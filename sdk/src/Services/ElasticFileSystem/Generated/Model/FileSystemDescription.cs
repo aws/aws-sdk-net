@@ -244,13 +244,14 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property ProvisionedThroughputInMibps. 
         /// <para>
-        /// The throughput, measured in MiB/s, that you want to provision for a file system. The
-        /// limit on throughput is 1024 MiB/s. You can get these limits increased by contacting
+        /// The throughput, measured in MiB/s, that you want to provision for a file system. Valid
+        /// values are 1-1024. Required if <code>ThroughputMode</code> is set to <code>provisioned</code>.
+        /// The limit on throughput is 1024 MiB/s. You can get these limits increased by contacting
         /// AWS Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
         /// EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Min=1)]
         public double ProvisionedThroughputInMibps
         {
             get { return this._provisionedThroughputInMibps.GetValueOrDefault(); }
@@ -313,9 +314,12 @@ namespace Amazon.ElasticFileSystem.Model
         /// Gets and sets the property ThroughputMode. 
         /// <para>
         /// The throughput mode for a file system. There are two throughput modes to choose from
-        /// for your file system: bursting and provisioned. You can decrease your file system's
+        /// for your file system: <code>bursting</code> and <code>provisioned</code>. If you set
+        /// <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value
+        /// for <code>ProvisionedThroughPutInMibps</code>. You can decrease your file system's
         /// throughput in Provisioned Throughput mode or change between the throughput modes as
         /// long as it’s been more than 24 hours since the last decrease or throughput mode change.
+        /// 
         /// </para>
         /// </summary>
         public ThroughputMode ThroughputMode

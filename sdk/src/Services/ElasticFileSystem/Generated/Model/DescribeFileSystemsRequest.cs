@@ -132,7 +132,9 @@ namespace Amazon.ElasticFileSystem.Model
         /// Gets and sets the property MaxItems. 
         /// <para>
         /// (Optional) Specifies the maximum number of file systems to return in the response
-        /// (integer). Currently, this number is automatically set to 10. 
+        /// (integer). Currently, this number is automatically set to 10, and other values are
+        /// ignored. The response is paginated at 10 per page if you have more than 10 file systems.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

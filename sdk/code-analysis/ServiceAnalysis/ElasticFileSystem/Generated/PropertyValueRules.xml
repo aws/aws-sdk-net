@@ -12,7 +12,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.CreateFileSystemRequest.ProvisionedThroughputInMibps</property>
-    <min>0</min>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.CreateFileSystemResponse.CreationToken</property>
@@ -34,7 +34,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.CreateFileSystemResponse.ProvisionedThroughputInMibps</property>
-    <min>0</min>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.DescribeFileSystemsRequest.CreationToken</property>
@@ -55,7 +55,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.UpdateFileSystemRequest.ProvisionedThroughputInMibps</property>
-    <min>0</min>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.UpdateFileSystemResponse.CreationToken</property>
@@ -77,7 +77,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.UpdateFileSystemResponse.ProvisionedThroughputInMibps</property>
-    <min>0</min>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.BadRequest.ErrorCode</property>

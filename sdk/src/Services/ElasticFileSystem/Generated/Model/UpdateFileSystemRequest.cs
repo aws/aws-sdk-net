@@ -61,11 +61,13 @@ namespace Amazon.ElasticFileSystem.Model
         /// Gets and sets the property ProvisionedThroughputInMibps. 
         /// <para>
         /// (Optional) The amount of throughput, in MiB/s, that you want to provision for your
-        /// file system. If you're not updating the amount of provisioned throughput for your
-        /// file system, you don't need to provide this value in your request.
+        /// file system. Valid values are 1-1024. Required if <code>ThroughputMode</code> is changed
+        /// to <code>provisioned</code> on update. If you're not updating the amount of provisioned
+        /// throughput for your file system, you don't need to provide this value in your request.
+        /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Min=1)]
         public double ProvisionedThroughputInMibps
         {
             get { return this._provisionedThroughputInMibps.GetValueOrDefault(); }
@@ -83,6 +85,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <para>
         /// (Optional) The throughput mode that you want your file system to use. If you're not
         /// updating your throughput mode, you don't need to provide this value in your request.
+        /// If you are changing the <code>ThroughputMode</code> to <code>provisioned</code>, you
+        /// must also set a value for <code>ProvisionedThroughputInMibps</code>.
         /// </para>
         /// </summary>
         public ThroughputMode ThroughputMode

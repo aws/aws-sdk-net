@@ -104,7 +104,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// Gets and sets the property MaxItems. 
         /// <para>
         /// (Optional) Maximum number of mount targets to return in the response. Currently, this
-        /// number is automatically set to 10.
+        /// number is automatically set to 10, and other values are ignored. The response is paginated
+        /// at 10 per page if you have more than 10 mount targets.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
