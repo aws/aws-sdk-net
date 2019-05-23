@@ -33,6 +33,10 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
+    /// You can only modify a Spot Fleet request of type <code>maintain</code>.
+    /// </para>
+    ///  
+    /// <para>
     /// While the Spot Fleet request is being modified, it is in the <code>modifying</code>
     /// state.
     /// </para>

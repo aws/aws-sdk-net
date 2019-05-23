@@ -146,10 +146,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DisableApiTermination. 
         /// <para>
-        /// If set to <code>true</code>, you can't terminate the instance using the Amazon EC2
-        /// console, CLI, or API. To change this attribute to <code>false</code> after launch,
-        /// use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">
-        /// ModifyInstanceAttribute</a>.
+        /// If you set this parameter to <code>true</code>, you can't terminate the instance using
+        /// the Amazon EC2 console, CLI, or API; otherwise, you can. To change this attribute
+        /// after launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>.
+        /// Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>,
+        /// you can terminate the instance by running the shutdown command from the instance.
         /// </para>
         /// </summary>
         public bool DisableApiTermination
@@ -264,7 +265,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImageId. 
         /// <para>
-        /// The ID of the AMI, which you can get by using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>.
+        /// The ID of the AMI.
         /// </para>
         /// </summary>
         public string ImageId

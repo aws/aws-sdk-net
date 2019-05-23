@@ -125,7 +125,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <code>true</code> 
         /// </para>
         /// </summary>
         public bool PrivateDnsEnabled

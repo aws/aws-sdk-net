@@ -5222,6 +5222,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DisableEbsEncryptionByDefaultMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisableEbsEncryptionByDefault");
+
+            var request = InstantiateClassGenerator.Execute<DisableEbsEncryptionByDefaultRequest>();
+            var marshaller = new DisableEbsEncryptionByDefaultRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DisableEbsEncryptionByDefaultResponseUnmarshaller.Instance.Unmarshall(context)
+                as DisableEbsEncryptionByDefaultResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DisableTransitGatewayRouteTablePropagationMarshallTest()
         {
             var operation = service_model.FindOperation("DisableTransitGatewayRouteTablePropagation");
@@ -5471,6 +5495,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void EnableEbsEncryptionByDefaultMarshallTest()
+        {
+            var operation = service_model.FindOperation("EnableEbsEncryptionByDefault");
+
+            var request = InstantiateClassGenerator.Execute<EnableEbsEncryptionByDefaultRequest>();
+            var marshaller = new EnableEbsEncryptionByDefaultRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = EnableEbsEncryptionByDefaultResponseUnmarshaller.Instance.Unmarshall(context)
+                as EnableEbsEncryptionByDefaultResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void EnableTransitGatewayRouteTablePropagationMarshallTest()
         {
             var operation = service_model.FindOperation("EnableTransitGatewayRouteTablePropagation");
@@ -5692,6 +5740,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = GetConsoleScreenshotResponseUnmarshaller.Instance.Unmarshall(context)
                 as GetConsoleScreenshotResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void GetEbsDefaultKmsKeyIdMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetEbsDefaultKmsKeyId");
+
+            var request = InstantiateClassGenerator.Execute<GetEbsDefaultKmsKeyIdRequest>();
+            var marshaller = new GetEbsDefaultKmsKeyIdRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = GetEbsDefaultKmsKeyIdResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetEbsDefaultKmsKeyIdResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void GetEbsEncryptionByDefaultMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetEbsEncryptionByDefault");
+
+            var request = InstantiateClassGenerator.Execute<GetEbsEncryptionByDefaultRequest>();
+            var marshaller = new GetEbsEncryptionByDefaultRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = GetEbsEncryptionByDefaultResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetEbsEncryptionByDefaultResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -6052,6 +6148,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = ModifyClientVpnEndpointResponseUnmarshaller.Instance.Unmarshall(context)
                 as ModifyClientVpnEndpointResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void ModifyEbsDefaultKmsKeyIdMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyEbsDefaultKmsKeyId");
+
+            var request = InstantiateClassGenerator.Execute<ModifyEbsDefaultKmsKeyIdRequest>();
+            var marshaller = new ModifyEbsDefaultKmsKeyIdRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ModifyEbsDefaultKmsKeyIdResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyEbsDefaultKmsKeyIdResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -7182,6 +7302,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = RequestSpotInstancesResponseUnmarshaller.Instance.Unmarshall(context)
                 as RequestSpotInstancesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void ResetEbsDefaultKmsKeyIdMarshallTest()
+        {
+            var operation = service_model.FindOperation("ResetEbsDefaultKmsKeyId");
+
+            var request = InstantiateClassGenerator.Execute<ResetEbsDefaultKmsKeyIdRequest>();
+            var marshaller = new ResetEbsDefaultKmsKeyIdRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ResetEbsDefaultKmsKeyIdResponseUnmarshaller.Instance.Unmarshall(context)
+                as ResetEbsDefaultKmsKeyIdResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

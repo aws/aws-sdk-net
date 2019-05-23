@@ -3386,7 +3386,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Creates a VPN connection between an existing virtual private gateway and a VPN customer
-        /// gateway. The only supported connection type is <code>ipsec.1</code>.
+        /// gateway. The supported connection types are <code>ipsec.1</code> and <code>ipsec.2</code>.
         /// 
         ///  
         /// <para>
@@ -9724,6 +9724,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableEbsEncryptionByDefault
+
+
+        /// <summary>
+        /// Disables default encryption for EBS volumes that are created in your account in the
+        /// current region.
+        /// 
+        ///  
+        /// <para>
+        /// Call this API if you have enabled default encryption using <a>EnableEbsEncryptionByDefault</a>
+        /// and want to disable default EBS encryption. Once default EBS encryption is disabled,
+        /// you can still create an encrypted volume by setting <i>encrypted</i> to <i>true</i>
+        /// in the API call that creates the volume. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Disabling default EBS encryption will not change the encryption status of any of your
+        /// existing volumes.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableEbsEncryptionByDefault service method.</param>
+        /// 
+        /// <returns>The response from the DisableEbsEncryptionByDefault service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableEbsEncryptionByDefault">REST API Reference for DisableEbsEncryptionByDefault Operation</seealso>
+        DisableEbsEncryptionByDefaultResponse DisableEbsEncryptionByDefault(DisableEbsEncryptionByDefaultRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableEbsEncryptionByDefault operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableEbsEncryptionByDefault operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableEbsEncryptionByDefault">REST API Reference for DisableEbsEncryptionByDefault Operation</seealso>
+        Task<DisableEbsEncryptionByDefaultResponse> DisableEbsEncryptionByDefaultAsync(DisableEbsEncryptionByDefaultRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DisableTransitGatewayRouteTablePropagation
 
 
@@ -10083,6 +10124,67 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  EnableEbsEncryptionByDefault
+
+
+        /// <summary>
+        /// Enables default encryption for EBS volumes that are created in your account in the
+        /// current region.
+        /// 
+        ///  
+        /// <para>
+        /// Once encryption is enabled with this action, EBS volumes that are created in your
+        /// account will always be encrypted even if encryption is not specified at launch. This
+        /// setting overrides the <i>encrypted</i> setting to <i>true</i> in all API calls that
+        /// create EBS volumes in your account. A volume will be encrypted even if you specify
+        /// <i>encryption</i> to be <i>false</i> in the API call that creates the volume.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not specify a customer master key (CMK) in the API call that creates the
+        /// EBS volume, then the volume is encrypted to your AWS account's default CMK.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify a default CMK of your choice using <a>ModifyEbsDefaultKmsKeyId</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Enabling default encryption for EBS volumes has no effect on existing unencrypted
+        /// volumes in your account. Encrypting the data in these requires manual action. You
+        /// can either create an encrypted snapshot of an unencrypted volume, or encrypt a copy
+        /// of an unencrypted snapshot. Any volume restored from an encrypted snapshot is also
+        /// encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
+        /// EBS Snapshots</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Once EBS encryption by default is enabled, you can no longer launch older-generation
+        /// instance types that do not support encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
+        /// Instance Types</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableEbsEncryptionByDefault service method.</param>
+        /// 
+        /// <returns>The response from the EnableEbsEncryptionByDefault service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableEbsEncryptionByDefault">REST API Reference for EnableEbsEncryptionByDefault Operation</seealso>
+        EnableEbsEncryptionByDefaultResponse EnableEbsEncryptionByDefault(EnableEbsEncryptionByDefaultRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableEbsEncryptionByDefault operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableEbsEncryptionByDefault operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableEbsEncryptionByDefault">REST API Reference for EnableEbsEncryptionByDefault Operation</seealso>
+        Task<EnableEbsEncryptionByDefaultResponse> EnableEbsEncryptionByDefaultAsync(EnableEbsEncryptionByDefaultRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  EnableTransitGatewayRouteTablePropagation
 
 
@@ -10396,6 +10498,63 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleScreenshot">REST API Reference for GetConsoleScreenshot Operation</seealso>
         Task<GetConsoleScreenshotResponse> GetConsoleScreenshotAsync(GetConsoleScreenshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetEbsDefaultKmsKeyId
+
+
+        /// <summary>
+        /// Describes the default customer master key (CMK) that your account uses to encrypt
+        /// EBS volumes if you don’t specify a CMK in the API call. You can change this default
+        /// using <a>ModifyEbsDefaultKmsKeyId</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEbsDefaultKmsKeyId service method.</param>
+        /// 
+        /// <returns>The response from the GetEbsDefaultKmsKeyId service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsDefaultKmsKeyId">REST API Reference for GetEbsDefaultKmsKeyId Operation</seealso>
+        GetEbsDefaultKmsKeyIdResponse GetEbsDefaultKmsKeyId(GetEbsDefaultKmsKeyIdRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEbsDefaultKmsKeyId operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEbsDefaultKmsKeyId operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsDefaultKmsKeyId">REST API Reference for GetEbsDefaultKmsKeyId Operation</seealso>
+        Task<GetEbsDefaultKmsKeyIdResponse> GetEbsDefaultKmsKeyIdAsync(GetEbsDefaultKmsKeyIdRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetEbsEncryptionByDefault
+
+
+        /// <summary>
+        /// Describes whether default EBS encryption is enabled for your account in the current
+        /// region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEbsEncryptionByDefault service method.</param>
+        /// 
+        /// <returns>The response from the GetEbsEncryptionByDefault service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsEncryptionByDefault">REST API Reference for GetEbsEncryptionByDefault Operation</seealso>
+        GetEbsEncryptionByDefaultResponse GetEbsEncryptionByDefault(GetEbsEncryptionByDefaultRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEbsEncryptionByDefault operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEbsEncryptionByDefault operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsEncryptionByDefault">REST API Reference for GetEbsEncryptionByDefault Operation</seealso>
+        Task<GetEbsEncryptionByDefaultResponse> GetEbsEncryptionByDefaultAsync(GetEbsEncryptionByDefaultRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -10881,6 +11040,47 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyClientVpnEndpoint">REST API Reference for ModifyClientVpnEndpoint Operation</seealso>
         Task<ModifyClientVpnEndpointResponse> ModifyClientVpnEndpointAsync(ModifyClientVpnEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ModifyEbsDefaultKmsKeyId
+
+
+        /// <summary>
+        /// Changes the default customer master key (CMK) that your account uses to encrypt EBS
+        /// volumes if you don’t specify a CMK in the API call.
+        /// 
+        ///  
+        /// <para>
+        /// Your account has an AWS-managed default CMK that is used for encrypting an EBS volume
+        /// when no CMK is specified in the API call that creates the volume. By calling this
+        /// API, you can specify a customer-managed CMK to use in place of the AWS-managed default
+        /// CMK.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note: Deleting or disabling the custom CMK that you have specified to act as your
+        /// default CMK will result in instance-launch failures.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyEbsDefaultKmsKeyId service method.</param>
+        /// 
+        /// <returns>The response from the ModifyEbsDefaultKmsKeyId service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyEbsDefaultKmsKeyId">REST API Reference for ModifyEbsDefaultKmsKeyId Operation</seealso>
+        ModifyEbsDefaultKmsKeyIdResponse ModifyEbsDefaultKmsKeyId(ModifyEbsDefaultKmsKeyIdRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyEbsDefaultKmsKeyId operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyEbsDefaultKmsKeyId operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyEbsDefaultKmsKeyId">REST API Reference for ModifyEbsDefaultKmsKeyId Operation</seealso>
+        Task<ModifyEbsDefaultKmsKeyIdResponse> ModifyEbsDefaultKmsKeyIdAsync(ModifyEbsDefaultKmsKeyIdRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -11469,6 +11669,10 @@ namespace Amazon.EC2
         /// <summary>
         /// Modifies the specified Spot Fleet request.
         /// 
+        ///  
+        /// <para>
+        /// You can only modify a Spot Fleet request of type <code>maintain</code>.
+        /// </para>
         ///  
         /// <para>
         /// While the Spot Fleet request is being modified, it is in the <code>modifying</code>
@@ -12868,6 +13072,46 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotInstances">REST API Reference for RequestSpotInstances Operation</seealso>
         Task<RequestSpotInstancesResponse> RequestSpotInstancesAsync(RequestSpotInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ResetEbsDefaultKmsKeyId
+
+
+        /// <summary>
+        /// Resets the account's default customer master key (CMK) to the account's AWS-managed
+        /// default CMK. This default CMK is used to encrypt EBS volumes when you have enabled
+        /// EBS encryption by default without specifying a CMK in the API call. If you have not
+        /// enabled encryption by default, then this CMK is used when you set the <code>Encrypted</code>
+        /// parameter to true without specifying a custom CMK in the API call.
+        /// 
+        ///  
+        /// <para>
+        /// Call this API if you have modified the default CMK that is used for encrypting your
+        /// EBS volume using <a>ModifyEbsDefaultKmsKeyId</a> and you want to reset it to the AWS-managed
+        /// default CMK. After resetting, you can continue to provide a CMK of your choice in
+        /// the API call that creates the volume. However, if no CMK is specified, your account
+        /// will encrypt the volume to the AWS-managed default CMK.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetEbsDefaultKmsKeyId service method.</param>
+        /// 
+        /// <returns>The response from the ResetEbsDefaultKmsKeyId service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetEbsDefaultKmsKeyId">REST API Reference for ResetEbsDefaultKmsKeyId Operation</seealso>
+        ResetEbsDefaultKmsKeyIdResponse ResetEbsDefaultKmsKeyId(ResetEbsDefaultKmsKeyIdRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResetEbsDefaultKmsKeyId operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResetEbsDefaultKmsKeyId operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetEbsDefaultKmsKeyId">REST API Reference for ResetEbsDefaultKmsKeyId Operation</seealso>
+        Task<ResetEbsDefaultKmsKeyIdResponse> ResetEbsDefaultKmsKeyIdAsync(ResetEbsDefaultKmsKeyIdRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

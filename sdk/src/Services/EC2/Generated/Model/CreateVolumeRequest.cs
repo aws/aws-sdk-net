@@ -77,8 +77,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates CreateVolumeRequest with the parameterized properties
         /// </summary>
-        /// <param name="availabilityZone">The Availability Zone in which to create the volume. Use <a>DescribeAvailabilityZones</a> to list the Availability Zones that are currently available to you.</param>
-        /// <param name="size">The size of the volume, in GiBs. Constraints: 1-16,384 for <code>gp2</code>, 4-16,384 for <code>io1</code>, 500-16,384 for <code>st1</code>, 500-16,384 for <code>sc1</code>, and 1-1,024 for <code>standard</code>. If you specify a snapshot, the volume size must be equal to or larger than the snapshot size. Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the snapshot size. <note> At least one of Size or SnapshotId are required. </note></param>
+        /// <param name="availabilityZone">The Availability Zone in which to create the volume.</param>
+        /// <param name="size">The size of the volume, in GiBs. Constraints: 1-16,384 for <code>gp2</code>, 4-16,384 for <code>io1</code>, 500-16,384 for <code>st1</code>, 500-16,384 for <code>sc1</code>, and 1-1,024 for <code>standard</code>. If you specify a snapshot, the volume size must be equal to or larger than the snapshot size. Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the snapshot size. <note> At least one of Size or SnapshotId is required. </note></param>
         public CreateVolumeRequest(string availabilityZone, int size)
         {
             _availabilityZone = availabilityZone;
@@ -88,7 +88,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates CreateVolumeRequest with the parameterized properties
         /// </summary>
-        /// <param name="availabilityZone">The Availability Zone in which to create the volume. Use <a>DescribeAvailabilityZones</a> to list the Availability Zones that are currently available to you.</param>
+        /// <param name="availabilityZone">The Availability Zone in which to create the volume.</param>
         /// <param name="snapshotId">The snapshot from which to create the volume. <note> At least one of Size or SnapshotId are required. </note></param>
         public CreateVolumeRequest(string availabilityZone, string snapshotId)
         {
@@ -99,8 +99,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The Availability Zone in which to create the volume. Use <a>DescribeAvailabilityZones</a>
-        /// to list the Availability Zones that are currently available to you.
+        /// The Availability Zone in which to create the volume.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -119,10 +118,13 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// Specifies the encryption state of the volume. The default effect of setting this parameter
-        /// depends on the volume's source and ownership. Each default case can be overridden
-        /// by specifying a customer master key (CMK) with the <code>KeyKeyId</code> parameter.
-        /// For a complete list of possible encryption cases, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+        /// Specifies the encryption state of the volume. The default effect of setting the <code>Encrypted</code>
+        /// parameter to <code>true</code> through the console, API, or CLI depends on the volume's
+        /// origin (new or from a snapshot), starting encryption state, ownership, and whether
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
+        /// encryption</a> is enabled. Each default case can be overridden by specifying a customer
+        /// master key (CMK) with the <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code>
+        /// to <code>true</code>. For a complete list of possible encryption cases, see <a href="AWSEC2/latest/UserGuide/EBSEncryption.htm">Amazon
         /// EBS Encryption</a>. 
         /// </para>
         ///  
@@ -175,10 +177,10 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK)
-        /// to use when creating the encrypted volume. This parameter is only required if you
-        /// want to use a non-default CMK; if this parameter is not specified, the default CMK
-        /// for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
-        /// flag must also be set. 
+        /// to use to encrypt the volume. This parameter is only required if you want to use a
+        /// non-default CMK; if this parameter is not specified, the default CMK for EBS is used.
+        /// If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also
+        /// be set. 
         /// </para>
         ///  
         /// <para>
@@ -246,7 +248,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// At least one of Size or SnapshotId are required.
+        /// At least one of Size or SnapshotId is required.
         /// </para>
         ///  </note>
         /// </summary>

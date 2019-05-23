@@ -8828,6 +8828,39 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableEbsEncryptionByDefault
+
+        internal virtual DisableEbsEncryptionByDefaultResponse DisableEbsEncryptionByDefault(DisableEbsEncryptionByDefaultRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableEbsEncryptionByDefaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableEbsEncryptionByDefaultResponseUnmarshaller.Instance;
+
+            return Invoke<DisableEbsEncryptionByDefaultResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableEbsEncryptionByDefault operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableEbsEncryptionByDefault operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableEbsEncryptionByDefault">REST API Reference for DisableEbsEncryptionByDefault Operation</seealso>
+        public virtual Task<DisableEbsEncryptionByDefaultResponse> DisableEbsEncryptionByDefaultAsync(DisableEbsEncryptionByDefaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableEbsEncryptionByDefaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableEbsEncryptionByDefaultResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisableEbsEncryptionByDefaultResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisableTransitGatewayRouteTablePropagation
 
         internal virtual DisableTransitGatewayRouteTablePropagationResponse DisableTransitGatewayRouteTablePropagation(DisableTransitGatewayRouteTablePropagationRequest request)
@@ -9191,6 +9224,39 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  EnableEbsEncryptionByDefault
+
+        internal virtual EnableEbsEncryptionByDefaultResponse EnableEbsEncryptionByDefault(EnableEbsEncryptionByDefaultRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableEbsEncryptionByDefaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableEbsEncryptionByDefaultResponseUnmarshaller.Instance;
+
+            return Invoke<EnableEbsEncryptionByDefaultResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableEbsEncryptionByDefault operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableEbsEncryptionByDefault operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableEbsEncryptionByDefault">REST API Reference for EnableEbsEncryptionByDefault Operation</seealso>
+        public virtual Task<EnableEbsEncryptionByDefaultResponse> EnableEbsEncryptionByDefaultAsync(EnableEbsEncryptionByDefaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableEbsEncryptionByDefaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableEbsEncryptionByDefaultResponseUnmarshaller.Instance;
+
+            return InvokeAsync<EnableEbsEncryptionByDefaultResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  EnableTransitGatewayRouteTablePropagation
 
         internal virtual EnableTransitGatewayRouteTablePropagationResponse EnableTransitGatewayRouteTablePropagation(EnableTransitGatewayRouteTablePropagationRequest request)
@@ -9517,6 +9583,72 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = GetConsoleScreenshotResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetConsoleScreenshotResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetEbsDefaultKmsKeyId
+
+        internal virtual GetEbsDefaultKmsKeyIdResponse GetEbsDefaultKmsKeyId(GetEbsDefaultKmsKeyIdRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEbsDefaultKmsKeyIdRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEbsDefaultKmsKeyIdResponseUnmarshaller.Instance;
+
+            return Invoke<GetEbsDefaultKmsKeyIdResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEbsDefaultKmsKeyId operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEbsDefaultKmsKeyId operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsDefaultKmsKeyId">REST API Reference for GetEbsDefaultKmsKeyId Operation</seealso>
+        public virtual Task<GetEbsDefaultKmsKeyIdResponse> GetEbsDefaultKmsKeyIdAsync(GetEbsDefaultKmsKeyIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEbsDefaultKmsKeyIdRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEbsDefaultKmsKeyIdResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetEbsDefaultKmsKeyIdResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetEbsEncryptionByDefault
+
+        internal virtual GetEbsEncryptionByDefaultResponse GetEbsEncryptionByDefault(GetEbsEncryptionByDefaultRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEbsEncryptionByDefaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEbsEncryptionByDefaultResponseUnmarshaller.Instance;
+
+            return Invoke<GetEbsEncryptionByDefaultResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEbsEncryptionByDefault operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEbsEncryptionByDefault operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsEncryptionByDefault">REST API Reference for GetEbsEncryptionByDefault Operation</seealso>
+        public virtual Task<GetEbsEncryptionByDefaultResponse> GetEbsEncryptionByDefaultAsync(GetEbsEncryptionByDefaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEbsEncryptionByDefaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEbsEncryptionByDefaultResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetEbsEncryptionByDefaultResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -10012,6 +10144,39 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = ModifyClientVpnEndpointResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyClientVpnEndpointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyEbsDefaultKmsKeyId
+
+        internal virtual ModifyEbsDefaultKmsKeyIdResponse ModifyEbsDefaultKmsKeyId(ModifyEbsDefaultKmsKeyIdRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyEbsDefaultKmsKeyIdRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyEbsDefaultKmsKeyIdResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyEbsDefaultKmsKeyIdResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyEbsDefaultKmsKeyId operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyEbsDefaultKmsKeyId operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyEbsDefaultKmsKeyId">REST API Reference for ModifyEbsDefaultKmsKeyId Operation</seealso>
+        public virtual Task<ModifyEbsDefaultKmsKeyIdResponse> ModifyEbsDefaultKmsKeyIdAsync(ModifyEbsDefaultKmsKeyIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyEbsDefaultKmsKeyIdRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyEbsDefaultKmsKeyIdResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyEbsDefaultKmsKeyIdResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -11662,6 +11827,39 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = RequestSpotInstancesResponseUnmarshaller.Instance;
 
             return InvokeAsync<RequestSpotInstancesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ResetEbsDefaultKmsKeyId
+
+        internal virtual ResetEbsDefaultKmsKeyIdResponse ResetEbsDefaultKmsKeyId(ResetEbsDefaultKmsKeyIdRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResetEbsDefaultKmsKeyIdRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResetEbsDefaultKmsKeyIdResponseUnmarshaller.Instance;
+
+            return Invoke<ResetEbsDefaultKmsKeyIdResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResetEbsDefaultKmsKeyId operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResetEbsDefaultKmsKeyId operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetEbsDefaultKmsKeyId">REST API Reference for ResetEbsDefaultKmsKeyId Operation</seealso>
+        public virtual Task<ResetEbsDefaultKmsKeyIdResponse> ResetEbsDefaultKmsKeyIdAsync(ResetEbsDefaultKmsKeyIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResetEbsDefaultKmsKeyIdRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResetEbsDefaultKmsKeyIdResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ResetEbsDefaultKmsKeyIdResponse>(request, options, cancellationToken);
         }
 
         #endregion

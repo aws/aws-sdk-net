@@ -4361,7 +4361,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Creates a VPN connection between an existing virtual private gateway and a VPN customer
-        /// gateway. The only supported connection type is <code>ipsec.1</code>.
+        /// gateway. The supported connection types are <code>ipsec.1</code> and <code>ipsec.2</code>.
         /// 
         ///  
         /// <para>
@@ -11663,6 +11663,60 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableEbsEncryptionByDefault
+
+
+        /// <summary>
+        /// Disables default encryption for EBS volumes that are created in your account in the
+        /// current region.
+        /// 
+        ///  
+        /// <para>
+        /// Call this API if you have enabled default encryption using <a>EnableEbsEncryptionByDefault</a>
+        /// and want to disable default EBS encryption. Once default EBS encryption is disabled,
+        /// you can still create an encrypted volume by setting <i>encrypted</i> to <i>true</i>
+        /// in the API call that creates the volume. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Disabling default EBS encryption will not change the encryption status of any of your
+        /// existing volumes.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableEbsEncryptionByDefault service method.</param>
+        /// 
+        /// <returns>The response from the DisableEbsEncryptionByDefault service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableEbsEncryptionByDefault">REST API Reference for DisableEbsEncryptionByDefault Operation</seealso>
+        DisableEbsEncryptionByDefaultResponse DisableEbsEncryptionByDefault(DisableEbsEncryptionByDefaultRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableEbsEncryptionByDefault operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableEbsEncryptionByDefault operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableEbsEncryptionByDefault
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableEbsEncryptionByDefault">REST API Reference for DisableEbsEncryptionByDefault Operation</seealso>
+        IAsyncResult BeginDisableEbsEncryptionByDefault(DisableEbsEncryptionByDefaultRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableEbsEncryptionByDefault operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableEbsEncryptionByDefault.</param>
+        /// 
+        /// <returns>Returns a  DisableEbsEncryptionByDefaultResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableEbsEncryptionByDefault">REST API Reference for DisableEbsEncryptionByDefault Operation</seealso>
+        DisableEbsEncryptionByDefaultResponse EndDisableEbsEncryptionByDefault(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisableTransitGatewayRouteTablePropagation
 
 
@@ -12165,6 +12219,80 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  EnableEbsEncryptionByDefault
+
+
+        /// <summary>
+        /// Enables default encryption for EBS volumes that are created in your account in the
+        /// current region.
+        /// 
+        ///  
+        /// <para>
+        /// Once encryption is enabled with this action, EBS volumes that are created in your
+        /// account will always be encrypted even if encryption is not specified at launch. This
+        /// setting overrides the <i>encrypted</i> setting to <i>true</i> in all API calls that
+        /// create EBS volumes in your account. A volume will be encrypted even if you specify
+        /// <i>encryption</i> to be <i>false</i> in the API call that creates the volume.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not specify a customer master key (CMK) in the API call that creates the
+        /// EBS volume, then the volume is encrypted to your AWS account's default CMK.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify a default CMK of your choice using <a>ModifyEbsDefaultKmsKeyId</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Enabling default encryption for EBS volumes has no effect on existing unencrypted
+        /// volumes in your account. Encrypting the data in these requires manual action. You
+        /// can either create an encrypted snapshot of an unencrypted volume, or encrypt a copy
+        /// of an unencrypted snapshot. Any volume restored from an encrypted snapshot is also
+        /// encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
+        /// EBS Snapshots</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Once EBS encryption by default is enabled, you can no longer launch older-generation
+        /// instance types that do not support encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
+        /// Instance Types</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableEbsEncryptionByDefault service method.</param>
+        /// 
+        /// <returns>The response from the EnableEbsEncryptionByDefault service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableEbsEncryptionByDefault">REST API Reference for EnableEbsEncryptionByDefault Operation</seealso>
+        EnableEbsEncryptionByDefaultResponse EnableEbsEncryptionByDefault(EnableEbsEncryptionByDefaultRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableEbsEncryptionByDefault operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableEbsEncryptionByDefault operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableEbsEncryptionByDefault
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableEbsEncryptionByDefault">REST API Reference for EnableEbsEncryptionByDefault Operation</seealso>
+        IAsyncResult BeginEnableEbsEncryptionByDefault(EnableEbsEncryptionByDefaultRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableEbsEncryptionByDefault operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableEbsEncryptionByDefault.</param>
+        /// 
+        /// <returns>Returns a  EnableEbsEncryptionByDefaultResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableEbsEncryptionByDefault">REST API Reference for EnableEbsEncryptionByDefault Operation</seealso>
+        EnableEbsEncryptionByDefaultResponse EndEnableEbsEncryptionByDefault(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  EnableTransitGatewayRouteTablePropagation
 
 
@@ -12608,6 +12736,89 @@ namespace Amazon.EC2
         /// <returns>Returns a  GetConsoleScreenshotResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleScreenshot">REST API Reference for GetConsoleScreenshot Operation</seealso>
         GetConsoleScreenshotResponse EndGetConsoleScreenshot(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetEbsDefaultKmsKeyId
+
+
+        /// <summary>
+        /// Describes the default customer master key (CMK) that your account uses to encrypt
+        /// EBS volumes if you don’t specify a CMK in the API call. You can change this default
+        /// using <a>ModifyEbsDefaultKmsKeyId</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEbsDefaultKmsKeyId service method.</param>
+        /// 
+        /// <returns>The response from the GetEbsDefaultKmsKeyId service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsDefaultKmsKeyId">REST API Reference for GetEbsDefaultKmsKeyId Operation</seealso>
+        GetEbsDefaultKmsKeyIdResponse GetEbsDefaultKmsKeyId(GetEbsDefaultKmsKeyIdRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEbsDefaultKmsKeyId operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEbsDefaultKmsKeyId operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEbsDefaultKmsKeyId
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsDefaultKmsKeyId">REST API Reference for GetEbsDefaultKmsKeyId Operation</seealso>
+        IAsyncResult BeginGetEbsDefaultKmsKeyId(GetEbsDefaultKmsKeyIdRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetEbsDefaultKmsKeyId operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEbsDefaultKmsKeyId.</param>
+        /// 
+        /// <returns>Returns a  GetEbsDefaultKmsKeyIdResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsDefaultKmsKeyId">REST API Reference for GetEbsDefaultKmsKeyId Operation</seealso>
+        GetEbsDefaultKmsKeyIdResponse EndGetEbsDefaultKmsKeyId(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetEbsEncryptionByDefault
+
+
+        /// <summary>
+        /// Describes whether default EBS encryption is enabled for your account in the current
+        /// region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEbsEncryptionByDefault service method.</param>
+        /// 
+        /// <returns>The response from the GetEbsEncryptionByDefault service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsEncryptionByDefault">REST API Reference for GetEbsEncryptionByDefault Operation</seealso>
+        GetEbsEncryptionByDefaultResponse GetEbsEncryptionByDefault(GetEbsEncryptionByDefaultRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEbsEncryptionByDefault operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEbsEncryptionByDefault operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEbsEncryptionByDefault
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsEncryptionByDefault">REST API Reference for GetEbsEncryptionByDefault Operation</seealso>
+        IAsyncResult BeginGetEbsEncryptionByDefault(GetEbsEncryptionByDefaultRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetEbsEncryptionByDefault operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEbsEncryptionByDefault.</param>
+        /// 
+        /// <returns>Returns a  GetEbsEncryptionByDefaultResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsEncryptionByDefault">REST API Reference for GetEbsEncryptionByDefault Operation</seealso>
+        GetEbsEncryptionByDefaultResponse EndGetEbsEncryptionByDefault(IAsyncResult asyncResult);
 
         #endregion
         
@@ -13288,6 +13499,60 @@ namespace Amazon.EC2
         /// <returns>Returns a  ModifyClientVpnEndpointResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyClientVpnEndpoint">REST API Reference for ModifyClientVpnEndpoint Operation</seealso>
         ModifyClientVpnEndpointResponse EndModifyClientVpnEndpoint(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ModifyEbsDefaultKmsKeyId
+
+
+        /// <summary>
+        /// Changes the default customer master key (CMK) that your account uses to encrypt EBS
+        /// volumes if you don’t specify a CMK in the API call.
+        /// 
+        ///  
+        /// <para>
+        /// Your account has an AWS-managed default CMK that is used for encrypting an EBS volume
+        /// when no CMK is specified in the API call that creates the volume. By calling this
+        /// API, you can specify a customer-managed CMK to use in place of the AWS-managed default
+        /// CMK.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note: Deleting or disabling the custom CMK that you have specified to act as your
+        /// default CMK will result in instance-launch failures.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyEbsDefaultKmsKeyId service method.</param>
+        /// 
+        /// <returns>The response from the ModifyEbsDefaultKmsKeyId service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyEbsDefaultKmsKeyId">REST API Reference for ModifyEbsDefaultKmsKeyId Operation</seealso>
+        ModifyEbsDefaultKmsKeyIdResponse ModifyEbsDefaultKmsKeyId(ModifyEbsDefaultKmsKeyIdRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyEbsDefaultKmsKeyId operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyEbsDefaultKmsKeyId operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyEbsDefaultKmsKeyId
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyEbsDefaultKmsKeyId">REST API Reference for ModifyEbsDefaultKmsKeyId Operation</seealso>
+        IAsyncResult BeginModifyEbsDefaultKmsKeyId(ModifyEbsDefaultKmsKeyIdRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyEbsDefaultKmsKeyId operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyEbsDefaultKmsKeyId.</param>
+        /// 
+        /// <returns>Returns a  ModifyEbsDefaultKmsKeyIdResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyEbsDefaultKmsKeyId">REST API Reference for ModifyEbsDefaultKmsKeyId Operation</seealso>
+        ModifyEbsDefaultKmsKeyIdResponse EndModifyEbsDefaultKmsKeyId(IAsyncResult asyncResult);
 
         #endregion
         
@@ -14071,6 +14336,10 @@ namespace Amazon.EC2
         /// <summary>
         /// Modifies the specified Spot Fleet request.
         /// 
+        ///  
+        /// <para>
+        /// You can only modify a Spot Fleet request of type <code>maintain</code>.
+        /// </para>
         ///  
         /// <para>
         /// While the Spot Fleet request is being modified, it is in the <code>modifying</code>
@@ -15925,6 +16194,59 @@ namespace Amazon.EC2
         /// <returns>Returns a  RequestSpotInstancesResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotInstances">REST API Reference for RequestSpotInstances Operation</seealso>
         RequestSpotInstancesResponse EndRequestSpotInstances(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ResetEbsDefaultKmsKeyId
+
+
+        /// <summary>
+        /// Resets the account's default customer master key (CMK) to the account's AWS-managed
+        /// default CMK. This default CMK is used to encrypt EBS volumes when you have enabled
+        /// EBS encryption by default without specifying a CMK in the API call. If you have not
+        /// enabled encryption by default, then this CMK is used when you set the <code>Encrypted</code>
+        /// parameter to true without specifying a custom CMK in the API call.
+        /// 
+        ///  
+        /// <para>
+        /// Call this API if you have modified the default CMK that is used for encrypting your
+        /// EBS volume using <a>ModifyEbsDefaultKmsKeyId</a> and you want to reset it to the AWS-managed
+        /// default CMK. After resetting, you can continue to provide a CMK of your choice in
+        /// the API call that creates the volume. However, if no CMK is specified, your account
+        /// will encrypt the volume to the AWS-managed default CMK.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetEbsDefaultKmsKeyId service method.</param>
+        /// 
+        /// <returns>The response from the ResetEbsDefaultKmsKeyId service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetEbsDefaultKmsKeyId">REST API Reference for ResetEbsDefaultKmsKeyId Operation</seealso>
+        ResetEbsDefaultKmsKeyIdResponse ResetEbsDefaultKmsKeyId(ResetEbsDefaultKmsKeyIdRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResetEbsDefaultKmsKeyId operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResetEbsDefaultKmsKeyId operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResetEbsDefaultKmsKeyId
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetEbsDefaultKmsKeyId">REST API Reference for ResetEbsDefaultKmsKeyId Operation</seealso>
+        IAsyncResult BeginResetEbsDefaultKmsKeyId(ResetEbsDefaultKmsKeyIdRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ResetEbsDefaultKmsKeyId operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResetEbsDefaultKmsKeyId.</param>
+        /// 
+        /// <returns>Returns a  ResetEbsDefaultKmsKeyIdResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetEbsDefaultKmsKeyId">REST API Reference for ResetEbsDefaultKmsKeyId Operation</seealso>
+        ResetEbsDefaultKmsKeyIdResponse EndResetEbsDefaultKmsKeyId(IAsyncResult asyncResult);
 
         #endregion
         
