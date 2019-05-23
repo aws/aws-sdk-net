@@ -1,3 +1,14 @@
+### 3.3.517.0 (2019-05-23 18:07 UTC)
+* EC2 (3.3.110.0)
+	* New APIs to enable EBS encryption by default feature. Once EBS encryption by default is enabled in a region within the account, all new EBS volumes and snapshot copies are always encrypted
+* WAFRegional (3.3.100.24)
+	* Documentation updates for waf-regional
+* Core 3.3.101.15
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.516.0 (2019-05-22 19:20 UTC)
 * APIGateway (3.3.101.0)
 	* This release adds support for tagging of Amazon API Gateway resources.
