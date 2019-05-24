@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.517.0",
+    "ProductVersion" : "3.3.518.0",
     "CoreVersion"    : "3.3.101.15",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -93,7 +93,7 @@
             "InPreview"               : false
         },
         "CodeDeploy"        : {
-            "Version" : "3.3.100.24",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.101.15"
@@ -649,7 +649,7 @@
             "InPreview"               : false
         },
         "OpsWorksCM"                      : {
-            "Version" : "3.3.100.24",
+            "Version" : "3.3.100.25",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.101.15"
@@ -881,7 +881,7 @@
             "InPreview"               : false
         },
         "MediaStoreData"                  : {
-            "Version" : "3.3.100.24",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.101.15"

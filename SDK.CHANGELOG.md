@@ -1,3 +1,11 @@
+### 3.3.518.0 (2019-05-24 19:13 UTC)
+* CodeDeploy (3.3.101.0)
+	* AWS CodeDeploy now supports tagging for the application and deployment group resources.
+* MediaStoreData (3.3.101.0)
+	* MediaStore - This release adds support for chunked transfer of objects, which reduces latency by making an object available for downloading while it is still being uploaded.
+* OpsWorksCM (3.3.100.25)
+	* Documentation updates for OpsWorks for Chef Automate; attribute values updated for Chef Automate 2.0 release.
+
 ### 3.3.517.0 (2019-05-23 18:07 UTC)
 * EC2 (3.3.110.0)
 	* New APIs to enable EBS encryption by default feature. Once EBS encryption by default is enabled in a region within the account, all new EBS volumes and snapshot copies are always encrypted
