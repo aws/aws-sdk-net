@@ -62,7 +62,7 @@ namespace Amazon.OpsWorksCM
     ///  </li> <li> 
     /// <para>
     ///  <b>Engine</b>: The engine is the specific configuration manager that you want to
-    /// use. Valid values in this release include <code>Chef</code> and <code>Puppet</code>.
+    /// use. Valid values in this release include <code>ChefAutomate</code> and <code>Puppet</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>

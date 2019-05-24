@@ -29,8 +29,7 @@ namespace Amazon.OpsWorksCM.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAccountAttributes operation.
-    /// Describes your account attributes, and creates requests to increase limits before
-    /// they are reached or exceeded. 
+    /// Describes your OpsWorks-CM account attributes. 
     /// 
     ///  
     /// <para>

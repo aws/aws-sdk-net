@@ -174,7 +174,7 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        ///  The configuration management engine to use. Valid values include <code>Chef</code>
+        ///  The configuration management engine to use. Valid values include <code>ChefAutomate</code>
         /// and <code>Puppet</code>. 
         /// </para>
         /// </summary>
@@ -199,17 +199,17 @@ namespace Amazon.OpsWorksCM.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The corresponding
-        /// private key is required to access the Chef API. When no CHEF_PIVOTAL_KEY is set, a
-        /// private key is generated and returned in the response. 
+        ///  <code>CHEF_AUTOMATE_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The corresponding
+        /// private key is required to access the Chef API. When no CHEF_AUTOMATE_PIVOTAL_KEY
+        /// is set, a private key is generated and returned in the response. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The password for the administrative user
-        /// in the Chef Automate GUI. The password length is a minimum of eight characters, and
-        /// a maximum of 32. The password can contain letters, numbers, and special characters
-        /// (!/@#$%^&amp;+=_). The password must contain at least one lower case letter, one upper
-        /// case letter, one number, and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD
+        ///  <code>CHEF_AUTOMATE_ADMIN_PASSWORD</code>: The password for the administrative user
+        /// in the Chef Automate web-based dashboard. The password length is a minimum of eight
+        /// characters, and a maximum of 32. The password can contain letters, numbers, and special
+        /// characters (!/@#$%^&amp;+=_). The password must contain at least one lower case letter,
+        /// one upper case letter, one number, and one special character. When no CHEF_AUTOMATE_ADMIN_PASSWORD
         /// is set, one is generated and returned in the response.
         /// </para>
         ///  </li> </ul> <p class="title"> <b>Attributes accepted in a Puppet createServer request:</b>
@@ -229,7 +229,7 @@ namespace Amazon.OpsWorksCM.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository,
-        /// add PUPPET_R10K_PRIVATE_KEY to specify an SSH URL and a PEM-encoded private SSH key.
+        /// add PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -311,9 +311,7 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        ///  The Amazon EC2 instance type to use. For example, <code>m4.large</code>. Recommended
-        /// instance types include <code>t2.medium</code> and greater, <code>m4.*</code>, or <code>c4.xlarge</code>
-        /// and greater. 
+        ///  The Amazon EC2 instance type to use. For example, <code>m5.large</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

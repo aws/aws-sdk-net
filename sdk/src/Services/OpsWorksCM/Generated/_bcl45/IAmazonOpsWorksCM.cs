@@ -55,7 +55,7 @@ namespace Amazon.OpsWorksCM
     ///  </li> <li> 
     /// <para>
     ///  <b>Engine</b>: The engine is the specific configuration manager that you want to
-    /// use. Valid values in this release include <code>Chef</code> and <code>Puppet</code>.
+    /// use. Valid values in this release include <code>ChefAutomate</code> and <code>Puppet</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -447,8 +447,7 @@ namespace Amazon.OpsWorksCM
 
 
         /// <summary>
-        /// Describes your account attributes, and creates requests to increase limits before
-        /// they are reached or exceeded. 
+        /// Describes your OpsWorks-CM account attributes. 
         /// 
         ///  
         /// <para>
