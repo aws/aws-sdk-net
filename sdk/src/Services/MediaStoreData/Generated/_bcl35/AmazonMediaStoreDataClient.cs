@@ -209,7 +209,9 @@ namespace Amazon.MediaStoreData
         #region  GetObject
 
         /// <summary>
-        /// Downloads the object at the specified path.
+        /// Downloads the object at the specified path. If the object’s upload availability is
+        /// set to <code>streaming</code>, AWS Elemental MediaStore downloads the object even
+        /// if it’s still uploading the object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetObject service method.</param>
         /// 
@@ -335,7 +337,8 @@ namespace Amazon.MediaStoreData
         #region  PutObject
 
         /// <summary>
-        /// Uploads an object to the specified path. Object sizes are limited to 25 MB.
+        /// Uploads an object to the specified path. Object sizes are limited to 25 MB for standard
+        /// upload availability and 10 MB for streaming upload availability.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutObject service method.</param>
         /// 

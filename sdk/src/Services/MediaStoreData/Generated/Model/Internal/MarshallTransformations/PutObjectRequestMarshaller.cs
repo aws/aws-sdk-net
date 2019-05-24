@@ -77,6 +77,9 @@ namespace Amazon.MediaStoreData.Model.Internal.MarshallTransformations
         
             if(publicRequest.IsSetStorageClass())
                 request.Headers["x-amz-storage-class"] = publicRequest.StorageClass;
+        
+            if(publicRequest.IsSetUploadAvailability())
+                request.Headers["x-amz-upload-availability"] = publicRequest.UploadAvailability;
 
             return request;
         }

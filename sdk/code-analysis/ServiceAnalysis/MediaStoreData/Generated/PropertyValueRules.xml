@@ -81,6 +81,11 @@
     <max>16</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaStoreData.Model.PutObjectRequest.UploadAvailability</property>
+    <min>1</min>
+    <max>16</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaStoreData.Model.PutObjectResponse.ContentSHA256</property>
     <min>64</min>
     <max>64</max>

@@ -30,7 +30,8 @@ namespace Amazon.MediaStoreData.Model
 {
     /// <summary>
     /// Container for the parameters to the PutObject operation.
-    /// Uploads an object to the specified path. Object sizes are limited to 25 MB.
+    /// Uploads an object to the specified path. Object sizes are limited to 25 MB for standard
+    /// upload availability and 10 MB for streaming upload availability.
     /// </summary>
     public partial class PutObjectRequest : AmazonMediaStoreDataRequest
     {
@@ -39,6 +40,7 @@ namespace Amazon.MediaStoreData.Model
         private string _contentType;
         private string _path;
         private StorageClass _storageClass;
+        private UploadAvailability _uploadAvailability;
 
         /// <summary>
         /// Gets and sets the property Body. 
@@ -172,6 +174,34 @@ namespace Amazon.MediaStoreData.Model
         internal bool IsSetStorageClass()
         {
             return this._storageClass != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UploadAvailability. 
+        /// <para>
+        /// Indicates the availability of an object while it is still uploading. If the value
+        /// is set to <code>streaming</code>, the object is available for downloading after some
+        /// initial buffering but before the object is uploaded completely. If the value is set
+        /// to <code>standard</code>, the object is available for downloading only when it is
+        /// uploaded completely. The default value for this header is <code>standard</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this header, you must also set the HTTP <code>Transfer-Encoding</code> header
+        /// to <code>chunked</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=16)]
+        public UploadAvailability UploadAvailability
+        {
+            get { return this._uploadAvailability; }
+            set { this._uploadAvailability = value; }
+        }
+
+        // Check to see if UploadAvailability property is set
+        internal bool IsSetUploadAvailability()
+        {
+            return this._uploadAvailability != null;
         }
 
         /// <summary>

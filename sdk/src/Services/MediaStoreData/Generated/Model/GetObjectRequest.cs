@@ -29,7 +29,9 @@ namespace Amazon.MediaStoreData.Model
 {
     /// <summary>
     /// Container for the parameters to the GetObject operation.
-    /// Downloads the object at the specified path.
+    /// Downloads the object at the specified path. If the object’s upload availability is
+    /// set to <code>streaming</code>, AWS Elemental MediaStore downloads the object even
+    /// if it’s still uploading the object.
     /// </summary>
     public partial class GetObjectRequest : AmazonMediaStoreDataRequest
     {
@@ -93,7 +95,9 @@ namespace Amazon.MediaStoreData.Model
         /// Gets and sets the property Range. 
         /// <para>
         /// The range bytes of an object to retrieve. For more information about the <code>Range</code>
-        /// header, go to <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.
+        /// header, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.
+        /// AWS Elemental MediaStore ignores this header for partially uploaded objects that have
+        /// streaming upload availability.
         /// </para>
         /// </summary>
         public string Range
