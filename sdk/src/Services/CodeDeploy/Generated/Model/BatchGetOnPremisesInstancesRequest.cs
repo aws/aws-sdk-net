@@ -29,7 +29,8 @@ namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchGetOnPremisesInstances operation.
-    /// Gets information about one or more on-premises instances.
+    /// Gets information about one or more on-premises instances. The maximum number of on-premises
+    /// instances that can be returned is 25.
     /// </summary>
     public partial class BatchGetOnPremisesInstancesRequest : AmazonCodeDeployRequest
     {
@@ -38,7 +39,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property InstanceNames. 
         /// <para>
-        /// The names of the on-premises instances about which to get information.
+        /// The names of the on-premises instances about which to get information. The maximum
+        /// number of instance names you can specify is 25.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

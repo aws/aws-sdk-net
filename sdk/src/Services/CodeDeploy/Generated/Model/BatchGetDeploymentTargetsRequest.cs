@@ -29,9 +29,9 @@ namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchGetDeploymentTargets operation.
-    /// Returns an array of targets associated with a deployment. This method works with
-    /// all compute types and should be used instead of the deprecated <code>BatchGetDeploymentInstances</code>.
-    /// 
+    /// Returns an array of one or more targets associated with a deployment. This method
+    /// works with all compute types and should be used instead of the deprecated <code>BatchGetDeploymentInstances</code>.
+    /// The maximum number of targets that can be returned is 25.
     /// 
     ///  
     /// <para>
@@ -78,7 +78,8 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property TargetIds. 
         /// <para>
         ///  The unique IDs of the deployment targets. The compute platform of the deployment
-        /// determines the type of the targets and their formats. 
+        /// determines the type of the targets and their formats. The maximum number of deployment
+        /// target IDs you can specify is 25.
         /// </para>
         ///  <ul> <li> 
         /// <para>

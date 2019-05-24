@@ -48,6 +48,7 @@ namespace Amazon.CodeDeploy.Model
         private List<TagFilter> _onPremisesInstanceTagFilters = new List<TagFilter>();
         private OnPremisesTagSet _onPremisesTagSet;
         private string _serviceRoleArn;
+        private List<Tag> _tags = new List<Tag>();
         private List<TriggerConfig> _triggerConfigurations = new List<TriggerConfig>();
 
         /// <summary>
@@ -347,6 +348,26 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetServiceRoleArn()
         {
             return this._serviceRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        ///  The metadata that you apply to CodeDeploy deployment groups to help you organize
+        /// and categorize them. Each tag consists of a key and an optional value, both of which
+        /// you define. 
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

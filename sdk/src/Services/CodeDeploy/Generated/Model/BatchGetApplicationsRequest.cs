@@ -29,7 +29,8 @@ namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchGetApplications operation.
-    /// Gets information about one or more applications.
+    /// Gets information about one or more applications. The maximum number of applications
+    /// that can be returned is 25.
     /// </summary>
     public partial class BatchGetApplicationsRequest : AmazonCodeDeployRequest
     {
@@ -38,7 +39,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ApplicationNames. 
         /// <para>
-        /// A list of application names separated by spaces.
+        /// A list of application names separated by spaces. The maximum number of application
+        /// names you can specify is 25.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

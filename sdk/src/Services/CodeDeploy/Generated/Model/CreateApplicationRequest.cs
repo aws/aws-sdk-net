@@ -35,6 +35,7 @@ namespace Amazon.CodeDeploy.Model
     {
         private string _applicationName;
         private ComputePlatform _computePlatform;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
@@ -59,7 +60,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ComputePlatform. 
         /// <para>
-        ///  The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+        ///  The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>,
+        /// or <code>ECS</code>).
         /// </para>
         /// </summary>
         public ComputePlatform ComputePlatform
@@ -72,6 +74,26 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetComputePlatform()
         {
             return this._computePlatform != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        ///  The metadata that you apply to CodeDeploy applications to help you organize and categorize
+        /// them. Each tag consists of a key and an optional value, both of which you define.
+        /// 
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

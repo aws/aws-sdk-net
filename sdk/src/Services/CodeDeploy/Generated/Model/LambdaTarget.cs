@@ -33,6 +33,7 @@ namespace Amazon.CodeDeploy.Model
     public partial class LambdaTarget
     {
         private string _deploymentId;
+        private LambdaFunctionInfo _lambdaFunctionInfo;
         private DateTime? _lastUpdatedAt;
         private List<LifecycleEvent> _lifecycleEvents = new List<LifecycleEvent>();
         private TargetStatus _status;
@@ -55,6 +56,25 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetDeploymentId()
         {
             return this._deploymentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaFunctionInfo. 
+        /// <para>
+        ///  A <code>LambdaFunctionInfo</code> object that describes a target Lambda function.
+        /// 
+        /// </para>
+        /// </summary>
+        public LambdaFunctionInfo LambdaFunctionInfo
+        {
+            get { return this._lambdaFunctionInfo; }
+            set { this._lambdaFunctionInfo = value; }
+        }
+
+        // Check to see if LambdaFunctionInfo property is set
+        internal bool IsSetLambdaFunctionInfo()
+        {
+            return this._lambdaFunctionInfo != null;
         }
 
         /// <summary>

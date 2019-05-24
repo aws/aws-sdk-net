@@ -711,6 +711,14 @@ namespace Amazon.CodeDeploy
         /// </summary>
         public static readonly ErrorCode AUTOSCALING_VALIDATION_ERROR = new ErrorCode("AUTOSCALING_VALIDATION_ERROR");
         /// <summary>
+        /// Constant CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND = new ErrorCode("CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND");
+        /// <summary>
+        /// Constant CUSTOMER_APPLICATION_UNHEALTHY for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode CUSTOMER_APPLICATION_UNHEALTHY = new ErrorCode("CUSTOMER_APPLICATION_UNHEALTHY");
+        /// <summary>
         /// Constant DEPLOYMENT_GROUP_MISSING for ErrorCode
         /// </summary>
         public static readonly ErrorCode DEPLOYMENT_GROUP_MISSING = new ErrorCode("DEPLOYMENT_GROUP_MISSING");
@@ -794,6 +802,10 @@ namespace Amazon.CodeDeploy
         /// Constant OVER_MAX_INSTANCES for ErrorCode
         /// </summary>
         public static readonly ErrorCode OVER_MAX_INSTANCES = new ErrorCode("OVER_MAX_INSTANCES");
+        /// <summary>
+        /// Constant RESOURCE_LIMIT_EXCEEDED for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode RESOURCE_LIMIT_EXCEEDED = new ErrorCode("RESOURCE_LIMIT_EXCEEDED");
         /// <summary>
         /// Constant REVISION_MISSING for ErrorCode
         /// </summary>

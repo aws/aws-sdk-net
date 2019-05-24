@@ -45,6 +45,13 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         /// The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If <code>applicationName</code> is specified, then <code>deploymentGroupName</code>
+        /// must be specified. If it is not specified, then <code>deploymentGroupName</code> must
+        /// not be specified. 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public string ApplicationName
@@ -82,6 +89,13 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         /// The name of a deployment group for the specified application.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If <code>deploymentGroupName</code> is specified, then <code>applicationName</code>
+        /// must be specified. If it is not specified, then <code>applicationName</code> must
+        /// not be specified. 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public string DeploymentGroupName

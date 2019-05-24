@@ -406,7 +406,8 @@ namespace Amazon.CodeDeploy
 
 
         /// <summary>
-        /// Gets information about one or more application revisions.
+        /// Gets information about one or more application revisions. The maximum number of application
+        /// revisions that can be returned is 25.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetApplicationRevisions service method.</param>
         /// 
@@ -464,7 +465,8 @@ namespace Amazon.CodeDeploy
 
 
         /// <summary>
-        /// Gets information about one or more applications.
+        /// Gets information about one or more applications. The maximum number of applications
+        /// that can be returned is 25.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetApplications service method.</param>
         /// 
@@ -584,9 +586,10 @@ namespace Amazon.CodeDeploy
         /// </para>
         ///  </note> 
         /// <para>
-        ///  Returns an array of instances associated with a deployment. This method works with
-        /// EC2/On-premises and AWS Lambda compute platforms. The newer <code>BatchGetDeploymentTargets</code>
-        /// works with all compute platforms. 
+        ///  Returns an array of one or more instances associated with a deployment. This method
+        /// works with EC2/On-premises and AWS Lambda compute platforms. The newer <code>BatchGetDeploymentTargets</code>
+        /// works with all compute platforms. The maximum number of instances that can be returned
+        /// is 25.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetDeploymentInstances service method.</param>
@@ -651,7 +654,8 @@ namespace Amazon.CodeDeploy
 
 
         /// <summary>
-        /// Gets information about one or more deployments.
+        /// Gets information about one or more deployments. The maximum number of deployments
+        /// that can be returned is 25.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetDeployments service method.</param>
         /// 
@@ -700,9 +704,9 @@ namespace Amazon.CodeDeploy
 
 
         /// <summary>
-        /// Returns an array of targets associated with a deployment. This method works with
-        /// all compute types and should be used instead of the deprecated <code>BatchGetDeploymentInstances</code>.
-        /// 
+        /// Returns an array of one or more targets associated with a deployment. This method
+        /// works with all compute types and should be used instead of the deprecated <code>BatchGetDeploymentInstances</code>.
+        /// The maximum number of targets that can be returned is 25.
         /// 
         ///  
         /// <para>
@@ -730,6 +734,9 @@ namespace Amazon.CodeDeploy
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
         /// At least one deployment ID must be specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentNotStartedException">
+        /// The specified deployment has not started.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentTargetDoesNotExistException">
         /// The provided target ID does not belong to the attempted deployment.
@@ -783,7 +790,8 @@ namespace Amazon.CodeDeploy
 
 
         /// <summary>
-        /// Gets information about one or more on-premises instances.
+        /// Gets information about one or more on-premises instances. The maximum number of on-premises
+        /// instances that can be returned is 25.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetOnPremisesInstances service method.</param>
         /// 
@@ -920,6 +928,9 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidComputePlatformException">
         /// The computePlatform is invalid. The computePlatform should be <code>Lambda</code>
         /// or <code>Server</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidTagsToAddException">
+        /// The specified tags are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
@@ -1266,6 +1277,9 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidTagException">
         /// The tag was specified in an invalid format.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidTagsToAddException">
+        /// The specified tags are not valid.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidTargetGroupPairException">
         /// A target group pair associated with this deployment is not valid.
         /// </exception>
@@ -1333,6 +1347,11 @@ namespace Amazon.CodeDeploy
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidApplicationNameException">
         /// The application name was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidRoleException">
+        /// The service role ARN was specified in an invalid format. Or, if an Auto Scaling group
+        /// was specified, the specified service role does not grant the appropriate permissions
+        /// to Amazon EC2 Auto Scaling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
@@ -1939,6 +1958,9 @@ namespace Amazon.CodeDeploy
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
         /// At least one deployment ID must be specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentNotStartedException">
+        /// The specified deployment has not started.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentTargetDoesNotExistException">
         /// The provided target ID does not belong to the attempted deployment.
@@ -2632,6 +2654,57 @@ namespace Amazon.CodeDeploy
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Returns a list of tags for the resource identified by a specified ARN. Tags are used
+        /// to organize and categorize your CodeDeploy resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.ArnNotSupportedException">
+        /// The specified ARN is not supported. For example, it might be an ARN for a resource
+        /// that is not expected.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidArnException">
+        /// The specified ARN is not in a valid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.ResourceArnRequiredException">
+        /// The ARN of a resource is required, but was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutLifecycleEventHookExecutionStatus
 
 
@@ -3008,6 +3081,139 @@ namespace Amazon.CodeDeploy
             options.ResponseUnmarshaller = StopDeploymentResponseUnmarshaller.Instance;
             
             return InvokeAsync<StopDeploymentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Associates the list of tags in the input <code>Tags</code> parameter with the resource
+        /// identified by the <code>ResourceArn</code> input parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
+        /// The application does not exist with the IAM user or AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.ArnNotSupportedException">
+        /// The specified ARN is not supported. For example, it might be an ARN for a resource
+        /// that is not expected.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentConfigDoesNotExistException">
+        /// The deployment configuration does not exist with the IAM user or AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupDoesNotExistException">
+        /// The named deployment group with the IAM user or AWS account does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidArnException">
+        /// The specified ARN is not in a valid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidTagsToAddException">
+        /// The specified tags are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.ResourceArnRequiredException">
+        /// The ARN of a resource is required, but was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.TagRequiredException">
+        /// A tag was not specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Disassociates a resource from a list of tags. The resource is identified by the <code>ResourceArn</code>
+        /// input parameter. The tags are identfied by the list of keys in the <code>TagKeys</code>
+        /// input parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
+        /// The application does not exist with the IAM user or AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.ArnNotSupportedException">
+        /// The specified ARN is not supported. For example, it might be an ARN for a resource
+        /// that is not expected.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentConfigDoesNotExistException">
+        /// The deployment configuration does not exist with the IAM user or AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupDoesNotExistException">
+        /// The named deployment group with the IAM user or AWS account does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidArnException">
+        /// The specified ARN is not in a valid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidTagsToAddException">
+        /// The specified tags are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.ResourceArnRequiredException">
+        /// The ARN of a resource is required, but was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.TagRequiredException">
+        /// A tag was not specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion

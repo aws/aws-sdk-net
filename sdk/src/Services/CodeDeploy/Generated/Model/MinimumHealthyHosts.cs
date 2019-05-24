@@ -59,9 +59,9 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// In a call to the get deployment configuration operation, CodeDeployDefault.OneAtATime
-        /// returns a minimum healthy instance type of MOST_CONCURRENCY and a value of 1. This
-        /// means a deployment to only one instance at a time. (You cannot set the type to MOST_CONCURRENCY,
+        /// In a call to the <code>GetDeploymentConfig</code>, CodeDeployDefault.OneAtATime returns
+        /// a minimum healthy instance type of MOST_CONCURRENCY and a value of 1. This means a
+        /// deployment to only one instance at a time. (You cannot set the type to MOST_CONCURRENCY,
         /// only to HOST_COUNT or FLEET_PERCENT.) In addition, with CodeDeployDefault.OneAtATime,
         /// AWS CodeDeploy attempts to ensure that all instances but one are kept in a healthy
         /// state during the deployment. Although this allows one instance at a time to be taken

@@ -29,7 +29,8 @@ namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchGetApplicationRevisions operation.
-    /// Gets information about one or more application revisions.
+    /// Gets information about one or more application revisions. The maximum number of application
+    /// revisions that can be returned is 25.
     /// </summary>
     public partial class BatchGetApplicationRevisionsRequest : AmazonCodeDeployRequest
     {
@@ -58,7 +59,9 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Revisions. 
         /// <para>
-        /// Information to get about the application revisions, including type and location.
+        /// An array of <code>RevisionLocation</code> objects that specify information to get
+        /// about the application revisions, including type and location. The maximum number of
+        /// <code>RevisionLocation</code> objects you can specify is 25.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

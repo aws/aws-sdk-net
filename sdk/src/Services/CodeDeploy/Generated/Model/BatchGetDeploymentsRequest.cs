@@ -29,7 +29,8 @@ namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchGetDeployments operation.
-    /// Gets information about one or more deployments.
+    /// Gets information about one or more deployments. The maximum number of deployments
+    /// that can be returned is 25.
     /// </summary>
     public partial class BatchGetDeploymentsRequest : AmazonCodeDeployRequest
     {
@@ -38,7 +39,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeploymentIds. 
         /// <para>
-        ///  A list of deployment IDs, separated by spaces. 
+        ///  A list of deployment IDs, separated by spaces. The maximum number of deployment IDs
+        /// you can specify is 25.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

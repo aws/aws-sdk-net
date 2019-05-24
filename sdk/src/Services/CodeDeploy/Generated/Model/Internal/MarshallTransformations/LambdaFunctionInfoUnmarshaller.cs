@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LambdaTarget Object
+    /// Response Unmarshaller for LambdaFunctionInfo Object
     /// </summary>  
-    public class LambdaTargetUnmarshaller : IUnmarshaller<LambdaTarget, XmlUnmarshallerContext>, IUnmarshaller<LambdaTarget, JsonUnmarshallerContext>
+    public class LambdaFunctionInfoUnmarshaller : IUnmarshaller<LambdaFunctionInfo, XmlUnmarshallerContext>, IUnmarshaller<LambdaFunctionInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LambdaTarget IUnmarshaller<LambdaTarget, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LambdaFunctionInfo IUnmarshaller<LambdaFunctionInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,57 +53,45 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LambdaTarget Unmarshall(JsonUnmarshallerContext context)
+        public LambdaFunctionInfo Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LambdaTarget unmarshalledObject = new LambdaTarget();
+            LambdaFunctionInfo unmarshalledObject = new LambdaFunctionInfo();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("deploymentId", targetDepth))
+                if (context.TestExpression("currentVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CurrentVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("lambdaFunctionInfo", targetDepth))
-                {
-                    var unmarshaller = LambdaFunctionInfoUnmarshaller.Instance;
-                    unmarshalledObject.LambdaFunctionInfo = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lastUpdatedAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lifecycleEvents", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<LifecycleEvent, LifecycleEventUnmarshaller>(LifecycleEventUnmarshaller.Instance);
-                    unmarshalledObject.LifecycleEvents = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("functionAlias", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FunctionAlias = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("targetArn", targetDepth))
+                if (context.TestExpression("functionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FunctionName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("targetId", targetDepth))
+                if (context.TestExpression("targetVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TargetVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("targetVersionWeight", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.TargetVersionWeight = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +100,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         }
 
 
-        private static LambdaTargetUnmarshaller _instance = new LambdaTargetUnmarshaller();        
+        private static LambdaFunctionInfoUnmarshaller _instance = new LambdaFunctionInfoUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LambdaTargetUnmarshaller Instance
+        public static LambdaFunctionInfoUnmarshaller Instance
         {
             get
             {

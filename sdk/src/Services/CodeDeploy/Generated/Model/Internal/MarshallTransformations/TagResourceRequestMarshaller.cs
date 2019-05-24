@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateApplication Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateApplicationRequestMarshaller : IMarshaller<IRequest, CreateApplicationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateApplicationRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateApplicationRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeDeploy");
-            string target = "CodeDeploy_20141006.CreateApplication";
+            string target = "CodeDeploy_20141006.TagResource";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-10-06";            
@@ -68,21 +68,15 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApplicationName())
+                if(publicRequest.IsSetResourceArn())
                 {
-                    context.Writer.WritePropertyName("applicationName");
-                    context.Writer.Write(publicRequest.ApplicationName);
-                }
-
-                if(publicRequest.IsSetComputePlatform())
-                {
-                    context.Writer.WritePropertyName("computePlatform");
-                    context.Writer.Write(publicRequest.ComputePlatform);
+                    context.Writer.WritePropertyName("ResourceArn");
+                    context.Writer.Write(publicRequest.ResourceArn);
                 }
 
                 if(publicRequest.IsSetTags())
                 {
-                    context.Writer.WritePropertyName("tags");
+                    context.Writer.WritePropertyName("Tags");
                     context.Writer.WriteArrayStart();
                     foreach(var publicRequestTagsListValue in publicRequest.Tags)
                     {
@@ -105,9 +99,9 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateApplicationRequestMarshaller _instance = new CreateApplicationRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateApplicationRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -115,7 +109,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateApplicationRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {

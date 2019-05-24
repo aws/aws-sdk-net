@@ -155,8 +155,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ComputePlatform. 
         /// <para>
-        ///  The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
-        /// 
+        /// The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>,
+        /// or <code>ECS</code>).
         /// </para>
         /// </summary>
         public ComputePlatform ComputePlatform
@@ -405,11 +405,13 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property IgnoreApplicationStopFailures. 
         /// <para>
-        ///  If true, then if an ApplicationStop, BeforeBlockTraffic, or AfterBlockTraffic deployment
-        /// lifecycle event to an instance fails, then the deployment continues to the next deployment
-        /// lifecycle event. For example, if ApplicationStop fails, the deployment continues with
-        /// DownloadBundle. If BeforeBlockTraffic fails, the deployment continues with BlockTraffic.
-        /// If AfterBlockTraffic fails, the deployment continues with ApplicationStop. 
+        ///  If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>,
+        /// or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails,
+        /// then the deployment continues to the next deployment lifecycle event. For example,
+        /// if <code>ApplicationStop</code> fails, the deployment continues with DownloadBundle.
+        /// If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>.
+        /// If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -420,18 +422,18 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  
         /// <para>
-        ///  During a deployment, the AWS CodeDeploy agent runs the scripts specified for ApplicationStop,
-        /// BeforeBlockTraffic, and AfterBlockTraffic in the AppSpec file from the previous successful
-        /// deployment. (All other scripts are run from the AppSpec file in the current deployment.)
-        /// If one of these scripts contains an error and does not run successfully, the deployment
-        /// can fail. 
+        ///  During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
+        /// <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec
+        /// file from the previous successful deployment. (All other scripts are run from the
+        /// AppSpec file in the current deployment.) If one of these scripts contains an error
+        /// and does not run successfully, the deployment can fail. 
         /// </para>
         ///  
         /// <para>
         ///  If the cause of the failure is a script from the last successful deployment that
         /// will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code>
-        /// to specify that the ApplicationStop, BeforeBlockTraffic, and AfterBlockTraffic failures
-        /// should be ignored. 
+        /// to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>,
+        /// and <code>AfterBlockTraffic</code> failures should be ignored. 
         /// </para>
         /// </summary>
         public bool IgnoreApplicationStopFailures

@@ -149,7 +149,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ComputePlatform. 
         /// <para>
-        /// The destination platform type for the deployment group (<code>Lambda</code> or <code>Server</code>).
+        /// The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>,
+        /// or <code>ECS</code>).
         /// </para>
         /// </summary>
         public ComputePlatform ComputePlatform
@@ -395,7 +396,9 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ServiceRoleArn. 
         /// <para>
-        /// A service role ARN.
+        /// A service role Amazon Resource Name (ARN) that grants CodeDeploy permission to make
+        /// calls to AWS services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create
+        /// a Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.
         /// </para>
         /// </summary>
         public string ServiceRoleArn
