@@ -364,6 +364,10 @@
       <Project>{0DE2217F-CCB8-4ADA-8B6A-561E5DB270F1}</Project>
       <Name>AWSSDK.Greengrass.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/GroundStation/AWSSDK.GroundStation.CodeAnalysis.csproj">
+      <Project>{8CB8BC2D-1D44-45FB-8426-0BD944B9DF31}</Project>
+      <Name>AWSSDK.GroundStation.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/GuardDuty/AWSSDK.GuardDuty.CodeAnalysis.csproj">
       <Project>{951ED9A4-88BD-43A6-BA7F-BCD77FD9D4DA}</Project>
       <Name>AWSSDK.GuardDuty.CodeAnalysis</Name>
