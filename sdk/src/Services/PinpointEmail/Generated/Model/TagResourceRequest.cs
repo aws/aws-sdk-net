@@ -29,8 +29,8 @@ namespace Amazon.PinpointEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Add one or more tags (keys and values) to one or more specified resources. A <i>tag</i> is
-    /// a label that you optionally define and associate with a resource in Amazon Pinpoint.
+    /// Add one or more tags (keys and values) to a specified resource. A <i>tag</i> is a
+    /// label that you optionally define and associate with a resource in Amazon Pinpoint.
     /// Tags can help you categorize and manage resources in different ways, such as by purpose,
     /// owner, environment, or other criteria. A resource can have as many as 50 tags.
     /// 

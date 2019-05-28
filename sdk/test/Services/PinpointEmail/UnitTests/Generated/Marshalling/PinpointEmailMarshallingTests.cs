@@ -588,6 +588,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("PinpointEmail")]
+        public void GetDomainDeliverabilityCampaignMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetDomainDeliverabilityCampaign");
+
+            var request = InstantiateClassGenerator.Execute<GetDomainDeliverabilityCampaignRequest>();
+            var marshaller = new GetDomainDeliverabilityCampaignRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetDomainDeliverabilityCampaign", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetDomainDeliverabilityCampaignResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetDomainDeliverabilityCampaignResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("PinpointEmail")]
         public void GetDomainStatisticsReportMarshallTest()
         {
             var operation = service_model.FindOperation("GetDomainStatisticsReport");
@@ -740,6 +772,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = ListDeliverabilityTestReportsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as ListDeliverabilityTestReportsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("PinpointEmail")]
+        public void ListDomainDeliverabilityCampaignsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListDomainDeliverabilityCampaigns");
+
+            var request = InstantiateClassGenerator.Execute<ListDomainDeliverabilityCampaignsRequest>();
+            var marshaller = new ListDomainDeliverabilityCampaignsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListDomainDeliverabilityCampaigns", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListDomainDeliverabilityCampaignsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListDomainDeliverabilityCampaignsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

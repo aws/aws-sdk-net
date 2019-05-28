@@ -28,36 +28,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PinpointEmail.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListTagsForResource operation.
-    /// Retrieve a list of the tags (keys and values) that are associated with a specified
-    /// resource. A <i>tag</i> is a label that you optionally define and associate with a
-    /// resource in Amazon Pinpoint. Each tag consists of a required <i>tag key</i> and an
-    /// optional associated <i>tag value</i>. A tag key is a general label that acts as a
-    /// category for more specific tag values. A tag value acts as a descriptor within a tag
-    /// key.
+    /// An object that contains all the deliverability data for a specific campaign. This
+    /// data is available for a campaign only if the campaign sent email by using a domain
+    /// that the Deliverability dashboard is enabled for (<code>PutDeliverabilityDashboardOption</code>
+    /// operation).
     /// </summary>
-    public partial class ListTagsForResourceRequest : AmazonPinpointEmailRequest
+    public partial class GetDomainDeliverabilityCampaignResponse : AmazonWebServiceResponse
     {
-        private string _resourceArn;
+        private DomainDeliverabilityCampaign _domainDeliverabilityCampaign;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. 
+        /// Gets and sets the property DomainDeliverabilityCampaign. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource that you want to retrieve tag information
-        /// for.
+        /// An object that contains the deliverability data for the campaign.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string ResourceArn
+        public DomainDeliverabilityCampaign DomainDeliverabilityCampaign
         {
-            get { return this._resourceArn; }
-            set { this._resourceArn = value; }
+            get { return this._domainDeliverabilityCampaign; }
+            set { this._domainDeliverabilityCampaign = value; }
         }
 
-        // Check to see if ResourceArn property is set
-        internal bool IsSetResourceArn()
+        // Check to see if DomainDeliverabilityCampaign property is set
+        internal bool IsSetDomainDeliverabilityCampaign()
         {
-            return this._resourceArn != null;
+            return this._domainDeliverabilityCampaign != null;
         }
 
     }

@@ -61,29 +61,11 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             string uriResourcePath = "/v1/email/deliverability-dashboard/blacklist-report";
+            
+            if (publicRequest.IsSetBlacklistItemNames())
+                request.ParameterCollection.Add("BlacklistItemNames", publicRequest.BlacklistItemNames);
             request.ResourcePath = uriResourcePath;
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
-            {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBlacklistItemNames())
-                {
-                    context.Writer.WritePropertyName("BlacklistItemNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestBlacklistItemNamesListValue in publicRequest.BlacklistItemNames)
-                    {
-                            context.Writer.Write(publicRequestBlacklistItemNamesListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-        
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-            }
-
+            request.UseQueryString = true;
 
             return request;
         }

@@ -74,6 +74,22 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DashboardEnabled);
                 }
 
+                if(publicRequest.IsSetSubscribedDomains())
+                {
+                    context.Writer.WritePropertyName("SubscribedDomains");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSubscribedDomainsListValue in publicRequest.SubscribedDomains)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DomainDeliverabilityTrackingOptionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSubscribedDomainsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

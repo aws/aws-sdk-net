@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetEmailIdentity operation
+    /// Response Unmarshaller for GetDomainDeliverabilityCampaign operation
     /// </summary>  
-    public class GetEmailIdentityResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetDomainDeliverabilityCampaignResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,46 +45,16 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetEmailIdentityResponse response = new GetEmailIdentityResponse();
+            GetDomainDeliverabilityCampaignResponse response = new GetDomainDeliverabilityCampaignResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DkimAttributes", targetDepth))
+                if (context.TestExpression("DomainDeliverabilityCampaign", targetDepth))
                 {
-                    var unmarshaller = DkimAttributesUnmarshaller.Instance;
-                    response.DkimAttributes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("FeedbackForwardingStatus", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.FeedbackForwardingStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("IdentityType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.IdentityType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MailFromAttributes", targetDepth))
-                {
-                    var unmarshaller = MailFromAttributesUnmarshaller.Instance;
-                    response.MailFromAttributes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Tags", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VerifiedForSendingStatus", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.VerifiedForSendingStatus = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DomainDeliverabilityCampaignUnmarshaller.Instance;
+                    response.DomainDeliverabilityCampaign = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -117,9 +87,9 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             return new AmazonPinpointEmailException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetEmailIdentityResponseUnmarshaller _instance = new GetEmailIdentityResponseUnmarshaller();        
+        private static GetDomainDeliverabilityCampaignResponseUnmarshaller _instance = new GetDomainDeliverabilityCampaignResponseUnmarshaller();        
 
-        internal static GetEmailIdentityResponseUnmarshaller GetInstance()
+        internal static GetDomainDeliverabilityCampaignResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -127,7 +97,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetEmailIdentityResponseUnmarshaller Instance
+        public static GetDomainDeliverabilityCampaignResponseUnmarshaller Instance
         {
             get
             {

@@ -29,28 +29,29 @@ namespace Amazon.PinpointEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the PutDeliverabilityDashboardOption operation.
-    /// Enable or disable the Deliverability dashboard. When you enable the Deliverability
-    /// dashboard, you gain access to reputation metrics for the domains that you use to send
-    /// email using Amazon Pinpoint. You also gain the ability to perform predictive inbox
-    /// placement tests.
+    /// Enable or disable the Deliverability dashboard for your Amazon Pinpoint account. When
+    /// you enable the Deliverability dashboard, you gain access to reputation, deliverability,
+    /// and other metrics for the domains that you use to send email using Amazon Pinpoint.
+    /// You also gain the ability to perform predictive inbox placement tests.
     /// 
     ///  
     /// <para>
-    /// When you use the Deliverability dashboard, you pay a monthly charge of USD$1,250.00,
-    /// in addition to any other fees that you accrue by using Amazon Pinpoint. If you enable
-    /// the Deliverability dashboard after the first day of a calendar month, we prorate the
-    /// monthly charge based on how many days have elapsed in the current calendar month.
+    /// When you use the Deliverability dashboard, you pay a monthly subscription charge,
+    /// in addition to any other fees that you accrue by using Amazon Pinpoint. For more information
+    /// about the features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon
+    /// Pinpoint Pricing</a>.
     /// </para>
     /// </summary>
     public partial class PutDeliverabilityDashboardOptionRequest : AmazonPinpointEmailRequest
     {
         private bool? _dashboardEnabled;
+        private List<DomainDeliverabilityTrackingOption> _subscribedDomains = new List<DomainDeliverabilityTrackingOption>();
 
         /// <summary>
         /// Gets and sets the property DashboardEnabled. 
         /// <para>
-        /// Indicates whether the Deliverability dashboard is enabled. If the value is <code>true</code>,
-        /// then the dashboard is enabled.
+        /// Specifies whether to enable the Deliverability dashboard for your Amazon Pinpoint
+        /// account. To enable the dashboard, set this value to <code>true</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -64,6 +65,25 @@ namespace Amazon.PinpointEmail.Model
         internal bool IsSetDashboardEnabled()
         {
             return this._dashboardEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubscribedDomains. 
+        /// <para>
+        /// An array of objects, one for each verified domain that you use to send email and enabled
+        /// the Deliverability dashboard for.
+        /// </para>
+        /// </summary>
+        public List<DomainDeliverabilityTrackingOption> SubscribedDomains
+        {
+            get { return this._subscribedDomains; }
+            set { this._subscribedDomains = value; }
+        }
+
+        // Check to see if SubscribedDomains property is set
+        internal bool IsSetSubscribedDomains()
+        {
+            return this._subscribedDomains != null && this._subscribedDomains.Count > 0; 
         }
 
     }

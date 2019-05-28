@@ -33,13 +33,57 @@ namespace Amazon.PinpointEmail.Model
     /// </summary>
     public partial class GetDeliverabilityDashboardOptionsResponse : AmazonWebServiceResponse
     {
+        private DeliverabilityDashboardAccountStatus _accountStatus;
+        private List<DomainDeliverabilityTrackingOption> _activeSubscribedDomains = new List<DomainDeliverabilityTrackingOption>();
         private bool? _dashboardEnabled;
+        private List<DomainDeliverabilityTrackingOption> _pendingExpirationSubscribedDomains = new List<DomainDeliverabilityTrackingOption>();
+        private DateTime? _subscriptionExpiryDate;
+
+        /// <summary>
+        /// Gets and sets the property AccountStatus. 
+        /// <para>
+        /// The current status of your Deliverability dashboard subscription. If this value is
+        /// <code>PENDING_EXPIRATION</code>, your subscription is scheduled to expire at the end
+        /// of the current calendar month.
+        /// </para>
+        /// </summary>
+        public DeliverabilityDashboardAccountStatus AccountStatus
+        {
+            get { return this._accountStatus; }
+            set { this._accountStatus = value; }
+        }
+
+        // Check to see if AccountStatus property is set
+        internal bool IsSetAccountStatus()
+        {
+            return this._accountStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ActiveSubscribedDomains. 
+        /// <para>
+        /// An array of objects, one for each verified domain that you use to send email and currently
+        /// has an active Deliverability dashboard subscription that isn’t scheduled to expire
+        /// at the end of the current calendar month.
+        /// </para>
+        /// </summary>
+        public List<DomainDeliverabilityTrackingOption> ActiveSubscribedDomains
+        {
+            get { return this._activeSubscribedDomains; }
+            set { this._activeSubscribedDomains = value; }
+        }
+
+        // Check to see if ActiveSubscribedDomains property is set
+        internal bool IsSetActiveSubscribedDomains()
+        {
+            return this._activeSubscribedDomains != null && this._activeSubscribedDomains.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property DashboardEnabled. 
         /// <para>
-        /// Indicates whether the Deliverability dashboard is enabled. If the value is <code>true</code>,
-        /// then the dashboard is enabled.
+        /// Specifies whether the Deliverability dashboard is enabled for your Amazon Pinpoint
+        /// account. If this value is <code>true</code>, the dashboard is enabled.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -53,6 +97,47 @@ namespace Amazon.PinpointEmail.Model
         internal bool IsSetDashboardEnabled()
         {
             return this._dashboardEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PendingExpirationSubscribedDomains. 
+        /// <para>
+        /// An array of objects, one for each verified domain that you use to send email and currently
+        /// has an active Deliverability dashboard subscription that's scheduled to expire at
+        /// the end of the current calendar month.
+        /// </para>
+        /// </summary>
+        public List<DomainDeliverabilityTrackingOption> PendingExpirationSubscribedDomains
+        {
+            get { return this._pendingExpirationSubscribedDomains; }
+            set { this._pendingExpirationSubscribedDomains = value; }
+        }
+
+        // Check to see if PendingExpirationSubscribedDomains property is set
+        internal bool IsSetPendingExpirationSubscribedDomains()
+        {
+            return this._pendingExpirationSubscribedDomains != null && this._pendingExpirationSubscribedDomains.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubscriptionExpiryDate. 
+        /// <para>
+        /// The date, in Unix time format, when your current subscription to the Deliverability
+        /// dashboard is scheduled to expire, if your subscription is scheduled to expire at the
+        /// end of the current calendar month. This value is null if you have an active subscription
+        /// that isn’t due to expire at the end of the month.
+        /// </para>
+        /// </summary>
+        public DateTime SubscriptionExpiryDate
+        {
+            get { return this._subscriptionExpiryDate.GetValueOrDefault(); }
+            set { this._subscriptionExpiryDate = value; }
+        }
+
+        // Check to see if SubscriptionExpiryDate property is set
+        internal bool IsSetSubscriptionExpiryDate()
+        {
+            return this._subscriptionExpiryDate.HasValue; 
         }
 
     }

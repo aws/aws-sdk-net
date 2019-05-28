@@ -50,6 +50,7 @@ namespace Amazon.PinpointEmail.Model
         /// The name of the configuration set.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConfigurationSetName
         {
             get { return this._configurationSetName; }
@@ -122,8 +123,8 @@ namespace Amazon.PinpointEmail.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// An object that defines the tags (keys and values) that you want to associate with
-        /// the configuration set.
+        /// An array of objects that define the tags (keys and values) that you want to associate
+        /// with the configuration set.
         /// </para>
         /// </summary>
         public List<Tag> Tags

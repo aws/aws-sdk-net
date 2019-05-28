@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetDedicatedIps Request Marshaller
+    /// GetDomainDeliverabilityCampaign Request Marshaller
     /// </summary>       
-    public class GetDedicatedIpsRequestMarshaller : IMarshaller<IRequest, GetDedicatedIpsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetDomainDeliverabilityCampaignRequestMarshaller : IMarshaller<IRequest, GetDomainDeliverabilityCampaignRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetDedicatedIpsRequest)input);
+            return this.Marshall((GetDomainDeliverabilityCampaignRequest)input);
         }
 
         /// <summary>
@@ -52,32 +52,25 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetDedicatedIpsRequest publicRequest)
+        public IRequest Marshall(GetDomainDeliverabilityCampaignRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.PinpointEmail");
-            string target = "com.amazonaws.services.pinpoint.email.GetDedicatedIps";
+            string target = "com.amazonaws.services.pinpoint.email.GetDomainDeliverabilityCampaign";
             request.Headers["X-Amz-Target"] = target;
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-26";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/v1/email/dedicated-ips";
-            
-            if (publicRequest.IsSetNextToken())
-                request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
-            
-            if (publicRequest.IsSetPageSize())
-                request.Parameters.Add("PageSize", StringUtils.FromInt(publicRequest.PageSize));
-            
-            if (publicRequest.IsSetPoolName())
-                request.Parameters.Add("PoolName", StringUtils.FromString(publicRequest.PoolName));
+            string uriResourcePath = "/v1/email/deliverability-dashboard/campaigns/{CampaignId}";
+            if (!publicRequest.IsSetCampaignId())
+                throw new AmazonPinpointEmailException("Request object does not have required field CampaignId set");
+            uriResourcePath = uriResourcePath.Replace("{CampaignId}", StringUtils.FromStringWithSlashEncoding(publicRequest.CampaignId));
             request.ResourcePath = uriResourcePath;
-            request.UseQueryString = true;
 
             return request;
         }
-        private static GetDedicatedIpsRequestMarshaller _instance = new GetDedicatedIpsRequestMarshaller();        
+        private static GetDomainDeliverabilityCampaignRequestMarshaller _instance = new GetDomainDeliverabilityCampaignRequestMarshaller();        
 
-        internal static GetDedicatedIpsRequestMarshaller GetInstance()
+        internal static GetDomainDeliverabilityCampaignRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -85,7 +78,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetDedicatedIpsRequestMarshaller Instance
+        public static GetDomainDeliverabilityCampaignRequestMarshaller Instance
         {
             get
             {

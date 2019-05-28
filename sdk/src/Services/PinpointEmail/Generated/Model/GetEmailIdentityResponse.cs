@@ -36,6 +36,7 @@ namespace Amazon.PinpointEmail.Model
         private bool? _feedbackForwardingStatus;
         private IdentityType _identityType;
         private MailFromAttributes _mailFromAttributes;
+        private List<Tag> _tags = new List<Tag>();
         private bool? _verifiedForSendingStatus;
 
         /// <summary>
@@ -125,6 +126,25 @@ namespace Amazon.PinpointEmail.Model
         internal bool IsSetMailFromAttributes()
         {
             return this._mailFromAttributes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// An array of objects that define the tags (keys and values) that are associated with
+        /// the email identity.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

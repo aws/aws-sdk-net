@@ -64,30 +64,14 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetDomain())
                 throw new AmazonPinpointEmailException("Request object does not have required field Domain set");
             uriResourcePath = uriResourcePath.Replace("{Domain}", StringUtils.FromStringWithSlashEncoding(publicRequest.Domain));
+            
+            if (publicRequest.IsSetEndDate())
+                request.Parameters.Add("EndDate", StringUtils.FromDateTimeToISO8601(publicRequest.EndDate));
+            
+            if (publicRequest.IsSetStartDate())
+                request.Parameters.Add("StartDate", StringUtils.FromDateTimeToISO8601(publicRequest.StartDate));
             request.ResourcePath = uriResourcePath;
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
-            {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEndDate())
-                {
-                    context.Writer.WritePropertyName("EndDate");
-                    context.Writer.Write(publicRequest.EndDate);
-                }
-
-                if(publicRequest.IsSetStartDate())
-                {
-                    context.Writer.WritePropertyName("StartDate");
-                    context.Writer.Write(publicRequest.StartDate);
-                }
-
-        
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-            }
-
+            request.UseQueryString = true;
 
             return request;
         }

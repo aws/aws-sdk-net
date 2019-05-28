@@ -40,33 +40,27 @@ namespace Amazon.PinpointEmail
     ///
     /// Amazon Pinpoint Email Service 
     /// <para>
-    ///  This document contains reference information for the <a href="https://aws.amazon.com/pinpoint">Amazon
+    /// This document contains reference information for the <a href="https://aws.amazon.com/pinpoint">Amazon
     /// Pinpoint</a> Email API, version 1.0. This document is best used in conjunction with
     /// the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
     /// Pinpoint Developer Guide</a>.
     /// </para>
     ///  
     /// <para>
-    /// The Amazon Pinpoint Email API is available in the US East (N. Virginia), US West (Oregon),
-    /// EU (Frankfurt), and EU (Ireland) Regions at the following endpoints:
+    /// The Amazon Pinpoint Email API is available in several AWS Regions and it provides
+    /// an endpoint for each of these Regions. For a list of all the Regions and endpoints
+    /// where the API is currently available, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#pinpoint_region">AWS
+    /// Regions and Endpoints</a> in the <i>Amazon Web Services General Reference</i>.
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <b>US East (N. Virginia)</b>: <code>email.us-east-1.amazonaws.com</code> 
+    /// In each Region, AWS maintains multiple Availability Zones. These Availability Zones
+    /// are physically isolated from each other, but are united by private, low-latency, high-throughput,
+    /// and highly redundant network connections. These Availability Zones enable us to provide
+    /// very high levels of availability and redundancy, while also minimizing latency. To
+    /// learn more about the number of Availability Zones that are available in each Region,
+    /// see <a href="http://aws.amazon.com/about-aws/global-infrastructure/">AWS Global Infrastructure</a>.
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>US West (Oregon)</b>: <code>email.us-west-2.amazonaws.com</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>EU (Frankfurt)</b>: <code>email.eu-central-1.amazonaws.com</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>EU (Ireland)</b>: <code>email.eu-west-1.amazonaws.com</code> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class AmazonPinpointEmailClient : AmazonServiceClient, IAmazonPinpointEmail
     {
@@ -815,6 +809,38 @@ namespace Amazon.PinpointEmail
 
         #endregion
         
+        #region  GetDomainDeliverabilityCampaign
+
+        internal virtual GetDomainDeliverabilityCampaignResponse GetDomainDeliverabilityCampaign(GetDomainDeliverabilityCampaignRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDomainDeliverabilityCampaignRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainDeliverabilityCampaignResponseUnmarshaller.Instance;
+
+            return Invoke<GetDomainDeliverabilityCampaignResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDomainDeliverabilityCampaign operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainDeliverabilityCampaign operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetDomainDeliverabilityCampaignResponse> GetDomainDeliverabilityCampaignAsync(GetDomainDeliverabilityCampaignRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDomainDeliverabilityCampaignRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainDeliverabilityCampaignResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDomainDeliverabilityCampaignResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetDomainStatisticsReport
 
         internal virtual GetDomainStatisticsReportResponse GetDomainStatisticsReport(GetDomainStatisticsReportRequest request)
@@ -971,6 +997,38 @@ namespace Amazon.PinpointEmail
             options.ResponseUnmarshaller = ListDeliverabilityTestReportsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListDeliverabilityTestReportsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDomainDeliverabilityCampaigns
+
+        internal virtual ListDomainDeliverabilityCampaignsResponse ListDomainDeliverabilityCampaigns(ListDomainDeliverabilityCampaignsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDomainDeliverabilityCampaignsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainDeliverabilityCampaignsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDomainDeliverabilityCampaignsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDomainDeliverabilityCampaigns operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainDeliverabilityCampaigns operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<ListDomainDeliverabilityCampaignsResponse> ListDomainDeliverabilityCampaignsAsync(ListDomainDeliverabilityCampaignsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDomainDeliverabilityCampaignsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainDeliverabilityCampaignsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDomainDeliverabilityCampaignsResponse>(request, options, cancellationToken);
         }
 
         #endregion

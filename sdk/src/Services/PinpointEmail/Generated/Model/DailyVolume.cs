@@ -40,7 +40,7 @@ namespace Amazon.PinpointEmail.Model
         /// <summary>
         /// Gets and sets the property DomainIspPlacements. 
         /// <para>
-        /// An object that contains inbox placement metrics for a specifid day in the analysis
+        /// An object that contains inbox placement metrics for a specified day in the analysis
         /// period, broken out by the recipient's email provider.
         /// </para>
         /// </summary>

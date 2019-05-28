@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetDedicatedIps Request Marshaller
+    /// ListDomainDeliverabilityCampaigns Request Marshaller
     /// </summary>       
-    public class GetDedicatedIpsRequestMarshaller : IMarshaller<IRequest, GetDedicatedIpsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListDomainDeliverabilityCampaignsRequestMarshaller : IMarshaller<IRequest, ListDomainDeliverabilityCampaignsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetDedicatedIpsRequest)input);
+            return this.Marshall((ListDomainDeliverabilityCampaignsRequest)input);
         }
 
         /// <summary>
@@ -52,15 +52,21 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetDedicatedIpsRequest publicRequest)
+        public IRequest Marshall(ListDomainDeliverabilityCampaignsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.PinpointEmail");
-            string target = "com.amazonaws.services.pinpoint.email.GetDedicatedIps";
+            string target = "com.amazonaws.services.pinpoint.email.ListDomainDeliverabilityCampaigns";
             request.Headers["X-Amz-Target"] = target;
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-26";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/v1/email/dedicated-ips";
+            string uriResourcePath = "/v1/email/deliverability-dashboard/domains/{SubscribedDomain}/campaigns";
+            if (!publicRequest.IsSetSubscribedDomain())
+                throw new AmazonPinpointEmailException("Request object does not have required field SubscribedDomain set");
+            uriResourcePath = uriResourcePath.Replace("{SubscribedDomain}", StringUtils.FromStringWithSlashEncoding(publicRequest.SubscribedDomain));
+            
+            if (publicRequest.IsSetEndDate())
+                request.Parameters.Add("EndDate", StringUtils.FromDateTimeToISO8601(publicRequest.EndDate));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
@@ -68,16 +74,16 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetPageSize())
                 request.Parameters.Add("PageSize", StringUtils.FromInt(publicRequest.PageSize));
             
-            if (publicRequest.IsSetPoolName())
-                request.Parameters.Add("PoolName", StringUtils.FromString(publicRequest.PoolName));
+            if (publicRequest.IsSetStartDate())
+                request.Parameters.Add("StartDate", StringUtils.FromDateTimeToISO8601(publicRequest.StartDate));
             request.ResourcePath = uriResourcePath;
             request.UseQueryString = true;
 
             return request;
         }
-        private static GetDedicatedIpsRequestMarshaller _instance = new GetDedicatedIpsRequestMarshaller();        
+        private static ListDomainDeliverabilityCampaignsRequestMarshaller _instance = new ListDomainDeliverabilityCampaignsRequestMarshaller();        
 
-        internal static GetDedicatedIpsRequestMarshaller GetInstance()
+        internal static ListDomainDeliverabilityCampaignsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -85,7 +91,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetDedicatedIpsRequestMarshaller Instance
+        public static ListDomainDeliverabilityCampaignsRequestMarshaller Instance
         {
             get
             {

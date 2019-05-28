@@ -31,33 +31,27 @@ namespace Amazon.PinpointEmail
     ///
     /// Amazon Pinpoint Email Service 
     /// <para>
-    ///  This document contains reference information for the <a href="https://aws.amazon.com/pinpoint">Amazon
+    /// This document contains reference information for the <a href="https://aws.amazon.com/pinpoint">Amazon
     /// Pinpoint</a> Email API, version 1.0. This document is best used in conjunction with
     /// the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
     /// Pinpoint Developer Guide</a>.
     /// </para>
     ///  
     /// <para>
-    /// The Amazon Pinpoint Email API is available in the US East (N. Virginia), US West (Oregon),
-    /// EU (Frankfurt), and EU (Ireland) Regions at the following endpoints:
+    /// The Amazon Pinpoint Email API is available in several AWS Regions and it provides
+    /// an endpoint for each of these Regions. For a list of all the Regions and endpoints
+    /// where the API is currently available, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#pinpoint_region">AWS
+    /// Regions and Endpoints</a> in the <i>Amazon Web Services General Reference</i>.
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <b>US East (N. Virginia)</b>: <code>email.us-east-1.amazonaws.com</code> 
+    /// In each Region, AWS maintains multiple Availability Zones. These Availability Zones
+    /// are physically isolated from each other, but are united by private, low-latency, high-throughput,
+    /// and highly redundant network connections. These Availability Zones enable us to provide
+    /// very high levels of availability and redundancy, while also minimizing latency. To
+    /// learn more about the number of Availability Zones that are available in each Region,
+    /// see <a href="http://aws.amazon.com/about-aws/global-infrastructure/">AWS Global Infrastructure</a>.
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>US West (Oregon)</b>: <code>email.us-west-2.amazonaws.com</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>EU (Frankfurt)</b>: <code>email.eu-central-1.amazonaws.com</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>EU (Ireland)</b>: <code>email.eu-west-1.amazonaws.com</code> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial interface IAmazonPinpointEmail : IAmazonService, IDisposable
     {
@@ -889,17 +883,18 @@ namespace Amazon.PinpointEmail
 
 
         /// <summary>
-        /// Show the status of the Deliverability dashboard. When the Deliverability dashboard
-        /// is enabled, you gain access to reputation metrics for the domains that you use to
-        /// send email using Amazon Pinpoint. You also gain the ability to perform predictive
-        /// inbox placement tests.
+        /// Retrieve information about the status of the Deliverability dashboard for your Amazon
+        /// Pinpoint account. When the Deliverability dashboard is enabled, you gain access to
+        /// reputation, deliverability, and other metrics for the domains that you use to send
+        /// email using Amazon Pinpoint. You also gain the ability to perform predictive inbox
+        /// placement tests.
         /// 
         ///  
         /// <para>
-        /// When you use the Deliverability dashboard, you pay a monthly charge of USD$1,250.00,
-        /// in addition to any other fees that you accrue by using Amazon Pinpoint. If you enable
-        /// the Deliverability dashboard after the first day of a calendar month, AWS prorates
-        /// the monthly charge based on how many days have elapsed in the current calendar month.
+        /// When you use the Deliverability dashboard, you pay a monthly subscription charge,
+        /// in addition to any other fees that you accrue by using Amazon Pinpoint. For more information
+        /// about the features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon
+        /// Pinpoint Pricing</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDeliverabilityDashboardOptions service method.</param>
@@ -985,6 +980,54 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>Returns a  GetDeliverabilityTestReportResult from PinpointEmail.</returns>
         GetDeliverabilityTestReportResponse EndGetDeliverabilityTestReport(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetDomainDeliverabilityCampaign
+
+
+        /// <summary>
+        /// Retrieve all the deliverability data for a specific campaign. This data is available
+        /// for a campaign only if the campaign sent email by using a domain that the Deliverability
+        /// dashboard is enabled for (<code>PutDeliverabilityDashboardOption</code> operation).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainDeliverabilityCampaign service method.</param>
+        /// 
+        /// <returns>The response from the GetDomainDeliverabilityCampaign service method, as returned by PinpointEmail.</returns>
+        /// <exception cref="Amazon.PinpointEmail.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        GetDomainDeliverabilityCampaignResponse GetDomainDeliverabilityCampaign(GetDomainDeliverabilityCampaignRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDomainDeliverabilityCampaign operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainDeliverabilityCampaign operation on AmazonPinpointEmailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDomainDeliverabilityCampaign
+        ///         operation.</returns>
+        IAsyncResult BeginGetDomainDeliverabilityCampaign(GetDomainDeliverabilityCampaignRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDomainDeliverabilityCampaign operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDomainDeliverabilityCampaign.</param>
+        /// 
+        /// <returns>Returns a  GetDomainDeliverabilityCampaignResult from PinpointEmail.</returns>
+        GetDomainDeliverabilityCampaignResponse EndGetDomainDeliverabilityCampaign(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1227,6 +1270,55 @@ namespace Amazon.PinpointEmail
 
         #endregion
         
+        #region  ListDomainDeliverabilityCampaigns
+
+
+        /// <summary>
+        /// Retrieve deliverability data for all the campaigns that used a specific domain to
+        /// send email during a specified time range. This data is available for a domain only
+        /// if you enabled the Deliverability dashboard (<code>PutDeliverabilityDashboardOption</code>
+        /// operation) for the domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainDeliverabilityCampaigns service method.</param>
+        /// 
+        /// <returns>The response from the ListDomainDeliverabilityCampaigns service method, as returned by PinpointEmail.</returns>
+        /// <exception cref="Amazon.PinpointEmail.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        ListDomainDeliverabilityCampaignsResponse ListDomainDeliverabilityCampaigns(ListDomainDeliverabilityCampaignsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDomainDeliverabilityCampaigns operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainDeliverabilityCampaigns operation on AmazonPinpointEmailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDomainDeliverabilityCampaigns
+        ///         operation.</returns>
+        IAsyncResult BeginListDomainDeliverabilityCampaigns(ListDomainDeliverabilityCampaignsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDomainDeliverabilityCampaigns operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDomainDeliverabilityCampaigns.</param>
+        /// 
+        /// <returns>Returns a  ListDomainDeliverabilityCampaignsResult from PinpointEmail.</returns>
+        ListDomainDeliverabilityCampaignsResponse EndListDomainDeliverabilityCampaigns(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListEmailIdentities
 
 
@@ -1276,7 +1368,7 @@ namespace Amazon.PinpointEmail
 
 
         /// <summary>
-        /// Retrieve a list of the tags (keys and values) that are associated with a specific
+        /// Retrieve a list of the tags (keys and values) that are associated with a specified
         /// resource. A <i>tag</i> is a label that you optionally define and associate with a
         /// resource in Amazon Pinpoint. Each tag consists of a required <i>tag key</i> and an
         /// optional associated <i>tag value</i>. A tag key is a general label that acts as a
@@ -1705,17 +1797,17 @@ namespace Amazon.PinpointEmail
 
 
         /// <summary>
-        /// Enable or disable the Deliverability dashboard. When you enable the Deliverability
-        /// dashboard, you gain access to reputation metrics for the domains that you use to send
-        /// email using Amazon Pinpoint. You also gain the ability to perform predictive inbox
-        /// placement tests.
+        /// Enable or disable the Deliverability dashboard for your Amazon Pinpoint account. When
+        /// you enable the Deliverability dashboard, you gain access to reputation, deliverability,
+        /// and other metrics for the domains that you use to send email using Amazon Pinpoint.
+        /// You also gain the ability to perform predictive inbox placement tests.
         /// 
         ///  
         /// <para>
-        /// When you use the Deliverability dashboard, you pay a monthly charge of USD$1,250.00,
-        /// in addition to any other fees that you accrue by using Amazon Pinpoint. If you enable
-        /// the Deliverability dashboard after the first day of a calendar month, we prorate the
-        /// monthly charge based on how many days have elapsed in the current calendar month.
+        /// When you use the Deliverability dashboard, you pay a monthly subscription charge,
+        /// in addition to any other fees that you accrue by using Amazon Pinpoint. For more information
+        /// about the features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon
+        /// Pinpoint Pricing</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutDeliverabilityDashboardOption service method.</param>
@@ -2002,8 +2094,8 @@ namespace Amazon.PinpointEmail
 
 
         /// <summary>
-        /// Add one or more tags (keys and values) to one or more specified resources. A <i>tag</i> is
-        /// a label that you optionally define and associate with a resource in Amazon Pinpoint.
+        /// Add one or more tags (keys and values) to a specified resource. A <i>tag</i> is a
+        /// label that you optionally define and associate with a resource in Amazon Pinpoint.
         /// Tags can help you categorize and manage resources in different ways, such as by purpose,
         /// owner, environment, or other criteria. A resource can have as many as 50 tags.
         /// 

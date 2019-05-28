@@ -51,10 +51,34 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AccountStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AccountStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ActiveSubscribedDomains", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DomainDeliverabilityTrackingOption, DomainDeliverabilityTrackingOptionUnmarshaller>(DomainDeliverabilityTrackingOptionUnmarshaller.Instance);
+                    response.ActiveSubscribedDomains = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DashboardEnabled", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     response.DashboardEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PendingExpirationSubscribedDomains", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DomainDeliverabilityTrackingOption, DomainDeliverabilityTrackingOptionUnmarshaller>(DomainDeliverabilityTrackingOptionUnmarshaller.Instance);
+                    response.PendingExpirationSubscribedDomains = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SubscriptionExpiryDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.SubscriptionExpiryDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
