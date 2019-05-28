@@ -31,6 +31,10 @@ namespace Amazon.TranscribeService
     {
 
         /// <summary>
+        /// Constant ArSA for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode ArSA = new LanguageCode("ar-SA");
+        /// <summary>
         /// Constant DeDE for LanguageCode
         /// </summary>
         public static readonly LanguageCode DeDE = new LanguageCode("de-DE");
