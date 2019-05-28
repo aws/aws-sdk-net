@@ -100,6 +100,7 @@
       <Directory>$(ProjectDir)/src/Services/globalaccelerator/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/glue/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/greengrass/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/groundstation/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/guardduty/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/identitymanagement/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/importexport/bin/Release/net45/</Directory>
@@ -276,6 +277,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.GlobalAccelerator.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Glue.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Greengrass.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.GroundStation.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.GuardDuty.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.IdentityManagement.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ImportExport.dll" Analyze="True" AnalyzeAllChildren="True" />

@@ -1,3 +1,28 @@
+### 3.3.519.0 (2019-05-28 20:04 UTC)
+* Chime (3.3.102.0)
+	* This release adds the ability to search and order toll free phone numbers for Voice Connectors.
+* GroundStation (3.3.100.0)
+	* AWS Ground Station is a fully managed service that enables you to control satellite communications, downlink and process satellite data, and scale your satellite operations efficiently and cost-effectively without having to build or manage your own ground station infrastructure.
+* PinpointEmail (3.3.102.0)
+	* This release adds support for programmatic access to Deliverability dashboard subscriptions and the deliverability data provided by the Deliverability dashboard for domains and IP addresses. The data includes placement metrics for campaigns that use subscribed domains to send email.
+* RDS (3.3.103.0)
+	* Add a new output field Status to DBEngineVersion which shows the status of the engine version (either available or deprecated). Add a new parameter IncludeAll to DescribeDBEngineVersions to make it possible to return both available and deprecated engine versions. These changes enable a user to create a Read Replica of an DB instance on a deprecated engine version.
+* RoboMaker (3.3.102.0)
+	* Added support for an additional robot software suite (Gazebo 9) and for cancelling deployment jobs.
+* SecurityToken (3.3.101.7)
+	* Documentation updates for iam
+* StorageGateway (3.3.106.0)
+	* Introduce AssignTapePool operation to allow customers to migrate tapes between pools.
+* TranscribeService (3.3.105.0)
+	* Amazon Transcribe - support transcriptions from audio sources in Modern Standard Arabic (ar-SA).
+* WAF (3.3.100.25)
+	* Documentation updates for waf
+* Core 3.3.101.16
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.518.0 (2019-05-24 19:13 UTC)
 * CodeDeploy (3.3.101.0)
 	* AWS CodeDeploy now supports tagging for the application and deployment group resources.
