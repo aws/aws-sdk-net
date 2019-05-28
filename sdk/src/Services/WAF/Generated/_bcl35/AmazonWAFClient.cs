@@ -1456,7 +1456,7 @@ namespace Amazon.WAF
         /// </summary>
         /// <param name="name">A friendly name or description of the <a>Rule</a>. You can't change the name of a <code>Rule</code> after you create it.</param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
-        /// <param name="metricName">A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name can't contain white space. You can't change the name of the metric after you create the <code>Rule</code>.</param>
+        /// <param name="metricName">A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>Rule</code>.</param>
         /// 
         /// <returns>The response from the CreateRule service method, as returned by WAF.</returns>
         /// <exception cref="Amazon.WAF.Model.WAFDisallowedNameException">
@@ -7277,7 +7277,11 @@ namespace Amazon.WAF
         /// However, if you are capturing logs for Amazon CloudFront, always create the firehose
         /// in US East (N. Virginia). 
         /// </para>
-        ///  </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// Do not create the data firehose using a <code>Kinesis stream</code> as your source.
+        /// </para>
+        ///  </note> </li> <li> 
         /// <para>
         /// Associate that firehose to your web ACL using a <code>PutLoggingConfiguration</code>
         /// request.

@@ -46,7 +46,11 @@ namespace Amazon.WAF.Model
     /// However, if you are capturing logs for Amazon CloudFront, always create the firehose
     /// in US East (N. Virginia). 
     /// </para>
-    ///  </li> <li> 
+    ///  <note> 
+    /// <para>
+    /// Do not create the data firehose using a <code>Kinesis stream</code> as your source.
+    /// </para>
+    ///  </note> </li> <li> 
     /// <para>
     /// Associate that firehose to your web ACL using a <code>PutLoggingConfiguration</code>
     /// request.
