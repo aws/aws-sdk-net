@@ -40,6 +40,7 @@ namespace Amazon.Chime.Model
         private string _phoneNumberId;
         private PhoneNumberProductType _productType;
         private PhoneNumberStatus _status;
+        private PhoneNumberType _type;
         private DateTime? _updatedTimestamp;
 
         /// <summary>
@@ -184,6 +185,24 @@ namespace Amazon.Chime.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The phone number type.
+        /// </para>
+        /// </summary>
+        public PhoneNumberType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
         /// <summary>

@@ -30,7 +30,8 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Container for the parameters to the UpdatePhoneNumber operation.
     /// Updates phone number details, such as product type, for the specified phone number
-    /// ID.
+    /// ID. For toll-free numbers, you can use only the Amazon Chime Voice Connector product
+    /// type.
     /// </summary>
     public partial class UpdatePhoneNumberRequest : AmazonChimeRequest
     {

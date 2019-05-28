@@ -39,6 +39,7 @@ namespace Amazon.Chime.Model
         private int? _maxResults;
         private string _nextToken;
         private string _state;
+        private string _tollFreePrefix;
 
         /// <summary>
         /// Gets and sets the property AreaCode. 
@@ -147,6 +148,25 @@ namespace Amazon.Chime.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TollFreePrefix. 
+        /// <para>
+        /// The toll-free prefix that you use to filter results.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=3)]
+        public string TollFreePrefix
+        {
+            get { return this._tollFreePrefix; }
+            set { this._tollFreePrefix = value; }
+        }
+
+        // Check to see if TollFreePrefix property is set
+        internal bool IsSetTollFreePrefix()
+        {
+            return this._tollFreePrefix != null;
         }
 
     }

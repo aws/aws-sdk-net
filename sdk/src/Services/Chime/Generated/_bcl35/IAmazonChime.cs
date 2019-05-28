@@ -432,7 +432,8 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Updates phone number product types. Choose from Amazon Chime Business Calling and
-        /// Amazon Chime Voice Connector product types.
+        /// Amazon Chime Voice Connector product types. For toll-free numbers, you can use only
+        /// the Amazon Chime Voice Connector product type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdatePhoneNumber service method.</param>
         /// 
@@ -686,7 +687,8 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Creates an order for phone numbers to be provisioned. Choose from Amazon Chime Business
-        /// Calling and Amazon Chime Voice Connector product types.
+        /// Calling and Amazon Chime Voice Connector product types. For toll-free numbers, you
+        /// can use only the Amazon Chime Voice Connector product type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePhoneNumberOrder service method.</param>
         /// 
@@ -3513,7 +3515,8 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Updates phone number details, such as product type, for the specified phone number
-        /// ID.
+        /// ID. For toll-free numbers, you can use only the Amazon Chime Voice Connector product
+        /// type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePhoneNumber service method.</param>
         /// 

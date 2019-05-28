@@ -30,7 +30,8 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Container for the parameters to the BatchUpdatePhoneNumber operation.
     /// Updates phone number product types. Choose from Amazon Chime Business Calling and
-    /// Amazon Chime Voice Connector product types.
+    /// Amazon Chime Voice Connector product types. For toll-free numbers, you can use only
+    /// the Amazon Chime Voice Connector product type.
     /// </summary>
     public partial class BatchUpdatePhoneNumberRequest : AmazonChimeRequest
     {

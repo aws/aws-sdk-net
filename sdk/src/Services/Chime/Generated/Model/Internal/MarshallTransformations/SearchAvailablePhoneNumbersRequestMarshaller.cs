@@ -78,6 +78,9 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetState())
                 request.Parameters.Add("state", StringUtils.FromString(publicRequest.State));
+            
+            if (publicRequest.IsSetTollFreePrefix())
+                request.Parameters.Add("toll-free-prefix", StringUtils.FromString(publicRequest.TollFreePrefix));
             request.ResourcePath = uriResourcePath;
             request.UseQueryString = true;
 

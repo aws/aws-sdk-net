@@ -237,6 +237,12 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.SearchAvailablePhoneNumbersRequest.TollFreePrefix</property>
+    <min>3</min>
+    <max>3</max>
+    <pattern>^8(00|33|44|55|66|77|88)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.UpdateAccountRequest.AccountId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
