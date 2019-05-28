@@ -487,6 +487,39 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  AssignTapePool
+
+        internal virtual AssignTapePoolResponse AssignTapePool(AssignTapePoolRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssignTapePoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssignTapePoolResponseUnmarshaller.Instance;
+
+            return Invoke<AssignTapePoolResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssignTapePool operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssignTapePool operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AssignTapePool">REST API Reference for AssignTapePool Operation</seealso>
+        public virtual Task<AssignTapePoolResponse> AssignTapePoolAsync(AssignTapePoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssignTapePoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssignTapePoolResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssignTapePoolResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AttachVolume
 
         internal virtual AttachVolumeResponse AttachVolume(AttachVolumeRequest request)

@@ -200,6 +200,23 @@ namespace Amazon.StorageGateway
 
         #endregion
                 
+        #region  AssignTapePool
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssignTapePool operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssignTapePool operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AssignTapePool">REST API Reference for AssignTapePool Operation</seealso>
+        Task<AssignTapePoolResponse> AssignTapePoolAsync(AssignTapePoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  AttachVolume
 
 

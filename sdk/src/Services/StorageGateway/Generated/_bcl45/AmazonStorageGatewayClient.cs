@@ -623,6 +623,62 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  AssignTapePool
+
+
+        /// <summary>
+        /// Assigns a tape to a tape pool for archiving. The tape assigned to a pool is archived
+        /// in the S3 storage class that is associated with the pool. When you use your backup
+        /// application to eject the tape, the tape is archived directly into the S3 storage class
+        /// (Glacier or Deep Archive) that corresponds to the pool.
+        /// 
+        ///  
+        /// <para>
+        /// Valid values: "GLACIER", "DEEP_ARCHIVE"
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssignTapePool service method.</param>
+        /// 
+        /// <returns>The response from the AssignTapePool service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AssignTapePool">REST API Reference for AssignTapePool Operation</seealso>
+        public virtual AssignTapePoolResponse AssignTapePool(AssignTapePoolRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssignTapePoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssignTapePoolResponseUnmarshaller.Instance;
+
+            return Invoke<AssignTapePoolResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssignTapePool operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssignTapePool operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AssignTapePool">REST API Reference for AssignTapePool Operation</seealso>
+        public virtual Task<AssignTapePoolResponse> AssignTapePoolAsync(AssignTapePoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssignTapePoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssignTapePoolResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssignTapePoolResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AttachVolume
 
 
