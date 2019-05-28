@@ -1,0 +1,5 @@
+{
+  "active": false,
+  "synopsis": "Amazon Transcribe Streaming service provides operations and objects for transcribing streaming speech to text.",
+  "generate-client-constructors": true
+}
