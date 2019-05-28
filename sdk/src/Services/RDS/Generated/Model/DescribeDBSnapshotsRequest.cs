@@ -150,13 +150,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IncludePublic. 
         /// <para>
-        /// A value that indicates whether to include manual DB cluster snapshots that are public
-        /// and can be copied or restored by any AWS account. By default, the public snapshots
-        /// are not included.
+        /// True to include manual DB snapshots that are public and can be copied or restored
+        /// by any AWS account, and otherwise false. The default is false.
         /// </para>
         ///  
         /// <para>
-        /// You can share a manual DB snapshot as public by using the <a>ModifyDBSnapshotAttribute</a>
+        /// You can share a manual DB snapshot as public by using the <code>ModifyDBSnapshotAttribute</code>
         /// API.
         /// </para>
         /// </summary>
@@ -175,9 +174,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IncludeShared. 
         /// <para>
-        /// A value that indicates whether to include shared manual DB cluster snapshots from
-        /// other AWS accounts that this AWS account has been given permission to copy or restore.
-        /// By default, these snapshots are not included.
+        /// True to include shared manual DB snapshots from other AWS accounts that this AWS account
+        /// has been given permission to copy or restore, and otherwise false. The default is
+        /// <code>false</code>.
         /// </para>
         ///  
         /// <para>
@@ -285,9 +284,10 @@ namespace Amazon.RDS.Model
         /// <para>
         /// If you don't specify a <code>SnapshotType</code> value, then both automated and manual
         /// snapshots are returned. Shared and public DB snapshots are not included in the returned
-        /// results by default. You can include shared snapshots with these results by enabling
-        /// the <code>IncludeShared</code> parameter. You can include public snapshots with these
-        /// results by enabling the <code>IncludePublic</code> parameter.
+        /// results by default. You can include shared snapshots with these results by setting
+        /// the <code>IncludeShared</code> parameter to <code>true</code>. You can include public
+        /// snapshots with these results by setting the <code>IncludePublic</code> parameter to
+        /// <code>true</code>.
         /// </para>
         ///  
         /// <para>

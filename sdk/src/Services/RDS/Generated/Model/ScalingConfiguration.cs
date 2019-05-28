@@ -47,7 +47,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AutoPause. 
         /// <para>
-        /// A value that indicates whether to allow or disallow automatic pause for an Aurora
+        /// A value that specifies whether to allow or disallow automatic pause for an Aurora
         /// DB cluster in <code>serverless</code> DB engine mode. A DB cluster can be paused only
         /// when it's idle (it has no connections).
         /// </para>
@@ -79,8 +79,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>,
-        /// <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.
+        /// Valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
+        /// <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.
         /// </para>
         ///  
         /// <para>
@@ -107,8 +107,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>,
-        /// <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.
+        /// Valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
+        /// <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.
         /// </para>
         ///  
         /// <para>
@@ -154,20 +154,15 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>ForceApplyCapacityChange</code> sets the capacity to the specified value as
-        /// soon as possible.
+        ///  <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified
+        /// value as soon as possible.
         /// </para>
         ///  
         /// <para>
-        ///  <code>RollbackCapacityChange</code>, the default, ignores the capacity change if
-        /// a scaling point is not found in the timeout period.
+        ///  <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point
+        /// is not found in the timeout period.
         /// </para>
-        ///  <important> 
-        /// <para>
-        /// If you specify <code>ForceApplyCapacityChange</code>, connections that prevent Aurora
-        /// Serverless from finding a scaling point might be dropped.
-        /// </para>
-        ///  </important> 
+        ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
         /// Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.

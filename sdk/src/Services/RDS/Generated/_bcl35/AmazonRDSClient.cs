@@ -2755,8 +2755,7 @@ namespace Amazon.RDS
         /// <para>
         /// Note that when a DB instance is in a failure state and has a status of <code>failed</code>,
         /// <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can only
-        /// delete it when you skip creation of the final snapshot with the <code>SkipFinalSnapshot</code>
-        /// parameter.
+        /// delete it when the <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
         /// </para>
         ///  
         /// <para>

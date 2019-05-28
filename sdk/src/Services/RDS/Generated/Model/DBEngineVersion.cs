@@ -39,6 +39,7 @@ namespace Amazon.RDS.Model
         private string _engine;
         private string _engineVersion;
         private List<string> _exportableLogTypes = new List<string>();
+        private string _status;
         private List<CharacterSet> _supportedCharacterSets = new List<CharacterSet>();
         private List<string> _supportedEngineModes = new List<string>();
         private List<string> _supportedFeatureNames = new List<string>();
@@ -178,6 +179,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetExportableLogTypes()
         {
             return this._exportableLogTypes != null && this._exportableLogTypes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.
+        /// </para>
+        /// </summary>
+        public string Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
         /// <summary>

@@ -130,8 +130,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CopyTagsToSnapshot. 
         /// <para>
-        /// A value that indicates whether to copy all tags from the restored DB cluster to snapshots
-        /// of the restored DB cluster. The default is not to copy them.
+        /// True to copy all tags from the restored DB cluster to snapshots of the restored DB
+        /// cluster, and otherwise false. The default is false.
         /// </para>
         /// </summary>
         public bool CopyTagsToSnapshot
@@ -274,9 +274,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        /// A value that indicates whether the DB cluster has deletion protection enabled. The
-        /// database can't be deleted when deletion protection is enabled. By default, deletion
-        /// protection is disabled. 
+        /// Indicates if the DB cluster should have deletion protection enabled. The database
+        /// can't be deleted when this value is set to true. The default is false. 
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -315,8 +314,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// A value that indicates whether to enable mapping of AWS Identity and Access Management
-        /// (IAM) accounts to database accounts. By default, mapping is disabled.
+        /// True to enable mapping of AWS Identity and Access Management (IAM) accounts to database
+        /// accounts, and otherwise false.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>false</code> 
         /// </para>
         /// </summary>
         public bool EnableIAMDatabaseAuthentication

@@ -65,23 +65,24 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ApplyImmediately. 
         /// <para>
-        /// A value that indicates whether the modifications in this request and any pending modifications
+        /// A value that specifies whether the modifications in this request and any pending modifications
         /// are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code>
-        /// setting for the DB cluster. If this parameter is disabled, changes to the DB cluster
-        /// are applied during the next maintenance window.
+        /// setting for the DB cluster. If this parameter is set to <code>false</code>, changes
+        /// to the DB cluster are applied during the next maintenance window.
         /// </para>
         ///  
         /// <para>
         /// The <code>ApplyImmediately</code> parameter only affects the <code>EnableIAMDatabaseAuthentication</code>,
         /// <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If
-        /// the <code>ApplyImmediately</code> parameter is disabled, then changes to the <code>EnableIAMDatabaseAuthentication</code>,
-        /// <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values are
-        /// applied during the next maintenance window. All other changes are applied immediately,
-        /// regardless of the value of the <code>ApplyImmediately</code> parameter.
+        /// you set the <code>ApplyImmediately</code> parameter value to false, then changes to
+        /// the <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>,
+        /// and <code>NewDBClusterIdentifier</code> values are applied during the next maintenance
+        /// window. All other changes are applied immediately, regardless of the value of the
+        /// <code>ApplyImmediately</code> parameter.
         /// </para>
         ///  
         /// <para>
-        /// By default, this parameter is disabled.
+        /// Default: <code>false</code> 
         /// </para>
         /// </summary>
         public bool ApplyImmediately
@@ -182,8 +183,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CopyTagsToSnapshot. 
         /// <para>
-        /// A value that indicates whether to copy all tags from the DB cluster to snapshots of
-        /// the DB cluster. The default is not to copy them.
+        /// True to copy all tags from the DB cluster to snapshots of the DB cluster, and otherwise
+        /// false. The default is false.
         /// </para>
         /// </summary>
         public bool CopyTagsToSnapshot
@@ -247,9 +248,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        /// A value that indicates whether the DB cluster has deletion protection enabled. The
-        /// database can't be deleted when deletion protection is enabled. By default, deletion
-        /// protection is disabled. 
+        /// Indicates if the DB cluster has deletion protection enabled. The database can't be
+        /// deleted when this value is set to true. 
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -301,8 +301,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// A value that indicates whether to enable mapping of AWS Identity and Access Management
-        /// (IAM) accounts to database accounts. By default, mapping is disabled.
+        /// True to enable mapping of AWS Identity and Access Management (IAM) accounts to database
+        /// accounts, and otherwise false.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>false</code> 
         /// </para>
         /// </summary>
         public bool EnableIAMDatabaseAuthentication
@@ -322,11 +326,12 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The version number of the database engine to which you want to upgrade. Changing this
         /// parameter results in an outage. The change is applied during the next maintenance
-        /// window unless <code>ApplyImmediately</code> is enabled.
+        /// window unless the ApplyImmediately parameter is set to true.
         /// </para>
         ///  
         /// <para>
-        /// For a list of valid engine versions, use <a>DescribeDBEngineVersions</a>.
+        /// For a list of valid engine versions, use the <code>DescribeDBEngineVersions</code>
+        /// action.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -409,9 +414,10 @@ namespace Amazon.RDS.Model
         /// A value that indicates that the DB cluster should be associated with the specified
         /// option group. Changing this parameter doesn't result in an outage except in the following
         /// case, and the change is applied during the next maintenance window unless the <code>ApplyImmediately</code>
-        /// is enabled for this request. If the parameter change results in an option group that
-        /// enables OEM, this change can cause a brief (sub-second) period during which new connections
-        /// are rejected but existing connections are not interrupted. 
+        /// parameter is set to <code>true</code> for this request. If the parameter change results
+        /// in an option group that enables OEM, this change can cause a brief (sub-second) period
+        /// during which new connections are rejected but existing connections are not interrupted.
+        /// 
         /// </para>
         ///  
         /// <para>

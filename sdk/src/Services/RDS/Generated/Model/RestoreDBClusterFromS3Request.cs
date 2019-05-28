@@ -178,8 +178,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CopyTagsToSnapshot. 
         /// <para>
-        /// A value that indicates whether to copy all tags from the restored DB cluster to snapshots
-        /// of the restored DB cluster. The default is not to copy them.
+        /// True to copy all tags from the restored DB cluster to snapshots of the restored DB
+        /// cluster, and otherwise false. The default is false.
         /// </para>
         /// </summary>
         public bool CopyTagsToSnapshot
@@ -309,9 +309,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        /// A value that indicates whether the DB cluster has deletion protection enabled. The
-        /// database can't be deleted when deletion protection is enabled. By default, deletion
-        /// protection is disabled. 
+        /// Indicates if the DB cluster should have deletion protection enabled. The database
+        /// can't be deleted when this value is set to true. The default is false. 
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -350,8 +349,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// A value that indicates whether to enable mapping of AWS Identity and Access Management
-        /// (IAM) accounts to database accounts. By default, mapping is disabled.
+        /// True to enable mapping of AWS Identity and Access Management (IAM) accounts to database
+        /// accounts, and otherwise false.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>false</code> 
         /// </para>
         /// </summary>
         public bool EnableIAMDatabaseAuthentication
@@ -437,8 +440,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If the StorageEncrypted parameter is enabled, and you do not specify a value for the
-        /// <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption
+        /// If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value
+        /// for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption
         /// key. AWS KMS creates the default encryption key for your AWS account. Your AWS account
         /// has a different default encryption key for each AWS Region.
         /// </para>
@@ -761,7 +764,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageEncrypted. 
         /// <para>
-        /// A value that indicates whether the restored DB cluster is encrypted.
+        /// Specifies whether the restored DB cluster is encrypted.
         /// </para>
         /// </summary>
         public bool StorageEncrypted

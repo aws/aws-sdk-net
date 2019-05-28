@@ -95,6 +95,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetIncludeAll())
+                {
+                    request.Parameters.Add("IncludeAll", StringUtils.FromBool(publicRequest.IncludeAll));
+                }
                 if(publicRequest.IsSetListSupportedCharacterSets())
                 {
                     request.Parameters.Add("ListSupportedCharacterSets", StringUtils.FromBool(publicRequest.ListSupportedCharacterSets));

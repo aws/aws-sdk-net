@@ -109,8 +109,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CopyTagsToSnapshot. 
         /// <para>
-        /// A value that indicates whether to copy all tags from the restored DB cluster to snapshots
-        /// of the restored DB cluster. The default is not to copy them.
+        /// True to copy all tags from the restored DB cluster to snapshots of the restored DB
+        /// cluster, and otherwise false. The default is false.
         /// </para>
         /// </summary>
         public bool CopyTagsToSnapshot
@@ -231,9 +231,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        /// A value that indicates whether the DB cluster has deletion protection enabled. The
-        /// database can't be deleted when deletion protection is enabled. By default, deletion
-        /// protection is disabled. 
+        /// Indicates if the DB cluster should have deletion protection enabled. The database
+        /// can't be deleted when this value is set to true. The default is false. 
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -272,8 +271,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// A value that indicates whether to enable mapping of AWS Identity and Access Management
-        /// (IAM) accounts to database accounts. By default, mapping is disabled.
+        /// True to enable mapping of AWS Identity and Access Management (IAM) accounts to database
+        /// accounts, and otherwise false.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>false</code> 
         /// </para>
         /// </summary>
         public bool EnableIAMDatabaseAuthentication
@@ -406,11 +409,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled
+        /// Can't be specified if <code>UseLatestRestorableTime</code> parameter is true
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code>
+        /// Can't be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -514,9 +517,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property UseLatestRestorableTime. 
         /// <para>
-        /// A value that indicates whether to restore the DB cluster to the latest restorable
-        /// backup time. By default, the DB cluster is not restored to the latest restorable backup
-        /// time. 
+        /// A value that is set to <code>true</code> to restore the DB cluster to the latest restorable
+        /// backup time, and <code>false</code> otherwise. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>false</code> 
         /// </para>
         ///  
         /// <para>
@@ -588,11 +594,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled
+        /// Can't be specified if <code>UseLatestRestorableTime</code> parameter is true
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code>
+        /// Can't be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code>
         /// 
         /// </para>
         ///  </li> </ul> 

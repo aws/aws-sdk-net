@@ -45,8 +45,7 @@ namespace Amazon.RDS.Model
     /// <para>
     /// Note that when a DB instance is in a failure state and has a status of <code>failed</code>,
     /// <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can only
-    /// delete it when you skip creation of the final snapshot with the <code>SkipFinalSnapshot</code>
-    /// parameter.
+    /// delete it when the <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
     /// </para>
     ///  
     /// <para>
@@ -123,8 +122,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DeleteAutomatedBackups. 
         /// <para>
         /// A value that indicates whether to remove automated backups immediately after the DB
-        /// instance is deleted. This parameter isn't case-sensitive. The default is to remove
-        /// automated backups immediately after the DB instance is deleted.
+        /// instance is deleted. This parameter isn't case-sensitive. This parameter defaults
+        /// to <code>true</code>.
         /// </para>
         /// </summary>
         public bool DeleteAutomatedBackups
@@ -142,13 +141,13 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property FinalDBSnapshotIdentifier. 
         /// <para>
-        ///  The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created
-        /// when the <code>SkipFinalSnapshot</code> parameter is disabled. 
+        ///  The <code>DBSnapshotIdentifier</code> of the new DB snapshot created when <code>SkipFinalSnapshot</code>
+        /// is set to <code>false</code>. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// Specifying this parameter and also specifying to skip final DB snapshot creation in
-        /// SkipFinalShapshot results in an error.
+        /// Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter
+        /// to <code>true</code> results in an error.
         /// </para>
         ///  </note> 
         /// <para>
@@ -187,25 +186,29 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SkipFinalSnapshot. 
         /// <para>
-        /// A value that indicates whether to skip the creation of a final DB snapshot before
-        /// the DB instance is deleted. If skip is specified, no DB snapshot is created. If skip
-        /// is not specified, a DB snapshot is created before the DB instance is deleted. By default,
-        /// skip is not specified, and the DB snapshot is created.
+        ///  A value that indicates whether a final DB snapshot is created before the DB instance
+        /// is deleted. If <code>true</code> is specified, no DB snapshot is created. If <code>false</code>
+        /// is specified, a DB snapshot is created before the DB instance is deleted. 
         /// </para>
         ///  
         /// <para>
-        /// Note that when a DB instance is in a failure state and has a status of 'failed', 'incompatible-restore',
-        /// or 'incompatible-network', it can only be deleted when skip is specified.
+        /// When a DB instance is in a failure state and has a status of <code>failed</code>,
+        /// <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can only
+        /// delete it when the <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
         /// </para>
         ///  
         /// <para>
-        /// Specify skip when deleting a Read Replica.
+        /// Specify <code>true</code> when deleting a Read Replica.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The FinalDBSnapshotIdentifier parameter must be specified if skip is not specified.
+        /// The <code>FinalDBSnapshotIdentifier</code> parameter must be specified if <code>SkipFinalSnapshot</code>
+        /// is <code>false</code>.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Default: <code>false</code> 
+        /// </para>
         /// </summary>
         public bool SkipFinalSnapshot
         {

@@ -88,7 +88,7 @@ namespace Amazon.RDS.Model
         /// Instantiates CreateDBInstanceRequest with the parameterized properties
         /// </summary>
         /// <param name="dbInstanceIdentifier">The DB instance identifier. This parameter is stored as a lowercase string. Constraints: <ul> <li> Must contain from 1 to 63 letters, numbers, or hyphens. </li> <li> First character must be a letter. </li> <li> Can't end with a hyphen or contain two consecutive hyphens. </li> </ul> Example: <code>mydbinstance</code> </param>
-        /// <param name="allocatedStorage">The amount of storage (in gibibytes) to allocate for the DB instance. Type: Integer  <b>Amazon Aurora</b>  Not applicable. Aurora cluster volumes automatically grow as the amount of data in your database increases, though you are only charged for the space that you use in an Aurora cluster volume.  <b>MySQL</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul>  <b>MariaDB</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul>  <b>PostgreSQL</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul>  <b>Oracle</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 10 to 3072. </li> </ul>  <b>SQL Server</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): <ul> <li> Enterprise and Standard editions: Must be an integer from 200 to 16384. </li> <li> Web and Express editions: Must be an integer from 20 to 16384. </li> </ul> </li> <li> Provisioned IOPS storage (io1): <ul> <li> Enterprise and Standard editions: Must be an integer from 200 to 16384. </li> <li> Web and Express editions: Must be an integer from 100 to 16384. </li> </ul> </li> <li> Magnetic storage (standard): <ul> <li> Enterprise and Standard editions: Must be an integer from 200 to 1024. </li> <li> Web and Express editions: Must be an integer from 20 to 1024. </li> </ul> </li> </ul></param>
+        /// <param name="allocatedStorage">The amount of storage (in gibibytes) to allocate for the DB instance. Type: Integer  <b>Amazon Aurora</b>  Not applicable. Aurora cluster volumes automatically grow as the amount of data in your database increases, though you are only charged for the space that you use in an Aurora cluster volume.  <b>MySQL</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 32768. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul>  <b>MariaDB</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 32768. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul>  <b>PostgreSQL</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 32768. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul>  <b>Oracle</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 32768. </li> <li> Magnetic storage (standard): Must be an integer from 10 to 3072. </li> </ul>  <b>SQL Server</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): <ul> <li> Enterprise and Standard editions: Must be an integer from 200 to 16384. </li> <li> Web and Express editions: Must be an integer from 20 to 16384. </li> </ul> </li> <li> Provisioned IOPS storage (io1): <ul> <li> Enterprise and Standard editions: Must be an integer from 200 to 16384. </li> <li> Web and Express editions: Must be an integer from 100 to 16384. </li> </ul> </li> <li> Magnetic storage (standard): <ul> <li> Enterprise and Standard editions: Must be an integer from 200 to 1024. </li> <li> Web and Express editions: Must be an integer from 20 to 1024. </li> </ul> </li> </ul></param>
         /// <param name="dbInstanceClass">The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i> </param>
         /// <param name="engine">The name of the database engine to be used for this instance.  Not every database engine is available for every AWS Region.  Valid Values:  <ul> <li>  <code>aurora</code> (for MySQL 5.6-compatible Aurora) </li> <li>  <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora) </li> <li>  <code>aurora-postgresql</code>  </li> <li>  <code>mariadb</code>  </li> <li>  <code>mysql</code>  </li> <li>  <code>oracle-ee</code>  </li> <li>  <code>oracle-se2</code>  </li> <li>  <code>oracle-se1</code>  </li> <li>  <code>oracle-se</code>  </li> <li>  <code>postgres</code>  </li> <li>  <code>sqlserver-ee</code>  </li> <li>  <code>sqlserver-se</code>  </li> <li>  <code>sqlserver-ex</code>  </li> <li>  <code>sqlserver-web</code>  </li> </ul></param>
         /// <param name="masterUsername">The name for the master user.  <b>Amazon Aurora</b>  Not applicable. The name for the master user is managed by the DB cluster.   <b>MariaDB</b>  Constraints: <ul> <li> Required for MariaDB. </li> <li> Must be 1 to 16 letters or numbers. </li> <li> Can't be a reserved word for the chosen database engine. </li> </ul>  <b>Microsoft SQL Server</b>  Constraints: <ul> <li> Required for SQL Server. </li> <li> Must be 1 to 128 letters or numbers. </li> <li> The first character must be a letter. </li> <li> Can't be a reserved word for the chosen database engine. </li> </ul>  <b>MySQL</b>  Constraints: <ul> <li> Required for MySQL. </li> <li> Must be 1 to 16 letters or numbers. </li> <li> First character must be a letter. </li> <li> Can't be a reserved word for the chosen database engine. </li> </ul>  <b>Oracle</b>  Constraints: <ul> <li> Required for Oracle. </li> <li> Must be 1 to 30 letters or numbers. </li> <li> First character must be a letter. </li> <li> Can't be a reserved word for the chosen database engine. </li> </ul>  <b>PostgreSQL</b>  Constraints: <ul> <li> Required for PostgreSQL. </li> <li> Must be 1 to 63 letters or numbers. </li> <li> First character must be a letter. </li> <li> Can't be a reserved word for the chosen database engine. </li> </ul></param>
@@ -132,11 +132,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.
+        /// General Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.
+        /// Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -152,11 +152,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.
+        /// General Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.
+        /// Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -172,11 +172,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.
+        /// General Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.
+        /// Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -192,11 +192,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.
+        /// General Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.
+        /// Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -263,9 +263,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        /// A value that indicates whether minor engine upgrades are applied automatically to
-        /// the DB instance during the maintenance window. By default, minor engine upgrades are
-        /// applied automatically.
+        /// Indicates that minor engine upgrades are applied automatically to the DB instance
+        /// during the maintenance window.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>true</code> 
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -297,9 +300,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the
-        /// DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the
-        /// same AWS Region as the current endpoint. 
+        ///  Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter
+        /// is set to <code>true</code>. The specified Availability Zone must be in the same AWS
+        /// Region as the current endpoint. 
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -390,8 +393,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CopyTagsToSnapshot. 
         /// <para>
-        /// A value that indicates whether to copy tags from the DB instance to snapshots of the
-        /// DB instance. By default, tags are not copied.
+        /// True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise
+        /// false. The default is false.
         /// </para>
         ///  
         /// <para>
@@ -716,9 +719,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        /// A value that indicates whether the DB instance has deletion protection enabled. The
-        /// database can't be deleted when deletion protection is enabled. By default, deletion
-        /// protection is disabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
+        /// Indicates if the DB instance should have deletion protection enabled. The database
+        /// can't be deleted when this value is set to true. The default is false. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>. 
         /// </para>
         /// </summary>
@@ -801,8 +804,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// A value that indicates whether to enable mapping of AWS Identity and Access Management
-        /// (IAM) accounts to database accounts. By default, mapping is disabled.
+        /// True to enable mapping of AWS Identity and Access Management (IAM) accounts to database
+        /// accounts, and otherwise false. 
         /// </para>
         ///  
         /// <para>
@@ -829,7 +832,10 @@ namespace Amazon.RDS.Model
         /// <para>
         /// For MySQL 5.7, minor version 5.7.16 or higher
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default: <code>false</code> 
+        /// </para>
         /// </summary>
         public bool EnableIAMDatabaseAuthentication
         {
@@ -846,8 +852,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnablePerformanceInsights. 
         /// <para>
-        /// A value that indicates whether to enable Performance Insights for the DB instance.
-        /// 
+        /// True to enable Performance Insights for the DB instance, and otherwise false. 
         /// </para>
         ///  
         /// <para>
@@ -1085,8 +1090,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If <code>StorageEncrypted</code> is enabled, and you do not specify a value for the
-        /// <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption
+        /// If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value
+        /// for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption
         /// key. AWS KMS creates the default encryption key for your AWS account. Your AWS account
         /// has a different default encryption key for each AWS Region.
         /// </para>
@@ -1394,8 +1399,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        /// A value that indicates whether the DB instance is a Multi-AZ deployment. You can't
-        /// set the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.
+        /// A value that specifies whether the DB instance is a Multi-AZ deployment. You can't
+        /// set the AvailabilityZone parameter if the MultiAZ parameter is set to true.
         /// </para>
         /// </summary>
         public bool MultiAZ
@@ -1440,13 +1445,6 @@ namespace Amazon.RDS.Model
         /// The AWS KMS key identifier for encryption of Performance Insights data. The KMS key
         /// ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for
         /// the KMS encryption key.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon
-        /// RDS uses your default encryption key. AWS KMS creates the default encryption key for
-        /// your AWS account. Your AWS account has a different default encryption key for each
-        /// AWS Region.
         /// </para>
         /// </summary>
         public string PerformanceInsightsKMSKeyId
@@ -1735,11 +1733,10 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        /// A value that indicates whether the DB instance is publicly accessible. When the DB
-        /// instance is publicly accessible, it is an Internet-facing instance with a publicly
-        /// resolvable DNS name, which resolves to a public IP address. When the DB instance is
-        /// not publicly accessible, it is an internal instance with a DNS name that resolves
-        /// to a private IP address.
+        /// Specifies the accessibility options for the DB instance. A value of true specifies
+        /// an Internet-facing instance with a publicly resolvable DNS name, which resolves to
+        /// a public IP address. A value of false specifies an internal instance with a DNS name
+        /// that resolves to a private IP address.
         /// </para>
         ///  
         /// <para>
@@ -1793,8 +1790,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageEncrypted. 
         /// <para>
-        /// A value that indicates whether the DB instance is encrypted. By default, it is not
-        /// encrypted.
+        /// Specifies whether the DB instance is encrypted.
         /// </para>
         ///  
         /// <para>
@@ -1803,6 +1799,10 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Not applicable. The encryption for DB instances is managed by the DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: false
         /// </para>
         /// </summary>
         public bool StorageEncrypted
@@ -1834,7 +1834,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         ///  Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
-        /// <code>gp2</code> 
+        /// <code>standard</code> 
         /// </para>
         /// </summary>
         public string StorageType

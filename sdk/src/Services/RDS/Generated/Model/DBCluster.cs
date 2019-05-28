@@ -470,7 +470,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DeletionProtection. 
         /// <para>
         /// Indicates if the DB cluster has deletion protection enabled. The database can't be
-        /// deleted when deletion protection is enabled. 
+        /// deleted when this value is set to true. 
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -643,8 +643,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// A value that indicates whether the HTTP endpoint for an Aurora Serverless DB cluster
-        /// is enabled.
+        /// Value that is <code>true</code> if the HTTP endpoint for an Aurora Serverless DB cluster
+        /// is enabled and <code>false</code> otherwise.
         /// </para>
         ///  
         /// <para>
@@ -673,8 +673,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IAMDatabaseAuthenticationEnabled. 
         /// <para>
-        /// A value that indicates whether the mapping of AWS Identity and Access Management (IAM)
-        /// accounts to database accounts is enabled.
+        /// True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts
+        /// is enabled, and otherwise false.
         /// </para>
         /// </summary>
         public bool IAMDatabaseAuthenticationEnabled
@@ -692,7 +692,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted
+        /// If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted
         /// DB cluster.
         /// </para>
         /// </summary>

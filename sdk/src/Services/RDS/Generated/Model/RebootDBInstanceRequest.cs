@@ -96,13 +96,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ForceFailover. 
         /// <para>
-        ///  A value that indicates whether the reboot is conducted through a Multi-AZ failover.
-        /// 
+        ///  When <code>true</code>, the reboot is conducted through a MultiAZ failover. 
         /// </para>
         ///  
         /// <para>
-        /// Constraint: You can't enable force failover if the instance is not configured for
-        /// Multi-AZ.
+        /// Constraint: You can't specify <code>true</code> if the instance is not configured
+        /// for MultiAZ.
         /// </para>
         /// </summary>
         public bool ForceFailover
