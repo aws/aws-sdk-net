@@ -86,7 +86,7 @@ namespace Amazon.SecurityToken.Model
     /// temporary credentials in subsequent AWS API calls to access resources in the account
     /// that owns the role. You cannot use session policies to grant more permissions than
     /// those allowed by the identity-based policy of the role that is being assumed. For
-    /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+    /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
     /// Policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
@@ -248,7 +248,7 @@ namespace Amazon.SecurityToken.Model
         /// in subsequent AWS API calls to access resources in the account that owns the role.
         /// You cannot use session policies to grant more permissions than those allowed by the
         /// identity-based policy of the role that is being assumed. For more information, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
         /// Policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
@@ -310,7 +310,7 @@ namespace Amazon.SecurityToken.Model
         /// the session policies. You can use the role's temporary credentials in subsequent AWS
         /// API calls to access resources in the account that owns the role. You cannot use session
         /// policies to grant more permissions than those allowed by the identity-based policy
-        /// of the role that is being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+        /// of the role that is being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
         /// Policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>

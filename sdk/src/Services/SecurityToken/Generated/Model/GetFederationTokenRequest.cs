@@ -100,7 +100,7 @@ namespace Amazon.SecurityToken.Model
     /// of the IAM user policies and the session policies that you pass. This gives you a
     /// way to further restrict the permissions for a federated user. You cannot use session
     /// policies to grant more permissions than those that are defined in the permissions
-    /// policy of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+    /// policy of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
     /// Policies</a> in the <i>IAM User Guide</i>. For information about using <code>GetFederationToken</code>
     /// to create temporary security credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken">GetFederationToken—Federation
     /// Through a Custom Identity Broker</a>. 
@@ -204,7 +204,7 @@ namespace Amazon.SecurityToken.Model
         /// IAM user policies and the session policies that you pass. This gives you a way to
         /// further restrict the permissions for a federated user. You cannot use session policies
         /// to grant more permissions than those that are defined in the permissions policy of
-        /// the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+        /// the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
         /// Policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
@@ -269,7 +269,7 @@ namespace Amazon.SecurityToken.Model
         /// IAM user policies and the session policies that you pass. This gives you a way to
         /// further restrict the permissions for a federated user. You cannot use session policies
         /// to grant more permissions than those that are defined in the permissions policy of
-        /// the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+        /// the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
         /// Policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  <note> 
