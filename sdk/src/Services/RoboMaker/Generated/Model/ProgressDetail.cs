@@ -46,11 +46,11 @@ namespace Amazon.RoboMaker.Model
         /// <para>
         /// Validating the deployment.
         /// </para>
-        ///  </dd> <dt>Downloading/Extracting</dt> <dd> 
+        ///  </dd> <dt>DownloadingExtracting</dt> <dd> 
         /// <para>
         /// Downloading and extracting the bundle on the robot.
         /// </para>
-        ///  </dd> <dt>Executing pre-launch script(s)</dt> <dd> 
+        ///  </dd> <dt>ExecutingPreLaunch</dt> <dd> 
         /// <para>
         /// Executing pre-launch script(s) if provided.
         /// </para>
@@ -58,7 +58,7 @@ namespace Amazon.RoboMaker.Model
         /// <para>
         /// Launching the robot application.
         /// </para>
-        ///  </dd> <dt>Executing post-launch script(s)</dt> <dd> 
+        ///  </dd> <dt>ExecutingPostLaunch</dt> <dd> 
         /// <para>
         /// Executing post-launch script(s) if provided.
         /// </para>

@@ -291,6 +291,59 @@ namespace Amazon.RoboMaker
 
         #endregion
         
+        #region  CancelDeploymentJob
+
+
+        /// <summary>
+        /// Cancels the specified deployment job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelDeploymentJob service method.</param>
+        /// 
+        /// <returns>The response from the CancelDeploymentJob service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelDeploymentJob">REST API Reference for CancelDeploymentJob Operation</seealso>
+        public virtual CancelDeploymentJobResponse CancelDeploymentJob(CancelDeploymentJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelDeploymentJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelDeploymentJobResponseUnmarshaller.Instance;
+
+            return Invoke<CancelDeploymentJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelDeploymentJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelDeploymentJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelDeploymentJob">REST API Reference for CancelDeploymentJob Operation</seealso>
+        public virtual Task<CancelDeploymentJobResponse> CancelDeploymentJobAsync(CancelDeploymentJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelDeploymentJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelDeploymentJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CancelDeploymentJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CancelSimulationJob
 
 

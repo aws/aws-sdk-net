@@ -38,6 +38,7 @@ namespace Amazon.RoboMaker.Model
         private SimulationJobErrorCode _failureCode;
         private string _failureReason;
         private string _iamRole;
+        private DateTime? _lastStartedAt;
         private DateTime? _lastUpdatedAt;
         private long? _maxJobDurationInSeconds;
         private string _name;
@@ -155,8 +156,7 @@ namespace Amazon.RoboMaker.Model
         /// <para>
         /// The IAM role that allows the simulation instance to call the AWS APIs that are specified
         /// in its associated policies on your behalf. This is how credentials are passed in to
-        /// your simulation job. See how to <a href="https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials">specify
-        /// AWS security credentials for your application</a>. 
+        /// your simulation job. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -170,6 +170,24 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetIamRole()
         {
             return this._iamRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastStartedAt. 
+        /// <para>
+        /// The time, in milliseconds since the epoch, when the simulation job was last started.
+        /// </para>
+        /// </summary>
+        public DateTime LastStartedAt
+        {
+            get { return this._lastStartedAt.GetValueOrDefault(); }
+            set { this._lastStartedAt = value; }
+        }
+
+        // Check to see if LastStartedAt property is set
+        internal bool IsSetLastStartedAt()
+        {
+            return this._lastStartedAt.HasValue; 
         }
 
         /// <summary>

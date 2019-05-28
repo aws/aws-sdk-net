@@ -303,6 +303,73 @@ namespace Amazon.RoboMaker
 
         #endregion
         
+        #region  CancelDeploymentJob
+
+        /// <summary>
+        /// Cancels the specified deployment job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelDeploymentJob service method.</param>
+        /// 
+        /// <returns>The response from the CancelDeploymentJob service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelDeploymentJob">REST API Reference for CancelDeploymentJob Operation</seealso>
+        public virtual CancelDeploymentJobResponse CancelDeploymentJob(CancelDeploymentJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelDeploymentJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelDeploymentJobResponseUnmarshaller.Instance;
+
+            return Invoke<CancelDeploymentJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelDeploymentJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelDeploymentJob operation on AmazonRoboMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelDeploymentJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelDeploymentJob">REST API Reference for CancelDeploymentJob Operation</seealso>
+        public virtual IAsyncResult BeginCancelDeploymentJob(CancelDeploymentJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelDeploymentJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelDeploymentJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelDeploymentJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelDeploymentJob.</param>
+        /// 
+        /// <returns>Returns a  CancelDeploymentJobResult from RoboMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelDeploymentJob">REST API Reference for CancelDeploymentJob Operation</seealso>
+        public virtual CancelDeploymentJobResponse EndCancelDeploymentJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CancelDeploymentJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CancelSimulationJob
 
         /// <summary>

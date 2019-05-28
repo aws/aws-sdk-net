@@ -276,6 +276,39 @@ namespace Amazon.RoboMaker
 
         #endregion
         
+        #region  CancelDeploymentJob
+
+        internal virtual CancelDeploymentJobResponse CancelDeploymentJob(CancelDeploymentJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelDeploymentJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelDeploymentJobResponseUnmarshaller.Instance;
+
+            return Invoke<CancelDeploymentJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelDeploymentJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelDeploymentJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelDeploymentJob">REST API Reference for CancelDeploymentJob Operation</seealso>
+        public virtual Task<CancelDeploymentJobResponse> CancelDeploymentJobAsync(CancelDeploymentJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelDeploymentJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelDeploymentJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelDeploymentJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CancelSimulationJob
 
         internal virtual CancelSimulationJobResponse CancelSimulationJob(CancelSimulationJobRequest request)

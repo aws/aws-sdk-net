@@ -35,6 +35,7 @@ namespace Amazon.RoboMaker.Model
         private string _arn;
         private DateTime? _lastUpdatedAt;
         private string _name;
+        private RobotSoftwareSuite _robotSoftwareSuite;
         private string _version;
 
         /// <summary>
@@ -91,6 +92,24 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RobotSoftwareSuite. 
+        /// <para>
+        /// Information about a robot software suite.
+        /// </para>
+        /// </summary>
+        public RobotSoftwareSuite RobotSoftwareSuite
+        {
+            get { return this._robotSoftwareSuite; }
+            set { this._robotSoftwareSuite = value; }
+        }
+
+        // Check to see if RobotSoftwareSuite property is set
+        internal bool IsSetRobotSoftwareSuite()
+        {
+            return this._robotSoftwareSuite != null;
         }
 
         /// <summary>

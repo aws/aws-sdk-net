@@ -87,6 +87,12 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                     response.IamRole = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("lastStartedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.LastStartedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastUpdatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

@@ -82,6 +82,18 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("robotSoftwareSuite", targetDepth))
+                {
+                    var unmarshaller = RobotSoftwareSuiteUnmarshaller.Instance;
+                    unmarshalledObject.RobotSoftwareSuite = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("simulationSoftwareSuite", targetDepth))
+                {
+                    var unmarshaller = SimulationSoftwareSuiteUnmarshaller.Instance;
+                    unmarshalledObject.SimulationSoftwareSuite = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("version", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

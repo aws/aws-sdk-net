@@ -53,6 +53,23 @@ namespace Amazon.RoboMaker
 
         #endregion
                 
+        #region  CancelDeploymentJob
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelDeploymentJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelDeploymentJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelDeploymentJob">REST API Reference for CancelDeploymentJob Operation</seealso>
+        Task<CancelDeploymentJobResponse> CancelDeploymentJobAsync(CancelDeploymentJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CancelSimulationJob
 
 

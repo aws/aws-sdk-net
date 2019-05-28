@@ -191,6 +191,10 @@ namespace Amazon.RoboMaker
     {
 
         /// <summary>
+        /// Constant Canceled for DeploymentStatus
+        /// </summary>
+        public static readonly DeploymentStatus Canceled = new DeploymentStatus("Canceled");
+        /// <summary>
         /// Constant Failed for DeploymentStatus
         /// </summary>
         public static readonly DeploymentStatus Failed = new DeploymentStatus("Failed");

@@ -38,6 +38,7 @@ namespace Amazon.RoboMaker.Model
         private SimulationJobErrorCode _failureCode;
         private string _failureReason;
         private string _iamRole;
+        private DateTime? _lastStartedAt;
         private DateTime? _lastUpdatedAt;
         private long? _maxJobDurationInSeconds;
         private string _name;
@@ -218,6 +219,24 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetIamRole()
         {
             return this._iamRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastStartedAt. 
+        /// <para>
+        /// The time, in milliseconds since the epoch, when the simulation job was last started.
+        /// </para>
+        /// </summary>
+        public DateTime LastStartedAt
+        {
+            get { return this._lastStartedAt.GetValueOrDefault(); }
+            set { this._lastStartedAt = value; }
+        }
+
+        // Check to see if LastStartedAt property is set
+        internal bool IsSetLastStartedAt()
+        {
+            return this._lastStartedAt.HasValue; 
         }
 
         /// <summary>
