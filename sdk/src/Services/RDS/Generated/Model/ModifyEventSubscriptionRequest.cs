@@ -52,7 +52,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        ///  A Boolean value; set to <b>true</b> to activate the subscription. 
+        ///  A value that indicates whether to activate the subscription. 
         /// </para>
         /// </summary>
         public bool Enabled

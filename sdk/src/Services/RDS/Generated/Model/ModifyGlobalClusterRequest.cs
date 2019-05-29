@@ -50,7 +50,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DeletionProtection. 
         /// <para>
         ///  Indicates if the global database cluster has deletion protection enabled. The global
-        /// database cluster can't be deleted when this value is set to true. 
+        /// database cluster can't be deleted when deletion protection is enabled. 
         /// </para>
         /// </summary>
         public bool DeletionProtection

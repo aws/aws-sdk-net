@@ -79,8 +79,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DefaultOnly. 
         /// <para>
-        /// Indicates that only the default version of the specified engine or engine and major
-        /// version combination is returned.
+        /// A value that indicates whether only the default version of the specified engine or
+        /// engine and major version combination is returned.
         /// </para>
         /// </summary>
         public bool DefaultOnly
@@ -156,8 +156,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IncludeAll. 
         /// <para>
-        /// Whether to include non-available engine versions in the list. The default is to list
-        /// only available engine versions.
+        /// A value that indicates whether to include engine versions that aren't available in
+        /// the list. The default is to list only available engine versions.
         /// </para>
         /// </summary>
         public bool IncludeAll
@@ -175,7 +175,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ListSupportedCharacterSets. 
         /// <para>
-        /// If this parameter is specified and the requested engine supports the <code>CharacterSetName</code>
+        /// A value that indicates whether to list the supported character sets for each engine
+        /// version.
+        /// </para>
+        ///  
+        /// <para>
+        /// If this parameter is enabled and the requested engine supports the <code>CharacterSetName</code>
         /// parameter for <code>CreateDBInstance</code>, the response includes a list of supported
         /// character sets for each engine version. 
         /// </para>
@@ -195,7 +200,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ListSupportedTimezones. 
         /// <para>
-        /// If this parameter is specified and the requested engine supports the <code>TimeZone</code>
+        /// A value that indicates whether to list the supported time zones for each engine version.
+        /// </para>
+        ///  
+        /// <para>
+        /// If this parameter is enabled and the requested engine supports the <code>TimeZone</code>
         /// parameter for <code>CreateDBInstance</code>, the response includes a list of supported
         /// time zones for each engine version. 
         /// </para>
