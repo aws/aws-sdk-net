@@ -28,34 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteFlowLogs operation.
-    /// Deletes one or more flow logs.
+    /// This is the response object from the CreateSnapshots operation.
     /// </summary>
-    public partial class DeleteFlowLogsRequest : AmazonEC2Request
+    public partial class CreateSnapshotsResponse : AmazonWebServiceResponse
     {
-        private List<string> _flowLogIds = new List<string>();
+        private List<SnapshotInfo> _snapshots = new List<SnapshotInfo>();
 
         /// <summary>
-        /// Gets and sets the property FlowLogIds. 
+        /// Gets and sets the property Snapshots. 
         /// <para>
-        /// One or more flow log IDs.
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraint: Maximum of 1000 flow log IDs.
+        /// List of snapshots.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public List<string> FlowLogIds
+        public List<SnapshotInfo> Snapshots
         {
-            get { return this._flowLogIds; }
-            set { this._flowLogIds = value; }
+            get { return this._snapshots; }
+            set { this._snapshots = value; }
         }
 
-        // Check to see if FlowLogIds property is set
-        internal bool IsSetFlowLogIds()
+        // Check to see if Snapshots property is set
+        internal bool IsSetSnapshots()
         {
-            return this._flowLogIds != null && this._flowLogIds.Count > 0; 
+            return this._snapshots != null && this._snapshots.Count > 0; 
         }
 
     }

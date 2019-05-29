@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// Once EBS encryption by default is enabled, you can no longer launch older-generation
+    /// After EBS encryption by default is enabled, you can no longer launch older-generation
     /// instance types that do not support encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
     /// Instance Types</a>.
     /// </para>

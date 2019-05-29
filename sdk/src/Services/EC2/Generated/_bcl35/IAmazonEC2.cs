@@ -1314,9 +1314,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// An outbound rule permits instances to send traffic to the specified destination IPv4
-        /// or IPv6 CIDR address ranges, or to the specified destination security groups for the
-        /// same VPC.
+        /// An outbound rule permits instances to send traffic to the specified IPv4 or IPv6 CIDR
+        /// address ranges, or to the instances associated with the specified destination security
+        /// groups.
         /// </para>
         ///  
         /// <para>
@@ -1378,8 +1378,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// An inbound rule permits instances to receive traffic from the specified destination
-        /// IPv4 or IPv6 CIDR address ranges, or from the specified destination security groups.
+        /// An inbound rule permits instances to receive traffic from the specified IPv4 or IPv6
+        /// CIDR address ranges, or from the instances associated with the specified destination
+        /// security groups.
         /// </para>
         ///  
         /// <para>
@@ -3630,6 +3631,49 @@ namespace Amazon.EC2
         /// <returns>Returns a  CreateSnapshotResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         CreateSnapshotResponse EndCreateSnapshot(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateSnapshots
+
+
+        /// <summary>
+        /// Creates crash-consistent snapshots of multiple EBS volumes and stores the data in
+        /// S3. Volumes are chosen by specifying an instance. Any attached volumes will produce
+        /// one snapshot each that is crash-consistent across the instance. Boot volumes can be
+        /// excluded by changing the paramaters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSnapshots service method.</param>
+        /// 
+        /// <returns>The response from the CreateSnapshots service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshots">REST API Reference for CreateSnapshots Operation</seealso>
+        CreateSnapshotsResponse CreateSnapshots(CreateSnapshotsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSnapshots operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSnapshots operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSnapshots
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshots">REST API Reference for CreateSnapshots Operation</seealso>
+        IAsyncResult BeginCreateSnapshots(CreateSnapshotsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateSnapshots operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSnapshots.</param>
+        /// 
+        /// <returns>Returns a  CreateSnapshotsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshots">REST API Reference for CreateSnapshots Operation</seealso>
+        CreateSnapshotsResponse EndCreateSnapshots(IAsyncResult asyncResult);
 
         #endregion
         
@@ -12254,7 +12298,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// Once EBS encryption by default is enabled, you can no longer launch older-generation
+        /// After EBS encryption by default is enabled, you can no longer launch older-generation
         /// instance types that do not support encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
         /// Instance Types</a>.
         /// </para>
@@ -13507,7 +13551,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Changes the default customer master key (CMK) that your account uses to encrypt EBS
-        /// volumes if you don’t specify a CMK in the API call.
+        /// volumes if you don't specify a CMK in the API call.
         /// 
         ///  
         /// <para>

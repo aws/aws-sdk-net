@@ -96,7 +96,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates RegisterImageRequest with the parameterized properties
         /// </summary>
-        /// <param name="imageLocation">The full path to your AMI manifest in Amazon S3 storage.</param>
+        /// <param name="imageLocation">The full path to your AMI manifest in Amazon S3 storage. The specified bucket must have the <code>aws-exec-read</code> canned access control list (ACL) to ensure that it can be accessed by Amazon EC2. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned ACLs</a> in the <i>Amazon S3 Service Developer Guide</i>.</param>
         public RegisterImageRequest(string imageLocation)
         {
             _imageLocation = imageLocation;
@@ -207,7 +207,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImageLocation. 
         /// <para>
-        /// The full path to your AMI manifest in Amazon S3 storage.
+        /// The full path to your AMI manifest in Amazon S3 storage. The specified bucket must
+        /// have the <code>aws-exec-read</code> canned access control list (ACL) to ensure that
+        /// it can be accessed by Amazon EC2. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
+        /// ACLs</a> in the <i>Amazon S3 Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public string ImageLocation

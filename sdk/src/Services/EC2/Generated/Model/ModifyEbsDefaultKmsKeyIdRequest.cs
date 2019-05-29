@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the ModifyEbsDefaultKmsKeyId operation.
     /// Changes the default customer master key (CMK) that your account uses to encrypt EBS
-    /// volumes if you don’t specify a CMK in the API call.
+    /// volumes if you don't specify a CMK in the API call.
     /// 
     ///  
     /// <para>

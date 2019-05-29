@@ -92,6 +92,10 @@ namespace Amazon.EC2.Model
         /// <para>
         /// One or more flow log IDs.
         /// </para>
+        ///  
+        /// <para>
+        /// Constraint: Maximum of 1000 flow log IDs.
+        /// </para>
         /// </summary>
         public List<string> FlowLogIds
         {

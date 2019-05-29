@@ -163,7 +163,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valide values: <code>interface</code> | <code>efa</code> 
+        /// Valid values: <code>interface</code> | <code>efa</code> 
         /// </para>
         /// </summary>
         public string InterfaceType

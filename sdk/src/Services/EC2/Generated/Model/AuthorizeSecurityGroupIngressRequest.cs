@@ -33,8 +33,9 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// An inbound rule permits instances to receive traffic from the specified destination
-    /// IPv4 or IPv6 CIDR address ranges, or from the specified destination security groups.
+    /// An inbound rule permits instances to receive traffic from the specified IPv4 or IPv6
+    /// CIDR address ranges, or from the instances associated with the specified destination
+    /// security groups.
     /// </para>
     ///  
     /// <para>

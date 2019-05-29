@@ -2569,6 +2569,39 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateSnapshots
+
+        internal virtual CreateSnapshotsResponse CreateSnapshots(CreateSnapshotsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSnapshotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSnapshotsResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSnapshotsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSnapshots operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSnapshots operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshots">REST API Reference for CreateSnapshots Operation</seealso>
+        public virtual Task<CreateSnapshotsResponse> CreateSnapshotsAsync(CreateSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSnapshotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSnapshotsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateSnapshotsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateSpotDatafeedSubscription
 
         internal virtual CreateSpotDatafeedSubscriptionResponse CreateSpotDatafeedSubscription(CreateSpotDatafeedSubscriptionRequest request)
