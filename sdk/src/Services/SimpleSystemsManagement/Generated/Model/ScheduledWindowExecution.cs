@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Information about a scheduled execution for a Maintenance Window.
+    /// Information about a scheduled execution for a maintenance window.
     /// </summary>
     public partial class ScheduledWindowExecution
     {
@@ -39,7 +39,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ExecutionTime. 
         /// <para>
-        /// The time, in ISO-8601 Extended format, that the Maintenance Window is scheduled to
+        /// The time, in ISO-8601 Extended format, that the maintenance window is scheduled to
         /// be run.
         /// </para>
         /// </summary>
@@ -58,7 +58,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Maintenance Window to be run.
+        /// The name of the maintenance window to be run.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=128)]
@@ -77,7 +77,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowId. 
         /// <para>
-        /// The ID of the Maintenance Window to be run.
+        /// The ID of the maintenance window to be run.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=20)]

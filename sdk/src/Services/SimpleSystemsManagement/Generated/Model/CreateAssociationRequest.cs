@@ -299,7 +299,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// The parameters for the runtime configuration of the document. 
+        /// The parameters for the runtime configuration of the document.
         /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Parameters

@@ -29,7 +29,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeMaintenanceWindowsForTarget operation.
-    /// Retrieves information about the Maintenance Windows targets or tasks that an instance
+    /// Retrieves information about the maintenance window targets or tasks that an instance
     /// is associated with.
     /// </summary>
     public partial class DescribeMaintenanceWindowsForTargetRequest : AmazonSimpleSystemsManagementRequest

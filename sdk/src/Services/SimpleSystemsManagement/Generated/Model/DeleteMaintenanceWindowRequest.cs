@@ -29,7 +29,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteMaintenanceWindow operation.
-    /// Deletes a Maintenance Window.
+    /// Deletes a maintenance window.
     /// </summary>
     public partial class DeleteMaintenanceWindowRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowId. 
         /// <para>
-        /// The ID of the Maintenance Window to delete.
+        /// The ID of the maintenance window to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=20)]

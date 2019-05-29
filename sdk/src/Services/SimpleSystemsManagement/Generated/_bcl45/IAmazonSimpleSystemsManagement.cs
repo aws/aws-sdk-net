@@ -49,8 +49,8 @@ namespace Amazon.SimpleSystemsManagement
     ///  
     /// <para>
     /// To get started, verify prerequisites and configure managed instances. For more information,
-    /// see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Systems
-    /// Manager Prerequisites</a> in the <i>AWS Systems Manager User Guide</i>.
+    /// see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting
+    /// Up AWS Systems Manager</a> in the <i>AWS Systems Manager User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -69,7 +69,7 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Adds or overwrites one or more tags for the specified resource. Tags are metadata
-        /// that you can assign to your documents, managed instances, Maintenance Windows, Parameter
+        /// that you can assign to your documents, managed instances, maintenance windows, Parameter
         /// Store parameters, and patch baselines. Tags enable you to categorize your resources
         /// in different ways, for example, by purpose, owner, or environment. Each tag consists
         /// of a key and an optional value, both of which you define. For example, you could define
@@ -378,7 +378,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Stops a Maintenance Window execution that is already in progress and cancels any tasks
+        /// Stops a maintenance window execution that is already in progress and cancels any tasks
         /// in the window that have not already starting running. (Tasks already in progress will
         /// continue to completion.)
         /// </summary>
@@ -386,7 +386,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the CancelMaintenanceWindowExecution service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource, such as a Maintenance Window
+        /// Error returned when the ID specified for a resource, such as a maintenance window
         /// or Patch baseline, doesn't exist.
         /// 
         ///  
@@ -424,7 +424,7 @@ namespace Amazon.SimpleSystemsManagement
         /// manage these resources using Run Command. An on-premises server or virtual machine
         /// that has been registered with EC2 is called a managed instance. For more information
         /// about activations, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
-        /// Up Systems Manager in Hybrid Environments</a>.
+        /// Up AWS Systems Manager for Hybrid Environments</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateActivation service method.</param>
         /// 
@@ -933,7 +933,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Creates a new Maintenance Window.
+        /// Creates a new maintenance window.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMaintenanceWindow service method.</param>
         /// 
@@ -947,7 +947,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceLimitExceededException">
         /// Error returned when the caller has exceeded the default resource limits. For example,
-        /// too many Maintenance Windows or Patch baselines have been created.
+        /// too many maintenance windows or patch baselines have been created.
         /// 
         ///  
         /// <para>
@@ -998,7 +998,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceLimitExceededException">
         /// Error returned when the caller has exceeded the default resource limits. For example,
-        /// too many Maintenance Windows or Patch baselines have been created.
+        /// too many maintenance windows or patch baselines have been created.
         /// 
         ///  
         /// <para>
@@ -1455,7 +1455,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Deletes a Maintenance Window.
+        /// Deletes a maintenance window.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMaintenanceWindow service method.</param>
         /// 
@@ -1708,13 +1708,13 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Removes a target from a Maintenance Window.
+        /// Removes a target from a maintenance window.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterTargetFromMaintenanceWindow service method.</param>
         /// 
         /// <returns>The response from the DeregisterTargetFromMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource, such as a Maintenance Window
+        /// Error returned when the ID specified for a resource, such as a maintenance window
         /// or Patch baseline, doesn't exist.
         /// 
         ///  
@@ -1752,13 +1752,13 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Removes a task from a Maintenance Window.
+        /// Removes a task from a maintenance window.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterTaskFromMaintenanceWindow service method.</param>
         /// 
         /// <returns>The response from the DeregisterTaskFromMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource, such as a Maintenance Window
+        /// Error returned when the ID specified for a resource, such as a maintenance window
         /// or Patch baseline, doesn't exist.
         /// 
         ///  
@@ -2371,7 +2371,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the DescribeEffectivePatchesForPatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource, such as a Maintenance Window
+        /// Error returned when the ID specified for a resource, such as a maintenance window
         /// or Patch baseline, doesn't exist.
         /// 
         ///  
@@ -2804,8 +2804,8 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDeletionIdException">
-        /// The ID specified for the delete operation does not exist or is not valide. Verify
-        /// the ID and try again.
+        /// The ID specified for the delete operation does not exist or is not valid. Verify the
+        /// ID and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
@@ -2832,9 +2832,9 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Lists the executions of a Maintenance Window. This includes information about when
-        /// the Maintenance Window was scheduled to be active, and information about tasks registered
-        /// and run with the Maintenance Window.
+        /// Lists the executions of a maintenance window. This includes information about when
+        /// the maintenance window was scheduled to be active, and information about tasks registered
+        /// and run with the maintenance window.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindowExecutions service method.</param>
         /// 
@@ -2865,13 +2865,13 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Retrieves the individual task executions (one per target) for a particular task run
-        /// as part of a Maintenance Window execution.
+        /// as part of a maintenance window execution.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindowExecutionTaskInvocations service method.</param>
         /// 
         /// <returns>The response from the DescribeMaintenanceWindowExecutionTaskInvocations service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource, such as a Maintenance Window
+        /// Error returned when the ID specified for a resource, such as a maintenance window
         /// or Patch baseline, doesn't exist.
         /// 
         ///  
@@ -2905,13 +2905,13 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// For a given Maintenance Window execution, lists the tasks that were run.
+        /// For a given maintenance window execution, lists the tasks that were run.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindowExecutionTasks service method.</param>
         /// 
         /// <returns>The response from the DescribeMaintenanceWindowExecutionTasks service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource, such as a Maintenance Window
+        /// Error returned when the ID specified for a resource, such as a maintenance window
         /// or Patch baseline, doesn't exist.
         /// 
         ///  
@@ -2945,7 +2945,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Retrieves the Maintenance Windows in an AWS account.
+        /// Retrieves the maintenance windows in an AWS account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindows service method.</param>
         /// 
@@ -2975,13 +2975,13 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Retrieves information about upcoming executions of a Maintenance Window.
+        /// Retrieves information about upcoming executions of a maintenance window.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindowSchedule service method.</param>
         /// 
         /// <returns>The response from the DescribeMaintenanceWindowSchedule service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource, such as a Maintenance Window
+        /// Error returned when the ID specified for a resource, such as a maintenance window
         /// or Patch baseline, doesn't exist.
         /// 
         ///  
@@ -3015,7 +3015,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Retrieves information about the Maintenance Windows targets or tasks that an instance
+        /// Retrieves information about the maintenance window targets or tasks that an instance
         /// is associated with.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindowsForTarget service method.</param>
@@ -3046,13 +3046,13 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Lists the targets registered with the Maintenance Window.
+        /// Lists the targets registered with the maintenance window.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindowTargets service method.</param>
         /// 
         /// <returns>The response from the DescribeMaintenanceWindowTargets service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource, such as a Maintenance Window
+        /// Error returned when the ID specified for a resource, such as a maintenance window
         /// or Patch baseline, doesn't exist.
         /// 
         ///  
@@ -3086,13 +3086,13 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Lists the tasks in a Maintenance Window.
+        /// Lists the tasks in a maintenance window.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindowTasks service method.</param>
         /// 
         /// <returns>The response from the DescribeMaintenanceWindowTasks service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource, such as a Maintenance Window
+        /// Error returned when the ID specified for a resource, such as a maintenance window
         /// or Patch baseline, doesn't exist.
         /// 
         ///  
@@ -3452,7 +3452,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvocationDoesNotExistException">
         /// The command ID and instance ID you specified did not match any invocations. Verify
-        /// the command ID adn the instance ID and try again.
+        /// the command ID and the instance ID and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation">REST API Reference for GetCommandInvocation Operation</seealso>
         GetCommandInvocationResponse GetCommandInvocation(GetCommandInvocationRequest request);
@@ -3555,7 +3555,10 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedFeatureRequiredException">
-        /// 
+        /// Microsoft application patching is only available on EC2 instances and Advanced Instances.
+        /// To patch Microsoft applications on on-premises servers and VMs, you must enable Advanced
+        /// Instances. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances-advanced.html">Using
+        /// the Advanced-Instances Tier</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedOperatingSystemException">
         /// The operating systems you specified is not supported, or the operation is not supported
@@ -3745,13 +3748,13 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Retrieves a Maintenance Window.
+        /// Retrieves a maintenance window.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMaintenanceWindow service method.</param>
         /// 
         /// <returns>The response from the GetMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource, such as a Maintenance Window
+        /// Error returned when the ID specified for a resource, such as a maintenance window
         /// or Patch baseline, doesn't exist.
         /// 
         ///  
@@ -3785,13 +3788,13 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Retrieves details about a specific task run as part of a Maintenance Window execution.
+        /// Retrieves details about a specific task run as part of a maintenance window execution.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMaintenanceWindowExecution service method.</param>
         /// 
         /// <returns>The response from the GetMaintenanceWindowExecution service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource, such as a Maintenance Window
+        /// Error returned when the ID specified for a resource, such as a maintenance window
         /// or Patch baseline, doesn't exist.
         /// 
         ///  
@@ -3825,13 +3828,13 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Retrieves the details about a specific task run as part of a Maintenance Window execution.
+        /// Retrieves the details about a specific task run as part of a maintenance window execution.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMaintenanceWindowExecutionTask service method.</param>
         /// 
         /// <returns>The response from the GetMaintenanceWindowExecutionTask service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource, such as a Maintenance Window
+        /// Error returned when the ID specified for a resource, such as a maintenance window
         /// or Patch baseline, doesn't exist.
         /// 
         ///  
@@ -3866,13 +3869,13 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Retrieves a task invocation. A task invocation is a specific task running on a specific
-        /// target. Maintenance Windows report status for all invocations.
+        /// target. maintenance windows report status for all invocations.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMaintenanceWindowExecutionTaskInvocation service method.</param>
         /// 
         /// <returns>The response from the GetMaintenanceWindowExecutionTaskInvocation service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource, such as a Maintenance Window
+        /// Error returned when the ID specified for a resource, such as a maintenance window
         /// or Patch baseline, doesn't exist.
         /// 
         ///  
@@ -3906,13 +3909,13 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Lists the tasks in a Maintenance Window.
+        /// Lists the tasks in a maintenance window.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMaintenanceWindowTask service method.</param>
         /// 
         /// <returns>The response from the GetMaintenanceWindowTask service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource, such as a Maintenance Window
+        /// Error returned when the ID specified for a resource, such as a maintenance window
         /// or Patch baseline, doesn't exist.
         /// 
         ///  
@@ -4130,7 +4133,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the GetPatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource, such as a Maintenance Window
+        /// Error returned when the ID specified for a resource, such as a maintenance window
         /// or Patch baseline, doesn't exist.
         /// 
         ///  
@@ -5651,7 +5654,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the RegisterDefaultPatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource, such as a Maintenance Window
+        /// Error returned when the ID specified for a resource, such as a maintenance window
         /// or Patch baseline, doesn't exist.
         /// 
         ///  
@@ -5698,7 +5701,7 @@ namespace Amazon.SimpleSystemsManagement
         /// that is already registered with a different patch baseline.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource, such as a Maintenance Window
+        /// Error returned when the ID specified for a resource, such as a maintenance window
         /// or Patch baseline, doesn't exist.
         /// 
         ///  
@@ -5715,7 +5718,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceLimitExceededException">
         /// Error returned when the caller has exceeded the default resource limits. For example,
-        /// too many Maintenance Windows or Patch baselines have been created.
+        /// too many maintenance windows or patch baselines have been created.
         /// 
         ///  
         /// <para>
@@ -5745,13 +5748,13 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Registers a target with a Maintenance Window.
+        /// Registers a target with a maintenance window.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterTargetWithMaintenanceWindow service method.</param>
         /// 
         /// <returns>The response from the RegisterTargetWithMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource, such as a Maintenance Window
+        /// Error returned when the ID specified for a resource, such as a maintenance window
         /// or Patch baseline, doesn't exist.
         /// 
         ///  
@@ -5769,7 +5772,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceLimitExceededException">
         /// Error returned when the caller has exceeded the default resource limits. For example,
-        /// too many Maintenance Windows or Patch baselines have been created.
+        /// too many maintenance windows or patch baselines have been created.
         /// 
         ///  
         /// <para>
@@ -5799,13 +5802,13 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Adds a new task to a Maintenance Window.
+        /// Adds a new task to a maintenance window.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterTaskWithMaintenanceWindow service method.</param>
         /// 
         /// <returns>The response from the RegisterTaskWithMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource, such as a Maintenance Window
+        /// Error returned when the ID specified for a resource, such as a maintenance window
         /// or Patch baseline, doesn't exist.
         /// 
         ///  
@@ -5827,7 +5830,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceLimitExceededException">
         /// Error returned when the caller has exceeded the default resource limits. For example,
-        /// too many Maintenance Windows or Patch baselines have been created.
+        /// too many maintenance windows or patch baselines have been created.
         /// 
         ///  
         /// <para>
@@ -5968,7 +5971,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the ResumeSession service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource, such as a Maintenance Window
+        /// Error returned when the ID specified for a resource, such as a maintenance window
         /// or Patch baseline, doesn't exist.
         /// 
         ///  
@@ -6455,7 +6458,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the TerminateSession service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource, such as a Maintenance Window
+        /// Error returned when the ID specified for a resource, such as a maintenance window
         /// or Patch baseline, doesn't exist.
         /// 
         ///  
@@ -6730,13 +6733,13 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Updates an existing Maintenance Window. Only specified parameters are modified.
+        /// Updates an existing maintenance window. Only specified parameters are modified.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMaintenanceWindow service method.</param>
         /// 
         /// <returns>The response from the UpdateMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource, such as a Maintenance Window
+        /// Error returned when the ID specified for a resource, such as a maintenance window
         /// or Patch baseline, doesn't exist.
         /// 
         ///  
@@ -6770,7 +6773,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Modifies the target of an existing Maintenance Window. You can't change the target
+        /// Modifies the target of an existing maintenance window. You can't change the target
         /// type, but you can change the following:
         /// 
         ///  
@@ -6806,7 +6809,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the UpdateMaintenanceWindowTarget service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource, such as a Maintenance Window
+        /// Error returned when the ID specified for a resource, such as a maintenance window
         /// or Patch baseline, doesn't exist.
         /// 
         ///  
@@ -6840,7 +6843,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Modifies a task assigned to a Maintenance Window. You can't change the task type,
+        /// Modifies a task assigned to a maintenance window. You can't change the task type,
         /// but you can change the following values:
         /// 
         ///  <ul> <li> 
@@ -6880,7 +6883,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the UpdateMaintenanceWindowTask service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource, such as a Maintenance Window
+        /// Error returned when the ID specified for a resource, such as a maintenance window
         /// or Patch baseline, doesn't exist.
         /// 
         ///  
@@ -6983,7 +6986,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the UpdatePatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource, such as a Maintenance Window
+        /// Error returned when the ID specified for a resource, such as a maintenance window
         /// or Patch baseline, doesn't exist.
         /// 
         ///  

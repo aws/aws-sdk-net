@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Metada includes information like the ARN of the last user and the date/time the parameter
-    /// was last used.
+    /// Metadata includes information like the ARN of the last user and the date/time the
+    /// parameter was last used.
     /// </summary>
     public partial class ParameterMetadata
     {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Information about a task execution performed as part of a Maintenance Window execution.
+    /// Information about a task execution performed as part of a maintenance window execution.
     /// </summary>
     public partial class MaintenanceWindowExecutionTaskIdentity
     {
@@ -137,7 +137,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TaskExecutionId. 
         /// <para>
-        /// The ID of the specific task execution in the Maintenance Window execution.
+        /// The ID of the specific task execution in the maintenance window execution.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -174,7 +174,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowExecutionId. 
         /// <para>
-        /// The ID of the Maintenance Window execution that ran the task.
+        /// The ID of the maintenance window execution that ran the task.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]

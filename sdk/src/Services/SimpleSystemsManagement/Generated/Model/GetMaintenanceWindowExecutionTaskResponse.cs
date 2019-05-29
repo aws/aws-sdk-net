@@ -217,7 +217,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TaskExecutionId. 
         /// <para>
-        /// The ID of the specific task execution in the Maintenance Window task that was retrieved.
+        /// The ID of the specific task execution in the maintenance window task that was retrieved.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -243,7 +243,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to
         /// a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
         /// structure. For information about how Systems Manager handles these options for the
-        /// supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+        /// supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -291,7 +291,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowExecutionId. 
         /// <para>
-        /// The ID of the Maintenance Window execution that includes the task.
+        /// The ID of the maintenance window execution that includes the task.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]

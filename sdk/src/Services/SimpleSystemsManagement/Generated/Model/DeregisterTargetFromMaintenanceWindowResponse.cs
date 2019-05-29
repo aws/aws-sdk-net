@@ -38,7 +38,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowId. 
         /// <para>
-        /// The ID of the Maintenance Window the target was removed from.
+        /// The ID of the maintenance window the target was removed from.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=20)]

@@ -29,7 +29,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateMaintenanceWindowTask operation.
-    /// Modifies a task assigned to a Maintenance Window. You can't change the task type,
+    /// Modifies a task assigned to a maintenance window. You can't change the task type,
     /// but you can change the following values:
     /// 
     ///  <ul> <li> 
@@ -111,7 +111,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
         /// logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code>
         /// options in the <code>TaskInvocationParameters</code> structure. For information about
-        /// how Systems Manager handles these options for the supported Maintenance Window task
+        /// how Systems Manager handles these options for the supported maintenance window task
         /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
         /// </para>
         ///  </note>
@@ -230,22 +230,28 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ServiceRoleArn. 
         /// <para>
-        /// The IAM service role ARN to modify. The system assumes this role during task execution.
+        /// The ARN of the IAM service role for Systems Manager to assume when running a maintenance
+        /// window task. If you do not specify a service role ARN, Systems Manager uses your account's
+        /// service-linked role. If no service-linked role for Systems Manager exists in your
+        /// account, it is created when you run <code>RegisterTaskWithMaintenanceWindow</code>.
         /// </para>
         ///  
         /// <para>
-        /// If you do not specify a service role ARN, Systems Manager will use your account's
-        /// service-linked role for Systems Manager by default. If no service-linked role for
-        /// Systems Manager exists in your account, it will be created when you run <code>RegisterTaskWithMaintenanceWindow</code>
-        /// without specifying a service role ARN.
+        /// For more information, see the following topics in the in the <i>AWS Systems Manager
+        /// User Guide</i>:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
-        /// Role Permissions for Systems Manager</a> and <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
+        ///  <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
+        /// Role Permissions for Systems Manager</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
         /// I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window Tasks?
-        /// </a> in the <i>AWS Systems Manager User Guide</i>.
+        /// </a> 
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ServiceRoleArn
         {
@@ -327,7 +333,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to
         /// a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
         /// structure. For information about how Systems Manager handles these options for the
-        /// supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+        /// supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -357,7 +363,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowId. 
         /// <para>
-        /// The Maintenance Window ID that contains the task to modify.
+        /// The maintenance window ID that contains the task to modify.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=20)]

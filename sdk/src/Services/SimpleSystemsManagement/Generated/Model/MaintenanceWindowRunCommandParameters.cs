@@ -40,7 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///  <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
     /// logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code>
     /// options in the <code>TaskInvocationParameters</code> structure. For information about
-    /// how Systems Manager handles these options for the supported Maintenance Window task
+    /// how Systems Manager handles these options for the supported maintenance window task
     /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
     /// </para>
     ///  
@@ -48,7 +48,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to
     /// a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
     /// structure. For information about how Systems Manager handles these options for the
-    /// supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+    /// supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
     /// </para>
     ///  
     /// <para>
@@ -73,7 +73,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Comment. 
         /// <para>
-        /// Information about the command(s) to run.
+        /// Information about the commands to run.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -205,7 +205,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ServiceRoleArn. 
         /// <para>
-        /// The IAM service role to assume during task execution.
+        /// The ARN of the IAM service role to use to publish Amazon Simple Notification Service
+        /// (Amazon SNS) notifications for maintenance window Run Command tasks.
         /// </para>
         /// </summary>
         public string ServiceRoleArn

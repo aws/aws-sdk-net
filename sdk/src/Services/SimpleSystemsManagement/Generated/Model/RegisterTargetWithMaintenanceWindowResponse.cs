@@ -37,7 +37,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowTargetId. 
         /// <para>
-        /// The ID of the target definition in this Maintenance Window.
+        /// The ID of the target definition in this maintenance window.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]

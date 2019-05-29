@@ -29,7 +29,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMaintenanceWindow operation.
-    /// Retrieves a Maintenance Window.
+    /// Retrieves a maintenance window.
     /// </summary>
     public partial class GetMaintenanceWindowRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowId. 
         /// <para>
-        /// The ID of the desired Maintenance Window.
+        /// The ID of the maintenance window for which you want to retrieve information.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=20)]

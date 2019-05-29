@@ -29,7 +29,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateMaintenanceWindowTarget operation.
-    /// Modifies the target of an existing Maintenance Window. You can't change the target
+    /// Modifies the target of an existing maintenance window. You can't change the target
     /// type, but you can change the following:
     /// 
     ///  
@@ -113,7 +113,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property OwnerInformation. 
         /// <para>
         /// User-provided value that will be included in any CloudWatch events raised while running
-        /// tasks for these targets in this Maintenance Window.
+        /// tasks for these targets in this maintenance window.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -171,7 +171,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowId. 
         /// <para>
-        /// The Maintenance Window ID with which to modify the target.
+        /// The maintenance window ID with which to modify the target.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=20)]

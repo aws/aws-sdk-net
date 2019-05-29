@@ -47,7 +47,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property AllowUnassociatedTargets. 
         /// <para>
-        /// Whether targets must be registered with the Maintenance Window before tasks can be
+        /// Whether targets must be registered with the maintenance window before tasks can be
         /// defined for those targets.
         /// </para>
         /// </summary>
@@ -66,7 +66,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Cutoff. 
         /// <para>
-        /// The number of hours before the end of the Maintenance Window that Systems Manager
+        /// The number of hours before the end of the maintenance window that Systems Manager
         /// stops scheduling new tasks for execution.
         /// </para>
         /// </summary>
@@ -105,7 +105,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Duration. 
         /// <para>
-        /// The duration of the Maintenance Window in hours.
+        /// The duration of the maintenance window in hours.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=24)]
@@ -124,7 +124,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Whether the Maintenance Window is enabled.
+        /// Whether the maintenance window is enabled.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -142,8 +142,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property EndDate. 
         /// <para>
-        /// The date and time, in ISO-8601 Extended format, for when the Maintenance Window is
-        /// scheduled to become inactive. The Maintenance Window will not run after this specified
+        /// The date and time, in ISO-8601 Extended format, for when the maintenance window is
+        /// scheduled to become inactive. The maintenance window will not run after this specified
         /// time.
         /// </para>
         /// </summary>
@@ -162,7 +162,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Maintenance Window.
+        /// The name of the maintenance window.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=128)]
@@ -181,7 +181,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Schedule. 
         /// <para>
-        /// The schedule of the Maintenance Window in the form of a cron or rate expression.
+        /// The schedule of the maintenance window in the form of a cron or rate expression.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -200,7 +200,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ScheduleTimezone. 
         /// <para>
-        /// The time zone that the scheduled Maintenance Window executions are based on, in Internet
+        /// The time zone that the scheduled maintenance window executions are based on, in Internet
         /// Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC",
         /// or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time
         /// Zone Database</a> on the IANA website.
@@ -221,8 +221,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StartDate. 
         /// <para>
-        /// The date and time, in ISO-8601 Extended format, for when the Maintenance Window is
-        /// scheduled to become active. The Maintenance Window will not run before this specified
+        /// The date and time, in ISO-8601 Extended format, for when the maintenance window is
+        /// scheduled to become active. The maintenance window will not run before this specified
         /// time.
         /// </para>
         /// </summary>
@@ -241,7 +241,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowId. 
         /// <para>
-        /// The ID of the created Maintenance Window.
+        /// The ID of the created maintenance window.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=20)]

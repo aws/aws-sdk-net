@@ -56,7 +56,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ScheduledWindowExecutions. 
         /// <para>
-        /// Information about Maintenance Window executions scheduled for the specified time range.
+        /// Information about maintenance window executions scheduled for the specified time range.
         /// </para>
         /// </summary>
         public List<ScheduledWindowExecution> ScheduledWindowExecutions

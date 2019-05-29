@@ -39,8 +39,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property NotificationArn. 
         /// <para>
-        /// An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic. Run Command
-        /// pushes notifications about command status changes to this topic.
+        /// An Amazon Resource Name (ARN) for an Amazon Simple Notification Service (Amazon SNS)
+        /// topic. Run Command pushes notifications about command status changes to this topic.
         /// </para>
         /// </summary>
         public string NotificationArn
@@ -60,8 +60,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The different events for which you can receive notifications. These events include
         /// the following: All (events), InProgress, Success, TimedOut, Cancelled, Failed. To
-        /// learn more about these events, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring
-        /// Amazon SNS Notifications for Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// learn more about these events, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Configuring
+        /// Amazon SNS Notifications for AWS Systems Manager</a> in the <i>AWS Systems Manager
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> NotificationEvents

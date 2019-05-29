@@ -49,8 +49,8 @@ namespace Amazon.SimpleSystemsManagement
     ///  
     /// <para>
     /// To get started, verify prerequisites and configure managed instances. For more information,
-    /// see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Systems
-    /// Manager Prerequisites</a> in the <i>AWS Systems Manager User Guide</i>.
+    /// see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting
+    /// Up AWS Systems Manager</a> in the <i>AWS Systems Manager User Guide</i>.
     /// </para>
     ///  
     /// <para>

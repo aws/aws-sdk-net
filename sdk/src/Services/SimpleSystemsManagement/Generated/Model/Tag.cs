@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Metadata that you assign to your AWS resources. Tags enable you to categorize your
     /// resources in different ways, for example, by purpose, owner, or environment. In Systems
-    /// Manager, you can apply tags to documents, managed instances, Maintenance Windows,
+    /// Manager, you can apply tags to documents, managed instances, maintenance windows,
     /// Parameter Store parameters, and patch baselines.
     /// </summary>
     public partial class Tag

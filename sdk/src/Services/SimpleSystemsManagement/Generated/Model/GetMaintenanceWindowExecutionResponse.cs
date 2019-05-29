@@ -42,7 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The time the Maintenance Window finished running.
+        /// The time the maintenance window finished running.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -60,7 +60,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The time the Maintenance Window started running.
+        /// The time the maintenance window started running.
         /// </para>
         /// </summary>
         public DateTime StartTime
@@ -78,7 +78,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the Maintenance Window execution.
+        /// The status of the maintenance window execution.
         /// </para>
         /// </summary>
         public MaintenanceWindowExecutionStatus Status
@@ -115,7 +115,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TaskIds. 
         /// <para>
-        /// The ID of the task executions from the Maintenance Window execution.
+        /// The ID of the task executions from the maintenance window execution.
         /// </para>
         /// </summary>
         public List<string> TaskIds
@@ -133,7 +133,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowExecutionId. 
         /// <para>
-        /// The ID of the Maintenance Window execution.
+        /// The ID of the maintenance window execution.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]

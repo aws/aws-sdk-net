@@ -29,7 +29,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMaintenanceWindowTask operation.
-    /// Lists the tasks in a Maintenance Window.
+    /// Lists the tasks in a maintenance window.
     /// </summary>
     public partial class GetMaintenanceWindowTaskRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowId. 
         /// <para>
-        /// The Maintenance Window ID that includes the task to retrieve.
+        /// The maintenance window ID that includes the task to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=20)]
@@ -58,7 +58,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowTaskId. 
         /// <para>
-        /// The Maintenance Window task ID to retrieve.
+        /// The maintenance window task ID to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

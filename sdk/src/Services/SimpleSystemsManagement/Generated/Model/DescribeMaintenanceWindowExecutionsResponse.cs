@@ -57,7 +57,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowExecutions. 
         /// <para>
-        /// Information about the Maintenance Windows execution.
+        /// Information about the maintenance window executions.
         /// </para>
         /// </summary>
         public List<MaintenanceWindowExecution> WindowExecutions

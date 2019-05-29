@@ -56,7 +56,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowIdentities. 
         /// <para>
-        /// Information about the Maintenance Window targets and tasks an instance is associated
+        /// Information about the maintenance window targets and tasks an instance is associated
         /// with.
         /// </para>
         /// </summary>

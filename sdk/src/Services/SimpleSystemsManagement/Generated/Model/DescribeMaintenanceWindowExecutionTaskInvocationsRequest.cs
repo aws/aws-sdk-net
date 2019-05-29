@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the DescribeMaintenanceWindowExecutionTaskInvocations operation.
     /// Retrieves the individual task executions (one per target) for a particular task run
-    /// as part of a Maintenance Window execution.
+    /// as part of a maintenance window execution.
     /// </summary>
     public partial class DescribeMaintenanceWindowExecutionTaskInvocationsRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -103,7 +103,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TaskId. 
         /// <para>
-        /// The ID of the specific task in the Maintenance Window task that should be retrieved.
+        /// The ID of the specific task in the maintenance window task that should be retrieved.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -122,7 +122,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowExecutionId. 
         /// <para>
-        /// The ID of the Maintenance Window execution the task is part of.
+        /// The ID of the maintenance window execution the task is part of.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

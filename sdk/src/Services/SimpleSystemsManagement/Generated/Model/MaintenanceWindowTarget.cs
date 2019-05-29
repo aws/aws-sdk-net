@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The target registered with the Maintenance Window.
+    /// The target registered with the maintenance window.
     /// </summary>
     public partial class MaintenanceWindowTarget
     {
@@ -62,7 +62,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The target name.
+        /// The name for the maintenance window target.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=128)]
@@ -82,7 +82,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property OwnerInformation. 
         /// <para>
         /// A user-provided value that will be included in any CloudWatch events that are raised
-        /// while running tasks for these targets in this Maintenance Window.
+        /// while running tasks for these targets in this maintenance window.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -101,7 +101,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of target that is being registered with the Maintenance Window.
+        /// The type of target that is being registered with the maintenance window.
         /// </para>
         /// </summary>
         public MaintenanceWindowResourceType ResourceType
@@ -154,7 +154,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowId. 
         /// <para>
-        /// The ID of the Maintenance Window to register the target with.
+        /// The ID of the maintenance window to register the target with.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=20)]

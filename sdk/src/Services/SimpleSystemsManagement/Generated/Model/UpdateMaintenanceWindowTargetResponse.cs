@@ -118,7 +118,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowId. 
         /// <para>
-        /// The Maintenance Window ID specified in the update request.
+        /// The maintenance window ID specified in the update request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=20)]

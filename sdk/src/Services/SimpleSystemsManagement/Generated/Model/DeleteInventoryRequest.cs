@@ -91,7 +91,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// DisableSchema: If you choose this option, the system ignores all inventory data for
         /// the specified version, and any earlier versions. To enable this schema again, you
-        /// must call the <code>PutInventory</code> action for a version greater than the disbled
+        /// must call the <code>PutInventory</code> action for a version greater than the disabled
         /// version.
         /// </para>
         ///  

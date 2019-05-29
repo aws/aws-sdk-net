@@ -29,7 +29,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelMaintenanceWindowExecution operation.
-    /// Stops a Maintenance Window execution that is already in progress and cancels any tasks
+    /// Stops a maintenance window execution that is already in progress and cancels any tasks
     /// in the window that have not already starting running. (Tasks already in progress will
     /// continue to completion.)
     /// </summary>
@@ -40,7 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowExecutionId. 
         /// <para>
-        /// The ID of the Maintenance Window execution to stop.
+        /// The ID of the maintenance window execution to stop.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

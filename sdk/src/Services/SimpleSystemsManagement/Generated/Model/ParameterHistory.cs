@@ -185,6 +185,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Information about the policies assigned to a parameter.
         /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Working
+        /// with Parameter Policies</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// </para>
         /// </summary>
         public List<ParameterInlinePolicy> Policies
         {

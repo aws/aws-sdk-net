@@ -98,7 +98,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TargetLocationMaxConcurrency. 
         /// <para>
-        /// The maxium number of AWS accounts and AWS regions allowed to run the Automation concurrently
+        /// The maximum number of AWS accounts and AWS regions allowed to run the Automation concurrently
         /// 
         /// </para>
         /// </summary>
@@ -118,7 +118,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TargetLocationMaxErrors. 
         /// <para>
-        /// The maxium number of errors allowed before the system stops queueing additional Automation
+        /// The maximum number of errors allowed before the system stops queueing additional Automation
         /// executions for the currently running Automation. 
         /// </para>
         /// </summary>

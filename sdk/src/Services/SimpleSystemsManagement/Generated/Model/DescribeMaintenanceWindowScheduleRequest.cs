@@ -29,7 +29,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeMaintenanceWindowSchedule operation.
-    /// Retrieves information about upcoming executions of a Maintenance Window.
+    /// Retrieves information about upcoming executions of a maintenance window.
     /// </summary>
     public partial class DescribeMaintenanceWindowScheduleRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -43,8 +43,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Filters used to limit the range of results. For example, you can limit Maintenance
-        /// Window executions to only those scheduled before or after a certain date and time.
+        /// Filters used to limit the range of results. For example, you can limit maintenance
+        /// window executions to only those scheduled before or after a certain date and time.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
@@ -139,7 +139,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowId. 
         /// <para>
-        /// The ID of the Maintenance Window to retrieve information about.
+        /// The ID of the maintenance window to retrieve information about.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=20)]

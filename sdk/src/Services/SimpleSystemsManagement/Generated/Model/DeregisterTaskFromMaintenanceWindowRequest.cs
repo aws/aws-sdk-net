@@ -29,7 +29,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeregisterTaskFromMaintenanceWindow operation.
-    /// Removes a task from a Maintenance Window.
+    /// Removes a task from a maintenance window.
     /// </summary>
     public partial class DeregisterTaskFromMaintenanceWindowRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowId. 
         /// <para>
-        /// The ID of the Maintenance Window the task should be removed from.
+        /// The ID of the maintenance window the task should be removed from.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=20)]
@@ -58,7 +58,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowTaskId. 
         /// <para>
-        /// The ID of the task to remove from the Maintenance Window.
+        /// The ID of the task to remove from the maintenance window.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

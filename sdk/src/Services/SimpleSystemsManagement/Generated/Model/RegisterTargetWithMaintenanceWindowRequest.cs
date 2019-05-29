@@ -29,7 +29,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterTargetWithMaintenanceWindow operation.
-    /// Registers a target with a Maintenance Window.
+    /// Registers a target with a maintenance window.
     /// </summary>
     public partial class RegisterTargetWithMaintenanceWindowRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -102,7 +102,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property OwnerInformation. 
         /// <para>
         /// User-provided value that will be included in any CloudWatch events raised while running
-        /// tasks for these targets in this Maintenance Window.
+        /// tasks for these targets in this maintenance window.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -121,7 +121,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of target being registered with the Maintenance Window.
+        /// The type of target being registered with the maintenance window.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -140,28 +140,46 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The targets (either instances or tags). 
+        /// The targets to register with the maintenance window. In other words, the instances
+        /// to run commands on when the maintenance window runs.
         /// </para>
         ///  
         /// <para>
-        /// Specify instances using the following format:
+        /// You can specify targets using either instance IDs or tags that have been applied to
+        /// instances.
         /// </para>
         ///  
         /// <para>
-        ///  <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code> 
+        ///  <b>Example 1</b>: Specify instance IDs
         /// </para>
         ///  
         /// <para>
-        /// Specify tags using either of the following formats:
+        ///  <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i>
+        /// </code> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>Key=tag:&lt;tag-key&gt;,Values=&lt;tag-value-1&gt;,&lt;tag-value-2&gt;</code>
-        /// 
+        ///  <b>Example 2</b>: Use tag key-pairs applied to instances
         /// </para>
         ///  
         /// <para>
-        ///  <code>Key=tag-key,Values=&lt;tag-key-1&gt;,&lt;tag-key-2&gt;</code> 
+        ///  <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i>
+        /// </code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Example 3</b>: Use tag-keys applied to instances
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about these examples formats, including the best use case for
+        /// each one, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
+        /// Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=5)]
@@ -180,7 +198,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowId. 
         /// <para>
-        /// The ID of the Maintenance Window the target should be registered with.
+        /// The ID of the maintenance window the target should be registered with.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=20)]

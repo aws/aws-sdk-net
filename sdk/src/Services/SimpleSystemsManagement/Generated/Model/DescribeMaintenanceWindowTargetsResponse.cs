@@ -57,7 +57,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// Information about the targets in the Maintenance Window.
+        /// Information about the targets in the maintenance window.
         /// </para>
         /// </summary>
         public List<MaintenanceWindowTarget> Targets

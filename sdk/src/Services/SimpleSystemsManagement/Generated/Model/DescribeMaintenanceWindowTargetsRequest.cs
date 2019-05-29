@@ -29,7 +29,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeMaintenanceWindowTargets operation.
-    /// Lists the targets registered with the Maintenance Window.
+    /// Lists the targets registered with the maintenance window.
     /// </summary>
     public partial class DescribeMaintenanceWindowTargetsRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -100,7 +100,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowId. 
         /// <para>
-        /// The ID of the Maintenance Window whose targets should be retrieved.
+        /// The ID of the maintenance window whose targets should be retrieved.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=20)]

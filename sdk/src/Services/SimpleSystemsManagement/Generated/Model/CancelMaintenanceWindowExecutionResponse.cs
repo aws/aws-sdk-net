@@ -37,7 +37,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowExecutionId. 
         /// <para>
-        /// The ID of the Maintenance Window execution that has been stopped.
+        /// The ID of the maintenance window execution that has been stopped.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]

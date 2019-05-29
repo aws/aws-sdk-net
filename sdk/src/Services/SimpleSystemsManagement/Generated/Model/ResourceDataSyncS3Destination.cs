@@ -42,7 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property AWSKMSKeyARN. 
         /// <para>
         /// The ARN of an encryption key for a destination in Amazon S3. Must belong to the same
-        /// region as the destination Amazon S3 bucket.
+        /// Region as the destination Amazon S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

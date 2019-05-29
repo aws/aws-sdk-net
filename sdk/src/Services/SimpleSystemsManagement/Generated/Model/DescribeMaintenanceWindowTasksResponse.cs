@@ -57,7 +57,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Tasks. 
         /// <para>
-        /// Information about the tasks in the Maintenance Window.
+        /// Information about the tasks in the maintenance window.
         /// </para>
         /// </summary>
         public List<MaintenanceWindowTask> Tasks

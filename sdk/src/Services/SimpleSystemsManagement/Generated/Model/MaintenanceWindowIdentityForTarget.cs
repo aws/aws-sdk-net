@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The Maintenance Window to which the specified target belongs.
+    /// The maintenance window to which the specified target belongs.
     /// </summary>
     public partial class MaintenanceWindowIdentityForTarget
     {
@@ -38,7 +38,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Maintenance Window.
+        /// The name of the maintenance window.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=128)]
@@ -57,7 +57,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowId. 
         /// <para>
-        /// The ID of the Maintenance Window.
+        /// The ID of the maintenance window.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=20)]

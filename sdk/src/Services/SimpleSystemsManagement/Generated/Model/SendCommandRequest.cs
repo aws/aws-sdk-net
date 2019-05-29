@@ -371,7 +371,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ServiceRoleArn. 
         /// <para>
-        /// The IAM role that Systems Manager uses to send notifications. 
+        /// The ARN of the IAM service role to use to publish Amazon Simple Notification Service
+        /// (Amazon SNS) notifications for Run Command commands.
         /// </para>
         /// </summary>
         public string ServiceRoleArn

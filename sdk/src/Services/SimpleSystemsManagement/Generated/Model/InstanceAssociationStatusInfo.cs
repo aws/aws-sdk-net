@@ -120,7 +120,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentVersion. 
         /// <para>
-        /// The association document verions.
+        /// The association document versions.
         /// </para>
         /// </summary>
         public string DocumentVersion

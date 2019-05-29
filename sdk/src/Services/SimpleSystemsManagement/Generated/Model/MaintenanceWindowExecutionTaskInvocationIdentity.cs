@@ -29,7 +29,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Describes the information about a task invocation for a particular target as part
-    /// of a task execution performed as part of a Maintenance Window execution.
+    /// of a task execution performed as part of a maintenance window execution.
     /// </summary>
     public partial class MaintenanceWindowExecutionTaskInvocationIdentity
     {
@@ -105,8 +105,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OwnerInformation. 
         /// <para>
-        /// User-provided value that was specified when the target was registered with the Maintenance
-        /// Window. This was also included in any CloudWatch events raised during the task invocation.
+        /// User-provided value that was specified when the target was registered with the maintenance
+        /// window. This was also included in any CloudWatch events raised during the task invocation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -199,7 +199,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TaskExecutionId. 
         /// <para>
-        /// The ID of the specific task execution in the Maintenance Window execution.
+        /// The ID of the specific task execution in the maintenance window execution.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -236,7 +236,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowExecutionId. 
         /// <para>
-        /// The ID of the Maintenance Window execution that ran the task.
+        /// The ID of the maintenance window execution that ran the task.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -255,7 +255,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowTargetId. 
         /// <para>
-        /// The ID of the target definition in this Maintenance Window the invocation was performed
+        /// The ID of the target definition in this maintenance window the invocation was performed
         /// for.
         /// </para>
         /// </summary>

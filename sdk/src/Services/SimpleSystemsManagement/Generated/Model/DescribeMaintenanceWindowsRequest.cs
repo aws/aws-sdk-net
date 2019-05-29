@@ -29,7 +29,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeMaintenanceWindows operation.
-    /// Retrieves the Maintenance Windows in an AWS account.
+    /// Retrieves the maintenance windows in an AWS account.
     /// </summary>
     public partial class DescribeMaintenanceWindowsRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Optional filters used to narrow down the scope of the returned Maintenance Windows.
+        /// Optional filters used to narrow down the scope of the returned maintenance windows.
         /// Supported filter keys are <b>Name</b> and <b>Enabled</b>.
         /// </para>
         /// </summary>
