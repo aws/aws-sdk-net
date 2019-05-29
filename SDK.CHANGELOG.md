@@ -1,3 +1,22 @@
+### 3.3.520.0 (2019-05-29 18:16 UTC)
+* DLM (3.3.101.0)
+	* Customers can now simultaneously take snapshots of multiple EBS volumes attached to an EC2 instance. With this new capability, snapshots guarantee crash-consistency across multiple volumes by preserving the order of IO operations. This new feature is fully integrated with Amazon Data Lifecycle Manager (DLM) allowing customers to automatically manage snapshots by creating lifecycle policies. 
+* EC2 (3.3.111.0)
+	* Customers can now simultaneously take snapshots of multiple EBS volumes attached to an EC2 instance. With this new capability, snapshots guarantee crash-consistency across multiple volumes by preserving the order of IO operations. This new feature is fully integrated with Amazon Data Lifecycle Manager (DLM) allowing customers to automatically manage snapshots by creating lifecycle policies. 
+* IoTThingsGraph (3.3.100.0)
+	* Initial release.
+* RDS (3.3.103.1)
+	* Documentation updates for rds
+* SecurityHub (3.3.102.0)
+	* This update adds the ListProductSubscribers API, DescribeProducts API, removes CONTAINS as a comparison value for the StringFilter, and only allows use of EQUALS instead of CONTAINS in MapFilter.  
+* SimpleSystemsManagement (3.3.102.10)
+	* Systems Manager - Documentation updates
+* Core 3.3.101.17
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.519.0 (2019-05-28 20:04 UTC)
 * Chime (3.3.102.0)
 	* This release adds the ability to search and order toll free phone numbers for Voice Connectors.
