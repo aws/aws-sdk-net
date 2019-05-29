@@ -39,7 +39,7 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property Interval. 
         /// <para>
-        /// The interval. The supported values are 12 and 24.
+        /// The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -77,7 +77,7 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property Times. 
         /// <para>
-        /// The time, in UTC, to start the operation.
+        /// The time, in UTC, to start the operation. The supported format is hh:mm.
         /// </para>
         ///  
         /// <para>

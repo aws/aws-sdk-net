@@ -95,6 +95,22 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetVariableTags())
+            {
+                context.Writer.WritePropertyName("VariableTags");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectVariableTagsListValue in requestObject.VariableTags)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(requestObjectVariableTagsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

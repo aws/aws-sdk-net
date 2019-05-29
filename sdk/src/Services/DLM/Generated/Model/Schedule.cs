@@ -37,9 +37,14 @@ namespace Amazon.DLM.Model
         private string _name;
         private RetainRule _retainRule;
         private List<Tag> _tagsToAdd = new List<Tag>();
+        private List<Tag> _variableTags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property CopyTags.
+        /// Gets and sets the property CopyTags. 
+        /// <para>
+        /// Copy all user-defined tags on a source volume to snapshots of the volume created by
+        /// this policy.
+        /// </para>
         /// </summary>
         public bool CopyTags
         {
@@ -126,6 +131,28 @@ namespace Amazon.DLM.Model
         internal bool IsSetTagsToAdd()
         {
             return this._tagsToAdd != null && this._tagsToAdd.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VariableTags. 
+        /// <para>
+        /// A collection of key/value pairs with values determined dynamically when the policy
+        /// is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the
+        /// two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable
+        /// tags are only valid for EBS Snapshot Management – Instance policies.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<Tag> VariableTags
+        {
+            get { return this._variableTags; }
+            set { this._variableTags = value; }
+        }
+
+        // Check to see if VariableTags property is set
+        internal bool IsSetVariableTags()
+        {
+            return this._variableTags != null && this._variableTags.Count > 0; 
         }
 
     }

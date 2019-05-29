@@ -125,11 +125,61 @@ namespace Amazon.DLM
 
 
     /// <summary>
+    /// Constants used for properties of type PolicyTypeValues.
+    /// </summary>
+    public class PolicyTypeValues : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EBS_SNAPSHOT_MANAGEMENT for PolicyTypeValues
+        /// </summary>
+        public static readonly PolicyTypeValues EBS_SNAPSHOT_MANAGEMENT = new PolicyTypeValues("EBS_SNAPSHOT_MANAGEMENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PolicyTypeValues(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PolicyTypeValues FindValue(string value)
+        {
+            return FindValue<PolicyTypeValues>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PolicyTypeValues(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceTypeValues.
     /// </summary>
     public class ResourceTypeValues : ConstantClass
     {
 
+        /// <summary>
+        /// Constant INSTANCE for ResourceTypeValues
+        /// </summary>
+        public static readonly ResourceTypeValues INSTANCE = new ResourceTypeValues("INSTANCE");
         /// <summary>
         /// Constant VOLUME for ResourceTypeValues
         /// </summary>

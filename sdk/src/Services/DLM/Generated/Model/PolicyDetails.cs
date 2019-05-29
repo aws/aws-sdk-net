@@ -32,9 +32,48 @@ namespace Amazon.DLM.Model
     /// </summary>
     public partial class PolicyDetails
     {
+        private Parameters _parameters;
+        private PolicyTypeValues _policyType;
         private List<string> _resourceTypes = new List<string>();
         private List<Schedule> _schedules = new List<Schedule>();
         private List<Tag> _targetTags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// A set of optional parameters that can be provided by the policy. 
+        /// </para>
+        /// </summary>
+        public Parameters Parameters
+        {
+            get { return this._parameters; }
+            set { this._parameters = value; }
+        }
+
+        // Check to see if Parameters property is set
+        internal bool IsSetParameters()
+        {
+            return this._parameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PolicyType. 
+        /// <para>
+        /// This field determines the valid target resource types and actions a policy can manage.
+        /// This field defaults to EBS_SNAPSHOT_MANAGEMENT if not present.
+        /// </para>
+        /// </summary>
+        public PolicyTypeValues PolicyType
+        {
+            get { return this._policyType; }
+            set { this._policyType = value; }
+        }
+
+        // Check to see if PolicyType property is set
+        internal bool IsSetPolicyType()
+        {
+            return this._policyType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ResourceTypes. 

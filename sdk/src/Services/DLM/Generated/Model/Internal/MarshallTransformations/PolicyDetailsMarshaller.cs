@@ -45,6 +45,23 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PolicyDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetParameters())
+            {
+                context.Writer.WritePropertyName("Parameters");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.Parameters, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetPolicyType())
+            {
+                context.Writer.WritePropertyName("PolicyType");
+                context.Writer.Write(requestObject.PolicyType);
+            }
+
             if(requestObject.IsSetResourceTypes())
             {
                 context.Writer.WritePropertyName("ResourceTypes");
