@@ -119,7 +119,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Direction. 
         /// <para>
-        /// Indicates the direction of network traffic associated with a finding.
+        /// The direction of network traffic associated with a finding.
         /// </para>
         /// </summary>
         public NetworkDirection Direction

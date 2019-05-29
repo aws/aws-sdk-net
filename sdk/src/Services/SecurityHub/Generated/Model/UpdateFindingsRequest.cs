@@ -29,7 +29,9 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateFindings operation.
-    /// Updates the AWS Security Hub-aggregated findings specified by the filter attributes.
+    /// Updates the <code>Note</code> and <code>RecordState</code> of the Security Hub-aggregated
+    /// findings that the filter attributes specify. Any member account that can view the
+    /// finding also sees the update to the finding.
     /// </summary>
     public partial class UpdateFindingsRequest : AmazonSecurityHubRequest
     {
@@ -40,7 +42,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// A collection of attributes that specify what findings you want to update.
+        /// A collection of attributes that specify which findings you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

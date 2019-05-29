@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// A resource data type that describes a resource to which the finding refers.
+    /// A resource data type that describes a resource that the finding refers to.
     /// </summary>
     public partial class Resource
     {
@@ -42,7 +42,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Details. 
         /// <para>
-        /// Provides additional details about the resource.
+        /// Additional details about the resource.
         /// </para>
         /// </summary>
         public ResourceDetails Details
@@ -79,7 +79,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Partition. 
         /// <para>
-        /// The canonical AWS partition name to which the region is assigned.
+        /// The canonical AWS partition name that the Region is assigned to.
         /// </para>
         /// </summary>
         public Partition Partition
@@ -97,7 +97,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The canonical AWS external region name where this resource is located.
+        /// The canonical AWS external Region name where this resource is located.
         /// </para>
         /// </summary>
         public string Region
@@ -133,7 +133,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Specifies the type of the resource for which details are provided.
+        /// The type of the resource that details are provided for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

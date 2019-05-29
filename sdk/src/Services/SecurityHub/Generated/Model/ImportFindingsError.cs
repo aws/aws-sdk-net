@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Includes details of the list of the findings that cannot be imported.
+    /// Includes details of the list of the findings that can't be imported.
     /// </summary>
     public partial class ImportFindingsError
     {
@@ -39,7 +39,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// The code of the error made during the BatchImportFindings operation. 
+        /// The code of the error made during the <code>BatchImportFindings</code> operation.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +59,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// The message of the error made during the BatchImportFindings operation. 
+        /// The message of the error made during the <code>BatchImportFindings</code> operation.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -77,7 +79,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The id of the error made during the BatchImportFindings operation.
+        /// The ID of the error made during the <code>BatchImportFindings</code> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

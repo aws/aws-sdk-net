@@ -29,7 +29,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteInvitations operation.
-    /// Deletes invitations that are sent to this AWS account (invitee) by the AWS accounts
+    /// Deletes invitations that were sent to theis AWS account (invitee) by the AWS accounts
     /// (inviters) that are specified by their account IDs.
     /// </summary>
     public partial class DeleteInvitationsRequest : AmazonSecurityHubRequest
@@ -39,8 +39,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        /// A list of account IDs specifying accounts whose invitations to Security Hub you want
-        /// to delete. 
+        /// A list of account IDs that specify accounts whose invitations to Security Hub you
+        /// want to delete. 
         /// </para>
         /// </summary>
         public List<string> AccountIds

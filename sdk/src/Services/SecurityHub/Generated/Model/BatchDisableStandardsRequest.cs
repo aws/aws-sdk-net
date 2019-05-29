@@ -41,7 +41,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property StandardsSubscriptionArns. 
         /// <para>
-        /// The ARNS of the standards subscriptions that you want to disable.
+        /// The ARNs of the standards subscriptions that you want to disable.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=25)]

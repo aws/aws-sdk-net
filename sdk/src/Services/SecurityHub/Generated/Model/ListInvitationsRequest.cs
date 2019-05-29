@@ -39,7 +39,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Indicates the maximum number of items that you want in the response. 
+        /// The maximum number of items that you want in the response. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -58,10 +58,10 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Paginates results. Set the value of this parameter to NULL on your first call to the
-        /// ListInvitations operation. For subsequent calls to the operation, fill nextToken in
-        /// the request with the value of NextToken from the previous response to continue listing
-        /// data. 
+        /// Paginates results. On your first call to the <code>ListInvitations</code> operation,
+        /// set the value of this parameter to <code>NULL</code>. For subsequent calls to the
+        /// operation, fill <code>nextToken</code> in the request with the value of <code>NextToken</code>
+        /// from the previous response to continue listing data. 
         /// </para>
         /// </summary>
         public string NextToken

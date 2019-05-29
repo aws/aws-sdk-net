@@ -39,8 +39,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Comparison. 
         /// <para>
-        /// Represents the condition to be applied to a key value when querying for findings with
-        /// a map filter.
+        /// The condition to be applied to a key value when querying for findings with a map filter.
         /// </para>
         /// </summary>
         public MapFilterComparison Comparison

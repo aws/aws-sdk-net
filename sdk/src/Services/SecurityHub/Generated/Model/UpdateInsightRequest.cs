@@ -29,7 +29,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateInsight operation.
-    /// Updates the AWS Security Hub insight specified by the insight ARN.
+    /// Updates the Security Hub insight that the insight ARN specifies.
     /// </summary>
     public partial class UpdateInsightRequest : AmazonSecurityHubRequest
     {
@@ -59,7 +59,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property GroupByAttribute. 
         /// <para>
-        /// The updated GroupBy attribute that defines this insight.
+        /// The updated <code>GroupBy</code> attribute that defines this insight.
         /// </para>
         /// </summary>
         public string GroupByAttribute

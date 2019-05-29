@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// AWS IAM access key details related to a finding.
+    /// IAM access key details related to a finding.
     /// </summary>
     public partial class AwsIamAccessKeyDetails
     {

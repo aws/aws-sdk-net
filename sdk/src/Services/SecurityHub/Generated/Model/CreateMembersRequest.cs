@@ -29,8 +29,9 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateMembers operation.
-    /// Creates member Security Hub accounts in the current AWS account (which becomes the
-    /// master Security Hub account) that has Security Hub enabled.
+    /// Creates Security Hub member accounts associated with the account used for this action,
+    /// which becomes the Security Hub Master account. Security Hub must be enabled in the
+    /// account used to make this request.
     /// </summary>
     public partial class CreateMembersRequest : AmazonSecurityHubRequest
     {
@@ -39,8 +40,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AccountDetails. 
         /// <para>
-        /// A list of account ID and email address pairs of the accounts that you want to associate
-        /// with the master Security Hub account.
+        /// A list of account ID and email address pairs of the accounts to associate with the
+        /// Security Hub master account.
         /// </para>
         /// </summary>
         public List<AccountDetails> AccountDetails

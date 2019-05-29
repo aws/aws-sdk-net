@@ -28,19 +28,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListMembers operation.
-    /// Lists details about all member accounts for the current Security Hub master account.
+    /// Container for the parameters to the ListProductSubscribers operation.
+    /// Returns a list of account IDs that are subscribed to the product.
     /// </summary>
-    public partial class ListMembersRequest : AmazonSecurityHubRequest
+    public partial class ListProductSubscribersRequest : AmazonSecurityHubRequest
     {
         private int? _maxResults;
         private string _nextToken;
-        private bool? _onlyAssociated;
+        private string _productArn;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of items that you want in the response. 
+        /// The maximum number of results to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -59,10 +59,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Paginates results. Set the value of this parameter to <code>NULL</code> on your first
-        /// call to the <code>ListMembers</code> operation. For subsequent calls to the operation,
-        /// fill <code>nextToken</code> in the request with the value of <code>nextToken</code>
-        /// from the previous response to continue listing data. 
+        /// The token that is required for pagination.
         /// </para>
         /// </summary>
         public string NextToken
@@ -78,26 +75,21 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OnlyAssociated. 
+        /// Gets and sets the property ProductArn. 
         /// <para>
-        /// Specifies which member accounts the response includes based on their relationship
-        /// status with the master account. The default value is <code>TRUE</code>. If <code>onlyAssociated</code>
-        /// is set to <code>TRUE</code>, the response includes member accounts whose relationship
-        /// status with the master is set to <code>ENABLED</code> or <code>DISABLED</code>. If
-        /// <code>onlyAssociated</code> is set to <code>FALSE</code>, the response includes all
-        /// existing member accounts. 
+        /// The ARN of the product.
         /// </para>
         /// </summary>
-        public bool OnlyAssociated
+        public string ProductArn
         {
-            get { return this._onlyAssociated.GetValueOrDefault(); }
-            set { this._onlyAssociated = value; }
+            get { return this._productArn; }
+            set { this._productArn = value; }
         }
 
-        // Check to see if OnlyAssociated property is set
-        internal bool IsSetOnlyAssociated()
+        // Check to see if ProductArn property is set
+        internal bool IsSetProductArn()
         {
-            return this._onlyAssociated.HasValue; 
+            return this._productArn != null;
         }
 
     }

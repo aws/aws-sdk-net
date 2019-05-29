@@ -38,7 +38,7 @@ namespace Amazon.SecurityHub
     /// <summary>
     /// Implementation for accessing SecurityHub
     ///
-    /// AWS Security Hub provides you with a comprehensive view of your security state within
+    /// AWS Security Hub provides you with a comprehensive view of your security state in
     /// AWS and your compliance with the security industry standards and best practices. Security
     /// Hub collects security data from across AWS accounts, services, and supported third-party
     /// partners and helps you analyze your security trends and identify the highest priority
@@ -47,7 +47,7 @@ namespace Amazon.SecurityHub
     /// 
     ///  <important> 
     /// <para>
-    /// Currently, AWS Security Hub is in Preview release.
+    /// Important: AWS Security Hub is currently in Preview release.
     /// </para>
     ///  </important>
     /// </summary>
@@ -580,6 +580,39 @@ namespace Amazon.SecurityHub
             options.ResponseUnmarshaller = DeleteMembersResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteMembersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeProducts
+
+        internal virtual DescribeProductsResponse DescribeProducts(DescribeProductsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeProductsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeProductsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeProductsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeProducts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProducts operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeProducts">REST API Reference for DescribeProducts Operation</seealso>
+        public virtual Task<DescribeProductsResponse> DescribeProductsAsync(DescribeProductsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeProductsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeProductsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeProductsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1141,6 +1174,39 @@ namespace Amazon.SecurityHub
             options.ResponseUnmarshaller = ListMembersResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListMembersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListProductSubscribers
+
+        internal virtual ListProductSubscribersResponse ListProductSubscribers(ListProductSubscribersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProductSubscribersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProductSubscribersResponseUnmarshaller.Instance;
+
+            return Invoke<ListProductSubscribersResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListProductSubscribers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListProductSubscribers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListProductSubscribers">REST API Reference for ListProductSubscribers Operation</seealso>
+        public virtual Task<ListProductSubscribersResponse> ListProductSubscribersAsync(ListProductSubscribersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProductSubscribersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProductSubscribersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListProductSubscribersResponse>(request, options, cancellationToken);
         }
 
         #endregion

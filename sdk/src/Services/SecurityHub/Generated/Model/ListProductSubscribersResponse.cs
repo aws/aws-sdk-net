@@ -28,47 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// The details of an Amazon S3 bucket.
+    /// This is the response object from the ListProductSubscribers operation.
     /// </summary>
-    public partial class AwsS3BucketDetails
+    public partial class ListProductSubscribersResponse : AmazonWebServiceResponse
     {
-        private string _ownerId;
-        private string _ownerName;
+        private string _nextToken;
+        private List<string> _productSubscribers = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property OwnerId. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The canonical user ID of the owner of the S3 bucket.
+        /// The token that is required for pagination.
         /// </para>
         /// </summary>
-        public string OwnerId
+        public string NextToken
         {
-            get { return this._ownerId; }
-            set { this._ownerId = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if OwnerId property is set
-        internal bool IsSetOwnerId()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._ownerId != null;
+            return this._nextToken != null;
         }
 
         /// <summary>
-        /// Gets and sets the property OwnerName. 
+        /// Gets and sets the property ProductSubscribers. 
         /// <para>
-        /// The display name of the owner of the S3 bucket.
+        /// A list of account IDs that are subscribed to the product.
         /// </para>
         /// </summary>
-        public string OwnerName
+        public List<string> ProductSubscribers
         {
-            get { return this._ownerName; }
-            set { this._ownerName = value; }
+            get { return this._productSubscribers; }
+            set { this._productSubscribers = value; }
         }
 
-        // Check to see if OwnerName property is set
-        internal bool IsSetOwnerName()
+        // Check to see if ProductSubscribers property is set
+        internal bool IsSetProductSubscribers()
         {
-            return this._ownerName != null;
+            return this._productSubscribers != null && this._productSubscribers.Count > 0; 
         }
 
     }

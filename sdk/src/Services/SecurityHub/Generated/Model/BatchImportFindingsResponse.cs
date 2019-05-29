@@ -39,7 +39,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property FailedCount. 
         /// <para>
-        /// The number of findings that cannot be imported.
+        /// The number of findings that failed to import.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +58,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property FailedFindings. 
         /// <para>
-        /// The list of the findings that cannot be imported.
+        /// The list of the findings that failed to import.
         /// </para>
         /// </summary>
         public List<ImportFindingsError> FailedFindings

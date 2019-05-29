@@ -34,8 +34,9 @@ namespace Amazon.SecurityHub.Model
     /// 
     ///  <note> 
     /// <para>
-    /// A finding is a potential security issue generated either by AWS services (GuardDuty,
-    /// Inspector, Macie) or by the integrated third-party solutions and compliance checks.
+    /// A finding is a potential security issue generated either by AWS services (Amazon GuardDuty,
+    /// Amazon Inspector, and Amazon Macie) or by the integrated third-party solutions and
+    /// compliance checks.
     /// </para>
     ///  </note>
     /// </summary>
@@ -75,7 +76,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The AWS account ID in which a finding is generated.
+        /// The AWS account ID that a finding is generated in.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -95,7 +96,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Compliance. 
         /// <para>
         /// This data type is exclusive to findings that are generated as the result of a check
-        /// run against a specific rule in a supported standard (for example, AWS CIS Foundations).
+        /// run against a specific rule in a supported standard (for example, CIS AWS Foundations).
         /// Contains compliance-related finding details.
         /// </para>
         /// </summary>
@@ -116,8 +117,8 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// A finding's confidence. Confidence is defined as the likelihood that a finding accurately
         /// identifies the behavior or issue that it was intended to identify. Confidence is scored
-        /// on a 0-100 basis using a ratio scale. 0 equates zero percent confidence and 100 equates
-        /// to 100 percent confidence.
+        /// on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100
+        /// means 100 percent confidence.
         /// </para>
         /// </summary>
         public int Confidence
@@ -135,8 +136,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// An ISO8601-formatted timestamp that indicates when the potential security issue captured
-        /// by a finding was created by the security findings provider.
+        /// An ISO8601-formatted timestamp that indicates when the security-findings provider
+        /// created the potential security issue that a finding captured.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -179,7 +180,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// In this release, Description is a required property.
+        /// In this release, <code>Description</code> is a required property.
         /// </para>
         ///  </note>
         /// </summary>
@@ -198,8 +199,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property FirstObservedAt. 
         /// <para>
-        /// An ISO8601-formatted timestamp that indicates when the potential security issue captured
-        /// by a finding was first observed by the security findings provider.
+        /// An ISO8601-formatted timestamp that indicates when the security-findings provider
+        /// first observed the potential security issue that a finding captured.
         /// </para>
         /// </summary>
         public string FirstObservedAt
@@ -217,9 +218,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property GeneratorId. 
         /// <para>
-        /// This is the identifier for the solution-specific component (a discrete unit of logic)
-        /// that generated a finding. In various security findings provider's solutions, this
-        /// generator can be called a rule, a check, a detector, a plug-in, etc. 
+        /// The identifier for the solution-specific component (a discrete unit of logic) that
+        /// generated a finding. In various security-findings providers' solutions, this generator
+        /// can be called a rule, a check, a detector, a plug-in, etc. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -257,8 +258,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property LastObservedAt. 
         /// <para>
-        /// An ISO8601-formatted timestamp that indicates when the potential security issue captured
-        /// by a finding was most recently observed by the security findings provider.
+        /// An ISO8601-formatted timestamp that indicates when the security-findings provider
+        /// most recently observed the potential security issue that a finding captured.
         /// </para>
         /// </summary>
         public string LastObservedAt
@@ -348,9 +349,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ProductArn. 
         /// <para>
-        /// The ARN generated by Security Hub that uniquely identifies a third-party company (security
-        /// findings provider) once this provider's product (solution that generates findings)
-        /// is registered with Security Hub. 
+        /// The ARN generated by Security Hub that uniquely identifies a third-party company (security-findings
+        /// provider) after this provider's product (solution that generates findings) is registered
+        /// with Security Hub. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -369,8 +370,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ProductFields. 
         /// <para>
-        /// A data type where security findings providers can include additional solution-specific
-        /// details that are not part of the defined AwsSecurityFinding format.
+        /// A data type where security-findings providers can include additional solution-specific
+        /// details that aren't part of the defined AwsSecurityFinding format.
         /// </para>
         /// </summary>
         public Dictionary<string, string> ProductFields
@@ -442,7 +443,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
-        /// A set of resource data types that describe the resources to which the finding refers.
+        /// A set of resource data types that describe the resources that the finding refers to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -461,7 +462,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SchemaVersion. 
         /// <para>
-        /// The schema version for which a finding is formatted.
+        /// The schema version that a finding is formatted for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -499,7 +500,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SourceUrl. 
         /// <para>
-        /// A URL that links to a page about the current finding in the security findings provider's
+        /// A URL that links to a page about the current finding in the security-findings provider's
         /// solution.
         /// </para>
         /// </summary>
@@ -540,7 +541,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// In this release, Title is a required property.
+        /// In this release, <code>Title</code> is a required property.
         /// </para>
         ///  </note>
         /// </summary>
@@ -559,8 +560,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Types. 
         /// <para>
-        /// One or more finding types in the format of 'namespace/category/classifier' that classify
-        /// a finding.
+        /// One or more finding types in the format of <code>namespace/category/classifier</code>
+        /// that classify a finding.
         /// </para>
         ///  
         /// <para>
@@ -584,8 +585,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// An ISO8601-formatted timestamp that indicates when the finding record was last updated
-        /// by the security findings provider. 
+        /// An ISO8601-formatted timestamp that indicates when the security-findings provider
+        /// last updated the finding record. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

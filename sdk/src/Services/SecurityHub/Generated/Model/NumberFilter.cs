@@ -39,8 +39,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Eq. 
         /// <para>
-        /// Represents the "equal to" condition to be applied to a single field when querying
-        /// for findings.
+        /// The equal-to condition to be applied to a single field when querying for findings.
         /// </para>
         /// </summary>
         public double Eq
@@ -58,8 +57,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Gte. 
         /// <para>
-        /// Represents the "greater than equal" condition to be applied to a single field when
-        /// querying for findings. 
+        /// The greater-than-equal condition to be applied to a single field when querying for
+        /// findings. 
         /// </para>
         /// </summary>
         public double Gte
@@ -77,8 +76,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Lte. 
         /// <para>
-        /// Represents the "less than equal" condition to be applied to a single field when querying
-        /// for findings. 
+        /// The less-than-equal condition to be applied to a single field when querying for findings.
+        /// 
         /// </para>
         /// </summary>
         public double Lte

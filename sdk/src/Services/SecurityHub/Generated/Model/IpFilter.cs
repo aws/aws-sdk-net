@@ -37,7 +37,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Cidr. 
         /// <para>
-        /// Finding's CIDR value.
+        /// A finding's CIDR value.
         /// </para>
         /// </summary>
         public string Cidr

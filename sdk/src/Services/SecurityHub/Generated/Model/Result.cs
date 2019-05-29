@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// The account details that could not be processed.
+    /// The account details that couldn't be processed.
     /// </summary>
     public partial class Result
     {
@@ -38,7 +38,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// An ID of the AWS account that could not be processed. 
+        /// An ID of the AWS account that couldn't be processed. 
         /// </para>
         /// </summary>
         public string AccountId
@@ -56,7 +56,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ProcessingResult. 
         /// <para>
-        /// The reason for why an account could not be processed.
+        /// The reason for why an account couldn't be processed.
         /// </para>
         /// </summary>
         public string ProcessingResult

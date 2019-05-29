@@ -29,7 +29,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableSecurityHub operation.
-    /// Enables the AWS Security Hub service.
+    /// Enables the Security Hub service.
     /// </summary>
     public partial class EnableSecurityHubRequest : AmazonSecurityHubRequest
     {

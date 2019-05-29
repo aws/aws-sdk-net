@@ -341,9 +341,9 @@ namespace Amazon.SecurityHub
     {
 
         /// <summary>
-        /// Constant CONTAINS for MapFilterComparison
+        /// Constant EQUALS for MapFilterComparison
         /// </summary>
-        public static readonly MapFilterComparison CONTAINS = new MapFilterComparison("CONTAINS");
+        public static readonly MapFilterComparison EQUALS = new MapFilterComparison("EQUALS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -599,6 +599,10 @@ namespace Amazon.SecurityHub
         /// </summary>
         public static readonly StandardsStatus FAILED = new StandardsStatus("FAILED");
         /// <summary>
+        /// Constant INCOMPLETE for StandardsStatus
+        /// </summary>
+        public static readonly StandardsStatus INCOMPLETE = new StandardsStatus("INCOMPLETE");
+        /// <summary>
         /// Constant PENDING for StandardsStatus
         /// </summary>
         public static readonly StandardsStatus PENDING = new StandardsStatus("PENDING");
@@ -648,10 +652,6 @@ namespace Amazon.SecurityHub
     public class StringFilterComparison : ConstantClass
     {
 
-        /// <summary>
-        /// Constant CONTAINS for StringFilterComparison
-        /// </summary>
-        public static readonly StringFilterComparison CONTAINS = new StringFilterComparison("CONTAINS");
         /// <summary>
         /// Constant EQUALS for StringFilterComparison
         /// </summary>

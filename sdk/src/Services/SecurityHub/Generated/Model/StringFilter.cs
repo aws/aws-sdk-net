@@ -38,8 +38,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Comparison. 
         /// <para>
-        /// Represents the condition to be applied to a string value when querying for findings.
-        /// 
+        /// The condition to be applied to a string value when querying for findings. 
         /// </para>
         /// </summary>
         public StringFilterComparison Comparison

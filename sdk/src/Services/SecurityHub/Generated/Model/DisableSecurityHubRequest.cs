@@ -29,7 +29,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableSecurityHub operation.
-    /// Disables the AWS Security Hub Service.
+    /// Disables the Security Hub service.
     /// </summary>
     public partial class DisableSecurityHubRequest : AmazonSecurityHubRequest
     {

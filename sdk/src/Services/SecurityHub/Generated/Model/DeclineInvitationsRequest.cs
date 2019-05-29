@@ -29,8 +29,8 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DeclineInvitations operation.
-    /// Declines invitations that are sent to this AWS account (invitee) by the AWS accounts
-    /// (inviters) that are specified by the account IDs.
+    /// Declines invitations that are sent to this AWS account (invitee) from the AWS accounts
+    /// (inviters) that are specified by the provided <code>AccountIds</code>.
     /// </summary>
     public partial class DeclineInvitationsRequest : AmazonSecurityHubRequest
     {
@@ -39,8 +39,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        /// A list of account IDs specifying accounts whose invitations to Security Hub you want
-        /// to decline. 
+        /// A list of account IDs that specify the accounts from which invitations to Security
+        /// Hub are declined.
         /// </para>
         /// </summary>
         public List<string> AccountIds

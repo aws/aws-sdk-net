@@ -57,7 +57,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Product. 
         /// <para>
-        /// The native severity as defined by the security findings provider's solution that generated
+        /// The native severity as defined by the security-findings provider's solution that generated
         /// the finding.
         /// </para>
         /// </summary>

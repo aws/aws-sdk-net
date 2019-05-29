@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// The details of an invitation sent to an AWS account by the Security Hub master account.
+    /// The details of an invitation that the Security Hub master account sent to an AWS account.
     /// </summary>
     public partial class Invitation
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The account ID of the master Security Hub account who sent the invitation. 
+        /// The account ID of the Security Hub master account that sent the invitation. 
         /// </para>
         /// </summary>
         public string AccountId
@@ -58,7 +58,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property InvitationId. 
         /// <para>
-        /// The ID of the invitation sent by the master Security Hub account.
+        /// The ID of the invitation that the Security Hub master account sent.
         /// </para>
         /// </summary>
         public string InvitationId

@@ -29,7 +29,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Exclusive to findings that are generated as the result of a check run against a specific
-    /// rule in a supported standard (for example, AWS CIS Foundations). Contains compliance-related
+    /// rule in a supported standard (for example, CIS AWS Foundations). Contains compliance-related
     /// finding details.
     /// </summary>
     public partial class Compliance
@@ -39,7 +39,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Indicates the result of a compliance check.
+        /// The result of a compliance check.
         /// </para>
         /// </summary>
         public ComplianceStatus Status

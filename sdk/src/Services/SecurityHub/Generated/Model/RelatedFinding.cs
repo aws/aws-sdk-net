@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Related finding's details.
+    /// A related finding's details.
     /// </summary>
     public partial class RelatedFinding
     {

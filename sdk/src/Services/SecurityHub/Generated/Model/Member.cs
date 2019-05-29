@@ -78,7 +78,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property InvitedAt. 
         /// <para>
-        /// Time stamp at which the member account was invited to Security Hub.
+        /// The timestamp of when the member account was invited to Security Hub.
         /// </para>
         /// </summary>
         public DateTime InvitedAt
@@ -96,7 +96,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property MasterId. 
         /// <para>
-        /// The AWS account ID of the master Security Hub account to this member account.
+        /// The AWS account ID of the Security Hub master account to this member account.
         /// </para>
         /// </summary>
         public string MasterId
@@ -133,7 +133,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// Time stamp at which this member account was updated.
+        /// The timestamp of when this member account was updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

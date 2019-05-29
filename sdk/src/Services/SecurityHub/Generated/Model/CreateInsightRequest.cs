@@ -41,8 +41,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// A collection of attributes that are applied to all active Security Hub-aggregated
-        /// findings and that result in a subset of findings that are included in this insight.
+        /// A collection of attributes that are applied to all of the active findings aggregated
+        /// by Security Hub, and that result in a subset of findings that are included in this
+        /// insight.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,7 +64,7 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The attribute by which the insight's findings are grouped. This attribute is used
         /// as a findings aggregator for the purposes of viewing and managing multiple related
-        /// findings under a single operand. 
+        /// findings under a single operand.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -82,7 +83,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The user-defined name that identifies the insight that you want to create.
+        /// The user-defined name that identifies the insight to create.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

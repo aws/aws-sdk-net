@@ -37,7 +37,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Recommendation. 
         /// <para>
-        /// Provides a recommendation on how to remediate the issue identified within a finding.
+        /// A recommendation on how to remediate the issue identified within a finding.
         /// </para>
         /// </summary>
         public Recommendation Recommendation

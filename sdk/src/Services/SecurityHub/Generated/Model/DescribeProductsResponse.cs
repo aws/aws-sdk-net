@@ -28,31 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetMembers operation.
-    /// Returns the details on the Security Hub member accounts that the account IDs specify.
+    /// This is the response object from the DescribeProducts operation.
     /// </summary>
-    public partial class GetMembersRequest : AmazonSecurityHubRequest
+    public partial class DescribeProductsResponse : AmazonWebServiceResponse
     {
-        private List<string> _accountIds = new List<string>();
+        private string _nextToken;
+        private List<Product> _products = new List<Product>();
 
         /// <summary>
-        /// Gets and sets the property AccountIds. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// A list of account IDs for the Security Hub member accounts that you want to return
-        /// the details for. 
+        /// The token that is required for pagination.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Products. 
+        /// <para>
+        /// A list of products.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public List<string> AccountIds
+        public List<Product> Products
         {
-            get { return this._accountIds; }
-            set { this._accountIds = value; }
+            get { return this._products; }
+            set { this._products = value; }
         }
 
-        // Check to see if AccountIds property is set
-        internal bool IsSetAccountIds()
+        // Check to see if Products property is set
+        internal bool IsSetProducts()
         {
-            return this._accountIds != null && this._accountIds.Count > 0; 
+            return this._products != null && this._products.Count > 0; 
         }
 
     }

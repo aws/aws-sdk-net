@@ -29,7 +29,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the GetInsightResults operation.
-    /// Lists the results of the Security Hub insight specified by the insight ARN.
+    /// Lists the results of the Security Hub insight that the insight ARN specifies.
     /// </summary>
     public partial class GetInsightResultsRequest : AmazonSecurityHubRequest
     {

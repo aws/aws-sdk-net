@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// The details of an AWS EC2 instance.
+    /// The details of an Amazon EC2 instance.
     /// </summary>
     public partial class AwsEc2InstanceDetails
     {
@@ -153,7 +153,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// The identifier of the subnet in which the instance was launched.
+        /// The identifier of the subnet that the instance was launched in.
         /// </para>
         /// </summary>
         public string SubnetId
@@ -189,7 +189,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// The identifier of the VPC in which the instance was launched.
+        /// The identifier of the VPC that the instance was launched in.
         /// </para>
         /// </summary>
         public string VpcId

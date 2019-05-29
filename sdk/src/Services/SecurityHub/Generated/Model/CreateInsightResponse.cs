@@ -37,7 +37,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property InsightArn. 
         /// <para>
-        /// The ARN Of the created insight.
+        /// The ARN of the insight created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

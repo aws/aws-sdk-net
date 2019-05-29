@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Provides additional details about the resource.
+    /// Additional details about the resource.
     /// </summary>
     public partial class ResourceDetails
     {
@@ -41,7 +41,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AwsEc2Instance. 
         /// <para>
-        /// The details of an AWS EC2 instance.
+        /// The details of an Amazon EC2 instance.
         /// </para>
         /// </summary>
         public AwsEc2InstanceDetails AwsEc2Instance
@@ -59,7 +59,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AwsIamAccessKey. 
         /// <para>
-        /// AWS IAM access key details related to a finding.
+        /// IAM access key details related to a finding.
         /// </para>
         /// </summary>
         public AwsIamAccessKeyDetails AwsIamAccessKey
@@ -77,7 +77,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AwsS3Bucket. 
         /// <para>
-        /// The details of an AWS S3 Bucket.
+        /// The details of an Amazon S3 Bucket.
         /// </para>
         /// </summary>
         public AwsS3BucketDetails AwsS3Bucket
@@ -113,8 +113,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Other. 
         /// <para>
-        /// The details of a resource that does not have a specific sub-field for the resource
-        /// type defined.
+        /// The details of a resource that doesn't have a specific subfield for the resource type
+        /// defined.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Other

@@ -29,8 +29,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the GetFindings operation.
-    /// Lists and describes Security Hub-aggregated findings that are specified by filter
-    /// attributes.
+    /// Lists and describes Security Hub-aggregated findings that filter attributes specify.
     /// </summary>
     public partial class GetFindingsRequest : AmazonSecurityHubRequest
     {
@@ -42,7 +41,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// A collection of attributes that is use for querying findings.
+        /// A collection of attributes that is used for querying findings.
         /// </para>
         /// </summary>
         public AwsSecurityFindingFilters Filters
@@ -79,10 +78,10 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Paginates results. Set the value of this parameter to NULL on your first call to the
-        /// GetFindings operation. For subsequent calls to the operation, fill nextToken in the
-        /// request with the value of nextToken from the previous response to continue listing
-        /// data.
+        /// Paginates results. On your first call to the <code>GetFindings</code> operation, set
+        /// the value of this parameter to <code>NULL</code>. For subsequent calls to the operation,
+        /// fill <code>nextToken</code> in the request with the value of <code>nextToken</code>
+        /// from the previous response to continue listing data.
         /// </para>
         /// </summary>
         public string NextToken
