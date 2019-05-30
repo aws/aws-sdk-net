@@ -191,6 +191,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.IoTAnalytics.CodeAnalysis" Path="|AWSSDK.IoTAnalytics.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.IotData.CodeAnalysis" Path="|AWSSDK.IotData.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.IotData.CodeAnalysis" Path="|AWSSDK.IotData.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.IoTEvents.CodeAnalysis" Path="|AWSSDK.IoTEvents.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.IoTEvents.CodeAnalysis" Path="|AWSSDK.IoTEvents.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.IoTJobsDataPlane.CodeAnalysis" Path="|AWSSDK.IoTJobsDataPlane.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.IoTJobsDataPlane.CodeAnalysis" Path="|AWSSDK.IoTJobsDataPlane.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.IoTThingsGraph.CodeAnalysis" Path="|AWSSDK.IoTThingsGraph.CodeAnalysis|"/>

@@ -404,6 +404,10 @@
       <Project>{41AE7ED7-1165-4C6C-9F69-FB872C628230}</Project>
       <Name>AWSSDK.IotData.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/IoTEvents/AWSSDK.IoTEvents.CodeAnalysis.csproj">
+      <Project>{45D20FED-F8EE-4253-BD0A-C189D18CDAA2}</Project>
+      <Name>AWSSDK.IoTEvents.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/IoTJobsDataPlane/AWSSDK.IoTJobsDataPlane.CodeAnalysis.csproj">
       <Project>{407F9CF3-E677-40D7-A8F0-28BA5643A666}</Project>
       <Name>AWSSDK.IoTJobsDataPlane.CodeAnalysis</Name>
