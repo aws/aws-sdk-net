@@ -234,6 +234,23 @@ namespace Amazon.CodeCommit
     /// </para>
     ///  </li> </ul> 
     /// <para>
+    /// Tags used to tag resources in AWS CodeCommit (not Git tags), by calling the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>ListTagsForResource</a>, which gets information about AWS tags for a specified
+    /// Amazon Resource Name (ARN) in AWS CodeCommit.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>TagResource</a>, which adds or updates tags for a resource in AWS CodeCommit.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UntagResource</a>, which removes tags for a resource in AWS CodeCommit.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
     /// Triggers, by calling the following:
     /// </para>
     ///  <ul> <li> 
@@ -253,7 +270,7 @@ namespace Amazon.CodeCommit
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For information about how to use AWS CodeCommit, see the <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+    /// For information about how to use AWS CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
     /// CodeCommit User Guide</a>.
     /// </para>
     /// </summary>
@@ -765,6 +782,12 @@ namespace Amazon.CodeCommit
         /// </para>
         ///  </note>
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidSystemTagUsageException">
+        /// The specified tag is not valid. Key names cannot be prefixed with aws:.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidTagsMapException">
+        /// The map of tags is not valid.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryLimitExceededException">
         /// A repository resource limit was exceeded.
         /// </exception>
@@ -773,6 +796,12 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
         /// A repository name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.TagPolicyException">
+        /// The tag policy is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.TooManyTagsException">
+        /// The maximum number of tags for an AWS CodeCommit resource has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateRepository">REST API Reference for CreateRepository Operation</seealso>
         CreateRepositoryResponse CreateRepository(CreateRepositoryRequest request);
@@ -1182,7 +1211,7 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileTooLargeException">
         /// The specified file exceeds the file size limit for AWS CodeCommit. For more information
-        /// about limits in AWS CodeCommit, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+        /// about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
         /// CodeCommit User Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidBlobIdException">
@@ -1686,7 +1715,7 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileTooLargeException">
         /// The specified file exceeds the file size limit for AWS CodeCommit. For more information
-        /// about limits in AWS CodeCommit, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+        /// about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
         /// CodeCommit User Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitException">
@@ -2251,6 +2280,59 @@ namespace Amazon.CodeCommit
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListRepositories">REST API Reference for ListRepositories Operation</seealso>
         Task<ListRepositoriesResponse> ListRepositoriesAsync(ListRepositoriesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS
+        /// CodeCommit. For a list of valid resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
+        /// Resources and Operations</a> in the AWS CodeCommit User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidResourceArnException">
+        /// The value for the resource ARN is not valid. For more information about resources
+        /// in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
+        /// Resources and Operations</a> in the AWS CodeCommit User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ResourceArnRequiredException">
+        /// A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For
+        /// a list of valid resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
+        /// Resources and Operations</a> in the AWS CodeCommit User Guide.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2901,6 +2983,74 @@ namespace Amazon.CodeCommit
 
         #endregion
         
+        #region  TagResource
+
+
+        /// <summary>
+        /// Adds or updates tags for a resource in AWS CodeCommit. For a list of valid resources
+        /// in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
+        /// Resources and Operations</a> in the AWS CodeCommit User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidResourceArnException">
+        /// The value for the resource ARN is not valid. For more information about resources
+        /// in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
+        /// Resources and Operations</a> in the AWS CodeCommit User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidSystemTagUsageException">
+        /// The specified tag is not valid. Key names cannot be prefixed with aws:.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidTagsMapException">
+        /// The map of tags is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ResourceArnRequiredException">
+        /// A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For
+        /// a list of valid resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
+        /// Resources and Operations</a> in the AWS CodeCommit User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.TagPolicyException">
+        /// The tag policy is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.TagsMapRequiredException">
+        /// A map of tags is required.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.TooManyTagsException">
+        /// The maximum number of tags for an AWS CodeCommit resource has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  TestRepositoryTriggers
 
 
@@ -3002,6 +3152,74 @@ namespace Amazon.CodeCommit
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/TestRepositoryTriggers">REST API Reference for TestRepositoryTriggers Operation</seealso>
         Task<TestRepositoryTriggersResponse> TestRepositoryTriggersAsync(TestRepositoryTriggersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Removes tags for a resource in AWS CodeCommit. For a list of valid resources in AWS
+        /// CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
+        /// Resources and Operations</a> in the AWS CodeCommit User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidResourceArnException">
+        /// The value for the resource ARN is not valid. For more information about resources
+        /// in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
+        /// Resources and Operations</a> in the AWS CodeCommit User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidSystemTagUsageException">
+        /// The specified tag is not valid. Key names cannot be prefixed with aws:.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidTagKeysListException">
+        /// The list of tags is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ResourceArnRequiredException">
+        /// A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For
+        /// a list of valid resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
+        /// Resources and Operations</a> in the AWS CodeCommit User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.TagKeysListRequiredException">
+        /// A list of tag keys is required. The list cannot be empty or null.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.TagPolicyException">
+        /// The tag policy is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.TooManyTagsException">
+        /// The maximum number of tags for an AWS CodeCommit resource has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3369,7 +3587,7 @@ namespace Amazon.CodeCommit
         /// Renames a repository. The repository name must be unique across the calling AWS account.
         /// In addition, repository names are limited to 100 alphanumeric, dash, and underscore
         /// characters, and cannot include certain characters. The suffix ".git" is prohibited.
-        /// For a full description of the limits on repository names, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a>
+        /// For a full description of the limits on repository names, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a>
         /// in the AWS CodeCommit User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRepositoryName service method.</param>

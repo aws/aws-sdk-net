@@ -32,7 +32,7 @@ namespace Amazon.CodeCommit.Model
     /// Renames a repository. The repository name must be unique across the calling AWS account.
     /// In addition, repository names are limited to 100 alphanumeric, dash, and underscore
     /// characters, and cannot include certain characters. The suffix ".git" is prohibited.
-    /// For a full description of the limits on repository names, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a>
+    /// For a full description of the limits on repository names, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a>
     /// in the AWS CodeCommit User Guide.
     /// </summary>
     public partial class UpdateRepositoryNameRequest : AmazonCodeCommitRequest

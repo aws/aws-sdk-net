@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateRepository Request Marshaller
+    /// ListTagsForResource Request Marshaller
     /// </summary>       
-    public class CreateRepositoryRequestMarshaller : IMarshaller<IRequest, CreateRepositoryRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListTagsForResourceRequestMarshaller : IMarshaller<IRequest, ListTagsForResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateRepositoryRequest)input);
+            return this.Marshall((ListTagsForResourceRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateRepositoryRequest publicRequest)
+        public IRequest Marshall(ListTagsForResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeCommit");
-            string target = "CodeCommit_20150413.CreateRepository";
+            string target = "CodeCommit_20150413.ListTagsForResource";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-04-13";            
@@ -68,30 +68,16 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetRepositoryDescription())
+                if(publicRequest.IsSetNextToken())
                 {
-                    context.Writer.WritePropertyName("repositoryDescription");
-                    context.Writer.Write(publicRequest.RepositoryDescription);
+                    context.Writer.WritePropertyName("nextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
-                if(publicRequest.IsSetRepositoryName())
+                if(publicRequest.IsSetResourceArn())
                 {
-                    context.Writer.WritePropertyName("repositoryName");
-                    context.Writer.Write(publicRequest.RepositoryName);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("resourceArn");
+                    context.Writer.Write(publicRequest.ResourceArn);
                 }
 
         
@@ -103,9 +89,9 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateRepositoryRequestMarshaller _instance = new CreateRepositoryRequestMarshaller();        
+        private static ListTagsForResourceRequestMarshaller _instance = new ListTagsForResourceRequestMarshaller();        
 
-        internal static CreateRepositoryRequestMarshaller GetInstance()
+        internal static ListTagsForResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -113,7 +99,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateRepositoryRequestMarshaller Instance
+        public static ListTagsForResourceRequestMarshaller Instance
         {
             get
             {
