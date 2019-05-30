@@ -404,7 +404,8 @@ namespace Amazon.Runtime.Internal
                 if (callback != null)
                     originalStream = httpRequest.SetupProgressListeners(originalStream, requestContext.ClientConfig.ProgressUpdateInterval, this.CallbackSender, callback);
 
-                var inputStream = wrappedRequest.UseChunkEncoding && wrappedRequest.AWS4SignerResult != null
+                var inputStream = (wrappedRequest.UseChunkEncoding && wrappedRequest.AWS4SignerResult != null) ||
+                        (wrappedRequest.Headers.ContainsKey(Amazon.Util.HeaderKeys.TransferEncodingHeader) && wrappedRequest.Headers[Amazon.Util.HeaderKeys.TransferEncodingHeader] == "chunked")
                     ? new ChunkedUploadWrapperStream(originalStream,
                                                      requestContext.ClientConfig.BufferSize,
                                                      wrappedRequest.AWS4SignerResult)
@@ -453,7 +454,7 @@ namespace Amazon.Runtime.Internal
                     request.Headers[HeaderKeys.ContentLengthHeader] =
                         content.Length.ToString(CultureInfo.InvariantCulture);
                 }
-                else if (request.ContentStream != null && !request.Headers.ContainsKey(HeaderKeys.ContentLengthHeader))
+                else if (request.ContentStream != null && request.ContentStream.CanSeek && !request.Headers.ContainsKey(HeaderKeys.ContentLengthHeader))
                 {
                     request.Headers[HeaderKeys.ContentLengthHeader] =
                         request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);

@@ -20,6 +20,7 @@ namespace ServiceClientGenerator
         public const string MembersKey = "members";
         public const string PayloadKey = "payload";
         public const string ExceptionKey = "exception";
+        public const string RequiresLengthKey = "requiresLength";
         public const string StreamingKey = "streaming";
         public const string TypeKey = "type";
         public const string FlattenedKey = "flattened";
@@ -32,7 +33,7 @@ namespace ServiceClientGenerator
         public const string EventStreamKey = "eventstream";
         public const string DeprecatedKey = "deprecated";
         public const string DeprecatedMessageKey = "deprecatedMessage";
-        public const string TimestampFormatKey = "timestampFormat";
+        public const string TimestampFormatKey = "timestampFormat";        
 
         public static readonly HashSet<string> NullableTypes = new HashSet<string> {
             "bool",
@@ -481,6 +482,17 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// Determines if the shape's json has a requiresLength attribute
+        /// </summary>
+        public bool RequiresLength
+        {
+            get
+            {                
+                return (bool)(this.data[RequiresLengthKey] ?? false);
+            }
+        }
+
+        /// <summary>
         /// Determines if the shape's json has a streaming attribute
         /// </summary>
         public bool IsStreaming
@@ -493,7 +505,7 @@ namespace ServiceClientGenerator
 
                 return bool.Parse(streamingNode.ToString());
             }
-        }
+        }        
 
         public long? Min
         {

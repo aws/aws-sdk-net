@@ -50,6 +50,7 @@ namespace Amazon.Util
         public const string ConnectionHeader = "Connection";
         public const string StatusHeader = "Status";
         public const string XHttpMethodOverrideHeader = "X-HTTP-Method-Override";
+        public const string TransferEncodingHeader = "transfer-encoding";
 
         public const string RequestIdHeader = "x-amzn-RequestId";
         public const string XAmzId2Header = "x-amz-id-2";

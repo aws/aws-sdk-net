@@ -300,6 +300,14 @@ namespace Amazon.Runtime.Internal.Util
         }
 
         #endregion
+
+        internal virtual bool HasLength
+        {
+            get
+            {
+                return true;
+            }
+        }
     }
 
 }

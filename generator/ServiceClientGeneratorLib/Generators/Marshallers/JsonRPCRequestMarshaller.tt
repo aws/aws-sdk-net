@@ -114,8 +114,39 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
     {
 #>
 			request.ContentStream =  publicRequest.<#=payload.PropertyName#> ?? new MemoryStream();
+<#		
+		var requiresLength = payload.RequiresLength;		
+		if(!requiresLength && payload.IsStreaming && this.Operation.AuthType == OperationAuthType.V4UnsignedBody)
+		{
+#>
+			if(request.ContentStream.CanSeek)
+			{
+				request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
+					request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
+			}
+			else
+			{
+				request.Headers[Amazon.Util.HeaderKeys.TransferEncodingHeader] = "chunked";
+			}
+<#
+		}
+		else
+		{
+			if(payload.IsStreaming && requiresLength)
+			{
+#>
+			if(!request.ContentStream.CanSeek)
+			{
+				throw new System.InvalidOperationException("Cannot determine stream length for the payload when content-length is required.");
+			}
+<#
+			}
+#>
 			request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
 				request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
+<#
+		}		
+#>
 			request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream";
 <#
     }

@@ -65,8 +65,15 @@ namespace Amazon.MediaStoreData.Model.Internal.MarshallTransformations
             uriResourcePath = uriResourcePath.Replace("{Path+}", StringUtils.FromString(publicRequest.Path.TrimStart('/')));
             request.ResourcePath = uriResourcePath;
             request.ContentStream =  publicRequest.Body ?? new MemoryStream();
-            request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
-                request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
+            if(request.ContentStream.CanSeek)
+            {
+                request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
+                    request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
+            }
+            else
+            {
+                request.Headers[Amazon.Util.HeaderKeys.TransferEncodingHeader] = "chunked";
+            }
             request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream";
         
             if(publicRequest.IsSetCacheControl())

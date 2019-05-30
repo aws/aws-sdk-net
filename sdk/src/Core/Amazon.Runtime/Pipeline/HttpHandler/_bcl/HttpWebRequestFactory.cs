@@ -464,6 +464,9 @@ namespace Amazon.Runtime.Internal
                         request.ContentLength = long.Parse(kvp.Value, CultureInfo.InvariantCulture);
                     else if (string.Equals(kvp.Key, HeaderKeys.UserAgentHeader, StringComparison.OrdinalIgnoreCase))
                         request.UserAgent = kvp.Value;
+                    else if (string.Equals(kvp.Key, HeaderKeys.TransferEncodingHeader, StringComparison.OrdinalIgnoreCase) 
+                        && string.Equals(kvp.Value, "chunked", StringComparison.OrdinalIgnoreCase))
+                        request.SendChunked = true;
                     // Date accessor is only present in .NET 4.0, so using reflection
                     else if (string.Equals(kvp.Key, HeaderKeys.DateHeader, StringComparison.OrdinalIgnoreCase))
                         _addWithoutValidateHeadersMethod.Invoke(request.Headers, new[] { HeaderKeys.DateHeader, kvp.Value });

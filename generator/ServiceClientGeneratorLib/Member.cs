@@ -836,6 +836,17 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// Determines if the member has requiresLength from the shape in the json model
+        /// </summary>
+        public bool RequiresLength
+        {
+            get
+            {
+                return this.Shape.RequiresLength;
+            }
+        }
+
+        /// <summary>
         /// Determines if the member is a stream from the shape in the json model
         /// </summary>
         public bool IsStreaming

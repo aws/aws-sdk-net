@@ -71,8 +71,15 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
             uriResourcePath = uriResourcePath.Replace("{userId}", StringUtils.FromStringWithSlashEncoding(publicRequest.UserId));
             request.ResourcePath = uriResourcePath;
             request.ContentStream =  publicRequest.InputStream ?? new MemoryStream();
-            request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
-                request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
+            if(request.ContentStream.CanSeek)
+            {
+                request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
+                    request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
+            }
+            else
+            {
+                request.Headers[Amazon.Util.HeaderKeys.TransferEncodingHeader] = "chunked";
+            }
             request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream";
         
             if(publicRequest.IsSetAccept())

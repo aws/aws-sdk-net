@@ -74,7 +74,7 @@ namespace Amazon.Runtime.Internal.Util
             : base(stream)
         {
             HeaderSigningResult = headerSigningResult;
-            PreviousChunkSignature = headerSigningResult.Signature;
+            PreviousChunkSignature = headerSigningResult?.Signature;
 
             _wrappedStreamBufferSize = wrappedStreamBufferSize;
             _inputBuffer = new byte[DefaultChunkSize];
@@ -167,23 +167,27 @@ namespace Amazon.Runtime.Internal.Util
 
             // variable-length size of the embedded chunk data in hex
             chunkHeader.Append(dataLen.ToString("X", CultureInfo.InvariantCulture));
-            
-            const string nonsigExtension = "";
-            
-            // signature-extension
-            var chunkStringToSign =
-                CHUNK_STRING_TO_SIGN_PREFIX + "\n" +
-                HeaderSigningResult.ISO8601DateTime + "\n" +
-                HeaderSigningResult.Scope + "\n" +
-                PreviousChunkSignature + "\n" +
-                AWSSDKUtils.ToHex(AWS4Signer.ComputeHash(nonsigExtension), true) + "\n" +
-                (dataLen > 0 
-                    ? AWSSDKUtils.ToHex(AWS4Signer.ComputeHash(_inputBuffer), true) 
-                    : AWS4Signer.EmptyBodySha256);
 
-            var chunkSignature = AWSSDKUtils.ToHex(AWS4Signer.SignBlob(HeaderSigningResult.SigningKey, chunkStringToSign), true);
-            PreviousChunkSignature = chunkSignature;
-            chunkHeader.Append(nonsigExtension + CHUNK_SIGNATURE_HEADER + chunkSignature);
+            if (HeaderSigningResult != null)
+            {
+                const string nonsigExtension = "";
+
+                // signature-extension
+                var chunkStringToSign =
+                    CHUNK_STRING_TO_SIGN_PREFIX + "\n" +
+                    HeaderSigningResult.ISO8601DateTime + "\n" +
+                    HeaderSigningResult.Scope + "\n" +
+                    PreviousChunkSignature + "\n" +
+                    AWSSDKUtils.ToHex(AWS4Signer.ComputeHash(nonsigExtension), true) + "\n" +
+                    (dataLen > 0
+                        ? AWSSDKUtils.ToHex(AWS4Signer.ComputeHash(_inputBuffer), true)
+                        : AWS4Signer.EmptyBodySha256);
+
+                var chunkSignature = AWSSDKUtils.ToHex(AWS4Signer.SignBlob(HeaderSigningResult.SigningKey, chunkStringToSign), true);
+                PreviousChunkSignature = chunkSignature;
+                chunkHeader.Append(nonsigExtension + CHUNK_SIGNATURE_HEADER + chunkSignature);
+            }
+
             chunkHeader.Append(CLRF);
 
             try
@@ -311,6 +315,14 @@ namespace Amazon.Runtime.Internal.Util
             }
 
             return inputBufferPos;
+        }
+
+        internal override bool HasLength
+        {
+            get
+            {
+                return HeaderSigningResult != null;
+            }
         }
     }
 }

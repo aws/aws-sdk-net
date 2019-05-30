@@ -52,7 +52,8 @@ namespace Amazon.Runtime.Internal.Auth
         const SigningAlgorithm SignerAlgorithm = SigningAlgorithm.HmacSHA256;
 
         private static IEnumerable<string> _headersToIgnoreWhenSigning = new HashSet<string>(StringComparer.OrdinalIgnoreCase) {
-            HeaderKeys.XAmznTraceIdHeader
+            HeaderKeys.XAmznTraceIdHeader,
+            HeaderKeys.TransferEncodingHeader
         };
 
         public AWS4Signer()
