@@ -4348,6 +4348,68 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  ListStackInstancesForProvisionedProduct
+
+        /// <summary>
+        /// Returns summary information about stack instances that are associated with the specified
+        /// <code>CFN_STACKSET</code> type provisioned product. You can filter for stack instances
+        /// that are associated with a specific AWS account name or region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStackInstancesForProvisionedProduct service method.</param>
+        /// 
+        /// <returns>The response from the ListStackInstancesForProvisionedProduct service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListStackInstancesForProvisionedProduct">REST API Reference for ListStackInstancesForProvisionedProduct Operation</seealso>
+        public virtual ListStackInstancesForProvisionedProductResponse ListStackInstancesForProvisionedProduct(ListStackInstancesForProvisionedProductRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStackInstancesForProvisionedProductRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStackInstancesForProvisionedProductResponseUnmarshaller.Instance;
+
+            return Invoke<ListStackInstancesForProvisionedProductResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListStackInstancesForProvisionedProduct operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListStackInstancesForProvisionedProduct operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStackInstancesForProvisionedProduct
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListStackInstancesForProvisionedProduct">REST API Reference for ListStackInstancesForProvisionedProduct Operation</seealso>
+        public virtual IAsyncResult BeginListStackInstancesForProvisionedProduct(ListStackInstancesForProvisionedProductRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStackInstancesForProvisionedProductRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStackInstancesForProvisionedProductResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListStackInstancesForProvisionedProduct operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStackInstancesForProvisionedProduct.</param>
+        /// 
+        /// <returns>Returns a  ListStackInstancesForProvisionedProductResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListStackInstancesForProvisionedProduct">REST API Reference for ListStackInstancesForProvisionedProduct Operation</seealso>
+        public virtual ListStackInstancesForProvisionedProductResponse EndListStackInstancesForProvisionedProduct(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListStackInstancesForProvisionedProductResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTagOptions
 
         /// <summary>

@@ -2395,6 +2395,39 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  ListStackInstancesForProvisionedProduct
+
+        internal virtual ListStackInstancesForProvisionedProductResponse ListStackInstancesForProvisionedProduct(ListStackInstancesForProvisionedProductRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStackInstancesForProvisionedProductRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStackInstancesForProvisionedProductResponseUnmarshaller.Instance;
+
+            return Invoke<ListStackInstancesForProvisionedProductResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListStackInstancesForProvisionedProduct operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListStackInstancesForProvisionedProduct operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListStackInstancesForProvisionedProduct">REST API Reference for ListStackInstancesForProvisionedProduct Operation</seealso>
+        public virtual Task<ListStackInstancesForProvisionedProductResponse> ListStackInstancesForProvisionedProductAsync(ListStackInstancesForProvisionedProductRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStackInstancesForProvisionedProductRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStackInstancesForProvisionedProductResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListStackInstancesForProvisionedProductResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagOptions
 
         internal virtual ListTagOptionsResponse ListTagOptions(ListTagOptionsRequest request)

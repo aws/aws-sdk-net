@@ -1111,6 +1111,31 @@
     <pattern>[\u0009\u000a\u000d\u0020-\uD7FF\uE000-\uFFFD]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ListStackInstancesForProvisionedProductRequest.AcceptLanguage</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ListStackInstancesForProvisionedProductRequest.PageSize</property>
+    <min>0</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ListStackInstancesForProvisionedProductRequest.PageToken</property>
+    <max>2024</max>
+    <pattern>[\u0009\u000a\u000d\u0020-\uD7FF\uE000-\uFFFD]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ListStackInstancesForProvisionedProductRequest.ProvisionedProductId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ListStackInstancesForProvisionedProductResponse.NextPageToken</property>
+    <max>2024</max>
+    <pattern>[\u0009\u000a\u000d\u0020-\uD7FF\uE000-\uFFFD]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.ListTagOptionsRequest.PageSize</property>
     <min>0</min>
     <max>20</max>
@@ -1889,6 +1914,10 @@
     <min>1</min>
     <max>256</max>
     <pattern>^[a-zA-Z0-9_\-.]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.StackInstance.Account</property>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.Tag.Key</property>
