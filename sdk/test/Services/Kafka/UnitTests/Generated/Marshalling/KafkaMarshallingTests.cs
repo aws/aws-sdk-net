@@ -172,6 +172,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Kafka")]
+        public void DescribeClusterOperationMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeClusterOperation");
+
+            var request = InstantiateClassGenerator.Execute<DescribeClusterOperationRequest>();
+            var marshaller = new DescribeClusterOperationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DescribeClusterOperation", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DescribeClusterOperationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DescribeClusterOperationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
         public void DescribeConfigurationMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeConfiguration");
@@ -268,6 +300,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Kafka")]
+        public void ListClusterOperationsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListClusterOperations");
+
+            var request = InstantiateClassGenerator.Execute<ListClusterOperationsRequest>();
+            var marshaller = new ListClusterOperationsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListClusterOperations", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListClusterOperationsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListClusterOperationsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
         public void ListClustersMarshallTest()
         {
             var operation = service_model.FindOperation("ListClusters");
@@ -292,6 +356,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = ListClustersResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as ListClustersResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void ListConfigurationRevisionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListConfigurationRevisions");
+
+            var request = InstantiateClassGenerator.Execute<ListConfigurationRevisionsRequest>();
+            var marshaller = new ListConfigurationRevisionsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListConfigurationRevisions", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListConfigurationRevisionsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListConfigurationRevisionsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -423,6 +519,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var internalRequest = marshaller.Marshall(request);
             TestTools.RequestValidator.Validate("UntagResource", request, internalRequest, service_model);            
 
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void UpdateBrokerStorageMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateBrokerStorage");
+
+            var request = InstantiateClassGenerator.Execute<UpdateBrokerStorageRequest>();
+            var marshaller = new UpdateBrokerStorageRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateBrokerStorage", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateBrokerStorageResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpdateBrokerStorageResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void UpdateClusterConfigurationMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateClusterConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<UpdateClusterConfigurationRequest>();
+            var marshaller = new UpdateClusterConfigurationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateClusterConfiguration", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateClusterConfigurationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpdateClusterConfigurationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
             }

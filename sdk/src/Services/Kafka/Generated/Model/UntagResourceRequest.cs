@@ -29,7 +29,7 @@ namespace Amazon.Kafka.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Remove tags of a resource by given tag keys.
+    /// Removes the tags associated with the keys that are provided in the query.
     /// </summary>
     public partial class UntagResourceRequest : AmazonKafkaRequest
     {
@@ -37,9 +37,10 @@ namespace Amazon.Kafka.Model
         private List<string> _tagKeys = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. 
+        /// Gets and sets the property ResourceArn.             
         /// <para>
-        /// The Amazon Resource Name (ARN) that uniquely identifies the resource.
+        /// The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated
+        /// with the tags.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -56,10 +57,33 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagKeys. 
+        /// Gets and sets the property TagKeys.             
         /// <para>
-        /// The list of tag keys.
+        /// Tag keys must be unique for a given cluster. In addition, the following restrictions
+        /// apply:
         /// </para>
+        ///             <ul>               <li>                  
+        /// <para>
+        /// Each tag key must be unique. If you add a tag with a key that's already in       
+        ///           use, your new tag overwrites the existing key-value pair. 
+        /// </para>
+        ///                </li>               <li>                  
+        /// <para>
+        /// You can't start a tag key with aws: because this prefix is reserved for use      
+        ///            by  AWS.  AWS creates tags that begin with this prefix on your behalf,
+        /// but                  you can't edit or delete them.
+        /// </para>
+        ///                </li>               <li>                  
+        /// <para>
+        /// Tag keys must be between 1 and 128 Unicode characters in length.
+        /// </para>
+        ///                </li>               <li>                  
+        /// <para>
+        /// Tag keys must consist of the following characters: Unicode letters, digits,      
+        ///            white space, and the following special characters: _ . / = + -        
+        ///             @.
+        /// </para>
+        ///                </li>            </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> TagKeys

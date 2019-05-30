@@ -32,7 +32,9 @@ namespace Amazon.Kafka.Model
     /// </summary>
     public partial class ClusterInfo
     {
+        private string _activeOperationArn;
         private BrokerNodeGroupInfo _brokerNodeGroupInfo;
+        private ClientAuthentication _clientAuthentication;
         private string _clusterArn;
         private string _clusterName;
         private DateTime? _creationTime;
@@ -42,10 +44,29 @@ namespace Amazon.Kafka.Model
         private EnhancedMonitoring _enhancedMonitoring;
         private int? _numberOfBrokerNodes;
         private ClusterState _state;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _zookeeperConnectString;
 
         /// <summary>
-        /// Gets and sets the property BrokerNodeGroupInfo. 
+        /// Gets and sets the property ActiveOperationArn.             
+        /// <para>
+        /// Arn of active cluster operation.
+        /// </para>
+        /// </summary>
+        public string ActiveOperationArn
+        {
+            get { return this._activeOperationArn; }
+            set { this._activeOperationArn = value; }
+        }
+
+        // Check to see if ActiveOperationArn property is set
+        internal bool IsSetActiveOperationArn()
+        {
+            return this._activeOperationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BrokerNodeGroupInfo.             
         /// <para>
         /// Information about the broker nodes.
         /// </para>
@@ -63,7 +84,25 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClusterArn. 
+        /// Gets and sets the property ClientAuthentication.             
+        /// <para>
+        /// Includes all client authentication information.
+        /// </para>
+        /// </summary>
+        public ClientAuthentication ClientAuthentication
+        {
+            get { return this._clientAuthentication; }
+            set { this._clientAuthentication = value; }
+        }
+
+        // Check to see if ClientAuthentication property is set
+        internal bool IsSetClientAuthentication()
+        {
+            return this._clientAuthentication != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterArn.             
         /// <para>
         /// The Amazon Resource Name (ARN) that uniquely identifies the cluster.
         /// </para>
@@ -81,7 +120,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClusterName. 
+        /// Gets and sets the property ClusterName.             
         /// <para>
         /// The name of the cluster.
         /// </para>
@@ -99,7 +138,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreationTime. 
+        /// Gets and sets the property CreationTime.             
         /// <para>
         /// The time when the cluster was created.
         /// </para>
@@ -117,7 +156,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CurrentBrokerSoftwareInfo. 
+        /// Gets and sets the property CurrentBrokerSoftwareInfo.             
         /// <para>
         /// Information about the version of software currently deployed on the Kafka brokers
         /// in the cluster.
@@ -136,7 +175,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CurrentVersion. 
+        /// Gets and sets the property CurrentVersion.             
         /// <para>
         /// The current version of the MSK cluster.
         /// </para>
@@ -154,7 +193,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EncryptionInfo. 
+        /// Gets and sets the property EncryptionInfo.             
         /// <para>
         /// Includes all encryption-related information.
         /// </para>
@@ -172,10 +211,11 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EnhancedMonitoring. 
+        /// Gets and sets the property EnhancedMonitoring.             
         /// <para>
         /// Specifies which metrics are gathered for the MSK cluster. This property has three
-        /// possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER.
+        /// possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the
+        /// metrics associated with each of these three levels of monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.
         /// </para>
         /// </summary>
         public EnhancedMonitoring EnhancedMonitoring
@@ -191,9 +231,9 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NumberOfBrokerNodes. 
+        /// Gets and sets the property NumberOfBrokerNodes.             
         /// <para>
-        /// The number of Kafka broker nodes in the cluster.
+        /// The number of broker nodes in the cluster.
         /// </para>
         /// </summary>
         public int NumberOfBrokerNodes
@@ -209,7 +249,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property State. 
+        /// Gets and sets the property State.             
         /// <para>
         /// The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.
         /// </para>
@@ -227,7 +267,25 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ZookeeperConnectString. 
+        /// Gets and sets the property Tags.             
+        /// <para>
+        /// Tags attached to the cluster.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ZookeeperConnectString.             
         /// <para>
         /// The connection string to use to connect to the Apache ZooKeeper cluster.
         /// </para>

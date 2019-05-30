@@ -265,6 +265,61 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  DescribeClusterOperation
+
+
+        /// <summary>
+        /// Returns a description of the cluster operation specified by the ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterOperation service method.</param>
+        /// 
+        /// <returns>The response from the DescribeClusterOperation service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeClusterOperation">REST API Reference for DescribeClusterOperation Operation</seealso>
+        DescribeClusterOperationResponse DescribeClusterOperation(DescribeClusterOperationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeClusterOperation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterOperation operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeClusterOperation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeClusterOperation">REST API Reference for DescribeClusterOperation Operation</seealso>
+        IAsyncResult BeginDescribeClusterOperation(DescribeClusterOperationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeClusterOperation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClusterOperation.</param>
+        /// 
+        /// <returns>Returns a  DescribeClusterOperationResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeClusterOperation">REST API Reference for DescribeClusterOperation Operation</seealso>
+        DescribeClusterOperationResponse EndDescribeClusterOperation(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeConfiguration
 
 
@@ -436,11 +491,64 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  ListClusterOperations
+
+
+        /// <summary>
+        /// Returns a list of all the operations that have been performed on the specified MSK
+        /// cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterOperations service method.</param>
+        /// 
+        /// <returns>The response from the ListClusterOperations service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClusterOperations">REST API Reference for ListClusterOperations Operation</seealso>
+        ListClusterOperationsResponse ListClusterOperations(ListClusterOperationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListClusterOperations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterOperations operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListClusterOperations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClusterOperations">REST API Reference for ListClusterOperations Operation</seealso>
+        IAsyncResult BeginListClusterOperations(ListClusterOperationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListClusterOperations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListClusterOperations.</param>
+        /// 
+        /// <returns>Returns a  ListClusterOperationsResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClusterOperations">REST API Reference for ListClusterOperations Operation</seealso>
+        ListClusterOperationsResponse EndListClusterOperations(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListClusters
 
 
         /// <summary>
-        /// Returns a list of clusters in an account.
+        /// Returns a list of all the MSK clusters in the current Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListClusters service method.</param>
         /// 
@@ -488,11 +596,69 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  ListConfigurationRevisions
+
+
+        /// <summary>
+        /// Returns a list of all the MSK configurations in this Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationRevisions service method.</param>
+        /// 
+        /// <returns>The response from the ListConfigurationRevisions service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListConfigurationRevisions">REST API Reference for ListConfigurationRevisions Operation</seealso>
+        ListConfigurationRevisionsResponse ListConfigurationRevisions(ListConfigurationRevisionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConfigurationRevisions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationRevisions operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConfigurationRevisions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListConfigurationRevisions">REST API Reference for ListConfigurationRevisions Operation</seealso>
+        IAsyncResult BeginListConfigurationRevisions(ListConfigurationRevisionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListConfigurationRevisions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListConfigurationRevisions.</param>
+        /// 
+        /// <returns>Returns a  ListConfigurationRevisionsResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListConfigurationRevisions">REST API Reference for ListConfigurationRevisions Operation</seealso>
+        ListConfigurationRevisionsResponse EndListConfigurationRevisions(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListConfigurations
 
 
         /// <summary>
-        /// Returns a list of all the MSK configurations in this Region for this account.
+        /// Returns a list of all the MSK configurations in this Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListConfigurations service method.</param>
         /// 
@@ -599,7 +765,7 @@ namespace Amazon.Kafka
 
 
         /// <summary>
-        /// Returns a list of tags attached to a resource.
+        /// Returns a list of the tags associated with the specified resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -648,7 +814,7 @@ namespace Amazon.Kafka
 
 
         /// <summary>
-        /// Tag a resource with given tags.
+        /// Adds tags to the specified MSK resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -697,7 +863,7 @@ namespace Amazon.Kafka
 
 
         /// <summary>
-        /// Remove tags of a resource by given tag keys.
+        /// Removes the tags associated with the keys that are provided in the query.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -739,6 +905,119 @@ namespace Amazon.Kafka
         /// <returns>Returns a  UntagResourceResult from Kafka.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateBrokerStorage
+
+
+        /// <summary>
+        /// Updates the EBS storage associated with MSK brokers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBrokerStorage service method.</param>
+        /// 
+        /// <returns>The response from the UpdateBrokerStorage service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateBrokerStorage">REST API Reference for UpdateBrokerStorage Operation</seealso>
+        UpdateBrokerStorageResponse UpdateBrokerStorage(UpdateBrokerStorageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateBrokerStorage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBrokerStorage operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateBrokerStorage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateBrokerStorage">REST API Reference for UpdateBrokerStorage Operation</seealso>
+        IAsyncResult BeginUpdateBrokerStorage(UpdateBrokerStorageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateBrokerStorage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateBrokerStorage.</param>
+        /// 
+        /// <returns>Returns a  UpdateBrokerStorageResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateBrokerStorage">REST API Reference for UpdateBrokerStorage Operation</seealso>
+        UpdateBrokerStorageResponse EndUpdateBrokerStorage(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateClusterConfiguration
+
+
+        /// <summary>
+        /// Updates the cluster with the configuration that is specified in the request body.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClusterConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateClusterConfiguration service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateClusterConfiguration">REST API Reference for UpdateClusterConfiguration Operation</seealso>
+        UpdateClusterConfigurationResponse UpdateClusterConfiguration(UpdateClusterConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateClusterConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClusterConfiguration operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateClusterConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateClusterConfiguration">REST API Reference for UpdateClusterConfiguration Operation</seealso>
+        IAsyncResult BeginUpdateClusterConfiguration(UpdateClusterConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateClusterConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateClusterConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateClusterConfigurationResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateClusterConfiguration">REST API Reference for UpdateClusterConfiguration Operation</seealso>
+        UpdateClusterConfigurationResponse EndUpdateClusterConfiguration(IAsyncResult asyncResult);
 
         #endregion
         

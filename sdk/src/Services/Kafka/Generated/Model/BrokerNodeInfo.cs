@@ -37,9 +37,10 @@ namespace Amazon.Kafka.Model
         private string _clientSubnet;
         private string _clientVpcIpAddress;
         private BrokerSoftwareInfo _currentBrokerSoftwareInfo;
+        private List<string> _endpoints = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property AttachedENIId. 
+        /// Gets and sets the property AttachedENIId.             
         /// <para>
         /// The attached elastic network interface of the broker.
         /// </para>
@@ -57,7 +58,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BrokerId. 
+        /// Gets and sets the property BrokerId.             
         /// <para>
         /// The ID of the broker.
         /// </para>
@@ -75,7 +76,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClientSubnet. 
+        /// Gets and sets the property ClientSubnet.             
         /// <para>
         /// The client subnet to which this broker node belongs.
         /// </para>
@@ -93,7 +94,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClientVpcIpAddress. 
+        /// Gets and sets the property ClientVpcIpAddress.             
         /// <para>
         /// The virtual private cloud (VPC) of the client.
         /// </para>
@@ -111,7 +112,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CurrentBrokerSoftwareInfo. 
+        /// Gets and sets the property CurrentBrokerSoftwareInfo.             
         /// <para>
         /// Information about the version of software currently deployed on the Kafka brokers
         /// in the cluster.
@@ -127,6 +128,24 @@ namespace Amazon.Kafka.Model
         internal bool IsSetCurrentBrokerSoftwareInfo()
         {
             return this._currentBrokerSoftwareInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Endpoints.             
+        /// <para>
+        /// Endpoints for accessing the broker.
+        /// </para>
+        /// </summary>
+        public List<string> Endpoints
+        {
+            get { return this._endpoints; }
+            set { this._endpoints = value; }
+        }
+
+        // Check to see if Endpoints property is set
+        internal bool IsSetEndpoints()
+        {
+            return this._endpoints != null && this._endpoints.Count > 0; 
         }
 
     }

@@ -35,7 +35,7 @@ namespace Amazon.Kafka.Model
         private EBSStorageInfo _ebsStorageInfo;
 
         /// <summary>
-        /// Gets and sets the property EbsStorageInfo. 
+        /// Gets and sets the property EbsStorageInfo.             
         /// <para>
         /// EBS volume information.
         /// </para>

@@ -64,10 +64,22 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("activeOperationArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ActiveOperationArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("brokerNodeGroupInfo", targetDepth))
                 {
                     var unmarshaller = BrokerNodeGroupInfoUnmarshaller.Instance;
                     unmarshalledObject.BrokerNodeGroupInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("clientAuthentication", targetDepth))
+                {
+                    var unmarshaller = ClientAuthenticationUnmarshaller.Instance;
+                    unmarshalledObject.ClientAuthentication = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("clusterArn", targetDepth))
@@ -122,6 +134,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("tags", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("zookeeperConnectString", targetDepth))

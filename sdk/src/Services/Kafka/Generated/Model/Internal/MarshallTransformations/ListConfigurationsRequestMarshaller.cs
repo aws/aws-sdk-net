@@ -61,7 +61,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             string uriResourcePath = "/v1/configurations";
             
             if (publicRequest.IsSetMaxResults())
-                request.Parameters.Add("maxResults", StringUtils.FromString(publicRequest.MaxResults));
+                request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));

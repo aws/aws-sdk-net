@@ -37,7 +37,7 @@ namespace Amazon.Kafka.Model
         private long? _revision;
 
         /// <summary>
-        /// Gets and sets the property Arn. 
+        /// Gets and sets the property Arn.             
         /// <para>
         /// The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all
         /// of its revisions.
@@ -57,7 +57,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Revision. 
+        /// Gets and sets the property Revision.             
         /// <para>
         /// A string that uniquely identifies a revision of an MSK configuration.
         /// </para>

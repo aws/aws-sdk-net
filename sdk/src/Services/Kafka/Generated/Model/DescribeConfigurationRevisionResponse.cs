@@ -39,7 +39,7 @@ namespace Amazon.Kafka.Model
         private MemoryStream _serverProperties;
 
         /// <summary>
-        /// Gets and sets the property Arn. 
+        /// Gets and sets the property Arn.             
         /// <para>
         /// The Amazon Resource Name (ARN) of the configuration.
         /// </para>
@@ -57,7 +57,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreationTime. 
+        /// Gets and sets the property CreationTime.             
         /// <para>
         /// The time when the configuration was created.
         /// </para>
@@ -75,7 +75,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description. 
+        /// Gets and sets the property Description.             
         /// <para>
         /// The description of the configuration.
         /// </para>
@@ -93,7 +93,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Revision. 
+        /// Gets and sets the property Revision.             
         /// <para>
         /// The revision number.
         /// </para>
@@ -111,11 +111,12 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServerProperties. 
+        /// Gets and sets the property ServerProperties.             
         /// <para>
-        /// Contents of the server.properties file. When using the API, you must ensure that the
-        /// contents of the file are base64 encoded.  When using the AWS Management Console, the
-        /// SDK, or the AWS CLI, the contents of server.properties can be in plaintext.
+        /// Contents of the <filename>server.properties</filename> file. When using the API, you
+        /// must ensure that the contents of the file are base64 encoded.                When
+        /// using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>server.properties</filename>
+        /// can be in plaintext.
         /// </para>
         /// </summary>
         public MemoryStream ServerProperties

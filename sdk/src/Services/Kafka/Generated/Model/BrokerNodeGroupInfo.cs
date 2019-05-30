@@ -39,7 +39,7 @@ namespace Amazon.Kafka.Model
         private StorageInfo _storageInfo;
 
         /// <summary>
-        /// Gets and sets the property BrokerAZDistribution. 
+        /// Gets and sets the property BrokerAZDistribution.             
         /// <para>
         /// The distribution of broker nodes across Availability Zones.
         /// </para>
@@ -57,7 +57,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClientSubnets. 
+        /// Gets and sets the property ClientSubnets.             
         /// <para>
         /// The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates
         /// elastic network interfaces inside these subnets. Client applications use elastic network
@@ -79,7 +79,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceType. 
+        /// Gets and sets the property InstanceType.             
         /// <para>
         /// The type of Amazon EC2 instances to use for Kafka brokers. The following instance
         /// types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge,kafka.m5.4xlarge,
@@ -100,10 +100,12 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SecurityGroups. 
+        /// Gets and sets the property SecurityGroups.             
         /// <para>
         /// The AWS security groups to associate with the elastic network interfaces in order
-        /// to specify who can connect to and communicate with the Amazon MSK cluster.
+        /// to specify who can connect to and communicate with the Amazon MSK cluster. If you
+        /// don't specify a security group, Amazon MSK uses the default security group associated
+        /// with the VPC.
         /// </para>
         /// </summary>
         public List<string> SecurityGroups
@@ -119,7 +121,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StorageInfo. 
+        /// Gets and sets the property StorageInfo.             
         /// <para>
         /// Contains information about storage volumes attached to MSK broker nodes.
         /// </para>

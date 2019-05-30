@@ -28,16 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kafka.Model
 {
     /// <summary>
-    /// The data volume encryption details.
+    /// The data-volume encryption details.
     /// </summary>
     public partial class EncryptionAtRest
     {
         private string _dataVolumeKMSKeyId;
 
         /// <summary>
-        /// Gets and sets the property DataVolumeKMSKeyId. 
+        /// Gets and sets the property DataVolumeKMSKeyId.             
         /// <para>
-        /// The AWS KMS key used for data encryption.
+        /// The ARN of the AWS KMS key for encrypting data at rest. If you don't specify a KMS
+        /// key, MSK creates one for you and uses it.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,38 +29,39 @@ namespace Amazon.Kafka.Model
 {
     /// <summary>
     /// Container for the parameters to the ListConfigurations operation.
-    /// Returns a list of all the MSK configurations in this Region for this account.
+    /// Returns a list of all the MSK configurations in this Region.
     /// </summary>
     public partial class ListConfigurationsRequest : AmazonKafkaRequest
     {
-        private string _maxResults;
+        private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property MaxResults.             
         /// <para>
         /// The maximum number of results to return in the response. If there are more results,
         /// the response includes a NextToken parameter.
         /// </para>
         /// </summary>
-        public string MaxResults
+        [AWSProperty(Min=1, Max=100)]
+        public int MaxResults
         {
-            get { return this._maxResults; }
+            get { return this._maxResults.GetValueOrDefault(); }
             set { this._maxResults = value; }
         }
 
         // Check to see if MaxResults property is set
         internal bool IsSetMaxResults()
         {
-            return this._maxResults != null;
+            return this._maxResults.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property NextToken.             
         /// <para>
         /// The paginated results marker. When the result of the operation is truncated, the call
-        /// returns NextToken in the response.  To get the next batch, provide this token in your
-        /// next request.
+        /// returns NextToken in the response.             To get the next batch, provide this
+        /// token in your next request.
         /// </para>
         /// </summary>
         public string NextToken

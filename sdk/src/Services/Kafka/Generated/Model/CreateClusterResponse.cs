@@ -37,7 +37,7 @@ namespace Amazon.Kafka.Model
         private ClusterState _state;
 
         /// <summary>
-        /// Gets and sets the property ClusterArn. 
+        /// Gets and sets the property ClusterArn.             
         /// <para>
         /// The Amazon Resource Name (ARN) of the cluster.
         /// </para>
@@ -55,7 +55,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClusterName. 
+        /// Gets and sets the property ClusterName.             
         /// <para>
         /// The name of the MSK cluster.
         /// </para>
@@ -73,7 +73,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property State. 
+        /// Gets and sets the property State.             
         /// <para>
         /// The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.
         /// </para>

@@ -29,7 +29,7 @@ namespace Amazon.Kafka.Model
 {
     /// <summary>
     /// Container for the parameters to the ListClusters operation.
-    /// Returns a list of clusters in an account.
+    /// Returns a list of all the MSK clusters in the current Region.
     /// </summary>
     public partial class ListClustersRequest : AmazonKafkaRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.Kafka.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ClusterNameFilter. 
+        /// Gets and sets the property ClusterNameFilter.             
         /// <para>
         /// Specify a prefix of the name of the clusters that you want to list. The service lists
         /// all the clusters whose names start with this prefix.
@@ -57,9 +57,9 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property MaxResults.             
         /// <para>
-        /// The maximum number of clusters to return in the response. If there are more clusters,
+        /// The maximum number of results to return in the response. If there are more results,
         /// the response includes a NextToken parameter.
         /// </para>
         /// </summary>
@@ -77,11 +77,11 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property NextToken.             
         /// <para>
-        /// The paginated results marker. When the result of a ListClusters operation is truncated,
-        /// the call returns NextToken in the response.  To get another batch of clusters, provide
-        /// this token in your next request.
+        /// The paginated results marker. When the result of the operation is truncated, the call
+        /// returns NextToken in the response.             To get the next batch, provide this
+        /// token in your next request.
         /// </para>
         /// </summary>
         public string NextToken

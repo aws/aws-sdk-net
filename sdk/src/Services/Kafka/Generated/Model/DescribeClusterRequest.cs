@@ -37,7 +37,7 @@ namespace Amazon.Kafka.Model
         private string _clusterArn;
 
         /// <summary>
-        /// Gets and sets the property ClusterArn. 
+        /// Gets and sets the property ClusterArn.             
         /// <para>
         /// The Amazon Resource Name (ARN) that uniquely identifies the cluster.
         /// </para>

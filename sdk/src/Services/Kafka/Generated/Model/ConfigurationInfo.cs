@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kafka.Model
 {
     /// <summary>
-    /// Specifies the Kafka configuration to use for the brokers.
+    /// Specifies the configuration to use for the brokers.
     /// </summary>
     public partial class ConfigurationInfo
     {
@@ -36,7 +36,7 @@ namespace Amazon.Kafka.Model
         private long? _revision;
 
         /// <summary>
-        /// Gets and sets the property Arn. 
+        /// Gets and sets the property Arn.             
         /// <para>
         /// ARN of the configuration to use.
         /// </para>
@@ -55,7 +55,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Revision. 
+        /// Gets and sets the property Revision.             
         /// <para>
         /// The revision of the configuration to use.
         /// </para>

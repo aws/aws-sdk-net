@@ -35,9 +35,9 @@ namespace Amazon.Kafka.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Tags. 
+        /// Gets and sets the property Tags.             
         /// <para>
-        /// The key-value pairs for the resource tags
+        /// The key-value pair for the resource tag.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

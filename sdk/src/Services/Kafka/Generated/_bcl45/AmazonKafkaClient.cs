@@ -468,6 +468,61 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  DescribeClusterOperation
+
+
+        /// <summary>
+        /// Returns a description of the cluster operation specified by the ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterOperation service method.</param>
+        /// 
+        /// <returns>The response from the DescribeClusterOperation service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeClusterOperation">REST API Reference for DescribeClusterOperation Operation</seealso>
+        public virtual DescribeClusterOperationResponse DescribeClusterOperation(DescribeClusterOperationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterOperationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterOperationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClusterOperationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeClusterOperation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterOperation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeClusterOperation">REST API Reference for DescribeClusterOperation Operation</seealso>
+        public virtual Task<DescribeClusterOperationResponse> DescribeClusterOperationAsync(DescribeClusterOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterOperationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterOperationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeClusterOperationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeConfiguration
 
 
@@ -639,11 +694,64 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  ListClusterOperations
+
+
+        /// <summary>
+        /// Returns a list of all the operations that have been performed on the specified MSK
+        /// cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterOperations service method.</param>
+        /// 
+        /// <returns>The response from the ListClusterOperations service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClusterOperations">REST API Reference for ListClusterOperations Operation</seealso>
+        public virtual ListClusterOperationsResponse ListClusterOperations(ListClusterOperationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClusterOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClusterOperationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListClusterOperationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListClusterOperations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterOperations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClusterOperations">REST API Reference for ListClusterOperations Operation</seealso>
+        public virtual Task<ListClusterOperationsResponse> ListClusterOperationsAsync(ListClusterOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClusterOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClusterOperationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListClusterOperationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListClusters
 
 
         /// <summary>
-        /// Returns a list of clusters in an account.
+        /// Returns a list of all the MSK clusters in the current Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListClusters service method.</param>
         /// 
@@ -691,11 +799,69 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  ListConfigurationRevisions
+
+
+        /// <summary>
+        /// Returns a list of all the MSK configurations in this Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationRevisions service method.</param>
+        /// 
+        /// <returns>The response from the ListConfigurationRevisions service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListConfigurationRevisions">REST API Reference for ListConfigurationRevisions Operation</seealso>
+        public virtual ListConfigurationRevisionsResponse ListConfigurationRevisions(ListConfigurationRevisionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConfigurationRevisionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConfigurationRevisionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListConfigurationRevisionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConfigurationRevisions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationRevisions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListConfigurationRevisions">REST API Reference for ListConfigurationRevisions Operation</seealso>
+        public virtual Task<ListConfigurationRevisionsResponse> ListConfigurationRevisionsAsync(ListConfigurationRevisionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConfigurationRevisionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConfigurationRevisionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListConfigurationRevisionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListConfigurations
 
 
         /// <summary>
-        /// Returns a list of all the MSK configurations in this Region for this account.
+        /// Returns a list of all the MSK configurations in this Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListConfigurations service method.</param>
         /// 
@@ -802,7 +968,7 @@ namespace Amazon.Kafka
 
 
         /// <summary>
-        /// Returns a list of tags attached to a resource.
+        /// Returns a list of the tags associated with the specified resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -851,7 +1017,7 @@ namespace Amazon.Kafka
 
 
         /// <summary>
-        /// Tag a resource with given tags.
+        /// Adds tags to the specified MSK resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -900,7 +1066,7 @@ namespace Amazon.Kafka
 
 
         /// <summary>
-        /// Remove tags of a resource by given tag keys.
+        /// Removes the tags associated with the keys that are provided in the query.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -941,6 +1107,119 @@ namespace Amazon.Kafka
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateBrokerStorage
+
+
+        /// <summary>
+        /// Updates the EBS storage associated with MSK brokers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBrokerStorage service method.</param>
+        /// 
+        /// <returns>The response from the UpdateBrokerStorage service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateBrokerStorage">REST API Reference for UpdateBrokerStorage Operation</seealso>
+        public virtual UpdateBrokerStorageResponse UpdateBrokerStorage(UpdateBrokerStorageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBrokerStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBrokerStorageResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateBrokerStorageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateBrokerStorage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBrokerStorage operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateBrokerStorage">REST API Reference for UpdateBrokerStorage Operation</seealso>
+        public virtual Task<UpdateBrokerStorageResponse> UpdateBrokerStorageAsync(UpdateBrokerStorageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBrokerStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBrokerStorageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateBrokerStorageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateClusterConfiguration
+
+
+        /// <summary>
+        /// Updates the cluster with the configuration that is specified in the request body.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClusterConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateClusterConfiguration service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateClusterConfiguration">REST API Reference for UpdateClusterConfiguration Operation</seealso>
+        public virtual UpdateClusterConfigurationResponse UpdateClusterConfiguration(UpdateClusterConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateClusterConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateClusterConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateClusterConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateClusterConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClusterConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateClusterConfiguration">REST API Reference for UpdateClusterConfiguration Operation</seealso>
+        public virtual Task<UpdateClusterConfigurationResponse> UpdateClusterConfigurationAsync(UpdateClusterConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateClusterConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateClusterConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateClusterConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion

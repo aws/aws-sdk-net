@@ -39,7 +39,7 @@ namespace Amazon.Kafka.Model
         private MemoryStream _serverProperties;
 
         /// <summary>
-        /// Gets and sets the property Description. 
+        /// Gets and sets the property Description.             
         /// <para>
         /// The description of the configuration.
         /// </para>
@@ -57,7 +57,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KafkaVersions. 
+        /// Gets and sets the property KafkaVersions.             
         /// <para>
         /// The versions of Apache Kafka with which you can use this MSK configuration.
         /// </para>
@@ -76,7 +76,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property Name.             
         /// <para>
         /// The name of the configuration.
         /// </para>
@@ -95,11 +95,12 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServerProperties. 
+        /// Gets and sets the property ServerProperties.             
         /// <para>
-        /// Contents of the server.properties file. When using the API, you must ensure that the
-        /// contents of the file are base64 encoded.  When using the AWS Management Console, the
-        /// SDK, or the AWS CLI, the contents of server.properties can be in plaintext.
+        /// Contents of the <filename>server.properties</filename> file. When using the API, you
+        /// must ensure that the contents of the file are base64 encoded.                When
+        /// using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>server.properties</filename>
+        /// can be in plaintext.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

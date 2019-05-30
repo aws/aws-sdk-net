@@ -38,7 +38,7 @@ namespace Amazon.Kafka.Model
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property Arn. 
+        /// Gets and sets the property Arn.             
         /// <para>
         /// The Amazon Resource Name (ARN) of the configuration.
         /// </para>
@@ -56,7 +56,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreationTime. 
+        /// Gets and sets the property CreationTime.             
         /// <para>
         /// The time when the configuration was created.
         /// </para>
@@ -74,7 +74,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LatestRevision. 
+        /// Gets and sets the property LatestRevision.             
         /// <para>
         /// Latest revision of the configuration.
         /// </para>
@@ -92,7 +92,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property Name.             
         /// <para>
         /// The name of the configuration.
         /// </para>

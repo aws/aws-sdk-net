@@ -77,6 +77,17 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetClientAuthentication())
+                {
+                    context.Writer.WritePropertyName("clientAuthentication");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ClientAuthenticationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ClientAuthentication, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetClusterName())
                 {
                     context.Writer.WritePropertyName("clusterName");
@@ -121,6 +132,20 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("numberOfBrokerNodes");
                     context.Writer.Write(publicRequest.NumberOfBrokerNodes);
+                }
+
+                if(publicRequest.IsSetTags())
+                {
+                    context.Writer.WritePropertyName("tags");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    {
+                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                            context.Writer.Write(publicRequestTagsValue);
+                    }
+                    context.Writer.WriteObjectEnd();
                 }
 
         

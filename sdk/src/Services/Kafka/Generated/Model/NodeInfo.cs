@@ -40,7 +40,7 @@ namespace Amazon.Kafka.Model
         private ZookeeperNodeInfo _zookeeperNodeInfo;
 
         /// <summary>
-        /// Gets and sets the property AddedToClusterTime. 
+        /// Gets and sets the property AddedToClusterTime.             
         /// <para>
         /// The start time.
         /// </para>
@@ -58,7 +58,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BrokerNodeInfo. 
+        /// Gets and sets the property BrokerNodeInfo.             
         /// <para>
         /// The broker node info.
         /// </para>
@@ -76,7 +76,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceType. 
+        /// Gets and sets the property InstanceType.             
         /// <para>
         /// The instance type.
         /// </para>
@@ -94,7 +94,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NodeARN. 
+        /// Gets and sets the property NodeARN.             
         /// <para>
         /// The Amazon Resource Name (ARN) of the node.
         /// </para>
@@ -112,7 +112,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NodeType. 
+        /// Gets and sets the property NodeType.             
         /// <para>
         /// The node type.
         /// </para>
@@ -130,7 +130,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ZookeeperNodeInfo. 
+        /// Gets and sets the property ZookeeperNodeInfo.             
         /// <para>
         /// The ZookeeperNodeInfo.
         /// </para>

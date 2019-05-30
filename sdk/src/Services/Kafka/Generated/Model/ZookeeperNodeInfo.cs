@@ -34,11 +34,12 @@ namespace Amazon.Kafka.Model
     {
         private string _attachedENIId;
         private string _clientVpcIpAddress;
+        private List<string> _endpoints = new List<string>();
         private double? _zookeeperId;
         private string _zookeeperVersion;
 
         /// <summary>
-        /// Gets and sets the property AttachedENIId. 
+        /// Gets and sets the property AttachedENIId.             
         /// <para>
         /// The attached elastic network interface of the broker.
         /// </para>
@@ -56,7 +57,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClientVpcIpAddress. 
+        /// Gets and sets the property ClientVpcIpAddress.             
         /// <para>
         /// The virtual private cloud (VPC) IP address of the client.
         /// </para>
@@ -74,7 +75,25 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ZookeeperId. 
+        /// Gets and sets the property Endpoints.             
+        /// <para>
+        /// Endpoints for accessing the ZooKeeper.
+        /// </para>
+        /// </summary>
+        public List<string> Endpoints
+        {
+            get { return this._endpoints; }
+            set { this._endpoints = value; }
+        }
+
+        // Check to see if Endpoints property is set
+        internal bool IsSetEndpoints()
+        {
+            return this._endpoints != null && this._endpoints.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ZookeeperId.             
         /// <para>
         /// The role-specific ID for Zookeeper.
         /// </para>
@@ -92,7 +111,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ZookeeperVersion. 
+        /// Gets and sets the property ZookeeperVersion.             
         /// <para>
         /// The version of Zookeeper.
         /// </para>

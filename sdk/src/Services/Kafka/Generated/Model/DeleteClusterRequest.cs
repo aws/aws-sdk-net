@@ -37,7 +37,7 @@ namespace Amazon.Kafka.Model
         private string _currentVersion;
 
         /// <summary>
-        /// Gets and sets the property ClusterArn. 
+        /// Gets and sets the property ClusterArn.             
         /// <para>
         /// The Amazon Resource Name (ARN) that uniquely identifies the cluster.
         /// </para>
@@ -56,7 +56,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CurrentVersion. 
+        /// Gets and sets the property CurrentVersion.             
         /// <para>
         /// The current version of the MSK cluster.
         /// </para>

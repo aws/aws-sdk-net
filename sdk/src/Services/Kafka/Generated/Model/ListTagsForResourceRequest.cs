@@ -29,16 +29,17 @@ namespace Amazon.Kafka.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Returns a list of tags attached to a resource.
+    /// Returns a list of the tags associated with the specified resource.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonKafkaRequest
     {
         private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. 
+        /// Gets and sets the property ResourceArn.             
         /// <para>
-        /// The Amazon Resource Name (ARN) that uniquely identifies the resource.
+        /// The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated
+        /// with the tags.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

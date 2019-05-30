@@ -70,6 +70,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     unmarshalledObject.EncryptionAtRest = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("encryptionInTransit", targetDepth))
+                {
+                    var unmarshaller = EncryptionInTransitUnmarshaller.Instance;
+                    unmarshalledObject.EncryptionInTransit = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

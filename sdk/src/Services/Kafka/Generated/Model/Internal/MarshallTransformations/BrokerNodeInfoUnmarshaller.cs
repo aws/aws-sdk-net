@@ -94,6 +94,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     unmarshalledObject.CurrentBrokerSoftwareInfo = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("endpoints", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Endpoints = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

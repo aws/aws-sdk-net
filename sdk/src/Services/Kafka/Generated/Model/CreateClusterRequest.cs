@@ -34,15 +34,17 @@ namespace Amazon.Kafka.Model
     public partial class CreateClusterRequest : AmazonKafkaRequest
     {
         private BrokerNodeGroupInfo _brokerNodeGroupInfo;
+        private ClientAuthentication _clientAuthentication;
         private string _clusterName;
         private ConfigurationInfo _configurationInfo;
         private EncryptionInfo _encryptionInfo;
         private EnhancedMonitoring _enhancedMonitoring;
         private string _kafkaVersion;
         private int? _numberOfBrokerNodes;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property BrokerNodeGroupInfo. 
+        /// Gets and sets the property BrokerNodeGroupInfo.             
         /// <para>
         /// Information about the broker nodes in the cluster.
         /// </para>
@@ -61,7 +63,25 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClusterName. 
+        /// Gets and sets the property ClientAuthentication.             
+        /// <para>
+        /// Includes all client authentication related information.
+        /// </para>
+        /// </summary>
+        public ClientAuthentication ClientAuthentication
+        {
+            get { return this._clientAuthentication; }
+            set { this._clientAuthentication = value; }
+        }
+
+        // Check to see if ClientAuthentication property is set
+        internal bool IsSetClientAuthentication()
+        {
+            return this._clientAuthentication != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterName.             
         /// <para>
         /// The name of the cluster.
         /// </para>
@@ -80,9 +100,9 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ConfigurationInfo. 
+        /// Gets and sets the property ConfigurationInfo.             
         /// <para>
-        /// Comprises of the Configuration to be used on Kafka brokers in a cluster.
+        /// Represents the configuration that you want MSK to use for the brokers in a cluster.
         /// </para>
         /// </summary>
         public ConfigurationInfo ConfigurationInfo
@@ -98,7 +118,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EncryptionInfo. 
+        /// Gets and sets the property EncryptionInfo.             
         /// <para>
         /// Includes all encryption-related information.
         /// </para>
@@ -116,7 +136,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EnhancedMonitoring. 
+        /// Gets and sets the property EnhancedMonitoring.             
         /// <para>
         /// Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT,
         /// PER_BROKER, and PER_TOPIC_PER_BROKER.
@@ -135,7 +155,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KafkaVersion. 
+        /// Gets and sets the property KafkaVersion.             
         /// <para>
         /// The version of Apache Kafka.
         /// </para>
@@ -154,9 +174,9 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NumberOfBrokerNodes. 
+        /// Gets and sets the property NumberOfBrokerNodes.             
         /// <para>
-        /// The number of Kafka broker nodes in the Amazon MSK cluster.
+        /// The number of broker nodes in the cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=15)]
@@ -170,6 +190,24 @@ namespace Amazon.Kafka.Model
         internal bool IsSetNumberOfBrokerNodes()
         {
             return this._numberOfBrokerNodes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags.             
+        /// <para>
+        /// Create tags when creating the cluster.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

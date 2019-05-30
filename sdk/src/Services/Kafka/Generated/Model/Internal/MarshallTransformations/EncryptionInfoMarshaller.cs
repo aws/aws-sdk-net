@@ -56,6 +56,17 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetEncryptionInTransit())
+            {
+                context.Writer.WritePropertyName("encryptionInTransit");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EncryptionInTransitMarshaller.Instance;
+                marshaller.Marshall(requestObject.EncryptionInTransit, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

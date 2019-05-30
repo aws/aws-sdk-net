@@ -40,7 +40,7 @@ namespace Amazon.Kafka.Model
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property Arn. 
+        /// Gets and sets the property Arn.             
         /// <para>
         /// The Amazon Resource Name (ARN) of the configuration.
         /// </para>
@@ -59,7 +59,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreationTime. 
+        /// Gets and sets the property CreationTime.             
         /// <para>
         /// The time when the configuration was created.
         /// </para>
@@ -78,7 +78,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description. 
+        /// Gets and sets the property Description.             
         /// <para>
         /// The description of the configuration.
         /// </para>
@@ -97,7 +97,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KafkaVersions. 
+        /// Gets and sets the property KafkaVersions.             
         /// <para>
         /// An array of the versions of Apache Kafka with which you can use this MSK configuration.
         /// You can use this configuration for an MSK cluster only if the Apache Kafka version
@@ -118,7 +118,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LatestRevision. 
+        /// Gets and sets the property LatestRevision.             
         /// <para>
         /// Latest revision of the configuration.
         /// </para>
@@ -137,7 +137,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property Name.             
         /// <para>
         /// The name of the configuration.
         /// </para>

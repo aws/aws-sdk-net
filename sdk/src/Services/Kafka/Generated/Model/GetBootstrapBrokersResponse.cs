@@ -33,9 +33,10 @@ namespace Amazon.Kafka.Model
     public partial class GetBootstrapBrokersResponse : AmazonWebServiceResponse
     {
         private string _bootstrapBrokerString;
+        private string _bootstrapBrokerStringTls;
 
         /// <summary>
-        /// Gets and sets the property BootstrapBrokerString. 
+        /// Gets and sets the property BootstrapBrokerString.             
         /// <para>
         /// A string containing one or more hostname:port pairs.
         /// </para>
@@ -50,6 +51,24 @@ namespace Amazon.Kafka.Model
         internal bool IsSetBootstrapBrokerString()
         {
             return this._bootstrapBrokerString != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BootstrapBrokerStringTls.             
+        /// <para>
+        /// A string containing one or more DNS names (or IP) and TLS port pairs.
+        /// </para>
+        /// </summary>
+        public string BootstrapBrokerStringTls
+        {
+            get { return this._bootstrapBrokerStringTls; }
+            set { this._bootstrapBrokerStringTls = value; }
+        }
+
+        // Check to see if BootstrapBrokerStringTls property is set
+        internal bool IsSetBootstrapBrokerStringTls()
+        {
+            return this._bootstrapBrokerStringTls != null;
         }
 
     }

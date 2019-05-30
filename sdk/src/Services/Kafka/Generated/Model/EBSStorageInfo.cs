@@ -35,7 +35,7 @@ namespace Amazon.Kafka.Model
         private int? _volumeSize;
 
         /// <summary>
-        /// Gets and sets the property VolumeSize. 
+        /// Gets and sets the property VolumeSize.             
         /// <para>
         /// The size in GiB of the EBS volume for the data drive on each broker node.
         /// </para>

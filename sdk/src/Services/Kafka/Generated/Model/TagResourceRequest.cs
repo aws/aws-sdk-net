@@ -29,7 +29,7 @@ namespace Amazon.Kafka.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Tag a resource with given tags.
+    /// Adds tags to the specified MSK resource.
     /// </summary>
     public partial class TagResourceRequest : AmazonKafkaRequest
     {
@@ -37,9 +37,10 @@ namespace Amazon.Kafka.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. 
+        /// Gets and sets the property ResourceArn.             
         /// <para>
-        /// The Amazon Resource Name (ARN) that uniquely identifies the resource.
+        /// The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated
+        /// with the tags.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -56,9 +57,9 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. 
+        /// Gets and sets the property Tags.             
         /// <para>
-        /// The key-value pairs for the resource tags
+        /// The key-value pair for the resource tag.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

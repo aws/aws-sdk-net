@@ -16,7 +16,22 @@
     <max>15</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kafka.Model.ListClusterOperationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kafka.Model.ListClustersRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kafka.Model.ListConfigurationRevisionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kafka.Model.ListConfigurationsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>

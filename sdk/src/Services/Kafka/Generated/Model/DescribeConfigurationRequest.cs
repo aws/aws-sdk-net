@@ -36,7 +36,7 @@ namespace Amazon.Kafka.Model
         private string _arn;
 
         /// <summary>
-        /// Gets and sets the property Arn. 
+        /// Gets and sets the property Arn.             
         /// <para>
         /// The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all
         /// of its revisions.

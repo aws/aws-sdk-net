@@ -36,7 +36,7 @@ namespace Amazon.Kafka.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ClusterInfoList. 
+        /// Gets and sets the property ClusterInfoList.             
         /// <para>
         /// Information on each of the MSK clusters in the response.
         /// </para>
@@ -54,11 +54,11 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property NextToken.             
         /// <para>
         /// The paginated results marker. When the result of a ListClusters operation is truncated,
-        /// the call returns NextToken in the response.  To get another batch of clusters, provide
-        /// this token in your next request.
+        /// the call returns NextToken in the response.                To get another batch of
+        /// clusters, provide this token in your next request.
         /// </para>
         /// </summary>
         public string NextToken

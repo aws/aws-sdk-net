@@ -37,7 +37,7 @@ namespace Amazon.Kafka.Model
         private long? _revision;
 
         /// <summary>
-        /// Gets and sets the property CreationTime. 
+        /// Gets and sets the property CreationTime.             
         /// <para>
         /// The time when the configuration revision was created.
         /// </para>
@@ -56,7 +56,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description. 
+        /// Gets and sets the property Description.             
         /// <para>
         /// The description of the configuration revision.
         /// </para>
@@ -74,7 +74,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Revision. 
+        /// Gets and sets the property Revision.             
         /// <para>
         /// The revision number.
         /// </para>

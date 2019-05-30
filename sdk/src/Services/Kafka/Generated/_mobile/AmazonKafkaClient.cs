@@ -375,6 +375,39 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  DescribeClusterOperation
+
+        internal virtual DescribeClusterOperationResponse DescribeClusterOperation(DescribeClusterOperationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterOperationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterOperationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClusterOperationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeClusterOperation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterOperation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeClusterOperation">REST API Reference for DescribeClusterOperation Operation</seealso>
+        public virtual Task<DescribeClusterOperationResponse> DescribeClusterOperationAsync(DescribeClusterOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterOperationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterOperationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeClusterOperationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeConfiguration
 
         internal virtual DescribeConfigurationResponse DescribeConfiguration(DescribeConfigurationRequest request)
@@ -474,6 +507,39 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  ListClusterOperations
+
+        internal virtual ListClusterOperationsResponse ListClusterOperations(ListClusterOperationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClusterOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClusterOperationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListClusterOperationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListClusterOperations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterOperations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClusterOperations">REST API Reference for ListClusterOperations Operation</seealso>
+        public virtual Task<ListClusterOperationsResponse> ListClusterOperationsAsync(ListClusterOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClusterOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClusterOperationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListClusterOperationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListClusters
 
         internal virtual ListClustersResponse ListClusters(ListClustersRequest request)
@@ -503,6 +569,39 @@ namespace Amazon.Kafka
             options.ResponseUnmarshaller = ListClustersResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListClustersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListConfigurationRevisions
+
+        internal virtual ListConfigurationRevisionsResponse ListConfigurationRevisions(ListConfigurationRevisionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConfigurationRevisionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConfigurationRevisionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListConfigurationRevisionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConfigurationRevisions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationRevisions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListConfigurationRevisions">REST API Reference for ListConfigurationRevisions Operation</seealso>
+        public virtual Task<ListConfigurationRevisionsResponse> ListConfigurationRevisionsAsync(ListConfigurationRevisionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConfigurationRevisionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConfigurationRevisionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListConfigurationRevisionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -668,6 +767,72 @@ namespace Amazon.Kafka
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateBrokerStorage
+
+        internal virtual UpdateBrokerStorageResponse UpdateBrokerStorage(UpdateBrokerStorageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBrokerStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBrokerStorageResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateBrokerStorageResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateBrokerStorage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBrokerStorage operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateBrokerStorage">REST API Reference for UpdateBrokerStorage Operation</seealso>
+        public virtual Task<UpdateBrokerStorageResponse> UpdateBrokerStorageAsync(UpdateBrokerStorageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBrokerStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBrokerStorageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateBrokerStorageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateClusterConfiguration
+
+        internal virtual UpdateClusterConfigurationResponse UpdateClusterConfiguration(UpdateClusterConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateClusterConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateClusterConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateClusterConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateClusterConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClusterConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateClusterConfiguration">REST API Reference for UpdateClusterConfiguration Operation</seealso>
+        public virtual Task<UpdateClusterConfigurationResponse> UpdateClusterConfigurationAsync(UpdateClusterConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateClusterConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateClusterConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateClusterConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion

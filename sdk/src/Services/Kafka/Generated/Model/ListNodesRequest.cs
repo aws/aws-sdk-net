@@ -38,7 +38,7 @@ namespace Amazon.Kafka.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ClusterArn. 
+        /// Gets and sets the property ClusterArn.             
         /// <para>
         /// The Amazon Resource Name (ARN) that uniquely identifies the cluster.
         /// </para>
@@ -57,9 +57,9 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property MaxResults.             
         /// <para>
-        /// The maximum number of clusters to return in the response. If there are more clusters,
+        /// The maximum number of results to return in the response. If there are more results,
         /// the response includes a NextToken parameter.
         /// </para>
         /// </summary>
@@ -77,11 +77,11 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property NextToken.             
         /// <para>
-        /// The paginated results marker. When the result of a ListClusters operation is truncated,
-        /// the call returns NextToken in the response.  To get another batch of clusters, provide
-        /// this token in your next request.
+        /// The paginated results marker. When the result of the operation is truncated, the call
+        /// returns NextToken in the response.             To get the next batch, provide this
+        /// token in your next request.
         /// </para>
         /// </summary>
         public string NextToken

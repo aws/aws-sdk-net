@@ -29,16 +29,17 @@ namespace Amazon.Kafka.Model
 {
     /// <summary>
     /// Includes encryption-related information, such as the AWS KMS key used for encrypting
-    /// data at rest.
+    /// data at rest and whether you want MSK to encrypt your data in transit.
     /// </summary>
     public partial class EncryptionInfo
     {
         private EncryptionAtRest _encryptionAtRest;
+        private EncryptionInTransit _encryptionInTransit;
 
         /// <summary>
-        /// Gets and sets the property EncryptionAtRest. 
+        /// Gets and sets the property EncryptionAtRest.             
         /// <para>
-        /// The data volume encryption details.
+        /// The data-volume encryption details.
         /// </para>
         /// </summary>
         public EncryptionAtRest EncryptionAtRest
@@ -51,6 +52,24 @@ namespace Amazon.Kafka.Model
         internal bool IsSetEncryptionAtRest()
         {
             return this._encryptionAtRest != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionInTransit.             
+        /// <para>
+        /// The details for encryption in transit.
+        /// </para>
+        /// </summary>
+        public EncryptionInTransit EncryptionInTransit
+        {
+            get { return this._encryptionInTransit; }
+            set { this._encryptionInTransit = value; }
+        }
+
+        // Check to see if EncryptionInTransit property is set
+        internal bool IsSetEncryptionInTransit()
+        {
+            return this._encryptionInTransit != null;
         }
 
     }

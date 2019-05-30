@@ -36,11 +36,11 @@ namespace Amazon.Kafka.Model
         private List<NodeInfo> _nodeInfoList = new List<NodeInfo>();
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property NextToken.             
         /// <para>
         /// The paginated results marker. When the result of a ListNodes operation is truncated,
-        /// the call returns NextToken in the response.  To get another batch of nodes, provide
-        /// this token in your next request.
+        /// the call returns NextToken in the response.                To get another batch of
+        /// nodes, provide this token in your next request.
         /// </para>
         /// </summary>
         public string NextToken
@@ -56,7 +56,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NodeInfoList. 
+        /// Gets and sets the property NodeInfoList.             
         /// <para>
         /// List containing a NodeInfo object.
         /// </para>

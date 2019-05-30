@@ -36,7 +36,7 @@ namespace Amazon.Kafka.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Configurations. 
+        /// Gets and sets the property Configurations.             
         /// <para>
         /// An array of MSK configurations.
         /// </para>
@@ -54,11 +54,11 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property NextToken.             
         /// <para>
         /// The paginated results marker. When the result of a ListConfigurations operation is
-        /// truncated, the call returns NextToken in the response.  To get another batch of configurations,
-        /// provide this token in your next request.
+        /// truncated, the call returns NextToken in the response.                To get another
+        /// batch of configurations, provide this token in your next request.
         /// </para>
         /// </summary>
         public string NextToken

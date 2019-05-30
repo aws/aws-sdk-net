@@ -37,9 +37,10 @@ namespace Amazon.Kafka.Model
         private string _kafkaVersion;
 
         /// <summary>
-        /// Gets and sets the property ConfigurationArn. 
+        /// Gets and sets the property ConfigurationArn.             
         /// <para>
-        /// The Amazon Resource Name (ARN) of the configuration used for the cluster.
+        /// The Amazon Resource Name (ARN) of the configuration used for the cluster. This field
+        /// isn't visible in this preview release.
         /// </para>
         /// </summary>
         public string ConfigurationArn
@@ -55,9 +56,10 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ConfigurationRevision. 
+        /// Gets and sets the property ConfigurationRevision.             
         /// <para>
-        /// The revision of the configuration to use.
+        /// The revision of the configuration to use. This field isn't visible in this preview
+        /// release.
         /// </para>
         /// </summary>
         public long ConfigurationRevision
@@ -73,7 +75,7 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KafkaVersion. 
+        /// Gets and sets the property KafkaVersion.             
         /// <para>
         /// The version of Apache Kafka.
         /// </para>

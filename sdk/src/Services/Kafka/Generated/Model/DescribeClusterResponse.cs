@@ -35,7 +35,7 @@ namespace Amazon.Kafka.Model
         private ClusterInfo _clusterInfo;
 
         /// <summary>
-        /// Gets and sets the property ClusterInfo. 
+        /// Gets and sets the property ClusterInfo.             
         /// <para>
         /// The cluster information.
         /// </para>
