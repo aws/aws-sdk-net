@@ -71,6 +71,8 @@ namespace Amazon.SecurityToken.SAML
             var cookieContainer = new CookieContainer();
             int redirectionsCount = 0;
             string responseData = null;
+            var connectionGroup = Guid.NewGuid().ToString(); //This is to avoid having multiple users sharing the same connection
+                                                             //if they authenticate against the same endpoint.
             while (responseData == null)
             {
                 HttpWebResponse response = null;
@@ -83,9 +85,10 @@ namespace Amazon.SecurityToken.SAML
                     {
                         request = (HttpWebRequest)WebRequest.Create(uri);
                         request.CookieContainer = cookieContainer;
+                        request.ConnectionGroupName = connectionGroup;
+                        request.KeepAlive = true; //KeepAlive = false doesn't work on .NET Core 2.1+
                         request.UserAgent = "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)";
-                        request.AllowAutoRedirect = false; // Handling redirection manually because .NET Standard code has a
-                                                           // different behavior when running on .NET Core than .NET Framework
+                        request.AllowAutoRedirect = false; // Handling redirection manually to avoid 401 errors
                         if (proxySettings != null)
                         {
                             request.Proxy = proxySettings;
@@ -145,6 +148,7 @@ namespace Amazon.SecurityToken.SAML
                 }
                 finally
                 {
+                    response?.Close();
 #if !BCL35
                     response?.Dispose();
 #endif
