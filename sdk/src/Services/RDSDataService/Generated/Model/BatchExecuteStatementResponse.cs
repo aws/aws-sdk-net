@@ -28,29 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDSDataService.Model
 {
     /// <summary>
-    /// The response elements represent the output of a request to run one or more SQL   
-    ///         statements.
+    /// The response elements represent the output of a SQL statement over an array of   
+    ///         data.
     /// </summary>
-    public partial class ExecuteSqlResponse : AmazonWebServiceResponse
+    public partial class BatchExecuteStatementResponse : AmazonWebServiceResponse
     {
-        private List<SqlStatementResult> _sqlStatementResults = new List<SqlStatementResult>();
+        private List<UpdateResult> _updateResults = new List<UpdateResult>();
 
         /// <summary>
-        /// Gets and sets the property SqlStatementResults. 
+        /// Gets and sets the property UpdateResults. 
         /// <para>
-        /// The results of the SQL statement or statements.
+        /// The execution results of each batch entry.
         /// </para>
         /// </summary>
-        public List<SqlStatementResult> SqlStatementResults
+        public List<UpdateResult> UpdateResults
         {
-            get { return this._sqlStatementResults; }
-            set { this._sqlStatementResults = value; }
+            get { return this._updateResults; }
+            set { this._updateResults = value; }
         }
 
-        // Check to see if SqlStatementResults property is set
-        internal bool IsSetSqlStatementResults()
+        // Check to see if UpdateResults property is set
+        internal bool IsSetUpdateResults()
         {
-            return this._sqlStatementResults != null && this._sqlStatementResults.Count > 0; 
+            return this._updateResults != null && this._updateResults.Count > 0; 
         }
 
     }

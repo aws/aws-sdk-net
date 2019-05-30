@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDSDataService.Model
 {
     /// <summary>
-    /// List of columns and their types.
+    /// The metadata of the result set returned by a SQL statement.
     /// </summary>
     public partial class ResultSetMetadata
     {
@@ -36,7 +36,10 @@ namespace Amazon.RDSDataService.Model
         private List<ColumnMetadata> _columnMetadata = new List<ColumnMetadata>();
 
         /// <summary>
-        /// Gets and sets the property ColumnCount. Number of columns
+        /// Gets and sets the property ColumnCount. 
+        /// <para>
+        /// The number of columns in the result set.
+        /// </para>
         /// </summary>
         public long ColumnCount
         {
@@ -51,7 +54,10 @@ namespace Amazon.RDSDataService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ColumnMetadata. List of columns and their types
+        /// Gets and sets the property ColumnMetadata. 
+        /// <para>
+        /// The metadata of the columns in the result set.
+        /// </para>
         /// </summary>
         public List<ColumnMetadata> ColumnMetadata
         {

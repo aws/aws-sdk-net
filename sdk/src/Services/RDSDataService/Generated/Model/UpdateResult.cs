@@ -28,29 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDSDataService.Model
 {
     /// <summary>
-    /// The response elements represent the output of a request to run one or more SQL   
-    ///         statements.
+    /// The response elements represent the results of an update.
     /// </summary>
-    public partial class ExecuteSqlResponse : AmazonWebServiceResponse
+    public partial class UpdateResult
     {
-        private List<SqlStatementResult> _sqlStatementResults = new List<SqlStatementResult>();
+        private List<Field> _generatedFields = new List<Field>();
 
         /// <summary>
-        /// Gets and sets the property SqlStatementResults. 
+        /// Gets and sets the property GeneratedFields. 
         /// <para>
-        /// The results of the SQL statement or statements.
+        /// Values for fields generated during the request.
         /// </para>
         /// </summary>
-        public List<SqlStatementResult> SqlStatementResults
+        public List<Field> GeneratedFields
         {
-            get { return this._sqlStatementResults; }
-            set { this._sqlStatementResults = value; }
+            get { return this._generatedFields; }
+            set { this._generatedFields = value; }
         }
 
-        // Check to see if SqlStatementResults property is set
-        internal bool IsSetSqlStatementResults()
+        // Check to see if GeneratedFields property is set
+        internal bool IsSetGeneratedFields()
         {
-            return this._sqlStatementResults != null && this._sqlStatementResults.Count > 0; 
+            return this._generatedFields != null && this._generatedFields.Count > 0; 
         }
 
     }

@@ -28,29 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDSDataService.Model
 {
     /// <summary>
-    /// The response elements represent the output of a request to run one or more SQL   
-    ///         statements.
+    /// The response elements represent the output of a request to start a SQL           
+    /// transaction.
     /// </summary>
-    public partial class ExecuteSqlResponse : AmazonWebServiceResponse
+    public partial class BeginTransactionResponse : AmazonWebServiceResponse
     {
-        private List<SqlStatementResult> _sqlStatementResults = new List<SqlStatementResult>();
+        private string _transactionId;
 
         /// <summary>
-        /// Gets and sets the property SqlStatementResults. 
+        /// Gets and sets the property TransactionId. 
         /// <para>
-        /// The results of the SQL statement or statements.
+        /// The transaction ID of the transaction started by the call.
         /// </para>
         /// </summary>
-        public List<SqlStatementResult> SqlStatementResults
+        [AWSProperty(Max=192)]
+        public string TransactionId
         {
-            get { return this._sqlStatementResults; }
-            set { this._sqlStatementResults = value; }
+            get { return this._transactionId; }
+            set { this._transactionId = value; }
         }
 
-        // Check to see if SqlStatementResults property is set
-        internal bool IsSetSqlStatementResults()
+        // Check to see if TransactionId property is set
+        internal bool IsSetTransactionId()
         {
-            return this._sqlStatementResults != null && this._sqlStatementResults.Count > 0; 
+            return this._transactionId != null;
         }
 
     }

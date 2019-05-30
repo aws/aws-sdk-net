@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDSDataService.Model
 {
     /// <summary>
-    /// Result Frame
+    /// The result set returned by a SQL statement.
     /// </summary>
     public partial class ResultFrame
     {
@@ -36,7 +36,10 @@ namespace Amazon.RDSDataService.Model
         private ResultSetMetadata _resultSetMetadata;
 
         /// <summary>
-        /// Gets and sets the property Records. ResultSet Metadata.
+        /// Gets and sets the property Records. 
+        /// <para>
+        /// The records in the result set.
+        /// </para>
         /// </summary>
         public List<Record> Records
         {
@@ -51,7 +54,10 @@ namespace Amazon.RDSDataService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResultSetMetadata. ResultSet Metadata.
+        /// Gets and sets the property ResultSetMetadata. 
+        /// <para>
+        /// The result-set metadata in the result set.
+        /// </para>
         /// </summary>
         public ResultSetMetadata ResultSetMetadata
         {

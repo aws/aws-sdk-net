@@ -28,29 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDSDataService.Model
 {
     /// <summary>
-    /// The response elements represent the output of a request to run one or more SQL   
-    ///         statements.
+    /// The response elements represent the output of a request to perform a rollback of a
+    ///            transaction.
     /// </summary>
-    public partial class ExecuteSqlResponse : AmazonWebServiceResponse
+    public partial class RollbackTransactionResponse : AmazonWebServiceResponse
     {
-        private List<SqlStatementResult> _sqlStatementResults = new List<SqlStatementResult>();
+        private string _transactionStatus;
 
         /// <summary>
-        /// Gets and sets the property SqlStatementResults. 
+        /// Gets and sets the property TransactionStatus. 
         /// <para>
-        /// The results of the SQL statement or statements.
+        /// The status of the rollback operation.
         /// </para>
         /// </summary>
-        public List<SqlStatementResult> SqlStatementResults
+        [AWSProperty(Max=128)]
+        public string TransactionStatus
         {
-            get { return this._sqlStatementResults; }
-            set { this._sqlStatementResults = value; }
+            get { return this._transactionStatus; }
+            set { this._transactionStatus = value; }
         }
 
-        // Check to see if SqlStatementResults property is set
-        internal bool IsSetSqlStatementResults()
+        // Check to see if TransactionStatus property is set
+        internal bool IsSetTransactionStatus()
         {
-            return this._sqlStatementResults != null && this._sqlStatementResults.Count > 0; 
+            return this._transactionStatus != null;
         }
 
     }

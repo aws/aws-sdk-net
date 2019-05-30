@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDSDataService.Model
 {
     /// <summary>
-    /// Column value
+    /// Contains the value of a column.
     /// </summary>
     public partial class Value
     {
@@ -44,7 +44,10 @@ namespace Amazon.RDSDataService.Model
         private StructValue _structValue;
 
         /// <summary>
-        /// Gets and sets the property ArrayValues. Arbitrarily nested arrays
+        /// Gets and sets the property ArrayValues. 
+        /// <para>
+        /// An array of column values.
+        /// </para>
         /// </summary>
         public List<Value> ArrayValues
         {
@@ -59,7 +62,10 @@ namespace Amazon.RDSDataService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BigIntValue. Long value
+        /// Gets and sets the property BigIntValue. 
+        /// <para>
+        /// A value for a column of big integer data type.
+        /// </para>
         /// </summary>
         public long BigIntValue
         {
@@ -74,7 +80,10 @@ namespace Amazon.RDSDataService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BitValue. Bit value
+        /// Gets and sets the property BitValue. 
+        /// <para>
+        /// A value for a column of BIT data type.
+        /// </para>
         /// </summary>
         public bool BitValue
         {
@@ -89,7 +98,10 @@ namespace Amazon.RDSDataService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BlobValue. Blob value
+        /// Gets and sets the property BlobValue. 
+        /// <para>
+        /// A value for a column of BLOB data type.
+        /// </para>
         /// </summary>
         public MemoryStream BlobValue
         {
@@ -104,7 +116,10 @@ namespace Amazon.RDSDataService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DoubleValue. Double value
+        /// Gets and sets the property DoubleValue. 
+        /// <para>
+        /// A value for a column of double data type.
+        /// </para>
         /// </summary>
         public double DoubleValue
         {
@@ -119,7 +134,10 @@ namespace Amazon.RDSDataService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IntValue. Integer value
+        /// Gets and sets the property IntValue. 
+        /// <para>
+        /// A value for a column of integer data type.
+        /// </para>
         /// </summary>
         public int IntValue
         {
@@ -134,7 +152,10 @@ namespace Amazon.RDSDataService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IsNull. Is column null
+        /// Gets and sets the property IsNull. 
+        /// <para>
+        /// A NULL value.
+        /// </para>
         /// </summary>
         public bool IsNull
         {
@@ -149,7 +170,10 @@ namespace Amazon.RDSDataService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RealValue. Float value
+        /// Gets and sets the property RealValue. 
+        /// <para>
+        /// A value for a column of real data type.
+        /// </para>
         /// </summary>
         public float RealValue
         {
@@ -164,7 +188,10 @@ namespace Amazon.RDSDataService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StringValue. String value
+        /// Gets and sets the property StringValue. 
+        /// <para>
+        /// A value for a column of string data type.
+        /// </para>
         /// </summary>
         public string StringValue
         {
@@ -179,7 +206,10 @@ namespace Amazon.RDSDataService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StructValue. Struct or UDT
+        /// Gets and sets the property StructValue. 
+        /// <para>
+        /// A value for a column of STRUCT data type.
+        /// </para>
         /// </summary>
         public StructValue StructValue
         {

@@ -28,14 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDSDataService.Model
 {
     /// <summary>
-    /// Row or Record
+    /// A record returned by a call.
     /// </summary>
     public partial class Record
     {
         private List<Value> _values = new List<Value>();
 
         /// <summary>
-        /// Gets and sets the property Values. Record
+        /// Gets and sets the property Values. 
+        /// <para>
+        /// The values returned in the record.
+        /// </para>
         /// </summary>
         public List<Value> Values
         {

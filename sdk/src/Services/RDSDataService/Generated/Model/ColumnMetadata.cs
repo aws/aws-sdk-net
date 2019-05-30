@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDSDataService.Model
 {
     /// <summary>
-    /// Column Metadata
+    /// Contains the metadata for a column.
     /// </summary>
     public partial class ColumnMetadata
     {
@@ -48,8 +48,10 @@ namespace Amazon.RDSDataService.Model
         private string _typeName;
 
         /// <summary>
-        /// Gets and sets the property ArrayBaseColumnType. Homogenous array base SQL type from
-        /// java.sql.Types.
+        /// Gets and sets the property ArrayBaseColumnType. 
+        /// <para>
+        /// The type of the column.
+        /// </para>
         /// </summary>
         public int ArrayBaseColumnType
         {
@@ -64,8 +66,10 @@ namespace Amazon.RDSDataService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IsAutoIncrement. Whether the designated column is automatically
-        /// numbered
+        /// Gets and sets the property IsAutoIncrement. 
+        /// <para>
+        /// A value that indicates whether the column increments automatically.
+        /// </para>
         /// </summary>
         public bool IsAutoIncrement
         {
@@ -80,8 +84,10 @@ namespace Amazon.RDSDataService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IsCaseSensitive. Whether values in the designated column's
-        /// case matters
+        /// Gets and sets the property IsCaseSensitive. 
+        /// <para>
+        /// A value that indicates whether the column is case-sensitive.
+        /// </para>
         /// </summary>
         public bool IsCaseSensitive
         {
@@ -96,8 +102,10 @@ namespace Amazon.RDSDataService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IsCurrency. Whether values in the designated column is
-        /// a cash value
+        /// Gets and sets the property IsCurrency. 
+        /// <para>
+        /// A value that indicates whether the column contains currency values.
+        /// </para>
         /// </summary>
         public bool IsCurrency
         {
@@ -112,8 +120,10 @@ namespace Amazon.RDSDataService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IsSigned. Whether values in the designated column are signed
-        /// numbers
+        /// Gets and sets the property IsSigned. 
+        /// <para>
+        /// A value that indicates whether an integer column is signed.
+        /// </para>
         /// </summary>
         public bool IsSigned
         {
@@ -128,8 +138,10 @@ namespace Amazon.RDSDataService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Label. Usually specified by the SQL AS. If not specified,
-        /// return column name.
+        /// Gets and sets the property Label. 
+        /// <para>
+        /// The label for the column.
+        /// </para>
         /// </summary>
         public string Label
         {
@@ -144,7 +156,10 @@ namespace Amazon.RDSDataService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. Name of the column.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the column.
+        /// </para>
         /// </summary>
         public string Name
         {
@@ -159,8 +174,10 @@ namespace Amazon.RDSDataService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Nullable. Indicates the nullability of values in the designated
-        /// column. One of columnNoNulls (0), columnNullable (1), columnNullableUnknown (2)
+        /// Gets and sets the property Nullable. 
+        /// <para>
+        /// A value that indicates whether the column is nullable.
+        /// </para>
         /// </summary>
         public int Nullable
         {
@@ -175,13 +192,10 @@ namespace Amazon.RDSDataService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Precision. Get the designated column's specified column
-        /// size.For numeric data, this is the maximum precision.  For character data, this is
-        /// the length in characters. For datetime datatypes, this is the length in characters
-        /// of the String representation (assuming the maximum allowed precision of the fractional
-        /// seconds component). For binary data, this is the length in bytes.  For the ROWID datatype,
-        /// this is the length in bytes. 0 is returned for data types where the column size is
-        /// not applicable.
+        /// Gets and sets the property Precision. 
+        /// <para>
+        /// The precision value of a decimal number column.
+        /// </para>
         /// </summary>
         public int Precision
         {
@@ -196,8 +210,10 @@ namespace Amazon.RDSDataService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Scale. Designated column's number of digits to right of
-        /// the decimal point. 0 is returned for data types where the scale is not applicable.
+        /// Gets and sets the property Scale. 
+        /// <para>
+        /// The scale value of a decimal number column.
+        /// </para>
         /// </summary>
         public int Scale
         {
@@ -212,7 +228,10 @@ namespace Amazon.RDSDataService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SchemaName. Designated column's table's schema
+        /// Gets and sets the property SchemaName. 
+        /// <para>
+        /// The name of the schema that owns the table that includes the column.
+        /// </para>
         /// </summary>
         public string SchemaName
         {
@@ -227,7 +246,10 @@ namespace Amazon.RDSDataService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TableName. Designated column's table name
+        /// Gets and sets the property TableName. 
+        /// <para>
+        /// The name of the table that includes the column.
+        /// </para>
         /// </summary>
         public string TableName
         {
@@ -242,7 +264,10 @@ namespace Amazon.RDSDataService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type. SQL type from java.sql.Types.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of the column.
+        /// </para>
         /// </summary>
         public int Type
         {
@@ -257,7 +282,10 @@ namespace Amazon.RDSDataService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TypeName. Database-specific type name.
+        /// Gets and sets the property TypeName. 
+        /// <para>
+        /// The database-specific data type of the column.
+        /// </para>
         /// </summary>
         public string TypeName
         {

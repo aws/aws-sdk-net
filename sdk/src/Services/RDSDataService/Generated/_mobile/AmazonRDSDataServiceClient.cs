@@ -38,7 +38,18 @@ namespace Amazon.RDSDataService
     /// <summary>
     /// Implementation for accessing RDSDataService
     ///
-    /// AWS RDS DataService provides Http Endpoint to query RDS databases.
+    /// Amazon RDS Data Service        
+    /// <para>
+    /// Amazon RDS provides an HTTP endpoint to run SQL statements on an Amazon Aurora   
+    ///         Serverless DB cluster. To run these statements, you work with the Data Service
+    ///            API.
+    /// </para>
+    ///         
+    /// <para>
+    /// For more information about the Data Service API, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+    /// the Data API for Aurora                Serverless</a> in the <i>Amazon Aurora User
+    /// Guide</i>.
+    /// </para>
     /// </summary>
     public partial class AmazonRDSDataServiceClient : AmazonServiceClient, IAmazonRDSDataService
     {
@@ -243,8 +254,108 @@ namespace Amazon.RDSDataService
         #endregion
 
 
+        #region  BatchExecuteStatement
+
+        internal virtual BatchExecuteStatementResponse BatchExecuteStatement(BatchExecuteStatementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchExecuteStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchExecuteStatementResponseUnmarshaller.Instance;
+
+            return Invoke<BatchExecuteStatementResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchExecuteStatement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchExecuteStatement operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/BatchExecuteStatement">REST API Reference for BatchExecuteStatement Operation</seealso>
+        public virtual Task<BatchExecuteStatementResponse> BatchExecuteStatementAsync(BatchExecuteStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchExecuteStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchExecuteStatementResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchExecuteStatementResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BeginTransaction
+
+        internal virtual BeginTransactionResponse BeginTransaction(BeginTransactionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BeginTransactionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BeginTransactionResponseUnmarshaller.Instance;
+
+            return Invoke<BeginTransactionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BeginTransaction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BeginTransaction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/BeginTransaction">REST API Reference for BeginTransaction Operation</seealso>
+        public virtual Task<BeginTransactionResponse> BeginTransactionAsync(BeginTransactionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BeginTransactionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BeginTransactionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BeginTransactionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CommitTransaction
+
+        internal virtual CommitTransactionResponse CommitTransaction(CommitTransactionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CommitTransactionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CommitTransactionResponseUnmarshaller.Instance;
+
+            return Invoke<CommitTransactionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CommitTransaction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CommitTransaction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/CommitTransaction">REST API Reference for CommitTransaction Operation</seealso>
+        public virtual Task<CommitTransactionResponse> CommitTransactionAsync(CommitTransactionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CommitTransactionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CommitTransactionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CommitTransactionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ExecuteSql
 
+        [Obsolete("ExecuteSql has been deprecated.  Please use ExecuteStatement or BatchExecuteStatement instead.")]
         internal virtual ExecuteSqlResponse ExecuteSql(ExecuteSqlRequest request)
         {
             var options = new InvokeOptions();
@@ -265,6 +376,7 @@ namespace Amazon.RDSDataService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ExecuteSql">REST API Reference for ExecuteSql Operation</seealso>
+        [Obsolete("ExecuteSql has been deprecated.  Please use ExecuteStatement or BatchExecuteStatement instead.")]
         public virtual Task<ExecuteSqlResponse> ExecuteSqlAsync(ExecuteSqlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -272,6 +384,72 @@ namespace Amazon.RDSDataService
             options.ResponseUnmarshaller = ExecuteSqlResponseUnmarshaller.Instance;
 
             return InvokeAsync<ExecuteSqlResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ExecuteStatement
+
+        internal virtual ExecuteStatementResponse ExecuteStatement(ExecuteStatementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExecuteStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExecuteStatementResponseUnmarshaller.Instance;
+
+            return Invoke<ExecuteStatementResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExecuteStatement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteStatement operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ExecuteStatement">REST API Reference for ExecuteStatement Operation</seealso>
+        public virtual Task<ExecuteStatementResponse> ExecuteStatementAsync(ExecuteStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExecuteStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExecuteStatementResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ExecuteStatementResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RollbackTransaction
+
+        internal virtual RollbackTransactionResponse RollbackTransaction(RollbackTransactionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RollbackTransactionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RollbackTransactionResponseUnmarshaller.Instance;
+
+            return Invoke<RollbackTransactionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RollbackTransaction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RollbackTransaction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/RollbackTransaction">REST API Reference for RollbackTransaction Operation</seealso>
+        public virtual Task<RollbackTransactionResponse> RollbackTransactionAsync(RollbackTransactionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RollbackTransactionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RollbackTransactionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RollbackTransactionResponse>(request, options, cancellationToken);
         }
 
         #endregion

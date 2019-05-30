@@ -28,29 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDSDataService.Model
 {
     /// <summary>
-    /// The response elements represent the output of a request to run one or more SQL   
-    ///         statements.
+    /// A parameter used in a SQL statement.
     /// </summary>
-    public partial class ExecuteSqlResponse : AmazonWebServiceResponse
+    public partial class SqlParameter
     {
-        private List<SqlStatementResult> _sqlStatementResults = new List<SqlStatementResult>();
+        private string _name;
+        private Field _value;
 
         /// <summary>
-        /// Gets and sets the property SqlStatementResults. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The results of the SQL statement or statements.
+        /// The name of the parameter.
         /// </para>
         /// </summary>
-        public List<SqlStatementResult> SqlStatementResults
+        public string Name
         {
-            get { return this._sqlStatementResults; }
-            set { this._sqlStatementResults = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if SqlStatementResults property is set
-        internal bool IsSetSqlStatementResults()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._sqlStatementResults != null && this._sqlStatementResults.Count > 0; 
+            return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// The value of the parameter.
+        /// </para>
+        /// </summary>
+        public Field Value
+        {
+            get { return this._value; }
+            set { this._value = value; }
+        }
+
+        // Check to see if Value property is set
+        internal bool IsSetValue()
+        {
+            return this._value != null;
         }
 
     }

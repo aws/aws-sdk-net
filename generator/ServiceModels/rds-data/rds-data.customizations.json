@@ -1,0 +1,7 @@
+{
+  "operationModifiers": {
+    "ExecuteSql": {
+      "deprecatedMessage": "ExecuteSql has been deprecated.  Please use ExecuteStatement or BatchExecuteStatement instead."
+    }
+  }
+}

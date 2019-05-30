@@ -28,14 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDSDataService.Model
 {
     /// <summary>
-    /// User Defined Type
+    /// A structure value returned by a call.
     /// </summary>
     public partial class StructValue
     {
         private List<Value> _attributes = new List<Value>();
 
         /// <summary>
-        /// Gets and sets the property Attributes. Struct or UDT
+        /// Gets and sets the property Attributes. 
+        /// <para>
+        /// The attributes returned in the record.
+        /// </para>
         /// </summary>
         public List<Value> Attributes
         {

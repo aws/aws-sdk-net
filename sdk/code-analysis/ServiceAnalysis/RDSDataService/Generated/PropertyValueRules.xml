@@ -1,8 +1,68 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.RDSDataService.Model.BatchExecuteStatementRequest.Database</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDSDataService.Model.BatchExecuteStatementRequest.ResourceArn</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDSDataService.Model.BatchExecuteStatementRequest.Schema</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDSDataService.Model.BatchExecuteStatementRequest.SecretArn</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDSDataService.Model.BatchExecuteStatementRequest.Sql</property>
+    <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDSDataService.Model.BatchExecuteStatementRequest.TransactionId</property>
+    <max>192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDSDataService.Model.BeginTransactionRequest.Database</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDSDataService.Model.BeginTransactionRequest.ResourceArn</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDSDataService.Model.BeginTransactionRequest.Schema</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDSDataService.Model.BeginTransactionRequest.SecretArn</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDSDataService.Model.BeginTransactionResponse.TransactionId</property>
+    <max>192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDSDataService.Model.CommitTransactionRequest.ResourceArn</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDSDataService.Model.CommitTransactionRequest.SecretArn</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDSDataService.Model.CommitTransactionRequest.TransactionId</property>
+    <max>192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDSDataService.Model.CommitTransactionResponse.TransactionStatus</property>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RDSDataService.Model.ExecuteSqlRequest.AwsSecretStoreArn</property>
-    <max>1024</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDSDataService.Model.ExecuteSqlRequest.Database</property>
@@ -10,7 +70,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDSDataService.Model.ExecuteSqlRequest.DbClusterOrInstanceArn</property>
-    <max>1024</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDSDataService.Model.ExecuteSqlRequest.Schema</property>
@@ -19,5 +79,45 @@
   <property-value-rule>
     <property>Amazon.RDSDataService.Model.ExecuteSqlRequest.SqlStatements</property>
     <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDSDataService.Model.ExecuteStatementRequest.Database</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDSDataService.Model.ExecuteStatementRequest.ResourceArn</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDSDataService.Model.ExecuteStatementRequest.Schema</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDSDataService.Model.ExecuteStatementRequest.SecretArn</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDSDataService.Model.ExecuteStatementRequest.Sql</property>
+    <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDSDataService.Model.ExecuteStatementRequest.TransactionId</property>
+    <max>192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDSDataService.Model.RollbackTransactionRequest.ResourceArn</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDSDataService.Model.RollbackTransactionRequest.SecretArn</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDSDataService.Model.RollbackTransactionRequest.TransactionId</property>
+    <max>192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDSDataService.Model.RollbackTransactionResponse.TransactionStatus</property>
+    <max>128</max>
   </property-value-rule>
 </property-value-rules>

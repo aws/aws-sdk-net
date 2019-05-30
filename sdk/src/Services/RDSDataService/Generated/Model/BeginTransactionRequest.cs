@@ -28,42 +28,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDSDataService.Model
 {
     /// <summary>
-    /// Container for the parameters to the ExecuteSql operation.
-    /// Runs one or more SQL statements.
+    /// Container for the parameters to the BeginTransaction operation.
+    /// Starts a SQL transaction.
     /// 
-    ///         <important>            
+    ///                 <important>            
     /// <para>
-    /// This operation is deprecated. Use the <code>BatchExecuteStatement</code> or      
-    ///              <code>ExecuteStatement</code> operation.
+    /// A transaction can run for a maximum of 24 hours. A transaction is terminated and 
+    ///                rolled back automatically after 24 hours.
+    /// </para>
+    ///             
+    /// <para>
+    /// A transaction times out if no calls use its transaction ID in three minutes.     
+    ///            If a transaction times out before it's committed, it's rolled back    
+    ///            automatically.
+    /// </para>
+    ///             
+    /// <para>
+    /// DDL statements inside a transaction cause an implicit commit. We recommend       
+    ///          that you run each DDL statement in a separate <code>ExecuteStatement</code>
+    /// call with                 <code>continueAfterTimeout</code> enabled.
     /// </para>
     ///         </important>
     /// </summary>
-    public partial class ExecuteSqlRequest : AmazonRDSDataServiceRequest
+    public partial class BeginTransactionRequest : AmazonRDSDataServiceRequest
     {
-        private string _awsSecretStoreArn;
         private string _database;
-        private string _dbClusterOrInstanceArn;
+        private string _resourceArn;
         private string _schema;
-        private string _sqlStatements;
-
-        /// <summary>
-        /// Gets and sets the property AwsSecretStoreArn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Max=100)]
-        public string AwsSecretStoreArn
-        {
-            get { return this._awsSecretStoreArn; }
-            set { this._awsSecretStoreArn = value; }
-        }
-
-        // Check to see if AwsSecretStoreArn property is set
-        internal bool IsSetAwsSecretStoreArn()
-        {
-            return this._awsSecretStoreArn != null;
-        }
+        private string _secretArn;
 
         /// <summary>
         /// Gets and sets the property Database. 
@@ -85,22 +77,22 @@ namespace Amazon.RDSDataService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DbClusterOrInstanceArn. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the Aurora Serverless DB cluster.
+        /// The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=100)]
-        public string DbClusterOrInstanceArn
+        public string ResourceArn
         {
-            get { return this._dbClusterOrInstanceArn; }
-            set { this._dbClusterOrInstanceArn = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if DbClusterOrInstanceArn property is set
-        internal bool IsSetDbClusterOrInstanceArn()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._dbClusterOrInstanceArn != null;
+            return this._resourceArn != null;
         }
 
         /// <summary>
@@ -123,28 +115,22 @@ namespace Amazon.RDSDataService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SqlStatements. 
+        /// Gets and sets the property SecretArn. 
         /// <para>
-        /// One or more SQL statements to run on the DB cluster.
-        /// </para>
-        ///         
-        /// <para>
-        /// You can separate SQL statements from each other with a semicolon (;). Any valid SQL
-        ///            statement is permitted, including data definition, data manipulation, and
-        /// commit            statements. 
+        /// The name or ARN of the secret that enables access to the DB cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=65536)]
-        public string SqlStatements
+        [AWSProperty(Required=true, Max=100)]
+        public string SecretArn
         {
-            get { return this._sqlStatements; }
-            set { this._sqlStatements = value; }
+            get { return this._secretArn; }
+            set { this._secretArn = value; }
         }
 
-        // Check to see if SqlStatements property is set
-        internal bool IsSetSqlStatements()
+        // Check to see if SecretArn property is set
+        internal bool IsSetSecretArn()
         {
-            return this._sqlStatements != null;
+            return this._secretArn != null;
         }
 
     }

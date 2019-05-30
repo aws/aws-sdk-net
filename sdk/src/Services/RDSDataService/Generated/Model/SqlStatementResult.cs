@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDSDataService.Model
 {
     /// <summary>
-    /// SQL statement execution result
+    /// The result of a SQL statement.
     /// </summary>
     public partial class SqlStatementResult
     {
@@ -36,7 +36,10 @@ namespace Amazon.RDSDataService.Model
         private ResultFrame _resultFrame;
 
         /// <summary>
-        /// Gets and sets the property NumberOfRecordsUpdated. Number of rows updated.
+        /// Gets and sets the property NumberOfRecordsUpdated. 
+        /// <para>
+        /// The number of records updated by a SQL statement.
+        /// </para>
         /// </summary>
         public long NumberOfRecordsUpdated
         {
@@ -51,8 +54,10 @@ namespace Amazon.RDSDataService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResultFrame. ResultFrame returned by executing the sql
-        /// statement
+        /// Gets and sets the property ResultFrame. 
+        /// <para>
+        /// The result set of the SQL statement.
+        /// </para>
         /// </summary>
         public ResultFrame ResultFrame
         {

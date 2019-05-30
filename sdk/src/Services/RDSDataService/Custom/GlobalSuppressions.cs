@@ -18,3 +18,4 @@ using System.Diagnostics.CodeAnalysis;
 
 [module: SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Scope="member", Target="Amazon.RDSDataService.Model.Value.#BigIntValue", MessageId="int")]
 [module: SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Scope="member", Target="Amazon.RDSDataService.Model.Value.#IntValue", MessageId="int")]
+[module: SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Scope = "member", Target = "Amazon.RDSDataService.Model.Field.#LongValue", MessageId = "long")]
