@@ -76,6 +76,12 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                     unmarshalledObject.DatastoreName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("datastoreStorage", targetDepth))
+                {
+                    var unmarshaller = DatastoreStorageSummaryUnmarshaller.Instance;
+                    unmarshalledObject.DatastoreStorage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastUpdateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

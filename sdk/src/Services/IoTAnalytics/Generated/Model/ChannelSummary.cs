@@ -33,6 +33,7 @@ namespace Amazon.IoTAnalytics.Model
     public partial class ChannelSummary
     {
         private string _channelName;
+        private ChannelStorageSummary _channelStorage;
         private DateTime? _creationTime;
         private DateTime? _lastUpdateTime;
         private ChannelStatus _status;
@@ -54,6 +55,24 @@ namespace Amazon.IoTAnalytics.Model
         internal bool IsSetChannelName()
         {
             return this._channelName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChannelStorage. 
+        /// <para>
+        /// Where channel data is stored.
+        /// </para>
+        /// </summary>
+        public ChannelStorageSummary ChannelStorage
+        {
+            get { return this._channelStorage; }
+            set { this._channelStorage = value; }
+        }
+
+        // Check to see if ChannelStorage property is set
+        internal bool IsSetChannelStorage()
+        {
+            return this._channelStorage != null;
         }
 
         /// <summary>

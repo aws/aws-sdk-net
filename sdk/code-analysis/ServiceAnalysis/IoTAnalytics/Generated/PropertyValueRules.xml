@@ -281,6 +281,74 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.CustomerManagedChannelS3Storage.Bucket</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9.\-_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.CustomerManagedChannelS3Storage.KeyPrefix</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9!_.*'()/{}:-]*/$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.CustomerManagedChannelS3Storage.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.CustomerManagedChannelS3StorageSummary.Bucket</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9.\-_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.CustomerManagedChannelS3StorageSummary.KeyPrefix</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9!_.*'()/{}:-]*/$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.CustomerManagedChannelS3StorageSummary.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.CustomerManagedDatastoreS3Storage.Bucket</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9.\-_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.CustomerManagedDatastoreS3Storage.KeyPrefix</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9!_.*'()/{}:-]*/$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.CustomerManagedDatastoreS3Storage.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.CustomerManagedDatastoreS3StorageSummary.Bucket</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9.\-_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.CustomerManagedDatastoreS3StorageSummary.KeyPrefix</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9!_.*'()/{}:-]*/$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.CustomerManagedDatastoreS3StorageSummary.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTAnalytics.Model.Dataset.Name</property>
     <min>1</min>
     <max>128</max>

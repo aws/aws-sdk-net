@@ -34,6 +34,7 @@ namespace Amazon.IoTAnalytics.Model
     public partial class UpdateDatastoreRequest : AmazonIoTAnalyticsRequest
     {
         private string _datastoreName;
+        private DatastoreStorage _datastoreStorage;
         private RetentionPeriod _retentionPeriod;
 
         /// <summary>
@@ -53,6 +54,24 @@ namespace Amazon.IoTAnalytics.Model
         internal bool IsSetDatastoreName()
         {
             return this._datastoreName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatastoreStorage. 
+        /// <para>
+        /// Where data store data is stored.
+        /// </para>
+        /// </summary>
+        public DatastoreStorage DatastoreStorage
+        {
+            get { return this._datastoreStorage; }
+            set { this._datastoreStorage = value; }
+        }
+
+        // Check to see if DatastoreStorage property is set
+        internal bool IsSetDatastoreStorage()
+        {
+            return this._datastoreStorage != null;
         }
 
         /// <summary>

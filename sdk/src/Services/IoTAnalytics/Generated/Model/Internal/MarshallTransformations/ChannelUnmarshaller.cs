@@ -100,6 +100,12 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("storage", targetDepth))
+                {
+                    var unmarshaller = ChannelStorageUnmarshaller.Instance;
+                    unmarshalledObject.Storage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

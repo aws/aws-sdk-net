@@ -38,6 +38,7 @@ namespace Amazon.IoTAnalytics.Model
         private string _name;
         private RetentionPeriod _retentionPeriod;
         private DatastoreStatus _status;
+        private DatastoreStorage _storage;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -159,6 +160,24 @@ namespace Amazon.IoTAnalytics.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Storage. 
+        /// <para>
+        /// Where data store data is stored.
+        /// </para>
+        /// </summary>
+        public DatastoreStorage Storage
+        {
+            get { return this._storage; }
+            set { this._storage = value; }
+        }
+
+        // Check to see if Storage property is set
+        internal bool IsSetStorage()
+        {
+            return this._storage != null;
         }
 
     }

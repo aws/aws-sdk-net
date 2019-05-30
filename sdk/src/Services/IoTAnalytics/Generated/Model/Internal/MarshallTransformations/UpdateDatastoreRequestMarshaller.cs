@@ -69,6 +69,17 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDatastoreStorage())
+                {
+                    context.Writer.WritePropertyName("datastoreStorage");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DatastoreStorageMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DatastoreStorage, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRetentionPeriod())
                 {
                     context.Writer.WritePropertyName("retentionPeriod");

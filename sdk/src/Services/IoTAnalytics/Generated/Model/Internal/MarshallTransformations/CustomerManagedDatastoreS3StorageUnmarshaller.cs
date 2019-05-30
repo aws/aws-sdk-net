@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ChannelSummary Object
+    /// Response Unmarshaller for CustomerManagedDatastoreS3Storage Object
     /// </summary>  
-    public class ChannelSummaryUnmarshaller : IUnmarshaller<ChannelSummary, XmlUnmarshallerContext>, IUnmarshaller<ChannelSummary, JsonUnmarshallerContext>
+    public class CustomerManagedDatastoreS3StorageUnmarshaller : IUnmarshaller<CustomerManagedDatastoreS3Storage, XmlUnmarshallerContext>, IUnmarshaller<CustomerManagedDatastoreS3Storage, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ChannelSummary IUnmarshaller<ChannelSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CustomerManagedDatastoreS3Storage IUnmarshaller<CustomerManagedDatastoreS3Storage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,33 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ChannelSummary Unmarshall(JsonUnmarshallerContext context)
+        public CustomerManagedDatastoreS3Storage Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ChannelSummary unmarshalledObject = new ChannelSummary();
+            CustomerManagedDatastoreS3Storage unmarshalledObject = new CustomerManagedDatastoreS3Storage();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("channelName", targetDepth))
+                if (context.TestExpression("bucket", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChannelName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Bucket = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("channelStorage", targetDepth))
-                {
-                    var unmarshaller = ChannelStorageSummaryUnmarshaller.Instance;
-                    unmarshalledObject.ChannelStorage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("creationTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lastUpdateTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdateTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("keyPrefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KeyPrefix = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("roleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +88,12 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         }
 
 
-        private static ChannelSummaryUnmarshaller _instance = new ChannelSummaryUnmarshaller();        
+        private static CustomerManagedDatastoreS3StorageUnmarshaller _instance = new CustomerManagedDatastoreS3StorageUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ChannelSummaryUnmarshaller Instance
+        public static CustomerManagedDatastoreS3StorageUnmarshaller Instance
         {
             get
             {

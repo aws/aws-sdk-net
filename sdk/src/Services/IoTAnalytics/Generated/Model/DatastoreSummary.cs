@@ -34,6 +34,7 @@ namespace Amazon.IoTAnalytics.Model
     {
         private DateTime? _creationTime;
         private string _datastoreName;
+        private DatastoreStorageSummary _datastoreStorage;
         private DateTime? _lastUpdateTime;
         private DatastoreStatus _status;
 
@@ -72,6 +73,24 @@ namespace Amazon.IoTAnalytics.Model
         internal bool IsSetDatastoreName()
         {
             return this._datastoreName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatastoreStorage. 
+        /// <para>
+        /// Where data store data is stored.
+        /// </para>
+        /// </summary>
+        public DatastoreStorageSummary DatastoreStorage
+        {
+            get { return this._datastoreStorage; }
+            set { this._datastoreStorage = value; }
+        }
+
+        // Check to see if DatastoreStorage property is set
+        internal bool IsSetDatastoreStorage()
+        {
+            return this._datastoreStorage != null;
         }
 
         /// <summary>

@@ -34,6 +34,7 @@ namespace Amazon.IoTAnalytics.Model
     public partial class UpdateChannelRequest : AmazonIoTAnalyticsRequest
     {
         private string _channelName;
+        private ChannelStorage _channelStorage;
         private RetentionPeriod _retentionPeriod;
 
         /// <summary>
@@ -53,6 +54,24 @@ namespace Amazon.IoTAnalytics.Model
         internal bool IsSetChannelName()
         {
             return this._channelName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChannelStorage. 
+        /// <para>
+        /// Where channel data is stored.
+        /// </para>
+        /// </summary>
+        public ChannelStorage ChannelStorage
+        {
+            get { return this._channelStorage; }
+            set { this._channelStorage = value; }
+        }
+
+        // Check to see if ChannelStorage property is set
+        internal bool IsSetChannelStorage()
+        {
+            return this._channelStorage != null;
         }
 
         /// <summary>
