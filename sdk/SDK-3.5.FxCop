@@ -110,6 +110,8 @@
       <Directory>$(ProjectDir)/src/Services/iot1clickprojects/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/iotanalytics/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/iotdata/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/iotevents/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/ioteventsdata/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/iotjobsdataplane/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/iotthingsgraph/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/kafka/bin/Release/net35/</Directory>
@@ -288,6 +290,8 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.IoT1ClickProjects.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.IoTAnalytics.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.IotData.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.IoTEvents.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.IoTEventsData.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.IoTJobsDataPlane.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.IoTThingsGraph.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Kafka.dll" Analyze="True" AnalyzeAllChildren="True" />
