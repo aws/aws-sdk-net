@@ -38,6 +38,10 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DBCluster
     {
+        private string _activityStreamKinesisStreamName;
+        private string _activityStreamKmsKeyId;
+        private ActivityStreamMode _activityStreamMode;
+        private ActivityStreamStatus _activityStreamStatus;
         private int? _allocatedStorage;
         private List<DBClusterRole> _associatedRoles = new List<DBClusterRole>();
         private List<string> _availabilityZones = new List<string>();
@@ -84,6 +88,80 @@ namespace Amazon.RDS.Model
         private string _status;
         private bool? _storageEncrypted;
         private List<VpcSecurityGroupMembership> _vpcSecurityGroups = new List<VpcSecurityGroupMembership>();
+
+        /// <summary>
+        /// Gets and sets the property ActivityStreamKinesisStreamName. 
+        /// <para>
+        /// The name of the Amazon Kinesis data stream used for the database activity stream.
+        /// </para>
+        /// </summary>
+        public string ActivityStreamKinesisStreamName
+        {
+            get { return this._activityStreamKinesisStreamName; }
+            set { this._activityStreamKinesisStreamName = value; }
+        }
+
+        // Check to see if ActivityStreamKinesisStreamName property is set
+        internal bool IsSetActivityStreamKinesisStreamName()
+        {
+            return this._activityStreamKinesisStreamName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ActivityStreamKmsKeyId. 
+        /// <para>
+        /// The AWS KMS key identifier used for encrypting messages in the database activity stream.
+        /// </para>
+        /// </summary>
+        public string ActivityStreamKmsKeyId
+        {
+            get { return this._activityStreamKmsKeyId; }
+            set { this._activityStreamKmsKeyId = value; }
+        }
+
+        // Check to see if ActivityStreamKmsKeyId property is set
+        internal bool IsSetActivityStreamKmsKeyId()
+        {
+            return this._activityStreamKmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ActivityStreamMode. 
+        /// <para>
+        /// The mode of the database activity stream. Database events such as a change or access
+        /// generate an activity stream event. The database session can handle these events either
+        /// synchronously or asynchronously. 
+        /// </para>
+        /// </summary>
+        public ActivityStreamMode ActivityStreamMode
+        {
+            get { return this._activityStreamMode; }
+            set { this._activityStreamMode = value; }
+        }
+
+        // Check to see if ActivityStreamMode property is set
+        internal bool IsSetActivityStreamMode()
+        {
+            return this._activityStreamMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ActivityStreamStatus. 
+        /// <para>
+        /// The status of the database activity stream.
+        /// </para>
+        /// </summary>
+        public ActivityStreamStatus ActivityStreamStatus
+        {
+            get { return this._activityStreamStatus; }
+            set { this._activityStreamStatus = value; }
+        }
+
+        // Check to see if ActivityStreamStatus property is set
+        internal bool IsSetActivityStreamStatus()
+        {
+            return this._activityStreamStatus != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 

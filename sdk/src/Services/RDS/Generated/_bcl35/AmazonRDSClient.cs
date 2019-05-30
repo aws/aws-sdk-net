@@ -8537,6 +8537,80 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  StartActivityStream
+
+        /// <summary>
+        /// Starts a database activity stream to monitor activity on the database. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">Database
+        /// Activity Streams</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartActivityStream service method.</param>
+        /// 
+        /// <returns>The response from the StartActivityStream service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an AWS KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.ResourceNotFoundException">
+        /// The specified resource ID was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartActivityStream">REST API Reference for StartActivityStream Operation</seealso>
+        public virtual StartActivityStreamResponse StartActivityStream(StartActivityStreamRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartActivityStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartActivityStreamResponseUnmarshaller.Instance;
+
+            return Invoke<StartActivityStreamResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartActivityStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartActivityStream operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartActivityStream
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartActivityStream">REST API Reference for StartActivityStream Operation</seealso>
+        public virtual IAsyncResult BeginStartActivityStream(StartActivityStreamRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartActivityStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartActivityStreamResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartActivityStream operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartActivityStream.</param>
+        /// 
+        /// <returns>Returns a  StartActivityStreamResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartActivityStream">REST API Reference for StartActivityStream Operation</seealso>
+        public virtual StartActivityStreamResponse EndStartActivityStream(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartActivityStreamResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartDBCluster
 
         /// <summary>
@@ -8719,6 +8793,82 @@ namespace Amazon.RDS
         public virtual StartDBInstanceResponse EndStartDBInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<StartDBInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopActivityStream
+
+        /// <summary>
+        /// Stops a database activity stream that was started using the AWS console, the <code>start-activity-stream</code>
+        /// AWS CLI command, or the <code>StartActivityStream</code> action.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">Database
+        /// Activity Streams</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopActivityStream service method.</param>
+        /// 
+        /// <returns>The response from the StopActivityStream service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.ResourceNotFoundException">
+        /// The specified resource ID was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopActivityStream">REST API Reference for StopActivityStream Operation</seealso>
+        public virtual StopActivityStreamResponse StopActivityStream(StopActivityStreamRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopActivityStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopActivityStreamResponseUnmarshaller.Instance;
+
+            return Invoke<StopActivityStreamResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopActivityStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopActivityStream operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopActivityStream
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopActivityStream">REST API Reference for StopActivityStream Operation</seealso>
+        public virtual IAsyncResult BeginStopActivityStream(StopActivityStreamRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopActivityStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopActivityStreamResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopActivityStream operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopActivityStream.</param>
+        /// 
+        /// <returns>Returns a  StopActivityStreamResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopActivityStream">REST API Reference for StopActivityStream Operation</seealso>
+        public virtual StopActivityStreamResponse EndStopActivityStream(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopActivityStreamResponse>(asyncResult);
         }
 
         #endregion

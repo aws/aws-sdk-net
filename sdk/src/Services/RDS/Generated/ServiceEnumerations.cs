@@ -25,6 +25,114 @@ namespace Amazon.RDS
 {
 
     /// <summary>
+    /// Constants used for properties of type ActivityStreamMode.
+    /// </summary>
+    public class ActivityStreamMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Async for ActivityStreamMode
+        /// </summary>
+        public static readonly ActivityStreamMode Async = new ActivityStreamMode("async");
+        /// <summary>
+        /// Constant Sync for ActivityStreamMode
+        /// </summary>
+        public static readonly ActivityStreamMode Sync = new ActivityStreamMode("sync");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ActivityStreamMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActivityStreamMode FindValue(string value)
+        {
+            return FindValue<ActivityStreamMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActivityStreamMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ActivityStreamStatus.
+    /// </summary>
+    public class ActivityStreamStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Started for ActivityStreamStatus
+        /// </summary>
+        public static readonly ActivityStreamStatus Started = new ActivityStreamStatus("started");
+        /// <summary>
+        /// Constant Starting for ActivityStreamStatus
+        /// </summary>
+        public static readonly ActivityStreamStatus Starting = new ActivityStreamStatus("starting");
+        /// <summary>
+        /// Constant Stopped for ActivityStreamStatus
+        /// </summary>
+        public static readonly ActivityStreamStatus Stopped = new ActivityStreamStatus("stopped");
+        /// <summary>
+        /// Constant Stopping for ActivityStreamStatus
+        /// </summary>
+        public static readonly ActivityStreamStatus Stopping = new ActivityStreamStatus("stopping");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ActivityStreamStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActivityStreamStatus FindValue(string value)
+        {
+            return FindValue<ActivityStreamStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActivityStreamStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ApplyMethod.
     /// </summary>
     public class ApplyMethod : ConstantClass

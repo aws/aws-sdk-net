@@ -4094,6 +4094,39 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  StartActivityStream
+
+        internal virtual StartActivityStreamResponse StartActivityStream(StartActivityStreamRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartActivityStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartActivityStreamResponseUnmarshaller.Instance;
+
+            return Invoke<StartActivityStreamResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartActivityStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartActivityStream operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartActivityStream">REST API Reference for StartActivityStream Operation</seealso>
+        public virtual Task<StartActivityStreamResponse> StartActivityStreamAsync(StartActivityStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartActivityStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartActivityStreamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartActivityStreamResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartDBCluster
 
         internal virtual StartDBClusterResponse StartDBCluster(StartDBClusterRequest request)
@@ -4156,6 +4189,39 @@ namespace Amazon.RDS
             options.ResponseUnmarshaller = StartDBInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartDBInstanceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopActivityStream
+
+        internal virtual StopActivityStreamResponse StopActivityStream(StopActivityStreamRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopActivityStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopActivityStreamResponseUnmarshaller.Instance;
+
+            return Invoke<StopActivityStreamResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopActivityStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopActivityStream operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopActivityStream">REST API Reference for StopActivityStream Operation</seealso>
+        public virtual Task<StopActivityStreamResponse> StopActivityStreamAsync(StopActivityStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopActivityStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopActivityStreamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopActivityStreamResponse>(request, options, cancellationToken);
         }
 
         #endregion
