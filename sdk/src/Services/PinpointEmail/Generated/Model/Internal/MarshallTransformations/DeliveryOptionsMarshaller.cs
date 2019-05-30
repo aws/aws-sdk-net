@@ -51,6 +51,12 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SendingPoolName);
             }
 
+            if(requestObject.IsSetTlsPolicy())
+            {
+                context.Writer.WritePropertyName("TlsPolicy");
+                context.Writer.Write(requestObject.TlsPolicy);
+            }
+
         }
 
         /// <summary>

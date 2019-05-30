@@ -55,8 +55,6 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteConfigurationSetEventDestinationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.PinpointEmail");
-            string target = "com.amazonaws.services.pinpoint.email.DeleteConfigurationSetEventDestination";
-            request.Headers["X-Amz-Target"] = target;
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-26";            
             request.HttpMethod = "DELETE";
 

@@ -33,6 +33,7 @@ namespace Amazon.PinpointEmail.Model
     public partial class DeliveryOptions
     {
         private string _sendingPoolName;
+        private TlsPolicy _tlsPolicy;
 
         /// <summary>
         /// Gets and sets the property SendingPoolName. 
@@ -51,6 +52,27 @@ namespace Amazon.PinpointEmail.Model
         internal bool IsSetSendingPoolName()
         {
             return this._sendingPoolName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TlsPolicy. 
+        /// <para>
+        /// Specifies whether Amazon Pinpoint should require that incoming email is delivered
+        /// over a connection that’s encrypted by using Transport Layer Security (TLS). If this
+        /// value is set to <code>Require</code>, Amazon Pinpoint will bounce email messages that
+        /// cannot be delivered over TLS. The default value is <code>Optional</code>.
+        /// </para>
+        /// </summary>
+        public TlsPolicy TlsPolicy
+        {
+            get { return this._tlsPolicy; }
+            set { this._tlsPolicy = value; }
+        }
+
+        // Check to see if TlsPolicy property is set
+        internal bool IsSetTlsPolicy()
+        {
+            return this._tlsPolicy != null;
         }
 
     }

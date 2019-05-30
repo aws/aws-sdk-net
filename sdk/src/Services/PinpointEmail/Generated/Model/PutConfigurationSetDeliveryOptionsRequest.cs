@@ -36,6 +36,7 @@ namespace Amazon.PinpointEmail.Model
     {
         private string _configurationSetName;
         private string _sendingPoolName;
+        private TlsPolicy _tlsPolicy;
 
         /// <summary>
         /// Gets and sets the property ConfigurationSetName. 
@@ -73,6 +74,25 @@ namespace Amazon.PinpointEmail.Model
         internal bool IsSetSendingPoolName()
         {
             return this._sendingPoolName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TlsPolicy. 
+        /// <para>
+        /// Whether Amazon Pinpoint should require that incoming email is delivered over a connection
+        /// encrypted with Transport Layer Security (TLS).
+        /// </para>
+        /// </summary>
+        public TlsPolicy TlsPolicy
+        {
+            get { return this._tlsPolicy; }
+            set { this._tlsPolicy = value; }
+        }
+
+        // Check to see if TlsPolicy property is set
+        internal bool IsSetTlsPolicy()
+        {
+            return this._tlsPolicy != null;
         }
 
     }

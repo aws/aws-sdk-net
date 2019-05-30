@@ -55,8 +55,6 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         public IRequest Marshall(PutConfigurationSetDeliveryOptionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.PinpointEmail");
-            string target = "com.amazonaws.services.pinpoint.email.PutConfigurationSetDeliveryOptions";
-            request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-26";            
             request.HttpMethod = "PUT";
@@ -75,6 +73,12 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("SendingPoolName");
                     context.Writer.Write(publicRequest.SendingPoolName);
+                }
+
+                if(publicRequest.IsSetTlsPolicy())
+                {
+                    context.Writer.WritePropertyName("TlsPolicy");
+                    context.Writer.Write(publicRequest.TlsPolicy);
                 }
 
         

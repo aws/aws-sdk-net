@@ -70,6 +70,12 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
                     unmarshalledObject.SendingPoolName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TlsPolicy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TlsPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
