@@ -1,3 +1,11 @@
+### 3.3.522.0 (2019-05-30 23:05 UTC)
+* Core 3.3.102.0
+	* Closing response object during SAML authentication in .NET Framework 3.5.
+Updating the documentation for the async operations.
+Handling anonymous credentials in endpoint discovery handler.
+Added support for unbounded streams when using services that support chunked transfer encoding.
+	* All services packages updated to require new Core
+
 ### 3.3.521.0 (2019-05-30 20:01 UTC)
 * CodeCommit (3.3.101.0)
 	* This release adds APIs that allow adding and removing tags to a repository, and viewing tags for a repository. It also enables adding tags when creating a repository.
