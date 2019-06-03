@@ -1,3 +1,14 @@
+### 3.3.523.0 (2019-06-03 18:17 UTC)
+* EC2 (3.3.112.0)
+	* Amazon EC2 I3en instances are the new storage-optimized instances offering up to 60 TB NVMe SSD instance storage and up to 100 Gbps of network bandwidth.
+* RDS (3.3.104.2)
+	* Amazon RDS Data API is generally available. Removing beta notes in the documentation.
+* Core 3.3.102.1
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.522.0 (2019-05-30 23:05 UTC)
 * Core 3.3.102.0
 	* Closing response object during SAML authentication in .NET Framework 3.5.
