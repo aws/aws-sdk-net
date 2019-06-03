@@ -715,11 +715,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HttpEndpointEnabled. <note> 
-        /// <para>
-        /// HTTP endpoint functionality is in beta for Aurora Serverless and is subject to change.
-        /// </para>
-        ///  </note> 
+        /// Gets and sets the property HttpEndpointEnabled. 
         /// <para>
         /// A value that indicates whether the HTTP endpoint for an Aurora Serverless DB cluster
         /// is enabled.
@@ -732,8 +728,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about Aurora Serverless, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
-        /// Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+        /// the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         /// </summary>
         public bool HttpEndpointEnabled
