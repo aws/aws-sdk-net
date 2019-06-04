@@ -86,7 +86,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// The 4-digit id for the node group you are configuring. For Redis (cluster mode disabled)
         /// replication groups, the node group id is always 0001. To find a Redis (cluster mode
-        /// enabled)'s node group's (shard's) id, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding
+        /// enabled)'s node group's (shard's) id, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding
         /// a Shard's Id</a>.
         /// </para>
         /// </summary>

@@ -53,7 +53,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis (cluster mode disabled): T1 and T2 cache node types.
+        /// Redis (cluster mode disabled): T1 node types.
         /// </para>
         ///  </li> <li> 
         /// <para>

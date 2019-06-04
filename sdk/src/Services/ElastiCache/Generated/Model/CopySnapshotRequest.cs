@@ -41,8 +41,8 @@ namespace Amazon.ElastiCache.Model
     /// can create their own Amazon S3 buckets and copy snapshots to it. To control access
     /// to your snapshots, use an IAM policy to control who has the ability to use the <code>CopySnapshot</code>
     /// operation. For more information about using IAM to control the use of ElastiCache
-    /// operations, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting
-    /// Snapshots</a> and <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.html">Authentication
+    /// operations, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html">Exporting
+    /// Snapshots</a> and <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.html">Authentication
     /// &amp; Access Control</a>.
     /// </para>
     ///  </important> 
@@ -58,7 +58,7 @@ namespace Amazon.ElastiCache.Model
     ///  
     /// <para>
     ///  <b>Solution:</b> Create an Amazon S3 bucket in the same region as your snapshot.
-    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.CreateBucket">Step
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-create-s3-bucket">Step
     /// 1: Create an Amazon S3 Bucket</a> in the ElastiCache User Guide.
     /// </para>
     ///  </li> <li> 
@@ -68,7 +68,7 @@ namespace Amazon.ElastiCache.Model
     ///  
     /// <para>
     ///  <b>Solution:</b> Create an Amazon S3 bucket in the same region as your snapshot.
-    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.CreateBucket">Step
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-create-s3-bucket">Step
     /// 1: Create an Amazon S3 Bucket</a> in the ElastiCache User Guide.
     /// </para>
     ///  </li> <li> 
@@ -78,7 +78,7 @@ namespace Amazon.ElastiCache.Model
     ///  
     /// <para>
     ///  <b>Solution:</b> Create an Amazon S3 bucket in the same region as your snapshot.
-    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.CreateBucket">Step
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-create-s3-bucket">Step
     /// 1: Create an Amazon S3 Bucket</a> in the ElastiCache User Guide.
     /// </para>
     ///  </li> <li> 
@@ -108,7 +108,7 @@ namespace Amazon.ElastiCache.Model
     ///  
     /// <para>
     ///  <b>Solution:</b> Add List and Read permissions on the bucket. For more information,
-    /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
+    /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html">Step
     /// 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User Guide.
     /// </para>
     ///  </li> <li> 
@@ -119,7 +119,7 @@ namespace Amazon.ElastiCache.Model
     ///  
     /// <para>
     ///  <b>Solution:</b> Add Upload/Delete permissions on the bucket. For more information,
-    /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
+    /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html">Step
     /// 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User Guide.
     /// </para>
     ///  </li> <li> 
@@ -130,7 +130,7 @@ namespace Amazon.ElastiCache.Model
     ///  
     /// <para>
     ///  <b>Solution:</b> Add View Permissions on the bucket. For more information, see <a
-    /// href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
+    /// href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html">Step
     /// 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User Guide.
     /// </para>
     ///  </li> </ul>
@@ -169,13 +169,13 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         /// When using this parameter to export a snapshot, be sure Amazon ElastiCache has the
-        /// needed permissions to this S3 bucket. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
+        /// needed permissions to this S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
         /// 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache
         /// User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting
         /// a Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.
         /// </para>
         /// </summary>

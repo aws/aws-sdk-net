@@ -89,8 +89,9 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property NodeGroupsToRemove. 
         /// <para>
         /// If the value of <code>NodeGroupCount</code> is less than the current number of node
-        /// groups (shards), the <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code>
-        /// is a required list of node group ids to remove from or retain in the cluster.
+        /// groups (shards), then either <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code>
+        /// is required. <code>NodeGroupsToRemove</code> is a list of <code>NodeGroupId</code>s
+        /// to remove from the cluster.
         /// </para>
         ///  
         /// <para>
@@ -114,8 +115,9 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property NodeGroupsToRetain. 
         /// <para>
         /// If the value of <code>NodeGroupCount</code> is less than the current number of node
-        /// groups (shards), the <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code>
-        /// is a required list of node group ids to remove from or retain in the cluster.
+        /// groups (shards), then either <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code>
+        /// is required. <code>NodeGroupsToRetain</code> is a list of <code>NodeGroupId</code>s
+        /// to retain in the cluster.
         /// </para>
         ///  
         /// <para>

@@ -183,6 +183,122 @@ namespace Amazon.ElastiCache
 
 
     /// <summary>
+    /// Constants used for properties of type NodeUpdateInitiatedBy.
+    /// </summary>
+    public class NodeUpdateInitiatedBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Customer for NodeUpdateInitiatedBy
+        /// </summary>
+        public static readonly NodeUpdateInitiatedBy Customer = new NodeUpdateInitiatedBy("customer");
+        /// <summary>
+        /// Constant System for NodeUpdateInitiatedBy
+        /// </summary>
+        public static readonly NodeUpdateInitiatedBy System = new NodeUpdateInitiatedBy("system");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NodeUpdateInitiatedBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NodeUpdateInitiatedBy FindValue(string value)
+        {
+            return FindValue<NodeUpdateInitiatedBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NodeUpdateInitiatedBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NodeUpdateStatus.
+    /// </summary>
+    public class NodeUpdateStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Complete for NodeUpdateStatus
+        /// </summary>
+        public static readonly NodeUpdateStatus Complete = new NodeUpdateStatus("complete");
+        /// <summary>
+        /// Constant InProgress for NodeUpdateStatus
+        /// </summary>
+        public static readonly NodeUpdateStatus InProgress = new NodeUpdateStatus("in-progress");
+        /// <summary>
+        /// Constant NotApplied for NodeUpdateStatus
+        /// </summary>
+        public static readonly NodeUpdateStatus NotApplied = new NodeUpdateStatus("not-applied");
+        /// <summary>
+        /// Constant Stopped for NodeUpdateStatus
+        /// </summary>
+        public static readonly NodeUpdateStatus Stopped = new NodeUpdateStatus("stopped");
+        /// <summary>
+        /// Constant Stopping for NodeUpdateStatus
+        /// </summary>
+        public static readonly NodeUpdateStatus Stopping = new NodeUpdateStatus("stopping");
+        /// <summary>
+        /// Constant WaitingToStart for NodeUpdateStatus
+        /// </summary>
+        public static readonly NodeUpdateStatus WaitingToStart = new NodeUpdateStatus("waiting-to-start");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NodeUpdateStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NodeUpdateStatus FindValue(string value)
+        {
+            return FindValue<NodeUpdateStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NodeUpdateStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PendingAutomaticFailoverStatus.
     /// </summary>
     public class PendingAutomaticFailoverStatus : ConstantClass
@@ -226,6 +342,218 @@ namespace Amazon.ElastiCache
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PendingAutomaticFailoverStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServiceUpdateSeverity.
+    /// </summary>
+    public class ServiceUpdateSeverity : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Critical for ServiceUpdateSeverity
+        /// </summary>
+        public static readonly ServiceUpdateSeverity Critical = new ServiceUpdateSeverity("critical");
+        /// <summary>
+        /// Constant Important for ServiceUpdateSeverity
+        /// </summary>
+        public static readonly ServiceUpdateSeverity Important = new ServiceUpdateSeverity("important");
+        /// <summary>
+        /// Constant Low for ServiceUpdateSeverity
+        /// </summary>
+        public static readonly ServiceUpdateSeverity Low = new ServiceUpdateSeverity("low");
+        /// <summary>
+        /// Constant Medium for ServiceUpdateSeverity
+        /// </summary>
+        public static readonly ServiceUpdateSeverity Medium = new ServiceUpdateSeverity("medium");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceUpdateSeverity(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceUpdateSeverity FindValue(string value)
+        {
+            return FindValue<ServiceUpdateSeverity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceUpdateSeverity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServiceUpdateStatus.
+    /// </summary>
+    public class ServiceUpdateStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for ServiceUpdateStatus
+        /// </summary>
+        public static readonly ServiceUpdateStatus Available = new ServiceUpdateStatus("available");
+        /// <summary>
+        /// Constant Cancelled for ServiceUpdateStatus
+        /// </summary>
+        public static readonly ServiceUpdateStatus Cancelled = new ServiceUpdateStatus("cancelled");
+        /// <summary>
+        /// Constant Expired for ServiceUpdateStatus
+        /// </summary>
+        public static readonly ServiceUpdateStatus Expired = new ServiceUpdateStatus("expired");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceUpdateStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceUpdateStatus FindValue(string value)
+        {
+            return FindValue<ServiceUpdateStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceUpdateStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServiceUpdateType.
+    /// </summary>
+    public class ServiceUpdateType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SecurityUpdate for ServiceUpdateType
+        /// </summary>
+        public static readonly ServiceUpdateType SecurityUpdate = new ServiceUpdateType("security-update");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceUpdateType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceUpdateType FindValue(string value)
+        {
+            return FindValue<ServiceUpdateType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceUpdateType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SlaMet.
+    /// </summary>
+    public class SlaMet : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NA for SlaMet
+        /// </summary>
+        public static readonly SlaMet NA = new SlaMet("n/a");
+        /// <summary>
+        /// Constant No for SlaMet
+        /// </summary>
+        public static readonly SlaMet No = new SlaMet("no");
+        /// <summary>
+        /// Constant Yes for SlaMet
+        /// </summary>
+        public static readonly SlaMet Yes = new SlaMet("yes");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SlaMet(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SlaMet FindValue(string value)
+        {
+            return FindValue<SlaMet>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SlaMet(string value)
         {
             return FindValue(value);
         }
@@ -288,6 +616,72 @@ namespace Amazon.ElastiCache
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UpdateActionStatus.
+    /// </summary>
+    public class UpdateActionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Complete for UpdateActionStatus
+        /// </summary>
+        public static readonly UpdateActionStatus Complete = new UpdateActionStatus("complete");
+        /// <summary>
+        /// Constant InProgress for UpdateActionStatus
+        /// </summary>
+        public static readonly UpdateActionStatus InProgress = new UpdateActionStatus("in-progress");
+        /// <summary>
+        /// Constant NotApplied for UpdateActionStatus
+        /// </summary>
+        public static readonly UpdateActionStatus NotApplied = new UpdateActionStatus("not-applied");
+        /// <summary>
+        /// Constant Stopped for UpdateActionStatus
+        /// </summary>
+        public static readonly UpdateActionStatus Stopped = new UpdateActionStatus("stopped");
+        /// <summary>
+        /// Constant Stopping for UpdateActionStatus
+        /// </summary>
+        public static readonly UpdateActionStatus Stopping = new UpdateActionStatus("stopping");
+        /// <summary>
+        /// Constant WaitingToStart for UpdateActionStatus
+        /// </summary>
+        public static readonly UpdateActionStatus WaitingToStart = new UpdateActionStatus("waiting-to-start");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UpdateActionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UpdateActionStatus FindValue(string value)
+        {
+            return FindValue<UpdateActionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UpdateActionStatus(string value)
         {
             return FindValue(value);
         }

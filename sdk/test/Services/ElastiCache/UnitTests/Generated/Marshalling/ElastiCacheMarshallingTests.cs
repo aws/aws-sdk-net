@@ -92,6 +92,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("ElastiCache")]
+        public void BatchApplyUpdateActionMarshallTest()
+        {
+            var operation = service_model.FindOperation("BatchApplyUpdateAction");
+
+            var request = InstantiateClassGenerator.Execute<BatchApplyUpdateActionRequest>();
+            var marshaller = new BatchApplyUpdateActionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = BatchApplyUpdateActionResponseUnmarshaller.Instance.Unmarshall(context)
+                as BatchApplyUpdateActionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElastiCache")]
+        public void BatchStopUpdateActionMarshallTest()
+        {
+            var operation = service_model.FindOperation("BatchStopUpdateAction");
+
+            var request = InstantiateClassGenerator.Execute<BatchStopUpdateActionRequest>();
+            var marshaller = new BatchStopUpdateActionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = BatchStopUpdateActionResponseUnmarshaller.Instance.Unmarshall(context)
+                as BatchStopUpdateActionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElastiCache")]
         public void CopySnapshotMarshallTest()
         {
             var operation = service_model.FindOperation("CopySnapshot");
@@ -677,6 +725,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("ElastiCache")]
+        public void DescribeServiceUpdatesMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeServiceUpdates");
+
+            var request = InstantiateClassGenerator.Execute<DescribeServiceUpdatesRequest>();
+            var marshaller = new DescribeServiceUpdatesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeServiceUpdatesResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeServiceUpdatesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElastiCache")]
         public void DescribeSnapshotsMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeSnapshots");
@@ -692,6 +764,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = DescribeSnapshotsResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeSnapshotsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElastiCache")]
+        public void DescribeUpdateActionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeUpdateActions");
+
+            var request = InstantiateClassGenerator.Execute<DescribeUpdateActionsRequest>();
+            var marshaller = new DescribeUpdateActionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeUpdateActionsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeUpdateActionsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

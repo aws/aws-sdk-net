@@ -45,8 +45,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ApplyImmediately. 
         /// <para>
-        /// If <code>True</code>, the number of replica nodes is decreased immediately. If <code>False</code>,
-        /// the number of replica nodes is decreased during the next maintenance window.
+        /// If <code>True</code>, the number of replica nodes is decreased immediately. <code>ApplyImmediately=False</code>
+        /// is not currently supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
