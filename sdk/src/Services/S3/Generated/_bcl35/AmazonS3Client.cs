@@ -261,9 +261,9 @@ namespace Amazon.S3
         /// storage, you should call the List Parts operation and ensure the parts list is empty.
         /// </para>
         /// </summary>
-        /// <param name="bucketName"><p/></param>
-        /// <param name="key"><p/></param>
-        /// <param name="uploadId"><p/></param>
+        /// <param name="bucketName">Name of the bucket to which the multipart upload was initiated.</param>
+        /// <param name="key">Key of the object for which the multipart upload was initiated.</param>
+        /// <param name="uploadId">Upload ID that identifies the multipart upload.</param>
         /// 
         /// <returns>The response from the AbortMultipartUpload service method, as returned by S3.</returns>
         public virtual AbortMultipartUploadResponse AbortMultipartUpload(string bucketName, string key, string uploadId)
@@ -644,6 +644,13 @@ namespace Amazon.S3
         /// <summary>
         /// Deletes an analytics configuration for the bucket (specified by the analytics configuration
         /// ID).
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have permissions to perform the s3:PutAnalyticsConfiguration
+        /// action. The bucket owner has this permission by default. The bucket owner can grant
+        /// this permission to others. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketAnalyticsConfiguration service method.</param>
         /// 
@@ -2684,8 +2691,8 @@ namespace Amazon.S3
         #region  GetObjectLockConfiguration
 
         /// <summary>
-        /// Gets the Object Lock configuration for a bucket. The rule specified in the Object
-        /// Lock configuration will be applied by default to every new object placed in the specified
+        /// Gets the object lock configuration for a bucket. The rule specified in the object
+        /// lock configuration will be applied by default to every new object placed in the specified
         /// bucket.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetObjectLockConfiguration service method.</param>
@@ -4243,8 +4250,7 @@ namespace Amazon.S3
         #region  PutBucketPolicy
 
         /// <summary>
-        /// Replaces a policy on a bucket. If the bucket already has a policy, the one in this
-        /// request completely replaces it.
+        /// Applies an Amazon S3 bucket policy to an Amazon S3 bucket.
         /// </summary>
         /// <param name="bucketName"><p/></param>
         /// <param name="policy">The bucket policy as a JSON document.</param>
@@ -4260,8 +4266,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Replaces a policy on a bucket. If the bucket already has a policy, the one in this
-        /// request completely replaces it.
+        /// Applies an Amazon S3 bucket policy to an Amazon S3 bucket.
         /// </summary>
         /// <param name="bucketName"><p/></param>
         /// <param name="policy">The bucket policy as a JSON document.</param>
@@ -4279,8 +4284,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Replaces a policy on a bucket. If the bucket already has a policy, the one in this
-        /// request completely replaces it.
+        /// Applies an Amazon S3 bucket policy to an Amazon S3 bucket.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketPolicy service method.</param>
         /// 
@@ -4332,7 +4336,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Creates a replication configuration or replaces an existing one. For more information,
-        /// see <a href=" https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
         /// Replication (CRR)</a> in the <i>Amazon S3 Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketReplication service method.</param>
@@ -4881,8 +4885,8 @@ namespace Amazon.S3
         #region  PutObjectLockConfiguration
 
         /// <summary>
-        /// Places an Object Lock configuration on the specified bucket. The rule specified in
-        /// the Object Lock configuration will be applied by default to every new object placed
+        /// Places an object lock configuration on the specified bucket. The rule specified in
+        /// the object lock configuration will be applied by default to every new object placed
         /// in the specified bucket.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutObjectLockConfiguration service method.</param>

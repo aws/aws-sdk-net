@@ -206,9 +206,9 @@ namespace Amazon.S3
         /// </para>
         /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
-        /// <param name="bucketName"><p/></param>
-        /// <param name="key"><p/></param>
-        /// <param name="uploadId"><p/></param>
+        /// <param name="bucketName">Name of the bucket to which the multipart upload was initiated.</param>
+        /// <param name="key">Key of the object for which the multipart upload was initiated.</param>
+        /// <param name="uploadId">Upload ID that identifies the multipart upload.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">
         ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -3035,8 +3035,7 @@ namespace Amazon.S3
         #region  PutBucketPolicy
 
         /// <summary>
-        /// Replaces a policy on a bucket. If the bucket already has a policy, the one in this
-        /// request completely replaces it.
+        /// Applies an Amazon S3 bucket policy to an Amazon S3 bucket.
         /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="bucketName"><p/></param>
@@ -3058,8 +3057,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Replaces a policy on a bucket. If the bucket already has a policy, the one in this
-        /// request completely replaces it.
+        /// Applies an Amazon S3 bucket policy to an Amazon S3 bucket.
         /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="bucketName"><p/></param>
