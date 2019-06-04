@@ -4086,15 +4086,25 @@ namespace Amazon.StorageGateway
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateSMBSecurityStrategy operation.
+        /// Updates the SMB security strategy on a file gateway. This action is only supported
+        /// in file gateways.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateSMBSecurityStrategy operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSMBSecurityStrategy service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateSMBSecurityStrategy service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBSecurityStrategy">REST API Reference for UpdateSMBSecurityStrategy Operation</seealso>
         public virtual Task<UpdateSMBSecurityStrategyResponse> UpdateSMBSecurityStrategyAsync(UpdateSMBSecurityStrategyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

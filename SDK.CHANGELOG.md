@@ -1,3 +1,20 @@
+### 3.3.524.0 (2019-06-04 18:09 UTC)
+* EC2 (3.3.113.0)
+	* This release adds support for Host Recovery feature which automatically restarts instances on to a new replacement host if failures are detected on Dedicated Host.
+* ElastiCache (3.3.101.0)
+	* Amazon ElastiCache now allows you to apply available service updates on demand. Features included: (1) Access to the list of applicable service updates and their priorities. (2) Service update monitoring and regular status updates. (3) Recommended apply-by-dates for scheduling the service updates, which is critical if your cluster is in ElastiCache-supported compliance programs. (4) Ability to stop and later re-apply updates. For more information, see https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Self-Service-Updates.html
+* IdentityManagement (3.3.101.20)
+	* This release adds validation for policy path field. This field is now restricted to be max 512 characters.
+* S3 (3.3.102.11)
+	* Documentation updates for s3
+* StorageGateway (3.3.107.0)
+	* AWS Storage Gateway now supports AWS PrivateLink, enabling you to administer and use gateways without needing to use public IP addresses or a NAT/Internet Gateway, while avoiding traffic from going over the internet.
+* Core 3.3.102.2
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.523.0 (2019-06-03 18:17 UTC)
 * EC2 (3.3.112.0)
 	* Amazon EC2 I3en instances are the new storage-optimized instances offering up to 60 TB NVMe SSD instance storage and up to 100 Gbps of network bandwidth.
