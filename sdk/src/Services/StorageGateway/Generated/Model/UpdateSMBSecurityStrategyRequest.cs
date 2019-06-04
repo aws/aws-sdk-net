@@ -28,38 +28,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeSMBSettings operation.
+    /// Container for the parameters to the UpdateSMBSecurityStrategy operation.
+    /// Updates the SMB security strategy on a file gateway. This action is only supported
+    /// in file gateways.
     /// </summary>
-    public partial class DescribeSMBSettingsResponse : AmazonWebServiceResponse
+    public partial class UpdateSMBSecurityStrategyRequest : AmazonStorageGatewayRequest
     {
-        private string _domainName;
         private string _gatewayARN;
-        private bool? _smbGuestPasswordSet;
         private SMBSecurityStrategy _smbSecurityStrategy;
-
-        /// <summary>
-        /// Gets and sets the property DomainName. 
-        /// <para>
-        /// The name of the domain that the gateway is joined to.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
-        public string DomainName
-        {
-            get { return this._domainName; }
-            set { this._domainName = value; }
-        }
-
-        // Check to see if DomainName property is set
-        internal bool IsSetDomainName()
-        {
-            return this._domainName != null;
-        }
 
         /// <summary>
         /// Gets and sets the property GatewayARN.
         /// </summary>
-        [AWSProperty(Min=50, Max=500)]
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string GatewayARN
         {
             get { return this._gatewayARN; }
@@ -73,28 +54,9 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SMBGuestPasswordSet. 
-        /// <para>
-        /// This value is true if a password for the guest user “smbguest” is set, and otherwise
-        /// false.
-        /// </para>
-        /// </summary>
-        public bool SMBGuestPasswordSet
-        {
-            get { return this._smbGuestPasswordSet.GetValueOrDefault(); }
-            set { this._smbGuestPasswordSet = value; }
-        }
-
-        // Check to see if SMBGuestPasswordSet property is set
-        internal bool IsSetSMBGuestPasswordSet()
-        {
-            return this._smbGuestPasswordSet.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property SMBSecurityStrategy. 
         /// <para>
-        /// The type of security strategy that was specified for file gateway.
+        /// Specifies the type of security strategy.
         /// </para>
         ///  
         /// <para>
@@ -112,6 +74,7 @@ namespace Amazon.StorageGateway.Model
         /// encryption is required.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SMBSecurityStrategy SMBSecurityStrategy
         {
             get { return this._smbSecurityStrategy; }

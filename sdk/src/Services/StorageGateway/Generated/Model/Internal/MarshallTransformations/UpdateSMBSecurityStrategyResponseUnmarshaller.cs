@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeSMBSettings operation
+    /// Response Unmarshaller for UpdateSMBSecurityStrategy operation
     /// </summary>  
-    public class DescribeSMBSettingsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateSMBSecurityStrategyResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,34 +45,16 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeSMBSettingsResponse response = new DescribeSMBSettingsResponse();
+            UpdateSMBSecurityStrategyResponse response = new UpdateSMBSecurityStrategyResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DomainName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DomainName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("GatewayARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.GatewayARN = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SMBGuestPasswordSet", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.SMBGuestPasswordSet = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SMBSecurityStrategy", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.SMBSecurityStrategy = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,9 +83,9 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             return new AmazonStorageGatewayException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DescribeSMBSettingsResponseUnmarshaller _instance = new DescribeSMBSettingsResponseUnmarshaller();        
+        private static UpdateSMBSecurityStrategyResponseUnmarshaller _instance = new UpdateSMBSecurityStrategyResponseUnmarshaller();        
 
-        internal static DescribeSMBSettingsResponseUnmarshaller GetInstance()
+        internal static UpdateSMBSecurityStrategyResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -111,7 +93,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeSMBSettingsResponseUnmarshaller Instance
+        public static UpdateSMBSecurityStrategyResponseUnmarshaller Instance
         {
             get
             {

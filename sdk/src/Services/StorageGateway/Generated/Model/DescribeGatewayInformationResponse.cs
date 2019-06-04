@@ -44,6 +44,7 @@ namespace Amazon.StorageGateway.Model
         private string _lastSoftwareUpdate;
         private string _nextUpdateAvailabilityDate;
         private List<Tag> _tags = new List<Tag>();
+        private string _vpcEndpoint;
 
         /// <summary>
         /// Gets and sets the property Ec2InstanceId. 
@@ -270,6 +271,25 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VPCEndpoint. 
+        /// <para>
+        /// The configuration settings for the virtual private cloud (VPC) endpoint for your gateway.
+        /// 
+        /// </para>
+        /// </summary>
+        public string VPCEndpoint
+        {
+            get { return this._vpcEndpoint; }
+            set { this._vpcEndpoint = value; }
+        }
+
+        // Check to see if VPCEndpoint property is set
+        internal bool IsSetVPCEndpoint()
+        {
+            return this._vpcEndpoint != null;
         }
 
     }

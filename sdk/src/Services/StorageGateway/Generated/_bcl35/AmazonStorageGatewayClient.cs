@@ -5448,6 +5448,69 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  UpdateSMBSecurityStrategy
+
+        /// <summary>
+        /// Updates the SMB security strategy on a file gateway. This action is only supported
+        /// in file gateways.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSMBSecurityStrategy service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSMBSecurityStrategy service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBSecurityStrategy">REST API Reference for UpdateSMBSecurityStrategy Operation</seealso>
+        public virtual UpdateSMBSecurityStrategyResponse UpdateSMBSecurityStrategy(UpdateSMBSecurityStrategyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSMBSecurityStrategyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSMBSecurityStrategyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSMBSecurityStrategyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSMBSecurityStrategy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSMBSecurityStrategy operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSMBSecurityStrategy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBSecurityStrategy">REST API Reference for UpdateSMBSecurityStrategy Operation</seealso>
+        public virtual IAsyncResult BeginUpdateSMBSecurityStrategy(UpdateSMBSecurityStrategyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSMBSecurityStrategyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSMBSecurityStrategyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSMBSecurityStrategy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSMBSecurityStrategy.</param>
+        /// 
+        /// <returns>Returns a  UpdateSMBSecurityStrategyResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBSecurityStrategy">REST API Reference for UpdateSMBSecurityStrategy Operation</seealso>
+        public virtual UpdateSMBSecurityStrategyResponse EndUpdateSMBSecurityStrategy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateSMBSecurityStrategyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateSnapshotSchedule
 
         /// <summary>

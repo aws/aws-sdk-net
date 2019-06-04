@@ -4074,6 +4074,39 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  UpdateSMBSecurityStrategy
+
+        internal virtual UpdateSMBSecurityStrategyResponse UpdateSMBSecurityStrategy(UpdateSMBSecurityStrategyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSMBSecurityStrategyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSMBSecurityStrategyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSMBSecurityStrategyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSMBSecurityStrategy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSMBSecurityStrategy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBSecurityStrategy">REST API Reference for UpdateSMBSecurityStrategy Operation</seealso>
+        public virtual Task<UpdateSMBSecurityStrategyResponse> UpdateSMBSecurityStrategyAsync(UpdateSMBSecurityStrategyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSMBSecurityStrategyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSMBSecurityStrategyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateSMBSecurityStrategyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateSnapshotSchedule
 
         internal virtual UpdateSnapshotScheduleResponse UpdateSnapshotSchedule(UpdateSnapshotScheduleRequest request)

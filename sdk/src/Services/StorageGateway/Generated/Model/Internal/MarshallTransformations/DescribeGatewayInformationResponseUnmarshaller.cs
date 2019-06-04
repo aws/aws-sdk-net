@@ -123,6 +123,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     response.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VPCEndpoint", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VPCEndpoint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
