@@ -179,6 +179,7 @@ namespace Amazon.IdentityManagement.Model
         /// Identifiers</a> in the <i>Using IAM</i> guide.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string Path
         {
             get { return this._path; }

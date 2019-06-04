@@ -53,9 +53,10 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates
-        /// formatted in YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation
-        /// always converts a YAML policy to JSON format before submitting it to IAM.
+        /// in IAM, you must provide a JSON policy that has been converted to a string. However,
+        /// for AWS CloudFormation templates formatted in YAML, you can provide the policy in
+        /// JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
+        /// before submitting it to IAM.
         /// </para>
         ///  
         /// <para>
@@ -76,7 +77,10 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// The special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D)
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  Upon success, the response includes the same trust policy as a URL-encoded JSON string.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=131072)]
         public string AssumeRolePolicyDocument

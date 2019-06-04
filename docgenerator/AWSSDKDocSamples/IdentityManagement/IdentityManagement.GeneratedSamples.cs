@@ -207,7 +207,7 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
             var response = client.CreateRole(new CreateRoleRequest 
             {
-                AssumeRolePolicyDocument = "<URL-encoded-JSON>",
+                AssumeRolePolicyDocument = "<Stringified-JSON>",
                 Path = "/",
                 RoleName = "Test-Role"
             });

@@ -143,6 +143,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreatePolicyRequest.Path</property>
+    <min>1</min>
+    <max>512</max>
     <pattern>((/[A-Za-z0-9\.,\+@=_-]+)*)/</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -827,6 +829,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListAttachedGroupPoliciesRequest.PathPrefix</property>
+    <min>1</min>
+    <max>512</max>
     <pattern>((/[A-Za-z0-9\.,\+@=_-]+)*)/</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -842,6 +846,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListAttachedRolePoliciesRequest.PathPrefix</property>
+    <min>1</min>
+    <max>512</max>
     <pattern>((/[A-Za-z0-9\.,\+@=_-]+)*)/</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -863,6 +869,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListAttachedUserPoliciesRequest.PathPrefix</property>
+    <min>1</min>
+    <max>512</max>
     <pattern>((/[A-Za-z0-9\.,\+@=_-]+)*)/</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1008,6 +1016,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListPoliciesRequest.PathPrefix</property>
+    <min>1</min>
+    <max>512</max>
     <pattern>((/[A-Za-z0-9\.,\+@=_-]+)*)/</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1875,6 +1885,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ManagedPolicy.Path</property>
+    <min>1</min>
+    <max>512</max>
     <pattern>((/[A-Za-z0-9\.,\+@=_-]+)*)/</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1904,6 +1916,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ManagedPolicyDetail.Path</property>
+    <min>1</min>
+    <max>512</max>
     <pattern>((/[A-Za-z0-9\.,\+@=_-]+)*)/</pattern>
   </property-value-rule>
   <property-value-rule>

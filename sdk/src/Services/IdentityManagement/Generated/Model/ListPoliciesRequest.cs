@@ -145,6 +145,7 @@ namespace Amazon.IdentityManagement.Model
         /// characters, digits, and upper and lowercased letters.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string PathPrefix
         {
             get { return this._pathPrefix; }
