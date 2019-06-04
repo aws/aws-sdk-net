@@ -39,6 +39,7 @@ namespace Amazon.EC2.Model
         private string _clientToken;
         private string _hostId;
         private HostProperties _hostProperties;
+        private HostRecovery _hostRecovery;
         private string _hostReservationId;
         private List<HostInstance> _instances = new List<HostInstance>();
         private DateTime? _releaseTime;
@@ -120,9 +121,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Unique, case-sensitive identifier that you provide to ensure idempotency of the request.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-        /// to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. 
+        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
+        /// to Ensure Idempotency</a>.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -171,6 +172,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetHostProperties()
         {
             return this._hostProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HostRecovery. 
+        /// <para>
+        /// Indicates whether host recovery is enabled or disabled for the Dedicated Host.
+        /// </para>
+        /// </summary>
+        public HostRecovery HostRecovery
+        {
+            get { return this._hostRecovery; }
+            set { this._hostRecovery = value; }
+        }
+
+        // Check to see if HostRecovery property is set
+        internal bool IsSetHostRecovery()
+        {
+            return this._hostRecovery != null;
         }
 
         /// <summary>

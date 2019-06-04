@@ -72,7 +72,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property BlockDeviceMappings. 
         /// <para>
-        /// Tthe block device mappings. This parameter cannot be used to modify the encryption
+        /// The block device mappings. This parameter cannot be used to modify the encryption
         /// status of existing volumes or snapshots. To create an AMI with encrypted snapshots,
         /// use the <a>CopyImage</a> action.
         /// </para>

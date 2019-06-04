@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private AutoPlacement _autoPlacement;
         private string _availabilityZone;
         private string _clientToken;
+        private HostRecovery _hostRecovery;
         private string _instanceType;
         private int? _quantity;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
@@ -90,8 +91,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-        /// to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. 
+        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
+        /// to Ensure Idempotency</a>.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -104,6 +105,30 @@ namespace Amazon.EC2.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HostRecovery. 
+        /// <para>
+        /// Indicates whether to enable or disable host recovery for the Dedicated Host. Host
+        /// recovery is disabled by default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">
+        /// Host Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>off</code> 
+        /// </para>
+        /// </summary>
+        public HostRecovery HostRecovery
+        {
+            get { return this._hostRecovery; }
+            set { this._hostRecovery = value; }
+        }
+
+        // Check to see if HostRecovery property is set
+        internal bool IsSetHostRecovery()
+        {
+            return this._hostRecovery != null;
         }
 
         /// <summary>

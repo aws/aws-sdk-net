@@ -40,6 +40,7 @@ namespace Amazon.EC2.Model
     {
         private AutoPlacement _autoPlacement;
         private List<string> _hostIds = new List<string>();
+        private HostRecovery _hostRecovery;
 
         /// <summary>
         /// Gets and sets the property AutoPlacement. 
@@ -47,7 +48,6 @@ namespace Amazon.EC2.Model
         /// Specify whether to enable or disable auto-placement.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public AutoPlacement AutoPlacement
         {
             get { return this._autoPlacement; }
@@ -77,6 +77,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetHostIds()
         {
             return this._hostIds != null && this._hostIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HostRecovery. 
+        /// <para>
+        /// Indicates whether to enable or disable host recovery for the Dedicated Host. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">
+        /// Host Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        public HostRecovery HostRecovery
+        {
+            get { return this._hostRecovery; }
+            set { this._hostRecovery = value; }
+        }
+
+        // Check to see if HostRecovery property is set
+        internal bool IsSetHostRecovery()
+        {
+            return this._hostRecovery != null;
         }
 
     }

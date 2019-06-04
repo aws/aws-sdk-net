@@ -124,7 +124,7 @@ namespace Amazon.EC2.Model
         /// encryption</a> is enabled. Each default case can be overridden by specifying a customer
         /// master key (CMK) using the <code>KmsKeyId</code> parameter, in addition to setting
         /// <code>Encrypted</code> to <code>true</code>. For a complete list of possible encryption
-        /// cases, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+        /// cases, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">Amazon
         /// EBS Encryption</a>.
         /// </para>
         ///  
@@ -178,9 +178,9 @@ namespace Amazon.EC2.Model
         /// <para>
         /// An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK)
         /// to use to encrypt the volume. This parameter is only required if you want to use a
-        /// non-default CMK; if this parameter is not specified, the default CMK for EBS is used.
-        /// If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also
-        /// be set. 
+        /// customer-managed CMK; if this parameter is not specified, your AWS-managed CMK for
+        /// the account is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
+        /// flag must also be set. 
         /// </para>
         ///  
         /// <para>
@@ -188,32 +188,30 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Key ID
+        /// Key ID: For example, key/1234abcd-12ab-34cd-56ef-1234567890ab.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed
-        /// by the Region of the CMK, the AWS account ID of the CMK owner, the <code>alias</code>
-        /// namespace, and then the CMK alias. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+        /// Key alias: For example, alias/ExampleAlias. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed
-        /// by the Region of the CMK, the AWS account ID of the CMK owner, the <code>key</code>
-        /// namespace, and then the CMK ID. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+        /// Key ARN: The key ARN contains the <code>arn:aws:kms</code> namespace, followed by
+        /// the Region of the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace,
+        /// and then the CMK ID. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace,
-        /// followed by the Region of the CMK, the AWS account ID of the CMK owner, the <code>alias</code>
+        /// Alias ARN: The alias ARN contains the <code>arn:aws:kms</code> namespace, followed
+        /// by the Region of the CMK, the AWS account ID of the CMK owner, the <code>alias</code>
         /// namespace, and then the CMK alias. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
         /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call
-        /// may appear to complete even though you provided an invalid identifier. The action
+        /// AWS authenticates <code>KmsKeyId</code> asynchronously, meaning that the action you
+        /// call may appear to complete even though you provided an invalid identifier. The action
         /// will eventually fail. 
         /// </para>
         /// </summary>

@@ -71,6 +71,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetHostRecovery())
+                {
+                    request.Parameters.Add("HostRecovery", StringUtils.FromString(publicRequest.HostRecovery));
+                }
             }
             return request;
         }

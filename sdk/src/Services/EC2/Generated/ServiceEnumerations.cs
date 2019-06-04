@@ -193,6 +193,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly AllocationState Available = new AllocationState("available");
         /// <summary>
+        /// Constant Pending for AllocationState
+        /// </summary>
+        public static readonly AllocationState Pending = new AllocationState("pending");
+        /// <summary>
         /// Constant PermanentFailure for AllocationState
         /// </summary>
         public static readonly AllocationState PermanentFailure = new AllocationState("permanent-failure");
@@ -3306,6 +3310,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GatewayType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HostRecovery.
+    /// </summary>
+    public class HostRecovery : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Off for HostRecovery
+        /// </summary>
+        public static readonly HostRecovery Off = new HostRecovery("off");
+        /// <summary>
+        /// Constant On for HostRecovery
+        /// </summary>
+        public static readonly HostRecovery On = new HostRecovery("on");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HostRecovery(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HostRecovery FindValue(string value)
+        {
+            return FindValue<HostRecovery>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HostRecovery(string value)
         {
             return FindValue(value);
         }

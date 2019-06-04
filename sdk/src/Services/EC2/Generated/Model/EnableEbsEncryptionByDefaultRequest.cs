@@ -43,15 +43,15 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// If you do not specify a customer master key (CMK) in the API call that creates the
-    /// EBS volume, then the volume is encrypted to your AWS account's default CMK.
+    /// EBS volume, then the volume is encrypted to your AWS account's managed CMK.
     /// </para>
     ///  
     /// <para>
-    /// You can specify a default CMK of your choice using <a>ModifyEbsDefaultKmsKeyId</a>.
+    /// You can specify a CMK of your choice using <a>ModifyEbsDefaultKmsKeyId</a>.
     /// </para>
     ///  
     /// <para>
-    /// Enabling default encryption for EBS volumes has no effect on existing unencrypted
+    /// Enabling encryption-by-default for EBS volumes has no effect on existing unencrypted
     /// volumes in your account. Encrypting the data in these requires manual action. You
     /// can either create an encrypted snapshot of an unencrypted volume, or encrypt a copy
     /// of an unencrypted snapshot. Any volume restored from an encrypted snapshot is also
@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// After EBS encryption by default is enabled, you can no longer launch older-generation
+    /// After EBS encryption-by-default is enabled, you can no longer launch older-generation
     /// instance types that do not support encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
     /// Instance Types</a>.
     /// </para>
