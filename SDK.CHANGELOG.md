@@ -1,3 +1,7 @@
+### 3.3.525.0 (2019-06-05 19:17 UTC)
+* Glue (3.3.104.0)
+	* Support specifying python version for Python shell jobs. A new parameter PythonVersion is added to the JobCommand data type.
+
 ### 3.3.524.0 (2019-06-04 18:09 UTC)
 * EC2 (3.3.113.0)
 	* This release adds support for Host Recovery feature which automatically restarts instances on to a new replacement host if failures are detected on Dedicated Host.
