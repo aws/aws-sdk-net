@@ -39,8 +39,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The name of the Job to whose JobRuns this condition applies and on which this trigger
-        /// waits.
+        /// The name of the job whose <code>JobRuns</code> this condition applies to, and on which
+        /// this trigger waits.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -77,8 +77,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The condition state. Currently, the values supported are SUCCEEDED, STOPPED, TIMEOUT
-        /// and FAILED.
+        /// The condition state. Currently, the values supported are <code>SUCCEEDED</code>, <code>STOPPED</code>,
+        /// <code>TIMEOUT</code>, and <code>FAILED</code>.
         /// </para>
         /// </summary>
         public JobRunState State

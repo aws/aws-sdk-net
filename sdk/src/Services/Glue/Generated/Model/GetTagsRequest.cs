@@ -38,7 +38,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon ARN of the resource for which to retrieve tags.
+        /// The Amazon Resource Name (ARN) of the resource for which to retrieve tags.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10240)]

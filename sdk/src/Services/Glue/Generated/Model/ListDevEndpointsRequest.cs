@@ -29,15 +29,15 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDevEndpoints operation.
-    /// Retrieves the names of all DevEndpoint resources in this AWS account, or the resources
-    /// with the specified tag. This operation allows you to see which resources are available
-    /// in your account, and their names.
+    /// Retrieves the names of all <code>DevEndpoint</code> resources in this AWS account,
+    /// or the resources with the specified tag. This operation allows you to see which resources
+    /// are available in your account, and their names.
     /// 
     ///  
     /// <para>
-    /// This operation takes the optional <code>Tags</code> field which you can use as a filter
-    /// on the response so that tagged resources can be retrieved as a group. If you choose
-    /// to use tags filtering, only resources with the tag will be retrieved.
+    /// This operation takes the optional <code>Tags</code> field, which you can use as a
+    /// filter on the response so that tagged resources can be retrieved as a group. If you
+    /// choose to use tags filtering, only resources with the tag are retrieved.
     /// </para>
     /// </summary>
     public partial class ListDevEndpointsRequest : AmazonGlueRequest

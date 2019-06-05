@@ -106,7 +106,7 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
-        /// This field is required when the trigger type is CONDITIONAL.
+        /// This field is required when the trigger type is <code>CONDITIONAL</code>.
         /// </para>
         /// </summary>
         public Predicate Predicate
@@ -124,7 +124,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Schedule. 
         /// <para>
-        /// A <code>cron</code> expression used to specify the schedule (see <a href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+        /// A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
         /// Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15
         /// UTC, you would specify: <code>cron(15 12 * * ? *)</code>.
         /// </para>
@@ -148,8 +148,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property StartOnCreation. 
         /// <para>
-        /// Set to true to start SCHEDULED and CONDITIONAL triggers when created. True not supported
-        /// for ON_DEMAND triggers.
+        /// Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code>
+        /// triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.
         /// </para>
         /// </summary>
         public bool StartOnCreation
@@ -168,7 +168,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The tags to use with this trigger. You may use tags to limit access to the trigger.
-        /// For more information about tags in AWS Glue, see <a href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS
+        /// For more information about tags in AWS Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS
         /// Tags in AWS Glue</a> in the developer guide. 
         /// </para>
         /// </summary>

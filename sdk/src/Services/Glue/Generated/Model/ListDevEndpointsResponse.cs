@@ -38,8 +38,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DevEndpointNames. 
         /// <para>
-        /// The names of all DevEndpoints in the account, or the DevEndpoints with the specified
-        /// tags.
+        /// The names of all the <code>DevEndpoint</code>s in the account, or the <code>DevEndpoint</code>s
+        /// with the specified tags.
         /// </para>
         /// </summary>
         public List<string> DevEndpointNames

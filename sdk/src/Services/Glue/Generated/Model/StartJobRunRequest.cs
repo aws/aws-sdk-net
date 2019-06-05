@@ -47,15 +47,15 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property AllocatedCapacity. 
         /// <para>
-        /// This field is deprecated, use <code>MaxCapacity</code> instead.
+        /// This field is deprecated. Use <code>MaxCapacity</code> instead.
         /// </para>
         ///  
         /// <para>
         /// The number of AWS Glue data processing units (DPUs) to allocate to this JobRun. From
         /// 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of
         /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue
-        /// pricing page</a>.
+        /// For more information, see the <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/glue/pricing/">AWS
+        /// Glue pricing page</a>.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated, use MaxCapacity instead.")]
@@ -85,13 +85,13 @@ namespace Amazon.Glue.Model
         ///  
         /// <para>
         /// For information about how to specify and consume your own Job arguments, see the <a
-        /// href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+        /// href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
         /// AWS Glue APIs in Python</a> topic in the developer guide.
         /// </para>
         ///  
         /// <para>
         /// For information about the key-value pairs that AWS Glue consumes to set up your job,
-        /// see the <a href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
+        /// see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
         /// Parameters Used by AWS Glue</a> topic in the developer guide.
         /// </para>
         /// </summary>
@@ -129,7 +129,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property JobRunId. 
         /// <para>
-        /// The ID of a previous JobRun to retry.
+        /// The ID of a previous <code>JobRun</code> to retry.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -150,7 +150,7 @@ namespace Amazon.Glue.Model
         /// <para>
         /// The number of AWS Glue data processing units (DPUs) that can be allocated when this
         /// job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs
-        /// of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS
+        /// of compute capacity and 16 GB of memory. For more information, see the <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/glue/pricing/">AWS
         /// Glue pricing page</a>.
         /// </para>
         ///  
@@ -160,11 +160,11 @@ namespace Amazon.Glue.Model
         ///  
         /// <para>
         /// The value that can be allocated for <code>MaxCapacity</code> depends on whether you
-        /// are running a python shell job, or an Apache Spark ETL job:
+        /// are running a Python shell job, or an Apache Spark ETL job:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// When you specify a python shell job (<code>JobCommand.Name</code>="pythonshell"),
+        /// When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"),
         /// you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.
         /// </para>
         ///  </li> <li> 
@@ -232,7 +232,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SecurityConfiguration. 
         /// <para>
-        /// The name of the SecurityConfiguration structure to be used with this job run.
+        /// The name of the <code>SecurityConfiguration</code> structure to be used with this
+        /// job run.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -251,9 +252,10 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Timeout. 
         /// <para>
-        /// The JobRun timeout in minutes. This is the maximum time that a job run can consume
-        /// resources before it is terminated and enters <code>TIMEOUT</code> status. The default
-        /// is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.
+        /// The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run
+        /// can consume resources before it is terminated and enters <code>TIMEOUT</code> status.
+        /// The default is 2,880 minutes (48 hours). This overrides the timeout value set in the
+        /// parent job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

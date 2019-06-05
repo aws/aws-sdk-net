@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies information used to update an existing job definition. Note that the previous
-    /// job definition will be completely overwritten by this information.
+    /// Specifies information used to update an existing job definition. The previous job
+    /// definition is completely overwritten by this information.
     /// </summary>
     public partial class JobUpdate
     {
@@ -56,11 +56,10 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
-        /// The number of AWS Glue data processing units (DPUs) to allocate to this Job. From
-        /// 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of
-        /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue
-        /// pricing page</a>.
+        /// The number of AWS Glue data processing units (DPUs) to allocate to this job. You can
+        /// allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing
+        /// power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,
+        /// see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated, use MaxCapacity instead.")]
@@ -79,7 +78,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Command. 
         /// <para>
-        /// The JobCommand that executes this job (required).
+        /// The <code>JobCommand</code> that executes this job (required).
         /// </para>
         /// </summary>
         public JobCommand Command
@@ -125,13 +124,13 @@ namespace Amazon.Glue.Model
         ///  
         /// <para>
         /// For information about how to specify and consume your own Job arguments, see the <a
-        /// href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+        /// href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
         /// AWS Glue APIs in Python</a> topic in the developer guide.
         /// </para>
         ///  
         /// <para>
         /// For information about the key-value pairs that AWS Glue consumes to set up your job,
-        /// see the <a href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
+        /// see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
         /// Parameters Used by AWS Glue</a> topic in the developer guide.
         /// </para>
         /// </summary>
@@ -169,8 +168,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ExecutionProperty. 
         /// <para>
-        /// An ExecutionProperty specifying the maximum number of concurrent runs allowed for
-        /// this job.
+        /// An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs
+        /// allowed for this job.
         /// </para>
         /// </summary>
         public ExecutionProperty ExecutionProperty
@@ -218,11 +217,11 @@ namespace Amazon.Glue.Model
         ///  
         /// <para>
         /// The value that can be allocated for <code>MaxCapacity</code> depends on whether you
-        /// are running a python shell job, or an Apache Spark ETL job:
+        /// are running a Python shell job or an Apache Spark ETL job:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// When you specify a python shell job (<code>JobCommand.Name</code>="pythonshell"),
+        /// When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"),
         /// you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.
         /// </para>
         ///  </li> <li> 
@@ -266,7 +265,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NotificationProperty. 
         /// <para>
-        /// Specifies configuration properties of a job notification.
+        /// Specifies the configuration properties of a job notification.
         /// </para>
         /// </summary>
         public NotificationProperty NotificationProperty
@@ -308,7 +307,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
-        /// The name or ARN of the IAM role associated with this job (required).
+        /// The name or Amazon Resource Name (ARN) of the IAM role associated with this job (required).
         /// </para>
         /// </summary>
         public string Role
@@ -326,7 +325,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SecurityConfiguration. 
         /// <para>
-        /// The name of the SecurityConfiguration structure to be used with this job.
+        /// The name of the <code>SecurityConfiguration</code> structure to be used with this
+        /// job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -376,13 +376,15 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory
-        /// and a 64GB disk, and 1 executor per worker.
+        /// For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of
+        /// memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker
+        /// type for memory-intensive jobs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory
-        /// and a 128GB disk, and 1 executor per worker.
+        /// For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of
+        /// memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker
+        /// type for memory-intensive jobs.
         /// </para>
         ///  </li> </ul>
         /// </summary>

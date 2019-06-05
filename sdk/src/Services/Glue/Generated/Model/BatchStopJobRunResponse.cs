@@ -38,8 +38,9 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        /// A list of the errors that were encountered in tryng to stop JobRuns, including the
-        /// JobRunId for which each error was encountered and details about the error.
+        /// A list of the errors that were encountered in trying to stop <code>JobRuns</code>,
+        /// including the <code>JobRunId</code> for which each error was encountered and details
+        /// about the error.
         /// </para>
         /// </summary>
         public List<BatchStopJobRunError> Errors

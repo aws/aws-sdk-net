@@ -31,7 +31,7 @@ namespace Amazon.Glue.Model
     /// Container for the parameters to the TagResource operation.
     /// Adds tags to a resource. A tag is a label you can assign to an AWS resource. In AWS
     /// Glue, you can tag only certain resources. For information about what resources you
-    /// can tag, see <a href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS
+    /// can tag, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS
     /// Tags in AWS Glue</a>.
     /// </summary>
     public partial class TagResourceRequest : AmazonGlueRequest
@@ -43,7 +43,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property ResourceArn. 
         /// <para>
         /// The ARN of the AWS Glue resource to which to add the tags. For more information about
-        /// AWS Glue resource ARNs, see the <a href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
+        /// AWS Glue resource ARNs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
         /// Glue ARN string pattern</a>.
         /// </para>
         /// </summary>

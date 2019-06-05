@@ -39,7 +39,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the resource from which to remove the tags.
+        /// The Amazon Resource Name (ARN) of the resource from which to remove the tags.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10240)]

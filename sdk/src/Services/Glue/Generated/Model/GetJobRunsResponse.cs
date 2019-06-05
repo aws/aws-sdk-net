@@ -38,7 +38,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property JobRuns. 
         /// <para>
-        /// A list of job-run metatdata objects.
+        /// A list of job-run metadata objects.
         /// </para>
         /// </summary>
         public List<JobRun> JobRuns
@@ -56,7 +56,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A continuation token, if not all reequested job runs have been returned.
+        /// A continuation token, if not all requested job runs have been returned.
         /// </para>
         /// </summary>
         public string NextToken

@@ -5046,9 +5046,9 @@ namespace Amazon.Glue
         /// 
         ///  
         /// <para>
-        /// This operation takes the optional <code>Tags</code> field which you can use as a filter
-        /// on the response so that tagged resources can be retrieved as a group. If you choose
-        /// to use tags filtering, only resources with the tag will be retrieved.
+        /// This operation takes the optional <code>Tags</code> field, which you can use as a
+        /// filter on the response so that tagged resources can be retrieved as a group. If you
+        /// choose to use tags filtering, only resources with the tag are retrieved.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCrawlers service method.</param>
@@ -5075,9 +5075,9 @@ namespace Amazon.Glue
         /// 
         ///  
         /// <para>
-        /// This operation takes the optional <code>Tags</code> field which you can use as a filter
-        /// on the response so that tagged resources can be retrieved as a group. If you choose
-        /// to use tags filtering, only resources with the tag will be retrieved.
+        /// This operation takes the optional <code>Tags</code> field, which you can use as a
+        /// filter on the response so that tagged resources can be retrieved as a group. If you
+        /// choose to use tags filtering, only resources with the tag are retrieved.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCrawlers service method.</param>
@@ -5105,15 +5105,15 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieves the names of all DevEndpoint resources in this AWS account, or the resources
-        /// with the specified tag. This operation allows you to see which resources are available
-        /// in your account, and their names.
+        /// Retrieves the names of all <code>DevEndpoint</code> resources in this AWS account,
+        /// or the resources with the specified tag. This operation allows you to see which resources
+        /// are available in your account, and their names.
         /// 
         ///  
         /// <para>
-        /// This operation takes the optional <code>Tags</code> field which you can use as a filter
-        /// on the response so that tagged resources can be retrieved as a group. If you choose
-        /// to use tags filtering, only resources with the tag will be retrieved.
+        /// This operation takes the optional <code>Tags</code> field, which you can use as a
+        /// filter on the response so that tagged resources can be retrieved as a group. If you
+        /// choose to use tags filtering, only resources with the tag are retrieved.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDevEndpoints service method.</param>
@@ -5143,15 +5143,15 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieves the names of all DevEndpoint resources in this AWS account, or the resources
-        /// with the specified tag. This operation allows you to see which resources are available
-        /// in your account, and their names.
+        /// Retrieves the names of all <code>DevEndpoint</code> resources in this AWS account,
+        /// or the resources with the specified tag. This operation allows you to see which resources
+        /// are available in your account, and their names.
         /// 
         ///  
         /// <para>
-        /// This operation takes the optional <code>Tags</code> field which you can use as a filter
-        /// on the response so that tagged resources can be retrieved as a group. If you choose
-        /// to use tags filtering, only resources with the tag will be retrieved.
+        /// This operation takes the optional <code>Tags</code> field, which you can use as a
+        /// filter on the response so that tagged resources can be retrieved as a group. If you
+        /// choose to use tags filtering, only resources with the tag are retrieved.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDevEndpoints service method.</param>
@@ -5194,9 +5194,9 @@ namespace Amazon.Glue
         /// 
         ///  
         /// <para>
-        /// This operation takes the optional <code>Tags</code> field which you can use as a filter
-        /// on the response so that tagged resources can be retrieved as a group. If you choose
-        /// to use tags filtering, only resources with the tag will be retrieved.
+        /// This operation takes the optional <code>Tags</code> field, which you can use as a
+        /// filter on the response so that tagged resources can be retrieved as a group. If you
+        /// choose to use tags filtering, only resources with the tag are retrieved.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
@@ -5232,9 +5232,9 @@ namespace Amazon.Glue
         /// 
         ///  
         /// <para>
-        /// This operation takes the optional <code>Tags</code> field which you can use as a filter
-        /// on the response so that tagged resources can be retrieved as a group. If you choose
-        /// to use tags filtering, only resources with the tag will be retrieved.
+        /// This operation takes the optional <code>Tags</code> field, which you can use as a
+        /// filter on the response so that tagged resources can be retrieved as a group. If you
+        /// choose to use tags filtering, only resources with the tag are retrieved.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
@@ -5277,9 +5277,9 @@ namespace Amazon.Glue
         /// 
         ///  
         /// <para>
-        /// This operation takes the optional <code>Tags</code> field which you can use as a filter
-        /// on the response so that tagged resources can be retrieved as a group. If you choose
-        /// to use tags filtering, only resources with the tag will be retrieved.
+        /// This operation takes the optional <code>Tags</code> field, which you can use as a
+        /// filter on the response so that tagged resources can be retrieved as a group. If you
+        /// choose to use tags filtering, only resources with the tag are retrieved.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTriggers service method.</param>
@@ -5315,9 +5315,9 @@ namespace Amazon.Glue
         /// 
         ///  
         /// <para>
-        /// This operation takes the optional <code>Tags</code> field which you can use as a filter
-        /// on the response so that tagged resources can be retrieved as a group. If you choose
-        /// to use tags filtering, only resources with the tag will be retrieved.
+        /// This operation takes the optional <code>Tags</code> field, which you can use as a
+        /// filter on the response so that tagged resources can be retrieved as a group. If you
+        /// choose to use tags filtering, only resources with the tag are retrieved.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTriggers service method.</param>
@@ -5762,7 +5762,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Starts an existing trigger. See <a href="http://docs.aws.amazon.com/glue/latest/dg/trigger-job.html">Triggering
+        /// Starts an existing trigger. See <a href="https://docs.aws.amazon.com/glue/latest/dg/trigger-job.html">Triggering
         /// Jobs</a> for information about how different types of trigger are started.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTrigger service method.</param>
@@ -5798,7 +5798,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Starts an existing trigger. See <a href="http://docs.aws.amazon.com/glue/latest/dg/trigger-job.html">Triggering
+        /// Starts an existing trigger. See <a href="https://docs.aws.amazon.com/glue/latest/dg/trigger-job.html">Triggering
         /// Jobs</a> for information about how different types of trigger are started.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTrigger service method.</param>
@@ -6046,7 +6046,7 @@ namespace Amazon.Glue
         /// <summary>
         /// Adds tags to a resource. A tag is a label you can assign to an AWS resource. In AWS
         /// Glue, you can tag only certain resources. For information about what resources you
-        /// can tag, see <a href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS
+        /// can tag, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS
         /// Tags in AWS Glue</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
@@ -6078,7 +6078,7 @@ namespace Amazon.Glue
         /// <summary>
         /// Adds tags to a resource. A tag is a label you can assign to an AWS resource. In AWS
         /// Glue, you can tag only certain resources. For information about what resources you
-        /// can tag, see <a href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS
+        /// can tag, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS
         /// Tags in AWS Glue</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>

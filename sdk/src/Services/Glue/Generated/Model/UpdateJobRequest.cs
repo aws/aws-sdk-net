@@ -39,7 +39,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// Name of the job definition to update.
+        /// The name of the job definition to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

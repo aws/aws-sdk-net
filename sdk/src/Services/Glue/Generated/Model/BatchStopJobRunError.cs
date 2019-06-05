@@ -57,7 +57,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The name of the job definition used in the job run in question.
+        /// The name of the job definition that is used in the job run in question.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -76,7 +76,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property JobRunId. 
         /// <para>
-        /// The JobRunId of the job run in question.
+        /// The <code>JobRunId</code> of the job run in question.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

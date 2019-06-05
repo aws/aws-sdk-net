@@ -35,9 +35,9 @@ namespace Amazon.Glue.Model
     /// 
     ///  
     /// <para>
-    /// This operation takes the optional <code>Tags</code> field which you can use as a filter
-    /// on the response so that tagged resources can be retrieved as a group. If you choose
-    /// to use tags filtering, only resources with the tag will be retrieved.
+    /// This operation takes the optional <code>Tags</code> field, which you can use as a
+    /// filter on the response so that tagged resources can be retrieved as a group. If you
+    /// choose to use tags filtering, only resources with the tag are retrieved.
     /// </para>
     /// </summary>
     public partial class ListTriggersRequest : AmazonGlueRequest
@@ -51,7 +51,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property DependentJobName. 
         /// <para>
         ///  The name of the job for which to retrieve triggers. The trigger that can start this
-        /// job will be returned, and if there is no such trigger, all triggers will be returned.
+        /// job is returned. If there is no such trigger, all triggers are returned.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

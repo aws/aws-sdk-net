@@ -41,7 +41,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property JobNames. 
         /// <para>
-        /// A list of job names, which may be the names returned from the <code>ListJobs</code>
+        /// A list of job names, which might be the names returned from the <code>ListJobs</code>
         /// operation.
         /// </para>
         /// </summary>
