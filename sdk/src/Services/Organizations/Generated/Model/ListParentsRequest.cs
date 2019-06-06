@@ -61,7 +61,7 @@ namespace Amazon.Organizations.Model
         /// Gets and sets the property ChildId. 
         /// <para>
         /// The unique identifier (ID) of the OU or account whose parent containers you want to
-        /// list. Do not specify a root.
+        /// list. Don't specify a root.
         /// </para>
         ///  
         /// <para>

@@ -57,7 +57,8 @@ namespace Amazon.Organizations.Model
     /// <para>
     /// For more information about integrating other services with AWS Organizations, including
     /// the list of services that work with Organizations, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Integrating
-    /// AWS Organizations with Other AWS Services</a> in the <i>AWS Organizations User Guide</i>.
+    /// AWS Organizations with Other AWS Services</a> in the <i>AWS Organizations User Guide.</i>
+    /// 
     /// </para>
     ///  
     /// <para>

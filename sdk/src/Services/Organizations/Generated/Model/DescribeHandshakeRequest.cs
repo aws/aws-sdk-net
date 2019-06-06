@@ -35,8 +35,9 @@ namespace Amazon.Organizations.Model
     /// 
     ///  
     /// <para>
-    /// You can access handshakes that are ACCEPTED, DECLINED, or CANCELED for only 30 days
-    /// after they change to that state. They are then deleted and no longer accessible.
+    /// You can access handshakes that are <code>ACCEPTED</code>, <code>DECLINED</code>, or
+    /// <code>CANCELED</code> for only 30 days after they change to that state. They're then
+    /// deleted and no longer accessible.
     /// </para>
     ///  
     /// <para>

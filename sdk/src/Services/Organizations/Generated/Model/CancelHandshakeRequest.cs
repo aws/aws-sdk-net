@@ -42,7 +42,7 @@ namespace Amazon.Organizations.Model
     ///  
     /// <para>
     /// After you cancel a handshake, it continues to appear in the results of relevant APIs
-    /// for only 30 days. After that it is deleted.
+    /// for only 30 days. After that, it's deleted.
     /// </para>
     /// </summary>
     public partial class CancelHandshakeRequest : AmazonOrganizationsRequest

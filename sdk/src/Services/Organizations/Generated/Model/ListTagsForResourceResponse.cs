@@ -28,12 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Model
 {
     /// <summary>
-    /// This is the response object from the ListPolicies operation.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class ListPoliciesResponse : AmazonWebServiceResponse
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PolicySummary> _policies = new List<PolicySummary>();
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -57,22 +57,21 @@ namespace Amazon.Organizations.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Policies. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of policies that match the filter criteria in the request. The output list
-        /// doesn't include the policy contents. To see the content for a policy, see <a>DescribePolicy</a>.
+        /// The tags that are assigned to the resource.
         /// </para>
         /// </summary>
-        public List<PolicySummary> Policies
+        public List<Tag> Tags
         {
-            get { return this._policies; }
-            set { this._policies = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if Policies property is set
-        internal bool IsSetPolicies()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._policies != null && this._policies.Count > 0; 
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

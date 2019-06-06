@@ -337,6 +337,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly ConstraintViolationExceptionReason MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED");
         /// <summary>
+        /// Constant MAX_TAG_LIMIT_EXCEEDED for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason MAX_TAG_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("MAX_TAG_LIMIT_EXCEEDED");
+        /// <summary>
         /// Constant MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED = new ConstraintViolationExceptionReason("MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED");
@@ -360,6 +364,10 @@ namespace Amazon.Organizations
         /// Constant POLICY_NUMBER_LIMIT_EXCEEDED for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason POLICY_NUMBER_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("POLICY_NUMBER_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant TAG_POLICY_VIOLATION for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason TAG_POLICY_VIOLATION = new ConstraintViolationExceptionReason("TAG_POLICY_VIOLATION");
         /// <summary>
         /// Constant WAIT_PERIOD_ACTIVE for ConstraintViolationExceptionReason
         /// </summary>
@@ -892,6 +900,10 @@ namespace Amazon.Organizations
         /// Constant INVALID_SYNTAX_POLICY_ID for InvalidInputExceptionReason
         /// </summary>
         public static readonly InvalidInputExceptionReason INVALID_SYNTAX_POLICY_ID = new InvalidInputExceptionReason("INVALID_SYNTAX_POLICY_ID");
+        /// <summary>
+        /// Constant INVALID_SYSTEM_TAGS_PARAMETER for InvalidInputExceptionReason
+        /// </summary>
+        public static readonly InvalidInputExceptionReason INVALID_SYSTEM_TAGS_PARAMETER = new InvalidInputExceptionReason("INVALID_SYSTEM_TAGS_PARAMETER");
         /// <summary>
         /// Constant MAX_LENGTH_EXCEEDED for InvalidInputExceptionReason
         /// </summary>

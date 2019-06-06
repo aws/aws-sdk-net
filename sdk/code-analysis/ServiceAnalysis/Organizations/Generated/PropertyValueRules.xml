@@ -216,6 +216,10 @@
     <max>20</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Organizations.Model.ListTagsForResourceRequest.ResourceId</property>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Organizations.Model.ListTargetsForPolicyRequest.MaxResults</property>
     <min>1</min>
     <max>20</max>
@@ -238,6 +242,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.RemoveAccountFromOrganizationRequest.AccountId</property>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.TagResourceRequest.ResourceId</property>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.UntagResourceRequest.ResourceId</property>
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -418,5 +430,17 @@
     <property>Amazon.Organizations.Model.Root.Name</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
 </property-value-rules>

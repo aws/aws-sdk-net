@@ -38,7 +38,7 @@ namespace Amazon.Organizations.Model
     ///  
     /// <para>
     /// For more information about OUs, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing
-    /// Organizational Units</a> in the <i>AWS Organizations User Guide</i>.
+    /// Organizational Units</a> in the <i>AWS Organizations User Guide.</i> 
     /// </para>
     ///  
     /// <para>
@@ -72,8 +72,8 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property ParentId. 
         /// <para>
-        /// The unique identifier (ID) of the parent root or OU in which you want to create the
-        /// new OU.
+        /// The unique identifier (ID) of the parent root or OU that you want to create the new
+        /// OU in.
         /// </para>
         ///  
         /// <para>

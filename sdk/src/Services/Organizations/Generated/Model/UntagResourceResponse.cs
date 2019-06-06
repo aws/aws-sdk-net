@@ -28,22 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeOrganization operation.
-    /// Retrieves information about the organization that the user's account belongs to.
-    /// 
-    ///  
-    /// <para>
-    /// This operation can be called from any account in the organization.
-    /// </para>
-    ///  <note> 
-    /// <para>
-    /// Even if a policy type is shown as available in the organization, you can disable it
-    /// separately at the root level with <a>DisablePolicyType</a>. Use <a>ListRoots</a> to
-    /// see the status of policy types for a specified root.
-    /// </para>
-    ///  </note>
+    /// This is the response object from the UntagResource operation.
     /// </summary>
-    public partial class DescribeOrganizationRequest : AmazonOrganizationsRequest
+    public partial class UntagResourceResponse : AmazonWebServiceResponse
     {
 
     }

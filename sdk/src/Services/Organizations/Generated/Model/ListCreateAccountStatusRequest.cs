@@ -102,7 +102,7 @@ namespace Amazon.Organizations.Model
         /// Gets and sets the property States. 
         /// <para>
         /// A list of one or more states that you want included in the response. If this parameter
-        /// is not present, then all requests are included in the response.
+        /// isn't present, all requests are included in the response.
         /// </para>
         /// </summary>
         public List<string> States

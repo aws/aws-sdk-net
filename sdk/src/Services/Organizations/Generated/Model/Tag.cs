@@ -28,41 +28,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeAccount operation.
-    /// Retrieves AWS Organizations-related information about the specified account.
-    /// 
-    ///  
-    /// <para>
-    /// This operation can be called only from the organization's master account.
-    /// </para>
+    /// A custom key-value pair associated with a resource such as an account within your
+    /// organization.
     /// </summary>
-    public partial class DescribeAccountRequest : AmazonOrganizationsRequest
+    public partial class Tag
     {
-        private string _accountId;
+        private string _key;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property AccountId. 
+        /// Gets and sets the property Key. 
         /// <para>
-        /// The unique identifier (ID) of the AWS account that you want information about. You
-        /// can get the ID from the <a>ListAccounts</a> or <a>ListAccountsForParent</a> operations.
-        /// </para>
-        ///  
-        /// <para>
-        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID
-        /// string requires exactly 12 digits.
+        /// The key identifier, or name, of the tag.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string AccountId
+        [AWSProperty(Min=1, Max=128)]
+        public string Key
         {
-            get { return this._accountId; }
-            set { this._accountId = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
-        // Check to see if AccountId property is set
-        internal bool IsSetAccountId()
+        // Check to see if Key property is set
+        internal bool IsSetKey()
         {
-            return this._accountId != null;
+            return this._key != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// The string value that's associated with the key of the tag.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string Value
+        {
+            get { return this._value; }
+            set { this._value = value; }
+        }
+
+        // Check to see if Value property is set
+        internal bool IsSetValue()
+        {
+            return this._value != null;
         }
 
     }

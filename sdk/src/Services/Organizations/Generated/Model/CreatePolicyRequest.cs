@@ -56,7 +56,7 @@ namespace Amazon.Organizations.Model
         /// control policy</a> (SCP), this string must be JSON text that specifies the permissions
         /// that admins in attached accounts can delegate to their users, groups, and roles. For
         /// more information about the SCP syntax, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-        /// Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
+        /// Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000000)]

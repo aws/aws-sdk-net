@@ -40,16 +40,16 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// If you attach an SCP to a root, it affects all accounts in the organization.
+    /// If you attach an SCP to a root, it affects all accounts in the organization
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// If you attach an SCP to an OU, it affects all accounts in that OU and in any child
-    /// OUs.
+    /// OUs
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If you attach the policy directly to an account, then it affects only that account.
+    /// If you attach the policy directly to an account, it affects only that account
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -57,14 +57,14 @@ namespace Amazon.Organizations.Model
     /// organizational unit (OU). When you attach one SCP to a higher level root or OU, and
     /// you also attach a different SCP to a child OU or to an account, the child policy can
     /// further restrict only the permissions that pass through the parent filter and are
-    /// available to the child. An SCP that is attached to a child cannot grant a permission
-    /// that is not already granted by the parent. For example, imagine that the parent SCP
+    /// available to the child. An SCP that is attached to a child can't grant a permission
+    /// that the paren't hasn't already granted. For example, imagine that the parent SCP
     /// allows permissions A, B, C, D, and E. The child SCP allows C, D, E, F, and G. The
     /// result is that the accounts affected by the child SCP are allowed to use only C, D,
-    /// and E. They cannot use A or B because they were filtered out by the child OU. They
-    /// also cannot use F and G because they were filtered out by the parent OU. They cannot
-    /// be granted back by the child SCP; child SCPs can only filter the permissions they
-    /// receive from the parent SCP.
+    /// and E. They can't use A or B because the child OU filtered them out. They also can't
+    /// use F and G because the parent OU filtered them out. They can't be granted back by
+    /// the child SCP; child SCPs can only filter the permissions they receive from the parent
+    /// SCP.
     /// </para>
     ///  
     /// <para>
@@ -76,8 +76,9 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about how Organizations policies permissions work, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">Using
-    /// Service Control Policies</a> in the <i>AWS Organizations User Guide</i>.
+    /// For more information about how AWS Organizations policies permissions work, see <a
+    /// href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">Using
+    /// Service Control Policies</a> in the <i>AWS Organizations User Guide.</i> 
     /// </para>
     ///  </li> </ul> 
     /// <para>

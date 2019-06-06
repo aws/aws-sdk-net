@@ -44,7 +44,7 @@ namespace Amazon.Organizations.Model
     ///  </li> <li> 
     /// <para>
     /// Check the AWS CloudTrail log for the <code>CreateAccountResult</code> event. For information
-    /// on using AWS CloudTrail with Organizations, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring
+    /// on using AWS CloudTrail with AWS Organizations, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring
     /// the Activity in Your Organization</a> in the <i>AWS Organizations User Guide.</i>
     /// 
     /// </para>
@@ -99,10 +99,10 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Using CreateAccount to create multiple temporary accounts isn't recommended. You can
-    /// only close an account from the Billing and Cost Management Console, and you must be
-    /// signed in as the root user. For information on the requirements and process for closing
-    /// an account, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
+    /// Using <code>CreateAccount</code> to create multiple temporary accounts isn't recommended.
+    /// You can only close an account from the Billing and Cost Management Console, and you
+    /// must be signed in as the root user. For information on the requirements and process
+    /// for closing an account, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
     /// an AWS Account</a> in the <i>AWS Organizations User Guide</i>.
     /// </para>
     ///  </li> </ul> </important> <note> 
@@ -216,7 +216,8 @@ namespace Amazon.Organizations.Model
         /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
         /// and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations
         /// User Guide</i>, and steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
-        /// Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i>.
+        /// Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide.</i>
+        /// 
         /// </para>
         ///  
         /// <para>

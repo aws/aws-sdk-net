@@ -45,8 +45,8 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// Policy types can be enabled and disabled in roots. This is distinct from whether they
-    /// are available in the organization. When you enable all features, you make policy types
+    /// Policy types can be enabled and disabled in roots. This is distinct from whether they're
+    /// available in the organization. When you enable all features, you make policy types
     /// available for use in that organization. Individual policy types can then be enabled
     /// and disabled in a root. To see the availability of a policy type in an organization,
     /// use <a>DescribeOrganization</a>.

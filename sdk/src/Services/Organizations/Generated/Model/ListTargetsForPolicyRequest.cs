@@ -29,8 +29,8 @@ namespace Amazon.Organizations.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTargetsForPolicy operation.
-    /// Lists all the roots, organizational units (OUs), and accounts to which the specified
-    /// policy is attached.
+    /// Lists all the roots, organizational units (OUs), and accounts that the specified policy
+    /// is attached to.
     /// 
     ///  <note> 
     /// <para>
@@ -101,7 +101,7 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property PolicyId. 
         /// <para>
-        /// The unique identifier (ID) of the policy for which you want to know its attachments.
+        /// The unique identifier (ID) of the policy whose attachments you want to know.
         /// </para>
         ///  
         /// <para>

@@ -28,20 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Model
 {
     /// <summary>
-    /// This is the response object from the ListPolicies operation.
+    /// Container for the parameters to the ListTagsForResource operation.
+    /// Lists tags for the specified resource. 
+    /// 
+    ///  
+    /// <para>
+    /// Currently, you can list tags on an account in AWS Organizations.
+    /// </para>
     /// </summary>
-    public partial class ListPoliciesResponse : AmazonWebServiceResponse
+    public partial class ListTagsForResourceRequest : AmazonOrganizationsRequest
     {
         private string _nextToken;
-        private List<PolicySummary> _policies = new List<PolicySummary>();
+        private string _resourceId;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If present, this value indicates that there is more output available than is included
-        /// in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should
-        /// repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.
+        /// Use this parameter if you receive a <code>NextToken</code> response in a previous
+        /// request that indicates that there is more output available. Set it to the value of
+        /// the previous call's <code>NextToken</code> response to indicate where the output should
+        /// continue from.
         /// </para>
         /// </summary>
         public string NextToken
@@ -57,22 +63,22 @@ namespace Amazon.Organizations.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Policies. 
+        /// Gets and sets the property ResourceId. 
         /// <para>
-        /// A list of policies that match the filter criteria in the request. The output list
-        /// doesn't include the policy contents. To see the content for a policy, see <a>DescribePolicy</a>.
+        /// The ID of the resource that you want to retrieve tags for. 
         /// </para>
         /// </summary>
-        public List<PolicySummary> Policies
+        [AWSProperty(Required=true)]
+        public string ResourceId
         {
-            get { return this._policies; }
-            set { this._policies = value; }
+            get { return this._resourceId; }
+            set { this._resourceId = value; }
         }
 
-        // Check to see if Policies property is set
-        internal bool IsSetPolicies()
+        // Check to see if ResourceId property is set
+        internal bool IsSetResourceId()
         {
-            return this._policies != null && this._policies.Count > 0; 
+            return this._resourceId != null;
         }
 
     }

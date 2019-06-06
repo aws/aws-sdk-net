@@ -37,12 +37,12 @@ namespace Amazon.Organizations.Model
     /// <para>
     ///  <b>Note:</b> Every root, OU, and account must have at least one SCP attached. If
     /// you want to replace the default <code>FullAWSAccess</code> policy with one that limits
-    /// the permissions that can be delegated, then you must attach the replacement policy
-    /// before you can remove the default one. This is the authorization strategy of <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_whitelist">whitelisting</a>.
+    /// the permissions that can be delegated, you must attach the replacement policy before
+    /// you can remove the default one. This is the authorization strategy of <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_whitelist">whitelisting</a>.
     /// If you instead attach a second SCP and leave the <code>FullAWSAccess</code> SCP still
     /// attached, and specify <code>"Effect": "Deny"</code> in the second SCP to override
     /// the <code>"Effect": "Allow"</code> in the <code>FullAWSAccess</code> policy (or any
-    /// other attached SCP), then you are using the authorization strategy of <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_blacklist">blacklisting</a>.
+    /// other attached SCP), you're using the authorization strategy of <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_blacklist">blacklisting</a>.
     /// 
     /// </para>
     ///  
@@ -83,8 +83,8 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property TargetId. 
         /// <para>
-        /// The unique identifier (ID) of the root, OU, or account from which you want to detach
-        /// the policy. You can get the ID from the <a>ListRoots</a>, <a>ListOrganizationalUnitsForParent</a>,
+        /// The unique identifier (ID) of the root, OU, or account that you want to detach the
+        /// policy from. You can get the ID from the <a>ListRoots</a>, <a>ListOrganizationalUnitsForParent</a>,
         /// or <a>ListAccounts</a> operations.
         /// </para>
         ///  

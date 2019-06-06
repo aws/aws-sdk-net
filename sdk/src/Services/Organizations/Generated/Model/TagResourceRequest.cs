@@ -28,41 +28,55 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeAccount operation.
-    /// Retrieves AWS Organizations-related information about the specified account.
+    /// Container for the parameters to the TagResource operation.
+    /// Adds one or more tags to the specified resource.
     /// 
     ///  
     /// <para>
-    /// This operation can be called only from the organization's master account.
+    /// Currently, you can tag and untag accounts in AWS Organizations.
     /// </para>
     /// </summary>
-    public partial class DescribeAccountRequest : AmazonOrganizationsRequest
+    public partial class TagResourceRequest : AmazonOrganizationsRequest
     {
-        private string _accountId;
+        private string _resourceId;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property AccountId. 
+        /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The unique identifier (ID) of the AWS account that you want information about. You
-        /// can get the ID from the <a>ListAccounts</a> or <a>ListAccountsForParent</a> operations.
-        /// </para>
-        ///  
-        /// <para>
-        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID
-        /// string requires exactly 12 digits.
+        /// The ID of the resource to add a tag to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string AccountId
+        public string ResourceId
         {
-            get { return this._accountId; }
-            set { this._accountId = value; }
+            get { return this._resourceId; }
+            set { this._resourceId = value; }
         }
 
-        // Check to see if AccountId property is set
-        internal bool IsSetAccountId()
+        // Check to see if ResourceId property is set
+        internal bool IsSetResourceId()
         {
-            return this._accountId != null;
+            return this._resourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tag to add to the specified resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

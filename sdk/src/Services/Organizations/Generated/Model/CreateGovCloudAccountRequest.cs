@@ -33,7 +33,7 @@ namespace Amazon.Organizations.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// You are authorized to create accounts in the AWS GovCloud (US) Region. For more information
+    /// You're authorized to create accounts in the AWS GovCloud (US) Region. For more information
     /// on the AWS GovCloud (US) Region, see the <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/welcome.html">
     /// <i>AWS GovCloud User Guide</i>.</a> 
     /// </para>
@@ -52,7 +52,8 @@ namespace Amazon.Organizations.Model
     /// You have the <code>organizations:CreateGovCloudAccount</code> permission. AWS Organizations
     /// creates the required service-linked role named <code>AWSServiceRoleForOrganizations</code>.
     /// For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs">AWS
-    /// Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User Guide</i>.
+    /// Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User Guide.</i>
+    /// 
     /// </para>
     ///  </li> </ul> 
     /// <para>

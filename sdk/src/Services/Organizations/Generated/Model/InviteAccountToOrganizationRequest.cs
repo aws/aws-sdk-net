@@ -30,25 +30,25 @@ namespace Amazon.Organizations.Model
     /// <summary>
     /// Container for the parameters to the InviteAccountToOrganization operation.
     /// Sends an invitation to another account to join your organization as a member account.
-    /// Organizations sends email on your behalf to the email address that is associated with
-    /// the other account's owner. The invitation is implemented as a <a>Handshake</a> whose
-    /// details are in the response.
+    /// AWS Organizations sends email on your behalf to the email address that is associated
+    /// with the other account's owner. The invitation is implemented as a <a>Handshake</a>
+    /// whose details are in the response.
     /// 
     ///  <important> <ul> <li> 
     /// <para>
     /// You can invite AWS accounts only from the same seller as the master account. For example,
     /// if your organization's master account was created by Amazon Internet Services Pvt.
-    /// Ltd (AISPL), an AWS seller in India, then you can only invite other AISPL accounts
-    /// to your organization. You can't combine accounts from AISPL and AWS, or any other
-    /// AWS seller. For more information, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html">Consolidated
+    /// Ltd (AISPL), an AWS seller in India, you can invite only other AISPL accounts to your
+    /// organization. You can't combine accounts from AISPL and AWS or from any other AWS
+    /// seller. For more information, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html">Consolidated
     /// Billing in India</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// If you receive an exception that indicates that you exceeded your account limits for
     /// the organization or that the operation failed because your organization is still initializing,
-    /// wait one hour and then try again. If the error persists after an hour, then contact
-    /// <a href="https://console.aws.amazon.com/support/home#/">AWS Customer Support</a>.
+    /// wait one hour and then try again. If the error persists after an hour, contact <a
+    /// href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
     /// </para>
     ///  </li> </ul> </important> 
     /// <para>
@@ -102,9 +102,9 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>"Type": "ACCOUNT"</code>, then you must provide the AWS account
-        /// ID number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, then
-        /// you must specify the email address that is associated with the account.
+        /// If you specify <code>"Type": "ACCOUNT"</code>, you must provide the AWS account ID
+        /// number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must
+        /// specify the email address that is associated with the account.
         /// </para>
         ///  
         /// <para>

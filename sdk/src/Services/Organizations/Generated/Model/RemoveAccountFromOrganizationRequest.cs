@@ -33,10 +33,10 @@ namespace Amazon.Organizations.Model
     /// 
     ///  
     /// <para>
-    /// The removed account becomes a stand-alone account that is not a member of any organization.
-    /// It is no longer subject to any policies and is responsible for its own bill payments.
+    /// The removed account becomes a standalone account that isn't a member of any organization.
+    /// It's no longer subject to any policies and is responsible for its own bill payments.
     /// The organization's master account is no longer charged for any expenses accrued by
-    /// the member account after it is removed from the organization.
+    /// the member account after it's removed from the organization.
     /// </para>
     ///  
     /// <para>
@@ -49,14 +49,14 @@ namespace Amazon.Organizations.Model
     /// with the information required to operate as a standalone account. When you create
     /// an account in an organization using the AWS Organizations console, API, or CLI commands,
     /// the information required of standalone accounts is <i>not</i> automatically collected.
-    /// For an account that you want to make standalone, you must accept the End User License
-    /// Agreement (EULA), choose a support plan, provide and verify the required contact information,
+    /// For an account that you want to make standalone, you must accept the end user license
+    /// agreement (EULA), choose a support plan, provide and verify the required contact information,
     /// and provide a current payment method. AWS uses the payment method to charge for any
-    /// billable (not free tier) AWS activity that occurs while the account is not attached
-    /// to an organization. To remove an account that does not yet have this information,
-    /// you must sign in as the member account and follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">
+    /// billable (not free tier) AWS activity that occurs while the account isn't attached
+    /// to an organization. To remove an account that doesn't yet have this information, you
+    /// must sign in as the member account and follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">
     /// To leave an organization when all required account information has not yet been provided</a>
-    /// in the <i>AWS Organizations User Guide</i>.
+    /// in the <i>AWS Organizations User Guide.</i> 
     /// </para>
     ///  </important>
     /// </summary>
