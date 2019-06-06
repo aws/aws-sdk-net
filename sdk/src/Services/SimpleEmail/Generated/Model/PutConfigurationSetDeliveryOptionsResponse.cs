@@ -28,21 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeActiveReceiptRuleSet operation.
-    /// Returns the metadata and receipt rules for the receipt rule set that is currently
-    /// active.
-    /// 
-    ///  
-    /// <para>
-    /// For information about setting up receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
-    /// SES Developer Guide</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// You can execute this operation no more than once per second.
-    /// </para>
+    /// An HTTP 200 response if the request succeeds, or an error message if the request fails.
     /// </summary>
-    public partial class DescribeActiveReceiptRuleSetRequest : AmazonSimpleEmailServiceRequest
+    public partial class PutConfigurationSetDeliveryOptionsResponse : AmazonWebServiceResponse
     {
 
     }

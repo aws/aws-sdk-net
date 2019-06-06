@@ -245,6 +245,10 @@ namespace Amazon.SimpleEmail
     {
 
         /// <summary>
+        /// Constant DeliveryOptions for ConfigurationSetAttribute
+        /// </summary>
+        public static readonly ConfigurationSetAttribute DeliveryOptions = new ConfigurationSetAttribute("deliveryOptions");
+        /// <summary>
         /// Constant EventDestinations for ConfigurationSetAttribute
         /// </summary>
         public static readonly ConfigurationSetAttribute EventDestinations = new ConfigurationSetAttribute("eventDestinations");

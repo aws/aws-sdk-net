@@ -34,7 +34,7 @@ namespace Amazon.SimpleEmail.Model
     /// 
     ///  
     /// <para>
-    /// For information about setting a stop action in a receipt rule, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-stop.html">Amazon
+    /// For information about setting a stop action in a receipt rule, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-stop.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -67,7 +67,7 @@ namespace Amazon.SimpleEmail.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the stop action
         /// is taken. An example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>.
-        /// For more information about Amazon SNS topics, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
+        /// For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
         /// SNS Developer Guide</a>.
         /// </para>
         /// </summary>

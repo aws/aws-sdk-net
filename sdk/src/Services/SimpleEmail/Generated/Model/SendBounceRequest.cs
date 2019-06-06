@@ -40,7 +40,7 @@ namespace Amazon.SimpleEmail.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// For information about receiving email through Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
+    /// For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
     ///  
@@ -104,7 +104,7 @@ namespace Amazon.SimpleEmail.Model
         /// This parameter is used only for sending authorization. It is the ARN of the identity
         /// that is associated with the sending authorization policy that permits you to use the
         /// address in the "From" header of the bounce. For more information about sending authorization,
-        /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+        /// see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         /// </summary>

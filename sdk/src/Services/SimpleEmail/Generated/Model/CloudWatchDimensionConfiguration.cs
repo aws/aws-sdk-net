@@ -34,7 +34,7 @@ namespace Amazon.SimpleEmail.Model
     ///  
     /// <para>
     /// For information about publishing email sending events to Amazon CloudWatch, see the
-    /// <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+    /// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
     /// </summary>

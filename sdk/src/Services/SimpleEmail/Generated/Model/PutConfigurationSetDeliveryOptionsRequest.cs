@@ -28,24 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteConfigurationSet operation.
-    /// Deletes a configuration set. Configuration sets enable you to publish email sending
-    /// events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-    /// SES Developer Guide</a>.
-    /// 
-    ///  
-    /// <para>
-    /// You can execute this operation no more than once per second.
-    /// </para>
+    /// Container for the parameters to the PutConfigurationSetDeliveryOptions operation.
+    /// Adds or updates the delivery options for a configuration set.
     /// </summary>
-    public partial class DeleteConfigurationSetRequest : AmazonSimpleEmailServiceRequest
+    public partial class PutConfigurationSetDeliveryOptionsRequest : AmazonSimpleEmailServiceRequest
     {
         private string _configurationSetName;
+        private DeliveryOptions _deliveryOptions;
 
         /// <summary>
         /// Gets and sets the property ConfigurationSetName. 
         /// <para>
-        /// The name of the configuration set to delete.
+        /// The name of the configuration set that you want to specify the delivery options for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,6 +53,25 @@ namespace Amazon.SimpleEmail.Model
         internal bool IsSetConfigurationSetName()
         {
             return this._configurationSetName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeliveryOptions. 
+        /// <para>
+        /// Specifies whether messages that use the configuration set are required to use Transport
+        /// Layer Security (TLS).
+        /// </para>
+        /// </summary>
+        public DeliveryOptions DeliveryOptions
+        {
+            get { return this._deliveryOptions; }
+            set { this._deliveryOptions = value; }
+        }
+
+        // Check to see if DeliveryOptions property is set
+        internal bool IsSetDeliveryOptions()
+        {
+            return this._deliveryOptions != null;
         }
 
     }

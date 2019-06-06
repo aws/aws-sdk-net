@@ -42,7 +42,7 @@ namespace Amazon.SimpleEmail.Model
     /// <para>
     /// Sending authorization is a feature that enables an identity owner to authorize other
     /// senders to use its identities. For information about using sending authorization,
-    /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+    /// see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
     ///  

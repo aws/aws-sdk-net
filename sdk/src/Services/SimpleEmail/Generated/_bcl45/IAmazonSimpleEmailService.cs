@@ -35,13 +35,13 @@ namespace Amazon.SimpleEmail
     /// <para>
     ///  This document contains reference information for the <a href="https://aws.amazon.com/ses/">Amazon
     /// Simple Email Service</a> (Amazon SES) API, version 2010-12-01. This document is best
-    /// used in conjunction with the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+    /// used in conjunction with the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
     /// SES Developer Guide</a>. 
     /// </para>
     ///  <note> 
     /// <para>
-    ///  For a list of Amazon SES endpoints to use in service requests, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions
-    /// and Amazon SES</a> in the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+    ///  For a list of Amazon SES endpoints to use in service requests, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions
+    /// and Amazon SES</a> in the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
     ///  </note>
@@ -60,7 +60,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about setting up rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
+        /// For information about setting up rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -76,7 +76,7 @@ namespace Amazon.SimpleEmail
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
         /// Indicates that a resource could not be created because of service limits. For a list
-        /// of Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
@@ -94,7 +94,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about setting up rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
+        /// For information about setting up rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -113,7 +113,7 @@ namespace Amazon.SimpleEmail
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
         /// Indicates that a resource could not be created because of service limits. For a list
-        /// of Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
@@ -133,7 +133,7 @@ namespace Amazon.SimpleEmail
         ///  
         /// <para>
         /// Configuration sets enable you to publish email sending events. For information about
-        /// using configuration sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+        /// using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -152,7 +152,7 @@ namespace Amazon.SimpleEmail
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
         /// Indicates that a resource could not be created because of service limits. For a list
-        /// of Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSet">REST API Reference for CreateConfigurationSet Operation</seealso>
@@ -166,7 +166,7 @@ namespace Amazon.SimpleEmail
         ///  
         /// <para>
         /// Configuration sets enable you to publish email sending events. For information about
-        /// using configuration sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+        /// using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -188,7 +188,7 @@ namespace Amazon.SimpleEmail
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
         /// Indicates that a resource could not be created because of service limits. For a list
-        /// of Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSet">REST API Reference for CreateConfigurationSet Operation</seealso>
@@ -212,7 +212,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// An event destination is the AWS service to which Amazon SES publishes the email sending
         /// events associated with a configuration set. For information about using configuration
-        /// sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+        /// sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -243,7 +243,7 @@ namespace Amazon.SimpleEmail
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
         /// Indicates that a resource could not be created because of service limits. For a list
-        /// of Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSetEventDestination">REST API Reference for CreateConfigurationSetEventDestination Operation</seealso>
@@ -264,7 +264,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// An event destination is the AWS service to which Amazon SES publishes the email sending
         /// events associated with a configuration set. For information about using configuration
-        /// sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+        /// sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -298,7 +298,7 @@ namespace Amazon.SimpleEmail
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
         /// Indicates that a resource could not be created because of service limits. For a list
-        /// of Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSetEventDestination">REST API Reference for CreateConfigurationSetEventDestination Operation</seealso>
@@ -317,7 +317,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// By default, images and links used for tracking open and click events are hosted on
         /// domains operated by Amazon SES. You can configure a subdomain of your own to handle
-        /// these events. For information about using custom domains, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Amazon
+        /// these events. For information about using custom domains, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
@@ -358,7 +358,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// By default, images and links used for tracking open and click events are hosted on
         /// domains operated by Amazon SES. You can configure a subdomain of your own to handle
-        /// these events. For information about using custom domains, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Amazon
+        /// these events. For information about using custom domains, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
@@ -402,7 +402,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For more information about custom verification email templates, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
         /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  
@@ -426,7 +426,7 @@ namespace Amazon.SimpleEmail
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
         /// Indicates that a resource could not be created because of service limits. For a list
-        /// of Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateCustomVerificationEmailTemplate">REST API Reference for CreateCustomVerificationEmailTemplate Operation</seealso>
@@ -439,7 +439,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For more information about custom verification email templates, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
         /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  
@@ -466,7 +466,7 @@ namespace Amazon.SimpleEmail
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
         /// Indicates that a resource could not be created because of service limits. For a list
-        /// of Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateCustomVerificationEmailTemplate">REST API Reference for CreateCustomVerificationEmailTemplate Operation</seealso>
@@ -482,7 +482,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about setting up IP address filters, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon
+        /// For information about setting up IP address filters, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -498,7 +498,7 @@ namespace Amazon.SimpleEmail
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
         /// Indicates that a resource could not be created because of service limits. For a list
-        /// of Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptFilter">REST API Reference for CreateReceiptFilter Operation</seealso>
@@ -511,7 +511,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about setting up IP address filters, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon
+        /// For information about setting up IP address filters, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -530,7 +530,7 @@ namespace Amazon.SimpleEmail
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
         /// Indicates that a resource could not be created because of service limits. For a list
-        /// of Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptFilter">REST API Reference for CreateReceiptFilter Operation</seealso>
@@ -546,7 +546,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about setting up receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
+        /// For information about setting up receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -563,24 +563,24 @@ namespace Amazon.SimpleEmail
         /// <exception cref="Amazon.SimpleEmail.Model.InvalidLambdaFunctionException">
         /// Indicates that the provided AWS Lambda function is invalid, or that Amazon SES could
         /// not execute the provided function, possibly due to permissions issues. For information
-        /// about giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+        /// about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.InvalidS3ConfigurationException">
         /// Indicates that the provided Amazon S3 bucket or AWS KMS encryption key is invalid,
         /// or that Amazon SES could not publish to the bucket, possibly due to permissions issues.
-        /// For information about giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+        /// For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.InvalidSnsTopicException">
         /// Indicates that the provided Amazon SNS topic is invalid, or that Amazon SES could
         /// not publish to the topic, possibly due to permissions issues. For information about
-        /// giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+        /// giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
         /// Indicates that a resource could not be created because of service limits. For a list
-        /// of Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.RuleDoesNotExistException">
@@ -599,7 +599,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about setting up receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
+        /// For information about setting up receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -619,24 +619,24 @@ namespace Amazon.SimpleEmail
         /// <exception cref="Amazon.SimpleEmail.Model.InvalidLambdaFunctionException">
         /// Indicates that the provided AWS Lambda function is invalid, or that Amazon SES could
         /// not execute the provided function, possibly due to permissions issues. For information
-        /// about giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+        /// about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.InvalidS3ConfigurationException">
         /// Indicates that the provided Amazon S3 bucket or AWS KMS encryption key is invalid,
         /// or that Amazon SES could not publish to the bucket, possibly due to permissions issues.
-        /// For information about giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+        /// For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.InvalidSnsTopicException">
         /// Indicates that the provided Amazon SNS topic is invalid, or that Amazon SES could
         /// not publish to the topic, possibly due to permissions issues. For information about
-        /// giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+        /// giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
         /// Indicates that a resource could not be created because of service limits. For a list
-        /// of Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.RuleDoesNotExistException">
@@ -658,7 +658,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about setting up receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
+        /// For information about setting up receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -674,7 +674,7 @@ namespace Amazon.SimpleEmail
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
         /// Indicates that a resource could not be created because of service limits. For a list
-        /// of Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptRuleSet">REST API Reference for CreateReceiptRuleSet Operation</seealso>
@@ -687,7 +687,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about setting up receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
+        /// For information about setting up receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -706,7 +706,7 @@ namespace Amazon.SimpleEmail
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
         /// Indicates that a resource could not be created because of service limits. For a list
-        /// of Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptRuleSet">REST API Reference for CreateReceiptRuleSet Operation</seealso>
@@ -720,7 +720,7 @@ namespace Amazon.SimpleEmail
         /// <summary>
         /// Creates an email template. Email templates enable you to send personalized email to
         /// one or more destinations in a single API operation. For more information, see the
-        /// <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon
+        /// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon
         /// SES Developer Guide</a>.
         /// 
         ///  
@@ -740,7 +740,7 @@ namespace Amazon.SimpleEmail
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
         /// Indicates that a resource could not be created because of service limits. For a list
-        /// of Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateTemplate">REST API Reference for CreateTemplate Operation</seealso>
@@ -751,7 +751,7 @@ namespace Amazon.SimpleEmail
         /// <summary>
         /// Creates an email template. Email templates enable you to send personalized email to
         /// one or more destinations in a single API operation. For more information, see the
-        /// <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon
+        /// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon
         /// SES Developer Guide</a>.
         /// 
         ///  
@@ -774,7 +774,7 @@ namespace Amazon.SimpleEmail
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
         /// Indicates that a resource could not be created because of service limits. For a list
-        /// of Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateTemplate">REST API Reference for CreateTemplate Operation</seealso>
@@ -787,7 +787,7 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Deletes a configuration set. Configuration sets enable you to publish email sending
-        /// events. For information about using configuration sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+        /// events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
         /// SES Developer Guide</a>.
         /// 
         ///  
@@ -808,7 +808,7 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Deletes a configuration set. Configuration sets enable you to publish email sending
-        /// events. For information about using configuration sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+        /// events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
         /// SES Developer Guide</a>.
         /// 
         ///  
@@ -836,7 +836,7 @@ namespace Amazon.SimpleEmail
         /// <summary>
         /// Deletes a configuration set event destination. Configuration set event destinations
         /// are associated with configuration sets, which enable you to publish email sending
-        /// events. For information about using configuration sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+        /// events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
         /// SES Developer Guide</a>.
         /// 
         ///  
@@ -861,7 +861,7 @@ namespace Amazon.SimpleEmail
         /// <summary>
         /// Deletes a configuration set event destination. Configuration set event destinations
         /// are associated with configuration sets, which enable you to publish email sending
-        /// events. For information about using configuration sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+        /// events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
         /// SES Developer Guide</a>.
         /// 
         ///  
@@ -897,7 +897,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// By default, images and links used for tracking open and click events are hosted on
         /// domains operated by Amazon SES. You can configure a subdomain of your own to handle
-        /// these events. For information about using custom domains, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Amazon
+        /// these events. For information about using custom domains, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  <note> 
@@ -929,7 +929,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// By default, images and links used for tracking open and click events are hosted on
         /// domains operated by Amazon SES. You can configure a subdomain of your own to handle
-        /// these events. For information about using custom domains, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Amazon
+        /// these events. For information about using custom domains, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  <note> 
@@ -964,7 +964,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For more information about custom verification email templates, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
         /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  
@@ -985,7 +985,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For more information about custom verification email templates, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
         /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  
@@ -1061,7 +1061,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// Sending authorization is a feature that enables an identity owner to authorize other
         /// senders to use its identities. For information about using sending authorization,
-        /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+        /// see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -1091,7 +1091,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// Sending authorization is a feature that enables an identity owner to authorize other
         /// senders to use its identities. For information about using sending authorization,
-        /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+        /// see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -1118,7 +1118,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about managing IP address filters, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
+        /// For information about managing IP address filters, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -1139,7 +1139,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about managing IP address filters, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
+        /// For information about managing IP address filters, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -1166,7 +1166,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about managing receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
+        /// For information about managing receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -1190,7 +1190,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about managing receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
+        /// For information about managing receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -1224,7 +1224,7 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  </note> 
         /// <para>
-        /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+        /// For information about managing receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -1252,7 +1252,7 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  </note> 
         /// <para>
-        /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+        /// For information about managing receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -1351,7 +1351,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about setting up receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
+        /// For information about setting up receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -1373,7 +1373,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about setting up receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
+        /// For information about setting up receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -1397,7 +1397,7 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Returns the details of the specified configuration set. For information about using
-        /// configuration sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+        /// configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
         /// SES Developer Guide</a>.
         /// 
         ///  
@@ -1418,7 +1418,7 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Returns the details of the specified configuration set. For information about using
-        /// configuration sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+        /// configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
         /// SES Developer Guide</a>.
         /// 
         ///  
@@ -1448,7 +1448,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about setting up receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
+        /// For information about setting up receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -1475,7 +1475,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about setting up receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
+        /// For information about setting up receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -1508,7 +1508,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+        /// For information about managing receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -1532,7 +1532,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+        /// For information about managing receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -1600,7 +1600,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For more information about custom verification email templates, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
         /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  
@@ -1625,7 +1625,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For more information about custom verification email templates, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
         /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  
@@ -1682,7 +1682,7 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  
         /// <para>
-        /// For more information about creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
+        /// For more information about creating DNS records using DKIM tokens, go to the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
@@ -1725,7 +1725,7 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  
         /// <para>
-        /// For more information about creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
+        /// For more information about creating DNS records using DKIM tokens, go to the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
@@ -1796,7 +1796,7 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  
         /// <para>
-        /// For more information about using notifications with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+        /// For more information about using notifications with Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
@@ -1819,7 +1819,7 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  
         /// <para>
-        /// For more information about using notifications with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+        /// For more information about using notifications with Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
@@ -1851,7 +1851,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// Sending authorization is a feature that enables an identity owner to authorize other
         /// senders to use its identities. For information about using sending authorization,
-        /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+        /// see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -1881,7 +1881,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// Sending authorization is a feature that enables an identity owner to authorize other
         /// senders to use its identities. For information about using sending authorization,
-        /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+        /// see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -2178,7 +2178,7 @@ namespace Amazon.SimpleEmail
         /// <summary>
         /// Provides a list of the configuration sets associated with your Amazon SES account
         /// in the current AWS Region. For information about using configuration sets, see <a
-        /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring
+        /// href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring
         /// Your Amazon SES Sending Activity</a> in the <i>Amazon SES Developer Guide.</i> 
         /// 
         ///  
@@ -2202,7 +2202,7 @@ namespace Amazon.SimpleEmail
         /// <summary>
         /// Provides a list of the configuration sets associated with your Amazon SES account
         /// in the current AWS Region. For information about using configuration sets, see <a
-        /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring
+        /// href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring
         /// Your Amazon SES Sending Activity</a> in the <i>Amazon SES Developer Guide.</i> 
         /// 
         ///  
@@ -2235,7 +2235,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For more information about custom verification email templates, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
         /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  
@@ -2257,7 +2257,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For more information about custom verification email templates, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
         /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  
@@ -2366,7 +2366,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// Sending authorization is a feature that enables an identity owner to authorize other
         /// senders to use its identities. For information about using sending authorization,
-        /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+        /// see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -2396,7 +2396,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// Sending authorization is a feature that enables an identity owner to authorize other
         /// senders to use its identities. For information about using sending authorization,
-        /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+        /// see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -2423,7 +2423,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about managing IP address filters, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
+        /// For information about managing IP address filters, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -2444,7 +2444,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about managing IP address filters, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
+        /// For information about managing IP address filters, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -2474,7 +2474,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+        /// For information about managing receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -2498,7 +2498,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+        /// For information about managing receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -2608,6 +2608,46 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  PutConfigurationSetDeliveryOptions
+
+
+        /// <summary>
+        /// Adds or updates the delivery options for a configuration set.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutConfigurationSetDeliveryOptions service method.</param>
+        /// 
+        /// <returns>The response from the PutConfigurationSetDeliveryOptions service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.ConfigurationSetDoesNotExistException">
+        /// Indicates that the configuration set does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.InvalidDeliveryOptionsException">
+        /// Indicates that provided delivery option is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/PutConfigurationSetDeliveryOptions">REST API Reference for PutConfigurationSetDeliveryOptions Operation</seealso>
+        PutConfigurationSetDeliveryOptionsResponse PutConfigurationSetDeliveryOptions(PutConfigurationSetDeliveryOptionsRequest request);
+
+
+
+        /// <summary>
+        /// Adds or updates the delivery options for a configuration set.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutConfigurationSetDeliveryOptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutConfigurationSetDeliveryOptions service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.ConfigurationSetDoesNotExistException">
+        /// Indicates that the configuration set does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.InvalidDeliveryOptionsException">
+        /// Indicates that provided delivery option is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/PutConfigurationSetDeliveryOptions">REST API Reference for PutConfigurationSetDeliveryOptions Operation</seealso>
+        Task<PutConfigurationSetDeliveryOptionsResponse> PutConfigurationSetDeliveryOptionsAsync(PutConfigurationSetDeliveryOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  PutIdentityPolicy
 
 
@@ -2624,7 +2664,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// Sending authorization is a feature that enables an identity owner to authorize other
         /// senders to use its identities. For information about using sending authorization,
-        /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+        /// see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -2657,7 +2697,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// Sending authorization is a feature that enables an identity owner to authorize other
         /// senders to use its identities. For information about using sending authorization,
-        /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+        /// see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -2694,7 +2734,7 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  </note> 
         /// <para>
-        /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+        /// For information about managing receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -2727,7 +2767,7 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  </note> 
         /// <para>
-        /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+        /// For information about managing receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -2767,7 +2807,7 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  </note> 
         /// <para>
-        /// For information about receiving email through Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
+        /// For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -2799,7 +2839,7 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  </note> 
         /// <para>
-        /// For information about receiving email through Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
+        /// For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -2847,7 +2887,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// If your account is still in the Amazon SES sandbox, you may only send to verified
         /// addresses or domains, or to email addresses associated with the Amazon SES Mailbox
-        /// Simulator. For more information, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
+        /// Simulator. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
         /// Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide.</i> 
         /// </para>
         ///  </li> <li> 
@@ -2901,7 +2941,7 @@ namespace Amazon.SimpleEmail
         /// <exception cref="Amazon.SimpleEmail.Model.MailFromDomainNotVerifiedException">
         /// Indicates that the message could not be sent because Amazon SES could not read the
         /// MX record required to use the specified MAIL FROM domain. For information about editing
-        /// the custom MAIL FROM domain settings for an identity, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon
+        /// the custom MAIL FROM domain settings for an identity, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.MessageRejectedException">
@@ -2939,7 +2979,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// If your account is still in the Amazon SES sandbox, you may only send to verified
         /// addresses or domains, or to email addresses associated with the Amazon SES Mailbox
-        /// Simulator. For more information, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
+        /// Simulator. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
         /// Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide.</i> 
         /// </para>
         ///  </li> <li> 
@@ -2996,7 +3036,7 @@ namespace Amazon.SimpleEmail
         /// <exception cref="Amazon.SimpleEmail.Model.MailFromDomainNotVerifiedException">
         /// Indicates that the message could not be sent because Amazon SES could not read the
         /// MX record required to use the specified MAIL FROM domain. For information about editing
-        /// the custom MAIL FROM domain settings for an identity, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon
+        /// the custom MAIL FROM domain settings for an identity, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.MessageRejectedException">
@@ -3024,7 +3064,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// To use this operation, you must first create a custom verification email template.
         /// For more information about creating and using custom verification email templates,
-        /// see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+        /// see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
         /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  
@@ -3067,7 +3107,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// To use this operation, you must first create a custom verification email template.
         /// For more information about creating and using custom verification email templates,
-        /// see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+        /// see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
         /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  
@@ -3122,7 +3162,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// If your account is still in the Amazon SES sandbox, you may only send to verified
         /// addresses or domains, or to email addresses associated with the Amazon SES Mailbox
-        /// Simulator. For more information, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
+        /// Simulator. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
         /// Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide.</i> 
         /// </para>
         ///  </li> <li> 
@@ -3149,7 +3189,7 @@ namespace Amazon.SimpleEmail
         /// For every message that you send, the total number of recipients (including each recipient
         /// in the To:, CC: and BCC: fields) is counted against the maximum number of emails you
         /// can send in a 24-hour period (your <i>sending quota</i>). For more information about
-        /// sending quotas in Amazon SES, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Managing
+        /// sending quotas in Amazon SES, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Managing
         /// Your Amazon SES Sending Limits</a> in the <i>Amazon SES Developer Guide.</i> 
         /// </para>
         ///  </important>
@@ -3179,7 +3219,7 @@ namespace Amazon.SimpleEmail
         /// <exception cref="Amazon.SimpleEmail.Model.MailFromDomainNotVerifiedException">
         /// Indicates that the message could not be sent because Amazon SES could not read the
         /// MX record required to use the specified MAIL FROM domain. For information about editing
-        /// the custom MAIL FROM domain settings for an identity, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon
+        /// the custom MAIL FROM domain settings for an identity, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.MessageRejectedException">
@@ -3206,7 +3246,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// If your account is still in the Amazon SES sandbox, you may only send to verified
         /// addresses or domains, or to email addresses associated with the Amazon SES Mailbox
-        /// Simulator. For more information, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
+        /// Simulator. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
         /// Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide.</i> 
         /// </para>
         ///  </li> <li> 
@@ -3233,7 +3273,7 @@ namespace Amazon.SimpleEmail
         /// For every message that you send, the total number of recipients (including each recipient
         /// in the To:, CC: and BCC: fields) is counted against the maximum number of emails you
         /// can send in a 24-hour period (your <i>sending quota</i>). For more information about
-        /// sending quotas in Amazon SES, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Managing
+        /// sending quotas in Amazon SES, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Managing
         /// Your Amazon SES Sending Limits</a> in the <i>Amazon SES Developer Guide.</i> 
         /// </para>
         ///  </important>
@@ -3266,7 +3306,7 @@ namespace Amazon.SimpleEmail
         /// <exception cref="Amazon.SimpleEmail.Model.MailFromDomainNotVerifiedException">
         /// Indicates that the message could not be sent because Amazon SES could not read the
         /// MX record required to use the specified MAIL FROM domain. For information about editing
-        /// the custom MAIL FROM domain settings for an identity, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon
+        /// the custom MAIL FROM domain settings for an identity, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.MessageRejectedException">
@@ -3298,15 +3338,15 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You can only send email from <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">verified
+        /// You can only send email from <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">verified
         /// email addresses or domains</a>. If you try to send email from an address that isn't
         /// verified, the operation results in an "Email address not verified" error.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If your account is still in the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-access.html">Amazon
+        /// If your account is still in the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-access.html">Amazon
         /// SES sandbox</a>, you can only send email to other verified addresses in your account,
-        /// or to addresses that are associated with the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mailbox-simulator.html">Amazon
+        /// or to addresses that are associated with the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mailbox-simulator.html">Amazon
         /// SES mailbox simulator</a>.
         /// </para>
         ///  </li> <li> 
@@ -3337,7 +3377,7 @@ namespace Amazon.SimpleEmail
         /// parts. However, if Amazon SES has to modify the contents of your message (for example,
         /// if you use open and click tracking), 8-bit content isn't preserved. For this reason,
         /// we highly recommend that you encode all content that isn't 7-bit ASCII. For more information,
-        /// see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html#send-email-mime-encoding">MIME
+        /// see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html#send-email-mime-encoding">MIME
         /// Encoding</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  </li> </ul> 
@@ -3384,7 +3424,7 @@ namespace Amazon.SimpleEmail
         /// or <code>ReturnPathIdentityArn</code> parameters. If you only specify the <code>SourceIdentityArn</code>
         /// parameter, Amazon SES will set the From and Return Path addresses to the identity
         /// specified in <code>SourceIdentityArn</code>. For more information about sending authorization,
-        /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Using
+        /// see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Using
         /// Sending Authorization with Amazon SES</a> in the <i>Amazon SES Developer Guide.</i>
         /// 
         /// </para>
@@ -3393,7 +3433,7 @@ namespace Amazon.SimpleEmail
         /// For every message that you send, the total number of recipients (including each recipient
         /// in the To:, CC: and BCC: fields) is counted against the maximum number of emails you
         /// can send in a 24-hour period (your <i>sending quota</i>). For more information about
-        /// sending quotas in Amazon SES, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Managing
+        /// sending quotas in Amazon SES, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Managing
         /// Your Amazon SES Sending Limits</a> in the <i>Amazon SES Developer Guide.</i> 
         /// </para>
         ///  </li> </ul>
@@ -3423,7 +3463,7 @@ namespace Amazon.SimpleEmail
         /// <exception cref="Amazon.SimpleEmail.Model.MailFromDomainNotVerifiedException">
         /// Indicates that the message could not be sent because Amazon SES could not read the
         /// MX record required to use the specified MAIL FROM domain. For information about editing
-        /// the custom MAIL FROM domain settings for an identity, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon
+        /// the custom MAIL FROM domain settings for an identity, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.MessageRejectedException">
@@ -3452,15 +3492,15 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You can only send email from <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">verified
+        /// You can only send email from <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">verified
         /// email addresses or domains</a>. If you try to send email from an address that isn't
         /// verified, the operation results in an "Email address not verified" error.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If your account is still in the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-access.html">Amazon
+        /// If your account is still in the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-access.html">Amazon
         /// SES sandbox</a>, you can only send email to other verified addresses in your account,
-        /// or to addresses that are associated with the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mailbox-simulator.html">Amazon
+        /// or to addresses that are associated with the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mailbox-simulator.html">Amazon
         /// SES mailbox simulator</a>.
         /// </para>
         ///  </li> <li> 
@@ -3491,7 +3531,7 @@ namespace Amazon.SimpleEmail
         /// parts. However, if Amazon SES has to modify the contents of your message (for example,
         /// if you use open and click tracking), 8-bit content isn't preserved. For this reason,
         /// we highly recommend that you encode all content that isn't 7-bit ASCII. For more information,
-        /// see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html#send-email-mime-encoding">MIME
+        /// see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html#send-email-mime-encoding">MIME
         /// Encoding</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  </li> </ul> 
@@ -3538,7 +3578,7 @@ namespace Amazon.SimpleEmail
         /// or <code>ReturnPathIdentityArn</code> parameters. If you only specify the <code>SourceIdentityArn</code>
         /// parameter, Amazon SES will set the From and Return Path addresses to the identity
         /// specified in <code>SourceIdentityArn</code>. For more information about sending authorization,
-        /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Using
+        /// see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Using
         /// Sending Authorization with Amazon SES</a> in the <i>Amazon SES Developer Guide.</i>
         /// 
         /// </para>
@@ -3547,7 +3587,7 @@ namespace Amazon.SimpleEmail
         /// For every message that you send, the total number of recipients (including each recipient
         /// in the To:, CC: and BCC: fields) is counted against the maximum number of emails you
         /// can send in a 24-hour period (your <i>sending quota</i>). For more information about
-        /// sending quotas in Amazon SES, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Managing
+        /// sending quotas in Amazon SES, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Managing
         /// Your Amazon SES Sending Limits</a> in the <i>Amazon SES Developer Guide.</i> 
         /// </para>
         ///  </li> </ul>
@@ -3580,7 +3620,7 @@ namespace Amazon.SimpleEmail
         /// <exception cref="Amazon.SimpleEmail.Model.MailFromDomainNotVerifiedException">
         /// Indicates that the message could not be sent because Amazon SES could not read the
         /// MX record required to use the specified MAIL FROM domain. For information about editing
-        /// the custom MAIL FROM domain settings for an identity, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon
+        /// the custom MAIL FROM domain settings for an identity, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.MessageRejectedException">
@@ -3616,7 +3656,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// If your account is still in the Amazon SES sandbox, you may only send to verified
         /// addresses or domains, or to email addresses associated with the Amazon SES Mailbox
-        /// Simulator. For more information, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
+        /// Simulator. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
         /// Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide.</i> 
         /// </para>
         ///  </li> <li> 
@@ -3649,7 +3689,7 @@ namespace Amazon.SimpleEmail
         ///  
         /// <para>
         /// For these reasons, we highly recommend that you set up Amazon SES to send you notifications
-        /// when Rendering Failure events occur. For more information, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Sending
+        /// when Rendering Failure events occur. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Sending
         /// Personalized Email Using the Amazon SES API</a> in the <i>Amazon Simple Email Service
         /// Developer Guide</i>.
         /// </para>
@@ -3680,7 +3720,7 @@ namespace Amazon.SimpleEmail
         /// <exception cref="Amazon.SimpleEmail.Model.MailFromDomainNotVerifiedException">
         /// Indicates that the message could not be sent because Amazon SES could not read the
         /// MX record required to use the specified MAIL FROM domain. For information about editing
-        /// the custom MAIL FROM domain settings for an identity, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon
+        /// the custom MAIL FROM domain settings for an identity, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.MessageRejectedException">
@@ -3717,7 +3757,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// If your account is still in the Amazon SES sandbox, you may only send to verified
         /// addresses or domains, or to email addresses associated with the Amazon SES Mailbox
-        /// Simulator. For more information, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
+        /// Simulator. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
         /// Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide.</i> 
         /// </para>
         ///  </li> <li> 
@@ -3750,7 +3790,7 @@ namespace Amazon.SimpleEmail
         ///  
         /// <para>
         /// For these reasons, we highly recommend that you set up Amazon SES to send you notifications
-        /// when Rendering Failure events occur. For more information, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Sending
+        /// when Rendering Failure events occur. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Sending
         /// Personalized Email Using the Amazon SES API</a> in the <i>Amazon Simple Email Service
         /// Developer Guide</i>.
         /// </para>
@@ -3784,7 +3824,7 @@ namespace Amazon.SimpleEmail
         /// <exception cref="Amazon.SimpleEmail.Model.MailFromDomainNotVerifiedException">
         /// Indicates that the message could not be sent because Amazon SES could not read the
         /// MX record required to use the specified MAIL FROM domain. For information about editing
-        /// the custom MAIL FROM domain settings for an identity, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon
+        /// the custom MAIL FROM domain settings for an identity, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.MessageRejectedException">
@@ -3813,7 +3853,7 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  </note> 
         /// <para>
-        /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+        /// For information about managing receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -3842,7 +3882,7 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  </note> 
         /// <para>
-        /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+        /// For information about managing receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -3894,7 +3934,7 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  
         /// <para>
-        /// For more information about Easy DKIM signing, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
+        /// For more information about Easy DKIM signing, go to the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
@@ -3933,7 +3973,7 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  
         /// <para>
-        /// For more information about Easy DKIM signing, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
+        /// For more information about Easy DKIM signing, go to the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
@@ -3968,7 +4008,7 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  
         /// <para>
-        /// For more information about using notifications with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+        /// For more information about using notifications with Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
@@ -3997,7 +4037,7 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  
         /// <para>
-        /// For more information about using notifications with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+        /// For more information about using notifications with Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
@@ -4026,7 +4066,7 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  
         /// <para>
-        /// For more information about using notifications with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+        /// For more information about using notifications with Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
@@ -4049,7 +4089,7 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  
         /// <para>
-        /// For more information about using notifications with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+        /// For more information about using notifications with Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
@@ -4076,7 +4116,7 @@ namespace Amazon.SimpleEmail
         /// To send emails using the specified MAIL FROM domain, you must add an MX record to
         /// your MAIL FROM domain's DNS settings. If you want your emails to pass Sender Policy
         /// Framework (SPF) checks, you must also add or update an SPF record. For more information,
-        /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html">Amazon
+        /// see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  </important> 
@@ -4101,7 +4141,7 @@ namespace Amazon.SimpleEmail
         /// To send emails using the specified MAIL FROM domain, you must add an MX record to
         /// your MAIL FROM domain's DNS settings. If you want your emails to pass Sender Policy
         /// Framework (SPF) checks, you must also add or update an SPF record. For more information,
-        /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html">Amazon
+        /// see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  </important> 
@@ -4137,7 +4177,7 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  
         /// <para>
-        /// For more information about feedback notification, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+        /// For more information about feedback notification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
@@ -4163,7 +4203,7 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  
         /// <para>
-        /// For more information about feedback notification, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+        /// For more information about feedback notification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
@@ -4186,7 +4226,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about managing receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
+        /// For information about managing receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -4213,7 +4253,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about managing receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
+        /// For information about managing receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -4355,7 +4395,7 @@ namespace Amazon.SimpleEmail
         /// Updates the event destination of a configuration set. Event destinations are associated
         /// with configuration sets, which enable you to publish email sending events to Amazon
         /// CloudWatch, Amazon Kinesis Firehose, or Amazon Simple Notification Service (Amazon
-        /// SNS). For information about using configuration sets, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring
+        /// SNS). For information about using configuration sets, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring
         /// Your Amazon SES Sending Activity</a> in the <i>Amazon SES Developer Guide.</i> 
         /// 
         ///  <note> 
@@ -4399,7 +4439,7 @@ namespace Amazon.SimpleEmail
         /// Updates the event destination of a configuration set. Event destinations are associated
         /// with configuration sets, which enable you to publish email sending events to Amazon
         /// CloudWatch, Amazon Kinesis Firehose, or Amazon Simple Notification Service (Amazon
-        /// SNS). For information about using configuration sets, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring
+        /// SNS). For information about using configuration sets, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring
         /// Your Amazon SES Sending Activity</a> in the <i>Amazon SES Developer Guide.</i> 
         /// 
         ///  <note> 
@@ -4555,7 +4595,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// By default, images and links used for tracking open and click events are hosted on
         /// domains operated by Amazon SES. You can configure a subdomain of your own to handle
-        /// these events. For information about using custom domains, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Amazon
+        /// these events. For information about using custom domains, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
@@ -4595,7 +4635,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// By default, images and links used for tracking open and click events are hosted on
         /// domains operated by Amazon SES. You can configure a subdomain of your own to handle
-        /// these events. For information about using custom domains, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Amazon
+        /// these events. For information about using custom domains, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
@@ -4638,7 +4678,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For more information about custom verification email templates, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
         /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  
@@ -4670,7 +4710,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For more information about custom verification email templates, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
         /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  
@@ -4708,7 +4748,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about managing receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
+        /// For information about managing receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -4722,24 +4762,24 @@ namespace Amazon.SimpleEmail
         /// <exception cref="Amazon.SimpleEmail.Model.InvalidLambdaFunctionException">
         /// Indicates that the provided AWS Lambda function is invalid, or that Amazon SES could
         /// not execute the provided function, possibly due to permissions issues. For information
-        /// about giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+        /// about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.InvalidS3ConfigurationException">
         /// Indicates that the provided Amazon S3 bucket or AWS KMS encryption key is invalid,
         /// or that Amazon SES could not publish to the bucket, possibly due to permissions issues.
-        /// For information about giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+        /// For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.InvalidSnsTopicException">
         /// Indicates that the provided Amazon SNS topic is invalid, or that Amazon SES could
         /// not publish to the topic, possibly due to permissions issues. For information about
-        /// giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+        /// giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
         /// Indicates that a resource could not be created because of service limits. For a list
-        /// of Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.RuleDoesNotExistException">
@@ -4758,7 +4798,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For information about managing receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
+        /// For information about managing receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
@@ -4775,24 +4815,24 @@ namespace Amazon.SimpleEmail
         /// <exception cref="Amazon.SimpleEmail.Model.InvalidLambdaFunctionException">
         /// Indicates that the provided AWS Lambda function is invalid, or that Amazon SES could
         /// not execute the provided function, possibly due to permissions issues. For information
-        /// about giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+        /// about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.InvalidS3ConfigurationException">
         /// Indicates that the provided Amazon S3 bucket or AWS KMS encryption key is invalid,
         /// or that Amazon SES could not publish to the bucket, possibly due to permissions issues.
-        /// For information about giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+        /// For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.InvalidSnsTopicException">
         /// Indicates that the provided Amazon SNS topic is invalid, or that Amazon SES could
         /// not publish to the topic, possibly due to permissions issues. For information about
-        /// giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+        /// giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
         /// Indicates that a resource could not be created because of service limits. For a list
-        /// of Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.RuleDoesNotExistException">
@@ -4812,7 +4852,7 @@ namespace Amazon.SimpleEmail
         /// <summary>
         /// Updates an email template. Email templates enable you to send personalized email to
         /// one or more destinations in a single API operation. For more information, see the
-        /// <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon
+        /// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon
         /// SES Developer Guide</a>.
         /// 
         ///  
@@ -4839,7 +4879,7 @@ namespace Amazon.SimpleEmail
         /// <summary>
         /// Updates an email template. Email templates enable you to send personalized email to
         /// one or more destinations in a single API operation. For more information, see the
-        /// <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon
+        /// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon
         /// SES Developer Guide</a>.
         /// 
         ///  
@@ -4870,26 +4910,52 @@ namespace Amazon.SimpleEmail
 
 
         /// <summary>
-        /// Returns a set of DKIM tokens for a domain. DKIM <i>tokens</i> are character strings
-        /// that represent your domain's identity. Using these tokens, you will need to create
-        /// DNS CNAME records that point to DKIM public keys hosted by Amazon SES. Amazon Web
-        /// Services will eventually detect that you have updated your DNS records; this detection
-        /// process may take up to 72 hours. Upon successful detection, Amazon SES will be able
-        /// to DKIM-sign email originating from that domain.
+        /// Returns a set of DKIM tokens for a domain identity.
         /// 
+        ///  <important> 
+        /// <para>
+        /// When you execute the <code>VerifyDomainDkim</code> operation, the domain that you
+        /// specify is added to the list of identities that are associated with your account.
+        /// This is true even if you haven't already associated the domain with your account by
+        /// using the <code>VerifyDomainIdentity</code> operation. However, you can't send email
+        /// from the domain until you either successfully <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-domains.html">verify
+        /// it</a> or you successfully <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">set
+        /// up DKIM for it</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// You use the tokens that are generated by this operation to create CNAME records. When
+        /// Amazon SES detects that you've added these records to the DNS configuration for a
+        /// domain, you can start sending email from that domain. You can start sending email
+        /// even if you haven't added the TXT record provided by the VerifyDomainIdentity operation
+        /// to the DNS configuration for your domain. All email that you send from the domain
+        /// is authenticated using DKIM.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create the CNAME records for DKIM authentication, use the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Name</b>: <i>token</i>._domainkey.<i>example.com</i> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Type</b>: CNAME
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Value</b>: <i>token</i>.dkim.amazonses.com
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// In the preceding example, replace <i>token</i> with one of the tokens that are generated
+        /// when you execute this operation. Replace <i>example.com</i> with your domain. Repeat
+        /// this process for each token that's generated by this operation.
+        /// </para>
         ///  
         /// <para>
         /// You can execute this operation no more than once per second.
-        /// </para>
-        ///  
-        /// <para>
-        /// To enable or disable Easy DKIM signing for a domain, use the <code>SetIdentityDkimEnabled</code>
-        /// operation.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
-        /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the VerifyDomainDkim service method.</param>
@@ -4901,26 +4967,52 @@ namespace Amazon.SimpleEmail
 
 
         /// <summary>
-        /// Returns a set of DKIM tokens for a domain. DKIM <i>tokens</i> are character strings
-        /// that represent your domain's identity. Using these tokens, you will need to create
-        /// DNS CNAME records that point to DKIM public keys hosted by Amazon SES. Amazon Web
-        /// Services will eventually detect that you have updated your DNS records; this detection
-        /// process may take up to 72 hours. Upon successful detection, Amazon SES will be able
-        /// to DKIM-sign email originating from that domain.
+        /// Returns a set of DKIM tokens for a domain identity.
         /// 
+        ///  <important> 
+        /// <para>
+        /// When you execute the <code>VerifyDomainDkim</code> operation, the domain that you
+        /// specify is added to the list of identities that are associated with your account.
+        /// This is true even if you haven't already associated the domain with your account by
+        /// using the <code>VerifyDomainIdentity</code> operation. However, you can't send email
+        /// from the domain until you either successfully <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-domains.html">verify
+        /// it</a> or you successfully <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">set
+        /// up DKIM for it</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// You use the tokens that are generated by this operation to create CNAME records. When
+        /// Amazon SES detects that you've added these records to the DNS configuration for a
+        /// domain, you can start sending email from that domain. You can start sending email
+        /// even if you haven't added the TXT record provided by the VerifyDomainIdentity operation
+        /// to the DNS configuration for your domain. All email that you send from the domain
+        /// is authenticated using DKIM.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create the CNAME records for DKIM authentication, use the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Name</b>: <i>token</i>._domainkey.<i>example.com</i> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Type</b>: CNAME
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Value</b>: <i>token</i>.dkim.amazonses.com
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// In the preceding example, replace <i>token</i> with one of the tokens that are generated
+        /// when you execute this operation. Replace <i>example.com</i> with your domain. Repeat
+        /// this process for each token that's generated by this operation.
+        /// </para>
         ///  
         /// <para>
         /// You can execute this operation no more than once per second.
-        /// </para>
-        ///  
-        /// <para>
-        /// To enable or disable Easy DKIM signing for a domain, use the <code>SetIdentityDkimEnabled</code>
-        /// operation.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
-        /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the VerifyDomainDkim service method.</param>
@@ -4940,7 +5032,7 @@ namespace Amazon.SimpleEmail
         /// <summary>
         /// Adds a domain to the list of identities for your Amazon SES account in the current
         /// AWS Region and attempts to verify it. For more information about verifying domains,
-        /// see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
+        /// see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
         /// Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide.</i> 
         /// 
         ///  
@@ -4959,7 +5051,7 @@ namespace Amazon.SimpleEmail
         /// <summary>
         /// Adds a domain to the list of identities for your Amazon SES account in the current
         /// AWS Region and attempts to verify it. For more information about verifying domains,
-        /// see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
+        /// see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
         /// Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide.</i> 
         /// 
         ///  

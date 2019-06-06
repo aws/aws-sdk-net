@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeConfigurationSet operation
+    /// Response Unmarshaller for PutConfigurationSetDeliveryOptions operation
     /// </summary>  
-    public class DescribeConfigurationSetResponseUnmarshaller : XmlResponseUnmarshaller
+    public class PutConfigurationSetDeliveryOptionsResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            DescribeConfigurationSetResponse response = new DescribeConfigurationSetResponse();
+            PutConfigurationSetDeliveryOptionsResponse response = new PutConfigurationSetDeliveryOptionsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("DescribeConfigurationSetResult", 2))
+                    if(context.TestExpression("PutConfigurationSetDeliveryOptionsResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,7 +67,8 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, DescribeConfigurationSetResponse response)
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId="response")]
+        private static void UnmarshallResult(XmlUnmarshallerContext context, PutConfigurationSetDeliveryOptionsResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -81,37 +82,6 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("ConfigurationSet", targetDepth))
-                    {
-                        var unmarshaller = ConfigurationSetUnmarshaller.Instance;
-                        response.ConfigurationSet = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("DeliveryOptions", targetDepth))
-                    {
-                        var unmarshaller = DeliveryOptionsUnmarshaller.Instance;
-                        response.DeliveryOptions = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("EventDestinations/member", targetDepth))
-                    {
-                        var unmarshaller = EventDestinationUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        response.EventDestinations.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("ReputationOptions", targetDepth))
-                    {
-                        var unmarshaller = ReputationOptionsUnmarshaller.Instance;
-                        response.ReputationOptions = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("TrackingOptions", targetDepth))
-                    {
-                        var unmarshaller = TrackingOptionsUnmarshaller.Instance;
-                        response.TrackingOptions = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                 } 
            }
 
@@ -133,11 +103,15 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             {
                 return new ConfigurationSetDoesNotExistException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDeliveryOptions"))
+            {
+                return new InvalidDeliveryOptionsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonSimpleEmailServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static DescribeConfigurationSetResponseUnmarshaller _instance = new DescribeConfigurationSetResponseUnmarshaller();        
+        private static PutConfigurationSetDeliveryOptionsResponseUnmarshaller _instance = new PutConfigurationSetDeliveryOptionsResponseUnmarshaller();        
 
-        internal static DescribeConfigurationSetResponseUnmarshaller GetInstance()
+        internal static PutConfigurationSetDeliveryOptionsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -145,7 +119,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeConfigurationSetResponseUnmarshaller Instance
+        public static PutConfigurationSetDeliveryOptionsResponseUnmarshaller Instance
         {
             get
             {

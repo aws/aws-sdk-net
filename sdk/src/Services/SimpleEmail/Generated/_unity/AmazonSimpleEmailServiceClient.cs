@@ -39,13 +39,13 @@ namespace Amazon.SimpleEmail
     /// <para>
     ///  This document contains reference information for the <a href="https://aws.amazon.com/ses/">Amazon
     /// Simple Email Service</a> (Amazon SES) API, version 2010-12-01. This document is best
-    /// used in conjunction with the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+    /// used in conjunction with the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
     /// SES Developer Guide</a>. 
     /// </para>
     ///  <note> 
     /// <para>
-    ///  For a list of Amazon SES endpoints to use in service requests, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions
-    /// and Amazon SES</a> in the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+    ///  For a list of Amazon SES endpoints to use in service requests, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions
+    /// and Amazon SES</a> in the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
     ///  </note>
@@ -1494,6 +1494,35 @@ namespace Amazon.SimpleEmail
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
                     AmazonServiceResult<ListVerifiedEmailAddressesRequest,ListVerifiedEmailAddressesResponse> responseObject 
                             = new AmazonServiceResult<ListVerifiedEmailAddressesRequest,ListVerifiedEmailAddressesResponse>((ListVerifiedEmailAddressesRequest)req, (ListVerifiedEmailAddressesResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  PutConfigurationSetDeliveryOptions
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutConfigurationSetDeliveryOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutConfigurationSetDeliveryOptions operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/PutConfigurationSetDeliveryOptions">REST API Reference for PutConfigurationSetDeliveryOptions Operation</seealso>
+        public virtual void PutConfigurationSetDeliveryOptionsAsync(PutConfigurationSetDeliveryOptionsRequest request, AmazonServiceCallback<PutConfigurationSetDeliveryOptionsRequest, PutConfigurationSetDeliveryOptionsResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = PutConfigurationSetDeliveryOptionsRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = PutConfigurationSetDeliveryOptionsResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<PutConfigurationSetDeliveryOptionsRequest,PutConfigurationSetDeliveryOptionsResponse> responseObject 
+                            = new AmazonServiceResult<PutConfigurationSetDeliveryOptionsRequest,PutConfigurationSetDeliveryOptionsResponse>((PutConfigurationSetDeliveryOptionsRequest)req, (PutConfigurationSetDeliveryOptionsResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
             BeginInvoke(request, invokeOptions, options, callbackHelper);

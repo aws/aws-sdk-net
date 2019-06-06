@@ -28,40 +28,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteReceiptFilter operation.
-    /// Deletes the specified IP address filter.
-    /// 
-    ///  
-    /// <para>
-    /// For information about managing IP address filters, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
-    /// SES Developer Guide</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// You can execute this operation no more than once per second.
-    /// </para>
+    /// Specifies whether messages that use the configuration set are required to use Transport
+    /// Layer Security (TLS).
     /// </summary>
-    public partial class DeleteReceiptFilterRequest : AmazonSimpleEmailServiceRequest
+    public partial class DeliveryOptions
     {
-        private string _filterName;
+        private TlsPolicy _tlsPolicy;
 
         /// <summary>
-        /// Gets and sets the property FilterName. 
+        /// Gets and sets the property TlsPolicy. 
         /// <para>
-        /// The name of the IP address filter to delete.
+        /// Specifies whether messages that use the configuration set are required to use Transport
+        /// Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered
+        /// if a TLS connection can be established. If the value is <code>Optional</code>, messages
+        /// can be delivered in plain text if a TLS connection can't be established.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string FilterName
+        public TlsPolicy TlsPolicy
         {
-            get { return this._filterName; }
-            set { this._filterName = value; }
+            get { return this._tlsPolicy; }
+            set { this._tlsPolicy = value; }
         }
 
-        // Check to see if FilterName property is set
-        internal bool IsSetFilterName()
+        // Check to see if TlsPolicy property is set
+        internal bool IsSetTlsPolicy()
         {
-            return this._filterName != null;
+            return this._tlsPolicy != null;
         }
 
     }

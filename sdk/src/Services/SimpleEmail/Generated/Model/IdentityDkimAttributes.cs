@@ -39,7 +39,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property DkimEnabled. 
         /// <para>
-        /// True if DKIM signing is enabled for email sent from the identity; false otherwise.
+        /// Is true if DKIM signing is enabled for email sent from the identity. It's false otherwise.
         /// The default value is true.
         /// </para>
         /// </summary>
@@ -60,15 +60,15 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property DkimTokens. 
         /// <para>
         /// A set of character strings that represent the domain's identity. Using these tokens,
-        /// you will need to create DNS CNAME records that point to DKIM public keys hosted by
-        /// Amazon SES. Amazon Web Services will eventually detect that you have updated your
-        /// DNS records; this detection process may take up to 72 hours. Upon successful detection,
-        /// Amazon SES will be able to DKIM-sign email originating from that domain. (This only
-        /// applies to domain identities, not email address identities.)
+        /// you need to create DNS CNAME records that point to DKIM public keys that are hosted
+        /// by Amazon SES. Amazon Web Services eventually detects that you've updated your DNS
+        /// records. This detection process might take up to 72 hours. After successful detection,
+        /// Amazon SES is able to DKIM-sign email originating from that domain. (This only applies
+        /// to domain identities, not email address identities.)
         /// </para>
         ///  
         /// <para>
-        /// For more information about creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
+        /// For more information about creating DNS records using DKIM tokens, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         /// </summary>

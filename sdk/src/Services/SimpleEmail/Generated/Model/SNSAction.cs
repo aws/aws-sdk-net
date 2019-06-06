@@ -39,7 +39,7 @@ namespace Amazon.SimpleEmail.Model
     /// If you own the Amazon SNS topic, you don't need to do anything to give Amazon SES
     /// permission to publish emails to it. However, if you don't own the Amazon SNS topic,
     /// you need to attach a policy to the topic to give Amazon SES permissions to access
-    /// it. For information about giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+    /// it. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
     ///  <important> 
@@ -51,7 +51,7 @@ namespace Amazon.SimpleEmail.Model
     ///  </important> 
     /// <para>
     /// For information about using a receipt rule to publish an Amazon SNS notification,
-    /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-sns.html">Amazon
+    /// see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-sns.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -86,7 +86,7 @@ namespace Amazon.SimpleEmail.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the Amazon SNS topic to notify. An example of an
         /// Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For
-        /// more information about Amazon SNS topics, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
+        /// more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
         /// SNS Developer Guide</a>.
         /// </para>
         /// </summary>

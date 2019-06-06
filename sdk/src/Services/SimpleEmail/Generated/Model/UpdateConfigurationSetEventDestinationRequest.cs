@@ -32,7 +32,7 @@ namespace Amazon.SimpleEmail.Model
     /// Updates the event destination of a configuration set. Event destinations are associated
     /// with configuration sets, which enable you to publish email sending events to Amazon
     /// CloudWatch, Amazon Kinesis Firehose, or Amazon Simple Notification Service (Amazon
-    /// SNS). For information about using configuration sets, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring
+    /// SNS). For information about using configuration sets, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring
     /// Your Amazon SES Sending Activity</a> in the <i>Amazon SES Developer Guide.</i> 
     /// 
     ///  <note> 

@@ -45,15 +45,15 @@ namespace Amazon.SimpleEmail.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// You can only send email from <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">verified
+    /// You can only send email from <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">verified
     /// email addresses or domains</a>. If you try to send email from an address that isn't
     /// verified, the operation results in an "Email address not verified" error.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If your account is still in the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-access.html">Amazon
+    /// If your account is still in the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-access.html">Amazon
     /// SES sandbox</a>, you can only send email to other verified addresses in your account,
-    /// or to addresses that are associated with the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mailbox-simulator.html">Amazon
+    /// or to addresses that are associated with the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mailbox-simulator.html">Amazon
     /// SES mailbox simulator</a>.
     /// </para>
     ///  </li> <li> 
@@ -84,7 +84,7 @@ namespace Amazon.SimpleEmail.Model
     /// parts. However, if Amazon SES has to modify the contents of your message (for example,
     /// if you use open and click tracking), 8-bit content isn't preserved. For this reason,
     /// we highly recommend that you encode all content that isn't 7-bit ASCII. For more information,
-    /// see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html#send-email-mime-encoding">MIME
+    /// see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html#send-email-mime-encoding">MIME
     /// Encoding</a> in the <i>Amazon SES Developer Guide</i>.
     /// </para>
     ///  </li> </ul> 
@@ -131,7 +131,7 @@ namespace Amazon.SimpleEmail.Model
     /// or <code>ReturnPathIdentityArn</code> parameters. If you only specify the <code>SourceIdentityArn</code>
     /// parameter, Amazon SES will set the From and Return Path addresses to the identity
     /// specified in <code>SourceIdentityArn</code>. For more information about sending authorization,
-    /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Using
+    /// see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Using
     /// Sending Authorization with Amazon SES</a> in the <i>Amazon SES Developer Guide.</i>
     /// 
     /// </para>
@@ -140,7 +140,7 @@ namespace Amazon.SimpleEmail.Model
     /// For every message that you send, the total number of recipients (including each recipient
     /// in the To:, CC: and BCC: fields) is counted against the maximum number of emails you
     /// can send in a 24-hour period (your <i>sending quota</i>). For more information about
-    /// sending quotas in Amazon SES, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Managing
+    /// sending quotas in Amazon SES, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Managing
     /// Your Amazon SES Sending Limits</a> in the <i>Amazon SES Developer Guide.</i> 
     /// </para>
     ///  </li> </ul>
@@ -164,7 +164,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Instantiates SendRawEmailRequest with the parameterized properties
         /// </summary>
-        /// <param name="rawMessage">The raw email message itself. The message has to meet the following criteria: <ul> <li> The message has to contain a header and a body, separated by a blank line. </li> <li> All of the required header fields must be present in the message. </li> <li> Each part of a multipart MIME message must be formatted properly. </li> <li> Attachments must be of a content type that Amazon SES supports. For a list on unsupported content types, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported Attachment Types</a> in the <i>Amazon SES Developer Guide</i>. </li> <li> The entire message must be base64-encoded. </li> <li> If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, we highly recommend that you encode that content. For more information, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending Raw Email</a> in the <i>Amazon SES Developer Guide</i>. </li> <li> Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC 5321</a>, the maximum length of each line of text, including the &lt;CRLF&gt;, must not exceed 1,000 characters. </li> </ul></param>
+        /// <param name="rawMessage">The raw email message itself. The message has to meet the following criteria: <ul> <li> The message has to contain a header and a body, separated by a blank line. </li> <li> All of the required header fields must be present in the message. </li> <li> Each part of a multipart MIME message must be formatted properly. </li> <li> Attachments must be of a content type that Amazon SES supports. For a list on unsupported content types, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported Attachment Types</a> in the <i>Amazon SES Developer Guide</i>. </li> <li> The entire message must be base64-encoded. </li> <li> If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, we highly recommend that you encode that content. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending Raw Email</a> in the <i>Amazon SES Developer Guide</i>. </li> <li> Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC 5321</a>, the maximum length of each line of text, including the &lt;CRLF&gt;, must not exceed 1,000 characters. </li> </ul></param>
         public SendRawEmailRequest(RawMessage rawMessage)
         {
             _rawMessage = rawMessage;
@@ -223,7 +223,7 @@ namespace Amazon.SimpleEmail.Model
         ///  <note> 
         /// <para>
         /// For information about when to use this parameter, see the description of <code>SendRawEmail</code>
-        /// in this guide, or see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+        /// in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  </note>
@@ -260,7 +260,7 @@ namespace Amazon.SimpleEmail.Model
         ///  </li> <li> 
         /// <para>
         /// Attachments must be of a content type that Amazon SES supports. For a list on unsupported
-        /// content types, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported
+        /// content types, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported
         /// Attachment Types</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -271,7 +271,7 @@ namespace Amazon.SimpleEmail.Model
         /// <para>
         /// If any of the MIME parts in your message contain content that is outside of the 7-bit
         /// ASCII character range, we highly recommend that you encode that content. For more
-        /// information, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending
+        /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending
         /// Raw Email</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -319,7 +319,7 @@ namespace Amazon.SimpleEmail.Model
         ///  <note> 
         /// <para>
         /// For information about when to use this parameter, see the description of <code>SendRawEmail</code>
-        /// in this guide, or see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+        /// in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  </note>
@@ -398,7 +398,7 @@ namespace Amazon.SimpleEmail.Model
         ///  <note> 
         /// <para>
         /// For information about when to use this parameter, see the description of <code>SendRawEmail</code>
-        /// in this guide, or see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+        /// in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  </note>

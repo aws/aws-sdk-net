@@ -31,7 +31,7 @@ namespace Amazon.SimpleEmail.Model
     /// Container for the parameters to the DeleteConfigurationSetEventDestination operation.
     /// Deletes a configuration set event destination. Configuration set event destinations
     /// are associated with configuration sets, which enable you to publish email sending
-    /// events. For information about using configuration sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+    /// events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
     /// SES Developer Guide</a>.
     /// 
     ///  

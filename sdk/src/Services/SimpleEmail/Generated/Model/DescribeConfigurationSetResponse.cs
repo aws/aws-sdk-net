@@ -29,12 +29,13 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Represents the details of a configuration set. Configuration sets enable you to publish
-    /// email sending events. For information about using configuration sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+    /// email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
     /// SES Developer Guide</a>.
     /// </summary>
     public partial class DescribeConfigurationSetResponse : AmazonWebServiceResponse
     {
         private ConfigurationSet _configurationSet;
+        private DeliveryOptions _deliveryOptions;
         private List<EventDestination> _eventDestinations = new List<EventDestination>();
         private ReputationOptions _reputationOptions;
         private TrackingOptions _trackingOptions;
@@ -55,6 +56,21 @@ namespace Amazon.SimpleEmail.Model
         internal bool IsSetConfigurationSet()
         {
             return this._configurationSet != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeliveryOptions.
+        /// </summary>
+        public DeliveryOptions DeliveryOptions
+        {
+            get { return this._deliveryOptions; }
+            set { this._deliveryOptions = value; }
+        }
+
+        // Check to see if DeliveryOptions property is set
+        internal bool IsSetDeliveryOptions()
+        {
+            return this._deliveryOptions != null;
         }
 
         /// <summary>

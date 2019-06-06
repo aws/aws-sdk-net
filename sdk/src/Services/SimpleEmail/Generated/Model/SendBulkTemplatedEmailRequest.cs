@@ -50,7 +50,7 @@ namespace Amazon.SimpleEmail.Model
     /// <para>
     /// If your account is still in the Amazon SES sandbox, you may only send to verified
     /// addresses or domains, or to email addresses associated with the Amazon SES Mailbox
-    /// Simulator. For more information, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
+    /// Simulator. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
     /// Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide.</i> 
     /// </para>
     ///  </li> <li> 
@@ -235,7 +235,7 @@ namespace Amazon.SimpleEmail.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about sending authorization, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+        /// For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
@@ -256,14 +256,14 @@ namespace Amazon.SimpleEmail.Model
         /// <para>
         /// The email address that is sending the email. This email address must be either individually
         /// verified with Amazon SES, or from a domain that has been verified with Amazon SES.
-        /// For information about verifying identities, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+        /// For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  
         /// <para>
         /// If you are sending on behalf of another user and have been permitted to do so by a
         /// sending authorization policy, then you must also specify the <code>SourceArn</code>
-        /// parameter. For more information about sending authorization, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+        /// parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  <note> 
@@ -309,7 +309,7 @@ namespace Amazon.SimpleEmail.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about sending authorization, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+        /// For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         /// </summary>

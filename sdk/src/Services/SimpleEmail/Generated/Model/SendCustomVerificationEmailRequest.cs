@@ -37,7 +37,7 @@ namespace Amazon.SimpleEmail.Model
     /// <para>
     /// To use this operation, you must first create a custom verification email template.
     /// For more information about creating and using custom verification email templates,
-    /// see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+    /// see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
     /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
     /// </para>
     ///  
