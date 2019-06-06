@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// Details on a load balancer that is used with a service.
+    /// Details on a load balancer to be used with a service or task set.
     /// 
     ///  
     /// <para>
@@ -104,7 +104,12 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
         /// <para>
-        /// The name of a load balancer.
+        /// The name of the load balancer to associate with the Amazon ECS service or task set.
+        /// </para>
+        ///  
+        /// <para>
+        /// A load balancer name is only specified when using a classic load balancer. If you
+        /// are using an application load balancer or a network load balancer this should be omitted.
         /// </para>
         /// </summary>
         public string LoadBalancerName
@@ -123,9 +128,18 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property TargetGroupArn. 
         /// <para>
         /// The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group or
-        /// groups associated with a service. For services using the <code>ECS</code> deployment
-        /// controller, you are limited to one target group. For services using the <code>CODE_DEPLOY</code>
-        /// deployment controller, you are required to define two target groups for the load balancer.
+        /// groups associated with a service or task set.
+        /// </para>
+        ///  
+        /// <para>
+        /// A target group ARN is only specified when using an application load balancer or a
+        /// network load balancer. If you are using a classic load balancer this should be omitted.
+        /// </para>
+        ///  
+        /// <para>
+        /// For services using the <code>ECS</code> deployment controller, you are limited to
+        /// one target group. For services using the <code>CODE_DEPLOY</code> deployment controller,
+        /// you are required to define two target groups for the load balancer.
         /// </para>
         ///  <important> 
         /// <para>

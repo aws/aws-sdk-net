@@ -191,13 +191,13 @@ namespace Amazon.ECS.Model
         /// For tasks using the EC2 launch type, the container instances require at least version
         /// 1.26.0 of the container agent to enable container dependencies. However, we recommend
         /// using the latest container agent version. For information about checking your agent
-        /// version and updating to the latest version, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
+        /// version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
         /// the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your instance needs
         /// at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container
         /// instances are launched from version <code>20190301</code> or later, then they contain
         /// the required versions of the container agent and <code>ecs-init</code>. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
         /// ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
@@ -346,7 +346,7 @@ namespace Amazon.ECS.Model
         /// ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
-        ///  
+        ///  </note> <note> 
         /// <para>
         /// This parameter is not supported for Windows containers.
         /// </para>
@@ -610,16 +610,17 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Links. 
         /// <para>
-        /// The <code>link</code> parameter allows containers to communicate with each other without
-        /// the need for port mappings. Only supported if the network mode of a task definition
-        /// is set to <code>bridge</code>. The <code>name:internalName</code> construct is analogous
-        /// to <code>name:alias</code> in Docker links. Up to 255 letters (uppercase and lowercase),
-        /// numbers, hyphens, and underscores are allowed. For more information about linking
-        /// Docker containers, go to <a href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/">https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>.
-        /// This parameter maps to <code>Links</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
+        /// The <code>links</code> parameter allows containers to communicate with each other
+        /// without the need for port mappings. This parameter is only supported if the network
+        /// mode of a task definition is <code>bridge</code>. The <code>name:internalName</code>
+        /// construct is analogous to <code>name:alias</code> in Docker links. Up to 255 letters
+        /// (uppercase and lowercase), numbers, and hyphens are allowed. For more information
+        /// about linking Docker containers, go to <a href="https://docs.docker.com/network/links/">Legacy
+        /// container links</a> in the Docker documentation. This parameter maps to <code>Links</code>
+        /// in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
-        /// Remote API</a> and the <code>--link</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/">
-        /// <code>docker run</code> </a>.
+        /// Remote API</a> and the <code>--link</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// run</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -648,7 +649,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LinuxParameters. 
         /// <para>
-        /// Linux-specific modifications that are applied to the container, such as Linux <a>KernelCapabilities</a>.
+        /// Linux-specific modifications that are applied to the container, such as Linux kernel
+        /// capabilities. For more information see <a>KernelCapabilities</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -736,9 +738,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Memory. 
         /// <para>
-        /// The hard limit (in MiB) of memory to present to the container. If your container attempts
-        /// to exceed the memory specified here, the container is killed. This parameter maps
-        /// to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
+        /// The amount (in MiB) of memory to present to the container. If your container attempts
+        /// to exceed the memory specified here, the container is killed. The total amount of
+        /// memory reserved for all containers within a task must be lower than the task <code>memory</code>
+        /// value, if one is specified. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
         /// Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
@@ -746,8 +749,7 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// If your containers are part of a task using the Fargate launch type, this field is
-        /// optional and the only requirement is that the total amount of memory reserved for
-        /// all containers within a task be lower than the task <code>memory</code> value.
+        /// optional.
         /// </para>
         ///  
         /// <para>
@@ -762,7 +764,7 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should
-        /// not specify fewer than 4 MiB of memory for your containers. 
+        /// not specify fewer than 4 MiB of memory for your containers.
         /// </para>
         /// </summary>
         public int Memory
@@ -863,8 +865,8 @@ namespace Amazon.ECS.Model
         /// The name of a container. If you are linking multiple containers together in a task
         /// definition, the <code>name</code> of one container can be entered in the <code>links</code>
         /// of another container to connect the containers. Up to 255 letters (uppercase and lowercase),
-        /// numbers, hyphens, and underscores are allowed. This parameter maps to <code>name</code>
-        /// in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
+        /// numbers, and hyphens are allowed. This parameter maps to <code>name</code> in the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
         /// Remote API</a> and the <code>--name</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>. 
@@ -1050,7 +1052,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Secrets. 
         /// <para>
-        /// The secrets to pass to the container. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+        /// The secrets to pass to the container. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
         /// Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1082,13 +1084,13 @@ namespace Amazon.ECS.Model
         /// For tasks using the EC2 launch type, the container instances require at least version
         /// 1.26.0 of the container agent to enable a container start timeout value. However,
         /// we recommend using the latest container agent version. For information about checking
-        /// your agent version and updating to the latest version, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
+        /// your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
         /// the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your instance needs
         /// at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container
         /// instances are launched from version <code>20190301</code> or later, then they contain
         /// the required versions of the container agent and <code>ecs-init</code>. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
         /// ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
@@ -1125,13 +1127,13 @@ namespace Amazon.ECS.Model
         /// parameter, if used. Container instances require at least version 1.26.0 of the container
         /// agent to enable a container stop timeout value. However, we recommend using the latest
         /// container agent version. For information about checking your agent version and updating
-        /// to the latest version, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
+        /// to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
         /// the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your instance needs
         /// at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container
         /// instances are launched from version <code>20190301</code> or later, then they contain
         /// the required versions of the container agent and <code>ecs-init</code>. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
         /// ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>

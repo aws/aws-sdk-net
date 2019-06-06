@@ -31,7 +31,7 @@ namespace Amazon.ECS.Model
     /// A data volume used in a task definition. For tasks that use a Docker volume, specify
     /// a <code>DockerVolumeConfiguration</code>. For tasks that use a bind mount host volume,
     /// specify a <code>host</code> and optional <code>sourcePath</code>. For more information,
-    /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
+    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
     /// Data Volumes in Tasks</a>.
     /// </summary>
     public partial class Volume
@@ -95,9 +95,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, hyphens,
-        /// and underscores are allowed. This name is referenced in the <code>sourceVolume</code>
-        /// parameter of container definition <code>mountPoints</code>.
+        /// The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, and
+        /// hyphens are allowed. This name is referenced in the <code>sourceVolume</code> parameter
+        /// of container definition <code>mountPoints</code>.
         /// </para>
         /// </summary>
         public string Name

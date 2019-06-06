@@ -321,7 +321,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ServiceRegistries. 
         /// <para>
         /// The details of the service discovery registries to assign to this task set. For more
-        /// information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
         /// Discovery</a>.
         /// </para>
         /// </summary>
@@ -360,7 +360,13 @@ namespace Amazon.ECS.Model
         /// All tasks are reporting a healthy status from the load balancers, service discovery,
         /// and container health checks.
         /// </para>
-        ///  </li> </ul> 
+        ///  <note> 
+        /// <para>
+        /// If a <code>healthCheckGracePeriodSeconds</code> value was set when the service was
+        /// created, you may see a <code>STEADY_STATE</code> reached since unhealthy Elastic Load
+        /// Balancing target health checks will be ignored until it expires.
+        /// </para>
+        ///  </note> </li> </ul> 
         /// <para>
         /// If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
         /// </para>

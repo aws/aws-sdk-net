@@ -76,8 +76,8 @@ namespace Amazon.ECS.Model
         /// href="https://docs.docker.com/engine/extend/plugin_api/#plugin-discovery">Docker plugin
         /// discovery</a>. This parameter maps to <code>Driver</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create
         /// a volume</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
-        /// Remote API</a> and the <code>xxdriver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/volume_create/">
-        /// <code>docker volume create</code> </a>.
+        /// Remote API</a> and the <code>xxdriver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker
+        /// volume create</a>.
         /// </para>
         /// </summary>
         public string Driver
@@ -98,8 +98,8 @@ namespace Amazon.ECS.Model
         /// A map of Docker driver-specific options passed through. This parameter maps to <code>DriverOpts</code>
         /// in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create
         /// a volume</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
-        /// Remote API</a> and the <code>xxopt</code> option to <a href="https://docs.docker.com/engine/reference/commandline/volume_create/">
-        /// <code>docker volume create</code> </a>.
+        /// Remote API</a> and the <code>xxopt</code> option to <a href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker
+        /// volume create</a>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> DriverOpts
@@ -120,8 +120,8 @@ namespace Amazon.ECS.Model
         /// Custom metadata to add to your Docker volume. This parameter maps to <code>Labels</code>
         /// in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create
         /// a volume</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
-        /// Remote API</a> and the <code>xxlabel</code> option to <a href="https://docs.docker.com/engine/reference/commandline/volume_create/">
-        /// <code>docker volume create</code> </a>.
+        /// Remote API</a> and the <code>xxlabel</code> option to <a href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker
+        /// volume create</a>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Labels

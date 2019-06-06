@@ -41,7 +41,9 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Cluster. 
         /// <para>
         /// The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task
-        /// to describe. If you do not specify a cluster, the default cluster is assumed.
+        /// or tasks to describe. If you do not specify a cluster, the default cluster is assumed.
+        /// This parameter is required if the task or tasks you are describing were launched in
+        /// any cluster other than the default cluster.
         /// </para>
         /// </summary>
         public string Cluster

@@ -39,7 +39,7 @@ namespace Amazon.ECS.Model
     /// the service-linked role for your account so that required resources in other AWS services
     /// can be managed on your behalf. However, if the IAM user that makes the call does not
     /// have permissions to create the service-linked role, it is not created. For more information,
-    /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
     /// Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
     /// Developer Guide</i>.
     /// </para>
@@ -55,7 +55,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The name of your cluster. If you do not specify a name for your cluster, you create
         /// a cluster named <code>default</code>. Up to 255 letters (uppercase and lowercase),
-        /// numbers, hyphens, and underscores are allowed.
+        /// numbers, and hyphens are allowed. 
         /// </para>
         /// </summary>
         public string ClusterName

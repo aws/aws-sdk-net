@@ -37,7 +37,7 @@ namespace Amazon.ECS
     /// by Amazon ECS by launching your services or tasks using the Fargate launch type. For
     /// more control, you can host your tasks on a cluster of Amazon Elastic Compute Cloud
     /// (Amazon EC2) instances that you manage by using the EC2 launch type. For more information
-    /// about launch types, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+    /// about launch types, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
     /// ECS Launch Types</a>.
     /// </para>
     ///  
@@ -72,7 +72,7 @@ namespace Amazon.ECS
         /// the service-linked role for your account so that required resources in other AWS services
         /// can be managed on your behalf. However, if the IAM user that makes the call does not
         /// have permissions to create the service-linked role, it is not created. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
         /// Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
         /// Developer Guide</i>.
         /// </para>
@@ -323,7 +323,7 @@ namespace Amazon.ECS
         /// <summary>
         /// Create a task set in the specified cluster and service. This is used when a service
         /// uses the <code>EXTERNAL</code> deployment controller type. For more information, see
-        /// <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
         /// ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTaskSet service method.</param>
@@ -399,9 +399,8 @@ namespace Amazon.ECS
 
 
         /// <summary>
-        /// Modifies the ARN and resource ID format of a resource for a specified IAM user, IAM
-        /// role, or the root user for an account. You can specify whether the new ARN and resource
-        /// ID format are disabled for new resources that are created.
+        /// Disables an account setting for a specified IAM user, IAM role, or the root user for
+        /// an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountSetting service method.</param>
         /// 
@@ -656,7 +655,7 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Deletes a specified task set within a service. This is used when a service uses the
-        /// <code>EXTERNAL</code> deployment controller type. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+        /// <code>EXTERNAL</code> deployment controller type. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
         /// ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTaskSet service method.</param>
@@ -1157,7 +1156,7 @@ namespace Amazon.ECS
         /// <summary>
         /// Describes the task sets in the specified cluster and service. This is used when a
         /// service uses the <code>EXTERNAL</code> deployment controller type. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
         /// ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTaskSets service method.</param>
@@ -1227,7 +1226,7 @@ namespace Amazon.ECS
 
 
         /// <summary>
-        /// Lists the account settings for an Amazon ECS resource for a specified principal.
+        /// Lists the account settings for a specified principal.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountSettings service method.</param>
         /// 
@@ -1730,16 +1729,30 @@ namespace Amazon.ECS
 
 
         /// <summary>
-        /// Modifies the ARN and resource ID format of a resource type for a specified IAM user,
-        /// IAM role, or the root user for an account. If the account setting for the root user
-        /// is changed, it sets the default setting for all of the IAM users and roles for which
-        /// no individual account setting has been set. The opt-in and opt-out account setting
-        /// can be set for each Amazon ECS resource separately. The ARN and resource ID format
-        /// of a resource will be defined by the opt-in status of the IAM user or role that created
-        /// the resource. Enabling this setting is required to use new Amazon ECS features such
-        /// as resource tagging. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-resource-ids.html">Amazon
-        /// Resource Names (ARNs) and IDs</a> in the <i>Amazon Elastic Container Service Developer
+        /// Modifies an account setting. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
+        /// Settings</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// When <code>serviceLongArnFormat</code>, <code>taskLongArnFormat</code>, or <code>containerInstanceLongArnFormat</code>
+        /// are specified, the ARN and resource ID format of the resource type for a specified
+        /// IAM user, IAM role, or the root user for an account is changed. If you change the
+        /// account setting for the root user, the default settings for all of the IAM users and
+        /// roles for which no individual account setting has been specified are reset. The opt-in
+        /// and opt-out account setting can be specified for each Amazon ECS resource separately.
+        /// The ARN and resource ID format of a resource will be defined by the opt-in status
+        /// of the IAM user or role that created the resource. You must enable this setting to
+        /// use Amazon ECS features such as resource tagging.
+        /// </para>
+        ///  
+        /// <para>
+        /// When <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI)
+        /// limit for any new container instances that support the feature is changed. If <code>awsvpcTrunking</code>
+        /// is enabled, any new container instances that support the feature are launched have
+        /// the increased ENI limits available to them. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-eni.html">Elastic
+        /// Network Interface Trunking</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccountSetting service method.</param>
         /// 
@@ -1790,9 +1803,8 @@ namespace Amazon.ECS
 
 
         /// <summary>
-        /// Modifies the ARN and resource ID format of a resource type for all IAM users on an
-        /// account for which no individual account setting has been set. Enabling this setting
-        /// is required to use new Amazon ECS features such as resource tagging.
+        /// Modifies an account setting for all IAM users on an account for whom no individual
+        /// account setting has been specified.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccountSettingDefault service method.</param>
         /// 
@@ -1926,7 +1938,7 @@ namespace Amazon.ECS
         /// settings</a> in the Docker run reference. If you specify the <code>awsvpc</code> network
         /// mode, the task is allocated an elastic network interface, and you must specify a <a>NetworkConfiguration</a>
         /// when you create a service or run a task with the task definition. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
         /// Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2223,6 +2235,68 @@ namespace Amazon.ECS
 
         #endregion
         
+        #region  SubmitAttachmentStateChanges
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This action is only used by the Amazon ECS agent, and it is not intended for use outside
+        /// of the agent.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Sent to acknowledge that an attachment changed states.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SubmitAttachmentStateChanges service method.</param>
+        /// 
+        /// <returns>The response from the SubmitAttachmentStateChanges service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You do not have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitAttachmentStateChanges">REST API Reference for SubmitAttachmentStateChanges Operation</seealso>
+        SubmitAttachmentStateChangesResponse SubmitAttachmentStateChanges(SubmitAttachmentStateChangesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SubmitAttachmentStateChanges operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SubmitAttachmentStateChanges operation on AmazonECSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSubmitAttachmentStateChanges
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitAttachmentStateChanges">REST API Reference for SubmitAttachmentStateChanges Operation</seealso>
+        IAsyncResult BeginSubmitAttachmentStateChanges(SubmitAttachmentStateChangesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SubmitAttachmentStateChanges operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSubmitAttachmentStateChanges.</param>
+        /// 
+        /// <returns>Returns a  SubmitAttachmentStateChangesResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitAttachmentStateChanges">REST API Reference for SubmitAttachmentStateChanges Operation</seealso>
+        SubmitAttachmentStateChangesResponse EndSubmitAttachmentStateChanges(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  TagResource
 
 
@@ -2436,11 +2510,18 @@ namespace Amazon.ECS
         /// 
         ///  
         /// <para>
-        /// You can change the status of a container instance to <code>DRAINING</code> to manually
-        /// remove an instance from a cluster, for example to perform system updates, update the
-        /// Docker daemon, or scale down the cluster size. 
+        /// Once a container instance has reached an <code>ACTIVE</code> state, you can change
+        /// the status of a container instance to <code>DRAINING</code> to manually remove an
+        /// instance from a cluster, for example to perform system updates, update the Docker
+        /// daemon, or scale down the cluster size.
         /// </para>
-        ///  
+        ///  <important> 
+        /// <para>
+        /// A container instance cannot be changed to <code>DRAINING</code> until it has reached
+        /// an <code>ACTIVE</code> status. If the instance is in any other status, an error will
+        /// be received.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// When you set a container instance to <code>DRAINING</code>, Amazon ECS prevents new
         /// tasks from being scheduled for placement on the container instance and replacement
@@ -2488,8 +2569,9 @@ namespace Amazon.ECS
         /// </para>
         ///  
         /// <para>
-        /// When you set a container instance to <code>ACTIVE</code>, the Amazon ECS scheduler
-        /// can begin scheduling tasks on the instance again.
+        /// When a container instance has been drained, you can set a container instance to <code>ACTIVE</code>
+        /// status and once it has reached that status the Amazon ECS scheduler can begin scheduling
+        /// tasks on the instance again.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContainerInstancesState service method.</param>
@@ -2745,7 +2827,7 @@ namespace Amazon.ECS
         /// Modifies which task set in a service is the primary task set. Any parameters that
         /// are updated on the primary task set in a service will transition to the service. This
         /// is used when a service uses the <code>EXTERNAL</code> deployment controller type.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
         /// ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateServicePrimaryTaskSet service method.</param>
@@ -2824,7 +2906,7 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Modifies a task set. This is used when a service uses the <code>EXTERNAL</code> deployment
-        /// controller type. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+        /// controller type. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
         /// ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTaskSet service method.</param>

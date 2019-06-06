@@ -31,7 +31,7 @@ namespace Amazon.ECS.Model
     /// Container for the parameters to the DescribeTaskSets operation.
     /// Describes the task sets in the specified cluster and service. This is used when a
     /// service uses the <code>EXTERNAL</code> deployment controller type. For more information,
-    /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
     /// ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </summary>
     public partial class DescribeTaskSetsRequest : AmazonECSRequest

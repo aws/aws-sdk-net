@@ -31,7 +31,7 @@ namespace Amazon.ECS.Model
     /// Container for the parameters to the CreateTaskSet operation.
     /// Create a task set in the specified cluster and service. This is used when a service
     /// uses the <code>EXTERNAL</code> deployment controller type. For more information, see
-    /// <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+    /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
     /// ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </summary>
     public partial class CreateTaskSetRequest : AmazonECSRequest
@@ -222,7 +222,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ServiceRegistries. 
         /// <para>
         /// The details of the service discovery registries to assign to this task set. For more
-        /// information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
         /// Discovery</a>.
         /// </para>
         /// </summary>

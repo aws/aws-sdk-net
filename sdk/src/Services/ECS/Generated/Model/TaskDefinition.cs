@@ -28,7 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// Details of a task definition.
+    /// The details of a task definition which describes the container and volume definitions
+    /// of an Amazon Elastic Container Service task. You can specify which Docker images to
+    /// use, the required resources, and other configurations related to launching the task
+    /// definition through an Amazon ECS service or task.
     /// </summary>
     public partial class TaskDefinition
     {
@@ -141,8 +144,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container
-        /// agent and the Docker daemon can assume.
+        /// The Amazon Resource Name (ARN) of the task execution role that containers in this
+        /// task can assume. All containers in this task are granted the permissions that are
+        /// specified in this role.
         /// </para>
         /// </summary>
         public string ExecutionRoleArn
@@ -160,7 +164,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Family. 
         /// <para>
-        /// The family of your task definition, used as the definition name.
+        /// The name of a family that this task definition is registered to. A family groups multiple
+        /// versions of a task definition. Amazon ECS gives the first task definition that you
+        /// registered to a family a revision number of 1. Amazon ECS gives sequential revision
+        /// numbers to each task definition that you add.
         /// </para>
         /// </summary>
         public string Family
@@ -200,7 +207,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// If you are setting namespaced kernel parameters using <code>systemControls</code>
         /// for the containers in the task, the following will apply to your IPC resource namespace.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
         /// Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  <ul> <li> 
@@ -304,7 +311,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// If the network mode is <code>awsvpc</code>, the task is allocated an elastic network
         /// interface, and you must specify a <a>NetworkConfiguration</a> value when you create
-        /// a service or run a task with the task definition. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+        /// a service or run a task with the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
         /// Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  <note> 
@@ -410,7 +417,7 @@ namespace Amazon.ECS.Model
         /// agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to enable
         /// a proxy configuration. If your container instances are launched from the Amazon ECS-optimized
         /// AMI version <code>20190301</code> or later, then they contain the required versions
-        /// of the container agent and <code>ecs-init</code>. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+        /// of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
         /// ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -448,7 +455,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property RequiresCompatibilities. 
         /// <para>
-        /// The launch type that the task is using.
+        /// The launch type the task requires. If no value is specified, it will default to <code>EC2</code>.
+        /// Valid values include <code>EC2</code> and <code>FARGATE</code>.
         /// </para>
         /// </summary>
         public List<string> RequiresCompatibilities
@@ -524,8 +532,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property TaskRoleArn. 
         /// <para>
-        /// The ARN of the IAM role that containers in this task can assume. All containers in
-        /// this task are granted the permissions that are specified in this role.
+        /// The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
+        /// that grants containers in the task permission to call AWS APIs on your behalf. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon
+        /// ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -551,11 +561,11 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Volumes. 
         /// <para>
-        /// The list of volumes in a task.
+        /// The list of volume definitions for the task.
         /// </para>
         ///  
         /// <para>
-        /// If you are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code>
+        /// If your tasks are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code>
         /// parameters are not supported.
         /// </para>
         ///  

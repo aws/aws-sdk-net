@@ -279,7 +279,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property EnableECSManagedTags. 
         /// <para>
         /// Specifies whether to enable Amazon ECS managed tags for the tasks within the service.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
         /// Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
@@ -412,7 +412,7 @@ namespace Amazon.ECS.Model
         /// The network configuration for the service. This parameter is required for task definitions
         /// that use the <code>awsvpc</code> network mode to receive their own elastic network
         /// interface, and it is not supported for other network modes. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
         /// Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -525,7 +525,7 @@ namespace Amazon.ECS.Model
         /// If your account has already created the Amazon ECS service-linked role, that role
         /// is used by default for your service unless you specify a role here. The service-linked
         /// role is required if your task definition uses the <code>awsvpc</code> network mode,
-        /// in which case you should not specify a role here. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+        /// in which case you should not specify a role here. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
         /// Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
         /// Developer Guide</i>.
         /// </para>
@@ -554,7 +554,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property SchedulingStrategy. 
         /// <para>
-        /// The scheduling strategy to use for the service. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
+        /// The scheduling strategy to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
         /// </para>
         ///  
         /// <para>
@@ -599,10 +599,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens,
-        /// and underscores are allowed. Service names must be unique within a cluster, but you
-        /// can have similarly named services in multiple clusters within a Region or across multiple
-        /// Regions.
+        /// The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and
+        /// hyphens are allowed. Service names must be unique within a cluster, but you can have
+        /// similarly named services in multiple clusters within a Region or across multiple Regions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -622,13 +621,13 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ServiceRegistries. 
         /// <para>
         /// The details of the service discovery registries to assign to this service. For more
-        /// information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
         /// Discovery</a>.
         /// </para>
         ///  <note> 
         /// <para>
         /// Service discovery is supported for Fargate tasks if you are using platform version
-        /// v1.1.0 or later. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+        /// v1.1.0 or later. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
         /// Fargate Platform Versions</a>.
         /// </para>
         ///  </note>

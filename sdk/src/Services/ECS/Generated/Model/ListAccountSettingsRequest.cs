@@ -29,7 +29,7 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAccountSettings operation.
-    /// Lists the account settings for an Amazon ECS resource for a specified principal.
+    /// Lists the account settings for a specified principal.
     /// </summary>
     public partial class ListAccountSettingsRequest : AmazonECSRequest
     {
@@ -44,9 +44,9 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property EffectiveSettings. 
         /// <para>
         /// Specifies whether to return the effective settings. If <code>true</code>, the account
-        /// settings for the root user or the default setting for the <code>principalArn</code>.
-        /// If <code>false</code>, the account settings for the <code>principalArn</code> are
-        /// returned if they are set. Otherwise, no account settings are returned.
+        /// settings for the root user or the default setting for the <code>principalArn</code>
+        /// are returned. If <code>false</code>, the account settings for the <code>principalArn</code>
+        /// are returned if they are set. Otherwise, no account settings are returned.
         /// </para>
         /// </summary>
         public bool EffectiveSettings

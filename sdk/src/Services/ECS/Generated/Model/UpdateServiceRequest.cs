@@ -277,7 +277,7 @@ namespace Amazon.ECS.Model
         /// The network configuration for the service. This parameter is required for task definitions
         /// that use the <code>awsvpc</code> network mode to receive their own elastic network
         /// interface, and it is not supported for other network modes. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
         /// Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  <note> 

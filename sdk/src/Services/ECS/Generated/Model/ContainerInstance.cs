@@ -45,6 +45,7 @@ namespace Amazon.ECS.Model
         private List<Resource> _remainingResources = new List<Resource>();
         private int? _runningTasksCount;
         private string _status;
+        private string _statusReason;
         private List<Tag> _tags = new List<Tag>();
         private long? _version;
         private VersionInfo _versionInfo;
@@ -91,7 +92,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Attachments. 
         /// <para>
-        /// The elastic network interfaces associated with the container instance.
+        /// The resources attached to a container instance, such as elastic network interfaces.
         /// </para>
         /// </summary>
         public List<Attachment> Attachments
@@ -131,8 +132,7 @@ namespace Amazon.ECS.Model
         /// The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code>
         /// namespace, followed by the Region of the container instance, the AWS account ID of
         /// the container instance owner, the <code>container-instance</code> namespace, and then
-        /// the container instance ID. For example, <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
-        /// </code>.
+        /// the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.
         /// </para>
         /// </summary>
         public string ContainerInstanceArn
@@ -270,11 +270,28 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the container instance. The valid values are <code>ACTIVE</code>, <code>INACTIVE</code>,
-        /// or <code>DRAINING</code>. <code>ACTIVE</code> indicates that the container instance
-        /// can accept tasks. <code>DRAINING</code> indicates that new tasks are not placed on
-        /// the container instance and any service tasks running on the container instance are
-        /// removed if possible. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
+        /// The status of the container instance. The valid values are <code>REGISTERING</code>,
+        /// <code>REGISTRATION_FAILED</code>, <code>ACTIVE</code>, <code>INACTIVE</code>, <code>DEREGISTERING</code>,
+        /// or <code>DRAINING</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If your account has opted in to the <code>awsvpcTrunking</code> account setting, then
+        /// any newly registered container instance will transition to a <code>REGISTERING</code>
+        /// status while the trunk elastic network interface is provisioned for the instance.
+        /// If the registration fails, the instance will transition to a <code>REGISTRATION_FAILED</code>
+        /// status. You can describe the container instance and see the reason for failure in
+        /// the <code>statusReason</code> parameter. Once the container instance is terminated,
+        /// the instance transitions to a <code>DEREGISTERING</code> status while the trunk elastic
+        /// network interface is deprovisioned. The instance then transitions to an <code>INACTIVE</code>
+        /// status.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>ACTIVE</code> status indicates that the container instance can accept tasks.
+        /// The <code>DRAINING</code> indicates that new tasks are not placed on the container
+        /// instance and any service tasks running on the container instance are removed if possible.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
         /// Instance Draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -288,6 +305,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusReason. 
+        /// <para>
+        /// The reason that the container instance reached its current status.
+        /// </para>
+        /// </summary>
+        public string StatusReason
+        {
+            get { return this._statusReason; }
+            set { this._statusReason = value; }
+        }
+
+        // Check to see if StatusReason property is set
+        internal bool IsSetStatusReason()
+        {
+            return this._statusReason != null;
         }
 
         /// <summary>

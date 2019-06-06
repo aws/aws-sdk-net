@@ -43,6 +43,8 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container
         /// instances to describe. If you do not specify a cluster, the default cluster is assumed.
+        /// This parameter is required if the container instance or container instances you are
+        /// describing were launched in any cluster other than the default cluster.
         /// </para>
         /// </summary>
         public string Cluster

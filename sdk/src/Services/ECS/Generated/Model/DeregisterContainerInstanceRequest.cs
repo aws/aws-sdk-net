@@ -83,8 +83,7 @@ namespace Amazon.ECS.Model
         /// The container instance ID or full ARN of the container instance to deregister. The
         /// ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the
         /// container instance, the AWS account ID of the container instance owner, the <code>container-instance</code>
-        /// namespace, and then the container instance ID. For example, <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
-        /// </code>.
+        /// namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,16 +29,30 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Container for the parameters to the PutAccountSetting operation.
-    /// Modifies the ARN and resource ID format of a resource type for a specified IAM user,
-    /// IAM role, or the root user for an account. If the account setting for the root user
-    /// is changed, it sets the default setting for all of the IAM users and roles for which
-    /// no individual account setting has been set. The opt-in and opt-out account setting
-    /// can be set for each Amazon ECS resource separately. The ARN and resource ID format
-    /// of a resource will be defined by the opt-in status of the IAM user or role that created
-    /// the resource. Enabling this setting is required to use new Amazon ECS features such
-    /// as resource tagging. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-resource-ids.html">Amazon
-    /// Resource Names (ARNs) and IDs</a> in the <i>Amazon Elastic Container Service Developer
+    /// Modifies an account setting. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
+    /// Settings</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// 
+    ///  
+    /// <para>
+    /// When <code>serviceLongArnFormat</code>, <code>taskLongArnFormat</code>, or <code>containerInstanceLongArnFormat</code>
+    /// are specified, the ARN and resource ID format of the resource type for a specified
+    /// IAM user, IAM role, or the root user for an account is changed. If you change the
+    /// account setting for the root user, the default settings for all of the IAM users and
+    /// roles for which no individual account setting has been specified are reset. The opt-in
+    /// and opt-out account setting can be specified for each Amazon ECS resource separately.
+    /// The ARN and resource ID format of a resource will be defined by the opt-in status
+    /// of the IAM user or role that created the resource. You must enable this setting to
+    /// use Amazon ECS features such as resource tagging.
+    /// </para>
+    ///  
+    /// <para>
+    /// When <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI)
+    /// limit for any new container instances that support the feature is changed. If <code>awsvpcTrunking</code>
+    /// is enabled, any new container instances that support the feature are launched have
+    /// the increased ENI limits available to them. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-eni.html">Elastic
+    /// Network Interface Trunking</a> in the <i>Amazon Elastic Container Service Developer
     /// Guide</i>.
+    /// </para>
     /// </summary>
     public partial class PutAccountSettingRequest : AmazonECSRequest
     {
@@ -49,10 +63,12 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The resource name for which to enable the new format. If <code>serviceLongArnFormat</code>
+        /// The resource name for which to modify the account setting. If <code>serviceLongArnFormat</code>
         /// is specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code>
         /// is specified, the ARN and resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code>
         /// is specified, the ARN and resource ID for your Amazon ECS container instances is affected.
+        /// If <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS container
+        /// instances is affected.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -72,10 +88,10 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property PrincipalArn. 
         /// <para>
         /// The ARN of the principal, which can be an IAM user, IAM role, or the root user. If
-        /// you specify the root user, it modifies the ARN and resource ID format for all IAM
-        /// users, IAM roles, and the root user of the account unless an IAM user or role explicitly
-        /// overrides these settings for themselves. If this field is omitted, the settings are
-        /// changed only for the authenticated user.
+        /// you specify the root user, it modifies the account setting for all IAM users, IAM
+        /// roles, and the root user of the account unless an IAM user or role explicitly overrides
+        /// these settings. If this field is omitted, the setting is changed only for the authenticated
+        /// user.
         /// </para>
         /// </summary>
         public string PrincipalArn

@@ -43,7 +43,7 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
     /// Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     /// </summary>

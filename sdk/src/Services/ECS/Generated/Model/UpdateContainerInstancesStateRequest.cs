@@ -33,11 +33,18 @@ namespace Amazon.ECS.Model
     /// 
     ///  
     /// <para>
-    /// You can change the status of a container instance to <code>DRAINING</code> to manually
-    /// remove an instance from a cluster, for example to perform system updates, update the
-    /// Docker daemon, or scale down the cluster size. 
+    /// Once a container instance has reached an <code>ACTIVE</code> state, you can change
+    /// the status of a container instance to <code>DRAINING</code> to manually remove an
+    /// instance from a cluster, for example to perform system updates, update the Docker
+    /// daemon, or scale down the cluster size.
     /// </para>
-    ///  
+    ///  <important> 
+    /// <para>
+    /// A container instance cannot be changed to <code>DRAINING</code> until it has reached
+    /// an <code>ACTIVE</code> status. If the instance is in any other status, an error will
+    /// be received.
+    /// </para>
+    ///  </important> 
     /// <para>
     /// When you set a container instance to <code>DRAINING</code>, Amazon ECS prevents new
     /// tasks from being scheduled for placement on the container instance and replacement
@@ -85,8 +92,9 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  
     /// <para>
-    /// When you set a container instance to <code>ACTIVE</code>, the Amazon ECS scheduler
-    /// can begin scheduling tasks on the instance again.
+    /// When a container instance has been drained, you can set a container instance to <code>ACTIVE</code>
+    /// status and once it has reached that status the Amazon ECS scheduler can begin scheduling
+    /// tasks on the instance again.
     /// </para>
     /// </summary>
     public partial class UpdateContainerInstancesStateRequest : AmazonECSRequest
@@ -136,7 +144,12 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The container instance state with which to update the container instance.
+        /// The container instance state with which to update the container instance. The only
+        /// valid values for this action are <code>ACTIVE</code> and <code>DRAINING</code>. A
+        /// container instance can only be updated to <code>DRAINING</code> status once it has
+        /// reached an <code>ACTIVE</code> state. If a container instance is in <code>REGISTERING</code>,
+        /// <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you can describe
+        /// the container instance but will be unable to update the container instance state.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -194,7 +194,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property EnableECSManagedTags. 
         /// <para>
         /// Specifies whether to enable Amazon ECS managed tags for the tasks in the service.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
         /// Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
@@ -251,7 +251,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LaunchType. 
         /// <para>
-        /// The launch type on which your service is running. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+        /// The launch type on which your service is running. If no value is specified, it will
+        /// default to <code>EC2</code>. Valid values include <code>EC2</code> and <code>FARGATE</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
         /// ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -372,10 +374,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PlatformVersion. 
         /// <para>
-        /// The platform version on which your tasks in the service are running. A platform version
-        /// is only specified for tasks using the Fargate launch type. If one is not specified,
-        /// the <code>LATEST</code> platform version is used by default. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+        /// The platform version on which to run your service. A platform version is only specified
+        /// for tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code>
+        /// platform version is used by default. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
         /// Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
@@ -451,7 +452,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property SchedulingStrategy. 
         /// <para>
-        /// The scheduling strategy to use for the service. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
+        /// The scheduling strategy to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
         /// </para>
         ///  
         /// <para>
@@ -494,7 +495,7 @@ namespace Amazon.ECS.Model
         /// The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code>
         /// namespace, followed by the Region of the service, the AWS account ID of the service
         /// owner, the <code>service</code> namespace, and then the service name. For example,
-        /// <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>.
+        /// <code>arn:aws:ecs:region:012345678910:service/my-service</code>.
         /// </para>
         /// </summary>
         public string ServiceArn
@@ -512,10 +513,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens,
-        /// and underscores are allowed. Service names must be unique within a cluster, but you
-        /// can have similarly named services in multiple clusters within a Region or across multiple
-        /// Regions.
+        /// The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and
+        /// hyphens are allowed. Service names must be unique within a cluster, but you can have
+        /// similarly named services in multiple clusters within a Region or across multiple Regions.
         /// </para>
         /// </summary>
         public string ServiceName
@@ -534,7 +534,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ServiceRegistries. 
         /// <para>
         /// The details of the service discovery registries to assign to this service. For more
-        /// information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
         /// Discovery</a>.
         /// </para>
         /// </summary>

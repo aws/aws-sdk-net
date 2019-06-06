@@ -29,9 +29,8 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Container for the parameters to the PutAccountSettingDefault operation.
-    /// Modifies the ARN and resource ID format of a resource type for all IAM users on an
-    /// account for which no individual account setting has been set. Enabling this setting
-    /// is required to use new Amazon ECS features such as resource tagging.
+    /// Modifies an account setting for all IAM users on an account for whom no individual
+    /// account setting has been specified.
     /// </summary>
     public partial class PutAccountSettingDefaultRequest : AmazonECSRequest
     {
@@ -41,11 +40,12 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The resource type to enable the new format for. If <code>serviceLongArnFormat</code>
+        /// The resource name for which to modify the account setting. If <code>serviceLongArnFormat</code>
         /// is specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code>
-        /// is specified, the ARN and resource ID for your Amazon ECS tasks are affected. If <code>containerInstanceLongArnFormat</code>
-        /// is specified, the ARN and resource ID for your Amazon ECS container instances are
-        /// affected.
+        /// is specified, the ARN and resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code>
+        /// is specified, the ARN and resource ID for your Amazon ECS container instances is affected.
+        /// If <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS container
+        /// instances is affected.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -51,7 +51,7 @@ namespace Amazon.ECS.Model
     /// settings</a> in the Docker run reference. If you specify the <code>awsvpc</code> network
     /// mode, the task is allocated an elastic network interface, and you must specify a <a>NetworkConfiguration</a>
     /// when you create a service or run a task with the task definition. For more information,
-    /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
     /// Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -181,7 +181,7 @@ namespace Amazon.ECS.Model
         /// You must specify a <code>family</code> for a task definition, which allows you to
         /// track multiple versions of the same task definition. The <code>family</code> is used
         /// as a name for your task definition. Up to 255 letters (uppercase and lowercase), numbers,
-        /// hyphens, and underscores are allowed.
+        /// and hyphens are allowed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -222,7 +222,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// If you are setting namespaced kernel parameters using <code>systemControls</code>
         /// for the containers in the task, the following will apply to your IPC resource namespace.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
         /// Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  <ul> <li> 
@@ -341,7 +341,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// If the network mode is <code>awsvpc</code>, the task is allocated an elastic network
         /// interface, and you must specify a <a>NetworkConfiguration</a> value when you create
-        /// a service or run a task with the task definition. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+        /// a service or run a task with the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
         /// Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  <note> 

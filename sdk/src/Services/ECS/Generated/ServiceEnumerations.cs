@@ -405,9 +405,21 @@ namespace Amazon.ECS
         /// </summary>
         public static readonly ContainerInstanceStatus ACTIVE = new ContainerInstanceStatus("ACTIVE");
         /// <summary>
+        /// Constant DEREGISTERING for ContainerInstanceStatus
+        /// </summary>
+        public static readonly ContainerInstanceStatus DEREGISTERING = new ContainerInstanceStatus("DEREGISTERING");
+        /// <summary>
         /// Constant DRAINING for ContainerInstanceStatus
         /// </summary>
         public static readonly ContainerInstanceStatus DRAINING = new ContainerInstanceStatus("DRAINING");
+        /// <summary>
+        /// Constant REGISTERING for ContainerInstanceStatus
+        /// </summary>
+        public static readonly ContainerInstanceStatus REGISTERING = new ContainerInstanceStatus("REGISTERING");
+        /// <summary>
+        /// Constant REGISTRATION_FAILED for ContainerInstanceStatus
+        /// </summary>
+        public static readonly ContainerInstanceStatus REGISTRATION_FAILED = new ContainerInstanceStatus("REGISTRATION_FAILED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1432,6 +1444,10 @@ namespace Amazon.ECS
     public class SettingName : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AwsvpcTrunking for SettingName
+        /// </summary>
+        public static readonly SettingName AwsvpcTrunking = new SettingName("awsvpcTrunking");
         /// <summary>
         /// Constant ContainerInstanceLongArnFormat for SettingName
         /// </summary>
