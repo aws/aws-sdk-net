@@ -1526,9 +1526,14 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Returns the results from the specified query. If the query is in progress, partial
-        /// results of that current execution are returned. Only the fields requested in the query
-        /// are returned.
+        /// results of that current execution are returned.
         /// 
+        ///  
+        /// <para>
+        /// Only the fields requested in the query are returned, along with a <code>@ptr</code>
+        /// field which is the identifier for the log record. You can use the value of <code>@ptr</code>
+        /// in a operation to get the full log record.
+        /// </para>
         ///  
         /// <para>
         ///  <code>GetQueryResults</code> does not start a query execution. To run a query, use
@@ -1767,8 +1772,8 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// None of the log events in the batch can be older than 14 days or the retention period
-        /// of the log group.
+        /// None of the log events in the batch can be older than 14 days or older than the retention
+        /// period of the log group.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2107,6 +2112,11 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
         /// Logs Insights Query Syntax</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Queries time out after 15 minutes of execution. If your queries are timing out, reduce
+        /// the time range being searched, or partition your query into a number of queries.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartQuery service method.</param>

@@ -85,7 +85,13 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// The status of the most recent running of the query. Possible values are <code>Cancelled</code>,
         /// <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>,
-        /// and <code>Unknown</code>.
+        /// <code>Timeout</code>, and <code>Unknown</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Queries time out after 15 minutes of execution. To avoid having your queries time
+        /// out, reduce the time range being searched, or partition your query into a number of
+        /// queries.
         /// </para>
         /// </summary>
         public QueryStatus Status

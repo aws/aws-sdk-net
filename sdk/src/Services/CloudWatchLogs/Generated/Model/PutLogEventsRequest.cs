@@ -54,8 +54,8 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// None of the log events in the batch can be older than 14 days or the retention period
-    /// of the log group.
+    /// None of the log events in the batch can be older than 14 days or older than the retention
+    /// period of the log group.
     /// </para>
     ///  </li> <li> 
     /// <para>

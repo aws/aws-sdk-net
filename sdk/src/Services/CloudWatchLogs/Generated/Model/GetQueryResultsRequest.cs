@@ -30,9 +30,14 @@ namespace Amazon.CloudWatchLogs.Model
     /// <summary>
     /// Container for the parameters to the GetQueryResults operation.
     /// Returns the results from the specified query. If the query is in progress, partial
-    /// results of that current execution are returned. Only the fields requested in the query
-    /// are returned.
+    /// results of that current execution are returned.
     /// 
+    ///  
+    /// <para>
+    /// Only the fields requested in the query are returned, along with a <code>@ptr</code>
+    /// field which is the identifier for the log record. You can use the value of <code>@ptr</code>
+    /// in a operation to get the full log record.
+    /// </para>
     ///  
     /// <para>
     ///  <code>GetQueryResults</code> does not start a query execution. To run a query, use

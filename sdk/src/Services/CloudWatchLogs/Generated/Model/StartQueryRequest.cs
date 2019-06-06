@@ -37,6 +37,11 @@ namespace Amazon.CloudWatchLogs.Model
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
     /// Logs Insights Query Syntax</a>.
     /// </para>
+    ///  
+    /// <para>
+    /// Queries time out after 15 minutes of execution. If your queries are timing out, reduce
+    /// the time range being searched, or partition your query into a number of queries.
+    /// </para>
     /// </summary>
     public partial class StartQueryRequest : AmazonCloudWatchLogsRequest
     {
