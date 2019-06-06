@@ -151,8 +151,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -249,8 +249,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -347,8 +347,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -450,8 +450,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -551,8 +551,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -653,8 +653,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -792,8 +792,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -926,8 +926,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -1064,8 +1064,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -1202,8 +1202,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -2019,8 +2019,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -2078,8 +2078,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -2135,8 +2135,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -2197,8 +2197,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -2259,8 +2259,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -2320,8 +2320,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -3300,8 +3300,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -3340,8 +3340,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -3378,8 +3378,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -3421,8 +3421,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -3464,8 +3464,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -3506,8 +3506,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -3941,8 +3941,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -4061,8 +4061,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -4179,8 +4179,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -4302,8 +4302,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -4425,8 +4425,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -4547,8 +4547,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -4647,8 +4647,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -4744,8 +4744,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -5236,8 +5236,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -5301,8 +5301,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -5367,8 +5367,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -5431,8 +5431,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -5500,8 +5500,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -5568,8 +5568,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -5637,8 +5637,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -5705,8 +5705,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -5877,11 +5877,11 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionCanceledException">
-        /// The entire transaction request was rejected.
+        /// The entire transaction request was canceled.
         /// 
         ///  
         /// <para>
-        /// DynamoDB rejects a <code>TransactWriteItems</code> request under the following circumstances:
+        /// DynamoDB cancels a <code>TransactWriteItems</code> request under the following circumstances:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5913,7 +5913,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// DynamoDB rejects a <code>TransactGetItems</code> request under the following circumstances:
+        /// DynamoDB cancels a <code>TransactGetItems</code> request under the following circumstances:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5935,7 +5935,186 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// There is a user error, such as an invalid data format.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code>
+        /// property. This property is not set for other languages. Transaction cancellation reasons
+        /// are ordered in the order of requested items, if an item has no error it will have
+        /// <code>NONE</code> code and <code>Null</code> message.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Cancellation reason codes and possible error messages:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// No Errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>NONE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Message: <code>null</code> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Conditional Check Failed:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>ConditionalCheckFailed</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Message: The conditional request failed. 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Item Collection Size Limit Exceeded:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>ItemCollectionSizeLimitExceeded</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Message: Collection size exceeded.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Transaction Conflict:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>TransactionConflict</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Message: Transaction is ongoing for the item.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Provisioned Throughput Exceeded:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>ProvisionedThroughputExceeded</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Messages: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The level of configured provisioned throughput for the table was exceeded. Consider
+        /// increasing your provisioning level with the UpdateTable API.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This Message is received when provisioned throughput is exceeded is on a provisioned
+        /// DynamoDB table.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        /// The level of configured provisioned throughput for one or more global secondary indexes
+        /// of the table was exceeded. Consider increasing your provisioning level for the under-provisioned
+        /// global secondary indexes with the UpdateTable API.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This message is returned when provisioned throughput is exceeded is on a provisioned
+        /// GSI.
+        /// </para>
+        ///  </note> </li> </ul> </li> </ul> </li> <li> 
+        /// <para>
+        /// Throttling Error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>ThrottlingError</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Messages: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Throughput exceeds the current capacity of your table or index. DynamoDB is automatically
+        /// scaling your table or index so please try again shortly. If exceptions persist, check
+        /// if you have a hot key: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This message is returned when writes get throttled on an On-Demand table as DynamoDB
+        /// is automatically scaling the table.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        /// Throughput exceeds the current capacity for one or more global secondary indexes.
+        /// DynamoDB is automatically scaling your index so please try again shortly.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This message is returned when when writes get throttled on an On-Demand GSI as DynamoDB
+        /// is automatically scaling the GSI.
+        /// </para>
+        ///  </note> </li> </ul> </li> </ul> </li> <li> 
+        /// <para>
+        /// Validation Error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>ValidationError</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Messages: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// One or more parameter values were invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The update expression attempted to update the secondary index key beyond allowed size
+        /// limits.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The update expression attempted to update the secondary index key to unsupported type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An operand in the update expression has an incorrect data type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Item size to update has exceeded the maximum allowed size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Number overflow. Attempting to store a number with magnitude larger than supported
+        /// range.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Type mismatch for attribute to update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Nesting Levels have exceeded supported limits.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The document path provided in the update expression is invalid for update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The provided expression refers to an attribute that does not exist in the item.
+        /// </para>
+        ///  </li> </ul> </li> </ul> </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TransactGetItems">REST API Reference for TransactGetItems Operation</seealso>
         TransactGetItemsResponse TransactGetItems(TransactGetItemsRequest request);
@@ -5990,11 +6169,11 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionCanceledException">
-        /// The entire transaction request was rejected.
+        /// The entire transaction request was canceled.
         /// 
         ///  
         /// <para>
-        /// DynamoDB rejects a <code>TransactWriteItems</code> request under the following circumstances:
+        /// DynamoDB cancels a <code>TransactWriteItems</code> request under the following circumstances:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -6026,7 +6205,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// DynamoDB rejects a <code>TransactGetItems</code> request under the following circumstances:
+        /// DynamoDB cancels a <code>TransactGetItems</code> request under the following circumstances:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -6048,7 +6227,186 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// There is a user error, such as an invalid data format.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code>
+        /// property. This property is not set for other languages. Transaction cancellation reasons
+        /// are ordered in the order of requested items, if an item has no error it will have
+        /// <code>NONE</code> code and <code>Null</code> message.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Cancellation reason codes and possible error messages:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// No Errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>NONE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Message: <code>null</code> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Conditional Check Failed:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>ConditionalCheckFailed</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Message: The conditional request failed. 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Item Collection Size Limit Exceeded:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>ItemCollectionSizeLimitExceeded</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Message: Collection size exceeded.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Transaction Conflict:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>TransactionConflict</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Message: Transaction is ongoing for the item.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Provisioned Throughput Exceeded:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>ProvisionedThroughputExceeded</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Messages: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The level of configured provisioned throughput for the table was exceeded. Consider
+        /// increasing your provisioning level with the UpdateTable API.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This Message is received when provisioned throughput is exceeded is on a provisioned
+        /// DynamoDB table.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        /// The level of configured provisioned throughput for one or more global secondary indexes
+        /// of the table was exceeded. Consider increasing your provisioning level for the under-provisioned
+        /// global secondary indexes with the UpdateTable API.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This message is returned when provisioned throughput is exceeded is on a provisioned
+        /// GSI.
+        /// </para>
+        ///  </note> </li> </ul> </li> </ul> </li> <li> 
+        /// <para>
+        /// Throttling Error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>ThrottlingError</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Messages: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Throughput exceeds the current capacity of your table or index. DynamoDB is automatically
+        /// scaling your table or index so please try again shortly. If exceptions persist, check
+        /// if you have a hot key: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This message is returned when writes get throttled on an On-Demand table as DynamoDB
+        /// is automatically scaling the table.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        /// Throughput exceeds the current capacity for one or more global secondary indexes.
+        /// DynamoDB is automatically scaling your index so please try again shortly.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This message is returned when when writes get throttled on an On-Demand GSI as DynamoDB
+        /// is automatically scaling the GSI.
+        /// </para>
+        ///  </note> </li> </ul> </li> </ul> </li> <li> 
+        /// <para>
+        /// Validation Error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>ValidationError</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Messages: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// One or more parameter values were invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The update expression attempted to update the secondary index key beyond allowed size
+        /// limits.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The update expression attempted to update the secondary index key to unsupported type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An operand in the update expression has an incorrect data type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Item size to update has exceeded the maximum allowed size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Number overflow. Attempting to store a number with magnitude larger than supported
+        /// range.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Type mismatch for attribute to update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Nesting Levels have exceeded supported limits.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The document path provided in the update expression is invalid for update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The provided expression refers to an attribute that does not exist in the item.
+        /// </para>
+        ///  </li> </ul> </li> </ul> </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TransactGetItems">REST API Reference for TransactGetItems Operation</seealso>
         Task<TransactGetItemsResponse> TransactGetItemsAsync(TransactGetItemsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -6154,11 +6512,11 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionCanceledException">
-        /// The entire transaction request was rejected.
+        /// The entire transaction request was canceled.
         /// 
         ///  
         /// <para>
-        /// DynamoDB rejects a <code>TransactWriteItems</code> request under the following circumstances:
+        /// DynamoDB cancels a <code>TransactWriteItems</code> request under the following circumstances:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -6190,7 +6548,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// DynamoDB rejects a <code>TransactGetItems</code> request under the following circumstances:
+        /// DynamoDB cancels a <code>TransactGetItems</code> request under the following circumstances:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -6212,7 +6570,186 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// There is a user error, such as an invalid data format.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code>
+        /// property. This property is not set for other languages. Transaction cancellation reasons
+        /// are ordered in the order of requested items, if an item has no error it will have
+        /// <code>NONE</code> code and <code>Null</code> message.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Cancellation reason codes and possible error messages:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// No Errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>NONE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Message: <code>null</code> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Conditional Check Failed:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>ConditionalCheckFailed</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Message: The conditional request failed. 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Item Collection Size Limit Exceeded:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>ItemCollectionSizeLimitExceeded</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Message: Collection size exceeded.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Transaction Conflict:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>TransactionConflict</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Message: Transaction is ongoing for the item.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Provisioned Throughput Exceeded:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>ProvisionedThroughputExceeded</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Messages: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The level of configured provisioned throughput for the table was exceeded. Consider
+        /// increasing your provisioning level with the UpdateTable API.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This Message is received when provisioned throughput is exceeded is on a provisioned
+        /// DynamoDB table.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        /// The level of configured provisioned throughput for one or more global secondary indexes
+        /// of the table was exceeded. Consider increasing your provisioning level for the under-provisioned
+        /// global secondary indexes with the UpdateTable API.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This message is returned when provisioned throughput is exceeded is on a provisioned
+        /// GSI.
+        /// </para>
+        ///  </note> </li> </ul> </li> </ul> </li> <li> 
+        /// <para>
+        /// Throttling Error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>ThrottlingError</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Messages: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Throughput exceeds the current capacity of your table or index. DynamoDB is automatically
+        /// scaling your table or index so please try again shortly. If exceptions persist, check
+        /// if you have a hot key: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This message is returned when writes get throttled on an On-Demand table as DynamoDB
+        /// is automatically scaling the table.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        /// Throughput exceeds the current capacity for one or more global secondary indexes.
+        /// DynamoDB is automatically scaling your index so please try again shortly.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This message is returned when when writes get throttled on an On-Demand GSI as DynamoDB
+        /// is automatically scaling the GSI.
+        /// </para>
+        ///  </note> </li> </ul> </li> </ul> </li> <li> 
+        /// <para>
+        /// Validation Error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>ValidationError</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Messages: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// One or more parameter values were invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The update expression attempted to update the secondary index key beyond allowed size
+        /// limits.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The update expression attempted to update the secondary index key to unsupported type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An operand in the update expression has an incorrect data type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Item size to update has exceeded the maximum allowed size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Number overflow. Attempting to store a number with magnitude larger than supported
+        /// range.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Type mismatch for attribute to update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Nesting Levels have exceeded supported limits.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The document path provided in the update expression is invalid for update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The provided expression refers to an attribute that does not exist in the item.
+        /// </para>
+        ///  </li> </ul> </li> </ul> </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionInProgressException">
         /// The transaction with the given request token is already in progress.
@@ -6321,11 +6858,11 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionCanceledException">
-        /// The entire transaction request was rejected.
+        /// The entire transaction request was canceled.
         /// 
         ///  
         /// <para>
-        /// DynamoDB rejects a <code>TransactWriteItems</code> request under the following circumstances:
+        /// DynamoDB cancels a <code>TransactWriteItems</code> request under the following circumstances:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -6357,7 +6894,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// DynamoDB rejects a <code>TransactGetItems</code> request under the following circumstances:
+        /// DynamoDB cancels a <code>TransactGetItems</code> request under the following circumstances:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -6379,7 +6916,186 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// There is a user error, such as an invalid data format.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code>
+        /// property. This property is not set for other languages. Transaction cancellation reasons
+        /// are ordered in the order of requested items, if an item has no error it will have
+        /// <code>NONE</code> code and <code>Null</code> message.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Cancellation reason codes and possible error messages:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// No Errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>NONE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Message: <code>null</code> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Conditional Check Failed:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>ConditionalCheckFailed</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Message: The conditional request failed. 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Item Collection Size Limit Exceeded:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>ItemCollectionSizeLimitExceeded</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Message: Collection size exceeded.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Transaction Conflict:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>TransactionConflict</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Message: Transaction is ongoing for the item.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Provisioned Throughput Exceeded:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>ProvisionedThroughputExceeded</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Messages: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The level of configured provisioned throughput for the table was exceeded. Consider
+        /// increasing your provisioning level with the UpdateTable API.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This Message is received when provisioned throughput is exceeded is on a provisioned
+        /// DynamoDB table.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        /// The level of configured provisioned throughput for one or more global secondary indexes
+        /// of the table was exceeded. Consider increasing your provisioning level for the under-provisioned
+        /// global secondary indexes with the UpdateTable API.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This message is returned when provisioned throughput is exceeded is on a provisioned
+        /// GSI.
+        /// </para>
+        ///  </note> </li> </ul> </li> </ul> </li> <li> 
+        /// <para>
+        /// Throttling Error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>ThrottlingError</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Messages: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Throughput exceeds the current capacity of your table or index. DynamoDB is automatically
+        /// scaling your table or index so please try again shortly. If exceptions persist, check
+        /// if you have a hot key: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This message is returned when writes get throttled on an On-Demand table as DynamoDB
+        /// is automatically scaling the table.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        /// Throughput exceeds the current capacity for one or more global secondary indexes.
+        /// DynamoDB is automatically scaling your index so please try again shortly.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This message is returned when when writes get throttled on an On-Demand GSI as DynamoDB
+        /// is automatically scaling the GSI.
+        /// </para>
+        ///  </note> </li> </ul> </li> </ul> </li> <li> 
+        /// <para>
+        /// Validation Error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>ValidationError</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Messages: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// One or more parameter values were invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The update expression attempted to update the secondary index key beyond allowed size
+        /// limits.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The update expression attempted to update the secondary index key to unsupported type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An operand in the update expression has an incorrect data type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Item size to update has exceeded the maximum allowed size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Number overflow. Attempting to store a number with magnitude larger than supported
+        /// range.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Type mismatch for attribute to update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Nesting Levels have exceeded supported limits.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The document path provided in the update expression is invalid for update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The provided expression refers to an attribute that does not exist in the item.
+        /// </para>
+        ///  </li> </ul> </li> </ul> </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionInProgressException">
         /// The transaction with the given request token is already in progress.
@@ -6843,8 +7559,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -6894,8 +7610,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -6942,8 +7658,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -6996,8 +7712,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -7050,8 +7766,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -7102,8 +7818,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not

@@ -39,7 +39,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property KMSMasterKeyArn. 
         /// <para>
-        /// The KMS master key ARN used for the KMS encryption.
+        /// The KMS customer master key (CMK) ARN used for the KMS encryption.
         /// </para>
         /// </summary>
         public string KMSMasterKeyArn
@@ -57,14 +57,9 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property SSEType. 
         /// <para>
-        /// Server-side encryption type:
+        /// Server-side encryption type. The only supported value is:
         /// </para>
         ///  <ul> <li> 
-        /// <para>
-        ///  <code>AES256</code> - Server-side encryption which uses the AES256 algorithm (not
-        /// applicable).
-        /// </para>
-        ///  </li> <li> 
         /// <para>
         ///  <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
         /// Key is stored in your account and is managed by AWS KMS (KMS charges apply).
@@ -86,23 +81,12 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current state of server-side encryption:
+        /// Represents the current state of server-side encryption. The only supported values
+        /// are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ENABLING</code> - Server-side encryption is being enabled.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>ENABLED</code> - Server-side encryption is enabled.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>DISABLING</code> - Server-side encryption is being disabled.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>DISABLED</code> - Server-side encryption is disabled.
         /// </para>
         ///  </li> <li> 
         /// <para>

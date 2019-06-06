@@ -342,8 +342,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -452,8 +452,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -638,8 +638,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -986,8 +986,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -1057,8 +1057,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -1663,8 +1663,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -1715,8 +1715,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -2165,8 +2165,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -2297,8 +2297,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -2542,8 +2542,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -2619,8 +2619,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -2697,8 +2697,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -3085,8 +3085,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -3149,8 +3149,8 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
-        /// Support</a> to request a limit increase.
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
