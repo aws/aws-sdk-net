@@ -51,10 +51,34 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Algorithm);
             }
 
+            if(requestObject.IsSetConstantInitializationVector())
+            {
+                context.Writer.WritePropertyName("constantInitializationVector");
+                context.Writer.Write(requestObject.ConstantInitializationVector);
+            }
+
+            if(requestObject.IsSetDeviceId())
+            {
+                context.Writer.WritePropertyName("deviceId");
+                context.Writer.Write(requestObject.DeviceId);
+            }
+
             if(requestObject.IsSetKeyType())
             {
                 context.Writer.WritePropertyName("keyType");
                 context.Writer.Write(requestObject.KeyType);
+            }
+
+            if(requestObject.IsSetRegion())
+            {
+                context.Writer.WritePropertyName("region");
+                context.Writer.Write(requestObject.Region);
+            }
+
+            if(requestObject.IsSetResourceId())
+            {
+                context.Writer.WritePropertyName("resourceId");
+                context.Writer.Write(requestObject.ResourceId);
             }
 
             if(requestObject.IsSetRoleArn())
@@ -67,6 +91,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("secretArn");
                 context.Writer.Write(requestObject.SecretArn);
+            }
+
+            if(requestObject.IsSetUrl())
+            {
+                context.Writer.WritePropertyName("url");
+                context.Writer.Write(requestObject.Url);
             }
 
         }

@@ -85,6 +85,10 @@ namespace Amazon.MediaConnect
     {
 
         /// <summary>
+        /// Constant Speke for KeyType
+        /// </summary>
+        public static readonly KeyType Speke = new KeyType("speke");
+        /// <summary>
         /// Constant StaticKey for KeyType
         /// </summary>
         public static readonly KeyType StaticKey = new KeyType("static-key");

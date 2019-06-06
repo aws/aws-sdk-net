@@ -33,9 +33,14 @@ namespace Amazon.MediaConnect.Model
     public partial class UpdateEncryption
     {
         private Algorithm _algorithm;
+        private string _constantInitializationVector;
+        private string _deviceId;
         private KeyType _keyType;
+        private string _region;
+        private string _resourceId;
         private string _roleArn;
         private string _secretArn;
+        private string _url;
 
         /// <summary>
         /// Gets and sets the property Algorithm. The type of algorithm that is used for the encryption
@@ -51,6 +56,40 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetAlgorithm()
         {
             return this._algorithm != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConstantInitializationVector. A 128-bit, 16-byte hex value
+        /// represented by a 32-character string, to be used with the key for encrypting content.
+        /// This parameter is not valid for static key encryption.
+        /// </summary>
+        public string ConstantInitializationVector
+        {
+            get { return this._constantInitializationVector; }
+            set { this._constantInitializationVector = value; }
+        }
+
+        // Check to see if ConstantInitializationVector property is set
+        internal bool IsSetConstantInitializationVector()
+        {
+            return this._constantInitializationVector != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeviceId. The value of one of the devices that you configured
+        /// with your digital rights management (DRM) platform key provider. This parameter is
+        /// required for SPEKE encryption and is not valid for static key encryption.
+        /// </summary>
+        public string DeviceId
+        {
+            get { return this._deviceId; }
+            set { this._deviceId = value; }
+        }
+
+        // Check to see if DeviceId property is set
+        internal bool IsSetDeviceId()
+        {
+            return this._deviceId != null;
         }
 
         /// <summary>
@@ -70,6 +109,41 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Region. The AWS Region that the API Gateway proxy endpoint
+        /// was created in. This parameter is required for SPEKE encryption and is not valid for
+        /// static key encryption.
+        /// </summary>
+        public string Region
+        {
+            get { return this._region; }
+            set { this._region = value; }
+        }
+
+        // Check to see if Region property is set
+        internal bool IsSetRegion()
+        {
+            return this._region != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceId. An identifier for the content. The service
+        /// sends this value to the key server to identify the current endpoint. The resource
+        /// ID is also known as the content ID. This parameter is required for SPEKE encryption
+        /// and is not valid for static key encryption.
+        /// </summary>
+        public string ResourceId
+        {
+            get { return this._resourceId; }
+            set { this._resourceId = value; }
+        }
+
+        // Check to see if ResourceId property is set
+        internal bool IsSetResourceId()
+        {
+            return this._resourceId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. The ARN of the role that you created during setup
         /// (when you set up AWS Elemental MediaConnect as a trusted entity).
         /// </summary>
@@ -86,8 +160,9 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SecretArn. The ARN that was assigned to the secret that
-        /// you created in AWS Secrets Manager to store the encryption key.
+        /// Gets and sets the property SecretArn. The ARN of the secret that you created in AWS
+        /// Secrets Manager to store the encryption key. This parameter is required for static
+        /// key encryption and is not valid for SPEKE encryption.
         /// </summary>
         public string SecretArn
         {
@@ -99,6 +174,23 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetSecretArn()
         {
             return this._secretArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Url. The URL from the API Gateway proxy that you set up
+        /// to talk to your key server. This parameter is required for SPEKE encryption and is
+        /// not valid for static key encryption.
+        /// </summary>
+        public string Url
+        {
+            get { return this._url; }
+            set { this._url = value; }
+        }
+
+        // Check to see if Url property is set
+        internal bool IsSetUrl()
+        {
+            return this._url != null;
         }
 
     }
