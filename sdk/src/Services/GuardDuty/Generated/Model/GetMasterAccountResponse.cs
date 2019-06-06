@@ -35,8 +35,12 @@ namespace Amazon.GuardDuty.Model
         private Master _master;
 
         /// <summary>
-        /// Gets and sets the property Master.
+        /// Gets and sets the property Master. 
+        /// <para>
+        /// Master account details.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Master Master
         {
             get { return this._master; }

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Security groups associated with the EC2 instance.
+    /// 
     /// </summary>
     public partial class SecurityGroup
     {
@@ -36,7 +36,10 @@ namespace Amazon.GuardDuty.Model
         private string _groupName;
 
         /// <summary>
-        /// Gets and sets the property GroupId. EC2 instance's security group ID.
+        /// Gets and sets the property GroupId. 
+        /// <para>
+        /// EC2 instance's security group ID.
+        /// </para>
         /// </summary>
         public string GroupId
         {
@@ -51,7 +54,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GroupName. EC2 instance's security group name.
+        /// Gets and sets the property GroupName. 
+        /// <para>
+        /// EC2 instance's security group name.
+        /// </para>
         /// </summary>
         public string GroupName
         {

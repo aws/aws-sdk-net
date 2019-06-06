@@ -39,7 +39,10 @@ namespace Amazon.GuardDuty.Model
         private string _updatedAt;
 
         /// <summary>
-        /// Gets and sets the property CreatedAt.
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// Detector creation timestamp.
+        /// </para>
         /// </summary>
         public string CreatedAt
         {
@@ -54,7 +57,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FindingPublishingFrequency.
+        /// Gets and sets the property FindingPublishingFrequency. 
+        /// <para>
+        /// Finding publishing frequency.
+        /// </para>
         /// </summary>
         public FindingPublishingFrequency FindingPublishingFrequency
         {
@@ -69,8 +75,12 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServiceRole.
+        /// Gets and sets the property ServiceRole. 
+        /// <para>
+        /// The GuardDuty service role.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServiceRole
         {
             get { return this._serviceRole; }
@@ -84,8 +94,12 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The detector status.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public DetectorStatus Status
         {
             get { return this._status; }
@@ -99,7 +113,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt.
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// Detector last update timestamp.
+        /// </para>
         /// </summary>
         public string UpdatedAt
         {

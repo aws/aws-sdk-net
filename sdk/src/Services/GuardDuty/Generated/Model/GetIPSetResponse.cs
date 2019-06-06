@@ -38,8 +38,12 @@ namespace Amazon.GuardDuty.Model
         private IpSetStatus _status;
 
         /// <summary>
-        /// Gets and sets the property Format. The format of the file that contains the IPSet.
+        /// Gets and sets the property Format. 
+        /// <para>
+        /// The format of the file that contains the IPSet.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public IpSetFormat Format
         {
             get { return this._format; }
@@ -53,9 +57,12 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Location. The URI of the file that contains the IPSet.
-        /// For example (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// The URI of the file that contains the IPSet. For example (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string Location
         {
             get { return this._location; }
@@ -69,10 +76,13 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. The user friendly name to identify the IPSet. This
-        /// name is displayed in all findings that are triggered by activity that involves IP
-        /// addresses included in this IPSet.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The user friendly name to identify the IPSet. This name is displayed in all findings
+        /// that are triggered by activity that involves IP addresses included in this IPSet.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string Name
         {
             get { return this._name; }
@@ -86,8 +96,12 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status. The status of ipSet file uploaded.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of ipSet file uploaded.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public IpSetStatus Status
         {
             get { return this._status; }

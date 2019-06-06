@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Information about the PORT_PROBE action described in this finding.
+    /// 
     /// </summary>
     public partial class PortProbeAction
     {
@@ -36,7 +36,10 @@ namespace Amazon.GuardDuty.Model
         private List<PortProbeDetail> _portProbeDetails = new List<PortProbeDetail>();
 
         /// <summary>
-        /// Gets and sets the property Blocked. Port probe blocked information.
+        /// Gets and sets the property Blocked. 
+        /// <para>
+        /// Port probe blocked information.
+        /// </para>
         /// </summary>
         public bool Blocked
         {
@@ -51,7 +54,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PortProbeDetails. A list of port probe details objects.
+        /// Gets and sets the property PortProbeDetails. 
+        /// <para>
+        /// A list of port probe details objects.
+        /// </para>
         /// </summary>
         public List<PortProbeDetail> PortProbeDetails
         {

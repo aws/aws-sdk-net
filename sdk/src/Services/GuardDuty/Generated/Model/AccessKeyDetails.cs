@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// The IAM access key details (IAM user information) of a user that engaged in the activity
-    /// that prompted GuardDuty to generate a finding.
+    /// 
     /// </summary>
     public partial class AccessKeyDetails
     {
@@ -39,7 +38,10 @@ namespace Amazon.GuardDuty.Model
         private string _userType;
 
         /// <summary>
-        /// Gets and sets the property AccessKeyId. Access key ID of the user.
+        /// Gets and sets the property AccessKeyId. 
+        /// <para>
+        /// Access key ID of the user.
+        /// </para>
         /// </summary>
         public string AccessKeyId
         {
@@ -54,7 +56,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PrincipalId. The principal ID of the user.
+        /// Gets and sets the property PrincipalId. 
+        /// <para>
+        /// The principal ID of the user.
+        /// </para>
         /// </summary>
         public string PrincipalId
         {
@@ -69,7 +74,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserName. The name of the user.
+        /// Gets and sets the property UserName. 
+        /// <para>
+        /// The name of the user.
+        /// </para>
         /// </summary>
         public string UserName
         {
@@ -84,7 +92,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserType. The type of the user.
+        /// Gets and sets the property UserType. 
+        /// <para>
+        /// The type of the user.
+        /// </para>
         /// </summary>
         public string UserType
         {

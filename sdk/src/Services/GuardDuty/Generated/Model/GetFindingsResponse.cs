@@ -35,8 +35,12 @@ namespace Amazon.GuardDuty.Model
         private List<Finding> _findings = new List<Finding>();
 
         /// <summary>
-        /// Gets and sets the property Findings.
+        /// Gets and sets the property Findings. 
+        /// <para>
+        /// A list of findings.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public List<Finding> Findings
         {
             get { return this._findings; }

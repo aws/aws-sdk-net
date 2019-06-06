@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// ISP Organization information of the remote IP address.
+    /// 
     /// </summary>
     public partial class Organization
     {
@@ -38,8 +38,10 @@ namespace Amazon.GuardDuty.Model
         private string _org;
 
         /// <summary>
-        /// Gets and sets the property Asn. Autonomous system number of the internet provider
-        /// of the remote IP address.
+        /// Gets and sets the property Asn. 
+        /// <para>
+        /// Autonomous system number of the internet provider of the remote IP address.
+        /// </para>
         /// </summary>
         public string Asn
         {
@@ -54,7 +56,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AsnOrg. Organization that registered this ASN.
+        /// Gets and sets the property AsnOrg. 
+        /// <para>
+        /// Organization that registered this ASN.
+        /// </para>
         /// </summary>
         public string AsnOrg
         {
@@ -69,7 +74,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Isp. ISP information for the internet provider.
+        /// Gets and sets the property Isp. 
+        /// <para>
+        /// ISP information for the internet provider.
+        /// </para>
         /// </summary>
         public string Isp
         {
@@ -84,7 +92,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Org. Name of the internet provider.
+        /// Gets and sets the property Org. 
+        /// <para>
+        /// Name of the internet provider.
+        /// </para>
         /// </summary>
         public string Org
         {

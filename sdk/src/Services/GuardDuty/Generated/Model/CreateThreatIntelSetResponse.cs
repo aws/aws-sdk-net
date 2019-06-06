@@ -35,8 +35,12 @@ namespace Amazon.GuardDuty.Model
         private string _threatIntelSetId;
 
         /// <summary>
-        /// Gets and sets the property ThreatIntelSetId.
+        /// Gets and sets the property ThreatIntelSetId. 
+        /// <para>
+        /// The ID of the ThreatIntelSet resource.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ThreatIntelSetId
         {
             get { return this._threatIntelSetId; }

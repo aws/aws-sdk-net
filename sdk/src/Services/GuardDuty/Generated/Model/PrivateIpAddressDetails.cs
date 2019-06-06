@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Other private IP address information of the EC2 instance.
+    /// 
     /// </summary>
     public partial class PrivateIpAddressDetails
     {
@@ -36,7 +36,10 @@ namespace Amazon.GuardDuty.Model
         private string _privateIpAddress;
 
         /// <summary>
-        /// Gets and sets the property PrivateDnsName. Private DNS name of the EC2 instance.
+        /// Gets and sets the property PrivateDnsName. 
+        /// <para>
+        /// Private DNS name of the EC2 instance.
+        /// </para>
         /// </summary>
         public string PrivateDnsName
         {
@@ -51,7 +54,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PrivateIpAddress. Private IP address of the EC2 instance.
+        /// Gets and sets the property PrivateIpAddress. 
+        /// <para>
+        /// Private IP address of the EC2 instance.
+        /// </para>
         /// </summary>
         public string PrivateIpAddress
         {

@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// An object containing the unprocessed account and a result string explaining why it
-    /// was unprocessed.
+    /// 
     /// </summary>
     public partial class UnprocessedAccount
     {
@@ -37,9 +36,12 @@ namespace Amazon.GuardDuty.Model
         private string _result;
 
         /// <summary>
-        /// Gets and sets the property AccountId. AWS Account ID.
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// AWS Account ID.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=12, Max=12)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -53,7 +55,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Result. A reason why the account hasn't been processed.
+        /// Gets and sets the property Result. 
+        /// <para>
+        /// A reason why the account hasn't been processed.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Result

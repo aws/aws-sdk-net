@@ -39,10 +39,12 @@ namespace Amazon.GuardDuty.Model
         private string _onlyAssociated;
 
         /// <summary>
-        /// Gets and sets the property DetectorId. The unique ID of the detector of the GuardDuty
-        /// account whose members you want to list.
+        /// Gets and sets the property DetectorId. 
+        /// <para>
+        /// The unique ID of the detector the member is associated with.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string DetectorId
         {
             get { return this._detectorId; }
@@ -56,9 +58,11 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults. You can use this parameter to indicate the
-        /// maximum number of items you want in the response. The default value is 1. The maximum
-        /// value is 50.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// You can use this parameter to indicate the maximum number of items you want in the
+        /// response. The default value is 50. The maximum value is 50.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public int MaxResults
@@ -74,10 +78,13 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. You can use this parameter when paginating results.
-        /// Set the value of this parameter to null on your first call to the ListMembers action.
-        /// Subsequent calls to the action fill nextToken in the request with the value of NextToken
-        /// from the previous response to continue listing data.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// You can use this parameter when paginating results. Set the value of this parameter
+        /// to null on your first call to the list action. For subsequent calls to the action
+        /// fill nextToken in the request with the value of NextToken from the previous response
+        /// to continue listing data.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -92,11 +99,11 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OnlyAssociated. Specifies what member accounts the response
-        /// is to include based on their relationship status with the master account. The default
-        /// value is TRUE. If onlyAssociated is set to TRUE, the response will include member
-        /// accounts whose relationship status with the master is set to Enabled, Disabled. If
-        /// onlyAssociated is set to FALSE, the response will include all existing member accounts.
+        /// Gets and sets the property OnlyAssociated. 
+        /// <para>
+        /// Specifies whether to only return associated members or to return all members (including
+        /// members which haven't been invited yet or have been disassociated).
+        /// </para>
         /// </summary>
         public string OnlyAssociated
         {

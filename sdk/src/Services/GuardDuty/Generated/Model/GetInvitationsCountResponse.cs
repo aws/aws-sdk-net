@@ -35,7 +35,10 @@ namespace Amazon.GuardDuty.Model
         private int? _invitationsCount;
 
         /// <summary>
-        /// Gets and sets the property InvitationsCount. The number of received invitations.
+        /// Gets and sets the property InvitationsCount. 
+        /// <para>
+        /// The number of received invitations.
+        /// </para>
         /// </summary>
         public int InvitationsCount
         {

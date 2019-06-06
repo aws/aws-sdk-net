@@ -39,10 +39,13 @@ namespace Amazon.GuardDuty.Model
         private string _detectorId;
 
         /// <summary>
-        /// Gets and sets the property AccountDetails. A list of account ID and email address
-        /// pairs of the accounts that you want to associate with the master GuardDuty account.
+        /// Gets and sets the property AccountDetails. 
+        /// <para>
+        /// A list of account ID and email address pairs of the accounts that you want to associate
+        /// with the master GuardDuty account.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<AccountDetail> AccountDetails
         {
             get { return this._accountDetails; }
@@ -56,10 +59,13 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DetectorId. The unique ID of the detector of the GuardDuty
-        /// account with which you want to associate member accounts.
+        /// Gets and sets the property DetectorId. 
+        /// <para>
+        /// The unique ID of the detector of the GuardDuty account with which you want to associate
+        /// member accounts.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string DetectorId
         {
             get { return this._detectorId; }

@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// The information about the EC2 instance associated with the activity that prompted
-    /// GuardDuty to generate a finding.
+    /// 
     /// </summary>
     public partial class InstanceDetails
     {
@@ -47,7 +46,10 @@ namespace Amazon.GuardDuty.Model
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property AvailabilityZone. The availability zone of the EC2 instance.
+        /// Gets and sets the property AvailabilityZone. 
+        /// <para>
+        /// The availability zone of the EC2 instance.
+        /// </para>
         /// </summary>
         public string AvailabilityZone
         {
@@ -62,7 +64,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IamInstanceProfile.
+        /// Gets and sets the property IamInstanceProfile. 
+        /// <para>
+        /// The profile information of the EC2 instance.
+        /// </para>
         /// </summary>
         public IamInstanceProfile IamInstanceProfile
         {
@@ -77,7 +82,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ImageDescription. The image description of the EC2 instance.
+        /// Gets and sets the property ImageDescription. 
+        /// <para>
+        /// The image description of the EC2 instance.
+        /// </para>
         /// </summary>
         public string ImageDescription
         {
@@ -92,7 +100,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ImageId. The image ID of the EC2 instance.
+        /// Gets and sets the property ImageId. 
+        /// <para>
+        /// The image ID of the EC2 instance.
+        /// </para>
         /// </summary>
         public string ImageId
         {
@@ -107,7 +118,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceId. The ID of the EC2 instance.
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The ID of the EC2 instance.
+        /// </para>
         /// </summary>
         public string InstanceId
         {
@@ -122,7 +136,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceState. The state of the EC2 instance.
+        /// Gets and sets the property InstanceState. 
+        /// <para>
+        /// The state of the EC2 instance.
+        /// </para>
         /// </summary>
         public string InstanceState
         {
@@ -137,7 +154,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceType. The type of the EC2 instance.
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        /// The type of the EC2 instance.
+        /// </para>
         /// </summary>
         public string InstanceType
         {
@@ -152,7 +172,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LaunchTime. The launch time of the EC2 instance.
+        /// Gets and sets the property LaunchTime. 
+        /// <para>
+        /// The launch time of the EC2 instance.
+        /// </para>
         /// </summary>
         public string LaunchTime
         {
@@ -167,8 +190,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NetworkInterfaces. The network interface information of
-        /// the EC2 instance.
+        /// Gets and sets the property NetworkInterfaces. 
+        /// <para>
+        /// The network interface information of the EC2 instance.
+        /// </para>
         /// </summary>
         public List<NetworkInterface> NetworkInterfaces
         {
@@ -183,7 +208,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Platform. The platform of the EC2 instance.
+        /// Gets and sets the property Platform. 
+        /// <para>
+        /// The platform of the EC2 instance.
+        /// </para>
         /// </summary>
         public string Platform
         {
@@ -198,7 +226,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProductCodes. The product code of the EC2 instance.
+        /// Gets and sets the property ProductCodes. 
+        /// <para>
+        /// The product code of the EC2 instance.
+        /// </para>
         /// </summary>
         public List<ProductCode> ProductCodes
         {
@@ -213,7 +244,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. The tags of the EC2 instance.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags of the EC2 instance.
+        /// </para>
         /// </summary>
         public List<Tag> Tags
         {

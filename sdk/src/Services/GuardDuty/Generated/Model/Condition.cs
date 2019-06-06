@@ -28,22 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Finding attribute (for example, accountId) for which conditions and values must be
-    /// specified when querying findings.
+    /// 
     /// </summary>
     public partial class Condition
     {
         private List<string> _eq = new List<string>();
+        private List<string> _equals = new List<string>();
+        private long? _greaterThan;
+        private long? _greaterThanOrEqual;
         private int? _gt;
         private int? _gte;
+        private long? _lessThan;
+        private long? _lessThanOrEqual;
         private int? _lt;
         private int? _lte;
         private List<string> _neq = new List<string>();
+        private List<string> _notEquals = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Eq. Represents the equal condition to be applied to a single
-        /// field when querying for findings.
+        /// Gets and sets the property Eq. 
+        /// <para>
+        /// Represents the equal condition to be applied to a single field when querying for findings.
+        /// </para>
         /// </summary>
+        [Obsolete("This property is deprecated and the Equals property should be used instead.")]
         public List<string> Eq
         {
             get { return this._eq; }
@@ -57,9 +65,66 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Gt. Represents the greater than condition to be applied
-        /// to a single field when querying for findings.
+        /// Gets and sets the property Equals.
         /// </summary>
+        public List<string> Equals
+        {
+            get { return this._equals; }
+            set { this._equals = value; }
+        }
+
+        // Check to see if Equals property is set
+        internal bool IsSetEquals()
+        {
+            return this._equals != null && this._equals.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GreaterThan. 
+        /// <para>
+        /// Represents a greater than condition to be applied to a single field when querying
+        /// for findings.
+        /// </para>
+        /// </summary>
+        public long GreaterThan
+        {
+            get { return this._greaterThan.GetValueOrDefault(); }
+            set { this._greaterThan = value; }
+        }
+
+        // Check to see if GreaterThan property is set
+        internal bool IsSetGreaterThan()
+        {
+            return this._greaterThan.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GreaterThanOrEqual. 
+        /// <para>
+        /// Represents a greater than equal condition to be applied to a single field when querying
+        /// for findings.
+        /// </para>
+        /// </summary>
+        public long GreaterThanOrEqual
+        {
+            get { return this._greaterThanOrEqual.GetValueOrDefault(); }
+            set { this._greaterThanOrEqual = value; }
+        }
+
+        // Check to see if GreaterThanOrEqual property is set
+        internal bool IsSetGreaterThanOrEqual()
+        {
+            return this._greaterThanOrEqual.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Gt. 
+        /// <para>
+        /// Represents a greater than condition to be applied to a single field when querying
+        /// for findings.
+        /// </para>
+        /// </summary>
+        [Obsolete("This property is deprecated and the GreaterThan property should be used instead.")]
         public int Gt
         {
             get { return this._gt.GetValueOrDefault(); }
@@ -73,9 +138,13 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Gte. Represents the greater than equal condition to be
-        /// applied to a single field when querying for findings.
+        /// Gets and sets the property Gte. 
+        /// <para>
+        /// Represents a greater than equal condition to be applied to a single field when querying
+        /// for findings.
+        /// </para>
         /// </summary>
+        [Obsolete("This property is deprecated and the GreaterThanOrEqual property should be used instead.")]
         public int Gte
         {
             get { return this._gte.GetValueOrDefault(); }
@@ -89,9 +158,51 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Lt. Represents the less than condition to be applied to
-        /// a single field when querying for findings.
+        /// Gets and sets the property LessThan. 
+        /// <para>
+        /// Represents a less than condition to be applied to a single field when querying for
+        /// findings.
+        /// </para>
         /// </summary>
+        public long LessThan
+        {
+            get { return this._lessThan.GetValueOrDefault(); }
+            set { this._lessThan = value; }
+        }
+
+        // Check to see if LessThan property is set
+        internal bool IsSetLessThan()
+        {
+            return this._lessThan.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LessThanOrEqual. 
+        /// <para>
+        /// Represents a less than equal condition to be applied to a single field when querying
+        /// for findings.
+        /// </para>
+        /// </summary>
+        public long LessThanOrEqual
+        {
+            get { return this._lessThanOrEqual.GetValueOrDefault(); }
+            set { this._lessThanOrEqual = value; }
+        }
+
+        // Check to see if LessThanOrEqual property is set
+        internal bool IsSetLessThanOrEqual()
+        {
+            return this._lessThanOrEqual.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Lt. 
+        /// <para>
+        /// Represents a less than condition to be applied to a single field when querying for
+        /// findings.
+        /// </para>
+        /// </summary>
+        [Obsolete("This property is deprecated and the LessThan property should be used instead.")]
         public int Lt
         {
             get { return this._lt.GetValueOrDefault(); }
@@ -105,9 +216,13 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Lte. Represents the less than equal condition to be applied
-        /// to a single field when querying for findings.
+        /// Gets and sets the property Lte. 
+        /// <para>
+        /// Represents a less than equal condition to be applied to a single field when querying
+        /// for findings.
+        /// </para>
         /// </summary>
+        [Obsolete("This property is deprecated and the LessThanOrEqual property should be used instead.")]
         public int Lte
         {
             get { return this._lte.GetValueOrDefault(); }
@@ -121,9 +236,13 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Neq. Represents the not equal condition to be applied to
-        /// a single field when querying for findings.
+        /// Gets and sets the property Neq. 
+        /// <para>
+        /// Represents the not equal condition to be applied to a single field when querying for
+        /// findings.
+        /// </para>
         /// </summary>
+        [Obsolete("This property is deprecated and the NotEquals property should be used instead.")]
         public List<string> Neq
         {
             get { return this._neq; }
@@ -134,6 +253,21 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetNeq()
         {
             return this._neq != null && this._neq.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotEquals.
+        /// </summary>
+        public List<string> NotEquals
+        {
+            get { return this._notEquals; }
+            set { this._notEquals = value; }
+        }
+
+        // Check to see if NotEquals property is set
+        internal bool IsSetNotEquals()
+        {
+            return this._notEquals != null && this._notEquals.Count > 0; 
         }
 
     }

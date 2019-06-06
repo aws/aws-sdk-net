@@ -40,7 +40,10 @@ namespace Amazon.GuardDuty.Model
         private FindingPublishingFrequency _findingPublishingFrequency;
 
         /// <summary>
-        /// Gets and sets the property ClientToken. The idempotency token for the create request.
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// The idempotency token for the create request.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=64)]
         public string ClientToken
@@ -56,8 +59,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Enable. A boolean value that specifies whether the detector
-        /// is to be enabled.
+        /// Gets and sets the property Enable. 
+        /// <para>
+        /// A boolean value that specifies whether the detector is to be enabled.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public bool Enable
@@ -73,8 +78,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FindingPublishingFrequency. A enum value that specifies
-        /// how frequently customer got Finding updates published.
+        /// Gets and sets the property FindingPublishingFrequency. 
+        /// <para>
+        /// A enum value that specifies how frequently customer got Finding updates published.
+        /// </para>
         /// </summary>
         public FindingPublishingFrequency FindingPublishingFrequency
         {

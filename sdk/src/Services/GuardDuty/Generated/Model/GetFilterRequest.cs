@@ -37,10 +37,12 @@ namespace Amazon.GuardDuty.Model
         private string _filterName;
 
         /// <summary>
-        /// Gets and sets the property DetectorId. The detector ID that specifies the GuardDuty
-        /// service where you want to list the details of the specified filter.
+        /// Gets and sets the property DetectorId. 
+        /// <para>
+        /// The unique ID of the detector the filter is associated with.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string DetectorId
         {
             get { return this._detectorId; }
@@ -54,8 +56,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FilterName. The name of the filter whose details you want
-        /// to get.
+        /// Gets and sets the property FilterName. 
+        /// <para>
+        /// The name of the filter you want to get.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string FilterName

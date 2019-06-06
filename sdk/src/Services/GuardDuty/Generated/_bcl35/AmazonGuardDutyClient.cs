@@ -35,8 +35,20 @@ namespace Amazon.GuardDuty
     /// <summary>
     /// Implementation for accessing GuardDuty
     ///
-    /// Assess, monitor, manage, and remediate security issues across your AWS infrastructure,
-    /// applications, and data.
+    /// Amazon GuardDuty is a continuous security monitoring service that analyzes and processes
+    /// the following data sources: VPC Flow Logs, AWS CloudTrail event logs, and DNS logs.
+    /// It uses threat intelligence feeds, such as lists of malicious IPs and domains, and
+    /// machine learning to identify unexpected and potentially unauthorized and malicious
+    /// activity within your AWS environment. This can include issues like escalations of
+    /// privileges, uses of exposed credentials, or communication with malicious IPs, URLs,
+    /// or domains. For example, GuardDuty can detect compromised EC2 instances serving malware
+    /// or mining bitcoin. It also monitors AWS account access behavior for signs of compromise,
+    /// such as unauthorized infrastructure deployments, like instances deployed in a region
+    /// that has never been used, or unusual API calls, like a password policy change to reduce
+    /// password strength. GuardDuty informs you of the status of your AWS environment by
+    /// producing security findings that you can view in the GuardDuty console or through
+    /// Amazon CloudWatch events. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html">
+    /// Amazon GuardDuty User Guide</a>.
     /// </summary>
     public partial class AmazonGuardDutyClient : AmazonServiceClient, IAmazonGuardDuty
     {
@@ -246,10 +258,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the AcceptInvitation service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AcceptInvitation">REST API Reference for AcceptInvitation Operation</seealso>
         public virtual AcceptInvitationResponse AcceptInvitation(AcceptInvitationRequest request)
@@ -306,10 +318,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the ArchiveFindings service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ArchiveFindings">REST API Reference for ArchiveFindings Operation</seealso>
         public virtual ArchiveFindingsResponse ArchiveFindings(ArchiveFindingsRequest request)
@@ -368,10 +380,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the CreateDetector service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateDetector">REST API Reference for CreateDetector Operation</seealso>
         public virtual CreateDetectorResponse CreateDetector(CreateDetectorRequest request)
@@ -428,10 +440,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the CreateFilter service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateFilter">REST API Reference for CreateFilter Operation</seealso>
         public virtual CreateFilterResponse CreateFilter(CreateFilterRequest request)
@@ -489,10 +501,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the CreateIPSet service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateIPSet">REST API Reference for CreateIPSet Operation</seealso>
         public virtual CreateIPSetResponse CreateIPSet(CreateIPSetRequest request)
@@ -551,10 +563,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the CreateMembers service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateMembers">REST API Reference for CreateMembers Operation</seealso>
         public virtual CreateMembersResponse CreateMembers(CreateMembersRequest request)
@@ -613,10 +625,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the CreateSampleFindings service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateSampleFindings">REST API Reference for CreateSampleFindings Operation</seealso>
         public virtual CreateSampleFindingsResponse CreateSampleFindings(CreateSampleFindingsRequest request)
@@ -674,10 +686,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the CreateThreatIntelSet service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateThreatIntelSet">REST API Reference for CreateThreatIntelSet Operation</seealso>
         public virtual CreateThreatIntelSetResponse CreateThreatIntelSet(CreateThreatIntelSetRequest request)
@@ -735,10 +747,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the DeclineInvitations service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeclineInvitations">REST API Reference for DeclineInvitations Operation</seealso>
         public virtual DeclineInvitationsResponse DeclineInvitations(DeclineInvitationsRequest request)
@@ -795,10 +807,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the DeleteDetector service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteDetector">REST API Reference for DeleteDetector Operation</seealso>
         public virtual DeleteDetectorResponse DeleteDetector(DeleteDetectorRequest request)
@@ -855,10 +867,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the DeleteFilter service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteFilter">REST API Reference for DeleteFilter Operation</seealso>
         public virtual DeleteFilterResponse DeleteFilter(DeleteFilterRequest request)
@@ -916,10 +928,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the DeleteInvitations service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteInvitations">REST API Reference for DeleteInvitations Operation</seealso>
         public virtual DeleteInvitationsResponse DeleteInvitations(DeleteInvitationsRequest request)
@@ -976,10 +988,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the DeleteIPSet service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteIPSet">REST API Reference for DeleteIPSet Operation</seealso>
         public virtual DeleteIPSetResponse DeleteIPSet(DeleteIPSetRequest request)
@@ -1037,10 +1049,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the DeleteMembers service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteMembers">REST API Reference for DeleteMembers Operation</seealso>
         public virtual DeleteMembersResponse DeleteMembers(DeleteMembersRequest request)
@@ -1097,10 +1109,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the DeleteThreatIntelSet service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteThreatIntelSet">REST API Reference for DeleteThreatIntelSet Operation</seealso>
         public virtual DeleteThreatIntelSetResponse DeleteThreatIntelSet(DeleteThreatIntelSetRequest request)
@@ -1157,10 +1169,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the DisassociateFromMasterAccount service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateFromMasterAccount">REST API Reference for DisassociateFromMasterAccount Operation</seealso>
         public virtual DisassociateFromMasterAccountResponse DisassociateFromMasterAccount(DisassociateFromMasterAccountRequest request)
@@ -1218,10 +1230,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the DisassociateMembers service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateMembers">REST API Reference for DisassociateMembers Operation</seealso>
         public virtual DisassociateMembersResponse DisassociateMembers(DisassociateMembersRequest request)
@@ -1278,10 +1290,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the GetDetector service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetDetector">REST API Reference for GetDetector Operation</seealso>
         public virtual GetDetectorResponse GetDetector(GetDetectorRequest request)
@@ -1338,10 +1350,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the GetFilter service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFilter">REST API Reference for GetFilter Operation</seealso>
         public virtual GetFilterResponse GetFilter(GetFilterRequest request)
@@ -1398,10 +1410,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the GetFindings service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFindings">REST API Reference for GetFindings Operation</seealso>
         public virtual GetFindingsResponse GetFindings(GetFindingsRequest request)
@@ -1458,10 +1470,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the GetFindingsStatistics service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFindingsStatistics">REST API Reference for GetFindingsStatistics Operation</seealso>
         public virtual GetFindingsStatisticsResponse GetFindingsStatistics(GetFindingsStatisticsRequest request)
@@ -1519,10 +1531,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the GetInvitationsCount service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetInvitationsCount">REST API Reference for GetInvitationsCount Operation</seealso>
         public virtual GetInvitationsCountResponse GetInvitationsCount(GetInvitationsCountRequest request)
@@ -1579,10 +1591,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the GetIPSet service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetIPSet">REST API Reference for GetIPSet Operation</seealso>
         public virtual GetIPSetResponse GetIPSet(GetIPSetRequest request)
@@ -1640,10 +1652,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the GetMasterAccount service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMasterAccount">REST API Reference for GetMasterAccount Operation</seealso>
         public virtual GetMasterAccountResponse GetMasterAccount(GetMasterAccountRequest request)
@@ -1701,10 +1713,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the GetMembers service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMembers">REST API Reference for GetMembers Operation</seealso>
         public virtual GetMembersResponse GetMembers(GetMembersRequest request)
@@ -1761,10 +1773,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the GetThreatIntelSet service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetThreatIntelSet">REST API Reference for GetThreatIntelSet Operation</seealso>
         public virtual GetThreatIntelSetResponse GetThreatIntelSet(GetThreatIntelSetRequest request)
@@ -1823,10 +1835,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the InviteMembers service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/InviteMembers">REST API Reference for InviteMembers Operation</seealso>
         public virtual InviteMembersResponse InviteMembers(InviteMembersRequest request)
@@ -1883,10 +1895,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the ListDetectors service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListDetectors">REST API Reference for ListDetectors Operation</seealso>
         public virtual ListDetectorsResponse ListDetectors(ListDetectorsRequest request)
@@ -1943,10 +1955,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the ListFilters service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListFilters">REST API Reference for ListFilters Operation</seealso>
         public virtual ListFiltersResponse ListFilters(ListFiltersRequest request)
@@ -2003,10 +2015,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the ListFindings service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListFindings">REST API Reference for ListFindings Operation</seealso>
         public virtual ListFindingsResponse ListFindings(ListFindingsRequest request)
@@ -2063,10 +2075,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the ListInvitations service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListInvitations">REST API Reference for ListInvitations Operation</seealso>
         public virtual ListInvitationsResponse ListInvitations(ListInvitationsRequest request)
@@ -2123,10 +2135,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the ListIPSets service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListIPSets">REST API Reference for ListIPSets Operation</seealso>
         public virtual ListIPSetsResponse ListIPSets(ListIPSetsRequest request)
@@ -2183,10 +2195,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the ListMembers service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListMembers">REST API Reference for ListMembers Operation</seealso>
         public virtual ListMembersResponse ListMembers(ListMembersRequest request)
@@ -2243,10 +2255,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the ListThreatIntelSets service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListThreatIntelSets">REST API Reference for ListThreatIntelSets Operation</seealso>
         public virtual ListThreatIntelSetsResponse ListThreatIntelSets(ListThreatIntelSetsRequest request)
@@ -2305,10 +2317,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the StartMonitoringMembers service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StartMonitoringMembers">REST API Reference for StartMonitoringMembers Operation</seealso>
         public virtual StartMonitoringMembersResponse StartMonitoringMembers(StartMonitoringMembersRequest request)
@@ -2367,10 +2379,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the StopMonitoringMembers service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StopMonitoringMembers">REST API Reference for StopMonitoringMembers Operation</seealso>
         public virtual StopMonitoringMembersResponse StopMonitoringMembers(StopMonitoringMembersRequest request)
@@ -2427,10 +2439,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the UnarchiveFindings service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UnarchiveFindings">REST API Reference for UnarchiveFindings Operation</seealso>
         public virtual UnarchiveFindingsResponse UnarchiveFindings(UnarchiveFindingsRequest request)
@@ -2487,10 +2499,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the UpdateDetector service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateDetector">REST API Reference for UpdateDetector Operation</seealso>
         public virtual UpdateDetectorResponse UpdateDetector(UpdateDetectorRequest request)
@@ -2547,10 +2559,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the UpdateFilter service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateFilter">REST API Reference for UpdateFilter Operation</seealso>
         public virtual UpdateFilterResponse UpdateFilter(UpdateFilterRequest request)
@@ -2607,10 +2619,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the UpdateFindingsFeedback service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateFindingsFeedback">REST API Reference for UpdateFindingsFeedback Operation</seealso>
         public virtual UpdateFindingsFeedbackResponse UpdateFindingsFeedback(UpdateFindingsFeedbackRequest request)
@@ -2667,10 +2679,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the UpdateIPSet service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateIPSet">REST API Reference for UpdateIPSet Operation</seealso>
         public virtual UpdateIPSetResponse UpdateIPSet(UpdateIPSetRequest request)
@@ -2727,10 +2739,10 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>The response from the UpdateThreatIntelSet service method, as returned by GuardDuty.</returns>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
-        /// Error response object.
+        /// Bad request exception object.
         /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
-        /// Error response object.
+        /// Internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateThreatIntelSet">REST API Reference for UpdateThreatIntelSet Operation</seealso>
         public virtual UpdateThreatIntelSetResponse UpdateThreatIntelSet(UpdateThreatIntelSetRequest request)

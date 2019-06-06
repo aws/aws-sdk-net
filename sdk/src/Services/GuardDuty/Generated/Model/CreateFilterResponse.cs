@@ -35,8 +35,12 @@ namespace Amazon.GuardDuty.Model
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property Name. The name of the successfully created filter.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the successfully created filter.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=64)]
         public string Name
         {
             get { return this._name; }

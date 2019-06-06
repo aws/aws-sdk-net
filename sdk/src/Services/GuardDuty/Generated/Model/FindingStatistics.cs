@@ -28,15 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Finding statistics object.
+    /// 
     /// </summary>
     public partial class FindingStatistics
     {
         private Dictionary<string, int> _countBySeverity = new Dictionary<string, int>();
 
         /// <summary>
-        /// Gets and sets the property CountBySeverity. Represents a map of severity to count
-        /// statistic for a set of findings
+        /// Gets and sets the property CountBySeverity. 
+        /// <para>
+        /// Represents a map of severity to count statistic for a set of findings
+        /// </para>
         /// </summary>
         public Dictionary<string, int> CountBySeverity
         {

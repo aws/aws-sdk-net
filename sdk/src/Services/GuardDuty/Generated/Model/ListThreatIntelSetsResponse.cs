@@ -36,7 +36,10 @@ namespace Amazon.GuardDuty.Model
         private List<string> _threatIntelSetIds = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// Pagination parameter to be used on the next list operation to retrieve more items.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -51,8 +54,12 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ThreatIntelSetIds.
+        /// Gets and sets the property ThreatIntelSetIds. 
+        /// <para>
+        /// The IDs of the ThreatIntelSet resources.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public List<string> ThreatIntelSetIds
         {
             get { return this._threatIntelSetIds; }

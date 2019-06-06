@@ -40,10 +40,13 @@ namespace Amazon.GuardDuty.Model
         private SortCriteria _sortCriteria;
 
         /// <summary>
-        /// Gets and sets the property DetectorId. The ID of the detector that specifies the GuardDuty
-        /// service whose findings you want to list.
+        /// Gets and sets the property DetectorId. 
+        /// <para>
+        /// The ID of the detector that specifies the GuardDuty service whose findings you want
+        /// to list.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string DetectorId
         {
             get { return this._detectorId; }
@@ -57,8 +60,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FindingCriteria. Represents the criteria used for querying
-        /// findings.
+        /// Gets and sets the property FindingCriteria. 
+        /// <para>
+        /// Represents the criteria used for querying findings.
+        /// </para>
         /// </summary>
         public FindingCriteria FindingCriteria
         {
@@ -73,9 +78,11 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults. You can use this parameter to indicate the
-        /// maximum number of items you want in the response. The default value is 50. The maximum
-        /// value is 50.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// You can use this parameter to indicate the maximum number of items you want in the
+        /// response. The default value is 50. The maximum value is 50.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public int MaxResults
@@ -91,10 +98,13 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. You can use this parameter when paginating results.
-        /// Set the value of this parameter to null on your first call to the ListFindings action.
-        /// For subsequent calls to the action fill nextToken in the request with the value of
-        /// nextToken from the previous response to continue listing data.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// You can use this parameter when paginating results. Set the value of this parameter
+        /// to null on your first call to the list action. For subsequent calls to the action
+        /// fill nextToken in the request with the value of NextToken from the previous response
+        /// to continue listing data.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -109,8 +119,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SortCriteria. Represents the criteria used for sorting
-        /// findings.
+        /// Gets and sets the property SortCriteria. 
+        /// <para>
+        /// Represents the criteria used for sorting findings.
+        /// </para>
         /// </summary>
         public SortCriteria SortCriteria
         {

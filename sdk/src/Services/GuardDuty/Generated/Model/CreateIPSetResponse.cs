@@ -35,8 +35,12 @@ namespace Amazon.GuardDuty.Model
         private string _ipSetId;
 
         /// <summary>
-        /// Gets and sets the property IpSetId.
+        /// Gets and sets the property IpSetId. 
+        /// <para>
+        /// The ID of the IPSet resource.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string IpSetId
         {
             get { return this._ipSetId; }

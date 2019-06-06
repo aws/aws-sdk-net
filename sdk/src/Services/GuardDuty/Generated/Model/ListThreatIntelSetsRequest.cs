@@ -38,10 +38,12 @@ namespace Amazon.GuardDuty.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property DetectorId. The detectorID that specifies the GuardDuty
-        /// service whose ThreatIntelSets you want to list.
+        /// Gets and sets the property DetectorId. 
+        /// <para>
+        /// The unique ID of the detector the threatIntelSet is associated with.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string DetectorId
         {
             get { return this._detectorId; }
@@ -55,9 +57,11 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults. You can use this parameter to indicate the
-        /// maximum number of items that you want in the response. The default value is 7. The
-        /// maximum value is 7.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// You can use this parameter to indicate the maximum number of items you want in the
+        /// response. The default value is 50. The maximum value is 50.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public int MaxResults
@@ -73,8 +77,13 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. Pagination token to start retrieving threat
-        /// intel sets from.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// You can use this parameter when paginating results. Set the value of this parameter
+        /// to null on your first call to the list action. For subsequent calls to the action
+        /// fill nextToken in the request with the value of NextToken from the previous response
+        /// to continue listing data.
+        /// </para>
         /// </summary>
         public string NextToken
         {

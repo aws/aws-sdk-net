@@ -36,8 +36,12 @@ namespace Amazon.GuardDuty.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Invitations.
+        /// Gets and sets the property Invitations. 
+        /// <para>
+        /// A list of invitation descriptions.
+        /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<Invitation> Invitations
         {
             get { return this._invitations; }
@@ -51,7 +55,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// Pagination parameter to be used on the next list operation to retrieve more items.
+        /// </para>
         /// </summary>
         public string NextToken
         {

@@ -37,11 +37,13 @@ namespace Amazon.GuardDuty.Model
         private List<string> _accountIds = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property AccountIds. A list of account IDs of the AWS accounts that
-        /// sent invitations to the current member account that you want to delete invitations
-        /// from.
+        /// Gets and sets the property AccountIds. 
+        /// <para>
+        /// A list of account IDs of the AWS accounts that sent invitations to the current member
+        /// account that you want to delete invitations from.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> AccountIds
         {
             get { return this._accountIds; }

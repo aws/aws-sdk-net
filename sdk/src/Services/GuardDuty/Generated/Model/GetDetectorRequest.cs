@@ -36,10 +36,12 @@ namespace Amazon.GuardDuty.Model
         private string _detectorId;
 
         /// <summary>
-        /// Gets and sets the property DetectorId. The unique ID of the detector that you want
-        /// to retrieve.
+        /// Gets and sets the property DetectorId. 
+        /// <para>
+        /// The unique ID of the detector that you want to get.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string DetectorId
         {
             get { return this._detectorId; }

@@ -37,9 +37,11 @@ namespace Amazon.GuardDuty.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. You can use this parameter to indicate the
-        /// maximum number of invitations you want in the response. The default value is 50. The
-        /// maximum value is 50.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// You can use this parameter to indicate the maximum number of items you want in the
+        /// response. The default value is 50. The maximum value is 50.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public int MaxResults
@@ -55,10 +57,13 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. You can use this parameter when paginating results.
-        /// Set the value of this parameter to null on your first call to the ListInvitations
-        /// action. Subsequent calls to the action fill nextToken in the request with the value
-        /// of NextToken from the previous response to continue listing data.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// You can use this parameter when paginating results. Set the value of this parameter
+        /// to null on your first call to the list action. For subsequent calls to the action
+        /// fill nextToken in the request with the value of NextToken from the previous response
+        /// to continue listing data.
+        /// </para>
         /// </summary>
         public string NextToken
         {

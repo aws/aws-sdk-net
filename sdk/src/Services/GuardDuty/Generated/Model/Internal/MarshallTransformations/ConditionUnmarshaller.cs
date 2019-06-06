@@ -70,6 +70,24 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.Eq = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("equals", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Equals = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("greaterThan", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.GreaterThan = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("greaterThanOrEqual", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.GreaterThanOrEqual = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("gt", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -80,6 +98,18 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.Gte = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lessThan", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.LessThan = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lessThanOrEqual", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.LessThanOrEqual = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lt", targetDepth))
@@ -98,6 +128,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Neq = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("notEquals", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.NotEquals = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

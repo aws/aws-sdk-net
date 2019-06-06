@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Information about the activity described in a finding.
+    /// 
     /// </summary>
     public partial class Action
     {
@@ -39,7 +39,10 @@ namespace Amazon.GuardDuty.Model
         private PortProbeAction _portProbeAction;
 
         /// <summary>
-        /// Gets and sets the property ActionType. GuardDuty Finding activity type.
+        /// Gets and sets the property ActionType. 
+        /// <para>
+        /// GuardDuty Finding activity type.
+        /// </para>
         /// </summary>
         public string ActionType
         {
@@ -54,8 +57,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AwsApiCallAction. Information about the AWS_API_CALL action
-        /// described in this finding.
+        /// Gets and sets the property AwsApiCallAction. 
+        /// <para>
+        /// Information about the AWS_API_CALL action described in this finding.
+        /// </para>
         /// </summary>
         public AwsApiCallAction AwsApiCallAction
         {
@@ -70,8 +75,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DnsRequestAction. Information about the DNS_REQUEST action
-        /// described in this finding.
+        /// Gets and sets the property DnsRequestAction. 
+        /// <para>
+        /// Information about the DNS_REQUEST action described in this finding.
+        /// </para>
         /// </summary>
         public DnsRequestAction DnsRequestAction
         {
@@ -86,8 +93,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NetworkConnectionAction. Information about the NETWORK_CONNECTION
-        /// action described in this finding.
+        /// Gets and sets the property NetworkConnectionAction. 
+        /// <para>
+        /// Information about the NETWORK_CONNECTION action described in this finding.
+        /// </para>
         /// </summary>
         public NetworkConnectionAction NetworkConnectionAction
         {
@@ -102,8 +111,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PortProbeAction. Information about the PORT_PROBE action
-        /// described in this finding.
+        /// Gets and sets the property PortProbeAction. 
+        /// <para>
+        /// Information about the PORT_PROBE action described in this finding.
+        /// </para>
         /// </summary>
         public PortProbeAction PortProbeAction
         {

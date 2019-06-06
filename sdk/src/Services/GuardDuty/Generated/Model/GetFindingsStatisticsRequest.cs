@@ -38,10 +38,13 @@ namespace Amazon.GuardDuty.Model
         private List<string> _findingStatisticTypes = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property DetectorId. The ID of the detector that specifies the GuardDuty
-        /// service whose findings' statistics you want to retrieve.
+        /// Gets and sets the property DetectorId. 
+        /// <para>
+        /// The ID of the detector that specifies the GuardDuty service whose findings' statistics
+        /// you want to retrieve.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string DetectorId
         {
             get { return this._detectorId; }
@@ -55,8 +58,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FindingCriteria. Represents the criteria used for querying
-        /// findings.
+        /// Gets and sets the property FindingCriteria. 
+        /// <para>
+        /// Represents the criteria used for querying findings.
+        /// </para>
         /// </summary>
         public FindingCriteria FindingCriteria
         {
@@ -71,9 +76,12 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FindingStatisticTypes. Types of finding statistics to retrieve.
+        /// Gets and sets the property FindingStatisticTypes. 
+        /// <para>
+        /// Types of finding statistics to retrieve.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=10)]
         public List<string> FindingStatisticTypes
         {
             get { return this._findingStatisticTypes; }

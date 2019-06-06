@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Information about the AWS_API_CALL action described in this finding.
+    /// 
     /// </summary>
     public partial class AwsApiCallAction
     {
@@ -39,7 +39,10 @@ namespace Amazon.GuardDuty.Model
         private string _serviceName;
 
         /// <summary>
-        /// Gets and sets the property Api. AWS API name.
+        /// Gets and sets the property Api. 
+        /// <para>
+        /// AWS API name.
+        /// </para>
         /// </summary>
         public string Api
         {
@@ -54,7 +57,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CallerType. AWS API caller type.
+        /// Gets and sets the property CallerType. 
+        /// <para>
+        /// AWS API caller type.
+        /// </para>
         /// </summary>
         public string CallerType
         {
@@ -69,7 +75,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DomainDetails. Domain information for the AWS API call.
+        /// Gets and sets the property DomainDetails. 
+        /// <para>
+        /// Domain information for the AWS API call.
+        /// </para>
         /// </summary>
         public DomainDetails DomainDetails
         {
@@ -84,7 +93,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RemoteIpDetails. Remote IP information of the connection.
+        /// Gets and sets the property RemoteIpDetails. 
+        /// <para>
+        /// Remote IP information of the connection.
+        /// </para>
         /// </summary>
         public RemoteIpDetails RemoteIpDetails
         {
@@ -99,7 +111,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServiceName. AWS service name whose API was invoked.
+        /// Gets and sets the property ServiceName. 
+        /// <para>
+        /// AWS service name whose API was invoked.
+        /// </para>
         /// </summary>
         public string ServiceName
         {

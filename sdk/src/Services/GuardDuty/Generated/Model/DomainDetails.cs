@@ -28,10 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Domain information for the AWS API call.
+    /// 
     /// </summary>
     public partial class DomainDetails
     {
+        private string _domain;
+
+        /// <summary>
+        /// Gets and sets the property Domain. 
+        /// <para>
+        /// Domain information for the AWS API call.
+        /// </para>
+        /// </summary>
+        public string Domain
+        {
+            get { return this._domain; }
+            set { this._domain = value; }
+        }
+
+        // Check to see if Domain property is set
+        internal bool IsSetDomain()
+        {
+            return this._domain != null;
+        }
 
     }
 }

@@ -28,15 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Represents the criteria used for querying findings.
+    /// 
     /// </summary>
     public partial class FindingCriteria
     {
         private Dictionary<string, Condition> _criterion = new Dictionary<string, Condition>();
 
         /// <summary>
-        /// Gets and sets the property Criterion. Represents a map of finding properties that
-        /// match specified conditions and values when querying findings.
+        /// Gets and sets the property Criterion. 
+        /// <para>
+        /// Represents a map of finding properties that match specified conditions and values
+        /// when querying findings.
+        /// </para>
         /// </summary>
         public Dictionary<string, Condition> Criterion
         {

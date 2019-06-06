@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Local port information of the connection.
+    /// 
     /// </summary>
     public partial class LocalPortDetails
     {
@@ -36,7 +36,10 @@ namespace Amazon.GuardDuty.Model
         private string _portName;
 
         /// <summary>
-        /// Gets and sets the property Port. Port number of the local connection.
+        /// Gets and sets the property Port. 
+        /// <para>
+        /// Port number of the local connection.
+        /// </para>
         /// </summary>
         public int Port
         {
@@ -51,7 +54,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PortName. Port name of the local connection.
+        /// Gets and sets the property PortName. 
+        /// <para>
+        /// Port name of the local connection.
+        /// </para>
         /// </summary>
         public string PortName
         {

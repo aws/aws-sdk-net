@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// A tag of the EC2 instance.
+    /// 
     /// </summary>
     public partial class Tag
     {
@@ -36,7 +36,10 @@ namespace Amazon.GuardDuty.Model
         private string _value;
 
         /// <summary>
-        /// Gets and sets the property Key. EC2 instance tag key.
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// EC2 instance tag key.
+        /// </para>
         /// </summary>
         public string Key
         {
@@ -51,7 +54,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Value. EC2 instance tag value.
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// EC2 instance tag value.
+        /// </para>
         /// </summary>
         public string Value
         {

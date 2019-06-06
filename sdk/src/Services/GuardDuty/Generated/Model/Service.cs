@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Additional information assigned to the generated finding by GuardDuty.
+    /// 
     /// </summary>
     public partial class Service
     {
@@ -43,7 +43,10 @@ namespace Amazon.GuardDuty.Model
         private string _userFeedback;
 
         /// <summary>
-        /// Gets and sets the property Action. Information about the activity described in a finding.
+        /// Gets and sets the property Action. 
+        /// <para>
+        /// Information about the activity described in a finding.
+        /// </para>
         /// </summary>
         public Action Action
         {
@@ -58,7 +61,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Archived. Indicates whether this finding is archived.
+        /// Gets and sets the property Archived. 
+        /// <para>
+        /// Indicates whether this finding is archived.
+        /// </para>
         /// </summary>
         public bool Archived
         {
@@ -73,7 +79,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Count. Total count of the occurrences of this finding type.
+        /// Gets and sets the property Count. 
+        /// <para>
+        /// Total count of the occurrences of this finding type.
+        /// </para>
         /// </summary>
         public int Count
         {
@@ -88,8 +97,12 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DetectorId. Detector ID for the GuardDuty service.
+        /// Gets and sets the property DetectorId. 
+        /// <para>
+        /// Detector ID for the GuardDuty service.
+        /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=300)]
         public string DetectorId
         {
             get { return this._detectorId; }
@@ -103,8 +116,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EventFirstSeen. First seen timestamp of the activity that
-        /// prompted GuardDuty to generate this finding.
+        /// Gets and sets the property EventFirstSeen. 
+        /// <para>
+        /// First seen timestamp of the activity that prompted GuardDuty to generate this finding.
+        /// </para>
         /// </summary>
         public string EventFirstSeen
         {
@@ -119,8 +134,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EventLastSeen. Last seen timestamp of the activity that
-        /// prompted GuardDuty to generate this finding.
+        /// Gets and sets the property EventLastSeen. 
+        /// <para>
+        /// Last seen timestamp of the activity that prompted GuardDuty to generate this finding.
+        /// </para>
         /// </summary>
         public string EventLastSeen
         {
@@ -135,7 +152,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceRole. Resource role information for this finding.
+        /// Gets and sets the property ResourceRole. 
+        /// <para>
+        /// Resource role information for this finding.
+        /// </para>
         /// </summary>
         public string ResourceRole
         {
@@ -150,8 +170,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServiceName. The name of the AWS service (GuardDuty) that
-        /// generated a finding.
+        /// Gets and sets the property ServiceName. 
+        /// <para>
+        /// The name of the AWS service (GuardDuty) that generated a finding.
+        /// </para>
         /// </summary>
         public string ServiceName
         {
@@ -166,7 +188,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserFeedback. Feedback left about the finding.
+        /// Gets and sets the property UserFeedback. 
+        /// <para>
+        /// Feedback left about the finding.
+        /// </para>
         /// </summary>
         public string UserFeedback
         {

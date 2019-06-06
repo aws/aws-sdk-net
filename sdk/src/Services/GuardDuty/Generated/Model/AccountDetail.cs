@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// An object containing the member's accountId and email address.
+    /// 
     /// </summary>
     public partial class AccountDetail
     {
@@ -36,9 +36,12 @@ namespace Amazon.GuardDuty.Model
         private string _email;
 
         /// <summary>
-        /// Gets and sets the property AccountId. Member account ID.
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// Member account ID.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=12, Max=12)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -52,9 +55,12 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Email. Member account's email address.
+        /// Gets and sets the property Email. 
+        /// <para>
+        /// Member account's email address.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Email
         {
             get { return this._email; }

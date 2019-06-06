@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Country information of the remote IP address.
+    /// 
     /// </summary>
     public partial class Country
     {
@@ -36,7 +36,10 @@ namespace Amazon.GuardDuty.Model
         private string _countryName;
 
         /// <summary>
-        /// Gets and sets the property CountryCode. Country code of the remote IP address.
+        /// Gets and sets the property CountryCode. 
+        /// <para>
+        /// Country code of the remote IP address.
+        /// </para>
         /// </summary>
         public string CountryCode
         {
@@ -51,7 +54,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CountryName. Country name of the remote IP address.
+        /// Gets and sets the property CountryName. 
+        /// <para>
+        /// Country name of the remote IP address.
+        /// </para>
         /// </summary>
         public string CountryName
         {

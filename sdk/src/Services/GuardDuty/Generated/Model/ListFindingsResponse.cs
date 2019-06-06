@@ -36,8 +36,12 @@ namespace Amazon.GuardDuty.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property FindingIds.
+        /// Gets and sets the property FindingIds. 
+        /// <para>
+        /// The IDs of the findings you are listing.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public List<string> FindingIds
         {
             get { return this._findingIds; }
@@ -51,7 +55,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// Pagination parameter to be used on the next list operation to retrieve more items.
+        /// </para>
         /// </summary>
         public string NextToken
         {

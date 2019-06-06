@@ -35,9 +35,13 @@ namespace Amazon.GuardDuty.Model
         private List<UnprocessedAccount> _unprocessedAccounts = new List<UnprocessedAccount>();
 
         /// <summary>
-        /// Gets and sets the property UnprocessedAccounts. A list of objects containing the unprocessed
-        /// account and a result string explaining why it was unprocessed.
+        /// Gets and sets the property UnprocessedAccounts. 
+        /// <para>
+        /// A list of objects containing the unprocessed account and a result string explaining
+        /// why it was unprocessed.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public List<UnprocessedAccount> UnprocessedAccounts
         {
             get { return this._unprocessedAccounts; }

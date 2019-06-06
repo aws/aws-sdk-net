@@ -28,14 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// City information of the remote IP address.
+    /// 
     /// </summary>
     public partial class City
     {
         private string _cityName;
 
         /// <summary>
-        /// Gets and sets the property CityName. City name of the remote IP address.
+        /// Gets and sets the property CityName. 
+        /// <para>
+        /// City name of the remote IP address.
+        /// </para>
         /// </summary>
         public string CityName
         {

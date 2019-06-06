@@ -1,0 +1,26 @@
+{
+    "shapeModifiers": {
+        "Condition": {
+            "modify": [
+                {
+                    "Eq": { "deprecatedMessage": "This property is deprecated and the Equals property should be used instead." }
+                },
+                {
+                    "Neq": { "deprecatedMessage": "This property is deprecated and the NotEquals property should be used instead." }
+                },
+                {
+                    "Gt": { "deprecatedMessage": "This property is deprecated and the GreaterThan property should be used instead." }
+                },
+                {
+                    "Gte": { "deprecatedMessage": "This property is deprecated and the GreaterThanOrEqual property should be used instead." }
+                },
+                {
+                    "Lt": { "deprecatedMessage": "This property is deprecated and the LessThan property should be used instead." }
+                },
+                {
+                    "Lte": { "deprecatedMessage": "This property is deprecated and the LessThanOrEqual property should be used instead." }
+                }				
+            ]
+        }
+    }
+}

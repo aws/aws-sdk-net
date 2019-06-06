@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// The network interface information of the EC2 instance.
+    /// 
     /// </summary>
     public partial class NetworkInterface
     {
@@ -44,7 +44,10 @@ namespace Amazon.GuardDuty.Model
         private string _vpcId;
 
         /// <summary>
-        /// Gets and sets the property Ipv6Addresses. A list of EC2 instance IPv6 address information.
+        /// Gets and sets the property Ipv6Addresses. 
+        /// <para>
+        /// A list of EC2 instance IPv6 address information.
+        /// </para>
         /// </summary>
         public List<string> Ipv6Addresses
         {
@@ -59,7 +62,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NetworkInterfaceId. The ID of the network interface
+        /// Gets and sets the property NetworkInterfaceId. 
+        /// <para>
+        /// The ID of the network interface
+        /// </para>
         /// </summary>
         public string NetworkInterfaceId
         {
@@ -74,7 +80,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PrivateDnsName. Private DNS name of the EC2 instance.
+        /// Gets and sets the property PrivateDnsName. 
+        /// <para>
+        /// Private DNS name of the EC2 instance.
+        /// </para>
         /// </summary>
         public string PrivateDnsName
         {
@@ -89,7 +98,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PrivateIpAddress. Private IP address of the EC2 instance.
+        /// Gets and sets the property PrivateIpAddress. 
+        /// <para>
+        /// Private IP address of the EC2 instance.
+        /// </para>
         /// </summary>
         public string PrivateIpAddress
         {
@@ -104,8 +116,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PrivateIpAddresses. Other private IP address information
-        /// of the EC2 instance.
+        /// Gets and sets the property PrivateIpAddresses. 
+        /// <para>
+        /// Other private IP address information of the EC2 instance.
+        /// </para>
         /// </summary>
         public List<PrivateIpAddressDetails> PrivateIpAddresses
         {
@@ -120,7 +134,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PublicDnsName. Public DNS name of the EC2 instance.
+        /// Gets and sets the property PublicDnsName. 
+        /// <para>
+        /// Public DNS name of the EC2 instance.
+        /// </para>
         /// </summary>
         public string PublicDnsName
         {
@@ -135,7 +152,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PublicIp. Public IP address of the EC2 instance.
+        /// Gets and sets the property PublicIp. 
+        /// <para>
+        /// Public IP address of the EC2 instance.
+        /// </para>
         /// </summary>
         public string PublicIp
         {
@@ -150,8 +170,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SecurityGroups. Security groups associated with the EC2
-        /// instance.
+        /// Gets and sets the property SecurityGroups. 
+        /// <para>
+        /// Security groups associated with the EC2 instance.
+        /// </para>
         /// </summary>
         public List<SecurityGroup> SecurityGroups
         {
@@ -166,7 +188,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SubnetId. The subnet ID of the EC2 instance.
+        /// Gets and sets the property SubnetId. 
+        /// <para>
+        /// The subnet ID of the EC2 instance.
+        /// </para>
         /// </summary>
         public string SubnetId
         {
@@ -181,7 +206,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VpcId. The VPC ID of the EC2 instance.
+        /// Gets and sets the property VpcId. 
+        /// <para>
+        /// The VPC ID of the EC2 instance.
+        /// </para>
         /// </summary>
         public string VpcId
         {

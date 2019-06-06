@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Represents the criteria used for sorting findings.
+    /// 
     /// </summary>
     public partial class SortCriteria
     {
@@ -36,8 +36,10 @@ namespace Amazon.GuardDuty.Model
         private OrderBy _orderBy;
 
         /// <summary>
-        /// Gets and sets the property AttributeName. Represents the finding attribute (for example,
-        /// accountId) by which to sort findings.
+        /// Gets and sets the property AttributeName. 
+        /// <para>
+        /// Represents the finding attribute (for example, accountId) by which to sort findings.
+        /// </para>
         /// </summary>
         public string AttributeName
         {
@@ -52,7 +54,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OrderBy. Order by which the sorted findings are to be displayed.
+        /// Gets and sets the property OrderBy. 
+        /// <para>
+        /// Order by which the sorted findings are to be displayed.
+        /// </para>
         /// </summary>
         public OrderBy OrderBy
         {

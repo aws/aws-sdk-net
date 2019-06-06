@@ -41,9 +41,12 @@ namespace Amazon.GuardDuty.Model
         private int? _rank;
 
         /// <summary>
-        /// Gets and sets the property Action. Specifies the action that is to be applied to the
-        /// findings that match the filter.
+        /// Gets and sets the property Action. 
+        /// <para>
+        /// Specifies the action that is to be applied to the findings that match the filter.
+        /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=300)]
         public FilterAction Action
         {
             get { return this._action; }
@@ -57,8 +60,12 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description. The description of the filter.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the filter.
+        /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=512)]
         public string Description
         {
             get { return this._description; }
@@ -72,10 +79,13 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DetectorId. The unique ID of the detector that specifies
-        /// the GuardDuty service where you want to update a filter.
+        /// Gets and sets the property DetectorId. 
+        /// <para>
+        /// The unique ID of the detector that specifies the GuardDuty service where you want
+        /// to update a filter.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string DetectorId
         {
             get { return this._detectorId; }
@@ -89,7 +99,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FilterName. The name of the filter.
+        /// Gets and sets the property FilterName. 
+        /// <para>
+        /// The name of the filter.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string FilterName
@@ -105,8 +118,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FindingCriteria. Represents the criteria to be used in
-        /// the filter for querying findings.
+        /// Gets and sets the property FindingCriteria. 
+        /// <para>
+        /// Represents the criteria to be used in the filter for querying findings.
+        /// </para>
         /// </summary>
         public FindingCriteria FindingCriteria
         {
@@ -121,10 +136,13 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Rank. Specifies the position of the filter in the list
-        /// of current filters. Also specifies the order in which this filter is applied to the
-        /// findings.
+        /// Gets and sets the property Rank. 
+        /// <para>
+        /// Specifies the position of the filter in the list of current filters. Also specifies
+        /// the order in which this filter is applied to the findings.
+        /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int Rank
         {
             get { return this._rank.GetValueOrDefault(); }

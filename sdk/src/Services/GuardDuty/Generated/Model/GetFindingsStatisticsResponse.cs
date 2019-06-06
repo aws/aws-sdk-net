@@ -35,8 +35,12 @@ namespace Amazon.GuardDuty.Model
         private FindingStatistics _findingStatistics;
 
         /// <summary>
-        /// Gets and sets the property FindingStatistics. Finding statistics object.
+        /// Gets and sets the property FindingStatistics. 
+        /// <para>
+        /// Finding statistics object.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public FindingStatistics FindingStatistics
         {
             get { return this._findingStatistics; }

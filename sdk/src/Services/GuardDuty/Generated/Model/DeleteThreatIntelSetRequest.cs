@@ -37,10 +37,12 @@ namespace Amazon.GuardDuty.Model
         private string _threatIntelSetId;
 
         /// <summary>
-        /// Gets and sets the property DetectorId. The detectorID that specifies the GuardDuty
-        /// service whose ThreatIntelSet you want to delete.
+        /// Gets and sets the property DetectorId. 
+        /// <para>
+        /// The unique ID of the detector the threatIntelSet is associated with.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string DetectorId
         {
             get { return this._detectorId; }
@@ -54,8 +56,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ThreatIntelSetId. The unique ID that specifies the ThreatIntelSet
-        /// that you want to delete.
+        /// Gets and sets the property ThreatIntelSetId. 
+        /// <para>
+        /// The unique ID of the threatIntelSet you want to delete.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ThreatIntelSetId

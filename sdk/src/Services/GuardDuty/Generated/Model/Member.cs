@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains details about the member account.
+    /// 
     /// </summary>
     public partial class Member
     {
@@ -41,9 +41,12 @@ namespace Amazon.GuardDuty.Model
         private string _updatedAt;
 
         /// <summary>
-        /// Gets and sets the property AccountId.
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// Member account ID.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=12, Max=12)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -57,8 +60,12 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DetectorId.
+        /// Gets and sets the property DetectorId. 
+        /// <para>
+        /// Member account's detector ID.
+        /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=300)]
         public string DetectorId
         {
             get { return this._detectorId; }
@@ -72,9 +79,12 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Email. Member account's email address.
+        /// Gets and sets the property Email. 
+        /// <para>
+        /// Member account's email address.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Email
         {
             get { return this._email; }
@@ -88,7 +98,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InvitedAt. Timestamp at which the invitation was sent
+        /// Gets and sets the property InvitedAt. 
+        /// <para>
+        /// Timestamp at which the invitation was sent
+        /// </para>
         /// </summary>
         public string InvitedAt
         {
@@ -103,7 +116,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MasterId.
+        /// Gets and sets the property MasterId. 
+        /// <para>
+        /// Master account ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string MasterId
@@ -119,8 +135,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RelationshipStatus. The status of the relationship between
-        /// the member and the master.
+        /// Gets and sets the property RelationshipStatus. 
+        /// <para>
+        /// The status of the relationship between the member and the master.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string RelationshipStatus
@@ -136,7 +154,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt.
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// Member last updated timestamp.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string UpdatedAt

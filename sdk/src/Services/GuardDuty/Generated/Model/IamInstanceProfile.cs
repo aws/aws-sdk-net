@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// The profile information of the EC2 instance.
+    /// 
     /// </summary>
     public partial class IamInstanceProfile
     {
@@ -36,7 +36,10 @@ namespace Amazon.GuardDuty.Model
         private string _id;
 
         /// <summary>
-        /// Gets and sets the property Arn. AWS EC2 instance profile ARN.
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// AWS EC2 instance profile ARN.
+        /// </para>
         /// </summary>
         public string Arn
         {
@@ -51,7 +54,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. AWS EC2 instance profile ID.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// AWS EC2 instance profile ID.
+        /// </para>
         /// </summary>
         public string Id
         {

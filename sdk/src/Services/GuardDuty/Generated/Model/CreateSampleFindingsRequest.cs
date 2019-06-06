@@ -39,10 +39,12 @@ namespace Amazon.GuardDuty.Model
         private List<string> _findingTypes = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property DetectorId. The ID of the detector to create sample findings
-        /// for.
+        /// Gets and sets the property DetectorId. 
+        /// <para>
+        /// The ID of the detector to create sample findings for.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string DetectorId
         {
             get { return this._detectorId; }
@@ -56,9 +58,12 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FindingTypes. Types of sample findings that you want to
-        /// generate.
+        /// Gets and sets the property FindingTypes. 
+        /// <para>
+        /// Types of sample findings that you want to generate.
+        /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<string> FindingTypes
         {
             get { return this._findingTypes; }

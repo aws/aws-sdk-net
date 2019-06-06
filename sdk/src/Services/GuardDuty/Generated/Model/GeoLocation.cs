@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Location information of the remote IP address.
+    /// 
     /// </summary>
     public partial class GeoLocation
     {
@@ -36,7 +36,10 @@ namespace Amazon.GuardDuty.Model
         private double? _lon;
 
         /// <summary>
-        /// Gets and sets the property Lat. Latitude information of remote IP address.
+        /// Gets and sets the property Lat. 
+        /// <para>
+        /// Latitude information of remote IP address.
+        /// </para>
         /// </summary>
         public double Lat
         {
@@ -51,7 +54,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Lon. Longitude information of remote IP address.
+        /// Gets and sets the property Lon. 
+        /// <para>
+        /// Longitude information of remote IP address.
+        /// </para>
         /// </summary>
         public double Lon
         {

@@ -38,10 +38,12 @@ namespace Amazon.GuardDuty.Model
         private string _detectorId;
 
         /// <summary>
-        /// Gets and sets the property AccountIds. A list of account IDs of the GuardDuty member
-        /// accounts that you want to describe.
+        /// Gets and sets the property AccountIds. 
+        /// <para>
+        /// A list of account IDs of the GuardDuty member accounts that you want to describe.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> AccountIds
         {
             get { return this._accountIds; }
@@ -55,10 +57,12 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DetectorId. The unique ID of the detector of the GuardDuty
-        /// account whose members you want to retrieve.
+        /// Gets and sets the property DetectorId. 
+        /// <para>
+        /// The unique ID of the detector of the GuardDuty account whose members you want to retrieve.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string DetectorId
         {
             get { return this._detectorId; }

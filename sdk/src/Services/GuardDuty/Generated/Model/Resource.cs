@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// The AWS resource associated with the activity that prompted GuardDuty to generate
-    /// a finding.
+    /// 
     /// </summary>
     public partial class Resource
     {
@@ -38,7 +37,11 @@ namespace Amazon.GuardDuty.Model
         private string _resourceType;
 
         /// <summary>
-        /// Gets and sets the property AccessKeyDetails.
+        /// Gets and sets the property AccessKeyDetails. 
+        /// <para>
+        /// The IAM access key details (IAM user information) of a user that engaged in the activity
+        /// that prompted GuardDuty to generate a finding.
+        /// </para>
         /// </summary>
         public AccessKeyDetails AccessKeyDetails
         {
@@ -53,7 +56,11 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceDetails.
+        /// Gets and sets the property InstanceDetails. 
+        /// <para>
+        /// The information about the EC2 instance associated with the activity that prompted
+        /// GuardDuty to generate a finding.
+        /// </para>
         /// </summary>
         public InstanceDetails InstanceDetails
         {
@@ -68,7 +75,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceType. The type of the AWS resource.
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        /// The type of the AWS resource.
+        /// </para>
         /// </summary>
         public string ResourceType
         {

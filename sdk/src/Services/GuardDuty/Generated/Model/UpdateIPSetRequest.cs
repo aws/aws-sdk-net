@@ -40,8 +40,10 @@ namespace Amazon.GuardDuty.Model
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property Activate. The updated boolean value that specifies whether
-        /// the IPSet is active or not.
+        /// Gets and sets the property Activate. 
+        /// <para>
+        /// The updated boolean value that specifies whether the IPSet is active or not.
+        /// </para>
         /// </summary>
         public bool Activate
         {
@@ -56,10 +58,12 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DetectorId. The detectorID that specifies the GuardDuty
-        /// service whose IPSet you want to update.
+        /// Gets and sets the property DetectorId. 
+        /// <para>
+        /// The detectorID that specifies the GuardDuty service whose IPSet you want to update.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string DetectorId
         {
             get { return this._detectorId; }
@@ -73,8 +77,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IpSetId. The unique ID that specifies the IPSet that you
-        /// want to update.
+        /// Gets and sets the property IpSetId. 
+        /// <para>
+        /// The unique ID that specifies the IPSet that you want to update.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string IpSetId
@@ -90,9 +96,12 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Location. The updated URI of the file that contains the
-        /// IPSet. For example (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// The updated URI of the file that contains the IPSet. For example (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).
+        /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=300)]
         public string Location
         {
             get { return this._location; }
@@ -106,9 +115,12 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. The unique ID that specifies the IPSet that you want
-        /// to update.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The unique ID that specifies the IPSet that you want to update.
+        /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=300)]
         public string Name
         {
             get { return this._name; }

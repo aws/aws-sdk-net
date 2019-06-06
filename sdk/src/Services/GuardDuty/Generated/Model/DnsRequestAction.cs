@@ -28,14 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Information about the DNS_REQUEST action described in this finding.
+    /// 
     /// </summary>
     public partial class DnsRequestAction
     {
         private string _domain;
 
         /// <summary>
-        /// Gets and sets the property Domain. Domain information for the DNS request.
+        /// Gets and sets the property Domain. 
+        /// <para>
+        /// Domain information for the DNS request.
+        /// </para>
         /// </summary>
         public string Domain
         {

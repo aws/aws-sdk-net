@@ -42,8 +42,10 @@ namespace Amazon.GuardDuty.Model
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property Activate. A boolean value that indicates whether GuardDuty
-        /// is to start using the uploaded IPSet.
+        /// Gets and sets the property Activate. 
+        /// <para>
+        /// A boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public bool Activate
@@ -59,7 +61,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClientToken. The idempotency token for the create request.
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// The idempotency token for the create request.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=64)]
         public string ClientToken
@@ -75,10 +80,13 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DetectorId. The unique ID of the detector that you want
-        /// to update.
+        /// Gets and sets the property DetectorId. 
+        /// <para>
+        /// The unique ID of the detector of the GuardDuty account for which you want to create
+        /// an IPSet.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string DetectorId
         {
             get { return this._detectorId; }
@@ -92,9 +100,12 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Format. The format of the file that contains the IPSet.
+        /// Gets and sets the property Format. 
+        /// <para>
+        /// The format of the file that contains the IPSet.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public IpSetFormat Format
         {
             get { return this._format; }
@@ -108,10 +119,12 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Location. The URI of the file that contains the IPSet.
-        /// For example (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// The URI of the file that contains the IPSet. For example (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string Location
         {
             get { return this._location; }
@@ -125,11 +138,13 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. The user friendly name to identify the IPSet. This
-        /// name is displayed in all findings that are triggered by activity that involves IP
-        /// addresses included in this IPSet.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The user friendly name to identify the IPSet. This name is displayed in all findings
+        /// that are triggered by activity that involves IP addresses included in this IPSet.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string Name
         {
             get { return this._name; }
