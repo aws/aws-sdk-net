@@ -433,7 +433,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The list of execution outputs as defined in the Automation document.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=30)]
+        [AWSProperty(Min=1, Max=50)]
         public string TargetParameterName
         {
             get { return this._targetParameterName; }

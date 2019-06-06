@@ -2465,6 +2465,328 @@ namespace Amazon.SimpleSystemsManagement
 
 
     /// <summary>
+    /// Constants used for properties of type OpsFilterOperatorType.
+    /// </summary>
+    public class OpsFilterOperatorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BeginWith for OpsFilterOperatorType
+        /// </summary>
+        public static readonly OpsFilterOperatorType BeginWith = new OpsFilterOperatorType("BeginWith");
+        /// <summary>
+        /// Constant Equal for OpsFilterOperatorType
+        /// </summary>
+        public static readonly OpsFilterOperatorType Equal = new OpsFilterOperatorType("Equal");
+        /// <summary>
+        /// Constant Exists for OpsFilterOperatorType
+        /// </summary>
+        public static readonly OpsFilterOperatorType Exists = new OpsFilterOperatorType("Exists");
+        /// <summary>
+        /// Constant GreaterThan for OpsFilterOperatorType
+        /// </summary>
+        public static readonly OpsFilterOperatorType GreaterThan = new OpsFilterOperatorType("GreaterThan");
+        /// <summary>
+        /// Constant LessThan for OpsFilterOperatorType
+        /// </summary>
+        public static readonly OpsFilterOperatorType LessThan = new OpsFilterOperatorType("LessThan");
+        /// <summary>
+        /// Constant NotEqual for OpsFilterOperatorType
+        /// </summary>
+        public static readonly OpsFilterOperatorType NotEqual = new OpsFilterOperatorType("NotEqual");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OpsFilterOperatorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OpsFilterOperatorType FindValue(string value)
+        {
+            return FindValue<OpsFilterOperatorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OpsFilterOperatorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OpsItemDataType.
+    /// </summary>
+    public class OpsItemDataType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SearchableString for OpsItemDataType
+        /// </summary>
+        public static readonly OpsItemDataType SearchableString = new OpsItemDataType("SearchableString");
+        /// <summary>
+        /// Constant String for OpsItemDataType
+        /// </summary>
+        public static readonly OpsItemDataType String = new OpsItemDataType("String");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OpsItemDataType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OpsItemDataType FindValue(string value)
+        {
+            return FindValue<OpsItemDataType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OpsItemDataType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OpsItemFilterKey.
+    /// </summary>
+    public class OpsItemFilterKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AutomationId for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey AutomationId = new OpsItemFilterKey("AutomationId");
+        /// <summary>
+        /// Constant CreatedBy for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey CreatedBy = new OpsItemFilterKey("CreatedBy");
+        /// <summary>
+        /// Constant CreatedTime for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey CreatedTime = new OpsItemFilterKey("CreatedTime");
+        /// <summary>
+        /// Constant LastModifiedTime for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey LastModifiedTime = new OpsItemFilterKey("LastModifiedTime");
+        /// <summary>
+        /// Constant OperationalData for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey OperationalData = new OpsItemFilterKey("OperationalData");
+        /// <summary>
+        /// Constant OperationalDataKey for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey OperationalDataKey = new OpsItemFilterKey("OperationalDataKey");
+        /// <summary>
+        /// Constant OperationalDataValue for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey OperationalDataValue = new OpsItemFilterKey("OperationalDataValue");
+        /// <summary>
+        /// Constant OpsItemId for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey OpsItemId = new OpsItemFilterKey("OpsItemId");
+        /// <summary>
+        /// Constant Priority for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey Priority = new OpsItemFilterKey("Priority");
+        /// <summary>
+        /// Constant ResourceId for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey ResourceId = new OpsItemFilterKey("ResourceId");
+        /// <summary>
+        /// Constant Source for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey Source = new OpsItemFilterKey("Source");
+        /// <summary>
+        /// Constant Status for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey Status = new OpsItemFilterKey("Status");
+        /// <summary>
+        /// Constant Title for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey Title = new OpsItemFilterKey("Title");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OpsItemFilterKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OpsItemFilterKey FindValue(string value)
+        {
+            return FindValue<OpsItemFilterKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OpsItemFilterKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OpsItemFilterOperator.
+    /// </summary>
+    public class OpsItemFilterOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Contains for OpsItemFilterOperator
+        /// </summary>
+        public static readonly OpsItemFilterOperator Contains = new OpsItemFilterOperator("Contains");
+        /// <summary>
+        /// Constant Equal for OpsItemFilterOperator
+        /// </summary>
+        public static readonly OpsItemFilterOperator Equal = new OpsItemFilterOperator("Equal");
+        /// <summary>
+        /// Constant GreaterThan for OpsItemFilterOperator
+        /// </summary>
+        public static readonly OpsItemFilterOperator GreaterThan = new OpsItemFilterOperator("GreaterThan");
+        /// <summary>
+        /// Constant LessThan for OpsItemFilterOperator
+        /// </summary>
+        public static readonly OpsItemFilterOperator LessThan = new OpsItemFilterOperator("LessThan");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OpsItemFilterOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OpsItemFilterOperator FindValue(string value)
+        {
+            return FindValue<OpsItemFilterOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OpsItemFilterOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OpsItemStatus.
+    /// </summary>
+    public class OpsItemStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant InProgress for OpsItemStatus
+        /// </summary>
+        public static readonly OpsItemStatus InProgress = new OpsItemStatus("InProgress");
+        /// <summary>
+        /// Constant Open for OpsItemStatus
+        /// </summary>
+        public static readonly OpsItemStatus Open = new OpsItemStatus("Open");
+        /// <summary>
+        /// Constant Resolved for OpsItemStatus
+        /// </summary>
+        public static readonly OpsItemStatus Resolved = new OpsItemStatus("Resolved");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OpsItemStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OpsItemStatus FindValue(string value)
+        {
+            return FindValue<OpsItemStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OpsItemStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ParametersFilterKey.
     /// </summary>
     public class ParametersFilterKey : ConstantClass
@@ -3328,6 +3650,10 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant ManagedInstance for ResourceTypeForTagging
         /// </summary>
         public static readonly ResourceTypeForTagging ManagedInstance = new ResourceTypeForTagging("ManagedInstance");
+        /// <summary>
+        /// Constant OpsItem for ResourceTypeForTagging
+        /// </summary>
+        public static readonly ResourceTypeForTagging OpsItem = new ResourceTypeForTagging("OpsItem");
         /// <summary>
         /// Constant Parameter for ResourceTypeForTagging
         /// </summary>

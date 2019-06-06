@@ -1061,6 +1061,65 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  CreateOpsItem
+
+        internal virtual CreateOpsItemResponse CreateOpsItem(CreateOpsItemRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateOpsItemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateOpsItemResponseUnmarshaller.Instance;
+
+            return Invoke<CreateOpsItemResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new OpsItem. You must have permission in AWS Identity and Access Management
+        /// (IAM) to create a new OpsItem. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
+        /// Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// Operations engineers and IT professionals use the Systems Manager OpsItems capability
+        /// to view, investigate, and remediate operational issues impacting the performance and
+        /// health of their AWS resources. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
+        /// Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateOpsItem service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateOpsItem service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemAlreadyExistsException">
+        /// The OpsItem already exists.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemInvalidParameterException">
+        /// A specified parameter argument isn't valid. Verify the available arguments and try
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemLimitExceededException">
+        /// The request caused OpsItems to exceed one or more limits. For information about OpsItem
+        /// limits, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-learn-more.html#OpsItems-learn-more-limits">What
+        /// are the resource limits for OpsItems?</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsItem">REST API Reference for CreateOpsItem Operation</seealso>
+        public virtual Task<CreateOpsItemResponse> CreateOpsItemAsync(CreateOpsItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateOpsItemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateOpsItemResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateOpsItemResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreatePatchBaseline
 
         internal virtual CreatePatchBaselineResponse CreatePatchBaseline(CreatePatchBaselineRequest request)
@@ -3313,6 +3372,53 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DescribeOpsItems
+
+        internal virtual DescribeOpsItemsResponse DescribeOpsItems(DescribeOpsItemsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOpsItemsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOpsItemsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeOpsItemsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Query a set of OpsItems. You must have permission in AWS Identity and Access Management
+        /// (IAM) to query a list of OpsItems. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
+        /// Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// Operations engineers and IT professionals use the Systems Manager OpsItems capability
+        /// to view, investigate, and remediate operational issues impacting the performance and
+        /// health of their AWS resources. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
+        /// Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOpsItems service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeOpsItems service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeOpsItems">REST API Reference for DescribeOpsItems Operation</seealso>
+        public virtual Task<DescribeOpsItemsResponse> DescribeOpsItemsAsync(DescribeOpsItemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOpsItemsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOpsItemsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeOpsItemsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeParameters
 
         internal virtual DescribeParametersResponse DescribeParameters(DescribeParametersRequest request)
@@ -4253,6 +4359,107 @@ namespace Amazon.SimpleSystemsManagement
             options.ResponseUnmarshaller = GetMaintenanceWindowTaskResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetMaintenanceWindowTaskResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetOpsItem
+
+        internal virtual GetOpsItemResponse GetOpsItem(GetOpsItemRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetOpsItemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOpsItemResponseUnmarshaller.Instance;
+
+            return Invoke<GetOpsItemResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get information about an OpsItem by using the ID. You must have permission in AWS
+        /// Identity and Access Management (IAM) to view information about an OpsItem. For more
+        /// information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
+        /// Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// Operations engineers and IT professionals use the Systems Manager OpsItems capability
+        /// to view, investigate, and remediate operational issues impacting the performance and
+        /// health of their AWS resources. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
+        /// Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOpsItem service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetOpsItem service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemNotFoundException">
+        /// The specified OpsItem ID doesn't exist. Verify the ID and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsItem">REST API Reference for GetOpsItem Operation</seealso>
+        public virtual Task<GetOpsItemResponse> GetOpsItemAsync(GetOpsItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetOpsItemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOpsItemResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetOpsItemResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetOpsSummary
+
+        internal virtual GetOpsSummaryResponse GetOpsSummary(GetOpsSummaryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetOpsSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOpsSummaryResponseUnmarshaller.Instance;
+
+            return Invoke<GetOpsSummaryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// View a summary of OpsItems based on specified filters and aggregators.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOpsSummary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetOpsSummary service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAggregatorException">
+        /// The specified aggregator is not valid for inventory groups. Verify that the aggregator
+        /// uses a valid inventory type such as <code>AWS:Application</code> or <code>AWS:InstanceInformation</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
+        /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTypeNameException">
+        /// The parameter type name is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsSummary">REST API Reference for GetOpsSummary Operation</seealso>
+        public virtual Task<GetOpsSummaryResponse> GetOpsSummaryAsync(GetOpsSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetOpsSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOpsSummaryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetOpsSummaryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7362,6 +7569,68 @@ namespace Amazon.SimpleSystemsManagement
             options.ResponseUnmarshaller = UpdateManagedInstanceRoleResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateManagedInstanceRoleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateOpsItem
+
+        internal virtual UpdateOpsItemResponse UpdateOpsItem(UpdateOpsItemRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateOpsItemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateOpsItemResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateOpsItemResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Edit or change an OpsItem. You must have permission in AWS Identity and Access Management
+        /// (IAM) to update an OpsItem. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
+        /// Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// Operations engineers and IT professionals use the Systems Manager OpsItems capability
+        /// to view, investigate, and remediate operational issues impacting the performance and
+        /// health of their AWS resources. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
+        /// Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOpsItem service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateOpsItem service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemAlreadyExistsException">
+        /// The OpsItem already exists.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemInvalidParameterException">
+        /// A specified parameter argument isn't valid. Verify the available arguments and try
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemLimitExceededException">
+        /// The request caused OpsItems to exceed one or more limits. For information about OpsItem
+        /// limits, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-learn-more.html#OpsItems-learn-more-limits">What
+        /// are the resource limits for OpsItems?</a>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemNotFoundException">
+        /// The specified OpsItem ID doesn't exist. Verify the ID and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsItem">REST API Reference for UpdateOpsItem Operation</seealso>
+        public virtual Task<UpdateOpsItemResponse> UpdateOpsItemAsync(UpdateOpsItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateOpsItemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateOpsItemResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateOpsItemResponse>(request, options, cancellationToken);
         }
 
         #endregion

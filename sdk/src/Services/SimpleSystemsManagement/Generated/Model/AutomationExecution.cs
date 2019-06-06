@@ -490,7 +490,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The parameter name.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=30)]
+        [AWSProperty(Min=1, Max=50)]
         public string TargetParameterName
         {
             get { return this._targetParameterName; }

@@ -139,6 +139,26 @@
     <pattern>^mw-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateOpsItemRequest.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateOpsItemRequest.Priority</property>
+    <min>1</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateOpsItemRequest.Source</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateOpsItemRequest.Title</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CreatePatchBaselineRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
@@ -536,6 +556,11 @@
     <pattern>^mw-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeOpsItemsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DescribeParametersRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
@@ -923,6 +948,15 @@
     <min>36</min>
     <max>36</max>
     <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetOpsItemRequest.OpsItemId</property>
+    <pattern>^(oi)-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetOpsSummaryRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetParameterRequest.Name</property>
@@ -1382,7 +1416,7 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.StartAutomationExecutionRequest.TargetParameterName</property>
     <min>1</min>
-    <max>30</max>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.StartAutomationExecutionResponse.AutomationExecutionId</property>
@@ -1719,6 +1753,25 @@
     <pattern>^mi-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateOpsItemRequest.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateOpsItemRequest.OpsItemId</property>
+    <pattern>^(oi)-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateOpsItemRequest.Priority</property>
+    <min>1</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateOpsItemRequest.Title</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.UpdatePatchBaselineRequest.BaselineId</property>
     <min>20</min>
     <max>128</max>
@@ -2003,7 +2056,7 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AutomationExecution.TargetParameterName</property>
     <min>1</min>
-    <max>30</max>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AutomationExecutionMetadata.AutomationExecutionId</property>
@@ -2038,7 +2091,7 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AutomationExecutionMetadata.TargetParameterName</property>
     <min>1</min>
-    <max>30</max>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CloudWatchOutputConfig.CloudWatchLogGroupName</property>
@@ -2798,6 +2851,66 @@
     <min>36</min>
     <max>36</max>
     <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.OpsAggregator.AggregatorType</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>^(range|count)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.OpsAggregator.TypeName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^(AWS|Custom):.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.OpsFilter.Key</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.OpsItem.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.OpsItem.OpsItemId</property>
+    <pattern>^(oi)-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.OpsItem.Priority</property>
+    <min>1</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.OpsItem.Source</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.OpsItem.Title</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.OpsItemSummary.OpsItemId</property>
+    <pattern>^(oi)-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.OpsItemSummary.Priority</property>
+    <min>1</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.OpsItemSummary.Source</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.OpsItemSummary.Title</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.OutputSource.OutputSourceId</property>
