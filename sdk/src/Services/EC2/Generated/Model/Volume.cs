@@ -102,7 +102,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// Indicates whether the volume will be encrypted.
+        /// Indicates whether the volume is encrypted.
         /// </para>
         /// </summary>
         public bool Encrypted
@@ -156,8 +156,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The full ARN of the AWS Key Management Service (AWS KMS) customer master key (CMK)
-        /// that was used to protect the volume encryption key for the volume.
+        /// The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer
+        /// master key (CMK) that was used to protect the volume encryption key for the volume.
         /// </para>
         /// </summary>
         public string KmsKeyId

@@ -34,16 +34,15 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// Encrypted EBS volumes may only be attached to instances that support Amazon EBS encryption.
+    /// Encrypted EBS volumes must be attached to instances that support Amazon EBS encryption.
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
     /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// For a list of supported device names, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
-    /// an EBS Volume to an Instance</a>. Any device names that aren't reserved for instance
-    /// store volumes can be used for EBS volumes. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon
-    /// EC2 Instance Store</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// After you attach an EBS volume, you must make it available. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html">Making
+    /// an EBS Volume Available For Use</a>.
     /// </para>
     ///  
     /// <para>
@@ -69,7 +68,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information about EBS volumes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
     /// Amazon EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>

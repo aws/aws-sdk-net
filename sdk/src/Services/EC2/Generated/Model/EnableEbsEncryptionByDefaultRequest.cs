@@ -29,39 +29,29 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableEbsEncryptionByDefault operation.
-    /// Enables default encryption for EBS volumes that are created in your account in the
-    /// current region.
+    /// Enables EBS encryption by default for your account in the current Region.
     /// 
     ///  
     /// <para>
-    /// Once encryption is enabled with this action, EBS volumes that are created in your
-    /// account will always be encrypted even if encryption is not specified at launch. This
-    /// setting overrides the <i>encrypted</i> setting to <i>true</i> in all API calls that
-    /// create EBS volumes in your account. A volume will be encrypted even if you specify
-    /// <i>encryption</i> to be <i>false</i> in the API call that creates the volume.
+    /// After you enable encryption by default, the EBS volumes that you create are are always
+    /// encrypted, either using the default CMK or the CMK that you specified when you created
+    /// each volume. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+    /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// If you do not specify a customer master key (CMK) in the API call that creates the
-    /// EBS volume, then the volume is encrypted to your AWS account's managed CMK.
+    /// You can specify the default CMK for encryption by default using <a>ModifyEbsDefaultKmsKeyId</a>
+    /// or <a>ResetEbsDefaultKmsKeyId</a>.
     /// </para>
     ///  
     /// <para>
-    /// You can specify a CMK of your choice using <a>ModifyEbsDefaultKmsKeyId</a>.
+    /// Enabling encryption by default has no effect on the encryption status of your existing
+    /// volumes.
     /// </para>
     ///  
     /// <para>
-    /// Enabling encryption-by-default for EBS volumes has no effect on existing unencrypted
-    /// volumes in your account. Encrypting the data in these requires manual action. You
-    /// can either create an encrypted snapshot of an unencrypted volume, or encrypt a copy
-    /// of an unencrypted snapshot. Any volume restored from an encrypted snapshot is also
-    /// encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
-    /// EBS Snapshots</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// After EBS encryption-by-default is enabled, you can no longer launch older-generation
-    /// instance types that do not support encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
+    /// After you enable encryption by default, you can no longer launch instances using instance
+    /// types that do not support encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
     /// Instance Types</a>.
     /// </para>
     /// </summary>

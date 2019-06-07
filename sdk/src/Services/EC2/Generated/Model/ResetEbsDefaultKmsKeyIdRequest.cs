@@ -29,19 +29,15 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ResetEbsDefaultKmsKeyId operation.
-    /// Resets the account's default customer master key (CMK) to the account's AWS-managed
-    /// default CMK. This default CMK is used to encrypt EBS volumes when you have enabled
-    /// EBS encryption by default without specifying a CMK in the API call. If you have not
-    /// enabled encryption by default, then this CMK is used when you set the <code>Encrypted</code>
-    /// parameter to true without specifying a custom CMK in the API call.
+    /// Resets the default customer master key (CMK) for EBS encryption for your account in
+    /// this Region to the AWS managed CMK for EBS.
     /// 
     ///  
     /// <para>
-    /// Call this API if you have modified the default CMK that is used for encrypting your
-    /// EBS volume using <a>ModifyEbsDefaultKmsKeyId</a> and you want to reset it to the AWS-managed
-    /// default CMK. After resetting, you can continue to provide a CMK of your choice in
-    /// the API call that creates the volume. However, if no CMK is specified, your account
-    /// will encrypt the volume to the AWS-managed default CMK.
+    /// After resetting the default CMK to the AWS managed CMK, you can continue to encrypt
+    /// by a customer managed CMK by specifying it when you create the volume. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+    /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class ResetEbsDefaultKmsKeyIdRequest : AmazonEC2Request

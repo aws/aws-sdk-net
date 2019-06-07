@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Object that contains information about a snapshot.
+    /// Information about a snapshot.
     /// </summary>
     public partial class SnapshotInfo
     {
@@ -64,7 +64,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// Boolean that specifies whether or not this snapshot is encrypted.
+        /// Indicates whether the snapshot is encrypted.
         /// </para>
         /// </summary>
         public bool Encrypted

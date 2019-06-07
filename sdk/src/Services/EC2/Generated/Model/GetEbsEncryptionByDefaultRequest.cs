@@ -29,8 +29,14 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetEbsEncryptionByDefault operation.
-    /// Describes whether default EBS encryption is enabled for your account in the current
-    /// region.
+    /// Describes whether EBS encryption by default is enabled for your account in the current
+    /// Region.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+    /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class GetEbsEncryptionByDefaultRequest : AmazonEC2Request
     {

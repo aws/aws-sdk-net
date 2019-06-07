@@ -60,6 +60,20 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.CreationTimestamp = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("dnsEntrySet/item", targetDepth))
+                    {
+                        var unmarshaller = DnsEntryUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.DnsEntries.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("networkLoadBalancerArnSet/item", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.NetworkLoadBalancerArns.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("serviceId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

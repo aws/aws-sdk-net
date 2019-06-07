@@ -78,7 +78,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>architecture</code> - The image architecture (<code>i386</code> | <code>x86_64</code>).
+        ///  <code>architecture</code> - The image architecture (<code>i386</code> | <code>x86_64</code>
+        /// | <code>arm64</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>

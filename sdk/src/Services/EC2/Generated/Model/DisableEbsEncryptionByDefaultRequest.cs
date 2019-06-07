@@ -29,20 +29,22 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableEbsEncryptionByDefault operation.
-    /// Disables default encryption for EBS volumes that are created in your account in the
-    /// current region.
+    /// Disables EBS encryption by default for your account in the current Region.
     /// 
     ///  
     /// <para>
-    /// Call this API if you have enabled default encryption using <a>EnableEbsEncryptionByDefault</a>
-    /// and want to disable default EBS encryption. Once default EBS encryption is disabled,
-    /// you can still create an encrypted volume by setting <i>encrypted</i> to <i>true</i>
-    /// in the API call that creates the volume. 
+    /// After you disable encryption by default, you can still create encrypted volumes by
+    /// enabling encryption when you create each volume.
     /// </para>
     ///  
     /// <para>
-    /// Disabling default EBS encryption will not change the encryption status of any of your
-    /// existing volumes.
+    /// Disabling encryption by default does not change the encryption status of your existing
+    /// volumes.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+    /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DisableEbsEncryptionByDefaultRequest : AmazonEC2Request

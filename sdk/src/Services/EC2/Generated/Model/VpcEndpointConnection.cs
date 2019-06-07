@@ -33,6 +33,8 @@ namespace Amazon.EC2.Model
     public partial class VpcEndpointConnection
     {
         private DateTime? _creationTimestamp;
+        private List<DnsEntry> _dnsEntries = new List<DnsEntry>();
+        private List<string> _networkLoadBalancerArns = new List<string>();
         private string _serviceId;
         private string _vpcEndpointId;
         private string _vpcEndpointOwner;
@@ -54,6 +56,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetCreationTimestamp()
         {
             return this._creationTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DnsEntries. 
+        /// <para>
+        /// The DNS entries for the VPC endpoint.
+        /// </para>
+        /// </summary>
+        public List<DnsEntry> DnsEntries
+        {
+            get { return this._dnsEntries; }
+            set { this._dnsEntries = value; }
+        }
+
+        // Check to see if DnsEntries property is set
+        internal bool IsSetDnsEntries()
+        {
+            return this._dnsEntries != null && this._dnsEntries.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkLoadBalancerArns. 
+        /// <para>
+        /// The Amazon Resource Names (ARNs) of the network load balancers for the service.
+        /// </para>
+        /// </summary>
+        public List<string> NetworkLoadBalancerArns
+        {
+            get { return this._networkLoadBalancerArns; }
+            set { this._networkLoadBalancerArns = value; }
+        }
+
+        // Check to see if NetworkLoadBalancerArns property is set
+        internal bool IsSetNetworkLoadBalancerArns()
+        {
+            return this._networkLoadBalancerArns != null && this._networkLoadBalancerArns.Count > 0; 
         }
 
         /// <summary>

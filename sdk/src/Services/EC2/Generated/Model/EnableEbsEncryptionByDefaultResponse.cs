@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EbsEncryptionByDefault. 
         /// <para>
-        /// Account-level encryption status after performing the action.
+        /// The updated status of encryption by default.
         /// </para>
         /// </summary>
         public bool EbsEncryptionByDefault

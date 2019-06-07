@@ -54,7 +54,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>i386</code> | <code>x86_64</code> 
+        /// Valid values: <code>i386</code> | <code>x86_64</code> | <code>arm64</code> 
         /// </para>
         /// </summary>
         public string Architecture

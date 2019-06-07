@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private List<DnsEntry> _dnsEntries = new List<DnsEntry>();
         private List<SecurityGroupIdentifier> _groups = new List<SecurityGroupIdentifier>();
         private List<string> _networkInterfaceIds = new List<string>();
+        private string _ownerId;
         private string _policyDocument;
         private bool? _privateDnsEnabled;
         private bool? _requesterManaged;
@@ -119,6 +120,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetNetworkInterfaceIds()
         {
             return this._networkInterfaceIds != null && this._networkInterfaceIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerId. 
+        /// <para>
+        /// The ID of the AWS account that owns the VPC endpoint.
+        /// </para>
+        /// </summary>
+        public string OwnerId
+        {
+            get { return this._ownerId; }
+            set { this._ownerId = value; }
+        }
+
+        // Check to see if OwnerId property is set
+        internal bool IsSetOwnerId()
+        {
+            return this._ownerId != null;
         }
 
         /// <summary>

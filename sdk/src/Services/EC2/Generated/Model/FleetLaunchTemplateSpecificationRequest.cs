@@ -77,7 +77,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version number of the launch template. 
+        /// The version number of the launch template. Note: This is a required parameter and
+        /// will be updated soon. 
         /// </para>
         /// </summary>
         public string Version

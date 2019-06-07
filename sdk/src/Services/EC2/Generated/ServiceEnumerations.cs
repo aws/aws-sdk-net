@@ -8339,6 +8339,10 @@ namespace Amazon.EC2
     {
 
         /// <summary>
+        /// Constant DirectConnectGateway for TransitGatewayAttachmentResourceType
+        /// </summary>
+        public static readonly TransitGatewayAttachmentResourceType DirectConnectGateway = new TransitGatewayAttachmentResourceType("direct-connect-gateway");
+        /// <summary>
         /// Constant Vpc for TransitGatewayAttachmentResourceType
         /// </summary>
         public static readonly TransitGatewayAttachmentResourceType Vpc = new TransitGatewayAttachmentResourceType("vpc");

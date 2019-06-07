@@ -46,7 +46,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>attachment.transit-gateway-attachment-id</code>- The id of the transit gateway
+        ///  <code>attachment.transit-gateway-attachment-id</code> - The id of the transit gateway
         /// attachment.
         /// </para>
         ///  </li> <li> 
@@ -86,7 +86,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>type</code> - The type of roue (<code>active</code> | <code>blackhole</code>).
+        ///  <code>type</code> - The type of route (<code>active</code> | <code>blackhole</code>).
         /// </para>
         ///  </li> </ul>
         /// </summary>

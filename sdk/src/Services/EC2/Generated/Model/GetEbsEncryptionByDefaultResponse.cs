@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EbsEncryptionByDefault. 
         /// <para>
-        /// Indicates whether default encryption for EBS volumes is enabled or disabled.
+        /// Indicates whether encryption by default is enabled.
         /// </para>
         /// </summary>
         public bool EbsEncryptionByDefault

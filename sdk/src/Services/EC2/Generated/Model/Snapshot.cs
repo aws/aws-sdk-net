@@ -55,7 +55,7 @@ namespace Amazon.EC2.Model
         /// volume or snapshot copy. Because data encryption keys are inherited by volumes created
         /// from snapshots, and vice versa, if snapshots share the same data encryption key identifier,
         /// then they belong to the same volume/snapshot lineage. This parameter is only returned
-        /// by the <a>DescribeSnapshots</a> API operation.
+        /// by <a>DescribeSnapshots</a>.
         /// </para>
         /// </summary>
         public string DataEncryptionKeyId
@@ -109,8 +109,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The full ARN of the AWS Key Management Service (AWS KMS) customer master key (CMK)
-        /// that was used to protect the volume encryption key for the parent volume.
+        /// The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer
+        /// master key (CMK) that was used to protect the volume encryption key for the parent
+        /// volume.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -242,8 +243,7 @@ namespace Amazon.EC2.Model
         /// Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation
         /// fails (for example, if the proper AWS Key Management Service (AWS KMS) permissions
         /// are not obtained) this field displays error state details to help you diagnose why
-        /// the error occurred. This parameter is only returned by the <a>DescribeSnapshots</a>
-        /// API operation.
+        /// the error occurred. This parameter is only returned by <a>DescribeSnapshots</a>.
         /// </para>
         /// </summary>
         public string StateMessage

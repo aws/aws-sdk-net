@@ -37,8 +37,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The full ARN of the default CMK that your account uses to encrypt an EBS volume when
-        /// no CMK is specified in the API call that creates the volume.
+        /// The Amazon Resource Name (ARN) of the default CMK for encryption by default.
         /// </para>
         /// </summary>
         public string KmsKeyId
