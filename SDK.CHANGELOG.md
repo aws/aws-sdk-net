@@ -1,3 +1,12 @@
+### 3.3.527.0 (2019-06-07 18:09 UTC)
+* EC2 (3.3.114.0)
+	* Adds DNS entries and NLB ARNs to describe-vpc-endpoint-connections API response. Adds owner ID to describe-vpc-endpoints and create-vpc-endpoint API responses.
+* Core 3.3.102.3
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.526.0 (2019-06-06 18:47 UTC)
 * CloudWatchLogs (3.3.100.31)
 	* Documentation updates for logs
