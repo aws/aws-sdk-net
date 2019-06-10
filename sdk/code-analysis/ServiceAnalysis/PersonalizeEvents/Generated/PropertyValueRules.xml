@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.PersonalizeEvents.Model.PutEventsRequest.SessionId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PersonalizeEvents.Model.PutEventsRequest.TrackingId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PersonalizeEvents.Model.PutEventsRequest.UserId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PersonalizeEvents.Model.Event.EventId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PersonalizeEvents.Model.Event.EventType</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PersonalizeEvents.Model.Event.Properties</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+</property-value-rules>
