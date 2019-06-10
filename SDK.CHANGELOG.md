@@ -1,3 +1,15 @@
+### 3.3.528.0 (2019-06-10 18:10 UTC)
+* CodeBuild (3.3.101.0)
+	* AWS CodeBuild adds support for source version on project level.
+* CodeCommit (3.3.102.0)
+	* This release adds two merge strategies for merging pull requests: squash and three-way. It also adds functionality for resolving merge conflicts, testing merge outcomes, and for merging branches using one of the three supported merge strategies.
+* Personalize (3.3.100.0)
+	* Amazon Personalize is a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications.
+* PersonalizeEvents (3.3.100.0)
+	* Introducing Amazon Personalize  - a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications.
+* PersonalizeRuntime (3.3.100.0)
+	* Amazon Personalize is a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications.
+
 ### 3.3.527.0 (2019-06-07 18:09 UTC)
 * EC2 (3.3.114.0)
 	* Adds DNS entries and NLB ARNs to describe-vpc-endpoint-connections API response. Adds owner ID to describe-vpc-endpoints and create-vpc-endpoint API responses.

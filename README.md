@@ -329,6 +329,10 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS OpsWorks for Chef Automate gives customers a single tenant Chef Automate server. The Chef Automate server is fully managed by AWS and supports automatic backup, restore and upgrade operations.
 * [AWSSDK.Organizations](https://www.nuget.org/packages/AWSSDK.Organizations/)
 	* AWS Organizations is a web service that enables you to consolidate your multiple AWS accounts into an organization and centrally manage your accounts and their resources.
+* [AWSSDK.Personalize](https://www.nuget.org/packages/AWSSDK.Personalize/)
+	* Amazon Personalize is a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications.
+* [AWSSDK.PersonalizeEvents](https://www.nuget.org/packages/AWSSDK.PersonalizeEvents/)
+	* Introducing Amazon Personalize  - a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications.
 * [AWSSDK.PersonalizeRuntime](https://www.nuget.org/packages/AWSSDK.PersonalizeRuntime/)
 	* Amazon Personalize is a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications.
 * [AWSSDK.PI](https://www.nuget.org/packages/AWSSDK.PI/)

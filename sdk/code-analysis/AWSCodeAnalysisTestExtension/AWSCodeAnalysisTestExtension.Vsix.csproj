@@ -560,6 +560,14 @@
       <Project>{9539F8B3-78F6-4C4D-8A47-664D8476011F}</Project>
       <Name>AWSSDK.Organizations.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Personalize/AWSSDK.Personalize.CodeAnalysis.csproj">
+      <Project>{66D218FF-F3FD-49FD-9929-18D43E7A35E7}</Project>
+      <Name>AWSSDK.Personalize.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/PersonalizeEvents/AWSSDK.PersonalizeEvents.CodeAnalysis.csproj">
+      <Project>{6E0E0F31-E6D3-468C-B345-6A75A0498FF3}</Project>
+      <Name>AWSSDK.PersonalizeEvents.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/PersonalizeRuntime/AWSSDK.PersonalizeRuntime.CodeAnalysis.csproj">
       <Project>{7E4C5776-8E9A-484B-BCF9-9C3546BF5A19}</Project>
       <Name>AWSSDK.PersonalizeRuntime.CodeAnalysis</Name>
