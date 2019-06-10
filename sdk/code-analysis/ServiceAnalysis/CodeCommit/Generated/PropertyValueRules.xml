@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.CodeCommit.Model.BatchDescribeMergeConflictsRequest.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\w\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeCommit.Model.CreateBranchRequest.BranchName</property>
     <min>1</min>
     <max>256</max>
@@ -41,6 +47,12 @@
     <pattern>[\w\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeCommit.Model.CreateUnreferencedMergeCommitRequest.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\w\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeCommit.Model.DeleteBranchRequest.BranchName</property>
     <min>1</min>
     <max>256</max>
@@ -64,6 +76,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.DeleteRepositoryRequest.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\w\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.DescribeMergeConflictsRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
     <pattern>[\w\.-]+</pattern>
@@ -126,7 +144,19 @@
     <pattern>[\w\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeCommit.Model.GetMergeCommitRequest.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\w\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeCommit.Model.GetMergeConflictsRequest.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\w\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.GetMergeOptionsRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
     <pattern>[\w\.-]+</pattern>
@@ -156,7 +186,52 @@
     <pattern>[\w\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeCommit.Model.MergeBranchesByFastForwardRequest.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\w\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.MergeBranchesByFastForwardRequest.TargetBranch</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.MergeBranchesBySquashRequest.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\w\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.MergeBranchesBySquashRequest.TargetBranch</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.MergeBranchesByThreeWayRequest.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\w\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.MergeBranchesByThreeWayRequest.TargetBranch</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeCommit.Model.MergePullRequestByFastForwardRequest.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\w\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.MergePullRequestBySquashRequest.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\w\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.MergePullRequestByThreeWayRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
     <pattern>[\w\.-]+</pattern>
@@ -304,6 +379,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.PutFileEntry.FileContent</property>
+    <max>6291456</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.ReplaceContentEntry.Content</property>
     <max>6291456</max>
   </property-value-rule>
   <property-value-rule>

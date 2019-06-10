@@ -51,6 +51,18 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("baseCommitId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.BaseCommitId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("conflictMetadataList", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ConflictMetadata, ConflictMetadataUnmarshaller>(ConflictMetadataUnmarshaller.Instance);
+                    response.ConflictMetadataList = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("destinationCommitId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -61,6 +73,12 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     response.Mergeable = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("nextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("sourceCommitId", targetDepth))
@@ -116,9 +134,25 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             {
                 return new InvalidCommitException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidConflictDetailLevelException"))
+            {
+                return new InvalidConflictDetailLevelException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidConflictResolutionStrategyException"))
+            {
+                return new InvalidConflictResolutionStrategyException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidContinuationTokenException"))
+            {
+                return new InvalidContinuationTokenException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDestinationCommitSpecifierException"))
             {
                 return new InvalidDestinationCommitSpecifierException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidMaxConflictFilesException"))
+            {
+                return new InvalidMaxConflictFilesException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidMergeOptionException"))
             {
@@ -131,6 +165,10 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidSourceCommitSpecifierException"))
             {
                 return new InvalidSourceCommitSpecifierException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("MaximumFileContentToLoadExceededException"))
+            {
+                return new MaximumFileContentToLoadExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("MergeOptionRequiredException"))
             {

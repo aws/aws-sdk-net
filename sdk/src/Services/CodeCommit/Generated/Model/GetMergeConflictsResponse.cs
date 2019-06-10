@@ -32,9 +32,49 @@ namespace Amazon.CodeCommit.Model
     /// </summary>
     public partial class GetMergeConflictsResponse : AmazonWebServiceResponse
     {
+        private string _baseCommitId;
+        private List<ConflictMetadata> _conflictMetadataList = new List<ConflictMetadata>();
         private string _destinationCommitId;
         private bool? _mergeable;
+        private string _nextToken;
         private string _sourceCommitId;
+
+        /// <summary>
+        /// Gets and sets the property BaseCommitId. 
+        /// <para>
+        /// The commit ID of the merge base.
+        /// </para>
+        /// </summary>
+        public string BaseCommitId
+        {
+            get { return this._baseCommitId; }
+            set { this._baseCommitId = value; }
+        }
+
+        // Check to see if BaseCommitId property is set
+        internal bool IsSetBaseCommitId()
+        {
+            return this._baseCommitId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConflictMetadataList. 
+        /// <para>
+        /// A list of metadata for any conflicts found.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public List<ConflictMetadata> ConflictMetadataList
+        {
+            get { return this._conflictMetadataList; }
+            set { this._conflictMetadataList = value; }
+        }
+
+        // Check to see if ConflictMetadataList property is set
+        internal bool IsSetConflictMetadataList()
+        {
+            return this._conflictMetadataList != null && this._conflictMetadataList.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property DestinationCommitId. 
@@ -58,7 +98,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property Mergeable. 
         /// <para>
-        /// A Boolean value that indicates whether the code is mergable by the specified merge
+        /// A Boolean value that indicates whether the code is mergeable by the specified merge
         /// option.
         /// </para>
         /// </summary>
@@ -73,6 +113,25 @@ namespace Amazon.CodeCommit.Model
         internal bool IsSetMergeable()
         {
             return this._mergeable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// An enumeration token that can be used in a request to return the next batch of the
+        /// results.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
         /// <summary>

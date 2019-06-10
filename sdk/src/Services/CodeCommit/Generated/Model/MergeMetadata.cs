@@ -34,7 +34,9 @@ namespace Amazon.CodeCommit.Model
     public partial class MergeMetadata
     {
         private bool? _isMerged;
+        private string _mergeCommitId;
         private string _mergedBy;
+        private MergeOptionTypeEnum _mergeOption;
 
         /// <summary>
         /// Gets and sets the property IsMerged. 
@@ -55,6 +57,24 @@ namespace Amazon.CodeCommit.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MergeCommitId. 
+        /// <para>
+        /// The commit ID for the merge commit, if any.
+        /// </para>
+        /// </summary>
+        public string MergeCommitId
+        {
+            get { return this._mergeCommitId; }
+            set { this._mergeCommitId = value; }
+        }
+
+        // Check to see if MergeCommitId property is set
+        internal bool IsSetMergeCommitId()
+        {
+            return this._mergeCommitId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MergedBy. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the user who merged the branches.
@@ -70,6 +90,24 @@ namespace Amazon.CodeCommit.Model
         internal bool IsSetMergedBy()
         {
             return this._mergedBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MergeOption. 
+        /// <para>
+        /// The merge strategy used in the merge.
+        /// </para>
+        /// </summary>
+        public MergeOptionTypeEnum MergeOption
+        {
+            get { return this._mergeOption; }
+            set { this._mergeOption = value; }
+        }
+
+        // Check to see if MergeOption property is set
+        internal bool IsSetMergeOption()
+        {
+            return this._mergeOption != null;
         }
 
     }

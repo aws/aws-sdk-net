@@ -34,10 +34,55 @@ namespace Amazon.CodeCommit.Model
     /// </summary>
     public partial class GetMergeConflictsRequest : AmazonCodeCommitRequest
     {
+        private ConflictDetailLevelTypeEnum _conflictDetailLevel;
+        private ConflictResolutionStrategyTypeEnum _conflictResolutionStrategy;
         private string _destinationCommitSpecifier;
+        private int? _maxConflictFiles;
         private MergeOptionTypeEnum _mergeOption;
+        private string _nextToken;
         private string _repositoryName;
         private string _sourceCommitSpecifier;
+
+        /// <summary>
+        /// Gets and sets the property ConflictDetailLevel. 
+        /// <para>
+        /// The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
+        /// which will return a not mergeable result if the same file has differences in both
+        /// branches. If LINE_LEVEL is specified, a conflict will be considered not mergeable
+        /// if the same file in both branches has differences on the same line.
+        /// </para>
+        /// </summary>
+        public ConflictDetailLevelTypeEnum ConflictDetailLevel
+        {
+            get { return this._conflictDetailLevel; }
+            set { this._conflictDetailLevel = value; }
+        }
+
+        // Check to see if ConflictDetailLevel property is set
+        internal bool IsSetConflictDetailLevel()
+        {
+            return this._conflictDetailLevel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConflictResolutionStrategy. 
+        /// <para>
+        /// Specifies which branch to use when resolving conflicts, or whether to attempt automatically
+        /// merging two versions of a file. The default is NONE, which requires any conflicts
+        /// to be resolved manually before the merge operation will be successful.
+        /// </para>
+        /// </summary>
+        public ConflictResolutionStrategyTypeEnum ConflictResolutionStrategy
+        {
+            get { return this._conflictResolutionStrategy; }
+            set { this._conflictResolutionStrategy = value; }
+        }
+
+        // Check to see if ConflictResolutionStrategy property is set
+        internal bool IsSetConflictResolutionStrategy()
+        {
+            return this._conflictResolutionStrategy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DestinationCommitSpecifier. 
@@ -60,10 +105,27 @@ namespace Amazon.CodeCommit.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaxConflictFiles. 
+        /// <para>
+        /// The maximum number of files to include in the output.
+        /// </para>
+        /// </summary>
+        public int MaxConflictFiles
+        {
+            get { return this._maxConflictFiles.GetValueOrDefault(); }
+            set { this._maxConflictFiles = value; }
+        }
+
+        // Check to see if MaxConflictFiles property is set
+        internal bool IsSetMaxConflictFiles()
+        {
+            return this._maxConflictFiles.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MergeOption. 
         /// <para>
-        /// The merge option or strategy you want to use to merge the code. The only valid value
-        /// is FAST_FORWARD_MERGE.
+        /// The merge option or strategy you want to use to merge the code. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -77,6 +139,25 @@ namespace Amazon.CodeCommit.Model
         internal bool IsSetMergeOption()
         {
             return this._mergeOption != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// An enumeration token that when provided in a request, returns the next batch of the
+        /// results.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
         /// <summary>

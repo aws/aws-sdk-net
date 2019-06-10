@@ -68,16 +68,40 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetConflictDetailLevel())
+                {
+                    context.Writer.WritePropertyName("conflictDetailLevel");
+                    context.Writer.Write(publicRequest.ConflictDetailLevel);
+                }
+
+                if(publicRequest.IsSetConflictResolutionStrategy())
+                {
+                    context.Writer.WritePropertyName("conflictResolutionStrategy");
+                    context.Writer.Write(publicRequest.ConflictResolutionStrategy);
+                }
+
                 if(publicRequest.IsSetDestinationCommitSpecifier())
                 {
                     context.Writer.WritePropertyName("destinationCommitSpecifier");
                     context.Writer.Write(publicRequest.DestinationCommitSpecifier);
                 }
 
+                if(publicRequest.IsSetMaxConflictFiles())
+                {
+                    context.Writer.WritePropertyName("maxConflictFiles");
+                    context.Writer.Write(publicRequest.MaxConflictFiles);
+                }
+
                 if(publicRequest.IsSetMergeOption())
                 {
                     context.Writer.WritePropertyName("mergeOption");
                     context.Writer.Write(publicRequest.MergeOption);
+                }
+
+                if(publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WritePropertyName("nextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
                 if(publicRequest.IsSetRepositoryName())

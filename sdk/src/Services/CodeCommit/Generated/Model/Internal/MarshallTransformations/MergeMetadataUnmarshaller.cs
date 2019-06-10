@@ -70,10 +70,22 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                     unmarshalledObject.IsMerged = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("mergeCommitId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MergeCommitId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("mergedBy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MergedBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("mergeOption", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MergeOption = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -79,6 +79,114 @@ namespace Amazon.CodeCommit
 
 
     /// <summary>
+    /// Constants used for properties of type ConflictDetailLevelTypeEnum.
+    /// </summary>
+    public class ConflictDetailLevelTypeEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FILE_LEVEL for ConflictDetailLevelTypeEnum
+        /// </summary>
+        public static readonly ConflictDetailLevelTypeEnum FILE_LEVEL = new ConflictDetailLevelTypeEnum("FILE_LEVEL");
+        /// <summary>
+        /// Constant LINE_LEVEL for ConflictDetailLevelTypeEnum
+        /// </summary>
+        public static readonly ConflictDetailLevelTypeEnum LINE_LEVEL = new ConflictDetailLevelTypeEnum("LINE_LEVEL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConflictDetailLevelTypeEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConflictDetailLevelTypeEnum FindValue(string value)
+        {
+            return FindValue<ConflictDetailLevelTypeEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConflictDetailLevelTypeEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConflictResolutionStrategyTypeEnum.
+    /// </summary>
+    public class ConflictResolutionStrategyTypeEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCEPT_DESTINATION for ConflictResolutionStrategyTypeEnum
+        /// </summary>
+        public static readonly ConflictResolutionStrategyTypeEnum ACCEPT_DESTINATION = new ConflictResolutionStrategyTypeEnum("ACCEPT_DESTINATION");
+        /// <summary>
+        /// Constant ACCEPT_SOURCE for ConflictResolutionStrategyTypeEnum
+        /// </summary>
+        public static readonly ConflictResolutionStrategyTypeEnum ACCEPT_SOURCE = new ConflictResolutionStrategyTypeEnum("ACCEPT_SOURCE");
+        /// <summary>
+        /// Constant AUTOMERGE for ConflictResolutionStrategyTypeEnum
+        /// </summary>
+        public static readonly ConflictResolutionStrategyTypeEnum AUTOMERGE = new ConflictResolutionStrategyTypeEnum("AUTOMERGE");
+        /// <summary>
+        /// Constant NONE for ConflictResolutionStrategyTypeEnum
+        /// </summary>
+        public static readonly ConflictResolutionStrategyTypeEnum NONE = new ConflictResolutionStrategyTypeEnum("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConflictResolutionStrategyTypeEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConflictResolutionStrategyTypeEnum FindValue(string value)
+        {
+            return FindValue<ConflictResolutionStrategyTypeEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConflictResolutionStrategyTypeEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FileModeTypeEnum.
     /// </summary>
     public class FileModeTypeEnum : ConstantClass
@@ -142,6 +250,14 @@ namespace Amazon.CodeCommit
         /// Constant FAST_FORWARD_MERGE for MergeOptionTypeEnum
         /// </summary>
         public static readonly MergeOptionTypeEnum FAST_FORWARD_MERGE = new MergeOptionTypeEnum("FAST_FORWARD_MERGE");
+        /// <summary>
+        /// Constant SQUASH_MERGE for MergeOptionTypeEnum
+        /// </summary>
+        public static readonly MergeOptionTypeEnum SQUASH_MERGE = new MergeOptionTypeEnum("SQUASH_MERGE");
+        /// <summary>
+        /// Constant THREE_WAY_MERGE for MergeOptionTypeEnum
+        /// </summary>
+        public static readonly MergeOptionTypeEnum THREE_WAY_MERGE = new MergeOptionTypeEnum("THREE_WAY_MERGE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -172,6 +288,64 @@ namespace Amazon.CodeCommit
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MergeOptionTypeEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ObjectTypeEnum.
+    /// </summary>
+    public class ObjectTypeEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DIRECTORY for ObjectTypeEnum
+        /// </summary>
+        public static readonly ObjectTypeEnum DIRECTORY = new ObjectTypeEnum("DIRECTORY");
+        /// <summary>
+        /// Constant FILE for ObjectTypeEnum
+        /// </summary>
+        public static readonly ObjectTypeEnum FILE = new ObjectTypeEnum("FILE");
+        /// <summary>
+        /// Constant GIT_LINK for ObjectTypeEnum
+        /// </summary>
+        public static readonly ObjectTypeEnum GIT_LINK = new ObjectTypeEnum("GIT_LINK");
+        /// <summary>
+        /// Constant SYMBOLIC_LINK for ObjectTypeEnum
+        /// </summary>
+        public static readonly ObjectTypeEnum SYMBOLIC_LINK = new ObjectTypeEnum("SYMBOLIC_LINK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ObjectTypeEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ObjectTypeEnum FindValue(string value)
+        {
+            return FindValue<ObjectTypeEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ObjectTypeEnum(string value)
         {
             return FindValue(value);
         }
@@ -380,6 +554,64 @@ namespace Amazon.CodeCommit
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RelativeFileVersionEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReplacementTypeEnum.
+    /// </summary>
+    public class ReplacementTypeEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KEEP_BASE for ReplacementTypeEnum
+        /// </summary>
+        public static readonly ReplacementTypeEnum KEEP_BASE = new ReplacementTypeEnum("KEEP_BASE");
+        /// <summary>
+        /// Constant KEEP_DESTINATION for ReplacementTypeEnum
+        /// </summary>
+        public static readonly ReplacementTypeEnum KEEP_DESTINATION = new ReplacementTypeEnum("KEEP_DESTINATION");
+        /// <summary>
+        /// Constant KEEP_SOURCE for ReplacementTypeEnum
+        /// </summary>
+        public static readonly ReplacementTypeEnum KEEP_SOURCE = new ReplacementTypeEnum("KEEP_SOURCE");
+        /// <summary>
+        /// Constant USE_NEW_CONTENT for ReplacementTypeEnum
+        /// </summary>
+        public static readonly ReplacementTypeEnum USE_NEW_CONTENT = new ReplacementTypeEnum("USE_NEW_CONTENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReplacementTypeEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReplacementTypeEnum FindValue(string value)
+        {
+            return FindValue<ReplacementTypeEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReplacementTypeEnum(string value)
         {
             return FindValue(value);
         }

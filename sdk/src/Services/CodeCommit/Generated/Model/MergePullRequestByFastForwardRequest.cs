@@ -31,7 +31,7 @@ namespace Amazon.CodeCommit.Model
     /// Container for the parameters to the MergePullRequestByFastForward operation.
     /// Closes a pull request and attempts to merge the source commit of a pull request into
     /// the specified destination branch for that pull request at the specified commit using
-    /// the fast-forward merge option.
+    /// the fast-forward merge strategy.
     /// </summary>
     public partial class MergePullRequestByFastForwardRequest : AmazonCodeCommitRequest
     {

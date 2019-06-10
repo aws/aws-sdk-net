@@ -156,6 +156,55 @@ namespace Amazon.CodeCommit
     /// </para>
     ///  </li> </ul> 
     /// <para>
+    /// Merges, by calling the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>BatchDescribeMergeConflicts</a>, which returns information about conflicts in
+    /// a merge between commits in a repository.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>CreateUnreferencedMergeCommit</a>, which creates an unreferenced commit between
+    /// two branches or commits for the purpose of comparing them and identifying any potential
+    /// conflicts.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeMergeConflicts</a>, which returns information about merge conflicts between
+    /// the base, source, and destination versions of a file in a potential merge.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetMergeCommit</a>, which returns information about the merge between a source
+    /// and destination commit. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetMergeConflicts</a>, which returns information about merge conflicts between
+    /// the source and destination branch in a pull request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetMergeOptions</a>, which returns information about the available merge options
+    /// between two branches or commit specifiers.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>MergeBranchesByFastForward</a>, which merges two branches using the fast-forward
+    /// merge option.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>MergeBranchesBySquash</a>, which merges two branches using the squash merge option.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>MergeBranchesByThreeWay</a>, which merges two branches using the three-way merge
+    /// option.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
     /// Pull requests, by calling the following:
     /// </para>
     ///  <ul> <li> 
@@ -174,11 +223,6 @@ namespace Amazon.CodeCommit
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>GetMergeConflicts</a>, which returns information about merge conflicts between
-    /// the source and destination branch in a pull request.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     ///  <a>GetPullRequest</a>, which returns information about a specified pull request.
     /// </para>
     ///  </li> <li> 
@@ -190,6 +234,18 @@ namespace Amazon.CodeCommit
     ///  <a>MergePullRequestByFastForward</a>, which merges the source destination branch
     /// of a pull request into the specified destination branch for that pull request using
     /// the fast-forward merge option.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>MergePullRequestBySquash</a>, which merges the source destination branch of a
+    /// pull request into the specified destination branch for that pull request using the
+    /// squash merge option.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>MergePullRequestByThreeWay</a>. which merges the source destination branch of
+    /// a pull request into the specified destination branch for that pull request using the
+    /// three-way merge option.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -479,6 +535,193 @@ namespace Amazon.CodeCommit
         #endregion
 
 
+        #region  BatchDescribeMergeConflicts
+
+
+        /// <summary>
+        /// Returns information about one or more merge conflicts in the attempted merge of two
+        /// commit specifiers using the squash or three-way merge strategy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDescribeMergeConflicts service method.</param>
+        /// 
+        /// <returns>The response from the BatchDescribeMergeConflicts service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitDoesNotExistException">
+        /// The specified commit does not exist or no commit was specified, and the specified
+        /// repository has no default branch.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitRequiredException">
+        /// A commit was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitException">
+        /// The specified commit is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictDetailLevelException">
+        /// The specified conflict detail level is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictResolutionStrategyException">
+        /// The specified conflict resolution strategy is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidContinuationTokenException">
+        /// The specified continuation token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidMaxConflictFilesException">
+        /// The specified value for the number of conflict files to return is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidMaxMergeHunksException">
+        /// The specified value for the number of merge hunks to return is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidMergeOptionException">
+        /// The specified merge option is not valid for this operation. Not all merge strategies
+        /// are supported for all operations.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
+        /// The number of files to load exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MergeOptionRequiredException">
+        /// A merge option or stategy is required, and none was provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
+        /// The divergence between the tips of the provided commit specifiers is too great to
+        /// determine whether there might be any merge conflicts. Locally compare the specifiers
+        /// using <code>git diff</code> or a diff tool.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchDescribeMergeConflicts">REST API Reference for BatchDescribeMergeConflicts Operation</seealso>
+        public virtual BatchDescribeMergeConflictsResponse BatchDescribeMergeConflicts(BatchDescribeMergeConflictsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDescribeMergeConflictsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDescribeMergeConflictsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDescribeMergeConflictsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns information about one or more merge conflicts in the attempted merge of two
+        /// commit specifiers using the squash or three-way merge strategy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDescribeMergeConflicts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDescribeMergeConflicts service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitDoesNotExistException">
+        /// The specified commit does not exist or no commit was specified, and the specified
+        /// repository has no default branch.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitRequiredException">
+        /// A commit was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitException">
+        /// The specified commit is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictDetailLevelException">
+        /// The specified conflict detail level is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictResolutionStrategyException">
+        /// The specified conflict resolution strategy is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidContinuationTokenException">
+        /// The specified continuation token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidMaxConflictFilesException">
+        /// The specified value for the number of conflict files to return is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidMaxMergeHunksException">
+        /// The specified value for the number of merge hunks to return is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidMergeOptionException">
+        /// The specified merge option is not valid for this operation. Not all merge strategies
+        /// are supported for all operations.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
+        /// The number of files to load exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MergeOptionRequiredException">
+        /// A merge option or stategy is required, and none was provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
+        /// The divergence between the tips of the provided commit specifiers is too great to
+        /// determine whether there might be any merge conflicts. Locally compare the specifiers
+        /// using <code>git diff</code> or a diff tool.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchDescribeMergeConflicts">REST API Reference for BatchDescribeMergeConflicts Operation</seealso>
+        public virtual Task<BatchDescribeMergeConflictsResponse> BatchDescribeMergeConflictsAsync(BatchDescribeMergeConflictsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDescribeMergeConflictsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDescribeMergeConflictsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchDescribeMergeConflictsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchGetRepositories
 
 
@@ -812,8 +1055,8 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileContentSizeLimitExceededException">
         /// The file cannot be added because it is too large. The maximum file size that can be
-        /// added using PutFile is 6 MB, and the combined file content change size is 7 MB. Consider
-        /// making these changes using a Git client.
+        /// added is 6 MB, and the combined file content change size is 7 MB. Consider making
+        /// these changes using a Git client.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileDoesNotExistException">
         /// The specified file does not exist. Verify that you have provided the correct name
@@ -838,7 +1081,7 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FolderContentSizeLimitExceededException">
         /// The commit cannot be created because at least one of the overall changes in the commit
-        /// result in a folder contents exceeding the limit of 6 MB. Either reduce the number
+        /// results in a folder whose contents exceed the limit of 6 MB. Either reduce the number
         /// and size of your changes, or split the changes across multiple folders.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidBranchNameException">
@@ -987,8 +1230,8 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileContentSizeLimitExceededException">
         /// The file cannot be added because it is too large. The maximum file size that can be
-        /// added using PutFile is 6 MB, and the combined file content change size is 7 MB. Consider
-        /// making these changes using a Git client.
+        /// added is 6 MB, and the combined file content change size is 7 MB. Consider making
+        /// these changes using a Git client.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileDoesNotExistException">
         /// The specified file does not exist. Verify that you have provided the correct name
@@ -1013,7 +1256,7 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FolderContentSizeLimitExceededException">
         /// The commit cannot be created because at least one of the overall changes in the commit
-        /// result in a folder contents exceeding the limit of 6 MB. Either reduce the number
+        /// results in a folder whose contents exceed the limit of 6 MB. Either reduce the number
         /// and size of your changes, or split the changes across multiple folders.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidBranchNameException">
@@ -1496,6 +1739,319 @@ namespace Amazon.CodeCommit
             options.ResponseUnmarshaller = CreateRepositoryResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateRepositoryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateUnreferencedMergeCommit
+
+
+        /// <summary>
+        /// Creates an unerferenced commit that represents the result of merging two branches
+        /// using a specified merge strategy. This can help you determine the outcome of a potential
+        /// merge. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This unreferenced merge commit can only be accessed using the GetCommit API or through
+        /// git commands such as git fetch. To retrieve this commit, you must specify its commit
+        /// ID or otherwise reference it.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUnreferencedMergeCommit service method.</param>
+        /// 
+        /// <returns>The response from the CreateUnreferencedMergeCommit service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitDoesNotExistException">
+        /// The specified commit does not exist or no commit was specified, and the specified
+        /// repository has no default branch.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitMessageLengthExceededException">
+        /// The commit message is too long. Provide a shorter string.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitRequiredException">
+        /// A commit was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FileContentSizeLimitExceededException">
+        /// The file cannot be added because it is too large. The maximum file size that can be
+        /// added is 6 MB, and the combined file content change size is 7 MB. Consider making
+        /// these changes using a Git client.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FileModeRequiredException">
+        /// The commit cannot be created because a file mode is required to update mode permissions
+        /// for an existing file, but no file mode has been specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FolderContentSizeLimitExceededException">
+        /// The commit cannot be created because at least one of the overall changes in the commit
+        /// results in a folder whose contents exceed the limit of 6 MB. Either reduce the number
+        /// and size of your changes, or split the changes across multiple folders.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitException">
+        /// The specified commit is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictDetailLevelException">
+        /// The specified conflict detail level is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictResolutionException">
+        /// The specified conflict resolution list is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictResolutionStrategyException">
+        /// The specified conflict resolution strategy is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidEmailException">
+        /// The specified email address either contains one or more characters that are not allowed,
+        /// or it exceeds the maximum number of characters allowed for an email address.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidFileModeException">
+        /// The specified file mode permission is not valid. For a list of valid file mode permissions,
+        /// see <a>PutFile</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidMergeOptionException">
+        /// The specified merge option is not valid for this operation. Not all merge strategies
+        /// are supported for all operations.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPathException">
+        /// The specified path is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidReplacementContentException">
+        /// Automerge was specified for resolving the conflict, but the replacement type is not
+        /// valid or content is missing.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidReplacementTypeException">
+        /// Automerge was specified for resolving the conflict, but the specified replacement
+        /// type is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ManualMergeRequiredException">
+        /// The pull request cannot be merged automatically into the destination branch. You must
+        /// manually merge the branches and resolve any conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumConflictResolutionEntriesExceededException">
+        /// The number of allowed conflict resolution entries was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
+        /// The number of files to load exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MergeOptionRequiredException">
+        /// A merge option or stategy is required, and none was provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MultipleConflictResolutionEntriesException">
+        /// More than one conflict resolution entries exists for the conflict. A conflict can
+        /// have only one conflict resolution entry.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.NameLengthExceededException">
+        /// The user name is not valid because it has exceeded the character limit for file names.
+        /// File names, including the path to the file, cannot exceed the character limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
+        /// The folderPath for a location cannot be null.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ReplacementContentRequiredException">
+        /// USE_NEW_CONTENT was specified but no replacement content has been provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ReplacementTypeRequiredException">
+        /// A replacement type is required.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
+        /// The divergence between the tips of the provided commit specifiers is too great to
+        /// determine whether there might be any merge conflicts. Locally compare the specifiers
+        /// using <code>git diff</code> or a diff tool.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateUnreferencedMergeCommit">REST API Reference for CreateUnreferencedMergeCommit Operation</seealso>
+        public virtual CreateUnreferencedMergeCommitResponse CreateUnreferencedMergeCommit(CreateUnreferencedMergeCommitRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUnreferencedMergeCommitRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUnreferencedMergeCommitResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUnreferencedMergeCommitResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an unerferenced commit that represents the result of merging two branches
+        /// using a specified merge strategy. This can help you determine the outcome of a potential
+        /// merge. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This unreferenced merge commit can only be accessed using the GetCommit API or through
+        /// git commands such as git fetch. To retrieve this commit, you must specify its commit
+        /// ID or otherwise reference it.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUnreferencedMergeCommit service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateUnreferencedMergeCommit service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitDoesNotExistException">
+        /// The specified commit does not exist or no commit was specified, and the specified
+        /// repository has no default branch.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitMessageLengthExceededException">
+        /// The commit message is too long. Provide a shorter string.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitRequiredException">
+        /// A commit was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FileContentSizeLimitExceededException">
+        /// The file cannot be added because it is too large. The maximum file size that can be
+        /// added is 6 MB, and the combined file content change size is 7 MB. Consider making
+        /// these changes using a Git client.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FileModeRequiredException">
+        /// The commit cannot be created because a file mode is required to update mode permissions
+        /// for an existing file, but no file mode has been specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FolderContentSizeLimitExceededException">
+        /// The commit cannot be created because at least one of the overall changes in the commit
+        /// results in a folder whose contents exceed the limit of 6 MB. Either reduce the number
+        /// and size of your changes, or split the changes across multiple folders.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitException">
+        /// The specified commit is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictDetailLevelException">
+        /// The specified conflict detail level is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictResolutionException">
+        /// The specified conflict resolution list is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictResolutionStrategyException">
+        /// The specified conflict resolution strategy is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidEmailException">
+        /// The specified email address either contains one or more characters that are not allowed,
+        /// or it exceeds the maximum number of characters allowed for an email address.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidFileModeException">
+        /// The specified file mode permission is not valid. For a list of valid file mode permissions,
+        /// see <a>PutFile</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidMergeOptionException">
+        /// The specified merge option is not valid for this operation. Not all merge strategies
+        /// are supported for all operations.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPathException">
+        /// The specified path is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidReplacementContentException">
+        /// Automerge was specified for resolving the conflict, but the replacement type is not
+        /// valid or content is missing.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidReplacementTypeException">
+        /// Automerge was specified for resolving the conflict, but the specified replacement
+        /// type is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ManualMergeRequiredException">
+        /// The pull request cannot be merged automatically into the destination branch. You must
+        /// manually merge the branches and resolve any conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumConflictResolutionEntriesExceededException">
+        /// The number of allowed conflict resolution entries was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
+        /// The number of files to load exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MergeOptionRequiredException">
+        /// A merge option or stategy is required, and none was provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MultipleConflictResolutionEntriesException">
+        /// More than one conflict resolution entries exists for the conflict. A conflict can
+        /// have only one conflict resolution entry.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.NameLengthExceededException">
+        /// The user name is not valid because it has exceeded the character limit for file names.
+        /// File names, including the path to the file, cannot exceed the character limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
+        /// The folderPath for a location cannot be null.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ReplacementContentRequiredException">
+        /// USE_NEW_CONTENT was specified but no replacement content has been provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ReplacementTypeRequiredException">
+        /// A replacement type is required.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
+        /// The divergence between the tips of the provided commit specifiers is too great to
+        /// determine whether there might be any merge conflicts. Locally compare the specifiers
+        /// using <code>git diff</code> or a diff tool.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateUnreferencedMergeCommit">REST API Reference for CreateUnreferencedMergeCommit Operation</seealso>
+        public virtual Task<CreateUnreferencedMergeCommitResponse> CreateUnreferencedMergeCommitAsync(CreateUnreferencedMergeCommitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUnreferencedMergeCommitRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUnreferencedMergeCommitResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateUnreferencedMergeCommitResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2020,6 +2576,209 @@ namespace Amazon.CodeCommit
             options.ResponseUnmarshaller = DeleteRepositoryResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteRepositoryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeMergeConflicts
+
+
+        /// <summary>
+        /// Returns information about one or more merge conflicts in the attempted merge of two
+        /// commit specifiers using the squash or three-way merge strategy. If the merge option
+        /// for the attempted merge is specified as FAST_FORWARD_MERGE, an exception will be thrown.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMergeConflicts service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMergeConflicts service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitDoesNotExistException">
+        /// The specified commit does not exist or no commit was specified, and the specified
+        /// repository has no default branch.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitRequiredException">
+        /// A commit was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FileDoesNotExistException">
+        /// The specified file does not exist. Verify that you have provided the correct name
+        /// of the file, including its full path and extension.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitException">
+        /// The specified commit is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictDetailLevelException">
+        /// The specified conflict detail level is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictResolutionStrategyException">
+        /// The specified conflict resolution strategy is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidContinuationTokenException">
+        /// The specified continuation token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidMaxMergeHunksException">
+        /// The specified value for the number of merge hunks to return is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidMergeOptionException">
+        /// The specified merge option is not valid for this operation. Not all merge strategies
+        /// are supported for all operations.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPathException">
+        /// The specified path is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
+        /// The number of files to load exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MergeOptionRequiredException">
+        /// A merge option or stategy is required, and none was provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
+        /// The folderPath for a location cannot be null.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
+        /// The divergence between the tips of the provided commit specifiers is too great to
+        /// determine whether there might be any merge conflicts. Locally compare the specifiers
+        /// using <code>git diff</code> or a diff tool.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DescribeMergeConflicts">REST API Reference for DescribeMergeConflicts Operation</seealso>
+        public virtual DescribeMergeConflictsResponse DescribeMergeConflicts(DescribeMergeConflictsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMergeConflictsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMergeConflictsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMergeConflictsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns information about one or more merge conflicts in the attempted merge of two
+        /// commit specifiers using the squash or three-way merge strategy. If the merge option
+        /// for the attempted merge is specified as FAST_FORWARD_MERGE, an exception will be thrown.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMergeConflicts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeMergeConflicts service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitDoesNotExistException">
+        /// The specified commit does not exist or no commit was specified, and the specified
+        /// repository has no default branch.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitRequiredException">
+        /// A commit was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FileDoesNotExistException">
+        /// The specified file does not exist. Verify that you have provided the correct name
+        /// of the file, including its full path and extension.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitException">
+        /// The specified commit is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictDetailLevelException">
+        /// The specified conflict detail level is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictResolutionStrategyException">
+        /// The specified conflict resolution strategy is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidContinuationTokenException">
+        /// The specified continuation token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidMaxMergeHunksException">
+        /// The specified value for the number of merge hunks to return is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidMergeOptionException">
+        /// The specified merge option is not valid for this operation. Not all merge strategies
+        /// are supported for all operations.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPathException">
+        /// The specified path is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
+        /// The number of files to load exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MergeOptionRequiredException">
+        /// A merge option or stategy is required, and none was provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
+        /// The folderPath for a location cannot be null.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
+        /// The divergence between the tips of the provided commit specifiers is too great to
+        /// determine whether there might be any merge conflicts. Locally compare the specifiers
+        /// using <code>git diff</code> or a diff tool.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DescribeMergeConflicts">REST API Reference for DescribeMergeConflicts Operation</seealso>
+        public virtual Task<DescribeMergeConflictsResponse> DescribeMergeConflictsAsync(DescribeMergeConflictsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMergeConflictsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMergeConflictsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeMergeConflictsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3352,6 +4111,143 @@ namespace Amazon.CodeCommit
 
         #endregion
         
+        #region  GetMergeCommit
+
+
+        /// <summary>
+        /// Returns information about a specified merge commit.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMergeCommit service method.</param>
+        /// 
+        /// <returns>The response from the GetMergeCommit service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitDoesNotExistException">
+        /// The specified commit does not exist or no commit was specified, and the specified
+        /// repository has no default branch.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitRequiredException">
+        /// A commit was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitException">
+        /// The specified commit is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictDetailLevelException">
+        /// The specified conflict detail level is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictResolutionStrategyException">
+        /// The specified conflict resolution strategy is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required but was not specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeCommit">REST API Reference for GetMergeCommit Operation</seealso>
+        public virtual GetMergeCommitResponse GetMergeCommit(GetMergeCommitRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMergeCommitRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMergeCommitResponseUnmarshaller.Instance;
+
+            return Invoke<GetMergeCommitResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns information about a specified merge commit.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMergeCommit service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMergeCommit service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitDoesNotExistException">
+        /// The specified commit does not exist or no commit was specified, and the specified
+        /// repository has no default branch.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitRequiredException">
+        /// A commit was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitException">
+        /// The specified commit is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictDetailLevelException">
+        /// The specified conflict detail level is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictResolutionStrategyException">
+        /// The specified conflict resolution strategy is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required but was not specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeCommit">REST API Reference for GetMergeCommit Operation</seealso>
+        public virtual Task<GetMergeCommitResponse> GetMergeCommitAsync(GetMergeCommitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMergeCommitRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMergeCommitResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetMergeCommitResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetMergeConflicts
 
 
@@ -3387,12 +4283,25 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitException">
         /// The specified commit is not valid.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictDetailLevelException">
+        /// The specified conflict detail level is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictResolutionStrategyException">
+        /// The specified conflict resolution strategy is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidContinuationTokenException">
+        /// The specified continuation token is not valid.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidDestinationCommitSpecifierException">
         /// The destination commit specifier is not valid. You must provide a valid branch name,
         /// tag, or full commit ID.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidMaxConflictFilesException">
+        /// The specified value for the number of conflict files to return is not valid.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidMergeOptionException">
-        /// The specified merge option is not valid. The only valid value is FAST_FORWARD_MERGE.
+        /// The specified merge option is not valid for this operation. Not all merge strategies
+        /// are supported for all operations.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
         /// At least one specified repository name is not valid.
@@ -3408,6 +4317,9 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.InvalidSourceCommitSpecifierException">
         /// The source commit specifier is not valid. You must provide a valid branch name, tag,
         /// or full commit ID.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
+        /// The number of files to load exceeds the allowed limit.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MergeOptionRequiredException">
         /// A merge option or stategy is required, and none was provided.
@@ -3469,12 +4381,25 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitException">
         /// The specified commit is not valid.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictDetailLevelException">
+        /// The specified conflict detail level is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictResolutionStrategyException">
+        /// The specified conflict resolution strategy is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidContinuationTokenException">
+        /// The specified continuation token is not valid.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidDestinationCommitSpecifierException">
         /// The destination commit specifier is not valid. You must provide a valid branch name,
         /// tag, or full commit ID.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidMaxConflictFilesException">
+        /// The specified value for the number of conflict files to return is not valid.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidMergeOptionException">
-        /// The specified merge option is not valid. The only valid value is FAST_FORWARD_MERGE.
+        /// The specified merge option is not valid for this operation. Not all merge strategies
+        /// are supported for all operations.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
         /// At least one specified repository name is not valid.
@@ -3490,6 +4415,9 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.InvalidSourceCommitSpecifierException">
         /// The source commit specifier is not valid. You must provide a valid branch name, tag,
         /// or full commit ID.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
+        /// The number of files to load exceeds the allowed limit.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MergeOptionRequiredException">
         /// A merge option or stategy is required, and none was provided.
@@ -3513,6 +4441,163 @@ namespace Amazon.CodeCommit
             options.ResponseUnmarshaller = GetMergeConflictsResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetMergeConflictsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetMergeOptions
+
+
+        /// <summary>
+        /// Returns information about the merge options available for merging two specified branches.
+        /// For details about why a particular merge option is not available, use GetMergeConflicts
+        /// or DescribeMergeConflicts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMergeOptions service method.</param>
+        /// 
+        /// <returns>The response from the GetMergeOptions service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitDoesNotExistException">
+        /// The specified commit does not exist or no commit was specified, and the specified
+        /// repository has no default branch.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitRequiredException">
+        /// A commit was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitException">
+        /// The specified commit is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictDetailLevelException">
+        /// The specified conflict detail level is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictResolutionStrategyException">
+        /// The specified conflict resolution strategy is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
+        /// The number of files to load exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
+        /// The divergence between the tips of the provided commit specifiers is too great to
+        /// determine whether there might be any merge conflicts. Locally compare the specifiers
+        /// using <code>git diff</code> or a diff tool.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeOptions">REST API Reference for GetMergeOptions Operation</seealso>
+        public virtual GetMergeOptionsResponse GetMergeOptions(GetMergeOptionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMergeOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMergeOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<GetMergeOptionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns information about the merge options available for merging two specified branches.
+        /// For details about why a particular merge option is not available, use GetMergeConflicts
+        /// or DescribeMergeConflicts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMergeOptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMergeOptions service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitDoesNotExistException">
+        /// The specified commit does not exist or no commit was specified, and the specified
+        /// repository has no default branch.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitRequiredException">
+        /// A commit was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitException">
+        /// The specified commit is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictDetailLevelException">
+        /// The specified conflict detail level is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictResolutionStrategyException">
+        /// The specified conflict resolution strategy is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
+        /// The number of files to load exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
+        /// The divergence between the tips of the provided commit specifiers is too great to
+        /// determine whether there might be any merge conflicts. Locally compare the specifiers
+        /// using <code>git diff</code> or a diff tool.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeOptions">REST API Reference for GetMergeOptions Operation</seealso>
+        public virtual Task<GetMergeOptionsResponse> GetMergeOptionsAsync(GetMergeOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMergeOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMergeOptionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetMergeOptionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4244,13 +5329,810 @@ namespace Amazon.CodeCommit
 
         #endregion
         
+        #region  MergeBranchesByFastForward
+
+
+        /// <summary>
+        /// Merges two branches using the fast-forward merge strategy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the MergeBranchesByFastForward service method.</param>
+        /// 
+        /// <returns>The response from the MergeBranchesByFastForward service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.BranchDoesNotExistException">
+        /// The specified branch does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.BranchNameIsTagNameException">
+        /// The specified branch name is not valid because it is a tag name. Type the name of
+        /// a current branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
+        /// A branch name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitDoesNotExistException">
+        /// The specified commit does not exist or no commit was specified, and the specified
+        /// repository has no default branch.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitRequiredException">
+        /// A commit was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidBranchNameException">
+        /// The specified reference name is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitException">
+        /// The specified commit is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidTargetBranchException">
+        /// The specified target branch is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ManualMergeRequiredException">
+        /// The pull request cannot be merged automatically into the destination branch. You must
+        /// manually merge the branches and resolve any conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
+        /// The divergence between the tips of the provided commit specifiers is too great to
+        /// determine whether there might be any merge conflicts. Locally compare the specifiers
+        /// using <code>git diff</code> or a diff tool.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesByFastForward">REST API Reference for MergeBranchesByFastForward Operation</seealso>
+        public virtual MergeBranchesByFastForwardResponse MergeBranchesByFastForward(MergeBranchesByFastForwardRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = MergeBranchesByFastForwardRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MergeBranchesByFastForwardResponseUnmarshaller.Instance;
+
+            return Invoke<MergeBranchesByFastForwardResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Merges two branches using the fast-forward merge strategy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the MergeBranchesByFastForward service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the MergeBranchesByFastForward service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.BranchDoesNotExistException">
+        /// The specified branch does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.BranchNameIsTagNameException">
+        /// The specified branch name is not valid because it is a tag name. Type the name of
+        /// a current branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
+        /// A branch name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitDoesNotExistException">
+        /// The specified commit does not exist or no commit was specified, and the specified
+        /// repository has no default branch.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitRequiredException">
+        /// A commit was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidBranchNameException">
+        /// The specified reference name is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitException">
+        /// The specified commit is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidTargetBranchException">
+        /// The specified target branch is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ManualMergeRequiredException">
+        /// The pull request cannot be merged automatically into the destination branch. You must
+        /// manually merge the branches and resolve any conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
+        /// The divergence between the tips of the provided commit specifiers is too great to
+        /// determine whether there might be any merge conflicts. Locally compare the specifiers
+        /// using <code>git diff</code> or a diff tool.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesByFastForward">REST API Reference for MergeBranchesByFastForward Operation</seealso>
+        public virtual Task<MergeBranchesByFastForwardResponse> MergeBranchesByFastForwardAsync(MergeBranchesByFastForwardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = MergeBranchesByFastForwardRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MergeBranchesByFastForwardResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<MergeBranchesByFastForwardResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  MergeBranchesBySquash
+
+
+        /// <summary>
+        /// Merges two branches using the squash merge strategy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the MergeBranchesBySquash service method.</param>
+        /// 
+        /// <returns>The response from the MergeBranchesBySquash service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.BranchDoesNotExistException">
+        /// The specified branch does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.BranchNameIsTagNameException">
+        /// The specified branch name is not valid because it is a tag name. Type the name of
+        /// a current branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
+        /// A branch name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitDoesNotExistException">
+        /// The specified commit does not exist or no commit was specified, and the specified
+        /// repository has no default branch.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitMessageLengthExceededException">
+        /// The commit message is too long. Provide a shorter string.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitRequiredException">
+        /// A commit was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FileContentSizeLimitExceededException">
+        /// The file cannot be added because it is too large. The maximum file size that can be
+        /// added is 6 MB, and the combined file content change size is 7 MB. Consider making
+        /// these changes using a Git client.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FileModeRequiredException">
+        /// The commit cannot be created because a file mode is required to update mode permissions
+        /// for an existing file, but no file mode has been specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FolderContentSizeLimitExceededException">
+        /// The commit cannot be created because at least one of the overall changes in the commit
+        /// results in a folder whose contents exceed the limit of 6 MB. Either reduce the number
+        /// and size of your changes, or split the changes across multiple folders.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidBranchNameException">
+        /// The specified reference name is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitException">
+        /// The specified commit is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictDetailLevelException">
+        /// The specified conflict detail level is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictResolutionException">
+        /// The specified conflict resolution list is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictResolutionStrategyException">
+        /// The specified conflict resolution strategy is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidEmailException">
+        /// The specified email address either contains one or more characters that are not allowed,
+        /// or it exceeds the maximum number of characters allowed for an email address.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidFileModeException">
+        /// The specified file mode permission is not valid. For a list of valid file mode permissions,
+        /// see <a>PutFile</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPathException">
+        /// The specified path is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidReplacementContentException">
+        /// Automerge was specified for resolving the conflict, but the replacement type is not
+        /// valid or content is missing.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidReplacementTypeException">
+        /// Automerge was specified for resolving the conflict, but the specified replacement
+        /// type is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidTargetBranchException">
+        /// The specified target branch is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ManualMergeRequiredException">
+        /// The pull request cannot be merged automatically into the destination branch. You must
+        /// manually merge the branches and resolve any conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumConflictResolutionEntriesExceededException">
+        /// The number of allowed conflict resolution entries was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
+        /// The number of files to load exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MultipleConflictResolutionEntriesException">
+        /// More than one conflict resolution entries exists for the conflict. A conflict can
+        /// have only one conflict resolution entry.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.NameLengthExceededException">
+        /// The user name is not valid because it has exceeded the character limit for file names.
+        /// File names, including the path to the file, cannot exceed the character limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
+        /// The folderPath for a location cannot be null.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ReplacementContentRequiredException">
+        /// USE_NEW_CONTENT was specified but no replacement content has been provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ReplacementTypeRequiredException">
+        /// A replacement type is required.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
+        /// The divergence between the tips of the provided commit specifiers is too great to
+        /// determine whether there might be any merge conflicts. Locally compare the specifiers
+        /// using <code>git diff</code> or a diff tool.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesBySquash">REST API Reference for MergeBranchesBySquash Operation</seealso>
+        public virtual MergeBranchesBySquashResponse MergeBranchesBySquash(MergeBranchesBySquashRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = MergeBranchesBySquashRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MergeBranchesBySquashResponseUnmarshaller.Instance;
+
+            return Invoke<MergeBranchesBySquashResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Merges two branches using the squash merge strategy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the MergeBranchesBySquash service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the MergeBranchesBySquash service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.BranchDoesNotExistException">
+        /// The specified branch does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.BranchNameIsTagNameException">
+        /// The specified branch name is not valid because it is a tag name. Type the name of
+        /// a current branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
+        /// A branch name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitDoesNotExistException">
+        /// The specified commit does not exist or no commit was specified, and the specified
+        /// repository has no default branch.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitMessageLengthExceededException">
+        /// The commit message is too long. Provide a shorter string.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitRequiredException">
+        /// A commit was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FileContentSizeLimitExceededException">
+        /// The file cannot be added because it is too large. The maximum file size that can be
+        /// added is 6 MB, and the combined file content change size is 7 MB. Consider making
+        /// these changes using a Git client.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FileModeRequiredException">
+        /// The commit cannot be created because a file mode is required to update mode permissions
+        /// for an existing file, but no file mode has been specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FolderContentSizeLimitExceededException">
+        /// The commit cannot be created because at least one of the overall changes in the commit
+        /// results in a folder whose contents exceed the limit of 6 MB. Either reduce the number
+        /// and size of your changes, or split the changes across multiple folders.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidBranchNameException">
+        /// The specified reference name is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitException">
+        /// The specified commit is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictDetailLevelException">
+        /// The specified conflict detail level is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictResolutionException">
+        /// The specified conflict resolution list is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictResolutionStrategyException">
+        /// The specified conflict resolution strategy is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidEmailException">
+        /// The specified email address either contains one or more characters that are not allowed,
+        /// or it exceeds the maximum number of characters allowed for an email address.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidFileModeException">
+        /// The specified file mode permission is not valid. For a list of valid file mode permissions,
+        /// see <a>PutFile</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPathException">
+        /// The specified path is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidReplacementContentException">
+        /// Automerge was specified for resolving the conflict, but the replacement type is not
+        /// valid or content is missing.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidReplacementTypeException">
+        /// Automerge was specified for resolving the conflict, but the specified replacement
+        /// type is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidTargetBranchException">
+        /// The specified target branch is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ManualMergeRequiredException">
+        /// The pull request cannot be merged automatically into the destination branch. You must
+        /// manually merge the branches and resolve any conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumConflictResolutionEntriesExceededException">
+        /// The number of allowed conflict resolution entries was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
+        /// The number of files to load exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MultipleConflictResolutionEntriesException">
+        /// More than one conflict resolution entries exists for the conflict. A conflict can
+        /// have only one conflict resolution entry.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.NameLengthExceededException">
+        /// The user name is not valid because it has exceeded the character limit for file names.
+        /// File names, including the path to the file, cannot exceed the character limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
+        /// The folderPath for a location cannot be null.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ReplacementContentRequiredException">
+        /// USE_NEW_CONTENT was specified but no replacement content has been provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ReplacementTypeRequiredException">
+        /// A replacement type is required.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
+        /// The divergence between the tips of the provided commit specifiers is too great to
+        /// determine whether there might be any merge conflicts. Locally compare the specifiers
+        /// using <code>git diff</code> or a diff tool.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesBySquash">REST API Reference for MergeBranchesBySquash Operation</seealso>
+        public virtual Task<MergeBranchesBySquashResponse> MergeBranchesBySquashAsync(MergeBranchesBySquashRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = MergeBranchesBySquashRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MergeBranchesBySquashResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<MergeBranchesBySquashResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  MergeBranchesByThreeWay
+
+
+        /// <summary>
+        /// Merges two specified branches using the three-way merge strategy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the MergeBranchesByThreeWay service method.</param>
+        /// 
+        /// <returns>The response from the MergeBranchesByThreeWay service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.BranchDoesNotExistException">
+        /// The specified branch does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.BranchNameIsTagNameException">
+        /// The specified branch name is not valid because it is a tag name. Type the name of
+        /// a current branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
+        /// A branch name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitDoesNotExistException">
+        /// The specified commit does not exist or no commit was specified, and the specified
+        /// repository has no default branch.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitMessageLengthExceededException">
+        /// The commit message is too long. Provide a shorter string.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitRequiredException">
+        /// A commit was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FileContentSizeLimitExceededException">
+        /// The file cannot be added because it is too large. The maximum file size that can be
+        /// added is 6 MB, and the combined file content change size is 7 MB. Consider making
+        /// these changes using a Git client.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FileModeRequiredException">
+        /// The commit cannot be created because a file mode is required to update mode permissions
+        /// for an existing file, but no file mode has been specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FolderContentSizeLimitExceededException">
+        /// The commit cannot be created because at least one of the overall changes in the commit
+        /// results in a folder whose contents exceed the limit of 6 MB. Either reduce the number
+        /// and size of your changes, or split the changes across multiple folders.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidBranchNameException">
+        /// The specified reference name is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitException">
+        /// The specified commit is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictDetailLevelException">
+        /// The specified conflict detail level is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictResolutionException">
+        /// The specified conflict resolution list is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictResolutionStrategyException">
+        /// The specified conflict resolution strategy is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidEmailException">
+        /// The specified email address either contains one or more characters that are not allowed,
+        /// or it exceeds the maximum number of characters allowed for an email address.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidFileModeException">
+        /// The specified file mode permission is not valid. For a list of valid file mode permissions,
+        /// see <a>PutFile</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPathException">
+        /// The specified path is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidReplacementContentException">
+        /// Automerge was specified for resolving the conflict, but the replacement type is not
+        /// valid or content is missing.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidReplacementTypeException">
+        /// Automerge was specified for resolving the conflict, but the specified replacement
+        /// type is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidTargetBranchException">
+        /// The specified target branch is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ManualMergeRequiredException">
+        /// The pull request cannot be merged automatically into the destination branch. You must
+        /// manually merge the branches and resolve any conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumConflictResolutionEntriesExceededException">
+        /// The number of allowed conflict resolution entries was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
+        /// The number of files to load exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MultipleConflictResolutionEntriesException">
+        /// More than one conflict resolution entries exists for the conflict. A conflict can
+        /// have only one conflict resolution entry.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.NameLengthExceededException">
+        /// The user name is not valid because it has exceeded the character limit for file names.
+        /// File names, including the path to the file, cannot exceed the character limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
+        /// The folderPath for a location cannot be null.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ReplacementContentRequiredException">
+        /// USE_NEW_CONTENT was specified but no replacement content has been provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ReplacementTypeRequiredException">
+        /// A replacement type is required.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
+        /// The divergence between the tips of the provided commit specifiers is too great to
+        /// determine whether there might be any merge conflicts. Locally compare the specifiers
+        /// using <code>git diff</code> or a diff tool.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesByThreeWay">REST API Reference for MergeBranchesByThreeWay Operation</seealso>
+        public virtual MergeBranchesByThreeWayResponse MergeBranchesByThreeWay(MergeBranchesByThreeWayRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = MergeBranchesByThreeWayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MergeBranchesByThreeWayResponseUnmarshaller.Instance;
+
+            return Invoke<MergeBranchesByThreeWayResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Merges two specified branches using the three-way merge strategy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the MergeBranchesByThreeWay service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the MergeBranchesByThreeWay service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.BranchDoesNotExistException">
+        /// The specified branch does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.BranchNameIsTagNameException">
+        /// The specified branch name is not valid because it is a tag name. Type the name of
+        /// a current branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
+        /// A branch name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitDoesNotExistException">
+        /// The specified commit does not exist or no commit was specified, and the specified
+        /// repository has no default branch.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitMessageLengthExceededException">
+        /// The commit message is too long. Provide a shorter string.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitRequiredException">
+        /// A commit was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FileContentSizeLimitExceededException">
+        /// The file cannot be added because it is too large. The maximum file size that can be
+        /// added is 6 MB, and the combined file content change size is 7 MB. Consider making
+        /// these changes using a Git client.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FileModeRequiredException">
+        /// The commit cannot be created because a file mode is required to update mode permissions
+        /// for an existing file, but no file mode has been specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FolderContentSizeLimitExceededException">
+        /// The commit cannot be created because at least one of the overall changes in the commit
+        /// results in a folder whose contents exceed the limit of 6 MB. Either reduce the number
+        /// and size of your changes, or split the changes across multiple folders.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidBranchNameException">
+        /// The specified reference name is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitException">
+        /// The specified commit is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictDetailLevelException">
+        /// The specified conflict detail level is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictResolutionException">
+        /// The specified conflict resolution list is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictResolutionStrategyException">
+        /// The specified conflict resolution strategy is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidEmailException">
+        /// The specified email address either contains one or more characters that are not allowed,
+        /// or it exceeds the maximum number of characters allowed for an email address.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidFileModeException">
+        /// The specified file mode permission is not valid. For a list of valid file mode permissions,
+        /// see <a>PutFile</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPathException">
+        /// The specified path is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidReplacementContentException">
+        /// Automerge was specified for resolving the conflict, but the replacement type is not
+        /// valid or content is missing.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidReplacementTypeException">
+        /// Automerge was specified for resolving the conflict, but the specified replacement
+        /// type is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidTargetBranchException">
+        /// The specified target branch is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ManualMergeRequiredException">
+        /// The pull request cannot be merged automatically into the destination branch. You must
+        /// manually merge the branches and resolve any conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumConflictResolutionEntriesExceededException">
+        /// The number of allowed conflict resolution entries was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
+        /// The number of files to load exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MultipleConflictResolutionEntriesException">
+        /// More than one conflict resolution entries exists for the conflict. A conflict can
+        /// have only one conflict resolution entry.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.NameLengthExceededException">
+        /// The user name is not valid because it has exceeded the character limit for file names.
+        /// File names, including the path to the file, cannot exceed the character limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
+        /// The folderPath for a location cannot be null.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ReplacementContentRequiredException">
+        /// USE_NEW_CONTENT was specified but no replacement content has been provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ReplacementTypeRequiredException">
+        /// A replacement type is required.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
+        /// The divergence between the tips of the provided commit specifiers is too great to
+        /// determine whether there might be any merge conflicts. Locally compare the specifiers
+        /// using <code>git diff</code> or a diff tool.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesByThreeWay">REST API Reference for MergeBranchesByThreeWay Operation</seealso>
+        public virtual Task<MergeBranchesByThreeWayResponse> MergeBranchesByThreeWayAsync(MergeBranchesByThreeWayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = MergeBranchesByThreeWayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MergeBranchesByThreeWayResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<MergeBranchesByThreeWayResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  MergePullRequestByFastForward
 
 
         /// <summary>
         /// Closes a pull request and attempts to merge the source commit of a pull request into
         /// the specified destination branch for that pull request at the specified commit using
-        /// the fast-forward merge option.
+        /// the fast-forward merge strategy.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MergePullRequestByFastForward service method.</param>
         /// 
@@ -4311,6 +6193,10 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
         /// A repository name is required but was not specified.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNotAssociatedWithPullRequestException">
+        /// The repository does not contain any pull requests with that pull request ID. Use GetPullRequest
+        /// to verify the correct repository name for the pull request ID.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.TipOfSourceReferenceIsDifferentException">
         /// The tip of the source branch in the destination repository does not match the tip
         /// of the source branch specified in your request. The pull request might have been updated.
@@ -4330,7 +6216,7 @@ namespace Amazon.CodeCommit
         /// <summary>
         /// Closes a pull request and attempts to merge the source commit of a pull request into
         /// the specified destination branch for that pull request at the specified commit using
-        /// the fast-forward merge option.
+        /// the fast-forward merge strategy.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MergePullRequestByFastForward service method.</param>
         /// <param name="cancellationToken">
@@ -4394,6 +6280,10 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
         /// A repository name is required but was not specified.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNotAssociatedWithPullRequestException">
+        /// The repository does not contain any pull requests with that pull request ID. Use GetPullRequest
+        /// to verify the correct repository name for the pull request ID.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.TipOfSourceReferenceIsDifferentException">
         /// The tip of the source branch in the destination repository does not match the tip
         /// of the source branch specified in your request. The pull request might have been updated.
@@ -4407,6 +6297,620 @@ namespace Amazon.CodeCommit
             options.ResponseUnmarshaller = MergePullRequestByFastForwardResponseUnmarshaller.Instance;
             
             return InvokeAsync<MergePullRequestByFastForwardResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  MergePullRequestBySquash
+
+
+        /// <summary>
+        /// Closes a pull request and attempts to merge the source commit of a pull request into
+        /// the specified destination branch for that pull request at the specified commit using
+        /// the squash merge strategy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the MergePullRequestBySquash service method.</param>
+        /// 
+        /// <returns>The response from the MergePullRequestBySquash service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitMessageLengthExceededException">
+        /// The commit message is too long. Provide a shorter string.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FileContentSizeLimitExceededException">
+        /// The file cannot be added because it is too large. The maximum file size that can be
+        /// added is 6 MB, and the combined file content change size is 7 MB. Consider making
+        /// these changes using a Git client.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FolderContentSizeLimitExceededException">
+        /// The commit cannot be created because at least one of the overall changes in the commit
+        /// results in a folder whose contents exceed the limit of 6 MB. Either reduce the number
+        /// and size of your changes, or split the changes across multiple folders.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitIdException">
+        /// The specified commit ID is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictDetailLevelException">
+        /// The specified conflict detail level is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictResolutionException">
+        /// The specified conflict resolution list is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictResolutionStrategyException">
+        /// The specified conflict resolution strategy is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidEmailException">
+        /// The specified email address either contains one or more characters that are not allowed,
+        /// or it exceeds the maximum number of characters allowed for an email address.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidFileModeException">
+        /// The specified file mode permission is not valid. For a list of valid file mode permissions,
+        /// see <a>PutFile</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPathException">
+        /// The specified path is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPullRequestIdException">
+        /// The pull request ID is not valid. Make sure that you have provided the full ID and
+        /// that the pull request is in the specified repository, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidReplacementContentException">
+        /// Automerge was specified for resolving the conflict, but the replacement type is not
+        /// valid or content is missing.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidReplacementTypeException">
+        /// Automerge was specified for resolving the conflict, but the specified replacement
+        /// type is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ManualMergeRequiredException">
+        /// The pull request cannot be merged automatically into the destination branch. You must
+        /// manually merge the branches and resolve any conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumConflictResolutionEntriesExceededException">
+        /// The number of allowed conflict resolution entries was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
+        /// The number of files to load exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MultipleConflictResolutionEntriesException">
+        /// More than one conflict resolution entries exists for the conflict. A conflict can
+        /// have only one conflict resolution entry.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.NameLengthExceededException">
+        /// The user name is not valid because it has exceeded the character limit for file names.
+        /// File names, including the path to the file, cannot exceed the character limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
+        /// The folderPath for a location cannot be null.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestAlreadyClosedException">
+        /// The pull request status cannot be updated because it is already closed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestDoesNotExistException">
+        /// The pull request ID could not be found. Make sure that you have specified the correct
+        /// repository name and pull request ID, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestIdRequiredException">
+        /// A pull request ID is required, but none was provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ReplacementContentRequiredException">
+        /// USE_NEW_CONTENT was specified but no replacement content has been provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ReplacementTypeRequiredException">
+        /// A replacement type is required.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNotAssociatedWithPullRequestException">
+        /// The repository does not contain any pull requests with that pull request ID. Use GetPullRequest
+        /// to verify the correct repository name for the pull request ID.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.TipOfSourceReferenceIsDifferentException">
+        /// The tip of the source branch in the destination repository does not match the tip
+        /// of the source branch specified in your request. The pull request might have been updated.
+        /// Make sure that you have the latest changes.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
+        /// The divergence between the tips of the provided commit specifiers is too great to
+        /// determine whether there might be any merge conflicts. Locally compare the specifiers
+        /// using <code>git diff</code> or a diff tool.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestBySquash">REST API Reference for MergePullRequestBySquash Operation</seealso>
+        public virtual MergePullRequestBySquashResponse MergePullRequestBySquash(MergePullRequestBySquashRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = MergePullRequestBySquashRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MergePullRequestBySquashResponseUnmarshaller.Instance;
+
+            return Invoke<MergePullRequestBySquashResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Closes a pull request and attempts to merge the source commit of a pull request into
+        /// the specified destination branch for that pull request at the specified commit using
+        /// the squash merge strategy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the MergePullRequestBySquash service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the MergePullRequestBySquash service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitMessageLengthExceededException">
+        /// The commit message is too long. Provide a shorter string.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FileContentSizeLimitExceededException">
+        /// The file cannot be added because it is too large. The maximum file size that can be
+        /// added is 6 MB, and the combined file content change size is 7 MB. Consider making
+        /// these changes using a Git client.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FolderContentSizeLimitExceededException">
+        /// The commit cannot be created because at least one of the overall changes in the commit
+        /// results in a folder whose contents exceed the limit of 6 MB. Either reduce the number
+        /// and size of your changes, or split the changes across multiple folders.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitIdException">
+        /// The specified commit ID is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictDetailLevelException">
+        /// The specified conflict detail level is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictResolutionException">
+        /// The specified conflict resolution list is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictResolutionStrategyException">
+        /// The specified conflict resolution strategy is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidEmailException">
+        /// The specified email address either contains one or more characters that are not allowed,
+        /// or it exceeds the maximum number of characters allowed for an email address.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidFileModeException">
+        /// The specified file mode permission is not valid. For a list of valid file mode permissions,
+        /// see <a>PutFile</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPathException">
+        /// The specified path is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPullRequestIdException">
+        /// The pull request ID is not valid. Make sure that you have provided the full ID and
+        /// that the pull request is in the specified repository, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidReplacementContentException">
+        /// Automerge was specified for resolving the conflict, but the replacement type is not
+        /// valid or content is missing.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidReplacementTypeException">
+        /// Automerge was specified for resolving the conflict, but the specified replacement
+        /// type is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ManualMergeRequiredException">
+        /// The pull request cannot be merged automatically into the destination branch. You must
+        /// manually merge the branches and resolve any conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumConflictResolutionEntriesExceededException">
+        /// The number of allowed conflict resolution entries was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
+        /// The number of files to load exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MultipleConflictResolutionEntriesException">
+        /// More than one conflict resolution entries exists for the conflict. A conflict can
+        /// have only one conflict resolution entry.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.NameLengthExceededException">
+        /// The user name is not valid because it has exceeded the character limit for file names.
+        /// File names, including the path to the file, cannot exceed the character limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
+        /// The folderPath for a location cannot be null.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestAlreadyClosedException">
+        /// The pull request status cannot be updated because it is already closed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestDoesNotExistException">
+        /// The pull request ID could not be found. Make sure that you have specified the correct
+        /// repository name and pull request ID, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestIdRequiredException">
+        /// A pull request ID is required, but none was provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ReplacementContentRequiredException">
+        /// USE_NEW_CONTENT was specified but no replacement content has been provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ReplacementTypeRequiredException">
+        /// A replacement type is required.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNotAssociatedWithPullRequestException">
+        /// The repository does not contain any pull requests with that pull request ID. Use GetPullRequest
+        /// to verify the correct repository name for the pull request ID.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.TipOfSourceReferenceIsDifferentException">
+        /// The tip of the source branch in the destination repository does not match the tip
+        /// of the source branch specified in your request. The pull request might have been updated.
+        /// Make sure that you have the latest changes.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
+        /// The divergence between the tips of the provided commit specifiers is too great to
+        /// determine whether there might be any merge conflicts. Locally compare the specifiers
+        /// using <code>git diff</code> or a diff tool.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestBySquash">REST API Reference for MergePullRequestBySquash Operation</seealso>
+        public virtual Task<MergePullRequestBySquashResponse> MergePullRequestBySquashAsync(MergePullRequestBySquashRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = MergePullRequestBySquashRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MergePullRequestBySquashResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<MergePullRequestBySquashResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  MergePullRequestByThreeWay
+
+
+        /// <summary>
+        /// Closes a pull request and attempts to merge the source commit of a pull request into
+        /// the specified destination branch for that pull request at the specified commit using
+        /// the three-way merge strategy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the MergePullRequestByThreeWay service method.</param>
+        /// 
+        /// <returns>The response from the MergePullRequestByThreeWay service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitMessageLengthExceededException">
+        /// The commit message is too long. Provide a shorter string.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FileContentSizeLimitExceededException">
+        /// The file cannot be added because it is too large. The maximum file size that can be
+        /// added is 6 MB, and the combined file content change size is 7 MB. Consider making
+        /// these changes using a Git client.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FolderContentSizeLimitExceededException">
+        /// The commit cannot be created because at least one of the overall changes in the commit
+        /// results in a folder whose contents exceed the limit of 6 MB. Either reduce the number
+        /// and size of your changes, or split the changes across multiple folders.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitIdException">
+        /// The specified commit ID is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictDetailLevelException">
+        /// The specified conflict detail level is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictResolutionException">
+        /// The specified conflict resolution list is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictResolutionStrategyException">
+        /// The specified conflict resolution strategy is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidEmailException">
+        /// The specified email address either contains one or more characters that are not allowed,
+        /// or it exceeds the maximum number of characters allowed for an email address.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidFileModeException">
+        /// The specified file mode permission is not valid. For a list of valid file mode permissions,
+        /// see <a>PutFile</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPathException">
+        /// The specified path is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPullRequestIdException">
+        /// The pull request ID is not valid. Make sure that you have provided the full ID and
+        /// that the pull request is in the specified repository, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidReplacementContentException">
+        /// Automerge was specified for resolving the conflict, but the replacement type is not
+        /// valid or content is missing.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidReplacementTypeException">
+        /// Automerge was specified for resolving the conflict, but the specified replacement
+        /// type is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ManualMergeRequiredException">
+        /// The pull request cannot be merged automatically into the destination branch. You must
+        /// manually merge the branches and resolve any conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumConflictResolutionEntriesExceededException">
+        /// The number of allowed conflict resolution entries was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
+        /// The number of files to load exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MultipleConflictResolutionEntriesException">
+        /// More than one conflict resolution entries exists for the conflict. A conflict can
+        /// have only one conflict resolution entry.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.NameLengthExceededException">
+        /// The user name is not valid because it has exceeded the character limit for file names.
+        /// File names, including the path to the file, cannot exceed the character limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
+        /// The folderPath for a location cannot be null.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestAlreadyClosedException">
+        /// The pull request status cannot be updated because it is already closed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestDoesNotExistException">
+        /// The pull request ID could not be found. Make sure that you have specified the correct
+        /// repository name and pull request ID, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestIdRequiredException">
+        /// A pull request ID is required, but none was provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ReplacementContentRequiredException">
+        /// USE_NEW_CONTENT was specified but no replacement content has been provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ReplacementTypeRequiredException">
+        /// A replacement type is required.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNotAssociatedWithPullRequestException">
+        /// The repository does not contain any pull requests with that pull request ID. Use GetPullRequest
+        /// to verify the correct repository name for the pull request ID.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.TipOfSourceReferenceIsDifferentException">
+        /// The tip of the source branch in the destination repository does not match the tip
+        /// of the source branch specified in your request. The pull request might have been updated.
+        /// Make sure that you have the latest changes.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
+        /// The divergence between the tips of the provided commit specifiers is too great to
+        /// determine whether there might be any merge conflicts. Locally compare the specifiers
+        /// using <code>git diff</code> or a diff tool.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestByThreeWay">REST API Reference for MergePullRequestByThreeWay Operation</seealso>
+        public virtual MergePullRequestByThreeWayResponse MergePullRequestByThreeWay(MergePullRequestByThreeWayRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = MergePullRequestByThreeWayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MergePullRequestByThreeWayResponseUnmarshaller.Instance;
+
+            return Invoke<MergePullRequestByThreeWayResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Closes a pull request and attempts to merge the source commit of a pull request into
+        /// the specified destination branch for that pull request at the specified commit using
+        /// the three-way merge strategy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the MergePullRequestByThreeWay service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the MergePullRequestByThreeWay service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitMessageLengthExceededException">
+        /// The commit message is too long. Provide a shorter string.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FileContentSizeLimitExceededException">
+        /// The file cannot be added because it is too large. The maximum file size that can be
+        /// added is 6 MB, and the combined file content change size is 7 MB. Consider making
+        /// these changes using a Git client.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FolderContentSizeLimitExceededException">
+        /// The commit cannot be created because at least one of the overall changes in the commit
+        /// results in a folder whose contents exceed the limit of 6 MB. Either reduce the number
+        /// and size of your changes, or split the changes across multiple folders.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitIdException">
+        /// The specified commit ID is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictDetailLevelException">
+        /// The specified conflict detail level is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictResolutionException">
+        /// The specified conflict resolution list is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidConflictResolutionStrategyException">
+        /// The specified conflict resolution strategy is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidEmailException">
+        /// The specified email address either contains one or more characters that are not allowed,
+        /// or it exceeds the maximum number of characters allowed for an email address.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidFileModeException">
+        /// The specified file mode permission is not valid. For a list of valid file mode permissions,
+        /// see <a>PutFile</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPathException">
+        /// The specified path is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPullRequestIdException">
+        /// The pull request ID is not valid. Make sure that you have provided the full ID and
+        /// that the pull request is in the specified repository, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidReplacementContentException">
+        /// Automerge was specified for resolving the conflict, but the replacement type is not
+        /// valid or content is missing.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidReplacementTypeException">
+        /// Automerge was specified for resolving the conflict, but the specified replacement
+        /// type is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ManualMergeRequiredException">
+        /// The pull request cannot be merged automatically into the destination branch. You must
+        /// manually merge the branches and resolve any conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumConflictResolutionEntriesExceededException">
+        /// The number of allowed conflict resolution entries was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
+        /// The number of files to load exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MultipleConflictResolutionEntriesException">
+        /// More than one conflict resolution entries exists for the conflict. A conflict can
+        /// have only one conflict resolution entry.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.NameLengthExceededException">
+        /// The user name is not valid because it has exceeded the character limit for file names.
+        /// File names, including the path to the file, cannot exceed the character limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
+        /// The folderPath for a location cannot be null.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestAlreadyClosedException">
+        /// The pull request status cannot be updated because it is already closed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestDoesNotExistException">
+        /// The pull request ID could not be found. Make sure that you have specified the correct
+        /// repository name and pull request ID, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PullRequestIdRequiredException">
+        /// A pull request ID is required, but none was provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ReplacementContentRequiredException">
+        /// USE_NEW_CONTENT was specified but no replacement content has been provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ReplacementTypeRequiredException">
+        /// A replacement type is required.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNotAssociatedWithPullRequestException">
+        /// The repository does not contain any pull requests with that pull request ID. Use GetPullRequest
+        /// to verify the correct repository name for the pull request ID.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.TipOfSourceReferenceIsDifferentException">
+        /// The tip of the source branch in the destination repository does not match the tip
+        /// of the source branch specified in your request. The pull request might have been updated.
+        /// Make sure that you have the latest changes.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
+        /// The divergence between the tips of the provided commit specifiers is too great to
+        /// determine whether there might be any merge conflicts. Locally compare the specifiers
+        /// using <code>git diff</code> or a diff tool.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestByThreeWay">REST API Reference for MergePullRequestByThreeWay Operation</seealso>
+        public virtual Task<MergePullRequestByThreeWayResponse> MergePullRequestByThreeWayAsync(MergePullRequestByThreeWayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = MergePullRequestByThreeWayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MergePullRequestByThreeWayResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<MergePullRequestByThreeWayResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5037,8 +7541,8 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileContentSizeLimitExceededException">
         /// The file cannot be added because it is too large. The maximum file size that can be
-        /// added using PutFile is 6 MB, and the combined file content change size is 7 MB. Consider
-        /// making these changes using a Git client.
+        /// added is 6 MB, and the combined file content change size is 7 MB. Consider making
+        /// these changes using a Git client.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileNameConflictsWithDirectoryNameException">
         /// A file cannot be added to the repository because the specified file name has the same
@@ -5051,7 +7555,7 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FolderContentSizeLimitExceededException">
         /// The commit cannot be created because at least one of the overall changes in the commit
-        /// result in a folder contents exceeding the limit of 6 MB. Either reduce the number
+        /// results in a folder whose contents exceed the limit of 6 MB. Either reduce the number
         /// and size of your changes, or split the changes across multiple folders.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidBranchNameException">
@@ -5177,8 +7681,8 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileContentSizeLimitExceededException">
         /// The file cannot be added because it is too large. The maximum file size that can be
-        /// added using PutFile is 6 MB, and the combined file content change size is 7 MB. Consider
-        /// making these changes using a Git client.
+        /// added is 6 MB, and the combined file content change size is 7 MB. Consider making
+        /// these changes using a Git client.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileNameConflictsWithDirectoryNameException">
         /// A file cannot be added to the repository because the specified file name has the same
@@ -5191,7 +7695,7 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FolderContentSizeLimitExceededException">
         /// The commit cannot be created because at least one of the overall changes in the commit
-        /// result in a folder contents exceeding the limit of 6 MB. Either reduce the number
+        /// results in a folder whose contents exceed the limit of 6 MB. Either reduce the number
         /// and size of your changes, or split the changes across multiple folders.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidBranchNameException">
