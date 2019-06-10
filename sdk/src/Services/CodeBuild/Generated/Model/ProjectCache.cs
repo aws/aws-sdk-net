@@ -87,7 +87,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        ///  You can use a Docker layer cache in the Linux enviornment only. 
+        ///  You can use a Docker layer cache in the Linux environment only. 
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -148,6 +148,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.SecondarySources = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("secondarySourceVersions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ProjectSourceVersion, ProjectSourceVersionUnmarshaller>(ProjectSourceVersionUnmarshaller.Instance);
+                    unmarshalledObject.SecondarySourceVersions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("serviceRole", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -158,6 +164,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ProjectSourceUnmarshaller.Instance;
                     unmarshalledObject.Source = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sourceVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))

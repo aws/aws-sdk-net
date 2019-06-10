@@ -196,19 +196,26 @@ namespace Amazon.CodeBuild.Model
         ///  
         /// <para>
         ///  <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375
-        /// --storage-driver=overlay&amp; - timeout 15 sh -c "until docker info; do echo .; sleep
-        /// 1; done"</code> 
+        /// --storage-driver=overlay&amp;</code> 
         /// </para>
         ///  
         /// <para>
-        /// If the operating system's base image is Alpine Linux, add the <code>-t</code> argument
-        /// to <code>timeout</code>:
+        ///  <code>- timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the operating system's base image is Alpine Linux and the previous command does
+        /// not work, add the <code>-t</code> argument to <code>timeout</code>:
         /// </para>
         ///  
         /// <para>
         ///  <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375
-        /// --storage-driver=overlay&amp; - timeout 15 -t sh -c "until docker info; do echo .;
-        /// sleep 1; done"</code> 
+        /// --storage-driver=overlay&amp;</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>- timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+        /// 
         /// </para>
         /// </summary>
         public bool PrivilegedMode

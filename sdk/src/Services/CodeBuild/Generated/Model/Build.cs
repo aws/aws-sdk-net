@@ -556,7 +556,14 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property SourceVersion. 
         /// <para>
-        /// Any version identifier for the version of the source code to be built.
+        /// Any version identifier for the version of the source code to be built. If <code>sourceVersion</code>
+        /// is specified at the project level, then this <code>sourceVersion</code> (at the build
+        /// level) takes precedence. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
+        /// Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

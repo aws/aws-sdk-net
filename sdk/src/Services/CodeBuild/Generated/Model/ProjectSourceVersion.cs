@@ -83,7 +83,11 @@ namespace Amazon.CodeBuild.Model
         /// For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents
         /// the build input ZIP file to use.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
+        /// Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string SourceVersion

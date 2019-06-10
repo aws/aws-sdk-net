@@ -174,6 +174,22 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetSecondarySourceVersions())
+                {
+                    context.Writer.WritePropertyName("secondarySourceVersions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSecondarySourceVersionsListValue in publicRequest.SecondarySourceVersions)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ProjectSourceVersionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSecondarySourceVersionsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetServiceRole())
                 {
                     context.Writer.WritePropertyName("serviceRole");
@@ -189,6 +205,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.Source, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSourceVersion())
+                {
+                    context.Writer.WritePropertyName("sourceVersion");
+                    context.Writer.Write(publicRequest.SourceVersion);
                 }
 
                 if(publicRequest.IsSetTags())

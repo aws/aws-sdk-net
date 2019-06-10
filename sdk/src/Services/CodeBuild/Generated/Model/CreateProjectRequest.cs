@@ -44,8 +44,10 @@ namespace Amazon.CodeBuild.Model
         private int? _queuedTimeoutInMinutes;
         private List<ProjectArtifacts> _secondaryArtifacts = new List<ProjectArtifacts>();
         private List<ProjectSource> _secondarySources = new List<ProjectSource>();
+        private List<ProjectSourceVersion> _secondarySourceVersions = new List<ProjectSourceVersion>();
         private string _serviceRole;
         private ProjectSource _source;
+        private string _sourceVersion;
         private List<Tag> _tags = new List<Tag>();
         private int? _timeoutInMinutes;
         private VpcConfig _vpcConfig;
@@ -269,6 +271,27 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SecondarySourceVersions. 
+        /// <para>
+        ///  An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code>
+        /// is specified at the build level, then they take precedence over these <code>secondarySourceVersions</code>
+        /// (at the project level). 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=12)]
+        public List<ProjectSourceVersion> SecondarySourceVersions
+        {
+            get { return this._secondarySourceVersions; }
+            set { this._secondarySourceVersions = value; }
+        }
+
+        // Check to see if SecondarySourceVersions property is set
+        internal bool IsSetSecondarySourceVersions()
+        {
+            return this._secondarySourceVersions != null && this._secondarySourceVersions.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ServiceRole. 
         /// <para>
         /// The ARN of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild
@@ -305,6 +328,58 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetSource()
         {
             return this._source != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceVersion. 
+        /// <para>
+        ///  A version of the build input to be built for this project. If not specified, the
+        /// latest version is used. If specified, it must be one of: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For AWS CodeCommit: the commit ID to use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds
+        /// to the version of the source code you want to build. If a pull request ID is specified,
+        /// it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>).
+        /// If a branch name is specified, the branch's HEAD commit ID is used. If not specified,
+        /// the default branch's HEAD commit ID is used.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version
+        /// of the source code you want to build. If a branch name is specified, the branch's
+        /// HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents
+        /// the build input ZIP file to use.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  If <code>sourceVersion</code> is specified at the build level, then that version
+        /// takes precedence over this <code>sourceVersion</code> (at the project level). 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
+        /// Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. 
+        /// </para>
+        /// </summary>
+        public string SourceVersion
+        {
+            get { return this._sourceVersion; }
+            set { this._sourceVersion = value; }
+        }
+
+        // Check to see if SourceVersion property is set
+        internal bool IsSetSourceVersion()
+        {
+            return this._sourceVersion != null;
         }
 
         /// <summary>
