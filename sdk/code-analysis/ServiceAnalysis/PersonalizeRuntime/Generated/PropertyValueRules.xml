@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.PersonalizeRuntime.Model.GetPersonalizedRankingRequest.CampaignArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PersonalizeRuntime.Model.GetPersonalizedRankingRequest.UserId</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PersonalizeRuntime.Model.GetRecommendationsRequest.CampaignArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PersonalizeRuntime.Model.GetRecommendationsRequest.ItemId</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PersonalizeRuntime.Model.GetRecommendationsRequest.NumResults</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PersonalizeRuntime.Model.GetRecommendationsRequest.UserId</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PersonalizeRuntime.Model.PredictedItem.ItemId</property>
+    <max>256</max>
+  </property-value-rule>
+</property-value-rules>

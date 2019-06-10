@@ -560,6 +560,10 @@
       <Project>{9539F8B3-78F6-4C4D-8A47-664D8476011F}</Project>
       <Name>AWSSDK.Organizations.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/PersonalizeRuntime/AWSSDK.PersonalizeRuntime.CodeAnalysis.csproj">
+      <Project>{7E4C5776-8E9A-484B-BCF9-9C3546BF5A19}</Project>
+      <Name>AWSSDK.PersonalizeRuntime.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/PI/AWSSDK.PI.CodeAnalysis.csproj">
       <Project>{580AC3E5-D981-4055-87A1-EF6985C35B7F}</Project>
       <Name>AWSSDK.PI.CodeAnalysis</Name>
