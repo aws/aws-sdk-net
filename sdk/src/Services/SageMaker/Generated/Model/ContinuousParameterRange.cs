@@ -114,7 +114,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </dd> <dt>Logarithmic</dt> <dd> 
         /// <para>
-        /// Hyperparemeter tuning searches the values in the hyperparameter range by using a logarithmic
+        /// Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic
         /// scale.
         /// </para>
         ///  

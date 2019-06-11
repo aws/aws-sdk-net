@@ -156,7 +156,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ModelPackageName. 
         /// <para>
-        /// The name of the model package to use to create the model.
+        /// The name or Amazon Resource Name (ARN) of the model package to use to create the model.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=170)]

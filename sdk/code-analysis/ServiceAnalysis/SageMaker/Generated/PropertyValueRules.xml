@@ -1407,6 +1407,16 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.DataProcessing.InputFilter</property>
+    <min>0</min>
+    <max>63</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DataProcessing.OutputFilter</property>
+    <min>0</min>
+    <max>63</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.DeployedImage.ResolvedImage</property>
     <max>255</max>
     <pattern>[\S]+</pattern>
@@ -1520,7 +1530,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.HumanTaskConfig.TaskTimeLimitInSeconds</property>
     <min>1</min>
-    <max>3600</max>
+    <max>28800</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.HumanTaskConfig.TaskTitle</property>

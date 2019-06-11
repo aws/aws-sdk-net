@@ -210,7 +210,7 @@ namespace Amazon.SageMaker.Model
         ///  </important> 
         /// <para>
         /// To have an overview of your training job's progress, view <code>TrainingJobStatus</code>
-        /// and <code>SecondaryStatus</code> in <a>DescribeTrainingJobResponse</a>, and <code>StatusMessage</code>
+        /// and <code>SecondaryStatus</code> in <a>DescribeTrainingJob</a>, and <code>StatusMessage</code>
         /// together. For example, at the start of a training job, you might see the following:
         /// </para>
         ///  <ul> <li> 

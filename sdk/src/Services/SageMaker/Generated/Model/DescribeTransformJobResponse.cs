@@ -34,6 +34,7 @@ namespace Amazon.SageMaker.Model
     {
         private BatchStrategy _batchStrategy;
         private DateTime? _creationTime;
+        private DataProcessing _dataProcessing;
         private Dictionary<string, string> _environment = new Dictionary<string, string>();
         private string _failureReason;
         private string _labelingJobArn;
@@ -91,6 +92,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataProcessing.
+        /// </summary>
+        public DataProcessing DataProcessing
+        {
+            get { return this._dataProcessing; }
+            set { this._dataProcessing = value; }
+        }
+
+        // Check to see if DataProcessing property is set
+        internal bool IsSetDataProcessing()
+        {
+            return this._dataProcessing != null;
         }
 
         /// <summary>

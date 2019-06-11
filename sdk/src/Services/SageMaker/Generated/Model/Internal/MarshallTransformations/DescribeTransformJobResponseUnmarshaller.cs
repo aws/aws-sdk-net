@@ -63,6 +63,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DataProcessing", targetDepth))
+                {
+                    var unmarshaller = DataProcessingUnmarshaller.Instance;
+                    response.DataProcessing = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Environment", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

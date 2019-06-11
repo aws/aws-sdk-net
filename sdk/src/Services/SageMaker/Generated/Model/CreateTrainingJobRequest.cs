@@ -49,8 +49,9 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>HyperParameters</code> - Specify these algorithm-specific parameters to influence
-    /// the quality of the final model. For a list of hyperparameters for each training algorithm
+    ///  <code>HyperParameters</code> - Specify these algorithm-specific parameters to enable
+    /// the estimation of model parameters during training. Hyperparameters can be tuned to
+    /// optimize this learning process. For a list of hyperparameters for each training algorithm
     /// provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
     /// 
     /// </para>
@@ -79,7 +80,7 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>StoppingCondition</code> - Sets a duration for training. Use this parameter
+    ///  <code>StoppingCondition</code> - Sets a time limit for training. Use this parameter
     /// to cap model training costs. 
     /// </para>
     ///  </li> </ul> 
@@ -225,7 +226,7 @@ namespace Amazon.SageMaker.Model
         /// makes it available as input streams. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=8)]
+        [AWSProperty(Min=1, Max=20)]
         public List<Channel> InputDataConfig
         {
             get { return this._inputDataConfig; }
@@ -324,17 +325,15 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property StoppingCondition. 
         /// <para>
-        /// Sets a duration for training. Use this parameter to cap model training costs. To stop
-        /// a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which
-        /// delays job termination for 120 seconds. Algorithms might use this 120-second window
-        /// to save the model artifacts. 
+        /// Specifies a limit to how long a model training job can run. When the job reaches the
+        /// time limit, Amazon SageMaker ends the training job. Use this API to cap model training
+        /// costs.
         /// </para>
         ///  
         /// <para>
-        /// When Amazon SageMaker terminates a job because the stopping condition has been met,
-        /// training algorithms provided by Amazon SageMaker save the intermediate results of
-        /// the job. This intermediate data is a valid model artifact. You can use it to create
-        /// a model using the <code>CreateModel</code> API. 
+        /// To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal,
+        /// which delays job termination for 120 seconds. Algorithms can use this 120-second window
+        /// to save the model artifacts, so the results of training are not lost. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

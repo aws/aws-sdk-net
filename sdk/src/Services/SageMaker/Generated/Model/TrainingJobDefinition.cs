@@ -64,7 +64,7 @@ namespace Amazon.SageMaker.Model
         /// An array of <code>Channel</code> objects, each of which specifies an input source.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=8)]
+        [AWSProperty(Required=true, Min=1, Max=20)]
         public List<Channel> InputDataConfig
         {
             get { return this._inputDataConfig; }
@@ -120,12 +120,14 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property StoppingCondition. 
         /// <para>
-        /// Sets a duration for training. Use this parameter to cap model training costs.
+        /// Specifies a limit to how long a model training job can run. When the job reaches the
+        /// time limit, Amazon SageMaker ends the training job. Use this API to cap model training
+        /// costs.
         /// </para>
         ///  
         /// <para>
         /// To stop a job, Amazon SageMaker sends the algorithm the SIGTERM signal, which delays
-        /// job termination for 120 seconds. Algorithms might use this 120-second window to save
+        /// job termination for 120 seconds. Algorithms can use this 120-second window to save
         /// the model artifacts.
         /// </para>
         /// </summary>

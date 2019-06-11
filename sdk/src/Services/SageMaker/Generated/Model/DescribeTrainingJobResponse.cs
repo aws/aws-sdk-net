@@ -101,7 +101,7 @@ namespace Amazon.SageMaker.Model
         /// To encrypt all communications between ML compute instances in distributed training,
         /// choose <code>True</code>. Encryption provides greater security for distributed training,
         /// but training might take longer. How long it takes depends on the amount of communication
-        /// between compute instances, especially if you use a deep learning algorithm in distributed
+        /// between compute instances, especially if you use a deep learning algorithms in distributed
         /// training.
         /// </para>
         /// </summary>
@@ -208,7 +208,7 @@ namespace Amazon.SageMaker.Model
         /// An array of <code>Channel</code> objects that describes each data input channel. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=8)]
+        [AWSProperty(Min=1, Max=20)]
         public List<Channel> InputDataConfig
         {
             get { return this._inputDataConfig; }
@@ -448,7 +448,15 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property StoppingCondition. 
         /// <para>
-        /// The condition under which to stop the training job. 
+        /// Specifies a limit to how long a model training job can run. When the job reaches the
+        /// time limit, Amazon SageMaker ends the training job. Use this API to cap model training
+        /// costs.
+        /// </para>
+        ///  
+        /// <para>
+        /// To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal,
+        /// which delays job termination for 120 seconds. Algorithms can use this 120-second window
+        /// to save the model artifacts, so the results of training are not lost. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

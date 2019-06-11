@@ -202,7 +202,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Asia Pacific (Tokyo (ap-northeast-1):</b> 
+        ///  <b>Asia Pacific (Tokyo) (ap-northeast-1):</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -226,7 +226,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Asia Pacific (Sydney (ap-southeast-1):</b> 
+        ///  <b>Asia Pacific (Sydney) (ap-southeast-1):</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -345,7 +345,7 @@ namespace Amazon.SageMaker.Model
         /// The amount of time that a worker has to complete a task.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=3600)]
+        [AWSProperty(Required=true, Min=1, Max=28800)]
         public int TaskTimeLimitInSeconds
         {
             get { return this._taskTimeLimitInSeconds.GetValueOrDefault(); }

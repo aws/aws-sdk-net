@@ -77,6 +77,7 @@ namespace Amazon.SageMaker.Model
     public partial class CreateTransformJobRequest : AmazonSageMakerRequest
     {
         private BatchStrategy _batchStrategy;
+        private DataProcessing _dataProcessing;
         private Dictionary<string, string> _environment = new Dictionary<string, string>();
         private int? _maxConcurrentTransforms;
         private int? _maxPayloadInMB;
@@ -122,6 +123,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetBatchStrategy()
         {
             return this._batchStrategy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataProcessing. 
+        /// <para>
+        /// The data structure used for combining the input data and inference in the output file.
+        /// For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-io-join.html">Batch
+        /// Transform I/O Join</a>.
+        /// </para>
+        /// </summary>
+        public DataProcessing DataProcessing
+        {
+            get { return this._dataProcessing; }
+            set { this._dataProcessing = value; }
+        }
+
+        // Check to see if DataProcessing property is set
+        internal bool IsSetDataProcessing()
+        {
+            return this._dataProcessing != null;
         }
 
         /// <summary>
