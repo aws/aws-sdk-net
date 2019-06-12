@@ -79,6 +79,12 @@ using System.Diagnostics.CodeAnalysis;
 // Suppressions for exceptions in setters
 [module: SuppressMessage("Microsoft.Usage", "CA2219:DoNotRaiseExceptionsInExceptionClauses", Scope = "member", Target = "Amazon.Runtime.Internal.HttpRequest.#WriteToRequestBody(System.IO.Stream,System.IO.Stream,System.Collections.Generic.IDictionary`2<System.String,System.String>,Amazon.Runtime.IRequestContext)")]
 
+// Suppressions for DisposableFieldsShouldBeDisposed
+#if BCL35
+// In this case the semaphore is being disposed. The semaphore.Close() has been renamed to semaphore.Dispose()
+[module: SuppressMessage("Microsoft.Usage", "CA2213:DisposableFieldsShouldBeDisposed", Scope = "member", Target = "Amazon.Runtime.RefreshingAWSCredentials.#Dispose(System.Boolean)")]
+#endif
+
 // Serialization-only classes
 [module: SuppressMessage("Microsoft.Performance", "CA1812:AvoidUninstantiatedInternalClasses", Scope = "type", Target = "Amazon.Runtime.InstanceProfileAWSCredentials+SecurityCredentials")]
 [module: SuppressMessage("Microsoft.Performance", "CA1812:AvoidUninstantiatedInternalClasses", Scope = "type", Target = "Amazon.Runtime.InstanceProfileAWSCredentials+SecurityInfo")]

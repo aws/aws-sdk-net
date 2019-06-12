@@ -77,11 +77,7 @@ namespace Amazon.Runtime
                 Util.AWSSDKUtils.Sleep(retry.Next());
             }
 
-            return new CredentialsRefreshState
-            {
-                Credentials = new ImmutableCredentials(credentials.AccessKeyId, credentials.SecretAccessKey, credentials.Token),
-                Expiration = credentials.Expiration
-            };
+            return new CredentialsRefreshState(new ImmutableCredentials(credentials.AccessKeyId, credentials.SecretAccessKey, credentials.Token), credentials.Expiration);
         }
     }
 #endif

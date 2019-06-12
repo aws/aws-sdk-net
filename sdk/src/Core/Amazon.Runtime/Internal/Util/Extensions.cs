@@ -16,17 +16,18 @@
 using System;
 using System.Diagnostics;
 using System.Text;
+using System.Threading;
 
 namespace Amazon.Runtime.Internal.Util
 {
     public static partial class Extensions
     {
-        private static readonly long ticksPerSecond = TimeSpan.FromSeconds(1).Ticks;
-        private static readonly double tickFrequency = ticksPerSecond / (double)Stopwatch.Frequency;
+        private static readonly long TicksPerSecond = TimeSpan.FromSeconds(1).Ticks;
+        private static readonly double TickFrequency = TicksPerSecond / (double)Stopwatch.Frequency;
         public static long GetElapsedDateTimeTicks(this Stopwatch self)
         {
             double stopwatchTicks = self.ElapsedTicks;
-            long ticks = (long)(stopwatchTicks * tickFrequency);
+            var ticks = (long)(stopwatchTicks * TickFrequency);
             return ticks;
         }
 
@@ -44,10 +45,19 @@ namespace Amazon.Runtime.Internal.Util
             if (request.ContentStream != null || request.Content != null)
                 return true;
 
-            if (request.Parameters.Count > 0)
-                return true;
-
-            return false;
+            return request.Parameters.Count > 0;
         }
+
+#if BCL35 || UNITY
+        public static bool Wait(this WaitHandle semaphore)
+        {
+            return semaphore.WaitOne();
+        }
+        
+        public static void Dispose(this WaitHandle semaphore)
+        {
+            semaphore.Close();
+        }
+#endif
     }
 }

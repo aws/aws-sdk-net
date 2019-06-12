@@ -12,6 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 using Amazon.Runtime.CredentialManagement;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.CredentialManagement.Internal;
@@ -41,8 +42,7 @@ namespace Amazon.Runtime
         private static readonly TimeSpan MaximumCredentialTimespan = TimeSpan.FromHours(1);
         private static readonly TimeSpan DefaultPreemptExpiryTime = TimeSpan.FromMinutes(5);
 
-        private object syncLock = new object();
-        private SAMLRoleSessionManager sessionManager = new SAMLRoleSessionManager();
+        private readonly SAMLRoleSessionManager sessionManager = new SAMLRoleSessionManager();
 
         /// <summary>
         /// Constructs an instance of FederatedAWSCredentials. After construction call GetCredentials
@@ -51,7 +51,7 @@ namespace Amazon.Runtime
         /// <param name="samlEndpoint">The SAML endpoint used for authentication.</param>
         /// <param name="roleArn">The role ARN used for authentication.</param>
         public FederatedAWSCredentials(SAMLEndpoint samlEndpoint, string roleArn)
-            :this(samlEndpoint, roleArn, new FederatedAWSCredentialsOptions())
+            : this(samlEndpoint, roleArn, new FederatedAWSCredentialsOptions())
         {
         }
 
@@ -63,23 +63,16 @@ namespace Amazon.Runtime
         /// <param name="roleArn">The role ARN used for authentication.</param>
         /// <param name="options">The options used for authentication.
         /// See <see cref="FederatedAWSCredentialsOptions"/> for details about available options.</param>
-        public FederatedAWSCredentials(SAMLEndpoint samlEndpoint, string roleArn, FederatedAWSCredentialsOptions options)
+        public FederatedAWSCredentials(SAMLEndpoint samlEndpoint, string roleArn,
+            FederatedAWSCredentialsOptions options)
         {
-            if (options == null)
-            {
-                throw new ArgumentNullException("options");
-            }
-            if (samlEndpoint == null)
-            {
-                throw new ArgumentNullException("samlEndpoint");
-            }
             if (string.IsNullOrEmpty(roleArn))
             {
                 throw new ArgumentException("RoleArn must not be null or empty.");
             }
 
-            Options = options;
-            SAMLEndpoint = samlEndpoint;
+            Options = options ?? throw new ArgumentNullException("options");
+            SAMLEndpoint = samlEndpoint ?? throw new ArgumentNullException("samlEndpoint");
             RoleArn = roleArn;
             PreemptExpiryTime = DefaultPreemptExpiryTime;
         }
@@ -111,98 +104,76 @@ namespace Amazon.Runtime
         protected override CredentialsRefreshState GenerateNewCredentials()
         {
             Validate();
-
-            // lock across the entire process for generating credentials so multiple
-            // threads don't attempt to invoke any registered callback at the same time
-            // and if we do callback, we only do it once to get the user authentication
-            // data
-            lock (syncLock)
+            // If the profile indicates the user has already authenticated and received
+            // credentials which are still valid, adopt them instead of requiring a fresh
+            // authentication.
+            SAMLImmutableCredentials currentSession;
+            if (TryGetRoleSession(out currentSession))
             {
-                // If the profile indicates the user has already authenticated and received
-                // credentials which are still valid, adopt them instead of requiring a fresh
-                // authentication.
-                SAMLImmutableCredentials currentSession;
-                if (TryGetRoleSession(out currentSession))
+                // Since cached role session credentials can be obtained, stored credentials exist 
+                // and they were not expired. However, since the stored credentials are actual 
+                // expiration time and not preempt expiration time we must preempt the expiration
+                // to check that they will not expire before this call completes.
+                var cachedState = new CredentialsRefreshState(currentSession, currentSession.Expires);
+
+                // Use the cached credentials as long as they are not within the preempt expiry window
+                // or have since actually expired since the prior call to TryGetRoleSession.
+                //Verify the actual expiration is not within the preempt expiration time.
+                if (!cachedState.IsExpiredWithin(PreemptExpiryTime))
                 {
-                    // Since cached role session credentials can be obtained, stored credentials exist 
-                    // and they were not expired. However, since the stored credentials are actual 
-                    // expiration time and not preempt expiration time we must preempt the expiration
-                    // to check that they will not expire before this call completes.
-                    var cachedState = new CredentialsRefreshState(currentSession, currentSession.Expires);
-
-                    // If currentState is null this is a new SDK startup. In this case we can possibly
-                    // use the cached credentials as long as they are not within the preempt expiry window
-                    // or have since actually expired since the prior call to TryGetRoleSession.
-                    if (currentState == null)
-                    {
-                        //Verify the actual expiration is not within the preempt expiration time.
-                        if (!cachedState.IsExpiredWithin(PreemptExpiryTime))
-                        {
-                            // The credentials have plenty of time left before they expire so they can be used. After
-                            // return the expiration time will be preempted for future checks using ShouldUpdate.
-                            return cachedState;
-                        }
-                    }
-                    else if (!ShouldUpdate)
-                    {
-                        // If currentState is not null we already have the credential state. This could
-                        // have come from a cached load or a new authentication. The preempted expiration
-                        // time would have already been built in to the ShouldUpdate check in this case.
-                        return cachedState;
-                    }
-
-                    // If the currentState was null but the credentials are already in the preempt expiry window
-                    // or the currentState was not null and we are currently in the preempt expiry window
-                    // new credentials must be obtained before the window closes. No longer use the cached
-                    // credentials so fall through to obtain new ones.
+                    // The credentials have plenty of time left before they expire so they can be used. After
+                    // return the expiration time will be preempted for future checks using ShouldUpdate.
+                    return cachedState;
                 }
+            }
 
-                CredentialsRefreshState newState = null;
-                var attempts = 0;
-                do
+            CredentialsRefreshState newState = null;
+            var attempts = 0;
+            do
+            {
+                try
                 {
-                    try
+                    NetworkCredential userCredential = null;
+                    if (Options.UserIdentity != null)
                     {
-                        NetworkCredential userCredential = null;
-                        if (Options.UserIdentity != null)
+                        if (Options.CredentialRequestCallback != null)
                         {
-                            if (Options.CredentialRequestCallback != null)
+                            var callbackArgs = new CredentialRequestCallbackArgs
                             {
-                                var callbackArgs = new CredentialRequestCallbackArgs
-                                {
-                                    ProfileName = Options.ProfileName,
-                                    UserIdentity = Options.UserIdentity,
-                                    CustomState = Options.CustomCallbackState,
-                                    PreviousAuthenticationFailed = attempts > 0
-                                };
+                                ProfileName = Options.ProfileName,
+                                UserIdentity = Options.UserIdentity,
+                                CustomState = Options.CustomCallbackState,
+                                PreviousAuthenticationFailed = attempts > 0
+                            };
 
-                                userCredential = Options.CredentialRequestCallback(callbackArgs);
+                            userCredential = Options.CredentialRequestCallback(callbackArgs);
 
-                                if (userCredential == null) // user declined to authenticate
-                                {
-                                    throw new FederatedAuthenticationCancelledException("User cancelled credential request.");
-                                }
-                            }
-                            else
+                            if (userCredential == null) // user declined to authenticate
                             {
-                                var logger = Logger.GetLogger(typeof(FederatedAWSCredentials));
-                                logger.InfoFormat("FederatedAWSCredentials configured for a specific user but no credential request callback registered; falling back to default identity.");
+                                throw new FederatedAuthenticationCancelledException(
+                                    "User cancelled credential request.");
                             }
                         }
-
-                        newState = Authenticate(userCredential);
-                    }
-                    catch (FederatedAuthenticationFailureException)
-                    {
-                        if (attempts < MaxAuthenticationRetries)
-                            attempts++;
                         else
-                            throw;
+                        {
+                            var logger = Logger.GetLogger(typeof(FederatedAWSCredentials));
+                            logger.InfoFormat(
+                                "FederatedAWSCredentials configured for a specific user but no credential request callback registered; falling back to default identity.");
+                        }
                     }
-                } while (newState == null && attempts < MaxAuthenticationRetries);
 
-                return newState;
-            }
+                    newState = Authenticate(userCredential);
+                }
+                catch (FederatedAuthenticationFailureException)
+                {
+                    if (attempts < MaxAuthenticationRetries)
+                        attempts++;
+                    else
+                        throw;
+                }
+            } while (newState == null && attempts < MaxAuthenticationRetries);
+
+            return newState;
         }
 
         private CredentialsRefreshState Authenticate(ICredentials userCredential)
@@ -252,7 +223,8 @@ namespace Amazon.Runtime
 
             try
             {
-                var credentials = samlCoreSTSClient.CredentialsFromSAMLAuthentication(SAMLEndpoint.EndpointUri.ToString(),
+                var credentials = samlCoreSTSClient.CredentialsFromSAMLAuthentication(
+                    SAMLEndpoint.EndpointUri.ToString(),
                     SAMLEndpoint.AuthenticationType.ToString(), RoleArn, MaximumCredentialTimespan, userCredential);
 
                 RegisterRoleSession(credentials);
@@ -261,7 +233,8 @@ namespace Amazon.Runtime
             }
             catch (Exception e)
             {
-                var wrappedException = new AmazonClientException("Credential generation from SAML authentication failed.", e);
+                var wrappedException =
+                    new AmazonClientException("Credential generation from SAML authentication failed.", e);
 
                 var logger = Logger.GetLogger(typeof(FederatedAWSCredentials));
                 logger.Error(wrappedException, wrappedException.Message);

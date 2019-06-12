@@ -194,11 +194,7 @@ namespace Amazon.Runtime
             if (newExpiryTime.ToUniversalTime() > state.Expiration.ToUniversalTime())
                 newExpiryTime = state.Expiration;
 
-            return new CredentialsRefreshState
-            {
-                Credentials = state.Credentials.Copy(),
-                Expiration = newExpiryTime
-            };
+            return new CredentialsRefreshState(state.Credentials.Copy(), newExpiryTime);
         }
 
         private CredentialsRefreshState GetRefreshState()
@@ -212,11 +208,7 @@ namespace Amazon.Runtime
             }
             SecurityCredentials credentials = GetRoleCredentials();
 
-            CredentialsRefreshState refreshState = new CredentialsRefreshState
-            {
-                Credentials = new ImmutableCredentials(credentials.AccessKeyId, credentials.SecretAccessKey, credentials.Token),
-                Expiration = credentials.Expiration
-            };
+            CredentialsRefreshState refreshState = new CredentialsRefreshState(new ImmutableCredentials(credentials.AccessKeyId, credentials.SecretAccessKey, credentials.Token), credentials.Expiration);
 
             return refreshState;
         }
