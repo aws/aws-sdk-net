@@ -35,6 +35,7 @@ namespace Amazon.ServiceCatalog.Model
         private bool? _active;
         private DateTime? _createdTime;
         private string _description;
+        private ProvisioningArtifactGuidance _guidance;
         private string _id;
         private string _name;
         private ProvisioningArtifactType _type;
@@ -91,6 +92,25 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Guidance. 
+        /// <para>
+        /// Information set by the administrator to provide guidance to end users about which
+        /// provisioning artifacts to use.
+        /// </para>
+        /// </summary>
+        public ProvisioningArtifactGuidance Guidance
+        {
+            get { return this._guidance; }
+            set { this._guidance = value; }
+        }
+
+        // Check to see if Guidance property is set
+        internal bool IsSetGuidance()
+        {
+            return this._guidance != null;
         }
 
         /// <summary>

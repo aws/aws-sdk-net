@@ -269,6 +269,12 @@ namespace Amazon.ServiceCatalog.Model
         /// <para>
         /// One or more tags.
         /// </para>
+        ///  
+        /// <para>
+        /// If the plan is for an existing provisioned product, the product must have a <code>RESOURCE_UPDATE</code>
+        /// constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code>
+        /// to allow tag updates.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=50)]
         public List<Tag> Tags

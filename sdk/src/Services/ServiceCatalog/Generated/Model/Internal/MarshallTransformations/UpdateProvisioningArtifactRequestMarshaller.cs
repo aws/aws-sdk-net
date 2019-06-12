@@ -86,6 +86,12 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetGuidance())
+                {
+                    context.Writer.WritePropertyName("Guidance");
+                    context.Writer.Write(publicRequest.Guidance);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("Name");

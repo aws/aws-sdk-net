@@ -42,6 +42,7 @@ namespace Amazon.ServiceCatalog.Model
         private string _acceptLanguage;
         private bool? _active;
         private string _description;
+        private ProvisioningArtifactGuidance _guidance;
         private string _name;
         private string _productId;
         private string _provisioningArtifactId;
@@ -112,6 +113,36 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Guidance. 
+        /// <para>
+        /// Information set by the administrator to provide guidance to end users about which
+        /// provisioning artifacts to use.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>DEFAULT</code> value indicates that the product version is active.
+        /// </para>
+        ///  
+        /// <para>
+        /// The administrator can set the guidance to <code>DEPRECATED</code> to inform users
+        /// that the product version is deprecated. Users are able to make updates to a provisioned
+        /// product of a deprecated version but cannot launch new provisioned products using a
+        /// deprecated version.
+        /// </para>
+        /// </summary>
+        public ProvisioningArtifactGuidance Guidance
+        {
+            get { return this._guidance; }
+            set { this._guidance = value; }
+        }
+
+        // Check to see if Guidance property is set
+        internal bool IsSetGuidance()
+        {
+            return this._guidance != null;
         }
 
         /// <summary>
