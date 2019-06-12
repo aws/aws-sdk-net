@@ -1,3 +1,7 @@
+### 3.3.530.0 (2019-06-12 18:09 UTC)
+* ServiceCatalog (3.3.106.0)
+	* This release adds a new field named Guidance to update provisioning artifact, this field can be set by the administrator to provide guidance to end users about which provisioning artifacts to use.
+
 ### 3.3.529.0 (2019-06-11 18:32 UTC)
 * SageMaker (3.3.102.0)
 	* The default TaskTimeLimitInSeconds of labeling job is increased to 8 hours. Batch Transform introduces a new DataProcessing field which supports input and output filtering and data joining. Training job increases the max allowed input channels from 8 to 20.
