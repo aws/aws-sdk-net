@@ -4351,6 +4351,34 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType G3sXlarge = new InstanceType("g3s.xlarge");
         /// <summary>
+        /// Constant G4dn12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G4dn12xlarge = new InstanceType("g4dn.12xlarge");
+        /// <summary>
+        /// Constant G4dn16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G4dn16xlarge = new InstanceType("g4dn.16xlarge");
+        /// <summary>
+        /// Constant G4dn2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G4dn2xlarge = new InstanceType("g4dn.2xlarge");
+        /// <summary>
+        /// Constant G4dn4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G4dn4xlarge = new InstanceType("g4dn.4xlarge");
+        /// <summary>
+        /// Constant G4dn8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G4dn8xlarge = new InstanceType("g4dn.8xlarge");
+        /// <summary>
+        /// Constant G4dnMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType G4dnMetal = new InstanceType("g4dn.metal");
+        /// <summary>
+        /// Constant G4dnXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G4dnXlarge = new InstanceType("g4dn.xlarge");
+        /// <summary>
         /// Constant H116xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType H116xlarge = new InstanceType("h1.16xlarge");
