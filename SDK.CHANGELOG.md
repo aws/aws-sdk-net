@@ -1,3 +1,13 @@
+### 3.3.531.0 (2019-06-13 19:22 UTC)
+* AppMesh (3.3.102.0)
+	* This release adds support for AWS Cloud Map as a service discovery method for virtual nodes.
+* EC2 (3.3.115.0)
+	* G4 instances are Amazon EC2 instances based on NVIDIA T4 GPUs and are designed to provide cost-effective machine learning inference for applications, like image classification, object detection, recommender systems, automated speech recognition, and language translation. G4 instances are also a cost-effective platform for building and running graphics-intensive applications, such as remote graphics workstations, video transcoding, photo-realistic design, and game streaming in the cloud. To get started with G4 instances visit https://aws.amazon.com/ec2/instance-types/g4.
+* ElastiCache (3.3.102.0)
+	* This release is to add support for reader endpoint for cluster-mode disabled Amazon ElastiCache for Redis clusters.
+* GuardDuty (3.3.102.0)
+	* Support for tagging functionality in Create and Get operations for Detector, IP Set, Threat Intel Set, and Finding Filter resources and 3 new tagging APIs: ListTagsForResource, TagResource, and UntagResource.
+
 ### 3.3.530.1 (2019-06-12 23:23 UTC)
 * Core 3.3.102.4
 	* Fixed issue with AssumeRoleAWSCredentials not refreshing credentials before they expire.
