@@ -36,6 +36,7 @@ namespace Amazon.GuardDuty.Model
         private FindingPublishingFrequency _findingPublishingFrequency;
         private string _serviceRole;
         private DetectorStatus _status;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _updatedAt;
 
         /// <summary>
@@ -110,6 +111,25 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags of the detector resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>
