@@ -36,6 +36,7 @@ namespace Amazon.ElastiCache.Model
         private string _nodeGroupId;
         private List<NodeGroupMember> _nodeGroupMembers = new List<NodeGroupMember>();
         private Endpoint _primaryEndpoint;
+        private Endpoint _readerEndpoint;
         private string _slots;
         private string _status;
 
@@ -94,6 +95,24 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetPrimaryEndpoint()
         {
             return this._primaryEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReaderEndpoint. 
+        /// <para>
+        /// The endpoint of the replica nodes in this node group (shard).
+        /// </para>
+        /// </summary>
+        public Endpoint ReaderEndpoint
+        {
+            get { return this._readerEndpoint; }
+            set { this._readerEndpoint = value; }
+        }
+
+        // Check to see if ReaderEndpoint property is set
+        internal bool IsSetReaderEndpoint()
+        {
+            return this._readerEndpoint != null;
         }
 
         /// <summary>

@@ -73,6 +73,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         unmarshalledObject.PrimaryEndpoint = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ReaderEndpoint", targetDepth))
+                    {
+                        var unmarshaller = EndpointUnmarshaller.Instance;
+                        unmarshalledObject.ReaderEndpoint = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Slots", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

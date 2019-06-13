@@ -147,7 +147,7 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Apply the service update. For more information on service updates and applying them,
-        /// see <a href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/Amazon/red-ug/applying-updates.html">Applying
+        /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/applying-updates.html">Applying
         /// Service Updates</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchApplyUpdateAction service method.</param>
