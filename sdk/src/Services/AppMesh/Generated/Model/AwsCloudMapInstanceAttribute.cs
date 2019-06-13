@@ -28,12 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// Optional metadata that you apply to a resource to assist with categorization and 
-    ///        organization. Each tag consists of a key and an optional value, both of which
-    /// you define.         Tag keys can have a maximum character length of 128 characters,
-    /// and tag values can have            a maximum length of 256 characters.
+    /// An object representing the AWS Cloud Map attribute information for your virtual node.
     /// </summary>
-    public partial class TagRef
+    public partial class AwsCloudMapInstanceAttribute
     {
         private string _key;
         private string _value;
@@ -41,11 +38,11 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// One part of a key-value pair that make up a tag. A <code>key</code> is a general label
-        ///         that acts like a category for more specific tag values.
+        /// The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service
+        /// instance         that contains the specified key and value is returned.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Key
         {
             get { return this._key; }
@@ -61,11 +58,11 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The optional part of a key-value pair that make up a tag. A <code>value</code> acts
-        /// as a         descriptor within a tag category (key).
+        /// The value of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service
+        ///         instance that contains the specified key and value is returned.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string Value
         {
             get { return this._value; }

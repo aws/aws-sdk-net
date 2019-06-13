@@ -46,7 +46,7 @@ namespace Amazon.AppMesh.Model
         /// response         element. You can see the remaining results of the initial request
         /// by sending another            <code>ListVirtualServices</code> request with the returned
         /// <code>nextToken</code> value.         This value can be between 1 and 100. If you
-        /// don't use this parameter,         <code>ListVirtualServices</code> returns up to 100
+        /// don't use this         parameter, <code>ListVirtualServices</code> returns up to 100
         /// results and         a <code>nextToken</code> value if applicable.
         /// </para>
         /// </summary>

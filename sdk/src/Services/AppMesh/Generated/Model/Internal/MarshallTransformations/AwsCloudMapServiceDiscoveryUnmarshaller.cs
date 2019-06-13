@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ServiceDiscovery Object
+    /// Response Unmarshaller for AwsCloudMapServiceDiscovery Object
     /// </summary>  
-    public class ServiceDiscoveryUnmarshaller : IUnmarshaller<ServiceDiscovery, XmlUnmarshallerContext>, IUnmarshaller<ServiceDiscovery, JsonUnmarshallerContext>
+    public class AwsCloudMapServiceDiscoveryUnmarshaller : IUnmarshaller<AwsCloudMapServiceDiscovery, XmlUnmarshallerContext>, IUnmarshaller<AwsCloudMapServiceDiscovery, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ServiceDiscovery IUnmarshaller<ServiceDiscovery, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AwsCloudMapServiceDiscovery IUnmarshaller<AwsCloudMapServiceDiscovery, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,33 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ServiceDiscovery Unmarshall(JsonUnmarshallerContext context)
+        public AwsCloudMapServiceDiscovery Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ServiceDiscovery unmarshalledObject = new ServiceDiscovery();
+            AwsCloudMapServiceDiscovery unmarshalledObject = new AwsCloudMapServiceDiscovery();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("awsCloudMap", targetDepth))
+                if (context.TestExpression("attributes", targetDepth))
                 {
-                    var unmarshaller = AwsCloudMapServiceDiscoveryUnmarshaller.Instance;
-                    unmarshalledObject.AwsCloudMap = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<AwsCloudMapInstanceAttribute, AwsCloudMapInstanceAttributeUnmarshaller>(AwsCloudMapInstanceAttributeUnmarshaller.Instance);
+                    unmarshalledObject.Attributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("dns", targetDepth))
+                if (context.TestExpression("namespaceName", targetDepth))
                 {
-                    var unmarshaller = DnsServiceDiscoveryUnmarshaller.Instance;
-                    unmarshalledObject.Dns = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NamespaceName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("serviceName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ServiceName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +88,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         }
 
 
-        private static ServiceDiscoveryUnmarshaller _instance = new ServiceDiscoveryUnmarshaller();        
+        private static AwsCloudMapServiceDiscoveryUnmarshaller _instance = new AwsCloudMapServiceDiscoveryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ServiceDiscoveryUnmarshaller Instance
+        public static AwsCloudMapServiceDiscoveryUnmarshaller Instance
         {
             get
             {

@@ -59,8 +59,8 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Listeners. 
         /// <para>
-        /// The listeners that the virtual node is expected to receive inbound traffic from. Currently
-        /// only one listener is supported per virtual node.
+        /// The listeners that the virtual node is expected to receive inbound traffic from. 
+        ///        Currently only one listener is supported per virtual node.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]

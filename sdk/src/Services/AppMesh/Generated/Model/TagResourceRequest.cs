@@ -29,10 +29,10 @@ namespace Amazon.AppMesh.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Associates the specified tags to a resource with the specified         <code>resourceArn</code>.
-    /// If existing tags on a resource aren't specified in the         request parameters,
-    /// they aren't changed. When a resource is deleted, the tags         associated with
-    /// that resource are also deleted.
+    /// Associates the specified tags to a resource with the specified <code>resourceArn</code>.
+    ///         If existing tags on a resource aren't specified in the request parameters,
+    /// they aren't         changed. When a resource is deleted, the tags associated with
+    /// that resource are also         deleted.
     /// </summary>
     public partial class TagResourceRequest : AmazonAppMeshRequest
     {

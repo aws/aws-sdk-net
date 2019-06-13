@@ -38,18 +38,16 @@ namespace Amazon.AppMesh
     /// <para>
     /// App Mesh gives you consistent visibility and network traffic controls for every  
     ///       microservice in an application. You can use App Mesh with AWS Fargate, Amazon
-    /// ECS, Amazon EKS, and         Kubernetes on AWS.
+    /// ECS, Amazon EKS,         Kubernetes on AWS, and Amazon EC2.
     /// </para>
     ///          <note>            
     /// <para>
     /// App Mesh supports microservice applications that use service discovery naming for
-    /// their            components. To use App Mesh, you must have an application running
-    /// on Amazon EC2 instances,            hosted in either Amazon ECS, Amazon EKS, or Kubernetes
-    /// on AWS. For more information about            service discovery on Amazon ECS, see
-    /// <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-    ///               Discovery</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-    /// Kubernetes               <code>kube-dns</code> and <code>coredns</code> are supported.
-    /// For more information,            see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/">DNS
+    /// their            components. For more information about service discovery on Amazon
+    /// ECS, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+    /// Discovery</a> in the               <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// Kubernetes <code>kube-dns</code> and               <code>coredns</code> are supported.
+    /// For more information, see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/">DNS
     ///               for Services and Pods</a> in the Kubernetes documentation.
     /// </para>
     ///          </note>
@@ -62,8 +60,8 @@ namespace Amazon.AppMesh
 
 
         /// <summary>
-        /// Creates a service mesh. A service mesh is a logical boundary for network traffic 
-        ///        between the services that reside within it.
+        /// Creates a service mesh. A service mesh is a logical boundary for network traffic between
+        ///         the services that reside within it.
         /// 
         ///          
         /// <para>
@@ -86,11 +84,12 @@ namespace Amazon.AppMesh
         /// You don't have permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
         /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service
-        /// Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        ///            Limits</a> in the <i>AWS App Mesh User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -101,7 +100,7 @@ namespace Amazon.AppMesh
         /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
         /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
         ///         account. For best results, use an increasing or variable sleep interval between
-        /// requests.
+        ///         requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateMesh">REST API Reference for CreateMesh Operation</seealso>
         CreateMeshResponse CreateMesh(CreateMeshRequest request);
@@ -167,11 +166,12 @@ namespace Amazon.AppMesh
         /// You don't have permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
         /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service
-        /// Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        ///            Limits</a> in the <i>AWS App Mesh User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -182,7 +182,7 @@ namespace Amazon.AppMesh
         /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
         /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
         ///         account. For best results, use an increasing or variable sleep interval between
-        /// requests.
+        ///         requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateRoute">REST API Reference for CreateRoute Operation</seealso>
         CreateRouteResponse CreateRoute(CreateRouteRequest request);
@@ -225,7 +225,7 @@ namespace Amazon.AppMesh
         /// <para>
         /// A virtual node acts as a logical pointer to a particular task group, such as an Amazon
         /// ECS         service or a Kubernetes deployment. When you create a virtual node, you
-        /// must specify the         DNS service discovery hostname for your task group.
+        /// can specify the         service discovery information for your task group.
         /// </para>
         ///          
         /// <para>
@@ -265,11 +265,12 @@ namespace Amazon.AppMesh
         /// You don't have permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
         /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service
-        /// Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        ///            Limits</a> in the <i>AWS App Mesh User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -280,7 +281,7 @@ namespace Amazon.AppMesh
         /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
         /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
         ///         account. For best results, use an increasing or variable sleep interval between
-        /// requests.
+        ///         requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualNode">REST API Reference for CreateVirtualNode Operation</seealso>
         CreateVirtualNodeResponse CreateVirtualNode(CreateVirtualNodeRequest request);
@@ -345,11 +346,12 @@ namespace Amazon.AppMesh
         /// You don't have permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
         /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service
-        /// Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        ///            Limits</a> in the <i>AWS App Mesh User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -360,7 +362,7 @@ namespace Amazon.AppMesh
         /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
         /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
         ///         account. For best results, use an increasing or variable sleep interval between
-        /// requests.
+        ///         requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualRouter">REST API Reference for CreateVirtualRouter Operation</seealso>
         CreateVirtualRouterResponse CreateVirtualRouter(CreateVirtualRouterRequest request);
@@ -401,10 +403,10 @@ namespace Amazon.AppMesh
         /// 
         ///          
         /// <para>
-        /// A virtual service is an abstraction of a real service that is provided by a      
-        ///   virtual node directly or indirectly by means of a virtual router. Dependent services
-        /// call         your virtual service by its <code>virtualServiceName</code>, and those
-        /// requests are routed         to the virtual node or virtual router that is specified
+        /// A virtual service is an abstraction of a real service that is provided by a virtual
+        /// node         directly or indirectly by means of a virtual router. Dependent services
+        /// call your virtual         service by its <code>virtualServiceName</code>, and those
+        /// requests are routed to the         virtual node or virtual router that is specified
         /// as the provider for the virtual         service.
         /// </para>
         /// </summary>
@@ -422,11 +424,12 @@ namespace Amazon.AppMesh
         /// You don't have permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
         /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service
-        /// Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        ///            Limits</a> in the <i>AWS App Mesh User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -437,7 +440,7 @@ namespace Amazon.AppMesh
         /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
         /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
         ///         account. For best results, use an increasing or variable sleep interval between
-        /// requests.
+        ///         requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualService">REST API Reference for CreateVirtualService Operation</seealso>
         CreateVirtualServiceResponse CreateVirtualService(CreateVirtualServiceRequest request);
@@ -479,7 +482,7 @@ namespace Amazon.AppMesh
         ///          
         /// <para>
         /// You must delete all resources (virtual services, routes, virtual routers, and virtual
-        /// nodes)         in the service mesh before you can delete the mesh itself.
+        ///         nodes) in the service mesh before you can delete the mesh itself.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMesh service method.</param>
@@ -492,14 +495,15 @@ namespace Amazon.AppMesh
         /// You don't have permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.ResourceInUseException">
         /// You can't delete the specified resource because it's in use or required by another
-        /// resource.
+        ///         resource.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
         /// The request has failed due to a temporary failure of the service.
@@ -507,7 +511,7 @@ namespace Amazon.AppMesh
         /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
         /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
         ///         account. For best results, use an increasing or variable sleep interval between
-        /// requests.
+        ///         requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteMesh">REST API Reference for DeleteMesh Operation</seealso>
         DeleteMeshResponse DeleteMesh(DeleteMeshRequest request);
@@ -556,14 +560,15 @@ namespace Amazon.AppMesh
         /// You don't have permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.ResourceInUseException">
         /// You can't delete the specified resource because it's in use or required by another
-        /// resource.
+        ///         resource.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
         /// The request has failed due to a temporary failure of the service.
@@ -571,7 +576,7 @@ namespace Amazon.AppMesh
         /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
         /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
         ///         account. For best results, use an increasing or variable sleep interval between
-        /// requests.
+        ///         requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteRoute">REST API Reference for DeleteRoute Operation</seealso>
         DeleteRouteResponse DeleteRoute(DeleteRouteRequest request);
@@ -626,14 +631,15 @@ namespace Amazon.AppMesh
         /// You don't have permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.ResourceInUseException">
         /// You can't delete the specified resource because it's in use or required by another
-        /// resource.
+        ///         resource.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
         /// The request has failed due to a temporary failure of the service.
@@ -641,7 +647,7 @@ namespace Amazon.AppMesh
         /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
         /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
         ///         account. For best results, use an increasing or variable sleep interval between
-        /// requests.
+        ///         requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualNode">REST API Reference for DeleteVirtualNode Operation</seealso>
         DeleteVirtualNodeResponse DeleteVirtualNode(DeleteVirtualNodeRequest request);
@@ -696,14 +702,15 @@ namespace Amazon.AppMesh
         /// You don't have permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.ResourceInUseException">
         /// You can't delete the specified resource because it's in use or required by another
-        /// resource.
+        ///         resource.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
         /// The request has failed due to a temporary failure of the service.
@@ -711,7 +718,7 @@ namespace Amazon.AppMesh
         /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
         /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
         ///         account. For best results, use an increasing or variable sleep interval between
-        /// requests.
+        ///         requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualRouter">REST API Reference for DeleteVirtualRouter Operation</seealso>
         DeleteVirtualRouterResponse DeleteVirtualRouter(DeleteVirtualRouterRequest request);
@@ -760,7 +767,8 @@ namespace Amazon.AppMesh
         /// You don't have permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -771,7 +779,7 @@ namespace Amazon.AppMesh
         /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
         /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
         ///         account. For best results, use an increasing or variable sleep interval between
-        /// requests.
+        ///         requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualService">REST API Reference for DeleteVirtualService Operation</seealso>
         DeleteVirtualServiceResponse DeleteVirtualService(DeleteVirtualServiceRequest request);
@@ -820,7 +828,8 @@ namespace Amazon.AppMesh
         /// You don't have permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -831,7 +840,7 @@ namespace Amazon.AppMesh
         /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
         /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
         ///         account. For best results, use an increasing or variable sleep interval between
-        /// requests.
+        ///         requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeMesh">REST API Reference for DescribeMesh Operation</seealso>
         DescribeMeshResponse DescribeMesh(DescribeMeshRequest request);
@@ -880,7 +889,8 @@ namespace Amazon.AppMesh
         /// You don't have permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -891,7 +901,7 @@ namespace Amazon.AppMesh
         /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
         /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
         ///         account. For best results, use an increasing or variable sleep interval between
-        /// requests.
+        ///         requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeRoute">REST API Reference for DescribeRoute Operation</seealso>
         DescribeRouteResponse DescribeRoute(DescribeRouteRequest request);
@@ -940,7 +950,8 @@ namespace Amazon.AppMesh
         /// You don't have permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -951,7 +962,7 @@ namespace Amazon.AppMesh
         /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
         /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
         ///         account. For best results, use an increasing or variable sleep interval between
-        /// requests.
+        ///         requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeVirtualNode">REST API Reference for DescribeVirtualNode Operation</seealso>
         DescribeVirtualNodeResponse DescribeVirtualNode(DescribeVirtualNodeRequest request);
@@ -1000,7 +1011,8 @@ namespace Amazon.AppMesh
         /// You don't have permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -1011,7 +1023,7 @@ namespace Amazon.AppMesh
         /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
         /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
         ///         account. For best results, use an increasing or variable sleep interval between
-        /// requests.
+        ///         requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeVirtualRouter">REST API Reference for DescribeVirtualRouter Operation</seealso>
         DescribeVirtualRouterResponse DescribeVirtualRouter(DescribeVirtualRouterRequest request);
@@ -1060,7 +1072,8 @@ namespace Amazon.AppMesh
         /// You don't have permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -1071,7 +1084,7 @@ namespace Amazon.AppMesh
         /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
         /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
         ///         account. For best results, use an increasing or variable sleep interval between
-        /// requests.
+        ///         requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeVirtualService">REST API Reference for DescribeVirtualService Operation</seealso>
         DescribeVirtualServiceResponse DescribeVirtualService(DescribeVirtualServiceRequest request);
@@ -1120,7 +1133,8 @@ namespace Amazon.AppMesh
         /// You don't have permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -1131,7 +1145,7 @@ namespace Amazon.AppMesh
         /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
         /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
         ///         account. For best results, use an increasing or variable sleep interval between
-        /// requests.
+        ///         requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListMeshes">REST API Reference for ListMeshes Operation</seealso>
         ListMeshesResponse ListMeshes(ListMeshesRequest request);
@@ -1180,7 +1194,8 @@ namespace Amazon.AppMesh
         /// You don't have permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -1191,7 +1206,7 @@ namespace Amazon.AppMesh
         /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
         /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
         ///         account. For best results, use an increasing or variable sleep interval between
-        /// requests.
+        ///         requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListRoutes">REST API Reference for ListRoutes Operation</seealso>
         ListRoutesResponse ListRoutes(ListRoutesRequest request);
@@ -1237,7 +1252,8 @@ namespace Amazon.AppMesh
         /// The request syntax was malformed. Check your request syntax and try again.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -1292,7 +1308,8 @@ namespace Amazon.AppMesh
         /// You don't have permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -1303,7 +1320,7 @@ namespace Amazon.AppMesh
         /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
         /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
         ///         account. For best results, use an increasing or variable sleep interval between
-        /// requests.
+        ///         requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualNodes">REST API Reference for ListVirtualNodes Operation</seealso>
         ListVirtualNodesResponse ListVirtualNodes(ListVirtualNodesRequest request);
@@ -1352,7 +1369,8 @@ namespace Amazon.AppMesh
         /// You don't have permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -1363,7 +1381,7 @@ namespace Amazon.AppMesh
         /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
         /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
         ///         account. For best results, use an increasing or variable sleep interval between
-        /// requests.
+        ///         requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualRouters">REST API Reference for ListVirtualRouters Operation</seealso>
         ListVirtualRoutersResponse ListVirtualRouters(ListVirtualRoutersRequest request);
@@ -1412,7 +1430,8 @@ namespace Amazon.AppMesh
         /// You don't have permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -1423,7 +1442,7 @@ namespace Amazon.AppMesh
         /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
         /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
         ///         account. For best results, use an increasing or variable sleep interval between
-        /// requests.
+        ///         requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualServices">REST API Reference for ListVirtualServices Operation</seealso>
         ListVirtualServicesResponse ListVirtualServices(ListVirtualServicesRequest request);
@@ -1460,10 +1479,10 @@ namespace Amazon.AppMesh
 
 
         /// <summary>
-        /// Associates the specified tags to a resource with the specified         <code>resourceArn</code>.
-        /// If existing tags on a resource aren't specified in the         request parameters,
-        /// they aren't changed. When a resource is deleted, the tags         associated with
-        /// that resource are also deleted.
+        /// Associates the specified tags to a resource with the specified <code>resourceArn</code>.
+        ///         If existing tags on a resource aren't specified in the request parameters,
+        /// they aren't         changed. When a resource is deleted, the tags associated with
+        /// that resource are also         deleted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -1472,7 +1491,8 @@ namespace Amazon.AppMesh
         /// The request syntax was malformed. Check your request syntax and try again.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -1529,7 +1549,8 @@ namespace Amazon.AppMesh
         /// The request syntax was malformed. Check your request syntax and try again.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -1588,7 +1609,8 @@ namespace Amazon.AppMesh
         /// You don't have permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -1599,7 +1621,7 @@ namespace Amazon.AppMesh
         /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
         /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
         ///         account. For best results, use an increasing or variable sleep interval between
-        /// requests.
+        ///         requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateMesh">REST API Reference for UpdateMesh Operation</seealso>
         UpdateMeshResponse UpdateMesh(UpdateMeshRequest request);
@@ -1652,11 +1674,12 @@ namespace Amazon.AppMesh
         /// You don't have permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
         /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service
-        /// Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        ///            Limits</a> in the <i>AWS App Mesh User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -1667,7 +1690,7 @@ namespace Amazon.AppMesh
         /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
         /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
         ///         account. For best results, use an increasing or variable sleep interval between
-        /// requests.
+        ///         requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateRoute">REST API Reference for UpdateRoute Operation</seealso>
         UpdateRouteResponse UpdateRoute(UpdateRouteRequest request);
@@ -1720,11 +1743,12 @@ namespace Amazon.AppMesh
         /// You don't have permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
         /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service
-        /// Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        ///            Limits</a> in the <i>AWS App Mesh User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -1735,7 +1759,7 @@ namespace Amazon.AppMesh
         /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
         /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
         ///         account. For best results, use an increasing or variable sleep interval between
-        /// requests.
+        ///         requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualNode">REST API Reference for UpdateVirtualNode Operation</seealso>
         UpdateVirtualNodeResponse UpdateVirtualNode(UpdateVirtualNodeRequest request);
@@ -1788,11 +1812,12 @@ namespace Amazon.AppMesh
         /// You don't have permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
         /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service
-        /// Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        ///            Limits</a> in the <i>AWS App Mesh User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -1803,7 +1828,7 @@ namespace Amazon.AppMesh
         /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
         /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
         ///         account. For best results, use an increasing or variable sleep interval between
-        /// requests.
+        ///         requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualRouter">REST API Reference for UpdateVirtualRouter Operation</seealso>
         UpdateVirtualRouterResponse UpdateVirtualRouter(UpdateVirtualRouterRequest request);
@@ -1856,11 +1881,12 @@ namespace Amazon.AppMesh
         /// You don't have permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// The request processing has failed because of an unknown error, exception, or     
+        ///    failure.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
         /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service
-        /// Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        ///            Limits</a> in the <i>AWS App Mesh User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -1871,7 +1897,7 @@ namespace Amazon.AppMesh
         /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
         /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
         ///         account. For best results, use an increasing or variable sleep interval between
-        /// requests.
+        ///         requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualService">REST API Reference for UpdateVirtualService Operation</seealso>
         UpdateVirtualServiceResponse UpdateVirtualService(UpdateVirtualServiceRequest request);

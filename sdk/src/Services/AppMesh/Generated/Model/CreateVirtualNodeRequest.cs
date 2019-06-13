@@ -35,7 +35,7 @@ namespace Amazon.AppMesh.Model
     /// <para>
     /// A virtual node acts as a logical pointer to a particular task group, such as an Amazon
     /// ECS         service or a Kubernetes deployment. When you create a virtual node, you
-    /// must specify the         DNS service discovery hostname for your task group.
+    /// can specify the         service discovery information for your task group.
     /// </para>
     ///          
     /// <para>
@@ -130,8 +130,8 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// Optional metadata that you can apply to the virtual node to assist with categorization
-        /// and organization.         Each tag consists of a key and an optional value, both of
-        /// which you define.         Tag keys can have a maximum character length of 128 characters,
+        ///         and organization. Each tag consists of a key and an optional value, both of
+        /// which you         define. Tag keys can have a maximum character length of 128 characters,
         /// and tag values can have            a maximum length of 256 characters.
         /// </para>
         /// </summary>

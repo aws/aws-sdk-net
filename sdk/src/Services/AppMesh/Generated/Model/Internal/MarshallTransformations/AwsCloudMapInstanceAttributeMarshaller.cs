@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ServiceDiscovery Marshaller
+    /// AwsCloudMapInstanceAttribute Marshaller
     /// </summary>       
-    public class ServiceDiscoveryMarshaller : IRequestMarshaller<ServiceDiscovery, JsonMarshallerContext> 
+    public class AwsCloudMapInstanceAttributeMarshaller : IRequestMarshaller<AwsCloudMapInstanceAttribute, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,18 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ServiceDiscovery requestObject, JsonMarshallerContext context)
+        public void Marshall(AwsCloudMapInstanceAttribute requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAwsCloudMap())
+            if(requestObject.IsSetKey())
             {
-                context.Writer.WritePropertyName("awsCloudMap");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AwsCloudMapServiceDiscoveryMarshaller.Instance;
-                marshaller.Marshall(requestObject.AwsCloudMap, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("key");
+                context.Writer.Write(requestObject.Key);
             }
 
-            if(requestObject.IsSetDns())
+            if(requestObject.IsSetValue())
             {
-                context.Writer.WritePropertyName("dns");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = DnsServiceDiscoveryMarshaller.Instance;
-                marshaller.Marshall(requestObject.Dns, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("value");
+                context.Writer.Write(requestObject.Value);
             }
 
         }
@@ -72,7 +62,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static ServiceDiscoveryMarshaller Instance = new ServiceDiscoveryMarshaller();
+        public readonly static AwsCloudMapInstanceAttributeMarshaller Instance = new AwsCloudMapInstanceAttributeMarshaller();
 
     }
 }

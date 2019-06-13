@@ -44,10 +44,10 @@ namespace Amazon.AppMesh.Model
         /// The maximum number of results returned by <code>ListRoutes</code> in paginated output.
         ///         When you use this parameter, <code>ListRoutes</code> returns only <code>limit</code>
         ///         results in a single page along with a <code>nextToken</code> response element.
-        /// You can see the         remaining results of the initial request by sending another
-        ///            <code>ListRoutes</code> request with the returned <code>nextToken</code>
-        /// value. This         value can be between 1 and 100. If you don't use this parameter,
-        ///         <code>ListRoutes</code> returns up to 100 results and a            <code>nextToken</code>
+        /// You can see         the remaining results of the initial request by sending another
+        /// <code>ListRoutes</code>         request with the returned <code>nextToken</code> value.
+        /// This value can be between         1 and 100. If you don't use this parameter,    
+        ///        <code>ListRoutes</code> returns up to 100 results and a            <code>nextToken</code>
         /// value if applicable.
         /// </para>
         /// </summary>
@@ -86,9 +86,9 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value returned from a previous paginated         <code>ListRoutes</code>
-        /// request where <code>limit</code> was used and the         results exceeded the value
-        /// of that parameter. Pagination continues from the end of the         previous results
+        /// The <code>nextToken</code> value returned from a previous paginated            <code>ListRoutes</code>
+        /// request where <code>limit</code> was used and the results         exceeded the value
+        /// of that parameter. Pagination continues from the end of the previous         results
         /// that returned the <code>nextToken</code> value.
         /// </para>
         /// </summary>

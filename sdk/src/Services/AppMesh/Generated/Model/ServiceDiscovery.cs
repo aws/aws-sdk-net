@@ -32,7 +32,26 @@ namespace Amazon.AppMesh.Model
     /// </summary>
     public partial class ServiceDiscovery
     {
+        private AwsCloudMapServiceDiscovery _awsCloudMap;
         private DnsServiceDiscovery _dns;
+
+        /// <summary>
+        /// Gets and sets the property AwsCloudMap. 
+        /// <para>
+        /// Specifies any AWS Cloud Map information for the virtual node.
+        /// </para>
+        /// </summary>
+        public AwsCloudMapServiceDiscovery AwsCloudMap
+        {
+            get { return this._awsCloudMap; }
+            set { this._awsCloudMap = value; }
+        }
+
+        // Check to see if AwsCloudMap property is set
+        internal bool IsSetAwsCloudMap()
+        {
+            return this._awsCloudMap != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Dns. 

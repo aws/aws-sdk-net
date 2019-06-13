@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ServiceDiscovery Object
+    /// Response Unmarshaller for AwsCloudMapInstanceAttribute Object
     /// </summary>  
-    public class ServiceDiscoveryUnmarshaller : IUnmarshaller<ServiceDiscovery, XmlUnmarshallerContext>, IUnmarshaller<ServiceDiscovery, JsonUnmarshallerContext>
+    public class AwsCloudMapInstanceAttributeUnmarshaller : IUnmarshaller<AwsCloudMapInstanceAttribute, XmlUnmarshallerContext>, IUnmarshaller<AwsCloudMapInstanceAttribute, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ServiceDiscovery IUnmarshaller<ServiceDiscovery, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AwsCloudMapInstanceAttribute IUnmarshaller<AwsCloudMapInstanceAttribute, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ServiceDiscovery Unmarshall(JsonUnmarshallerContext context)
+        public AwsCloudMapInstanceAttribute Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ServiceDiscovery unmarshalledObject = new ServiceDiscovery();
+            AwsCloudMapInstanceAttribute unmarshalledObject = new AwsCloudMapInstanceAttribute();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("awsCloudMap", targetDepth))
+                if (context.TestExpression("key", targetDepth))
                 {
-                    var unmarshaller = AwsCloudMapServiceDiscoveryUnmarshaller.Instance;
-                    unmarshalledObject.AwsCloudMap = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Key = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("dns", targetDepth))
+                if (context.TestExpression("value", targetDepth))
                 {
-                    var unmarshaller = DnsServiceDiscoveryUnmarshaller.Instance;
-                    unmarshalledObject.Dns = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         }
 
 
-        private static ServiceDiscoveryUnmarshaller _instance = new ServiceDiscoveryUnmarshaller();        
+        private static AwsCloudMapInstanceAttributeUnmarshaller _instance = new AwsCloudMapInstanceAttributeUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ServiceDiscoveryUnmarshaller Instance
+        public static AwsCloudMapInstanceAttributeUnmarshaller Instance
         {
             get
             {

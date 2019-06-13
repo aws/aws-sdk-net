@@ -33,10 +33,10 @@ namespace Amazon.AppMesh.Model
     /// 
     ///          
     /// <para>
-    /// A virtual service is an abstraction of a real service that is provided by a      
-    ///   virtual node directly or indirectly by means of a virtual router. Dependent services
-    /// call         your virtual service by its <code>virtualServiceName</code>, and those
-    /// requests are routed         to the virtual node or virtual router that is specified
+    /// A virtual service is an abstraction of a real service that is provided by a virtual
+    /// node         directly or indirectly by means of a virtual router. Dependent services
+    /// call your virtual         service by its <code>virtualServiceName</code>, and those
+    /// requests are routed to the         virtual node or virtual router that is specified
     /// as the provider for the virtual         service.
     /// </para>
     /// </summary>
@@ -108,10 +108,10 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Optional metadata that you can apply to the virtual service to assist with categorization
-        /// and organization.         Each tag consists of a key and an optional value, both of
-        /// which you define.         Tag keys can have a maximum character length of 128 characters,
-        /// and tag values can have            a maximum length of 256 characters.
+        /// Optional metadata that you can apply to the virtual service to assist with       
+        ///  categorization and organization. Each tag consists of a key and an optional value,
+        /// both of         which you define. Tag keys can have a maximum character length of
+        /// 128 characters, and tag values can have            a maximum length of 256 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
