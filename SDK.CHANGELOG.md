@@ -1,3 +1,8 @@
+### 3.3.530.1 (2019-06-12 23:23 UTC)
+* Core 3.3.102.4
+	* Fixed issue with AssumeRoleAWSCredentials not refreshing credentials before they expire.
+	* All services packages updated to require new Core
+
 ### 3.3.530.0 (2019-06-12 18:09 UTC)
 * ServiceCatalog (3.3.106.0)
 	* This release adds a new field named Guidance to update provisioning artifact, this field can be set by the administrator to provide guidance to end users about which provisioning artifacts to use.
