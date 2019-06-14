@@ -181,7 +181,7 @@ namespace Amazon.Personalize.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// SEARCH_PERSONALIZATION
+        /// PERSONALIZED_RANKING
         /// </para>
         ///  </li> <li> 
         /// <para>
