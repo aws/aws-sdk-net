@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -30,9 +30,8 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// A complex type that specifies whether you want CloudFront to forward cookies to the
     /// origin and, if so, which ones. For more information about forwarding cookies to the
-    /// origin, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How
-    /// CloudFront Forwards, Caches, and Logs Cookies</a> in the <i>Amazon CloudFront Developer
-    /// Guide</i>.
+    /// origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">Caching
+    /// Content Based on Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.
     /// </summary>
     public partial class CookiePreference
     {
@@ -82,7 +81,7 @@ namespace Amazon.CloudFront.Model
         ///  
         /// <para>
         /// For the current limit on the number of cookie names that you can whitelist for each
-        /// cache behavior, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront">Amazon
+        /// cache behavior, see <a href="https://docs.aws.amazon.com/general/latest/gr/xrefaws_service_limits.html#limits_cloudfront">
         /// CloudFront Limits</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>

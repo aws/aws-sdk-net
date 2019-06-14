@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// 
+    /// A complex type that contains information about the query string parameters that you
+    /// want CloudFront to use for caching for a cache behavior.
     /// </summary>
     public partial class QueryStringCacheKeys
     {
@@ -38,9 +39,9 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// (Optional) A list that contains the query string parameters that you want CloudFront
-        /// to use as a basis for caching for this cache behavior. If <code>Quantity</code> is
-        /// 0, you can omit <code>Items</code>. 
+        /// A list that contains the query string parameters that you want CloudFront to use as
+        /// a basis for caching for a cache behavior. If <code>Quantity</code> is 0, you can omit
+        /// <code>Items</code>. 
         /// </para>
         /// </summary>
         public List<string> Items
@@ -58,7 +59,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Quantity. 
         /// <para>
-        /// The number of <code>whitelisted</code> query string parameters for this cache behavior.
+        /// The number of <code>whitelisted</code> query string parameters for a cache behavior.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

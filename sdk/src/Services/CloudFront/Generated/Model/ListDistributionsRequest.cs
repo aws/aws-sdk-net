@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDistributions operation.
-    /// List distributions.
+    /// List CloudFront distributions.
     /// </summary>
     public partial class ListDistributionsRequest : AmazonCloudFrontRequest
     {

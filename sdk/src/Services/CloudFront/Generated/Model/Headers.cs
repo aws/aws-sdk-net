@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -40,7 +40,7 @@ namespace Amazon.CloudFront.Model
     /// to cache your content based on values in the <code>product</code> header. CloudFront
     /// forwards the <code>product</code> header to the origin and caches the response from
     /// the origin once for each header value. For more information about caching based on
-    /// header values, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html">How
+    /// header values, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html">How
     /// CloudFront Forwards and Caches Headers</a> in the <i>Amazon CloudFront Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -106,12 +106,12 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>S3 bucket</b>: See <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorS3Origin.html#request-s3-removed-headers">HTTP
+        ///  <b>S3 bucket</b>: See <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorS3Origin.html#request-s3-removed-headers">HTTP
         /// Request Headers That CloudFront Removes or Updates</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Custom origin</b>: See <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior">HTTP
+        ///  <b>Custom origin</b>: See <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior">HTTP
         /// Request Headers and CloudFront Behavior</a> 
         /// </para>
         ///  </li> </ul>

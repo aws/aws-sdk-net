@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -56,7 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "PUT";
-            string uriResourcePath = "/2018-11-05/public-key/{Id}/config";
+            string uriResourcePath = "/2019-03-26/public-key/{Id}/config";
         
             if(publicRequest.IsSetIfMatch())
                 request.Headers["If-Match"] = publicRequest.IfMatch;
@@ -70,18 +70,18 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {   
                 if (publicRequest.IsSetPublicKeyConfig())
                 {
-                    xmlWriter.WriteStartElement("PublicKeyConfig", "http://cloudfront.amazonaws.com/doc/2018-11-05/");
+                    xmlWriter.WriteStartElement("PublicKeyConfig", "http://cloudfront.amazonaws.com/doc/2019-03-26/");
                     if(publicRequest.PublicKeyConfig.IsSetCallerReference())
-                        xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2018-11-05/", StringUtils.FromString(publicRequest.PublicKeyConfig.CallerReference));                    
+                        xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2019-03-26/", StringUtils.FromString(publicRequest.PublicKeyConfig.CallerReference));                    
     
                     if(publicRequest.PublicKeyConfig.IsSetComment())
-                        xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2018-11-05/", StringUtils.FromString(publicRequest.PublicKeyConfig.Comment));                    
+                        xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2019-03-26/", StringUtils.FromString(publicRequest.PublicKeyConfig.Comment));                    
     
                     if(publicRequest.PublicKeyConfig.IsSetEncodedKey())
-                        xmlWriter.WriteElementString("EncodedKey", "http://cloudfront.amazonaws.com/doc/2018-11-05/", StringUtils.FromString(publicRequest.PublicKeyConfig.EncodedKey));                    
+                        xmlWriter.WriteElementString("EncodedKey", "http://cloudfront.amazonaws.com/doc/2019-03-26/", StringUtils.FromString(publicRequest.PublicKeyConfig.EncodedKey));                    
     
                     if(publicRequest.PublicKeyConfig.IsSetName())
-                        xmlWriter.WriteElementString("Name", "http://cloudfront.amazonaws.com/doc/2018-11-05/", StringUtils.FromString(publicRequest.PublicKeyConfig.Name));                    
+                        xmlWriter.WriteElementString("Name", "http://cloudfront.amazonaws.com/doc/2019-03-26/", StringUtils.FromString(publicRequest.PublicKeyConfig.Name));                    
     
     
                     xmlWriter.WriteEndElement();
@@ -92,7 +92,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 string content = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
                 request.Headers["Content-Type"] = "application/xml";
-                request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-05";            
+                request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-03-26";            
             } 
             catch (EncoderFallbackException e) 
             {

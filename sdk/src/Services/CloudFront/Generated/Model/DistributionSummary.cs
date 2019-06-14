@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -33,6 +33,7 @@ namespace Amazon.CloudFront.Model
     public partial class DistributionSummary
     {
         private Aliases _aliases;
+        private List<AliasICPRecordal> _aliasICPRecordals = new List<AliasICPRecordal>();
         private string _arn;
         private CacheBehaviors _cacheBehaviors;
         private string _comment;
@@ -75,6 +76,32 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetAliases()
         {
             return this._aliases != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AliasICPRecordals. 
+        /// <para>
+        /// AWS services in China customers must file for an Internet Content Provider (ICP) recordal
+        /// if they want to serve content publicly on an alternate domain name, also known as
+        /// a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP recordal
+        /// status for CNAMEs associated with distributions.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about ICP recordals, see <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
+        /// Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in China</i>.
+        /// </para>
+        /// </summary>
+        public List<AliasICPRecordal> AliasICPRecordals
+        {
+            get { return this._aliasICPRecordals; }
+            set { this._aliasICPRecordals = value; }
+        }
+
+        // Check to see if AliasICPRecordals property is set
+        internal bool IsSetAliasICPRecordals()
+        {
+            return this._aliasICPRecordals != null && this._aliasICPRecordals.Count > 0; 
         }
 
         /// <summary>
@@ -349,7 +376,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Restrictions.
+        /// Gets and sets the property Restrictions. 
+        /// <para>
+        /// A complex type that identifies ways in which you want to restrict distribution of
+        /// your content.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Restrictions Restrictions
@@ -385,7 +416,12 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ViewerCertificate.
+        /// Gets and sets the property ViewerCertificate. 
+        /// <para>
+        /// A complex type that specifies whether you want viewers to use HTTP or HTTPS to request
+        /// your objects, whether you're using an alternate domain name with HTTPS, and if so,
+        /// if you're using AWS Certificate Manager (ACM) or a third-party certificate authority.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public ViewerCertificate ViewerCertificate

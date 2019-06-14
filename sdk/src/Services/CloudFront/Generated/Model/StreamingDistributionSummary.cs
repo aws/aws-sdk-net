@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A summary of the information for an Amazon CloudFront streaming distribution.
+    /// A summary of the information for a CloudFront streaming distribution.
     /// </summary>
     public partial class StreamingDistributionSummary
     {
@@ -185,7 +185,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PriceClass.
+        /// Gets and sets the property PriceClass. 
+        /// <para>
+        /// A complex type that contains information about price class for this streaming distribution.
+        /// 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public PriceClass PriceClass
@@ -255,6 +259,12 @@ namespace Amazon.CloudFront.Model
         /// <code>Enabled</code> to <code>true</code> (if it's currently <code>false</code>),
         /// change <code>Quantity</code> as applicable, and specify all of the trusted signers
         /// that you want to include in the updated distribution.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+        /// Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

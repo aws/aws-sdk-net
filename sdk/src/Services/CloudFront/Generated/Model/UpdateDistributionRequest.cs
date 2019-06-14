@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model
     /// When you update a distribution, there are more required fields than when you create
     /// a distribution. When you update your distribution by using this API action, follow
     /// the steps here to get the current configuration and then make your updates, to make
-    /// sure that you include all of the required fields. To view a summary, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html">Required
+    /// sure that you include all of the required fields. To view a summary, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html">Required
     /// Fields for Create Distribution and Update Distribution</a> in the <i>Amazon CloudFront
     /// Developer Guide</i>.
     /// </para>
@@ -49,7 +49,7 @@ namespace Amazon.CloudFront.Model
     ///  
     /// <para>
     /// For information about updating a distribution using the CloudFront console instead,
-    /// see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating-console.html">Creating
+    /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating-console.html">Creating
     /// a Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
     /// </para>
     ///  
@@ -58,8 +58,8 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    /// Submit a <a>GetDistributionConfig</a> request to get the current configuration and
-    /// an <code>Etag</code> header for the distribution.
+    /// Submit a <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistributionConfig.html">GetDistributionConfig</a>
+    /// request to get the current configuration and an <code>Etag</code> header for the distribution.
     /// </para>
     ///  <note> 
     /// <para>
@@ -121,8 +121,9 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Optional: Submit a <a>GetDistribution</a> request to confirm that your changes have
-    /// propagated. When propagation is complete, the value of <code>Status</code> is <code>Deployed</code>.
+    /// Optional: Submit a <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html">GetDistribution</a>
+    /// request to confirm that your changes have propagated. When propagation is complete,
+    /// the value of <code>Status</code> is <code>Deployed</code>.
     /// </para>
     ///  </li> </ol>
     /// </summary>

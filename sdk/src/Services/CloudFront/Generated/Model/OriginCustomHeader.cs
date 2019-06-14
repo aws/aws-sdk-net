@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -40,9 +40,9 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property HeaderName. 
         /// <para>
         /// The name of a header that you want CloudFront to forward to your origin. For more
-        /// information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">Forwarding
-        /// Custom Headers to Your Origin (Web Distributions Only)</a> in the <i>Amazon Amazon
-        /// CloudFront Developer Guide</i>.
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">Forwarding
+        /// Custom Headers to Your Origin (Web Distributions Only)</a> in the <i> Amazon CloudFront
+        /// Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

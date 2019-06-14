@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -56,7 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "POST";
-            string uriResourcePath = "/2018-11-05/tagging";
+            string uriResourcePath = "/2019-03-26/tagging";
             request.AddSubResource("Operation", "Untag");
             
             if (publicRequest.IsSetResource())
@@ -68,14 +68,14 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {   
                 if (publicRequest.IsSetTagKeys())
                 {
-                    xmlWriter.WriteStartElement("TagKeys", "http://cloudfront.amazonaws.com/doc/2018-11-05/");
+                    xmlWriter.WriteStartElement("TagKeys", "http://cloudfront.amazonaws.com/doc/2019-03-26/");
                     var publicRequestTagKeysItems = publicRequest.TagKeys.Items;
                     if (publicRequestTagKeysItems != null && publicRequestTagKeysItems.Count > 0) 
                     {                        
-                        xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2018-11-05/");
+                        xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2019-03-26/");
                         foreach (var publicRequestTagKeysItemsValue in publicRequestTagKeysItems) 
                         {
-                            xmlWriter.WriteStartElement("Key", "http://cloudfront.amazonaws.com/doc/2018-11-05/");
+                            xmlWriter.WriteStartElement("Key", "http://cloudfront.amazonaws.com/doc/2019-03-26/");
                             xmlWriter.WriteValue(publicRequestTagKeysItemsValue);
                             xmlWriter.WriteEndElement();
                         }            
@@ -90,7 +90,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 string content = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
                 request.Headers["Content-Type"] = "application/xml";
-                request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-05";            
+                request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-03-26";            
             } 
             catch (EncoderFallbackException e) 
             {

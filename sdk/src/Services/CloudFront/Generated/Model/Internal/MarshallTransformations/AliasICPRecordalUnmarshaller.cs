@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ContentTypeProfile Object
+    /// Response Unmarshaller for AliasICPRecordal Object
     /// </summary>  
-    public class ContentTypeProfileUnmarshaller : IUnmarshaller<ContentTypeProfile, XmlUnmarshallerContext>
+    public class AliasICPRecordalUnmarshaller : IUnmarshaller<AliasICPRecordal, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ContentTypeProfile Unmarshall(XmlUnmarshallerContext context)
+        public AliasICPRecordal Unmarshall(XmlUnmarshallerContext context)
         {
-            ContentTypeProfile unmarshalledObject = new ContentTypeProfile();
+            AliasICPRecordal unmarshalledObject = new AliasICPRecordal();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,22 +55,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("ContentType", targetDepth))
+                    if (context.TestExpression("CNAME", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ContentType = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.CNAME = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Format", targetDepth))
+                    if (context.TestExpression("ICPRecordalStatus", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Format = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ProfileId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ProfileId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ICPRecordalStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -82,12 +76,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static ContentTypeProfileUnmarshaller _instance = new ContentTypeProfileUnmarshaller();        
+        private static AliasICPRecordalUnmarshaller _instance = new AliasICPRecordalUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ContentTypeProfileUnmarshaller Instance
+        public static AliasICPRecordalUnmarshaller Instance
         {
             get
             {

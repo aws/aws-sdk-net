@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -183,7 +183,7 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information about custom error pages, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
+        /// For more information about custom error pages, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
         /// Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -250,7 +250,7 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about the default root object, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating
+        /// For more information about the default root object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating
         /// a Default Root Object</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -333,7 +333,7 @@ namespace Amazon.CloudFront.Model
         /// parameter to restrict the IP addresses that can access your content, don't enable
         /// IPv6. If you want to restrict access to some content by IP address and not restrict
         /// access to other content (or restrict access but not by IP address), you can create
-        /// two distributions. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating
+        /// two distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating
         /// a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         ///  
@@ -352,7 +352,7 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
+        /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
         /// Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in
         /// the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
@@ -382,7 +382,7 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about logging, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access
+        /// For more information about logging, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access
         /// Logs</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -451,10 +451,10 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about price classes, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing
+        /// For more information about price classes, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing
         /// the Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer
         /// Guide</i>. For information about CloudFront pricing, including how price classes (such
-        /// as Price Class 100) map to CloudFront regions, see <a href="https://aws.amazon.com/cloudfront/pricing/">Amazon
+        /// as Price Class 100) map to CloudFront regions, see <a href="http://aws.amazon.com/cloudfront/pricing/">Amazon
         /// CloudFront Pricing</a>. For price class information, scroll down to see the table
         /// at the bottom of the page.
         /// </para>
@@ -472,7 +472,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Restrictions.
+        /// Gets and sets the property Restrictions. 
+        /// <para>
+        /// A complex type that identifies ways in which you want to restrict distribution of
+        /// your content.
+        /// </para>
         /// </summary>
         public Restrictions Restrictions
         {
@@ -487,7 +491,12 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ViewerCertificate.
+        /// Gets and sets the property ViewerCertificate. 
+        /// <para>
+        /// A complex type that specifies whether you want viewers to use HTTP or HTTPS to request
+        /// your objects, whether you're using an alternate domain name with HTTPS, and if so,
+        /// if you're using AWS Certificate Manager (ACM) or a third-party certificate authority.
+        /// </para>
         /// </summary>
         public ViewerCertificate ViewerCertificate
         {

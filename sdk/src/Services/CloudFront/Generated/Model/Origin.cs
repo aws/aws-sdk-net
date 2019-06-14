@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model
     ///  
     /// <para>
     /// For the current limit on the number of origins or origin groups that you can specify
-    /// for a distribution, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront">Amazon
+    /// for a distribution, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront">Amazon
     /// CloudFront Limits</a> in the <i>AWS General Reference</i>.
     /// </para>
     /// </summary>
@@ -97,7 +97,7 @@ namespace Amazon.CloudFront.Model
         ///  
         /// <para>
         /// For more information about specifying this value for different types of origins, see
-        /// <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin
         /// Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         ///  
@@ -169,7 +169,7 @@ namespace Amazon.CloudFront.Model
         /// behavior to route requests by specifying the value of the <code>Id</code> element
         /// for that origin. When a request matches the path pattern for that cache behavior,
         /// CloudFront routes the request to the specified origin. For more information, see <a
-        /// href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache
+        /// href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache
         /// Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>

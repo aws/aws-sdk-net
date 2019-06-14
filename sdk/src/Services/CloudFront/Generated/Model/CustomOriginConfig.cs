@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A customer origin or an Amazon S3 bucket configured as a website endpoint.
+    /// A custom origin or an Amazon S3 bucket configured as a website endpoint.
     /// </summary>
     public partial class CustomOriginConfig
     {

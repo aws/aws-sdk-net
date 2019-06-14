@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -42,7 +42,7 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
     /// Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -60,7 +60,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates ActiveTrustedSigners with the parameterized properties
         /// </summary>
-        /// <param name="items">A complex type that contains one <code>Signer</code> complex type for each trusted signer that is specified in the <code>TrustedSigners</code> complex type. For more information, see <a>ActiveTrustedSigners</a>. </param>
+        /// <param name="items">A complex type that contains one <code>Signer</code> complex type for each trusted signer that is specified in the <code>TrustedSigners</code> complex type.</param>
         public ActiveTrustedSigners(List<Signer> items)
         {
             _items = items;
@@ -70,12 +70,8 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Enabled. 
         /// <para>
         /// Enabled is <code>true</code> if any of the AWS accounts listed in the <code>TrustedSigners</code>
-        /// complex type for this RTMP distribution have active CloudFront key pairs. If not,
-        /// <code>Enabled</code> is <code>false</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a>ActiveTrustedSigners</a>.
+        /// complex type for this distribution have active CloudFront key pairs. If not, <code>Enabled</code>
+        /// is <code>false</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -97,10 +93,6 @@ namespace Amazon.CloudFront.Model
         /// A complex type that contains one <code>Signer</code> complex type for each trusted
         /// signer that is specified in the <code>TrustedSigners</code> complex type.
         /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a>ActiveTrustedSigners</a>. 
-        /// </para>
         /// </summary>
         public List<Signer> Items
         {
@@ -117,12 +109,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Quantity. 
         /// <para>
-        /// A complex type that contains one <code>Signer</code> complex type for each trusted
-        /// signer specified in the <code>TrustedSigners</code> complex type.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a>ActiveTrustedSigners</a>.
+        /// The number of trusted signers specified in the <code>TrustedSigners</code> complex
+        /// type.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

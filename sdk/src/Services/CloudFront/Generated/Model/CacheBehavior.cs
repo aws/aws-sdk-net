@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -42,7 +42,7 @@ namespace Amazon.CloudFront.Model
     ///  
     /// <para>
     /// For the current limit on the number of cache behaviors that you can add to a distribution,
-    /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront">Amazon
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront">Amazon
     /// CloudFront Limits</a> in the <i>AWS General Reference</i>.
     /// </para>
     ///  
@@ -63,7 +63,7 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about cache behaviors, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache
+    /// For more information about cache behaviors, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache
     /// Behaviors</a> in the <i>Amazon CloudFront Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -103,7 +103,7 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// Whether you want CloudFront to automatically compress certain files for this cache
         /// behavior. If so, specify true; if not, specify false. For more information, see <a
-        /// href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html">Serving
+        /// href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html">Serving
         /// Compressed Files</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -126,9 +126,9 @@ namespace Amazon.CloudFront.Model
         /// CloudFront forwards another request to your origin to determine whether the object
         /// has been updated. The value that you specify applies only when your origin does not
         /// add HTTP headers such as <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>,
-        /// and <code>Expires</code> to objects. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying
-        /// How Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the
-        /// <i>Amazon CloudFront Developer Guide</i>.
+        /// and <code>Expires</code> to objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
+        /// How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront
+        /// Developer Guide</i>.
         /// </para>
         /// </summary>
         public long DefaultTTL
@@ -208,9 +208,9 @@ namespace Amazon.CloudFront.Model
         /// CloudFront forwards another request to your origin to determine whether the object
         /// has been updated. The value that you specify applies only when your origin adds HTTP
         /// headers such as <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>,
-        /// and <code>Expires</code> to objects. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying
-        /// How Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the
-        /// <i>Amazon CloudFront Developer Guide</i>.
+        /// and <code>Expires</code> to objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
+        /// How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront
+        /// Developer Guide</i>.
         /// </para>
         /// </summary>
         public long MaxTTL
@@ -230,9 +230,9 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// The minimum amount of time that you want objects to stay in CloudFront caches before
         /// CloudFront forwards another request to your origin to determine whether the object
-        /// has been updated. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying
-        /// How Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the
-        /// <i>Amazon Amazon CloudFront Developer Guide</i>.
+        /// has been updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">
+        /// Managing How Long Content Stays in an Edge Cache (Expiration)</a> in the <i> Amazon
+        /// CloudFront Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -276,7 +276,7 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesPathPattern">Path
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesPathPattern">Path
         /// Pattern</a> in the <i> Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -347,9 +347,9 @@ namespace Amazon.CloudFront.Model
         /// If you want to require signed URLs in requests for objects in the target origin that
         /// match the <code>PathPattern</code> for this cache behavior, specify <code>true</code>
         /// for <code>Enabled</code>, and specify the applicable values for <code>Quantity</code>
-        /// and <code>Items</code>. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
-        /// Private Content through CloudFront</a> in the <i>Amazon Amazon CloudFront Developer
-        /// Guide</i>.
+        /// and <code>Items</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+        /// Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -402,7 +402,7 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information about requiring the HTTPS protocol, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using
+        /// For more information about requiring the HTTPS protocol, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using
         /// an HTTPS Connection to Access Your Objects</a> in the <i>Amazon CloudFront Developer
         /// Guide</i>.
         /// </para>
@@ -413,9 +413,9 @@ namespace Amazon.CloudFront.Model
         /// have recently changed from HTTP to HTTPS, we recommend that you clear your objects'
         /// cache because cached objects are protocol agnostic. That means that an edge location
         /// will return an object from the cache regardless of whether the current request protocol
-        /// matches the protocol used previously. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying
-        /// How Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the
-        /// <i>Amazon CloudFront Developer Guide</i>.
+        /// matches the protocol used previously. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
+        /// How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront
+        /// Developer Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>

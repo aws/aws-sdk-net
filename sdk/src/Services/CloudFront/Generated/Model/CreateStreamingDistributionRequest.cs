@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,13 +29,13 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStreamingDistribution operation.
-    /// Creates a new RMTP distribution. An RTMP distribution is similar to a web distribution,
+    /// Creates a new RTMP distribution. An RTMP distribution is similar to a web distribution,
     /// but an RTMP distribution streams media files using the Adobe Real-Time Messaging Protocol
     /// (RTMP) instead of serving files using HTTP. 
     /// 
     ///  
     /// <para>
-    /// To create a new web distribution, submit a <code>POST</code> request to the <i>CloudFront
+    /// To create a new distribution, submit a <code>POST</code> request to the <i>CloudFront
     /// API version</i>/distribution resource. The request body must include a document with
     /// a <i>StreamingDistributionConfig</i> element. The response echoes the <code>StreamingDistributionConfig</code>
     /// element and returns other information about the RTMP distribution.
@@ -49,7 +49,7 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about web distributions, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-rtmp.html">Working
+    /// For more information about web distributions, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-rtmp.html">Working
     /// with RTMP Distributions</a> in the <i>Amazon CloudFront Developer Guide</i>.
     /// </para>
     ///  <important> 

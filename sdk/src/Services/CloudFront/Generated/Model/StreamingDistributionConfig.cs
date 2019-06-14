@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -193,7 +193,7 @@ namespace Amazon.CloudFront.Model
         /// A complex type that specifies any AWS accounts that you want to permit to create signed
         /// URLs for private content. If you want the distribution to use signed URLs, include
         /// this element; if you want the distribution to use public URLs, remove this element.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
         /// Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// 
         /// </para>

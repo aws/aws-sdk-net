@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -42,7 +42,7 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// A complex type that specifies whether you want CloudFront to forward cookies to the
         /// origin and, if so, which ones. For more information about forwarding cookies to the
-        /// origin, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How
+        /// origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How
         /// CloudFront Forwards, Caches, and Logs Cookies</a> in the <i>Amazon CloudFront Developer
         /// Guide</i>.
         /// </para>
@@ -64,7 +64,15 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Headers. 
         /// <para>
         /// A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront
-        /// to base caching on for this cache behavior. 
+        /// to forward to the origin for this cache behavior (whitelisted headers). For the headers
+        /// that you specify, CloudFront also caches separate versions of a specified object that
+        /// is based on the header values in viewer requests.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html">
+        /// Caching Content Based on Request Headers</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public Headers Headers
@@ -108,7 +116,7 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html">Configuring
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html">Configuring
         /// CloudFront to Cache Based on Query String Parameters</a> in the <i>Amazon CloudFront
         /// Developer Guide</i>.
         /// </para>

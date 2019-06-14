@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -43,14 +43,18 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates Restrictions with the parameterized properties
         /// </summary>
-        /// <param name="geoRestriction">Sets the Restrictions GeoRestriction property</param>
+        /// <param name="geoRestriction">A complex type that controls the countries in which your content is distributed. CloudFront determines the location of your users using <code>MaxMind</code> GeoIP databases.</param>
         public Restrictions(GeoRestriction geoRestriction)
         {
             _geoRestriction = geoRestriction;
         }
 
         /// <summary>
-        /// Gets and sets the property GeoRestriction.
+        /// Gets and sets the property GeoRestriction. 
+        /// <para>
+        /// A complex type that controls the countries in which your content is distributed. CloudFront
+        /// determines the location of your users using <code>MaxMind</code> GeoIP databases.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public GeoRestriction GeoRestriction

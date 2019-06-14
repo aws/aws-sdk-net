@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -48,131 +48,27 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// You must specify only one of the following values: 
+    /// Specify only one of the following values: 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>ViewerCertificate$ACMCertificateArn</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ViewerCertificate$IAMCertificateId</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ViewerCertificate$CloudFrontDefaultCertificate</a> 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// Don't specify <code>false</code> for <code>CloudFrontDefaultCertificate</code>.
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>If you want viewers to use HTTP instead of HTTPS to request your objects</b>:
-    /// Specify the following value:
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt;</code>
-    /// 
-    /// </para>
-    ///  
-    /// <para>
-    /// In addition, specify <code>allow-all</code> for <code>ViewerProtocolPolicy</code>
-    /// for all of your cache behaviors.
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>If you want viewers to use HTTPS to request your objects</b>: Choose the type
-    /// of certificate that you want to use based on whether you're using an alternate domain
-    /// name for your objects or the CloudFront domain name:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <b>If you're using an alternate domain name, such as example.com</b>: Specify one
-    /// of the following values, depending on whether ACM provided your certificate or you
-    /// purchased your certificate from third-party certificate authority:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <code>&lt;ACMCertificateArn&gt;<i>ARN for ACM SSL/TLS certificate</i>&lt;ACMCertificateArn&gt;</code>
-    /// where <code> <i>ARN for ACM SSL/TLS certificate</i> </code> is the ARN for the ACM
-    /// SSL/TLS certificate that you want to use for this distribution.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>&lt;IAMCertificateId&gt;<i>IAM certificate ID</i>&lt;IAMCertificateId&gt;</code>
-    /// where <code> <i>IAM certificate ID</i> </code> is the ID that IAM returned when you
-    /// added the certificate to the IAM certificate store.
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// If you specify <code>ACMCertificateArn</code> or <code>IAMCertificateId</code>, you
-    /// must also specify a value for <code>SSLSupportMethod</code>.
-    /// </para>
-    ///  
-    /// <para>
-    /// If you choose to use an ACM certificate or a certificate in the IAM certificate store,
-    /// we recommend that you use only an alternate domain name in your object URLs (<code>https://example.com/logo.jpg</code>).
-    /// If you use the domain name that is associated with your CloudFront distribution (such
-    /// as <code>https://d111111abcdef8.cloudfront.net/logo.jpg</code>) and the viewer supports
-    /// <code>SNI</code>, then CloudFront behaves normally. However, if the browser does not
-    /// support SNI, the user's experience depends on the value that you choose for <code>SSLSupportMethod</code>:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <code>vip</code>: The viewer displays a warning because there is a mismatch between
-    /// the CloudFront domain name and the domain name in your SSL/TLS certificate.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>sni-only</code>: CloudFront drops the connection with the browser without returning
-    /// the object.
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    ///  <b>If you're using the CloudFront domain name for your distribution, such as <code>d111111abcdef8.cloudfront.net</code>
-    /// </b>: Specify the following value:
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt;
-    /// </code> 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// If you want viewers to use HTTPS, you must also specify one of the following values
-    /// in your cache behaviors:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <code> &lt;ViewerProtocolPolicy&gt;https-only&lt;ViewerProtocolPolicy&gt;</code>
+    ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn">ACMCertificateArn</a>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>&lt;ViewerProtocolPolicy&gt;redirect-to-https&lt;ViewerProtocolPolicy&gt;</code>
-    /// 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// You can also optionally require that CloudFront use HTTPS to communicate with your
-    /// origin by specifying one of the following values for the applicable origins:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <code>&lt;OriginProtocolPolicy&gt;https-only&lt;OriginProtocolPolicy&gt; </code>
+    ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId">IAMCertificateId</a>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>&lt;OriginProtocolPolicy&gt;match-viewer&lt;OriginProtocolPolicy&gt; </code>
+    ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-CloudFrontDefaultCertificate">CloudFrontDefaultCertificate</a>
     /// 
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html#CNAMEsAndHTTPS">Using
-    /// Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html#CNAMEsAndHTTPS">
+    /// Using Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class ViewerCertificate
@@ -188,7 +84,19 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ACMCertificateArn. 
         /// <para>
-        /// For information about how and when to use <code>ACMCertificateArn</code>, see <a>ViewerCertificate</a>.
+        /// If you want viewers to use HTTPS to request your objects and you're using an alternate
+        /// domain name, you must choose the type of certificate that you want to use. Specify
+        /// the following value if ACM provided your certificate:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>&lt;ACMCertificateArn&gt;<i>ARN for ACM SSL/TLS certificate</i>&lt;ACMCertificateArn&gt;</code>
+        /// where <code> <i>ARN for ACM SSL/TLS certificate</i> </code> is the ARN for the ACM
+        /// SSL/TLS certificate that you want to use for this distribution.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you specify <code>ACMCertificateArn</code>, you must also specify a value for <code>SSLSupportMethod</code>.
         /// </para>
         /// </summary>
         public string ACMCertificateArn
@@ -206,19 +114,22 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Certificate. 
         /// <para>
-        /// This field has been deprecated. Use one of the following fields instead:
+        /// This field is no longer used. Use one of the following fields instead:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ViewerCertificate$ACMCertificateArn</a> 
+        ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn">ACMCertificateArn</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ViewerCertificate$IAMCertificateId</a> 
+        ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId">IAMCertificateId</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ViewerCertificate$CloudFrontDefaultCertificate</a> 
+        ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-CloudFrontDefaultCertificate">CloudFrontDefaultCertificate</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -238,19 +149,22 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property CertificateSource. 
         /// <para>
-        /// This field has been deprecated. Use one of the following fields instead:
+        /// This field is no longer used. Use one of the following fields instead:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ViewerCertificate$ACMCertificateArn</a> 
+        ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn">ACMCertificateArn</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ViewerCertificate$IAMCertificateId</a> 
+        ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId">IAMCertificateId</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ViewerCertificate$CloudFrontDefaultCertificate</a> 
+        ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-CloudFrontDefaultCertificate">CloudFrontDefaultCertificate</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -270,9 +184,15 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property CloudFrontDefaultCertificate. 
         /// <para>
-        /// For information about how and when to use <code>CloudFrontDefaultCertificate</code>,
-        /// see <a>ViewerCertificate</a>.
+        /// If you're using the CloudFront domain name for your distribution, such as <code>d111111abcdef8.cloudfront.net</code>,
+        /// specify the following value:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt;
+        /// </code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public bool CloudFrontDefaultCertificate
         {
@@ -289,7 +209,20 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property IAMCertificateId. 
         /// <para>
-        /// For information about how and when to use <code>IAMCertificateId</code>, see <a>ViewerCertificate</a>.
+        /// If you want viewers to use HTTPS to request your objects and you're using an alternate
+        /// domain name, you must choose the type of certificate that you want to use. Specify
+        /// the following value if you purchased your certificate from a third-party certificate
+        /// authority:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>&lt;IAMCertificateId&gt;<i>IAM certificate ID</i>&lt;IAMCertificateId&gt;</code>
+        /// where <code> <i>IAM certificate ID</i> </code> is the ID that IAM returned when you
+        /// added the certificate to the IAM certificate store.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you specify <code>IAMCertificateId</code>, you must also specify a value for <code>SSLSupportMethod</code>.
         /// </para>
         /// </summary>
         public string IAMCertificateId
@@ -352,7 +285,7 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// For information about the relationship between the security policy that you choose
         /// and the protocols and ciphers that CloudFront uses to communicate with viewers, see
-        /// <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers">
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers">
         /// Supported SSL/TLS Protocols and Ciphers for Communication Between Viewers and CloudFront</a>
         /// in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
@@ -372,50 +305,37 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property SSLSupportMethod. 
         /// <para>
-        /// If you specify a value for <a>ViewerCertificate$ACMCertificateArn</a> or for <a>ViewerCertificate$IAMCertificateId</a>,
+        /// If you specify a value for <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn">ACMCertificateArn</a>
+        /// or for <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId">IAMCertificateId</a>,
         /// you must also specify how you want CloudFront to serve HTTPS requests: using a method
-        /// that works for all clients or one that works for most clients:
+        /// that works for browsers and clients released after 2010 or one that works for all
+        /// clients.
         /// </para>
         ///  <ul> <li> 
-        /// <para>
-        ///  <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can
-        /// respond to HTTPS requests from any viewer. However, you will incur additional monthly
-        /// charges.
-        /// </para>
-        ///  </li> <li> 
         /// <para>
         ///  <code>sni-only</code>: CloudFront can respond to HTTPS requests from viewers that
-        /// support Server Name Indication (SNI). All modern browsers support SNI, but some browsers
-        /// still in use don't support SNI. If some of your users' browsers don't support SNI,
-        /// we recommend that you do one of the following:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Use the <code>vip</code> option (dedicated IP addresses) instead of <code>sni-only</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Use the CloudFront SSL/TLS certificate instead of a custom certificate. This requires
-        /// that you use the CloudFront domain name of your distribution in the URLs for your
-        /// objects, for example, <code>https://d111111abcdef8.cloudfront.net/logo.png</code>.
+        /// support Server Name Indication (SNI). All modern browsers support SNI, but there are
+        /// a few that don't. For a current list of the browsers that support SNI, see the <a
+        /// href="http://en.wikipedia.org/wiki/Server_Name_Indication">Wikipedia entry Server
+        /// Name Indication</a>. To learn about options to explore if you have users with browsers
+        /// that don't include SNI support, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cnames-https-dedicated-ip-or-sni.html">Choosing
+        /// How CloudFront Serves HTTPS Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you can control which browser your users use, upgrade the browser to one that supports
-        /// SNI.
+        ///  <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can
+        /// respond to HTTPS requests from any viewer. However, there are additional monthly charges.
+        /// For details, including specific pricing information, see <a href="http://aws.amazon.com/cloudfront/custom-ssl-domains/">Custom
+        /// SSL options for Amazon CloudFront</a> on the AWS marketing site.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Use HTTP instead of HTTPS.
-        /// </para>
-        ///  </li> </ul> </li> </ul> 
+        ///  </li> </ul> 
         /// <para>
         /// Don't specify a value for <code>SSLSupportMethod</code> if you specified <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt;</code>.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html#CNAMEsAndHTTPS.html">Using
-        /// Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cnames-https-dedicated-ip-or-sni.html">Choosing
+        /// How CloudFront Serves HTTPS Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
         public SSLSupportMethod SSLSupportMethod

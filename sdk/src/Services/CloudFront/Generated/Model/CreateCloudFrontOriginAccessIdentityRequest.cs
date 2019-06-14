@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -32,7 +32,7 @@ namespace Amazon.CloudFront.Model
     /// Creates a new origin access identity. If you're using Amazon S3 for your origin, you
     /// can use an origin access identity to require users to access your content using a
     /// CloudFront URL instead of the Amazon S3 URL. For more information about how to use
-    /// origin access identities, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+    /// origin access identities, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
     /// Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
     /// </summary>
     public partial class CreateCloudFrontOriginAccessIdentityRequest : AmazonCloudFrontRequest
