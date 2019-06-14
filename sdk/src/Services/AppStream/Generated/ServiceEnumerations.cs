@@ -802,6 +802,14 @@ namespace Amazon.AppStream
         /// Constant WINDOWS for PlatformType
         /// </summary>
         public static readonly PlatformType WINDOWS = new PlatformType("WINDOWS");
+        /// <summary>
+        /// Constant WINDOWS_SERVER_2016 for PlatformType
+        /// </summary>
+        public static readonly PlatformType WINDOWS_SERVER_2016 = new PlatformType("WINDOWS_SERVER_2016");
+        /// <summary>
+        /// Constant WINDOWS_SERVER_2019 for PlatformType
+        /// </summary>
+        public static readonly PlatformType WINDOWS_SERVER_2019 = new PlatformType("WINDOWS_SERVER_2019");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
