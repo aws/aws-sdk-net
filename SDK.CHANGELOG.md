@@ -1,3 +1,16 @@
+### 3.3.533.0 (2019-06-17 19:09 UTC)
+* Neptune (3.3.101.0)
+	* This release adds a feature to configure Amazon Neptune to publish audit logs to Amazon CloudWatch Logs.
+* RoboMaker (3.3.103.0)
+	* Add the ServiceUnavailableException (503) into CreateSimulationJob API.
+* ServiceCatalog (3.3.107.0)
+	* Restrict concurrent calls by a single customer account for CreatePortfolioShare and DeletePortfolioShare when sharing/unsharing to an Organization.
+* Core 3.3.102.6
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.532.0 (2019-06-14 18:12 UTC)
 * AppStream (3.3.102.0)
 	* Added 2 new values(WINDOWS_SERVER_2016, WINDOWS_SERVER_2019) for PlatformType enum.
