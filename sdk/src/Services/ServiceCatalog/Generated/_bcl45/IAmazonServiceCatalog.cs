@@ -613,6 +613,10 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
         /// One or more parameters provided to the operation are not valid.
         /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidStateException">
+        /// An attempt was made to modify a resource that is in a state that is not valid. Check
+        /// your resources to ensure that they are in valid states before retrying the operation.
+        /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.LimitExceededException">
         /// The current limits of the service would have been exceeded by this operation. Decrease
         /// your resource use or increase your service limits and retry the operation.
@@ -642,6 +646,10 @@ namespace Amazon.ServiceCatalog
         /// <returns>The response from the CreatePortfolioShare service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
         /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidStateException">
+        /// An attempt was made to modify a resource that is in a state that is not valid. Check
+        /// your resources to ensure that they are in valid states before retrying the operation.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.LimitExceededException">
         /// The current limits of the service would have been exceeded by this operation. Decrease
@@ -1059,6 +1067,10 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
         /// One or more parameters provided to the operation are not valid.
         /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidStateException">
+        /// An attempt was made to modify a resource that is in a state that is not valid. Check
+        /// your resources to ensure that they are in valid states before retrying the operation.
+        /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.OperationNotSupportedException">
         /// The operation is not supported.
         /// </exception>
@@ -1082,6 +1094,10 @@ namespace Amazon.ServiceCatalog
         /// <returns>The response from the DeletePortfolioShare service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
         /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidStateException">
+        /// An attempt was made to modify a resource that is in a state that is not valid. Check
+        /// your resources to ensure that they are in valid states before retrying the operation.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.OperationNotSupportedException">
         /// The operation is not supported.
