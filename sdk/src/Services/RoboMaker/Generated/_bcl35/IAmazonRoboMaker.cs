@@ -655,6 +655,9 @@ namespace Amazon.RoboMaker
         /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the server.
+        /// </exception>
         /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
         /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
         /// </exception>
@@ -946,7 +949,7 @@ namespace Amazon.RoboMaker
 
 
         /// <summary>
-        /// Describes a deployment job. [Does it work regardless of deployment status, e.g. Failed?]
+        /// Describes a deployment job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDeploymentJob service method.</param>
         /// 

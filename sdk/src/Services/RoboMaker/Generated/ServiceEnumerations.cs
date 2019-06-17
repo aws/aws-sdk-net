@@ -145,6 +145,10 @@ namespace Amazon.RoboMaker
         /// </summary>
         public static readonly DeploymentJobErrorCode RobotAgentConnectionTimeout = new DeploymentJobErrorCode("RobotAgentConnectionTimeout");
         /// <summary>
+        /// Constant RobotDeploymentAborted for DeploymentJobErrorCode
+        /// </summary>
+        public static readonly DeploymentJobErrorCode RobotDeploymentAborted = new DeploymentJobErrorCode("RobotDeploymentAborted");
+        /// <summary>
         /// Constant RobotDeploymentNoResponse for DeploymentJobErrorCode
         /// </summary>
         public static readonly DeploymentJobErrorCode RobotDeploymentNoResponse = new DeploymentJobErrorCode("RobotDeploymentNoResponse");

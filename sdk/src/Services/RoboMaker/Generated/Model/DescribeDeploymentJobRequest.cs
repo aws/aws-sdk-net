@@ -29,7 +29,7 @@ namespace Amazon.RoboMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDeploymentJob operation.
-    /// Describes a deployment job. [Does it work regardless of deployment status, e.g. Failed?]
+    /// Describes a deployment job.
     /// </summary>
     public partial class DescribeDeploymentJobRequest : AmazonRoboMakerRequest
     {
