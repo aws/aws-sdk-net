@@ -50,6 +50,7 @@ namespace Amazon.Neptune.Model
         private string _dbClusterIdentifier;
         private string _dbClusterParameterGroupName;
         private string _dbSubnetGroupName;
+        private List<string> _enableCloudwatchLogsExports = new List<string>();
         private bool? _enableIAMDatabaseAuthentication;
         private string _kmsKeyId;
         private string _optionGroupName;
@@ -148,6 +149,24 @@ namespace Amazon.Neptune.Model
         internal bool IsSetDBSubnetGroupName()
         {
             return this._dbSubnetGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableCloudwatchLogsExports. 
+        /// <para>
+        /// The list of logs that the restored DB cluster is to export to CloudWatch Logs.
+        /// </para>
+        /// </summary>
+        public List<string> EnableCloudwatchLogsExports
+        {
+            get { return this._enableCloudwatchLogsExports; }
+            set { this._enableCloudwatchLogsExports = value; }
+        }
+
+        // Check to see if EnableCloudwatchLogsExports property is set
+        internal bool IsSetEnableCloudwatchLogsExports()
+        {
+            return this._enableCloudwatchLogsExports != null && this._enableCloudwatchLogsExports.Count > 0; 
         }
 
         /// <summary>
@@ -318,8 +337,22 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property RestoreType. 
         /// <para>
-        /// The type of restore to be performed. The only type of restore currently supported
-        /// is <code>full-copy</code> (the default).
+        /// The type of restore to be performed. You can specify one of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>full-copy</code> - The new DB cluster is restored as a full copy of the source
+        /// DB cluster.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source
+        /// DB cluster.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you don't specify a <code>RestoreType</code> value, then the new DB cluster is
+        /// restored as a full copy of the source DB cluster.
         /// </para>
         /// </summary>
         public string RestoreType

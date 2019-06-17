@@ -772,14 +772,8 @@ namespace Amazon.Neptune
         /// </para>
         ///  
         /// <para>
-        /// If the specified DB instance is part of a DB cluster, you can't delete the DB instance
-        /// if both of the following conditions are true:
+        /// You can't delete a DB instance if it is the only instance in the DB cluster.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The DB instance is the only instance in the DB cluster.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBInstance service method.</param>
         /// <param name="cancellationToken">

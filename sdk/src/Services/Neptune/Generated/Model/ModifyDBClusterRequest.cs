@@ -36,6 +36,7 @@ namespace Amazon.Neptune.Model
     {
         private bool? _applyImmediately;
         private int? _backupRetentionPeriod;
+        private CloudwatchLogsExportConfiguration _cloudwatchLogsExportConfiguration;
         private string _dbClusterIdentifier;
         private string _dbClusterParameterGroupName;
         private bool? _enableIAMDatabaseAuthentication;
@@ -112,6 +113,25 @@ namespace Amazon.Neptune.Model
         internal bool IsSetBackupRetentionPeriod()
         {
             return this._backupRetentionPeriod.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudwatchLogsExportConfiguration. 
+        /// <para>
+        /// The configuration setting for the log types to be enabled for export to CloudWatch
+        /// Logs for a specific DB cluster.
+        /// </para>
+        /// </summary>
+        public CloudwatchLogsExportConfiguration CloudwatchLogsExportConfiguration
+        {
+            get { return this._cloudwatchLogsExportConfiguration; }
+            set { this._cloudwatchLogsExportConfiguration = value; }
+        }
+
+        // Check to see if CloudwatchLogsExportConfiguration property is set
+        internal bool IsSetCloudwatchLogsExportConfiguration()
+        {
+            return this._cloudwatchLogsExportConfiguration != null;
         }
 
         /// <summary>

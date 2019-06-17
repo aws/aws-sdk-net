@@ -30,6 +30,12 @@ namespace Amazon.Neptune.Model
     /// <summary>
     /// The configuration setting for the log types to be enabled for export to CloudWatch
     /// Logs for a specific DB instance or DB cluster.
+    /// 
+    ///  
+    /// <para>
+    /// The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine
+    /// which logs will be exported (or not exported) to CloudWatch Logs.
+    /// </para>
     /// </summary>
     public partial class CloudwatchLogsExportConfiguration
     {
