@@ -29,17 +29,27 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTagValues operation.
-    /// Returns all tag values for the specified key in the specified region for the AWS account.
+    /// Returns all tag values for the specified key in the specified Region for the AWS account.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// You can check the <code>PaginationToken</code> response parameter to determine if
+    /// a query completed. Queries can occasionally return fewer results on a page than allowed.
+    /// The <code>PaginationToken</code> response parameter value is <code>null</code> <i>only</i>
+    /// when there are no more results to display. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class GetTagValuesRequest : AmazonResourceGroupsTaggingAPIRequest
     {
         private string _key;
+        private int? _maxResults;
         private string _paginationToken;
 
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The key for which you want to list all existing values in the specified region for
+        /// The key for which you want to list all existing values in the specified Region for
         /// the AWS account.
         /// </para>
         /// </summary>
@@ -57,11 +67,30 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// A limit that restricts the number of results that are returned per page.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PaginationToken. 
         /// <para>
         /// A string that indicates that additional data is available. Leave this value empty
-        /// for your initial request. If the response includes a PaginationToken, use that string
-        /// for this value to request an additional page of data.
+        /// for your initial request. If the response includes a <code>PaginationToken</code>,
+        /// use that string for this value to request an additional page of data.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

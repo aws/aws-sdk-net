@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetTagKeys Request Marshaller
+    /// GetComplianceSummary Request Marshaller
     /// </summary>       
-    public class GetTagKeysRequestMarshaller : IMarshaller<IRequest, GetTagKeysRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetComplianceSummaryRequestMarshaller : IMarshaller<IRequest, GetComplianceSummaryRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetTagKeysRequest)input);
+            return this.Marshall((GetComplianceSummaryRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetTagKeysRequest publicRequest)
+        public IRequest Marshall(GetComplianceSummaryRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ResourceGroupsTaggingAPI");
-            string target = "ResourceGroupsTaggingAPI_20170126.GetTagKeys";
+            string target = "ResourceGroupsTaggingAPI_20170126.GetComplianceSummary";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-01-26";            
@@ -68,6 +68,17 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetGroupBy())
+                {
+                    context.Writer.WritePropertyName("GroupBy");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestGroupByListValue in publicRequest.GroupBy)
+                    {
+                            context.Writer.Write(publicRequestGroupByListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
@@ -80,6 +91,50 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PaginationToken);
                 }
 
+                if(publicRequest.IsSetRegionFilters())
+                {
+                    context.Writer.WritePropertyName("RegionFilters");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestRegionFiltersListValue in publicRequest.RegionFilters)
+                    {
+                            context.Writer.Write(publicRequestRegionFiltersListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetResourceTypeFilters())
+                {
+                    context.Writer.WritePropertyName("ResourceTypeFilters");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestResourceTypeFiltersListValue in publicRequest.ResourceTypeFilters)
+                    {
+                            context.Writer.Write(publicRequestResourceTypeFiltersListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetTagKeyFilters())
+                {
+                    context.Writer.WritePropertyName("TagKeyFilters");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTagKeyFiltersListValue in publicRequest.TagKeyFilters)
+                    {
+                            context.Writer.Write(publicRequestTagKeyFiltersListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetTargetIdFilters())
+                {
+                    context.Writer.WritePropertyName("TargetIdFilters");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTargetIdFiltersListValue in publicRequest.TargetIdFilters)
+                    {
+                            context.Writer.Write(publicRequestTargetIdFiltersListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
@@ -89,9 +144,9 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static GetTagKeysRequestMarshaller _instance = new GetTagKeysRequestMarshaller();        
+        private static GetComplianceSummaryRequestMarshaller _instance = new GetComplianceSummaryRequestMarshaller();        
 
-        internal static GetTagKeysRequestMarshaller GetInstance()
+        internal static GetComplianceSummaryRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -99,7 +154,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetTagKeysRequestMarshaller Instance
+        public static GetComplianceSummaryRequestMarshaller Instance
         {
             get
             {

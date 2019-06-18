@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ResourceTagMapping Object
+    /// Response Unmarshaller for ComplianceDetails Object
     /// </summary>  
-    public class ResourceTagMappingUnmarshaller : IUnmarshaller<ResourceTagMapping, XmlUnmarshallerContext>, IUnmarshaller<ResourceTagMapping, JsonUnmarshallerContext>
+    public class ComplianceDetailsUnmarshaller : IUnmarshaller<ComplianceDetails, XmlUnmarshallerContext>, IUnmarshaller<ComplianceDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ResourceTagMapping IUnmarshaller<ResourceTagMapping, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ComplianceDetails IUnmarshaller<ComplianceDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,39 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ResourceTagMapping Unmarshall(JsonUnmarshallerContext context)
+        public ComplianceDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ResourceTagMapping unmarshalledObject = new ResourceTagMapping();
+            ComplianceDetails unmarshalledObject = new ComplianceDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ComplianceDetails", targetDepth))
+                if (context.TestExpression("ComplianceStatus", targetDepth))
                 {
-                    var unmarshaller = ComplianceDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ComplianceDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ComplianceStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ResourceARN", targetDepth))
+                if (context.TestExpression("InvalidKeys", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceARN = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.InvalidKeys = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Tags", targetDepth))
+                if (context.TestExpression("InvalidValues", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.InvalidValues = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MissingKeys", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.MissingKeys = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +94,12 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
         }
 
 
-        private static ResourceTagMappingUnmarshaller _instance = new ResourceTagMappingUnmarshaller();        
+        private static ComplianceDetailsUnmarshaller _instance = new ComplianceDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResourceTagMappingUnmarshaller Instance
+        public static ComplianceDetailsUnmarshaller Instance
         {
             get
             {

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetTagKeys Request Marshaller
+    /// DescribeReportCreation Request Marshaller
     /// </summary>       
-    public class GetTagKeysRequestMarshaller : IMarshaller<IRequest, GetTagKeysRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeReportCreationRequestMarshaller : IMarshaller<IRequest, DescribeReportCreationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetTagKeysRequest)input);
+            return this.Marshall((DescribeReportCreationRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetTagKeysRequest publicRequest)
+        public IRequest Marshall(DescribeReportCreationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ResourceGroupsTaggingAPI");
-            string target = "ResourceGroupsTaggingAPI_20170126.GetTagKeys";
+            string target = "ResourceGroupsTaggingAPI_20170126.DescribeReportCreation";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-01-26";            
@@ -63,35 +63,13 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
 
             string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
-            {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetPaginationToken())
-                {
-                    context.Writer.WritePropertyName("PaginationToken");
-                    context.Writer.Write(publicRequest.PaginationToken);
-                }
-
-        
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-            }
-
+            request.Content = System.Text.Encoding.UTF8.GetBytes("{}");
 
             return request;
         }
-        private static GetTagKeysRequestMarshaller _instance = new GetTagKeysRequestMarshaller();        
+        private static DescribeReportCreationRequestMarshaller _instance = new DescribeReportCreationRequestMarshaller();        
 
-        internal static GetTagKeysRequestMarshaller GetInstance()
+        internal static DescribeReportCreationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -99,7 +77,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetTagKeysRequestMarshaller Instance
+        public static DescribeReportCreationRequestMarshaller Instance
         {
             get
             {

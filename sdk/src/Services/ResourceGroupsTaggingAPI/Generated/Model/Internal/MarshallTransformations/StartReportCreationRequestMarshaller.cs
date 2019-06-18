@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetTagKeys Request Marshaller
+    /// StartReportCreation Request Marshaller
     /// </summary>       
-    public class GetTagKeysRequestMarshaller : IMarshaller<IRequest, GetTagKeysRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class StartReportCreationRequestMarshaller : IMarshaller<IRequest, StartReportCreationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetTagKeysRequest)input);
+            return this.Marshall((StartReportCreationRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetTagKeysRequest publicRequest)
+        public IRequest Marshall(StartReportCreationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ResourceGroupsTaggingAPI");
-            string target = "ResourceGroupsTaggingAPI_20170126.GetTagKeys";
+            string target = "ResourceGroupsTaggingAPI_20170126.StartReportCreation";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-01-26";            
@@ -68,16 +68,10 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaxResults())
+                if(publicRequest.IsSetS3Bucket())
                 {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetPaginationToken())
-                {
-                    context.Writer.WritePropertyName("PaginationToken");
-                    context.Writer.Write(publicRequest.PaginationToken);
+                    context.Writer.WritePropertyName("S3Bucket");
+                    context.Writer.Write(publicRequest.S3Bucket);
                 }
 
         
@@ -89,9 +83,9 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static GetTagKeysRequestMarshaller _instance = new GetTagKeysRequestMarshaller();        
+        private static StartReportCreationRequestMarshaller _instance = new StartReportCreationRequestMarshaller();        
 
-        internal static GetTagKeysRequestMarshaller GetInstance()
+        internal static StartReportCreationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -99,7 +93,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetTagKeysRequestMarshaller Instance
+        public static StartReportCreationRequestMarshaller Instance
         {
             get
             {
