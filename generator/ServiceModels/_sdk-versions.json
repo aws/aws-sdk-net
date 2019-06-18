@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.533.0",
+    "ProductVersion" : "3.3.534.0",
     "CoreVersion"    : "3.3.102.6",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.116.1",
+            "Version" : "3.3.117.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.102.6"
@@ -761,7 +761,7 @@
             "InPreview"               : false
         },
         "ResourceGroupsTaggingAPI"        : {
-            "Version" : "3.3.100.34",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.102.6"
