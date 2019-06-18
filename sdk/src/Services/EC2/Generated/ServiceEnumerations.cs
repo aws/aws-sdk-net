@@ -4211,9 +4211,17 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType C4Xlarge = new InstanceType("c4.xlarge");
         /// <summary>
+        /// Constant C512xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C512xlarge = new InstanceType("c5.12xlarge");
+        /// <summary>
         /// Constant C518xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType C518xlarge = new InstanceType("c5.18xlarge");
+        /// <summary>
+        /// Constant C524xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C524xlarge = new InstanceType("c5.24xlarge");
         /// <summary>
         /// Constant C52xlarge for InstanceType
         /// </summary>
