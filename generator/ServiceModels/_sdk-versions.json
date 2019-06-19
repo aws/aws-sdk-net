@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.534.0",
+    "ProductVersion" : "3.3.534.1",
     "CoreVersion"    : "3.3.102.6",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -1137,7 +1137,7 @@
             "InPreview"               : false
         },
         "EKS"                             : {
-            "Version" : "3.3.101.30",
+            "Version" : "3.3.101.31",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.102.6"
