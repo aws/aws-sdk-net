@@ -78,12 +78,12 @@ namespace Amazon.AWSHealth
     /// </para>
     ///  
     /// <para>
-    /// For authentication of requests, AWS Health uses the <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    /// For authentication of requests, AWS Health uses the <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
     /// Version 4 Signing Process</a>.
     /// </para>
     ///  
     /// <para>
-    /// See the <a href="http://docs.aws.amazon.com/health/latest/ug/what-is-aws-health.html">AWS
+    /// See the <a href="https://docs.aws.amazon.com/health/latest/ug/what-is-aws-health.html">AWS
     /// Health User Guide</a> for information about how to use the API.
     /// </para>
     ///  

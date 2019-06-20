@@ -189,6 +189,10 @@ namespace Amazon.AWSHealth
         /// </summary>
         public static readonly EventTypeCategory AccountNotification = new EventTypeCategory("accountNotification");
         /// <summary>
+        /// Constant Investigation for EventTypeCategory
+        /// </summary>
+        public static readonly EventTypeCategory Investigation = new EventTypeCategory("investigation");
+        /// <summary>
         /// Constant Issue for EventTypeCategory
         /// </summary>
         public static readonly EventTypeCategory Issue = new EventTypeCategory("issue");
