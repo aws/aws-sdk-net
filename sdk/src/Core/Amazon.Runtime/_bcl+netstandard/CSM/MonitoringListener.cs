@@ -36,12 +36,13 @@ namespace Amazon.Runtime
         /// <summary>
         /// The CSMevents are always posted to the localhost
         /// </summary>
-        private const string Hostname = "127.0.0.1";
+        private readonly string _host;
         private readonly UdpClient _udpClient;
         private readonly Logger logger;
         private readonly int _port;
         private MonitoringListener()
         {
+            _host = DeterminedCSMConfiguration.Instance.CSMConfiguration.Host;
             _port = DeterminedCSMConfiguration.Instance.CSMConfiguration.Port;
             _udpClient = new UdpClient();
             logger = Logger.GetLogger(typeof(MonitoringListener));
@@ -68,7 +69,7 @@ namespace Amazon.Runtime
             try
             {
                 _udpClient.Send(Encoding.UTF8.GetBytes(response),
-                        Encoding.UTF8.GetBytes(response).Length, Hostname, _port);
+                        Encoding.UTF8.GetBytes(response).Length, _host, _port);
             }
             catch (Exception e)
             {
@@ -87,7 +88,7 @@ namespace Amazon.Runtime
             try
             {
                 await _udpClient.SendAsync(Encoding.UTF8.GetBytes(response),
-                    Encoding.UTF8.GetBytes(response).Length, Hostname, _port).ConfigureAwait(false);
+                    Encoding.UTF8.GetBytes(response).Length, _host, _port).ConfigureAwait(false);
             }
             catch(Exception e)
             {
@@ -105,7 +106,7 @@ namespace Amazon.Runtime
             try
             {
                 _udpClient.BeginSend(Encoding.UTF8.GetBytes(response),
-                        Encoding.UTF8.GetBytes(response).Length, Hostname, _port, new AsyncCallback(EndSendMessagesOverUDPInvoke), _udpClient);
+                        Encoding.UTF8.GetBytes(response).Length, _host, _port, new AsyncCallback(EndSendMessagesOverUDPInvoke), _udpClient);
             }
             catch (Exception e)
             {

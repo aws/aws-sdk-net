@@ -83,6 +83,7 @@ namespace Amazon.Runtime.Internal
     {
         private const string CSM_ENABLED = "csm_enabled";
         private const string CSM_CLIENTID = "csm_clientid";
+        private const string CSM_HOST = "csm_host";
         private const string CSM_PORT = "csm_port";
         private const string CSM_PROFILE_ERROR_MSG = "CSM configurations not found using profile store.";
 
@@ -147,8 +148,18 @@ namespace Amazon.Runtime.Internal
                         throw new AmazonClientException("Unexpected profile variable value type " + CSM_PORT + ". Set a valid integer value.");
                     }
                 }
+                string csm_host;
+                if (profileProperties.TryGetValue(CSM_HOST, out csm_host))
+                {
+                    if (!string.IsNullOrEmpty(csm_host))
+                    {
+                        csmConfiguration.Host = csm_host;
+                    }
+                }
             }
-            logger.InfoFormat(string.Format(CultureInfo.InvariantCulture,"CSM configurations found using profile store for the profile = {0}: values are CSM enabled = {1}, port = {2}, clientid = {3}", ProfileName, csmConfiguration.Enabled, csmConfiguration.Port, csmConfiguration.ClientId));
+            logger.InfoFormat(string.Format(CultureInfo.InvariantCulture, 
+                "CSM configurations found using profile store for the profile = {0}: values are CSM enabled = {1}, host = {2}, port = {3}, clientid = {4}", 
+                ProfileName, csmConfiguration.Enabled, csmConfiguration.Host, csmConfiguration.Port, csmConfiguration.ClientId));
         }
     }
 
@@ -159,6 +170,7 @@ namespace Amazon.Runtime.Internal
     {
         private const string CSM_ENABLED = "AWS_CSM_ENABLED";
         private const string CSM_CLIENTID = "AWS_CSM_CLIENT_ID";
+        private const string CSM_HOST = "AWS_CSM_HOST";
         private const string CSM_PORT = "AWS_CSM_PORT";
 
         private IEnvironmentVariableRetriever environmentRetriever { get; set; } = EnvironmentVariableSource.Instance.EnvironmentVariableRetriever;
@@ -209,9 +221,17 @@ namespace Amazon.Runtime.Internal
                         throw new AmazonClientException("Unexpected environment variable value type " + CSM_PORT + ". Set a valid integer value.");
                     }
                 }
+
+                string hostValue = environmentRetriever.GetEnvironmentVariable(CSM_HOST);
+                if(!string.IsNullOrEmpty(hostValue))
+                {
+                    csmConfiguration.Host = hostValue;
+                }
             }
 
-            logger.InfoFormat(string.Format(CultureInfo.InvariantCulture,"CSM configurations found using environment variable. Values are CSM enabled = {0}, port = {1}, clientid = {2}", csmConfiguration.Enabled, csmConfiguration.Port, csmConfiguration.ClientId));
+            logger.InfoFormat(string.Format(CultureInfo.InvariantCulture,
+                "CSM configurations found using environment variable. values are CSM enabled = {0}, host = {1}, port = {2}, clientid = {3}",
+                csmConfiguration.Enabled, csmConfiguration.Host, csmConfiguration.Port, csmConfiguration.ClientId));
         }
     }
 
@@ -241,9 +261,12 @@ namespace Amazon.Runtime.Internal
                 {
                     csmConfiguration.ClientId = AWSConfigs.CSMConfig.CSMClientId;
                 }
+                csmConfiguration.Host = AWSConfigs.CSMConfig.CSMHost;
                 csmConfiguration.Port = AWSConfigs.CSMConfig.CSMPort;
 
-                logger.InfoFormat(string.Format(CultureInfo.InvariantCulture,"CSM configurations found using application configuration file. Values are CSM enabled = {0}, port = {1}, clientid = {2}", csmConfiguration.Enabled, csmConfiguration.Port, csmConfiguration.ClientId));
+                logger.InfoFormat(string.Format(CultureInfo.InvariantCulture,
+                    "CSM configurations found using application configuration file. values are CSM enabled = {0}, host = {1}, port = {2}, clientid = {3}",
+                    csmConfiguration.Enabled, csmConfiguration.Host, csmConfiguration.Port, csmConfiguration.ClientId));
             }
         }
     }
