@@ -58,6 +58,7 @@ namespace Amazon.RDS.Model
         private bool? _supportsIAMDatabaseAuthentication;
         private bool? _supportsIops;
         private bool? _supportsPerformanceInsights;
+        private bool? _supportsStorageAutoscaling;
         private bool? _supportsStorageEncryption;
         private bool? _vpc;
 
@@ -420,6 +421,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetSupportsPerformanceInsights()
         {
             return this._supportsPerformanceInsights.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsStorageAutoscaling. 
+        /// <para>
+        /// Whether or not Amazon RDS can automatically scale storage for DB instances that use
+        /// the specified instance class.
+        /// </para>
+        /// </summary>
+        public bool SupportsStorageAutoscaling
+        {
+            get { return this._supportsStorageAutoscaling.GetValueOrDefault(); }
+            set { this._supportsStorageAutoscaling = value; }
+        }
+
+        // Check to see if SupportsStorageAutoscaling property is set
+        internal bool IsSetSupportsStorageAutoscaling()
+        {
+            return this._supportsStorageAutoscaling.HasValue; 
         }
 
         /// <summary>

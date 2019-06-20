@@ -81,6 +81,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.StorageType = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("SupportsStorageAutoscaling", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.SupportsStorageAutoscaling = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

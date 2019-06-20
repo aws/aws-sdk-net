@@ -59,6 +59,7 @@ namespace Amazon.RDS.Model
         private string _licenseModel;
         private string _masterUsername;
         private string _masterUserPassword;
+        private int? _maxAllocatedStorage;
         private int? _monitoringInterval;
         private string _monitoringRoleArn;
         private bool? _multiAZ;
@@ -1334,6 +1335,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetMasterUserPassword()
         {
             return this._masterUserPassword != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxAllocatedStorage. 
+        /// <para>
+        /// The upper limit to which Amazon RDS can automatically scale the storage of the DB
+        /// instance.
+        /// </para>
+        /// </summary>
+        public int MaxAllocatedStorage
+        {
+            get { return this._maxAllocatedStorage.GetValueOrDefault(); }
+            set { this._maxAllocatedStorage = value; }
+        }
+
+        // Check to see if MaxAllocatedStorage property is set
+        internal bool IsSetMaxAllocatedStorage()
+        {
+            return this._maxAllocatedStorage.HasValue; 
         }
 
         /// <summary>

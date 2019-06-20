@@ -38,6 +38,7 @@ namespace Amazon.RDS.Model
         private List<Range> _provisionedIops = new List<Range>();
         private List<Range> _storageSize = new List<Range>();
         private string _storageType;
+        private bool? _supportsStorageAutoscaling;
 
         /// <summary>
         /// Gets and sets the property IopsToStorageRatio. 
@@ -110,6 +111,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetStorageType()
         {
             return this._storageType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsStorageAutoscaling. 
+        /// <para>
+        /// Whether or not Amazon RDS can automatically scale storage for DB instances that use
+        /// the new instance class.
+        /// </para>
+        /// </summary>
+        public bool SupportsStorageAutoscaling
+        {
+            get { return this._supportsStorageAutoscaling.GetValueOrDefault(); }
+            set { this._supportsStorageAutoscaling = value; }
+        }
+
+        // Check to see if SupportsStorageAutoscaling property is set
+        internal bool IsSetSupportsStorageAutoscaling()
+        {
+            return this._supportsStorageAutoscaling.HasValue; 
         }
 
     }
