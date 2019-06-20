@@ -15,6 +15,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +27,7 @@ using System.Net;
 using System.Globalization;
 using Amazon.Util;
 using System.Reflection;
+using Moq;
 
 namespace AWSSDK.UnitTests
 {
@@ -122,6 +124,15 @@ namespace AWSSDK.UnitTests
             //aws-sdk-dotnet-coreclr/ aws-sdk-dotnet-core/3.3.31.8 .NET_Core/4.6.27129.04 OS/Microsoft_Windows_10.0.17134
             var regex = new System.Text.RegularExpressions.Regex("aws-sdk-dotnet-.+aws-sdk-dotnet-core/");
             Assert.IsTrue(regex.IsMatch(userAgentValue));
+        }
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        public void TestWhiteSpaceCompression()
+        {
+            const string text = "qqdglmcdoxtqiwwlucjv      xtehwhfhchtkhgoufyzgtkxvgcmcyvifp  sgseqpnzvaecjcwdjsylcilfkh";
+            Assert.IsFalse(AWSSDKUtils.CompressSpaces(text).Contains("  "));
         }
     }
 }

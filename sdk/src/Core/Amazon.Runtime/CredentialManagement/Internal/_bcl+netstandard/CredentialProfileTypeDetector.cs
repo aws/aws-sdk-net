@@ -31,6 +31,7 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         SAMLRoleUserIdentity,
 #endif
         Session,
+        CredentialProcess
     }
 
     public enum CredentialSourceType
@@ -57,10 +58,17 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         private const string SourceProfile = "SourceProfile";        
         private const string Token = "Token";
         private const string UserIdentity = "UserIdentity";
+        private const string CredentialProcess = "CredentialProcess";
 
         private static Dictionary<CredentialProfileType, HashSet<string>> TypePropertyDictionary =
             new Dictionary<CredentialProfileType, HashSet<string>>()
             {
+                {
+                    CredentialProfileType.CredentialProcess, new HashSet<string>()
+                    {
+                        CredentialProcess
+                    }
+                },
                 {
                     CredentialProfileType.AssumeRole, new HashSet<string>()
                     {
@@ -147,6 +155,7 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                 { CredentialProfileType.SAMLRoleUserIdentity, SAMLCredentials },
 #endif
                 { CredentialProfileType.Session, SessionCredentials },
+                { CredentialProfileType.CredentialProcess, CredentialProcess }
             };
 
         public static string GetUserFriendlyCredentialType(CredentialProfileType? profileType)

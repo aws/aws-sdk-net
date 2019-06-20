@@ -27,7 +27,7 @@ namespace Amazon.Runtime.CredentialManagement
     /// </summary>
     public class CredentialProfile
     {
-        private Dictionary<string, string> properties;
+        private Dictionary<string, string> _properties;
 
         /// <summary>
         /// The name of the CredentialProfile
@@ -60,29 +60,15 @@ namespace Amazon.Runtime.CredentialManagement
         /// </summary>
         internal Dictionary<string, string> Properties
         {
-            get
-            {
-                if (properties == null)
-                    properties = new Dictionary<string, string>();
-                return properties;
-            }
-            set
-            {
-                properties = value;
-            }
+            get => _properties ?? (_properties = new Dictionary<string, string>());
+            set => _properties = value;
         }
 
         /// <summary>
         /// True if the properties of the Options object can be converted into AWSCredentials, false otherwise.
         /// See <see cref="CredentialProfileOptions"/> for more details about which options are available.
         /// </summary>
-        public bool CanCreateAWSCredentials
-        {
-            get
-            {
-                return ProfileType.HasValue;
-            }
-        }
+        public bool CanCreateAWSCredentials => ProfileType.HasValue;
 
         /// <summary>
         /// The <see cref="ICredentialProfileStore"/> that this <see cref="CredentialProfile"/> is associated with.
@@ -99,35 +85,17 @@ namespace Amazon.Runtime.CredentialManagement
         /// credentials that would be created.
         /// If CanCreateAWSCredentials is false, return null.
         /// </summary>
-        public string CredentialDescription
-        {
-            get
-            {
-                return CredentialProfileTypeDetector.GetUserFriendlyCredentialType(ProfileType);
-            }
-        }
+        public string CredentialDescription => CredentialProfileTypeDetector.GetUserFriendlyCredentialType(ProfileType);
 
         /// <summary>
         /// The CredentialProfileType of this CredentialProfile, if one applies.
         /// </summary>
-        internal CredentialProfileType? ProfileType
-        {
-            get
-            {
-                return CredentialProfileTypeDetector.DetectProfileType(Options);
-            }
-        }
+        internal CredentialProfileType? ProfileType => CredentialProfileTypeDetector.DetectProfileType(Options);
 
         /// <summary>
         /// Determine this CredentialProfile will generate AWSCredentials that require a callback to be set on them.
         /// </summary>
-        internal bool IsCallbackRequired
-        {
-            get
-            {
-                return AWSCredentialsFactory.IsCallbackRequired(ProfileType);
-            }
-        }
+        internal bool IsCallbackRequired => AWSCredentialsFactory.IsCallbackRequired(ProfileType);
 
         /// <summary>
         /// Construct a new CredentialProfile.
@@ -140,13 +108,9 @@ namespace Amazon.Runtime.CredentialManagement
             {
                 throw new ArgumentException("Name must not be null or empty.");
             }
-            if (profileOptions == null)
-            {
-                throw new ArgumentNullException("profileOptions");
-            }
 
-            Name = name;
-            Options = profileOptions;            
+            Options = profileOptions ?? throw new ArgumentNullException("profileOptions");   
+            Name = name;       
         }
 
         /// <summary>

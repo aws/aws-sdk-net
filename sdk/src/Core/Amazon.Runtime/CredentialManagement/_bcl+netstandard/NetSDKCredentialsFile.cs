@@ -75,14 +75,17 @@ namespace Amazon.Runtime.CredentialManagement
 #if !NETSTANDARD13
                     { "UserIdentity", SettingsConstants.UserIdentityField },
 #endif
+                    // Not implemented for NetSDKCredentials. Applicable only
+                    // for SharedCredentials
+                    { "CredentialProcess" , SettingsConstants.CredentialProcess }
                 }
             );
 
-        private NamedSettingsManager settingsManager;
+        private readonly NamedSettingsManager _settingsManager;
 
         public NetSDKCredentialsFile()
         {
-            settingsManager = new NamedSettingsManager(SettingsConstants.RegisteredProfiles);
+            _settingsManager = new NamedSettingsManager(SettingsConstants.RegisteredProfiles);
         }
 
         public List<string> ListProfileNames()
@@ -93,7 +96,7 @@ namespace Amazon.Runtime.CredentialManagement
         public List<CredentialProfile> ListProfiles()
         {
             var profiles = new List<CredentialProfile>();
-            foreach (var profileName in settingsManager.ListObjectNames())
+            foreach (var profileName in _settingsManager.ListObjectNames())
             {
                 CredentialProfile profile = null;
                 if (TryGetProfile(profileName, out profile) && profile.CanCreateAWSCredentials)
@@ -114,7 +117,7 @@ namespace Amazon.Runtime.CredentialManagement
         {
             Dictionary<string, string> properties;
             string uniqueKeyStr;
-            if (settingsManager.TryGetObject(profileName, out uniqueKeyStr, out properties))
+            if (_settingsManager.TryGetObject(profileName, out uniqueKeyStr, out properties))
             {
                 try
                 {
@@ -201,7 +204,7 @@ namespace Amazon.Runtime.CredentialManagement
 
                 // Set the UniqueKey.  It might change if the unique key is set by the objectManger,
                 // or if this is an update to an existing profile.
-                string newUniqueKeyStr = settingsManager.RegisterObject(profile.Name, profileDictionary);
+                string newUniqueKeyStr = _settingsManager.RegisterObject(profile.Name, profileDictionary);
                 Guid? newUniqueKey;
                 if (GuidUtils.TryParseNullableGuid(newUniqueKeyStr, out newUniqueKey))
                     profile.UniqueKey = newUniqueKey;
@@ -220,7 +223,7 @@ namespace Amazon.Runtime.CredentialManagement
         /// <param name="profileName">The name of the profile to delete.</param>
         public void UnregisterProfile(string profileName)
         {
-            settingsManager.UnregisterObject(profileName);
+            _settingsManager.UnregisterObject(profileName);
         }
 
         /// <summary>
@@ -241,7 +244,7 @@ namespace Amazon.Runtime.CredentialManagement
         /// <param name="force">If true and the destination profile exists it will be overwritten.</param>
         public void RenameProfile(string oldProfileName, string newProfileName, bool force)
         {
-            settingsManager.RenameObject(oldProfileName, newProfileName, force);
+            _settingsManager.RenameObject(oldProfileName, newProfileName, force);
         }
 
         /// <summary>
@@ -262,7 +265,7 @@ namespace Amazon.Runtime.CredentialManagement
         /// <param name="force">If true and the destination profile exists it will be overwritten.</param>
         public void CopyProfile(string fromProfileName, string toProfileName, bool force)
         {
-            settingsManager.CopyObject(fromProfileName, toProfileName, force);
+            _settingsManager.CopyObject(fromProfileName, toProfileName, force);
         }
 
         /// <summary>
@@ -271,22 +274,22 @@ namespace Amazon.Runtime.CredentialManagement
         /// </summary>
         /// <param name="properties"></param>
         /// <param name="profileType"></param>
-        private static void SetProfileTypeField(Dictionary<string, string> properties, CredentialProfileType profileType)
+        private static void SetProfileTypeField(IDictionary<string, string> properties, CredentialProfileType profileType)
         {
-            if (profileType == CredentialProfileType.Basic)
+            switch (profileType)
             {
-                properties[SettingsConstants.ProfileTypeField] = AWSCredentialsProfileType;
-            }
+                case CredentialProfileType.Basic:
+                    properties[SettingsConstants.ProfileTypeField] = AWSCredentialsProfileType;
+                    break;
 #if !NETSTANDARD13
-            else if (profileType == CredentialProfileType.SAMLRole ||
-                     profileType == CredentialProfileType.SAMLRoleUserIdentity)
-            {
-                properties[SettingsConstants.ProfileTypeField] = SAMLRoleProfileType;
-            }
+                case CredentialProfileType.SAMLRole:
+                case CredentialProfileType.SAMLRoleUserIdentity:
+                    properties[SettingsConstants.ProfileTypeField] = SAMLRoleProfileType;
+                    break;
 #endif
-            else
-            {
-                properties[SettingsConstants.ProfileTypeField] = profileType.ToString();
+                default:
+                    properties[SettingsConstants.ProfileTypeField] = profileType.ToString();
+                    break;
             }
         }
     }

@@ -29,6 +29,7 @@ using System.Net;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime;
 using Amazon.Util.Internal;
+using System.Text.RegularExpressions;
 
 namespace Amazon.Util
 {
@@ -50,7 +51,11 @@ namespace Amazon.Util
         internal const int DefaultMaxRetry = 3;
         private const int DefaultConnectionLimit = 50;
         private const int DefaultMaxIdleTime = 50 * 1000; // 50 seconds
-
+#if(BCL || NETSTANDARD)
+        private static readonly Regex CompressWhitespaceRegex = new Regex("\\s+", RegexOptions.Compiled);
+#else
+        private static readonly Regex CompressWhitespaceRegex = new Regex("\\s+");
+#endif
         public static readonly DateTime EPOCH_START = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 
         public const int DefaultBufferSize = 8192;
@@ -1052,8 +1057,17 @@ namespace Amazon.Util
 #endif
         }
 
+        /// <summary>
+        /// Utility method that accepts a string and replaces white spaces with a space.
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public static string CompressSpaces(string data)
+        {
+            return data == null ? data : CompressWhitespaceRegex.Replace(data, " ");
+        }
+
         #endregion
-        
     }
 
     public class JitteredDelay

@@ -51,6 +51,7 @@ namespace Amazon.Runtime.Internal.Settings
         public const string AuthenticationTypeField = "AuthenticationType";
         public const string SourceProfileField = "SourceProfile";
         public const string CredentialSourceField = "CredentialSource";
+        public const string CredentialProcess = "credential_process";
 
         // present in endpoint definitions in SAMLEndpoints.json file
         public const string EndpointField = "Endpoint";

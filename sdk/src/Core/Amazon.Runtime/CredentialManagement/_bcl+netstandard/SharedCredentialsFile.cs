@@ -12,7 +12,6 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using Amazon.Runtime.Internal;
 using Amazon.Runtime.CredentialManagement.Internal;
 using Amazon.Runtime.Internal.Util;
 using System;
@@ -20,7 +19,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Diagnostics.CodeAnalysis;
 
 namespace Amazon.Runtime.CredentialManagement
@@ -43,14 +41,16 @@ namespace Amazon.Runtime.CredentialManagement
         private const string ConfigFileName = "config";
         private const string DefaultDirectoryName = ".aws";
         private const string DefaultFileName = "credentials";
+        private const string CredentialProcess = "credential_process";
 
-        private readonly Logger logger = Logger.GetLogger(typeof(SharedCredentialsFile));
+        private readonly Logger _logger = Logger.GetLogger(typeof(SharedCredentialsFile));
 
         private static readonly HashSet<string> ReservedPropertyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
             ToolkitArtifactGuidField,
             RegionField,
-            EndpointDiscoveryEnabledField
+            EndpointDiscoveryEnabledField,
+            CredentialProcess
         };
 
         /// <summary>
@@ -66,7 +66,8 @@ namespace Amazon.Runtime.CredentialManagement
                 CredentialProfileType.AssumeRoleExternalMFA,
                 CredentialProfileType.AssumeRoleMFA,
                 CredentialProfileType.Basic,
-                CredentialProfileType.Session
+                CredentialProfileType.Session,
+                CredentialProfileType.CredentialProcess
             };
 
         private static readonly CredentialProfilePropertyMapping PropertyMapping =
@@ -87,6 +88,7 @@ namespace Amazon.Runtime.CredentialManagement
 #if !NETSTANDARD13
                     { "UserIdentity", null },
 #endif
+                    { "CredentialProcess" , "credential_process" }
                 }
             );
 
@@ -110,8 +112,8 @@ namespace Amazon.Runtime.CredentialManagement
             DefaultFilePath = Path.Combine(DefaultDirectory, DefaultFileName);
         }
 
-        private ProfileIniFile credentialsFile;
-        private ProfileIniFile configFile;
+        private ProfileIniFile _credentialsFile;
+        private ProfileIniFile _configFile;
 
         public string FilePath { get; private set; }
 
@@ -222,8 +224,8 @@ namespace Amazon.Runtime.CredentialManagement
             var profileDictionary = PropertyMapping.CombineProfileParts(
                 profile.Options, ReservedPropertyNames, reservedProperties, profile.Properties);
 
-            credentialsFile.EditSection(profile.Name, new SortedDictionary<string, string>(profileDictionary));
-            credentialsFile.Persist();
+            _credentialsFile.EditSection(profile.Name, new SortedDictionary<string, string>(profileDictionary));
+            _credentialsFile.Persist();
             profile.CredentialProfileStore = this;
         }
 
@@ -234,8 +236,8 @@ namespace Amazon.Runtime.CredentialManagement
         public void UnregisterProfile(string profileName)
         {
             Refresh();
-            credentialsFile.DeleteSection(profileName);
-            credentialsFile.Persist();
+            _credentialsFile.DeleteSection(profileName);
+            _credentialsFile.Persist();
         }
 
         /// <summary>
@@ -257,8 +259,8 @@ namespace Amazon.Runtime.CredentialManagement
         public void RenameProfile(string oldProfileName, string newProfileName, bool force)
         {
             Refresh();
-            credentialsFile.RenameSection(oldProfileName, newProfileName, force);
-            credentialsFile.Persist();
+            _credentialsFile.RenameSection(oldProfileName, newProfileName, force);
+            _credentialsFile.Persist();
         }
 
         /// <summary>
@@ -281,31 +283,31 @@ namespace Amazon.Runtime.CredentialManagement
         {
             Refresh();
             // Do the copy but make sure to replace the toolkitArtifactGuid with a new one, if it's there.
-            credentialsFile.CopySection(fromProfileName, toProfileName,
+            _credentialsFile.CopySection(fromProfileName, toProfileName,
                 new Dictionary<string, string> { {ToolkitArtifactGuidField, Guid.NewGuid().ToString()} }, force);
-            credentialsFile.Persist();
+            _credentialsFile.Persist();
         }
 
         private void Refresh()
         {
-            credentialsFile = new ProfileIniFile(FilePath,false);
+            _credentialsFile = new ProfileIniFile(FilePath,false);
 
             // If a config file exists in the same location as the credentials file
             // load it for use as a read-only source of profile properties.
             var configPath = Path.Combine(Path.GetDirectoryName(FilePath), ConfigFileName);
             if (File.Exists(configPath))
             {
-                configFile = new ProfileIniFile(configPath,true);
+                _configFile = new ProfileIniFile(configPath,true);
             }
         }
 
         private HashSet<string> ListAllProfileNames()
         {
-            var profileNames = credentialsFile.ListSectionNames();
+            var profileNames = _credentialsFile.ListSectionNames();
             
-            if (configFile != null)
+            if (_configFile != null)
             {
-                profileNames.UnionWith(configFile.ListSectionNames());
+                profileNames.UnionWith(_configFile.ListSectionNames());
             }
             return profileNames;
         }
@@ -371,18 +373,17 @@ namespace Amazon.Runtime.CredentialManagement
 
                 if (!IsSupportedProfileType(profile.ProfileType))
                 {
-                    logger.InfoFormat("The profile type {0} is not supported by SharedCredentialsFile.", profile.ProfileType);
+                    _logger.InfoFormat("The profile type {0} is not supported by SharedCredentialsFile.", profile.ProfileType);
                     profile = null;
                     return false;
                 }
 
                 return true;
+
             }
-            else
-            {
-                profile = null;
-                return false;
-            }
+
+            profile = null;
+            return false;
         }
 
         /// <summary>
@@ -396,13 +397,12 @@ namespace Amazon.Runtime.CredentialManagement
         {
             Dictionary<string, string> credentialsProperties = null;
             Dictionary<string, string> configProperties = null;
-            bool hasCredentialsProperties = false;
-            hasCredentialsProperties = credentialsFile.TryGetSection(sectionName, out credentialsProperties);
+            var hasCredentialsProperties = _credentialsFile.TryGetSection(sectionName, out credentialsProperties);
            
-            bool hasConfigProperties = false;
-            if (configFile != null)
+            var hasConfigProperties = false;
+            if (_configFile != null)
             {
-                hasConfigProperties = configFile.TryGetSection(sectionName, out configProperties);
+                hasConfigProperties = _configFile.TryGetSection(sectionName, out configProperties);
             }
 
             if (hasConfigProperties)
@@ -421,11 +421,9 @@ namespace Amazon.Runtime.CredentialManagement
                 }
                 return true;
             }
-            else
-            {
-                iniProperties = credentialsProperties;
-                return hasCredentialsProperties;
-            }
+
+            iniProperties = credentialsProperties;
+            return hasCredentialsProperties;
         }
 
         private static bool IsSupportedProfileType(CredentialProfileType? profileType)

@@ -94,6 +94,11 @@ namespace Amazon.Runtime.CredentialManagement
         /// </summary>
         public string UserIdentity { get; set; }
 #endif
+        /// <summary>
+        /// Contains the executable information to be used by the process credential retriever
+        /// to either fetch Basic or Session credentials
+        /// </summary>
+        public string CredentialProcess { get; set; }
 
         /// <summary>
         /// Return true the properties are all null or empty, false otherwise.
@@ -113,8 +118,8 @@ namespace Amazon.Runtime.CredentialManagement
                     string.IsNullOrEmpty(RoleArn) &&
                     string.IsNullOrEmpty(SecretKey) &&
                     string.IsNullOrEmpty(SourceProfile) &&
-                    string.IsNullOrEmpty(Token);
-;
+                    string.IsNullOrEmpty(Token) &&
+                    string.IsNullOrEmpty(CredentialProcess);
             }
         }
         public override string ToString()
@@ -133,6 +138,7 @@ namespace Amazon.Runtime.CredentialManagement
 #if !NETSTANDARD13
                 ", " + "UserIdentity=" + UserIdentity +
 #endif
+                ", " + "CredentialProcess=" + CredentialProcess +
                 "]";
         }
 

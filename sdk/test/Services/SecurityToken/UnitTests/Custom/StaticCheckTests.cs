@@ -45,7 +45,7 @@ namespace AWSSDK.UnitTests
         {
             AssertExtensions.AssertEnumUnchanged(
                 typeof(CredentialProfileType),
-                "A55DBF1077524CA7DD4CBD8CF45D5B5C2474B1918D99174AC9D20D374C60CCEC",
+                "E14AB39DDAC5DB51CC8C5ECD2D42206DB38414F5CA215A1C595F07F40E1883EF",
                 "The AWSCredentialsFactory.GetAWSCredentials method implementation may need to be updated.");
         }
 

@@ -29,10 +29,10 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         private static readonly HashSet<string> TypePropertySet =
             new HashSet<string>(typeof(CredentialProfileOptions).GetProperties().Select((p) => p.Name), StringComparer.OrdinalIgnoreCase);
 
-        private static readonly PropertyInfo[] credentialProfileReflectionProperties = typeof(CredentialProfileOptions).GetProperties();
+        private static readonly PropertyInfo[] CredentialProfileReflectionProperties = typeof(CredentialProfileOptions).GetProperties();
 
-        private Dictionary<string, string> nameMapping;
-        private HashSet<string> mappedNames;
+        private readonly Dictionary<string, string> _nameMapping;
+        private readonly HashSet<string> _mappedNames;
 
         public CredentialProfilePropertyMapping(Dictionary<string, string> nameMapping)
         {
@@ -41,8 +41,8 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                 throw new ArgumentException("The nameMapping Dictionary must contain a name mapping for each ProfileOptions property, and no additional keys.");
             }
 
-            this.nameMapping = nameMapping;
-            mappedNames = new HashSet<string>(nameMapping.Values.Where(v => !string.IsNullOrEmpty(v)), StringComparer.OrdinalIgnoreCase);
+            this._nameMapping = nameMapping;
+            _mappedNames = new HashSet<string>(nameMapping.Values.Where(v => !string.IsNullOrEmpty(v)), StringComparer.OrdinalIgnoreCase);
         }
 
         /// <summary>
@@ -82,10 +82,10 @@ namespace Amazon.Runtime.CredentialManagement.Internal
 
             // userProperties -= profileOptions
             profileOptions = new CredentialProfileOptions();
-            foreach (var reflectionProperty in credentialProfileReflectionProperties)
+            foreach (var reflectionProperty in CredentialProfileReflectionProperties)
             {
                 string value = null;
-                var mappedName = nameMapping[reflectionProperty.Name];
+                var mappedName = _nameMapping[reflectionProperty.Name];
                 if (mappedName != null)
                 {
                     if (userProperties.TryGetValue(mappedName, out value))
@@ -176,7 +176,7 @@ namespace Amazon.Runtime.CredentialManagement.Internal
             {
                 foreach (var key in userProperties.Keys)
                 {
-                    if (mappedNames.Contains(key, StringComparer.OrdinalIgnoreCase))
+                    if (_mappedNames.Contains(key, StringComparer.OrdinalIgnoreCase))
                     {
                         throw new ArgumentException("The profile properties dictionary cannot contain a key named " + key +
                             " because it is in the name mapping dictionary.");
@@ -203,9 +203,9 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                     if (string.IsNullOrEmpty(value))
                         value = null;
 
-                    if (nameMapping[property.Name] != null)
+                    if (_nameMapping[property.Name] != null)
                     {
-                        dictionary.Add(nameMapping[property.Name], value);
+                        dictionary.Add(_nameMapping[property.Name], value);
                     }
                 }
             }

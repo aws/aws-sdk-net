@@ -15,6 +15,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 
 using Amazon.Util;
@@ -444,7 +445,7 @@ namespace ThirdParty.Json.LitJson
 
                 AddObjectMetadata (value_type);
                 ObjectMetadata t_data = object_metadata[value_type];
-
+                
                 instance = Activator.CreateInstance (value_type);
 
                 while (true) {
@@ -454,7 +455,7 @@ namespace ThirdParty.Json.LitJson
                         break;
 
                     string property = (string) reader.Value;
-
+                    
                     if (t_data.Properties.ContainsKey (property)) {
                         PropertyMetadata prop_data =
                             t_data.Properties[property];
@@ -490,7 +491,25 @@ namespace ThirdParty.Json.LitJson
 
             }
 
+            ValidateRequiredFields(instance, inst_type);
             return instance;
+        }
+
+        private static void ValidateRequiredFields(object instance, Type inst_type)
+        {
+            var typeInfo = TypeFactory.GetTypeInfo(inst_type);
+            foreach (var prop in typeInfo.GetProperties())
+            {
+                var customAttributes = prop.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
+                if (!customAttributes.Any()) continue;
+                var jsonAttributeVal = (JsonPropertyAttribute)customAttributes.First();
+                if (typeInfo.GetProperty(prop.Name).GetValue(instance, null) == null &&
+                    jsonAttributeVal.Required)
+                {
+                    throw new JsonException ($"The type {instance.GetType()} doesn't have the required " +
+                                             $"property '{prop}' set");
+                }
+            }
         }
 
         private static IJsonWrapper ReadValue (WrapperFactory factory,
@@ -989,5 +1008,11 @@ namespace ThirdParty.Json.LitJson
         {
             custom_importers_table.Clear ();
         }
+    }
+    
+    [AttributeUsage(AttributeTargets.Property)]
+    public class JsonPropertyAttribute: Attribute
+    {
+        public bool Required { get; set; }
     }
 }

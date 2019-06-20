@@ -250,6 +250,9 @@ namespace Amazon.Runtime.CredentialManagement
                             return ThrowOrReturnNull("Federated credentials are not available on this platform.", null, throwIfInvalid);
                         }
 #endif
+                    case CredentialProfileType.CredentialProcess:
+                        return new ProcessAWSCredentials(options.CredentialProcess);
+
                     default:
                         var defaultMessage = profileName == null
                             ? string.Format(CultureInfo.InvariantCulture,

@@ -48,6 +48,9 @@ namespace AWSSDK.UnitTests
             .AppendLine("aws_access_key_id=other2_aws_access_key_id")
             .AppendLine("aws_secret_access_key=other2_aws_secret_access_key")
             .AppendLine("endpoint_discovery_enabled=true")
+            .AppendLine("[processCredential]")
+            .AppendLine("region=us-west-1")
+            .AppendLine($"credential_process = {ProcessAWSCredentialsTest.Executable} {ProcessAWSCredentialsTest.ArgumentsBasic} {ProcessAWSCredentialsTest.ValidVersionNumber}")
             .ToString();
 
         [TestMethod]
@@ -93,6 +96,21 @@ namespace AWSSDK.UnitTests
                 Assert.IsTrue(enabled.Value);
             }
         }
+        
+        [TestMethod]
+        public void TestProcessCredentialProfile()
+        {
+            using (new FallbackFactoryTestFixture(ProfileText, "processCredential"))
+            {
+                var credentials = FallbackCredentialsFactory.GetCredentials().GetCredentials();
+                Assert.AreEqual(ProcessAWSCredentialsTest.ActualAccessKey, credentials.AccessKey);
+                Assert.AreEqual(ProcessAWSCredentialsTest.ActualSecretKey, credentials.SecretKey);
+                
+                var region = FallbackRegionFactory.GetRegionEndpoint(false);
+                Assert.AreEqual(RegionEndpoint.USWest1, region);
+            }
+        }
+
 
         [TestMethod]
         public void TestEnableEndpointDiscoveryEnvVariable()

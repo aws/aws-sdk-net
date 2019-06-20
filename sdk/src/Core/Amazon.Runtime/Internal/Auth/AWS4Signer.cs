@@ -48,7 +48,6 @@ namespace Amazon.Runtime.Internal.Auth
 
         public const string UnsignedPayload = "UNSIGNED-PAYLOAD";
 
-        static readonly Regex CompressWhitespaceRegex = new Regex("\\s+");
         const SigningAlgorithm SignerAlgorithm = SigningAlgorithm.HmacSHA256;
 
         private static IEnumerable<string> _headersToIgnoreWhenSigning = new HashSet<string>(StringComparer.OrdinalIgnoreCase) {
@@ -667,7 +666,7 @@ namespace Amazon.Runtime.Internal.Auth
                 {
                     builder.Append(entry.Key.ToLowerInvariant());
                     builder.Append(":");
-                    builder.Append(CompressSpaces(entry.Value));
+                    builder.Append(AWSSDKUtils.CompressSpaces(entry.Value));
                     builder.Append("\n");
                 }
                 
@@ -679,7 +678,7 @@ namespace Amazon.Runtime.Internal.Auth
             {
                 builder.Append(entry.Key.ToLowerInvariant());
                 builder.Append(":");
-                builder.Append(CompressSpaces(entry.Value));
+                builder.Append(AWSSDKUtils.CompressSpaces(entry.Value));
                 builder.Append("\n");
             }
             return builder.ToString();
@@ -856,15 +855,6 @@ namespace Amazon.Runtime.Internal.Auth
             }
 
             return canonicalQueryString.ToString();
-        }
-
-        static string CompressSpaces(string data)
-        {
-            if (data == null || !data.Contains(" "))
-                return data;
-
-            var compressed = CompressWhitespaceRegex.Replace(data, " ");
-            return compressed;
         }
 
         /// <summary>

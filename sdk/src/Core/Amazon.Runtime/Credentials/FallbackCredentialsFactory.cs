@@ -32,7 +32,7 @@ namespace Amazon.Runtime
         internal const string AWS_PROFILE_ENVIRONMENT_VARIABLE = "AWS_PROFILE";
         internal const string DefaultProfileName = "default";
 
-        private static CredentialProfileStoreChain credentialProfileChain = new CredentialProfileStoreChain();
+        private static readonly CredentialProfileStoreChain credentialProfileChain = new CredentialProfileStoreChain();
 #endif
 
         static FallbackCredentialsFactory()
@@ -68,15 +68,12 @@ namespace Amazon.Runtime
 #if BCL || NETSTANDARD
         private static AWSCredentials GetAWSCredentials(ICredentialProfileSource source)
         {
-            var profileName = Environment.GetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE);
-            if (profileName == null)
-                profileName = DefaultProfileName;
+            var profileName = Environment.GetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE) ?? DefaultProfileName;
 
             CredentialProfile profile;
             if (source.TryGetProfile(profileName, out profile))
                 return profile.GetAWSCredentials(source, true);
-            else
-                throw new AmazonClientException("Unable to find the '" + profileName + "' profile in CredentialProfileStoreChain.");
+            throw new AmazonClientException("Unable to find the '" + profileName + "' profile in CredentialProfileStoreChain.");
         }
 
         /// If AWS_CONTAINER_CREDENTIALS_RELATIVE_URI environment variable is set, we want to attempt to retrieve credentials
@@ -125,6 +122,18 @@ namespace Amazon.Runtime
                 {
                     cachedCredentials = generator();
                 }
+#if BCL || NETSTANDARD
+                // Breaking the FallbackCredentialFactory chain in case a ProcessAWSCredentialException exception 
+                // is encountered. ProcessAWSCredentialException is thrown by the ProcessAWSCredential provider
+                // when an exception is encountered when running a user provided process to obtain Basic/Session 
+                // credentials. The motivation behind this is that, if the user has provided a process to be run
+                // he expects to use the credentials obtained by running the process. Therefore the exception is
+                // surfaced to the user.
+                catch (ProcessAWSCredentialException)
+                {
+                    throw;
+                }
+#endif
                 catch (Exception e)
                 {
                     cachedCredentials = null;
