@@ -92,6 +92,12 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SigningAlgorithm);
                 }
 
+                if(publicRequest.IsSetTemplateArn())
+                {
+                    context.Writer.WritePropertyName("TemplateArn");
+                    context.Writer.Write(publicRequest.TemplateArn);
+                }
+
                 if(publicRequest.IsSetValidity())
                 {
                     context.Writer.WritePropertyName("Validity");

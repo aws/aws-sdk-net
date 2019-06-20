@@ -28,12 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ACMPCA.Model
 {
     /// <summary>
-    /// Permissions designate which private CA operations can be performed by an AWS service
+    /// Permissions designate which private CA actions can be performed by an AWS service
     /// or entity. In order for ACM to automatically renew private certificates, you must
     /// give the ACM service principal all available permissions (<code>IssueCertificate</code>,
     /// <code>GetCertificate</code>, and <code>ListPermissions</code>). Permissions can be
-    /// assigned with the <a>CreatePermission</a> operation, removed with the <a>DeletePermission</a>
-    /// operation, and listed with the <a>ListPermissions</a> operation.
+    /// assigned with the <a>CreatePermission</a> action, removed with the <a>DeletePermission</a>
+    /// action, and listed with the <a>ListPermissions</a> action.
     /// </summary>
     public partial class Permission
     {
@@ -47,7 +47,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property Actions. 
         /// <para>
-        /// The private CA operations that can be performed by the designated AWS service.
+        /// The private CA actions that can be performed by the designated AWS service.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3)]

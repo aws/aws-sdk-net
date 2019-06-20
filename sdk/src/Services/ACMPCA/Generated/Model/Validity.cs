@@ -30,7 +30,7 @@ namespace Amazon.ACMPCA.Model
     /// <summary>
     /// Length of time for which the certificate issued by your private certificate authority
     /// (CA), or by the private CA itself, is valid in days, months, or years. You can issue
-    /// a certificate by calling the <a>IssueCertificate</a> operation.
+    /// a certificate by calling the <a>IssueCertificate</a> action.
     /// </summary>
     public partial class Validity
     {

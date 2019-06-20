@@ -29,14 +29,14 @@ namespace Amazon.ACMPCA.Model
 {
     /// <summary>
     /// Container for the parameters to the IssueCertificate operation.
-    /// Uses your private certificate authority (CA) to issue a client certificate. This operation
+    /// Uses your private certificate authority (CA) to issue a client certificate. This action
     /// returns the Amazon Resource Name (ARN) of the certificate. You can retrieve the certificate
-    /// by calling the <a>GetCertificate</a> operation and specifying the ARN. 
+    /// by calling the <a>GetCertificate</a> action and specifying the ARN. 
     /// 
     ///  <note> 
     /// <para>
-    /// You cannot use the ACM <b>ListCertificateAuthorities</b> operation to retrieve the
-    /// ARNs of the certificates that you issue by using ACM PCA.
+    /// You cannot use the ACM <b>ListCertificateAuthorities</b> action to retrieve the ARNs
+    /// of the certificates that you issue by using ACM Private CA.
     /// </para>
     ///  </note>
     /// </summary>
@@ -46,6 +46,7 @@ namespace Amazon.ACMPCA.Model
         private MemoryStream _csr;
         private string _idempotencyToken;
         private SigningAlgorithm _signingAlgorithm;
+        private string _templateArn;
         private Validity _validity;
 
         /// <summary>
@@ -113,8 +114,8 @@ namespace Amazon.ACMPCA.Model
         /// Gets and sets the property IdempotencyToken. 
         /// <para>
         /// Custom string that can be used to distinguish between calls to the <b>IssueCertificate</b>
-        /// operation. Idempotency tokens time out after one hour. Therefore, if you call <b>IssueCertificate</b>
-        /// multiple times with the same idempotency token within 5 minutes, ACM PCA recognizes
+        /// action. Idempotency tokens time out after one hour. Therefore, if you call <b>IssueCertificate</b>
+        /// multiple times with the same idempotency token within 5 minutes, ACM Private CA recognizes
         /// that you are requesting only one certificate and will issue only one. If you change
         /// the idempotency token for each call, PCA recognizes that you are requesting multiple
         /// certificates.
@@ -150,6 +151,61 @@ namespace Amazon.ACMPCA.Model
         internal bool IsSetSigningAlgorithm()
         {
             return this._signingAlgorithm != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateArn. 
+        /// <para>
+        /// Specifies a custom configuration template to use when issuing a certificate. If this
+        /// parameter is not provided, ACM Private CA defaults to the <code>EndEntityCertificate/V1</code>
+        /// template.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following service-owned <code>TemplateArn</code> values are supported by ACM Private
+        /// CA: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// arn:aws:acm-pca:::template/EndEntityCertificate/V1
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen0/V1
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen1/V1
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen2/V1
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen3/V1
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// arn:aws:acm-pca:::template/RootCACertificate/V1
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Using
+        /// Templates</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5, Max=200)]
+        public string TemplateArn
+        {
+            get { return this._templateArn; }
+            set { this._templateArn = value; }
+        }
+
+        // Check to see if TemplateArn property is set
+        internal bool IsSetTemplateArn()
+        {
+            return this._templateArn != null;
         }
 
         /// <summary>

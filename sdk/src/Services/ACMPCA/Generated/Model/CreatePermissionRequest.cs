@@ -39,8 +39,8 @@ namespace Amazon.ACMPCA.Model
     ///  
     /// <para>
     /// At this time, you can only assign permissions to ACM (<code>acm.amazonaws.com</code>).
-    /// Permissions can be revoked with the <a>DeletePermission</a> operation and listed with
-    /// the <a>ListPermissions</a> operation.
+    /// Permissions can be revoked with the <a>DeletePermission</a> action and listed with
+    /// the <a>ListPermissions</a> action.
     /// </para>
     /// </summary>
     public partial class CreatePermissionRequest : AmazonACMPCARequest
@@ -74,8 +74,8 @@ namespace Amazon.ACMPCA.Model
         /// Gets and sets the property CertificateAuthorityArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the CA that grants the permissions. You can find
-        /// the ARN by calling the <a>ListCertificateAuthorities</a> operation. This must have
-        /// the following form: 
+        /// the ARN by calling the <a>ListCertificateAuthorities</a> action. This must have the
+        /// following form: 
         /// </para>
         ///  
         /// <para>

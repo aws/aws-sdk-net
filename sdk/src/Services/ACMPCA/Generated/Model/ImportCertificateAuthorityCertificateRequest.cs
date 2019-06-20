@@ -29,30 +29,58 @@ namespace Amazon.ACMPCA.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportCertificateAuthorityCertificate operation.
-    /// Imports your signed private CA certificate into ACM PCA. Before you can call this
-    /// operation, you must create the private certificate authority by calling the <a>CreateCertificateAuthority</a>
-    /// operation. You must then generate a certificate signing request (CSR) by calling the
-    /// <a>GetCertificateAuthorityCsr</a> operation. Take the CSR to your on-premises CA and
-    /// use the root certificate or a subordinate certificate to sign it. Create a certificate
-    /// chain and copy the signed certificate and the certificate chain to your working directory.
+    /// Imports a signed private CA certificate into ACM Private CA. This action is used when
+    /// you are using a chain of trust whose root is located outside ACM Private CA. Before
+    /// you can call this action, the following preparations must in place:
     /// 
-    /// 
-    ///  <note> 
+    ///  <ol> <li> 
+    /// <para>
+    /// In ACM Private CA, call the <a>CreateCertificateAuthority</a> action to create the
+    /// private CA that that you plan to back with the imported certificate.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Call the <a>GetCertificateAuthorityCsr</a> action to generate a certificate signing
+    /// request (CSR).
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Sign the CSR using a root or intermediate CA hosted either by an on-premises PKI hierarchy
+    /// or a commercial CA..
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Create a certificate chain and copy the signed certificate and the certificate chain
+    /// to your working directory.
+    /// </para>
+    ///  </li> </ol> 
+    /// <para>
+    /// The following requirements apply when you import a CA certificate.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// You cannot import a non-self-signed certificate for use as a root CA.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You cannot import a self-signed certificate for use as a subordinate CA.
+    /// </para>
+    ///  </li> <li> 
     /// <para>
     /// Your certificate chain must not include the private CA certificate that you are importing.
     /// </para>
-    ///  </note> <note> 
+    ///  </li> <li> 
     /// <para>
-    /// Your on-premises CA certificate must be the last certificate in your chain. The subordinate
-    /// certificate, if any, that your root CA signed must be next to last. The subordinate
-    /// certificate signed by the preceding subordinate CA must come next, and so on until
-    /// your chain is built. 
+    /// Your ACM Private CA-hosted or on-premises CA certificate must be the last certificate
+    /// in your chain. The subordinate certificate, if any, that your root CA signed must
+    /// be next to last. The subordinate certificate signed by the preceding subordinate CA
+    /// must come next, and so on until your chain is built. 
     /// </para>
-    ///  </note> <note> 
+    ///  </li> <li> 
     /// <para>
     /// The chain must be PEM-encoded.
     /// </para>
-    ///  </note>
+    ///  </li> </ul>
     /// </summary>
     public partial class ImportCertificateAuthorityCertificateRequest : AmazonACMPCARequest
     {
@@ -63,8 +91,8 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property Certificate. 
         /// <para>
-        /// The PEM-encoded certificate for your private CA. This must be signed by using your
-        /// on-premises CA.
+        /// The PEM-encoded certificate for a private CA. This may be a self-signed certificate
+        /// in the case of a root CA, or it may be signed by another CA that you control.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32768)]
@@ -109,12 +137,17 @@ namespace Amazon.ACMPCA.Model
         /// Gets and sets the property CertificateChain. 
         /// <para>
         /// A PEM-encoded file that contains all of your certificates, other than the certificate
-        /// you're importing, chaining up to your root CA. Your on-premises root certificate is
-        /// the last in the chain, and each certificate in the chain signs the one preceding.
-        /// 
+        /// you're importing, chaining up to your root CA. Your ACM Private CA-hosted or on-premises
+        /// root certificate is the last in the chain, and each certificate in the chain signs
+        /// the one preceding. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter must be supplied when you import a subordinate CA. When you import
+        /// a root CA, there is no chain.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=2097152)]
+        [AWSProperty(Min=0, Max=2097152)]
         public MemoryStream CertificateChain
         {
             get { return this._certificateChain; }

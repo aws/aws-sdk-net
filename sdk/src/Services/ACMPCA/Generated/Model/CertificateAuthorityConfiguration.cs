@@ -33,7 +33,7 @@ namespace Amazon.ACMPCA.Model
     /// your private CA creates when it issues a certificate. It also includes the signature
     /// algorithm that it uses when issuing certificates, and its X.500 distinguished name.
     /// You must specify this information when you call the <a>CreateCertificateAuthority</a>
-    /// operation.
+    /// action.
     /// </summary>
     public partial class CertificateAuthorityConfiguration
     {
@@ -44,8 +44,9 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property KeyAlgorithm. 
         /// <para>
-        /// Type of the public key algorithm and size, in bits, of the key pair that your key
-        /// pair creates when it issues a certificate.
+        /// Type of the public key algorithm and size, in bits, of the key pair that your CA creates
+        /// when it issues a certificate. When you create a subordinate CA, you must use a key
+        /// algorithm supported by the parent CA.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

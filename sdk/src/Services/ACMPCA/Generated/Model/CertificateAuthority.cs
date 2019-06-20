@@ -32,11 +32,11 @@ namespace Amazon.ACMPCA.Model
     /// can issue and revoke X.509 digital certificates. Digital certificates verify that
     /// the entity named in the certificate <b>Subject</b> field owns or controls the public
     /// key contained in the <b>Subject Public Key Info</b> field. Call the <a>CreateCertificateAuthority</a>
-    /// operation to create your private CA. You must then call the <a>GetCertificateAuthorityCertificate</a>
-    /// operation to retrieve a private CA certificate signing request (CSR). Take the CSR
-    /// to your on-premises CA and sign it with the root CA certificate or a subordinate certificate.
-    /// Call the <a>ImportCertificateAuthorityCertificate</a> operation to import the signed
-    /// certificate into AWS Certificate Manager (ACM).
+    /// action to create your private CA. You must then call the <a>GetCertificateAuthorityCertificate</a>
+    /// action to retrieve a private CA certificate signing request (CSR). Sign the CSR with
+    /// your ACM Private CA-hosted or on-premises root or subordinate CA certificate. Call
+    /// the <a>ImportCertificateAuthorityCertificate</a> action to import the signed certificate
+    /// into AWS Certificate Manager (ACM).
     /// </summary>
     public partial class CertificateAuthority
     {
@@ -186,7 +186,7 @@ namespace Amazon.ACMPCA.Model
         /// <para>
         /// The period during which a deleted CA can be restored. For more information, see the
         /// <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a>
-        /// operation. 
+        /// action. 
         /// </para>
         /// </summary>
         public DateTime RestorableUntil

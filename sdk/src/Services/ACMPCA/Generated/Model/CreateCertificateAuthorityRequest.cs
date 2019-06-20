@@ -29,15 +29,15 @@ namespace Amazon.ACMPCA.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCertificateAuthority operation.
-    /// Creates a private subordinate certificate authority (CA). You must specify the CA
-    /// configuration, the revocation configuration, the CA type, and an optional idempotency
-    /// token. The CA configuration specifies the name of the algorithm and key size to be
-    /// used to create the CA private key, the type of signing algorithm that the CA uses
-    /// to sign, and X.500 subject information. The CRL (certificate revocation list) configuration
-    /// specifies the CRL expiration period in days (the validity period of the CRL), the
-    /// Amazon S3 bucket that will contain the CRL, and a CNAME alias for the S3 bucket that
-    /// is included in certificates issued by the CA. If successful, this operation returns
-    /// the Amazon Resource Name (ARN) of the CA.
+    /// Creates a root or subordinate private certificate authority (CA). You must specify
+    /// the CA configuration, the certificate revocation list (CRL) configuration, the CA
+    /// type, and an optional idempotency token to avoid accidental creation of multiple CAs.
+    /// The CA configuration specifies the name of the algorithm and key size to be used to
+    /// create the CA private key, the type of signing algorithm that the CA uses, and X.500
+    /// subject information. The CRL configuration specifies the CRL expiration period in
+    /// days (the validity period of the CRL), the Amazon S3 bucket that will contain the
+    /// CRL, and a CNAME alias for the S3 bucket that is included in certificates issued by
+    /// the CA. If successful, this action returns the Amazon Resource Name (ARN) of the CA.
     /// </summary>
     public partial class CreateCertificateAuthorityRequest : AmazonACMPCARequest
     {
@@ -70,7 +70,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property CertificateAuthorityType. 
         /// <para>
-        /// The type of the certificate authority. Currently, this must be <b>SUBORDINATE</b>.
+        /// The type of the certificate authority.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -91,10 +91,10 @@ namespace Amazon.ACMPCA.Model
         /// <para>
         /// Alphanumeric string that can be used to distinguish between calls to <b>CreateCertificateAuthority</b>.
         /// Idempotency tokens time out after five minutes. Therefore, if you call <b>CreateCertificateAuthority</b>
-        /// multiple times with the same idempotency token within a five minute period, ACM PCA
-        /// recognizes that you are requesting only one certificate. As a result, ACM PCA issues
-        /// only one. If you change the idempotency token for each call, however, ACM PCA recognizes
-        /// that you are requesting multiple certificates.
+        /// multiple times with the same idempotency token within a five minute period, ACM Private
+        /// CA recognizes that you are requesting only one certificate. As a result, ACM Private
+        /// CA issues only one. If you change the idempotency token for each call, however, ACM
+        /// Private CA recognizes that you are requesting multiple certificates.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]
@@ -114,10 +114,10 @@ namespace Amazon.ACMPCA.Model
         /// Gets and sets the property RevocationConfiguration. 
         /// <para>
         /// Contains a Boolean value that you can use to enable a certification revocation list
-        /// (CRL) for the CA, the name of the S3 bucket to which ACM PCA will write the CRL, and
-        /// an optional CNAME alias that you can use to hide the name of your bucket in the <b>CRL
-        /// Distribution Points</b> extension of your CA certificate. For more information, see
-        /// the <a>CrlConfiguration</a> structure. 
+        /// (CRL) for the CA, the name of the S3 bucket to which ACM Private CA will write the
+        /// CRL, and an optional CNAME alias that you can use to hide the name of your bucket
+        /// in the <b>CRL Distribution Points</b> extension of your CA certificate. For more information,
+        /// see the <a>CrlConfiguration</a> structure. 
         /// </para>
         /// </summary>
         public RevocationConfiguration RevocationConfiguration
@@ -136,7 +136,12 @@ namespace Amazon.ACMPCA.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// Key-value pairs that will be attached to the new private CA. You can associate up
-        /// to 50 tags with a private CA.
+        /// to 50 tags with a private CA. For information using tags with 
+        /// </para>
+        ///  
+        /// <para>
+        /// IAM to manage permissions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
+        /// Access Using IAM Tags</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

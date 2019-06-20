@@ -35,13 +35,13 @@ namespace Amazon.ACMPCA.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <code>CREATING</code> - ACM PCA is creating your private certificate authority.
+    ///  <code>CREATING</code> - ACM Private CA is creating your private certificate authority.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <code>PENDING_CERTIFICATE</code> - The certificate is pending. You must use your
-    /// on-premises root or subordinate CA to sign your private CA CSR and then import it
-    /// into PCA. 
+    /// ACM Private CA-hosted or on-premises root or subordinate CA to sign your private CA
+    /// CSR and then import it into PCA. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -65,7 +65,7 @@ namespace Amazon.ACMPCA.Model
     /// <para>
     ///  <code>DELETED</code> - Your private CA is within the restoration period, after which
     /// it is permanently deleted. The length of time remaining in the CA's restoration period
-    /// is also included in this operation's output.
+    /// is also included in this action's output.
     /// </para>
     ///  </li> </ul>
     /// </summary>

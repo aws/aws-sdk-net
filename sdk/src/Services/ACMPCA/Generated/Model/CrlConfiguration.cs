@@ -35,7 +35,7 @@ namespace Amazon.ACMPCA.Model
     /// in the <b>S3BucketName</b> parameter. You can hide the name of your bucket by specifying
     /// a value for the <b>CustomCname</b> parameter. Your private CA copies the CNAME or
     /// the S3 bucket name to the <b>CRL Distribution Points</b> extension of each certificate
-    /// it issues. Your S3 bucket policy must give write permission to ACM PCA. 
+    /// it issues. Your S3 bucket policy must give write permission to ACM Private CA. 
     /// 
     ///  
     /// <para>
@@ -114,8 +114,8 @@ namespace Amazon.ACMPCA.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Certificate revocation lists created by ACM PCA are DER-encoded. You can use the following
-    /// OpenSSL command to list a CRL.
+    /// Certificate revocation lists created by ACM Private CA are DER-encoded. You can use
+    /// the following OpenSSL command to list a CRL.
     /// </para>
     ///  
     /// <para>
@@ -155,8 +155,8 @@ namespace Amazon.ACMPCA.Model
         /// <para>
         /// Boolean value that specifies whether certificate revocation lists (CRLs) are enabled.
         /// You can use this value to enable certificate revocation for a new CA when you call
-        /// the <a>CreateCertificateAuthority</a> operation or for an existing CA when you call
-        /// the <a>UpdateCertificateAuthority</a> operation. 
+        /// the <a>CreateCertificateAuthority</a> action or for an existing CA when you call the
+        /// <a>UpdateCertificateAuthority</a> action. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -197,8 +197,8 @@ namespace Amazon.ACMPCA.Model
         /// Name of the S3 bucket that contains the CRL. If you do not provide a value for the
         /// <b>CustomCname</b> argument, the name of your S3 bucket is placed into the <b>CRL
         /// Distribution Points</b> extension of the issued certificate. You can change the name
-        /// of your bucket by calling the <a>UpdateCertificateAuthority</a> operation. You must
-        /// specify a bucket policy that allows ACM PCA to write the CRL to your bucket.
+        /// of your bucket by calling the <a>UpdateCertificateAuthority</a> action. You must specify
+        /// a bucket policy that allows ACM Private CA to write the CRL to your bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=255)]

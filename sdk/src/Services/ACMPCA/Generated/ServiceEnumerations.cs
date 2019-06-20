@@ -259,6 +259,10 @@ namespace Amazon.ACMPCA
     {
 
         /// <summary>
+        /// Constant ROOT for CertificateAuthorityType
+        /// </summary>
+        public static readonly CertificateAuthorityType ROOT = new CertificateAuthorityType("ROOT");
+        /// <summary>
         /// Constant SUBORDINATE for CertificateAuthorityType
         /// </summary>
         public static readonly CertificateAuthorityType SUBORDINATE = new CertificateAuthorityType("SUBORDINATE");

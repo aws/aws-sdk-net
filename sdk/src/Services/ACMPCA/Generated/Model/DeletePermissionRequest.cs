@@ -30,8 +30,8 @@ namespace Amazon.ACMPCA.Model
     /// <summary>
     /// Container for the parameters to the DeletePermission operation.
     /// Revokes permissions that a private CA assigned to a designated AWS service. Permissions
-    /// can be created with the <a>CreatePermission</a> operation and listed with the <a>ListPermissions</a>
-    /// operation.
+    /// can be created with the <a>CreatePermission</a> action and listed with the <a>ListPermissions</a>
+    /// action.
     /// </summary>
     public partial class DeletePermissionRequest : AmazonACMPCARequest
     {
@@ -43,8 +43,8 @@ namespace Amazon.ACMPCA.Model
         /// Gets and sets the property CertificateAuthorityArn. 
         /// <para>
         /// The Amazon Resource Number (ARN) of the private CA that issued the permissions. You
-        /// can find the CA's ARN by calling the <a>ListCertificateAuthorities</a> operation.
-        /// This must have the following form: 
+        /// can find the CA's ARN by calling the <a>ListCertificateAuthorities</a> action. This
+        /// must have the following form: 
         /// </para>
         ///  
         /// <para>
@@ -88,7 +88,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property SourceAccount. 
         /// <para>
-        /// The AWS account that calls this operation.
+        /// The AWS account that calls this action.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]

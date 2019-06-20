@@ -10,13 +10,13 @@
     <property>Amazon.ACMPCA.Model.CreateCertificateAuthorityResponse.CertificateAuthorityArn</property>
     <min>5</min>
     <max>200</max>
-    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.CreateCertificateAuthorityAuditReportRequest.CertificateAuthorityArn</property>
     <min>5</min>
     <max>200</max>
-    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.CreateCertificateAuthorityAuditReportResponse.AuditReportId</property>
@@ -28,7 +28,7 @@
     <property>Amazon.ACMPCA.Model.CreatePermissionRequest.CertificateAuthorityArn</property>
     <min>5</min>
     <max>200</max>
-    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.CreatePermissionRequest.Principal</property>
@@ -46,7 +46,7 @@
     <property>Amazon.ACMPCA.Model.DeleteCertificateAuthorityRequest.CertificateAuthorityArn</property>
     <min>5</min>
     <max>200</max>
-    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.DeleteCertificateAuthorityRequest.PermanentDeletionTimeInDays</property>
@@ -57,7 +57,7 @@
     <property>Amazon.ACMPCA.Model.DeletePermissionRequest.CertificateAuthorityArn</property>
     <min>5</min>
     <max>200</max>
-    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.DeletePermissionRequest.Principal</property>
@@ -75,7 +75,7 @@
     <property>Amazon.ACMPCA.Model.DescribeCertificateAuthorityRequest.CertificateAuthorityArn</property>
     <min>5</min>
     <max>200</max>
-    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.DescribeCertificateAuthorityAuditReportRequest.AuditReportId</property>
@@ -87,31 +87,31 @@
     <property>Amazon.ACMPCA.Model.DescribeCertificateAuthorityAuditReportRequest.CertificateAuthorityArn</property>
     <min>5</min>
     <max>200</max>
-    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.GetCertificateRequest.CertificateArn</property>
     <min>5</min>
     <max>200</max>
-    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.GetCertificateRequest.CertificateAuthorityArn</property>
     <min>5</min>
     <max>200</max>
-    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.GetCertificateAuthorityCertificateRequest.CertificateAuthorityArn</property>
     <min>5</min>
     <max>200</max>
-    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.GetCertificateAuthorityCsrRequest.CertificateAuthorityArn</property>
     <min>5</min>
     <max>200</max>
-    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.ImportCertificateAuthorityCertificateRequest.Certificate</property>
@@ -122,7 +122,7 @@
     <property>Amazon.ACMPCA.Model.ImportCertificateAuthorityCertificateRequest.CertificateAuthorityArn</property>
     <min>5</min>
     <max>200</max>
-    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.ImportCertificateAuthorityCertificateRequest.CertificateChain</property>
@@ -133,7 +133,7 @@
     <property>Amazon.ACMPCA.Model.IssueCertificateRequest.CertificateAuthorityArn</property>
     <min>5</min>
     <max>200</max>
-    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.IssueCertificateRequest.Csr</property>
@@ -147,10 +147,16 @@
     <pattern>[\u0009\u000A\u000D\u0020-\u00FF]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ACMPCA.Model.IssueCertificateRequest.TemplateArn</property>
+    <min>5</min>
+    <max>200</max>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ACMPCA.Model.IssueCertificateResponse.CertificateArn</property>
     <min>5</min>
     <max>200</max>
-    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.ListCertificateAuthoritiesRequest.MaxResults</property>
@@ -171,7 +177,7 @@
     <property>Amazon.ACMPCA.Model.ListPermissionsRequest.CertificateAuthorityArn</property>
     <min>5</min>
     <max>200</max>
-    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.ListPermissionsRequest.MaxResults</property>
@@ -192,7 +198,7 @@
     <property>Amazon.ACMPCA.Model.ListTagsRequest.CertificateAuthorityArn</property>
     <min>5</min>
     <max>200</max>
-    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.ListTagsRequest.MaxResults</property>
@@ -213,13 +219,13 @@
     <property>Amazon.ACMPCA.Model.RestoreCertificateAuthorityRequest.CertificateAuthorityArn</property>
     <min>5</min>
     <max>200</max>
-    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.RevokeCertificateRequest.CertificateAuthorityArn</property>
     <min>5</min>
     <max>200</max>
-    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.RevokeCertificateRequest.CertificateSerial</property>
@@ -230,19 +236,19 @@
     <property>Amazon.ACMPCA.Model.TagCertificateAuthorityRequest.CertificateAuthorityArn</property>
     <min>5</min>
     <max>200</max>
-    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.UntagCertificateAuthorityRequest.CertificateAuthorityArn</property>
     <min>5</min>
     <max>200</max>
-    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.UpdateCertificateAuthorityRequest.CertificateAuthorityArn</property>
     <min>5</min>
     <max>200</max>
-    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.ASN1Subject.CommonName</property>
@@ -318,7 +324,7 @@
     <property>Amazon.ACMPCA.Model.CertificateAuthority.Arn</property>
     <min>5</min>
     <max>200</max>
-    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.CrlConfiguration.CustomCname</property>
@@ -339,7 +345,7 @@
     <property>Amazon.ACMPCA.Model.Permission.CertificateAuthorityArn</property>
     <min>5</min>
     <max>200</max>
-    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.Tag.Key</property>

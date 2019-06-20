@@ -30,7 +30,7 @@ namespace Amazon.ACMPCA.Model
     /// <summary>
     /// Container for the parameters to the ListCertificateAuthorities operation.
     /// Lists the private certificate authorities that you created by using the <a>CreateCertificateAuthority</a>
-    /// operation.
+    /// action.
     /// </summary>
     public partial class ListCertificateAuthoritiesRequest : AmazonACMPCARequest
     {

@@ -31,17 +31,17 @@ namespace Amazon.ACMPCA.Model
     /// Container for the parameters to the RestoreCertificateAuthority operation.
     /// Restores a certificate authority (CA) that is in the <code>DELETED</code> state. You
     /// can restore a CA during the period that you defined in the <b>PermanentDeletionTimeInDays</b>
-    /// parameter of the <a>DeleteCertificateAuthority</a> operation. Currently, you can specify
+    /// parameter of the <a>DeleteCertificateAuthority</a> action. Currently, you can specify
     /// 7 to 30 days. If you did not specify a <b>PermanentDeletionTimeInDays</b> value, by
     /// default you can restore the CA at any time in a 30 day period. You can check the time
     /// remaining in the restoration period of a private CA in the <code>DELETED</code> state
     /// by calling the <a>DescribeCertificateAuthority</a> or <a>ListCertificateAuthorities</a>
-    /// operations. The status of a restored CA is set to its pre-deletion status when the
-    /// <b>RestoreCertificateAuthority</b> operation returns. To change its status to <code>ACTIVE</code>,
-    /// call the <a>UpdateCertificateAuthority</a> operation. If the private CA was in the
-    /// <code>PENDING_CERTIFICATE</code> state at deletion, you must use the <a>ImportCertificateAuthorityCertificate</a>
-    /// operation to import a certificate authority into the private CA before it can be activated.
-    /// You cannot restore a CA after the restoration period has ended.
+    /// actions. The status of a restored CA is set to its pre-deletion status when the <b>RestoreCertificateAuthority</b>
+    /// action returns. To change its status to <code>ACTIVE</code>, call the <a>UpdateCertificateAuthority</a>
+    /// action. If the private CA was in the <code>PENDING_CERTIFICATE</code> state at deletion,
+    /// you must use the <a>ImportCertificateAuthorityCertificate</a> action to import a certificate
+    /// authority into the private CA before it can be activated. You cannot restore a CA
+    /// after the restoration period has ended.
     /// </summary>
     public partial class RestoreCertificateAuthorityRequest : AmazonACMPCARequest
     {
@@ -51,7 +51,7 @@ namespace Amazon.ACMPCA.Model
         /// Gets and sets the property CertificateAuthorityArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a>
-        /// operation. This must be of the form: 
+        /// action. This must be of the form: 
         /// </para>
         ///  
         /// <para>

@@ -29,46 +29,22 @@ namespace Amazon.ACMPCA
     /// <summary>
     /// Interface for accessing ACMPCA
     ///
-    /// You can use the ACM PCA API to create a private certificate authority (CA). You must
-    /// first call the <a>CreateCertificateAuthority</a> operation. If successful, the operation
-    /// returns an Amazon Resource Name (ARN) for your private CA. Use this ARN as input to
-    /// the <a>GetCertificateAuthorityCsr</a> operation to retrieve the certificate signing
-    /// request (CSR) for your private CA certificate. Sign the CSR using the root or an intermediate
-    /// CA in your on-premises PKI hierarchy, and call the <a>ImportCertificateAuthorityCertificate</a>
-    /// to import your signed private CA certificate into ACM PCA. 
+    /// This is the <i>ACM Private CA API Reference</i>. It provides descriptions, syntax,
+    /// and usage examples for each of the actions and data types involved in creating and
+    /// managing private certificate authorities (CA) for your organization.
     /// 
     ///  
     /// <para>
-    /// Use your private CA to issue and revoke certificates. These are private certificates
-    /// that identify and secure client computers, servers, applications, services, devices,
-    /// and users over SSLS/TLS connections within your organization. Call the <a>IssueCertificate</a>
-    /// operation to issue a certificate. Call the <a>RevokeCertificate</a> operation to revoke
-    /// a certificate. 
+    /// The documentation for each action shows the Query API request parameters and the XML
+    /// response. Alternatively, you can use one of the AWS SDKs to access an API that's tailored
+    /// to the programming language or platform that you're using. For more information, see
+    /// <a href="https://aws.amazon.com/tools/#SDKs">AWS SDKs</a>.
     /// </para>
     ///  <note> 
     /// <para>
-    /// Certificates issued by your private CA can be trusted only within your organization,
-    /// not publicly.
-    /// </para>
-    ///  </note> 
-    /// <para>
-    /// Your private CA can optionally create a certificate revocation list (CRL) to track
-    /// the certificates you revoke. To create a CRL, you must specify a <a>RevocationConfiguration</a>
-    /// object when you call the <a>CreateCertificateAuthority</a> operation. ACM PCA writes
-    /// the CRL to an S3 bucket that you specify. You must specify a bucket policy that grants
-    /// ACM PCA write permission. 
-    /// </para>
-    ///  
-    /// <para>
-    /// You can also call the <a>CreateCertificateAuthorityAuditReport</a> to create an optional
-    /// audit report, which enumerates all of the issued, valid, expired, and revoked certificates
-    /// from the CA.
-    /// </para>
-    ///  <note> 
-    /// <para>
-    /// Each ACM PCA API operation has a throttling limit which determines the number of times
-    /// the operation can be called per second. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaLimits.html#PcaLimits-api">API
-    /// Rate Limits in ACM PCA</a> in the ACM PCA user guide.
+    /// Each ACM Private CA API action has a throttling limit which determines the number
+    /// of times the action can be called per second. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaLimits.html#PcaLimits-api">API
+    /// Rate Limits in ACM Private CA</a> in the ACM Private CA user guide.
     /// </para>
     ///  </note>
     /// </summary>
@@ -80,15 +56,15 @@ namespace Amazon.ACMPCA
 
 
         /// <summary>
-        /// Creates a private subordinate certificate authority (CA). You must specify the CA
-        /// configuration, the revocation configuration, the CA type, and an optional idempotency
-        /// token. The CA configuration specifies the name of the algorithm and key size to be
-        /// used to create the CA private key, the type of signing algorithm that the CA uses
-        /// to sign, and X.500 subject information. The CRL (certificate revocation list) configuration
-        /// specifies the CRL expiration period in days (the validity period of the CRL), the
-        /// Amazon S3 bucket that will contain the CRL, and a CNAME alias for the S3 bucket that
-        /// is included in certificates issued by the CA. If successful, this operation returns
-        /// the Amazon Resource Name (ARN) of the CA.
+        /// Creates a root or subordinate private certificate authority (CA). You must specify
+        /// the CA configuration, the certificate revocation list (CRL) configuration, the CA
+        /// type, and an optional idempotency token to avoid accidental creation of multiple CAs.
+        /// The CA configuration specifies the name of the algorithm and key size to be used to
+        /// create the CA private key, the type of signing algorithm that the CA uses, and X.500
+        /// subject information. The CRL configuration specifies the CRL expiration period in
+        /// days (the validity period of the CRL), the Amazon S3 bucket that will contain the
+        /// CRL, and a CNAME alias for the S3 bucket that is included in certificates issued by
+        /// the CA. If successful, this action returns the Amazon Resource Name (ARN) of the CA.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCertificateAuthority service method.</param>
         /// 
@@ -97,15 +73,15 @@ namespace Amazon.ACMPCA
         /// One or more of the specified arguments was not valid.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidPolicyException">
-        /// The S3 bucket policy is not valid. The policy must give ACM PCA rights to read from
-        /// and write to the bucket and find the bucket location.
+        /// The S3 bucket policy is not valid. The policy must give ACM Private CA rights to read
+        /// from and write to the bucket and find the bucket location.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidTagException">
         /// The tag associated with the CA is not valid. The invalid argument is contained in
         /// the message field.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.LimitExceededException">
-        /// An ACM PCA limit has been exceeded. See the exception message returned to determine
+        /// An ACM Private CA limit has been exceeded. See the exception message returned to determine
         /// the limit that was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CreateCertificateAuthority">REST API Reference for CreateCertificateAuthority Operation</seealso>
@@ -145,8 +121,7 @@ namespace Amazon.ACMPCA
         /// <summary>
         /// Creates an audit report that lists every time that your CA private key is used. The
         /// report is saved in the Amazon S3 bucket that you specify on input. The <a>IssueCertificate</a>
-        /// and <a>RevokeCertificate</a> operations use the private key. You can generate a new
-        /// report every 30 minutes.
+        /// and <a>RevokeCertificate</a> actions use the private key.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCertificateAuthorityAuditReport service method.</param>
         /// 
@@ -215,8 +190,8 @@ namespace Amazon.ACMPCA
         ///  
         /// <para>
         /// At this time, you can only assign permissions to ACM (<code>acm.amazonaws.com</code>).
-        /// Permissions can be revoked with the <a>DeletePermission</a> operation and listed with
-        /// the <a>ListPermissions</a> operation.
+        /// Permissions can be revoked with the <a>DeletePermission</a> action and listed with
+        /// the <a>ListPermissions</a> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePermission service method.</param>
@@ -229,7 +204,7 @@ namespace Amazon.ACMPCA
         /// The private CA is in a state during which a report or certificate cannot be generated.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.LimitExceededException">
-        /// An ACM PCA limit has been exceeded. See the exception message returned to determine
+        /// An ACM Private CA limit has been exceeded. See the exception message returned to determine
         /// the limit that was exceeded.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.PermissionAlreadyExistsException">
@@ -277,29 +252,36 @@ namespace Amazon.ACMPCA
 
 
         /// <summary>
-        /// Deletes a private certificate authority (CA). You must provide the ARN (Amazon Resource
-        /// Name) of the private CA that you want to delete. You can find the ARN by calling the
-        /// <a>ListCertificateAuthorities</a> operation. Before you can delete a CA, you must
-        /// disable it. Call the <a>UpdateCertificateAuthority</a> operation and set the <b>CertificateAuthorityStatus</b>
-        /// parameter to <code>DISABLED</code>. 
+        /// Deletes a private certificate authority (CA). You must provide the Amazon Resource
+        /// Name (ARN) of the private CA that you want to delete. You can find the ARN by calling
+        /// the <a>ListCertificateAuthorities</a> action. 
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// Additionally, you can delete a CA if you are waiting for it to be created (the <b>Status</b>
-        /// field of the <a>CertificateAuthority</a> is <code>CREATING</code>). You can also delete
-        /// it if the CA has been created but you haven't yet imported the signed certificate
-        /// (the <b>Status</b> is <code>PENDING_CERTIFICATE</code>) into ACM PCA. 
+        /// Deleting a CA will invalidate other CAs and certificates below it in your CA hierarchy.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Before you can delete a CA that you have created and activated, you must disable it.
+        /// To do this, call the <a>UpdateCertificateAuthority</a> action and set the <b>CertificateAuthorityStatus</b>
+        /// parameter to <code>DISABLED</code>. 
         /// </para>
         ///  
         /// <para>
-        /// If the CA is in one of the previously mentioned states and you call <a>DeleteCertificateAuthority</a>,
-        /// the CA's status changes to <code>DELETED</code>. However, the CA won't be permanently
-        /// deleted until the restoration period has passed. By default, if you do not set the
-        /// <code>PermanentDeletionTimeInDays</code> parameter, the CA remains restorable for
-        /// 30 days. You can set the parameter from 7 to 30 days. The <a>DescribeCertificateAuthority</a>
-        /// operation returns the time remaining in the restoration window of a Private CA in
-        /// the <code>DELETED</code> state. To restore an eligible CA, call the <a>RestoreCertificateAuthority</a>
-        /// operation.
+        /// Additionally, you can delete a CA if you are waiting for it to be created (that is,
+        /// the status of the CA is <code>CREATING</code>). You can also delete it if the CA has
+        /// been created but you haven't yet imported the signed certificate into ACM Private
+        /// CA (that is, the status of the CA is <code>PENDING_CERTIFICATE</code>). 
+        /// </para>
+        ///  
+        /// <para>
+        /// When you successfully call <a>DeleteCertificateAuthority</a>, the CA's status changes
+        /// to <code>DELETED</code>. However, the CA won't be permanently deleted until the restoration
+        /// period has passed. By default, if you do not set the <code>PermanentDeletionTimeInDays</code>
+        /// parameter, the CA remains restorable for 30 days. You can set the parameter from 7
+        /// to 30 days. The <a>DescribeCertificateAuthority</a> action returns the time remaining
+        /// in the restoration window of a private CA in the <code>DELETED</code> state. To restore
+        /// an eligible CA, call the <a>RestoreCertificateAuthority</a> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCertificateAuthority service method.</param>
@@ -354,8 +336,8 @@ namespace Amazon.ACMPCA
 
         /// <summary>
         /// Revokes permissions that a private CA assigned to a designated AWS service. Permissions
-        /// can be created with the <a>CreatePermission</a> operation and listed with the <a>ListPermissions</a>
-        /// operation.
+        /// can be created with the <a>CreatePermission</a> action and listed with the <a>ListPermissions</a>
+        /// action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePermission service method.</param>
         /// 
@@ -414,13 +396,13 @@ namespace Amazon.ACMPCA
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATING</code> - ACM PCA is creating your private certificate authority.
+        ///  <code>CREATING</code> - ACM Private CA is creating your private certificate authority.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>PENDING_CERTIFICATE</code> - The certificate is pending. You must use your
-        /// on-premises root or subordinate CA to sign your private CA CSR and then import it
-        /// into PCA. 
+        /// ACM Private CA-hosted or on-premises root or subordinate CA to sign your private CA
+        /// CSR and then import it into PCA. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -444,7 +426,7 @@ namespace Amazon.ACMPCA
         /// <para>
         ///  <code>DELETED</code> - Your private CA is within the restoration period, after which
         /// it is permanently deleted. The length of time remaining in the CA's restoration period
-        /// is also included in this operation's output.
+        /// is also included in this action's output.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -494,9 +476,9 @@ namespace Amazon.ACMPCA
 
         /// <summary>
         /// Lists information about a specific audit report created by calling the <a>CreateCertificateAuthorityAuditReport</a>
-        /// operation. Audit information is created every time the certificate authority (CA)
-        /// private key is used. The private key is used when you call the <a>IssueCertificate</a>
-        /// operation or the <a>RevokeCertificate</a> operation.
+        /// action. Audit information is created every time the certificate authority (CA) private
+        /// key is used. The private key is used when you call the <a>IssueCertificate</a> action
+        /// or the <a>RevokeCertificate</a> action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCertificateAuthorityAuditReport service method.</param>
         /// 
@@ -547,10 +529,10 @@ namespace Amazon.ACMPCA
 
         /// <summary>
         /// Retrieves a certificate from your private CA. The ARN of the certificate is returned
-        /// when you call the <a>IssueCertificate</a> operation. You must specify both the ARN
-        /// of your private CA and the ARN of the issued certificate when calling the <b>GetCertificate</b>
-        /// operation. You can retrieve the certificate if it is in the <b>ISSUED</b> state. You
-        /// can call the <a>CreateCertificateAuthorityAuditReport</a> operation to create a report
+        /// when you call the <a>IssueCertificate</a> action. You must specify both the ARN of
+        /// your private CA and the ARN of the issued certificate when calling the <b>GetCertificate</b>
+        /// action. You can retrieve the certificate if it is in the <b>ISSUED</b> state. You
+        /// can call the <a>CreateCertificateAuthorityAuditReport</a> action to create a report
         /// that contains information about all of the certificates issued and revoked by your
         /// private CA.
         /// </summary>
@@ -661,11 +643,10 @@ namespace Amazon.ACMPCA
 
         /// <summary>
         /// Retrieves the certificate signing request (CSR) for your private certificate authority
-        /// (CA). The CSR is created when you call the <a>CreateCertificateAuthority</a> operation.
-        /// Take the CSR to your on-premises X.509 infrastructure and sign it by using your root
-        /// or a subordinate CA. Then import the signed certificate back into ACM PCA by calling
-        /// the <a>ImportCertificateAuthorityCertificate</a> operation. The CSR is returned as
-        /// a base64 PEM-encoded string.
+        /// (CA). The CSR is created when you call the <a>CreateCertificateAuthority</a> action.
+        /// Sign the CSR with your ACM Private CA-hosted or on-premises root or subordinate CA.
+        /// Then import the signed certificate back into ACM Private CA by calling the <a>ImportCertificateAuthorityCertificate</a>
+        /// action. The CSR is returned as a base64 PEM-encoded string.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCertificateAuthorityCsr service method.</param>
         /// 
@@ -721,30 +702,58 @@ namespace Amazon.ACMPCA
 
 
         /// <summary>
-        /// Imports your signed private CA certificate into ACM PCA. Before you can call this
-        /// operation, you must create the private certificate authority by calling the <a>CreateCertificateAuthority</a>
-        /// operation. You must then generate a certificate signing request (CSR) by calling the
-        /// <a>GetCertificateAuthorityCsr</a> operation. Take the CSR to your on-premises CA and
-        /// use the root certificate or a subordinate certificate to sign it. Create a certificate
-        /// chain and copy the signed certificate and the certificate chain to your working directory.
+        /// Imports a signed private CA certificate into ACM Private CA. This action is used when
+        /// you are using a chain of trust whose root is located outside ACM Private CA. Before
+        /// you can call this action, the following preparations must in place:
         /// 
-        /// 
-        ///  <note> 
+        ///  <ol> <li> 
+        /// <para>
+        /// In ACM Private CA, call the <a>CreateCertificateAuthority</a> action to create the
+        /// private CA that that you plan to back with the imported certificate.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call the <a>GetCertificateAuthorityCsr</a> action to generate a certificate signing
+        /// request (CSR).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Sign the CSR using a root or intermediate CA hosted either by an on-premises PKI hierarchy
+        /// or a commercial CA..
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create a certificate chain and copy the signed certificate and the certificate chain
+        /// to your working directory.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// The following requirements apply when you import a CA certificate.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You cannot import a non-self-signed certificate for use as a root CA.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You cannot import a self-signed certificate for use as a subordinate CA.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// Your certificate chain must not include the private CA certificate that you are importing.
         /// </para>
-        ///  </note> <note> 
+        ///  </li> <li> 
         /// <para>
-        /// Your on-premises CA certificate must be the last certificate in your chain. The subordinate
-        /// certificate, if any, that your root CA signed must be next to last. The subordinate
-        /// certificate signed by the preceding subordinate CA must come next, and so on until
-        /// your chain is built. 
+        /// Your ACM Private CA-hosted or on-premises CA certificate must be the last certificate
+        /// in your chain. The subordinate certificate, if any, that your root CA signed must
+        /// be next to last. The subordinate certificate signed by the preceding subordinate CA
+        /// must come next, and so on until your chain is built. 
         /// </para>
-        ///  </note> <note> 
+        ///  </li> <li> 
         /// <para>
         /// The chain must be PEM-encoded.
         /// </para>
-        ///  </note>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportCertificateAuthorityCertificate service method.</param>
         /// 
@@ -758,6 +767,9 @@ namespace Amazon.ACMPCA
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidArnException">
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.ACMPCA.Model.InvalidRequestException">
+        /// The request action cannot be performed or is prohibited.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidStateException">
         /// The private CA is in a state during which a report or certificate cannot be generated.
@@ -810,14 +822,14 @@ namespace Amazon.ACMPCA
 
 
         /// <summary>
-        /// Uses your private certificate authority (CA) to issue a client certificate. This operation
+        /// Uses your private certificate authority (CA) to issue a client certificate. This action
         /// returns the Amazon Resource Name (ARN) of the certificate. You can retrieve the certificate
-        /// by calling the <a>GetCertificate</a> operation and specifying the ARN. 
+        /// by calling the <a>GetCertificate</a> action and specifying the ARN. 
         /// 
         ///  <note> 
         /// <para>
-        /// You cannot use the ACM <b>ListCertificateAuthorities</b> operation to retrieve the
-        /// ARNs of the certificates that you issue by using ACM PCA.
+        /// You cannot use the ACM <b>ListCertificateAuthorities</b> action to retrieve the ARNs
+        /// of the certificates that you issue by using ACM Private CA.
         /// </para>
         ///  </note>
         /// </summary>
@@ -834,7 +846,7 @@ namespace Amazon.ACMPCA
         /// The private CA is in a state during which a report or certificate cannot be generated.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.LimitExceededException">
-        /// An ACM PCA limit has been exceeded. See the exception message returned to determine
+        /// An ACM Private CA limit has been exceeded. See the exception message returned to determine
         /// the limit that was exceeded.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.MalformedCSRException">
@@ -880,7 +892,7 @@ namespace Amazon.ACMPCA
 
         /// <summary>
         /// Lists the private certificate authorities that you created by using the <a>CreateCertificateAuthority</a>
-        /// operation.
+        /// action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCertificateAuthorities service method.</param>
         /// 
@@ -925,8 +937,8 @@ namespace Amazon.ACMPCA
 
         /// <summary>
         /// Lists all the permissions, if any, that have been assigned by a private CA. Permissions
-        /// can be granted with the <a>CreatePermission</a> operation and revoked with the <a>DeletePermission</a>
-        /// operation.
+        /// can be granted with the <a>CreatePermission</a> action and revoked with the <a>DeletePermission</a>
+        /// action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPermissions service method.</param>
         /// 
@@ -985,15 +997,17 @@ namespace Amazon.ACMPCA
         /// <summary>
         /// Lists the tags, if any, that are associated with your private CA. Tags are labels
         /// that you can use to identify and organize your CAs. Each tag consists of a key and
-        /// an optional value. Call the <a>TagCertificateAuthority</a> operation to add one or
-        /// more tags to your CA. Call the <a>UntagCertificateAuthority</a> operation to remove
-        /// tags.
+        /// an optional value. Call the <a>TagCertificateAuthority</a> action to add one or more
+        /// tags to your CA. Call the <a>UntagCertificateAuthority</a> action to remove tags.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
         /// 
         /// <returns>The response from the ListTags service method, as returned by ACMPCA.</returns>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidArnException">
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.ACMPCA.Model.InvalidStateException">
+        /// The private CA is in a state during which a report or certificate cannot be generated.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.ResourceNotFoundException">
         /// A resource such as a private CA, S3 bucket, certificate, or audit report cannot be
@@ -1036,17 +1050,17 @@ namespace Amazon.ACMPCA
         /// <summary>
         /// Restores a certificate authority (CA) that is in the <code>DELETED</code> state. You
         /// can restore a CA during the period that you defined in the <b>PermanentDeletionTimeInDays</b>
-        /// parameter of the <a>DeleteCertificateAuthority</a> operation. Currently, you can specify
+        /// parameter of the <a>DeleteCertificateAuthority</a> action. Currently, you can specify
         /// 7 to 30 days. If you did not specify a <b>PermanentDeletionTimeInDays</b> value, by
         /// default you can restore the CA at any time in a 30 day period. You can check the time
         /// remaining in the restoration period of a private CA in the <code>DELETED</code> state
         /// by calling the <a>DescribeCertificateAuthority</a> or <a>ListCertificateAuthorities</a>
-        /// operations. The status of a restored CA is set to its pre-deletion status when the
-        /// <b>RestoreCertificateAuthority</b> operation returns. To change its status to <code>ACTIVE</code>,
-        /// call the <a>UpdateCertificateAuthority</a> operation. If the private CA was in the
-        /// <code>PENDING_CERTIFICATE</code> state at deletion, you must use the <a>ImportCertificateAuthorityCertificate</a>
-        /// operation to import a certificate authority into the private CA before it can be activated.
-        /// You cannot restore a CA after the restoration period has ended.
+        /// actions. The status of a restored CA is set to its pre-deletion status when the <b>RestoreCertificateAuthority</b>
+        /// action returns. To change its status to <code>ACTIVE</code>, call the <a>UpdateCertificateAuthority</a>
+        /// action. If the private CA was in the <code>PENDING_CERTIFICATE</code> state at deletion,
+        /// you must use the <a>ImportCertificateAuthorityCertificate</a> action to import a certificate
+        /// authority into the private CA before it can be activated. You cannot restore a CA
+        /// after the restoration period has ended.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreCertificateAuthority service method.</param>
         /// 
@@ -1096,12 +1110,18 @@ namespace Amazon.ACMPCA
 
 
         /// <summary>
-        /// Revokes a certificate that you issued by calling the <a>IssueCertificate</a> operation.
-        /// If you enable a certificate revocation list (CRL) when you create or update your private
-        /// CA, information about the revoked certificates will be included in the CRL. ACM PCA
-        /// writes the CRL to an S3 bucket that you specify. For more information about revocation,
-        /// see the <a>CrlConfiguration</a> structure. ACM PCA also writes revocation information
-        /// to the audit report. For more information, see <a>CreateCertificateAuthorityAuditReport</a>.
+        /// Revokes a certificate that was issued inside ACM Private CA. If you enable a certificate
+        /// revocation list (CRL) when you create or update your private CA, information about
+        /// the revoked certificates will be included in the CRL. ACM Private CA writes the CRL
+        /// to an S3 bucket that you specify. For more information about revocation, see the <a>CrlConfiguration</a>
+        /// structure. ACM Private CA also writes revocation information to the audit report.
+        /// For more information, see <a>CreateCertificateAuthorityAuditReport</a>. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot revoke a root CA self-signed certificate.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RevokeCertificate service method.</param>
         /// 
@@ -1112,11 +1132,14 @@ namespace Amazon.ACMPCA
         /// <exception cref="Amazon.ACMPCA.Model.InvalidArnException">
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
+        /// <exception cref="Amazon.ACMPCA.Model.InvalidRequestException">
+        /// The request action cannot be performed or is prohibited.
+        /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidStateException">
         /// The private CA is in a state during which a report or certificate cannot be generated.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.LimitExceededException">
-        /// An ACM PCA limit has been exceeded. See the exception message returned to determine
+        /// An ACM Private CA limit has been exceeded. See the exception message returned to determine
         /// the limit that was exceeded.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.RequestAlreadyProcessedException">
@@ -1173,8 +1196,8 @@ namespace Amazon.ACMPCA
         /// the tag by using a key-value pair. You can apply a tag to just one private CA if you
         /// want to identify a specific characteristic of that CA, or you can apply the same tag
         /// to multiple private CAs if you want to filter for a common relationship among those
-        /// CAs. To remove one or more tags, use the <a>UntagCertificateAuthority</a> operation.
-        /// Call the <a>ListTags</a> operation to see what tags are associated with your CA.
+        /// CAs. To remove one or more tags, use the <a>UntagCertificateAuthority</a> action.
+        /// Call the <a>ListTags</a> action to see what tags are associated with your CA.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagCertificateAuthority service method.</param>
         /// 
@@ -1233,11 +1256,11 @@ namespace Amazon.ACMPCA
 
         /// <summary>
         /// Remove one or more tags from your private CA. A tag consists of a key-value pair.
-        /// If you do not specify the value portion of the tag when calling this operation, the
-        /// tag will be removed regardless of value. If you specify a value, the tag is removed
-        /// only if it is associated with the specified value. To add tags to a private CA, use
-        /// the <a>TagCertificateAuthority</a>. Call the <a>ListTags</a> operation to see what
-        /// tags are associated with your CA.
+        /// If you do not specify the value portion of the tag when calling this action, the tag
+        /// will be removed regardless of value. If you specify a value, the tag is removed only
+        /// if it is associated with the specified value. To add tags to a private CA, use the
+        /// <a>TagCertificateAuthority</a>. Call the <a>ListTags</a> action to see what tags are
+        /// associated with your CA.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagCertificateAuthority service method.</param>
         /// 
@@ -1309,8 +1332,8 @@ namespace Amazon.ACMPCA
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidPolicyException">
-        /// The S3 bucket policy is not valid. The policy must give ACM PCA rights to read from
-        /// and write to the bucket and find the bucket location.
+        /// The S3 bucket policy is not valid. The policy must give ACM Private CA rights to read
+        /// from and write to the bucket and find the bucket location.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidStateException">
         /// The private CA is in a state during which a report or certificate cannot be generated.

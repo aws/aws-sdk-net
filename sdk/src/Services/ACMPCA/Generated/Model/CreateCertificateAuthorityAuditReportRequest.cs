@@ -31,8 +31,7 @@ namespace Amazon.ACMPCA.Model
     /// Container for the parameters to the CreateCertificateAuthorityAuditReport operation.
     /// Creates an audit report that lists every time that your CA private key is used. The
     /// report is saved in the Amazon S3 bucket that you specify on input. The <a>IssueCertificate</a>
-    /// and <a>RevokeCertificate</a> operations use the private key. You can generate a new
-    /// report every 30 minutes.
+    /// and <a>RevokeCertificate</a> actions use the private key.
     /// </summary>
     public partial class CreateCertificateAuthorityAuditReportRequest : AmazonACMPCARequest
     {
