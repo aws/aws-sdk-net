@@ -41,6 +41,7 @@ namespace Amazon.Glue.Model
         private bool? _startOnCreation;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private TriggerType _type;
+        private string _workflowName;
 
         /// <summary>
         /// Gets and sets the property Actions. 
@@ -202,6 +203,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowName. 
+        /// <para>
+        /// The name of the workflow associated with the trigger.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string WorkflowName
+        {
+            get { return this._workflowName; }
+            set { this._workflowName = value; }
+        }
+
+        // Check to see if WorkflowName property is set
+        internal bool IsSetWorkflowName()
+        {
+            return this._workflowName != null;
         }
 
     }

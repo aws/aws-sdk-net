@@ -32,9 +32,48 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class Condition
     {
+        private string _crawlerName;
+        private CrawlState _crawlState;
         private string _jobName;
         private LogicalOperator _logicalOperator;
         private JobRunState _state;
+
+        /// <summary>
+        /// Gets and sets the property CrawlerName. 
+        /// <para>
+        /// The name of the crawler to which this condition applies.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string CrawlerName
+        {
+            get { return this._crawlerName; }
+            set { this._crawlerName = value; }
+        }
+
+        // Check to see if CrawlerName property is set
+        internal bool IsSetCrawlerName()
+        {
+            return this._crawlerName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CrawlState. 
+        /// <para>
+        /// The state of the crawler to which this condition applies.
+        /// </para>
+        /// </summary>
+        public CrawlState CrawlState
+        {
+            get { return this._crawlState; }
+            set { this._crawlState = value; }
+        }
+
+        // Check to see if CrawlState property is set
+        internal bool IsSetCrawlState()
+        {
+            return this._crawlState != null;
+        }
 
         /// <summary>
         /// Gets and sets the property JobName. 

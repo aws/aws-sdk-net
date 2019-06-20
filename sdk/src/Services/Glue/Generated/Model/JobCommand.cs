@@ -78,7 +78,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property ScriptLocation. 
         /// <para>
         /// Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that executes
-        /// a job (required).
+        /// a job.
         /// </para>
         /// </summary>
         public string ScriptLocation

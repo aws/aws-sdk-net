@@ -33,6 +33,7 @@ namespace Amazon.Glue.Model
     public partial class Action
     {
         private Dictionary<string, string> _arguments = new Dictionary<string, string>();
+        private string _crawlerName;
         private string _jobName;
         private NotificationProperty _notificationProperty;
         private string _securityConfiguration;
@@ -72,6 +73,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetArguments()
         {
             return this._arguments != null && this._arguments.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CrawlerName. 
+        /// <para>
+        /// The name of the crawler to be used with this action.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string CrawlerName
+        {
+            get { return this._crawlerName; }
+            set { this._crawlerName = value; }
+        }
+
+        // Check to see if CrawlerName property is set
+        internal bool IsSetCrawlerName()
+        {
+            return this._crawlerName != null;
         }
 
         /// <summary>

@@ -323,6 +323,64 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type CrawlState.
+    /// </summary>
+    public class CrawlState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for CrawlState
+        /// </summary>
+        public static readonly CrawlState CANCELLED = new CrawlState("CANCELLED");
+        /// <summary>
+        /// Constant FAILED for CrawlState
+        /// </summary>
+        public static readonly CrawlState FAILED = new CrawlState("FAILED");
+        /// <summary>
+        /// Constant RUNNING for CrawlState
+        /// </summary>
+        public static readonly CrawlState RUNNING = new CrawlState("RUNNING");
+        /// <summary>
+        /// Constant SUCCEEDED for CrawlState
+        /// </summary>
+        public static readonly CrawlState SUCCEEDED = new CrawlState("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CrawlState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CrawlState FindValue(string value)
+        {
+            return FindValue<CrawlState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CrawlState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CsvHeaderOption.
     /// </summary>
     public class CsvHeaderOption : ConstantClass
@@ -805,6 +863,60 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type NodeType.
+    /// </summary>
+    public class NodeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CRAWLER for NodeType
+        /// </summary>
+        public static readonly NodeType CRAWLER = new NodeType("CRAWLER");
+        /// <summary>
+        /// Constant JOB for NodeType
+        /// </summary>
+        public static readonly NodeType JOB = new NodeType("JOB");
+        /// <summary>
+        /// Constant TRIGGER for NodeType
+        /// </summary>
+        public static readonly NodeType TRIGGER = new NodeType("TRIGGER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NodeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NodeType FindValue(string value)
+        {
+            return FindValue<NodeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NodeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PrincipalType.
     /// </summary>
     public class PrincipalType : ConstantClass
@@ -1246,6 +1358,56 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator WorkerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WorkflowRunStatus.
+    /// </summary>
+    public class WorkflowRunStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for WorkflowRunStatus
+        /// </summary>
+        public static readonly WorkflowRunStatus COMPLETED = new WorkflowRunStatus("COMPLETED");
+        /// <summary>
+        /// Constant RUNNING for WorkflowRunStatus
+        /// </summary>
+        public static readonly WorkflowRunStatus RUNNING = new WorkflowRunStatus("RUNNING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorkflowRunStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkflowRunStatus FindValue(string value)
+        {
+            return FindValue<WorkflowRunStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkflowRunStatus(string value)
         {
             return FindValue(value);
         }

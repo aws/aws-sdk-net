@@ -42,7 +42,7 @@ namespace Amazon.Glue.Model
         private int? _numberOfWorkers;
         private string _securityConfiguration;
         private int? _timeout;
-        private WorkerType _workerType;
+        private string _workerType;
 
         /// <summary>
         /// Gets and sets the property AllocatedCapacity. 
@@ -294,7 +294,8 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public WorkerType WorkerType
+        [AWSProperty(Min=1, Max=255)]
+        public string WorkerType
         {
             get { return this._workerType; }
             set { this._workerType = value; }

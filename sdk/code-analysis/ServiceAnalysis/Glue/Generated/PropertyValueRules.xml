@@ -148,6 +148,11 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.CreateJobRequest.WorkerType</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.CreateJobResponse.Name</property>
     <min>1</min>
     <max>255</max>
@@ -198,6 +203,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.CreateTriggerRequest.WorkflowName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.CreateTriggerResponse.Name</property>
     <min>1</min>
     <max>255</max>
@@ -209,6 +219,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CreateUserDefinedFunctionRequest.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateWorkflowRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateWorkflowResponse.Name</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -334,6 +354,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DeleteUserDefinedFunctionRequest.FunctionName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteWorkflowRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteWorkflowResponse.Name</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -639,6 +669,41 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.GetWorkflowRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetWorkflowRunRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetWorkflowRunRequest.RunId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetWorkflowRunPropertiesRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetWorkflowRunPropertiesRequest.RunId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetWorkflowRunsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetWorkflowRunsRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.ImportCatalogToGlueRequest.CatalogId</property>
     <min>1</min>
     <max>255</max>
@@ -669,6 +734,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.ListWorkflowsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.PutDataCatalogEncryptionSettingsRequest.CatalogId</property>
     <min>1</min>
     <max>255</max>
@@ -685,6 +755,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.PutResourcePolicyResponse.PolicyHash</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.PutWorkflowRunPropertiesRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.PutWorkflowRunPropertiesRequest.RunId</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -718,6 +798,11 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.StartJobRunRequest.WorkerType</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.StartJobRunResponse.JobRunId</property>
     <min>1</min>
     <max>255</max>
@@ -729,6 +814,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.StartTriggerResponse.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StartWorkflowRunRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StartWorkflowRunResponse.RunId</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -865,6 +960,21 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateWorkflowRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateWorkflowResponse.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.Action.CrawlerName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.Action.JobName</property>
     <min>1</min>
     <max>255</max>
@@ -956,6 +1066,11 @@
     <max>131072</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.Condition.CrawlerName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.Condition.JobName</property>
     <min>1</min>
     <max>255</max>
@@ -989,6 +1104,23 @@
     <property>Amazon.Glue.Model.ConnectionPasswordEncryption.AwsKmsKeyId</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.Crawl.ErrorMessage</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.Crawl.LogGroup</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.Crawl.LogStream</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[^:*]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Crawler.CrawlerSecurityConfiguration</property>
@@ -1138,6 +1270,16 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.Edge.DestinationId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.Edge.SourceId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.EncryptionAtRest.SseAwsKmsKeyId</property>
     <min>1</min>
     <max>255</max>
@@ -1261,6 +1403,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.LastCrawlInfo.MessagePrefix</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.Node.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.Node.UniqueId</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -1461,6 +1613,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.Trigger.WorkflowName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.TriggerUpdate.Description</property>
     <min>0</min>
     <max>2048</max>
@@ -1539,6 +1696,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.UserDefinedFunctionInput.OwnerName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.Workflow.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.WorkflowRun.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.WorkflowRun.WorkflowRunId</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>

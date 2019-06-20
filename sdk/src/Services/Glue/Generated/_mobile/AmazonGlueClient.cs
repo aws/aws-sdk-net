@@ -726,6 +726,52 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  BatchGetWorkflows
+
+        internal virtual BatchGetWorkflowsResponse BatchGetWorkflows(BatchGetWorkflowsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetWorkflowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetWorkflowsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetWorkflowsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of resource metadata for a given list of workflow names. After calling
+        /// the <code>ListWorkflows</code> operation, you can call this operation to access the
+        /// data to which you have been granted permissions. This operation supports all IAM permissions,
+        /// including permission conditions that uses tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetWorkflows service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetWorkflows service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetWorkflows">REST API Reference for BatchGetWorkflows Operation</seealso>
+        public virtual Task<BatchGetWorkflowsResponse> BatchGetWorkflowsAsync(BatchGetWorkflowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetWorkflowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetWorkflowsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetWorkflowsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchStopJobRun
 
         internal virtual BatchStopJobRunResponse BatchStopJobRun(BatchStopJobRunRequest request)
@@ -1306,6 +1352,9 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
         /// Two processes are trying to modify a resource simultaneously.
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.IdempotentParameterMismatchException">
         /// The same unique identifier was associated with two different records.
         /// </exception>
@@ -1384,6 +1433,58 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = CreateUserDefinedFunctionResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateUserDefinedFunctionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateWorkflow
+
+        internal virtual CreateWorkflowResponse CreateWorkflow(CreateWorkflowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkflowResponseUnmarshaller.Instance;
+
+            return Invoke<CreateWorkflowResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkflow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateWorkflow service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateWorkflow">REST API Reference for CreateWorkflow Operation</seealso>
+        public virtual Task<CreateWorkflowResponse> CreateWorkflowAsync(CreateWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkflowResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateWorkflowResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2003,6 +2104,52 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = DeleteUserDefinedFunctionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteUserDefinedFunctionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteWorkflow
+
+        internal virtual DeleteWorkflowResponse DeleteWorkflow(DeleteWorkflowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkflowResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWorkflowResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkflow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteWorkflow service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteWorkflow">REST API Reference for DeleteWorkflow Operation</seealso>
+        public virtual Task<DeleteWorkflowResponse> DeleteWorkflowAsync(DeleteWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkflowResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteWorkflowResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3562,6 +3709,190 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  GetWorkflow
+
+        internal virtual GetWorkflowResponse GetWorkflow(GetWorkflowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkflowResponseUnmarshaller.Instance;
+
+            return Invoke<GetWorkflowResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves resource metadata for a workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkflow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetWorkflow service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflow">REST API Reference for GetWorkflow Operation</seealso>
+        public virtual Task<GetWorkflowResponse> GetWorkflowAsync(GetWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkflowResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetWorkflowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetWorkflowRun
+
+        internal virtual GetWorkflowRunResponse GetWorkflowRun(GetWorkflowRunRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkflowRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkflowRunResponseUnmarshaller.Instance;
+
+            return Invoke<GetWorkflowRunResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the metadata for a given workflow run.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkflowRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetWorkflowRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflowRun">REST API Reference for GetWorkflowRun Operation</seealso>
+        public virtual Task<GetWorkflowRunResponse> GetWorkflowRunAsync(GetWorkflowRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkflowRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkflowRunResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetWorkflowRunResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetWorkflowRunProperties
+
+        internal virtual GetWorkflowRunPropertiesResponse GetWorkflowRunProperties(GetWorkflowRunPropertiesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkflowRunPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkflowRunPropertiesResponseUnmarshaller.Instance;
+
+            return Invoke<GetWorkflowRunPropertiesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the workflow run properties which were set during the run.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkflowRunProperties service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetWorkflowRunProperties service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflowRunProperties">REST API Reference for GetWorkflowRunProperties Operation</seealso>
+        public virtual Task<GetWorkflowRunPropertiesResponse> GetWorkflowRunPropertiesAsync(GetWorkflowRunPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkflowRunPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkflowRunPropertiesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetWorkflowRunPropertiesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetWorkflowRuns
+
+        internal virtual GetWorkflowRunsResponse GetWorkflowRuns(GetWorkflowRunsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkflowRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkflowRunsResponseUnmarshaller.Instance;
+
+            return Invoke<GetWorkflowRunsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves metadata for all runs of a given workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkflowRuns service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetWorkflowRuns service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflowRuns">REST API Reference for GetWorkflowRuns Operation</seealso>
+        public virtual Task<GetWorkflowRunsResponse> GetWorkflowRunsAsync(GetWorkflowRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkflowRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkflowRunsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetWorkflowRunsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ImportCatalogToGlue
 
         internal virtual ImportCatalogToGlueResponse ImportCatalogToGlue(ImportCatalogToGlueRequest request)
@@ -3813,6 +4144,49 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  ListWorkflows
+
+        internal virtual ListWorkflowsResponse ListWorkflows(ListWorkflowsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorkflowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkflowsResponseUnmarshaller.Instance;
+
+            return Invoke<ListWorkflowsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists names of workflows created in the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkflows service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWorkflows service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListWorkflows">REST API Reference for ListWorkflows Operation</seealso>
+        public virtual Task<ListWorkflowsResponse> ListWorkflowsAsync(ListWorkflowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorkflowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkflowsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListWorkflowsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutDataCatalogEncryptionSettings
 
         internal virtual PutDataCatalogEncryptionSettingsResponse PutDataCatalogEncryptionSettings(PutDataCatalogEncryptionSettingsRequest request)
@@ -3902,6 +4276,63 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutWorkflowRunProperties
+
+        internal virtual PutWorkflowRunPropertiesResponse PutWorkflowRunProperties(PutWorkflowRunPropertiesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutWorkflowRunPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutWorkflowRunPropertiesResponseUnmarshaller.Instance;
+
+            return Invoke<PutWorkflowRunPropertiesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Puts the specified workflow run properties for the given workflow run. If a property
+        /// already exists for the specified run, then it overrides the value otherwise adds the
+        /// property to existing properties.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutWorkflowRunProperties service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutWorkflowRunProperties service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutWorkflowRunProperties">REST API Reference for PutWorkflowRunProperties Operation</seealso>
+        public virtual Task<PutWorkflowRunPropertiesResponse> PutWorkflowRunPropertiesAsync(PutWorkflowRunPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutWorkflowRunPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutWorkflowRunPropertiesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutWorkflowRunPropertiesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4147,6 +4578,58 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = StartTriggerResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartTriggerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartWorkflowRun
+
+        internal virtual StartWorkflowRunResponse StartWorkflowRun(StartWorkflowRunRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartWorkflowRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartWorkflowRunResponseUnmarshaller.Instance;
+
+            return Invoke<StartWorkflowRunResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts a new run of the specified workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartWorkflowRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartWorkflowRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentRunsExceededException">
+        /// Too many jobs are being run concurrently.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartWorkflowRun">REST API Reference for StartWorkflowRun Operation</seealso>
+        public virtual Task<StartWorkflowRunResponse> StartWorkflowRunAsync(StartWorkflowRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartWorkflowRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartWorkflowRunResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartWorkflowRunResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4929,6 +5412,55 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = UpdateUserDefinedFunctionResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateUserDefinedFunctionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateWorkflow
+
+        internal virtual UpdateWorkflowResponse UpdateWorkflow(UpdateWorkflowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkflowResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWorkflowResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkflow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateWorkflow service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateWorkflow">REST API Reference for UpdateWorkflow Operation</seealso>
+        public virtual Task<UpdateWorkflowResponse> UpdateWorkflowAsync(UpdateWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkflowResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateWorkflowResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -45,6 +45,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Condition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCrawlerName())
+            {
+                context.Writer.WritePropertyName("CrawlerName");
+                context.Writer.Write(requestObject.CrawlerName);
+            }
+
+            if(requestObject.IsSetCrawlState())
+            {
+                context.Writer.WritePropertyName("CrawlState");
+                context.Writer.Write(requestObject.CrawlState);
+            }
+
             if(requestObject.IsSetJobName())
             {
                 context.Writer.WritePropertyName("JobName");

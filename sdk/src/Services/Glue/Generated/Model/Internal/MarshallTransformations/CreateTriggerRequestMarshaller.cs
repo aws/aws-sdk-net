@@ -139,6 +139,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Type);
                 }
 
+                if(publicRequest.IsSetWorkflowName())
+                {
+                    context.Writer.WritePropertyName("WorkflowName");
+                    context.Writer.Write(publicRequest.WorkflowName);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

@@ -59,6 +59,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetCrawlerName())
+            {
+                context.Writer.WritePropertyName("CrawlerName");
+                context.Writer.Write(requestObject.CrawlerName);
+            }
+
             if(requestObject.IsSetJobName())
             {
                 context.Writer.WritePropertyName("JobName");

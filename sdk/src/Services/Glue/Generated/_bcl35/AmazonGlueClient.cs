@@ -919,6 +919,72 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  BatchGetWorkflows
+
+        /// <summary>
+        /// Returns a list of resource metadata for a given list of workflow names. After calling
+        /// the <code>ListWorkflows</code> operation, you can call this operation to access the
+        /// data to which you have been granted permissions. This operation supports all IAM permissions,
+        /// including permission conditions that uses tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetWorkflows service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetWorkflows service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetWorkflows">REST API Reference for BatchGetWorkflows Operation</seealso>
+        public virtual BatchGetWorkflowsResponse BatchGetWorkflows(BatchGetWorkflowsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetWorkflowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetWorkflowsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetWorkflowsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetWorkflows operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetWorkflows operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetWorkflows
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetWorkflows">REST API Reference for BatchGetWorkflows Operation</seealso>
+        public virtual IAsyncResult BeginBatchGetWorkflows(BatchGetWorkflowsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetWorkflowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetWorkflowsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetWorkflows operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetWorkflows.</param>
+        /// 
+        /// <returns>Returns a  BatchGetWorkflowsResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetWorkflows">REST API Reference for BatchGetWorkflows Operation</seealso>
+        public virtual BatchGetWorkflowsResponse EndBatchGetWorkflows(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchGetWorkflowsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  BatchStopJobRun
 
         /// <summary>
@@ -1705,6 +1771,9 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
         /// Two processes are trying to modify a resource simultaneously.
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.IdempotentParameterMismatchException">
         /// The same unique identifier was associated with two different records.
         /// </exception>
@@ -1837,6 +1906,78 @@ namespace Amazon.Glue
         public virtual CreateUserDefinedFunctionResponse EndCreateUserDefinedFunction(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateUserDefinedFunctionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateWorkflow
+
+        /// <summary>
+        /// Creates a new workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkflow service method.</param>
+        /// 
+        /// <returns>The response from the CreateWorkflow service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateWorkflow">REST API Reference for CreateWorkflow Operation</seealso>
+        public virtual CreateWorkflowResponse CreateWorkflow(CreateWorkflowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkflowResponseUnmarshaller.Instance;
+
+            return Invoke<CreateWorkflowResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateWorkflow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkflow operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateWorkflow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateWorkflow">REST API Reference for CreateWorkflow Operation</seealso>
+        public virtual IAsyncResult BeginCreateWorkflow(CreateWorkflowRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkflowResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateWorkflow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateWorkflow.</param>
+        /// 
+        /// <returns>Returns a  CreateWorkflowResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateWorkflow">REST API Reference for CreateWorkflow Operation</seealso>
+        public virtual CreateWorkflowResponse EndCreateWorkflow(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateWorkflowResponse>(asyncResult);
         }
 
         #endregion
@@ -2716,6 +2857,72 @@ namespace Amazon.Glue
         public virtual DeleteUserDefinedFunctionResponse EndDeleteUserDefinedFunction(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteUserDefinedFunctionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteWorkflow
+
+        /// <summary>
+        /// Deletes a workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkflow service method.</param>
+        /// 
+        /// <returns>The response from the DeleteWorkflow service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteWorkflow">REST API Reference for DeleteWorkflow Operation</seealso>
+        public virtual DeleteWorkflowResponse DeleteWorkflow(DeleteWorkflowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkflowResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWorkflowResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteWorkflow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkflow operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteWorkflow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteWorkflow">REST API Reference for DeleteWorkflow Operation</seealso>
+        public virtual IAsyncResult BeginDeleteWorkflow(DeleteWorkflowRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkflowResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteWorkflow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteWorkflow.</param>
+        /// 
+        /// <returns>Returns a  DeleteWorkflowResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteWorkflow">REST API Reference for DeleteWorkflow Operation</seealso>
+        public virtual DeleteWorkflowResponse EndDeleteWorkflow(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteWorkflowResponse>(asyncResult);
         }
 
         #endregion
@@ -4955,6 +5162,270 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  GetWorkflow
+
+        /// <summary>
+        /// Retrieves resource metadata for a workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkflow service method.</param>
+        /// 
+        /// <returns>The response from the GetWorkflow service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflow">REST API Reference for GetWorkflow Operation</seealso>
+        public virtual GetWorkflowResponse GetWorkflow(GetWorkflowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkflowResponseUnmarshaller.Instance;
+
+            return Invoke<GetWorkflowResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetWorkflow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkflow operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetWorkflow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflow">REST API Reference for GetWorkflow Operation</seealso>
+        public virtual IAsyncResult BeginGetWorkflow(GetWorkflowRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkflowResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetWorkflow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetWorkflow.</param>
+        /// 
+        /// <returns>Returns a  GetWorkflowResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflow">REST API Reference for GetWorkflow Operation</seealso>
+        public virtual GetWorkflowResponse EndGetWorkflow(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetWorkflowResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetWorkflowRun
+
+        /// <summary>
+        /// Retrieves the metadata for a given workflow run.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkflowRun service method.</param>
+        /// 
+        /// <returns>The response from the GetWorkflowRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflowRun">REST API Reference for GetWorkflowRun Operation</seealso>
+        public virtual GetWorkflowRunResponse GetWorkflowRun(GetWorkflowRunRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkflowRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkflowRunResponseUnmarshaller.Instance;
+
+            return Invoke<GetWorkflowRunResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetWorkflowRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkflowRun operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetWorkflowRun
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflowRun">REST API Reference for GetWorkflowRun Operation</seealso>
+        public virtual IAsyncResult BeginGetWorkflowRun(GetWorkflowRunRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkflowRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkflowRunResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetWorkflowRun operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetWorkflowRun.</param>
+        /// 
+        /// <returns>Returns a  GetWorkflowRunResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflowRun">REST API Reference for GetWorkflowRun Operation</seealso>
+        public virtual GetWorkflowRunResponse EndGetWorkflowRun(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetWorkflowRunResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetWorkflowRunProperties
+
+        /// <summary>
+        /// Retrieves the workflow run properties which were set during the run.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkflowRunProperties service method.</param>
+        /// 
+        /// <returns>The response from the GetWorkflowRunProperties service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflowRunProperties">REST API Reference for GetWorkflowRunProperties Operation</seealso>
+        public virtual GetWorkflowRunPropertiesResponse GetWorkflowRunProperties(GetWorkflowRunPropertiesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkflowRunPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkflowRunPropertiesResponseUnmarshaller.Instance;
+
+            return Invoke<GetWorkflowRunPropertiesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetWorkflowRunProperties operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkflowRunProperties operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetWorkflowRunProperties
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflowRunProperties">REST API Reference for GetWorkflowRunProperties Operation</seealso>
+        public virtual IAsyncResult BeginGetWorkflowRunProperties(GetWorkflowRunPropertiesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkflowRunPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkflowRunPropertiesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetWorkflowRunProperties operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetWorkflowRunProperties.</param>
+        /// 
+        /// <returns>Returns a  GetWorkflowRunPropertiesResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflowRunProperties">REST API Reference for GetWorkflowRunProperties Operation</seealso>
+        public virtual GetWorkflowRunPropertiesResponse EndGetWorkflowRunProperties(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetWorkflowRunPropertiesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetWorkflowRuns
+
+        /// <summary>
+        /// Retrieves metadata for all runs of a given workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkflowRuns service method.</param>
+        /// 
+        /// <returns>The response from the GetWorkflowRuns service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflowRuns">REST API Reference for GetWorkflowRuns Operation</seealso>
+        public virtual GetWorkflowRunsResponse GetWorkflowRuns(GetWorkflowRunsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkflowRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkflowRunsResponseUnmarshaller.Instance;
+
+            return Invoke<GetWorkflowRunsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetWorkflowRuns operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkflowRuns operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetWorkflowRuns
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflowRuns">REST API Reference for GetWorkflowRuns Operation</seealso>
+        public virtual IAsyncResult BeginGetWorkflowRuns(GetWorkflowRunsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkflowRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkflowRunsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetWorkflowRuns operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetWorkflowRuns.</param>
+        /// 
+        /// <returns>Returns a  GetWorkflowRunsResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflowRuns">REST API Reference for GetWorkflowRuns Operation</seealso>
+        public virtual GetWorkflowRunsResponse EndGetWorkflowRuns(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetWorkflowRunsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ImportCatalogToGlue
 
         /// <summary>
@@ -5306,6 +5777,69 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  ListWorkflows
+
+        /// <summary>
+        /// Lists names of workflows created in the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkflows service method.</param>
+        /// 
+        /// <returns>The response from the ListWorkflows service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListWorkflows">REST API Reference for ListWorkflows Operation</seealso>
+        public virtual ListWorkflowsResponse ListWorkflows(ListWorkflowsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorkflowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkflowsResponseUnmarshaller.Instance;
+
+            return Invoke<ListWorkflowsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListWorkflows operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkflows operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListWorkflows
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListWorkflows">REST API Reference for ListWorkflows Operation</seealso>
+        public virtual IAsyncResult BeginListWorkflows(ListWorkflowsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorkflowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkflowsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListWorkflows operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListWorkflows.</param>
+        /// 
+        /// <returns>Returns a  ListWorkflowsResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListWorkflows">REST API Reference for ListWorkflows Operation</seealso>
+        public virtual ListWorkflowsResponse EndListWorkflows(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListWorkflowsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutDataCatalogEncryptionSettings
 
         /// <summary>
@@ -5435,6 +5969,83 @@ namespace Amazon.Glue
         public virtual PutResourcePolicyResponse EndPutResourcePolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<PutResourcePolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutWorkflowRunProperties
+
+        /// <summary>
+        /// Puts the specified workflow run properties for the given workflow run. If a property
+        /// already exists for the specified run, then it overrides the value otherwise adds the
+        /// property to existing properties.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutWorkflowRunProperties service method.</param>
+        /// 
+        /// <returns>The response from the PutWorkflowRunProperties service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutWorkflowRunProperties">REST API Reference for PutWorkflowRunProperties Operation</seealso>
+        public virtual PutWorkflowRunPropertiesResponse PutWorkflowRunProperties(PutWorkflowRunPropertiesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutWorkflowRunPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutWorkflowRunPropertiesResponseUnmarshaller.Instance;
+
+            return Invoke<PutWorkflowRunPropertiesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutWorkflowRunProperties operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutWorkflowRunProperties operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutWorkflowRunProperties
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutWorkflowRunProperties">REST API Reference for PutWorkflowRunProperties Operation</seealso>
+        public virtual IAsyncResult BeginPutWorkflowRunProperties(PutWorkflowRunPropertiesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutWorkflowRunPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutWorkflowRunPropertiesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutWorkflowRunProperties operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutWorkflowRunProperties.</param>
+        /// 
+        /// <returns>Returns a  PutWorkflowRunPropertiesResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutWorkflowRunProperties">REST API Reference for PutWorkflowRunProperties Operation</seealso>
+        public virtual PutWorkflowRunPropertiesResponse EndPutWorkflowRunProperties(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutWorkflowRunPropertiesResponse>(asyncResult);
         }
 
         #endregion
@@ -5780,6 +6391,78 @@ namespace Amazon.Glue
         public virtual StartTriggerResponse EndStartTrigger(IAsyncResult asyncResult)
         {
             return EndInvoke<StartTriggerResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartWorkflowRun
+
+        /// <summary>
+        /// Starts a new run of the specified workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartWorkflowRun service method.</param>
+        /// 
+        /// <returns>The response from the StartWorkflowRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentRunsExceededException">
+        /// Too many jobs are being run concurrently.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartWorkflowRun">REST API Reference for StartWorkflowRun Operation</seealso>
+        public virtual StartWorkflowRunResponse StartWorkflowRun(StartWorkflowRunRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartWorkflowRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartWorkflowRunResponseUnmarshaller.Instance;
+
+            return Invoke<StartWorkflowRunResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartWorkflowRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartWorkflowRun operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartWorkflowRun
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartWorkflowRun">REST API Reference for StartWorkflowRun Operation</seealso>
+        public virtual IAsyncResult BeginStartWorkflowRun(StartWorkflowRunRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartWorkflowRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartWorkflowRunResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartWorkflowRun operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartWorkflowRun.</param>
+        /// 
+        /// <returns>Returns a  StartWorkflowRunResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartWorkflowRun">REST API Reference for StartWorkflowRun Operation</seealso>
+        public virtual StartWorkflowRunResponse EndStartWorkflowRun(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartWorkflowRunResponse>(asyncResult);
         }
 
         #endregion
@@ -6882,6 +7565,75 @@ namespace Amazon.Glue
         public virtual UpdateUserDefinedFunctionResponse EndUpdateUserDefinedFunction(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateUserDefinedFunctionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateWorkflow
+
+        /// <summary>
+        /// Updates an existing workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkflow service method.</param>
+        /// 
+        /// <returns>The response from the UpdateWorkflow service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateWorkflow">REST API Reference for UpdateWorkflow Operation</seealso>
+        public virtual UpdateWorkflowResponse UpdateWorkflow(UpdateWorkflowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkflowResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWorkflowResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateWorkflow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkflow operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateWorkflow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateWorkflow">REST API Reference for UpdateWorkflow Operation</seealso>
+        public virtual IAsyncResult BeginUpdateWorkflow(UpdateWorkflowRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkflowResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateWorkflow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateWorkflow.</param>
+        /// 
+        /// <returns>Returns a  UpdateWorkflowResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateWorkflow">REST API Reference for UpdateWorkflow Operation</seealso>
+        public virtual UpdateWorkflowResponse EndUpdateWorkflow(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateWorkflowResponse>(asyncResult);
         }
 
         #endregion
