@@ -96,7 +96,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property AmiId. 
         /// <para>
-        /// A custom AMI ID to be used to create the instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+        /// A custom AMI ID to be used to create the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
         /// 
         /// </para>
         /// </summary>
@@ -169,7 +169,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The instance Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
+        /// The instance Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
         /// and Endpoints</a>.
         /// </para>
         /// </summary>
@@ -297,7 +297,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property ElasticIp. 
         /// <para>
-        /// The instance <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+        /// The instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
         /// IP address </a>.
         /// </para>
         /// </summary>
@@ -399,7 +399,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property InstanceProfileArn. 
         /// <para>
         /// The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a
-        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
         /// Identifiers</a>.
         /// </para>
         /// </summary>
@@ -634,7 +634,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property RootDeviceType. 
         /// <para>
-        /// The instance's root device type. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+        /// The instance's root device type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
         /// for the Root Device</a>.
         /// </para>
         /// </summary>

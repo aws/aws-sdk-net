@@ -39,7 +39,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property DelayUntilElbConnectionsDrained. 
         /// <para>
         /// Whether to enable Elastic Load Balancing connection draining. For more information,
-        /// see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection
+        /// see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection
         /// Draining</a> 
         /// </para>
         /// </summary>

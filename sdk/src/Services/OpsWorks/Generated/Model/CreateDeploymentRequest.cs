@@ -29,15 +29,15 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDeployment operation.
-    /// Runs deployment or stack commands. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html">Deploying
-    /// Apps</a> and <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html">Run
+    /// Runs deployment or stack commands. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html">Deploying
+    /// Apps</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html">Run
     /// Stack Commands</a>.
     /// 
     ///  
     /// <para>
     ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Deploy or
     /// Manage permissions level for the stack, or an attached policy that explicitly grants
-    /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
     /// </para>
     /// </summary>
@@ -111,8 +111,9 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property CustomJson. 
         /// <para>
-        /// A string that contains user-defined, custom JSON. It is used to override the corresponding
-        /// default stack configuration JSON values. The string should be in the following format:
+        /// A string that contains user-defined, custom JSON. You can use this parameter to override
+        /// some corresponding default stack configuration JSON values. The string should be in
+        /// the following format:
         /// </para>
         ///  
         /// <para>
@@ -120,8 +121,9 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
-        /// Custom JSON to Modify the Stack Configuration Attributes</a>.
+        /// For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+        /// Custom JSON to Modify the Stack Configuration Attributes</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">Overriding
+        /// Attributes With Custom JSON</a>.
         /// </para>
         /// </summary>
         public string CustomJson

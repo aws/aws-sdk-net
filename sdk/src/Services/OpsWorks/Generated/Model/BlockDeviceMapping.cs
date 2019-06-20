@@ -29,7 +29,7 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Describes a block device mapping. This data type maps directly to the Amazon EC2 <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a>
+    /// href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a>
     /// data type.
     /// </summary>
     public partial class BlockDeviceMapping
@@ -100,7 +100,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property VirtualName. 
         /// <para>
-        /// The virtual device name. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a>.
+        /// The virtual device name. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a>.
         /// </para>
         /// </summary>
         public string VirtualName

@@ -31,14 +31,14 @@ namespace Amazon.OpsWorks.Model
     /// Container for the parameters to the StopInstance operation.
     /// Stops a specified instance. When you stop a standard instance, the data disappears
     /// and must be reinstalled when you restart the instance. You can stop an Amazon EBS-backed
-    /// instance without losing data. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting,
+    /// instance without losing data. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting,
     /// Stopping, and Rebooting Instances</a>.
     /// 
     ///  
     /// <para>
     ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
     /// level for the stack, or an attached policy that explicitly grants permissions. For
-    /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
     /// </para>
     /// </summary>
@@ -50,7 +50,12 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Force. 
         /// <para>
-        /// Specifies whether to force an instance to stop.
+        /// Specifies whether to force an instance to stop. If the instance's root device type
+        /// is <code>ebs</code>, or EBS-backed, adding the <code>Force</code> parameter to the
+        /// <code>StopInstances</code> API call disassociates the AWS OpsWorks Stacks instance
+        /// from EC2, and forces deletion of <i>only</i> the OpsWorks Stacks instance. You must
+        /// also delete the formerly-associated instance in EC2 after troubleshooting and replacing
+        /// the AWS OpsWorks Stacks instance with a new one.
         /// </para>
         /// </summary>
         public bool Force

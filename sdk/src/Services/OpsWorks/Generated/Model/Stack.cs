@@ -114,7 +114,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property ChefConfiguration. 
         /// <para>
         /// A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf
-        /// and the Berkshelf version. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
+        /// and the Berkshelf version. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
         /// a New Stack</a>.
         /// </para>
         /// </summary>
@@ -167,7 +167,13 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CustomCookbooksSource.
+        /// Gets and sets the property CustomCookbooksSource. 
+        /// <para>
+        /// Contains the information required to retrieve an app or cookbook from a repository.
+        /// For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding
+        /// Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks
+        /// and Recipes</a>.
+        /// </para>
         /// </summary>
         public Source CustomCookbooksSource
         {
@@ -195,7 +201,7 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+        /// For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
         /// Custom JSON to Modify the Stack Configuration Attributes</a>.
         /// </para>
         /// </summary>
@@ -214,7 +220,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property DefaultAvailabilityZone. 
         /// <para>
-        /// The stack's default Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
+        /// The stack's default Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
         /// and Endpoints</a>.
         /// </para>
         /// </summary>
@@ -234,7 +240,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property DefaultInstanceProfileArn. 
         /// <para>
         /// The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances.
-        /// For more information about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+        /// For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
         /// Identifiers</a>.
         /// </para>
         /// </summary>
@@ -273,7 +279,7 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The default root device type. This value is used by default for all instances in the
         /// stack, but you can override it when you create an instance. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
         /// for the Root Device</a>.
         /// </para>
         /// </summary>
@@ -366,7 +372,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property Region. 
         /// <para>
         /// The stack AWS region, such as "ap-northeast-2". For more information about AWS regions,
-        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
         /// Endpoints</a>.
         /// </para>
         /// </summary>

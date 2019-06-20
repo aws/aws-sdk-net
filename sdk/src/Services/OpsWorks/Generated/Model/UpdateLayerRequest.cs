@@ -35,7 +35,7 @@ namespace Amazon.OpsWorks.Model
     /// <para>
     ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
     /// level for the stack, or an attached policy that explicitly grants permissions. For
-    /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
     /// </para>
     /// </summary>
@@ -80,8 +80,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property AutoAssignElasticIps. 
         /// <para>
-        /// Whether to automatically assign an <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-        /// IP address</a> to the layer's instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+        /// Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+        /// IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
         /// to Edit a Layer</a>.
         /// </para>
         /// </summary>
@@ -101,7 +101,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property AutoAssignPublicIps. 
         /// <para>
         /// For stacks that are running in a VPC, whether to automatically assign a public IP
-        /// address to the layer's instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+        /// address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
         /// to Edit a Layer</a>.
         /// </para>
         /// </summary>
@@ -140,7 +140,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property CustomInstanceProfileArn. 
         /// <para>
         /// The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more
-        /// information about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+        /// information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
         /// Identifiers</a>.
         /// </para>
         /// </summary>
@@ -160,7 +160,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property CustomJson. 
         /// <para>
         /// A JSON-formatted string containing custom stack configuration and deployment attributes
-        /// to be installed on the layer's instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
+        /// to be installed on the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
         /// Using Custom JSON</a>. 
         /// </para>
         /// </summary>
@@ -340,7 +340,7 @@ namespace Amazon.OpsWorks.Model
         ///  
         /// <para>
         /// The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information,
-        /// see the <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
+        /// see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
         /// Reference</a> 
         /// </para>
         /// </summary>

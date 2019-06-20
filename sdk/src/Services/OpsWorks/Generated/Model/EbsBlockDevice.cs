@@ -29,7 +29,7 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Describes an Amazon EBS volume. This data type maps directly to the Amazon EC2 <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>
+    /// href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>
     /// data type.
     /// </summary>
     public partial class EbsBlockDevice
@@ -62,7 +62,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property Iops. 
         /// <para>
         /// The number of I/O operations per second (IOPS) that the volume supports. For more
-        /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
         /// </para>
         /// </summary>
         public int Iops
@@ -98,7 +98,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property VolumeSize. 
         /// <para>
-        /// The volume size, in GiB. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+        /// The volume size, in GiB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
         /// </para>
         /// </summary>
         public int VolumeSize

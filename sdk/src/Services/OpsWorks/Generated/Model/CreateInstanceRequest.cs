@@ -29,14 +29,14 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateInstance operation.
-    /// Creates an instance in a specified stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">Adding
+    /// Creates an instance in a specified stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">Adding
     /// an Instance to a Layer</a>.
     /// 
     ///  
     /// <para>
     ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
     /// level for the stack, or an attached policy that explicitly grants permissions. For
-    /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
     /// </para>
     /// </summary>
@@ -101,7 +101,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property AmiId. 
         /// <para>
         /// A custom AMI ID to be used to create the instance. The AMI should be based on one
-        /// of the supported operating systems. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+        /// of the supported operating systems. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
         /// Custom AMIs</a>.
         /// </para>
         ///  <note> 
@@ -127,7 +127,7 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The instance architecture. The default option is <code>x86_64</code>. Instance types
         /// do not necessarily support both architectures. For a list of the architectures that
-        /// are supported by the different instance types, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+        /// are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
         /// Families and Types</a>.
         /// </para>
         /// </summary>
@@ -165,7 +165,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The instance Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
+        /// The instance Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
         /// and Endpoints</a>.
         /// </para>
         /// </summary>
@@ -185,7 +185,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property BlockDeviceMappings. 
         /// <para>
         /// An array of <code>BlockDeviceMapping</code> objects that specify the instance's block
-        /// devices. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
+        /// devices. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
         /// Device Mapping</a>. Note that block device mappings are not supported for custom AMIs.
         /// </para>
         /// </summary>
@@ -272,7 +272,7 @@ namespace Amazon.OpsWorks.Model
         /// The instance type, such as <code>t2.micro</code>. For a list of supported instance
         /// types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>.
         /// The <b>Size</b> list contains the currently supported types. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
         /// Families and Types</a>. The parameter values that you use to specify the various types
         /// are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.
         /// </para>
@@ -317,9 +317,9 @@ namespace Amazon.OpsWorks.Model
         ///  <ul> <li> 
         /// <para>
         /// A supported Linux operating system: An Amazon Linux version, such as <code>Amazon
-        /// Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-        /// <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon
-        /// Linux 2015.03</code>.
+        /// Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>,
+        /// <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon
+        /// Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -347,7 +347,7 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information about the supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
+        /// For more information about the supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
         /// OpsWorks Stacks Operating Systems</a>.
         /// </para>
         ///  
@@ -356,9 +356,9 @@ namespace Amazon.OpsWorks.Model
         /// to <code>Custom</code>, you must use the <a>CreateInstance</a> action's AmiId parameter
         /// to specify the custom AMI that you want to use. Block device mappings are not supported
         /// if the value is <code>Custom</code>. For more information about supported operating
-        /// systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
+        /// systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
         /// Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks,
-        /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
         /// Custom AMIs</a>.
         /// </para>
         /// </summary>
@@ -377,7 +377,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property RootDeviceType. 
         /// <para>
-        /// The instance root device type. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+        /// The instance root device type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
         /// for the Root Device</a>.
         /// </para>
         /// </summary>
@@ -460,7 +460,7 @@ namespace Amazon.OpsWorks.Model
         /// you research tenancy options before choosing them for your instances. For more information
         /// about dedicated hosts, see <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Dedicated
         /// Hosts Overview</a> and <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Amazon
-        /// EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated
+        /// EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated
         /// Instances</a> and <a href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon
         /// EC2 Dedicated Instances</a>.
         /// </para>

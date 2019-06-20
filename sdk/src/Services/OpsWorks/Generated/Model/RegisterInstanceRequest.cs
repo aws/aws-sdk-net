@@ -38,7 +38,7 @@ namespace Amazon.OpsWorks.Model
     /// operation includes two tasks: installing the AWS OpsWorks Stacks agent on the instance,
     /// and registering the instance with the stack. <code>RegisterInstance</code> handles
     /// only the second step. You should instead use the AWS CLI <code>register</code> command,
-    /// which performs the entire registration operation. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html">
+    /// which performs the entire registration operation. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html">
     /// Registering an Instance with an AWS OpsWorks Stacks Stack</a>.
     /// </para>
     ///  </note> 
@@ -47,14 +47,14 @@ namespace Amazon.OpsWorks.Model
     /// the <a>CreateInstance</a> API. For example, registered instances must be running a
     /// supported Linux-based operating system, and they must have a supported instance type.
     /// For more information about requirements for instances that you want to register, see
-    /// <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register-registering-preparer.html">
+    /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register-registering-preparer.html">
     /// Preparing the Instance</a>.
     /// </para>
     ///  
     /// <para>
     ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
     /// level for the stack or an attached policy that explicitly grants permissions. For
-    /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
     /// </para>
     /// </summary>

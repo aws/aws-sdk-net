@@ -62,7 +62,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of a supported operating system, such as <code>Amazon Linux 2017.09</code>.
+        /// The ID of a supported operating system, such as <code>Amazon Linux 2018.03</code>.
         /// </para>
         /// </summary>
         public string Id
@@ -80,7 +80,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the operating system, such as <code>Amazon Linux 2017.09</code>.
+        /// The name of the operating system, such as <code>Amazon Linux 2018.03</code>.
         /// </para>
         /// </summary>
         public string Name

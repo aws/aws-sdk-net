@@ -29,14 +29,14 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the CloneStack operation.
-    /// Creates a clone of a specified stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html">Clone
+    /// Creates a clone of a specified stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html">Clone
     /// a Stack</a>. By default, all parameters are set to the values used by the parent stack.
     /// 
     ///  
     /// <para>
     ///  <b>Required Permissions</b>: To use this action, an IAM user must have an attached
     /// policy that explicitly grants permissions. For more information about user permissions,
-    /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
     /// </para>
     /// </summary>
@@ -130,7 +130,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property ChefConfiguration. 
         /// <para>
         /// A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf
-        /// and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
+        /// and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
         /// a New Stack</a>.
         /// </para>
         /// </summary>
@@ -203,7 +203,13 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CustomCookbooksSource.
+        /// Gets and sets the property CustomCookbooksSource. 
+        /// <para>
+        /// Contains the information required to retrieve an app or cookbook from a repository.
+        /// For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding
+        /// Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks
+        /// and Recipes</a>.
+        /// </para>
         /// </summary>
         public Source CustomCookbooksSource
         {
@@ -229,7 +235,7 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+        /// For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
         /// Custom JSON to Modify the Stack Configuration Attributes</a> 
         /// </para>
         /// </summary>
@@ -249,7 +255,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property DefaultAvailabilityZone. 
         /// <para>
         /// The cloned stack's default Availability Zone, which must be in the specified region.
-        /// For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
+        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
         /// and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the
         /// subnet must be in the same zone. For more information, see the <code>VpcId</code>
         /// parameter description. 
@@ -271,7 +277,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property DefaultInstanceProfileArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all
-        /// of the stack's EC2 instances. For more information about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+        /// of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
         /// Identifiers</a>.
         /// </para>
         /// </summary>
@@ -295,9 +301,9 @@ namespace Amazon.OpsWorks.Model
         ///  <ul> <li> 
         /// <para>
         /// A supported Linux operating system: An Amazon Linux version, such as <code>Amazon
-        /// Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-        /// <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon
-        /// Linux 2015.03</code>.
+        /// Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>,
+        /// <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon
+        /// Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -323,13 +329,13 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when
         /// you create instances. For more information about how to use custom AMIs with OpsWorks,
-        /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
         /// Custom AMIs</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// The default option is the parent stack's operating system. For more information about
-        /// supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
+        /// supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
         /// OpsWorks Stacks Operating Systems</a>.
         /// </para>
         ///  <note> 
@@ -356,7 +362,7 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The default root device type. This value is used by default for all instances in the
         /// cloned stack, but you can override it when you create an instance. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
         /// for the Root Device</a>.
         /// </para>
         /// </summary>
@@ -378,10 +384,10 @@ namespace Amazon.OpsWorks.Model
         /// A default Amazon EC2 key pair name. The default value is none. If you specify a key
         /// pair name, AWS OpsWorks installs the public key on the instance and you can use the
         /// private key with an SSH client to log in to the instance. For more information, see
-        /// <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html">
-        /// Using SSH to Communicate with an Instance</a> and <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html">
+        /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html">
+        /// Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html">
         /// Managing SSH Access</a>. You can override this setting by specifying a different key
-        /// pair, or no key pair, when you <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
+        /// pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
         /// create an instance</a>. 
         /// </para>
         /// </summary>
@@ -446,7 +452,7 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Greek_Deities</code> 
+        ///  <code>Greek_Deities_and_Titans</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -512,7 +518,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property Region. 
         /// <para>
         /// The cloned stack AWS region, such as "ap-northeast-2". For more information about
-        /// AWS regions, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
+        /// AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
         /// and Endpoints</a>.
         /// </para>
         /// </summary>
@@ -536,7 +542,7 @@ namespace Amazon.OpsWorks.Model
         /// Amazon Resource Name (ARN) for an existing IAM role. If you create a stack by using
         /// the AWS OpsWorks Stacks console, it creates the role for you. You can obtain an existing
         /// stack's IAM ARN programmatically by calling <a>DescribePermissions</a>. For more information
-        /// about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+        /// about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
         /// Identifiers</a>.
         /// </para>
         ///  <note> 
@@ -626,7 +632,7 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
+        /// For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
         /// a New Stack</a>.
         /// </para>
         /// </summary>
@@ -680,9 +686,9 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
+        /// For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
         /// a Stack in a VPC</a>. For more information about default VPC and EC2 Classic, see
-        /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
         /// Platforms</a>. 
         /// </para>
         /// </summary>

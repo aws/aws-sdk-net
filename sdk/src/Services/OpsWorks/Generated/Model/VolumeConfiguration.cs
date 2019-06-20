@@ -44,7 +44,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property Encrypted. 
         /// <para>
         /// Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
-        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+        /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
         /// EBS Encryption</a>.
         /// </para>
         /// </summary>
@@ -156,7 +156,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property VolumeType. 
         /// <para>
-        /// The volume type. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
+        /// The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
         /// Amazon EBS Volume Types</a>.
         /// </para>
         ///  <ul> <li> 
