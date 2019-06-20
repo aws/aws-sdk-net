@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTEventsData.Model
 {
     /// <summary>
-    /// Contains informations about the errors encountered.
+    /// Contains information about the errors encountered.
     /// </summary>
     public partial class BatchPutMessageErrorEntry
     {
@@ -75,8 +75,8 @@ namespace Amazon.IoTEventsData.Model
         /// <summary>
         /// Gets and sets the property MessageId. 
         /// <para>
-        /// The ID of the message that caused the error. (See the value corresponding to the <code>messageId</code>
-        /// key in the <code>message</code> object.)
+        /// The ID of the message that caused the error. (See the value corresponding to the <code>"messageId"</code>
+        /// key in the <code>"message"</code> object.)
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

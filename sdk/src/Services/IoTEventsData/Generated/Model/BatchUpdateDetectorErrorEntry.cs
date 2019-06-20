@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTEventsData.Model
 {
     /// <summary>
-    /// Information about the error which occured when attempting to update a detector.
+    /// Information about the error that occured when attempting to update a detector.
     /// </summary>
     public partial class BatchUpdateDetectorErrorEntry
     {
@@ -75,8 +75,8 @@ namespace Amazon.IoTEventsData.Model
         /// <summary>
         /// Gets and sets the property MessageId. 
         /// <para>
-        /// The "messageId" of the update request that caused the error. (The value of the <code>messageId</code>
-        /// in the update request <code>Detector</code> object.)
+        /// The <code>"messageId"</code> of the update request that caused the error. (The value
+        /// of the <code>"messageId"</code> in the update request <code>"Detector"</code> object.)
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

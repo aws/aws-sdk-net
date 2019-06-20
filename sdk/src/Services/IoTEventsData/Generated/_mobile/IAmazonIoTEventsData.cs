@@ -32,7 +32,9 @@ namespace Amazon.IoTEventsData
     /// Interface for accessing IoTEventsData
     ///
     /// AWS IoT Events monitors your equipment or device fleets for failures or changes in
-    /// operation, and triggers actions when such events occur.
+    /// operation, and triggers actions when such events occur. AWS IoT Events Data API commands
+    /// enable you to send inputs to detectors, list detectors, and view or update a detector's
+    /// status.
     /// </summary>
     public partial interface IAmazonIoTEventsData : IAmazonService, IDisposable
     {
@@ -42,11 +44,11 @@ namespace Amazon.IoTEventsData
 
 
         /// <summary>
-        /// Sends a set of messages to the AWS IoT Events system. Each message payload will be
-        /// transformed into the input you specify (<code>inputName</code>) and ingested into
-        /// any detectors that monitor that input. If multiple messages are sent, the order in
-        /// which the messages are processed is not guaranteed--you must send messages one at
-        /// a time and wait for a successful response to guarantee ordering.
+        /// Sends a set of messages to the AWS IoT Events system. Each message payload is transformed
+        /// into the input you specify (<code>"inputName"</code>) and ingested into any detectors
+        /// that monitor that input. If multiple messages are sent, the order in which the messages
+        /// are processed isn't guaranteed. To guarantee ordering, you must send messages one
+        /// at a time and wait for a successful response.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchPutMessage service method.</param>
         /// <param name="cancellationToken">

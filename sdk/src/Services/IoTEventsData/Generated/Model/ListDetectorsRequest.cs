@@ -41,7 +41,7 @@ namespace Amazon.IoTEventsData.Model
         /// <summary>
         /// Gets and sets the property DetectorModelName. 
         /// <para>
-        /// The name of the detector model whose instances you want to list.
+        /// The name of the detector model whose detectors (instances) are listed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

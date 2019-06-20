@@ -77,7 +77,7 @@ namespace Amazon.IoTEventsData.Model
         /// <summary>
         /// Gets and sets the property Variables. 
         /// <para>
-        /// The current state of the detector's variables.
+        /// The current values of the detector's variables.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

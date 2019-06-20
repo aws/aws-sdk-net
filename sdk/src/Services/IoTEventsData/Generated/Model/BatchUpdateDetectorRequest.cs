@@ -39,7 +39,7 @@ namespace Amazon.IoTEventsData.Model
         /// <summary>
         /// Gets and sets the property Detectors. 
         /// <para>
-        /// The list of detectors (instances) to be updated, along with the values to be updated.
+        /// The list of detectors (instances) to update, along with the values to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

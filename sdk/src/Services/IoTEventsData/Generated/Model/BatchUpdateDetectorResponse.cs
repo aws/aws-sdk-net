@@ -37,8 +37,8 @@ namespace Amazon.IoTEventsData.Model
         /// <summary>
         /// Gets and sets the property BatchUpdateDetectorErrorEntries. 
         /// <para>
-        /// A list of those detector updates which resulted in errors. (The specific update did
-        /// not occur if an error is listed here.)
+        /// A list of those detector updates that resulted in errors. (If an error is listed here,
+        /// the specific update did not occur.)
         /// </para>
         /// </summary>
         public List<BatchUpdateDetectorErrorEntry> BatchUpdateDetectorErrorEntries

@@ -39,7 +39,7 @@ namespace Amazon.IoTEventsData.Model
         /// <summary>
         /// Gets and sets the property InputName. 
         /// <para>
-        /// The name of the input into which the message payload will be transformed.
+        /// The name of the input into which the message payload is transformed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -58,8 +58,8 @@ namespace Amazon.IoTEventsData.Model
         /// <summary>
         /// Gets and sets the property MessageId. 
         /// <para>
-        /// The ID you wish to assign to the message. Each "messageId" must be unique within each
-        /// batch sent.
+        /// The ID to assign to the message. Within each batch sent, each <code>"messageId"</code>
+        /// must be unique.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
