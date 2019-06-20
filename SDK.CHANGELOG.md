@@ -1,3 +1,8 @@
+### 3.3.536.0 (2019-06-20 22:29 UTC)
+* Core 3.3.103.0
+	* Added support for the credential_process credential provider; Added host name support for Client Side Metrics.
+	* All services packages updated to require new Core
+
 ### 3.3.535.0 (2019-06-20 18:11 UTC)
 * ACMPCA (3.3.101.0)
 	* ACM Private CA is launching Root CAs and hierarchy management, a new feature that expands the scope of ACM Private CA from supporting only subordinate issuing CAs, to now include a full CA hierarchy that includes root CAs - the cryptographic root of trust for an organization.
