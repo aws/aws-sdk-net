@@ -1,3 +1,13 @@
+### 3.3.537.0 (2019-06-21 19:40 UTC)
+* DeviceFarm (3.3.101.14)
+	* This release includes updated documentation about the default timeout value for test runs and remote access sessions. This release also includes miscellaneous bug fixes for the documentation.
+* IdentityManagement (3.3.102.0)
+	* We are making it easier for you to manage your permission guardrails i.e. service control policies by enabling you to retrieve the last timestamp when an AWS service was accessed within an account or AWS Organizations entity.
+* KinesisVideoMedia (3.3.100.37)
+	* Documentation updates for Amazon Kinesis Video Streams.
+* MediaPackage (3.3.102.0)
+	* Added two new origin endpoint fields for configuring which SCTE-35 messages are treated as advertisements.
+
 ### 3.3.536.0 (2019-06-20 22:29 UTC)
 * Core 3.3.103.0
 	* Added support for the credential_process credential provider; Added host name support for Client Side Metrics.
