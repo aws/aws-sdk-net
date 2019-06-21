@@ -32,6 +32,8 @@ namespace Amazon.MediaPackage.Model
     /// </summary>
     public partial class DashPackage
     {
+        private AdsOnDeliveryRestrictions _adsOnDeliveryRestrictions;
+        private List<string> _adTriggers = new List<string>();
         private DashEncryption _encryption;
         private ManifestLayout _manifestLayout;
         private int? _manifestWindowSeconds;
@@ -43,6 +45,36 @@ namespace Amazon.MediaPackage.Model
         private SegmentTemplateFormat _segmentTemplateFormat;
         private StreamSelection _streamSelection;
         private int? _suggestedPresentationDelaySeconds;
+
+        /// <summary>
+        /// Gets and sets the property AdsOnDeliveryRestrictions.
+        /// </summary>
+        public AdsOnDeliveryRestrictions AdsOnDeliveryRestrictions
+        {
+            get { return this._adsOnDeliveryRestrictions; }
+            set { this._adsOnDeliveryRestrictions = value; }
+        }
+
+        // Check to see if AdsOnDeliveryRestrictions property is set
+        internal bool IsSetAdsOnDeliveryRestrictions()
+        {
+            return this._adsOnDeliveryRestrictions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdTriggers.
+        /// </summary>
+        public List<string> AdTriggers
+        {
+            get { return this._adTriggers; }
+            set { this._adTriggers = value; }
+        }
+
+        // Check to see if AdTriggers property is set
+        internal bool IsSetAdTriggers()
+        {
+            return this._adTriggers != null && this._adTriggers.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Encryption.

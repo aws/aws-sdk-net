@@ -25,6 +25,80 @@ namespace Amazon.MediaPackage
 {
 
     /// <summary>
+    /// Constants used for properties of type __AdTriggersElement.
+    /// </summary>
+    public class __AdTriggersElement : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BREAK for __AdTriggersElement
+        /// </summary>
+        public static readonly __AdTriggersElement BREAK = new __AdTriggersElement("BREAK");
+        /// <summary>
+        /// Constant DISTRIBUTOR_ADVERTISEMENT for __AdTriggersElement
+        /// </summary>
+        public static readonly __AdTriggersElement DISTRIBUTOR_ADVERTISEMENT = new __AdTriggersElement("DISTRIBUTOR_ADVERTISEMENT");
+        /// <summary>
+        /// Constant DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY for __AdTriggersElement
+        /// </summary>
+        public static readonly __AdTriggersElement DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY = new __AdTriggersElement("DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY");
+        /// <summary>
+        /// Constant DISTRIBUTOR_PLACEMENT_OPPORTUNITY for __AdTriggersElement
+        /// </summary>
+        public static readonly __AdTriggersElement DISTRIBUTOR_PLACEMENT_OPPORTUNITY = new __AdTriggersElement("DISTRIBUTOR_PLACEMENT_OPPORTUNITY");
+        /// <summary>
+        /// Constant PROVIDER_ADVERTISEMENT for __AdTriggersElement
+        /// </summary>
+        public static readonly __AdTriggersElement PROVIDER_ADVERTISEMENT = new __AdTriggersElement("PROVIDER_ADVERTISEMENT");
+        /// <summary>
+        /// Constant PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY for __AdTriggersElement
+        /// </summary>
+        public static readonly __AdTriggersElement PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY = new __AdTriggersElement("PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY");
+        /// <summary>
+        /// Constant PROVIDER_PLACEMENT_OPPORTUNITY for __AdTriggersElement
+        /// </summary>
+        public static readonly __AdTriggersElement PROVIDER_PLACEMENT_OPPORTUNITY = new __AdTriggersElement("PROVIDER_PLACEMENT_OPPORTUNITY");
+        /// <summary>
+        /// Constant SPLICE_INSERT for __AdTriggersElement
+        /// </summary>
+        public static readonly __AdTriggersElement SPLICE_INSERT = new __AdTriggersElement("SPLICE_INSERT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public __AdTriggersElement(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static __AdTriggersElement FindValue(string value)
+        {
+            return FindValue<__AdTriggersElement>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator __AdTriggersElement(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type __PeriodTriggersElement.
     /// </summary>
     public class __PeriodTriggersElement : ConstantClass
@@ -118,6 +192,64 @@ namespace Amazon.MediaPackage
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AdMarkers(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AdsOnDeliveryRestrictions.
+    /// </summary>
+    public class AdsOnDeliveryRestrictions : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BOTH for AdsOnDeliveryRestrictions
+        /// </summary>
+        public static readonly AdsOnDeliveryRestrictions BOTH = new AdsOnDeliveryRestrictions("BOTH");
+        /// <summary>
+        /// Constant NONE for AdsOnDeliveryRestrictions
+        /// </summary>
+        public static readonly AdsOnDeliveryRestrictions NONE = new AdsOnDeliveryRestrictions("NONE");
+        /// <summary>
+        /// Constant RESTRICTED for AdsOnDeliveryRestrictions
+        /// </summary>
+        public static readonly AdsOnDeliveryRestrictions RESTRICTED = new AdsOnDeliveryRestrictions("RESTRICTED");
+        /// <summary>
+        /// Constant UNRESTRICTED for AdsOnDeliveryRestrictions
+        /// </summary>
+        public static readonly AdsOnDeliveryRestrictions UNRESTRICTED = new AdsOnDeliveryRestrictions("UNRESTRICTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AdsOnDeliveryRestrictions(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AdsOnDeliveryRestrictions FindValue(string value)
+        {
+            return FindValue<AdsOnDeliveryRestrictions>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AdsOnDeliveryRestrictions(string value)
         {
             return FindValue(value);
         }

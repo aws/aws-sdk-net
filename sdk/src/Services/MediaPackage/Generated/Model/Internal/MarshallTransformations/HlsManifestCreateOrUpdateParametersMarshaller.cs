@@ -51,6 +51,23 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AdMarkers);
             }
 
+            if(requestObject.IsSetAdsOnDeliveryRestrictions())
+            {
+                context.Writer.WritePropertyName("adsOnDeliveryRestrictions");
+                context.Writer.Write(requestObject.AdsOnDeliveryRestrictions);
+            }
+
+            if(requestObject.IsSetAdTriggers())
+            {
+                context.Writer.WritePropertyName("adTriggers");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAdTriggersListValue in requestObject.AdTriggers)
+                {
+                        context.Writer.Write(requestObjectAdTriggersListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("id");

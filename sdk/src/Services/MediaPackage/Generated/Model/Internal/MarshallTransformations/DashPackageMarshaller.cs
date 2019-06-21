@@ -45,6 +45,23 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DashPackage requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAdsOnDeliveryRestrictions())
+            {
+                context.Writer.WritePropertyName("adsOnDeliveryRestrictions");
+                context.Writer.Write(requestObject.AdsOnDeliveryRestrictions);
+            }
+
+            if(requestObject.IsSetAdTriggers())
+            {
+                context.Writer.WritePropertyName("adTriggers");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAdTriggersListValue in requestObject.AdTriggers)
+                {
+                        context.Writer.Write(requestObjectAdTriggersListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetEncryption())
             {
                 context.Writer.WritePropertyName("encryption");
