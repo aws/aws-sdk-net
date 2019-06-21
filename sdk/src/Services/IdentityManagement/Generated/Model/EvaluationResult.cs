@@ -133,7 +133,7 @@ namespace Amazon.IdentityManagement.Model
         /// A list of the statements in the input policies that determine the result for this
         /// scenario. Remember that even if multiple statements allow the operation on the resource,
         /// if only one statement denies that operation, then the explicit deny overrides any
-        /// allow. Inaddition, the deny statement is the only entry included in the result.
+        /// allow. In addition, the deny statement is the only entry included in the result.
         /// </para>
         /// </summary>
         public List<Statement> MatchedStatements
@@ -175,7 +175,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property OrganizationsDecisionDetail. 
         /// <para>
-        /// A structure that details how AWS Organizations and its service control policies affect
+        /// A structure that details how Organizations and its service control policies affect
         /// the results of the simulation. Only applies if the simulated user's account is part
         /// of an organization.
         /// </para>

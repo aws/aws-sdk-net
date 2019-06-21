@@ -1811,6 +1811,35 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  GenerateOrganizationsAccessReport
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GenerateOrganizationsAccessReport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GenerateOrganizationsAccessReport operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GenerateOrganizationsAccessReport">REST API Reference for GenerateOrganizationsAccessReport Operation</seealso>
+        public virtual void GenerateOrganizationsAccessReportAsync(GenerateOrganizationsAccessReportRequest request, AmazonServiceCallback<GenerateOrganizationsAccessReportRequest, GenerateOrganizationsAccessReportResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GenerateOrganizationsAccessReportRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GenerateOrganizationsAccessReportResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<GenerateOrganizationsAccessReportRequest,GenerateOrganizationsAccessReportResponse> responseObject 
+                            = new AmazonServiceResult<GenerateOrganizationsAccessReportRequest,GenerateOrganizationsAccessReportResponse>((GenerateOrganizationsAccessReportRequest)req, (GenerateOrganizationsAccessReportResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  GenerateServiceLastAccessedDetails
 
         /// <summary>
@@ -2411,6 +2440,35 @@ namespace Amazon.IdentityManagement
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
                     AmazonServiceResult<GetOpenIDConnectProviderRequest,GetOpenIDConnectProviderResponse> responseObject 
                             = new AmazonServiceResult<GetOpenIDConnectProviderRequest,GetOpenIDConnectProviderResponse>((GetOpenIDConnectProviderRequest)req, (GetOpenIDConnectProviderResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  GetOrganizationsAccessReport
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetOrganizationsAccessReport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetOrganizationsAccessReport operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetOrganizationsAccessReport">REST API Reference for GetOrganizationsAccessReport Operation</seealso>
+        public virtual void GetOrganizationsAccessReportAsync(GetOrganizationsAccessReportRequest request, AmazonServiceCallback<GetOrganizationsAccessReportRequest, GetOrganizationsAccessReportResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetOrganizationsAccessReportRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetOrganizationsAccessReportResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<GetOrganizationsAccessReportRequest,GetOrganizationsAccessReportResponse> responseObject 
+                            = new AmazonServiceResult<GetOrganizationsAccessReportRequest,GetOrganizationsAccessReportResponse>((GetOrganizationsAccessReportRequest)req, (GetOrganizationsAccessReportResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
             BeginInvoke(request, invokeOptions, options, callbackHelper);

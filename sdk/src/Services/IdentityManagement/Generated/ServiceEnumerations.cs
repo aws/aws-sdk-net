@@ -921,6 +921,64 @@ namespace Amazon.IdentityManagement
 
 
     /// <summary>
+    /// Constants used for properties of type SortKeyType.
+    /// </summary>
+    public class SortKeyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LAST_AUTHENTICATED_TIME_ASCENDING for SortKeyType
+        /// </summary>
+        public static readonly SortKeyType LAST_AUTHENTICATED_TIME_ASCENDING = new SortKeyType("LAST_AUTHENTICATED_TIME_ASCENDING");
+        /// <summary>
+        /// Constant LAST_AUTHENTICATED_TIME_DESCENDING for SortKeyType
+        /// </summary>
+        public static readonly SortKeyType LAST_AUTHENTICATED_TIME_DESCENDING = new SortKeyType("LAST_AUTHENTICATED_TIME_DESCENDING");
+        /// <summary>
+        /// Constant SERVICE_NAMESPACE_ASCENDING for SortKeyType
+        /// </summary>
+        public static readonly SortKeyType SERVICE_NAMESPACE_ASCENDING = new SortKeyType("SERVICE_NAMESPACE_ASCENDING");
+        /// <summary>
+        /// Constant SERVICE_NAMESPACE_DESCENDING for SortKeyType
+        /// </summary>
+        public static readonly SortKeyType SERVICE_NAMESPACE_DESCENDING = new SortKeyType("SERVICE_NAMESPACE_DESCENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SortKeyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortKeyType FindValue(string value)
+        {
+            return FindValue<SortKeyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortKeyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StatusType.
     /// </summary>
     public class StatusType : ConstantClass

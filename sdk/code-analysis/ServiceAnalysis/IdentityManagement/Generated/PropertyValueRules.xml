@@ -519,6 +519,21 @@
     <pattern>[\w+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GenerateOrganizationsAccessReportRequest.EntityPath</property>
+    <min>19</min>
+    <max>427</max>
+    <pattern>^o-[0-9a-z]{10,32}\/r-[0-9a-z]{4,32}[0-9a-z-\/]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GenerateOrganizationsAccessReportRequest.OrganizationsPolicyId</property>
+    <pattern>^p-[0-9a-zA-Z_]{8,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GenerateOrganizationsAccessReportResponse.JobId</property>
+    <min>36</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GenerateServiceLastAccessedDetailsRequest.Arn</property>
     <min>20</min>
     <max>2048</max>
@@ -624,6 +639,28 @@
     <property>Amazon.IdentityManagement.Model.GetOpenIDConnectProviderResponse.Url</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GetOrganizationsAccessReportRequest.JobId</property>
+    <min>36</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GetOrganizationsAccessReportRequest.Marker</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GetOrganizationsAccessReportRequest.MaxItems</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GetOrganizationsAccessReportResponse.Marker</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>[\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetPolicyRequest.PolicyArn</property>
@@ -1706,6 +1743,18 @@
     <min>1</min>
     <max>64</max>
     <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.AccessDetail.EntityPath</property>
+    <min>19</min>
+    <max>427</max>
+    <pattern>^o-[0-9a-z]{10,32}\/r-[0-9a-z]{4,32}[0-9a-z-\/]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.AccessDetail.ServiceNamespace</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\w-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.AccessKey.AccessKeyId</property>

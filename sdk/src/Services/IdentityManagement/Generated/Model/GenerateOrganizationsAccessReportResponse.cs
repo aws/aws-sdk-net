@@ -28,29 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Contains information about the effect that Organizations has on a policy simulation.
+    /// This is the response object from the GenerateOrganizationsAccessReport operation.
     /// </summary>
-    public partial class OrganizationsDecisionDetail
+    public partial class GenerateOrganizationsAccessReportResponse : AmazonWebServiceResponse
     {
-        private bool? _allowedByOrganizations;
+        private string _jobId;
 
         /// <summary>
-        /// Gets and sets the property AllowedByOrganizations. 
+        /// Gets and sets the property JobId. 
         /// <para>
-        /// Specifies whether the simulated operation is allowed by the Organizations service
-        /// control policies that impact the simulated user's account.
+        /// The job identifier that you can use in the <a>GetOrganizationsAccessReport</a> operation.
         /// </para>
         /// </summary>
-        public bool AllowedByOrganizations
+        [AWSProperty(Min=36, Max=36)]
+        public string JobId
         {
-            get { return this._allowedByOrganizations.GetValueOrDefault(); }
-            set { this._allowedByOrganizations = value; }
+            get { return this._jobId; }
+            set { this._jobId = value; }
         }
 
-        // Check to see if AllowedByOrganizations property is set
-        internal bool IsSetAllowedByOrganizations()
+        // Check to see if JobId property is set
+        internal bool IsSetJobId()
         {
-            return this._allowedByOrganizations.HasValue; 
+            return this._jobId != null;
         }
 
     }

@@ -151,7 +151,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property ContextEntries. 
         /// <para>
         /// A list of context keys and corresponding values for the simulation to use. Whenever
-        /// a context key is evaluated in one of the simulated IAM permission policies, the corresponding
+        /// a context key is evaluated in one of the simulated IAM permissions policies, the corresponding
         /// value is supplied.
         /// </para>
         /// </summary>

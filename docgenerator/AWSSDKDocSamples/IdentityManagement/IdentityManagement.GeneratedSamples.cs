@@ -391,6 +391,20 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
             #endregion
         }
 
+        public void IdentityManagementServiceGenerateOrganizationsAccessReport()
+        {
+            #region generateorganizationsaccessreport-ou
+
+            var response = client.GenerateOrganizationsAccessReport(new GenerateOrganizationsAccessReportRequest 
+            {
+                EntityPath = "o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-1a2b3c-k9l8m7n6o5example"
+            });
+
+            string jobId = response.JobId;
+
+            #endregion
+        }
+
         public void IdentityManagementServiceGenerateServiceLastAccessedDetails()
         {
             #region generateaccessdata-policy-1541695178514
@@ -455,6 +469,26 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
             });
 
             LoginProfile loginProfile = response.LoginProfile;
+
+            #endregion
+        }
+
+        public void IdentityManagementServiceGetOrganizationsAccessReport()
+        {
+            #region getorganizationsaccessreport-ou
+
+            var response = client.GetOrganizationsAccessReport(new GetOrganizationsAccessReportRequest 
+            {
+                JobId = "examplea-1234-b567-cde8-90fg123abcd4"
+            });
+
+            List<AccessDetail> accessDetails = response.AccessDetails;
+            bool isTruncated = response.IsTruncated;
+            DateTime jobCompletionDate = response.JobCompletionDate;
+            DateTime jobCreationDate = response.JobCreationDate;
+            string jobStatus = response.JobStatus;
+            integer numberOfServicesAccessible = response.NumberOfServicesAccessible;
+            integer numberOfServicesNotAccessed = response.NumberOfServicesNotAccessed;
 
             #endregion
         }

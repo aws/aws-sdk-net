@@ -1069,6 +1069,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("IdentityManagement")]
+        public void GenerateOrganizationsAccessReportMarshallTest()
+        {
+            var operation = service_model.FindOperation("GenerateOrganizationsAccessReport");
+
+            var request = InstantiateClassGenerator.Execute<GenerateOrganizationsAccessReportRequest>();
+            var marshaller = new GenerateOrganizationsAccessReportRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GenerateOrganizationsAccessReportResponseUnmarshaller.Instance.Unmarshall(context)
+                as GenerateOrganizationsAccessReportResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagement")]
         public void GenerateServiceLastAccessedDetailsMarshallTest()
         {
             var operation = service_model.FindOperation("GenerateServiceLastAccessedDetails");
@@ -1372,6 +1396,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = GetOpenIDConnectProviderResponseUnmarshaller.Instance.Unmarshall(context)
                 as GetOpenIDConnectProviderResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagement")]
+        public void GetOrganizationsAccessReportMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetOrganizationsAccessReport");
+
+            var request = InstantiateClassGenerator.Execute<GetOrganizationsAccessReportRequest>();
+            var marshaller = new GetOrganizationsAccessReportRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GetOrganizationsAccessReportResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetOrganizationsAccessReportResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

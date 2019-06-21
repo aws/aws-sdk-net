@@ -144,7 +144,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// A null valuedoes not mean that the user <i>never</i> had a password. Also, if the
+        /// A null value does not mean that the user <i>never</i> had a password. Also, if the
         /// user does not currently have a password, but had one in the past, then this field
         /// contains the date and time the most recent password was used.
         /// </para>

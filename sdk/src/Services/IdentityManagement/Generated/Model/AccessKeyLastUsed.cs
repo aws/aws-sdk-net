@@ -59,7 +59,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// There is no sign-in data associated with the user
+        /// There is no sign-in data associated with the user.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -79,7 +79,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS region where this access key was most recently used. The value for this field
+        /// The AWS Region where this access key was most recently used. The value for this field
         /// is "N/A" in the following situations:
         /// </para>
         ///  <ul> <li> 
@@ -92,11 +92,11 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// There is no sign-in data associated with the user
+        /// There is no sign-in data associated with the user.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
+        /// For more information about AWS Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
         /// and Endpoints</a> in the Amazon Web Services General Reference.
         /// </para>
         /// </summary>
@@ -129,7 +129,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// There is no sign-in data associated with the user
+        /// There is no sign-in data associated with the user.
         /// </para>
         ///  </li> </ul>
         /// </summary>

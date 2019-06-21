@@ -28,38 +28,55 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// This is the response object from the GetServiceLastAccessedDetails operation.
+    /// This is the response object from the GetOrganizationsAccessReport operation.
     /// </summary>
-    public partial class GetServiceLastAccessedDetailsResponse : AmazonWebServiceResponse
+    public partial class GetOrganizationsAccessReportResponse : AmazonWebServiceResponse
     {
-        private ErrorDetails _error;
+        private List<AccessDetail> _accessDetails = new List<AccessDetail>();
+        private ErrorDetails _errorDetails;
         private bool? _isTruncated;
         private DateTime? _jobCompletionDate;
         private DateTime? _jobCreationDate;
         private JobStatusType _jobStatus;
         private string _marker;
-        private List<ServiceLastAccessed> _servicesLastAccessed = new List<ServiceLastAccessed>();
+        private int? _numberOfServicesAccessible;
+        private int? _numberOfServicesNotAccessed;
 
         /// <summary>
-        /// Gets and sets the property Error. 
+        /// Gets and sets the property AccessDetails. 
         /// <para>
-        /// An object that contains details about the reason the operation failed.
+        /// An object that contains details about the most recent attempt to access the service.
         /// </para>
         /// </summary>
-        public ErrorDetails Error
+        public List<AccessDetail> AccessDetails
         {
-            get { return this._error; }
-            set { this._error = value; }
+            get { return this._accessDetails; }
+            set { this._accessDetails = value; }
         }
 
-        // Check to see if Error property is set
-        internal bool IsSetError()
+        // Check to see if AccessDetails property is set
+        internal bool IsSetAccessDetails()
         {
-            return this._error != null;
+            return this._accessDetails != null && this._accessDetails.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property IsTruncated.  
+        /// Gets and sets the property ErrorDetails.
+        /// </summary>
+        public ErrorDetails ErrorDetails
+        {
+            get { return this._errorDetails; }
+            set { this._errorDetails = value; }
+        }
+
+        // Check to see if ErrorDetails property is set
+        internal bool IsSetErrorDetails()
+        {
+            return this._errorDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsTruncated. 
         /// <para>
         /// A flag that indicates whether there are more items to return. If your results were
         /// truncated, you can make a subsequent pagination request using the <code>Marker</code>
@@ -93,7 +110,6 @@ namespace Amazon.IdentityManagement.Model
         /// of <code>IN_PROGRESS</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public DateTime JobCompletionDate
         {
             get { return this._jobCompletionDate.GetValueOrDefault(); }
@@ -153,6 +169,7 @@ namespace Amazon.IdentityManagement.Model
         /// request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=320)]
         public string Marker
         {
             get { return this._marker; }
@@ -166,23 +183,40 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServicesLastAccessed. 
+        /// Gets and sets the property NumberOfServicesAccessible. 
         /// <para>
-        ///  A <code>ServiceLastAccessed</code> object that contains details about the most recent
-        /// attempt to access the service.
+        /// The number of services that the applicable SCPs allow account principals to access.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public List<ServiceLastAccessed> ServicesLastAccessed
+        public int NumberOfServicesAccessible
         {
-            get { return this._servicesLastAccessed; }
-            set { this._servicesLastAccessed = value; }
+            get { return this._numberOfServicesAccessible.GetValueOrDefault(); }
+            set { this._numberOfServicesAccessible = value; }
         }
 
-        // Check to see if ServicesLastAccessed property is set
-        internal bool IsSetServicesLastAccessed()
+        // Check to see if NumberOfServicesAccessible property is set
+        internal bool IsSetNumberOfServicesAccessible()
         {
-            return this._servicesLastAccessed != null && this._servicesLastAccessed.Count > 0; 
+            return this._numberOfServicesAccessible.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumberOfServicesNotAccessed. 
+        /// <para>
+        /// The number of services that account principals are allowed but did not attempt to
+        /// access.
+        /// </para>
+        /// </summary>
+        public int NumberOfServicesNotAccessed
+        {
+            get { return this._numberOfServicesNotAccessed.GetValueOrDefault(); }
+            set { this._numberOfServicesNotAccessed = value; }
+        }
+
+        // Check to see if NumberOfServicesNotAccessed property is set
+        internal bool IsSetNumberOfServicesNotAccessed()
+        {
+            return this._numberOfServicesNotAccessed.HasValue; 
         }
 
     }

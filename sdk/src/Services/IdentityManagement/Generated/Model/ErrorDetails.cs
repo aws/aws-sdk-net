@@ -32,8 +32,9 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the <a>GetServiceLastAccessedDetails</a>
-    /// operation and the <a>GetServiceLastAccessedDetailsWithEntities</a> operation.
+    /// This data type is used as a response element in the <a>GetOrganizationsAccessReport</a>,
+    /// <a>GetServiceLastAccessedDetails</a>, and <a>GetServiceLastAccessedDetailsWithEntities</a>
+    /// operations.
     /// </para>
     /// </summary>
     public partial class ErrorDetails

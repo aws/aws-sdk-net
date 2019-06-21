@@ -515,6 +515,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.GenerateOrganizationsAccessReport(Amazon.IdentityManagement.Model.GenerateOrganizationsAccessReportRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.GenerateOrganizationsAccessReport(Amazon.IdentityManagement.Model.GenerateOrganizationsAccessReportRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.GenerateOrganizationsAccessReportRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.GenerateOrganizationsAccessReportResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation generates a report for the organizational unit ou-rge0-awexample
+                </para>
+                <code
+                    title="To generate a service last accessed data report for an organizational unit"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="generateorganizationsaccessreport-ou" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.GenerateServiceLastAccessedDetails(Amazon.IdentityManagement.Model.GenerateServiceLastAccessedDetailsRequest)" />
             <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.GenerateServiceLastAccessedDetails(Amazon.IdentityManagement.Model.GenerateServiceLastAccessedDetailsRequest)" />
             <member name="T:Amazon.IdentityManagement.Model.GenerateServiceLastAccessedDetailsRequest" />
@@ -605,6 +624,25 @@
                     title="To get password information for an IAM user"
                     source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
                     region="d6b580cc-909f-4925-9caa-d425cbc1ad47" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.GetOrganizationsAccessReport(Amazon.IdentityManagement.Model.GetOrganizationsAccessReportRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.GetOrganizationsAccessReport(Amazon.IdentityManagement.Model.GetOrganizationsAccessReportRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.GetOrganizationsAccessReportRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.GetOrganizationsAccessReportResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation gets details about the report with the job ID: examplea-1234-b567-cde8-90fg123abcd4
+                </para>
+                <code
+                    title="To get details from a previously generated organizational unit report"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="getorganizationsaccessreport-ou" />
             </example>
         </value>
     </doc>

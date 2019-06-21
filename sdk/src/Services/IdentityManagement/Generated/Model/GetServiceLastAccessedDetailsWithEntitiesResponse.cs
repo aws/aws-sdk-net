@@ -108,6 +108,11 @@ namespace Amazon.IdentityManagement.Model
         /// The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the generated report job was completed or failed.
         /// </para>
+        ///  
+        /// <para>
+        /// This field is null if the job is still in progress, as indicated by a job status value
+        /// of <code>IN_PROGRESS</code>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime JobCompletionDate

@@ -28,72 +28,99 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Contains details about the most recent attempt to access the service.
+    /// An object that contains details about when a principal in the reported AWS Organizations
+    /// entity last attempted to access an AWS service. A principal can be an IAM user, an
+    /// IAM role, or the AWS account root user within the reported Organizations entity.
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the <a>GetServiceLastAccessedDetails</a>
-    /// operation.
+    /// This data type is a response element in the <a>GetOrganizationsAccessReport</a> operation.
     /// </para>
     /// </summary>
-    public partial class ServiceLastAccessed
+    public partial class AccessDetail
     {
-        private DateTime? _lastAuthenticated;
-        private string _lastAuthenticatedEntity;
+        private string _entityPath;
+        private DateTime? _lastAuthenticatedTime;
+        private string _region;
         private string _serviceName;
         private string _serviceNamespace;
         private int? _totalAuthenticatedEntities;
 
         /// <summary>
-        /// Gets and sets the property LastAuthenticated. 
+        /// Gets and sets the property EntityPath. 
         /// <para>
-        /// The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
-        /// format</a>, when an authenticated entity most recently attempted to access the service.
-        /// AWS does not report unauthenticated requests.
+        /// The path of the Organizations entity (root, organizational unit, or account) from
+        /// which an authenticated principal last attempted to access the service. AWS does not
+        /// report unauthenticated requests.
         /// </para>
         ///  
         /// <para>
-        /// This field is null if no IAM entities attempted to access the service within the <a
-        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+        /// This field is null if no principals (IAM users, IAM roles, or root users) in the reported
+        /// Organizations entity attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
         /// period</a>.
         /// </para>
         /// </summary>
-        public DateTime LastAuthenticated
+        [AWSProperty(Min=19, Max=427)]
+        public string EntityPath
         {
-            get { return this._lastAuthenticated.GetValueOrDefault(); }
-            set { this._lastAuthenticated = value; }
+            get { return this._entityPath; }
+            set { this._entityPath = value; }
         }
 
-        // Check to see if LastAuthenticated property is set
-        internal bool IsSetLastAuthenticated()
+        // Check to see if EntityPath property is set
+        internal bool IsSetEntityPath()
         {
-            return this._lastAuthenticated.HasValue; 
+            return this._entityPath != null;
         }
 
         /// <summary>
-        /// Gets and sets the property LastAuthenticatedEntity. 
+        /// Gets and sets the property LastAuthenticatedTime. 
         /// <para>
-        /// The ARN of the authenticated entity (user or role) that last attempted to access the
+        /// The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when an authenticated principal most recently attempted to access the
         /// service. AWS does not report unauthenticated requests.
         /// </para>
         ///  
         /// <para>
-        /// This field is null if no IAM entities attempted to access the service within the <a
-        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+        /// This field is null if no principals in the reported Organizations entity attempted
+        /// to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
         /// period</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
-        public string LastAuthenticatedEntity
+        public DateTime LastAuthenticatedTime
         {
-            get { return this._lastAuthenticatedEntity; }
-            set { this._lastAuthenticatedEntity = value; }
+            get { return this._lastAuthenticatedTime.GetValueOrDefault(); }
+            set { this._lastAuthenticatedTime = value; }
         }
 
-        // Check to see if LastAuthenticatedEntity property is set
-        internal bool IsSetLastAuthenticatedEntity()
+        // Check to see if LastAuthenticatedTime property is set
+        internal bool IsSetLastAuthenticatedTime()
         {
-            return this._lastAuthenticatedEntity != null;
+            return this._lastAuthenticatedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Region. 
+        /// <para>
+        /// The Region where the last service access attempt occurred.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field is null if no principals in the reported Organizations entity attempted
+        /// to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+        /// period</a>.
+        /// </para>
+        /// </summary>
+        public string Region
+        {
+            get { return this._region; }
+            set { this._region = value; }
+        }
+
+        // Check to see if Region property is set
+        internal bool IsSetRegion()
+        {
+            return this._region != null;
         }
 
         /// <summary>
@@ -146,14 +173,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property TotalAuthenticatedEntities. 
         /// <para>
-        /// The total number of authenticated principals (root user, IAM users, or IAM roles)
-        /// that have attempted to access the service.
-        /// </para>
-        ///  
-        /// <para>
-        /// This field is null if no principals attempted to access the service within the <a
-        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
-        /// period</a>.
+        /// The number of accounts with authenticated principals (root users, IAM users, and IAM
+        /// roles) that attempted to access the service in the reporting period.
         /// </para>
         /// </summary>
         public int TotalAuthenticatedEntities

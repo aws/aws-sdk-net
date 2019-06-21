@@ -959,6 +959,23 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  GenerateOrganizationsAccessReport
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GenerateOrganizationsAccessReport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GenerateOrganizationsAccessReport operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GenerateOrganizationsAccessReport">REST API Reference for GenerateOrganizationsAccessReport Operation</seealso>
+        void GenerateOrganizationsAccessReportAsync(GenerateOrganizationsAccessReportRequest request, AmazonServiceCallback<GenerateOrganizationsAccessReportRequest, GenerateOrganizationsAccessReportResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
         #region  GenerateServiceLastAccessedDetails
 
 
@@ -1297,6 +1314,23 @@ namespace Amazon.IdentityManagement
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetOpenIDConnectProvider">REST API Reference for GetOpenIDConnectProvider Operation</seealso>
         void GetOpenIDConnectProviderAsync(GetOpenIDConnectProviderRequest request, AmazonServiceCallback<GetOpenIDConnectProviderRequest, GetOpenIDConnectProviderResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  GetOrganizationsAccessReport
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetOrganizationsAccessReport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetOrganizationsAccessReport operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetOrganizationsAccessReport">REST API Reference for GetOrganizationsAccessReport Operation</seealso>
+        void GetOrganizationsAccessReportAsync(GetOrganizationsAccessReportRequest request, AmazonServiceCallback<GetOrganizationsAccessReportRequest, GetOrganizationsAccessReportResponse> callback, AsyncOptions options = null);
 
 
         #endregion
