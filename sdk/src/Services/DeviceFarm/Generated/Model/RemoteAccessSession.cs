@@ -152,7 +152,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property DeviceMinutes. 
         /// <para>
-        /// The number of minutes a device is used in a remote access sesssion (including setup
+        /// The number of minutes a device is used in a remote access session (including setup
         /// and teardown minutes).
         /// </para>
         /// </summary>

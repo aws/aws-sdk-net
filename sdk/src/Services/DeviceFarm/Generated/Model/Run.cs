@@ -770,11 +770,11 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// XCTEST: The XCode test type.
+        /// XCTEST: The Xcode test type.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// XCTEST_UI: The XCode UI test type.
+        /// XCTEST_UI: The Xcode UI test type.
         /// </para>
         ///  </li> </ul>
         /// </summary>

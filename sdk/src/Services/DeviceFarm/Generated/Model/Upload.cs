@@ -243,7 +243,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WEB_APP: A web appliction upload.
+        /// WEB_APP: A web application upload.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -309,11 +309,11 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// XCTEST_TEST_PACKAGE: An XCode test package upload.
+        /// XCTEST_TEST_PACKAGE: An Xcode test package upload.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+        /// XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -362,7 +362,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+        /// XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
         /// </para>
         ///  </li> </ul>
         /// </summary>

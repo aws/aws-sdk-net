@@ -38,7 +38,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the sesssion for which you want to delete remote
+        /// The Amazon Resource Name (ARN) of the session for which you want to delete remote
         /// access.
         /// </para>
         /// </summary>

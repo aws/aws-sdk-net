@@ -45,7 +45,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resourc Name (ARN) of the Device Farm device pool you wish to update.
+        /// The Amazon Resource Name (ARN) of the Device Farm device pool you wish to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=32, Max=1011)]

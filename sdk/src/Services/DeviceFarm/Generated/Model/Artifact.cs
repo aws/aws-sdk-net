@@ -198,7 +198,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// XCTEST_LOG: The XCode test output type.
+        /// XCTEST_LOG: The Xcode test output type.
         /// </para>
         ///  </li> <li> 
         /// <para>

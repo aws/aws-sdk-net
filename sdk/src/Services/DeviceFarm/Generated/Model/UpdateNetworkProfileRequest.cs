@@ -69,7 +69,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The descriptoin of the network profile about which you are returning information.
+        /// The description of the network profile about which you are returning information.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=16384)]

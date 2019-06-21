@@ -64,8 +64,8 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Attribute: The aspect of a device such as platform or model used as the selction criteria
-        /// in a device filter.
+        /// Attribute: The aspect of a device such as platform or model used as the selection
+        /// criteria in a device filter.
         /// </para>
         ///  
         /// <para>
