@@ -96,8 +96,9 @@ namespace Amazon.KinesisVideoMedia
         /// <para>
         /// When you put media data (fragments) on a stream, Kinesis Video Streams stores each
         /// incoming fragment and related metadata in what is called a "chunk." For more information,
-        /// see . The <code>GetMedia</code> API returns a stream of these chunks starting from
-        /// the chunk that you specify in the request. 
+        /// see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>.
+        /// The <code>GetMedia</code> API returns a stream of these chunks starting from the chunk
+        /// that you specify in the request. 
         /// </para>
         ///  
         /// <para>
@@ -112,7 +113,36 @@ namespace Amazon.KinesisVideoMedia
         /// Kinesis Video Streams sends media data at a rate of up to 25 megabytes per second
         /// (or 200 megabits per second) during a <code>GetMedia</code> session. 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// If an error is thrown after invoking a Kinesis Video Streams media API, in addition
+        /// to the HTTP status code and the response body, it includes the following pieces of
+        /// information: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>x-amz-ErrorType</code> HTTP header – contains a more specific error type in
+        /// addition to what the HTTP status code provides. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>x-amz-RequestId</code> HTTP header – if you want to report an issue to AWS,
+        /// the support team can better diagnose the problem if given the Request Id.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Both the HTTP status code and the ErrorType header can be utilized to make programmatic
+        /// decisions about whether errors are retry-able and under what conditions, as well as
+        /// provide information on what actions the client programmer might need to take in order
+        /// to successfully try again.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see the <b>Errors</b> section at the bottom of this topic, as
+        /// well as <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/CommonErrors.html">Common
+        /// Errors</a>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMedia service method.</param>
         /// 

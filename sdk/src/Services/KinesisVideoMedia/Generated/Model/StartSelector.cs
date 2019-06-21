@@ -114,8 +114,8 @@ namespace Amazon.KinesisVideoMedia.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// FRAGMENT_NUMBER - Start with the chunk containing the specific fragment. You must
-        /// also specify the <code>StartFragmentNumber</code>.
+        /// FRAGMENT_NUMBER - Start with the chunk after a specific fragment. You must also specify
+        /// the <code>AfterFragmentNumber</code> parameter.
         /// </para>
         ///  </li> <li> 
         /// <para>
