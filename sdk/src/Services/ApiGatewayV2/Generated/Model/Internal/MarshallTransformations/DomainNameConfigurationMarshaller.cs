@@ -69,6 +69,18 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 context.Writer.Write(StringUtils.FromDateTimeToISO8601(requestObject.CertificateUploadDate));
             }
 
+            if(requestObject.IsSetDomainNameStatus())
+            {
+                context.Writer.WritePropertyName("domainNameStatus");
+                context.Writer.Write(requestObject.DomainNameStatus);
+            }
+
+            if(requestObject.IsSetDomainNameStatusMessage())
+            {
+                context.Writer.WritePropertyName("domainNameStatusMessage");
+                context.Writer.Write(requestObject.DomainNameStatusMessage);
+            }
+
             if(requestObject.IsSetEndpointType())
             {
                 context.Writer.WritePropertyName("endpointType");
@@ -79,6 +91,12 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("hostedZoneId");
                 context.Writer.Write(requestObject.HostedZoneId);
+            }
+
+            if(requestObject.IsSetSecurityPolicy())
+            {
+                context.Writer.WritePropertyName("securityPolicy");
+                context.Writer.Write(requestObject.SecurityPolicy);
             }
 
         }

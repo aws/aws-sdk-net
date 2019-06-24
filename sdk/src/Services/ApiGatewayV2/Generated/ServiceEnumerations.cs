@@ -279,6 +279,56 @@ namespace Amazon.ApiGatewayV2
 
 
     /// <summary>
+    /// Constants used for properties of type DomainNameStatus.
+    /// </summary>
+    public class DomainNameStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for DomainNameStatus
+        /// </summary>
+        public static readonly DomainNameStatus AVAILABLE = new DomainNameStatus("AVAILABLE");
+        /// <summary>
+        /// Constant UPDATING for DomainNameStatus
+        /// </summary>
+        public static readonly DomainNameStatus UPDATING = new DomainNameStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DomainNameStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DomainNameStatus FindValue(string value)
+        {
+            return FindValue<DomainNameStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DomainNameStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EndpointType.
     /// </summary>
     public class EndpointType : ConstantClass
@@ -538,6 +588,56 @@ namespace Amazon.ApiGatewayV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ProtocolType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SecurityPolicy.
+    /// </summary>
+    public class SecurityPolicy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TLS_1_0 for SecurityPolicy
+        /// </summary>
+        public static readonly SecurityPolicy TLS_1_0 = new SecurityPolicy("TLS_1_0");
+        /// <summary>
+        /// Constant TLS_1_2 for SecurityPolicy
+        /// </summary>
+        public static readonly SecurityPolicy TLS_1_2 = new SecurityPolicy("TLS_1_2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SecurityPolicy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SecurityPolicy FindValue(string value)
+        {
+            return FindValue<SecurityPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SecurityPolicy(string value)
         {
             return FindValue(value);
         }

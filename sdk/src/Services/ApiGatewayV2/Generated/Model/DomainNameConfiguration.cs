@@ -36,8 +36,11 @@ namespace Amazon.ApiGatewayV2.Model
         private string _certificateArn;
         private string _certificateName;
         private DateTime? _certificateUploadDate;
+        private DomainNameStatus _domainNameStatus;
+        private string _domainNameStatusMessage;
         private EndpointType _endpointType;
         private string _hostedZoneId;
+        private SecurityPolicy _securityPolicy;
 
         /// <summary>
         /// Gets and sets the property ApiGatewayDomainName. 
@@ -115,6 +118,45 @@ namespace Amazon.ApiGatewayV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DomainNameStatus. 
+        /// <para>
+        /// The status of the domain name migration. The valid values are AVAILABLE and UPDATING.
+        /// If the status is UPDATING, the domain cannot be modified further until the existing
+        /// operation is complete. If it is AVAILABLE, the domain can be updated.
+        /// </para>
+        /// </summary>
+        public DomainNameStatus DomainNameStatus
+        {
+            get { return this._domainNameStatus; }
+            set { this._domainNameStatus = value; }
+        }
+
+        // Check to see if DomainNameStatus property is set
+        internal bool IsSetDomainNameStatus()
+        {
+            return this._domainNameStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainNameStatusMessage. 
+        /// <para>
+        /// An optional text message containing detailed information about status of the domain
+        /// name migration.
+        /// </para>
+        /// </summary>
+        public string DomainNameStatusMessage
+        {
+            get { return this._domainNameStatusMessage; }
+            set { this._domainNameStatusMessage = value; }
+        }
+
+        // Check to see if DomainNameStatusMessage property is set
+        internal bool IsSetDomainNameStatusMessage()
+        {
+            return this._domainNameStatusMessage != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EndpointType. 
         /// <para>
         /// The endpoint type.
@@ -148,6 +190,25 @@ namespace Amazon.ApiGatewayV2.Model
         internal bool IsSetHostedZoneId()
         {
             return this._hostedZoneId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityPolicy. 
+        /// <para>
+        /// The Transport Layer Security (TLS) version of the security policy for this domain
+        /// name. The valid values are TLS_1_0 and TLS_1_2.
+        /// </para>
+        /// </summary>
+        public SecurityPolicy SecurityPolicy
+        {
+            get { return this._securityPolicy; }
+            set { this._securityPolicy = value; }
+        }
+
+        // Check to see if SecurityPolicy property is set
+        internal bool IsSetSecurityPolicy()
+        {
+            return this._securityPolicy != null;
         }
 
     }

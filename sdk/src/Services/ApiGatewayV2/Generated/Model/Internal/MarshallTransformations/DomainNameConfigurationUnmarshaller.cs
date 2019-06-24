@@ -88,6 +88,18 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.CertificateUploadDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("domainNameStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DomainNameStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("domainNameStatusMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DomainNameStatusMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("endpointType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -98,6 +110,12 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HostedZoneId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("securityPolicy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SecurityPolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
