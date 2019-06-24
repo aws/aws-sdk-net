@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.ApplicationInsights.Model.ListApplicationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationInsights.Model.ListComponentsRequest.MaxResults</property>
+    <min>1</min>
+    <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationInsights.Model.ListProblemsRequest.MaxResults</property>
+    <min>1</min>
+    <max>40</max>
+  </property-value-rule>
+</property-value-rules>
