@@ -105,7 +105,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FileSystemId. 
         /// <para>
-        /// The eight-digit ID of the file system that was automatically assigned by Amazon FSx.
+        /// The system-generated, unique 17-digit ID of the file system.
         /// </para>
         /// </summary>
         [AWSProperty(Min=11, Max=21)]
@@ -124,7 +124,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FileSystemType. 
         /// <para>
-        /// Type of file system. Currently the only supported type is WINDOWS.
+        /// The type of Amazon FSx file system, either <code>LUSTRE</code> or <code>WINDOWS</code>.
         /// </para>
         /// </summary>
         public FileSystemType FileSystemType
@@ -162,8 +162,38 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Lifecycle. 
         /// <para>
-        /// The lifecycle status of the file system.
+        /// The lifecycle status of the file system:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>AVAILABLE</code> indicates that the file system is reachable and available
+        /// for use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CREATING</code> indicates that Amazon FSx is in the process of creating the
+        /// new file system.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETING</code> indicates that Amazon FSx is in the process of deleting the
+        /// file system.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FAILED</code> indicates that Amazon FSx was not able to create the file system.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MISCONFIGURED</code> indicates that the file system is in a failed but recoverable
+        /// state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UPDATING</code> indicates that the file system is undergoing a customer initiated
+        /// update.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public FileSystemLifecycle Lifecycle
         {
@@ -203,7 +233,7 @@ namespace Amazon.FSx.Model
         ///  
         /// <para>
         /// For an Amazon FSx for Windows File Server file system, you can have one network interface
-        /// Id. For an Amazon FSx for Lustre file system, you can have more than one.
+        /// ID. For an Amazon FSx for Lustre file system, you can have more than one.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]
@@ -223,7 +253,8 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property OwnerId. 
         /// <para>
         /// The AWS account that created the file system. If the file system was created by an
-        /// IAM user, the AWS account to which the IAM user belongs is the owner.
+        /// AWS Identity and Access Management (IAM) user, the AWS account to which the IAM user
+        /// belongs is the owner.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -242,7 +273,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The resource ARN of the file system.
+        /// The Amazon Resource Name (ARN) for the file system resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=8, Max=512)]
@@ -261,7 +292,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property StorageCapacity. 
         /// <para>
-        /// The storage capacity of the file system in gigabytes.
+        /// The storage capacity of the file system in gigabytes (GB).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -280,7 +311,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// The IDs of the subnets to contain the endpoint for the file system. One and only one
+        /// The ID of the subnet to contain the endpoint for the file system. One and only one
         /// is supported. The file system is launched in the Availability Zone associated with
         /// this subnet.
         /// </para>

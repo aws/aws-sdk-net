@@ -37,14 +37,15 @@ namespace Amazon.FSx.Model
         private int? _automaticBackupRetentionDays;
         private bool? _copyTagsToBackups;
         private string _dailyAutomaticBackupStartTime;
+        private SelfManagedActiveDirectoryConfiguration _selfManagedActiveDirectoryConfiguration;
         private int? _throughputCapacity;
         private string _weeklyMaintenanceStartTime;
 
         /// <summary>
         /// Gets and sets the property ActiveDirectoryId. 
         /// <para>
-        /// The ID for an existing Microsoft Active Directory instance that the file system should
-        /// join when it's created.
+        /// The ID for an existing AWS Managed Microsoft Active Directory (AD) instance that the
+        /// file system should join when it's created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -84,11 +85,11 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property CopyTagsToBackups. 
         /// <para>
-        /// A boolean flag indicating whether tags on the file system should be copied to backups.
-        /// This value defaults to false. If it's set to true, all tags on the file system are
-        /// copied to all automatic backups and any user-initiated backups where the user doesn't
-        /// specify any tags. If this value is true, and you specify one or more tags, only the
-        /// specified tags are copied to backups.
+        /// A boolean flag indicating whether tags for the file system should be copied to backups.
+        /// This value defaults to false. If it's set to true, all tags for the file system are
+        /// copied to all automatic and user-initiated backups where the user doesn't specify
+        /// tags. If this value is true, and you specify one or more tags, only the specified
+        /// tags are copied to backups.
         /// </para>
         /// </summary>
         public bool CopyTagsToBackups
@@ -106,7 +107,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property DailyAutomaticBackupStartTime. 
         /// <para>
-        /// The preferred time to take daily automatic backups, in the UTC time zone.
+        /// The preferred time to take daily automatic backups, formatted HH:MM in the UTC time
+        /// zone.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=5)]
@@ -123,9 +125,25 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SelfManagedActiveDirectoryConfiguration.
+        /// </summary>
+        public SelfManagedActiveDirectoryConfiguration SelfManagedActiveDirectoryConfiguration
+        {
+            get { return this._selfManagedActiveDirectoryConfiguration; }
+            set { this._selfManagedActiveDirectoryConfiguration = value; }
+        }
+
+        // Check to see if SelfManagedActiveDirectoryConfiguration property is set
+        internal bool IsSetSelfManagedActiveDirectoryConfiguration()
+        {
+            return this._selfManagedActiveDirectoryConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ThroughputCapacity. 
         /// <para>
-        /// The throughput of an Amazon FSx file system, measured in megabytes per second.
+        /// The throughput of an Amazon FSx file system, measured in megabytes per second, in
+        /// 2 to the <i>n</i>th increments, between 2^3 (8) and 2^11 (2048).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=8, Max=2048)]
@@ -144,7 +162,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property WeeklyMaintenanceStartTime. 
         /// <para>
-        /// The preferred start time to perform weekly maintenance, in the UTC time zone.
+        /// The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC
+        /// time zone.
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=7)]

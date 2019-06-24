@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The response object for the <code>CreateFileSystem</code> operation.
+    /// The response object returned after the file system is created.
     /// </summary>
     public partial class CreateFileSystemResponse : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FileSystem. 
         /// <para>
-        /// A description of the file system.
+        /// The configuration of the file system that was created.
         /// </para>
         /// </summary>
         public FileSystem FileSystem

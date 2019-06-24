@@ -212,6 +212,14 @@ namespace Amazon.FSx
         /// Constant FAILED for FileSystemLifecycle
         /// </summary>
         public static readonly FileSystemLifecycle FAILED = new FileSystemLifecycle("FAILED");
+        /// <summary>
+        /// Constant MISCONFIGURED for FileSystemLifecycle
+        /// </summary>
+        public static readonly FileSystemLifecycle MISCONFIGURED = new FileSystemLifecycle("MISCONFIGURED");
+        /// <summary>
+        /// Constant UPDATING for FileSystemLifecycle
+        /// </summary>
+        public static readonly FileSystemLifecycle UPDATING = new FileSystemLifecycle("UPDATING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

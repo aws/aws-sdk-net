@@ -37,7 +37,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FileSystem. 
         /// <para>
-        /// A description of the file system.
+        /// A description of the file system that was updated.
         /// </para>
         /// </summary>
         public FileSystem FileSystem

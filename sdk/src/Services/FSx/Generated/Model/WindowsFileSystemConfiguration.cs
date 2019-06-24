@@ -37,6 +37,7 @@ namespace Amazon.FSx.Model
         private bool? _copyTagsToBackups;
         private string _dailyAutomaticBackupStartTime;
         private List<string> _maintenanceOperationsInProgress = new List<string>();
+        private SelfManagedActiveDirectoryAttributes _selfManagedActiveDirectoryConfiguration;
         private int? _throughputCapacity;
         private string _weeklyMaintenanceStartTime;
 
@@ -138,6 +139,21 @@ namespace Amazon.FSx.Model
         internal bool IsSetMaintenanceOperationsInProgress()
         {
             return this._maintenanceOperationsInProgress != null && this._maintenanceOperationsInProgress.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelfManagedActiveDirectoryConfiguration.
+        /// </summary>
+        public SelfManagedActiveDirectoryAttributes SelfManagedActiveDirectoryConfiguration
+        {
+            get { return this._selfManagedActiveDirectoryConfiguration; }
+            set { this._selfManagedActiveDirectoryConfiguration = value; }
+        }
+
+        // Check to see if SelfManagedActiveDirectoryConfiguration property is set
+        internal bool IsSetSelfManagedActiveDirectoryConfiguration()
+        {
+            return this._selfManagedActiveDirectoryConfiguration != null;
         }
 
         /// <summary>

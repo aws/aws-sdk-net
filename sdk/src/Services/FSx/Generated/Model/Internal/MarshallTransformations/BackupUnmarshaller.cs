@@ -76,6 +76,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DirectoryInformation", targetDepth))
+                {
+                    var unmarshaller = ActiveDirectoryBackupAttributesUnmarshaller.Instance;
+                    unmarshalledObject.DirectoryInformation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FailureDetails", targetDepth))
                 {
                     var unmarshaller = BackupFailureDetailsUnmarshaller.Instance;

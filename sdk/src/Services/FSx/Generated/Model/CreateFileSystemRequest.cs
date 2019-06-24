@@ -106,7 +106,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FileSystemType. 
         /// <para>
-        /// The type of file system.
+        /// The type of Amazon FSx file system to create.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -156,9 +156,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// A list of IDs for the security groups that apply to the specified network interfaces
-        /// created for file system access. These security groups will apply to all network interfaces.
-        /// This list isn't returned in later describe requests.
+        /// A list of IDs specifying the security groups to apply to all network interfaces created
+        /// for file system access. This list isn't returned in later requests to describe the
+        /// file system.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]
@@ -177,7 +177,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property StorageCapacity. 
         /// <para>
-        /// The storage capacity of the file system.
+        /// The storage capacity of the file system being created.
         /// </para>
         ///  
         /// <para>
@@ -206,7 +206,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// A list of IDs for the subnets that the file system will be accessible from. File systems
+        /// The IDs of the subnets that the file system will be accessible from. File systems
         /// support only one subnet. The file server is also launched in that subnet's Availability
         /// Zone.
         /// </para>
@@ -227,8 +227,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to be applied to the file system at file system creation. The key value of
-        /// the <code>Name</code> tag appears in the console as the file system name.
+        /// The tags to apply to the file system being created. The key value of the <code>Name</code>
+        /// tag appears in the console as the file system name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -247,7 +247,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property WindowsConfiguration. 
         /// <para>
-        /// The configuration for this Microsoft Windows file system.
+        /// The Microsoft Windows configuration for the file system being created. This value
+        /// is required if <code>FileSystemType</code> is set to <code>WINDOWS</code>.
         /// </para>
         /// </summary>
         public CreateFileSystemWindowsConfiguration WindowsConfiguration

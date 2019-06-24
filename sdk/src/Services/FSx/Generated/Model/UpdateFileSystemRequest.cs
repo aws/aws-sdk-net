@@ -93,8 +93,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property WindowsConfiguration. 
         /// <para>
-        /// The configuration for this Microsoft Windows file system. The only supported options
-        /// are for backup and maintenance.
+        /// The configuration update for this Microsoft Windows file system. The only supported
+        /// options are for backup and maintenance and for self-managed Active Directory configuration.
         /// </para>
         /// </summary>
         public UpdateFileSystemWindowsConfiguration WindowsConfiguration

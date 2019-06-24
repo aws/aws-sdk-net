@@ -28,13 +28,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The configuration object for the Microsoft Windows file system used in the <code>UpdateFileSystem</code>
-    /// operation.
+    /// Updates the Microsoft Windows configuration for an existing Amazon FSx for Windows
+    /// File Server file system. Amazon FSx overwrites existing properties with non-null values
+    /// provided in the request. If you don't specify a non-null value for a property, that
+    /// property is not updated.
     /// </summary>
     public partial class UpdateFileSystemWindowsConfiguration
     {
         private int? _automaticBackupRetentionDays;
         private string _dailyAutomaticBackupStartTime;
+        private SelfManagedActiveDirectoryConfigurationUpdates _selfManagedActiveDirectoryConfiguration;
         private string _weeklyMaintenanceStartTime;
 
         /// <summary>
@@ -74,6 +77,25 @@ namespace Amazon.FSx.Model
         internal bool IsSetDailyAutomaticBackupStartTime()
         {
             return this._dailyAutomaticBackupStartTime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelfManagedActiveDirectoryConfiguration. 
+        /// <para>
+        /// The configuration Amazon FSx uses to join the Windows File Server instance to the
+        /// self-managed Microsoft AD directory.
+        /// </para>
+        /// </summary>
+        public SelfManagedActiveDirectoryConfigurationUpdates SelfManagedActiveDirectoryConfiguration
+        {
+            get { return this._selfManagedActiveDirectoryConfiguration; }
+            set { this._selfManagedActiveDirectoryConfiguration = value; }
+        }
+
+        // Check to see if SelfManagedActiveDirectoryConfiguration property is set
+        internal bool IsSetSelfManagedActiveDirectoryConfiguration()
+        {
+            return this._selfManagedActiveDirectoryConfiguration != null;
         }
 
         /// <summary>

@@ -109,6 +109,9 @@ namespace Amazon.FSx
         /// An error indicating that a particular service limit was exceeded. You can increase
         /// some service limits by contacting AWS Support.
         /// </exception>
+        /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
+        /// An error occured.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateBackup">REST API Reference for CreateBackup Operation</seealso>
         Task<CreateBackupResponse> CreateBackupAsync(CreateBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -216,10 +219,10 @@ namespace Amazon.FSx
         ///  
         /// <para>
         /// If a file system with the specified client request token exists and the parameters
-        /// match, this call returns the description of the existing file system. If a client
-        /// request token specified by the file system exists and the parameters don't match,
-        /// this call returns <code>IncompatibleParameterError</code>. If a file system with the
-        /// specified client request token doesn't exist, this operation does the following:
+        /// match, this operation returns the description of the file system. If a client request
+        /// token specified by the file system exists and the parameters don't match, this call
+        /// returns <code>IncompatibleParameterError</code>. If a file system with the specified
+        /// client request token doesn't exist, this operation does the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -695,6 +698,9 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.MissingFileSystemConfigurationException">
         /// File system configuration is required for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
+        /// An error occured.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystem">REST API Reference for UpdateFileSystem Operation</seealso>
         Task<UpdateFileSystemResponse> UpdateFileSystemAsync(UpdateFileSystemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));

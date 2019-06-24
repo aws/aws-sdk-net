@@ -94,6 +94,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.MaintenanceOperationsInProgress = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SelfManagedActiveDirectoryConfiguration", targetDepth))
+                {
+                    var unmarshaller = SelfManagedActiveDirectoryAttributesUnmarshaller.Instance;
+                    unmarshalledObject.SelfManagedActiveDirectoryConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ThroughputCapacity", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

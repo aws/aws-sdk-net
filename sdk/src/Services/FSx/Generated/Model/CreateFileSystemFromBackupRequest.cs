@@ -35,10 +35,10 @@ namespace Amazon.FSx.Model
     ///  
     /// <para>
     /// If a file system with the specified client request token exists and the parameters
-    /// match, this call returns the description of the existing file system. If a client
-    /// request token specified by the file system exists and the parameters don't match,
-    /// this call returns <code>IncompatibleParameterError</code>. If a file system with the
-    /// specified client request token doesn't exist, this operation does the following:
+    /// match, this operation returns the description of the file system. If a client request
+    /// token specified by the file system exists and the parameters don't match, this call
+    /// returns <code>IncompatibleParameterError</code>. If a file system with the specified
+    /// client request token doesn't exist, this operation does the following:
     /// </para>
     ///  <ul> <li> 
     /// <para>

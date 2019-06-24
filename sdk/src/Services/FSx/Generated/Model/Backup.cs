@@ -35,6 +35,7 @@ namespace Amazon.FSx.Model
     {
         private string _backupId;
         private DateTime? _creationTime;
+        private ActiveDirectoryBackupAttributes _directoryInformation;
         private BackupFailureDetails _failureDetails;
         private FileSystem _fileSystem;
         private string _kmsKeyId;
@@ -80,6 +81,25 @@ namespace Amazon.FSx.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DirectoryInformation. 
+        /// <para>
+        /// The configuration of the self-managed Microsoft Active Directory (AD) to which the
+        /// Windows File Server instance is joined.
+        /// </para>
+        /// </summary>
+        public ActiveDirectoryBackupAttributes DirectoryInformation
+        {
+            get { return this._directoryInformation; }
+            set { this._directoryInformation = value; }
+        }
+
+        // Check to see if DirectoryInformation property is set
+        internal bool IsSetDirectoryInformation()
+        {
+            return this._directoryInformation != null;
         }
 
         /// <summary>

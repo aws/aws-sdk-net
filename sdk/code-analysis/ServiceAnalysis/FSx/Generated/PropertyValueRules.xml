@@ -4,7 +4,7 @@
     <property>Amazon.FSx.Model.CreateBackupRequest.ClientRequestToken</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-za-z0-9_/.-]{0,255}$</pattern>
+    <pattern>[A-za-z0-9_.-]{0,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.CreateBackupRequest.FileSystemId</property>
@@ -16,7 +16,7 @@
     <property>Amazon.FSx.Model.CreateFileSystemRequest.ClientRequestToken</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-za-z0-9_/.-]{0,255}$</pattern>
+    <pattern>[A-za-z0-9_.-]{0,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.CreateFileSystemRequest.KmsKeyId</property>
@@ -38,7 +38,7 @@
     <property>Amazon.FSx.Model.CreateFileSystemFromBackupRequest.ClientRequestToken</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-za-z0-9_/.-]{0,255}$</pattern>
+    <pattern>[A-za-z0-9_.-]{0,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.DeleteBackupRequest.BackupId</property>
@@ -50,7 +50,7 @@
     <property>Amazon.FSx.Model.DeleteBackupRequest.ClientRequestToken</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-za-z0-9_/.-]{0,255}$</pattern>
+    <pattern>[A-za-z0-9_.-]{0,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.DeleteBackupResponse.BackupId</property>
@@ -62,7 +62,7 @@
     <property>Amazon.FSx.Model.DeleteFileSystemRequest.ClientRequestToken</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-za-z0-9_/.-]{0,255}$</pattern>
+    <pattern>[A-za-z0-9_.-]{0,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.DeleteFileSystemRequest.FileSystemId</property>
@@ -146,13 +146,19 @@
     <property>Amazon.FSx.Model.UpdateFileSystemRequest.ClientRequestToken</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-za-z0-9_/.-]{0,255}$</pattern>
+    <pattern>[A-za-z0-9_.-]{0,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.UpdateFileSystemRequest.FileSystemId</property>
     <min>11</min>
     <max>21</max>
     <pattern>^(fs-[0-9a-f]{8,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.ActiveDirectoryBackupAttributes.ActiveDirectoryId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.ActiveDirectoryError.ActiveDirectoryId</property>
@@ -425,6 +431,51 @@
     <pattern>^arn:aws[a-z-]{0,7}:[A-Za-z0-9][A-za-z0-9_/.-]{0,62}:[A-za-z0-9_/.-]{0,63}:[A-za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-za-z0-9_/.-]{0,127}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FSx.Model.SelfManagedActiveDirectoryAttributes.FileSystemAdministratorsGroup</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SelfManagedActiveDirectoryAttributes.OrganizationalUnitDistinguishedName</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SelfManagedActiveDirectoryAttributes.UserName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SelfManagedActiveDirectoryConfiguration.FileSystemAdministratorsGroup</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SelfManagedActiveDirectoryConfiguration.OrganizationalUnitDistinguishedName</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SelfManagedActiveDirectoryConfiguration.Password</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SelfManagedActiveDirectoryConfiguration.UserName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SelfManagedActiveDirectoryConfigurationUpdates.Password</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SelfManagedActiveDirectoryConfigurationUpdates.UserName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FSx.Model.ServiceLimitExceeded.Message</property>
     <min>1</min>
     <max>256</max>
@@ -437,6 +488,11 @@
   <property-value-rule>
     <property>Amazon.FSx.Model.Tag.Value</property>
     <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.UnsupportedOperation.Message</property>
+    <min>1</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>

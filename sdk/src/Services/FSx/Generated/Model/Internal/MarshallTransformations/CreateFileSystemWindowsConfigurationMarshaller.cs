@@ -69,6 +69,17 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DailyAutomaticBackupStartTime);
             }
 
+            if(requestObject.IsSetSelfManagedActiveDirectoryConfiguration())
+            {
+                context.Writer.WritePropertyName("SelfManagedActiveDirectoryConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SelfManagedActiveDirectoryConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SelfManagedActiveDirectoryConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetThroughputCapacity())
             {
                 context.Writer.WritePropertyName("ThroughputCapacity");
