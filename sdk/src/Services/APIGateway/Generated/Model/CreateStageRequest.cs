@@ -177,7 +177,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property StageName. 
         /// <para>
-        /// [Required] The name for the <a>Stage</a> resource.
+        /// [Required] The name for the <a>Stage</a> resource. Stage names can only contain alphanumeric
+        /// characters, hyphens, and underscores. Maximum length is 128 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

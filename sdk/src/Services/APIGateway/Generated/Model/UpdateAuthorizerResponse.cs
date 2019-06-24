@@ -31,8 +31,9 @@ namespace Amazon.APIGateway.Model
     /// Represents an authorization layer for methods. If enabled on a method, API Gateway
     /// will activate the authorizer when a client calls the method.
     /// 
-    ///  <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html">Enable
-    /// custom authorization</a> </div>
+    ///  <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html">Use
+    /// Lambda Function as Authorizer</a> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html">Use
+    /// Cognito User Pool as Authorizer</a> </div>
     /// </summary>
     public partial class UpdateAuthorizerResponse : AmazonWebServiceResponse
     {
@@ -188,11 +189,12 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property IdentityValidationExpression. 
         /// <para>
         /// A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers,
-        /// this value is a regular expression. API Gateway will match the <code>aud</code> field
-        /// of the incoming token from the client against the specified regular expression. It
-        /// will invoke the authorizer's Lambda function when there is a match. Otherwise, it
-        /// will return a 401 Unauthorized response without calling the Lambda function. The validation
-        /// expression does not apply to the <code>REQUEST</code> authorizer.
+        /// this value is a regular expression. For <code>COGNITO_USER_POOLS</code> authorizers,
+        /// API Gateway will match the <code>aud</code> field of the incoming token from the client
+        /// against the specified regular expression. It will invoke the authorizer's Lambda function
+        /// when there is a match. Otherwise, it will return a 401 Unauthorized response without
+        /// calling the Lambda function. The validation expression does not apply to the <code>REQUEST</code>
+        /// authorizer.
         /// </para>
         /// </summary>
         public string IdentityValidationExpression

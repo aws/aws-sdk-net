@@ -42,6 +42,10 @@ namespace Amazon.APIGateway.Model
         /// <para>
         /// [Required] The base path of the <a>BasePathMapping</a> resource to change.
         /// </para>
+        ///  
+        /// <para>
+        /// To specify an empty base path, set this parameter to <code>'(none)'</code>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string BasePath

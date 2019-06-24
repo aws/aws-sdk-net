@@ -125,6 +125,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.RegionalCertificateName);
                 }
 
+                if(publicRequest.IsSetSecurityPolicy())
+                {
+                    context.Writer.WritePropertyName("securityPolicy");
+                    context.Writer.Write(publicRequest.SecurityPolicy);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

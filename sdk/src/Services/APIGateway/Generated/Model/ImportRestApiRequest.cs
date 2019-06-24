@@ -98,8 +98,8 @@ namespace Amazon.APIGateway.Model
         /// </para>
         ///  
         /// <para>
-        ///  To handle imported <code>basePath</code>, set <code>parameters</code> as <code>basePath=ignore</code>,
-        /// <code>basePath=prepend</code> or <code>basePath=split</code>.
+        ///  To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>,
+        /// <code>basepath=prepend</code> or <code>basepath=split</code>.
         /// </para>
         ///  
         /// <para>

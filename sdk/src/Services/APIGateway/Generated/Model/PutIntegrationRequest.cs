@@ -53,7 +53,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property CacheKeyParameters. 
         /// <para>
-        /// Specifies a put integration input's cache key parameters.
+        /// An API-specific tag group of related cached parameters.
         /// </para>
         /// </summary>
         public List<string> CacheKeyParameters
@@ -71,7 +71,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property CacheNamespace. 
         /// <para>
-        /// Specifies a put integration input's cache namespace.
+        /// A list of request parameters whose values are to be cached.
         /// </para>
         /// </summary>
         public string CacheNamespace
@@ -147,7 +147,7 @@ namespace Amazon.APIGateway.Model
         /// </li> </ul> 
         /// <para>
         /// If this property is not defined, the request payload will be passed through from the
-        /// method request to integration request without modification, provided that the <code>passthroughBehaviors</code>
+        /// method request to integration request without modification, provided that the <code>passthroughBehavior</code>
         /// is configured to support payload pass-through.
         /// </para>
         /// </summary>

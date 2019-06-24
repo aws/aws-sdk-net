@@ -51,12 +51,15 @@ namespace Amazon.APIGateway.Model
         private DateTime? _certificateUploadDate;
         private string _distributionDomainName;
         private string _distributionHostedZoneId;
+        private DomainNameStatus _domainNameStatus;
+        private string _domainNameStatusMessage;
         private EndpointConfiguration _endpointConfiguration;
         private string _name;
         private string _regionalCertificateArn;
         private string _regionalCertificateName;
         private string _regionalDomainName;
         private string _regionalHostedZoneId;
+        private SecurityPolicy _securityPolicy;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
@@ -158,6 +161,46 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetDistributionHostedZoneId()
         {
             return this._distributionHostedZoneId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainNameStatus. 
+        /// <para>
+        /// The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code>
+        /// and <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot
+        /// be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>,
+        /// the domain can be updated.
+        /// </para>
+        /// </summary>
+        public DomainNameStatus DomainNameStatus
+        {
+            get { return this._domainNameStatus; }
+            set { this._domainNameStatus = value; }
+        }
+
+        // Check to see if DomainNameStatus property is set
+        internal bool IsSetDomainNameStatus()
+        {
+            return this._domainNameStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainNameStatusMessage. 
+        /// <para>
+        /// An optional text message containing detailed information about status of the <a>DomainName</a>
+        /// migration.
+        /// </para>
+        /// </summary>
+        public string DomainNameStatusMessage
+        {
+            get { return this._domainNameStatusMessage; }
+            set { this._domainNameStatusMessage = value; }
+        }
+
+        // Check to see if DomainNameStatusMessage property is set
+        internal bool IsSetDomainNameStatusMessage()
+        {
+            return this._domainNameStatusMessage != null;
         }
 
         /// <summary>
@@ -274,6 +317,25 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetRegionalHostedZoneId()
         {
             return this._regionalHostedZoneId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityPolicy. 
+        /// <para>
+        /// The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>.
+        /// The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+        /// </para>
+        /// </summary>
+        public SecurityPolicy SecurityPolicy
+        {
+            get { return this._securityPolicy; }
+            set { this._securityPolicy = value; }
+        }
+
+        // Check to see if SecurityPolicy property is set
+        internal bool IsSetSecurityPolicy()
+        {
+            return this._securityPolicy != null;
         }
 
         /// <summary>

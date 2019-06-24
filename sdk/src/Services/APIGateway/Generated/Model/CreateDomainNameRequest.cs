@@ -42,6 +42,7 @@ namespace Amazon.APIGateway.Model
         private EndpointConfiguration _endpointConfiguration;
         private string _regionalCertificateArn;
         private string _regionalCertificateName;
+        private SecurityPolicy _securityPolicy;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
@@ -216,6 +217,25 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetRegionalCertificateName()
         {
             return this._regionalCertificateName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityPolicy. 
+        /// <para>
+        /// The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>.
+        /// The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+        /// </para>
+        /// </summary>
+        public SecurityPolicy SecurityPolicy
+        {
+            get { return this._securityPolicy; }
+            set { this._securityPolicy = value; }
+        }
+
+        // Check to see if SecurityPolicy property is set
+        internal bool IsSetSecurityPolicy()
+        {
+            return this._securityPolicy != null;
         }
 
         /// <summary>
