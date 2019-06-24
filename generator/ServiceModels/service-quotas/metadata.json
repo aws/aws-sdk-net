@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "Service Quotas enables you to view and manage your quotas for AWS services from a central location.",
+  "generate-client-constructors": true
+}

@@ -393,6 +393,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Service Catalog allows organizations to create and manage catalogs of IT services that are approved for use on AWS.
 * [AWSSDK.ServiceDiscovery](https://www.nuget.org/packages/AWSSDK.ServiceDiscovery/)
 	* AWS Cloud Map lets you configure public DNS, private DNS, or HTTP namespaces that your microservice applications run in. When an instance of the service becomes available, you can call the AWS Cloud Map API to register the instance with AWS Cloud Map. For public or private DNS namespaces, AWS Cloud Map automatically creates DNS records and an optional health check. Clients that submit public or private DNS queries, or HTTP requests, for the service receive an answer that contains up to eight healthy records.
+* [AWSSDK.ServiceQuotas](https://www.nuget.org/packages/AWSSDK.ServiceQuotas/)
+	* Service Quotas enables you to view and manage your quotas for AWS services from a central location.
 * [AWSSDK.Shield](https://www.nuget.org/packages/AWSSDK.Shield/)
 	* AWS Shield protects web applications from large and sophisticated DDoS attacks at Layer 3, 4 and 7. In addition AWS Shield provides visibility in attacks, and access to 24X7 DDoS Response Team.
 * [AWSSDK.Signer](https://www.nuget.org/packages/AWSSDK.Signer/)
