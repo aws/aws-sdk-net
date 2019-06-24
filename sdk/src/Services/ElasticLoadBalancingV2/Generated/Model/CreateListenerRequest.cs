@@ -62,13 +62,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Certificates. 
         /// <para>
-        /// [HTTPS and TLS listeners] The default SSL server certificate. You must provide exactly
-        /// one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not
-        /// set <code>IsDefault</code>.
+        /// [HTTPS and TLS listeners] The default certificate for the listener. You must provide
+        /// exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but
+        /// do not set <code>IsDefault</code>.
         /// </para>
         ///  
         /// <para>
-        /// To create a certificate list, use <a>AddListenerCertificates</a>.
+        /// To create a certificate list for the listener, use <a>AddListenerCertificates</a>.
         /// </para>
         /// </summary>
         public List<Certificate> Certificates
@@ -93,7 +93,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// If the action type is <code>forward</code>, you specify a target group. The protocol
         /// of the target group must be HTTP or HTTPS for an Application Load Balancer. The protocol
-        /// of the target group must be TCP or TLS for a Network Load Balancer.
+        /// of the target group must be TCP, TLS, UDP, or TCP_UDP for a Network Load Balancer.
         /// </para>
         ///  
         /// <para>
@@ -172,7 +172,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// The protocol for connections from clients to the load balancer. For Application Load
         /// Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers,
-        /// the supported protocols are TCP and TLS.
+        /// the supported protocols are TCP, TLS, UDP, and TCP_UDP.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

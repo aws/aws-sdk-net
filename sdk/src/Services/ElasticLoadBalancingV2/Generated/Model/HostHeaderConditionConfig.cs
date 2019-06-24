@@ -28,14 +28,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// 
+    /// Information about a host header condition.
     /// </summary>
     public partial class HostHeaderConditionConfig
     {
         private List<string> _values = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Values.
+        /// Gets and sets the property Values. 
+        /// <para>
+        /// One or more host names. The maximum size of each name is 128 characters. The comparison
+        /// is case insensitive. The following wildcard characters are supported: * (matches 0
+        /// or more characters) and ? (matches exactly 1 character).
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify multiple strings, the condition is satisfied if one of the strings
+        /// matches the host name.
+        /// </para>
         /// </summary>
         public List<string> Values
         {

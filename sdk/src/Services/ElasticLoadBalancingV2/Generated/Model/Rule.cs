@@ -41,7 +41,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Actions. 
         /// <para>
-        /// The actions.
+        /// The actions. Each rule must include exactly one of the following types of actions:
+        /// <code>forward</code>, <code>redirect</code>, or <code>fixed-response</code>, and it
+        /// must be the last action to be performed.
         /// </para>
         /// </summary>
         public List<Action> Actions
@@ -59,7 +61,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Conditions. 
         /// <para>
-        /// The conditions.
+        /// The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>,
+        /// <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and
+        /// zero or more of the following conditions: <code>http-header</code> and <code>query-string</code>.
         /// </para>
         /// </summary>
         public List<RuleCondition> Conditions

@@ -43,8 +43,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Certificates. 
         /// <para>
-        /// The SSL server certificate. You must provide a certificate if the protocol is HTTPS
-        /// or TLS.
+        /// [HTTPS or TLS listener] The default certificate for the listener.
         /// </para>
         /// </summary>
         public List<Certificate> Certificates
@@ -153,8 +152,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property SslPolicy. 
         /// <para>
-        /// The security policy that defines which ciphers and protocols are supported. The default
-        /// is the current predefined security policy.
+        /// [HTTPS or TLS listener] The security policy that defines which ciphers and protocols
+        /// are supported. The default is the current predefined security policy.
         /// </para>
         /// </summary>
         public string SslPolicy

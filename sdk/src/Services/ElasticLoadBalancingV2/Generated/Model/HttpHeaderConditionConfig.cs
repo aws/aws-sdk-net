@@ -28,7 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
+    /// Information about an HTTP header condition.
     /// 
+    ///  
+    /// <para>
+    /// There is a set of standard HTTP header fields. You can also define custom HTTP header
+    /// fields.
+    /// </para>
     /// </summary>
     public partial class HttpHeaderConditionConfig
     {
@@ -36,7 +42,17 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private List<string> _values = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property HttpHeaderName.
+        /// Gets and sets the property HttpHeaderName. 
+        /// <para>
+        /// The name of the HTTP header field. The maximum size is 40 characters. The header name
+        /// is case insensitive. The allowed characters are specified by RFC 7230. Wildcards are
+        /// not supported.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't use an HTTP header condition to specify the host header. Use <a>HostHeaderConditionConfig</a>
+        /// to specify a host header condition.
+        /// </para>
         /// </summary>
         public string HttpHeaderName
         {
@@ -51,7 +67,24 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Values.
+        /// Gets and sets the property Values. 
+        /// <para>
+        /// One or more strings to compare against the value of the HTTP header. The maximum size
+        /// of each string is 128 characters. The comparison strings are case insensitive. The
+        /// following wildcard characters are supported: * (matches 0 or more characters) and
+        /// ? (matches exactly 1 character).
+        /// </para>
+        ///  
+        /// <para>
+        /// If the same header appears multiple times in the request, we search them in order
+        /// until a match is found.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify multiple strings, the condition is satisfied if one of the strings
+        /// matches the value of the HTTP header. To require that all of the strings are a match,
+        /// create one condition per string.
+        /// </para>
         /// </summary>
         public List<string> Values
         {

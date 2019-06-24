@@ -29,18 +29,24 @@ namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
     /// Container for the parameters to the AddListenerCertificates operation.
-    /// Adds the specified certificate to the specified HTTPS listener.
+    /// Adds the specified SSL server certificate to the certificate list for the specified
+    /// HTTPS listener.
     /// 
     ///  
     /// <para>
-    /// If the certificate was already added, the call is successful but the certificate is
-    /// not added again.
+    /// If the certificate in already in the certificate list, the call is successful but
+    /// the certificate is not added again.
     /// </para>
     ///  
     /// <para>
-    /// To list the certificates for your listener, use <a>DescribeListenerCertificates</a>.
-    /// To remove certificates from your listener, use <a>RemoveListenerCertificates</a>.
-    /// To specify the default SSL server certificate, use <a>ModifyListener</a>.
+    /// To get the certificate list for a listener, use <a>DescribeListenerCertificates</a>.
+    /// To remove certificates from the certificate list for a listener, use <a>RemoveListenerCertificates</a>.
+    /// To replace the default certificate for a listener, use <a>ModifyListener</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#https-listener-certificates">SSL
+    /// Certificates</a> in the <i>Application Load Balancers Guide</i>.
     /// </para>
     /// </summary>
     public partial class AddListenerCertificatesRequest : AmazonElasticLoadBalancingV2Request

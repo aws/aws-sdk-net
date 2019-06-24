@@ -35,8 +35,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// <para>
     /// Any properties that you do not specify retain their current values. However, changing
     /// the protocol from HTTPS to HTTP, or from TLS to TCP, removes the security policy and
-    /// server certificate properties. If you change the protocol from HTTP to HTTPS, or from
-    /// TCP to TLS, you must add the security policy and server certificate properties.
+    /// default certificate properties. If you change the protocol from HTTP to HTTPS, or
+    /// from TCP to TLS, you must add the security policy and default certificate properties.
     /// </para>
     /// </summary>
     public partial class ModifyListenerRequest : AmazonElasticLoadBalancingV2Request
@@ -51,9 +51,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Certificates. 
         /// <para>
-        /// [HTTPS and TLS listeners] The default SSL server certificate. You must provide exactly
-        /// one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not
-        /// set <code>IsDefault</code>.
+        /// [HTTPS and TLS listeners] The default certificate for the listener. You must provide
+        /// exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but
+        /// do not set <code>IsDefault</code>.
         /// </para>
         ///  
         /// <para>
@@ -82,7 +82,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// If the action type is <code>forward</code>, you specify a target group. The protocol
         /// of the target group must be HTTP or HTTPS for an Application Load Balancer. The protocol
-        /// of the target group must be TCP or TLS for a Network Load Balancer.
+        /// of the target group must be TCP, TLS, UDP, or TCP_UDP for a Network Load Balancer.
         /// </para>
         ///  
         /// <para>
@@ -159,8 +159,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property Protocol. 
         /// <para>
         /// The protocol for connections from clients to the load balancer. Application Load Balancers
-        /// support the HTTP and HTTPS protocols. Network Load Balancers support the TCP and TLS
-        /// protocols.
+        /// support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS,
+        /// UDP, and TCP_UDP protocols.
         /// </para>
         /// </summary>
         public ProtocolEnum Protocol

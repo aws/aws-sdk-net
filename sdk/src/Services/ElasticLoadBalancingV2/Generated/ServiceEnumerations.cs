@@ -421,9 +421,17 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </summary>
         public static readonly ProtocolEnum TCP = new ProtocolEnum("TCP");
         /// <summary>
+        /// Constant TCP_UDP for ProtocolEnum
+        /// </summary>
+        public static readonly ProtocolEnum TCP_UDP = new ProtocolEnum("TCP_UDP");
+        /// <summary>
         /// Constant TLS for ProtocolEnum
         /// </summary>
         public static readonly ProtocolEnum TLS = new ProtocolEnum("TLS");
+        /// <summary>
+        /// Constant UDP for ProtocolEnum
+        /// </summary>
+        public static readonly ProtocolEnum UDP = new ProtocolEnum("UDP");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

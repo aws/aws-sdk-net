@@ -37,7 +37,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Certificates. 
         /// <para>
-        /// Information about the certificates.
+        /// Information about the certificates in the certificate list.
         /// </para>
         /// </summary>
         public List<Certificate> Certificates

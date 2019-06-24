@@ -113,18 +113,24 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
         /// <summary>
-        /// Adds the specified certificate to the specified HTTPS listener.
+        /// Adds the specified SSL server certificate to the certificate list for the specified
+        /// HTTPS listener.
         /// 
         ///  
         /// <para>
-        /// If the certificate was already added, the call is successful but the certificate is
-        /// not added again.
+        /// If the certificate in already in the certificate list, the call is successful but
+        /// the certificate is not added again.
         /// </para>
         ///  
         /// <para>
-        /// To list the certificates for your listener, use <a>DescribeListenerCertificates</a>.
-        /// To remove certificates from your listener, use <a>RemoveListenerCertificates</a>.
-        /// To specify the default SSL server certificate, use <a>ModifyListener</a>.
+        /// To get the certificate list for a listener, use <a>DescribeListenerCertificates</a>.
+        /// To remove certificates from the certificate list for a listener, use <a>RemoveListenerCertificates</a>.
+        /// To replace the default certificate for a listener, use <a>ModifyListener</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#https-listener-certificates">SSL
+        /// Certificates</a> in the <i>Application Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddListenerCertificates service method.</param>
@@ -664,7 +670,20 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
         /// <summary>
-        /// Describes the certificates for the specified HTTPS listener.
+        /// Describes the default certificate and the certificate list for the specified HTTPS
+        /// listener.
+        /// 
+        ///  
+        /// <para>
+        /// If the default certificate is also in the certificate list, it appears twice in the
+        /// results (once with <code>IsDefault</code> set to true and once with <code>IsDefault</code>
+        /// set to false).
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#https-listener-certificates">SSL
+        /// Certificates</a> in the <i>Application Load Balancers Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeListenerCertificates service method.</param>
         /// <param name="cancellationToken">
@@ -688,6 +707,12 @@ namespace Amazon.ElasticLoadBalancingV2
         /// Describes the specified listeners or the listeners for the specified Application Load
         /// Balancer or Network Load Balancer. You must specify either a load balancer or one
         /// or more listeners.
+        /// 
+        ///  
+        /// <para>
+        /// For an HTTPS or TLS listener, the output includes the default certificate for the
+        /// listener. To describe the certificate list for the listener, use <a>DescribeListenerCertificates</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeListeners service method.</param>
         /// <param name="cancellationToken">
@@ -951,8 +976,8 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <para>
         /// Any properties that you do not specify retain their current values. However, changing
         /// the protocol from HTTPS to HTTP, or from TLS to TCP, removes the security policy and
-        /// server certificate properties. If you change the protocol from HTTP to HTTPS, or from
-        /// TCP to TLS, you must add the security policy and server certificate properties.
+        /// default certificate properties. If you change the protocol from HTTP to HTTPS, or
+        /// from TCP to TLS, you must add the security policy and default certificate properties.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyListener service method.</param>
@@ -1215,7 +1240,8 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
         /// <summary>
-        /// Removes the specified certificate from the specified HTTPS listener.
+        /// Removes the specified certificate from the certificate list for the specified HTTPS
+        /// listener.
         /// 
         ///  
         /// <para>
@@ -1289,11 +1315,6 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <summary>
         /// Sets the type of IP addresses used by the subnets of the specified Application Load
         /// Balancer or Network Load Balancer.
-        /// 
-        ///  
-        /// <para>
-        /// Network Load Balancers must use <code>ipv4</code>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetIpAddressType service method.</param>
         /// <param name="cancellationToken">

@@ -28,14 +28,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
+    /// Information about a source IP condition.
     /// 
+    ///  
+    /// <para>
+    /// You can use this condition to route based on the IP address of the source that connects
+    /// to the load balancer. If a client is behind a proxy, this is the IP address of the
+    /// proxy not the IP address of the client.
+    /// </para>
     /// </summary>
     public partial class SourceIpConditionConfig
     {
         private List<string> _values = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Values.
+        /// Gets and sets the property Values. 
+        /// <para>
+        /// One or more source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses.
+        /// Wildcards are not supported.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify multiple addresses, the condition is satisfied if the source IP address
+        /// of the request matches one of the CIDR blocks. This condition is not satisfied by
+        /// the addresses in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For
+        /// header, use <a>HttpHeaderConditionConfig</a>.
+        /// </para>
         /// </summary>
         public List<string> Values
         {

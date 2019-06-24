@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// 
+    /// Information about a key/value pair.
     /// </summary>
     public partial class QueryStringKeyValuePair
     {
@@ -36,7 +36,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private string _value;
 
         /// <summary>
-        /// Gets and sets the property Key.
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// The key. You can omit the key.
+        /// </para>
         /// </summary>
         public string Key
         {
@@ -51,7 +54,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Value.
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// The value.
+        /// </para>
         /// </summary>
         public string Value
         {

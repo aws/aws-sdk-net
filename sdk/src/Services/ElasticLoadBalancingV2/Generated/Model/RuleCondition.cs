@@ -44,8 +44,33 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Field. 
         /// <para>
-        /// The name of the field. The possible values are <code>host-header</code> and <code>path-pattern</code>.
+        /// The field in the HTTP request. The following are the possible values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>http-header</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>http-request-method</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>host-header</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>path-pattern</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>query-string</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>source-ip</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Max=64)]
         public string Field
@@ -61,7 +86,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HostHeaderConfig.
+        /// Gets and sets the property HostHeaderConfig. 
+        /// <para>
+        /// Information for a host header condition. Specify only when <code>Field</code> is <code>host-header</code>.
+        /// </para>
         /// </summary>
         public HostHeaderConditionConfig HostHeaderConfig
         {
@@ -76,7 +104,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HttpHeaderConfig.
+        /// Gets and sets the property HttpHeaderConfig. 
+        /// <para>
+        /// Information for an HTTP header condition. Specify only when <code>Field</code> is
+        /// <code>http-header</code>.
+        /// </para>
         /// </summary>
         public HttpHeaderConditionConfig HttpHeaderConfig
         {
@@ -91,7 +123,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HttpRequestMethodConfig.
+        /// Gets and sets the property HttpRequestMethodConfig. 
+        /// <para>
+        /// Information for an HTTP method condition. Specify only when <code>Field</code> is
+        /// <code>http-request-method</code>.
+        /// </para>
         /// </summary>
         public HttpRequestMethodConditionConfig HttpRequestMethodConfig
         {
@@ -106,7 +142,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PathPatternConfig.
+        /// Gets and sets the property PathPatternConfig. 
+        /// <para>
+        /// Information for a path pattern condition. Specify only when <code>Field</code> is
+        /// <code>path-pattern</code>.
+        /// </para>
         /// </summary>
         public PathPatternConditionConfig PathPatternConfig
         {
@@ -121,7 +161,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property QueryStringConfig.
+        /// Gets and sets the property QueryStringConfig. 
+        /// <para>
+        /// Information for a query string condition. Specify only when <code>Field</code> is
+        /// <code>query-string</code>.
+        /// </para>
         /// </summary>
         public QueryStringConditionConfig QueryStringConfig
         {
@@ -136,7 +180,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceIpConfig.
+        /// Gets and sets the property SourceIpConfig. 
+        /// <para>
+        /// Information for a source IP condition. Specify only when <code>Field</code> is <code>source-ip</code>.
+        /// </para>
         /// </summary>
         public SourceIpConditionConfig SourceIpConfig
         {
@@ -153,14 +200,16 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The condition value.
+        /// The condition value. You can use <code>Values</code> if the rule contains only <code>host-header</code>
+        /// and <code>path-pattern</code> conditions. Otherwise, you can use <code>HostHeaderConfig</code>
+        /// for <code>host-header</code> conditions and <code>PathPatternConfig</code> for <code>path-pattern</code>
+        /// conditions.
         /// </para>
         ///  
         /// <para>
-        /// If the field name is <code>host-header</code>, you can specify a single host name
+        /// If <code>Field</code> is <code>host-header</code>, you can specify a single host name
         /// (for example, my.example.com). A host name is case insensitive, can be up to 128 characters
-        /// in length, and can contain any of the following characters. You can include up to
-        /// three wildcard characters.
+        /// in length, and can contain any of the following characters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -180,10 +229,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If the field name is <code>path-pattern</code>, you can specify a single path pattern
-        /// (for example, /img/*). A path pattern is case-sensitive, can be up to 128 characters
-        /// in length, and can contain any of the following characters. You can include up to
-        /// three wildcard characters.
+        /// If <code>Field</code> is <code>path-pattern</code>, you can specify a single path
+        /// pattern (for example, /img/*). A path pattern is case-sensitive, can be up to 128
+        /// characters in length, and can contain any of the following characters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
