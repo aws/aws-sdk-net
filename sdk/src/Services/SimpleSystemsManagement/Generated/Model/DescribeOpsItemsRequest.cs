@@ -30,15 +30,15 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the DescribeOpsItems operation.
     /// Query a set of OpsItems. You must have permission in AWS Identity and Access Management
-    /// (IAM) to query a list of OpsItems. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
-    /// Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+    /// (IAM) to query a list of OpsItems. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+    /// Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
     /// 
     ///  
     /// <para>
-    /// Operations engineers and IT professionals use the Systems Manager OpsItems capability
-    /// to view, investigate, and remediate operational issues impacting the performance and
-    /// health of their AWS resources. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
-    /// Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>. 
+    /// Operations engineers and IT professionals use OpsCenter to view, investigate, and
+    /// remediate operational issues impacting the performance and health of their AWS resources.
+    /// For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
+    /// Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>. 
     /// </para>
     /// </summary>
     public partial class DescribeOpsItemsRequest : AmazonSimpleSystemsManagementRequest
@@ -148,7 +148,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key: OperationalData
+        /// Key: OperationalData*
         /// </para>
         ///  
         /// <para>
@@ -194,7 +194,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Operations: Equals
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// *If you filter the response by using the OperationalData operator, specify a key-value
+        /// pair by using the following JSON format: {"key":"key_name","value":"a_value"}
+        /// </para>
         /// </summary>
         public List<OpsItemFilter> OpsItemFilters
         {

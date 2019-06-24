@@ -39,7 +39,9 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class DeleteDocumentRequest : AmazonSimpleSystemsManagementRequest
     {
+        private string _documentVersion;
         private string _name;
+        private string _versionName;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -53,6 +55,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         public DeleteDocumentRequest(string name)
         {
             _name = name;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentVersion. 
+        /// <para>
+        /// (Optional) The version of the document that you want to delete. If not provided, all
+        /// versions of the document are deleted.
+        /// </para>
+        /// </summary>
+        public string DocumentVersion
+        {
+            get { return this._documentVersion; }
+            set { this._documentVersion = value; }
+        }
+
+        // Check to see if DocumentVersion property is set
+        internal bool IsSetDocumentVersion()
+        {
+            return this._documentVersion != null;
         }
 
         /// <summary>
@@ -72,6 +93,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionName. 
+        /// <para>
+        /// (Optional) The version name of the document that you want to delete. If not provided,
+        /// all versions of the document are deleted.
+        /// </para>
+        /// </summary>
+        public string VersionName
+        {
+            get { return this._versionName; }
+            set { this._versionName = value; }
+        }
+
+        // Check to see if VersionName property is set
+        internal bool IsSetVersionName()
+        {
+            return this._versionName != null;
         }
 
     }

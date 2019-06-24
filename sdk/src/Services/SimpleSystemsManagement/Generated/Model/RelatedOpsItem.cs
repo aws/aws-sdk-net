@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// An OpsItems that shares something in common with the current OpsItems. For example,
+    /// An OpsItems that shares something in common with the current OpsItem. For example,
     /// related OpsItems can include OpsItems with similar error messages, impacted resources,
     /// or statuses for the impacted resource.
     /// </summary>

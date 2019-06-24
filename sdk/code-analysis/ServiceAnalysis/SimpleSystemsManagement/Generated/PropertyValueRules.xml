@@ -202,8 +202,16 @@
     <pattern>^[a-zA-Z0-9_\-.:/]{3,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeleteDocumentRequest.DocumentVersion</property>
+    <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DeleteDocumentRequest.Name</property>
     <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeleteDocumentRequest.VersionName</property>
+    <pattern>^[a-zA-Z0-9_\-.]{1,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DeleteInventoryRequest.ClientToken</property>

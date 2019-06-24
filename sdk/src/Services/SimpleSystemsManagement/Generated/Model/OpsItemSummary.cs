@@ -119,17 +119,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property OperationalData. 
         /// <para>
         /// Operational data is custom data that provides useful reference details about the OpsItem.
-        /// For example, you can specify log files, error strings, license keys, troubleshooting
-        /// tips, or other relevant data. You enter operational data as key-value pairs. The key
-        /// has a maximum length of 128 characters. The value has a maximum size of 20 KB.
-        /// </para>
-        ///  
-        /// <para>
-        /// This custom data is searchable, but with restrictions. For the <code>Searchable operational
-        /// data</code> feature, all users with access to the OpsItem Overview page (as provided
-        /// by the <a>DescribeOpsItems</a> API action) can view and search on the specified data.
-        /// For the <code>Private operational data</code> feature, the data is only viewable by
-        /// users who have access to the OpsItem (as provided by the <a>GetOpsItem</a> API action).
+        /// 
         /// </para>
         /// </summary>
         public Dictionary<string, OpsItemDataValue> OperationalData

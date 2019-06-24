@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Describes an OpsCenter filter.
+    /// Describes an OpsItem filter.
     /// </summary>
     public partial class OpsItemFilter
     {

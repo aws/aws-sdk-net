@@ -1624,15 +1624,15 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Creates a new OpsItem. You must have permission in AWS Identity and Access Management
-        /// (IAM) to create a new OpsItem. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
-        /// Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// (IAM) to create a new OpsItem. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+        /// Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// Operations engineers and IT professionals use the Systems Manager OpsItems capability
-        /// to view, investigate, and remediate operational issues impacting the performance and
-        /// health of their AWS resources. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
-        /// Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>. 
+        /// Operations engineers and IT professionals use OpsCenter to view, investigate, and
+        /// remediate operational issues impacting the performance and health of their AWS resources.
+        /// For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
+        /// Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateOpsItem service method.</param>
@@ -1650,8 +1650,8 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemLimitExceededException">
         /// The request caused OpsItems to exceed one or more limits. For information about OpsItem
-        /// limits, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-learn-more.html#OpsItems-learn-more-limits">What
-        /// are the resource limits for OpsItems?</a>.
+        /// limits, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What
+        /// are the resource limits for OpsCenter?</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsItem">REST API Reference for CreateOpsItem Operation</seealso>
         public virtual CreateOpsItemResponse CreateOpsItem(CreateOpsItemRequest request)
@@ -1666,15 +1666,15 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Creates a new OpsItem. You must have permission in AWS Identity and Access Management
-        /// (IAM) to create a new OpsItem. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
-        /// Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// (IAM) to create a new OpsItem. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+        /// Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// Operations engineers and IT professionals use the Systems Manager OpsItems capability
-        /// to view, investigate, and remediate operational issues impacting the performance and
-        /// health of their AWS resources. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
-        /// Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>. 
+        /// Operations engineers and IT professionals use OpsCenter to view, investigate, and
+        /// remediate operational issues impacting the performance and health of their AWS resources.
+        /// For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
+        /// Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateOpsItem service method.</param>
@@ -1695,8 +1695,8 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemLimitExceededException">
         /// The request caused OpsItems to exceed one or more limits. For information about OpsItem
-        /// limits, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-learn-more.html#OpsItems-learn-more-limits">What
-        /// are the resource limits for OpsItems?</a>.
+        /// limits, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What
+        /// are the resource limits for OpsCenter?</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsItem">REST API Reference for CreateOpsItem Operation</seealso>
         public virtual Task<CreateOpsItemResponse> CreateOpsItemAsync(CreateOpsItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5115,15 +5115,15 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Query a set of OpsItems. You must have permission in AWS Identity and Access Management
-        /// (IAM) to query a list of OpsItems. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
-        /// Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// (IAM) to query a list of OpsItems. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+        /// Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// Operations engineers and IT professionals use the Systems Manager OpsItems capability
-        /// to view, investigate, and remediate operational issues impacting the performance and
-        /// health of their AWS resources. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
-        /// Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>. 
+        /// Operations engineers and IT professionals use OpsCenter to view, investigate, and
+        /// remediate operational issues impacting the performance and health of their AWS resources.
+        /// For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
+        /// Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOpsItems service method.</param>
@@ -5145,15 +5145,15 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Query a set of OpsItems. You must have permission in AWS Identity and Access Management
-        /// (IAM) to query a list of OpsItems. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
-        /// Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// (IAM) to query a list of OpsItems. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+        /// Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// Operations engineers and IT professionals use the Systems Manager OpsItems capability
-        /// to view, investigate, and remediate operational issues impacting the performance and
-        /// health of their AWS resources. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
-        /// Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>. 
+        /// Operations engineers and IT professionals use OpsCenter to view, investigate, and
+        /// remediate operational issues impacting the performance and health of their AWS resources.
+        /// For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
+        /// Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOpsItems service method.</param>
@@ -6555,15 +6555,15 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Get information about an OpsItem by using the ID. You must have permission in AWS
         /// Identity and Access Management (IAM) to view information about an OpsItem. For more
-        /// information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
-        /// Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+        /// Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// Operations engineers and IT professionals use the Systems Manager OpsItems capability
-        /// to view, investigate, and remediate operational issues impacting the performance and
-        /// health of their AWS resources. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
-        /// Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>. 
+        /// Operations engineers and IT professionals use OpsCenter to view, investigate, and
+        /// remediate operational issues impacting the performance and health of their AWS resources.
+        /// For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
+        /// Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOpsItem service method.</param>
@@ -6589,15 +6589,15 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Get information about an OpsItem by using the ID. You must have permission in AWS
         /// Identity and Access Management (IAM) to view information about an OpsItem. For more
-        /// information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
-        /// Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+        /// Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// Operations engineers and IT professionals use the Systems Manager OpsItems capability
-        /// to view, investigate, and remediate operational issues impacting the performance and
-        /// health of their AWS resources. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
-        /// Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>. 
+        /// Operations engineers and IT professionals use OpsCenter to view, investigate, and
+        /// remediate operational issues impacting the performance and health of their AWS resources.
+        /// For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
+        /// Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOpsItem service method.</param>
@@ -11633,15 +11633,15 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Edit or change an OpsItem. You must have permission in AWS Identity and Access Management
-        /// (IAM) to update an OpsItem. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
-        /// Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// (IAM) to update an OpsItem. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+        /// Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// Operations engineers and IT professionals use the Systems Manager OpsItems capability
-        /// to view, investigate, and remediate operational issues impacting the performance and
-        /// health of their AWS resources. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
-        /// Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>. 
+        /// Operations engineers and IT professionals use OpsCenter to view, investigate, and
+        /// remediate operational issues impacting the performance and health of their AWS resources.
+        /// For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
+        /// Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateOpsItem service method.</param>
@@ -11659,8 +11659,8 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemLimitExceededException">
         /// The request caused OpsItems to exceed one or more limits. For information about OpsItem
-        /// limits, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-learn-more.html#OpsItems-learn-more-limits">What
-        /// are the resource limits for OpsItems?</a>.
+        /// limits, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What
+        /// are the resource limits for OpsCenter?</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemNotFoundException">
         /// The specified OpsItem ID doesn't exist. Verify the ID and try again.
@@ -11678,15 +11678,15 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Edit or change an OpsItem. You must have permission in AWS Identity and Access Management
-        /// (IAM) to update an OpsItem. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
-        /// Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// (IAM) to update an OpsItem. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+        /// Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// Operations engineers and IT professionals use the Systems Manager OpsItems capability
-        /// to view, investigate, and remediate operational issues impacting the performance and
-        /// health of their AWS resources. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
-        /// Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>. 
+        /// Operations engineers and IT professionals use OpsCenter to view, investigate, and
+        /// remediate operational issues impacting the performance and health of their AWS resources.
+        /// For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
+        /// Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateOpsItem service method.</param>
@@ -11707,8 +11707,8 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemLimitExceededException">
         /// The request caused OpsItems to exceed one or more limits. For information about OpsItem
-        /// limits, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-learn-more.html#OpsItems-learn-more-limits">What
-        /// are the resource limits for OpsItems?</a>.
+        /// limits, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What
+        /// are the resource limits for OpsCenter?</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemNotFoundException">
         /// The specified OpsItem ID doesn't exist. Verify the ID and try again.
