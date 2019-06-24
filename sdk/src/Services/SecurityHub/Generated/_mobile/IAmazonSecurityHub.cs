@@ -31,18 +31,26 @@ namespace Amazon.SecurityHub
     /// <summary>
     /// Interface for accessing SecurityHub
     ///
-    /// AWS Security Hub provides you with a comprehensive view of your security state in
-    /// AWS and your compliance with the security industry standards and best practices. Security
-    /// Hub collects security data from across AWS accounts, services, and supported third-party
-    /// partners and helps you analyze your security trends and identify the highest priority
-    /// security issues. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">AWS
-    /// Security Hub User Guide</a>. 
+    /// Security Hub provides you with a comprehensive view of the security state of your
+    /// AWS environment and resources. It also provides you with the compliance status of
+    /// your environment based on CIS AWS Foundations compliance checks. Security Hub collects
+    /// security data from AWS accounts, services, and integrated third-party products and
+    /// helps you analyze security trends in your environment to identify the highest priority
+    /// security issues. For more information about Security Hub, see the <i> <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">AWS
+    /// Security Hub User Guide</a> </i>.
     /// 
-    ///  <important> 
+    ///  
     /// <para>
-    /// Important: AWS Security Hub is currently in Preview release.
+    /// When you use operations in the Security Hub API, the requests are executed only in
+    /// the AWS Region that is currently active or in the specific AWS Region that you specify
+    /// in your request. Any configuration or settings change that results from the operation
+    /// is applied only to that Region. To make the same change in other Regions, execute
+    /// the same command for each Region to apply the change to. For example, if your Region
+    /// is set to <code>us-west-2</code>, when you use <code>CreateMembers</code> to add a
+    /// member account to Security Hub, the association of the member account with the master
+    /// account is created only in the us-west-2 Region. Security Hub must be enabled for
+    /// the member account in the same Region that the invite was sent from.
     /// </para>
-    ///  </important>
     /// </summary>
     public partial interface IAmazonSecurityHub : IAmazonService, IDisposable
     {
@@ -52,7 +60,10 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Accepts the invitation to be monitored by a Security Hub master account.
+        /// Accepts the invitation to be a member account and be monitored by the Security Hub
+        /// master account that the invitation was sent from. When the member account accepts
+        /// the invitation, permission is granted to the master account to view findings generated
+        /// in the member account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptInvitation service method.</param>
         /// <param name="cancellationToken">
@@ -87,10 +98,9 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Disables the standards specified by the standards subscription ARNs. In the context
-        /// of Security Hub, supported standards (for example, CIS AWS Foundations) are automated
-        /// and continuous checks that help determine your compliance status against security
-        /// industry (including AWS) best practices.
+        /// Disables the standards specified by the provided <code>StandardsSubscriptionArns</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Standards
+        /// Supported in AWS Security Hub</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDisableStandards service method.</param>
         /// <param name="cancellationToken">
@@ -122,10 +132,10 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Enables the standards specified by the standards ARNs. In the context of Security
-        /// Hub, supported standards (for example, CIS AWS Foundations) are automated and continuous
-        /// checks that help determine your compliance status against security industry (including
-        /// AWS) best practices.
+        /// Enables the standards specified by the provided <code>standardsArn</code>. In this
+        /// release, only CIS AWS Foundations standards are supported. For more information, see
+        /// <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Standards
+        /// Supported in AWS Security Hub</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchEnableStandards service method.</param>
         /// <param name="cancellationToken">
@@ -158,7 +168,9 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Imports security findings generated from an integrated third-party product into Security
-        /// Hub.
+        /// Hub. This action is requested by the integrated product to import its findings into
+        /// Security Hub. The maximum allowed size for a finding is 240 Kb. An error is returned
+        /// for any finding larger than 240 Kb.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchImportFindings service method.</param>
         /// <param name="cancellationToken">
@@ -185,13 +197,50 @@ namespace Amazon.SecurityHub
 
         #endregion
                 
+        #region  CreateActionTarget
+
+
+
+        /// <summary>
+        /// Creates a custom action target in Security Hub. You can use custom actions on findings
+        /// and insights in Security Hub to trigger target actions in Amazon CloudWatch Events.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateActionTarget service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateActionTarget service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceConflictException">
+        /// The resource specified in the request conflicts with an existing resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateActionTarget">REST API Reference for CreateActionTarget Operation</seealso>
+        Task<CreateActionTargetResponse> CreateActionTargetAsync(CreateActionTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateInsight
 
 
 
         /// <summary>
-        /// Creates an insight, which is a consolidation of findings that identifies a security
-        /// area that requires attention or intervention.
+        /// Creates a custom insight in Security Hub. An insight is a consolidation of findings
+        /// that relate to a security issue that requires attention or remediation. Use the <code>GroupByAttribute</code>
+        /// to group the related findings in the insight.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateInsight service method.</param>
         /// <param name="cancellationToken">
@@ -226,9 +275,26 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Creates Security Hub member accounts associated with the account used for this action,
-        /// which becomes the Security Hub Master account. Security Hub must be enabled in the
-        /// account used to make this request.
+        /// Creates a member association in Security Hub between the specified accounts and the
+        /// account used to make the request, which is the master account. To successfully create
+        /// a member, you must use this action from an account that already has Security Hub enabled.
+        /// You can use the <a>EnableSecurityHub</a> to enable Security Hub.
+        /// 
+        ///  
+        /// <para>
+        /// After you use <code>CreateMembers</code> to create member account associations in
+        /// Security Hub, you need to use the <a>InviteMembers</a> action, which invites the accounts
+        /// to enable Security Hub and become member accounts in Security Hub. If the invitation
+        /// is accepted by the account owner, the account becomes a member account in Security
+        /// Hub, and a permission policy is added that permits the master account to view the
+        /// findings generated in the member account. When Security Hub is enabled in the invited
+        /// account, findings start being sent to both the member and master accounts.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can remove the association between the master and member accounts by using the
+        /// <a>DisassociateFromMasterAccount</a> or <a>DisassociateMembers</a> operation.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMembers service method.</param>
         /// <param name="cancellationToken">
@@ -263,8 +329,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Declines invitations that are sent to this AWS account (invitee) from the AWS accounts
-        /// (inviters) that are specified by the provided <code>AccountIds</code>.
+        /// Declines invitations to become a member account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeclineInvitations service method.</param>
         /// <param name="cancellationToken">
@@ -287,6 +352,39 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeclineInvitations">REST API Reference for DeclineInvitations Operation</seealso>
         Task<DeclineInvitationsResponse> DeclineInvitationsAsync(DeclineInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteActionTarget
+
+
+
+        /// <summary>
+        /// Deletes a custom action target from Security Hub. Deleting a custom action target
+        /// doesn't affect any findings or insights that were already sent to Amazon CloudWatch
+        /// Events using the custom action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteActionTarget service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteActionTarget service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteActionTarget">REST API Reference for DeleteActionTarget Operation</seealso>
+        Task<DeleteActionTargetResponse> DeleteActionTargetAsync(DeleteActionTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -330,8 +428,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Deletes invitations that were sent to theis AWS account (invitee) by the AWS accounts
-        /// (inviters) that are specified by their account IDs.
+        /// Deletes invitations received by the AWS account to become a member account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteInvitations service method.</param>
         /// <param name="cancellationToken">
@@ -366,7 +463,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Deletes the Security Hub member accounts that the account IDs specify.
+        /// Deletes the specified member accounts from Security Hub.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMembers service method.</param>
         /// <param name="cancellationToken">
@@ -396,12 +493,80 @@ namespace Amazon.SecurityHub
 
         #endregion
                 
+        #region  DescribeActionTargets
+
+
+
+        /// <summary>
+        /// Returns a list of the custom action targets in Security Hub in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeActionTargets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeActionTargets service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeActionTargets">REST API Reference for DescribeActionTargets Operation</seealso>
+        Task<DescribeActionTargetsResponse> DescribeActionTargetsAsync(DescribeActionTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeHub
+
+
+
+        /// <summary>
+        /// Returns details about the Hub resource in your account, including the <code>HubArn</code>
+        /// and the time when you enabled Security Hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHub service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeHub service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeHub">REST API Reference for DescribeHub Operation</seealso>
+        Task<DescribeHubResponse> DescribeHubAsync(DescribeHubRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeProducts
 
 
 
         /// <summary>
-        /// Returns information about the products available that you can subscribe to.
+        /// Returns information about the products available that you can subscribe to and integrate
+        /// with Security Hub to consolidate findings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProducts service method.</param>
         /// <param name="cancellationToken">
@@ -433,8 +598,8 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Cancels the subscription that allows a findings-generating solution (product) to import
-        /// its findings into Security Hub.
+        /// Disables the integration of the specified product with Security Hub. Findings from
+        /// that product are no longer sent to Security Hub after the integration is disabled.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableImportFindingsForProduct service method.</param>
         /// <param name="cancellationToken">
@@ -469,7 +634,19 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Disables the Security Hub service.
+        /// Disables Security Hub in your account only in the current Region. To disable Security
+        /// Hub in all Regions, you must submit one request per Region where you have enabled
+        /// Security Hub. When you disable Security Hub for a master account, it doesn't disable
+        /// Security Hub for any associated member accounts.
+        /// 
+        ///  
+        /// <para>
+        /// When you disable Security Hub, your existing findings and insights and any Security
+        /// Hub configuration settings are deleted after 90 days and can't be recovered. Any standards
+        /// that were enabled are disabled, and your master and member account associations are
+        /// removed. If you want to save your existing findings, you must export them before you
+        /// disable Security Hub.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableSecurityHub service method.</param>
         /// <param name="cancellationToken">
@@ -500,7 +677,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Disassociates the current Security Hub member account from its master account.
+        /// Disassociates the current Security Hub member account from the associated master account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateFromMasterAccount service method.</param>
         /// <param name="cancellationToken">
@@ -535,8 +712,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Disassociates the Security Hub member accounts that are specified by the account IDs
-        /// from their master account.
+        /// Disassociates the specified member accounts from the associated master account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateMembers service method.</param>
         /// <param name="cancellationToken">
@@ -571,8 +747,10 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Sets up the subscription that enables a findings-generating solution (product) to
-        /// import its findings into Security Hub.
+        /// Enables the integration of a partner product with Security Hub. Integrated products
+        /// send findings to Security Hub. When you enable a product integration, a permission
+        /// policy that grants permission for the product to send findings to Security Hub is
+        /// applied.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableImportFindingsForProduct service method.</param>
         /// <param name="cancellationToken">
@@ -607,7 +785,11 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Enables the Security Hub service.
+        /// Enables Security Hub for your account in the current Region or the Region you specify
+        /// in the request. When you enable Security Hub, you grant to Security Hub the permissions
+        /// necessary to gather findings from AWS Config, Amazon GuardDuty, Amazon Inspector,
+        /// and Amazon Macie. To learn more, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">Setting
+        /// Up AWS Security Hub</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableSecurityHub service method.</param>
         /// <param name="cancellationToken">
@@ -641,7 +823,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Lists and describes enabled standards.
+        /// Returns a list of the standards that are currently enabled.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEnabledStandards service method.</param>
         /// <param name="cancellationToken">
@@ -673,7 +855,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Lists and describes Security Hub-aggregated findings that filter attributes specify.
+        /// Returns a list of findings that match the specified criteria.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFindings service method.</param>
         /// <param name="cancellationToken">
@@ -878,9 +1060,12 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Invites other AWS accounts to enable Security Hub and become Security Hub member accounts.
-        /// When an account accepts the invitation and becomes a member account, the master account
-        /// can view Security Hub findings of the member account.
+        /// Invites other AWS accounts to become member accounts for the Security Hub master account
+        /// that the invitation is sent from. Before you can use this action to invite a member,
+        /// you must first create the member account in Security Hub by using the <a>CreateMembers</a>
+        /// action. When the account owner accepts the invitation to become a member account and
+        /// enables Security Hub, the master account can view the findings generated from member
+        /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InviteMembers service method.</param>
         /// <param name="cancellationToken">
@@ -1003,34 +1188,121 @@ namespace Amazon.SecurityHub
 
         #endregion
                 
-        #region  ListProductSubscribers
+        #region  ListTagsForResource
 
 
 
         /// <summary>
-        /// Returns a list of account IDs that are subscribed to the product.
+        /// Returns a list of tags associated with a resource.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListProductSubscribers service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
-        /// <returns>The response from the ListProductSubscribers service method, as returned by SecurityHub.</returns>
+        /// <returns>The response from the ListTagsForResource service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  TagResource
+
+
+
+        /// <summary>
+        /// Adds one or more tags to a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UntagResource
+
+
+
+        /// <summary>
+        /// Removes one or more tags from a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateActionTarget
+
+
+
+        /// <summary>
+        /// Updates the name and description of a custom action target in Security Hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateActionTarget service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateActionTarget service method, as returned by SecurityHub.</returns>
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
         /// AWS Security Hub isn't enabled for the account used to make this request.
         /// </exception>
-        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
-        /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListProductSubscribers">REST API Reference for ListProductSubscribers Operation</seealso>
-        Task<ListProductSubscribersResponse> ListProductSubscribersAsync(ListProductSubscribersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateActionTarget">REST API Reference for UpdateActionTarget Operation</seealso>
+        Task<UpdateActionTargetResponse> UpdateActionTargetAsync(UpdateActionTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

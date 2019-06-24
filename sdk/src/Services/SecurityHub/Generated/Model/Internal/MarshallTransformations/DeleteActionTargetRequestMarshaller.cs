@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListProductSubscribers Request Marshaller
+    /// DeleteActionTarget Request Marshaller
     /// </summary>       
-    public class ListProductSubscribersRequestMarshaller : IMarshaller<IRequest, ListProductSubscribersRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteActionTargetRequestMarshaller : IMarshaller<IRequest, DeleteActionTargetRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListProductSubscribersRequest)input);
+            return this.Marshall((DeleteActionTargetRequest)input);
         }
 
         /// <summary>
@@ -52,30 +52,23 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListProductSubscribersRequest publicRequest)
+        public IRequest Marshall(DeleteActionTargetRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SecurityHub");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-26";            
-            request.HttpMethod = "GET";
+            request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/productSubscribers/";
-            
-            if (publicRequest.IsSetMaxResults())
-                request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
-            
-            if (publicRequest.IsSetNextToken())
-                request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
-            
-            if (publicRequest.IsSetProductArn())
-                request.Parameters.Add("ProductArn", StringUtils.FromString(publicRequest.ProductArn));
+            string uriResourcePath = "/actionTargets/{ActionTargetArn+}";
+            if (!publicRequest.IsSetActionTargetArn())
+                throw new AmazonSecurityHubException("Request object does not have required field ActionTargetArn set");
+            uriResourcePath = uriResourcePath.Replace("{ActionTargetArn+}", StringUtils.FromString(publicRequest.ActionTargetArn.TrimStart('/')));
             request.ResourcePath = uriResourcePath;
-            request.UseQueryString = true;
 
             return request;
         }
-        private static ListProductSubscribersRequestMarshaller _instance = new ListProductSubscribersRequestMarshaller();        
+        private static DeleteActionTargetRequestMarshaller _instance = new DeleteActionTargetRequestMarshaller();        
 
-        internal static ListProductSubscribersRequestMarshaller GetInstance()
+        internal static DeleteActionTargetRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -83,7 +76,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListProductSubscribersRequestMarshaller Instance
+        public static DeleteActionTargetRequestMarshaller Instance
         {
             get
             {

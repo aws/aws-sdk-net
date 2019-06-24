@@ -29,8 +29,8 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableImportFindingsForProduct operation.
-    /// Cancels the subscription that allows a findings-generating solution (product) to import
-    /// its findings into Security Hub.
+    /// Disables the integration of the specified product with Security Hub. Findings from
+    /// that product are no longer sent to Security Hub after the integration is disabled.
     /// </summary>
     public partial class DisableImportFindingsForProductRequest : AmazonSecurityHubRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ProductSubscriptionArn. 
         /// <para>
-        /// The ARN of a resource that represents your subscription to a supported product.
+        /// The ARN of the integrated product to disable the integration for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

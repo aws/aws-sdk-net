@@ -29,8 +29,10 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableImportFindingsForProduct operation.
-    /// Sets up the subscription that enables a findings-generating solution (product) to
-    /// import its findings into Security Hub.
+    /// Enables the integration of a partner product with Security Hub. Integrated products
+    /// send findings to Security Hub. When you enable a product integration, a permission
+    /// policy that grants permission for the product to send findings to Security Hub is
+    /// applied.
     /// </summary>
     public partial class EnableImportFindingsForProductRequest : AmazonSecurityHubRequest
     {
@@ -39,8 +41,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ProductArn. 
         /// <para>
-        /// The ARN of the product that generates findings that you want to import into Security
-        /// Hub.
+        /// The ARN of the product to enable the integration for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

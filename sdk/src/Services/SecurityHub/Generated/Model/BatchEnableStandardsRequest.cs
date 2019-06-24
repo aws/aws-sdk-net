@@ -29,10 +29,10 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchEnableStandards operation.
-    /// Enables the standards specified by the standards ARNs. In the context of Security
-    /// Hub, supported standards (for example, CIS AWS Foundations) are automated and continuous
-    /// checks that help determine your compliance status against security industry (including
-    /// AWS) best practices.
+    /// Enables the standards specified by the provided <code>standardsArn</code>. In this
+    /// release, only CIS AWS Foundations standards are supported. For more information, see
+    /// <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Standards
+    /// Supported in AWS Security Hub</a>.
     /// </summary>
     public partial class BatchEnableStandardsRequest : AmazonSecurityHubRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property StandardsSubscriptionRequests. 
         /// <para>
-        /// The list of standards that you want to enable.
+        /// The list of standards compliance checks to enable.
         /// </para>
         ///  <important> 
         /// <para>
@@ -49,7 +49,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Its ARN is <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0</code>.
+        /// The ARN for the standard is <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0</code>.
         /// </para>
         ///  </important>
         /// </summary>

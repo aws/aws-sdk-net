@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// The remediation options for a finding.
+    /// Details about the remediation steps for a finding.
     /// </summary>
     public partial class Remediation
     {
@@ -37,7 +37,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Recommendation. 
         /// <para>
-        /// A recommendation on how to remediate the issue identified within a finding.
+        /// A recommendation on the steps to take to remediate the issue identified by a finding.
         /// </para>
         /// </summary>
         public Recommendation Recommendation

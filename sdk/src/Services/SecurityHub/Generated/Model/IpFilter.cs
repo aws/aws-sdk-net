@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// The IP filter for querying findings.&gt;
+    /// The IP filter for querying findings.
     /// </summary>
     public partial class IpFilter
     {

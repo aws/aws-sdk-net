@@ -218,8 +218,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Criticality. 
         /// <para>
         /// The level of importance assigned to the resources associated with the finding. A score
-        /// of 0 means the underlying resources have no criticality, and a score of 100 is reserved
-        /// for the most critical resources.
+        /// of 0 means that the underlying resources have no criticality, and a score of 100 is
+        /// reserved for the most critical resources.
         /// </para>
         /// </summary>
         public List<NumberFilter> Criticality
@@ -803,7 +803,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property ProductFields. 
         /// <para>
         /// A data type where security-findings providers can include additional solution-specific
-        /// details that aren't part of the defined AwsSecurityFinding format.
+        /// details that aren't part of the defined <code>AwsSecurityFinding</code> format.
         /// </para>
         /// </summary>
         public List<MapFilter> ProductFields
@@ -1601,7 +1601,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property VerificationState. 
         /// <para>
-        /// The veracity of a finding. 
+        /// The veracity of a finding.
         /// </para>
         /// </summary>
         public List<StringFilter> VerificationState

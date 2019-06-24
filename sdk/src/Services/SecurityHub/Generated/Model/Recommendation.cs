@@ -38,7 +38,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// The recommendation of what to do about the issue described in a finding. 
+        /// Describes the recommended steps to take to remediate an issue identified in a finding.
         /// </para>
         /// </summary>
         public string Text
@@ -56,8 +56,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// A URL to link to general remediation information for the finding type of a finding.
-        /// 
+        /// A URL to a page or site that contains information about how to remediate a finding.
         /// </para>
         /// </summary>
         public string Url

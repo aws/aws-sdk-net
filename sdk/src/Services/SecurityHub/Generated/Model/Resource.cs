@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// A resource data type that describes a resource that the finding refers to.
+    /// A resource related to a finding.
     /// </summary>
     public partial class Resource
     {
@@ -42,7 +42,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Details. 
         /// <para>
-        /// Additional details about the resource.
+        /// Additional details about the resource related to a finding.
         /// </para>
         /// </summary>
         public ResourceDetails Details

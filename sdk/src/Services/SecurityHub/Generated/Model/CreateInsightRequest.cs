@@ -29,8 +29,9 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateInsight operation.
-    /// Creates an insight, which is a consolidation of findings that identifies a security
-    /// area that requires attention or intervention.
+    /// Creates a custom insight in Security Hub. An insight is a consolidation of findings
+    /// that relate to a security issue that requires attention or remediation. Use the <code>GroupByAttribute</code>
+    /// to group the related findings in the insight.
     /// </summary>
     public partial class CreateInsightRequest : AmazonSecurityHubRequest
     {
@@ -41,9 +42,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// A collection of attributes that are applied to all of the active findings aggregated
-        /// by Security Hub, and that result in a subset of findings that are included in this
-        /// insight.
+        /// One or more attributes used to filter the findings included in the insight. Only findings
+        /// that match the criteria defined in the filters are included in the insight.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,9 +62,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property GroupByAttribute. 
         /// <para>
-        /// The attribute by which the insight's findings are grouped. This attribute is used
-        /// as a findings aggregator for the purposes of viewing and managing multiple related
-        /// findings under a single operand.
+        /// The attribute used as the aggregator to group related findings for the insight.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -83,7 +81,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The user-defined name that identifies the insight to create.
+        /// The name of the custom insight to create.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -76,7 +76,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SuccessCount. 
         /// <para>
-        /// The number of findings that were successfully imported
+        /// The number of findings that were successfully imported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

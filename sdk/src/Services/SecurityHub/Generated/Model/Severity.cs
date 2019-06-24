@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// A finding's severity.
+    /// The severity of the finding.
     /// </summary>
     public partial class Severity
     {
@@ -57,8 +57,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Product. 
         /// <para>
-        /// The native severity as defined by the security-findings provider's solution that generated
-        /// the finding.
+        /// The native severity as defined by the AWS service or integrated partner product that
+        /// generated the finding.
         /// </para>
         /// </summary>
         public double Product

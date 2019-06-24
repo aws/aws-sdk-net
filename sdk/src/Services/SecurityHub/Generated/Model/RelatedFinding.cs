@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// A related finding's details.
+    /// Details about a related finding.
     /// </summary>
     public partial class RelatedFinding
     {
@@ -38,7 +38,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The solution-generated identifier for a related finding.
+        /// The product-generated identifier for a related finding.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -57,7 +57,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ProductArn. 
         /// <para>
-        /// The ARN of the solution that generated a related finding.
+        /// The ARN of the product that generated a related finding.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

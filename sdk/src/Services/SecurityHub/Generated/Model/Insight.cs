@@ -40,9 +40,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// A collection of attributes that are applied to all active Security Hub-aggregated
-        /// findings and that result in a subset of findings that are included in this insight.
-        /// 
+        /// One or more attributes used to filter the findings included in the insight. Only findings
+        /// that match the criteria defined in the filters are included in the insight.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

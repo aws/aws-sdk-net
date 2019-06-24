@@ -29,10 +29,9 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchDisableStandards operation.
-    /// Disables the standards specified by the standards subscription ARNs. In the context
-    /// of Security Hub, supported standards (for example, CIS AWS Foundations) are automated
-    /// and continuous checks that help determine your compliance status against security
-    /// industry (including AWS) best practices.
+    /// Disables the standards specified by the provided <code>StandardsSubscriptionArns</code>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Standards
+    /// Supported in AWS Security Hub</a>.
     /// </summary>
     public partial class BatchDisableStandardsRequest : AmazonSecurityHubRequest
     {
@@ -41,7 +40,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property StandardsSubscriptionArns. 
         /// <para>
-        /// The ARNs of the standards subscriptions that you want to disable.
+        /// The ARNs of the standards subscriptions to disable.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=25)]

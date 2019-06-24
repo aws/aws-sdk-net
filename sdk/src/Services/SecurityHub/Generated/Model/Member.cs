@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// The details for a Security Hub member account.
+    /// The details about a member account.
     /// </summary>
     public partial class Member
     {
@@ -42,7 +42,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID of a Security Hub member account.
+        /// The AWS account ID of the member account.
         /// </para>
         /// </summary>
         public string AccountId
@@ -60,7 +60,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Email. 
         /// <para>
-        /// The email of a Security Hub member account.
+        /// The email address of the member account.
         /// </para>
         /// </summary>
         public string Email
@@ -78,7 +78,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property InvitedAt. 
         /// <para>
-        /// The timestamp of when the member account was invited to Security Hub.
+        /// A timestamp for the date and time when the invitation was sent to the member account.
         /// </para>
         /// </summary>
         public DateTime InvitedAt
@@ -96,7 +96,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property MasterId. 
         /// <para>
-        /// The AWS account ID of the Security Hub master account to this member account.
+        /// The AWS account ID of the Security Hub master account associated with this member
+        /// account.
         /// </para>
         /// </summary>
         public string MasterId
@@ -133,7 +134,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The timestamp of when this member account was updated.
+        /// The timestamp for the date and time when the member account was updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

@@ -9,6 +9,22 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.CreateActionTargetRequest.Description</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.CreateActionTargetRequest.Id</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.CreateActionTargetRequest.Name</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.CreateActionTargetResponse.ActionTargetArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.CreateInsightRequest.GroupByAttribute</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -21,11 +37,36 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.DeleteActionTargetRequest.ActionTargetArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.DeleteActionTargetResponse.ActionTargetArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.DeleteInsightRequest.InsightArn</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.DeleteInsightResponse.InsightArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.DescribeActionTargetsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.DescribeHubRequest.HubArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.DescribeHubResponse.HubArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.DescribeHubResponse.SubscribedAt</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -88,12 +129,27 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityHub.Model.ListProductSubscribersRequest.MaxResults</property>
-    <min>1</min>
-    <max>100</max>
+    <property>Amazon.SecurityHub.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <pattern>^arn:aws:securityhub:.*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityHub.Model.ListProductSubscribersRequest.ProductArn</property>
+    <property>Amazon.SecurityHub.Model.TagResourceRequest.ResourceArn</property>
+    <pattern>^arn:aws:securityhub:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.UntagResourceRequest.ResourceArn</property>
+    <pattern>^arn:aws:securityhub:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.UpdateActionTargetRequest.ActionTargetArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.UpdateActionTargetRequest.Description</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.UpdateActionTargetRequest.Name</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -118,6 +174,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.AccountDetails.Email</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.ActionTarget.ActionTargetArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.ActionTarget.Description</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.ActionTarget.Name</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>

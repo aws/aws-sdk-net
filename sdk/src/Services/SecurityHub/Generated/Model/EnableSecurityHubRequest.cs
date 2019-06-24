@@ -29,10 +29,34 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableSecurityHub operation.
-    /// Enables the Security Hub service.
+    /// Enables Security Hub for your account in the current Region or the Region you specify
+    /// in the request. When you enable Security Hub, you grant to Security Hub the permissions
+    /// necessary to gather findings from AWS Config, Amazon GuardDuty, Amazon Inspector,
+    /// and Amazon Macie. To learn more, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">Setting
+    /// Up AWS Security Hub</a>.
     /// </summary>
     public partial class EnableSecurityHubRequest : AmazonSecurityHubRequest
     {
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to add to the Hub resource when you enable Security Hub.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
 
     }
 }

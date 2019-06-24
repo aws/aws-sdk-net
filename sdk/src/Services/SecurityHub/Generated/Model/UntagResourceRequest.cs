@@ -28,47 +28,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// This is the response object from the ListProductSubscribers operation.
+    /// Container for the parameters to the UntagResource operation.
+    /// Removes one or more tags from a resource.
     /// </summary>
-    public partial class ListProductSubscribersResponse : AmazonWebServiceResponse
+    public partial class UntagResourceRequest : AmazonSecurityHubRequest
     {
-        private string _nextToken;
-        private List<string> _productSubscribers = new List<string>();
+        private string _resourceArn;
+        private List<string> _tagKeys = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The token that is required for pagination.
+        /// The ARN of the resource to remove the tags from.
         /// </para>
         /// </summary>
-        public string NextToken
+        [AWSProperty(Required=true)]
+        public string ResourceArn
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._nextToken != null;
+            return this._resourceArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ProductSubscribers. 
+        /// Gets and sets the property TagKeys. 
         /// <para>
-        /// A list of account IDs that are subscribed to the product.
+        /// The tag keys associated with the tags to remove from the resource.
         /// </para>
         /// </summary>
-        public List<string> ProductSubscribers
+        [AWSProperty(Required=true, Min=1, Max=50)]
+        public List<string> TagKeys
         {
-            get { return this._productSubscribers; }
-            set { this._productSubscribers = value; }
+            get { return this._tagKeys; }
+            set { this._tagKeys = value; }
         }
 
-        // Check to see if ProductSubscribers property is set
-        internal bool IsSetProductSubscribers()
+        // Check to see if TagKeys property is set
+        internal bool IsSetTagKeys()
         {
-            return this._productSubscribers != null && this._productSubscribers.Count > 0; 
+            return this._tagKeys != null && this._tagKeys.Count > 0; 
         }
 
     }

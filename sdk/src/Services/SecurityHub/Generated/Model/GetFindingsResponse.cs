@@ -38,7 +38,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Findings. 
         /// <para>
-        /// Findings details returned by the operation.
+        /// The findings that matched the filters specified in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

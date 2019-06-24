@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// A collection of attributes used for sorting findings.
+    /// A collection of finding attributes used to sort findings.
     /// </summary>
     public partial class SortCriterion
     {
@@ -38,7 +38,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Field. 
         /// <para>
-        /// The finding attribute used for sorting findings.
+        /// The finding attribute used to sort findings.
         /// </para>
         /// </summary>
         public string Field
@@ -56,7 +56,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// The order used for sorting findings.
+        /// The order used to sort findings.
         /// </para>
         /// </summary>
         public SortOrder SortOrder

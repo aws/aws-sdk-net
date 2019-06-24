@@ -171,7 +171,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ProductSubscriptionResourcePolicy. 
         /// <para>
-        /// The resource policy asasociated with the product.
+        /// The resource policy associated with the product.
         /// </para>
         /// </summary>
         public string ProductSubscriptionResourcePolicy

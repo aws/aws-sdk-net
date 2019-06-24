@@ -29,7 +29,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateFromMasterAccount operation.
-    /// Disassociates the current Security Hub member account from its master account.
+    /// Disassociates the current Security Hub member account from the associated master account.
     /// </summary>
     public partial class DisassociateFromMasterAccountRequest : AmazonSecurityHubRequest
     {

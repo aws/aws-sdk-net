@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Threat intel details related to a finding.
+    /// Details about the threat intel related to a finding.
     /// </summary>
     public partial class ThreatIntelIndicator
     {
@@ -60,7 +60,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property LastObservedAt. 
         /// <para>
-        /// The date/time of the last observation of a threat intel indicator.
+        /// The date and time when the most recent instance of a threat intel indicator was observed.
         /// </para>
         /// </summary>
         public string LastObservedAt
@@ -78,7 +78,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The source of the threat intel.
+        /// The source of the threat intel indicator.
         /// </para>
         /// </summary>
         public string Source
@@ -96,7 +96,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SourceUrl. 
         /// <para>
-        /// The URL for more details from the source of the threat intel.
+        /// The URL to the page or site where you can get more information about the threat intel
+        /// indicator.
         /// </para>
         /// </summary>
         public string SourceUrl

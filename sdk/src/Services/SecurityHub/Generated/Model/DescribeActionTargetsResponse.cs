@@ -28,32 +28,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListProductSubscribers operation.
-    /// Returns a list of account IDs that are subscribed to the product.
+    /// This is the response object from the DescribeActionTargets operation.
     /// </summary>
-    public partial class ListProductSubscribersRequest : AmazonSecurityHubRequest
+    public partial class DescribeActionTargetsResponse : AmazonWebServiceResponse
     {
-        private int? _maxResults;
+        private List<ActionTarget> _actionTargets = new List<ActionTarget>();
         private string _nextToken;
-        private string _productArn;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property ActionTargets. 
         /// <para>
-        /// The maximum number of results to return.
+        /// A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>,
+        /// <code>Description</code>, and <code>Name</code> of a custom action target available
+        /// in Security Hub.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        [AWSProperty(Required=true)]
+        public List<ActionTarget> ActionTargets
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._actionTargets; }
+            set { this._actionTargets = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if ActionTargets property is set
+        internal bool IsSetActionTargets()
         {
-            return this._maxResults.HasValue; 
+            return this._actionTargets != null && this._actionTargets.Count > 0; 
         }
 
         /// <summary>
@@ -72,24 +72,6 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ProductArn. 
-        /// <para>
-        /// The ARN of the product.
-        /// </para>
-        /// </summary>
-        public string ProductArn
-        {
-            get { return this._productArn; }
-            set { this._productArn = value; }
-        }
-
-        // Check to see if ProductArn property is set
-        internal bool IsSetProductArn()
-        {
-            return this._productArn != null;
         }
 
     }

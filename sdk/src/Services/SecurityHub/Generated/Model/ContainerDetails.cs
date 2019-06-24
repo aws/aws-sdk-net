@@ -76,7 +76,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property LaunchedAt. 
         /// <para>
-        /// The date/time that the container was started.
+        /// The date and time when the container started.
         /// </para>
         /// </summary>
         public string LaunchedAt

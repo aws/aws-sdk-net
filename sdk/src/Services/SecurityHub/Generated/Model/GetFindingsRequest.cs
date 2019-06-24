@@ -29,7 +29,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the GetFindings operation.
-    /// Lists and describes Security Hub-aggregated findings that filter attributes specify.
+    /// Returns a list of findings that match the specified criteria.
     /// </summary>
     public partial class GetFindingsRequest : AmazonSecurityHubRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// A collection of attributes that is used for querying findings.
+        /// The findings attributes used to define a condition to filter the findings returned.
         /// </para>
         /// </summary>
         public AwsSecurityFindingFilters Filters
@@ -59,7 +59,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Indicates the maximum number of items that you want in the response.
+        /// The maximum number of findings to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -99,7 +99,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SortCriteria. 
         /// <para>
-        /// A collection of attributes used for sorting findings.
+        /// Findings attributes used to sort the list of findings returned.
         /// </para>
         /// </summary>
         public List<SortCriterion> SortCriteria

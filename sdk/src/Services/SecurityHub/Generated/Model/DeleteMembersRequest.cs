@@ -29,7 +29,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteMembers operation.
-    /// Deletes the Security Hub member accounts that the account IDs specify.
+    /// Deletes the specified member accounts from Security Hub.
     /// </summary>
     public partial class DeleteMembersRequest : AmazonSecurityHubRequest
     {
@@ -38,8 +38,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        /// A list of account IDs of the Security Hub member accounts that you want to delete.
-        /// 
+        /// A list of account IDs of the member accounts to delete.
         /// </para>
         /// </summary>
         public List<string> AccountIds

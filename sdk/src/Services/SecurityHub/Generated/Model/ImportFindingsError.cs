@@ -40,7 +40,6 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property ErrorCode. 
         /// <para>
         /// The code of the error made during the <code>BatchImportFindings</code> operation.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +59,6 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property ErrorMessage. 
         /// <para>
         /// The message of the error made during the <code>BatchImportFindings</code> operation.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

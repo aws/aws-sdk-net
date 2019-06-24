@@ -29,8 +29,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateMembers operation.
-    /// Disassociates the Security Hub member accounts that are specified by the account IDs
-    /// from their master account.
+    /// Disassociates the specified member accounts from the associated master account.
     /// </summary>
     public partial class DisassociateMembersRequest : AmazonSecurityHubRequest
     {
@@ -39,8 +38,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        /// The account IDs of the member accounts that you want to disassociate from the master
-        /// account.
+        /// The account IDs of the member accounts to disassociate from the master account.
         /// </para>
         /// </summary>
         public List<string> AccountIds

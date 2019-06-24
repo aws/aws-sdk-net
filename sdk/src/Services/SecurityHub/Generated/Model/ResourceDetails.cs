@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Additional details about the resource.
+    /// Additional details about a resource related to a finding.
     /// </summary>
     public partial class ResourceDetails
     {
@@ -41,7 +41,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AwsEc2Instance. 
         /// <para>
-        /// The details of an Amazon EC2 instance.
+        /// Details about an Amazon EC2 instance related to a finding.
         /// </para>
         /// </summary>
         public AwsEc2InstanceDetails AwsEc2Instance
@@ -59,7 +59,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AwsIamAccessKey. 
         /// <para>
-        /// IAM access key details related to a finding.
+        /// Details about an IAM access key related to a finding.
         /// </para>
         /// </summary>
         public AwsIamAccessKeyDetails AwsIamAccessKey
@@ -77,7 +77,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AwsS3Bucket. 
         /// <para>
-        /// The details of an Amazon S3 Bucket.
+        /// Details about an Amazon S3 Bucket related to a finding.
         /// </para>
         /// </summary>
         public AwsS3BucketDetails AwsS3Bucket
@@ -95,7 +95,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Container. 
         /// <para>
-        /// Container details related to a finding.
+        /// Details about a container resource related to a finding.
         /// </para>
         /// </summary>
         public ContainerDetails Container
@@ -113,8 +113,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Other. 
         /// <para>
-        /// The details of a resource that doesn't have a specific subfield for the resource type
-        /// defined.
+        /// Details about a resource that doesn't have a specific type defined.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Other

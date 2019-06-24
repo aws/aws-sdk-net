@@ -132,7 +132,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property TerminatedAt. 
         /// <para>
-        /// The date/time that the process was terminated.
+        /// The date and time when the process was terminated.
         /// </para>
         /// </summary>
         public string TerminatedAt

@@ -46,7 +46,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.
+        /// Its ARN is <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0</code>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -64,7 +64,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StandardsInput.
+        /// Gets and sets the property StandardsInput. 
+        /// <para>
+        /// A key-value pair of input for the standard.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> StandardsInput
         {

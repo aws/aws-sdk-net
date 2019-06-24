@@ -42,15 +42,12 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The ARN of a standard.
         /// </para>
-        ///  <important> 
-        /// <para>
-        /// In this release, Security Hub supports only the CIS AWS Foundations standard. 
-        /// </para>
         ///  
         /// <para>
-        /// Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.
+        /// In this release, Security Hub supports only the CIS AWS Foundations standard, which
+        /// uses the following ARN: <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</code>
+        /// 
         /// </para>
-        ///  </important>
         /// </summary>
         [AWSProperty(Required=true)]
         public string StandardsArn
@@ -66,7 +63,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StandardsInput.
+        /// Gets and sets the property StandardsInput. 
+        /// <para>
+        /// A key-value pair of input for the standard.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Dictionary<string, string> StandardsInput
@@ -84,7 +84,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property StandardsStatus. 
         /// <para>
-        /// The standard's status.
+        /// The status of the standards subscription.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

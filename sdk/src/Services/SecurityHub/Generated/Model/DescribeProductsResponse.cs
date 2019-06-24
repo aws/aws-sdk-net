@@ -56,7 +56,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Products. 
         /// <para>
-        /// A list of products.
+        /// A list of products, including details for each product.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

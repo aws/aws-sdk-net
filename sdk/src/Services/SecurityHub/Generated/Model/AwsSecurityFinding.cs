@@ -29,8 +29,8 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Provides consistent format for the contents of the Security Hub-aggregated findings.
-    /// AwsSecurityFinding format enables you to share findings between AWS security services
-    /// and third-party solutions, and compliance checks.
+    /// <code>AwsSecurityFinding</code> format enables you to share findings between AWS security
+    /// services and third-party solutions, and compliance checks.
     /// 
     ///  <note> 
     /// <para>
@@ -157,8 +157,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Criticality. 
         /// <para>
         /// The level of importance assigned to the resources associated with the finding. A score
-        /// of 0 means the underlying resources have no criticality, and a score of 100 is reserved
-        /// for the most critical resources.
+        /// of 0 means that the underlying resources have no criticality, and a score of 100 is
+        /// reserved for the most critical resources.
         /// </para>
         /// </summary>
         public int Criticality
@@ -184,6 +184,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Description
         {
             get { return this._description; }
@@ -371,7 +372,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property ProductFields. 
         /// <para>
         /// A data type where security-findings providers can include additional solution-specific
-        /// details that aren't part of the defined AwsSecurityFinding format.
+        /// details that aren't part of the defined <code>AwsSecurityFinding</code> format.
         /// </para>
         /// </summary>
         public Dictionary<string, string> ProductFields
@@ -425,7 +426,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Remediation. 
         /// <para>
-        /// An data type that describes the remediation options for a finding.
+        /// A data type that describes the remediation options for a finding.
         /// </para>
         /// </summary>
         public Remediation Remediation
@@ -545,6 +546,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Title
         {
             get { return this._title; }

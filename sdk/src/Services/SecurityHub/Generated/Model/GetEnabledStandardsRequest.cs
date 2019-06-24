@@ -29,7 +29,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the GetEnabledStandards operation.
-    /// Lists and describes enabled standards.
+    /// Returns a list of the standards that are currently enabled.
     /// </summary>
     public partial class GetEnabledStandardsRequest : AmazonSecurityHubRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of items that you want in the response.
+        /// The maximum number of results to return in the response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -80,7 +80,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property StandardsSubscriptionArns. 
         /// <para>
-        /// The list of standards subscription ARNS that you want to list and describe.
+        /// A list of the standards subscription ARNs for the standards to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
