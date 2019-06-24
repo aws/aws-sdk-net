@@ -1,60 +1,14 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
-    <property>Amazon.ResourceGroupsTaggingAPI.Model.DeleteTagPolicyRequest.TargetId</property>
-    <min>6</min>
-    <max>68</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ResourceGroupsTaggingAPI.Model.EnableTagPoliciesRequest.RootId</property>
-    <min>6</min>
-    <max>34</max>
-    <pattern>r-.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ResourceGroupsTaggingAPI.Model.GetComplianceSummaryRequest.MaxResults</property>
-    <min>1</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ResourceGroupsTaggingAPI.Model.GetComplianceSummaryRequest.PaginationToken</property>
-    <min>0</min>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ResourceGroupsTaggingAPI.Model.GetComplianceSummaryResponse.PaginationToken</property>
-    <min>0</min>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ResourceGroupsTaggingAPI.Model.GetEffectiveTagPolicyRequest.TargetId</property>
-    <min>6</min>
-    <max>68</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ResourceGroupsTaggingAPI.Model.GetEffectiveTagPolicyResponse.Policy</property>
-    <min>34</min>
-    <max>5000</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.ResourceGroupsTaggingAPI.Model.GetResourcesRequest.PaginationToken</property>
     <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.ResourceGroupsTaggingAPI.Model.GetResourcesRequest.Policy</property>
-    <min>34</min>
-    <max>5000</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.ResourceGroupsTaggingAPI.Model.GetResourcesResponse.PaginationToken</property>
     <min>0</min>
     <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ResourceGroupsTaggingAPI.Model.GetTagKeysRequest.MaxResults</property>
-    <min>1</min>
-    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroupsTaggingAPI.Model.GetTagKeysRequest.PaginationToken</property>
@@ -67,24 +21,9 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.ResourceGroupsTaggingAPI.Model.GetTagPolicyRequest.TargetId</property>
-    <min>6</min>
-    <max>68</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ResourceGroupsTaggingAPI.Model.GetTagPolicyResponse.Policy</property>
-    <min>34</min>
-    <max>5000</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.ResourceGroupsTaggingAPI.Model.GetTagValuesRequest.Key</property>
     <min>1</min>
     <max>128</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ResourceGroupsTaggingAPI.Model.GetTagValuesRequest.MaxResults</property>
-    <min>1</min>
-    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroupsTaggingAPI.Model.GetTagValuesRequest.PaginationToken</property>
@@ -93,26 +32,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroupsTaggingAPI.Model.GetTagValuesResponse.PaginationToken</property>
-    <min>0</min>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ResourceGroupsTaggingAPI.Model.PutTagPolicyRequest.Policy</property>
-    <min>34</min>
-    <max>5000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ResourceGroupsTaggingAPI.Model.PutTagPolicyRequest.TargetId</property>
-    <min>6</min>
-    <max>68</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ResourceGroupsTaggingAPI.Model.ConcurrentModificationException.Message</property>
-    <min>0</min>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ResourceGroupsTaggingAPI.Model.ConstraintViolationException.Message</property>
     <min>0</min>
     <max>2048</max>
   </property-value-rule>
@@ -134,17 +53,7 @@
   <property-value-rule>
     <property>Amazon.ResourceGroupsTaggingAPI.Model.ResourceTagMapping.ResourceARN</property>
     <min>1</min>
-    <max>1011</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ResourceGroupsTaggingAPI.Model.Summary.ResourceType</property>
-    <min>0</min>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ResourceGroupsTaggingAPI.Model.Summary.TargetId</property>
-    <min>6</min>
-    <max>68</max>
+    <max>1600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroupsTaggingAPI.Model.Tag.Key</property>

@@ -30,25 +30,11 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// <summary>
     /// Container for the parameters to the GetResources operation.
     /// Returns all the tagged or previously tagged resources that are located in the specified
-    /// Region for the AWS account.
-    /// 
-    ///  
-    /// <para>
-    /// Depending on what information you want returned, you can also specify the following:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <i>Filters</i> that specify what tags and resource types you want returned. The response
+    /// region for the AWS account. You can optionally specify <i>filters</i> (tags and resource
+    /// types) in your request, depending on what information you want returned. The response
     /// includes all tags that are associated with the requested resources.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Information about compliance with tag policies. If supplied, the compliance check
-    /// follows the specified tag policy instead of following the effective tag policy. For
-    /// more information on tag policies, see <a href="http://docs.aws.amazon.com/ARG/latest/userguide/tag-policies.html">Tag
-    /// Policies</a> in the <i>AWS Resource Groups User Guide.</i> 
-    /// </para>
-    ///  </li> </ul> <note> 
+    /// 
+    ///  <note> 
     /// <para>
     /// You can check the <code>PaginationToken</code> response parameter to determine if
     /// a query completed. Queries can occasionally return fewer results on a page than allowed.
@@ -59,59 +45,11 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// </summary>
     public partial class GetResourcesRequest : AmazonResourceGroupsTaggingAPIRequest
     {
-        private bool? _excludeCompliantResources;
-        private bool? _includeComplianceDetails;
         private string _paginationToken;
-        private string _policy;
         private int? _resourcesPerPage;
         private List<string> _resourceTypeFilters = new List<string>();
         private List<TagFilter> _tagFilters = new List<TagFilter>();
         private int? _tagsPerPage;
-
-        /// <summary>
-        /// Gets and sets the property ExcludeCompliantResources. 
-        /// <para>
-        /// Specifies whether to exclude resources that are compliant with the tag policy. Set
-        /// this to <code>true</code> if you are interested in retrieving information on noncompliant
-        /// resources only.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter
-        /// is also set to <code>true</code>.
-        /// </para>
-        /// </summary>
-        public bool ExcludeCompliantResources
-        {
-            get { return this._excludeCompliantResources.GetValueOrDefault(); }
-            set { this._excludeCompliantResources = value; }
-        }
-
-        // Check to see if ExcludeCompliantResources property is set
-        internal bool IsSetExcludeCompliantResources()
-        {
-            return this._excludeCompliantResources.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property IncludeComplianceDetails. 
-        /// <para>
-        /// Specifies whether to include details regarding the compliance with the effective tag
-        /// policy. Set this to <code>true</code> to determine whether resources are compliant
-        /// with the tag policy and to get details.
-        /// </para>
-        /// </summary>
-        public bool IncludeComplianceDetails
-        {
-            get { return this._includeComplianceDetails.GetValueOrDefault(); }
-            set { this._includeComplianceDetails = value; }
-        }
-
-        // Check to see if IncludeComplianceDetails property is set
-        internal bool IsSetIncludeComplianceDetails()
-        {
-            return this._includeComplianceDetails.HasValue; 
-        }
 
         /// <summary>
         /// Gets and sets the property PaginationToken. 
@@ -132,33 +70,6 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         internal bool IsSetPaginationToken()
         {
             return this._paginationToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Policy. 
-        /// <para>
-        /// The tag policy to check resources against for compliance. If supplied, the compliance
-        /// check follows the specified tag policy instead of following the effective tag policy.
-        /// Using this parameter to specify a tag policy is useful for testing new tag policies
-        /// before attaching them to a target.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can only use this parameter if the <code>IncludeComplianceDetails</code> parameter
-        /// is also set to <code>true</code>.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=34, Max=5000)]
-        public string Policy
-        {
-            get { return this._policy; }
-            set { this._policy = value; }
-        }
-
-        // Check to see if Policy property is set
-        internal bool IsSetPolicy()
-        {
-            return this._policy != null;
         }
 
         /// <summary>
@@ -269,28 +180,27 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, for filters: <code>filter1 = {key1, {value1}}, filter2 = {key2, {value2,value3,value4}}
-        /// , filter3 = {key3}</code>:
+        /// For example, for filters: filter1 = {key1, {value1}}, filter2 = {key2, {value2,value3,value4}}
+        /// , filter3 = {key3}:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>GetResources( {filter1} )</code> returns resources tagged with key1=value1
+        /// GetResources( {filter1} ) returns resources tagged with key1=value1
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>GetResources( {filter2} )</code> returns resources tagged with key2=value2
-        /// or key2=value3 or key2=value4
+        /// GetResources( {filter2} ) returns resources tagged with key2=value2 or key2=value3
+        /// or key2=value4
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>GetResources( {filter3} )</code> returns resources tagged with any tag containing
-        /// key3 as its tag key, irrespective of its value
+        /// GetResources( {filter3} ) returns resources tagged with any tag containing key3 as
+        /// its tag key, irrespective of its value
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>GetResources( {filter1,filter2,filter3} )</code> returns resources tagged with
-        /// ( key1=value1) and ( key2=value2 or key2=value3 or key2=value4) and (key3, irrespective
-        /// of the value)
+        /// GetResources( {filter1,filter2,filter3} ) returns resources tagged with ( key1=value1)
+        /// and ( key2=value2 or key2=value3 or key2=value4) and (key3, irrespective of the value)
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>

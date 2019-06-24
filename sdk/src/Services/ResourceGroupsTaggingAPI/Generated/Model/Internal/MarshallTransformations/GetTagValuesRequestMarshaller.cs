@@ -74,12 +74,6 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Key);
                 }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
                 if(publicRequest.IsSetPaginationToken())
                 {
                     context.Writer.WritePropertyName("PaginationToken");

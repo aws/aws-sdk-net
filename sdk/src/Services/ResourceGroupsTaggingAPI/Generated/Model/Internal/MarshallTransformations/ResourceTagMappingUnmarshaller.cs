@@ -64,12 +64,6 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ComplianceDetails", targetDepth))
-                {
-                    var unmarshaller = ComplianceDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ComplianceDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("ResourceARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -34,23 +34,24 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     ///  <ul> <li> 
     /// <para>
     /// Not all resources can have tags. For a list of resources that support tagging, see
-    /// <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/Welcome.html">this
-    /// list</a>.
+    /// <a href="http://docs.aws.amazon.com/ARG/latest/userguide/supported-resources.html">Supported
+    /// Resources</a> in the <i>AWS Resource Groups User Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Each resource can have up to 50 tags. 
+    /// Each resource can have up to 50 tags. For other limits, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-restrictions">Tag
+    /// Restrictions</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You can only tag resources that are located in the specified Region for the AWS account.
+    /// You can only tag resources that are located in the specified region for the AWS account.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// To add tags to a resource, you need the necessary permissions for the service that
     /// the resource belongs to as well as permissions for adding tags. For more information,
-    /// see <a href="http://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions">Set
-    /// Up Permissions</a> in the <i>AWS Resource Groups User Guide.</i> 
+    /// see <a href="http://docs.aws.amazon.com/ARG/latest/userguide/obtaining-permissions-for-tagging.html">Obtaining
+    /// Permissions for Tagging</a> in the <i>AWS Resource Groups User Guide</i>.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -63,8 +64,8 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// Gets and sets the property ResourceARNList. 
         /// <para>
         /// A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You
-        /// can specify a minimum of 1 and a maximum of 20 ARNs (resources) to tag. For more information,
-        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// can specify a minimum of 1 and a maximum of 20 ARNs (resources) to tag. An ARN can
+        /// be set to a maximum of 1600 characters. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
