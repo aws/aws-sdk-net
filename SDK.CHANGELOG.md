@@ -1,3 +1,28 @@
+### 3.3.538.0 (2019-06-24 18:18 UTC)
+* APIGateway (3.3.102.0)
+	* Customers can pick different security policies (TLS version + cipher suite) for custom domains in API Gateway
+* ApiGatewayV2 (3.3.101.0)
+	* Customers can get information about security policies set on custom domain resources in API Gateway
+* ApplicationInsights (3.3.100.0)
+	* CloudWatch Application Insights detects errors and exceptions from logs, including .NET custom application logs, SQL Server logs, IIS logs, and more, and uses a combination of built-in rules and machine learning, such as dynamic baselining, to identify common problems. You can then easily drill into specific issues with CloudWatch Automatic Dashboards that are dynamically generated. These dashboards contain the most recent alarms, a summary of relevant metrics, and log snippets to help you identify root cause.
+* ElasticLoadBalancingV2 (3.3.102.0)
+	* This release adds support for UDP on Network Load Balancers
+* FSx (3.3.101.0)
+	* Starting today, you can join your Amazon FSx for Windows File Server file systems to your organization's self-managed Microsoft Active Directory while creating the file system. You can also perform in-place updates of file systems to keep your Active Directory configuration up to date.
+* ResourceGroupsTaggingAPI (3.3.102.0)
+	* Updated service APIs and documentation.
+* SecurityHub (3.3.103.0)
+	* This release includes a new Tags parameter for the EnableSecurityHub operation, and the following new operations: DescribeHub, CreateActionTarget, DeleteActionTarget, DescribeActionTargets, UpdateActionTarget, TagResource, UntagResource, and ListTagsforResource. It removes the operation ListProductSubscribers, and makes Title and Description required attributes of AwsSecurityFinding.
+* ServiceQuotas (3.3.100.0)
+	* Service Quotas enables you to view and manage your quotas for AWS services from a central location.
+* SimpleSystemsManagement (3.3.104.0)
+	* AWS Systems Manager now supports deleting a specific version of a SSM Document.
+* Core 3.3.103.1
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.537.0 (2019-06-21 19:40 UTC)
 * DeviceFarm (3.3.101.14)
 	* This release includes updated documentation about the default timeout value for test runs and remote access sessions. This release also includes miscellaneous bug fixes for the documentation.

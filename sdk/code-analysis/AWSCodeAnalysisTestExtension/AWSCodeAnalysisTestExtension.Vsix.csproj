@@ -84,6 +84,10 @@
       <Project>{1707A0B9-C421-4504-A887-EF27A459B440}</Project>
       <Name>AWSSDK.ApplicationDiscoveryService.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ApplicationInsights/AWSSDK.ApplicationInsights.CodeAnalysis.csproj">
+      <Project>{DBC8FB2F-6C2F-452D-B0C0-4100FE32AF2F}</Project>
+      <Name>AWSSDK.ApplicationInsights.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/AppMesh/AWSSDK.AppMesh.CodeAnalysis.csproj">
       <Project>{51779681-17D6-43BF-B4E3-C57D3C22283E}</Project>
       <Name>AWSSDK.AppMesh.CodeAnalysis</Name>
