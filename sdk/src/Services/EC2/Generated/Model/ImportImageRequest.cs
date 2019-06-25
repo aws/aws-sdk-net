@@ -250,30 +250,16 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use
-        /// these licenses in a third party cloud like AWS. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image">Prerequisites</a>
-        /// in the VM Import/Export User Guide.
+        /// By default, we detect the source-system operating system (OS) and apply the appropriate
+        /// license. Specify <code>AWS</code> to replace the source-system license with an AWS
+        /// license, if appropriate. Specify <code>BYOL</code> to retain the source-system license,
+        /// if appropriate.
         /// </para>
         ///  
         /// <para>
-        /// Valid values include:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>Auto</code> - Detects the source-system operating system (OS) and applies the
-        /// appropriate license.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>AWS</code> - Replaces the source-system license with an AWS license, if appropriate.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>BYOL</code> - Retains the source-system license, if appropriate.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Default value: <code>Auto</code> 
+        /// To use <code>BYOL</code>, you must have existing licenses with rights to use these
+        /// licenses in a third party cloud, such as AWS. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image">Prerequisites</a>
+        /// in the VM Import/Export User Guide.
         /// </para>
         /// </summary>
         public string LicenseType

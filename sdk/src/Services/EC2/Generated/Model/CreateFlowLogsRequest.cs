@@ -36,7 +36,7 @@ namespace Amazon.EC2.Model
     /// <para>
     /// Flow log data for a monitored network interface is recorded as flow log records, which
     /// are log events consisting of fields that describe the traffic flow. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html#flow-log-records">Flow
+    /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
     /// Log Records</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// </para>
     ///  
@@ -48,7 +48,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html">VPC
+    /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html">VPC
     /// Flow Logs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// </para>
     /// </summary>

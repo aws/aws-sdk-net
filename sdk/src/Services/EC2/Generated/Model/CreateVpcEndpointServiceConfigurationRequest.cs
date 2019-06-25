@@ -36,7 +36,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// To create an endpoint service configuration, you must first create a Network Load
-    /// Balancer for your service. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC
+    /// Balancer for your service. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC
     /// Endpoint Services</a> in the <i>Amazon Virtual Private Cloud User Guide</i>. 
     /// </para>
     /// </summary>

@@ -43,27 +43,27 @@ namespace Amazon.EC2
     /// </para>
     ///  
     /// <para>
-    /// To learn more about Amazon EC2, Amazon EBS, and Amazon VPC, see the following resources:
+    /// To learn more, see the following resources:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="http://aws.amazon.com/ec2">Amazon EC2 product page</a> 
+    /// Amazon EC2: <a href="http://aws.amazon.com/ec2">Amazon EC2 product page</a>, <a href="http://aws.amazon.com/documentation/ec2">Amazon
+    /// EC2 documentation</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://aws.amazon.com/documentation/ec2">Amazon EC2 documentation</a> 
+    /// Amazon EBS: <a href="http://aws.amazon.com/ebs">Amazon EBS product page</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon
+    /// EBS documentation</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://aws.amazon.com/ebs">Amazon EBS product page</a> 
+    /// Amazon VPC: <a href="http://aws.amazon.com/vpc">Amazon VPC product page</a>, <a href="http://aws.amazon.com/documentation/vpc">Amazon
+    /// VPC documentation</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://aws.amazon.com/vpc">Amazon VPC product page</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="http://aws.amazon.com/documentation/vpc">Amazon VPC documentation</a> 
+    /// AWS VPN: <a href="http://aws.amazon.com/vpn">AWS VPN product page</a>, <a href="http://aws.amazon.com/documentation/vpn">AWS
+    /// VPN documentation</a> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -1118,7 +1118,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
         /// Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -1237,7 +1237,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
         /// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -1410,7 +1410,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about associating CIDR blocks with your VPC and applicable restrictions,
-        /// see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#VPC_Sizing">VPC
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPC_Sizing">VPC
         /// and Subnet Sizing</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -1537,8 +1537,8 @@ namespace Amazon.EC2
         /// <summary>
         /// Attaches an internet gateway to a VPC, enabling connectivity between the internet
         /// and the VPC. For more information about your VPC and internet gateway, see the <a
-        /// href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon Virtual Private
-        /// Cloud User Guide</a>.
+        /// href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon Virtual Private Cloud
+        /// User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachInternetGateway service method.</param>
         /// 
@@ -3095,7 +3095,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Creates a default subnet with a size <code>/20</code> IPv4 CIDR block in the specified
         /// Availability Zone in your default VPC. You can have only one default subnet per Availability
-        /// Zone. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html#create-default-subnet">Creating
+        /// Zone. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Creating
         /// a Default Subnet</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDefaultSubnet service method.</param>
@@ -3152,7 +3152,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Creates a default VPC with a size <code>/16</code> IPv4 CIDR block and a default subnet
         /// in each Availability Zone. For more information about the components of a default
-        /// VPC, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html">Default
+        /// VPC, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html">Default
         /// VPC and Default Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// You cannot specify the components of the default VPC yourself.
         /// 
@@ -3271,7 +3271,7 @@ namespace Amazon.EC2
         /// DNS server that we provide (AmazonProvidedDNS). If you create a set of options, and
         /// if your VPC has an internet gateway, make sure to set the <code>domain-name-servers</code>
         /// option either to <code>AmazonProvidedDNS</code> or to a domain name server of your
-        /// choice. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
+        /// choice. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
         /// Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -3456,7 +3456,7 @@ namespace Amazon.EC2
         /// <para>
         /// Flow log data for a monitored network interface is recorded as flow log records, which
         /// are log events consisting of fields that describe the traffic flow. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html#flow-log-records">Flow
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
         /// Log Records</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         ///  
@@ -3468,7 +3468,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html">VPC
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html">VPC
         /// Flow Logs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -3724,7 +3724,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about your VPC and internet gateway, see the <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon
+        /// For more information about your VPC and internet gateway, see the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon
         /// Virtual Private Cloud User Guide</a>.
         /// </para>
         /// </summary>
@@ -3742,7 +3742,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about your VPC and internet gateway, see the <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon
+        /// For more information about your VPC and internet gateway, see the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon
         /// Virtual Private Cloud User Guide</a>.
         /// </para>
         /// </summary>
@@ -3992,7 +3992,7 @@ namespace Amazon.EC2
         /// interface in the specified subnet with a private IP address from the IP address range
         /// of the subnet. Internet-bound traffic from a private subnet can be routed to the NAT
         /// gateway, therefore enabling instances in the private subnet to connect to the internet.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">NAT
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT
         /// Gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNatGateway service method.</param>
@@ -4052,7 +4052,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network
         /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -4129,7 +4129,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about network ACLs, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+        /// For more information about network ACLs, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network
         /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -4489,7 +4489,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about route tables, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+        /// For more information about route tables, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
         /// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -4550,7 +4550,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
         /// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -4938,7 +4938,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about subnets, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
+        /// For more information about subnets, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
         /// VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -5053,6 +5053,276 @@ namespace Amazon.EC2
         public virtual CreateTagsResponse EndCreateTags(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateTagsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateTrafficMirrorFilter
+
+        /// <summary>
+        /// Creates a Traffic Mirror filter.
+        /// 
+        ///  
+        /// <para>
+        /// A Traffic Mirror filter is a set of rules that defines the traffic to mirror.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, no traffic is mirrored. To mirror traffic, use <a>CreateTrafficMirrorFilterRule</a>
+        /// to add Traffic Mirror rules to the filter. The rules you add define what traffic gets
+        /// mirrored. You can also use <a>ModifyTrafficMirrorFilterNetworkServices</a> to mirror
+        /// supported network services.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrafficMirrorFilter service method.</param>
+        /// 
+        /// <returns>The response from the CreateTrafficMirrorFilter service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorFilter">REST API Reference for CreateTrafficMirrorFilter Operation</seealso>
+        public virtual CreateTrafficMirrorFilterResponse CreateTrafficMirrorFilter(CreateTrafficMirrorFilterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTrafficMirrorFilterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrafficMirrorFilterResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTrafficMirrorFilterResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTrafficMirrorFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrafficMirrorFilter operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTrafficMirrorFilter
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorFilter">REST API Reference for CreateTrafficMirrorFilter Operation</seealso>
+        public virtual IAsyncResult BeginCreateTrafficMirrorFilter(CreateTrafficMirrorFilterRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTrafficMirrorFilterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrafficMirrorFilterResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTrafficMirrorFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTrafficMirrorFilter.</param>
+        /// 
+        /// <returns>Returns a  CreateTrafficMirrorFilterResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorFilter">REST API Reference for CreateTrafficMirrorFilter Operation</seealso>
+        public virtual CreateTrafficMirrorFilterResponse EndCreateTrafficMirrorFilter(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateTrafficMirrorFilterResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateTrafficMirrorFilterRule
+
+        /// <summary>
+        /// Creates a Traffic Mirror rule. 
+        /// 
+        ///  
+        /// <para>
+        /// A Traffic Mirror rule defines the Traffic Mirror source traffic to mirror.
+        /// </para>
+        ///  
+        /// <para>
+        /// You need the Traffic Mirror filter ID when you create the rule.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrafficMirrorFilterRule service method.</param>
+        /// 
+        /// <returns>The response from the CreateTrafficMirrorFilterRule service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorFilterRule">REST API Reference for CreateTrafficMirrorFilterRule Operation</seealso>
+        public virtual CreateTrafficMirrorFilterRuleResponse CreateTrafficMirrorFilterRule(CreateTrafficMirrorFilterRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTrafficMirrorFilterRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrafficMirrorFilterRuleResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTrafficMirrorFilterRuleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTrafficMirrorFilterRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrafficMirrorFilterRule operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTrafficMirrorFilterRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorFilterRule">REST API Reference for CreateTrafficMirrorFilterRule Operation</seealso>
+        public virtual IAsyncResult BeginCreateTrafficMirrorFilterRule(CreateTrafficMirrorFilterRuleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTrafficMirrorFilterRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrafficMirrorFilterRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTrafficMirrorFilterRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTrafficMirrorFilterRule.</param>
+        /// 
+        /// <returns>Returns a  CreateTrafficMirrorFilterRuleResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorFilterRule">REST API Reference for CreateTrafficMirrorFilterRule Operation</seealso>
+        public virtual CreateTrafficMirrorFilterRuleResponse EndCreateTrafficMirrorFilterRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateTrafficMirrorFilterRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateTrafficMirrorSession
+
+        /// <summary>
+        /// Creates a Traffic Mirror session.
+        /// 
+        ///  
+        /// <para>
+        /// A Traffic Mirror session actively copies packets from a Traffic Mirror source to a
+        /// Traffic Mirror target. Create a filter, and then assign it to the session to define
+        /// a subset of the traffic to mirror, for example all TCP traffic.
+        /// </para>
+        ///  
+        /// <para>
+        /// The Traffic Mirror source and the Traffic Mirror target (monitoring appliances) can
+        /// be in the same VPC, or in a different VPC connected via VPC peering or a transit gateway.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, no traffic is mirrored. Use <a>CreateTrafficMirrorFilter</a> to create
+        /// filter rules that specify the traffic to mirror.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrafficMirrorSession service method.</param>
+        /// 
+        /// <returns>The response from the CreateTrafficMirrorSession service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorSession">REST API Reference for CreateTrafficMirrorSession Operation</seealso>
+        public virtual CreateTrafficMirrorSessionResponse CreateTrafficMirrorSession(CreateTrafficMirrorSessionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTrafficMirrorSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrafficMirrorSessionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTrafficMirrorSessionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTrafficMirrorSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrafficMirrorSession operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTrafficMirrorSession
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorSession">REST API Reference for CreateTrafficMirrorSession Operation</seealso>
+        public virtual IAsyncResult BeginCreateTrafficMirrorSession(CreateTrafficMirrorSessionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTrafficMirrorSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrafficMirrorSessionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTrafficMirrorSession operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTrafficMirrorSession.</param>
+        /// 
+        /// <returns>Returns a  CreateTrafficMirrorSessionResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorSession">REST API Reference for CreateTrafficMirrorSession Operation</seealso>
+        public virtual CreateTrafficMirrorSessionResponse EndCreateTrafficMirrorSession(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateTrafficMirrorSessionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateTrafficMirrorTarget
+
+        /// <summary>
+        /// Creates a target for your Traffic Mirror session.
+        /// 
+        ///  
+        /// <para>
+        /// A Traffic Mirror target is the destination for mirrored traffic. The Traffic Mirror
+        /// source and the Traffic Mirror target (monitoring appliances) can be in the same VPC,
+        /// or in different VPCs connected via VPC peering or a transit gateway.
+        /// </para>
+        ///  
+        /// <para>
+        /// A Traffic Mirror target can be a network interface, or a Network Load Balancer.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use the target in a Traffic Mirror session, use <a>CreateTrafficMirrorSession</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrafficMirrorTarget service method.</param>
+        /// 
+        /// <returns>The response from the CreateTrafficMirrorTarget service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorTarget">REST API Reference for CreateTrafficMirrorTarget Operation</seealso>
+        public virtual CreateTrafficMirrorTargetResponse CreateTrafficMirrorTarget(CreateTrafficMirrorTargetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTrafficMirrorTargetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrafficMirrorTargetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTrafficMirrorTargetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTrafficMirrorTarget operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrafficMirrorTarget operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTrafficMirrorTarget
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorTarget">REST API Reference for CreateTrafficMirrorTarget Operation</seealso>
+        public virtual IAsyncResult BeginCreateTrafficMirrorTarget(CreateTrafficMirrorTargetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTrafficMirrorTargetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrafficMirrorTargetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTrafficMirrorTarget operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTrafficMirrorTarget.</param>
+        /// 
+        /// <returns>Returns a  CreateTrafficMirrorTargetResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorTarget">REST API Reference for CreateTrafficMirrorTarget Operation</seealso>
+        public virtual CreateTrafficMirrorTargetResponse EndCreateTrafficMirrorTarget(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateTrafficMirrorTargetResponse>(asyncResult);
         }
 
         #endregion
@@ -5398,7 +5668,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Creates a VPC with the specified IPv4 CIDR block. The smallest VPC you can create
         /// uses a /28 netmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536
-        /// IPv4 addresses). For more information about how large to make your VPC, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
+        /// IPv4 addresses). For more information about how large to make your VPC, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
         /// VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// 
         ///  
@@ -5411,7 +5681,7 @@ namespace Amazon.EC2
         /// <para>
         /// By default, each instance you launch in the VPC has the default DHCP options, which
         /// include only a default DNS server that we provide (AmazonProvidedDNS). For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
         /// Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         ///  
@@ -5476,7 +5746,7 @@ namespace Amazon.EC2
         /// Creates a VPC endpoint for a specified service. An endpoint enables you to create
         /// a private connection between your VPC and the service. The service may be provided
         /// by AWS, an AWS Marketplace partner, or another AWS account. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html">VPC
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC
         /// Endpoints</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// 
         ///  
@@ -5619,7 +5889,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// To create an endpoint service configuration, you must first create a Network Load
-        /// Balancer for your service. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC
+        /// Balancer for your service. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC
         /// Endpoint Services</a> in the <i>Amazon Virtual Private Cloud User Guide</i>. 
         /// </para>
         /// </summary>
@@ -5683,7 +5953,7 @@ namespace Amazon.EC2
         ///  <note> 
         /// <para>
         /// Limitations and rules apply to a VPC peering connection. For more information, see
-        /// the <a href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/vpc-peering-basics.html#vpc-peering-limitations">limitations</a>
+        /// the <a href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html#vpc-peering-limitations">limitations</a>
         /// section in the <i>VPC Peering Guide</i>.
         /// </para>
         ///  </note> 
@@ -5751,7 +6021,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Creates a VPN connection between an existing virtual private gateway and a VPN customer
-        /// gateway. The supported connection types are <code>ipsec.1</code> and <code>ipsec.2</code>.
+        /// gateway. The supported connection types is <code>ipsec.1</code>.
         /// 
         ///  
         /// <para>
@@ -7373,6 +7643,232 @@ namespace Amazon.EC2
         public virtual DeleteTagsResponse EndDeleteTags(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteTagsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteTrafficMirrorFilter
+
+        /// <summary>
+        /// Deletes the specified Traffic Mirror filter.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a Traffic Mirror filter that is in use by a Traffic Mirror session.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrafficMirrorFilter service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTrafficMirrorFilter service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorFilter">REST API Reference for DeleteTrafficMirrorFilter Operation</seealso>
+        public virtual DeleteTrafficMirrorFilterResponse DeleteTrafficMirrorFilter(DeleteTrafficMirrorFilterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTrafficMirrorFilterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrafficMirrorFilterResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTrafficMirrorFilterResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTrafficMirrorFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrafficMirrorFilter operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTrafficMirrorFilter
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorFilter">REST API Reference for DeleteTrafficMirrorFilter Operation</seealso>
+        public virtual IAsyncResult BeginDeleteTrafficMirrorFilter(DeleteTrafficMirrorFilterRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTrafficMirrorFilterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrafficMirrorFilterResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTrafficMirrorFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTrafficMirrorFilter.</param>
+        /// 
+        /// <returns>Returns a  DeleteTrafficMirrorFilterResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorFilter">REST API Reference for DeleteTrafficMirrorFilter Operation</seealso>
+        public virtual DeleteTrafficMirrorFilterResponse EndDeleteTrafficMirrorFilter(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteTrafficMirrorFilterResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteTrafficMirrorFilterRule
+
+        /// <summary>
+        /// Deletes the specified Traffic Mirror rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrafficMirrorFilterRule service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTrafficMirrorFilterRule service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorFilterRule">REST API Reference for DeleteTrafficMirrorFilterRule Operation</seealso>
+        public virtual DeleteTrafficMirrorFilterRuleResponse DeleteTrafficMirrorFilterRule(DeleteTrafficMirrorFilterRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTrafficMirrorFilterRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrafficMirrorFilterRuleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTrafficMirrorFilterRuleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTrafficMirrorFilterRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrafficMirrorFilterRule operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTrafficMirrorFilterRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorFilterRule">REST API Reference for DeleteTrafficMirrorFilterRule Operation</seealso>
+        public virtual IAsyncResult BeginDeleteTrafficMirrorFilterRule(DeleteTrafficMirrorFilterRuleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTrafficMirrorFilterRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrafficMirrorFilterRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTrafficMirrorFilterRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTrafficMirrorFilterRule.</param>
+        /// 
+        /// <returns>Returns a  DeleteTrafficMirrorFilterRuleResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorFilterRule">REST API Reference for DeleteTrafficMirrorFilterRule Operation</seealso>
+        public virtual DeleteTrafficMirrorFilterRuleResponse EndDeleteTrafficMirrorFilterRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteTrafficMirrorFilterRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteTrafficMirrorSession
+
+        /// <summary>
+        /// Deletes the specified Traffic Mirror session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrafficMirrorSession service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTrafficMirrorSession service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorSession">REST API Reference for DeleteTrafficMirrorSession Operation</seealso>
+        public virtual DeleteTrafficMirrorSessionResponse DeleteTrafficMirrorSession(DeleteTrafficMirrorSessionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTrafficMirrorSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrafficMirrorSessionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTrafficMirrorSessionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTrafficMirrorSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrafficMirrorSession operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTrafficMirrorSession
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorSession">REST API Reference for DeleteTrafficMirrorSession Operation</seealso>
+        public virtual IAsyncResult BeginDeleteTrafficMirrorSession(DeleteTrafficMirrorSessionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTrafficMirrorSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrafficMirrorSessionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTrafficMirrorSession operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTrafficMirrorSession.</param>
+        /// 
+        /// <returns>Returns a  DeleteTrafficMirrorSessionResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorSession">REST API Reference for DeleteTrafficMirrorSession Operation</seealso>
+        public virtual DeleteTrafficMirrorSessionResponse EndDeleteTrafficMirrorSession(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteTrafficMirrorSessionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteTrafficMirrorTarget
+
+        /// <summary>
+        /// Deletes the specified Traffic Mirror target.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a Traffic Mirror target that is in use by a Traffic Mirror session.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrafficMirrorTarget service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTrafficMirrorTarget service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorTarget">REST API Reference for DeleteTrafficMirrorTarget Operation</seealso>
+        public virtual DeleteTrafficMirrorTargetResponse DeleteTrafficMirrorTarget(DeleteTrafficMirrorTargetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTrafficMirrorTargetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrafficMirrorTargetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTrafficMirrorTargetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTrafficMirrorTarget operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrafficMirrorTarget operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTrafficMirrorTarget
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorTarget">REST API Reference for DeleteTrafficMirrorTarget Operation</seealso>
+        public virtual IAsyncResult BeginDeleteTrafficMirrorTarget(DeleteTrafficMirrorTargetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTrafficMirrorTargetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrafficMirrorTargetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTrafficMirrorTarget operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTrafficMirrorTarget.</param>
+        /// 
+        /// <returns>Returns a  DeleteTrafficMirrorTargetResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorTarget">REST API Reference for DeleteTrafficMirrorTarget Operation</seealso>
+        public virtual DeleteTrafficMirrorTargetResponse EndDeleteTrafficMirrorTarget(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteTrafficMirrorTargetResponse>(asyncResult);
         }
 
         #endregion
@@ -9303,7 +9799,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
         /// Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -9320,7 +9816,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
         /// Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -11269,7 +11765,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network
         /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -11286,7 +11782,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network
         /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -12239,7 +12735,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
         /// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -12262,7 +12758,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
         /// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -13337,7 +13833,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
         /// VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -13354,7 +13850,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
         /// VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -13480,6 +13976,169 @@ namespace Amazon.EC2
         public virtual DescribeTagsResponse EndDescribeTags(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeTagsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeTrafficMirrorFilters
+
+        /// <summary>
+        /// Describes one or more Traffic Mirror filters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrafficMirrorFilters service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTrafficMirrorFilters service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorFilters">REST API Reference for DescribeTrafficMirrorFilters Operation</seealso>
+        public virtual DescribeTrafficMirrorFiltersResponse DescribeTrafficMirrorFilters(DescribeTrafficMirrorFiltersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrafficMirrorFiltersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrafficMirrorFiltersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTrafficMirrorFiltersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTrafficMirrorFilters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrafficMirrorFilters operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTrafficMirrorFilters
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorFilters">REST API Reference for DescribeTrafficMirrorFilters Operation</seealso>
+        public virtual IAsyncResult BeginDescribeTrafficMirrorFilters(DescribeTrafficMirrorFiltersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrafficMirrorFiltersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrafficMirrorFiltersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTrafficMirrorFilters operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTrafficMirrorFilters.</param>
+        /// 
+        /// <returns>Returns a  DescribeTrafficMirrorFiltersResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorFilters">REST API Reference for DescribeTrafficMirrorFilters Operation</seealso>
+        public virtual DescribeTrafficMirrorFiltersResponse EndDescribeTrafficMirrorFilters(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeTrafficMirrorFiltersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeTrafficMirrorSessions
+
+        /// <summary>
+        /// Describes one or more Traffic Mirror sessions. By default, all Traffic Mirror sessions
+        /// are described. Alternatively, you can filter the results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrafficMirrorSessions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTrafficMirrorSessions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorSessions">REST API Reference for DescribeTrafficMirrorSessions Operation</seealso>
+        public virtual DescribeTrafficMirrorSessionsResponse DescribeTrafficMirrorSessions(DescribeTrafficMirrorSessionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrafficMirrorSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrafficMirrorSessionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTrafficMirrorSessionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTrafficMirrorSessions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrafficMirrorSessions operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTrafficMirrorSessions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorSessions">REST API Reference for DescribeTrafficMirrorSessions Operation</seealso>
+        public virtual IAsyncResult BeginDescribeTrafficMirrorSessions(DescribeTrafficMirrorSessionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrafficMirrorSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrafficMirrorSessionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTrafficMirrorSessions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTrafficMirrorSessions.</param>
+        /// 
+        /// <returns>Returns a  DescribeTrafficMirrorSessionsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorSessions">REST API Reference for DescribeTrafficMirrorSessions Operation</seealso>
+        public virtual DescribeTrafficMirrorSessionsResponse EndDescribeTrafficMirrorSessions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeTrafficMirrorSessionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeTrafficMirrorTargets
+
+        /// <summary>
+        /// Information about one or more Traffic Mirror targets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrafficMirrorTargets service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTrafficMirrorTargets service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorTargets">REST API Reference for DescribeTrafficMirrorTargets Operation</seealso>
+        public virtual DescribeTrafficMirrorTargetsResponse DescribeTrafficMirrorTargets(DescribeTrafficMirrorTargetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrafficMirrorTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrafficMirrorTargetsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTrafficMirrorTargetsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTrafficMirrorTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrafficMirrorTargets operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTrafficMirrorTargets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorTargets">REST API Reference for DescribeTrafficMirrorTargets Operation</seealso>
+        public virtual IAsyncResult BeginDescribeTrafficMirrorTargets(DescribeTrafficMirrorTargetsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrafficMirrorTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrafficMirrorTargetsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTrafficMirrorTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTrafficMirrorTargets.</param>
+        /// 
+        /// <returns>Returns a  DescribeTrafficMirrorTargetsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorTargets">REST API Reference for DescribeTrafficMirrorTargets Operation</seealso>
+        public virtual DescribeTrafficMirrorTargetsResponse EndDescribeTrafficMirrorTargets(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeTrafficMirrorTargetsResponse>(asyncResult);
         }
 
         #endregion
@@ -15664,7 +16323,7 @@ namespace Amazon.EC2
         /// <para>
         /// After you perform this action, the subnet no longer uses the routes in the route table.
         /// Instead, it uses the routes in the VPC's main route table. For more information about
-        /// route tables, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+        /// route tables, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
         /// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -18767,6 +19426,189 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyTrafficMirrorFilterNetworkServices
+
+        /// <summary>
+        /// Allows or restricts mirroring network services.
+        /// 
+        ///  
+        /// <para>
+        ///  By default, Amazon DNS network services are not eligible for Traffic Mirror. Use
+        /// <code>AddNetworkServices</code> to add network services to a Traffic Mirror filter.
+        /// When a network service is added to the Traffic Mirror filter, all traffic related
+        /// to that network service will be mirrored. When you no longer want to mirror network
+        /// services, use <code>RemoveNetworkServices</code> to remove the network services from
+        /// the Traffic Mirror filter. 
+        /// </para>
+        ///  
+        /// <para>
+        /// FFor information about filter rule properties, see <a href="https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-considerations.html#traffic-mirroring-network-services">Network
+        /// Services</a> in the <i>Traffic Mirroring User Guide </i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTrafficMirrorFilterNetworkServices service method.</param>
+        /// 
+        /// <returns>The response from the ModifyTrafficMirrorFilterNetworkServices service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTrafficMirrorFilterNetworkServices">REST API Reference for ModifyTrafficMirrorFilterNetworkServices Operation</seealso>
+        public virtual ModifyTrafficMirrorFilterNetworkServicesResponse ModifyTrafficMirrorFilterNetworkServices(ModifyTrafficMirrorFilterNetworkServicesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyTrafficMirrorFilterNetworkServicesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyTrafficMirrorFilterNetworkServicesResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyTrafficMirrorFilterNetworkServicesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyTrafficMirrorFilterNetworkServices operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTrafficMirrorFilterNetworkServices operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyTrafficMirrorFilterNetworkServices
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTrafficMirrorFilterNetworkServices">REST API Reference for ModifyTrafficMirrorFilterNetworkServices Operation</seealso>
+        public virtual IAsyncResult BeginModifyTrafficMirrorFilterNetworkServices(ModifyTrafficMirrorFilterNetworkServicesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyTrafficMirrorFilterNetworkServicesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyTrafficMirrorFilterNetworkServicesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyTrafficMirrorFilterNetworkServices operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyTrafficMirrorFilterNetworkServices.</param>
+        /// 
+        /// <returns>Returns a  ModifyTrafficMirrorFilterNetworkServicesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTrafficMirrorFilterNetworkServices">REST API Reference for ModifyTrafficMirrorFilterNetworkServices Operation</seealso>
+        public virtual ModifyTrafficMirrorFilterNetworkServicesResponse EndModifyTrafficMirrorFilterNetworkServices(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyTrafficMirrorFilterNetworkServicesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyTrafficMirrorFilterRule
+
+        /// <summary>
+        /// Modifies the specified Traffic Mirror rule.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>DestinationCidrBlock</code> and <code>SourceCidrBlock</code> must both be an
+        /// IPv4 range or an IPv6 range.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTrafficMirrorFilterRule service method.</param>
+        /// 
+        /// <returns>The response from the ModifyTrafficMirrorFilterRule service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTrafficMirrorFilterRule">REST API Reference for ModifyTrafficMirrorFilterRule Operation</seealso>
+        public virtual ModifyTrafficMirrorFilterRuleResponse ModifyTrafficMirrorFilterRule(ModifyTrafficMirrorFilterRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyTrafficMirrorFilterRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyTrafficMirrorFilterRuleResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyTrafficMirrorFilterRuleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyTrafficMirrorFilterRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTrafficMirrorFilterRule operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyTrafficMirrorFilterRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTrafficMirrorFilterRule">REST API Reference for ModifyTrafficMirrorFilterRule Operation</seealso>
+        public virtual IAsyncResult BeginModifyTrafficMirrorFilterRule(ModifyTrafficMirrorFilterRuleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyTrafficMirrorFilterRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyTrafficMirrorFilterRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyTrafficMirrorFilterRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyTrafficMirrorFilterRule.</param>
+        /// 
+        /// <returns>Returns a  ModifyTrafficMirrorFilterRuleResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTrafficMirrorFilterRule">REST API Reference for ModifyTrafficMirrorFilterRule Operation</seealso>
+        public virtual ModifyTrafficMirrorFilterRuleResponse EndModifyTrafficMirrorFilterRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyTrafficMirrorFilterRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyTrafficMirrorSession
+
+        /// <summary>
+        /// Modifies a Traffic Mirror session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTrafficMirrorSession service method.</param>
+        /// 
+        /// <returns>The response from the ModifyTrafficMirrorSession service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTrafficMirrorSession">REST API Reference for ModifyTrafficMirrorSession Operation</seealso>
+        public virtual ModifyTrafficMirrorSessionResponse ModifyTrafficMirrorSession(ModifyTrafficMirrorSessionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyTrafficMirrorSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyTrafficMirrorSessionResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyTrafficMirrorSessionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyTrafficMirrorSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTrafficMirrorSession operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyTrafficMirrorSession
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTrafficMirrorSession">REST API Reference for ModifyTrafficMirrorSession Operation</seealso>
+        public virtual IAsyncResult BeginModifyTrafficMirrorSession(ModifyTrafficMirrorSessionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyTrafficMirrorSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyTrafficMirrorSessionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyTrafficMirrorSession operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyTrafficMirrorSession.</param>
+        /// 
+        /// <returns>Returns a  ModifyTrafficMirrorSessionResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTrafficMirrorSession">REST API Reference for ModifyTrafficMirrorSession Operation</seealso>
+        public virtual ModifyTrafficMirrorSessionResponse EndModifyTrafficMirrorSession(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyTrafficMirrorSessionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ModifyTransitGatewayVpcAttachment
 
         /// <summary>
@@ -19041,7 +19883,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Modifies attributes of a specified VPC endpoint. The attributes that you can modify
         /// depend on the type of VPC endpoint (interface or gateway). For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html">VPC
+        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC
         /// Endpoints</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpoint service method.</param>
@@ -19208,7 +20050,7 @@ namespace Amazon.EC2
         #region  ModifyVpcEndpointServicePermissions
 
         /// <summary>
-        /// Modifies the permissions for your <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC
+        /// Modifies the permissions for your <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC
         /// endpoint service</a>. You can add or remove permissions for service consumers (IAM
         /// users, IAM roles, and AWS accounts) to connect to your endpoint service.
         /// 
@@ -20476,7 +21318,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Changes which network ACL a subnet is associated with. By default when you create
         /// a subnet, it's automatically associated with the default network ACL. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network
         /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// 
         ///  
@@ -20536,7 +21378,7 @@ namespace Amazon.EC2
         #region  ReplaceNetworkAclEntry
 
         /// <summary>
-        /// Replaces an entry (rule) in a network ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+        /// Replaces an entry (rule) in a network ACL. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network
         /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReplaceNetworkAclEntry service method.</param>
@@ -20597,7 +21439,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
         /// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -20655,7 +21497,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Changes the route table associated with a given subnet in a VPC. After the operation
         /// completes, the subnet uses the routes in the new route table it's associated with.
-        /// For more information about route tables, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+        /// For more information about route tables, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
         /// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// 
         ///  

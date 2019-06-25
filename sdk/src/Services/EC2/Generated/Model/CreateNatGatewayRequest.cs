@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// interface in the specified subnet with a private IP address from the IP address range
     /// of the subnet. Internet-bound traffic from a private subnet can be routed to the NAT
     /// gateway, therefore enabling instances in the private subnet to connect to the internet.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">NAT
+    /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT
     /// Gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// </summary>
     public partial class CreateNatGatewayRequest : AmazonEC2Request

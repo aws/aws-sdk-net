@@ -1699,6 +1699,102 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void CreateTrafficMirrorFilterMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateTrafficMirrorFilter");
+
+            var request = InstantiateClassGenerator.Execute<CreateTrafficMirrorFilterRequest>();
+            var marshaller = new CreateTrafficMirrorFilterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = CreateTrafficMirrorFilterResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateTrafficMirrorFilterResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void CreateTrafficMirrorFilterRuleMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateTrafficMirrorFilterRule");
+
+            var request = InstantiateClassGenerator.Execute<CreateTrafficMirrorFilterRuleRequest>();
+            var marshaller = new CreateTrafficMirrorFilterRuleRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = CreateTrafficMirrorFilterRuleResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateTrafficMirrorFilterRuleResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void CreateTrafficMirrorSessionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateTrafficMirrorSession");
+
+            var request = InstantiateClassGenerator.Execute<CreateTrafficMirrorSessionRequest>();
+            var marshaller = new CreateTrafficMirrorSessionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = CreateTrafficMirrorSessionResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateTrafficMirrorSessionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void CreateTrafficMirrorTargetMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateTrafficMirrorTarget");
+
+            var request = InstantiateClassGenerator.Execute<CreateTrafficMirrorTargetRequest>();
+            var marshaller = new CreateTrafficMirrorTargetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = CreateTrafficMirrorTargetResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateTrafficMirrorTargetResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void CreateTransitGatewayMarshallTest()
         {
             var operation = service_model.FindOperation("CreateTransitGateway");
@@ -2523,6 +2619,102 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
 
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DeleteTrafficMirrorFilterMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteTrafficMirrorFilter");
+
+            var request = InstantiateClassGenerator.Execute<DeleteTrafficMirrorFilterRequest>();
+            var marshaller = new DeleteTrafficMirrorFilterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DeleteTrafficMirrorFilterResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteTrafficMirrorFilterResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DeleteTrafficMirrorFilterRuleMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteTrafficMirrorFilterRule");
+
+            var request = InstantiateClassGenerator.Execute<DeleteTrafficMirrorFilterRuleRequest>();
+            var marshaller = new DeleteTrafficMirrorFilterRuleRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DeleteTrafficMirrorFilterRuleResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteTrafficMirrorFilterRuleResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DeleteTrafficMirrorSessionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteTrafficMirrorSession");
+
+            var request = InstantiateClassGenerator.Execute<DeleteTrafficMirrorSessionRequest>();
+            var marshaller = new DeleteTrafficMirrorSessionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DeleteTrafficMirrorSessionResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteTrafficMirrorSessionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DeleteTrafficMirrorTargetMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteTrafficMirrorTarget");
+
+            var request = InstantiateClassGenerator.Execute<DeleteTrafficMirrorTargetRequest>();
+            var marshaller = new DeleteTrafficMirrorTargetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DeleteTrafficMirrorTargetResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteTrafficMirrorTargetResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         
@@ -4637,6 +4829,78 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DescribeTrafficMirrorFiltersMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeTrafficMirrorFilters");
+
+            var request = InstantiateClassGenerator.Execute<DescribeTrafficMirrorFiltersRequest>();
+            var marshaller = new DescribeTrafficMirrorFiltersRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeTrafficMirrorFiltersResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeTrafficMirrorFiltersResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DescribeTrafficMirrorSessionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeTrafficMirrorSessions");
+
+            var request = InstantiateClassGenerator.Execute<DescribeTrafficMirrorSessionsRequest>();
+            var marshaller = new DescribeTrafficMirrorSessionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeTrafficMirrorSessionsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeTrafficMirrorSessionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DescribeTrafficMirrorTargetsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeTrafficMirrorTargets");
+
+            var request = InstantiateClassGenerator.Execute<DescribeTrafficMirrorTargetsRequest>();
+            var marshaller = new DescribeTrafficMirrorTargetsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeTrafficMirrorTargetsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeTrafficMirrorTargetsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DescribeTransitGatewayAttachmentsMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeTransitGatewayAttachments");
@@ -6570,6 +6834,78 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
 
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void ModifyTrafficMirrorFilterNetworkServicesMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyTrafficMirrorFilterNetworkServices");
+
+            var request = InstantiateClassGenerator.Execute<ModifyTrafficMirrorFilterNetworkServicesRequest>();
+            var marshaller = new ModifyTrafficMirrorFilterNetworkServicesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ModifyTrafficMirrorFilterNetworkServicesResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyTrafficMirrorFilterNetworkServicesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void ModifyTrafficMirrorFilterRuleMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyTrafficMirrorFilterRule");
+
+            var request = InstantiateClassGenerator.Execute<ModifyTrafficMirrorFilterRuleRequest>();
+            var marshaller = new ModifyTrafficMirrorFilterRuleRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ModifyTrafficMirrorFilterRuleResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyTrafficMirrorFilterRuleResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void ModifyTrafficMirrorSessionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyTrafficMirrorSession");
+
+            var request = InstantiateClassGenerator.Execute<ModifyTrafficMirrorSessionRequest>();
+            var marshaller = new ModifyTrafficMirrorSessionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ModifyTrafficMirrorSessionResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyTrafficMirrorSessionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         

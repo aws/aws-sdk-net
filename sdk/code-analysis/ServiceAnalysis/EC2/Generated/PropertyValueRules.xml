@@ -239,6 +239,36 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeTrafficMirrorFiltersRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeTrafficMirrorFiltersRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeTrafficMirrorSessionsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeTrafficMirrorSessionsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeTrafficMirrorTargetsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeTrafficMirrorTargetsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeTransitGatewayAttachmentsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>

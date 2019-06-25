@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output for ImportInstance.
+    /// This is the response object from the ImportInstance operation.
     /// </summary>
     public partial class ImportInstanceResponse : AmazonWebServiceResponse
     {

@@ -724,7 +724,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property NetworkInterfaces. 
         /// <para>
         /// The network interfaces to associate with the instance. If you specify a network interface,
-        /// you must specify any security groups as part of the network interface.
+        /// you must specify any security groups and subnets as part of the network interface.
         /// </para>
         /// </summary>
         public List<InstanceNetworkInterfaceSpecification> NetworkInterfaces
@@ -873,7 +873,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// You cannot specify this option and the network interfaces option in the same request.
+        /// If you specify a network interface, you must specify any subnets as part of the network
+        /// interface.
         /// </para>
         /// </summary>
         public string SubnetId
