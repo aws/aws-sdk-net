@@ -42,6 +42,7 @@ namespace Amazon.ApiGatewayV2.Model
         private Dictionary<string, RouteSettings> _routeSettings = new Dictionary<string, RouteSettings>();
         private string _stageName;
         private Dictionary<string, string> _stageVariables = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property AccessLogSettings. 
@@ -206,6 +207,26 @@ namespace Amazon.ApiGatewayV2.Model
         internal bool IsSetStageVariables()
         {
             return this._stageVariables != null && this._stageVariables.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag
+        /// key can be up to 128 characters and must not start with aws:. The tag value can be
+        /// up to 256 characters..
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

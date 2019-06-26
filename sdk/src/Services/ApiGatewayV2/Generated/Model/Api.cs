@@ -41,6 +41,7 @@ namespace Amazon.ApiGatewayV2.Model
         private string _name;
         private ProtocolType _protocolType;
         private string _routeSelectionExpression;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _version;
         private List<string> _warnings = new List<string>();
 
@@ -209,6 +210,26 @@ namespace Amazon.ApiGatewayV2.Model
         internal bool IsSetRouteSelectionExpression()
         {
             return this._routeSelectionExpression != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag
+        /// key can be up to 128 characters and must not start with aws:. The tag value can be
+        /// up to 256 characters..
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

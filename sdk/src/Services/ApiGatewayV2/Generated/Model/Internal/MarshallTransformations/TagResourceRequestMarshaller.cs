@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateApi Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateApiRequestMarshaller : IMarshaller<IRequest, CreateApiRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateApiRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,56 +52,23 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateApiRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ApiGatewayV2");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-29";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/v2/apis";
+            string uriResourcePath = "/v2/tags/{resource-arn}";
+            if (!publicRequest.IsSetResourceArn())
+                throw new AmazonApiGatewayV2Exception("Request object does not have required field ResourceArn set");
+            uriResourcePath = uriResourcePath.Replace("{resource-arn}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceArn));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApiKeySelectionExpression())
-                {
-                    context.Writer.WritePropertyName("apiKeySelectionExpression");
-                    context.Writer.Write(publicRequest.ApiKeySelectionExpression);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDisableSchemaValidation())
-                {
-                    context.Writer.WritePropertyName("disableSchemaValidation");
-                    context.Writer.Write(publicRequest.DisableSchemaValidation);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetProtocolType())
-                {
-                    context.Writer.WritePropertyName("protocolType");
-                    context.Writer.Write(publicRequest.ProtocolType);
-                }
-
-                if(publicRequest.IsSetRouteSelectionExpression())
-                {
-                    context.Writer.WritePropertyName("routeSelectionExpression");
-                    context.Writer.Write(publicRequest.RouteSelectionExpression);
-                }
-
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
@@ -116,12 +83,6 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVersion())
-                {
-                    context.Writer.WritePropertyName("version");
-                    context.Writer.Write(publicRequest.Version);
-                }
-
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
@@ -131,9 +92,9 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateApiRequestMarshaller _instance = new CreateApiRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateApiRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -141,7 +102,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateApiRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {

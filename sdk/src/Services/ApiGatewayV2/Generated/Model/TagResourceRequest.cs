@@ -28,50 +28,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApiGatewayV2.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateDomainName operation.
-    /// Creates a domain name.
+    /// Container for the parameters to the TagResource operation.
+    /// Tag an APIGW resource
     /// </summary>
-    public partial class CreateDomainNameRequest : AmazonApiGatewayV2Request
+    public partial class TagResourceRequest : AmazonApiGatewayV2Request
     {
-        private string _domainName;
-        private List<DomainNameConfiguration> _domainNameConfigurations = new List<DomainNameConfiguration>();
+        private string _resourceArn;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property DomainName. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The domain name.
+        /// AWS resource arn 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string DomainName
+        public string ResourceArn
         {
-            get { return this._domainName; }
-            set { this._domainName = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if DomainName property is set
-        internal bool IsSetDomainName()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._domainName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property DomainNameConfigurations. 
-        /// <para>
-        /// The domain name configurations.
-        /// </para>
-        /// </summary>
-        public List<DomainNameConfiguration> DomainNameConfigurations
-        {
-            get { return this._domainNameConfigurations; }
-            set { this._domainNameConfigurations = value; }
-        }
-
-        // Check to see if DomainNameConfigurations property is set
-        internal bool IsSetDomainNameConfigurations()
-        {
-            return this._domainNameConfigurations != null && this._domainNameConfigurations.Count > 0; 
+            return this._resourceArn != null;
         }
 
         /// <summary>

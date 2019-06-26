@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateStage operation
+    /// Response Unmarshaller for GetTags operation
     /// </summary>  
-    public class CreateStageResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetTagsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,72 +45,12 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateStageResponse response = new CreateStageResponse();
+            GetTagsResponse response = new GetTagsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("accessLogSettings", targetDepth))
-                {
-                    var unmarshaller = AccessLogSettingsUnmarshaller.Instance;
-                    response.AccessLogSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("clientCertificateId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ClientCertificateId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("createdDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreatedDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("defaultRouteSettings", targetDepth))
-                {
-                    var unmarshaller = RouteSettingsUnmarshaller.Instance;
-                    response.DefaultRouteSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("deploymentId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DeploymentId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lastUpdatedDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.LastUpdatedDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("routeSettings", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, RouteSettings, StringUnmarshaller, RouteSettingsUnmarshaller>(StringUnmarshaller.Instance, RouteSettingsUnmarshaller.Instance);
-                    response.RouteSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("stageName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.StageName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("stageVariables", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.StageVariables = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
@@ -151,9 +91,9 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             return new AmazonApiGatewayV2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static CreateStageResponseUnmarshaller _instance = new CreateStageResponseUnmarshaller();        
+        private static GetTagsResponseUnmarshaller _instance = new GetTagsResponseUnmarshaller();        
 
-        internal static CreateStageResponseUnmarshaller GetInstance()
+        internal static GetTagsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -161,7 +101,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateStageResponseUnmarshaller Instance
+        public static GetTagsResponseUnmarshaller Instance
         {
             get
             {
