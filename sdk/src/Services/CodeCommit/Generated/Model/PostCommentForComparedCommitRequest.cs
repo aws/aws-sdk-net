@@ -66,6 +66,11 @@ namespace Amazon.CodeCommit.Model
         /// To establish the directionality of the comparison, the full commit ID of the 'before'
         /// commit.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This is required for commenting on any commit unless that commit is the initial commit.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string BeforeCommitId
         {

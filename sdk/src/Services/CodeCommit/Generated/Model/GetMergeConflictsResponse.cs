@@ -60,7 +60,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property ConflictMetadataList. 
         /// <para>
-        /// A list of metadata for any conflicts found.
+        /// A list of metadata for any conflicting files. If the specified merge strategy is FAST_FORWARD_MERGE,
+        /// this list will always be empty.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

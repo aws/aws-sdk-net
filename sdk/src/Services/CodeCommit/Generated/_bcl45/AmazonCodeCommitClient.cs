@@ -120,6 +120,11 @@ namespace Amazon.CodeCommit
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a>GetBlob</a>, which returns the base-64 encoded content of an individual Git blob
+    /// object within a repository.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>GetFile</a>, which returns the base-64 encoded content of a specified file.
     /// </para>
     ///  </li> <li> 
@@ -128,20 +133,16 @@ namespace Amazon.CodeCommit
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>PutFile</a>, which adds or modifies a file in a specified repository and branch.
+    ///  <a>PutFile</a>, which adds or modifies a single file in a specified repository and
+    /// branch.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Information about committed code in a repository, by calling the following:
+    /// Commits, by calling the following:
     /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateCommit</a>, which creates a commit for changes to a repository.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>GetBlob</a>, which returns the base-64 encoded content of an individual Git blob
-    /// object within a repository.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -266,7 +267,7 @@ namespace Amazon.CodeCommit
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Information about comments in a repository, by calling the following:
+    /// Comments in a repository, by calling the following:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -603,6 +604,10 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
+        /// The maximum number of items to compare between the source or destination branches
+        /// and the merge base has exceeded the maximum allowed.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MergeOptionRequiredException">
         /// A merge option or stategy is required, and none was provided.
         /// </exception>
@@ -695,6 +700,10 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
         /// The number of files to load exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
+        /// The maximum number of items to compare between the source or destination branches
+        /// and the merge base has exceeded the maximum allowed.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MergeOptionRequiredException">
         /// A merge option or stategy is required, and none was provided.
@@ -1123,8 +1132,8 @@ namespace Amazon.CodeCommit
         /// for these changes.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.NameLengthExceededException">
-        /// The user name is not valid because it has exceeded the character limit for file names.
-        /// File names, including the path to the file, cannot exceed the character limit.
+        /// The user name is not valid because it has exceeded the character limit for author
+        /// names.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.NoChangeException">
         /// The commit cannot be created because no changes will be made to the repository as
@@ -1298,8 +1307,8 @@ namespace Amazon.CodeCommit
         /// for these changes.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.NameLengthExceededException">
-        /// The user name is not valid because it has exceeded the character limit for file names.
-        /// File names, including the path to the file, cannot exceed the character limit.
+        /// The user name is not valid because it has exceeded the character limit for author
+        /// names.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.NoChangeException">
         /// The commit cannot be created because no changes will be made to the repository as
@@ -1747,9 +1756,10 @@ namespace Amazon.CodeCommit
 
 
         /// <summary>
-        /// Creates an unerferenced commit that represents the result of merging two branches
+        /// Creates an unreferenced commit that represents the result of merging two branches
         /// using a specified merge strategy. This can help you determine the outcome of a potential
-        /// merge. 
+        /// merge. This API cannot be used with the fast-forward merge strategy, as that strategy
+        /// does not create a merge commit.
         /// 
         ///  <note> 
         /// <para>
@@ -1857,6 +1867,10 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
+        /// The maximum number of items to compare between the source or destination branches
+        /// and the merge base has exceeded the maximum allowed.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MergeOptionRequiredException">
         /// A merge option or stategy is required, and none was provided.
         /// </exception>
@@ -1865,8 +1879,8 @@ namespace Amazon.CodeCommit
         /// have only one conflict resolution entry.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.NameLengthExceededException">
-        /// The user name is not valid because it has exceeded the character limit for file names.
-        /// File names, including the path to the file, cannot exceed the character limit.
+        /// The user name is not valid because it has exceeded the character limit for author
+        /// names.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
         /// The folderPath for a location cannot be null.
@@ -1900,9 +1914,10 @@ namespace Amazon.CodeCommit
 
 
         /// <summary>
-        /// Creates an unerferenced commit that represents the result of merging two branches
+        /// Creates an unreferenced commit that represents the result of merging two branches
         /// using a specified merge strategy. This can help you determine the outcome of a potential
-        /// merge. 
+        /// merge. This API cannot be used with the fast-forward merge strategy, as that strategy
+        /// does not create a merge commit.
         /// 
         ///  <note> 
         /// <para>
@@ -2013,6 +2028,10 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
+        /// The maximum number of items to compare between the source or destination branches
+        /// and the merge base has exceeded the maximum allowed.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MergeOptionRequiredException">
         /// A merge option or stategy is required, and none was provided.
         /// </exception>
@@ -2021,8 +2040,8 @@ namespace Amazon.CodeCommit
         /// have only one conflict resolution entry.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.NameLengthExceededException">
-        /// The user name is not valid because it has exceeded the character limit for file names.
-        /// File names, including the path to the file, cannot exceed the character limit.
+        /// The user name is not valid because it has exceeded the character limit for author
+        /// names.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
         /// The folderPath for a location cannot be null.
@@ -2322,8 +2341,8 @@ namespace Amazon.CodeCommit
         ///  </note>
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.NameLengthExceededException">
-        /// The user name is not valid because it has exceeded the character limit for file names.
-        /// File names, including the path to the file, cannot exceed the character limit.
+        /// The user name is not valid because it has exceeded the character limit for author
+        /// names.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ParentCommitDoesNotExistException">
         /// The parent commit ID is not valid because it does not exist. The specified parent
@@ -2428,8 +2447,8 @@ namespace Amazon.CodeCommit
         ///  </note>
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.NameLengthExceededException">
-        /// The user name is not valid because it has exceeded the character limit for file names.
-        /// File names, including the path to the file, cannot exceed the character limit.
+        /// The user name is not valid because it has exceeded the character limit for author
+        /// names.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ParentCommitDoesNotExistException">
         /// The parent commit ID is not valid because it does not exist. The specified parent
@@ -2653,6 +2672,10 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
+        /// The maximum number of items to compare between the source or destination branches
+        /// and the merge base has exceeded the maximum allowed.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MergeOptionRequiredException">
         /// A merge option or stategy is required, and none was provided.
         /// </exception>
@@ -2753,6 +2776,10 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
         /// The number of files to load exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
+        /// The maximum number of items to compare between the source or destination branches
+        /// and the merge base has exceeded the maximum allowed.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MergeOptionRequiredException">
         /// A merge option or stategy is required, and none was provided.
@@ -4321,6 +4348,10 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
+        /// The maximum number of items to compare between the source or destination branches
+        /// and the merge base has exceeded the maximum allowed.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MergeOptionRequiredException">
         /// A merge option or stategy is required, and none was provided.
         /// </exception>
@@ -4419,6 +4450,10 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
+        /// The maximum number of items to compare between the source or destination branches
+        /// and the merge base has exceeded the maximum allowed.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MergeOptionRequiredException">
         /// A merge option or stategy is required, and none was provided.
         /// </exception>
@@ -4501,6 +4536,10 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
+        /// The maximum number of items to compare between the source or destination branches
+        /// and the merge base has exceeded the maximum allowed.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
         /// The specified repository does not exist.
         /// </exception>
@@ -4578,6 +4617,10 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
         /// The number of files to load exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
+        /// The maximum number of items to compare between the source or destination branches
+        /// and the merge base has exceeded the maximum allowed.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
         /// The specified repository does not exist.
@@ -5620,13 +5663,17 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
+        /// The maximum number of items to compare between the source or destination branches
+        /// and the merge base has exceeded the maximum allowed.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MultipleConflictResolutionEntriesException">
         /// More than one conflict resolution entries exists for the conflict. A conflict can
         /// have only one conflict resolution entry.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.NameLengthExceededException">
-        /// The user name is not valid because it has exceeded the character limit for file names.
-        /// File names, including the path to the file, cannot exceed the character limit.
+        /// The user name is not valid because it has exceeded the character limit for author
+        /// names.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
         /// The folderPath for a location cannot be null.
@@ -5775,13 +5822,17 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
+        /// The maximum number of items to compare between the source or destination branches
+        /// and the merge base has exceeded the maximum allowed.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MultipleConflictResolutionEntriesException">
         /// More than one conflict resolution entries exists for the conflict. A conflict can
         /// have only one conflict resolution entry.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.NameLengthExceededException">
-        /// The user name is not valid because it has exceeded the character limit for file names.
-        /// File names, including the path to the file, cannot exceed the character limit.
+        /// The user name is not valid because it has exceeded the character limit for author
+        /// names.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
         /// The folderPath for a location cannot be null.
@@ -5931,13 +5982,17 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
+        /// The maximum number of items to compare between the source or destination branches
+        /// and the merge base has exceeded the maximum allowed.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MultipleConflictResolutionEntriesException">
         /// More than one conflict resolution entries exists for the conflict. A conflict can
         /// have only one conflict resolution entry.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.NameLengthExceededException">
-        /// The user name is not valid because it has exceeded the character limit for file names.
-        /// File names, including the path to the file, cannot exceed the character limit.
+        /// The user name is not valid because it has exceeded the character limit for author
+        /// names.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
         /// The folderPath for a location cannot be null.
@@ -6086,13 +6141,17 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
+        /// The maximum number of items to compare between the source or destination branches
+        /// and the merge base has exceeded the maximum allowed.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MultipleConflictResolutionEntriesException">
         /// More than one conflict resolution entries exists for the conflict. A conflict can
         /// have only one conflict resolution entry.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.NameLengthExceededException">
-        /// The user name is not valid because it has exceeded the character limit for file names.
-        /// File names, including the path to the file, cannot exceed the character limit.
+        /// The user name is not valid because it has exceeded the character limit for author
+        /// names.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
         /// The folderPath for a location cannot be null.
@@ -6130,9 +6189,9 @@ namespace Amazon.CodeCommit
 
 
         /// <summary>
-        /// Closes a pull request and attempts to merge the source commit of a pull request into
-        /// the specified destination branch for that pull request at the specified commit using
-        /// the fast-forward merge strategy.
+        /// Attempts to merge the source commit of a pull request into the specified destination
+        /// branch for that pull request at the specified commit using the fast-forward merge
+        /// strategy. If the merge is successful, it closes the pull request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MergePullRequestByFastForward service method.</param>
         /// 
@@ -6214,9 +6273,9 @@ namespace Amazon.CodeCommit
 
 
         /// <summary>
-        /// Closes a pull request and attempts to merge the source commit of a pull request into
-        /// the specified destination branch for that pull request at the specified commit using
-        /// the fast-forward merge strategy.
+        /// Attempts to merge the source commit of a pull request into the specified destination
+        /// branch for that pull request at the specified commit using the fast-forward merge
+        /// strategy. If the merge is successful, it closes the pull request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MergePullRequestByFastForward service method.</param>
         /// <param name="cancellationToken">
@@ -6305,9 +6364,9 @@ namespace Amazon.CodeCommit
 
 
         /// <summary>
-        /// Closes a pull request and attempts to merge the source commit of a pull request into
-        /// the specified destination branch for that pull request at the specified commit using
-        /// the squash merge strategy.
+        /// Attempts to merge the source commit of a pull request into the specified destination
+        /// branch for that pull request at the specified commit using the squash merge strategy.
+        /// If the merge is successful, it closes the pull request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MergePullRequestBySquash service method.</param>
         /// 
@@ -6396,13 +6455,17 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
+        /// The maximum number of items to compare between the source or destination branches
+        /// and the merge base has exceeded the maximum allowed.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MultipleConflictResolutionEntriesException">
         /// More than one conflict resolution entries exists for the conflict. A conflict can
         /// have only one conflict resolution entry.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.NameLengthExceededException">
-        /// The user name is not valid because it has exceeded the character limit for file names.
-        /// File names, including the path to the file, cannot exceed the character limit.
+        /// The user name is not valid because it has exceeded the character limit for author
+        /// names.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
         /// The folderPath for a location cannot be null.
@@ -6455,9 +6518,9 @@ namespace Amazon.CodeCommit
 
 
         /// <summary>
-        /// Closes a pull request and attempts to merge the source commit of a pull request into
-        /// the specified destination branch for that pull request at the specified commit using
-        /// the squash merge strategy.
+        /// Attempts to merge the source commit of a pull request into the specified destination
+        /// branch for that pull request at the specified commit using the squash merge strategy.
+        /// If the merge is successful, it closes the pull request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MergePullRequestBySquash service method.</param>
         /// <param name="cancellationToken">
@@ -6549,13 +6612,17 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
+        /// The maximum number of items to compare between the source or destination branches
+        /// and the merge base has exceeded the maximum allowed.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MultipleConflictResolutionEntriesException">
         /// More than one conflict resolution entries exists for the conflict. A conflict can
         /// have only one conflict resolution entry.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.NameLengthExceededException">
-        /// The user name is not valid because it has exceeded the character limit for file names.
-        /// File names, including the path to the file, cannot exceed the character limit.
+        /// The user name is not valid because it has exceeded the character limit for author
+        /// names.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
         /// The folderPath for a location cannot be null.
@@ -6612,9 +6679,9 @@ namespace Amazon.CodeCommit
 
 
         /// <summary>
-        /// Closes a pull request and attempts to merge the source commit of a pull request into
-        /// the specified destination branch for that pull request at the specified commit using
-        /// the three-way merge strategy.
+        /// Attempts to merge the source commit of a pull request into the specified destination
+        /// branch for that pull request at the specified commit using the three-way merge strategy.
+        /// If the merge is successful, it closes the pull request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MergePullRequestByThreeWay service method.</param>
         /// 
@@ -6703,13 +6770,17 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
+        /// The maximum number of items to compare between the source or destination branches
+        /// and the merge base has exceeded the maximum allowed.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MultipleConflictResolutionEntriesException">
         /// More than one conflict resolution entries exists for the conflict. A conflict can
         /// have only one conflict resolution entry.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.NameLengthExceededException">
-        /// The user name is not valid because it has exceeded the character limit for file names.
-        /// File names, including the path to the file, cannot exceed the character limit.
+        /// The user name is not valid because it has exceeded the character limit for author
+        /// names.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
         /// The folderPath for a location cannot be null.
@@ -6762,9 +6833,9 @@ namespace Amazon.CodeCommit
 
 
         /// <summary>
-        /// Closes a pull request and attempts to merge the source commit of a pull request into
-        /// the specified destination branch for that pull request at the specified commit using
-        /// the three-way merge strategy.
+        /// Attempts to merge the source commit of a pull request into the specified destination
+        /// branch for that pull request at the specified commit using the three-way merge strategy.
+        /// If the merge is successful, it closes the pull request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MergePullRequestByThreeWay service method.</param>
         /// <param name="cancellationToken">
@@ -6856,13 +6927,17 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.MaximumFileContentToLoadExceededException">
         /// The number of files to load exceeds the allowed limit.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumItemsToCompareExceededException">
+        /// The maximum number of items to compare between the source or destination branches
+        /// and the merge base has exceeded the maximum allowed.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MultipleConflictResolutionEntriesException">
         /// More than one conflict resolution entries exists for the conflict. A conflict can
         /// have only one conflict resolution entry.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.NameLengthExceededException">
-        /// The user name is not valid because it has exceeded the character limit for file names.
-        /// File names, including the path to the file, cannot exceed the character limit.
+        /// The user name is not valid because it has exceeded the character limit for author
+        /// names.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
         /// The folderPath for a location cannot be null.
@@ -7592,8 +7667,8 @@ namespace Amazon.CodeCommit
         ///  </note>
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.NameLengthExceededException">
-        /// The user name is not valid because it has exceeded the character limit for file names.
-        /// File names, including the path to the file, cannot exceed the character limit.
+        /// The user name is not valid because it has exceeded the character limit for author
+        /// names.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ParentCommitDoesNotExistException">
         /// The parent commit ID is not valid because it does not exist. The specified parent
@@ -7732,8 +7807,8 @@ namespace Amazon.CodeCommit
         ///  </note>
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.NameLengthExceededException">
-        /// The user name is not valid because it has exceeded the character limit for file names.
-        /// File names, including the path to the file, cannot exceed the character limit.
+        /// The user name is not valid because it has exceeded the character limit for author
+        /// names.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ParentCommitDoesNotExistException">
         /// The parent commit ID is not valid because it does not exist. The specified parent

@@ -160,6 +160,10 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             {
                 return new MaximumFileContentToLoadExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("MaximumItemsToCompareExceededException"))
+            {
+                return new MaximumItemsToCompareExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("MultipleConflictResolutionEntriesException"))
             {
                 return new MultipleConflictResolutionEntriesException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

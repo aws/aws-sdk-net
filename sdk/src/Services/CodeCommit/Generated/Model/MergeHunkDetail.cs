@@ -40,7 +40,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property EndLine. 
         /// <para>
-        /// The line number where a merge conflict ends.
+        /// The end position of the hunk in the merge result.
         /// </para>
         /// </summary>
         public int EndLine
@@ -58,7 +58,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property HunkContent. 
         /// <para>
-        /// The base-64 encoded content of the hunk that contains the conflict.
+        /// The base-64 encoded content of the hunk merged region that might or might not contain
+        /// a conflict.
         /// </para>
         /// </summary>
         public string HunkContent
@@ -76,7 +77,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property StartLine. 
         /// <para>
-        /// The line number where a merge conflict begins.
+        /// The start position of the hunk in the merge result.
         /// </para>
         /// </summary>
         public int StartLine

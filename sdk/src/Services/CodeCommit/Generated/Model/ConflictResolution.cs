@@ -58,7 +58,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property ReplaceContents. 
         /// <para>
-        /// Information about how a conflict in a merge will be resolved.
+        /// Files that will have content replaced as part of the merge conflict resolution.
         /// </para>
         /// </summary>
         public List<ReplaceContentEntry> ReplaceContents

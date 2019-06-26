@@ -192,8 +192,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property ObjectTypeConflict. 
         /// <para>
-        /// A boolean value (true or false) indicating whether there are conflicts in the object
-        /// type of a file.
+        /// A boolean value (true or false) indicating whether there are conflicts between the
+        /// branches in the object type of a file, folder, or submodule.
         /// </para>
         /// </summary>
         public bool ObjectTypeConflict
