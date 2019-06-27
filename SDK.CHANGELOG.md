@@ -1,3 +1,12 @@
+### 3.3.540.1 (2019-06-27 00:22 UTC)
+* DynamoDBv2 (3.3.101.30)
+	* Documentation updates for dynamodb
+* Core 3.3.103.3
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.540.0 (2019-06-26 19:13 UTC)
 * ApiGatewayV2 (3.3.102.0)
 	* You can now perform tag operations on ApiGatewayV2 Resources (typically associated with WebSocket APIs)
