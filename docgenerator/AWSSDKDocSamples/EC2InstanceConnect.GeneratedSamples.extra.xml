@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2InstanceConnect.IAmazonEC2InstanceConnect.SendSSHPublicKey(Amazon.EC2InstanceConnect.Model.SendSSHPublicKeyRequest)" />
+            <member name="M:Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectClient.SendSSHPublicKey(Amazon.EC2InstanceConnect.Model.SendSSHPublicKeyRequest)" />
+            <member name="T:Amazon.EC2InstanceConnect.Model.SendSSHPublicKeyRequest" />
+            <member name="T:Amazon.EC2InstanceConnect.Model.SendSSHPublicKeyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example pushes a sample SSH public key to the EC2 instance i-abcd1234 in AZ us-west-2b for use by the instance OS user ec2-user.
+                </para>
+                <code
+                    title="To push an SSH key to an EC2 instance"
+                    source=".\AWSSDKDocSamples\EC2InstanceConnect\EC2InstanceConnect.GeneratedSamples.cs"
+                    region="send-ssh-key-to-an-ec2-instance-1518124883100" />
+            </example>
+        </value>
+    </doc>
+</docs>
