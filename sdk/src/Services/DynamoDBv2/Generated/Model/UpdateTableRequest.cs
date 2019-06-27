@@ -42,7 +42,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Enable or disable Streams on the table.
+    /// Enable or disable DynamoDB Streams on the table.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -50,7 +50,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Create a new global secondary index on the table. Once the index begins backfilling,
+    /// Create a new global secondary index on the table. After the index begins backfilling,
     /// you can use <code>UpdateTable</code> to perform other operations.
     /// </para>
     ///  </li> </ul> 
@@ -221,9 +221,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// You will receive a <code>ResourceInUseException</code> if you attempt to enable a
-        /// stream on a table that already has a stream, or if you attempt to disable a stream
-        /// on a table which does not have a stream.
+        /// You receive a <code>ResourceInUseException</code> if you try to enable a stream on
+        /// a table that already has a stream, or if you try to disable a stream on a table that
+        /// doesn't have a stream.
         /// </para>
         ///  </note>
         /// </summary>

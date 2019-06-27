@@ -43,7 +43,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property BackupArn. 
         /// <para>
-        /// The ARN associated with the backup.
+        /// The Amazon Resource Name (ARN) associated with the backup.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=37, Max=1024)]

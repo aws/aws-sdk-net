@@ -52,9 +52,8 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  
     /// <para>
-    /// Note that if <i>none</i> of the items can be processed due to insufficient provisioned
-    /// throughput on all of the tables in the request, then <code>BatchWriteItem</code> will
-    /// return a <code>ProvisionedThroughputExceededException</code>.
+    /// If <i>none</i> of the items can be processed due to insufficient provisioned throughput
+    /// on all of the tables in the request, then <code>BatchWriteItem</code> returns a <code>ProvisionedThroughputExceededException</code>.
     /// </para>
     ///  <important> 
     /// <para>
@@ -67,18 +66,17 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#BatchOperations">Batch
+    /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#Programming.Errors.BatchOperations">Batch
     /// Operations and Error Handling</a> in the <i>Amazon DynamoDB Developer Guide</i>.
     /// </para>
     ///  </important> 
     /// <para>
     /// With <code>BatchWriteItem</code>, you can efficiently write or delete large amounts
-    /// of data, such as from Amazon Elastic MapReduce (EMR), or copy data from another database
-    /// into DynamoDB. In order to improve performance with these large-scale operations,
-    /// <code>BatchWriteItem</code> does not behave in the same way as individual <code>PutItem</code>
-    /// and <code>DeleteItem</code> calls would. For example, you cannot specify conditions
-    /// on individual put and delete requests, and <code>BatchWriteItem</code> does not return
-    /// deleted items in the response.
+    /// of data, such as from Amazon EMR, or copy data from another database into DynamoDB.
+    /// In order to improve performance with these large-scale operations, <code>BatchWriteItem</code>
+    /// does not behave in the same way as individual <code>PutItem</code> and <code>DeleteItem</code>
+    /// calls would. For example, you cannot specify conditions on individual put and delete
+    /// requests, and <code>BatchWriteItem</code> does not return deleted items in the response.
     /// </para>
     ///  
     /// <para>
@@ -147,7 +145,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates BatchWriteItemRequest with the parameterized properties
         /// </summary>
-        /// <param name="requestItems">A map of one or more table names and, for each table, a list of operations to be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the following: <ul> <li>  <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item to be deleted is identified by a <code>Key</code> subelement: <ul> <li>  <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in this map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key. </li> </ul> </li> <li>  <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be put is identified by an <code>Item</code> subelement: <ul> <li>  <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected with a <code>ValidationException</code> exception. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. </li> </ul> </li> </ul></param>
+        /// <param name="requestItems">A map of one or more table names and, for each table, a list of operations to be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the following: <ul> <li>  <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item to be deleted is identified by a <code>Key</code> subelement: <ul> <li>  <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in this map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key. </li> </ul> </li> <li>  <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be put is identified by an <code>Item</code> subelement: <ul> <li>  <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values are rejected with a <code>ValidationException</code> exception. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. </li> </ul> </li> </ul></param>
         public BatchWriteItemRequest(Dictionary<string, List<WriteRequest>> requestItems)
         {
             _requestItems = requestItems;
@@ -184,7 +182,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  <code>Item</code> - A map of attributes and their values. Each entry in this map
         /// consists of an attribute name and an attribute value. Attribute values must not be
         /// null; string and binary type attributes must have lengths greater than zero; and set
-        /// type attributes must not be empty. Requests that contain empty values will be rejected
+        /// type attributes must not be empty. Requests that contain empty values are rejected
         /// with a <code>ValidationException</code> exception.
         /// </para>
         ///  

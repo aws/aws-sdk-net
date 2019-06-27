@@ -36,8 +36,8 @@ namespace Amazon.DynamoDBv2.Model
     /// 
     ///  
     /// <para>
-    ///  Once continuous backups and point in time recovery are enabled, you can restore to
-    /// any point in time within <code>EarliestRestorableDateTime</code> and <code>LatestRestorableDateTime</code>.
+    ///  After continuous backups and point in time recovery are enabled, you can restore
+    /// to any point in time within <code>EarliestRestorableDateTime</code> and <code>LatestRestorableDateTime</code>.
     /// 
     /// </para>
     ///  

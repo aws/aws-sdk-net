@@ -158,7 +158,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information on condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+        /// For more information about condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
         /// Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -226,7 +226,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// The name of this attribute conflicts with a reserved word, so it cannot be used directly
         /// in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
-        /// Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you
+        /// Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.) To work around this, you
         /// could specify the following for <code>ExpressionAttributeNames</code>:
         /// </para>
         ///  <ul> <li> 
@@ -248,7 +248,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+        /// For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
         /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -272,7 +272,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  
         /// <para>
         /// Use the <b>:</b> (colon) character in an expression to dereference an attribute value.
-        /// For example, suppose that you wanted to check whether the value of the <i>ProductStatus</i>
+        /// For example, suppose that you wanted to check whether the value of the <code>ProductStatus</code>
         /// attribute was one of the following: 
         /// </para>
         ///  
@@ -298,8 +298,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-        /// Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+        /// Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, AttributeValue> ExpressionAttributeValues
@@ -453,7 +453,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property UpdateExpression. 
         /// <para>
         /// An expression that defines one or more attributes to be updated, the action to be
-        /// performed on them, and new value(s) for them.
+        /// performed on them, and new values for them.
         /// </para>
         ///  
         /// <para>
@@ -462,7 +462,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>SET</code> - Adds one or more attributes and values to an item. If any of these
-        /// attribute already exist, they are replaced by the new values. You can also use <code>SET</code>
+        /// attributes already exist, they are replaced by the new values. You can also use <code>SET</code>
         /// to add or subtract from an attribute that is of type Number. For example: <code>SET
         /// myNum = myNum + :val</code> 
         /// </para>
@@ -513,11 +513,11 @@ namespace Amazon.DynamoDBv2.Model
         /// Similarly, if you use <code>ADD</code> for an existing item to increment or decrement
         /// an attribute value that doesn't exist before the update, DynamoDB uses <code>0</code>
         /// as the initial value. For example, suppose that the item you want to update doesn't
-        /// have an attribute named <i>itemcount</i>, but you decide to <code>ADD</code> the number
-        /// <code>3</code> to this attribute anyway. DynamoDB will create the <i>itemcount</i>
+        /// have an attribute named <code>itemcount</code>, but you decide to <code>ADD</code>
+        /// the number <code>3</code> to this attribute anyway. DynamoDB will create the <code>itemcount</code>
         /// attribute, set its initial value to <code>0</code>, and finally add <code>3</code>
-        /// to it. The result will be a new <i>itemcount</i> attribute in the item, with a value
-        /// of <code>3</code>.
+        /// to it. The result will be a new <code>itemcount</code> attribute in the item, with
+        /// a value of <code>3</code>.
         /// </para>
         ///  </note> </li> <li> 
         /// <para>

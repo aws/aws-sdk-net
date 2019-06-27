@@ -69,7 +69,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  
         /// <para>
         ///  If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate
-        /// there is more data to be returned. All results are guaranteed to have been returned
+        /// that there is more data to be returned. All results are guaranteed to have been returned
         /// if and only if no value for <code>LastEvaluatedBackupArn</code> is returned. 
         /// </para>
         /// </summary>

@@ -31,7 +31,7 @@ namespace Amazon.DynamoDBv2.Model
     /// Container for the parameters to the CreateGlobalTable operation.
     /// Creates a global table from an existing table. A global table creates a replication
     /// relationship between two or more DynamoDB tables with the same table name in the provided
-    /// regions. 
+    /// Regions. 
     /// 
     ///  
     /// <para>
@@ -111,7 +111,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ReplicationGroup. 
         /// <para>
-        /// The regions where the global table needs to be created.
+        /// The Regions where the global table needs to be created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

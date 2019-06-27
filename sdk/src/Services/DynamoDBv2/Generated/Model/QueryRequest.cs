@@ -204,7 +204,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// The data type for <code>ExclusiveStartKey</code> must be String, Number or Binary.
+        /// The data type for <code>ExclusiveStartKey</code> must be String, Number, or Binary.
         /// No set data types are allowed.
         /// </para>
         /// </summary>
@@ -274,7 +274,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+        /// For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
         /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -399,7 +399,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property KeyConditionExpression. 
         /// <para>
-        /// The condition that specifies the key value(s) for items to be retrieved by the <code>Query</code>
+        /// The condition that specifies the key values for items to be retrieved by the <code>Query</code>
         /// action.
         /// </para>
         ///  
@@ -553,7 +553,7 @@ namespace Amazon.DynamoDBv2.Model
         /// If DynamoDB processes the number of items up to the limit while processing the results,
         /// it stops the operation and returns the matching values up to that point, and a key
         /// in <code>LastEvaluatedKey</code> to apply in a subsequent operation, so that you can
-        /// pick up where you left off. Also, if the processed data set size exceeds 1 MB before
+        /// pick up where you left off. Also, if the processed dataset size exceeds 1 MB before
         /// DynamoDB reaches this limit, it stops the operation and returns the matching values
         /// up to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent
         /// operation to continue the operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
@@ -683,7 +683,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         ///  <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified
         /// table or index. If you query a local secondary index, then for each matching item
-        /// in the index DynamoDB will fetch the entire item from the parent table. If the index
+        /// in the index, DynamoDB fetches the entire item from the parent table. If the index
         /// is configured to project all item attributes, then all of the data can be obtained
         /// from the local secondary index, and no fetching is required.
         /// </para>
@@ -709,7 +709,7 @@ namespace Amazon.DynamoDBv2.Model
         /// If you query or scan a local secondary index and request only attributes that are
         /// projected into that index, the operation will read only the index and not the table.
         /// If any of the requested attributes are not projected into the local secondary index,
-        /// DynamoDB will fetch each of these attributes from the parent table. This extra fetching
+        /// DynamoDB fetches each of these attributes from the parent table. This extra fetching
         /// incurs additional throughput cost and latency.
         /// </para>
         ///  

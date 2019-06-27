@@ -29,8 +29,8 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes the association of tags from an Amazon DynamoDB resource. You can call UntagResource
-    /// up to 5 times per second, per account. 
+    /// Removes the association of tags from an Amazon DynamoDB resource. You can call <code>UntagResource</code>
+    /// up to five times per second, per account. 
     /// 
     ///  
     /// <para>
@@ -46,7 +46,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon DyanamoDB resource the tags will be removed from. This value is an Amazon
+        /// The DynamoDB resource that the tags will be removed from. This value is an Amazon
         /// Resource Name (ARN).
         /// </para>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property TagKeys. 
         /// <para>
         /// A list of tag keys. Existing tags of the resource whose keys are members of this list
-        /// will be removed from the Amazon DynamoDB resource.
+        /// will be removed from the DynamoDB resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

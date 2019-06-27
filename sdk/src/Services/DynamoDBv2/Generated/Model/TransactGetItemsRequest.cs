@@ -31,12 +31,31 @@ namespace Amazon.DynamoDBv2.Model
     /// Container for the parameters to the TransactGetItems operation.
     /// <code>TransactGetItems</code> is a synchronous operation that atomically retrieves
     /// multiple items from one or more tables (but not from indexes) in a single account
-    /// and region. A <code>TransactGetItems</code> call can contain up to 10 <code>TransactGetItem</code>
+    /// and Region. A <code>TransactGetItems</code> call can contain up to 25 <code>TransactGetItem</code>
     /// objects, each of which contains a <code>Get</code> structure that specifies an item
-    /// to retrieve from a table in the account and region. A call to <code>TransactGetItems</code>
-    /// cannot retrieve items from tables in more than one AWS account or region.
+    /// to retrieve from a table in the account and Region. A call to <code>TransactGetItems</code>
+    /// cannot retrieve items from tables in more than one AWS account or Region. The aggregate
+    /// size of the items in the transaction cannot exceed 4 MB.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// All AWS Regions and AWS GovCloud (US) support up to 25 items per transaction with
+    /// up to 4 MB of data, except the following AWS Regions: 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// China (Beijing)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// China (Ningxia)
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// The China (Beijing) and China (Ningxia) Regions support up to 10 items per transaction
+    /// with up to 4 MB of data. 
+    /// </para>
+    ///  </note> 
     /// <para>
     /// DynamoDB rejects the entire <code>TransactGetItems</code> request if any of the following
     /// is true:
@@ -52,6 +71,10 @@ namespace Amazon.DynamoDBv2.Model
     ///  </li> <li> 
     /// <para>
     /// There is a user error, such as an invalid data format.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The aggregate size of the items in the transaction cannot exceed 4 MB.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -83,7 +106,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property TransactItems. 
         /// <para>
-        /// An ordered array of up to 10 <code>TransactGetItem</code> objects, each of which contains
+        /// An ordered array of up to 25 <code>TransactGetItem</code> objects, each of which contains
         /// a <code>Get</code> structure.
         /// </para>
         /// </summary>

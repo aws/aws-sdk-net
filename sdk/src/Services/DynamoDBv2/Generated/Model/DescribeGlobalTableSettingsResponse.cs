@@ -57,7 +57,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ReplicaSettings. 
         /// <para>
-        /// The region specific settings for the global table.
+        /// The Region-specific settings for the global table.
         /// </para>
         /// </summary>
         public List<ReplicaSettingsDescription> ReplicaSettings

@@ -60,7 +60,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// A list of tables that were processed by <code>TransactWriteItems</code> and, for each
         /// table, information about any item collections that were affected by individual <code>UpdateItem</code>,
-        /// <code>PutItem</code> or <code>DeleteItem</code> operations. 
+        /// <code>PutItem</code>, or <code>DeleteItem</code> operations. 
         /// </para>
         /// </summary>
         public Dictionary<string, List<ItemCollectionMetrics>> ItemCollectionMetrics

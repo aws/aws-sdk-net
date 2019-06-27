@@ -29,7 +29,7 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Container for the parameters to the ListGlobalTables operation.
-    /// Lists all global tables that have a replica in the specified region.
+    /// Lists all global tables that have a replica in the specified Region.
     /// </summary>
     public partial class ListGlobalTablesRequest : AmazonDynamoDBRequest
     {
@@ -78,7 +78,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property RegionName. 
         /// <para>
-        /// Lists the global tables in a specific region.
+        /// Lists the global tables in a specific Region.
         /// </para>
         /// </summary>
         public string RegionName

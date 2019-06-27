@@ -103,7 +103,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate.
         /// 
         /// <para>
-        /// AutoScaling settings for managing provisioned write capacity for the global table.
+        /// Auto scaling settings for managing provisioned write capacity for the global table.
         /// </para>
         /// </summary>
         public AutoScalingSettingsUpdate GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate
@@ -141,7 +141,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ReplicaSettingsUpdate. 
         /// <para>
-        /// Represents the settings for a global table in a region that will be modified.
+        /// Represents the settings for a global table in a Region that will be modified.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

@@ -66,16 +66,16 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// A single operation can retrieve up to 16 MB of data, which can contain as many as
-        /// 100 items. <code>BatchGetItem</code> will return a partial result if the response
-        /// size limit is exceeded, the table's provisioned throughput is exceeded, or an internal
+        /// 100 items. <code>BatchGetItem</code> returns a partial result if the response size
+        /// limit is exceeded, the table's provisioned throughput is exceeded, or an internal
         /// processing failure occurs. If a partial result is returned, the operation returns
         /// a value for <code>UnprocessedKeys</code>. You can use this value to retry the operation
         /// starting with the next item to get.
         /// </para>
         ///  <important> 
         /// <para>
-        /// If you request more than 100 items <code>BatchGetItem</code> will return a <code>ValidationException</code>
-        /// with the message "Too many items requested for the BatchGetItem call".
+        /// If you request more than 100 items, <code>BatchGetItem</code> returns a <code>ValidationException</code>
+        /// with the message "Too many items requested for the BatchGetItem call."
         /// </para>
         ///  </important> 
         /// <para>
@@ -83,15 +83,14 @@ namespace Amazon.DynamoDBv2
         /// in size, the system returns 52 items (so as not to exceed the 16 MB limit). It also
         /// returns an appropriate <code>UnprocessedKeys</code> value so you can get the next
         /// page of results. If desired, your application can include its own logic to assemble
-        /// the pages of results into one data set.
+        /// the pages of results into one dataset.
         /// </para>
         ///  
         /// <para>
         /// If <i>none</i> of the items can be processed due to insufficient provisioned throughput
-        /// on all of the tables in the request, then <code>BatchGetItem</code> will return a
-        /// <code>ProvisionedThroughputExceededException</code>. If <i>at least one</i> of the
-        /// items is successfully processed, then <code>BatchGetItem</code> completes successfully,
-        /// while returning the keys of the unread items in <code>UnprocessedKeys</code>.
+        /// on all of the tables in the request, then <code>BatchGetItem</code> returns a <code>ProvisionedThroughputExceededException</code>.
+        /// If <i>at least one</i> of the items is successfully processed, then <code>BatchGetItem</code>
+        /// completes successfully, while returning the keys of the unread items in <code>UnprocessedKeys</code>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -128,11 +127,11 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// If a requested item does not exist, it is not returned in the result. Requests for
         /// nonexistent items consume the minimum read capacity units according to the type of
-        /// read. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#CapacityUnitCalculations">Capacity
-        /// Units Calculations</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// read. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#CapacityUnitCalculations">Working
+        /// with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="requestItems">A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <code>BatchGetItem</code> request. Each element in the map of items to retrieve consists of the following: <ul> <li>  <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent read is used; if <code>false</code> (the default), an eventually consistent read is used. </li> <li>  <code>ExpressionAttributeNames</code> - One or more substitution tokens for attribute names in the <code>ProjectionExpression</code> parameter. The following are some use cases for using <code>ExpressionAttributeNames</code>: <ul> <li> To access an attribute whose name conflicts with a DynamoDB reserved word. </li> <li> To create a placeholder for repeating occurrences of an attribute name in an expression. </li> <li> To prevent special characters in an attribute name from being misinterpreted in an expression. </li> </ul> Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name: <ul> <li>  <code>Percentile</code>  </li> </ul> The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>: <ul> <li>  <code>{"#P":"Percentile"}</code>  </li> </ul> You could then use this substitution in an expression, as in this example: <ul> <li>  <code>#P = :val</code>  </li> </ul> <note> Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime. </note> For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <code>Keys</code> - An array of primary key attribute values that define specific items in the table. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key value. For a composite key, you must provide <i>both</i> the partition key value and the sort key value. </li> <li>  <code>ProjectionExpression</code> - A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <code>AttributesToGet</code> - This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.  </li> </ul></param>
+        /// <param name="requestItems">A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <code>BatchGetItem</code> request. Each element in the map of items to retrieve consists of the following: <ul> <li>  <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent read is used; if <code>false</code> (the default), an eventually consistent read is used. </li> <li>  <code>ExpressionAttributeNames</code> - One or more substitution tokens for attribute names in the <code>ProjectionExpression</code> parameter. The following are some use cases for using <code>ExpressionAttributeNames</code>: <ul> <li> To access an attribute whose name conflicts with a DynamoDB reserved word. </li> <li> To create a placeholder for repeating occurrences of an attribute name in an expression. </li> <li> To prevent special characters in an attribute name from being misinterpreted in an expression. </li> </ul> Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name: <ul> <li>  <code>Percentile</code>  </li> </ul> The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>: <ul> <li>  <code>{"#P":"Percentile"}</code>  </li> </ul> You could then use this substitution in an expression, as in this example: <ul> <li>  <code>#P = :val</code>  </li> </ul> <note> Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime. </note> For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <code>Keys</code> - An array of primary key attribute values that define specific items in the table. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key value. For a composite key, you must provide <i>both</i> the partition key value and the sort key value. </li> <li>  <code>ProjectionExpression</code> - A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not found, they do not appear in the result. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <code>AttributesToGet</code> - This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.  </li> </ul></param>
         /// <param name="returnConsumedCapacity">A property of BatchGetItemRequest used to execute the BatchGetItem service method.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">
@@ -170,16 +169,16 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// A single operation can retrieve up to 16 MB of data, which can contain as many as
-        /// 100 items. <code>BatchGetItem</code> will return a partial result if the response
-        /// size limit is exceeded, the table's provisioned throughput is exceeded, or an internal
+        /// 100 items. <code>BatchGetItem</code> returns a partial result if the response size
+        /// limit is exceeded, the table's provisioned throughput is exceeded, or an internal
         /// processing failure occurs. If a partial result is returned, the operation returns
         /// a value for <code>UnprocessedKeys</code>. You can use this value to retry the operation
         /// starting with the next item to get.
         /// </para>
         ///  <important> 
         /// <para>
-        /// If you request more than 100 items <code>BatchGetItem</code> will return a <code>ValidationException</code>
-        /// with the message "Too many items requested for the BatchGetItem call".
+        /// If you request more than 100 items, <code>BatchGetItem</code> returns a <code>ValidationException</code>
+        /// with the message "Too many items requested for the BatchGetItem call."
         /// </para>
         ///  </important> 
         /// <para>
@@ -187,15 +186,14 @@ namespace Amazon.DynamoDBv2
         /// in size, the system returns 52 items (so as not to exceed the 16 MB limit). It also
         /// returns an appropriate <code>UnprocessedKeys</code> value so you can get the next
         /// page of results. If desired, your application can include its own logic to assemble
-        /// the pages of results into one data set.
+        /// the pages of results into one dataset.
         /// </para>
         ///  
         /// <para>
         /// If <i>none</i> of the items can be processed due to insufficient provisioned throughput
-        /// on all of the tables in the request, then <code>BatchGetItem</code> will return a
-        /// <code>ProvisionedThroughputExceededException</code>. If <i>at least one</i> of the
-        /// items is successfully processed, then <code>BatchGetItem</code> completes successfully,
-        /// while returning the keys of the unread items in <code>UnprocessedKeys</code>.
+        /// on all of the tables in the request, then <code>BatchGetItem</code> returns a <code>ProvisionedThroughputExceededException</code>.
+        /// If <i>at least one</i> of the items is successfully processed, then <code>BatchGetItem</code>
+        /// completes successfully, while returning the keys of the unread items in <code>UnprocessedKeys</code>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -232,11 +230,11 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// If a requested item does not exist, it is not returned in the result. Requests for
         /// nonexistent items consume the minimum read capacity units according to the type of
-        /// read. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#CapacityUnitCalculations">Capacity
-        /// Units Calculations</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// read. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#CapacityUnitCalculations">Working
+        /// with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="requestItems">A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <code>BatchGetItem</code> request. Each element in the map of items to retrieve consists of the following: <ul> <li>  <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent read is used; if <code>false</code> (the default), an eventually consistent read is used. </li> <li>  <code>ExpressionAttributeNames</code> - One or more substitution tokens for attribute names in the <code>ProjectionExpression</code> parameter. The following are some use cases for using <code>ExpressionAttributeNames</code>: <ul> <li> To access an attribute whose name conflicts with a DynamoDB reserved word. </li> <li> To create a placeholder for repeating occurrences of an attribute name in an expression. </li> <li> To prevent special characters in an attribute name from being misinterpreted in an expression. </li> </ul> Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name: <ul> <li>  <code>Percentile</code>  </li> </ul> The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>: <ul> <li>  <code>{"#P":"Percentile"}</code>  </li> </ul> You could then use this substitution in an expression, as in this example: <ul> <li>  <code>#P = :val</code>  </li> </ul> <note> Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime. </note> For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <code>Keys</code> - An array of primary key attribute values that define specific items in the table. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key value. For a composite key, you must provide <i>both</i> the partition key value and the sort key value. </li> <li>  <code>ProjectionExpression</code> - A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <code>AttributesToGet</code> - This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.  </li> </ul></param>
+        /// <param name="requestItems">A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <code>BatchGetItem</code> request. Each element in the map of items to retrieve consists of the following: <ul> <li>  <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent read is used; if <code>false</code> (the default), an eventually consistent read is used. </li> <li>  <code>ExpressionAttributeNames</code> - One or more substitution tokens for attribute names in the <code>ProjectionExpression</code> parameter. The following are some use cases for using <code>ExpressionAttributeNames</code>: <ul> <li> To access an attribute whose name conflicts with a DynamoDB reserved word. </li> <li> To create a placeholder for repeating occurrences of an attribute name in an expression. </li> <li> To prevent special characters in an attribute name from being misinterpreted in an expression. </li> </ul> Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name: <ul> <li>  <code>Percentile</code>  </li> </ul> The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>: <ul> <li>  <code>{"#P":"Percentile"}</code>  </li> </ul> You could then use this substitution in an expression, as in this example: <ul> <li>  <code>#P = :val</code>  </li> </ul> <note> Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime. </note> For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <code>Keys</code> - An array of primary key attribute values that define specific items in the table. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key value. For a composite key, you must provide <i>both</i> the partition key value and the sort key value. </li> <li>  <code>ProjectionExpression</code> - A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not found, they do not appear in the result. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <code>AttributesToGet</code> - This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.  </li> </ul></param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">
         ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -307,9 +305,8 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// Note that if <i>none</i> of the items can be processed due to insufficient provisioned
-        /// throughput on all of the tables in the request, then <code>BatchWriteItem</code> will
-        /// return a <code>ProvisionedThroughputExceededException</code>.
+        /// If <i>none</i> of the items can be processed due to insufficient provisioned throughput
+        /// on all of the tables in the request, then <code>BatchWriteItem</code> returns a <code>ProvisionedThroughputExceededException</code>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -322,18 +319,17 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#BatchOperations">Batch
+        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#Programming.Errors.BatchOperations">Batch
         /// Operations and Error Handling</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         ///  </important> 
         /// <para>
         /// With <code>BatchWriteItem</code>, you can efficiently write or delete large amounts
-        /// of data, such as from Amazon Elastic MapReduce (EMR), or copy data from another database
-        /// into DynamoDB. In order to improve performance with these large-scale operations,
-        /// <code>BatchWriteItem</code> does not behave in the same way as individual <code>PutItem</code>
-        /// and <code>DeleteItem</code> calls would. For example, you cannot specify conditions
-        /// on individual put and delete requests, and <code>BatchWriteItem</code> does not return
-        /// deleted items in the response.
+        /// of data, such as from Amazon EMR, or copy data from another database into DynamoDB.
+        /// In order to improve performance with these large-scale operations, <code>BatchWriteItem</code>
+        /// does not behave in the same way as individual <code>PutItem</code> and <code>DeleteItem</code>
+        /// calls would. For example, you cannot specify conditions on individual put and delete
+        /// requests, and <code>BatchWriteItem</code> does not return deleted items in the response.
         /// </para>
         ///  
         /// <para>
@@ -388,7 +384,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="requestItems">A map of one or more table names and, for each table, a list of operations to be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the following: <ul> <li>  <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item to be deleted is identified by a <code>Key</code> subelement: <ul> <li>  <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in this map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key. </li> </ul> </li> <li>  <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be put is identified by an <code>Item</code> subelement: <ul> <li>  <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected with a <code>ValidationException</code> exception. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. </li> </ul> </li> </ul></param>
+        /// <param name="requestItems">A map of one or more table names and, for each table, a list of operations to be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the following: <ul> <li>  <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item to be deleted is identified by a <code>Key</code> subelement: <ul> <li>  <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in this map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key. </li> </ul> </li> <li>  <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be put is identified by an <code>Item</code> subelement: <ul> <li>  <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values are rejected with a <code>ValidationException</code> exception. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. </li> </ul> </li> </ul></param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">
         ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -475,8 +471,8 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// The <code>CreateTable</code> operation adds a new table to your account. In an AWS
-        /// account, table names must be unique within each region. That is, you can have two
-        /// tables with same name if you create the tables in different regions.
+        /// account, table names must be unique within each Region. That is, you can have two
+        /// tables with same name if you create the tables in different Regions.
         /// 
         ///  
         /// <para>
@@ -499,7 +495,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </summary>
         /// <param name="tableName">The name of the table to create.</param>
-        /// <param name="keySchema">Specifies the attributes that make up the primary key for a table or an index. The attributes in <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each <code>KeySchemaElement</code> in the array is composed of: <ul> <li>  <code>AttributeName</code> - The name of this key attribute. </li> <li>  <code>KeyType</code> - The role that the key attribute will assume: <ul> <li>  <code>HASH</code> - partition key </li> <li>  <code>RANGE</code> - sort key </li> </ul> </li> </ul> <note> The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values. The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value. </note> For a simple primary key (partition key), you must provide exactly one element with a <code>KeyType</code> of <code>HASH</code>. For a composite primary key (partition key and sort key), you must provide exactly two elements, in this order: The first element must have a <code>KeyType</code> of <code>HASH</code>, and the second element must have a <code>KeyType</code> of <code>RANGE</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
+        /// <param name="keySchema">Specifies the attributes that make up the primary key for a table or an index. The attributes in <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each <code>KeySchemaElement</code> in the array is composed of: <ul> <li>  <code>AttributeName</code> - The name of this key attribute. </li> <li>  <code>KeyType</code> - The role that the key attribute will assume: <ul> <li>  <code>HASH</code> - partition key </li> <li>  <code>RANGE</code> - sort key </li> </ul> </li> </ul> <note> The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from the DynamoDB usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values. The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value. </note> For a simple primary key (partition key), you must provide exactly one element with a <code>KeyType</code> of <code>HASH</code>. For a composite primary key (partition key and sort key), you must provide exactly two elements, in this order: The first element must have a <code>KeyType</code> of <code>HASH</code>, and the second element must have a <code>KeyType</code> of <code>RANGE</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         /// <param name="attributeDefinitions">An array of attributes that describe the key schema for the table and indexes.</param>
         /// <param name="provisionedThroughput">Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.  If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>, you cannot specify this property.  For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
@@ -1251,51 +1247,51 @@ namespace Amazon.DynamoDBv2
         ///  <ul> <li> 
         /// <para>
         ///  <a href="http://docs.aws.amazon.com/goto/aws-cli/dynamodb-2012-08-10/PutItem"> PutItem
-        /// in the AWS Command Line Interface </a> 
+        /// in the AWS Command Line Interface</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <a href="http://docs.aws.amazon.com/goto/DotNetSDKV3/dynamodb-2012-08-10/PutItem">
-        /// PutItem in the AWS SDK for .NET </a> 
+        /// PutItem in the AWS SDK for .NET</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <a href="http://docs.aws.amazon.com/goto/SdkForCpp/dynamodb-2012-08-10/PutItem">
-        /// PutItem in the AWS SDK for C++ </a> 
+        /// PutItem in the AWS SDK for C++</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <a href="http://docs.aws.amazon.com/goto/SdkForGoV1/dynamodb-2012-08-10/PutItem">
-        /// PutItem in the AWS SDK for Go </a> 
+        /// PutItem in the AWS SDK for Go</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <a href="http://docs.aws.amazon.com/goto/SdkForJava/dynamodb-2012-08-10/PutItem">
-        /// PutItem in the AWS SDK for Java </a> 
+        /// PutItem in the AWS SDK for Java</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <a href="http://docs.aws.amazon.com/goto/AWSJavaScriptSDK/dynamodb-2012-08-10/PutItem">
-        /// PutItem in the AWS SDK for JavaScript </a> 
+        /// PutItem in the AWS SDK for JavaScript</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <a href="http://docs.aws.amazon.com/goto/SdkForPHPV3/dynamodb-2012-08-10/PutItem">
-        /// PutItem in the AWS SDK for PHP V3 </a> 
+        /// PutItem in the AWS SDK for PHP V3</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <a href="http://docs.aws.amazon.com/goto/boto3/dynamodb-2012-08-10/PutItem"> PutItem
-        /// in the AWS SDK for Python </a> 
+        /// in the AWS SDK for Python</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <a href="http://docs.aws.amazon.com/goto/SdkForRubyV2/dynamodb-2012-08-10/PutItem">
-        /// PutItem in the AWS SDK for Ruby V2 </a> 
+        /// PutItem in the AWS SDK for Ruby V2</a> 
         /// </para>
         ///  </li> </ul> </important> 
         /// <para>
-        /// When you add an item, the primary key attribute(s) are the only required attributes.
+        /// When you add an item, the primary key attributes are the only required attributes.
         /// Attribute values cannot be null. String and Binary type attributes must have lengths
         /// greater than zero. Set type attributes cannot be empty. Requests with empty values
         /// will be rejected with a <code>ValidationException</code> exception.
@@ -1315,7 +1311,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </summary>
         /// <param name="tableName">The name of the table to contain the item.</param>
-        /// <param name="item">A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item. You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each element in the <code>Item</code> map is an <code>AttributeValue</code> object.</param>
+        /// <param name="item">A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item. You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each element in the <code>Item</code> map is an <code>AttributeValue</code> object.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">
         ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -1375,51 +1371,51 @@ namespace Amazon.DynamoDBv2
         ///  <ul> <li> 
         /// <para>
         ///  <a href="http://docs.aws.amazon.com/goto/aws-cli/dynamodb-2012-08-10/PutItem"> PutItem
-        /// in the AWS Command Line Interface </a> 
+        /// in the AWS Command Line Interface</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <a href="http://docs.aws.amazon.com/goto/DotNetSDKV3/dynamodb-2012-08-10/PutItem">
-        /// PutItem in the AWS SDK for .NET </a> 
+        /// PutItem in the AWS SDK for .NET</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <a href="http://docs.aws.amazon.com/goto/SdkForCpp/dynamodb-2012-08-10/PutItem">
-        /// PutItem in the AWS SDK for C++ </a> 
+        /// PutItem in the AWS SDK for C++</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <a href="http://docs.aws.amazon.com/goto/SdkForGoV1/dynamodb-2012-08-10/PutItem">
-        /// PutItem in the AWS SDK for Go </a> 
+        /// PutItem in the AWS SDK for Go</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <a href="http://docs.aws.amazon.com/goto/SdkForJava/dynamodb-2012-08-10/PutItem">
-        /// PutItem in the AWS SDK for Java </a> 
+        /// PutItem in the AWS SDK for Java</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <a href="http://docs.aws.amazon.com/goto/AWSJavaScriptSDK/dynamodb-2012-08-10/PutItem">
-        /// PutItem in the AWS SDK for JavaScript </a> 
+        /// PutItem in the AWS SDK for JavaScript</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <a href="http://docs.aws.amazon.com/goto/SdkForPHPV3/dynamodb-2012-08-10/PutItem">
-        /// PutItem in the AWS SDK for PHP V3 </a> 
+        /// PutItem in the AWS SDK for PHP V3</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <a href="http://docs.aws.amazon.com/goto/boto3/dynamodb-2012-08-10/PutItem"> PutItem
-        /// in the AWS SDK for Python </a> 
+        /// in the AWS SDK for Python</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <a href="http://docs.aws.amazon.com/goto/SdkForRubyV2/dynamodb-2012-08-10/PutItem">
-        /// PutItem in the AWS SDK for Ruby V2 </a> 
+        /// PutItem in the AWS SDK for Ruby V2</a> 
         /// </para>
         ///  </li> </ul> </important> 
         /// <para>
-        /// When you add an item, the primary key attribute(s) are the only required attributes.
+        /// When you add an item, the primary key attributes are the only required attributes.
         /// Attribute values cannot be null. String and Binary type attributes must have lengths
         /// greater than zero. Set type attributes cannot be empty. Requests with empty values
         /// will be rejected with a <code>ValidationException</code> exception.
@@ -1439,7 +1435,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </summary>
         /// <param name="tableName">The name of the table to contain the item.</param>
-        /// <param name="item">A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item. You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each element in the <code>Item</code> map is an <code>AttributeValue</code> object.</param>
+        /// <param name="item">A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item. You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each element in the <code>Item</code> map is an <code>AttributeValue</code> object.</param>
         /// <param name="returnValues">Use <code>ReturnValues</code> if you want to get the item attributes as they appeared before they were updated with the <code>PutItem</code> request. For <code>PutItem</code>, the valid values are: <ul> <li>  <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <code>ReturnValues</code>.) </li> <li>  <code>ALL_OLD</code> - If <code>PutItem</code> overwrote an attribute name-value pair, then the content of the old item is returned. </li> </ul> <note> The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however, <code>PutItem</code> does not recognize any values other than <code>NONE</code> or <code>ALL_OLD</code>. </note></param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">
@@ -1555,18 +1551,18 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// If the total number of scanned items exceeds the maximum data set size limit of 1
-        /// MB, the scan stops and results are returned to the user as a <code>LastEvaluatedKey</code>
+        /// If the total number of scanned items exceeds the maximum dataset size limit of 1 MB,
+        /// the scan stops and results are returned to the user as a <code>LastEvaluatedKey</code>
         /// value to continue the scan in a subsequent operation. The results also include the
         /// number of items exceeding the limit. A scan can result in no table data meeting the
         /// filter criteria. 
         /// </para>
         ///  
         /// <para>
-        /// A single <code>Scan</code> operation will read up to the maximum number of items set
-        /// (if using the <code>Limit</code> parameter) or a maximum of 1 MB of data and then
-        /// apply any filtering to the results using <code>FilterExpression</code>. If <code>LastEvaluatedKey</code>
-        /// is present in the response, you will need to paginate the result set. For more information,
+        /// A single <code>Scan</code> operation reads up to the maximum number of items set (if
+        /// using the <code>Limit</code> parameter) or a maximum of 1 MB of data and then apply
+        /// any filtering to the results using <code>FilterExpression</code>. If <code>LastEvaluatedKey</code>
+        /// is present in the response, you need to paginate the result set. For more information,
         /// see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.Pagination">Paginating
         /// the Results</a> in the <i>Amazon DynamoDB Developer Guide</i>. 
         /// </para>
@@ -1625,18 +1621,18 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// If the total number of scanned items exceeds the maximum data set size limit of 1
-        /// MB, the scan stops and results are returned to the user as a <code>LastEvaluatedKey</code>
+        /// If the total number of scanned items exceeds the maximum dataset size limit of 1 MB,
+        /// the scan stops and results are returned to the user as a <code>LastEvaluatedKey</code>
         /// value to continue the scan in a subsequent operation. The results also include the
         /// number of items exceeding the limit. A scan can result in no table data meeting the
         /// filter criteria. 
         /// </para>
         ///  
         /// <para>
-        /// A single <code>Scan</code> operation will read up to the maximum number of items set
-        /// (if using the <code>Limit</code> parameter) or a maximum of 1 MB of data and then
-        /// apply any filtering to the results using <code>FilterExpression</code>. If <code>LastEvaluatedKey</code>
-        /// is present in the response, you will need to paginate the result set. For more information,
+        /// A single <code>Scan</code> operation reads up to the maximum number of items set (if
+        /// using the <code>Limit</code> parameter) or a maximum of 1 MB of data and then apply
+        /// any filtering to the results using <code>FilterExpression</code>. If <code>LastEvaluatedKey</code>
+        /// is present in the response, you need to paginate the result set. For more information,
         /// see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.Pagination">Paginating
         /// the Results</a> in the <i>Amazon DynamoDB Developer Guide</i>. 
         /// </para>
@@ -1695,18 +1691,18 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// If the total number of scanned items exceeds the maximum data set size limit of 1
-        /// MB, the scan stops and results are returned to the user as a <code>LastEvaluatedKey</code>
+        /// If the total number of scanned items exceeds the maximum dataset size limit of 1 MB,
+        /// the scan stops and results are returned to the user as a <code>LastEvaluatedKey</code>
         /// value to continue the scan in a subsequent operation. The results also include the
         /// number of items exceeding the limit. A scan can result in no table data meeting the
         /// filter criteria. 
         /// </para>
         ///  
         /// <para>
-        /// A single <code>Scan</code> operation will read up to the maximum number of items set
-        /// (if using the <code>Limit</code> parameter) or a maximum of 1 MB of data and then
-        /// apply any filtering to the results using <code>FilterExpression</code>. If <code>LastEvaluatedKey</code>
-        /// is present in the response, you will need to paginate the result set. For more information,
+        /// A single <code>Scan</code> operation reads up to the maximum number of items set (if
+        /// using the <code>Limit</code> parameter) or a maximum of 1 MB of data and then apply
+        /// any filtering to the results using <code>FilterExpression</code>. If <code>LastEvaluatedKey</code>
+        /// is present in the response, you need to paginate the result set. For more information,
         /// see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.Pagination">Paginating
         /// the Results</a> in the <i>Amazon DynamoDB Developer Guide</i>. 
         /// </para>
@@ -2037,7 +2033,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Enable or disable Streams on the table.
+        /// Enable or disable DynamoDB Streams on the table.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2045,7 +2041,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Create a new global secondary index on the table. Once the index begins backfilling,
+        /// Create a new global secondary index on the table. After the index begins backfilling,
         /// you can use <code>UpdateTable</code> to perform other operations.
         /// </para>
         ///  </li> </ul> 

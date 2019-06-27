@@ -35,18 +35,18 @@ namespace Amazon.DynamoDBv2.Model
     /// 
     ///  
     /// <para>
-    /// If the total number of scanned items exceeds the maximum data set size limit of 1
-    /// MB, the scan stops and results are returned to the user as a <code>LastEvaluatedKey</code>
+    /// If the total number of scanned items exceeds the maximum dataset size limit of 1 MB,
+    /// the scan stops and results are returned to the user as a <code>LastEvaluatedKey</code>
     /// value to continue the scan in a subsequent operation. The results also include the
     /// number of items exceeding the limit. A scan can result in no table data meeting the
     /// filter criteria. 
     /// </para>
     ///  
     /// <para>
-    /// A single <code>Scan</code> operation will read up to the maximum number of items set
-    /// (if using the <code>Limit</code> parameter) or a maximum of 1 MB of data and then
-    /// apply any filtering to the results using <code>FilterExpression</code>. If <code>LastEvaluatedKey</code>
-    /// is present in the response, you will need to paginate the result set. For more information,
+    /// A single <code>Scan</code> operation reads up to the maximum number of items set (if
+    /// using the <code>Limit</code> parameter) or a maximum of 1 MB of data and then apply
+    /// any filtering to the results using <code>FilterExpression</code>. If <code>LastEvaluatedKey</code>
+    /// is present in the response, you need to paginate the result set. For more information,
     /// see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.Pagination">Paginating
     /// the Results</a> in the <i>Amazon DynamoDB Developer Guide</i>. 
     /// </para>
@@ -150,7 +150,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// If <code>ConsistentRead</code> is <code>false</code>, then the data returned from
         /// <code>Scan</code> might not contain the results from other recently completed write
-        /// operations (PutItem, UpdateItem or DeleteItem).
+        /// operations (<code>PutItem</code>, <code>UpdateItem</code>, or <code>DeleteItem</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -265,7 +265,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+        /// For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
         /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -289,7 +289,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  
         /// <para>
         /// Use the <b>:</b> (colon) character in an expression to dereference an attribute value.
-        /// For example, suppose that you wanted to check whether the value of the <i>ProductStatus</i>
+        /// For example, suppose that you wanted to check whether the value of the <code>ProductStatus</code>
         /// attribute was one of the following: 
         /// </para>
         ///  
@@ -315,8 +315,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-        /// Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+        /// Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, AttributeValue> ExpressionAttributeValues
@@ -389,11 +389,11 @@ namespace Amazon.DynamoDBv2.Model
         /// If DynamoDB processes the number of items up to the limit while processing the results,
         /// it stops the operation and returns the matching values up to that point, and a key
         /// in <code>LastEvaluatedKey</code> to apply in a subsequent operation, so that you can
-        /// pick up where you left off. Also, if the processed data set size exceeds 1 MB before
+        /// pick up where you left off. Also, if the processed dataset size exceeds 1 MB before
         /// DynamoDB reaches this limit, it stops the operation and returns the matching values
         /// up to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent
-        /// operation to continue the operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-        /// and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// operation to continue the operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Working
+        /// with Queries</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -423,7 +423,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
         /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -527,7 +527,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         ///  <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified
         /// table or index. If you query a local secondary index, then for each matching item
-        /// in the index DynamoDB will fetch the entire item from the parent table. If the index
+        /// in the index, DynamoDB fetches the entire item from the parent table. If the index
         /// is configured to project all item attributes, then all of the data can be obtained
         /// from the local secondary index, and no fetching is required.
         /// </para>
@@ -551,9 +551,9 @@ namespace Amazon.DynamoDBv2.Model
         ///  
         /// <para>
         /// If you query or scan a local secondary index and request only attributes that are
-        /// projected into that index, the operation will read only the index and not the table.
-        /// If any of the requested attributes are not projected into the local secondary index,
-        /// DynamoDB will fetch each of these attributes from the parent table. This extra fetching
+        /// projected into that index, the operation reads only the index and not the table. If
+        /// any of the requested attributes are not projected into the local secondary index,
+        /// DynamoDB fetches each of these attributes from the parent table. This extra fetching
         /// incurs additional throughput cost and latency.
         /// </para>
         ///  

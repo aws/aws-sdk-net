@@ -29,7 +29,7 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeGlobalTableSettings operation.
-    /// Describes region specific settings for a global table.
+    /// Describes Region-specific settings for a global table.
     /// </summary>
     public partial class DescribeGlobalTableSettingsRequest : AmazonDynamoDBRequest
     {

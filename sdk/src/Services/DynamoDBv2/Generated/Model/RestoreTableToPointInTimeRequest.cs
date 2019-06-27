@@ -80,7 +80,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Cloudwatch metrics and alarms
+    /// Amazon CloudWatch metrics and alarms
     /// </para>
     ///  </li> <li> 
     /// <para>

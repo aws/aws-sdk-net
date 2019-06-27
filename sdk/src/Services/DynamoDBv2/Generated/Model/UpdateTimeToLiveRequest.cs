@@ -29,11 +29,11 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateTimeToLive operation.
-    /// The UpdateTimeToLive method will enable or disable TTL for the specified table. A
-    /// successful <code>UpdateTimeToLive</code> call returns the current <code>TimeToLiveSpecification</code>;
-    /// it may take up to one hour for the change to fully process. Any additional <code>UpdateTimeToLive</code>
-    /// calls for the same table during this one hour duration result in a <code>ValidationException</code>.
-    /// 
+    /// The <code>UpdateTimeToLive</code> method enables or disables Time to Live (TTL) for
+    /// the specified table. A successful <code>UpdateTimeToLive</code> call returns the current
+    /// <code>TimeToLiveSpecification</code>. It can take up to one hour for the change to
+    /// fully process. Any additional <code>UpdateTimeToLive</code> calls for the same table
+    /// during this one hour duration result in a <code>ValidationException</code>. 
     /// 
     ///  
     /// <para>
@@ -44,7 +44,7 @@ namespace Amazon.DynamoDBv2.Model
     ///  <note> 
     /// <para>
     ///  The epoch time format is the number of seconds elapsed since 12:00:00 AM January
-    /// 1st, 1970 UTC. 
+    /// 1, 1970 UTC. 
     /// </para>
     ///  </note> 
     /// <para>
@@ -60,8 +60,8 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  </important> 
     /// <para>
-    /// As items are deleted, they are removed from any Local Secondary Index and Global Secondary
-    /// Index immediately in the same eventually consistent way as a standard delete operation.
+    /// As items are deleted, they are removed from any local secondary index and global secondary
+    /// index immediately in the same eventually consistent way as a standard delete operation.
     /// </para>
     ///  
     /// <para>

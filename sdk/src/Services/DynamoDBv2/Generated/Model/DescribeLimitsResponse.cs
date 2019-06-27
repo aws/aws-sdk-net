@@ -41,7 +41,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property AccountMaxReadCapacityUnits. 
         /// <para>
         /// The maximum total read capacity units that your account allows you to provision across
-        /// all of your tables in this region.
+        /// all of your tables in this Region.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -61,7 +61,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property AccountMaxWriteCapacityUnits. 
         /// <para>
         /// The maximum total write capacity units that your account allows you to provision across
-        /// all of your tables in this region.
+        /// all of your tables in this Region.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -81,7 +81,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property TableMaxReadCapacityUnits. 
         /// <para>
         /// The maximum read capacity units that your account allows you to provision for a new
-        /// table that you are creating in this region, including the read capacity units provisioned
+        /// table that you are creating in this Region, including the read capacity units provisioned
         /// for its global secondary indexes (GSIs).
         /// </para>
         /// </summary>
@@ -102,7 +102,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property TableMaxWriteCapacityUnits. 
         /// <para>
         /// The maximum write capacity units that your account allows you to provision for a new
-        /// table that you are creating in this region, including the write capacity units provisioned
+        /// table that you are creating in this Region, including the write capacity units provisioned
         /// for its global secondary indexes (GSIs).
         /// </para>
         /// </summary>

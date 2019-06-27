@@ -31,17 +31,17 @@ namespace Amazon.DynamoDBv2.Model
     /// Container for the parameters to the ListBackups operation.
     /// List backups associated with an AWS account. To list backups for a given table, specify
     /// <code>TableName</code>. <code>ListBackups</code> returns a paginated list of results
-    /// with at most 1MB worth of items in a page. You can also specify a limit for the maximum
+    /// with at most 1 MB worth of items in a page. You can also specify a limit for the maximum
     /// number of entries to be returned in a page. 
     /// 
     ///  
     /// <para>
-    /// In the request, start time is inclusive but end time is exclusive. Note that these
+    /// In the request, start time is inclusive, but end time is exclusive. Note that these
     /// limits are for the time at which the original backup was requested.
     /// </para>
     ///  
     /// <para>
-    /// You can call <code>ListBackups</code> a maximum of 5 times per second.
+    /// You can call <code>ListBackups</code> a maximum of five times per second.
     /// </para>
     /// </summary>
     public partial class ListBackupsRequest : AmazonDynamoDBRequest
@@ -91,10 +91,11 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ExclusiveStartBackupArn. 
         /// <para>
-        ///  <code>LastEvaluatedBackupArn</code> is the ARN of the backup last evaluated when
-        /// the current page of results was returned, inclusive of the current page of results.
-        /// This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code>
-        /// operation in order to fetch the next page of results. 
+        ///  <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the backup
+        /// last evaluated when the current page of results was returned, inclusive of the current
+        /// page of results. This value may be specified as the <code>ExclusiveStartBackupArn</code>
+        /// of a new <code>ListBackups</code> operation in order to fetch the next page of results.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=37, Max=1024)]

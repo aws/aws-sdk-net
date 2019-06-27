@@ -31,8 +31,8 @@ namespace Amazon.DynamoDBv2.Model
     /// Container for the parameters to the TagResource operation.
     /// Associate a set of tags with an Amazon DynamoDB resource. You can then activate these
     /// user-defined tags so that they appear on the Billing and Cost Management console for
-    /// cost allocation tracking. You can call TagResource up to 5 times per second, per account.
-    /// 
+    /// cost allocation tracking. You can call TagResource up to five times per second, per
+    /// account. 
     /// 
     ///  
     /// <para>
