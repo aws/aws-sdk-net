@@ -153,6 +153,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     response.RouteFilterPrefixes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("tags", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    response.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("virtualGatewayId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -211,6 +217,14 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("DirectConnectServerException"))
             {
                 return new DirectConnectServerException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DuplicateTagKeysException"))
+            {
+                return new DuplicateTagKeysException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyTagsException"))
+            {
+                return new TooManyTagsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonDirectConnectException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// Information about a transit virtual interface.
+    /// Information about the transit virtual interface.
     /// </summary>
     public partial class NewTransitVirtualInterface
     {
@@ -39,6 +39,7 @@ namespace Amazon.DirectConnect.Model
         private string _customerAddress;
         private string _directConnectGatewayId;
         private int? _mtu;
+        private List<Tag> _tags = new List<Tag>();
         private string _virtualInterfaceName;
         private int? _vlan;
 
@@ -153,8 +154,8 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Mtu. 
         /// <para>
-        /// The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001.
-        /// The default value is 1500.
+        /// The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500.
+        /// The default value is 1500. 
         /// </para>
         /// </summary>
         public int Mtu
@@ -167,6 +168,25 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetMtu()
         {
             return this._mtu.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Any tags assigned to the transit virtual interface.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

@@ -51,6 +51,7 @@ namespace Amazon.DirectConnect.Model
         private string _connectionId;
         private string _connectionName;
         private string _ownerAccount;
+        private List<Tag> _tags = new List<Tag>();
         private int? _vlan;
 
         /// <summary>
@@ -130,6 +131,25 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetOwnerAccount()
         {
             return this._ownerAccount != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to assign to the hosted connection.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

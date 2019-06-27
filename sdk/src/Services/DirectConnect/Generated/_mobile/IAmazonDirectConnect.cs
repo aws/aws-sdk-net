@@ -141,6 +141,12 @@ namespace Amazon.DirectConnect
         /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred.
         /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DuplicateTagKeysException">
+        /// A tag key was specified more than once.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.TooManyTagsException">
+        /// You have reached the limit on the number of tags that can be assigned.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateHostedConnection">REST API Reference for AllocateHostedConnection Operation</seealso>
         Task<AllocateHostedConnectionResponse> AllocateHostedConnectionAsync(AllocateHostedConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -171,6 +177,12 @@ namespace Amazon.DirectConnect
         /// </exception>
         /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DuplicateTagKeysException">
+        /// A tag key was specified more than once.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.TooManyTagsException">
+        /// You have reached the limit on the number of tags that can be assigned.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePrivateVirtualInterface">REST API Reference for AllocatePrivateVirtualInterface Operation</seealso>
         Task<AllocatePrivateVirtualInterfaceResponse> AllocatePrivateVirtualInterfaceAsync(AllocatePrivateVirtualInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -214,6 +226,12 @@ namespace Amazon.DirectConnect
         /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred.
         /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DuplicateTagKeysException">
+        /// A tag key was specified more than once.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.TooManyTagsException">
+        /// You have reached the limit on the number of tags that can be assigned.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePublicVirtualInterface">REST API Reference for AllocatePublicVirtualInterface Operation</seealso>
         Task<AllocatePublicVirtualInterfaceResponse> AllocatePublicVirtualInterfaceAsync(AllocatePublicVirtualInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -251,6 +269,12 @@ namespace Amazon.DirectConnect
         /// </exception>
         /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DuplicateTagKeysException">
+        /// A tag key was specified more than once.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.TooManyTagsException">
+        /// You have reached the limit on the number of tags that can be assigned.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateTransitVirtualInterface">REST API Reference for AllocateTransitVirtualInterface Operation</seealso>
         Task<AllocateTransitVirtualInterfaceResponse> AllocateTransitVirtualInterfaceAsync(AllocateTransitVirtualInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -581,6 +605,12 @@ namespace Amazon.DirectConnect
         /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred.
         /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DuplicateTagKeysException">
+        /// A tag key was specified more than once.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.TooManyTagsException">
+        /// You have reached the limit on the number of tags that can be assigned.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
         Task<CreateConnectionResponse> CreateConnectionAsync(CreateConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -723,6 +753,12 @@ namespace Amazon.DirectConnect
         /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred.
         /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DuplicateTagKeysException">
+        /// A tag key was specified more than once.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.TooManyTagsException">
+        /// You have reached the limit on the number of tags that can be assigned.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateInterconnect">REST API Reference for CreateInterconnect Operation</seealso>
         Task<CreateInterconnectResponse> CreateInterconnectAsync(CreateInterconnectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -778,6 +814,12 @@ namespace Amazon.DirectConnect
         /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred.
         /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DuplicateTagKeysException">
+        /// A tag key was specified more than once.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.TooManyTagsException">
+        /// You have reached the limit on the number of tags that can be assigned.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateLag">REST API Reference for CreateLag Operation</seealso>
         Task<CreateLagResponse> CreateLagAsync(CreateLagRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -806,6 +848,12 @@ namespace Amazon.DirectConnect
         /// </exception>
         /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DuplicateTagKeysException">
+        /// A tag key was specified more than once.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.TooManyTagsException">
+        /// You have reached the limit on the number of tags that can be assigned.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePrivateVirtualInterface">REST API Reference for CreatePrivateVirtualInterface Operation</seealso>
         Task<CreatePrivateVirtualInterfaceResponse> CreatePrivateVirtualInterfaceAsync(CreatePrivateVirtualInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -840,6 +888,12 @@ namespace Amazon.DirectConnect
         /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred.
         /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DuplicateTagKeysException">
+        /// A tag key was specified more than once.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.TooManyTagsException">
+        /// You have reached the limit on the number of tags that can be assigned.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePublicVirtualInterface">REST API Reference for CreatePublicVirtualInterface Operation</seealso>
         Task<CreatePublicVirtualInterfaceResponse> CreatePublicVirtualInterfaceAsync(CreatePublicVirtualInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -850,10 +904,19 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Creates a transit virtual interface. A transit virtual interface is a VLAN that transports
-        /// traffic from a Direct Connect gateway to one or more transit gateways. A transit virtual
-        /// interface enables the connection of multiple VPCs attached to a transit gateway to
-        /// a Direct Connect gateway.
+        /// Creates a transit virtual interface. A transit virtual interface should be used to
+        /// access one or more transit gateways associated with Direct Connect gateways. A transit
+        /// virtual interface enables the connection of multiple VPCs attached to a transit gateway
+        /// to a Direct Connect gateway.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// If you associate your transit gateway with one or more Direct Connect gateways, the
+        /// Autonomous System Number (ASN) used by the transit gateway and the Direct Connect
+        /// gateway must be different. For example, if you use the default ASN 64512 for both
+        /// your the transit gateway and Direct Connect gateway, the association request fails.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTransitVirtualInterface service method.</param>
         /// <param name="cancellationToken">
@@ -866,6 +929,12 @@ namespace Amazon.DirectConnect
         /// </exception>
         /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DuplicateTagKeysException">
+        /// A tag key was specified more than once.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.TooManyTagsException">
+        /// You have reached the limit on the number of tags that can be assigned.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateTransitVirtualInterface">REST API Reference for CreateTransitVirtualInterface Operation</seealso>
         Task<CreateTransitVirtualInterfaceResponse> CreateTransitVirtualInterfaceAsync(CreateTransitVirtualInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));

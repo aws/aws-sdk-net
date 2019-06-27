@@ -39,6 +39,7 @@ namespace Amazon.DirectConnect.Model
         private string _customerAddress;
         private string _directConnectGatewayId;
         private int? _mtu;
+        private List<Tag> _tags = new List<Tag>();
         private string _virtualGatewayId;
         private string _virtualInterfaceName;
         private int? _vlan;
@@ -101,7 +102,8 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property AuthKey. 
         /// <para>
-        /// The authentication key for BGP configuration.
+        /// The authentication key for BGP configuration. This string has a minimum length of
+        /// 6 characters and and a maximun lenth of 80 characters.
         /// </para>
         /// </summary>
         public string AuthKey
@@ -169,6 +171,25 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetMtu()
         {
             return this._mtu.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Any tags assigned to the private virtual interface.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

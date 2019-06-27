@@ -80,7 +80,12 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property OverrideAllowedPrefixesToDirectConnectGateway. 
         /// <para>
-        /// Overrides the existing Amazon VPC prefixes advertised to the Direct Connect gateway.
+        /// Overrides the Amazon VPC prefixes advertised to the Direct Connect gateway.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about how to set the prefixes, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
+        /// Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
         /// </para>
         /// </summary>
         public List<RouteFilterPrefix> OverrideAllowedPrefixesToDirectConnectGateway

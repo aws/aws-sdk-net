@@ -68,6 +68,22 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetChildConnectionTags())
+                {
+                    context.Writer.WritePropertyName("childConnectionTags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestChildConnectionTagsListValue in publicRequest.ChildConnectionTags)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestChildConnectionTagsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetConnectionId())
                 {
                     context.Writer.WritePropertyName("connectionId");
@@ -96,6 +112,22 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("numberOfConnections");
                     context.Writer.Write(publicRequest.NumberOfConnections);
+                }
+
+                if(publicRequest.IsSetTags())
+                {
+                    context.Writer.WritePropertyName("tags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
         

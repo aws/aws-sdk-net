@@ -64,11 +64,35 @@ namespace Amazon.DirectConnect.Model
     /// </summary>
     public partial class CreateLagRequest : AmazonDirectConnectRequest
     {
+        private List<Tag> _childConnectionTags = new List<Tag>();
         private string _connectionId;
         private string _connectionsBandwidth;
         private string _lagName;
         private string _location;
         private int? _numberOfConnections;
+        private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property ChildConnectionTags. 
+        /// <para>
+        /// The tags to assign to the child connections of the LAG. Only newly created child connections
+        /// as the result of creating a LAG connection are assigned the provided tags. The tags
+        /// are not assigned to an existing connection that is provided via the “connectionId”
+        /// parameter that will be migrated to the LAG.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<Tag> ChildConnectionTags
+        {
+            get { return this._childConnectionTags; }
+            set { this._childConnectionTags = value; }
+        }
+
+        // Check to see if ChildConnectionTags property is set
+        internal bool IsSetChildConnectionTags()
+        {
+            return this._childConnectionTags != null && this._childConnectionTags.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ConnectionId. 
@@ -164,6 +188,25 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetNumberOfConnections()
         {
             return this._numberOfConnections.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to assign to the link aggregation group (LAG).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

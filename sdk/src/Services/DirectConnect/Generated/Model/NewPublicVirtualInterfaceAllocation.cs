@@ -38,6 +38,7 @@ namespace Amazon.DirectConnect.Model
         private string _authKey;
         private string _customerAddress;
         private List<RouteFilterPrefix> _routeFilterPrefixes = new List<RouteFilterPrefix>();
+        private List<Tag> _tags = new List<Tag>();
         private string _virtualInterfaceName;
         private int? _vlan;
 
@@ -99,7 +100,8 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property AuthKey. 
         /// <para>
-        /// The authentication key for BGP configuration.
+        /// The authentication key for BGP configuration. This string has a minimum length of
+        /// 6 characters and and a maximun lenth of 80 characters.
         /// </para>
         /// </summary>
         public string AuthKey
@@ -149,6 +151,25 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetRouteFilterPrefixes()
         {
             return this._routeFilterPrefixes != null && this._routeFilterPrefixes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Any tags assigned to the public virtual interface to be provisioned on a connection.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

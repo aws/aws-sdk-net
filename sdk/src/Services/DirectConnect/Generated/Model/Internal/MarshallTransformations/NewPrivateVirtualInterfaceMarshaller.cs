@@ -87,6 +87,22 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Mtu);
             }
 
+            if(requestObject.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectTagsListValue in requestObject.Tags)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(requestObjectTagsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetVirtualGatewayId())
             {
                 context.Writer.WritePropertyName("virtualGatewayId");

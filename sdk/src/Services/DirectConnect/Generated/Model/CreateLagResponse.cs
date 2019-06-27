@@ -47,6 +47,7 @@ namespace Amazon.DirectConnect.Model
         private int? _numberOfConnections;
         private string _ownerAccount;
         private string _region;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property AllowsHostedConnections. 
@@ -350,6 +351,25 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetRegion()
         {
             return this._region != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Any tags assigned to link aggregation group (LAG).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

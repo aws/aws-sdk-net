@@ -99,7 +99,8 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property AuthKey. 
         /// <para>
-        /// The authentication key for BGP configuration.
+        /// The authentication key for BGP configuration. This string has a minimum length of
+        /// 6 characters and and a maximun lenth of 80 characters.
         /// </para>
         /// </summary>
         public string AuthKey

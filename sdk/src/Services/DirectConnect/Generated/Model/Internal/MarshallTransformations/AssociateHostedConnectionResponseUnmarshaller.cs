@@ -135,6 +135,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     response.Region = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("tags", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    response.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("vlan", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
