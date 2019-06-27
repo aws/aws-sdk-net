@@ -9,6 +9,32 @@
     <pattern>wsipg-[0-9a-z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.CopyWorkspaceImageRequest.Description</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9_./() -]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.CopyWorkspaceImageRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_./()\\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.CopyWorkspaceImageRequest.SourceImageId</property>
+    <pattern>wsi-[0-9a-z]{9,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.CopyWorkspaceImageRequest.SourceRegion</property>
+    <min>1</min>
+    <max>31</max>
+    <pattern>^[-0-9a-z]{1,31}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.CopyWorkspaceImageResponse.ImageId</property>
+    <pattern>wsi-[0-9a-z]{9,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpaces.Model.CreateIpGroupResponse.GroupId</property>
     <pattern>wsipg-[0-9a-z]{8,63}$</pattern>
   </property-value-rule>
@@ -135,6 +161,10 @@
     <max>63</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeWorkspaceSnapshotsRequest.WorkspaceId</property>
+    <pattern>^ws-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DisassociateIpGroupsRequest.DirectoryId</property>
     <pattern>^d-[0-9a-f]{8,63}$</pattern>
   </property-value-rule>
@@ -191,6 +221,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.ModifyWorkspaceStateRequest.WorkspaceId</property>
+    <pattern>^ws-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.RestoreWorkspaceRequest.WorkspaceId</property>
     <pattern>^ws-[0-9a-z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>

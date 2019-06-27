@@ -387,6 +387,81 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  CopyWorkspaceImage
+
+        /// <summary>
+        /// Copies the specified image from the specified Region to the current Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyWorkspaceImage service method.</param>
+        /// 
+        /// <returns>The response from the CopyWorkspaceImage service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceUnavailableException">
+        /// The specified resource is not available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CopyWorkspaceImage">REST API Reference for CopyWorkspaceImage Operation</seealso>
+        public virtual CopyWorkspaceImageResponse CopyWorkspaceImage(CopyWorkspaceImageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CopyWorkspaceImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CopyWorkspaceImageResponseUnmarshaller.Instance;
+
+            return Invoke<CopyWorkspaceImageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CopyWorkspaceImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CopyWorkspaceImage operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCopyWorkspaceImage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CopyWorkspaceImage">REST API Reference for CopyWorkspaceImage Operation</seealso>
+        public virtual IAsyncResult BeginCopyWorkspaceImage(CopyWorkspaceImageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CopyWorkspaceImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CopyWorkspaceImageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CopyWorkspaceImage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopyWorkspaceImage.</param>
+        /// 
+        /// <returns>Returns a  CopyWorkspaceImageResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CopyWorkspaceImage">REST API Reference for CopyWorkspaceImage Operation</seealso>
+        public virtual CopyWorkspaceImageResponse EndCopyWorkspaceImage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CopyWorkspaceImageResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateIpGroup
 
         /// <summary>
@@ -735,7 +810,8 @@ namespace Amazon.WorkSpaces
 
         /// <summary>
         /// Deletes the specified image from your account. To delete an image, you must first
-        /// delete any bundles that are associated with the image.
+        /// delete any bundles that are associated with the image and un-share the image if it
+        /// is shared with other accounts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspaceImage service method.</param>
         /// 
@@ -1455,6 +1531,69 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  DescribeWorkspaceSnapshots
+
+        /// <summary>
+        /// Describes the snapshots for the specified WorkSpace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspaceSnapshots service method.</param>
+        /// 
+        /// <returns>The response from the DescribeWorkspaceSnapshots service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceSnapshots">REST API Reference for DescribeWorkspaceSnapshots Operation</seealso>
+        public virtual DescribeWorkspaceSnapshotsResponse DescribeWorkspaceSnapshots(DescribeWorkspaceSnapshotsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkspaceSnapshotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkspaceSnapshotsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeWorkspaceSnapshotsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeWorkspaceSnapshots operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspaceSnapshots operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeWorkspaceSnapshots
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceSnapshots">REST API Reference for DescribeWorkspaceSnapshots Operation</seealso>
+        public virtual IAsyncResult BeginDescribeWorkspaceSnapshots(DescribeWorkspaceSnapshotsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkspaceSnapshotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkspaceSnapshotsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeWorkspaceSnapshots operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeWorkspaceSnapshots.</param>
+        /// 
+        /// <returns>Returns a  DescribeWorkspaceSnapshotsResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceSnapshots">REST API Reference for DescribeWorkspaceSnapshots Operation</seealso>
+        public virtual DescribeWorkspaceSnapshotsResponse EndDescribeWorkspaceSnapshots(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeWorkspaceSnapshotsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisassociateIpGroups
 
         /// <summary>
@@ -1881,9 +2020,9 @@ namespace Amazon.WorkSpaces
         ///  
         /// <para>
         /// To maintain a WorkSpace without being interrupted, set the WorkSpace state to <code>ADMIN_MAINTENANCE</code>.
-        /// WorkSpaces in this state do not respond to requests to reboot, stop, start, or rebuild.
-        /// An AutoStop WorkSpace in this state is not stopped. Users can log into a WorkSpace
-        /// in the <code>ADMIN_MAINTENANCE</code> state.
+        /// WorkSpaces in this state do not respond to requests to reboot, stop, start, rebuild,
+        /// or restore. An AutoStop WorkSpace in this state is not stopped. Users cannot log into
+        /// a WorkSpace in the <code>ADMIN_MAINTENANCE</code> state.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceState service method.</param>
@@ -2074,6 +2213,85 @@ namespace Amazon.WorkSpaces
         public virtual RebuildWorkspacesResponse EndRebuildWorkspaces(IAsyncResult asyncResult)
         {
             return EndInvoke<RebuildWorkspacesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RestoreWorkspace
+
+        /// <summary>
+        /// Restores the specified WorkSpace to its last known healthy state.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot restore a WorkSpace unless its state is <code> AVAILABLE</code>, <code>ERROR</code>,
+        /// or <code>UNHEALTHY</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Restoring a WorkSpace is a potentially destructive action that can result in the loss
+        /// of data. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/restore-workspace.html">Restore
+        /// a WorkSpace</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is asynchronous and returns before the WorkSpace is completely restored.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreWorkspace service method.</param>
+        /// 
+        /// <returns>The response from the RestoreWorkspace service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RestoreWorkspace">REST API Reference for RestoreWorkspace Operation</seealso>
+        public virtual RestoreWorkspaceResponse RestoreWorkspace(RestoreWorkspaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreWorkspaceResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreWorkspaceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreWorkspace operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreWorkspace operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRestoreWorkspace
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RestoreWorkspace">REST API Reference for RestoreWorkspace Operation</seealso>
+        public virtual IAsyncResult BeginRestoreWorkspace(RestoreWorkspaceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreWorkspaceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RestoreWorkspace operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRestoreWorkspace.</param>
+        /// 
+        /// <returns>Returns a  RestoreWorkspaceResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RestoreWorkspace">REST API Reference for RestoreWorkspace Operation</seealso>
+        public virtual RestoreWorkspaceResponse EndRestoreWorkspace(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RestoreWorkspaceResponse>(asyncResult);
         }
 
         #endregion

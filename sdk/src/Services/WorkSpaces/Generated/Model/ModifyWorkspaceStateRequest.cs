@@ -34,9 +34,9 @@ namespace Amazon.WorkSpaces.Model
     ///  
     /// <para>
     /// To maintain a WorkSpace without being interrupted, set the WorkSpace state to <code>ADMIN_MAINTENANCE</code>.
-    /// WorkSpaces in this state do not respond to requests to reboot, stop, start, or rebuild.
-    /// An AutoStop WorkSpace in this state is not stopped. Users can log into a WorkSpace
-    /// in the <code>ADMIN_MAINTENANCE</code> state.
+    /// WorkSpaces in this state do not respond to requests to reboot, stop, start, rebuild,
+    /// or restore. An AutoStop WorkSpace in this state is not stopped. Users cannot log into
+    /// a WorkSpace in the <code>ADMIN_MAINTENANCE</code> state.
     /// </para>
     /// </summary>
     public partial class ModifyWorkspaceStateRequest : AmazonWorkSpacesRequest

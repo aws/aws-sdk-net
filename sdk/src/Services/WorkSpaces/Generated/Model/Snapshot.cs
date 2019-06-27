@@ -28,32 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteWorkspaceImage operation.
-    /// Deletes the specified image from your account. To delete an image, you must first
-    /// delete any bundles that are associated with the image and un-share the image if it
-    /// is shared with other accounts.
+    /// Describes a snapshot.
     /// </summary>
-    public partial class DeleteWorkspaceImageRequest : AmazonWorkSpacesRequest
+    public partial class Snapshot
     {
-        private string _imageId;
+        private DateTime? _snapshotTime;
 
         /// <summary>
-        /// Gets and sets the property ImageId. 
+        /// Gets and sets the property SnapshotTime. 
         /// <para>
-        /// The identifier of the image.
+        /// The time when the snapshot was created.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string ImageId
+        public DateTime SnapshotTime
         {
-            get { return this._imageId; }
-            set { this._imageId = value; }
+            get { return this._snapshotTime.GetValueOrDefault(); }
+            set { this._snapshotTime = value; }
         }
 
-        // Check to see if ImageId property is set
-        internal bool IsSetImageId()
+        // Check to see if SnapshotTime property is set
+        internal bool IsSetSnapshotTime()
         {
-            return this._imageId != null;
+            return this._snapshotTime.HasValue; 
         }
 
     }

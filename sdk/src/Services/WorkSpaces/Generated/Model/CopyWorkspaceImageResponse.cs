@@ -28,12 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteWorkspaceImage operation.
-    /// Deletes the specified image from your account. To delete an image, you must first
-    /// delete any bundles that are associated with the image and un-share the image if it
-    /// is shared with other accounts.
+    /// This is the response object from the CopyWorkspaceImage operation.
     /// </summary>
-    public partial class DeleteWorkspaceImageRequest : AmazonWorkSpacesRequest
+    public partial class CopyWorkspaceImageResponse : AmazonWebServiceResponse
     {
         private string _imageId;
 
@@ -43,7 +40,6 @@ namespace Amazon.WorkSpaces.Model
         /// The identifier of the image.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ImageId
         {
             get { return this._imageId; }

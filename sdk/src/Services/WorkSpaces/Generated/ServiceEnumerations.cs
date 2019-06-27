@@ -911,6 +911,10 @@ namespace Amazon.WorkSpaces
         /// </summary>
         public static readonly WorkspaceState REBUILDING = new WorkspaceState("REBUILDING");
         /// <summary>
+        /// Constant RESTORING for WorkspaceState
+        /// </summary>
+        public static readonly WorkspaceState RESTORING = new WorkspaceState("RESTORING");
+        /// <summary>
         /// Constant STARTING for WorkspaceState
         /// </summary>
         public static readonly WorkspaceState STARTING = new WorkspaceState("STARTING");

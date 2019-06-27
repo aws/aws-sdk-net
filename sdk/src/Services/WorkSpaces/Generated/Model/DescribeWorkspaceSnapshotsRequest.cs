@@ -28,32 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteWorkspaceImage operation.
-    /// Deletes the specified image from your account. To delete an image, you must first
-    /// delete any bundles that are associated with the image and un-share the image if it
-    /// is shared with other accounts.
+    /// Container for the parameters to the DescribeWorkspaceSnapshots operation.
+    /// Describes the snapshots for the specified WorkSpace.
     /// </summary>
-    public partial class DeleteWorkspaceImageRequest : AmazonWorkSpacesRequest
+    public partial class DescribeWorkspaceSnapshotsRequest : AmazonWorkSpacesRequest
     {
-        private string _imageId;
+        private string _workspaceId;
 
         /// <summary>
-        /// Gets and sets the property ImageId. 
+        /// Gets and sets the property WorkspaceId. 
         /// <para>
-        /// The identifier of the image.
+        /// The identifier of the WorkSpace.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string ImageId
+        public string WorkspaceId
         {
-            get { return this._imageId; }
-            set { this._imageId = value; }
+            get { return this._workspaceId; }
+            set { this._workspaceId = value; }
         }
 
-        // Check to see if ImageId property is set
-        internal bool IsSetImageId()
+        // Check to see if WorkspaceId property is set
+        internal bool IsSetWorkspaceId()
         {
-            return this._imageId != null;
+            return this._workspaceId != null;
         }
 
     }
