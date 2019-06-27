@@ -83,6 +83,7 @@
       <Directory>$(ProjectDir)/src/Services/docdb/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/dynamodbv2/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/ec2/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/ec2instanceconnect/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/ecr/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/ecs/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/eks/bin/Release/net35/</Directory>
@@ -268,6 +269,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.DocDB.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.DynamoDBv2.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.EC2.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.EC2InstanceConnect.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ECR.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ECS.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.EKS.dll" Analyze="True" AnalyzeAllChildren="True" />

@@ -197,6 +197,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale.
 * [AWSSDK.EC2](https://www.nuget.org/packages/AWSSDK.EC2/)
 	* Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides resizable compute capacity in the cloud. It is designed to make web-scale cloud computing easier for developers.
+* [AWSSDK.EC2InstanceConnect](https://www.nuget.org/packages/AWSSDK.EC2InstanceConnect/)
+	* Amazon EC2 Instance Connect is a simple and secure way to connect to your instances using Secure Shell (SSH). With EC2 Instance Connect, you can control SSH access to your instances using AWS Identity and Access Management (IAM) policies as well as audit connection requests with AWS CloudTrail events. In addition, you can leverage your existing SSH keys or further enhance your security posture by generating one-time use SSH keys each time an authorized user connects.
 * [AWSSDK.ECR](https://www.nuget.org/packages/AWSSDK.ECR/)
 	* Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry service. Customers can use the familiar Docker CLI to push, pull, and manage images.
 * [AWSSDK.ECS](https://www.nuget.org/packages/AWSSDK.ECS/)

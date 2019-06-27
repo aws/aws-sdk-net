@@ -1,3 +1,18 @@
+### 3.3.541.0 (2019-06-27 18:14 UTC)
+* DirectConnect (3.3.103.0)
+	* Tags will now be included in the API responses of all supported resources (Virtual interfaces, Connections, Interconnects and LAGs). You can also add tags while creating these resources.
+* EC2InstanceConnect (3.3.100.0)
+	* Amazon EC2 Instance Connect is a simple and secure way to connect to your instances using Secure Shell (SSH). With EC2 Instance Connect, you can control SSH access to your instances using AWS Identity and Access Management (IAM) policies as well as audit connection requests with AWS CloudTrail events. In addition, you can leverage your existing SSH keys or further enhance your security posture by generating one-time use SSH keys each time an authorized user connects.
+* Pinpoint (3.3.100.40)
+	* This release includes editorial updates for the Amazon Pinpoint API documentation.
+* WorkSpaces (3.3.103.0)
+	* Added support for the WorkSpaces restore feature and copying WorkSpaces Images across AWS Regions.
+* Core 3.3.103.4
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.540.1 (2019-06-27 00:22 UTC)
 * DynamoDBv2 (3.3.101.30)
 	* Documentation updates for dynamodb
