@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Default Push Notification Message.
+    /// Specifies the default settings and content for a push notification that's sent directly
+    /// to an endpoint.
     /// </summary>
     public partial class DefaultPushNotificationMessage
     {
@@ -41,13 +42,27 @@ namespace Amazon.Pinpoint.Model
         private string _url;
 
         /// <summary>
-        /// Gets and sets the property Action. The action that occurs if the user taps a push
-        /// notification delivered by the campaign: OPEN_APP - Your app launches, or it becomes
-        /// the foreground app if it has been sent to the background. This is the default action.
-        /// DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display
-        /// a designated user interface within the app. URL - The default mobile browser on the
-        /// user's device launches and opens a web page at the URL you specify. Possible values
-        /// include: OPEN_APP | DEEP_LINK | URL
+        /// Gets and sets the property Action. 
+        /// <para>
+        /// The default action to occur if a recipient taps the push notification. Valid values
+        /// are:
+        /// </para>
+        ///  <ul><li>
+        /// <para>
+        /// OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background.
+        /// This is the default action.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// DEEP_LINK - Your app opens and displays a designated user interface in the app. This
+        /// setting uses the deep-linking features of the iOS and Android platforms.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// URL - The default mobile browser on the recipient's device opens and loads the web
+        /// page at a URL that you specify.
+        /// </para>
+        /// </li></ul>
         /// </summary>
         public Action Action
         {
@@ -62,7 +77,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Body. The message body of the notification.
+        /// Gets and sets the property Body. 
+        /// <para>
+        /// The default body of the notification message.
+        /// </para>
         /// </summary>
         public string Body
         {
@@ -77,8 +95,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Data. The data payload used for a silent push. This payload
-        /// is added to the notifications' data.pinpoint.jsonBody' object
+        /// Gets and sets the property Data. 
+        /// <para>
+        /// The JSON data payload to use for the default push notification, if the notification
+        /// is a silent push notification. This payload is added to the data.pinpoint.jsonBody
+        /// object of the notification.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Data
         {
@@ -93,9 +115,13 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SilentPush. Indicates if the message should display on
-        /// the recipient's device. You can use silent pushes for remote configuration or to deliver
-        /// messages to in-app notification centers.
+        /// Gets and sets the property SilentPush. 
+        /// <para>
+        /// Specifies whether the default notification is a silent push notification, which is
+        /// a push notification that doesn't display on a recipient's device. Silent push notifications
+        /// can be used for cases such as updating an app's configuration or delivering messages
+        /// to an in-app notification center.
+        /// </para>
         /// </summary>
         public bool SilentPush
         {
@@ -110,8 +136,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Substitutions. Default message substitutions. Can be overridden
-        /// by individual address substitutions.
+        /// Gets and sets the property Substitutions. 
+        /// <para>
+        /// The default message variables to use in the notification message. You can override
+        /// the default variables with individual address variables.
+        /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Substitutions
         {
@@ -126,8 +155,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Title. The message title that displays above the message
-        /// on the user's device.
+        /// Gets and sets the property Title. 
+        /// <para>
+        /// The default title to display above the notification message on a recipient's device.
+        /// </para>
         /// </summary>
         public string Title
         {
@@ -142,8 +173,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Url. The URL to open in the user's mobile browser. Used
-        /// if the value for Action is URL.
+        /// Gets and sets the property Url. 
+        /// <para>
+        /// The default URL to open in a recipient's default mobile browser, if a recipient taps
+        /// the push notification and the value of the Action property is URL.
+        /// </para>
         /// </summary>
         public string Url
         {

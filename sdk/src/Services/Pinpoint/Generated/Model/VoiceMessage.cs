@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Voice Message.
+    /// Specifies the settings for a one-time voice message that's sent directly to an endpoint
+    /// through the voice channel.
     /// </summary>
     public partial class VoiceMessage
     {
@@ -39,8 +40,10 @@ namespace Amazon.Pinpoint.Model
         private string _voiceId;
 
         /// <summary>
-        /// Gets and sets the property Body. The message body of the notification, the email body
-        /// or the text message.
+        /// Gets and sets the property Body. 
+        /// <para>
+        /// The text script for the voice message.
+        /// </para>
         /// </summary>
         public string Body
         {
@@ -55,7 +58,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LanguageCode. Language of sent message
+        /// Gets and sets the property LanguageCode. 
+        /// <para>
+        /// The language to use when delivering the message. For a list of supported languages,
+        /// see the <a href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
+        /// </para>
         /// </summary>
         public string LanguageCode
         {
@@ -70,8 +77,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OriginationNumber. Is the number from the pool or messaging
-        /// service to send from.
+        /// Gets and sets the property OriginationNumber. 
+        /// <para>
+        /// The phone number from the pool or messaging service to send the message from. Although
+        /// it isn't required, we recommend that you specify the phone number in E.164 format
+        /// to ensure prompt and accurate delivery.
+        /// </para>
         /// </summary>
         public string OriginationNumber
         {
@@ -86,8 +97,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Substitutions. Default message substitutions. Can be overridden
-        /// by individual address substitutions.
+        /// Gets and sets the property Substitutions. 
+        /// <para>
+        /// The default message variables to use in the voice message. You can override the default
+        /// variables with individual address variables.
+        /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Substitutions
         {
@@ -102,7 +116,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceId. Voice ID of sent message.
+        /// Gets and sets the property VoiceId. 
+        /// <para>
+        /// The name of the voice to use when delivering the message. For a list of supported
+        /// voices, see the <a href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
+        /// </para>
         /// </summary>
         public string VoiceId
         {

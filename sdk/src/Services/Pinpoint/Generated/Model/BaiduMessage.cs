@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Baidu Message.
+    /// Specifies the settings for a one-time message that's sent directly to an endpoint
+    /// through the Baidu (Baidu Cloud Push) channel.
     /// </summary>
     public partial class BaiduMessage
     {
@@ -48,13 +49,26 @@ namespace Amazon.Pinpoint.Model
         private string _url;
 
         /// <summary>
-        /// Gets and sets the property Action. The action that occurs if the user taps a push
-        /// notification delivered by the campaign: OPEN_APP - Your app launches, or it becomes
-        /// the foreground app if it has been sent to the background. This is the default action.
-        /// DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display
-        /// a designated user interface within the app. URL - The default mobile browser on the
-        /// user's device launches and opens a web page at the URL you specify. Possible values
-        /// include: OPEN_APP | DEEP_LINK | URL
+        /// Gets and sets the property Action. 
+        /// <para>
+        /// The action to occur if the recipient taps the push notification. Valid values are:
+        /// </para>
+        ///  <ul><li>
+        /// <para>
+        /// OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background.
+        /// This is the default action.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// DEEP_LINK - Your app opens and displays a designated user interface in the app. This
+        /// action uses the deep-linking features of the Android platform.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// URL - The default mobile browser on the recipient's device opens and loads the web
+        /// page at a URL that you specify.
+        /// </para>
+        /// </li></ul>
         /// </summary>
         public Action Action
         {
@@ -69,7 +83,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Body. The message body of the notification.
+        /// Gets and sets the property Body. 
+        /// <para>
+        /// The body of the notification message.
+        /// </para>
         /// </summary>
         public string Body
         {
@@ -84,8 +101,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Data. The data payload used for a silent push. This payload
-        /// is added to the notifications' data.pinpoint.jsonBody' object
+        /// Gets and sets the property Data. 
+        /// <para>
+        /// The JSON data payload to use for the push notification, if the notification is a silent
+        /// push notification. This payload is added to the data.pinpoint.jsonBody object of the
+        /// notification.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Data
         {
@@ -100,8 +121,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IconReference. The icon image name of the asset saved in
-        /// your application.
+        /// Gets and sets the property IconReference. 
+        /// <para>
+        /// The icon image name of the asset saved in your app.
+        /// </para>
         /// </summary>
         public string IconReference
         {
@@ -116,8 +139,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ImageIconUrl. The URL that points to an image used as the
-        /// large icon to the notification content view.
+        /// Gets and sets the property ImageIconUrl. 
+        /// <para>
+        /// The URL of the large icon image to display in the content view of the push notification.
+        /// </para>
         /// </summary>
         public string ImageIconUrl
         {
@@ -132,8 +157,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ImageUrl. The URL that points to an image used in the push
-        /// notification.
+        /// Gets and sets the property ImageUrl. 
+        /// <para>
+        /// The URL of an image to display in the push notification.
+        /// </para>
         /// </summary>
         public string ImageUrl
         {
@@ -148,8 +175,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RawContent. The Raw JSON formatted string to be used as
-        /// the payload. This value overrides the message.
+        /// Gets and sets the property RawContent. 
+        /// <para>
+        /// The raw, JSON-formatted string to use as the payload for the notification message.
+        /// This value overrides the message.
+        /// </para>
         /// </summary>
         public string RawContent
         {
@@ -164,9 +194,13 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SilentPush. Indicates if the message should display on
-        /// the users device. Silent pushes can be used for Remote Configuration and Phone Home
-        /// use cases.
+        /// Gets and sets the property SilentPush. 
+        /// <para>
+        /// Specifies whether the notification is a silent push notification, which is a push
+        /// notification that doesn't display on a recipient's device. Silent push notifications
+        /// can be used for cases such as updating an app's configuration or supporting phone
+        /// home functionality.
+        /// </para>
         /// </summary>
         public bool SilentPush
         {
@@ -181,9 +215,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SmallImageIconUrl. The URL that points to an image used
-        /// as the small icon for the notification which will be used to represent the notification
-        /// in the status bar and content view
+        /// Gets and sets the property SmallImageIconUrl. 
+        /// <para>
+        /// The URL of the small icon image to display in the status bar and the content view
+        /// of the push notification.
+        /// </para>
         /// </summary>
         public string SmallImageIconUrl
         {
@@ -198,9 +234,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Sound. Indicates a sound to play when the device receives
-        /// the notification. Supports default, or the filename of a sound resource bundled in
-        /// the app. Android sound files must reside in /res/raw/
+        /// Gets and sets the property Sound. 
+        /// <para>
+        /// The sound to play when the recipient receives the push notification. You can use the
+        /// default stream or specify the file name of a sound resource that's bundled in your
+        /// app. On an Android platform, the sound file must reside in /res/raw/.
+        /// </para>
         /// </summary>
         public string Sound
         {
@@ -215,8 +254,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Substitutions. Default message substitutions. Can be overridden
-        /// by individual address substitutions.
+        /// Gets and sets the property Substitutions. 
+        /// <para>
+        /// The default message variables to use in the notification message. You can override
+        /// the default variables with individual address variables.
+        /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Substitutions
         {
@@ -231,9 +273,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimeToLive. This parameter specifies how long (in seconds)
-        /// the message should be kept in Baidu storage if the device is offline. The and the
-        /// default value and the maximum time to live supported is 7 days (604800 seconds)
+        /// Gets and sets the property TimeToLive. 
+        /// <para>
+        /// The amount of time, in seconds, that the Baidu Cloud Push service should store the
+        /// message if the recipient's device is offline. The default value and maximum supported
+        /// time is 604,800 seconds (7 days).
+        /// </para>
         /// </summary>
         public int TimeToLive
         {
@@ -248,8 +293,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Title. The message title that displays above the message
-        /// on the user's device.
+        /// Gets and sets the property Title. 
+        /// <para>
+        /// The title to display above the notification message on the recipient's device.
+        /// </para>
         /// </summary>
         public string Title
         {
@@ -264,8 +311,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Url. The URL to open in the user's mobile browser. Used
-        /// if the value for Action is URL.
+        /// Gets and sets the property Url. 
+        /// <para>
+        /// The URL to open in the recipient's default mobile browser, if a recipient taps the
+        /// push notification and the value of the Action property is URL.
+        /// </para>
         /// </summary>
         public string Url
         {

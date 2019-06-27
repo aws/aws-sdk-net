@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Segment demographic dimensions
+    /// Specifies demographic-based dimension settings for including or excluding endpoints
+    /// from a segment. These settings derive from characteristics of endpoint devices, such
+    /// as platform, make, and model.
     /// </summary>
     public partial class SegmentDemographics
     {
@@ -40,7 +42,10 @@ namespace Amazon.Pinpoint.Model
         private SetDimension _platform;
 
         /// <summary>
-        /// Gets and sets the property AppVersion. The app version criteria for the segment.
+        /// Gets and sets the property AppVersion. 
+        /// <para>
+        /// The app version criteria for the segment.
+        /// </para>
         /// </summary>
         public SetDimension AppVersion
         {
@@ -55,7 +60,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Channel. The channel criteria for the segment.
+        /// Gets and sets the property Channel. 
+        /// <para>
+        /// The channel criteria for the segment.
+        /// </para>
         /// </summary>
         public SetDimension Channel
         {
@@ -70,7 +78,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DeviceType. The device type criteria for the segment.
+        /// Gets and sets the property DeviceType. 
+        /// <para>
+        /// The device type criteria for the segment.
+        /// </para>
         /// </summary>
         public SetDimension DeviceType
         {
@@ -85,7 +96,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Make. The device make criteria for the segment.
+        /// Gets and sets the property Make. 
+        /// <para>
+        /// The device make criteria for the segment.
+        /// </para>
         /// </summary>
         public SetDimension Make
         {
@@ -100,7 +114,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Model. The device model criteria for the segment.
+        /// Gets and sets the property Model. 
+        /// <para>
+        /// The device model criteria for the segment.
+        /// </para>
         /// </summary>
         public SetDimension Model
         {
@@ -115,7 +132,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Platform. The device platform criteria for the segment.
+        /// Gets and sets the property Platform. 
+        /// <para>
+        /// The device platform criteria for the segment.
+        /// </para>
         /// </summary>
         public SetDimension Platform
         {

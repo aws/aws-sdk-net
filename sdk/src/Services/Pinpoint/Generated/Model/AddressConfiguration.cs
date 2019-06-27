@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Address configuration.
+    /// Specifies address-based configuration settings for a message that's sent directly
+    /// to an endpoint.
     /// </summary>
     public partial class AddressConfiguration
     {
@@ -40,8 +41,11 @@ namespace Amazon.Pinpoint.Model
         private string _titleOverride;
 
         /// <summary>
-        /// Gets and sets the property BodyOverride. Body override. If specified will override
-        /// default body.
+        /// Gets and sets the property BodyOverride. 
+        /// <para>
+        /// The message body to use instead of the default message body. This value overrides
+        /// the default message body.
+        /// </para>
         /// </summary>
         public string BodyOverride
         {
@@ -56,8 +60,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ChannelType. The channel type.Valid values: GCM | APNS
-        /// | APNS_SANDBOX | APNS_VOIP | APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
+        /// Gets and sets the property ChannelType. 
+        /// <para>
+        /// The channel to use when sending the message.
+        /// </para>
         /// </summary>
         public ChannelType ChannelType
         {
@@ -72,9 +78,13 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Context. A map of custom attributes to attributes to be
-        /// attached to the message for this address. This payload is added to the push notification's
-        /// 'data.pinpoint' object or added to the email/sms delivery receipt event attributes.
+        /// Gets and sets the property Context. 
+        /// <para>
+        /// An object that maps custom attributes to attributes for the address and is attached
+        /// to the message. For a push notification, this payload is added to the data.pinpoint
+        /// object. For an email or text message, this payload is added to email/SMS delivery
+        /// receipt event attributes.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Context
         {
@@ -89,8 +99,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RawContent. The Raw JSON formatted string to be used as
-        /// the payload. This value overrides the message.
+        /// Gets and sets the property RawContent. 
+        /// <para>
+        /// The raw, JSON-formatted string to use as the payload for the notification message.
+        /// This value overrides the message.
+        /// </para>
         /// </summary>
         public string RawContent
         {
@@ -105,9 +118,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Substitutions. A map of substitution values for the message
-        /// to be merged with the DefaultMessage's substitutions. Substitutions on this map take
-        /// precedence over the all other substitutions.
+        /// Gets and sets the property Substitutions. 
+        /// <para>
+        /// An object that maps variable values for the message. Amazon Pinpoint merges these
+        /// values with the variable values specified by properties of the DefaultMessage object.
+        /// The substitutions in this map take precedence over all other substitutions.
+        /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Substitutions
         {
@@ -122,8 +138,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TitleOverride. Title override. If specified will override
-        /// default title if applicable.
+        /// Gets and sets the property TitleOverride. 
+        /// <para>
+        /// The message title to use instead of the default message title. This value overrides
+        /// the default message title.
+        /// </para>
         /// </summary>
         public string TitleOverride
         {

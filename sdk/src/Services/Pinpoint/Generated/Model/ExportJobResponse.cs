@@ -28,7 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Export job response.
+    /// Provides information about the status and settings of a job that exports endpoint
+    /// definitions to a file. The file can be added directly to an Amazon Simple Storage
+    /// Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly
+    /// to a computer by using the Amazon Pinpoint console.
     /// </summary>
     public partial class ExportJobResponse
     {
@@ -47,9 +50,12 @@ namespace Amazon.Pinpoint.Model
         private string _type;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The unique ID of the application associated
-        /// with the export job.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The unique identifier for the application that's associated with the export job.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApplicationId
         {
             get { return this._applicationId; }
@@ -63,8 +69,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CompletedPieces. The number of pieces that have successfully
-        /// completed as of the time of the request.
+        /// Gets and sets the property CompletedPieces. 
+        /// <para>
+        /// The number of pieces that were processed successfully (completed) by the export job,
+        /// as of the time of the request.
+        /// </para>
         /// </summary>
         public int CompletedPieces
         {
@@ -79,8 +88,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CompletionDate. The date the job completed in ISO 8601
-        /// format.
+        /// Gets and sets the property CompletionDate. 
+        /// <para>
+        /// The date, in ISO 8601 format, when the export job was completed.
+        /// </para>
         /// </summary>
         public string CompletionDate
         {
@@ -95,9 +106,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreationDate. The date the job was created in ISO 8601
-        /// format.
+        /// Gets and sets the property CreationDate. 
+        /// <para>
+        /// The date, in ISO 8601 format, when the export job was created.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CreationDate
         {
             get { return this._creationDate; }
@@ -111,8 +125,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Definition. The export job settings.
+        /// Gets and sets the property Definition. 
+        /// <para>
+        /// The resource settings that apply to the export job.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ExportJobResource Definition
         {
             get { return this._definition; }
@@ -126,8 +144,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FailedPieces. The number of pieces that failed to be processed
+        /// Gets and sets the property FailedPieces. 
+        /// <para>
+        /// The number of pieces that weren't processed successfully (failed) by the export job,
         /// as of the time of the request.
+        /// </para>
         /// </summary>
         public int FailedPieces
         {
@@ -142,8 +163,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Failures. Provides up to 100 of the first failed entries
-        /// for the job, if any exist.
+        /// Gets and sets the property Failures. 
+        /// <para>
+        /// An array of entries, one for each of the first 100 entries that weren't processed
+        /// successfully (failed) by the export job, if any.
+        /// </para>
         /// </summary>
         public List<string> Failures
         {
@@ -158,8 +182,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. The unique ID of the job.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The unique identifier for the export job.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -173,10 +201,13 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property JobStatus. The status of the job.Valid values: CREATED,
-        /// INITIALIZING, PROCESSING, COMPLETING, COMPLETED, FAILING, FAILEDThe job status is
-        /// FAILED if one or more pieces failed.
+        /// Gets and sets the property JobStatus. 
+        /// <para>
+        /// The status of the export job. The job status is FAILED if Amazon Pinpoint wasn't able
+        /// to process one or more pieces in the job.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public JobStatus JobStatus
         {
             get { return this._jobStatus; }
@@ -190,8 +221,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TotalFailures. The number of endpoints that were not processed;
-        /// for example, because of syntax errors.
+        /// Gets and sets the property TotalFailures. 
+        /// <para>
+        /// The total number of endpoint definitions that weren't processed successfully (failed)
+        /// by the export job, typically because an error, such as a syntax error, occurred.
+        /// </para>
         /// </summary>
         public int TotalFailures
         {
@@ -206,8 +240,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TotalPieces. The total number of pieces that must be processed
-        /// to finish the job. Each piece is an approximately equal portion of the endpoints.
+        /// Gets and sets the property TotalPieces. 
+        /// <para>
+        /// The total number of pieces that must be processed to complete the export job. Each
+        /// piece consists of an approximately equal portion of the endpoint definitions that
+        /// are part of the export job.
+        /// </para>
         /// </summary>
         public int TotalPieces
         {
@@ -222,8 +260,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TotalProcessed. The number of endpoints that were processed
-        /// by the job.
+        /// Gets and sets the property TotalProcessed. 
+        /// <para>
+        /// The total number of endpoint definitions that were processed by the export job.
+        /// </para>
         /// </summary>
         public int TotalProcessed
         {
@@ -238,8 +278,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type. The job type. Will be 'EXPORT'.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The job type. This value is EXPORT for export jobs.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Type
         {
             get { return this._type; }

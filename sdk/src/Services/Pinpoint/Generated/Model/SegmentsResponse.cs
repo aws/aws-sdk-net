@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Segments in your account.
+    /// Provides information about all the segments that are associated with an application.
     /// </summary>
     public partial class SegmentsResponse
     {
@@ -36,8 +36,14 @@ namespace Amazon.Pinpoint.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Item. The list of segments.
+        /// Gets and sets the property Item. 
+        /// <para>
+        /// An array of responses, one for each segment that's associated with the application
+        /// (Segments resource) or each version of a segment that's associated with the application
+        /// (Segment Versions resource).
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<SegmentResponse> Item
         {
             get { return this._item; }
@@ -51,8 +57,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. An identifier used to retrieve the next page
-        /// of results. The token is null if no additional pages exist.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The string to use in a subsequent request to get the next page of results in a paginated
+        /// response. This value is null if there are no additional pages.
+        /// </para>
         /// </summary>
         public string NextToken
         {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// SMS Channel Response.
+    /// Provides information about the status and settings of the SMS channel for an application.
     /// </summary>
     public partial class SMSChannelResponse
     {
@@ -48,8 +48,10 @@ namespace Amazon.Pinpoint.Model
         private int? _version;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The unique ID of the application to which
-        /// the SMS channel belongs.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The unique identifier for the application that the SMS channel applies to.
+        /// </para>
         /// </summary>
         public string ApplicationId
         {
@@ -64,8 +66,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreationDate. The date that the settings were last updated
-        /// in ISO 8601 format.
+        /// Gets and sets the property CreationDate. 
+        /// <para>
+        /// The date and time, in ISO 8601 format, when the SMS channel was enabled.
+        /// </para>
         /// </summary>
         public string CreationDate
         {
@@ -80,7 +84,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Enabled. If the channel is enabled for sending messages.
+        /// Gets and sets the property Enabled. 
+        /// <para>
+        /// Specifies whether the SMS channel is enabled for the application.
+        /// </para>
         /// </summary>
         public bool Enabled
         {
@@ -95,7 +102,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HasCredential. Not used. Retained for backwards compatibility.
+        /// Gets and sets the property HasCredential. 
+        /// <para>
+        /// (Not used) This property is retained only for backward compatibility.
+        /// </para>
         /// </summary>
         public bool HasCredential
         {
@@ -110,7 +120,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. Channel ID. Not used, only for backwards compatibility.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// (Deprecated) An identifier for the SMS channel. This property is retained only for
+        /// backward compatibility.
+        /// </para>
         /// </summary>
         public string Id
         {
@@ -125,7 +139,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IsArchived. Is this channel archived
+        /// Gets and sets the property IsArchived. 
+        /// <para>
+        /// Specifies whether the SMS channel is archived.
+        /// </para>
         /// </summary>
         public bool IsArchived
         {
@@ -140,7 +157,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastModifiedBy. Who last updated this entry
+        /// Gets and sets the property LastModifiedBy. 
+        /// <para>
+        /// The user who last modified the SMS channel.
+        /// </para>
         /// </summary>
         public string LastModifiedBy
         {
@@ -155,7 +175,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastModifiedDate. Last date this was updated
+        /// Gets and sets the property LastModifiedDate. 
+        /// <para>
+        /// The date and time, in ISO 8601 format, when the SMS channel was last modified.
+        /// </para>
         /// </summary>
         public string LastModifiedDate
         {
@@ -170,8 +193,13 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Platform. Platform type. Will be "SMS"
+        /// Gets and sets the property Platform. 
+        /// <para>
+        /// The type of messaging or notification platform for the channel. For the SMS channel,
+        /// this value is SMS.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Platform
         {
             get { return this._platform; }
@@ -185,8 +213,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PromotionalMessagesPerSecond. Promotional messages per
-        /// second that can be sent
+        /// Gets and sets the property PromotionalMessagesPerSecond. 
+        /// <para>
+        /// The maximum number of promotional messages that you can send through the SMS channel
+        /// each second.
+        /// </para>
         /// </summary>
         public int PromotionalMessagesPerSecond
         {
@@ -201,7 +232,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SenderId. Sender identifier of your messages.
+        /// Gets and sets the property SenderId. 
+        /// <para>
+        /// The identity that displays on recipients' devices when they receive messages from
+        /// the SMS channel.
+        /// </para>
         /// </summary>
         public string SenderId
         {
@@ -216,7 +251,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ShortCode. The short code registered with the phone provider.
+        /// Gets and sets the property ShortCode. 
+        /// <para>
+        /// The registered short code to use when you send messages through the SMS channel.
+        /// </para>
         /// </summary>
         public string ShortCode
         {
@@ -231,8 +269,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TransactionalMessagesPerSecond. Transactional messages
-        /// per second that can be sent
+        /// Gets and sets the property TransactionalMessagesPerSecond. 
+        /// <para>
+        /// The maximum number of transactional messages that you can send through the SMS channel
+        /// each second.
+        /// </para>
         /// </summary>
         public int TransactionalMessagesPerSecond
         {
@@ -247,7 +288,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Version. Version of channel
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The current version of the SMS channel.
+        /// </para>
         /// </summary>
         public int Version
         {

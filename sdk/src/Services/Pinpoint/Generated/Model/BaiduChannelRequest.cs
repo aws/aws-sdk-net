@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Baidu Cloud Push credentials
+    /// Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application.
     /// </summary>
     public partial class BaiduChannelRequest
     {
@@ -37,8 +37,13 @@ namespace Amazon.Pinpoint.Model
         private string _secretKey;
 
         /// <summary>
-        /// Gets and sets the property ApiKey. Platform credential API key from Baidu.
+        /// Gets and sets the property ApiKey. 
+        /// <para>
+        /// The API key that you received from the Baidu Cloud Push service to communicate with
+        /// the service.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApiKey
         {
             get { return this._apiKey; }
@@ -52,7 +57,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Enabled. If the channel is enabled for sending messages.
+        /// Gets and sets the property Enabled. 
+        /// <para>
+        /// Specifies whether to enable the Baidu channel for the application.
+        /// </para>
         /// </summary>
         public bool Enabled
         {
@@ -67,8 +75,13 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SecretKey. Platform credential Secret key from Baidu.
+        /// Gets and sets the property SecretKey. 
+        /// <para>
+        /// The secret key that you received from the Baidu Cloud Push service to communicate
+        /// with the service.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SecretKey
         {
             get { return this._secretKey; }

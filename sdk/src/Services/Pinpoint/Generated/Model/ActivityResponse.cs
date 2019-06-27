@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Activity definition
+    /// Provides information about an activity that was performed by a campaign.
     /// </summary>
     public partial class ActivityResponse
     {
@@ -47,9 +47,12 @@ namespace Amazon.Pinpoint.Model
         private string _treatmentId;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The ID of the application to which the campaign
-        /// applies.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The unique identifier for the application that the campaign applies to.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApplicationId
         {
             get { return this._applicationId; }
@@ -63,9 +66,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CampaignId. The ID of the campaign to which the activity
-        /// applies.
+        /// Gets and sets the property CampaignId. 
+        /// <para>
+        /// The unique identifier for the campaign that the activity applies to.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CampaignId
         {
             get { return this._campaignId; }
@@ -79,8 +85,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property End. The actual time the activity was marked CANCELLED
-        /// or COMPLETED. Provided in ISO 8601 format.
+        /// Gets and sets the property End. 
+        /// <para>
+        /// The actual time, in ISO 8601 format, when the activity was marked CANCELLED or COMPLETED.
+        /// </para>
         /// </summary>
         public string End
         {
@@ -95,8 +103,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. The unique activity ID.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The unique identifier for the activity.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -110,8 +122,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Result. Indicates whether the activity succeeded.Valid
-        /// values: SUCCESS, FAIL
+        /// Gets and sets the property Result. 
+        /// <para>
+        /// Specifies whether the activity succeeded. Possible values are SUCCESS and FAIL.
+        /// </para>
         /// </summary>
         public string Result
         {
@@ -126,8 +140,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScheduledStart. The scheduled start time for the activity
-        /// in ISO 8601 format.
+        /// Gets and sets the property ScheduledStart. 
+        /// <para>
+        /// The scheduled start time, in ISO 8601 format, for the activity.
+        /// </para>
         /// </summary>
         public string ScheduledStart
         {
@@ -142,8 +158,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Start. The actual start time of the activity in ISO 8601
-        /// format.
+        /// Gets and sets the property Start. 
+        /// <para>
+        /// The actual start time, in ISO 8601 format, of the activity.
+        /// </para>
         /// </summary>
         public string Start
         {
@@ -158,8 +176,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property State. The state of the activity.Valid values: PENDING,
-        /// INITIALIZING, RUNNING, PAUSED, CANCELLED, COMPLETED
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The state of the activity. Possible values are: PENDING, INITIALIZING, RUNNING, PAUSED,
+        /// CANCELLED, and COMPLETED.
+        /// </para>
         /// </summary>
         public string State
         {
@@ -174,8 +195,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SuccessfulEndpointCount. The total number of endpoints
-        /// to which the campaign successfully delivered messages.
+        /// Gets and sets the property SuccessfulEndpointCount. 
+        /// <para>
+        /// The total number of endpoints that the campaign successfully delivered messages to.
+        /// </para>
         /// </summary>
         public int SuccessfulEndpointCount
         {
@@ -190,8 +213,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimezonesCompletedCount. The total number of timezones
-        /// completed.
+        /// Gets and sets the property TimezonesCompletedCount. 
+        /// <para>
+        /// The total number of time zones that were completed.
+        /// </para>
         /// </summary>
         public int TimezonesCompletedCount
         {
@@ -206,8 +231,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimezonesTotalCount. The total number of unique timezones
-        /// present in the segment.
+        /// Gets and sets the property TimezonesTotalCount. 
+        /// <para>
+        /// The total number of unique time zones that are in the segment for the campaign.
+        /// </para>
         /// </summary>
         public int TimezonesTotalCount
         {
@@ -222,8 +249,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TotalEndpointCount. The total number of endpoints to which
-        /// the campaign attempts to deliver messages.
+        /// Gets and sets the property TotalEndpointCount. 
+        /// <para>
+        /// The total number of endpoints that the campaign attempted to deliver messages to.
+        /// </para>
         /// </summary>
         public int TotalEndpointCount
         {
@@ -238,8 +267,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TreatmentId. The ID of a variation of the campaign used
-        /// for A/B testing.
+        /// Gets and sets the property TreatmentId. 
+        /// <para>
+        /// The unique identifier for the campaign treatment that the activity applies to. A treatment
+        /// is a variation of a campaign that's used for A/B testing of a campaign.
+        /// </para>
         /// </summary>
         public string TreatmentId
         {

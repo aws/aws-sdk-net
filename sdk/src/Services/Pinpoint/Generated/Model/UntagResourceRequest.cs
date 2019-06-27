@@ -29,7 +29,7 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// 
+    /// Removes one or more tags (keys and values) from an application, campaign, or segment.
     /// </summary>
     public partial class UntagResourceRequest : AmazonPinpointRequest
     {
@@ -37,7 +37,10 @@ namespace Amazon.Pinpoint.Model
         private List<string> _tagKeys = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property ResourceArn.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the application, campaign, or segment.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceArn
@@ -53,7 +56,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagKeys. The key(s) of tag to be deleted
+        /// Gets and sets the property TagKeys. 
+        /// <para>
+        /// The key of the tag to remove from the application, campaign, or segment. To remove
+        /// multiple tags, append the tagKeys parameter and argument for each additional tag to
+        /// remove, separated by an ampersand (&amp;).
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> TagKeys

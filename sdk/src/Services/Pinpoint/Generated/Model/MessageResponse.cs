@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Send message response.
+    /// Provides information about the results of a request to send a message to an endpoint
+    /// address.
     /// </summary>
     public partial class MessageResponse
     {
@@ -38,8 +39,12 @@ namespace Amazon.Pinpoint.Model
         private Dictionary<string, MessageResult> _result = new Dictionary<string, MessageResult>();
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. Application id of the message.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The unique identifier for the application that was used to send the message.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApplicationId
         {
             get { return this._applicationId; }
@@ -53,8 +58,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EndpointResult. A map containing a multi part response
-        /// for each address, with the endpointId as the key and the result as the value.
+        /// Gets and sets the property EndpointResult. 
+        /// <para>
+        /// A map that contains a multipart response for each address that the message was sent
+        /// to. In the map, the endpoint ID is the key and the result is the value.
+        /// </para>
         /// </summary>
         public Dictionary<string, EndpointMessageResult> EndpointResult
         {
@@ -69,8 +77,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RequestId. Original request Id for which this message was
-        /// delivered.
+        /// Gets and sets the property RequestId. 
+        /// <para>
+        /// The identifier for the original request that the message was delivered for.
+        /// </para>
         /// </summary>
         public string RequestId
         {
@@ -85,9 +95,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Result. A map containing a multi part response for each
-        /// address, with the address as the key(Email address, phone number or push token) and
-        /// the result as the value.
+        /// Gets and sets the property Result. 
+        /// <para>
+        /// A map that contains a multipart response for each address (email address, phone number,
+        /// or push notification token) that the message was sent to. In the map, the address
+        /// is the key and the result is the value.
+        /// </para>
         /// </summary>
         public Dictionary<string, MessageResult> Result
         {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Model for creating or updating events.
+    /// Specifies information about an event that reports data to Amazon Pinpoint.
     /// </summary>
     public partial class Event
     {
@@ -44,8 +44,10 @@ namespace Amazon.Pinpoint.Model
         private string _timestamp;
 
         /// <summary>
-        /// Gets and sets the property AppPackageName. The package name associated with the app
-        /// that's recording the event.
+        /// Gets and sets the property AppPackageName. 
+        /// <para>
+        /// The package name of the app that's recording the event.
+        /// </para>
         /// </summary>
         public string AppPackageName
         {
@@ -60,7 +62,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AppTitle. The title of the app that's recording the event.
+        /// Gets and sets the property AppTitle. 
+        /// <para>
+        /// The title of the app that's recording the event.
+        /// </para>
         /// </summary>
         public string AppTitle
         {
@@ -75,8 +80,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AppVersionCode. The version number of the app that's recording
-        /// the event.
+        /// Gets and sets the property AppVersionCode. 
+        /// <para>
+        /// The version number of the app that's recording the event.
+        /// </para>
         /// </summary>
         public string AppVersionCode
         {
@@ -91,8 +98,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Attributes. Custom attributes that are associated with
-        /// the event you're adding or updating.
+        /// Gets and sets the property Attributes. 
+        /// <para>
+        /// One or more custom attributes that are associated with the event.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes
         {
@@ -107,8 +116,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClientSdkVersion. The version of the SDK that's running
-        /// on the client device.
+        /// Gets and sets the property ClientSdkVersion. 
+        /// <para>
+        /// The version of the SDK that's running on the client device.
+        /// </para>
         /// </summary>
         public string ClientSdkVersion
         {
@@ -123,8 +134,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EventType. The name of the custom event that you're recording.
+        /// Gets and sets the property EventType. 
+        /// <para>
+        /// The name of the event.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EventType
         {
             get { return this._eventType; }
@@ -138,7 +153,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Metrics. Custom metrics related to the event.
+        /// Gets and sets the property Metrics. 
+        /// <para>
+        /// One or more custom metrics that are associated with the event.
+        /// </para>
         /// </summary>
         public Dictionary<string, double> Metrics
         {
@@ -153,8 +171,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SdkName. The name of the SDK that's being used to record
-        /// the event.
+        /// Gets and sets the property SdkName. 
+        /// <para>
+        /// The name of the SDK that's being used to record the event.
+        /// </para>
         /// </summary>
         public string SdkName
         {
@@ -169,8 +189,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Session. Information about the session in which the event
-        /// occurred.
+        /// Gets and sets the property Session. 
+        /// <para>
+        /// Information about the session in which the event occurred.
+        /// </para>
         /// </summary>
         public Session Session
         {
@@ -185,9 +207,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Timestamp. The date and time when the event occurred, in
-        /// ISO 8601 format.
+        /// Gets and sets the property Timestamp. 
+        /// <para>
+        /// The date and time, in ISO 8601 format, when the event occurred.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Timestamp
         {
             get { return this._timestamp; }

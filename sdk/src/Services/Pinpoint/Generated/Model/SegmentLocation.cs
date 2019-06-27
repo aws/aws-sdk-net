@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Segment location dimensions
+    /// Specifies geographical dimension settings for a segment.
     /// </summary>
     public partial class SegmentLocation
     {
@@ -36,7 +36,10 @@ namespace Amazon.Pinpoint.Model
         private GPSPointDimension _gpsPoint;
 
         /// <summary>
-        /// Gets and sets the property Country. The country or region, in ISO 3166-1 alpha-2 format.
+        /// Gets and sets the property Country. 
+        /// <para>
+        /// The country or region code, in ISO 3166-1 alpha-2 format, for the segment.
+        /// </para>
         /// </summary>
         public SetDimension Country
         {
@@ -51,7 +54,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GPSPoint. The GPS Point dimension.
+        /// Gets and sets the property GPSPoint. 
+        /// <para>
+        /// The GPS location and range for the segment.
+        /// </para>
         /// </summary>
         public GPSPointDimension GPSPoint
         {

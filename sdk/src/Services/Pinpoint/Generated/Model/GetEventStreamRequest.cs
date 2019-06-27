@@ -29,14 +29,18 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the GetEventStream operation.
-    /// Returns the event stream for an app.
+    /// Retrieves information about the event stream settings for an application.
     /// </summary>
     public partial class GetEventStreamRequest : AmazonPinpointRequest
     {
         private string _applicationId;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The unique ID of your Amazon Pinpoint application.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The unique identifier for the application. This identifier is displayed as the <b>Project
+        /// ID</b> on the Amazon Pinpoint console.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ApplicationId

@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// The email message configuration.
+    /// Specifies the content and "From" address for an email message that's sent to recipients
+    /// of a campaign.
     /// </summary>
     public partial class CampaignEmailMessage
     {
@@ -38,7 +39,10 @@ namespace Amazon.Pinpoint.Model
         private string _title;
 
         /// <summary>
-        /// Gets and sets the property Body. The email text body.
+        /// Gets and sets the property Body. 
+        /// <para>
+        /// The body of the email for recipients whose email clients don't support HTML content.
+        /// </para>
         /// </summary>
         public string Body
         {
@@ -53,8 +57,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FromAddress. The email address used to send the email from.
-        /// Defaults to use FromAddress specified in the Email Channel.
+        /// Gets and sets the property FromAddress. 
+        /// <para>
+        /// The verified email address to send the email from. The default address is the FromAddress
+        /// specified for the email channel for the application.
+        /// </para>
         /// </summary>
         public string FromAddress
         {
@@ -69,7 +76,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HtmlBody. The email html body.
+        /// Gets and sets the property HtmlBody. 
+        /// <para>
+        /// The body of the email, in HTML format, for recipients whose email clients support
+        /// HTML content.
+        /// </para>
         /// </summary>
         public string HtmlBody
         {
@@ -84,8 +95,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Title. The email title (Or subject).
+        /// Gets and sets the property Title. 
+        /// <para>
+        /// The subject line, or title, of the email.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Title
         {
             get { return this._title; }

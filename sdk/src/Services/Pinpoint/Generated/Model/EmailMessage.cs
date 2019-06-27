@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Email Message.
+    /// Specifies the default settings and content for a one-time email message that's sent
+    /// directly to an endpoint.
     /// </summary>
     public partial class EmailMessage
     {
@@ -41,7 +42,10 @@ namespace Amazon.Pinpoint.Model
         private Dictionary<string, List<string>> _substitutions = new Dictionary<string, List<string>>();
 
         /// <summary>
-        /// Gets and sets the property Body. The body of the email message.
+        /// Gets and sets the property Body. 
+        /// <para>
+        /// The body of the email message.
+        /// </para>
         /// </summary>
         public string Body
         {
@@ -56,8 +60,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FeedbackForwardingAddress. The email address that bounces
-        /// and complaints will be forwarded to when feedback forwarding is enabled.
+        /// Gets and sets the property FeedbackForwardingAddress. 
+        /// <para>
+        /// The email address to forward bounces and complaints to, if feedback forwarding is
+        /// enabled.
+        /// </para>
         /// </summary>
         public string FeedbackForwardingAddress
         {
@@ -72,8 +79,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FromAddress. The email address used to send the email from.
-        /// Defaults to use FromAddress specified in the Email Channel.
+        /// Gets and sets the property FromAddress. 
+        /// <para>
+        /// The verified email address to send the email message from. The default value is the
+        /// FromAddress specified for the email channel.
+        /// </para>
         /// </summary>
         public string FromAddress
         {
@@ -88,7 +98,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RawEmail. An email represented as a raw MIME message.
+        /// Gets and sets the property RawEmail. 
+        /// <para>
+        /// The email message, represented as a raw MIME message.
+        /// </para>
         /// </summary>
         public RawEmail RawEmail
         {
@@ -103,9 +116,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReplyToAddresses. The reply-to email address(es) for the
-        /// email. If the recipient replies to the email, each reply-to address will receive the
-        /// reply.
+        /// Gets and sets the property ReplyToAddresses. 
+        /// <para>
+        /// The reply-to email address(es) for the email message. If a recipient replies to the
+        /// email, each reply-to address receives the reply.
+        /// </para>
         /// </summary>
         public List<string> ReplyToAddresses
         {
@@ -120,8 +135,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SimpleEmail. An email composed of a subject, a text part
-        /// and a html part.
+        /// Gets and sets the property SimpleEmail. 
+        /// <para>
+        /// The email message, composed of a subject, a text part, and an HTML part.
+        /// </para>
         /// </summary>
         public SimpleEmail SimpleEmail
         {
@@ -136,8 +153,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Substitutions. Default message substitutions. Can be overridden
-        /// by individual address substitutions.
+        /// Gets and sets the property Substitutions. 
+        /// <para>
+        /// The default message variables to use in the email message. You can override the default
+        /// variables with individual address variables.
+        /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Substitutions
         {

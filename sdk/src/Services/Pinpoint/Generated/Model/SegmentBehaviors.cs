@@ -28,14 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Segment behavior dimensions
+    /// Specifies dimension settings for including or excluding endpoints from a segment based
+    /// on how recently an endpoint was active.
     /// </summary>
     public partial class SegmentBehaviors
     {
         private RecencyDimension _recency;
 
         /// <summary>
-        /// Gets and sets the property Recency. The recency of use.
+        /// Gets and sets the property Recency. 
+        /// <para>
+        /// The dimension settings that are based on how recently an endpoint was active.
+        /// </para>
         /// </summary>
         public RecencyDimension Recency
         {

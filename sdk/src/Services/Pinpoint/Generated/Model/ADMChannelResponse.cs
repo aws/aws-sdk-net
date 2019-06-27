@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Amazon Device Messaging channel definition.
+    /// Provides information about the status and settings of the ADM (Amazon Device Messaging)
+    /// channel for an application.
     /// </summary>
     public partial class ADMChannelResponse
     {
@@ -44,8 +45,10 @@ namespace Amazon.Pinpoint.Model
         private int? _version;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The ID of the application to which the channel
-        /// applies.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The unique identifier for the application that the ADM channel applies to.
+        /// </para>
         /// </summary>
         public string ApplicationId
         {
@@ -60,7 +63,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreationDate. The date and time when this channel was created.
+        /// Gets and sets the property CreationDate. 
+        /// <para>
+        /// The date and time when the ADM channel was enabled.
+        /// </para>
         /// </summary>
         public string CreationDate
         {
@@ -75,8 +81,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Enabled. Indicates whether or not the channel is enabled
-        /// for sending messages.
+        /// Gets and sets the property Enabled. 
+        /// <para>
+        /// Specifies whether the ADM channel is enabled for the application.
+        /// </para>
         /// </summary>
         public bool Enabled
         {
@@ -91,7 +99,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HasCredential. Not used. Retained for backwards compatibility.
+        /// Gets and sets the property HasCredential. 
+        /// <para>
+        /// (Not used) This property is retained only for backward compatibility.
+        /// </para>
         /// </summary>
         public bool HasCredential
         {
@@ -106,8 +117,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. (Deprecated) An identifier for the channel. Retained
-        /// for backwards compatibility.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// (Deprecated) An identifier for the ADM channel. This property is retained only for
+        /// backward compatibility.
+        /// </para>
         /// </summary>
         public string Id
         {
@@ -122,7 +136,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IsArchived. Indicates whether or not the channel is archived.
+        /// Gets and sets the property IsArchived. 
+        /// <para>
+        /// Specifies whether the ADM channel is archived.
+        /// </para>
         /// </summary>
         public bool IsArchived
         {
@@ -137,7 +154,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastModifiedBy. The user who last updated this channel.
+        /// Gets and sets the property LastModifiedBy. 
+        /// <para>
+        /// The user who last modified the ADM channel.
+        /// </para>
         /// </summary>
         public string LastModifiedBy
         {
@@ -152,8 +172,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastModifiedDate. The date and time when this channel was
-        /// last modified.
+        /// Gets and sets the property LastModifiedDate. 
+        /// <para>
+        /// The date and time when the ADM channel was last modified.
+        /// </para>
         /// </summary>
         public string LastModifiedDate
         {
@@ -168,9 +190,13 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Platform. The platform type. For this channel, the value
-        /// is always "ADM."
+        /// Gets and sets the property Platform. 
+        /// <para>
+        /// The type of messaging or notification platform for the channel. For the ADM channel,
+        /// this value is ADM.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Platform
         {
             get { return this._platform; }
@@ -184,7 +210,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Version. The channel version.
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The current version of the ADM channel.
+        /// </para>
         /// </summary>
         public int Version
         {

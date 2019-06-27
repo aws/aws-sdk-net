@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Request to save an EventStream.
+    /// Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and
+    /// the AWS Identity and Access Management (IAM) role to use when publishing those events.
     /// </summary>
     public partial class WriteEventStream
     {
@@ -36,11 +37,23 @@ namespace Amazon.Pinpoint.Model
         private string _roleArn;
 
         /// <summary>
-        /// Gets and sets the property DestinationStreamArn. The Amazon Resource Name (ARN) of
-        /// the Amazon Kinesis stream or Firehose delivery stream to which you want to publish
-        /// events. Firehose ARN: arn:aws:firehose:REGION:ACCOUNT_ID:deliverystream/STREAM_NAME
-        /// Kinesis ARN: arn:aws:kinesis:REGION:ACCOUNT_ID:stream/STREAM_NAME
+        /// Gets and sets the property DestinationStreamArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Amazon Kinesis data stream or Amazon Kinesis
+        /// Data Firehose delivery stream that you want to publish event data to.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a Kinesis data stream, the ARN format is: arn:aws:kinesis:<replaceable>region</replaceable>:<replaceable>account-id</replaceable>:stream/<replaceable>stream_name</replaceable>
+        ///               
+        /// </para>
+        ///  
+        /// <para>
+        /// For a Kinesis Data Firehose delivery stream, the ARN format is: arn:aws:firehose:<replaceable>region</replaceable>:<replaceable>account-id</replaceable>:deliverystream/<replaceable>stream_name</replaceable>
+        ///               
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DestinationStreamArn
         {
             get { return this._destinationStreamArn; }
@@ -54,9 +67,13 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoleArn. The IAM role that authorizes Amazon Pinpoint to
-        /// publish events to the stream in your account.
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// The AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint
+        /// to publish event data to the stream in your AWS account.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RoleArn
         {
             get { return this._roleArn; }

@@ -28,14 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Voice Channel Request
+    /// Specifies the status and settings of the voice channel for an application.
     /// </summary>
     public partial class VoiceChannelRequest
     {
         private bool? _enabled;
 
         /// <summary>
-        /// Gets and sets the property Enabled. If the channel is enabled for sending messages.
+        /// Gets and sets the property Enabled. 
+        /// <para>
+        /// Specifies whether to enable the voice channel for the application.
+        /// </para>
         /// </summary>
         public bool Enabled
         {

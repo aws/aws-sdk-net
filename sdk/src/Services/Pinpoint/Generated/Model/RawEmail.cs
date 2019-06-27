@@ -28,15 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// An email represented as a raw MIME message.
+    /// Specifies the contents of an email message, represented as a raw MIME message.
     /// </summary>
     public partial class RawEmail
     {
         private MemoryStream _data;
 
         /// <summary>
-        /// Gets and sets the property Data. The raw email message itself. Then entire message
-        /// must be base64-encoded.
+        /// Gets and sets the property Data. 
+        /// <para>
+        /// The email message, represented as a raw MIME message. The entire message must be base64
+        /// encoded.
+        /// </para>
         /// </summary>
         public MemoryStream Data
         {

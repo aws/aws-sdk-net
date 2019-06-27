@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Phone Number Validate request.
+    /// Specifies a phone number to validate and retrieve information about.
     /// </summary>
     public partial class NumberValidateRequest
     {
@@ -36,8 +36,11 @@ namespace Amazon.Pinpoint.Model
         private string _phoneNumber;
 
         /// <summary>
-        /// Gets and sets the property IsoCountryCode. (Optional) The two-character ISO country
-        /// code for the country or region where the phone number was originally registered.
+        /// Gets and sets the property IsoCountryCode. 
+        /// <para>
+        /// The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where
+        /// the phone number was originally registered.
+        /// </para>
         /// </summary>
         public string IsoCountryCode
         {
@@ -52,9 +55,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PhoneNumber. The phone number to get information about.
-        /// The phone number that you provide should include a country code. If the number doesn't
-        /// include a valid country code, the operation might result in an error.
+        /// Gets and sets the property PhoneNumber. 
+        /// <para>
+        /// The phone number to retrieve information about. The phone number that you provide
+        /// should include a valid numeric country code. Otherwise, the operation might result
+        /// in an error.
+        /// </para>
         /// </summary>
         public string PhoneNumber
         {

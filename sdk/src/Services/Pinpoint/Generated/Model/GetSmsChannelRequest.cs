@@ -29,14 +29,18 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSmsChannel operation.
-    /// Get an SMS channel.
+    /// Retrieves information about the status and settings of the SMS channel for an application.
     /// </summary>
     public partial class GetSmsChannelRequest : AmazonPinpointRequest
     {
         private string _applicationId;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The unique ID of your Amazon Pinpoint application.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The unique identifier for the application. This identifier is displayed as the <b>Project
+        /// ID</b> on the Amazon Pinpoint console.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ApplicationId

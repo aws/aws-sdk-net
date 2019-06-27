@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Custom attibute dimension
+    /// Specifies attribute-based criteria for including or excluding endpoints from a segment.
     /// </summary>
     public partial class AttributeDimension
     {
@@ -36,9 +36,12 @@ namespace Amazon.Pinpoint.Model
         private List<string> _values = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property AttributeType. The type of dimension:INCLUSIVE - Endpoints
-        /// that match the criteria are included in the segment.EXCLUSIVE - Endpoints that match
+        /// Gets and sets the property AttributeType. 
+        /// <para>
+        /// The type of segment dimension to use. Valid values are: INCLUSIVE, endpoints that
+        /// match the criteria are included in the segment; and, EXCLUSIVE, endpoints that match
         /// the criteria are excluded from the segment.
+        /// </para>
         /// </summary>
         public AttributeType AttributeType
         {
@@ -53,10 +56,14 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Values. The criteria values for the segment dimension.
-        /// Endpoints with matching attribute values are included or excluded from the segment,
-        /// depending on the setting for Type.
+        /// Gets and sets the property Values. 
+        /// <para>
+        /// The criteria values to use for the segment dimension. Depending on the value of the
+        /// AttributeType property, endpoints are included or excluded from the segment if their
+        /// attribute values match the criteria values.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Values
         {
             get { return this._values; }

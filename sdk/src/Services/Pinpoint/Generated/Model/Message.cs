@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Message to send
+    /// Specifies the content and settings for a push notification that's sent to recipients
+    /// of a campaign.
     /// </summary>
     public partial class Message
     {
@@ -46,12 +47,26 @@ namespace Amazon.Pinpoint.Model
         private string _url;
 
         /// <summary>
-        /// Gets and sets the property Action. The action that occurs if the user taps a push
-        /// notification delivered by the campaign:OPEN_APP - Your app launches, or it becomes
-        /// the foreground app if it has been sent to the background. This is the default action.DEEP_LINK
-        /// - Uses deep linking features in iOS and Android to open your app and display a designated
-        /// user interface within the app.URL - The default mobile browser on the user's device
-        /// launches and opens a web page at the URL you specify.
+        /// Gets and sets the property Action. 
+        /// <para>
+        /// The action to occur if a recipient taps the push notification. Valid values are:
+        /// </para>
+        ///  <ul><li>
+        /// <para>
+        /// OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background.
+        /// This is the default action.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// DEEP_LINK - Your app opens and displays a designated user interface in the app. This
+        /// setting uses the deep-linking features of iOS and Android.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// URL - The default mobile browser on the recipient's device opens and loads the web
+        /// page at a URL that you specify.
+        /// </para>
+        /// </li></ul>
         /// </summary>
         public Action Action
         {
@@ -66,7 +81,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Body. The message body. Can include up to 140 characters.
+        /// Gets and sets the property Body. 
+        /// <para>
+        /// The body of the notification message. The maximum number of characters is 200.
+        /// </para>
         /// </summary>
         public string Body
         {
@@ -81,8 +99,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ImageIconUrl. The URL that points to the icon image for
-        /// the push notification icon, for example, the app icon.
+        /// Gets and sets the property ImageIconUrl. 
+        /// <para>
+        /// The URL of the image to display as the push-notification icon, such as the icon for
+        /// the app.
+        /// </para>
         /// </summary>
         public string ImageIconUrl
         {
@@ -97,8 +118,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ImageSmallIconUrl. The URL that points to the small icon
-        /// image for the push notification icon, for example, the app icon.
+        /// Gets and sets the property ImageSmallIconUrl. 
+        /// <para>
+        /// The URL of the image to display as the small, push-notification icon, such as a small
+        /// version of the icon for the app.
+        /// </para>
         /// </summary>
         public string ImageSmallIconUrl
         {
@@ -113,8 +137,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ImageUrl. The URL that points to an image used in the push
-        /// notification.
+        /// Gets and sets the property ImageUrl. 
+        /// <para>
+        /// The URL of an image to display in the push notification.
+        /// </para>
         /// </summary>
         public string ImageUrl
         {
@@ -129,7 +155,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property JsonBody. The JSON payload used for a silent push.
+        /// Gets and sets the property JsonBody. 
+        /// <para>
+        /// The JSON payload to use for a silent push notification.
+        /// </para>
         /// </summary>
         public string JsonBody
         {
@@ -144,8 +173,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MediaUrl. A URL that refers to the location of an image
-        /// or video that you want to display in the push notification.
+        /// Gets and sets the property MediaUrl. 
+        /// <para>
+        /// The URL of the image or video to display in the push notification.
+        /// </para>
         /// </summary>
         public string MediaUrl
         {
@@ -160,8 +191,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RawContent. The Raw JSON formatted string to be used as
-        /// the payload. This value overrides the message.
+        /// Gets and sets the property RawContent. 
+        /// <para>
+        /// The raw, JSON-formatted string to use as the payload for the notification message.
+        /// This value overrides other values for the message.
+        /// </para>
         /// </summary>
         public string RawContent
         {
@@ -176,9 +210,13 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SilentPush. Indicates if the message should display on
-        /// the users device.Silent pushes can be used for Remote Configuration and Phone Home
-        /// use cases.
+        /// Gets and sets the property SilentPush. 
+        /// <para>
+        /// Specifies whether the notification is a silent push notification, which is a push
+        /// notification that doesn't display on a recipient's device. Silent push notifications
+        /// can be used for cases such as updating an app's configuration, displaying messages
+        /// in an in-app message center, or supporting phone home functionality.
+        /// </para>
         /// </summary>
         public bool SilentPush
         {
@@ -193,11 +231,19 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimeToLive. This parameter specifies how long (in seconds)
-        /// the message should be kept if the service is unable to deliver the notification the
-        /// first time. If the value is 0, it treats the notification as if it expires immediately
-        /// and does not store the notification or attempt to redeliver it. This value is converted
-        /// to the expiration field when sent to the service. It only applies to APNs and GCM
+        /// Gets and sets the property TimeToLive. 
+        /// <para>
+        /// The number of seconds that the push-notification service should keep the message,
+        /// if the service is unable to deliver the notification the first time. This value is
+        /// converted to an expiration value when it's sent to a push-notification service. If
+        /// this value is 0, the service treats the notification as if it expires immediately
+        /// and the service doesn't store or try to deliver the notification again.
+        /// </para>
+        ///  
+        /// <para>
+        /// This value doesn't apply to messages that are sent through the Amazon Device Messaging
+        /// (ADM) service.
+        /// </para>
         /// </summary>
         public int TimeToLive
         {
@@ -212,8 +258,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Title. The message title that displays above the message
-        /// on the user's device.
+        /// Gets and sets the property Title. 
+        /// <para>
+        /// The title to display above the notification message on a recipient's device.
+        /// </para>
         /// </summary>
         public string Title
         {
@@ -228,8 +276,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Url. The URL to open in the user's mobile browser. Used
-        /// if the value for Action is URL.
+        /// Gets and sets the property Url. 
+        /// <para>
+        /// The URL to open in a recipient's default mobile browser, if a recipient taps the push
+        /// notification and the value of the Action property is URL.
+        /// </para>
         /// </summary>
         public string Url
         {

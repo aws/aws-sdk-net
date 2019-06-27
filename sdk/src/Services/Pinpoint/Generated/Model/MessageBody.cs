@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Simple message object.
+    /// Provides information about an API request or response.
     /// </summary>
     public partial class MessageBody
     {
@@ -36,7 +36,10 @@ namespace Amazon.Pinpoint.Model
         private string _requestID;
 
         /// <summary>
-        /// Gets and sets the property Message. The error message that's returned from the API.
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// The message that's returned from the API.
+        /// </para>
         /// </summary>
         public string Message
         {
@@ -51,7 +54,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RequestID. The unique message body ID.
+        /// Gets and sets the property RequestID. 
+        /// <para>
+        /// The unique identifier for the request or response.
+        /// </para>
         /// </summary>
         public string RequestID
         {

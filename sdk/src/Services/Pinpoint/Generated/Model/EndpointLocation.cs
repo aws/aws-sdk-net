@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Location data for the endpoint.
+    /// Specifies geographic information about an endpoint.
     /// </summary>
     public partial class EndpointLocation
     {
@@ -40,7 +40,10 @@ namespace Amazon.Pinpoint.Model
         private string _region;
 
         /// <summary>
-        /// Gets and sets the property City. The city where the endpoint is located.
+        /// Gets and sets the property City. 
+        /// <para>
+        /// The name of the city where the endpoint is located.
+        /// </para>
         /// </summary>
         public string City
         {
@@ -55,9 +58,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Country. The two-letter code for the country or region
-        /// of the endpoint. Specified as an ISO 3166-1 alpha-2 code, such as "US" for the United
-        /// States.
+        /// Gets and sets the property Country. 
+        /// <para>
+        /// The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where
+        /// the endpoint is located. For example, US for the United States.
+        /// </para>
         /// </summary>
         public string Country
         {
@@ -72,8 +77,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Latitude. The latitude of the endpoint location, rounded
-        /// to one decimal place.
+        /// Gets and sets the property Latitude. 
+        /// <para>
+        /// The latitude coordinate of the endpoint location, rounded to one decimal place.
+        /// </para>
         /// </summary>
         public double Latitude
         {
@@ -88,8 +95,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Longitude. The longitude of the endpoint location, rounded
-        /// to one decimal place.
+        /// Gets and sets the property Longitude. 
+        /// <para>
+        /// The longitude coordinate of the endpoint location, rounded to one decimal place.
+        /// </para>
         /// </summary>
         public double Longitude
         {
@@ -104,7 +113,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PostalCode. The postal code or zip code of the endpoint.
+        /// Gets and sets the property PostalCode. 
+        /// <para>
+        /// The postal or ZIP code for the area where the endpoint is located.
+        /// </para>
         /// </summary>
         public string PostalCode
         {
@@ -119,8 +131,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Region. The region of the endpoint location. For example,
-        /// in the United States, this corresponds to a state.
+        /// Gets and sets the property Region. 
+        /// <para>
+        /// The name of the region where the endpoint is located. For locations in the United
+        /// States, this value is the name of a state.
+        /// </para>
         /// </summary>
         public string Region
         {

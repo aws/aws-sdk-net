@@ -28,16 +28,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// State of the Campaign
+    /// Provides information about the status of a campaign.
     /// </summary>
     public partial class CampaignState
     {
         private CampaignStatus _campaignStatus;
 
         /// <summary>
-        /// Gets and sets the property CampaignStatus. The status of the campaign, or the status
-        /// of a treatment that belongs to an A/B test campaign.Valid values: SCHEDULED, EXECUTING,
-        /// PENDING_NEXT_RUN, COMPLETED, PAUSED
+        /// Gets and sets the property CampaignStatus. 
+        /// <para>
+        /// The status of the campaign, or the status of a treatment that belongs to an A/B test
+        /// campaign. If a campaign uses A/B testing, the campaign has a status of COMPLETED only
+        /// when all campaign treatments have a status of COMPLETED.
+        /// </para>
         /// </summary>
         public CampaignStatus CampaignStatus
         {

@@ -28,16 +28,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// A set of events to process.
+    /// Specifies a batch of events to process.
     /// </summary>
     public partial class EventsRequest
     {
         private Dictionary<string, EventsBatch> _batchItem = new Dictionary<string, EventsBatch>();
 
         /// <summary>
-        /// Gets and sets the property BatchItem. A batch of events to process. Each BatchItem
-        /// consists of an endpoint ID as the key, and an EventsBatch object as the value.
+        /// Gets and sets the property BatchItem. 
+        /// <para>
+        /// The batch of events to process. For each item in a batch, the endpoint ID acts as
+        /// a key that has an EventsBatch object as its value.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, EventsBatch> BatchItem
         {
             get { return this._batchItem; }

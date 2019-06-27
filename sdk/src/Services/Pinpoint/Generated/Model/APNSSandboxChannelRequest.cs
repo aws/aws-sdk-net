@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Apple Development Push Notification Service channel definition.
+    /// Specifies the status and settings of the APNs (Apple Push Notification service) sandbox
+    /// channel for an application.
     /// </summary>
     public partial class APNSSandboxChannelRequest
     {
@@ -42,7 +43,11 @@ namespace Amazon.Pinpoint.Model
         private string _tokenKeyId;
 
         /// <summary>
-        /// Gets and sets the property BundleId. The bundle id used for APNs Tokens.
+        /// Gets and sets the property BundleId. 
+        /// <para>
+        /// The bundle identifier that's assigned to your iOS app. This identifier is used for
+        /// APNs tokens.
+        /// </para>
         /// </summary>
         public string BundleId
         {
@@ -57,7 +62,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Certificate. The distribution certificate from Apple.
+        /// Gets and sets the property Certificate. 
+        /// <para>
+        /// The APNs client certificate that you received from Apple, if you want Amazon Pinpoint
+        /// to communicate with the APNs sandbox environment by using an APNs certificate.
+        /// </para>
         /// </summary>
         public string Certificate
         {
@@ -72,8 +81,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DefaultAuthenticationMethod. The default authentication
-        /// method used for APNs.
+        /// Gets and sets the property DefaultAuthenticationMethod. 
+        /// <para>
+        /// The default authentication method that you want Amazon Pinpoint to use when authenticating
+        /// with the APNs sandbox environment, key or certificate.
+        /// </para>
         /// </summary>
         public string DefaultAuthenticationMethod
         {
@@ -88,7 +100,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Enabled. If the channel is enabled for sending messages.
+        /// Gets and sets the property Enabled. 
+        /// <para>
+        /// Specifies whether to enable the APNs sandbox channel for the application.
+        /// </para>
         /// </summary>
         public bool Enabled
         {
@@ -103,7 +118,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PrivateKey. The certificate private key.
+        /// Gets and sets the property PrivateKey. 
+        /// <para>
+        /// The private key for the APNs client certificate that you want Amazon Pinpoint to use
+        /// to communicate with the APNs sandbox environment.
+        /// </para>
         /// </summary>
         public string PrivateKey
         {
@@ -118,7 +137,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TeamId. The team id used for APNs Tokens.
+        /// Gets and sets the property TeamId. 
+        /// <para>
+        /// The identifier that's assigned to your Apple developer account team. This identifier
+        /// is used for APNs tokens.
+        /// </para>
         /// </summary>
         public string TeamId
         {
@@ -133,7 +156,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TokenKey. The token key used for APNs Tokens.
+        /// Gets and sets the property TokenKey. 
+        /// <para>
+        /// The authentication key to use for APNs tokens.
+        /// </para>
         /// </summary>
         public string TokenKey
         {
@@ -148,7 +174,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TokenKeyId. The token key used for APNs Tokens.
+        /// Gets and sets the property TokenKeyId. 
+        /// <para>
+        /// The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint
+        /// to communicate with the APNs sandbox environment by using APNs tokens.
+        /// </para>
         /// </summary>
         public string TokenKeyId
         {

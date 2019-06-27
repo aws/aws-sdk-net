@@ -28,16 +28,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Get channels definition
+    /// Provides information about the general settings and status of all channels for an
+    /// application, including channels that aren't enabled for the application.
     /// </summary>
     public partial class ChannelsResponse
     {
         private Dictionary<string, ChannelResponse> _channels = new Dictionary<string, ChannelResponse>();
 
         /// <summary>
-        /// Gets and sets the property Channels. A map of channels, with the ChannelType as the
-        /// key and the Channel as the value.
+        /// Gets and sets the property Channels. 
+        /// <para>
+        /// A map that contains a multipart response for each channel. For each item in this object,
+        /// the ChannelType is the key and the Channel is the value.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, ChannelResponse> Channels
         {
             get { return this._channels; }

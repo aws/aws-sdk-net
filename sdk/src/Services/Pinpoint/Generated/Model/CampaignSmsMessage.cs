@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// SMS message configuration.
+    /// Specifies the content and settings for an SMS message that's sent to recipients of
+    /// a campaign.
     /// </summary>
     public partial class CampaignSmsMessage
     {
@@ -37,7 +38,10 @@ namespace Amazon.Pinpoint.Model
         private string _senderId;
 
         /// <summary>
-        /// Gets and sets the property Body. The SMS text body.
+        /// Gets and sets the property Body. 
+        /// <para>
+        /// The body of the SMS message.
+        /// </para>
         /// </summary>
         public string Body
         {
@@ -52,8 +56,13 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MessageType. Is this is a transactional SMS message, otherwise
-        /// a promotional message.
+        /// Gets and sets the property MessageType. 
+        /// <para>
+        /// The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical
+        /// or time-sensitive, such as a one-time password that supports a customer transaction;
+        /// and, PROMOTIONAL, the message isn't critical or time-sensitive, such as a marketing
+        /// message.
+        /// </para>
         /// </summary>
         public MessageType MessageType
         {
@@ -68,7 +77,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SenderId. Sender ID of sent message.
+        /// Gets and sets the property SenderId. 
+        /// <para>
+        /// The sender ID to display on recipients' devices when they receive the SMS message.
+        /// </para>
         /// </summary>
         public string SenderId
         {

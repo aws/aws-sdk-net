@@ -29,7 +29,8 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSegment operation.
-    /// Used to update a segment.
+    /// Creates a new segment for an application or updates the configuration, dimension,
+    /// and other settings for an existing segment that's associated with an application.
     /// </summary>
     public partial class UpdateSegmentRequest : AmazonPinpointRequest
     {
@@ -38,7 +39,11 @@ namespace Amazon.Pinpoint.Model
         private WriteSegmentRequest _writeSegmentRequest;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The unique ID of your Amazon Pinpoint application.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The unique identifier for the application. This identifier is displayed as the <b>Project
+        /// ID</b> on the Amazon Pinpoint console.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ApplicationId
@@ -54,7 +59,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SegmentId. The unique ID of the segment.
+        /// Gets and sets the property SegmentId. 
+        /// <para>
+        /// The unique identifier for the segment.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string SegmentId

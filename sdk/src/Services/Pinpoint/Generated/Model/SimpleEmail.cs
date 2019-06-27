@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// An email composed of a subject, a text part and a html part.
+    /// Specifies the content of an email message, composed of a subject, a text part, and
+    /// an HTML part.
     /// </summary>
     public partial class SimpleEmail
     {
@@ -37,9 +38,12 @@ namespace Amazon.Pinpoint.Model
         private SimpleEmailPart _textPart;
 
         /// <summary>
-        /// Gets and sets the property HtmlPart. The content of the message, in HTML format. Use
-        /// this for email clients that can process HTML. You can include clickable links, formatted
-        /// text, and much more in an HTML message.
+        /// Gets and sets the property HtmlPart. 
+        /// <para>
+        /// The body of the email message, in HTML format. We recommend using an HTML part for
+        /// email clients that support HTML. You can include links, formatted text, and more in
+        /// an HTML message.
+        /// </para>
         /// </summary>
         public SimpleEmailPart HtmlPart
         {
@@ -54,8 +58,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Subject. The subject of the message: A short summary of
-        /// the content, which will appear in the recipient's inbox.
+        /// Gets and sets the property Subject. 
+        /// <para>
+        /// The subject line, or title, of the email.
+        /// </para>
         /// </summary>
         public SimpleEmailPart Subject
         {
@@ -70,9 +76,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TextPart. The content of the message, in text format. Use
-        /// this for text-based email clients, or clients on high-latency networks (such as mobile
-        /// devices).
+        /// Gets and sets the property TextPart. 
+        /// <para>
+        /// The body of the email message, in text format. We recommend using a text part for
+        /// email clients that don't support HTML and clients that are connected to high-latency
+        /// networks, such as mobile devices.
+        /// </para>
         /// </summary>
         public SimpleEmailPart TextPart
         {

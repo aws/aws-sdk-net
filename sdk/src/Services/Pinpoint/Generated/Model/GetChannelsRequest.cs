@@ -29,14 +29,18 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the GetChannels operation.
-    /// Get all channels.
+    /// Retrieves information about the history and status of each channel for an application.
     /// </summary>
     public partial class GetChannelsRequest : AmazonPinpointRequest
     {
         private string _applicationId;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The unique ID of your Amazon Pinpoint application.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The unique identifier for the application. This identifier is displayed as the <b>Project
+        /// ID</b> on the Amazon Pinpoint console.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ApplicationId

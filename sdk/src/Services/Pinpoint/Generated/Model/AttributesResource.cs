@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Attributes.
+    /// Provides information about the type and the names of attributes that were removed
+    /// from all the endpoints that are associated with an application.
     /// </summary>
     public partial class AttributesResource
     {
@@ -37,8 +38,12 @@ namespace Amazon.Pinpoint.Model
         private string _attributeType;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The unique ID for the application.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The unique identifier for the application.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApplicationId
         {
             get { return this._applicationId; }
@@ -52,7 +57,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Attributes. The attributes for the application.
+        /// Gets and sets the property Attributes. 
+        /// <para>
+        /// An array that specifies the names of the attributes that were removed from the endpoints.
+        /// </para>
         /// </summary>
         public List<string> Attributes
         {
@@ -67,8 +75,27 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AttributeType. The attribute type for the application.
+        /// Gets and sets the property AttributeType. 
+        /// <para>
+        /// The type of attribute or attributes that were removed from the endpoints. Valid values
+        /// are:
+        /// </para>
+        ///  <ul><li>
+        /// <para>
+        /// endpoint-custom-attributes - Custom attributes that describe endpoints
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// endpoint-custom-metrics - Custom metrics that your app reports to Amazon Pinpoint
+        /// for endpoints
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// endpoint-user-attributes - Custom attributes that describe users
+        /// </para>
+        /// </li></ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AttributeType
         {
             get { return this._attributeType; }

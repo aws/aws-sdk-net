@@ -28,7 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Import job response.
+    /// Provides information about the status and settings of a job that imports endpoint
+    /// definitions from one or more files. The files can be stored in an Amazon Simple Storage
+    /// Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon
+    /// Pinpoint console.
     /// </summary>
     public partial class ImportJobResponse
     {
@@ -47,9 +50,12 @@ namespace Amazon.Pinpoint.Model
         private string _type;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The unique ID of the application to which
-        /// the import job applies.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The unique identifier for the application that's associated with the import job.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApplicationId
         {
             get { return this._applicationId; }
@@ -63,8 +69,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CompletedPieces. The number of pieces that have successfully
-        /// imported as of the time of the request.
+        /// Gets and sets the property CompletedPieces. 
+        /// <para>
+        /// The number of pieces that were processed successfully (completed) by the import job,
+        /// as of the time of the request.
+        /// </para>
         /// </summary>
         public int CompletedPieces
         {
@@ -79,8 +88,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CompletionDate. The date the import job completed in ISO
-        /// 8601 format.
+        /// Gets and sets the property CompletionDate. 
+        /// <para>
+        /// The date, in ISO 8601 format, when the import job was completed.
+        /// </para>
         /// </summary>
         public string CompletionDate
         {
@@ -95,9 +106,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreationDate. The date the import job was created in ISO
-        /// 8601 format.
+        /// Gets and sets the property CreationDate. 
+        /// <para>
+        /// The date, in ISO 8601 format, when the import job was created.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CreationDate
         {
             get { return this._creationDate; }
@@ -111,8 +125,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Definition. The import job settings.
+        /// Gets and sets the property Definition. 
+        /// <para>
+        /// The resource settings that apply to the import job.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ImportJobResource Definition
         {
             get { return this._definition; }
@@ -126,8 +144,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FailedPieces. The number of pieces that have failed to
-        /// import as of the time of the request.
+        /// Gets and sets the property FailedPieces. 
+        /// <para>
+        /// The number of pieces that weren't processed successfully (failed) by the import job,
+        /// as of the time of the request.
+        /// </para>
         /// </summary>
         public int FailedPieces
         {
@@ -142,8 +163,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Failures. Provides up to 100 of the first failed entries
-        /// for the job, if any exist.
+        /// Gets and sets the property Failures. 
+        /// <para>
+        /// An array of entries, one for each of the first 100 entries that weren't processed
+        /// successfully (failed) by the import job, if any.
+        /// </para>
         /// </summary>
         public List<string> Failures
         {
@@ -158,8 +182,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. The unique ID of the import job.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The unique identifier for the import job.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -173,10 +201,13 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property JobStatus. The status of the import job.Valid values: CREATED,
-        /// INITIALIZING, PROCESSING, COMPLETING, COMPLETED, FAILING, FAILEDThe job status is
-        /// FAILED if one or more pieces failed to import.
+        /// Gets and sets the property JobStatus. 
+        /// <para>
+        /// The status of the import job. The job status is FAILED if Amazon Pinpoint wasn't able
+        /// to process one or more pieces in the job.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public JobStatus JobStatus
         {
             get { return this._jobStatus; }
@@ -190,8 +221,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TotalFailures. The number of endpoints that failed to import;
-        /// for example, because of syntax errors.
+        /// Gets and sets the property TotalFailures. 
+        /// <para>
+        /// The total number of endpoint definitions that weren't processed successfully (failed)
+        /// by the import job, typically because an error, such as a syntax error, occurred.
+        /// </para>
         /// </summary>
         public int TotalFailures
         {
@@ -206,9 +240,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TotalPieces. The total number of pieces that must be imported
-        /// to finish the job. Each piece is an approximately equal portion of the endpoints to
-        /// import.
+        /// Gets and sets the property TotalPieces. 
+        /// <para>
+        /// The total number of pieces that must be processed to complete the import job. Each
+        /// piece consists of an approximately equal portion of the endpoint definitions that
+        /// are part of the import job.
+        /// </para>
         /// </summary>
         public int TotalPieces
         {
@@ -223,8 +260,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TotalProcessed. The number of endpoints that were processed
-        /// by the import job.
+        /// Gets and sets the property TotalProcessed. 
+        /// <para>
+        /// The total number of endpoint definitions that were processed by the import job.
+        /// </para>
         /// </summary>
         public int TotalProcessed
         {
@@ -239,8 +278,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type. The job type. Will be Import.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The job type. This value is IMPORT for import jobs.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Type
         {
             get { return this._type; }

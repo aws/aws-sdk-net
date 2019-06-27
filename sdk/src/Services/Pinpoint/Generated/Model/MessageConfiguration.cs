@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Message configuration for a campaign.
+    /// Specifies the message configuration settings for a campaign.
     /// </summary>
     public partial class MessageConfiguration
     {
@@ -41,8 +41,11 @@ namespace Amazon.Pinpoint.Model
         private CampaignSmsMessage _smsMessage;
 
         /// <summary>
-        /// Gets and sets the property ADMMessage. The message that the campaign delivers to ADM
-        /// channels. Overrides the default message.
+        /// Gets and sets the property ADMMessage. 
+        /// <para>
+        /// The message that the campaign sends through the ADM (Amazon Device Messaging) channel.
+        /// This message overrides the default message.
+        /// </para>
         /// </summary>
         public Message ADMMessage
         {
@@ -57,8 +60,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property APNSMessage. The message that the campaign delivers to
-        /// APNS channels. Overrides the default message.
+        /// Gets and sets the property APNSMessage. 
+        /// <para>
+        /// The message that the campaign sends through the APNs (Apple Push Notification service)
+        /// channel. This message overrides the default message.
+        /// </para>
         /// </summary>
         public Message APNSMessage
         {
@@ -73,8 +79,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BaiduMessage. The message that the campaign delivers to
-        /// Baidu channels. Overrides the default message.
+        /// Gets and sets the property BaiduMessage. 
+        /// <para>
+        /// The message that the campaign sends through the Baidu (Baidu Cloud Push) channel.
+        /// This message overrides the default message.
+        /// </para>
         /// </summary>
         public Message BaiduMessage
         {
@@ -89,7 +98,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DefaultMessage. The default message for all channels.
+        /// Gets and sets the property DefaultMessage. 
+        /// <para>
+        /// The default message that the campaign sends through all the channels that are configured
+        /// for the campaign.
+        /// </para>
         /// </summary>
         public Message DefaultMessage
         {
@@ -104,7 +117,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EmailMessage. The email message configuration.
+        /// Gets and sets the property EmailMessage. 
+        /// <para>
+        /// The message that the campaign sends through the email channel.
+        /// </para>
         /// </summary>
         public CampaignEmailMessage EmailMessage
         {
@@ -119,8 +135,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GCMMessage. The message that the campaign delivers to GCM
-        /// channels. Overrides the default message.
+        /// Gets and sets the property GCMMessage. 
+        /// <para>
+        /// The message that the campaign sends through the GCM channel, which enables Amazon
+        /// Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly
+        /// Google Cloud Messaging (GCM), service. This message overrides the default message.
+        /// </para>
         /// </summary>
         public Message GCMMessage
         {
@@ -135,7 +155,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SMSMessage. The SMS message configuration.
+        /// Gets and sets the property SMSMessage. 
+        /// <para>
+        /// The message that the campaign sends through the SMS channel.
+        /// </para>
         /// </summary>
         public CampaignSmsMessage SMSMessage
         {

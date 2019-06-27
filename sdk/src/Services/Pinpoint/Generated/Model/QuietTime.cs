@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Quiet Time
+    /// Specifies the start and end times that define a time range when messages aren't sent
+    /// to endpoints.
     /// </summary>
     public partial class QuietTime
     {
@@ -36,10 +37,13 @@ namespace Amazon.Pinpoint.Model
         private string _start;
 
         /// <summary>
-        /// Gets and sets the property End. The time at which quiet time should end. The value
-        /// that you specify has to be in HH:mm format, where HH is the hour in 24-hour format
-        /// (with a leading zero, if applicable), and mm is the minutes. For example, use 02:30
-        /// to represent 2:30 AM, or 14:30 to represent 2:30 PM.
+        /// Gets and sets the property End. 
+        /// <para>
+        /// The specific time when quiet time ends. This value has to use 24-hour notation and
+        /// be in HH:MM format, where HH is the hour (with a leading zero, if applicable) and
+        /// MM is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent
+        /// 2:30 PM.
+        /// </para>
         /// </summary>
         public string End
         {
@@ -54,10 +58,13 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Start. The time at which quiet time should begin. The value
-        /// that you specify has to be in HH:mm format, where HH is the hour in 24-hour format
-        /// (with a leading zero, if applicable), and mm is the minutes. For example, use 02:30
-        /// to represent 2:30 AM, or 14:30 to represent 2:30 PM.
+        /// Gets and sets the property Start. 
+        /// <para>
+        /// The specific time when quiet time begins. This value has to use 24-hour notation and
+        /// be in HH:MM format, where HH is the hour (with a leading zero, if applicable) and
+        /// MM is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent
+        /// 2:30 PM.
+        /// </para>
         /// </summary>
         public string Start
         {

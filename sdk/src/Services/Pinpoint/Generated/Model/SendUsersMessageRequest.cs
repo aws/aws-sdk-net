@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Send message request.
+    /// Specifies the configuration and other settings for a message to send to all the endpoints
+    /// that are associated with a list of users.
     /// </summary>
     public partial class SendUsersMessageRequest
     {
@@ -38,10 +39,13 @@ namespace Amazon.Pinpoint.Model
         private Dictionary<string, EndpointSendConfiguration> _users = new Dictionary<string, EndpointSendConfiguration>();
 
         /// <summary>
-        /// Gets and sets the property Context. A map of custom attribute-value pairs. Amazon
-        /// Pinpoint adds these attributes to the data.pinpoint object in the body of the push
-        /// notification payload. Amazon Pinpoint also provides these attributes in the events
-        /// that it generates for users-messages deliveries.
+        /// Gets and sets the property Context. 
+        /// <para>
+        /// A map of custom attribute-value pairs. For a push notification, Amazon Pinpoint adds
+        /// these attributes to the data.pinpoint object in the body of the notification payload.
+        /// Amazon Pinpoint also provides these attributes in the events that it generates for
+        /// users-messages deliveries.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Context
         {
@@ -56,9 +60,13 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MessageConfiguration. Message definitions for the default
-        /// message and any messages that are tailored for specific channels.
+        /// Gets and sets the property MessageConfiguration. 
+        /// <para>
+        /// The message definitions for the default message and any default messages that you
+        /// defined for specific channels.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DirectMessageConfiguration MessageConfiguration
         {
             get { return this._messageConfiguration; }
@@ -72,8 +80,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TraceId. A unique ID that you can use to trace a message.
-        /// This ID is visible to recipients.
+        /// Gets and sets the property TraceId. 
+        /// <para>
+        /// The unique identifier for tracing the message. This identifier is visible to message
+        /// recipients.
+        /// </para>
         /// </summary>
         public string TraceId
         {
@@ -88,10 +99,14 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Users. A map that associates user IDs with EndpointSendConfiguration
-        /// objects. Within an EndpointSendConfiguration object, you can tailor the message for
-        /// a user by specifying message overrides or substitutions.
+        /// Gets and sets the property Users. 
+        /// <para>
+        /// A map that associates user IDs with EndpointSendConfiguration objects. You can use
+        /// an EndpointSendConfiguration object to tailor the message for a user by specifying
+        /// settings such as content overrides and message variables.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, EndpointSendConfiguration> Users
         {
             get { return this._users; }

@@ -29,7 +29,7 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteUserEndpoints operation.
-    /// Deletes endpoints that are associated with a User ID.
+    /// Deletes all the endpoints that are associated with a specific user ID.
     /// </summary>
     public partial class DeleteUserEndpointsRequest : AmazonPinpointRequest
     {
@@ -37,7 +37,11 @@ namespace Amazon.Pinpoint.Model
         private string _userId;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The unique ID of your Amazon Pinpoint application.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The unique identifier for the application. This identifier is displayed as the <b>Project
+        /// ID</b> on the Amazon Pinpoint console.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ApplicationId
@@ -53,7 +57,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserId. The unique ID of the user.
+        /// Gets and sets the property UserId. 
+        /// <para>
+        /// The unique identifier for the user.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string UserId

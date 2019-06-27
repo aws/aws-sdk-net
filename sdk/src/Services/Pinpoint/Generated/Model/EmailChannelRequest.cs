@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Email Channel Request
+    /// Specifies the status and settings of the email channel for an application.
     /// </summary>
     public partial class EmailChannelRequest
     {
@@ -39,8 +39,11 @@ namespace Amazon.Pinpoint.Model
         private string _roleArn;
 
         /// <summary>
-        /// Gets and sets the property ConfigurationSet. The configuration set that you want to
-        /// use when you send email using the Pinpoint Email API.
+        /// Gets and sets the property ConfigurationSet. 
+        /// <para>
+        /// The configuration set that you want to apply to email that you send through the channel
+        /// by using the <a href="emailAPIreference.html">Amazon Pinpoint Email API</a>.
+        /// </para>
         /// </summary>
         public string ConfigurationSet
         {
@@ -55,7 +58,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Enabled. If the channel is enabled for sending messages.
+        /// Gets and sets the property Enabled. 
+        /// <para>
+        /// Specifies whether to enable the email channel for the application.
+        /// </para>
         /// </summary>
         public bool Enabled
         {
@@ -70,8 +76,13 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FromAddress. The email address used to send emails from.
+        /// Gets and sets the property FromAddress.  
+        /// <para>
+        /// The verified email address that you want to send email from when you send email through
+        /// the channel.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FromAddress
         {
             get { return this._fromAddress; }
@@ -85,8 +96,13 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Identity. The ARN of an identity verified with SES.
+        /// Gets and sets the property Identity.  
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email
+        /// Service (Amazon SES), that you want to use when you send email through the channel.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Identity
         {
             get { return this._identity; }
@@ -100,8 +116,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoleArn. The ARN of an IAM Role used to submit events to
-        /// Mobile Analytics' event ingestion service
+        /// Gets and sets the property RoleArn.  
+        /// <para>
+        /// The ARN of the AWS Identity and Access Management (IAM) role that you want Amazon
+        /// Pinpoint to use when it submits email-related event data for the channel.
+        /// </para>
         /// </summary>
         public string RoleArn
         {

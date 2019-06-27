@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Campaign Limits are used to limit the number of messages that can be sent to a single
-    /// endpoint.
+    /// Specifies limits on the messages that a campaign can send.
     /// </summary>
     public partial class CampaignLimits
     {
@@ -39,8 +38,11 @@ namespace Amazon.Pinpoint.Model
         private int? _total;
 
         /// <summary>
-        /// Gets and sets the property Daily. The maximum number of messages that each campaign
-        /// can send to a single endpoint in a 24-hour period.
+        /// Gets and sets the property Daily. 
+        /// <para>
+        /// The maximum number of messages that a campaign can send to a single endpoint during
+        /// a 24-hour period. The maximum value is 100.
+        /// </para>
         /// </summary>
         public int Daily
         {
@@ -55,9 +57,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaximumDuration. The length of time (in seconds) that the
-        /// campaign can run before it ends and message deliveries stop. This duration begins
-        /// at the scheduled start time for the campaign. The minimum value is 60.
+        /// Gets and sets the property MaximumDuration. 
+        /// <para>
+        /// The maximum amount of time, in seconds, that a campaign can attempt to deliver a message
+        /// after the scheduled start time for the campaign. The minimum value is 60 seconds.
+        /// </para>
         /// </summary>
         public int MaximumDuration
         {
@@ -72,8 +76,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MessagesPerSecond. The number of messages that the campaign
-        /// can send per second. The minimum value is 50, and the maximum is 20000.
+        /// Gets and sets the property MessagesPerSecond. 
+        /// <para>
+        /// The maximum number of messages that a campaign can send each second. The minimum value
+        /// is 50. The maximum value is 20,000.
+        /// </para>
         /// </summary>
         public int MessagesPerSecond
         {
@@ -88,8 +95,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Total. The maximum number of messages that an individual
-        /// campaign can send to a single endpoint over the course of the campaign.
+        /// Gets and sets the property Total. 
+        /// <para>
+        /// The maximum number of messages that a campaign can send to a single endpoint during
+        /// the course of the campaign. The maximum value is 100.
+        /// </para>
         /// </summary>
         public int Total
         {

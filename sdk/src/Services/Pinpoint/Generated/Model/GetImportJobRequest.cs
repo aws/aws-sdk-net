@@ -29,7 +29,8 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the GetImportJob operation.
-    /// Returns information about an import job.
+    /// Retrieves information about the status and settings of a specific import job for an
+    /// application.
     /// </summary>
     public partial class GetImportJobRequest : AmazonPinpointRequest
     {
@@ -37,7 +38,11 @@ namespace Amazon.Pinpoint.Model
         private string _jobId;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The unique ID of your Amazon Pinpoint application.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The unique identifier for the application. This identifier is displayed as the <b>Project
+        /// ID</b> on the Amazon Pinpoint console.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ApplicationId
@@ -53,7 +58,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property JobId. The unique ID of the job.
+        /// Gets and sets the property JobId. 
+        /// <para>
+        /// The unique identifier for the job.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string JobId

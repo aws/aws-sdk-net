@@ -29,7 +29,9 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateEndpoint operation.
-    /// Creates or updates an endpoint.
+    /// Creates a new endpoint for an application or updates the settings and attributes of
+    /// an existing endpoint for an application. You can also use this operation to define
+    /// custom attributes (Attributes, Metrics, and UserAttributes properties) for an endpoint.
     /// </summary>
     public partial class UpdateEndpointRequest : AmazonPinpointRequest
     {
@@ -38,7 +40,11 @@ namespace Amazon.Pinpoint.Model
         private EndpointRequest _endpointRequest;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The unique ID of your Amazon Pinpoint application.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The unique identifier for the application. This identifier is displayed as the <b>Project
+        /// ID</b> on the Amazon Pinpoint console.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ApplicationId
@@ -54,7 +60,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EndpointId. The unique ID of the endpoint.
+        /// Gets and sets the property EndpointId. 
+        /// <para>
+        /// The unique identifier for the endpoint.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string EndpointId

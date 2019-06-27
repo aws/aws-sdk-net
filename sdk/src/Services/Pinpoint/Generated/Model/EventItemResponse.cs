@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// A complex object that holds the status code and message as a result of processing
-    /// an event.
+    /// Provides the status code and message that result from processing an event.
     /// </summary>
     public partial class EventItemResponse
     {
@@ -37,8 +36,10 @@ namespace Amazon.Pinpoint.Model
         private int? _statusCode;
 
         /// <summary>
-        /// Gets and sets the property Message. A custom message that is associated with the processing
-        /// of an event.
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// A custom message that's returned in the response as a result of processing the event.
+        /// </para>
         /// </summary>
         public string Message
         {
@@ -53,9 +54,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StatusCode. The status returned in the response as a result
-        /// of processing the event.Possible values: 400 (for invalid events) and 202 (for events
-        /// that were accepted).
+        /// Gets and sets the property StatusCode. 
+        /// <para>
+        /// The status code that's returned in the response as a result of processing the event.
+        /// Possible values are: 202, for events that were accepted; and, 400, for events that
+        /// weren't valid.
+        /// </para>
         /// </summary>
         public int StatusCode
         {

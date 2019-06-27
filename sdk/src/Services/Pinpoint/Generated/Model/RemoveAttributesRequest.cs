@@ -29,7 +29,8 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveAttributes operation.
-    /// Used to remove the attributes for an app
+    /// Removes one or more attributes, of the same attribute type, from all the endpoints
+    /// that are associated with an application.
     /// </summary>
     public partial class RemoveAttributesRequest : AmazonPinpointRequest
     {
@@ -38,7 +39,11 @@ namespace Amazon.Pinpoint.Model
         private UpdateAttributesRequest _updateAttributesRequest;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The unique ID of your Amazon Pinpoint application.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The unique identifier for the application. This identifier is displayed as the <b>Project
+        /// ID</b> on the Amazon Pinpoint console.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ApplicationId
@@ -54,8 +59,28 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AttributeType. Type of attribute. Can be endpoint-custom-attributes,
-        /// endpoint-custom-metrics, endpoint-user-attributes.
+        /// Gets and sets the property AttributeType.  
+        /// <para>
+        /// The type of attribute or attributes to remove. Valid values are:
+        /// </para>
+        ///  <ul><li>
+        /// <para>
+        /// endpoint-custom-attributes - Custom attributes that describe endpoints, such as the
+        /// date when an associated user opted in or out of receiving communications from you
+        /// through a specific type of channel.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// endpoint-custom-metrics - Custom metrics that your app reports to Amazon Pinpoint
+        /// for endpoints, such as the number of app sessions or the number of items left in a
+        /// cart.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// endpoint-user-attributes - Custom attributes that describe users, such as first name,
+        /// last name, and age.
+        /// </para>
+        /// </li></ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public string AttributeType

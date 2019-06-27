@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Baidu Cloud Messaging channel definition
+    /// Provides information about the status and settings of the Baidu (Baidu Cloud Push)
+    /// channel for an application.
     /// </summary>
     public partial class BaiduChannelResponse
     {
@@ -45,7 +46,10 @@ namespace Amazon.Pinpoint.Model
         private int? _version;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. Application id
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The unique identifier for the application that the Baidu channel applies to.
+        /// </para>
         /// </summary>
         public string ApplicationId
         {
@@ -60,7 +64,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreationDate. When was this segment created
+        /// Gets and sets the property CreationDate. 
+        /// <para>
+        /// The date and time when the Baidu channel was enabled.
+        /// </para>
         /// </summary>
         public string CreationDate
         {
@@ -75,8 +82,13 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Credential. The Baidu API key from Baidu.
+        /// Gets and sets the property Credential. 
+        /// <para>
+        /// The API key that you received from the Baidu Cloud Push service to communicate with
+        /// the service.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Credential
         {
             get { return this._credential; }
@@ -90,7 +102,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Enabled. If the channel is enabled for sending messages.
+        /// Gets and sets the property Enabled. 
+        /// <para>
+        /// Specifies whether the Baidu channel is enabled for the application.
+        /// </para>
         /// </summary>
         public bool Enabled
         {
@@ -105,7 +120,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HasCredential. Not used. Retained for backwards compatibility.
+        /// Gets and sets the property HasCredential. 
+        /// <para>
+        /// (Not used) This property is retained only for backward compatibility.
+        /// </para>
         /// </summary>
         public bool HasCredential
         {
@@ -120,7 +138,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. Channel ID. Not used, only for backwards compatibility.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// (Deprecated) An identifier for the Baidu channel. This property is retained only for
+        /// backward compatibility.
+        /// </para>
         /// </summary>
         public string Id
         {
@@ -135,7 +157,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IsArchived. Is this channel archived
+        /// Gets and sets the property IsArchived. 
+        /// <para>
+        /// Specifies whether the Baidu channel is archived.
+        /// </para>
         /// </summary>
         public bool IsArchived
         {
@@ -150,7 +175,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastModifiedBy. Who made the last change
+        /// Gets and sets the property LastModifiedBy. 
+        /// <para>
+        /// The user who last modified the Baidu channel.
+        /// </para>
         /// </summary>
         public string LastModifiedBy
         {
@@ -165,7 +193,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastModifiedDate. Last date this was updated
+        /// Gets and sets the property LastModifiedDate. 
+        /// <para>
+        /// The date and time when the Baidu channel was last modified.
+        /// </para>
         /// </summary>
         public string LastModifiedDate
         {
@@ -180,8 +211,13 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Platform. The platform type. Will be BAIDU
+        /// Gets and sets the property Platform. 
+        /// <para>
+        /// The type of messaging or notification platform for the channel. For the Baidu channel,
+        /// this value is BAIDU.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Platform
         {
             get { return this._platform; }
@@ -195,7 +231,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Version. Version of channel
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The current version of the Baidu channel.
+        /// </para>
         /// </summary>
         public int Version
         {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// GPS point location dimension
+    /// Specifies GPS-based criteria for including or excluding endpoints from a segment.
     /// </summary>
     public partial class GPSPointDimension
     {
@@ -36,8 +36,12 @@ namespace Amazon.Pinpoint.Model
         private double? _rangeInKilometers;
 
         /// <summary>
-        /// Gets and sets the property Coordinates. Coordinate to measure distance from.
+        /// Gets and sets the property Coordinates. 
+        /// <para>
+        /// The GPS coordinates to measure distance from.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public GPSCoordinates Coordinates
         {
             get { return this._coordinates; }
@@ -51,7 +55,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RangeInKilometers. Range in kilometers from the coordinate.
+        /// Gets and sets the property RangeInKilometers. 
+        /// <para>
+        /// The range, in kilometers, from the GPS coordinates.
+        /// </para>
         /// </summary>
         public double RangeInKilometers
         {

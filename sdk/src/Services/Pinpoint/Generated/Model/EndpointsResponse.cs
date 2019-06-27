@@ -28,15 +28,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// List of endpoints
+    /// Provides information about all the endpoints that are associated with a user ID.
     /// </summary>
     public partial class EndpointsResponse
     {
         private List<EndpointResponse> _item = new List<EndpointResponse>();
 
         /// <summary>
-        /// Gets and sets the property Item. The list of endpoints.
+        /// Gets and sets the property Item. 
+        /// <para>
+        /// An array of responses, one for each endpoint that's associated with the user ID.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<EndpointResponse> Item
         {
             get { return this._item; }

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// User send message response.
+    /// Provides information about which users and endpoints a message was sent to.
     /// </summary>
     public partial class SendUsersMessageResponse
     {
@@ -37,9 +37,12 @@ namespace Amazon.Pinpoint.Model
         private Dictionary<string, Dictionary<string, EndpointMessageResult>> _result = new Dictionary<string, Dictionary<string, EndpointMessageResult>>();
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The unique ID of the Amazon Pinpoint project
-        /// used to send the message.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The unique identifier for the application that was used to send the message.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApplicationId
         {
             get { return this._applicationId; }
@@ -53,8 +56,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RequestId. The unique ID assigned to the users-messages
-        /// request.
+        /// Gets and sets the property RequestId. 
+        /// <para>
+        /// The unique identifier that was assigned to the message request.
+        /// </para>
         /// </summary>
         public string RequestId
         {
@@ -69,10 +74,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Result. An object that shows the endpoints that were messaged
-        /// for each user. The object provides a list of user IDs. For each user ID, it provides
-        /// the endpoint IDs that were messaged. For each endpoint ID, it provides an EndpointMessageResult
-        /// object.
+        /// Gets and sets the property Result. 
+        /// <para>
+        /// An object that indicates which endpoints the message was sent to, for each user. The
+        /// object lists user IDs and, for each user ID, provides the endpoint IDs that the message
+        /// was sent to. For each endpoint ID, it provides an EndpointMessageResult object.
+        /// </para>
         /// </summary>
         public Dictionary<string, Dictionary<string, EndpointMessageResult>> Result
         {

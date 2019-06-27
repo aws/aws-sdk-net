@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Application Request.
+    /// Specifies the display name of an application and the tags to associate with the application.
     /// </summary>
     public partial class CreateApplicationRequest
     {
@@ -36,9 +36,13 @@ namespace Amazon.Pinpoint.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Name. The display name of the application. Used in the
-        /// Amazon Pinpoint console.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The display name of the application. This name is displayed as the <b>Project name</b>
+        /// on the Amazon Pinpoint console.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -52,7 +56,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. The Tags for the app.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A string-to-string map of key-value pairs that defines the tags to associate with
+        /// the application. Each tag consists of a required tag key and an associated tag value.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
         {

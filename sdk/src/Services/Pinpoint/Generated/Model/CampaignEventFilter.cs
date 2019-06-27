@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// An object that defines the events that cause the campaign to be sent.
+    /// Specifies the settings for events that cause a campaign to be sent.
     /// </summary>
     public partial class CampaignEventFilter
     {
@@ -36,9 +36,12 @@ namespace Amazon.Pinpoint.Model
         private FilterType _filterType;
 
         /// <summary>
-        /// Gets and sets the property Dimensions. An object that defines the dimensions for the
-        /// event filter.
+        /// Gets and sets the property Dimensions. 
+        /// <para>
+        /// The dimension settings of the event filter for the campaign.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EventDimensions Dimensions
         {
             get { return this._dimensions; }
@@ -52,11 +55,15 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FilterType. The type of event that causes the campaign
-        /// to be sent. Possible values:SYSTEM - Send the campaign when a system event occurs.
-        /// See the System resource for more information.ENDPOINT - Send the campaign when an
-        /// endpoint event occurs. See the Event resource for more information.
+        /// Gets and sets the property FilterType. 
+        /// <para>
+        /// The type of event that causes the campaign to be sent. Valid values are: SYSTEM, sends
+        /// the campaign when a system event occurs; and, ENDPOINT, sends the campaign when an
+        /// endpoint event (<link  linkend="apps-application-id-events">Events</link> resource)
+        /// occurs.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public FilterType FilterType
         {
             get { return this._filterType; }

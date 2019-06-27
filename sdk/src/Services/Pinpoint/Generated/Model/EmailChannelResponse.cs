@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Email Channel Response.
+    /// Provides information about the status and settings of the email channel for an application.
     /// </summary>
     public partial class EmailChannelResponse
     {
@@ -49,8 +49,10 @@ namespace Amazon.Pinpoint.Model
         private int? _version;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The unique ID of the application to which
-        /// the email channel belongs.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The unique identifier for the application that the email channel applies to.
+        /// </para>
         /// </summary>
         public string ApplicationId
         {
@@ -65,8 +67,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ConfigurationSet. The configuration set that you want to
-        /// use when you send email using the Pinpoint Email API.
+        /// Gets and sets the property ConfigurationSet. 
+        /// <para>
+        /// The configuration set that's applied to email that's sent through the channel by using
+        /// the <a href="emailAPIreference.html">Amazon Pinpoint Email API</a>.
+        /// </para>
         /// </summary>
         public string ConfigurationSet
         {
@@ -81,8 +86,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreationDate. The date that the settings were last updated
-        /// in ISO 8601 format.
+        /// Gets and sets the property CreationDate. 
+        /// <para>
+        /// The date and time, in ISO 8601 format, when the email channel was enabled.
+        /// </para>
         /// </summary>
         public string CreationDate
         {
@@ -97,7 +104,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Enabled. If the channel is enabled for sending messages.
+        /// Gets and sets the property Enabled. 
+        /// <para>
+        /// Specifies whether the email channel is enabled for the application.
+        /// </para>
         /// </summary>
         public bool Enabled
         {
@@ -112,7 +122,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FromAddress. The email address used to send emails from.
+        /// Gets and sets the property FromAddress. 
+        /// <para>
+        /// The verified email address that you send email from when you send email through the
+        /// channel.
+        /// </para>
         /// </summary>
         public string FromAddress
         {
@@ -127,7 +141,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HasCredential. Not used. Retained for backwards compatibility.
+        /// Gets and sets the property HasCredential. 
+        /// <para>
+        /// (Not used) This property is retained only for backward compatibility.
+        /// </para>
         /// </summary>
         public bool HasCredential
         {
@@ -142,7 +159,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. Channel ID. Not used, only for backwards compatibility.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// (Deprecated) An identifier for the email channel. This property is retained only for
+        /// backward compatibility.
+        /// </para>
         /// </summary>
         public string Id
         {
@@ -157,7 +178,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Identity. The ARN of an identity verified with SES.
+        /// Gets and sets the property Identity.  
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email
+        /// Service (Amazon SES), that you use when you send email through the channel.
+        /// </para>
         /// </summary>
         public string Identity
         {
@@ -172,7 +197,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IsArchived. Is this channel archived
+        /// Gets and sets the property IsArchived. 
+        /// <para>
+        /// Specifies whether the email channel is archived.
+        /// </para>
         /// </summary>
         public bool IsArchived
         {
@@ -187,7 +215,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastModifiedBy. Who last updated this entry
+        /// Gets and sets the property LastModifiedBy. 
+        /// <para>
+        /// The user who last modified the email channel.
+        /// </para>
         /// </summary>
         public string LastModifiedBy
         {
@@ -202,7 +233,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastModifiedDate. Last date this was updated
+        /// Gets and sets the property LastModifiedDate. 
+        /// <para>
+        /// The date and time, in ISO 8601 format, when the email channel was last modified.
+        /// </para>
         /// </summary>
         public string LastModifiedDate
         {
@@ -217,7 +251,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MessagesPerSecond. Messages per second that can be sent
+        /// Gets and sets the property MessagesPerSecond. 
+        /// <para>
+        /// The maximum number of emails that you can send through the channel each second.
+        /// </para>
         /// </summary>
         public int MessagesPerSecond
         {
@@ -232,8 +269,13 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Platform. Platform type. Will be "EMAIL"
+        /// Gets and sets the property Platform. 
+        /// <para>
+        /// The type of messaging or notification platform for the channel. For the email channel,
+        /// this value is EMAIL.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Platform
         {
             get { return this._platform; }
@@ -247,8 +289,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoleArn. The ARN of an IAM Role used to submit events to
-        /// Mobile Analytics' event ingestion service
+        /// Gets and sets the property RoleArn.  
+        /// <para>
+        /// The ARN of the AWS Identity and Access Management (IAM) role that Amazon Pinpoint
+        /// uses to submit email-related event data for the channel.
+        /// </para>
         /// </summary>
         public string RoleArn
         {
@@ -263,7 +308,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Version. Version of channel
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The current version of the email channel.
+        /// </para>
         /// </summary>
         public int Version
         {

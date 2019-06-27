@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Activities for campaign.
+    /// Provides information about the activities that were performed by a campaign.
     /// </summary>
     public partial class ActivitiesResponse
     {
@@ -36,8 +36,12 @@ namespace Amazon.Pinpoint.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Item. List of campaign activities
+        /// Gets and sets the property Item. 
+        /// <para>
+        /// An array of responses, one for each activity that was performed by the campaign.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ActivityResponse> Item
         {
             get { return this._item; }
@@ -51,8 +55,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. The string that you use in a subsequent request
-        /// to get the next page of results in a paginated response.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The string to use in a subsequent request to get the next page of results in a paginated
+        /// response. This value is null if there are no additional pages.
+        /// </para>
         /// </summary>
         public string NextToken
         {

@@ -29,7 +29,7 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the PhoneNumberValidate operation.
-    /// Returns information about the specified phone number.
+    /// Retrieves information about a phone number.
     /// </summary>
     public partial class PhoneNumberValidateRequest : AmazonPinpointRequest
     {

@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Import job request.
+    /// Specifies the settings for a job that imports endpoint definitions from an Amazon
+    /// Simple Storage Service (Amazon S3) bucket.
     /// </summary>
     public partial class ImportJobRequest
     {
@@ -42,8 +43,11 @@ namespace Amazon.Pinpoint.Model
         private string _segmentName;
 
         /// <summary>
-        /// Gets and sets the property DefineSegment. Sets whether the endpoints create a segment
-        /// when they are imported.
+        /// Gets and sets the property DefineSegment. 
+        /// <para>
+        /// Specifies whether to create a segment that contains the endpoints, when the endpoint
+        /// definitions are imported.
+        /// </para>
         /// </summary>
         public bool DefineSegment
         {
@@ -58,10 +62,13 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExternalId. (Deprecated) Your AWS account ID, which you
-        /// assigned to the ExternalID key in an IAM trust policy. Used by Amazon Pinpoint to
-        /// assume an IAM role. This requirement is removed, and external IDs are not recommended
-        /// for IAM roles assumed by Amazon Pinpoint.
+        /// Gets and sets the property ExternalId. 
+        /// <para>
+        /// (Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM
+        /// trust policy. Amazon Pinpoint previously used this value to assume an IAM role when
+        /// importing endpoint definitions, but we removed this requirement. We don't recommend
+        /// use of external IDs for IAM roles that are assumed by Amazon Pinpoint.
+        /// </para>
         /// </summary>
         public string ExternalId
         {
@@ -76,9 +83,15 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Format. The format of the files that contain the endpoint
-        /// definitions.Valid values: CSV, JSON
+        /// Gets and sets the property Format. 
+        /// <para>
+        /// The format of the files that contain the endpoint definitions to import. Valid values
+        /// are: CSV, for comma-separated values format; and, JSON, for newline-delimited JSON
+        /// format. If the Amazon S3 location stores multiple files that use different formats,
+        /// Amazon Pinpoint imports data only from the files that use the specified format.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Format Format
         {
             get { return this._format; }
@@ -92,8 +105,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RegisterEndpoints. Sets whether the endpoints are registered
-        /// with Amazon Pinpoint when they are imported.
+        /// Gets and sets the property RegisterEndpoints. 
+        /// <para>
+        /// Specifies whether to register the endpoints with Amazon Pinpoint, when the endpoint
+        /// definitions are imported.
+        /// </para>
         /// </summary>
         public bool RegisterEndpoints
         {
@@ -108,10 +124,14 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoleArn. The Amazon Resource Name (ARN) of an IAM role
-        /// that grants Amazon Pinpoint access to the Amazon S3 location that contains the endpoints
-        /// to import.
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
+        /// that authorizes Amazon Pinpoint to access the Amazon S3 location to import endpoint
+        /// definitions from.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -125,11 +145,21 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3Url. The URL of the S3 bucket that contains the segment
-        /// information to import. The location can be a folder or a single file. The URL should
-        /// use the following format: s3://bucket-name/folder-name/file-nameAmazon Pinpoint imports
-        /// endpoints from this location and any subfolders it contains.
+        /// Gets and sets the property S3Url. 
+        /// <para>
+        /// The URL of the Amazon Simple Storage Service (Amazon S3) bucket that contains the
+        /// endpoint definitions to import. This location can be a folder or a single file. If
+        /// the location is a folder, Amazon Pinpoint imports endpoint definitions from the files
+        /// in this location, including any subfolders that the folder contains.
+        /// </para>
+        ///  
+        /// <para>
+        /// The URL should be in the following format: s3://<replaceable>bucket-name</replaceable>/<replaceable>folder-name</replaceable>/<replaceable>file-name</replaceable>.
+        /// The location can end with the key for an individual object or a prefix that qualifies
+        /// multiple objects.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string S3Url
         {
             get { return this._s3Url; }
@@ -143,8 +173,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SegmentId. The ID of the segment to update if the import
-        /// job is meant to update an existing segment.
+        /// Gets and sets the property SegmentId. 
+        /// <para>
+        /// The identifier for the segment to update or add the imported endpoint definitions
+        /// to, if the import job is meant to update an existing segment.
+        /// </para>
         /// </summary>
         public string SegmentId
         {
@@ -159,8 +192,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SegmentName. A custom name for the segment created by the
-        /// import job. Use if DefineSegment is true.
+        /// Gets and sets the property SegmentName. 
+        /// <para>
+        /// The custom name for the segment that's created by the import job, if the value of
+        /// the DefineSegment property is true.
+        /// </para>
         /// </summary>
         public string SegmentName
         {

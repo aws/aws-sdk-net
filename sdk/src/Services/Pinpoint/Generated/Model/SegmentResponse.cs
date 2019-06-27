@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Segment definition.
+    /// Provides information about the configuration, dimension, and other settings for a
+    /// segment.
     /// </summary>
     public partial class SegmentResponse
     {
@@ -46,9 +47,12 @@ namespace Amazon.Pinpoint.Model
         private int? _version;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The ID of the application that the segment
-        /// applies to.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The unique identifier for the application that the segment is associated with.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApplicationId
         {
             get { return this._applicationId; }
@@ -62,8 +66,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Arn. The arn for the segment.
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the segment.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Arn
         {
             get { return this._arn; }
@@ -77,8 +85,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreationDate. The date and time when the segment was created.
+        /// Gets and sets the property CreationDate. 
+        /// <para>
+        /// The date and time when the segment was created.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CreationDate
         {
             get { return this._creationDate; }
@@ -92,7 +104,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Dimensions. The segment dimensions attributes.
+        /// Gets and sets the property Dimensions. 
+        /// <para>
+        /// The dimension settings for the segment.
+        /// </para>
         /// </summary>
         public SegmentDimensions Dimensions
         {
@@ -107,8 +122,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. The unique segment ID.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The unique identifier for the segment.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -122,7 +141,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ImportDefinition. The import job settings.
+        /// Gets and sets the property ImportDefinition. 
+        /// <para>
+        /// The settings for the import job that's associated with the segment.
+        /// </para>
         /// </summary>
         public SegmentImportResource ImportDefinition
         {
@@ -137,8 +159,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastModifiedDate. The date and time when the segment was
-        /// last modified.
+        /// Gets and sets the property LastModifiedDate. 
+        /// <para>
+        /// The date and time when the segment was last modified.
+        /// </para>
         /// </summary>
         public string LastModifiedDate
         {
@@ -153,7 +177,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. The name of the segment.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the segment.
+        /// </para>
         /// </summary>
         public string Name
         {
@@ -168,8 +195,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SegmentGroups. A segment group, which consists of zero
-        /// or more source segments, plus dimensions that are applied to those source segments.
+        /// Gets and sets the property SegmentGroups. 
+        /// <para>
+        /// A list of one or more segment groups that apply to the segment. Each segment group
+        /// consists of zero or more base segments and the dimensions that are applied to those
+        /// base segments.
+        /// </para>
         /// </summary>
         public SegmentGroupList SegmentGroups
         {
@@ -184,14 +215,25 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SegmentType. The segment type:DIMENSIONAL - A dynamic segment
-        /// built from selection criteria based on endpoint data reported by your app. You create
-        /// this type of segment by using the segment builder in the Amazon Pinpoint console or
-        /// by making a POST request to the segments resource.IMPORT - A static segment built
-        /// from an imported set of endpoint definitions. You create this type of segment by importing
-        /// a segment in the Amazon Pinpoint console or by making a POST request to the jobs/import
-        /// resource.
+        /// Gets and sets the property SegmentType. 
+        /// <para>
+        /// The segment type. Valid values are:
+        /// </para>
+        ///  <ul><li>
+        /// <para>
+        /// DIMENSIONAL - A dynamic segment, which is a segment that uses selection criteria that
+        /// you specify and is based on endpoint data that's reported by your app. Dynamic segments
+        /// can change over time.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// IMPORT - A static segment, which is a segment that uses selection criteria that you
+        /// specify and is based on endpoint definitions that you import from a file. Imported
+        /// segments are static; they don't change over time.
+        /// </para>
+        /// </li></ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SegmentType SegmentType
         {
             get { return this._segmentType; }
@@ -205,7 +247,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. The Tags for the segment.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A string-to-string map of key-value pairs that identifies the tags that are associated
+        /// with the segment. Each tag consists of a required tag key and an associated tag value.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
         {
@@ -220,7 +266,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Version. The segment version number.
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The version number of the segment.
+        /// </para>
         /// </summary>
         public int Version
         {

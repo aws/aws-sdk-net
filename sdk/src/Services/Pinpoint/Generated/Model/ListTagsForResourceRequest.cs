@@ -29,14 +29,18 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// 
+    /// Retrieves all the tags (keys and values) that are associated with an application,
+    /// campaign, or segment.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonPinpointRequest
     {
         private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the application, campaign, or segment.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceArn

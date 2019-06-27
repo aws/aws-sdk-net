@@ -28,7 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Export job resource.
+    /// Provides information about the resource settings for a job that exports endpoint definitions
+    /// to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon
+    /// S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by
+    /// using the Amazon Pinpoint console.
     /// </summary>
     public partial class ExportJobResource
     {
@@ -38,10 +41,14 @@ namespace Amazon.Pinpoint.Model
         private int? _segmentVersion;
 
         /// <summary>
-        /// Gets and sets the property RoleArn. The Amazon Resource Name (ARN) of an IAM role
-        /// that grants Amazon Pinpoint access to the Amazon S3 location that endpoints will be
-        /// exported to.
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
+        /// that authorized Amazon Pinpoint to access the Amazon S3 location where the endpoint
+        /// definitions were exported to.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -55,11 +62,14 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3UrlPrefix. A URL that points to the location within an
-        /// Amazon S3 bucket that will receive the export. The location is typically a folder
-        /// with multiple files.The URL should follow this format: s3://bucket-name/folder-name/Amazon
-        /// Pinpoint will export endpoints to this location.
+        /// Gets and sets the property S3UrlPrefix. 
+        /// <para>
+        /// The URL of the location in an Amazon Simple Storage Service (Amazon S3) bucket where
+        /// the endpoint definitions were exported to. This location is typically a folder that
+        /// contains multiple files. The URL should be in the following format: s3://<replaceable>bucket-name</replaceable>/<replaceable>folder-name</replaceable>/.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string S3UrlPrefix
         {
             get { return this._s3UrlPrefix; }
@@ -73,8 +83,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SegmentId. The ID of the segment to export endpoints from.
-        /// If not present, Amazon Pinpoint exports all of the endpoints that belong to the application.
+        /// Gets and sets the property SegmentId. 
+        /// <para>
+        /// The identifier for the segment that the endpoint definitions were exported from. If
+        /// this value isn't present, Amazon Pinpoint exported definitions for all the endpoints
+        /// that are associated with the application.
+        /// </para>
         /// </summary>
         public string SegmentId
         {
@@ -89,8 +103,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SegmentVersion. The version of the segment to export if
-        /// specified.
+        /// Gets and sets the property SegmentVersion. 
+        /// <para>
+        /// The version of the segment that the endpoint definitions were exported from.
+        /// </para>
         /// </summary>
         public int SegmentVersion
         {

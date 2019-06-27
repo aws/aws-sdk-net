@@ -28,14 +28,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// 
+    /// Specifies the tags (keys and values) for an application, campaign, or segment.
     /// </summary>
     public partial class TagsModel
     {
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A string-to-string map of key-value pairs that defines the tags for an application,
+        /// campaign, or segment. A project, campaign, or segment can have a maximum of 50 tags.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each tag consists of a required tag key and an associated tag value. The maximum length
+        /// of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Dictionary<string, string> Tags

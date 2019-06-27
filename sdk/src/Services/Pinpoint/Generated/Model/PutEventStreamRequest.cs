@@ -29,7 +29,8 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the PutEventStream operation.
-    /// Use to create or update the event stream for an app.
+    /// Creates a new event stream for an application or updates the settings of an existing
+    /// event stream for an application.
     /// </summary>
     public partial class PutEventStreamRequest : AmazonPinpointRequest
     {
@@ -37,7 +38,11 @@ namespace Amazon.Pinpoint.Model
         private WriteEventStream _writeEventStream;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The unique ID of your Amazon Pinpoint application.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The unique identifier for the application. This identifier is displayed as the <b>Project
+        /// ID</b> on the Amazon Pinpoint console.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ApplicationId

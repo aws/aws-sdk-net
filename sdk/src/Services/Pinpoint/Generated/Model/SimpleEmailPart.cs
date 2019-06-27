@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Textual email data, plus an optional character set specification.
+    /// Specifies the subject or body of an email message, represented as textual email data
+    /// and the applicable character set.
     /// </summary>
     public partial class SimpleEmailPart
     {
@@ -36,7 +37,10 @@ namespace Amazon.Pinpoint.Model
         private string _data;
 
         /// <summary>
-        /// Gets and sets the property Charset. The character set of the content.
+        /// Gets and sets the property Charset. 
+        /// <para>
+        /// The applicable character set for the message content.
+        /// </para>
         /// </summary>
         public string Charset
         {
@@ -51,7 +55,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Data. The textual data of the content.
+        /// Gets and sets the property Data. 
+        /// <para>
+        /// The textual data of the message content.
+        /// </para>
         /// </summary>
         public string Data
         {

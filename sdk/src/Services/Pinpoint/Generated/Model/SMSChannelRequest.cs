@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// SMS Channel Request
+    /// Specifies the status and settings of the SMS channel for an application.
     /// </summary>
     public partial class SMSChannelRequest
     {
@@ -37,7 +37,10 @@ namespace Amazon.Pinpoint.Model
         private string _shortCode;
 
         /// <summary>
-        /// Gets and sets the property Enabled. If the channel is enabled for sending messages.
+        /// Gets and sets the property Enabled. 
+        /// <para>
+        /// Specifies whether to enable the SMS channel for the application.
+        /// </para>
         /// </summary>
         public bool Enabled
         {
@@ -52,7 +55,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SenderId. Sender identifier of your messages.
+        /// Gets and sets the property SenderId. 
+        /// <para>
+        /// The identity that you want to display on recipients' devices when they receive messages
+        /// from the SMS channel.
+        /// </para>
         /// </summary>
         public string SenderId
         {
@@ -67,7 +74,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ShortCode. ShortCode registered with phone provider.
+        /// Gets and sets the property ShortCode. 
+        /// <para>
+        /// The registered short code that you want to use when you send messages through the
+        /// SMS channel.
+        /// </para>
         /// </summary>
         public string ShortCode
         {

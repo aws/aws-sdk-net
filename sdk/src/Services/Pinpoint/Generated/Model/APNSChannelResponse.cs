@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Apple Distribution Push Notification Service channel definition.
+    /// Provides information about the status and settings of the APNs (Apple Push Notification
+    /// service) channel for an application.
     /// </summary>
     public partial class APNSChannelResponse
     {
@@ -46,8 +47,10 @@ namespace Amazon.Pinpoint.Model
         private int? _version;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The ID of the application that the channel
-        /// applies to.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The unique identifier for the application that the APNs channel applies to.
+        /// </para>
         /// </summary>
         public string ApplicationId
         {
@@ -62,7 +65,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreationDate. The date and time when this channel was created.
+        /// Gets and sets the property CreationDate. 
+        /// <para>
+        /// The date and time when the APNs channel was enabled.
+        /// </para>
         /// </summary>
         public string CreationDate
         {
@@ -77,8 +83,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DefaultAuthenticationMethod. The default authentication
-        /// method used for APNs.
+        /// Gets and sets the property DefaultAuthenticationMethod. 
+        /// <para>
+        /// The default authentication method that Amazon Pinpoint uses to authenticate with APNs
+        /// for this channel, key or certificate.
+        /// </para>
         /// </summary>
         public string DefaultAuthenticationMethod
         {
@@ -93,7 +102,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Enabled. If the channel is enabled for sending messages.
+        /// Gets and sets the property Enabled. 
+        /// <para>
+        /// Specifies whether the APNs channel is enabled for the application.
+        /// </para>
         /// </summary>
         public bool Enabled
         {
@@ -108,7 +120,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HasCredential. Not used. Retained for backwards compatibility.
+        /// Gets and sets the property HasCredential. 
+        /// <para>
+        /// (Not used) This property is retained only for backward compatibility.
+        /// </para>
         /// </summary>
         public bool HasCredential
         {
@@ -123,9 +138,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HasTokenKey. Indicates whether the channel is configured
-        /// with a key for APNs token authentication. Provide a token key by setting the TokenKey
-        /// attribute.
+        /// Gets and sets the property HasTokenKey. 
+        /// <para>
+        /// Specifies whether the APNs channel is configured to communicate with APNs by using
+        /// APNs tokens. To provide an authentication key for APNs tokens, set the TokenKey property
+        /// of the channel.
+        /// </para>
         /// </summary>
         public bool HasTokenKey
         {
@@ -140,8 +158,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. (Deprecated) An identifier for the channel. Retained
-        /// for backwards compatibility.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// (Deprecated) An identifier for the APNs channel. This property is retained only for
+        /// backward compatibility.
+        /// </para>
         /// </summary>
         public string Id
         {
@@ -156,7 +177,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IsArchived. Indicates whether or not the channel is archived.
+        /// Gets and sets the property IsArchived. 
+        /// <para>
+        /// Specifies whether the APNs channel is archived.
+        /// </para>
         /// </summary>
         public bool IsArchived
         {
@@ -171,7 +195,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastModifiedBy. The user who last updated this channel.
+        /// Gets and sets the property LastModifiedBy. 
+        /// <para>
+        /// The user who last modified the APNs channel.
+        /// </para>
         /// </summary>
         public string LastModifiedBy
         {
@@ -186,8 +213,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastModifiedDate. The date and time when this channel was
-        /// last modified.
+        /// Gets and sets the property LastModifiedDate. 
+        /// <para>
+        /// The date and time when the APNs channel was last modified.
+        /// </para>
         /// </summary>
         public string LastModifiedDate
         {
@@ -202,9 +231,13 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Platform. The platform type. For this channel, the value
-        /// is always "ADM."
+        /// Gets and sets the property Platform.  
+        /// <para>
+        /// The type of messaging or notification platform for the channel. For the APNs channel,
+        /// this value is APNS.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Platform
         {
             get { return this._platform; }
@@ -218,7 +251,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Version. The channel version.
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The current version of the APNs channel.
+        /// </para>
         /// </summary>
         public int Version
         {

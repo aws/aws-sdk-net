@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// GPS coordinates
+    /// Specifies the GPS coordinates of a location.
     /// </summary>
     public partial class GPSCoordinates
     {
@@ -36,8 +36,12 @@ namespace Amazon.Pinpoint.Model
         private double? _longitude;
 
         /// <summary>
-        /// Gets and sets the property Latitude. Latitude
+        /// Gets and sets the property Latitude. 
+        /// <para>
+        /// The latitude coordinate of the location.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public double Latitude
         {
             get { return this._latitude.GetValueOrDefault(); }
@@ -51,8 +55,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Longitude. Longitude
+        /// Gets and sets the property Longitude. 
+        /// <para>
+        /// The longitude coordinate of the location.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public double Longitude
         {
             get { return this._longitude.GetValueOrDefault(); }

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Send message request.
+    /// Specifies the objects that define configuration and other settings for a message.
     /// </summary>
     public partial class MessageRequest
     {
@@ -39,9 +39,13 @@ namespace Amazon.Pinpoint.Model
         private string _traceId;
 
         /// <summary>
-        /// Gets and sets the property Addresses. A map of key-value pairs, where each key is
-        /// an address and each value is an AddressConfiguration object. An address can be a push
-        /// notification token, a phone number, or an email address.
+        /// Gets and sets the property Addresses. 
+        /// <para>
+        /// A map of key-value pairs, where each key is an address and each value is an AddressConfiguration
+        /// object. An address can be a push notification token, a phone number, or an email address.
+        /// You can use an AddressConfiguration object to tailor the message for an address by
+        /// specifying settings such as content overrides and message variables.
+        /// </para>
         /// </summary>
         public Dictionary<string, AddressConfiguration> Addresses
         {
@@ -56,9 +60,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Context. A map of custom attributes to attributes to be
-        /// attached to the message. This payload is added to the push notification's 'data.pinpoint'
-        /// object or added to the email/sms delivery receipt event attributes.
+        /// Gets and sets the property Context. 
+        /// <para>
+        /// A map of custom attributes to attach to the message. For a push notification, this
+        /// payload is added to the data.pinpoint object. For an email or text message, this payload
+        /// is added to email/SMS delivery receipt event attributes.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Context
         {
@@ -73,10 +80,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Endpoints. A map of key-value pairs, where each key is
-        /// an endpoint ID and each value is an EndpointSendConfiguration object. Within an EndpointSendConfiguration
-        /// object, you can tailor the message for an endpoint by specifying message overrides
-        /// or substitutions.
+        /// Gets and sets the property Endpoints. 
+        /// <para>
+        /// A map of key-value pairs, where each key is an endpoint ID and each value is an EndpointSendConfiguration
+        /// object. You can use an EndpointSendConfiguration object to tailor the message for
+        /// an endpoint by specifying settings such as content overrides and message variables.
+        /// </para>
         /// </summary>
         public Dictionary<string, EndpointSendConfiguration> Endpoints
         {
@@ -91,8 +100,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MessageConfiguration. Message configuration.
+        /// Gets and sets the property MessageConfiguration. 
+        /// <para>
+        /// The set of properties that defines the configuration settings for the message.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DirectMessageConfiguration MessageConfiguration
         {
             get { return this._messageConfiguration; }
@@ -106,8 +119,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TraceId. A unique ID that you can use to trace a message.
-        /// This ID is visible to recipients.
+        /// Gets and sets the property TraceId. 
+        /// <para>
+        /// The unique identifier for tracing the message. This identifier is visible to message
+        /// recipients.
+        /// </para>
         /// </summary>
         public string TraceId
         {

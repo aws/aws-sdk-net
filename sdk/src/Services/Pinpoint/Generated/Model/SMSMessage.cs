@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// SMS Message.
+    /// Specifies the default settings for a one-time SMS message that's sent directly to
+    /// an endpoint.
     /// </summary>
     public partial class SMSMessage
     {
@@ -40,7 +41,10 @@ namespace Amazon.Pinpoint.Model
         private Dictionary<string, List<string>> _substitutions = new Dictionary<string, List<string>>();
 
         /// <summary>
-        /// Gets and sets the property Body. The body of the SMS message.
+        /// Gets and sets the property Body. 
+        /// <para>
+        /// The body of the SMS message.
+        /// </para>
         /// </summary>
         public string Body
         {
@@ -55,8 +59,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Keyword. The SMS program name that you provided to AWS
-        /// Support when you requested your dedicated number.
+        /// Gets and sets the property Keyword. 
+        /// <para>
+        /// The SMS program name that you provided to AWS Support when you requested your dedicated
+        /// number.
+        /// </para>
         /// </summary>
         public string Keyword
         {
@@ -71,8 +78,13 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MessageType. Is this a transaction priority message or
-        /// lower priority.
+        /// Gets and sets the property MessageType. 
+        /// <para>
+        /// The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or
+        /// time-sensitive, such as a one-time password that supports a customer transaction;
+        /// and, PROMOTIONAL, the message is not critical or time-sensitive, such as a marketing
+        /// message.
+        /// </para>
         /// </summary>
         public MessageType MessageType
         {
@@ -87,10 +99,13 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OriginationNumber. The phone number that the SMS message
-        /// originates from. Specify one of the dedicated long codes or short codes that you requested
-        /// from AWS Support and that is assigned to your account. If this attribute is not specified,
-        /// Amazon Pinpoint randomly assigns a long code.
+        /// Gets and sets the property OriginationNumber. 
+        /// <para>
+        /// The number that the SMS message originates from. This should be one of the dedicated
+        /// long codes or short codes that you requested from AWS Support and is assigned to your
+        /// AWS account. If you don't specify a long or short code, Amazon Pinpoint assigns a
+        /// random long code to the SMS message.
+        /// </para>
         /// </summary>
         public string OriginationNumber
         {
@@ -105,8 +120,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SenderId. The sender ID that is shown as the message sender
-        /// on the recipient's device. Support for sender IDs varies by country or region.
+        /// Gets and sets the property SenderId. 
+        /// <para>
+        /// The sender ID to display as the sender of the message on a recipient's device. Support
+        /// for sender IDs varies by country or region.
+        /// </para>
         /// </summary>
         public string SenderId
         {
@@ -121,8 +139,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Substitutions. Default message substitutions. Can be overridden
-        /// by individual address substitutions.
+        /// Gets and sets the property Substitutions. 
+        /// <para>
+        /// The message variables to use in the SMS message. You can override the default variables
+        /// with individual address variables.
+        /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Substitutions
         {

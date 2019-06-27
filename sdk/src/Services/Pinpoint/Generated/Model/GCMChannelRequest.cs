@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Google Cloud Messaging credentials
+    /// Specifies the status and settings of the GCM channel for an application. This channel
+    /// enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging
+    /// (FCM), formerly Google Cloud Messaging (GCM), service.
     /// </summary>
     public partial class GCMChannelRequest
     {
@@ -36,8 +38,13 @@ namespace Amazon.Pinpoint.Model
         private bool? _enabled;
 
         /// <summary>
-        /// Gets and sets the property ApiKey. Platform credential API key from Google.
+        /// Gets and sets the property ApiKey. 
+        /// <para>
+        /// The API key, also referred to as a <i>server key</i>, that you received from Google
+        /// to communicate with Google services.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApiKey
         {
             get { return this._apiKey; }
@@ -51,7 +58,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Enabled. If the channel is enabled for sending messages.
+        /// Gets and sets the property Enabled. 
+        /// <para>
+        /// Specifies whether to enable the GCM channel for the application.
+        /// </para>
         /// </summary>
         public bool Enabled
         {

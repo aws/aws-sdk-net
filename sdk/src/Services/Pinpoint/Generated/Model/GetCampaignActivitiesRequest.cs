@@ -29,7 +29,7 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCampaignActivities operation.
-    /// Returns information about the activity performed by a campaign.
+    /// Retrieves information about the activity performed by a campaign.
     /// </summary>
     public partial class GetCampaignActivitiesRequest : AmazonPinpointRequest
     {
@@ -39,7 +39,11 @@ namespace Amazon.Pinpoint.Model
         private string _token;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The unique ID of your Amazon Pinpoint application.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The unique identifier for the application. This identifier is displayed as the <b>Project
+        /// ID</b> on the Amazon Pinpoint console.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ApplicationId
@@ -55,7 +59,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CampaignId. The unique ID of the campaign.
+        /// Gets and sets the property CampaignId. 
+        /// <para>
+        /// The unique identifier for the campaign.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string CampaignId
@@ -71,8 +78,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PageSize. The number of entries you want on each page in
-        /// the response.
+        /// Gets and sets the property PageSize. 
+        /// <para>
+        /// The maximum number of items to include on each page in a paginated response.
+        /// </para>
         /// </summary>
         public string PageSize
         {
@@ -87,8 +96,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Token. The NextToken string returned on a previous page
-        /// that you use to get the next page of results in a paginated response.
+        /// Gets and sets the property Token. 
+        /// <para>
+        /// The NextToken string that specifies which page of results to return in a paginated
+        /// response.
+        /// </para>
         /// </summary>
         public string Token
         {

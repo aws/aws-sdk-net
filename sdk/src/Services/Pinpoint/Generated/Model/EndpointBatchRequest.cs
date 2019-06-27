@@ -28,15 +28,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Endpoint batch update request.
+    /// Specifies a batch of endpoints to create or update and the settings and attributes
+    /// to set or change for each endpoint.
     /// </summary>
     public partial class EndpointBatchRequest
     {
         private List<EndpointBatchItem> _item = new List<EndpointBatchItem>();
 
         /// <summary>
-        /// Gets and sets the property Item. List of items to update. Maximum 100 items
+        /// Gets and sets the property Item. 
+        /// <para>
+        /// An array that defines the endpoints to create or update and, for each endpoint, the
+        /// property values to set or change. An array can contain a maximum of 100 items.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<EndpointBatchItem> Item
         {
             get { return this._item; }

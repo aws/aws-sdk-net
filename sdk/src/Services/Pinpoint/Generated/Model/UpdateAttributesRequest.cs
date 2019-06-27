@@ -28,15 +28,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Update attributes request
+    /// Specifies one or more attributes to remove from all the endpoints that are associated
+    /// with an application.
     /// </summary>
     public partial class UpdateAttributesRequest
     {
         private List<string> _blacklist = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Blacklist. The GLOB wildcard for removing the attributes
-        /// in the application
+        /// Gets and sets the property Blacklist. 
+        /// <para>
+        /// An array of the attributes to remove from all the endpoints that are associated with
+        /// the application. The array can specify the complete, exact name of each attribute
+        /// to remove or it can specify a glob pattern that an attribute name must match in order
+        /// for the attribute to be removed.
+        /// </para>
         /// </summary>
         public List<string> Blacklist
         {

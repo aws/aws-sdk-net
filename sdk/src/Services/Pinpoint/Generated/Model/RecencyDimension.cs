@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Define how a segment based on recency of use.
+    /// Specifies criteria for including or excluding endpoints from a segment based on how
+    /// recently an endpoint was active.
     /// </summary>
     public partial class RecencyDimension
     {
@@ -36,9 +37,12 @@ namespace Amazon.Pinpoint.Model
         private RecencyType _recencyType;
 
         /// <summary>
-        /// Gets and sets the property Duration. The length of time during which users have been
-        /// active or inactive with your app.Valid values: HR_24, DAY_7, DAY_14, DAY_30
+        /// Gets and sets the property Duration. 
+        /// <para>
+        /// The duration to use when determining whether an endpoint is active or inactive.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Duration Duration
         {
             get { return this._duration; }
@@ -52,11 +56,14 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RecencyType. The recency dimension type:ACTIVE - Users
-        /// who have used your app within the specified duration are included in the segment.INACTIVE
-        /// - Users who have not used your app within the specified duration are included in the
-        /// segment.
+        /// Gets and sets the property RecencyType. 
+        /// <para>
+        /// The type of recency dimension to use for the segment. Valid values are: ACTIVE, endpoints
+        /// that were active within the specified duration are included in the segment; and, INACTIVE,
+        /// endpoints that weren't active within the specified duration are included in the segment.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RecencyType RecencyType
         {
             get { return this._recencyType; }

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Campaign hook information.
+    /// Specifies the AWS Lambda function to use as a code hook for a campaign.
     /// </summary>
     public partial class CampaignHook
     {
@@ -37,8 +37,11 @@ namespace Amazon.Pinpoint.Model
         private string _webUrl;
 
         /// <summary>
-        /// Gets and sets the property LambdaFunctionName. Lambda function name or arn to be called
-        /// for delivery
+        /// Gets and sets the property LambdaFunctionName. 
+        /// <para>
+        /// The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint
+        /// invokes to send messages for a campaign.
+        /// </para>
         /// </summary>
         public string LambdaFunctionName
         {
@@ -53,7 +56,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Mode. What mode Lambda should be invoked in.
+        /// Gets and sets the property Mode. 
+        /// <para>
+        /// Specifies which Lambda mode to use when invoking the AWS Lambda function.
+        /// </para>
         /// </summary>
         public Mode Mode
         {
@@ -68,8 +74,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WebUrl. Web URL to call for hook. If the URL has authentication
-        /// specified it will be added as authentication to the request
+        /// Gets and sets the property WebUrl.  
+        /// <para>
+        /// The web URL that Amazon Pinpoint calls to invoke the AWS Lambda function over HTTPS.
+        /// </para>
         /// </summary>
         public string WebUrl
         {

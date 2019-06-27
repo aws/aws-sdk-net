@@ -29,7 +29,8 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSegment operation.
-    /// Returns information about a segment.
+    /// Retrieves information about the configuration, dimension, and other settings for a
+    /// specific segment that's associated with an application.
     /// </summary>
     public partial class GetSegmentRequest : AmazonPinpointRequest
     {
@@ -37,7 +38,11 @@ namespace Amazon.Pinpoint.Model
         private string _segmentId;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The unique ID of your Amazon Pinpoint application.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The unique identifier for the application. This identifier is displayed as the <b>Project
+        /// ID</b> on the Amazon Pinpoint console.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ApplicationId
@@ -53,7 +58,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SegmentId. The unique ID of the segment.
+        /// Gets and sets the property SegmentId. 
+        /// <para>
+        /// The unique identifier for the segment.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string SegmentId

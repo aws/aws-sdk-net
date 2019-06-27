@@ -29,7 +29,7 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateGcmChannel operation.
-    /// Use to update the GCM channel for an app.
+    /// Updates the status and settings of the GCM channel for an application.
     /// </summary>
     public partial class UpdateGcmChannelRequest : AmazonPinpointRequest
     {
@@ -37,7 +37,11 @@ namespace Amazon.Pinpoint.Model
         private GCMChannelRequest _gcmChannelRequest;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The unique ID of your Amazon Pinpoint application.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The unique identifier for the application. This identifier is displayed as the <b>Project
+        /// ID</b> on the Amazon Pinpoint console.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ApplicationId

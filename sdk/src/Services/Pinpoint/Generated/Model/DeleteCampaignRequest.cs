@@ -29,7 +29,7 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCampaign operation.
-    /// Deletes a campaign.
+    /// Deletes a campaign from an application.
     /// </summary>
     public partial class DeleteCampaignRequest : AmazonPinpointRequest
     {
@@ -37,7 +37,11 @@ namespace Amazon.Pinpoint.Model
         private string _campaignId;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The unique ID of your Amazon Pinpoint application.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The unique identifier for the application. This identifier is displayed as the <b>Project
+        /// ID</b> on the Amazon Pinpoint console.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ApplicationId
@@ -53,7 +57,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CampaignId. The unique ID of the campaign.
+        /// Gets and sets the property CampaignId. 
+        /// <para>
+        /// The unique identifier for the campaign.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string CampaignId

@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Import job list.
+    /// Provides information about the status and settings of all the import jobs that are
+    /// associated with an application or segment. An import job is a job that imports endpoint
+    /// definitions from one or more files.
     /// </summary>
     public partial class ImportJobsResponse
     {
@@ -36,8 +38,13 @@ namespace Amazon.Pinpoint.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Item. A list of import jobs for the application.
+        /// Gets and sets the property Item. 
+        /// <para>
+        /// An array of responses, one for each import job that's associated with the application
+        /// (Import Jobs resource) or segment (Segment Import Jobs resource).
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ImportJobResponse> Item
         {
             get { return this._item; }
@@ -51,8 +58,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. The string that you use in a subsequent request
-        /// to get the next page of results in a paginated response.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The string to use in a subsequent request to get the next page of results in a paginated
+        /// response. This value is null if there are no additional pages.
+        /// </para>
         /// </summary>
         public string NextToken
         {

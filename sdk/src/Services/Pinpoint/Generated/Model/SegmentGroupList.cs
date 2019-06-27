@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Segment group definition.
+    /// Specifies the settings that define the relationships between segment groups for a
+    /// segment.
     /// </summary>
     public partial class SegmentGroupList
     {
@@ -36,7 +37,11 @@ namespace Amazon.Pinpoint.Model
         private Include _include;
 
         /// <summary>
-        /// Gets and sets the property Groups. A set of segment criteria to evaluate.
+        /// Gets and sets the property Groups. 
+        /// <para>
+        /// An array that defines the set of segment criteria to evaluate when handling segment
+        /// groups for the segment.
+        /// </para>
         /// </summary>
         public List<SegmentGroup> Groups
         {
@@ -51,10 +56,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Include. Specify how to handle multiple segment groups.
-        /// For example, if the segment includes three segment groups, should the resulting segment
-        /// include endpoints that are matched by all, any, or none of the segment groups you
-        /// created. Acceptable values: ALL, ANY, or NONE.
+        /// Gets and sets the property Include. 
+        /// <para>
+        /// Specifies how to handle multiple segment groups for the segment. For example, if the
+        /// segment includes three segment groups, whether the resulting segment includes endpoints
+        /// that match all, any, or none of the segment groups.
+        /// </para>
         /// </summary>
         public Include Include
         {

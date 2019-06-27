@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Apple Development Push Notification Service channel definition.
+    /// Provides information about the status and settings of the APNs (Apple Push Notification
+    /// service) sandbox channel for an application.
     /// </summary>
     public partial class APNSSandboxChannelResponse
     {
@@ -46,8 +47,10 @@ namespace Amazon.Pinpoint.Model
         private int? _version;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The ID of the application to which the channel
-        /// applies.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The unique identifier for the application that the APNs sandbox channel applies to.
+        /// </para>
         /// </summary>
         public string ApplicationId
         {
@@ -62,7 +65,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreationDate. When was this segment created
+        /// Gets and sets the property CreationDate. 
+        /// <para>
+        /// The date and time when the APNs sandbox channel was enabled.
+        /// </para>
         /// </summary>
         public string CreationDate
         {
@@ -77,8 +83,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DefaultAuthenticationMethod. The default authentication
-        /// method used for APNs.
+        /// Gets and sets the property DefaultAuthenticationMethod. 
+        /// <para>
+        /// The default authentication method that Amazon Pinpoint uses to authenticate with the
+        /// APNs sandbox environment for this channel, key or certificate.
+        /// </para>
         /// </summary>
         public string DefaultAuthenticationMethod
         {
@@ -93,7 +102,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Enabled. If the channel is enabled for sending messages.
+        /// Gets and sets the property Enabled. 
+        /// <para>
+        /// Specifies whether the APNs sandbox channel is enabled for the application.
+        /// </para>
         /// </summary>
         public bool Enabled
         {
@@ -108,7 +120,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HasCredential. Not used. Retained for backwards compatibility.
+        /// Gets and sets the property HasCredential. 
+        /// <para>
+        /// (Not used) This property is retained only for backward compatibility.
+        /// </para>
         /// </summary>
         public bool HasCredential
         {
@@ -123,9 +138,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HasTokenKey. Indicates whether the channel is configured
-        /// with a key for APNs token authentication. Provide a token key by setting the TokenKey
-        /// attribute.
+        /// Gets and sets the property HasTokenKey. 
+        /// <para>
+        /// Specifies whether the APNs sandbox channel is configured to communicate with APNs
+        /// by using APNs tokens. To provide an authentication key for APNs tokens, set the TokenKey
+        /// property of the channel.
+        /// </para>
         /// </summary>
         public bool HasTokenKey
         {
@@ -140,7 +158,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. Channel ID. Not used, only for backwards compatibility.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// (Deprecated) An identifier for the APNs sandbox channel. This property is retained
+        /// only for backward compatibility.
+        /// </para>
         /// </summary>
         public string Id
         {
@@ -155,7 +177,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IsArchived. Is this channel archived
+        /// Gets and sets the property IsArchived. 
+        /// <para>
+        /// Specifies whether the APNs sandbox channel is archived.
+        /// </para>
         /// </summary>
         public bool IsArchived
         {
@@ -170,7 +195,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastModifiedBy. Who last updated this entry
+        /// Gets and sets the property LastModifiedBy. 
+        /// <para>
+        /// The user who last modified the APNs sandbox channel.
+        /// </para>
         /// </summary>
         public string LastModifiedBy
         {
@@ -185,7 +213,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastModifiedDate. Last date this was updated
+        /// Gets and sets the property LastModifiedDate. 
+        /// <para>
+        /// The date and time when the APNs sandbox channel was last modified.
+        /// </para>
         /// </summary>
         public string LastModifiedDate
         {
@@ -200,8 +231,13 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Platform. The platform type. Will be APNS_SANDBOX.
+        /// Gets and sets the property Platform. 
+        /// <para>
+        /// The type of messaging or notification platform for the channel. For the APNs sandbox
+        /// channel, this value is APNS_SANDBOX.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Platform
         {
             get { return this._platform; }
@@ -215,7 +251,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Version. Version of channel
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The current version of the APNs sandbox channel.
+        /// </para>
         /// </summary>
         public int Version
         {

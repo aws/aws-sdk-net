@@ -29,7 +29,7 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the SendUsersMessages operation.
-    /// Used to send a message to a list of users.
+    /// Creates and sends a message to a list of users.
     /// </summary>
     public partial class SendUsersMessagesRequest : AmazonPinpointRequest
     {
@@ -37,7 +37,11 @@ namespace Amazon.Pinpoint.Model
         private SendUsersMessageRequest _sendUsersMessageRequest;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The unique ID of your Amazon Pinpoint application.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The unique identifier for the application. This identifier is displayed as the <b>Project
+        /// ID</b> on the Amazon Pinpoint console.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ApplicationId

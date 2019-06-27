@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Export job list.
+    /// Provides information about all the export jobs that are associated with an application
+    /// or segment. An export job is a job that exports endpoint definitions to a file.
     /// </summary>
     public partial class ExportJobsResponse
     {
@@ -36,8 +37,13 @@ namespace Amazon.Pinpoint.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Item. A list of export jobs for the application.
+        /// Gets and sets the property Item. 
+        /// <para>
+        /// An array of responses, one for each export job that's associated with the application
+        /// (Export Jobs resource) or segment (Segment Export Jobs resource).
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ExportJobResponse> Item
         {
             get { return this._item; }
@@ -51,8 +57,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. The string that you use in a subsequent request
-        /// to get the next page of results in a paginated response.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The string to use in a subsequent request to get the next page of results in a paginated
+        /// response. This value is null if there are no additional pages.
+        /// </para>
         /// </summary>
         public string NextToken
         {

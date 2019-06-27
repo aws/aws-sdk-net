@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Information about a session.
+    /// Provides information about a session.
     /// </summary>
     public partial class Session
     {
@@ -38,7 +38,10 @@ namespace Amazon.Pinpoint.Model
         private string _stopTimestamp;
 
         /// <summary>
-        /// Gets and sets the property Duration. The duration of the session, in milliseconds.
+        /// Gets and sets the property Duration. 
+        /// <para>
+        /// The duration of the session, in milliseconds.
+        /// </para>
         /// </summary>
         public int Duration
         {
@@ -53,8 +56,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. A unique identifier for the session.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The unique identifier for the session.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -68,8 +75,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StartTimestamp. The date and time when the session began.
+        /// Gets and sets the property StartTimestamp. 
+        /// <para>
+        /// The date and time when the session began.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StartTimestamp
         {
             get { return this._startTimestamp; }
@@ -83,7 +94,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StopTimestamp. The date and time when the session ended.
+        /// Gets and sets the property StopTimestamp. 
+        /// <para>
+        /// The date and time when the session ended.
+        /// </para>
         /// </summary>
         public string StopTimestamp
         {

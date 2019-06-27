@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Segment reference.
+    /// Specifies the segment identifier and version of a segment.
     /// </summary>
     public partial class SegmentReference
     {
@@ -36,8 +36,12 @@ namespace Amazon.Pinpoint.Model
         private int? _version;
 
         /// <summary>
-        /// Gets and sets the property Id. A unique identifier for the segment.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The unique identifier for the segment.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -51,8 +55,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Version. If specified contains a specific version of the
-        /// segment included.
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The version number of the segment.
+        /// </para>
         /// </summary>
         public int Version
         {

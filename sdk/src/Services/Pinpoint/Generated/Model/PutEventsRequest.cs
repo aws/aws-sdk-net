@@ -29,8 +29,8 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the PutEvents operation.
-    /// Use to record events for endpoints. This method creates events and creates or updates
-    /// the endpoints that those events are associated with.
+    /// Creates a new event to record for endpoints, or creates or updates endpoint data that
+    /// existing events are associated with.
     /// </summary>
     public partial class PutEventsRequest : AmazonPinpointRequest
     {
@@ -38,7 +38,11 @@ namespace Amazon.Pinpoint.Model
         private EventsRequest _eventsRequest;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The unique ID of your Amazon Pinpoint application.
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The unique identifier for the application. This identifier is displayed as the <b>Project
+        /// ID</b> on the Amazon Pinpoint console.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ApplicationId

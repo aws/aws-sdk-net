@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Custom metric dimension
+    /// Specifies metric-based criteria for including or excluding endpoints from a segment.
+    /// These criteria derive from custom metrics that you define for endpoints.
     /// </summary>
     public partial class MetricDimension
     {
@@ -36,10 +37,13 @@ namespace Amazon.Pinpoint.Model
         private double? _value;
 
         /// <summary>
-        /// Gets and sets the property ComparisonOperator. The operator that you're using to compare
-        /// metric values. Possible values: GREATER_THAN, LESS_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL,
-        /// or EQUAL
+        /// Gets and sets the property ComparisonOperator. 
+        /// <para>
+        /// The operator to use when comparing metric values. Valid values are: GREATER_THAN,
+        /// LESS_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, and EQUAL.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ComparisonOperator
         {
             get { return this._comparisonOperator; }
@@ -53,8 +57,12 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Value. The value to be compared.
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// The value to compare.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public double Value
         {
             get { return this._value.GetValueOrDefault(); }
