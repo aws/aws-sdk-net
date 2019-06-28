@@ -1,3 +1,18 @@
+### 3.3.542.0 (2019-06-28 18:43 UTC)
+* AlexaForBusiness (3.3.105.0)
+	* This release allows developers and customers to add SIP addresses and international phone numbers to contacts.
+* EC2 (3.3.119.0)
+	* You can now launch 8xlarge and 16xlarge instance sizes on the general purpose M5 and memory optimized R5 instance types.
+* Redshift (3.3.102.0)
+	* ClusterAvailabilityStatus: The availability status of the cluster for queries. Possible values are the following: Available, Unavailable, Maintenance, Modifying, Failed.
+* WorkSpaces (3.3.104.0)
+	* Minor API fixes for WorkSpaces.
+* Core 3.3.103.5
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.541.0 (2019-06-27 18:14 UTC)
 * DirectConnect (3.3.103.0)
 	* Tags will now be included in the API responses of all supported resources (Virtual interfaces, Connections, Interconnects and LAGs). You can also add tags while creating these resources.
