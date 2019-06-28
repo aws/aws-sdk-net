@@ -35,6 +35,7 @@ namespace Amazon.Redshift.Model
         private bool? _allowVersionUpgrade;
         private int? _automatedSnapshotRetentionPeriod;
         private string _availabilityZone;
+        private string _clusterAvailabilityStatus;
         private DateTime? _clusterCreateTime;
         private string _clusterIdentifier;
         private List<ClusterNode> _clusterNodes = new List<ClusterNode>();
@@ -128,6 +129,47 @@ namespace Amazon.Redshift.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterAvailabilityStatus. 
+        /// <para>
+        /// The availability status of the cluster for queries. Possible values are the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Available - The cluster is available for queries. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Unavailable - The cluster is not available for queries.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Maintenance - The cluster is intermittently available for queries due to maintenance
+        /// activities.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Modifying - The cluster is intermittently available for queries due to changes that
+        /// modify the cluster.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Failed - The cluster failed and is not available for queries.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string ClusterAvailabilityStatus
+        {
+            get { return this._clusterAvailabilityStatus; }
+            set { this._clusterAvailabilityStatus = value; }
+        }
+
+        // Check to see if ClusterAvailabilityStatus property is set
+        internal bool IsSetClusterAvailabilityStatus()
+        {
+            return this._clusterAvailabilityStatus != null;
         }
 
         /// <summary>
