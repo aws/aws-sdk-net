@@ -50,26 +50,7 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class RebuildWorkspacesRequest : AmazonWorkSpacesRequest
     {
-        private string _additionalInfo;
         private List<RebuildRequest> _rebuildWorkspaceRequests = new List<RebuildRequest>();
-
-        /// <summary>
-        /// Gets and sets the property AdditionalInfo. 
-        /// <para>
-        /// Reserved.
-        /// </para>
-        /// </summary>
-        public string AdditionalInfo
-        {
-            get { return this._additionalInfo; }
-            set { this._additionalInfo = value; }
-        }
-
-        // Check to see if AdditionalInfo property is set
-        internal bool IsSetAdditionalInfo()
-        {
-            return this._additionalInfo != null;
-        }
 
         /// <summary>
         /// Gets and sets the property RebuildWorkspaceRequests. 

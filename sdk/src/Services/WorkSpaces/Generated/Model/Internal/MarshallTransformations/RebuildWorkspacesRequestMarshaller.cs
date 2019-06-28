@@ -68,12 +68,6 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdditionalInfo())
-                {
-                    context.Writer.WritePropertyName("AdditionalInfo");
-                    context.Writer.Write(publicRequest.AdditionalInfo);
-                }
-
                 if(publicRequest.IsSetRebuildWorkspaceRequests())
                 {
                     context.Writer.WritePropertyName("RebuildWorkspaceRequests");
