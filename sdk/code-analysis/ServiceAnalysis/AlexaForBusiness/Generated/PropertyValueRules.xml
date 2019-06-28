@@ -138,7 +138,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.CreateContactRequest.PhoneNumber</property>
-    <pattern>^\+\d{8,}$</pattern>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^[\+0-9\#\,\(][\+0-9\-\.\/\(\)\,\#\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.CreateContactResponse.ContactArn</property>
@@ -975,7 +977,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.UpdateContactRequest.PhoneNumber</property>
-    <pattern>^\+\d{8,}$</pattern>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^[\+0-9\#\,\(][\+0-9\-\.\/\(\)\,\#\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.UpdateDeviceRequest.DeviceArn</property>
@@ -1224,7 +1228,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.Contact.PhoneNumber</property>
-    <pattern>^\+\d{8,}$</pattern>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^[\+0-9\#\,\(][\+0-9\-\.\/\(\)\,\#\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ContactData.ContactArn</property>
@@ -1250,7 +1256,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ContactData.PhoneNumber</property>
-    <pattern>^\+\d{8,}$</pattern>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^[\+0-9\#\,\(][\+0-9\-\.\/\(\)\,\#\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.DeveloperInfo.Email</property>
@@ -1481,6 +1489,12 @@
     <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.PhoneNumber.Number</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^[\+0-9\#\,\(][\+0-9\-\.\/\(\)\,\#\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.Profile.Address</property>
     <min>1</min>
     <max>500</max>
@@ -1613,6 +1627,12 @@
     <property>Amazon.AlexaForBusiness.Model.RoomSkillParameter.ParameterValue</property>
     <min>1</min>
     <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.SipAddress.Uri</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^sip[s]?:([^@:]+)\@([^@]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.SkillGroup.Description</property>

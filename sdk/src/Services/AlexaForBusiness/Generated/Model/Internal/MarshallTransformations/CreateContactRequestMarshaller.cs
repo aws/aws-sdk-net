@@ -103,6 +103,38 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PhoneNumber);
                 }
 
+                if(publicRequest.IsSetPhoneNumbers())
+                {
+                    context.Writer.WritePropertyName("PhoneNumbers");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestPhoneNumbersListValue in publicRequest.PhoneNumbers)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PhoneNumberMarshaller.Instance;
+                        marshaller.Marshall(publicRequestPhoneNumbersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetSipAddresses())
+                {
+                    context.Writer.WritePropertyName("SipAddresses");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSipAddressesListValue in publicRequest.SipAddresses)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SipAddressMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSipAddressesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

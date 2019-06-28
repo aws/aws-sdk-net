@@ -980,8 +980,16 @@ namespace Amazon.AlexaForBusiness
 
         /// <summary>
         /// When this action is called for a specified shared device, it allows authorized users
+        /// to delete the device's entire previous history of voice input data and associated
+        /// response data. This action can be called once every 24 hours for a specific shared
+        /// device.
+        /// 
+        ///  
+        /// <para>
+        /// When this action is called for a specified shared device, it allows authorized users
         /// to delete the device's entire previous history of voice input data. This action can
-        /// be called once every 24 hours for a specific shared device.
+        /// be called once every 24 hours for a specific shared device. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDeviceUsageData service method.</param>
         /// 
@@ -1003,8 +1011,16 @@ namespace Amazon.AlexaForBusiness
 
         /// <summary>
         /// When this action is called for a specified shared device, it allows authorized users
+        /// to delete the device's entire previous history of voice input data and associated
+        /// response data. This action can be called once every 24 hours for a specific shared
+        /// device.
+        /// 
+        ///  
+        /// <para>
+        /// When this action is called for a specified shared device, it allows authorized users
         /// to delete the device's entire previous history of voice input data. This action can
-        /// be called once every 24 hours for a specific shared device.
+        /// be called once every 24 hours for a specific shared device. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDeviceUsageData service method.</param>
         /// <param name="cancellationToken">
@@ -2913,8 +2929,8 @@ namespace Amazon.AlexaForBusiness
 
 
         /// <summary>
-        /// Sends an enrollment invitation email with a URL to a user. The URL is valid for 72
-        /// hours or until you call this operation again, whichever comes first.
+        /// Sends an enrollment invitation email with a URL to a user. The URL is valid for 30
+        /// days or until you call this operation again, whichever comes first.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendInvitation service method.</param>
         /// 
@@ -2934,8 +2950,8 @@ namespace Amazon.AlexaForBusiness
 
 
         /// <summary>
-        /// Sends an enrollment invitation email with a URL to a user. The URL is valid for 72
-        /// hours or until you call this operation again, whichever comes first.
+        /// Sends an enrollment invitation email with a URL to a user. The URL is valid for 30
+        /// days or until you call this operation again, whichever comes first.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendInvitation service method.</param>
         /// <param name="cancellationToken">

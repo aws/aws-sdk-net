@@ -94,6 +94,18 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                     unmarshalledObject.PhoneNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PhoneNumbers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<PhoneNumber, PhoneNumberUnmarshaller>(PhoneNumberUnmarshaller.Instance);
+                    unmarshalledObject.PhoneNumbers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SipAddresses", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<SipAddress, SipAddressUnmarshaller>(SipAddressUnmarshaller.Instance);
+                    unmarshalledObject.SipAddresses = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

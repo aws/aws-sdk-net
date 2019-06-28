@@ -37,6 +37,8 @@ namespace Amazon.AlexaForBusiness.Model
         private string _firstName;
         private string _lastName;
         private string _phoneNumber;
+        private List<PhoneNumber> _phoneNumbers = new List<PhoneNumber>();
+        private List<SipAddress> _sipAddresses = new List<SipAddress>();
 
         /// <summary>
         /// Gets and sets the property ContactArn. 
@@ -116,9 +118,12 @@ namespace Amazon.AlexaForBusiness.Model
         /// <summary>
         /// Gets and sets the property PhoneNumber. 
         /// <para>
-        /// The phone number of the contact.
+        /// The phone number of the contact. The phone number type defaults to WORK. You can either
+        /// specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which
+        /// lets you specify the phone number type and multiple numbers.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public string PhoneNumber
         {
             get { return this._phoneNumber; }
@@ -129,6 +134,44 @@ namespace Amazon.AlexaForBusiness.Model
         internal bool IsSetPhoneNumber()
         {
             return this._phoneNumber != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PhoneNumbers. 
+        /// <para>
+        /// The list of phone numbers for the contact.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=3)]
+        public List<PhoneNumber> PhoneNumbers
+        {
+            get { return this._phoneNumbers; }
+            set { this._phoneNumbers = value; }
+        }
+
+        // Check to see if PhoneNumbers property is set
+        internal bool IsSetPhoneNumbers()
+        {
+            return this._phoneNumbers != null && this._phoneNumbers.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SipAddresses. 
+        /// <para>
+        /// The list of SIP addresses for the contact.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<SipAddress> SipAddresses
+        {
+            get { return this._sipAddresses; }
+            set { this._sipAddresses = value; }
+        }
+
+        // Check to see if SipAddresses property is set
+        internal bool IsSetSipAddresses()
+        {
+            return this._sipAddresses != null && this._sipAddresses.Count > 0; 
         }
 
     }

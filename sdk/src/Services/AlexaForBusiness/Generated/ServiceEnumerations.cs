@@ -1119,6 +1119,60 @@ namespace Amazon.AlexaForBusiness
 
 
     /// <summary>
+    /// Constants used for properties of type PhoneNumberType.
+    /// </summary>
+    public class PhoneNumberType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HOME for PhoneNumberType
+        /// </summary>
+        public static readonly PhoneNumberType HOME = new PhoneNumberType("HOME");
+        /// <summary>
+        /// Constant MOBILE for PhoneNumberType
+        /// </summary>
+        public static readonly PhoneNumberType MOBILE = new PhoneNumberType("MOBILE");
+        /// <summary>
+        /// Constant WORK for PhoneNumberType
+        /// </summary>
+        public static readonly PhoneNumberType WORK = new PhoneNumberType("WORK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PhoneNumberType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PhoneNumberType FindValue(string value)
+        {
+            return FindValue<PhoneNumberType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PhoneNumberType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RequirePin.
     /// </summary>
     public class RequirePin : ConstantClass
@@ -1166,6 +1220,52 @@ namespace Amazon.AlexaForBusiness
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RequirePin(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SipType.
+    /// </summary>
+    public class SipType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant WORK for SipType
+        /// </summary>
+        public static readonly SipType WORK = new SipType("WORK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SipType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SipType FindValue(string value)
+        {
+            return FindValue<SipType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SipType(string value)
         {
             return FindValue(value);
         }

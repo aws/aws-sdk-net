@@ -28,30 +28,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AlexaForBusiness.Model
 {
     /// <summary>
-    /// Container for the parameters to the SendInvitation operation.
-    /// Sends an enrollment invitation email with a URL to a user. The URL is valid for 30
-    /// days or until you call this operation again, whichever comes first.
+    /// The phone number for the contact containing the raw number and phone number type.
     /// </summary>
-    public partial class SendInvitationRequest : AmazonAlexaForBusinessRequest
+    public partial class PhoneNumber
     {
-        private string _userArn;
+        private string _number;
+        private PhoneNumberType _type;
 
         /// <summary>
-        /// Gets and sets the property UserArn. 
+        /// Gets and sets the property Number. 
         /// <para>
-        /// The ARN of the user to whom to send an invitation. Required.
+        /// The raw value of the phone number.
         /// </para>
         /// </summary>
-        public string UserArn
+        [AWSProperty(Required=true, Min=0, Max=50)]
+        public string Number
         {
-            get { return this._userArn; }
-            set { this._userArn = value; }
+            get { return this._number; }
+            set { this._number = value; }
         }
 
-        // Check to see if UserArn property is set
-        internal bool IsSetUserArn()
+        // Check to see if Number property is set
+        internal bool IsSetNumber()
         {
-            return this._userArn != null;
+            return this._number != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of the phone number.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public PhoneNumberType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

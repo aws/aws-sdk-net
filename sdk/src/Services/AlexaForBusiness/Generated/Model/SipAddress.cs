@@ -28,30 +28,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AlexaForBusiness.Model
 {
     /// <summary>
-    /// Container for the parameters to the SendInvitation operation.
-    /// Sends an enrollment invitation email with a URL to a user. The URL is valid for 30
-    /// days or until you call this operation again, whichever comes first.
+    /// The SIP address for the contact containing the URI and SIP address type.
     /// </summary>
-    public partial class SendInvitationRequest : AmazonAlexaForBusinessRequest
+    public partial class SipAddress
     {
-        private string _userArn;
+        private SipType _type;
+        private string _uri;
 
         /// <summary>
-        /// Gets and sets the property UserArn. 
+        /// Gets and sets the property Type. 
         /// <para>
-        /// The ARN of the user to whom to send an invitation. Required.
+        /// The type of the SIP address.
         /// </para>
         /// </summary>
-        public string UserArn
+        [AWSProperty(Required=true)]
+        public SipType Type
         {
-            get { return this._userArn; }
-            set { this._userArn = value; }
+            get { return this._type; }
+            set { this._type = value; }
         }
 
-        // Check to see if UserArn property is set
-        internal bool IsSetUserArn()
+        // Check to see if Type property is set
+        internal bool IsSetType()
         {
-            return this._userArn != null;
+            return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Uri. 
+        /// <para>
+        /// The URI for the SIP address.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
+        public string Uri
+        {
+            get { return this._uri; }
+            set { this._uri = value; }
+        }
+
+        // Check to see if Uri property is set
+        internal bool IsSetUri()
+        {
+            return this._uri != null;
         }
 
     }
