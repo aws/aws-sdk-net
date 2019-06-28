@@ -49,7 +49,7 @@ namespace Amazon.EC2.Model
         /// results, make another call with the returned <code>nextToken</code> value.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=5, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -68,7 +68,6 @@ namespace Amazon.EC2.Model
         /// The token for the next page of results.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

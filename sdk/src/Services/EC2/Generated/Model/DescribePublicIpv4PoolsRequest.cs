@@ -63,7 +63,6 @@ namespace Amazon.EC2.Model
         /// The token for the next page of results.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

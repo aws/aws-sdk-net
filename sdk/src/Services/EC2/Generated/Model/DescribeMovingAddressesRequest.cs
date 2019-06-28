@@ -77,6 +77,7 @@ namespace Amazon.EC2.Model
         /// Default: If no value is provided, the default is 1000.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=5, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

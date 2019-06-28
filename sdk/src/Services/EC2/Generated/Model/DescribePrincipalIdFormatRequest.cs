@@ -66,6 +66,7 @@ namespace Amazon.EC2.Model
         /// results, make another call with the returned NextToken value. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

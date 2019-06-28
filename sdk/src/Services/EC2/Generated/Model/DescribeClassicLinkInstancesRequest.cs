@@ -118,6 +118,7 @@ namespace Amazon.EC2.Model
         /// Constraint: If the value is greater than 1000, we return only 1000 items.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=5, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

@@ -2563,6 +2563,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly EventType FleetRequestChange = new EventType("fleetRequestChange");
         /// <summary>
+        /// Constant Information for EventType
+        /// </summary>
+        public static readonly EventType Information = new EventType("information");
+        /// <summary>
         /// Constant InstanceChange for EventType
         /// </summary>
         public static readonly EventType InstanceChange = new EventType("instanceChange");
@@ -4263,6 +4267,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType C5Large = new InstanceType("c5.large");
         /// <summary>
+        /// Constant C5Metal for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5Metal = new InstanceType("c5.metal");
+        /// <summary>
         /// Constant C5n18xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType C5n18xlarge = new InstanceType("c5n.18xlarge");
@@ -4527,6 +4535,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType M512xlarge = new InstanceType("m5.12xlarge");
         /// <summary>
+        /// Constant M516xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M516xlarge = new InstanceType("m5.16xlarge");
+        /// <summary>
         /// Constant M524xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType M524xlarge = new InstanceType("m5.24xlarge");
@@ -4539,9 +4551,17 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType M54xlarge = new InstanceType("m5.4xlarge");
         /// <summary>
+        /// Constant M58xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M58xlarge = new InstanceType("m5.8xlarge");
+        /// <summary>
         /// Constant M5a12xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType M5a12xlarge = new InstanceType("m5a.12xlarge");
+        /// <summary>
+        /// Constant M5a16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5a16xlarge = new InstanceType("m5a.16xlarge");
         /// <summary>
         /// Constant M5a24xlarge for InstanceType
         /// </summary>
@@ -4554,6 +4574,10 @@ namespace Amazon.EC2
         /// Constant M5a4xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType M5a4xlarge = new InstanceType("m5a.4xlarge");
+        /// <summary>
+        /// Constant M5a8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5a8xlarge = new InstanceType("m5a.8xlarge");
         /// <summary>
         /// Constant M5ad12xlarge for InstanceType
         /// </summary>
@@ -4599,6 +4623,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType M5d12xlarge = new InstanceType("m5d.12xlarge");
         /// <summary>
+        /// Constant M5d16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5d16xlarge = new InstanceType("m5d.16xlarge");
+        /// <summary>
         /// Constant M5d24xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType M5d24xlarge = new InstanceType("m5d.24xlarge");
@@ -4610,6 +4638,10 @@ namespace Amazon.EC2
         /// Constant M5d4xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType M5d4xlarge = new InstanceType("m5d.4xlarge");
+        /// <summary>
+        /// Constant M5d8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5d8xlarge = new InstanceType("m5d.8xlarge");
         /// <summary>
         /// Constant M5dLarge for InstanceType
         /// </summary>
@@ -4711,6 +4743,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType R512xlarge = new InstanceType("r5.12xlarge");
         /// <summary>
+        /// Constant R516xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R516xlarge = new InstanceType("r5.16xlarge");
+        /// <summary>
         /// Constant R524xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R524xlarge = new InstanceType("r5.24xlarge");
@@ -4723,9 +4759,17 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType R54xlarge = new InstanceType("r5.4xlarge");
         /// <summary>
+        /// Constant R58xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R58xlarge = new InstanceType("r5.8xlarge");
+        /// <summary>
         /// Constant R5a12xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R5a12xlarge = new InstanceType("r5a.12xlarge");
+        /// <summary>
+        /// Constant R5a16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5a16xlarge = new InstanceType("r5a.16xlarge");
         /// <summary>
         /// Constant R5a24xlarge for InstanceType
         /// </summary>
@@ -4738,6 +4782,10 @@ namespace Amazon.EC2
         /// Constant R5a4xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R5a4xlarge = new InstanceType("r5a.4xlarge");
+        /// <summary>
+        /// Constant R5a8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5a8xlarge = new InstanceType("r5a.8xlarge");
         /// <summary>
         /// Constant R5ad12xlarge for InstanceType
         /// </summary>
@@ -4783,6 +4831,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType R5d12xlarge = new InstanceType("r5d.12xlarge");
         /// <summary>
+        /// Constant R5d16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5d16xlarge = new InstanceType("r5d.16xlarge");
+        /// <summary>
         /// Constant R5d24xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R5d24xlarge = new InstanceType("r5d.24xlarge");
@@ -4794,6 +4846,10 @@ namespace Amazon.EC2
         /// Constant R5d4xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R5d4xlarge = new InstanceType("r5d.4xlarge");
+        /// <summary>
+        /// Constant R5d8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5d8xlarge = new InstanceType("r5d.8xlarge");
         /// <summary>
         /// Constant R5dLarge for InstanceType
         /// </summary>

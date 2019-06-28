@@ -34,13 +34,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeByoipCidrsRequest.MaxResults</property>
-    <min>5</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeByoipCidrsRequest.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeCapacityReservationsRequest.MaxResults</property>
@@ -48,84 +43,44 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeClassicLinkInstancesRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeClientVpnAuthorizationRulesRequest.MaxResults</property>
     <min>5</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeClientVpnAuthorizationRulesRequest.NextToken</property>
-    <min>1</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeClientVpnAuthorizationRulesResponse.NextToken</property>
-    <min>1</min>
-    <max>1024</max>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeClientVpnConnectionsRequest.MaxResults</property>
     <min>5</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeClientVpnConnectionsRequest.NextToken</property>
-    <min>1</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeClientVpnConnectionsResponse.NextToken</property>
-    <min>1</min>
-    <max>1024</max>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeClientVpnEndpointsRequest.MaxResults</property>
     <min>5</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeClientVpnEndpointsRequest.NextToken</property>
-    <min>1</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeClientVpnEndpointsResponse.NextToken</property>
-    <min>1</min>
-    <max>1024</max>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeClientVpnRoutesRequest.MaxResults</property>
     <min>5</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeClientVpnRoutesRequest.NextToken</property>
-    <min>1</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeClientVpnRoutesResponse.NextToken</property>
-    <min>1</min>
-    <max>1024</max>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeClientVpnTargetNetworksRequest.MaxResults</property>
     <min>5</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeClientVpnTargetNetworksRequest.NextToken</property>
-    <min>1</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeClientVpnTargetNetworksResponse.NextToken</property>
-    <min>1</min>
-    <max>1024</max>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeDhcpOptionsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeEgressOnlyInternetGatewaysRequest.MaxResults</property>
+    <min>5</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeElasticGpusRequest.MaxResults</property>
@@ -135,17 +90,7 @@
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeFpgaImagesRequest.MaxResults</property>
     <min>5</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeFpgaImagesRequest.NextToken</property>
-    <min>1</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeFpgaImagesResponse.NextToken</property>
-    <min>1</min>
-    <max>1024</max>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeHostReservationOfferingsRequest.MaxResults</property>
@@ -155,17 +100,7 @@
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeIamInstanceProfileAssociationsRequest.MaxResults</property>
     <min>5</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeIamInstanceProfileAssociationsRequest.NextToken</property>
-    <min>1</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeIamInstanceProfileAssociationsResponse.NextToken</property>
-    <min>1</min>
-    <max>1024</max>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeInstanceCreditSpecificationsRequest.MaxResults</property>
@@ -189,6 +124,16 @@
     <pattern>[a-zA-Z0-9\(\)\.\-/_]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeMovingAddressesRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeNatGatewaysRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeNetworkAclsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
@@ -204,14 +149,14 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribePrincipalIdFormatRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribePublicIpv4PoolsRequest.MaxResults</property>
     <min>1</min>
     <max>10</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.EC2.Model.DescribePublicIpv4PoolsRequest.NextToken</property>
-    <min>1</min>
-    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeRouteTablesRequest.MaxResults</property>
@@ -219,8 +164,23 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeScheduledInstanceAvailabilityRequest.MaxResults</property>
+    <min>5</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeSecurityGroupsRequest.MaxResults</property>
     <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeSpotFleetInstancesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeSpotFleetRequestHistoryRequest.MaxResults</property>
+    <min>1</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
@@ -244,29 +204,14 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeTrafficMirrorFiltersRequest.NextToken</property>
-    <min>1</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeTrafficMirrorSessionsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeTrafficMirrorSessionsRequest.NextToken</property>
-    <min>1</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeTrafficMirrorTargetsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.EC2.Model.DescribeTrafficMirrorTargetsRequest.NextToken</property>
-    <min>1</min>
-    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeTransitGatewayAttachmentsRequest.MaxResults</property>
