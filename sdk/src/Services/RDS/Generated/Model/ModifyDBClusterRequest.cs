@@ -42,6 +42,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class ModifyDBClusterRequest : AmazonRDSRequest
     {
+        private bool? _allowMajorVersionUpgrade;
         private bool? _applyImmediately;
         private long? _backtrackWindow;
         private int? _backupRetentionPeriod;
@@ -49,6 +50,7 @@ namespace Amazon.RDS.Model
         private bool? _copyTagsToSnapshot;
         private string _dbClusterIdentifier;
         private string _dbClusterParameterGroupName;
+        private string _dbInstanceParameterGroupName;
         private bool? _deletionProtection;
         private bool? _enableHttpEndpoint;
         private bool? _enableIAMDatabaseAuthentication;
@@ -61,6 +63,30 @@ namespace Amazon.RDS.Model
         private string _preferredMaintenanceWindow;
         private ScalingConfiguration _scalingConfiguration;
         private List<string> _vpcSecurityGroupIds = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property AllowMajorVersionUpgrade. 
+        /// <para>
+        /// A value that indicates whether major version upgrades are allowed.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: You must allow major version upgrades when specifying a value for the
+        /// <code>EngineVersion</code> parameter that is a different major version than the DB
+        /// cluster's current version.
+        /// </para>
+        /// </summary>
+        public bool AllowMajorVersionUpgrade
+        {
+            get { return this._allowMajorVersionUpgrade.GetValueOrDefault(); }
+            set { this._allowMajorVersionUpgrade = value; }
+        }
+
+        // Check to see if AllowMajorVersionUpgrade property is set
+        internal bool IsSetAllowMajorVersionUpgrade()
+        {
+            return this._allowMajorVersionUpgrade.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ApplyImmediately. 
@@ -205,13 +231,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints:
+        /// Constraints: This identifier must match the identifier of an existing DB cluster.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Must match the identifier of an existing DBCluster.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public string DBClusterIdentifier
@@ -242,6 +263,48 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBClusterParameterGroupName()
         {
             return this._dbClusterParameterGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBInstanceParameterGroupName. 
+        /// <para>
+        /// The name of the DB parameter group to apply to all instances of the DB cluster. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you apply a parameter group using the <code>DBInstanceParameterGroupName</code>
+        /// parameter, the DB cluster isn't rebooted automatically. Also, parameter changes aren't
+        /// applied during the next maintenance window but instead are applied immediately.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Default: The existing name setting
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The DB parameter group must be in the same DB parameter group family as this DB cluster.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>DBInstanceParameterGroupName</code> parameter is only valid in combination
+        /// with the <code>AllowMajorVersionUpgrade</code> parameter.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string DBInstanceParameterGroupName
+        {
+            get { return this._dbInstanceParameterGroupName; }
+            set { this._dbInstanceParameterGroupName = value; }
+        }
+
+        // Check to see if DBInstanceParameterGroupName property is set
+        internal bool IsSetDBInstanceParameterGroupName()
+        {
+            return this._dbInstanceParameterGroupName != null;
         }
 
         /// <summary>

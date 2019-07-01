@@ -58,6 +58,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAllowMajorVersionUpgrade())
+                {
+                    request.Parameters.Add("AllowMajorVersionUpgrade", StringUtils.FromBool(publicRequest.AllowMajorVersionUpgrade));
+                }
                 if(publicRequest.IsSetApplyImmediately())
                 {
                     request.Parameters.Add("ApplyImmediately", StringUtils.FromBool(publicRequest.ApplyImmediately));
@@ -102,6 +106,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDBClusterParameterGroupName())
                 {
                     request.Parameters.Add("DBClusterParameterGroupName", StringUtils.FromString(publicRequest.DBClusterParameterGroupName));
+                }
+                if(publicRequest.IsSetDBInstanceParameterGroupName())
+                {
+                    request.Parameters.Add("DBInstanceParameterGroupName", StringUtils.FromString(publicRequest.DBInstanceParameterGroupName));
                 }
                 if(publicRequest.IsSetDeletionProtection())
                 {
