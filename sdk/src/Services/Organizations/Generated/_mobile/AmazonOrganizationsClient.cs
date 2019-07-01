@@ -575,7 +575,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -932,7 +932,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1127,7 +1127,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1519,7 +1519,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1967,7 +1967,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2293,7 +2293,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2610,7 +2610,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2927,7 +2927,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3122,7 +3122,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3284,7 +3284,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3455,7 +3455,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3629,7 +3629,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3803,7 +3803,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3969,7 +3969,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4145,7 +4145,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4381,7 +4381,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4546,7 +4546,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4868,7 +4868,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5211,7 +5211,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5528,7 +5528,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5798,7 +5798,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6125,7 +6125,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6442,7 +6442,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6719,7 +6719,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7060,7 +7060,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7236,7 +7236,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7410,7 +7410,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7723,7 +7723,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7895,7 +7895,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8069,7 +8069,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8249,7 +8249,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8432,7 +8432,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8602,7 +8602,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8786,7 +8786,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8956,7 +8956,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9128,7 +9128,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9310,7 +9310,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9472,7 +9472,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9646,7 +9646,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9828,7 +9828,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10165,7 +10165,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10475,7 +10475,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10783,7 +10783,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10957,7 +10957,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11269,7 +11269,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_ENUM: You specified a value that isn't valid for that parameter.
+        /// INVALID_ENUM: You specified an invalid value.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -63,7 +63,9 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tag to add to the specified resource.
+        /// The tag to add to the specified resource. Specifying the tag key is required. You
+        /// can set the value of a tag to an empty string, but you can't set the value of a tag
+        /// to null.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -42,7 +42,7 @@ namespace Amazon.Organizations.Model
         /// The key identifier, or name, of the tag.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -58,10 +58,11 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The string value that's associated with the key of the tag.
+        /// The string value that's associated with the key of the tag. You can set the value
+        /// of a tag to an empty string, but you can't set the value of a tag to null.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Value
         {
             get { return this._value; }
