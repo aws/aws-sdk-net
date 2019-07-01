@@ -310,6 +310,12 @@ namespace Amazon.DocDB
         /// <param name="request">Container for the necessary parameters to execute the ApplyPendingMaintenanceAction service method.</param>
         /// 
         /// <returns>The response from the ApplyPendingMaintenanceAction service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.InvalidDBClusterStateException">
+        /// The DB cluster isn't in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.InvalidDBInstanceStateException">
+        /// The specified DB instance isn't in the <i>available</i> state.
+        /// </exception>
         /// <exception cref="Amazon.DocDB.Model.ResourceNotFoundException">
         /// The specified resource ID was not found.
         /// </exception>
@@ -3045,6 +3051,136 @@ namespace Amazon.DocDB
         public virtual RestoreDBClusterToPointInTimeResponse EndRestoreDBClusterToPointInTime(IAsyncResult asyncResult)
         {
             return EndInvoke<RestoreDBClusterToPointInTimeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartDBCluster
+
+        /// <summary>
+        /// Restarts the stopped cluster that is specified by <code>DBClusterIdentifier</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/db-cluster-stop-start.html">Stopping
+        /// and Starting an Amazon DocumentDB Cluster</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDBCluster service method.</param>
+        /// 
+        /// <returns>The response from the StartDBCluster service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.DBClusterNotFoundException">
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.InvalidDBClusterStateException">
+        /// The DB cluster isn't in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.InvalidDBInstanceStateException">
+        /// The specified DB instance isn't in the <i>available</i> state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/StartDBCluster">REST API Reference for StartDBCluster Operation</seealso>
+        public virtual StartDBClusterResponse StartDBCluster(StartDBClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartDBClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDBClusterResponseUnmarshaller.Instance;
+
+            return Invoke<StartDBClusterResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartDBCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartDBCluster operation on AmazonDocDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartDBCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/StartDBCluster">REST API Reference for StartDBCluster Operation</seealso>
+        public virtual IAsyncResult BeginStartDBCluster(StartDBClusterRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartDBClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDBClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartDBCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartDBCluster.</param>
+        /// 
+        /// <returns>Returns a  StartDBClusterResult from DocDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/StartDBCluster">REST API Reference for StartDBCluster Operation</seealso>
+        public virtual StartDBClusterResponse EndStartDBCluster(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartDBClusterResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopDBCluster
+
+        /// <summary>
+        /// Stops the running cluster that is specified by <code>DBClusterIdentifier</code>. The
+        /// cluster must be in the <i>available</i> state. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/db-cluster-stop-start.html">Stopping
+        /// and Starting an Amazon DocumentDB Cluster</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopDBCluster service method.</param>
+        /// 
+        /// <returns>The response from the StopDBCluster service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.DBClusterNotFoundException">
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.InvalidDBClusterStateException">
+        /// The DB cluster isn't in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.InvalidDBInstanceStateException">
+        /// The specified DB instance isn't in the <i>available</i> state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/StopDBCluster">REST API Reference for StopDBCluster Operation</seealso>
+        public virtual StopDBClusterResponse StopDBCluster(StopDBClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopDBClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopDBClusterResponseUnmarshaller.Instance;
+
+            return Invoke<StopDBClusterResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopDBCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopDBCluster operation on AmazonDocDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopDBCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/StopDBCluster">REST API Reference for StopDBCluster Operation</seealso>
+        public virtual IAsyncResult BeginStopDBCluster(StopDBClusterRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopDBClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopDBClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopDBCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopDBCluster.</param>
+        /// 
+        /// <returns>Returns a  StopDBClusterResult from DocDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/StopDBCluster">REST API Reference for StopDBCluster Operation</seealso>
+        public virtual StopDBClusterResponse EndStopDBCluster(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopDBClusterResponse>(asyncResult);
         }
 
         #endregion

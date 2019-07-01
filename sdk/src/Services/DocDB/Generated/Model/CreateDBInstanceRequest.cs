@@ -120,7 +120,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
-        /// The compute and memory capacity of the DB instance; for example, <code>db.m4.large</code>.
+        /// The compute and memory capacity of the DB instance; for example, <code>db.r5.large</code>.
         /// 
         /// </para>
         /// </summary>

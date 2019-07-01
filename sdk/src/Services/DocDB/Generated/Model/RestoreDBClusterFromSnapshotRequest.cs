@@ -48,6 +48,7 @@ namespace Amazon.DocDB.Model
         private List<string> _availabilityZones = new List<string>();
         private string _dbClusterIdentifier;
         private string _dbSubnetGroupName;
+        private bool? _deletionProtection;
         private List<string> _enableCloudwatchLogsExports = new List<string>();
         private string _engine;
         private string _engineVersion;
@@ -140,6 +141,27 @@ namespace Amazon.DocDB.Model
         internal bool IsSetDBSubnetGroupName()
         {
             return this._dbSubnetGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeletionProtection. 
+        /// <para>
+        /// Specifies whether this cluster can be deleted. If <code>DeletionProtection</code>
+        /// is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code>
+        /// is disabled. <code>DeletionProtection</code> protects clusters from being accidentally
+        /// deleted.
+        /// </para>
+        /// </summary>
+        public bool DeletionProtection
+        {
+            get { return this._deletionProtection.GetValueOrDefault(); }
+            set { this._deletionProtection = value; }
+        }
+
+        // Check to see if DeletionProtection property is set
+        internal bool IsSetDeletionProtection()
+        {
+            return this._deletionProtection.HasValue; 
         }
 
         /// <summary>
