@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
         private SpotAllocationStrategy _allocationStrategy;
         private SpotInstanceInterruptionBehavior _instanceInterruptionBehavior;
         private int? _instancePoolsToUseCount;
+        private string _maxTotalPrice;
         private int? _minTargetCapacity;
         private bool? _singleAvailabilityZone;
         private bool? _singleInstanceType;
@@ -95,6 +96,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstancePoolsToUseCount()
         {
             return this._instancePoolsToUseCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxTotalPrice. 
+        /// <para>
+        /// The maximum amount per hour for Spot Instances that you're willing to pay.
+        /// </para>
+        /// </summary>
+        public string MaxTotalPrice
+        {
+            get { return this._maxTotalPrice; }
+            set { this._maxTotalPrice = value; }
+        }
+
+        // Check to see if MaxTotalPrice property is set
+        internal bool IsSetMaxTotalPrice()
+        {
+            return this._maxTotalPrice != null;
         }
 
         /// <summary>

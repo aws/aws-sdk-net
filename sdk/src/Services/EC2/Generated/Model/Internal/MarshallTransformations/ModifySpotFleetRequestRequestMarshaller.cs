@@ -62,6 +62,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ExcessCapacityTerminationPolicy", StringUtils.FromString(publicRequest.ExcessCapacityTerminationPolicy));
                 }
+                if(publicRequest.IsSetOnDemandTargetCapacity())
+                {
+                    request.Parameters.Add("OnDemandTargetCapacity", StringUtils.FromInt(publicRequest.OnDemandTargetCapacity));
+                }
                 if(publicRequest.IsSetSpotFleetRequestId())
                 {
                     request.Parameters.Add("SpotFleetRequestId", StringUtils.FromString(publicRequest.SpotFleetRequestId));

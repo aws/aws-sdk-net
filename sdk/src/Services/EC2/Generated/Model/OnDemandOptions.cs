@@ -28,11 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The allocation strategy of On-Demand Instances in an EC2 Fleet.
+    /// Describes the configuration of On-Demand Instances in an EC2 Fleet.
     /// </summary>
     public partial class OnDemandOptions
     {
         private FleetOnDemandAllocationStrategy _allocationStrategy;
+        private string _maxTotalPrice;
         private int? _minTargetCapacity;
         private bool? _singleAvailabilityZone;
         private bool? _singleInstanceType;
@@ -57,6 +58,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetAllocationStrategy()
         {
             return this._allocationStrategy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxTotalPrice. 
+        /// <para>
+        /// The maximum amount per hour for On-Demand Instances that you're willing to pay.
+        /// </para>
+        /// </summary>
+        public string MaxTotalPrice
+        {
+            get { return this._maxTotalPrice; }
+            set { this._maxTotalPrice = value; }
+        }
+
+        // Check to see if MaxTotalPrice property is set
+        internal bool IsSetMaxTotalPrice()
+        {
+            return this._maxTotalPrice != null;
         }
 
         /// <summary>

@@ -8321,7 +8321,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the specified instances or all of your instances.
+        /// Describes the specified instances or all of AWS account's instances.
         /// 
         ///  
         /// <para>
@@ -8351,7 +8351,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the specified instances or all of your instances.
+        /// Describes the specified instances or all of AWS account's instances.
         /// 
         ///  
         /// <para>
@@ -8382,7 +8382,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the specified instances or all of your instances.
+        /// Describes the specified instances or all of AWS account's instances.
         /// 
         ///  
         /// <para>
@@ -8416,7 +8416,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the specified instances or all of your instances.
+        /// Describes the specified instances or all of AWS account's instances.
         /// 
         ///  
         /// <para>

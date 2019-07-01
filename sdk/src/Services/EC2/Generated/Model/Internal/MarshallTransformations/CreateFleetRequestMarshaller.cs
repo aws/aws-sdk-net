@@ -158,6 +158,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("OnDemandOptions" + "." + "AllocationStrategy", StringUtils.FromString(publicRequest.OnDemandOptions.AllocationStrategy));
                     }
+                    if(publicRequest.OnDemandOptions.IsSetMaxTotalPrice())
+                    {
+                        request.Parameters.Add("OnDemandOptions" + "." + "MaxTotalPrice", StringUtils.FromString(publicRequest.OnDemandOptions.MaxTotalPrice));
+                    }
                     if(publicRequest.OnDemandOptions.IsSetMinTargetCapacity())
                     {
                         request.Parameters.Add("OnDemandOptions" + "." + "MinTargetCapacity", StringUtils.FromInt(publicRequest.OnDemandOptions.MinTargetCapacity));
@@ -188,6 +192,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if(publicRequest.SpotOptions.IsSetInstancePoolsToUseCount())
                     {
                         request.Parameters.Add("SpotOptions" + "." + "InstancePoolsToUseCount", StringUtils.FromInt(publicRequest.SpotOptions.InstancePoolsToUseCount));
+                    }
+                    if(publicRequest.SpotOptions.IsSetMaxTotalPrice())
+                    {
+                        request.Parameters.Add("SpotOptions" + "." + "MaxTotalPrice", StringUtils.FromString(publicRequest.SpotOptions.MaxTotalPrice));
                     }
                     if(publicRequest.SpotOptions.IsSetMinTargetCapacity())
                     {

@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInstances operation.
-    /// Describes the specified instances or all of your instances.
+    /// Describes the specified instances or all of AWS account's instances.
     /// 
     ///  
     /// <para>

@@ -70,6 +70,7 @@ namespace Amazon.EC2.Model
     public partial class ModifySpotFleetRequestRequest : AmazonEC2Request
     {
         private ExcessCapacityTerminationPolicy _excessCapacityTerminationPolicy;
+        private int? _onDemandTargetCapacity;
         private string _spotFleetRequestId;
         private int? _targetCapacity;
 
@@ -90,6 +91,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetExcessCapacityTerminationPolicy()
         {
             return this._excessCapacityTerminationPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnDemandTargetCapacity. 
+        /// <para>
+        /// The number of On-Demand Instances in the fleet.
+        /// </para>
+        /// </summary>
+        public int OnDemandTargetCapacity
+        {
+            get { return this._onDemandTargetCapacity.GetValueOrDefault(); }
+            set { this._onDemandTargetCapacity = value; }
+        }
+
+        // Check to see if OnDemandTargetCapacity property is set
+        internal bool IsSetOnDemandTargetCapacity()
+        {
+            return this._onDemandTargetCapacity.HasValue; 
         }
 
         /// <summary>

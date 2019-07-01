@@ -60,6 +60,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AllocationStrategy = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("maxTotalPrice", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.MaxTotalPrice = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("minTargetCapacity", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;

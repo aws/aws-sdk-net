@@ -44,8 +44,10 @@ namespace Amazon.EC2.Model
         private LoadBalancersConfig _loadBalancersConfig;
         private OnDemandAllocationStrategy _onDemandAllocationStrategy;
         private double? _onDemandFulfilledCapacity;
+        private string _onDemandMaxTotalPrice;
         private int? _onDemandTargetCapacity;
         private bool? _replaceUnhealthyInstances;
+        private string _spotMaxTotalPrice;
         private string _spotPrice;
         private int? _targetCapacity;
         private bool? _terminateInstancesWithExpiration;
@@ -304,6 +306,30 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OnDemandMaxTotalPrice. 
+        /// <para>
+        /// The maximum amount per hour for On-Demand Instances that you're willing to pay. You
+        /// can use the <code>onDemandMaxTotalPrice</code> parameter, the <code>spotMaxTotalPrice</code>
+        /// parameter, or both parameters to ensure that your fleet cost does not exceed your
+        /// budget. If you set a maximum price per hour for the On-Demand Instances and Spot Instances
+        /// in your request, Spot Fleet will launch instances until it reaches the maximum amount
+        /// you're willing to pay. When the maximum amount you're willing to pay is reached, the
+        /// fleet stops launching instances even if it hasn’t met the target capacity.
+        /// </para>
+        /// </summary>
+        public string OnDemandMaxTotalPrice
+        {
+            get { return this._onDemandMaxTotalPrice; }
+            set { this._onDemandMaxTotalPrice = value; }
+        }
+
+        // Check to see if OnDemandMaxTotalPrice property is set
+        internal bool IsSetOnDemandMaxTotalPrice()
+        {
+            return this._onDemandMaxTotalPrice != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OnDemandTargetCapacity. 
         /// <para>
         /// The number of On-Demand units to request. You can choose to set the target capacity
@@ -340,6 +366,30 @@ namespace Amazon.EC2.Model
         internal bool IsSetReplaceUnhealthyInstances()
         {
             return this._replaceUnhealthyInstances.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpotMaxTotalPrice. 
+        /// <para>
+        /// The maximum amount per hour for Spot Instances that you're willing to pay. You can
+        /// use the <code>spotdMaxTotalPrice</code> parameter, the <code>onDemandMaxTotalPrice</code>
+        /// parameter, or both parameters to ensure that your fleet cost does not exceed your
+        /// budget. If you set a maximum price per hour for the On-Demand Instances and Spot Instances
+        /// in your request, Spot Fleet will launch instances until it reaches the maximum amount
+        /// you're willing to pay. When the maximum amount you're willing to pay is reached, the
+        /// fleet stops launching instances even if it hasn’t met the target capacity.
+        /// </para>
+        /// </summary>
+        public string SpotMaxTotalPrice
+        {
+            get { return this._spotMaxTotalPrice; }
+            set { this._spotMaxTotalPrice = value; }
+        }
+
+        // Check to see if SpotMaxTotalPrice property is set
+        internal bool IsSetSpotMaxTotalPrice()
+        {
+            return this._spotMaxTotalPrice != null;
         }
 
         /// <summary>

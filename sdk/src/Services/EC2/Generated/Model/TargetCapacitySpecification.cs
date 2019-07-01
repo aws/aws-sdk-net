@@ -32,6 +32,17 @@ namespace Amazon.EC2.Model
     /// of instances or a performance characteristic that is important to your application
     /// workload, such as vCPUs, memory, or I/O. If the request type is <code>maintain</code>,
     /// you can specify a target capacity of 0 and add capacity later.
+    /// 
+    ///  
+    /// <para>
+    /// You can use the On-Demand Instance <code>MaxTotalPrice</code> parameter, the Spot
+    /// Instance <code>MaxTotalPrice</code>, or both to ensure your fleet cost does not exceed
+    /// your budget. If you set a maximum price per hour for the On-Demand Instances and Spot
+    /// Instances in your request, EC2 Fleet will launch instances until it reaches the maximum
+    /// amount you're willing to pay. When the maximum amount you're willing to pay is reached,
+    /// the fleet stops launching instances even if it hasn’t met the target capacity. The
+    /// <code>MaxTotalPrice</code> parameters are located in and 
+    /// </para>
     /// </summary>
     public partial class TargetCapacitySpecification
     {
@@ -62,7 +73,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OnDemandTargetCapacity. 
         /// <para>
-        /// The number of On-Demand units to request.
+        /// The number of On-Demand units to request. If you specify a target capacity for Spot
+        /// units, you cannot specify a target capacity for On-Demand units.
         /// </para>
         /// </summary>
         public int OnDemandTargetCapacity
@@ -80,7 +92,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotTargetCapacity. 
         /// <para>
-        /// The maximum number of Spot units to launch.
+        /// The maximum number of Spot units to launch. If you specify a target capacity for On-Demand
+        /// units, you cannot specify a target capacity for Spot units.
         /// </para>
         /// </summary>
         public int SpotTargetCapacity

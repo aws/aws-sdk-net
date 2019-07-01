@@ -128,6 +128,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.OnDemandFulfilledCapacity = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("onDemandMaxTotalPrice", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OnDemandMaxTotalPrice = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("onDemandTargetCapacity", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
@@ -138,6 +144,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
                         unmarshalledObject.ReplaceUnhealthyInstances = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("spotMaxTotalPrice", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SpotMaxTotalPrice = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("spotPrice", targetDepth))

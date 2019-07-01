@@ -449,6 +449,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "OnDemandFulfilledCapacity", StringUtils.FromDouble(publicRequest.SpotFleetRequestConfig.OnDemandFulfilledCapacity));
                     }
+                    if(publicRequest.SpotFleetRequestConfig.IsSetOnDemandMaxTotalPrice())
+                    {
+                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "OnDemandMaxTotalPrice", StringUtils.FromString(publicRequest.SpotFleetRequestConfig.OnDemandMaxTotalPrice));
+                    }
                     if(publicRequest.SpotFleetRequestConfig.IsSetOnDemandTargetCapacity())
                     {
                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "OnDemandTargetCapacity", StringUtils.FromInt(publicRequest.SpotFleetRequestConfig.OnDemandTargetCapacity));
@@ -456,6 +460,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if(publicRequest.SpotFleetRequestConfig.IsSetReplaceUnhealthyInstances())
                     {
                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "ReplaceUnhealthyInstances", StringUtils.FromBool(publicRequest.SpotFleetRequestConfig.ReplaceUnhealthyInstances));
+                    }
+                    if(publicRequest.SpotFleetRequestConfig.IsSetSpotMaxTotalPrice())
+                    {
+                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "SpotMaxTotalPrice", StringUtils.FromString(publicRequest.SpotFleetRequestConfig.SpotMaxTotalPrice));
                     }
                     if(publicRequest.SpotFleetRequestConfig.IsSetSpotPrice())
                     {

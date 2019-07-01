@@ -118,7 +118,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OnDemandOptions. 
         /// <para>
-        /// The allocation strategy of On-Demand Instances in an EC2 Fleet.
+        /// Describes the configuration of On-Demand Instances in an EC2 Fleet.
         /// </para>
         /// </summary>
         public OnDemandOptionsRequest OnDemandOptions
@@ -194,8 +194,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TargetCapacitySpecification. 
         /// <para>
-        /// The <code>TotalTargetCapacity</code>, <code>OnDemandTargetCapacity</code>, <code>SpotTargetCapacity</code>,
-        /// and <code>DefaultCapacityType</code> structure.
+        /// The number of units to request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
