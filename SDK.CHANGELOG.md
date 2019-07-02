@@ -1,3 +1,14 @@
+### 3.3.544.0 (2019-07-02 19:33 UTC)
+* AppStream (3.3.102.10)
+	* Adding ImageBuilderName in Fleet API and Documentation updates for AppStream. 
+* MediaStore (3.3.101.0)
+	* This release adds support for tagging, untagging, and listing tags for AWS Elemental MediaStore containers.
+* Core 3.3.103.7
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.543.0 (2019-07-01 18:27 UTC)
 * DocDB (3.3.101.0)
 	* This release provides support for cluster delete protection and the ability to stop and start clusters.
