@@ -35,6 +35,7 @@ namespace Amazon.MediaStore.Model
     public partial class CreateContainerRequest : AmazonMediaStoreRequest
     {
         private string _containerName;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property ContainerName. 
@@ -56,6 +57,29 @@ namespace Amazon.MediaStore.Model
         internal bool IsSetContainerName()
         {
             return this._containerName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// An array of key:value pairs that you define. These values can be anything that you
+        /// want. Typically, the tag key represents a category (such as "environment") and the
+        /// tag value represents a specific value within that category (such as "test," "development,"
+        /// or "production"). You can add up to 50 tags to each container. For more information
+        /// about tagging, including naming and usage conventions, see <a href="https://aws.amazon.com/documentation/mediastore/tagging">Tagging
+        /// Resources in MediaStore</a>.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

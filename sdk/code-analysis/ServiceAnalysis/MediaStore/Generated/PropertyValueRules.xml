@@ -46,7 +46,7 @@
     <property>Amazon.MediaStore.Model.GetContainerPolicyResponse.Policy</property>
     <min>1</min>
     <max>8192</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>[\x00-\x7F]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.GetCorsPolicyRequest.ContainerName</property>
@@ -84,6 +84,12 @@
     <pattern>[0-9A-Za-z=/+]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaStore.Model.ListTagsForResourceRequest.Resource</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:aws:mediastore:[a-z]+-[a-z]+-\d:\d{12}:container/[\w-]{1,255}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaStore.Model.PutContainerPolicyRequest.ContainerName</property>
     <min>1</min>
     <max>255</max>
@@ -93,7 +99,7 @@
     <property>Amazon.MediaStore.Model.PutContainerPolicyRequest.Policy</property>
     <min>1</min>
     <max>8192</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>[\x00-\x7F]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.PutCorsPolicyRequest.ContainerName</property>
@@ -126,10 +132,22 @@
     <pattern>[\w-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaStore.Model.TagResourceRequest.Resource</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:aws:mediastore:[a-z]+-[a-z]+-\d:\d{12}:container/[\w-]{1,255}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaStore.Model.UntagResourceRequest.Resource</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:aws:mediastore:[a-z]+-[a-z]+-\d:\d{12}:container/[\w-]{1,255}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaStore.Model.Container.ARN</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws:mediastore:[a-z]+-[a-z]+-\d:\d{12}:container/\w{1,255}</pattern>
+    <pattern>arn:aws:mediastore:[a-z]+-[a-z]+-\d:\d{12}:container/[\w-]{1,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.Container.Endpoint</property>
@@ -187,5 +205,15 @@
     <min>1</min>
     <max>255</max>
     <pattern>[ \w:\.\?-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaStore.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaStore.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
 </property-value-rules>

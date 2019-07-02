@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaStore.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateContainer Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateContainerRequestMarshaller : IMarshaller<IRequest, CreateContainerRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.MediaStore.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateContainerRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.MediaStore.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateContainerRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaStore");
-            string target = "MediaStore_20170901.CreateContainer";
+            string target = "MediaStore_20170901.TagResource";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-01";            
@@ -68,10 +68,10 @@ namespace Amazon.MediaStore.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContainerName())
+                if(publicRequest.IsSetResource())
                 {
-                    context.Writer.WritePropertyName("ContainerName");
-                    context.Writer.Write(publicRequest.ContainerName);
+                    context.Writer.WritePropertyName("Resource");
+                    context.Writer.Write(publicRequest.Resource);
                 }
 
                 if(publicRequest.IsSetTags())
@@ -99,9 +99,9 @@ namespace Amazon.MediaStore.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateContainerRequestMarshaller _instance = new CreateContainerRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateContainerRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -109,7 +109,7 @@ namespace Amazon.MediaStore.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateContainerRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {
