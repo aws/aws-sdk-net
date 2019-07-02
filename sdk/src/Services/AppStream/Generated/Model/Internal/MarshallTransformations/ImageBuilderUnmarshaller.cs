@@ -130,6 +130,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NetworkAccessConfiguration", targetDepth))
+                {
+                    var unmarshaller = NetworkAccessConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.NetworkAccessConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Platform", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -43,6 +43,7 @@ namespace Amazon.AppStream.Model
         private List<ResourceError> _imageBuilderErrors = new List<ResourceError>();
         private string _instanceType;
         private string _name;
+        private NetworkAccessConfiguration _networkAccessConfiguration;
         private PlatformType _platform;
         private ImageBuilderState _state;
         private ImageBuilderStateChangeReason _stateChangeReason;
@@ -251,6 +252,21 @@ namespace Amazon.AppStream.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkAccessConfiguration.
+        /// </summary>
+        public NetworkAccessConfiguration NetworkAccessConfiguration
+        {
+            get { return this._networkAccessConfiguration; }
+            set { this._networkAccessConfiguration = value; }
+        }
+
+        // Check to see if NetworkAccessConfiguration property is set
+        internal bool IsSetNetworkAccessConfiguration()
+        {
+            return this._networkAccessConfiguration != null;
         }
 
         /// <summary>

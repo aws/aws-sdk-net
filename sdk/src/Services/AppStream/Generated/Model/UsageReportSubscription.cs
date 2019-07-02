@@ -58,9 +58,16 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property S3BucketName. 
         /// <para>
-        /// The Amazon S3 bucket where generated reports are stored. When a usage report subscription
-        /// is enabled for the first time for an account in an AWS Region, an S3 bucket is created.
-        /// The bucket is unique to the AWS account and the Region.
+        /// The Amazon S3 bucket where generated reports are stored.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you enabled on-instance session scripts and Amazon S3 logging for your session
+        /// script configuration, AppStream 2.0 created an S3 bucket to store the script output.
+        /// The bucket is unique to your account and Region. When you enable usage reporting in
+        /// this case, AppStream 2.0 uses the same bucket to store your usage reports. If you
+        /// haven't already enabled on-instance session scripts, when you enable usage reports,
+        /// AppStream 2.0 creates a new S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -97,7 +104,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property SubscriptionErrors. 
         /// <para>
-        /// The errors that are returned when usage reports can't be generated.
+        /// The errors that were returned if usage reports couldn't be generated.
         /// </para>
         /// </summary>
         public List<LastReportGenerationExecutionError> SubscriptionErrors

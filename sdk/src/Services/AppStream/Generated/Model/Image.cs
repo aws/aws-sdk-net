@@ -39,6 +39,7 @@ namespace Amazon.AppStream.Model
         private DateTime? _createdTime;
         private string _description;
         private string _displayName;
+        private string _imageBuilderName;
         private bool? _imageBuilderSupported;
         private ImagePermissions _imagePermissions;
         private string _name;
@@ -176,6 +177,26 @@ namespace Amazon.AppStream.Model
         internal bool IsSetDisplayName()
         {
             return this._displayName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageBuilderName. 
+        /// <para>
+        /// The name of the image builder that was used to create the private image. If the image
+        /// is shared, this value is null.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string ImageBuilderName
+        {
+            get { return this._imageBuilderName; }
+            set { this._imageBuilderName = value; }
+        }
+
+        // Check to see if ImageBuilderName property is set
+        internal bool IsSetImageBuilderName()
+        {
+            return this._imageBuilderName != null;
         }
 
         /// <summary>

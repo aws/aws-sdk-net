@@ -58,7 +58,7 @@ namespace Amazon.AppStream.Model
         /// Gets and sets the property SubnetIds. 
         /// <para>
         /// The identifiers of the subnets to which a network interface is attached from the fleet
-        /// instance or image builder instance. Fleet instances use one or two subnets. Image
+        /// instance or image builder instance. Fleet instances use one or more subnets. Image
         /// builder instances use one subnet.
         /// </para>
         /// </summary>

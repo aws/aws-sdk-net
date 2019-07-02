@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// Describes the parameters for a fleet.
+    /// Describes a fleet.
     /// </summary>
     public partial class Fleet
     {
@@ -272,7 +272,7 @@ namespace Amazon.AppStream.Model
         ///  
         /// <para>
         /// To prevent users from being disconnected due to inactivity, specify a value of 0.
-        /// Otherwise, specify a value between 60 and 3600. The default value is 900.
+        /// Otherwise, specify a value between 60 and 3600. The default value is 0.
         /// </para>
         ///  <note> 
         /// <para>
