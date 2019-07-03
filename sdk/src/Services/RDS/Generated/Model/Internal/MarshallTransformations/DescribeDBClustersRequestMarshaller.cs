@@ -83,6 +83,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetIncludeShared())
+                {
+                    request.Parameters.Add("IncludeShared", StringUtils.FromBool(publicRequest.IncludeShared));
+                }
                 if(publicRequest.IsSetMarker())
                 {
                     request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));

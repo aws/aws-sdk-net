@@ -146,6 +146,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.CopyTagsToSnapshot = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("CrossAccountClone", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.CrossAccountClone = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("CustomEndpoints/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

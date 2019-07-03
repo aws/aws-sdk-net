@@ -53,6 +53,7 @@ namespace Amazon.RDS.Model
         private string _cloneGroupId;
         private DateTime? _clusterCreateTime;
         private bool? _copyTagsToSnapshot;
+        private bool? _crossAccountClone;
         private List<string> _customEndpoints = new List<string>();
         private string _databaseName;
         private string _dbClusterArn;
@@ -374,6 +375,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetCopyTagsToSnapshot()
         {
             return this._copyTagsToSnapshot.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CrossAccountClone. 
+        /// <para>
+        /// Specifies whether the DB cluster is a clone of a DB cluster owned by a different AWS
+        /// account.
+        /// </para>
+        /// </summary>
+        public bool CrossAccountClone
+        {
+            get { return this._crossAccountClone.GetValueOrDefault(); }
+            set { this._crossAccountClone = value; }
+        }
+
+        // Check to see if CrossAccountClone property is set
+        internal bool IsSetCrossAccountClone()
+        {
+            return this._crossAccountClone.HasValue; 
         }
 
         /// <summary>

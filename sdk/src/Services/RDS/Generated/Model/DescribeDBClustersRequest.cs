@@ -46,6 +46,7 @@ namespace Amazon.RDS.Model
     {
         private string _dbClusterIdentifier;
         private List<Filter> _filters = new List<Filter>();
+        private bool? _includeShared;
         private string _marker;
         private int? _maxRecords;
 
@@ -104,6 +105,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetFilters()
         {
             return this._filters != null && this._filters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeShared. 
+        /// <para>
+        /// Optional Boolean parameter that specifies whether the output includes information
+        /// about clusters shared from other AWS accounts.
+        /// </para>
+        /// </summary>
+        public bool IncludeShared
+        {
+            get { return this._includeShared.GetValueOrDefault(); }
+            set { this._includeShared = value; }
+        }
+
+        // Check to see if IncludeShared property is set
+        internal bool IsSetIncludeShared()
+        {
+            return this._includeShared.HasValue; 
         }
 
         /// <summary>
