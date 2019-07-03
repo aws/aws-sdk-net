@@ -921,7 +921,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Deletes the replication configuration from the bucket. For information about replication
-        /// configuration, see <a href=" https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
+        /// configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
         /// Replication (CRR)</a> in the <i>Amazon S3 Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketReplication service method.</param>

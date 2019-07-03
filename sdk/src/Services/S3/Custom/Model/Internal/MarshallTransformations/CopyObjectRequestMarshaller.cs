@@ -107,6 +107,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (copyObjectRequest.IsSetServerSideEncryptionKeyManagementServiceKeyId())
                 request.Headers.Add(HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader, copyObjectRequest.ServerSideEncryptionKeyManagementServiceKeyId);
 
+            if (copyObjectRequest.IsSetServerSideEncryptionKeyManagementServiceEncryptionContext())
+                request.Headers.Add("x-amz-server-side-encryption-context", copyObjectRequest.ServerSideEncryptionKeyManagementServiceEncryptionContext);
+
             if (copyObjectRequest.IsSetStorageClass())
                 request.Headers.Add(HeaderKeys.XAmzStorageClassHeader, S3Transforms.ToStringValue(copyObjectRequest.StorageClass));
 

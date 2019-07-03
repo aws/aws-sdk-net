@@ -30,7 +30,10 @@ namespace Amazon.S3.Model
         private string key;
         private string uploadId;
         private ServerSideEncryptionMethod serverSideEncryption;
+        private ServerSideEncryptionCustomerMethod serverSideCustomerEncryption;
+        private string serverSideEncryptionCustomerProvidedKeyMD5;
         private string serverSideEncryptionKeyManagementServiceKeyId;
+        private string serverSideEncryptionKeyManagementServiceEncryptionContext;
         private DateTime? abortDate;
         private string abortRuleId;
         private RequestCharged requestCharged;
@@ -93,6 +96,25 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// The Server-side encryption algorithm to be used with the customer provided key.
+        /// </summary>
+        public ServerSideEncryptionCustomerMethod ServerSideEncryptionCustomerMethod
+        {
+            get { return this.serverSideCustomerEncryption; }
+            set { this.serverSideCustomerEncryption = value; }
+        }
+
+        /// <summary>
+        /// The MD5 of the customer encryption key specified in the ServerSideEncryptionCustomerProvidedKey property. The MD5 is
+        /// base 64 encoded. This field is optional, the SDK will calculate the MD5 if this is not set.
+        /// </summary>
+        public string ServerSideEncryptionCustomerProvidedKeyMD5
+        {
+            get { return this.serverSideEncryptionCustomerProvidedKeyMD5; }
+            set { this.serverSideEncryptionCustomerProvidedKeyMD5 = value; }
+        }
+
+        /// <summary>
         /// The id of the AWS Key Management Service key that Amazon S3 uses to encrypt and decrypt the object.
         /// </summary>
         public string ServerSideEncryptionKeyManagementServiceKeyId
@@ -108,6 +130,16 @@ namespace Amazon.S3.Model
         internal bool IsSetServerSideEncryptionKeyManagementServiceKeyId()
         {
             return !System.String.IsNullOrEmpty(this.serverSideEncryptionKeyManagementServiceKeyId);
+        }
+
+        /// <summary>
+        /// Specifies the AWS KMS Encryption Context to use for object encryption.
+        /// The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.
+        /// </summary>
+        public string ServerSideEncryptionKeyManagementServiceEncryptionContext
+        {
+            get { return this.serverSideEncryptionKeyManagementServiceEncryptionContext; }
+            set { this.serverSideEncryptionKeyManagementServiceEncryptionContext = value; }
         }
 
         /// <summary>

@@ -88,8 +88,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             IWebResponseData responseData = context.ResponseData;
             if (responseData.IsHeaderPresent("x-amz-server-side-encryption"))
                 response.ServerSideEncryptionMethod = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-server-side-encryption"));
+            if (responseData.IsHeaderPresent("x-amz-server-side-encryption-customer-algorithm"))
+                response.ServerSideEncryptionCustomerMethod = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-server-side-encryption-customer-algorithm"));
+            if (responseData.IsHeaderPresent("x-amz-server-side-encryption-customer-key-MD5"))
+                response.ServerSideEncryptionCustomerProvidedKeyMD5 = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-server-side-encryption-customer-key-MD5"));
             if (responseData.IsHeaderPresent(HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader))
                 response.ServerSideEncryptionKeyManagementServiceKeyId = S3Transforms.ToString(responseData.GetHeaderValue(HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader));
+            if (responseData.IsHeaderPresent("x-amz-server-side-encryption-context"))
+                response.ServerSideEncryptionKeyManagementServiceEncryptionContext = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-server-side-encryption-context"));
             if (responseData.IsHeaderPresent(HeaderKeys.XAmzAbortDateHeader))
                 response.AbortDate = S3Transforms.ToDateTime(responseData.GetHeaderValue(HeaderKeys.XAmzAbortDateHeader));
             if (responseData.IsHeaderPresent(HeaderKeys.XAmzAbortRuleIdHeader))

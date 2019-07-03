@@ -50,12 +50,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 response.Expiration = new Expiration(responseData.GetHeaderValue("x-amz-expiration"));
             if (responseData.IsHeaderPresent("x-amz-server-side-encryption"))
                 response.ServerSideEncryptionMethod = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-server-side-encryption"));
+            if (responseData.IsHeaderPresent("x-amz-server-side-encryption-customer-algorithm"))
+                response.ServerSideEncryptionCustomerMethod = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-server-side-encryption-customer-algorithm"));
+            if (responseData.IsHeaderPresent("x-amz-server-side-encryption-customer-key-MD5"))
+                response.ServerSideEncryptionCustomerProvidedKeyMD5 = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-server-side-encryption-customer-key-MD5"));
             if (responseData.IsHeaderPresent("ETag"))
                 response.ETag = S3Transforms.ToString(responseData.GetHeaderValue("ETag"));
             if (responseData.IsHeaderPresent("x-amz-version-id"))
                 response.VersionId = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-version-id"));
             if (responseData.IsHeaderPresent(HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader))
                 response.ServerSideEncryptionKeyManagementServiceKeyId = S3Transforms.ToString(responseData.GetHeaderValue(HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader));
+            if (responseData.IsHeaderPresent("x-amz-server-side-encryption-context"))
+                response.ServerSideEncryptionKeyManagementServiceEncryptionContext = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-server-side-encryption-context"));
             if (responseData.IsHeaderPresent(S3Constants.AmzHeaderRequestCharged))
                 response.RequestCharged = RequestCharged.FindValue(responseData.GetHeaderValue(S3Constants.AmzHeaderRequestCharged));
 

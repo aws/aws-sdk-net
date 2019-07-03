@@ -64,6 +64,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (initiateMultipartUploadRequest.IsSetServerSideEncryptionKeyManagementServiceKeyId())
                 request.Headers.Add(HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader, initiateMultipartUploadRequest.ServerSideEncryptionKeyManagementServiceKeyId);
 
+            if (initiateMultipartUploadRequest.IsSetServerSideEncryptionKeyManagementServiceEncryptionContext())
+                request.Headers.Add("x-amz-server-side-encryption-context", initiateMultipartUploadRequest.ServerSideEncryptionKeyManagementServiceEncryptionContext);
+
             if (initiateMultipartUploadRequest.IsSetStorageClass())
                 request.Headers.Add(HeaderKeys.XAmzStorageClassHeader, S3Transforms.ToStringValue(initiateMultipartUploadRequest.StorageClass));
 

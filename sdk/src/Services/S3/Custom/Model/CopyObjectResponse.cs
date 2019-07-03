@@ -12,11 +12,6 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
-
 using Amazon.Runtime;
 
 namespace Amazon.S3.Model
@@ -30,8 +25,12 @@ namespace Amazon.S3.Model
         private string lastModified;
         private Expiration expiration;
         private string srcVersionId;
+        private string versionId;
         private ServerSideEncryptionMethod serverSideEncryption;
+        private ServerSideEncryptionCustomerMethod serverSideCustomerEncryption;
+        private string serverSideEncryptionCustomerProvidedKeyMD5;
         private string serverSideEncryptionKeyManagementServiceKeyId;
+        private string serverSideEncryptionKeyManagementServiceEncryptionContext;
         private RequestCharged requestCharged;
 
         /// <summary>
@@ -76,8 +75,16 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// Version ID of the newly created copy.
+        /// </summary>
+        public string VersionId
+        {
+            get { return this.versionId; }
+            set { this.versionId = value; }
+        }
+
+        /// <summary>
         /// The Server-side encryption algorithm used when storing this object in S3.
-        ///  
         /// </summary>
         public ServerSideEncryptionMethod ServerSideEncryptionMethod
         {
@@ -85,6 +92,24 @@ namespace Amazon.S3.Model
             set { this.serverSideEncryption = value; }
         }
 
+        /// <summary>
+        /// The Server-side encryption algorithm to be used with the customer provided key.
+        /// </summary>
+        public ServerSideEncryptionCustomerMethod ServerSideEncryptionCustomerMethod
+        {
+            get { return this.serverSideCustomerEncryption; }
+            set { this.serverSideCustomerEncryption = value; }
+        }
+
+        /// <summary>
+        /// The MD5 of the customer encryption key specified in the ServerSideEncryptionCustomerProvidedKey property. The MD5 is
+        /// base 64 encoded. This field is optional, the SDK will calculate the MD5 if this is not set.
+        /// </summary>
+        public string ServerSideEncryptionCustomerProvidedKeyMD5
+        {
+            get { return this.serverSideEncryptionCustomerProvidedKeyMD5; }
+            set { this.serverSideEncryptionCustomerProvidedKeyMD5 = value; }
+        }
 
         /// <summary>
         /// The id of the AWS Key Management Service key that Amazon S3 uses to encrypt and decrypt the object.
@@ -96,12 +121,13 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Checks if ServerSideEncryptionKeyManagementServiceKeyId property is set.
+        /// Specifies the AWS KMS Encryption Context to use for object encryption.
+        /// The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.
         /// </summary>
-        /// <returns>true if ServerSideEncryptionKeyManagementServiceKeyId property is set.</returns>
-        internal bool IsSetServerSideEncryptionKeyManagementServiceKeyId()
+        public string ServerSideEncryptionKeyManagementServiceEncryptionContext
         {
-            return !System.String.IsNullOrEmpty(this.serverSideEncryptionKeyManagementServiceKeyId);
+            get { return this.serverSideEncryptionKeyManagementServiceEncryptionContext; }
+            set { this.serverSideEncryptionKeyManagementServiceEncryptionContext = value; }
         }
 
         /// <summary>

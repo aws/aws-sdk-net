@@ -78,6 +78,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (putObjectRequest.IsSetServerSideEncryptionKeyManagementServiceKeyId())
                 request.Headers.Add(HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader, putObjectRequest.ServerSideEncryptionKeyManagementServiceKeyId);
 
+            if (putObjectRequest.IsSetServerSideEncryptionKeyManagementServiceEncryptionContext())
+                request.Headers.Add("x-amz-server-side-encryption-context", putObjectRequest.ServerSideEncryptionKeyManagementServiceEncryptionContext);
+
             if (putObjectRequest.IsSetObjectLockLegalHoldStatus())
                 request.Headers.Add("x-amz-object-lock-legal-hold", S3Transforms.ToStringValue(putObjectRequest.ObjectLockLegalHoldStatus));
 

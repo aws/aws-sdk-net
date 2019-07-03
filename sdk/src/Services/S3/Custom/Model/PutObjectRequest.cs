@@ -42,6 +42,7 @@ namespace Amazon.S3.Model
         private string serverSideEncryptionCustomerProvidedKey;
         private string serverSideEncryptionCustomerProvidedKeyMD5;
         private string serverSideEncryptionKeyManagementServiceKeyId;
+        private string serverSideEncryptionKeyManagementServiceEncryptionContext;
 
         private Stream inputStream;
         private string filePath;
@@ -309,6 +310,26 @@ namespace Amazon.S3.Model
         {
             return !System.String.IsNullOrEmpty(this.serverSideEncryptionKeyManagementServiceKeyId);
         }
+
+        /// <summary>
+        /// Specifies the AWS KMS Encryption Context to use for object encryption.
+        /// The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.
+        /// </summary>
+        public string ServerSideEncryptionKeyManagementServiceEncryptionContext
+        {
+            get { return this.serverSideEncryptionKeyManagementServiceEncryptionContext; }
+            set { this.serverSideEncryptionKeyManagementServiceEncryptionContext = value; }
+        }
+
+        /// <summary>
+        /// Checks if ServerSideEncryptionKeyManagementServiceEncryptionContext property is set.
+        /// </summary>
+        /// <returns>true if ServerSideEncryptionKeyManagementServiceEncryptionContext property is set.</returns>
+        internal bool IsSetServerSideEncryptionKeyManagementServiceEncryptionContext()
+        {
+            return !System.String.IsNullOrEmpty(this.serverSideEncryptionKeyManagementServiceEncryptionContext);
+        }
+
 
 
         /// <summary>
