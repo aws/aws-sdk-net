@@ -166,6 +166,11 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleWorkflow.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ListWorkflowTypesRequest.Domain</property>
     <min>1</min>
     <max>256</max>
@@ -438,6 +443,11 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleWorkflow.Model.TagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.TerminateWorkflowExecutionRequest.Details</property>
     <max>32768</max>
   </property-value-rule>
@@ -458,6 +468,26 @@
     <property>Amazon.SimpleWorkflow.Model.TerminateWorkflowExecutionRequest.WorkflowId</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleWorkflow.Model.UndeprecateActivityTypeRequest.Domain</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleWorkflow.Model.UndeprecateDomainRequest.Name</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleWorkflow.Model.UndeprecateWorkflowTypeRequest.Domain</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleWorkflow.Model.UntagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.ActivityTaskCanceledEventAttributes.Details</property>
@@ -621,6 +651,11 @@
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleWorkflow.Model.DomainInfo.Arn</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.DomainInfo.Description</property>
     <max>1024</max>
   </property-value-rule>
@@ -742,6 +777,15 @@
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.RequestCancelExternalWorkflowExecutionInitiatedEventAttributes.WorkflowId</property>
     <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleWorkflow.Model.ResourceTag.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleWorkflow.Model.ResourceTag.Value</property>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>

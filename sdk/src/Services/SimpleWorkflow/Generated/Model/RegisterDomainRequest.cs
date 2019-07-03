@@ -58,7 +58,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
     /// values fall outside the specified constraints, the action fails. The associated event
     /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
     /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -66,6 +66,7 @@ namespace Amazon.SimpleWorkflow.Model
     {
         private string _description;
         private string _name;
+        private List<ResourceTag> _tags = new List<ResourceTag>();
         private string _workflowExecutionRetentionPeriodInDays;
 
         /// <summary>
@@ -98,7 +99,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The specified string must not start or end with whitespace. It must not contain a
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or
         /// any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>).
-        /// Also, it must not contain the literal string <code>arn</code>.
+        /// Also, it must not <i>be</i> the literal string <code>arn</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -112,6 +113,29 @@ namespace Amazon.SimpleWorkflow.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags to be added when registering a domain.
+        /// </para>
+        ///  
+        /// <para>
+        /// Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_
+        /// . : / = + - @</code>.
+        /// </para>
+        /// </summary>
+        public List<ResourceTag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>
@@ -130,7 +154,7 @@ namespace Amazon.SimpleWorkflow.Model
         ///  
         /// <para>
         /// The maximum workflow execution retention period is 90 days. For more information about
-        /// Amazon SWF service limits, see: <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon
+        /// Amazon SWF service limits, see: <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon
         /// SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>

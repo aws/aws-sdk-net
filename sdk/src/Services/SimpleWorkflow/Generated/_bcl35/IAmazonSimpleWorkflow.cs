@@ -46,7 +46,7 @@ namespace Amazon.SimpleWorkflow
     ///  
     /// <para>
     /// This documentation serves as reference only. For a broader overview of the Amazon
-    /// SWF programming model, see the <i> <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon
+    /// SWF programming model, see the <i> <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon
     /// SWF Developer Guide</a> </i>.
     /// </para>
     /// </summary>
@@ -106,7 +106,7 @@ namespace Amazon.SimpleWorkflow
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
         /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -204,7 +204,7 @@ namespace Amazon.SimpleWorkflow
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
         /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -287,7 +287,7 @@ namespace Amazon.SimpleWorkflow
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
         /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -370,7 +370,7 @@ namespace Amazon.SimpleWorkflow
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
         /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -465,7 +465,7 @@ namespace Amazon.SimpleWorkflow
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
         /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -556,7 +556,7 @@ namespace Amazon.SimpleWorkflow
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
         /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -655,7 +655,7 @@ namespace Amazon.SimpleWorkflow
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
         /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -748,7 +748,7 @@ namespace Amazon.SimpleWorkflow
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
         /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -827,7 +827,7 @@ namespace Amazon.SimpleWorkflow
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
         /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -912,7 +912,7 @@ namespace Amazon.SimpleWorkflow
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
         /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1002,7 +1002,7 @@ namespace Amazon.SimpleWorkflow
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
         /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1088,7 +1088,7 @@ namespace Amazon.SimpleWorkflow
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
         /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1171,7 +1171,7 @@ namespace Amazon.SimpleWorkflow
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
         /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1270,7 +1270,7 @@ namespace Amazon.SimpleWorkflow
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
         /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1357,7 +1357,7 @@ namespace Amazon.SimpleWorkflow
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
         /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1451,7 +1451,7 @@ namespace Amazon.SimpleWorkflow
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
         /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1497,6 +1497,59 @@ namespace Amazon.SimpleWorkflow
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// List tags for a given domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by SimpleWorkflow.</returns>
+        /// <exception cref="Amazon.SimpleWorkflow.Model.LimitExceededException">
+        /// Returned by any operation if a system imposed limitation has been reached. To address
+        /// this fault you should either clean up unused resources or increase the limit by contacting
+        /// AWS.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
+        /// Returned when the caller doesn't have sufficient permissions to invoke the action.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
+        /// Returned when the named resource cannot be found with in the scope of this operation
+        /// (region or domain). This could happen if the named resource was never created or is
+        /// no longer available for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonSimpleWorkflowClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListWorkflowTypes
 
 
@@ -1531,7 +1584,7 @@ namespace Amazon.SimpleWorkflow
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
         /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1623,7 +1676,7 @@ namespace Amazon.SimpleWorkflow
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
         /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1735,7 +1788,7 @@ namespace Amazon.SimpleWorkflow
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
         /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1854,7 +1907,7 @@ namespace Amazon.SimpleWorkflow
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
         /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1953,7 +2006,7 @@ namespace Amazon.SimpleWorkflow
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
         /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1969,9 +2022,9 @@ namespace Amazon.SimpleWorkflow
         /// Returned when the caller doesn't have sufficient permissions to invoke the action.
         /// </exception>
         /// <exception cref="Amazon.SimpleWorkflow.Model.TypeAlreadyExistsException">
-        /// Returned if the type already exists in the specified domain. You get this fault even
-        /// if the existing type is in deprecated status. You can specify another version if the
-        /// intent is to create a new distinct version of the type.
+        /// Returned if the type already exists in the specified domain. You may get this fault
+        /// if you are registering a type that is either already registered or deprecated, or
+        /// if you undeprecate a type that is currently registered.
         /// </exception>
         /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
         /// Returned when the named resource cannot be found with in the scope of this operation
@@ -2042,7 +2095,7 @@ namespace Amazon.SimpleWorkflow
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
         /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2050,8 +2103,9 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>The response from the RegisterDomain service method, as returned by SimpleWorkflow.</returns>
         /// <exception cref="Amazon.SimpleWorkflow.Model.DomainAlreadyExistsException">
-        /// Returned if the specified domain already exists. You get this fault even if the existing
-        /// domain is in deprecated status.
+        /// Returned if the domain already exists. You may get this fault if you are registering
+        /// a domain that is either already registered or deprecated, or if you undeprecate a
+        /// domain that is currently registered.
         /// </exception>
         /// <exception cref="Amazon.SimpleWorkflow.Model.LimitExceededException">
         /// Returned by any operation if a system imposed limitation has been reached. To address
@@ -2060,6 +2114,9 @@ namespace Amazon.SimpleWorkflow
         /// </exception>
         /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
         /// Returned when the caller doesn't have sufficient permissions to invoke the action.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleWorkflow.Model.TooManyTagsException">
+        /// You've exceeded the number of tags allowed for a domain.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterDomain">REST API Reference for RegisterDomain Operation</seealso>
         RegisterDomainResponse RegisterDomain(RegisterDomainRequest request);
@@ -2150,7 +2207,7 @@ namespace Amazon.SimpleWorkflow
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
         /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2166,9 +2223,9 @@ namespace Amazon.SimpleWorkflow
         /// Returned when the caller doesn't have sufficient permissions to invoke the action.
         /// </exception>
         /// <exception cref="Amazon.SimpleWorkflow.Model.TypeAlreadyExistsException">
-        /// Returned if the type already exists in the specified domain. You get this fault even
-        /// if the existing type is in deprecated status. You can specify another version if the
-        /// intent is to create a new distinct version of the type.
+        /// Returned if the type already exists in the specified domain. You may get this fault
+        /// if you are registering a type that is either already registered or deprecated, or
+        /// if you undeprecate a type that is currently registered.
         /// </exception>
         /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
         /// Returned when the named resource cannot be found with in the scope of this operation
@@ -2253,7 +2310,7 @@ namespace Amazon.SimpleWorkflow
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
         /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2322,7 +2379,7 @@ namespace Amazon.SimpleWorkflow
         /// A task is considered open from the time that it is scheduled until it is closed. Therefore
         /// a task is reported as open while a worker is processing it. A task is closed after
         /// it has been specified in a call to <a>RespondActivityTaskCompleted</a>, RespondActivityTaskCanceled,
-        /// <a>RespondActivityTaskFailed</a>, or the task has <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed
+        /// <a>RespondActivityTaskFailed</a>, or the task has <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed
         /// out</a>.
         /// </para>
         ///  
@@ -2352,7 +2409,7 @@ namespace Amazon.SimpleWorkflow
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
         /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2419,7 +2476,7 @@ namespace Amazon.SimpleWorkflow
         /// A task is considered open from the time that it is scheduled until it is closed. Therefore
         /// a task is reported as open while a worker is processing it. A task is closed after
         /// it has been specified in a call to RespondActivityTaskCompleted, <a>RespondActivityTaskCanceled</a>,
-        /// <a>RespondActivityTaskFailed</a>, or the task has <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed
+        /// <a>RespondActivityTaskFailed</a>, or the task has <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed
         /// out</a>.
         /// </para>
         ///  
@@ -2449,7 +2506,7 @@ namespace Amazon.SimpleWorkflow
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
         /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2509,7 +2566,7 @@ namespace Amazon.SimpleWorkflow
         /// A task is considered open from the time that it is scheduled until it is closed. Therefore
         /// a task is reported as open while a worker is processing it. A task is closed after
         /// it has been specified in a call to <a>RespondActivityTaskCompleted</a>, <a>RespondActivityTaskCanceled</a>,
-        /// RespondActivityTaskFailed, or the task has <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed
+        /// RespondActivityTaskFailed, or the task has <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed
         /// out</a>.
         /// </para>
         ///  
@@ -2539,7 +2596,7 @@ namespace Amazon.SimpleWorkflow
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
         /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2609,7 +2666,7 @@ namespace Amazon.SimpleWorkflow
         /// parameter. Each of the decisions has one or more parameters, much like a regular API
         /// call. To allow for policies to be as readable as possible, you can express permissions
         /// on decisions as if they were actual API calls, including applying conditions to some
-        /// parameters. For more information, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// parameters. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2701,7 +2758,7 @@ namespace Amazon.SimpleWorkflow
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
         /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2818,7 +2875,7 @@ namespace Amazon.SimpleWorkflow
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
         /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2895,6 +2952,68 @@ namespace Amazon.SimpleWorkflow
 
         #endregion
         
+        #region  TagResource
+
+
+        /// <summary>
+        /// Add a tag to a Amazon SWF domain.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon SWF supports a maximum of 50 tags per resource.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by SimpleWorkflow.</returns>
+        /// <exception cref="Amazon.SimpleWorkflow.Model.LimitExceededException">
+        /// Returned by any operation if a system imposed limitation has been reached. To address
+        /// this fault you should either clean up unused resources or increase the limit by contacting
+        /// AWS.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
+        /// Returned when the caller doesn't have sufficient permissions to invoke the action.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleWorkflow.Model.TooManyTagsException">
+        /// You've exceeded the number of tags allowed for a domain.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
+        /// Returned when the named resource cannot be found with in the scope of this operation
+        /// (region or domain). This could happen if the named resource was never created or is
+        /// no longer available for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonSimpleWorkflowClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse EndTagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  TerminateWorkflowExecution
 
 
@@ -2947,7 +3066,7 @@ namespace Amazon.SimpleWorkflow
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
         /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2990,6 +3109,347 @@ namespace Amazon.SimpleWorkflow
         /// <returns>Returns a  TerminateWorkflowExecutionResult from SimpleWorkflow.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TerminateWorkflowExecution">REST API Reference for TerminateWorkflowExecution Operation</seealso>
         TerminateWorkflowExecutionResponse EndTerminateWorkflowExecution(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UndeprecateActivityType
+
+
+        /// <summary>
+        /// Undeprecates a previously deprecated <i>activity type</i>. After an activity type
+        /// has been undeprecated, you can create new tasks of that activity type.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation is eventually consistent. The results are best effort and may not exactly
+        /// reflect recent updates and changes.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <b>Access Control</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use IAM policies to control this action's access to Amazon SWF resources as
+        /// follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use a <code>Resource</code> element with the domain name to limit the action to only
+        /// specified domains.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Constrain the following parameters by using a <code>Condition</code> element with
+        /// the appropriate keys.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>activityType.name</code>: String constraint. The key is <code>swf:activityType.name</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>activityType.version</code>: String constraint. The key is <code>swf:activityType.version</code>.
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
+        /// values fall outside the specified constraints, the action fails. The associated event
+        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UndeprecateActivityType service method.</param>
+        /// 
+        /// <returns>The response from the UndeprecateActivityType service method, as returned by SimpleWorkflow.</returns>
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
+        /// Returned when the caller doesn't have sufficient permissions to invoke the action.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleWorkflow.Model.TypeAlreadyExistsException">
+        /// Returned if the type already exists in the specified domain. You may get this fault
+        /// if you are registering a type that is either already registered or deprecated, or
+        /// if you undeprecate a type that is currently registered.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
+        /// Returned when the named resource cannot be found with in the scope of this operation
+        /// (region or domain). This could happen if the named resource was never created or is
+        /// no longer available for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UndeprecateActivityType">REST API Reference for UndeprecateActivityType Operation</seealso>
+        UndeprecateActivityTypeResponse UndeprecateActivityType(UndeprecateActivityTypeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UndeprecateActivityType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UndeprecateActivityType operation on AmazonSimpleWorkflowClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUndeprecateActivityType
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UndeprecateActivityType">REST API Reference for UndeprecateActivityType Operation</seealso>
+        IAsyncResult BeginUndeprecateActivityType(UndeprecateActivityTypeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UndeprecateActivityType operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUndeprecateActivityType.</param>
+        /// 
+        /// <returns>Returns a  UndeprecateActivityTypeResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UndeprecateActivityType">REST API Reference for UndeprecateActivityType Operation</seealso>
+        UndeprecateActivityTypeResponse EndUndeprecateActivityType(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UndeprecateDomain
+
+
+        /// <summary>
+        /// Undeprecates a previously deprecated domain. After a domain has been undeprecated
+        /// it can be used to create new workflow executions or register new types.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation is eventually consistent. The results are best effort and may not exactly
+        /// reflect recent updates and changes.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <b>Access Control</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use IAM policies to control this action's access to Amazon SWF resources as
+        /// follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use a <code>Resource</code> element with the domain name to limit the action to only
+        /// specified domains.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You cannot use an IAM policy to constrain this action's parameters.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
+        /// values fall outside the specified constraints, the action fails. The associated event
+        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UndeprecateDomain service method.</param>
+        /// 
+        /// <returns>The response from the UndeprecateDomain service method, as returned by SimpleWorkflow.</returns>
+        /// <exception cref="Amazon.SimpleWorkflow.Model.DomainAlreadyExistsException">
+        /// Returned if the domain already exists. You may get this fault if you are registering
+        /// a domain that is either already registered or deprecated, or if you undeprecate a
+        /// domain that is currently registered.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
+        /// Returned when the caller doesn't have sufficient permissions to invoke the action.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
+        /// Returned when the named resource cannot be found with in the scope of this operation
+        /// (region or domain). This could happen if the named resource was never created or is
+        /// no longer available for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UndeprecateDomain">REST API Reference for UndeprecateDomain Operation</seealso>
+        UndeprecateDomainResponse UndeprecateDomain(UndeprecateDomainRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UndeprecateDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UndeprecateDomain operation on AmazonSimpleWorkflowClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUndeprecateDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UndeprecateDomain">REST API Reference for UndeprecateDomain Operation</seealso>
+        IAsyncResult BeginUndeprecateDomain(UndeprecateDomainRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UndeprecateDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUndeprecateDomain.</param>
+        /// 
+        /// <returns>Returns a  UndeprecateDomainResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UndeprecateDomain">REST API Reference for UndeprecateDomain Operation</seealso>
+        UndeprecateDomainResponse EndUndeprecateDomain(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UndeprecateWorkflowType
+
+
+        /// <summary>
+        /// Undeprecates a previously deprecated <i>workflow type</i>. After a workflow type has
+        /// been undeprecated, you can create new executions of that type. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation is eventually consistent. The results are best effort and may not exactly
+        /// reflect recent updates and changes.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <b>Access Control</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use IAM policies to control this action's access to Amazon SWF resources as
+        /// follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use a <code>Resource</code> element with the domain name to limit the action to only
+        /// specified domains.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Constrain the following parameters by using a <code>Condition</code> element with
+        /// the appropriate keys.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>workflowType.name</code>: String constraint. The key is <code>swf:workflowType.name</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>workflowType.version</code>: String constraint. The key is <code>swf:workflowType.version</code>.
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
+        /// values fall outside the specified constraints, the action fails. The associated event
+        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UndeprecateWorkflowType service method.</param>
+        /// 
+        /// <returns>The response from the UndeprecateWorkflowType service method, as returned by SimpleWorkflow.</returns>
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
+        /// Returned when the caller doesn't have sufficient permissions to invoke the action.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleWorkflow.Model.TypeAlreadyExistsException">
+        /// Returned if the type already exists in the specified domain. You may get this fault
+        /// if you are registering a type that is either already registered or deprecated, or
+        /// if you undeprecate a type that is currently registered.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
+        /// Returned when the named resource cannot be found with in the scope of this operation
+        /// (region or domain). This could happen if the named resource was never created or is
+        /// no longer available for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UndeprecateWorkflowType">REST API Reference for UndeprecateWorkflowType Operation</seealso>
+        UndeprecateWorkflowTypeResponse UndeprecateWorkflowType(UndeprecateWorkflowTypeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UndeprecateWorkflowType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UndeprecateWorkflowType operation on AmazonSimpleWorkflowClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUndeprecateWorkflowType
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UndeprecateWorkflowType">REST API Reference for UndeprecateWorkflowType Operation</seealso>
+        IAsyncResult BeginUndeprecateWorkflowType(UndeprecateWorkflowTypeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UndeprecateWorkflowType operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUndeprecateWorkflowType.</param>
+        /// 
+        /// <returns>Returns a  UndeprecateWorkflowTypeResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UndeprecateWorkflowType">REST API Reference for UndeprecateWorkflowType Operation</seealso>
+        UndeprecateWorkflowTypeResponse EndUndeprecateWorkflowType(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Remove a tag from a Amazon SWF domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by SimpleWorkflow.</returns>
+        /// <exception cref="Amazon.SimpleWorkflow.Model.LimitExceededException">
+        /// Returned by any operation if a system imposed limitation has been reached. To address
+        /// this fault you should either clean up unused resources or increase the limit by contacting
+        /// AWS.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
+        /// Returned when the caller doesn't have sufficient permissions to invoke the action.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
+        /// Returned when the named resource cannot be found with in the scope of this operation
+        /// (region or domain). This could happen if the named resource was never created or is
+        /// no longer available for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonSimpleWorkflowClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
 
         #endregion
         

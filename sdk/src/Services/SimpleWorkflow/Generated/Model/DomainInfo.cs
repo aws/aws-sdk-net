@@ -32,9 +32,29 @@ namespace Amazon.SimpleWorkflow.Model
     /// </summary>
     public partial class DomainInfo
     {
+        private string _arn;
         private string _description;
         private string _name;
         private RegistrationStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The ARN of the domain.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 

@@ -78,7 +78,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
     /// values fall outside the specified constraints, the action fails. The associated event
     /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
     /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -140,14 +140,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property MaximumPageSize. 
         /// <para>
-        /// The maximum number of results that are returned per call. <code>nextPageToken</code>
-        /// can be used to obtain futher pages of results. The default is 1000, which is the maximum
-        /// allowed page size. You can, however, specify a page size <i>smaller</i> than the maximum.
-        /// </para>
-        ///  
-        /// <para>
-        /// This is an upper limit only; the actual number of results returned per call may be
-        /// fewer than the specified maximum.
+        /// The maximum number of results that are returned per call. Use <code>nextPageToken</code>
+        /// to obtain further pages of results. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -166,14 +160,17 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property NextPageToken. 
         /// <para>
-        /// If a <code>NextPageToken</code> was returned by a previous call, there are more results
-        /// available. To retrieve the next page of results, make the call again using the returned
-        /// token in <code>nextPageToken</code>. Keep all other arguments unchanged.
+        /// If <code>NextPageToken</code> is returned there are more results available. The value
+        /// of <code>NextPageToken</code> is a unique pagination token for each page. Make the
+        /// call again using the returned token to retrieve the next page. Keep all other arguments
+        /// unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+        /// token will return a <code>400</code> error: "<code>Specified token has exceeded its
+        /// maximum lifetime</code>". 
         /// </para>
         ///  
         /// <para>
         /// The configured <code>maximumPageSize</code> determines how many results can be returned
-        /// in a single call.
+        /// in a single call. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]
