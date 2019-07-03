@@ -92,10 +92,6 @@ namespace Amazon.EC2.Model
         /// specify <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">
         /// Elastic Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
-        ///  
-        /// <para>
-        /// If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
-        /// </para>
         /// </summary>
         public NetworkInterfaceCreationType InterfaceType
         {

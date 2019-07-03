@@ -32,6 +32,44 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class AssignPrivateIpAddressesResponse : AmazonWebServiceResponse
     {
+        private List<AssignedPrivateIpAddress> _assignedPrivateIpAddresses = new List<AssignedPrivateIpAddress>();
+        private string _networkInterfaceId;
+
+        /// <summary>
+        /// Gets and sets the property AssignedPrivateIpAddresses. 
+        /// <para>
+        /// The private IP addresses assigned to the network interface.
+        /// </para>
+        /// </summary>
+        public List<AssignedPrivateIpAddress> AssignedPrivateIpAddresses
+        {
+            get { return this._assignedPrivateIpAddresses; }
+            set { this._assignedPrivateIpAddresses = value; }
+        }
+
+        // Check to see if AssignedPrivateIpAddresses property is set
+        internal bool IsSetAssignedPrivateIpAddresses()
+        {
+            return this._assignedPrivateIpAddresses != null && this._assignedPrivateIpAddresses.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkInterfaceId. 
+        /// <para>
+        /// The ID of the network interface.
+        /// </para>
+        /// </summary>
+        public string NetworkInterfaceId
+        {
+            get { return this._networkInterfaceId; }
+            set { this._networkInterfaceId = value; }
+        }
+
+        // Check to see if NetworkInterfaceId property is set
+        internal bool IsSetNetworkInterfaceId()
+        {
+            return this._networkInterfaceId != null;
+        }
 
     }
 }

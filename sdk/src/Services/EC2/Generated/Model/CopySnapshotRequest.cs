@@ -114,9 +114,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// Specifies whether the destination snapshot should be encrypted. You can encrypt a
-        /// copy of an unencrypted snapshot, but you cannot use it to create an unencrypted copy
-        /// of an encrypted snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+        /// To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled,
+        /// enable encryption using this parameter. Otherwise, omit this parameter. Encrypted
+        /// snapshots are encrypted, even if you omit this parameter and encryption by default
+        /// is not enabled. You cannot set this parameter to false. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
         /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>

@@ -32,77 +32,66 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AssignPrivateIpAddresses operation
+    /// Response Unmarshaller for AssignedPrivateIpAddress Object
     /// </summary>  
-    public class AssignPrivateIpAddressesResponseUnmarshaller : EC2ResponseUnmarshaller
+    public class AssignedPrivateIpAddressUnmarshaller : IUnmarshaller<AssignedPrivateIpAddress, XmlUnmarshallerContext>, IUnmarshaller<AssignedPrivateIpAddress, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
-        /// </summary>
+        /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        public AssignedPrivateIpAddress Unmarshall(XmlUnmarshallerContext context)
         {
-            AssignPrivateIpAddressesResponse response = new AssignPrivateIpAddressesResponse();
-
+            AssignedPrivateIpAddress unmarshalledObject = new AssignedPrivateIpAddress();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
-               targetDepth = 2;
-
+               targetDepth += 2;
+            
             while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-
-                    if (context.TestExpression("assignedPrivateIpAddressesSet/item", targetDepth))
-                    {
-                        var unmarshaller = AssignedPrivateIpAddressUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        response.AssignedPrivateIpAddresses.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("networkInterfaceId", targetDepth))
+                    if (context.TestExpression("privateIpAddress", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        response.NetworkInterfaceId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.PrivateIpAddress = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                } 
+                }
+                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
+                {
+                    return unmarshalledObject;
+                }
             }
 
-            return response;
+            return unmarshalledObject;
         }
 
         /// <summary>
         /// Unmarshaller error response to exception.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="innerException"></param>
-        /// <param name="statusCode"></param>
         /// <returns></returns>
-        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public AssignedPrivateIpAddress Unmarshall(JsonUnmarshallerContext context)
         {
-            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            return null;
         }
-        private static AssignPrivateIpAddressesResponseUnmarshaller _instance = new AssignPrivateIpAddressesResponseUnmarshaller();        
 
-        internal static AssignPrivateIpAddressesResponseUnmarshaller GetInstance()
-        {
-            return _instance;
-        }
+
+        private static AssignedPrivateIpAddressUnmarshaller _instance = new AssignedPrivateIpAddressUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AssignPrivateIpAddressesResponseUnmarshaller Instance
+        public static AssignedPrivateIpAddressUnmarshaller Instance
         {
             get
             {
                 return _instance;
             }
         }
-
     }
 }
