@@ -1,3 +1,12 @@
+### 3.3.546.0 (2019-07-08 19:22 UTC)
+* CostExplorer (3.3.101.0)
+	* This release introduces a new operation called GetUsageForecast, which allows you to programmatically access AWS Cost Explorer's forecasting engine on usage data (running hours, data transfer, etc).
+* Core 3.3.103.8
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.545.0 (2019-07-03 19:47 UTC)
 * EC2 (3.3.121.0)
 	* AssignPrivateIpAddresses response includes two new fields: AssignedPrivateIpAddresses, NetworkInterfaceId
