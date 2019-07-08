@@ -808,5 +808,70 @@ namespace Amazon.CostExplorer
 
         #endregion
         
+        #region  GetUsageForecast
+
+        /// <summary>
+        /// Retrieves a forecast for how much Amazon Web Services predicts that you will use over
+        /// the forecast time period that you select, based on your past usage.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUsageForecast service method.</param>
+        /// 
+        /// <returns>The response from the GetUsageForecast service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.UnresolvableUsageUnitException">
+        /// Cost Explorer was unable to identify the usage unit. Provide <code>UsageType/UsageTypeGroup</code>
+        /// filter selections that contain matching units, for example: <code>hours</code>.(
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetUsageForecast">REST API Reference for GetUsageForecast Operation</seealso>
+        public virtual GetUsageForecastResponse GetUsageForecast(GetUsageForecastRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUsageForecastRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUsageForecastResponseUnmarshaller.Instance;
+
+            return Invoke<GetUsageForecastResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUsageForecast operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUsageForecast operation on AmazonCostExplorerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUsageForecast
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetUsageForecast">REST API Reference for GetUsageForecast Operation</seealso>
+        public virtual IAsyncResult BeginGetUsageForecast(GetUsageForecastRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUsageForecastRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUsageForecastResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetUsageForecast operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUsageForecast.</param>
+        /// 
+        /// <returns>Returns a  GetUsageForecastResult from CostExplorer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetUsageForecast">REST API Reference for GetUsageForecast Operation</seealso>
+        public virtual GetUsageForecastResponse EndGetUsageForecast(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetUsageForecastResponse>(asyncResult);
+        }
+
+        #endregion
+        
     }
 }

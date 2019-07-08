@@ -10,6 +10,11 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetUsageForecastRequest.PredictionIntervalLevel</property>
+    <min>51</min>
+    <max>99</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CostExplorer.Model.DateInterval.End</property>
     <pattern>(\d{4}-\d{2}-\d{2})(T\d{2}:\d{2}:\d{2}Z)?</pattern>
   </property-value-rule>

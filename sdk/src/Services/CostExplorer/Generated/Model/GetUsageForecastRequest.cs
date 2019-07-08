@@ -28,11 +28,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetCostForecast operation.
-    /// Retrieves a forecast for how much Amazon Web Services predicts that you will spend
-    /// over the forecast time period that you select, based on your past costs.
+    /// Container for the parameters to the GetUsageForecast operation.
+    /// Retrieves a forecast for how much Amazon Web Services predicts that you will use over
+    /// the forecast time period that you select, based on your past usage.
     /// </summary>
-    public partial class GetCostForecastRequest : AmazonCostExplorerRequest
+    public partial class GetUsageForecastRequest : AmazonCostExplorerRequest
     {
         private Expression _filter;
         private Granularity _granularity;
@@ -67,7 +67,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>GetCostForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code>
+        /// The <code>GetUsageForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code>
         /// granularities.
         /// </para>
         /// </summary>
@@ -87,33 +87,19 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Metric. 
         /// <para>
-        /// Which metric Cost Explorer uses to create your forecast. For more information about
-        /// blended and unblended rates, see <a href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
-        /// does the "blended" annotation appear on some line items in my bill?</a>. 
+        /// Which metric Cost Explorer uses to create your forecast.
         /// </para>
         ///  
         /// <para>
-        /// Valid values for a <code>GetCostForecast</code> call are the following:
+        /// Valid values for a <code>GetUsageForecast</code> call are the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// AMORTIZED_COST
+        /// USAGE_QUANTITY
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// BLENDED_COST
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// NET_AMORTIZED_COST
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// NET_UNBLENDED_COST
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// UNBLENDED_COST
+        /// NORMALIZED_USAGE_AMOUNT
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -155,7 +141,11 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property TimePeriod. 
         /// <para>
-        /// The period of time that you want the forecast to cover.
+        /// The start and end dates of the period that you want to retrieve usage forecast for.
+        /// The start date is inclusive, but the end date is exclusive. For example, if <code>start</code>
+        /// is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the
+        /// cost and usage data is retrieved from <code>2017-01-01</code> up to and including
+        /// <code>2017-04-30</code> but not including <code>2017-05-01</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
