@@ -42,7 +42,15 @@ namespace Amazon.SecurityToken
         public AmazonSecurityTokenServiceConfig()
         {
             this.AuthenticationServiceName = "sts";
-            var region = FallbackRegionFactory.GetRegionEndpoint(false);
+            RegionEndpoint region;
+            try
+            {
+                region = FallbackRegionFactory.GetRegionEndpoint(false);
+            }
+            catch
+            {
+                region = RegionEndpoint.USEast1;
+            }
             this.RegionEndpoint = region ?? RegionEndpoint.USEast1;
         }
 
