@@ -39,6 +39,18 @@ namespace Amazon.CloudWatch
         /// </summary>
         public static readonly ComparisonOperator GreaterThanThreshold = new ComparisonOperator("GreaterThanThreshold");
         /// <summary>
+        /// Constant GreaterThanUpperThreshold for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator GreaterThanUpperThreshold = new ComparisonOperator("GreaterThanUpperThreshold");
+        /// <summary>
+        /// Constant LessThanLowerOrGreaterThanUpperThreshold for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator LessThanLowerOrGreaterThanUpperThreshold = new ComparisonOperator("LessThanLowerOrGreaterThanUpperThreshold");
+        /// <summary>
+        /// Constant LessThanLowerThreshold for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator LessThanLowerThreshold = new ComparisonOperator("LessThanLowerThreshold");
+        /// <summary>
         /// Constant LessThanOrEqualToThreshold for ComparisonOperator
         /// </summary>
         public static readonly ComparisonOperator LessThanOrEqualToThreshold = new ComparisonOperator("LessThanOrEqualToThreshold");

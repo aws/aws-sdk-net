@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.CloudWatch.Model.DeleteAnomalyDetectorRequest.MetricName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.DeleteAnomalyDetectorRequest.Namespace</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[^:].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatch.Model.DescribeAlarmHistoryRequest.AlarmName</property>
     <min>1</min>
     <max>255</max>
@@ -45,6 +56,21 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatch.Model.DescribeAnomalyDetectorsRequest.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.DescribeAnomalyDetectorsRequest.MetricName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.DescribeAnomalyDetectorsRequest.Namespace</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[^:].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatch.Model.GetMetricStatisticsRequest.MetricName</property>
     <min>1</min>
     <max>255</max>
@@ -74,6 +100,17 @@
     <property>Amazon.CloudWatch.Model.ListTagsForResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.PutAnomalyDetectorRequest.MetricName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.PutAnomalyDetectorRequest.Namespace</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[^:].*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.PutMetricAlarmRequest.AlarmDescription</property>
@@ -116,6 +153,11 @@
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.PutMetricAlarmRequest.Period</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.PutMetricAlarmRequest.ThresholdMetricId</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.PutMetricAlarmRequest.TreatMissingData</property>
@@ -167,6 +209,17 @@
     <property>Amazon.CloudWatch.Model.AlarmHistoryItem.HistorySummary</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.AnomalyDetector.MetricName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.AnomalyDetector.Namespace</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[^:].*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.Dimension.Name</property>
@@ -270,6 +323,11 @@
     <property>Amazon.CloudWatch.Model.MetricAlarm.StateReasonData</property>
     <min>0</min>
     <max>4000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.MetricAlarm.ThresholdMetricId</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.MetricAlarm.TreatMissingData</property>

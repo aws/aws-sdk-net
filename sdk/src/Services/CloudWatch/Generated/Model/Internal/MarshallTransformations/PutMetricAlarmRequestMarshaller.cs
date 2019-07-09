@@ -235,6 +235,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Threshold", StringUtils.FromDouble(publicRequest.Threshold));
                 }
+                if(publicRequest.IsSetThresholdMetricId())
+                {
+                    request.Parameters.Add("ThresholdMetricId", StringUtils.FromString(publicRequest.ThresholdMetricId));
+                }
                 if(publicRequest.IsSetTreatMissingData())
                 {
                     request.Parameters.Add("TreatMissingData", StringUtils.FromString(publicRequest.TreatMissingData));

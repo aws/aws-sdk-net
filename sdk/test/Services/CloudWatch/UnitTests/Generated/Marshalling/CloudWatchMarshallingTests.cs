@@ -63,6 +63,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudWatch")]
+        public void DeleteAnomalyDetectorMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAnomalyDetector");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAnomalyDetectorRequest>();
+            var marshaller = new DeleteAnomalyDetectorRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DeleteAnomalyDetectorResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteAnomalyDetectorResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudWatch")]
         public void DeleteDashboardsMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteDashboards");
@@ -150,6 +174,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = DescribeAlarmsForMetricResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeAlarmsForMetricResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudWatch")]
+        public void DescribeAnomalyDetectorsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAnomalyDetectors");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAnomalyDetectorsRequest>();
+            var marshaller = new DescribeAnomalyDetectorsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeAnomalyDetectorsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeAnomalyDetectorsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -356,6 +404,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = ListTagsForResourceResponseUnmarshaller.Instance.Unmarshall(context)
                 as ListTagsForResourceResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudWatch")]
+        public void PutAnomalyDetectorMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutAnomalyDetector");
+
+            var request = InstantiateClassGenerator.Execute<PutAnomalyDetectorRequest>();
+            var marshaller = new PutAnomalyDetectorRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = PutAnomalyDetectorResponseUnmarshaller.Instance.Unmarshall(context)
+                as PutAnomalyDetectorResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

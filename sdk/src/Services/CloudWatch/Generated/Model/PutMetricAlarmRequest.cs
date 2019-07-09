@@ -29,9 +29,13 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the PutMetricAlarm operation.
-    /// Creates or updates an alarm and associates it with the specified metric or metric
-    /// math expression.
+    /// Creates or updates an alarm and associates it with the specified metric, metric math
+    /// expression, or anomaly detection model.
     /// 
+    ///  
+    /// <para>
+    /// Alarms based on anomaly detection models cannot have Auto Scaling actions.
+    /// </para>
     ///  
     /// <para>
     /// When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>.
@@ -117,6 +121,7 @@ namespace Amazon.CloudWatch.Model
         private Statistic _statistic;
         private List<Tag> _tags = new List<Tag>();
         private double? _threshold;
+        private string _thresholdMetricId;
         private string _treatMissingData;
         private StandardUnit _unit;
 
@@ -217,6 +222,12 @@ namespace Amazon.CloudWatch.Model
         /// <para>
         ///  The arithmetic operation to use when comparing the specified statistic and threshold.
         /// The specified statistic value is used as the first operand.
+        /// </para>
+        ///  
+        /// <para>
+        /// The values <code>LessThanLowerOrGreaterThanUpperThreshold</code>, <code>LessThanLowerThreshold</code>,
+        /// and <code>GreaterThanUpperThreshold</code> are used only for alarms based on anomaly
+        /// detection models.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -587,7 +598,6 @@ namespace Amazon.CloudWatch.Model
         /// The value against which the specified statistic is compared.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public double Threshold
         {
             get { return this._threshold.GetValueOrDefault(); }
@@ -598,6 +608,35 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetThreshold()
         {
             return this._threshold.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThresholdMetricId. 
+        /// <para>
+        /// If this is an alarm based on an anomaly detection model, make this value match the
+        /// ID of the <code>ANOMALY_DETECTION_BAND</code> function.
+        /// </para>
+        ///  
+        /// <para>
+        /// For an example of how to use this parameter, see the <b>Anomaly Detection Model Alarm</b>
+        /// example on this page.
+        /// </para>
+        ///  
+        /// <para>
+        /// If your alarm uses this parameter, it cannot have Auto Scaling actions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string ThresholdMetricId
+        {
+            get { return this._thresholdMetricId; }
+            set { this._thresholdMetricId = value; }
+        }
+
+        // Check to see if ThresholdMetricId property is set
+        internal bool IsSetThresholdMetricId()
+        {
+            return this._thresholdMetricId != null;
         }
 
         /// <summary>

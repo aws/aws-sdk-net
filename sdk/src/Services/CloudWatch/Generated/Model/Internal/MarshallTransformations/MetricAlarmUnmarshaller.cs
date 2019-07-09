@@ -203,6 +203,12 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         unmarshalledObject.Threshold = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ThresholdMetricId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ThresholdMetricId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("TreatMissingData", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -35,8 +35,7 @@ namespace Amazon.CloudWatch.Model
     /// 
     ///  
     /// <para>
-    /// There is no limit to the number of dashboards in your account. All dashboards in your
-    /// account are global, not region-specific.
+    /// All dashboards in your account are global, not region-specific.
     /// </para>
     ///  
     /// <para>

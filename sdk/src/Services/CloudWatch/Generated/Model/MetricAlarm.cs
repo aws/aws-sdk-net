@@ -56,6 +56,7 @@ namespace Amazon.CloudWatch.Model
         private StateValue _stateValue;
         private Statistic _statistic;
         private double? _threshold;
+        private string _thresholdMetricId;
         private string _treatMissingData;
         private StandardUnit _unit;
 
@@ -312,7 +313,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        /// The name of the metric associated with the alarm.
+        /// The name of the metric associated with the alarm, if this is an alarm based on a single
+        /// metric.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -329,7 +331,13 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Metrics.
+        /// Gets and sets the property Metrics. 
+        /// <para>
+        /// An array of MetricDataQuery structures, used in an alarm based on a metric math expression.
+        /// Each structure either retrieves a metric or performs a math expression. One item in
+        /// the Metrics array is the math expression that the alarm watches. This expression by
+        /// designated by having <code>ReturnValue</code> set to true.
+        /// </para>
         /// </summary>
         public List<MetricDataQuery> Metrics
         {
@@ -510,6 +518,26 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetThreshold()
         {
             return this._threshold.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThresholdMetricId. 
+        /// <para>
+        /// In an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code>
+        /// function used as the threshold for the alarm.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string ThresholdMetricId
+        {
+            get { return this._thresholdMetricId; }
+            set { this._thresholdMetricId = value; }
+        }
+
+        // Check to see if ThresholdMetricId property is set
+        internal bool IsSetThresholdMetricId()
+        {
+            return this._thresholdMetricId != null;
         }
 
         /// <summary>

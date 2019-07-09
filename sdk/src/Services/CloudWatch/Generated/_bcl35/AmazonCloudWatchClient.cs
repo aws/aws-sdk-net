@@ -310,6 +310,72 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  DeleteAnomalyDetector
+
+        /// <summary>
+        /// Deletes the specified anomaly detection model from your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAnomalyDetector service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAnomalyDetector service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
+        /// Request processing has failed due to some unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
+        /// An input parameter that is required is missing.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAnomalyDetector">REST API Reference for DeleteAnomalyDetector Operation</seealso>
+        public virtual DeleteAnomalyDetectorResponse DeleteAnomalyDetector(DeleteAnomalyDetectorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAnomalyDetectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAnomalyDetectorResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAnomalyDetectorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAnomalyDetector operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAnomalyDetector operation on AmazonCloudWatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAnomalyDetector
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAnomalyDetector">REST API Reference for DeleteAnomalyDetector Operation</seealso>
+        public virtual IAsyncResult BeginDeleteAnomalyDetector(DeleteAnomalyDetectorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAnomalyDetectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAnomalyDetectorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAnomalyDetector operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAnomalyDetector.</param>
+        /// 
+        /// <returns>Returns a  DeleteAnomalyDetectorResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAnomalyDetector">REST API Reference for DeleteAnomalyDetector Operation</seealso>
+        public virtual DeleteAnomalyDetectorResponse EndDeleteAnomalyDetector(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAnomalyDetectorResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteDashboards
 
         /// <summary>
@@ -585,6 +651,71 @@ namespace Amazon.CloudWatch
         public virtual DescribeAlarmsForMetricResponse EndDescribeAlarmsForMetric(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAlarmsForMetricResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeAnomalyDetectors
+
+        /// <summary>
+        /// Lists the anomaly detection models that you have created in your account. You can
+        /// list all models in your account or filter the results to only the models that are
+        /// related to a certain namespace, metric name, or metric dimension.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAnomalyDetectors service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAnomalyDetectors service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
+        /// Request processing has failed due to some unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
+        /// The next token specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAnomalyDetectors">REST API Reference for DescribeAnomalyDetectors Operation</seealso>
+        public virtual DescribeAnomalyDetectorsResponse DescribeAnomalyDetectors(DescribeAnomalyDetectorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAnomalyDetectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAnomalyDetectorsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAnomalyDetectorsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAnomalyDetectors operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAnomalyDetectors operation on AmazonCloudWatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAnomalyDetectors
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAnomalyDetectors">REST API Reference for DescribeAnomalyDetectors Operation</seealso>
+        public virtual IAsyncResult BeginDescribeAnomalyDetectors(DescribeAnomalyDetectorsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAnomalyDetectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAnomalyDetectorsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAnomalyDetectors operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAnomalyDetectors.</param>
+        /// 
+        /// <returns>Returns a  DescribeAnomalyDetectorsResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAnomalyDetectors">REST API Reference for DescribeAnomalyDetectors Operation</seealso>
+        public virtual DescribeAnomalyDetectorsResponse EndDescribeAnomalyDetectors(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAnomalyDetectorsResponse>(asyncResult);
         }
 
         #endregion
@@ -1329,6 +1460,79 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  PutAnomalyDetector
+
+        /// <summary>
+        /// Creates an anomaly detection model for a CloudWatch metric. You can use the model
+        /// to display a band of expected normal values when the metric is graphed.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Anomaly_Detection.html">CloudWatch
+        /// Anomaly Detection</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAnomalyDetector service method.</param>
+        /// 
+        /// <returns>The response from the PutAnomalyDetector service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
+        /// Request processing has failed due to some unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.LimitExceededException">
+        /// The operation exceeded one or more limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
+        /// An input parameter that is required is missing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutAnomalyDetector">REST API Reference for PutAnomalyDetector Operation</seealso>
+        public virtual PutAnomalyDetectorResponse PutAnomalyDetector(PutAnomalyDetectorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAnomalyDetectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAnomalyDetectorResponseUnmarshaller.Instance;
+
+            return Invoke<PutAnomalyDetectorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAnomalyDetector operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAnomalyDetector operation on AmazonCloudWatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAnomalyDetector
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutAnomalyDetector">REST API Reference for PutAnomalyDetector Operation</seealso>
+        public virtual IAsyncResult BeginPutAnomalyDetector(PutAnomalyDetectorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAnomalyDetectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAnomalyDetectorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutAnomalyDetector operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAnomalyDetector.</param>
+        /// 
+        /// <returns>Returns a  PutAnomalyDetectorResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutAnomalyDetector">REST API Reference for PutAnomalyDetector Operation</seealso>
+        public virtual PutAnomalyDetectorResponse EndPutAnomalyDetector(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutAnomalyDetectorResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutDashboard
 
         /// <summary>
@@ -1338,8 +1542,7 @@ namespace Amazon.CloudWatch
         /// 
         ///  
         /// <para>
-        /// There is no limit to the number of dashboards in your account. All dashboards in your
-        /// account are global, not region-specific.
+        /// All dashboards in your account are global, not region-specific.
         /// </para>
         ///  
         /// <para>
@@ -1417,9 +1620,13 @@ namespace Amazon.CloudWatch
         #region  PutMetricAlarm
 
         /// <summary>
-        /// Creates or updates an alarm and associates it with the specified metric or metric
-        /// math expression.
+        /// Creates or updates an alarm and associates it with the specified metric, metric math
+        /// expression, or anomaly detection model.
         /// 
+        ///  
+        /// <para>
+        /// Alarms based on anomaly detection models cannot have Auto Scaling actions.
+        /// </para>
         ///  
         /// <para>
         /// When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>.
