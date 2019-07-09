@@ -569,6 +569,72 @@ namespace Amazon.ConfigService
 
 
     /// <summary>
+    /// Constants used for properties of type MemberAccountRuleStatus.
+    /// </summary>
+    public class MemberAccountRuleStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_FAILED for MemberAccountRuleStatus
+        /// </summary>
+        public static readonly MemberAccountRuleStatus CREATE_FAILED = new MemberAccountRuleStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATE_IN_PROGRESS for MemberAccountRuleStatus
+        /// </summary>
+        public static readonly MemberAccountRuleStatus CREATE_IN_PROGRESS = new MemberAccountRuleStatus("CREATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant CREATE_SUCCESSFUL for MemberAccountRuleStatus
+        /// </summary>
+        public static readonly MemberAccountRuleStatus CREATE_SUCCESSFUL = new MemberAccountRuleStatus("CREATE_SUCCESSFUL");
+        /// <summary>
+        /// Constant DELETE_FAILED for MemberAccountRuleStatus
+        /// </summary>
+        public static readonly MemberAccountRuleStatus DELETE_FAILED = new MemberAccountRuleStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for MemberAccountRuleStatus
+        /// </summary>
+        public static readonly MemberAccountRuleStatus DELETE_IN_PROGRESS = new MemberAccountRuleStatus("DELETE_IN_PROGRESS");
+        /// <summary>
+        /// Constant DELETE_SUCCESSFUL for MemberAccountRuleStatus
+        /// </summary>
+        public static readonly MemberAccountRuleStatus DELETE_SUCCESSFUL = new MemberAccountRuleStatus("DELETE_SUCCESSFUL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MemberAccountRuleStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MemberAccountRuleStatus FindValue(string value)
+        {
+            return FindValue<MemberAccountRuleStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MemberAccountRuleStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MessageType.
     /// </summary>
     public class MessageType : ConstantClass
@@ -620,6 +686,126 @@ namespace Amazon.ConfigService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MessageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OrganizationConfigRuleTriggerType.
+    /// </summary>
+    public class OrganizationConfigRuleTriggerType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ConfigurationItemChangeNotification for OrganizationConfigRuleTriggerType
+        /// </summary>
+        public static readonly OrganizationConfigRuleTriggerType ConfigurationItemChangeNotification = new OrganizationConfigRuleTriggerType("ConfigurationItemChangeNotification");
+        /// <summary>
+        /// Constant OversizedConfigurationItemChangeNotification for OrganizationConfigRuleTriggerType
+        /// </summary>
+        public static readonly OrganizationConfigRuleTriggerType OversizedConfigurationItemChangeNotification = new OrganizationConfigRuleTriggerType("OversizedConfigurationItemChangeNotification");
+        /// <summary>
+        /// Constant ScheduledNotification for OrganizationConfigRuleTriggerType
+        /// </summary>
+        public static readonly OrganizationConfigRuleTriggerType ScheduledNotification = new OrganizationConfigRuleTriggerType("ScheduledNotification");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OrganizationConfigRuleTriggerType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrganizationConfigRuleTriggerType FindValue(string value)
+        {
+            return FindValue<OrganizationConfigRuleTriggerType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrganizationConfigRuleTriggerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OrganizationRuleStatus.
+    /// </summary>
+    public class OrganizationRuleStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_FAILED for OrganizationRuleStatus
+        /// </summary>
+        public static readonly OrganizationRuleStatus CREATE_FAILED = new OrganizationRuleStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATE_IN_PROGRESS for OrganizationRuleStatus
+        /// </summary>
+        public static readonly OrganizationRuleStatus CREATE_IN_PROGRESS = new OrganizationRuleStatus("CREATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant CREATE_SUCCESSFUL for OrganizationRuleStatus
+        /// </summary>
+        public static readonly OrganizationRuleStatus CREATE_SUCCESSFUL = new OrganizationRuleStatus("CREATE_SUCCESSFUL");
+        /// <summary>
+        /// Constant DELETE_FAILED for OrganizationRuleStatus
+        /// </summary>
+        public static readonly OrganizationRuleStatus DELETE_FAILED = new OrganizationRuleStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for OrganizationRuleStatus
+        /// </summary>
+        public static readonly OrganizationRuleStatus DELETE_IN_PROGRESS = new OrganizationRuleStatus("DELETE_IN_PROGRESS");
+        /// <summary>
+        /// Constant DELETE_SUCCESSFUL for OrganizationRuleStatus
+        /// </summary>
+        public static readonly OrganizationRuleStatus DELETE_SUCCESSFUL = new OrganizationRuleStatus("DELETE_SUCCESSFUL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OrganizationRuleStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrganizationRuleStatus FindValue(string value)
+        {
+            return FindValue<OrganizationRuleStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrganizationRuleStatus(string value)
         {
             return FindValue(value);
         }

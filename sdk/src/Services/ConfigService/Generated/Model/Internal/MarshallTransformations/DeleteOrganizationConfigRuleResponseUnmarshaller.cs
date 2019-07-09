@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteRemediationConfiguration operation
+    /// Response Unmarshaller for DeleteOrganizationConfigRule operation
     /// </summary>  
-    public class DeleteRemediationConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteOrganizationConfigRuleResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteRemediationConfigurationResponse response = new DeleteRemediationConfigurationResponse();
+            DeleteOrganizationConfigRuleResponse response = new DeleteOrganizationConfigRuleResponse();
 
 
             return response;
@@ -61,20 +61,20 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchRemediationConfigurationException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchOrganizationConfigRuleException"))
             {
-                return new NoSuchRemediationConfigurationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new NoSuchOrganizationConfigRuleException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("RemediationInProgressException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceInUseException"))
             {
-                return new RemediationInProgressException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new ResourceInUseException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonConfigServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DeleteRemediationConfigurationResponseUnmarshaller _instance = new DeleteRemediationConfigurationResponseUnmarshaller();        
+        private static DeleteOrganizationConfigRuleResponseUnmarshaller _instance = new DeleteOrganizationConfigRuleResponseUnmarshaller();        
 
-        internal static DeleteRemediationConfigurationResponseUnmarshaller GetInstance()
+        internal static DeleteOrganizationConfigRuleResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -82,7 +82,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteRemediationConfigurationResponseUnmarshaller Instance
+        public static DeleteOrganizationConfigRuleResponseUnmarshaller Instance
         {
             get
             {

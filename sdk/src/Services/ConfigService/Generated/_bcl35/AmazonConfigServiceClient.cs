@@ -827,6 +827,67 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  DeleteOrganizationConfigRule
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOrganizationConfigRule service method.</param>
+        /// 
+        /// <returns>The response from the DeleteOrganizationConfigRule service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConfigRuleException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
+        /// The rule is currently being deleted or the rule is deleting your evaluation results.
+        /// Try your request again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteOrganizationConfigRule">REST API Reference for DeleteOrganizationConfigRule Operation</seealso>
+        public virtual DeleteOrganizationConfigRuleResponse DeleteOrganizationConfigRule(DeleteOrganizationConfigRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteOrganizationConfigRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOrganizationConfigRuleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteOrganizationConfigRuleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteOrganizationConfigRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOrganizationConfigRule operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteOrganizationConfigRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteOrganizationConfigRule">REST API Reference for DeleteOrganizationConfigRule Operation</seealso>
+        public virtual IAsyncResult BeginDeleteOrganizationConfigRule(DeleteOrganizationConfigRuleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteOrganizationConfigRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOrganizationConfigRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteOrganizationConfigRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteOrganizationConfigRule.</param>
+        /// 
+        /// <returns>Returns a  DeleteOrganizationConfigRuleResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteOrganizationConfigRule">REST API Reference for DeleteOrganizationConfigRule Operation</seealso>
+        public virtual DeleteOrganizationConfigRuleResponse EndDeleteOrganizationConfigRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteOrganizationConfigRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeletePendingAggregationRequest
 
         /// <summary>
@@ -896,6 +957,9 @@ namespace Amazon.ConfigService
         /// <returns>The response from the DeleteRemediationConfiguration service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchRemediationConfigurationException">
         /// You specified an AWS Config rule without a remediation configuration.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.RemediationInProgressException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRemediationConfiguration">REST API Reference for DeleteRemediationConfiguration Operation</seealso>
         public virtual DeleteRemediationConfigurationResponse DeleteRemediationConfiguration(DeleteRemediationConfigurationRequest request)
@@ -2077,6 +2141,134 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  DescribeOrganizationConfigRules
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationConfigRules service method.</param>
+        /// 
+        /// <returns>The response from the DescribeOrganizationConfigRules service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConfigRuleException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules">REST API Reference for DescribeOrganizationConfigRules Operation</seealso>
+        public virtual DescribeOrganizationConfigRulesResponse DescribeOrganizationConfigRules(DescribeOrganizationConfigRulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOrganizationConfigRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOrganizationConfigRulesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeOrganizationConfigRulesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeOrganizationConfigRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationConfigRules operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeOrganizationConfigRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules">REST API Reference for DescribeOrganizationConfigRules Operation</seealso>
+        public virtual IAsyncResult BeginDescribeOrganizationConfigRules(DescribeOrganizationConfigRulesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOrganizationConfigRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOrganizationConfigRulesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeOrganizationConfigRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeOrganizationConfigRules.</param>
+        /// 
+        /// <returns>Returns a  DescribeOrganizationConfigRulesResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules">REST API Reference for DescribeOrganizationConfigRules Operation</seealso>
+        public virtual DescribeOrganizationConfigRulesResponse EndDescribeOrganizationConfigRules(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeOrganizationConfigRulesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeOrganizationConfigRuleStatuses
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationConfigRuleStatuses service method.</param>
+        /// 
+        /// <returns>The response from the DescribeOrganizationConfigRuleStatuses service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConfigRuleException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRuleStatuses">REST API Reference for DescribeOrganizationConfigRuleStatuses Operation</seealso>
+        public virtual DescribeOrganizationConfigRuleStatusesResponse DescribeOrganizationConfigRuleStatuses(DescribeOrganizationConfigRuleStatusesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOrganizationConfigRuleStatusesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOrganizationConfigRuleStatusesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeOrganizationConfigRuleStatusesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeOrganizationConfigRuleStatuses operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationConfigRuleStatuses operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeOrganizationConfigRuleStatuses
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRuleStatuses">REST API Reference for DescribeOrganizationConfigRuleStatuses Operation</seealso>
+        public virtual IAsyncResult BeginDescribeOrganizationConfigRuleStatuses(DescribeOrganizationConfigRuleStatusesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOrganizationConfigRuleStatusesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOrganizationConfigRuleStatusesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeOrganizationConfigRuleStatuses operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeOrganizationConfigRuleStatuses.</param>
+        /// 
+        /// <returns>Returns a  DescribeOrganizationConfigRuleStatusesResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRuleStatuses">REST API Reference for DescribeOrganizationConfigRuleStatuses Operation</seealso>
+        public virtual DescribeOrganizationConfigRuleStatusesResponse EndDescribeOrganizationConfigRuleStatuses(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeOrganizationConfigRuleStatusesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribePendingAggregationRequests
 
         /// <summary>
@@ -2988,6 +3180,70 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  GetOrganizationConfigRuleDetailedStatus
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOrganizationConfigRuleDetailedStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetOrganizationConfigRuleDetailedStatus service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConfigRuleException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus">REST API Reference for GetOrganizationConfigRuleDetailedStatus Operation</seealso>
+        public virtual GetOrganizationConfigRuleDetailedStatusResponse GetOrganizationConfigRuleDetailedStatus(GetOrganizationConfigRuleDetailedStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetOrganizationConfigRuleDetailedStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOrganizationConfigRuleDetailedStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetOrganizationConfigRuleDetailedStatusResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetOrganizationConfigRuleDetailedStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetOrganizationConfigRuleDetailedStatus operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetOrganizationConfigRuleDetailedStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus">REST API Reference for GetOrganizationConfigRuleDetailedStatus Operation</seealso>
+        public virtual IAsyncResult BeginGetOrganizationConfigRuleDetailedStatus(GetOrganizationConfigRuleDetailedStatusRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetOrganizationConfigRuleDetailedStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOrganizationConfigRuleDetailedStatusResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetOrganizationConfigRuleDetailedStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetOrganizationConfigRuleDetailedStatus.</param>
+        /// 
+        /// <returns>Returns a  GetOrganizationConfigRuleDetailedStatusResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus">REST API Reference for GetOrganizationConfigRuleDetailedStatus Operation</seealso>
+        public virtual GetOrganizationConfigRuleDetailedStatusResponse EndGetOrganizationConfigRuleDetailedStatus(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetOrganizationConfigRuleDetailedStatusResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetResourceConfigHistory
 
         /// <summary>
@@ -3842,6 +4098,99 @@ namespace Amazon.ConfigService
         public virtual PutEvaluationsResponse EndPutEvaluations(IAsyncResult asyncResult)
         {
             return EndInvoke<PutEvaluationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutOrganizationConfigRule
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutOrganizationConfigRule service method.</param>
+        /// 
+        /// <returns>The response from the PutOrganizationConfigRule service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InsufficientPermissionsException">
+        /// Indicates one of the following errors:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The rule cannot be created because the IAM role assigned to AWS Config lacks permissions
+        /// to perform the config:Put* action.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The AWS Lambda function cannot be invoked. Check the function ARN, and check the function's
+        /// permissions.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfOrganizationConfigRulesExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoAvailableOrganizationException">
+        /// Organization does is no longer available.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
+        /// No permission to call the EnableAWSServiceAccess API.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.OrganizationAllFeaturesNotEnabledException">
+        /// The configuration aggregator cannot be created because organization does not have
+        /// all features enabled.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
+        /// The rule is currently being deleted or the rule is deleting your evaluation results.
+        /// Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConfigRule">REST API Reference for PutOrganizationConfigRule Operation</seealso>
+        public virtual PutOrganizationConfigRuleResponse PutOrganizationConfigRule(PutOrganizationConfigRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutOrganizationConfigRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutOrganizationConfigRuleResponseUnmarshaller.Instance;
+
+            return Invoke<PutOrganizationConfigRuleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutOrganizationConfigRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutOrganizationConfigRule operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutOrganizationConfigRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConfigRule">REST API Reference for PutOrganizationConfigRule Operation</seealso>
+        public virtual IAsyncResult BeginPutOrganizationConfigRule(PutOrganizationConfigRuleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutOrganizationConfigRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutOrganizationConfigRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutOrganizationConfigRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutOrganizationConfigRule.</param>
+        /// 
+        /// <returns>Returns a  PutOrganizationConfigRuleResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConfigRule">REST API Reference for PutOrganizationConfigRule Operation</seealso>
+        public virtual PutOrganizationConfigRuleResponse EndPutOrganizationConfigRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutOrganizationConfigRuleResponse>(asyncResult);
         }
 
         #endregion

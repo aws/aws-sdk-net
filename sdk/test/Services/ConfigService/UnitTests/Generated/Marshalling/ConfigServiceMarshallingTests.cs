@@ -210,6 +210,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("ConfigService")]
+        public void DeleteOrganizationConfigRuleMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DeleteOrganizationConfigRuleRequest>();
+            var marshaller = new DeleteOrganizationConfigRuleRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DeleteOrganizationConfigRuleRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ConfigService")]
         public void DeletePendingAggregationRequestMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DeletePendingAggregationRequestRequest>();
@@ -648,6 +664,64 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("ConfigService")]
+        public void DescribeOrganizationConfigRulesMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeOrganizationConfigRulesRequest>();
+            var marshaller = new DescribeOrganizationConfigRulesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DescribeOrganizationConfigRulesRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeOrganizationConfigRules").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DescribeOrganizationConfigRulesResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeOrganizationConfigRulesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ConfigService")]
+        public void DescribeOrganizationConfigRuleStatusesMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeOrganizationConfigRuleStatusesRequest>();
+            var marshaller = new DescribeOrganizationConfigRuleStatusesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DescribeOrganizationConfigRuleStatusesRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeOrganizationConfigRuleStatuses").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DescribeOrganizationConfigRuleStatusesResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeOrganizationConfigRuleStatusesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ConfigService")]
         public void DescribePendingAggregationRequestsMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DescribePendingAggregationRequestsRequest>();
@@ -1022,6 +1096,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("ConfigService")]
+        public void GetOrganizationConfigRuleDetailedStatusMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<GetOrganizationConfigRuleDetailedStatusRequest>();
+            var marshaller = new GetOrganizationConfigRuleDetailedStatusRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<GetOrganizationConfigRuleDetailedStatusRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetOrganizationConfigRuleDetailedStatus").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = GetOrganizationConfigRuleDetailedStatusResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetOrganizationConfigRuleDetailedStatusResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ConfigService")]
         public void GetResourceConfigHistoryMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<GetResourceConfigHistoryRequest>();
@@ -1265,6 +1368,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = PutEvaluationsResponseUnmarshaller.Instance.Unmarshall(context)
                 as PutEvaluationsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ConfigService")]
+        public void PutOrganizationConfigRuleMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<PutOrganizationConfigRuleRequest>();
+            var marshaller = new PutOrganizationConfigRuleRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<PutOrganizationConfigRuleRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("PutOrganizationConfigRule").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = PutOrganizationConfigRuleResponseUnmarshaller.Instance.Unmarshall(context)
+                as PutOrganizationConfigRuleResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 

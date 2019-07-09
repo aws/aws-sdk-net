@@ -42,6 +42,11 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.DeleteOrganizationConfigRuleRequest.OrganizationConfigRuleName</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.DeletePendingAggregationRequestRequest.RequesterAccountId</property>
     <pattern>\d{12}</pattern>
   </property-value-rule>
@@ -115,6 +120,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.DescribeConfigurationAggregatorSourcesStatusRequest.Limit</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.DescribeOrganizationConfigRulesRequest.Limit</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.DescribeOrganizationConfigRuleStatusesRequest.Limit</property>
     <min>0</min>
     <max>100</max>
   </property-value-rule>
@@ -232,6 +247,16 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.GetOrganizationConfigRuleDetailedStatusRequest.Limit</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.GetOrganizationConfigRuleDetailedStatusRequest.OrganizationConfigRuleName</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.GetResourceConfigHistoryRequest.Limit</property>
     <min>0</min>
     <max>100</max>
@@ -281,6 +306,16 @@
     <min>1</min>
     <max>256</max>
     <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.PutOrganizationConfigRuleRequest.OrganizationConfigRuleName</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.PutOrganizationConfigRuleResponse.OrganizationConfigRuleArn</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.PutRetentionConfigurationRequest.RetentionPeriodInDays</property>
@@ -540,6 +575,90 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.MemberAccountStatus.AccountId</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.MemberAccountStatus.ConfigRuleName</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.OrganizationConfigRule.OrganizationConfigRuleArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.OrganizationConfigRule.OrganizationConfigRuleName</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.OrganizationConfigRuleStatus.OrganizationConfigRuleName</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.OrganizationCustomRuleMetadata.Description</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.OrganizationCustomRuleMetadata.InputParameters</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.OrganizationCustomRuleMetadata.LambdaFunctionArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.OrganizationCustomRuleMetadata.ResourceIdScope</property>
+    <min>1</min>
+    <max>768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.OrganizationCustomRuleMetadata.TagKeyScope</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.OrganizationCustomRuleMetadata.TagValueScope</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.OrganizationManagedRuleMetadata.Description</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.OrganizationManagedRuleMetadata.InputParameters</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.OrganizationManagedRuleMetadata.ResourceIdScope</property>
+    <min>1</min>
+    <max>768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.OrganizationManagedRuleMetadata.RuleIdentifier</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.OrganizationManagedRuleMetadata.TagKeyScope</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.OrganizationManagedRuleMetadata.TagValueScope</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.PendingAggregationRequest.RequesterAccountId</property>
     <pattern>\d{12}</pattern>
   </property-value-rule>
@@ -626,6 +745,10 @@
     <property>Amazon.ConfigService.Model.Source.SourceIdentifier</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.StatusDetailFilters.AccountId</property>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.Tag.Key</property>

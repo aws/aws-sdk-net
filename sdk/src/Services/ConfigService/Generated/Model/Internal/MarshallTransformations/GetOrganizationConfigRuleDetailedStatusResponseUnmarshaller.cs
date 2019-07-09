@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteRemediationConfiguration operation
+    /// Response Unmarshaller for GetOrganizationConfigRuleDetailedStatus operation
     /// </summary>  
-    public class DeleteRemediationConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetOrganizationConfigRuleDetailedStatusResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,25 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteRemediationConfigurationResponse response = new DeleteRemediationConfigurationResponse();
+            GetOrganizationConfigRuleDetailedStatusResponse response = new GetOrganizationConfigRuleDetailedStatusResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("NextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OrganizationConfigRuleDetailedStatus", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MemberAccountStatus, MemberAccountStatusUnmarshaller>(MemberAccountStatusUnmarshaller.Instance);
+                    response.OrganizationConfigRuleDetailedStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -61,20 +78,24 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchRemediationConfigurationException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidLimitException"))
             {
-                return new NoSuchRemediationConfigurationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidLimitException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("RemediationInProgressException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidNextTokenException"))
             {
-                return new RemediationInProgressException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidNextTokenException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchOrganizationConfigRuleException"))
+            {
+                return new NoSuchOrganizationConfigRuleException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonConfigServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DeleteRemediationConfigurationResponseUnmarshaller _instance = new DeleteRemediationConfigurationResponseUnmarshaller();        
+        private static GetOrganizationConfigRuleDetailedStatusResponseUnmarshaller _instance = new GetOrganizationConfigRuleDetailedStatusResponseUnmarshaller();        
 
-        internal static DeleteRemediationConfigurationResponseUnmarshaller GetInstance()
+        internal static GetOrganizationConfigRuleDetailedStatusResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -82,7 +103,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteRemediationConfigurationResponseUnmarshaller Instance
+        public static GetOrganizationConfigRuleDetailedStatusResponseUnmarshaller Instance
         {
             get
             {
