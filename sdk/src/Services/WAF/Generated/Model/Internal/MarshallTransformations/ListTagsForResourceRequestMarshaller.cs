@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAF.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateWebACL Request Marshaller
+    /// ListTagsForResource Request Marshaller
     /// </summary>       
-    public class CreateWebACLRequestMarshaller : IMarshaller<IRequest, CreateWebACLRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListTagsForResourceRequestMarshaller : IMarshaller<IRequest, ListTagsForResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateWebACLRequest)input);
+            return this.Marshall((ListTagsForResourceRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateWebACLRequest publicRequest)
+        public IRequest Marshall(ListTagsForResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WAF");
-            string target = "AWSWAF_20150824.CreateWebACL";
+            string target = "AWSWAF_20150824.ListTagsForResource";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-08-24";            
@@ -68,49 +68,22 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetChangeToken())
+                if(publicRequest.IsSetLimit())
                 {
-                    context.Writer.WritePropertyName("ChangeToken");
-                    context.Writer.Write(publicRequest.ChangeToken);
+                    context.Writer.WritePropertyName("Limit");
+                    context.Writer.Write(publicRequest.Limit);
                 }
 
-                if(publicRequest.IsSetDefaultAction())
+                if(publicRequest.IsSetNextMarker())
                 {
-                    context.Writer.WritePropertyName("DefaultAction");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = WafActionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DefaultAction, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("NextMarker");
+                    context.Writer.Write(publicRequest.NextMarker);
                 }
 
-                if(publicRequest.IsSetMetricName())
+                if(publicRequest.IsSetResourceARN())
                 {
-                    context.Writer.WritePropertyName("MetricName");
-                    context.Writer.Write(publicRequest.MetricName);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("ResourceARN");
+                    context.Writer.Write(publicRequest.ResourceARN);
                 }
 
         
@@ -122,9 +95,9 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateWebACLRequestMarshaller _instance = new CreateWebACLRequestMarshaller();        
+        private static ListTagsForResourceRequestMarshaller _instance = new ListTagsForResourceRequestMarshaller();        
 
-        internal static CreateWebACLRequestMarshaller GetInstance()
+        internal static ListTagsForResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -132,7 +105,7 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateWebACLRequestMarshaller Instance
+        public static ListTagsForResourceRequestMarshaller Instance
         {
             get
             {

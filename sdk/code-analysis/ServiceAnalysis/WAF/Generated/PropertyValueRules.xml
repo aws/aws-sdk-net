@@ -612,6 +612,24 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.ListTagsForResourceRequest.Limit</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.ListTagsForResourceRequest.NextMarker</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.ListTagsForResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1224</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.ListTagsForResourceResponse.NextMarker</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.ListWebACLsRequest.Limit</property>
     <min>0</min>
     <max>100</max>
@@ -643,6 +661,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.PutPermissionPolicyRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1224</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.TagResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1224</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.UntagResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1224</max>
   </property-value-rule>
@@ -1054,6 +1082,21 @@
     <property>Amazon.WAF.Model.SubscribedRuleGroupSummary.RuleGroupId</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.TagInfoForResource.ResourceARN</property>
+    <min>1</min>
+    <max>1224</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.WAFInvalidParameterException.Parameter</property>

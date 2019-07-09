@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAF.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateWebACL operation
+    /// Response Unmarshaller for ListTagsForResource operation
     /// </summary>  
-    public class CreateWebACLResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListTagsForResourceResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,22 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateWebACLResponse response = new CreateWebACLResponse();
+            ListTagsForResourceResponse response = new ListTagsForResourceResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ChangeToken", targetDepth))
+                if (context.TestExpression("NextMarker", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ChangeToken = unmarshaller.Unmarshall(context);
+                    response.NextMarker = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("WebACL", targetDepth))
+                if (context.TestExpression("TagInfoForResource", targetDepth))
                 {
-                    var unmarshaller = WebACLUnmarshaller.Instance;
-                    response.WebACL = unmarshaller.Unmarshall(context);
+                    var unmarshaller = TagInfoForResourceUnmarshaller.Instance;
+                    response.TagInfoForResource = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,29 +82,17 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
             {
                 return new WAFBadRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFDisallowedNameException"))
-            {
-                return new WAFDisallowedNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInternalErrorException"))
             {
                 return new WAFInternalErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInvalidAccountException"))
-            {
-                return new WAFInvalidAccountException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInvalidParameterException"))
             {
                 return new WAFInvalidParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFLimitsExceededException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFNonexistentItemException"))
             {
-                return new WAFLimitsExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFStaleDataException"))
-            {
-                return new WAFStaleDataException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new WAFNonexistentItemException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("WAFTagOperationException"))
             {
@@ -117,9 +105,9 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
             return new AmazonWAFException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static CreateWebACLResponseUnmarshaller _instance = new CreateWebACLResponseUnmarshaller();        
+        private static ListTagsForResourceResponseUnmarshaller _instance = new ListTagsForResourceResponseUnmarshaller();        
 
-        internal static CreateWebACLResponseUnmarshaller GetInstance()
+        internal static ListTagsForResourceResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -127,7 +115,7 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateWebACLResponseUnmarshaller Instance
+        public static ListTagsForResourceResponseUnmarshaller Instance
         {
             get
             {
