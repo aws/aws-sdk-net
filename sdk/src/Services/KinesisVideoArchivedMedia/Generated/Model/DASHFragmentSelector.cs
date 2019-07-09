@@ -30,10 +30,10 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// <summary>
     /// Contains the range of timestamps for the requested media, and the source of the timestamps.
     /// </summary>
-    public partial class HLSFragmentSelector
+    public partial class DASHFragmentSelector
     {
-        private HLSFragmentSelectorType _fragmentSelectorType;
-        private HLSTimestampRange _timestampRange;
+        private DASHFragmentSelectorType _fragmentSelectorType;
+        private DASHTimestampRange _timestampRange;
 
         /// <summary>
         /// Gets and sets the property FragmentSelectorType. 
@@ -43,18 +43,18 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         ///  
         /// <para>
         /// When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and
-        /// <a>GetHLSStreamingSessionURLInput$PlaybackMode</a> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>,
+        /// <a>GetDASHStreamingSessionURLInput$PlaybackMode</a> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>,
         /// the first fragment ingested with a producer timestamp within the specified <a>FragmentSelector$TimestampRange</a>
         /// is included in the media playlist. In addition, the fragments with producer timestamps
         /// within the <code>TimestampRange</code> ingested immediately following the first fragment
-        /// (up to the <a>GetHLSStreamingSessionURLInput$MaxMediaPlaylistFragmentResults</a> value)
+        /// (up to the <a>GetDASHStreamingSessionURLInput$MaxManifestFragmentResults</a> value)
         /// are included. 
         /// </para>
         ///  
         /// <para>
         /// Fragments that have duplicate producer timestamps are deduplicated. This means that
         /// if producers are producing a stream of fragments with producer timestamps that are
-        /// approximately equal to the true clock time, the HLS media playlists will contain all
+        /// approximately equal to the true clock time, the MPEG-DASH manifest will contain all
         /// of the fragments within the requested timestamp range. If some fragments are ingested
         /// within the same time range and very different points in time, only the oldest ingested
         /// collection of fragments are returned.
@@ -62,9 +62,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         ///  
         /// <para>
         /// When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and
-        /// <a>GetHLSStreamingSessionURLInput$PlaybackMode</a> is <code>LIVE</code>, the producer
+        /// <a>GetDASHStreamingSessionURLInput$PlaybackMode</a> is <code>LIVE</code>, the producer
         /// timestamps are used in the MP4 fragments and for deduplication. But the most recently
-        /// ingested fragments based on server timestamps are included in the HLS media playlist.
+        /// ingested fragments based on server timestamps are included in the MPEG-DASH manifest.
         /// This means that even if fragments ingested in the past have producer timestamps with
         /// values now, they are not included in the HLS media playlist.
         /// </para>
@@ -73,7 +73,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// The default is <code>SERVER_TIMESTAMP</code>.
         /// </para>
         /// </summary>
-        public HLSFragmentSelectorType FragmentSelectorType
+        public DASHFragmentSelectorType FragmentSelectorType
         {
             get { return this._fragmentSelectorType; }
             set { this._fragmentSelectorType = value; }
@@ -95,7 +95,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.
         /// </para>
         /// </summary>
-        public HLSTimestampRange TimestampRange
+        public DASHTimestampRange TimestampRange
         {
             get { return this._timestampRange; }
             set { this._timestampRange = value; }

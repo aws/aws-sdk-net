@@ -75,19 +75,19 @@ namespace Amazon.KinesisVideoArchivedMedia
 
 
     /// <summary>
-    /// Constants used for properties of type DiscontinuityMode.
+    /// Constants used for properties of type DASHDisplayFragmentNumber.
     /// </summary>
-    public class DiscontinuityMode : ConstantClass
+    public class DASHDisplayFragmentNumber : ConstantClass
     {
 
         /// <summary>
-        /// Constant ALWAYS for DiscontinuityMode
+        /// Constant ALWAYS for DASHDisplayFragmentNumber
         /// </summary>
-        public static readonly DiscontinuityMode ALWAYS = new DiscontinuityMode("ALWAYS");
+        public static readonly DASHDisplayFragmentNumber ALWAYS = new DASHDisplayFragmentNumber("ALWAYS");
         /// <summary>
-        /// Constant NEVER for DiscontinuityMode
+        /// Constant NEVER for DASHDisplayFragmentNumber
         /// </summary>
-        public static readonly DiscontinuityMode NEVER = new DiscontinuityMode("NEVER");
+        public static readonly DASHDisplayFragmentNumber NEVER = new DASHDisplayFragmentNumber("NEVER");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -97,7 +97,7 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// defined as statics, for instance if attempting to use a feature that is
         /// newer than the current version of the SDK.
         /// </summary>
-        public DiscontinuityMode(string value)
+        public DASHDisplayFragmentNumber(string value)
             : base(value)
         {
         }
@@ -107,9 +107,9 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// </summary>
         /// <param name="value">The unique value for the constant</param>
         /// <returns>The constant for the unique value</returns>
-        public static DiscontinuityMode FindValue(string value)
+        public static DASHDisplayFragmentNumber FindValue(string value)
         {
-            return FindValue<DiscontinuityMode>(value);
+            return FindValue<DASHDisplayFragmentNumber>(value);
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// </summary>
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
-        public static implicit operator DiscontinuityMode(string value)
+        public static implicit operator DASHDisplayFragmentNumber(string value)
         {
             return FindValue(value);
         }
@@ -125,19 +125,19 @@ namespace Amazon.KinesisVideoArchivedMedia
 
 
     /// <summary>
-    /// Constants used for properties of type DisplayFragmentTimestamp.
+    /// Constants used for properties of type DASHDisplayFragmentTimestamp.
     /// </summary>
-    public class DisplayFragmentTimestamp : ConstantClass
+    public class DASHDisplayFragmentTimestamp : ConstantClass
     {
 
         /// <summary>
-        /// Constant ALWAYS for DisplayFragmentTimestamp
+        /// Constant ALWAYS for DASHDisplayFragmentTimestamp
         /// </summary>
-        public static readonly DisplayFragmentTimestamp ALWAYS = new DisplayFragmentTimestamp("ALWAYS");
+        public static readonly DASHDisplayFragmentTimestamp ALWAYS = new DASHDisplayFragmentTimestamp("ALWAYS");
         /// <summary>
-        /// Constant NEVER for DisplayFragmentTimestamp
+        /// Constant NEVER for DASHDisplayFragmentTimestamp
         /// </summary>
-        public static readonly DisplayFragmentTimestamp NEVER = new DisplayFragmentTimestamp("NEVER");
+        public static readonly DASHDisplayFragmentTimestamp NEVER = new DASHDisplayFragmentTimestamp("NEVER");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -147,7 +147,7 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// defined as statics, for instance if attempting to use a feature that is
         /// newer than the current version of the SDK.
         /// </summary>
-        public DisplayFragmentTimestamp(string value)
+        public DASHDisplayFragmentTimestamp(string value)
             : base(value)
         {
         }
@@ -157,9 +157,9 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// </summary>
         /// <param name="value">The unique value for the constant</param>
         /// <returns>The constant for the unique value</returns>
-        public static DisplayFragmentTimestamp FindValue(string value)
+        public static DASHDisplayFragmentTimestamp FindValue(string value)
         {
-            return FindValue<DisplayFragmentTimestamp>(value);
+            return FindValue<DASHDisplayFragmentTimestamp>(value);
         }
 
         /// <summary>
@@ -167,7 +167,111 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// </summary>
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
-        public static implicit operator DisplayFragmentTimestamp(string value)
+        public static implicit operator DASHDisplayFragmentTimestamp(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DASHFragmentSelectorType.
+    /// </summary>
+    public class DASHFragmentSelectorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PRODUCER_TIMESTAMP for DASHFragmentSelectorType
+        /// </summary>
+        public static readonly DASHFragmentSelectorType PRODUCER_TIMESTAMP = new DASHFragmentSelectorType("PRODUCER_TIMESTAMP");
+        /// <summary>
+        /// Constant SERVER_TIMESTAMP for DASHFragmentSelectorType
+        /// </summary>
+        public static readonly DASHFragmentSelectorType SERVER_TIMESTAMP = new DASHFragmentSelectorType("SERVER_TIMESTAMP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DASHFragmentSelectorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DASHFragmentSelectorType FindValue(string value)
+        {
+            return FindValue<DASHFragmentSelectorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DASHFragmentSelectorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DASHPlaybackMode.
+    /// </summary>
+    public class DASHPlaybackMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LIVE for DASHPlaybackMode
+        /// </summary>
+        public static readonly DASHPlaybackMode LIVE = new DASHPlaybackMode("LIVE");
+        /// <summary>
+        /// Constant LIVE_REPLAY for DASHPlaybackMode
+        /// </summary>
+        public static readonly DASHPlaybackMode LIVE_REPLAY = new DASHPlaybackMode("LIVE_REPLAY");
+        /// <summary>
+        /// Constant ON_DEMAND for DASHPlaybackMode
+        /// </summary>
+        public static readonly DASHPlaybackMode ON_DEMAND = new DASHPlaybackMode("ON_DEMAND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DASHPlaybackMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DASHPlaybackMode FindValue(string value)
+        {
+            return FindValue<DASHPlaybackMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DASHPlaybackMode(string value)
         {
             return FindValue(value);
         }
@@ -225,6 +329,106 @@ namespace Amazon.KinesisVideoArchivedMedia
 
 
     /// <summary>
+    /// Constants used for properties of type HLSDiscontinuityMode.
+    /// </summary>
+    public class HLSDiscontinuityMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALWAYS for HLSDiscontinuityMode
+        /// </summary>
+        public static readonly HLSDiscontinuityMode ALWAYS = new HLSDiscontinuityMode("ALWAYS");
+        /// <summary>
+        /// Constant NEVER for HLSDiscontinuityMode
+        /// </summary>
+        public static readonly HLSDiscontinuityMode NEVER = new HLSDiscontinuityMode("NEVER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HLSDiscontinuityMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HLSDiscontinuityMode FindValue(string value)
+        {
+            return FindValue<HLSDiscontinuityMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HLSDiscontinuityMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HLSDisplayFragmentTimestamp.
+    /// </summary>
+    public class HLSDisplayFragmentTimestamp : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALWAYS for HLSDisplayFragmentTimestamp
+        /// </summary>
+        public static readonly HLSDisplayFragmentTimestamp ALWAYS = new HLSDisplayFragmentTimestamp("ALWAYS");
+        /// <summary>
+        /// Constant NEVER for HLSDisplayFragmentTimestamp
+        /// </summary>
+        public static readonly HLSDisplayFragmentTimestamp NEVER = new HLSDisplayFragmentTimestamp("NEVER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HLSDisplayFragmentTimestamp(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HLSDisplayFragmentTimestamp FindValue(string value)
+        {
+            return FindValue<HLSDisplayFragmentTimestamp>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HLSDisplayFragmentTimestamp(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HLSFragmentSelectorType.
     /// </summary>
     public class HLSFragmentSelectorType : ConstantClass
@@ -275,19 +479,23 @@ namespace Amazon.KinesisVideoArchivedMedia
 
 
     /// <summary>
-    /// Constants used for properties of type PlaybackMode.
+    /// Constants used for properties of type HLSPlaybackMode.
     /// </summary>
-    public class PlaybackMode : ConstantClass
+    public class HLSPlaybackMode : ConstantClass
     {
 
         /// <summary>
-        /// Constant LIVE for PlaybackMode
+        /// Constant LIVE for HLSPlaybackMode
         /// </summary>
-        public static readonly PlaybackMode LIVE = new PlaybackMode("LIVE");
+        public static readonly HLSPlaybackMode LIVE = new HLSPlaybackMode("LIVE");
         /// <summary>
-        /// Constant ON_DEMAND for PlaybackMode
+        /// Constant LIVE_REPLAY for HLSPlaybackMode
         /// </summary>
-        public static readonly PlaybackMode ON_DEMAND = new PlaybackMode("ON_DEMAND");
+        public static readonly HLSPlaybackMode LIVE_REPLAY = new HLSPlaybackMode("LIVE_REPLAY");
+        /// <summary>
+        /// Constant ON_DEMAND for HLSPlaybackMode
+        /// </summary>
+        public static readonly HLSPlaybackMode ON_DEMAND = new HLSPlaybackMode("ON_DEMAND");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -297,7 +505,7 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// defined as statics, for instance if attempting to use a feature that is
         /// newer than the current version of the SDK.
         /// </summary>
-        public PlaybackMode(string value)
+        public HLSPlaybackMode(string value)
             : base(value)
         {
         }
@@ -307,9 +515,9 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// </summary>
         /// <param name="value">The unique value for the constant</param>
         /// <returns>The constant for the unique value</returns>
-        public static PlaybackMode FindValue(string value)
+        public static HLSPlaybackMode FindValue(string value)
         {
-            return FindValue<PlaybackMode>(value);
+            return FindValue<HLSPlaybackMode>(value);
         }
 
         /// <summary>
@@ -317,7 +525,7 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// </summary>
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
-        public static implicit operator PlaybackMode(string value)
+        public static implicit operator HLSPlaybackMode(string value)
         {
             return FindValue(value);
         }

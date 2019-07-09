@@ -36,13 +36,13 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// The values in the <code>HLSTimestampRange</code> are inclusive. Fragments that begin
+    /// The values in the <code>DASHimestampRange</code> are inclusive. Fragments that begin
     /// before the start time but continue past it, or fragments that begin before the end
     /// time but continue past it, are included in the session.
     /// </para>
     ///  </note>
     /// </summary>
-    public partial class HLSTimestampRange
+    public partial class DASHTimestampRange
     {
         private DateTime? _endTimestamp;
         private DateTime? _startTimestamp;
@@ -93,7 +93,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  
         /// <para>
-        /// If the <code>HLSTimestampRange</code> value is specified, the <code>StartTimestamp</code>
+        /// If the <code>DASHTimestampRange</code> value is specified, the <code>StartTimestamp</code>
         /// value is required.
         /// </para>
         ///  <note> 

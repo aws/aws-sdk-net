@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideoArchivedMedia.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetHLSStreamingSessionURL operation.
-    /// Retrieves an HTTP Live Streaming (HLS) URL for the stream. You can then open the URL
-    /// in a browser or media player to view the stream contents.
+    /// Container for the parameters to the GetDASHStreamingSessionURL operation.
+    /// Retrieves an MPEG Dynamic Adaptive Streaming over HTTP (DASH) URL for the stream.
+    /// You can then open the URL in a media player to view the stream contents.
     /// 
     ///  
     /// <para>
@@ -41,14 +41,14 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     ///  
     /// <para>
     /// An Amazon Kinesis video stream has the following requirements for providing data through
-    /// HLS:
+    /// MPEG-DASH:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// The media must contain h.264 or h.265 encoded video and, optionally, AAC encoded audio.
-    /// Specifically, the codec id of track 1 should be <code>V_MPEG/ISO/AVC</code> (for h.264)
-    /// or <code>V_MPEG/ISO/HEVC</code> (for h.265). Optionally, the codec id of track 2 should
-    /// be <code>A_AAC</code>.
+    /// The media must contain h.264 or h.265 encoded video and, optionally, AAC or G.711
+    /// encoded audio. Specifically, the codec id of track 1 should be <code>V_MPEG/ISO/AVC</code>
+    /// (for h.264) or V_MPEGH/ISO/HEVC (for H.265). Optionally, the codec id of track 2 should
+    /// be <code>A_AAC</code> (for AAC) or A_MS/ACM (for G.711).
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -57,41 +57,35 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     ///  </li> <li> 
     /// <para>
     /// The video track of each fragment must contain codec private data in the Advanced Video
-    /// Coding (AVC) for H.264 format or HEVC for H.265 format (<a href="https://www.iso.org/standard/55980.html">MPEG-4
-    /// specification ISO/IEC 14496-15</a>). For information about adapting stream data to
-    /// a given format, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/producer-reference-nal.html">NAL
+    /// Coding (AVC) for H.264 format and HEVC for H.265 format. For more information, see
+    /// <a href="https://www.iso.org/standard/55980.html">MPEG-4 specification ISO/IEC 14496-15</a>.
+    /// For information about adapting stream data to a given format, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/producer-reference-nal.html">NAL
     /// Adaptation Flags</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// The audio track (if present) of each fragment must contain codec private data in the
     /// AAC format (<a href="https://www.iso.org/standard/43345.html">AAC specification ISO/IEC
-    /// 13818-7</a>).
+    /// 13818-7</a>) or the <a href="http://www-mmsp.ece.mcgill.ca/Documents/AudioFormats/WAVE/WAVE.html">MS
+    /// Wave format</a>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Kinesis Video Streams HLS sessions contain fragments in the fragmented MPEG-4 form
-    /// (also called fMP4 or CMAF) or the MPEG-2 form (also called TS chunks, which the HLS
-    /// specification also supports). For more information about HLS fragment types, see the
-    /// <a href="https://tools.ietf.org/html/draft-pantos-http-live-streaming-23">HLS specification</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// The following procedure shows how to use HLS with Kinesis Video Streams:
+    /// The following procedure shows how to use MPEG-DASH with Kinesis Video Streams:
     /// </para>
     ///  <ol> <li> 
     /// <para>
     /// Get an endpoint using <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetDataEndpoint.html">GetDataEndpoint</a>,
-    /// specifying <code>GET_HLS_STREAMING_SESSION_URL</code> for the <code>APIName</code>
+    /// specifying <code>GET_DASH_STREAMING_SESSION_URL</code> for the <code>APIName</code>
     /// parameter.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Retrieve the HLS URL using <code>GetHLSStreamingSessionURL</code>. Kinesis Video Streams
-    /// creates an HLS streaming session to be used for accessing content in a stream using
-    /// the HLS protocol. <code>GetHLSStreamingSessionURL</code> returns an authenticated
-    /// URL (that includes an encrypted session token) for the session's HLS <i>master playlist</i>
-    /// (the root resource needed for streaming with HLS).
+    /// Retrieve the MPEG-DASH URL using <code>GetDASHStreamingSessionURL</code>. Kinesis
+    /// Video Streams creates an MPEG-DASH streaming session to be used for accessing content
+    /// in a stream using the MPEG-DASH protocol. <code>GetDASHStreamingSessionURL</code>
+    /// returns an authenticated URL (that includes an encrypted session token) for the session's
+    /// MPEG-DASH <i>manifest</i> (the root resource needed for streaming with MPEG-DASH).
     /// </para>
     ///  <note> 
     /// <para>
@@ -101,18 +95,18 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// The media that is made available through the playlist consists only of the requested
+    /// The media that is made available through the manifest consists only of the requested
     /// stream, time range, and format. No other media data (such as frames outside the requested
     /// window or alternate bitrates) is made available.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Provide the URL (containing the encrypted session token) for the HLS master playlist
-    /// to a media player that supports the HLS protocol. Kinesis Video Streams makes the
-    /// HLS media playlist, initialization fragment, and media fragments available through
-    /// the master playlist URL. The initialization fragment contains the codec private data
-    /// for the stream, and other data needed to set up the video or audio decoder and renderer.
-    /// The media fragments contain H.264-encoded video frames or AAC-encoded audio samples.
+    /// Provide the URL (containing the encrypted session token) for the MPEG-DASH manifest
+    /// to a media player that supports the MPEG-DASH protocol. Kinesis Video Streams makes
+    /// the initialization fragment, and media fragments available through the manifest URL.
+    /// The initialization fragment contains the codec private data for the stream, and other
+    /// data needed to set up the video or audio decoder and renderer. The media fragments
+    /// contain encoded video frames or encoded audio samples.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -121,23 +115,8 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <b>GetHLSMasterPlaylist:</b> Retrieves an HLS master playlist, which contains a URL
-    /// for the <code>GetHLSMediaPlaylist</code> action for each track, and additional metadata
-    /// for the media player, including estimated bitrate and resolution.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>GetHLSMediaPlaylist:</b> Retrieves an HLS media playlist, which contains a URL
-    /// to access the MP4 initialization fragment with the <code>GetMP4InitFragment</code>
-    /// action, and URLs to access the MP4 media fragments with the <code>GetMP4MediaFragment</code>
-    /// actions. The HLS media playlist also contains metadata about the stream that the player
-    /// needs to play it, such as whether the <code>PlaybackMode</code> is <code>LIVE</code>
-    /// or <code>ON_DEMAND</code>. The HLS media playlist is typically static for sessions
-    /// with a <code>PlaybackType</code> of <code>ON_DEMAND</code>. The HLS media playlist
-    /// is continually updated with new fragments for sessions with a <code>PlaybackType</code>
-    /// of <code>LIVE</code>. There is a distinct HLS media playlist for the video track and
-    /// the audio track (if applicable) that contains MP4 media URLs for the specific track.
-    /// 
+    ///  <b>GetDASHManifest:</b> Retrieves an MPEG DASH manifest, which contains the metadata
+    /// for the media that you want to playback.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -172,25 +151,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// Data retrieved with this action is billable. See <a href="https://aws.amazon.com/kinesis/video-streams/pricing/">Pricing</a>
     /// for details.
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>GetTSFragment:</b> Retrieves MPEG TS fragments containing both initialization
-    /// and media data for all tracks in the stream.
-    /// </para>
-    ///  <note> 
-    /// <para>
-    /// If the <code>ContainerFormat</code> is <code>MPEG_TS</code>, this API is used instead
-    /// of <code>GetMP4InitFragment</code> and <code>GetMP4MediaFragment</code> to retrieve
-    /// stream media.
-    /// </para>
-    ///  </note> 
-    /// <para>
-    /// Data retrieved with this action is billable. For more information, see <a href="https://aws.amazon.com/kinesis/video-streams/pricing/">Kinesis
-    /// Video Streams pricing</a>.
-    /// </para>
     ///  </li> </ul> </li> </ol> <note> 
     /// <para>
-    /// The following restrictions apply to HLS sessions:
+    /// The following restrictions apply to MPEG-DASH sessions:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -201,17 +164,17 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A Kinesis video stream can have a maximum of ten active HLS streaming sessions. If
-    /// a new session is created when the maximum number of sessions is already active, the
-    /// oldest (earliest created) session is closed. The number of active <code>GetMedia</code>
+    /// A Kinesis video stream can have a maximum of ten active MPEG-DASH streaming sessions.
+    /// If a new session is created when the maximum number of sessions is already active,
+    /// the oldest (earliest created) session is closed. The number of active <code>GetMedia</code>
     /// connections on a Kinesis video stream does not count against this limit, and the number
-    /// of active HLS sessions does not count against the active <code>GetMedia</code> connection
-    /// limit.
+    /// of active MPEG-DASH sessions does not count against the active <code>GetMedia</code>
+    /// connection limit.
     /// </para>
     ///  <note> 
     /// <para>
     /// The maximum limits for active HLS and MPEG-DASH streaming sessions are independent
-    /// of each other.
+    /// of each other. 
     /// </para>
     ///  </note> </li> </ul> </note> 
     /// <para>
@@ -258,98 +221,93 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// </para>
     ///  </important>
     /// </summary>
-    public partial class GetHLSStreamingSessionURLRequest : AmazonKinesisVideoArchivedMediaRequest
+    public partial class GetDASHStreamingSessionURLRequest : AmazonKinesisVideoArchivedMediaRequest
     {
-        private ContainerFormat _containerFormat;
-        private HLSDiscontinuityMode _discontinuityMode;
-        private HLSDisplayFragmentTimestamp _displayFragmentTimestamp;
+        private DASHFragmentSelector _dashFragmentSelector;
+        private DASHDisplayFragmentNumber _displayFragmentNumber;
+        private DASHDisplayFragmentTimestamp _displayFragmentTimestamp;
         private int? _expires;
-        private HLSFragmentSelector _hlsFragmentSelector;
-        private long? _maxMediaPlaylistFragmentResults;
-        private HLSPlaybackMode _playbackMode;
+        private long? _maxManifestFragmentResults;
+        private DASHPlaybackMode _playbackMode;
         private string _streamARN;
         private string _streamName;
 
         /// <summary>
-        /// Gets and sets the property ContainerFormat. 
+        /// Gets and sets the property DASHFragmentSelector. 
         /// <para>
-        /// Specifies which format should be used for packaging the media. Specifying the <code>FRAGMENTED_MP4</code>
-        /// container format packages the media into MP4 fragments (fMP4 or CMAF). This is the
-        /// recommended packaging because there is minimal packaging overhead. The other container
-        /// format option is <code>MPEG_TS</code>. HLS has supported MPEG TS chunks since it was
-        /// released and is sometimes the only supported packaging on older HLS players. MPEG
-        /// TS typically has a 5-25 percent packaging overhead. This means MPEG TS typically requires
-        /// 5-25 percent more bandwidth and cost than fMP4.
+        /// The time range of the requested fragment, and the source of the timestamps.
         /// </para>
         ///  
         /// <para>
-        /// The default is <code>FRAGMENTED_MP4</code>.
+        /// This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code>
+        /// or <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code/>
+        /// <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the <code>FragmentSelectorType</code>
+        /// can be set, but the <code>TimestampRange</code> should not be set. If <code>PlaybackMode</code>
+        /// is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code>
+        /// and <code>TimestampRange</code> must be set.
         /// </para>
         /// </summary>
-        public ContainerFormat ContainerFormat
+        public DASHFragmentSelector DASHFragmentSelector
         {
-            get { return this._containerFormat; }
-            set { this._containerFormat = value; }
+            get { return this._dashFragmentSelector; }
+            set { this._dashFragmentSelector = value; }
         }
 
-        // Check to see if ContainerFormat property is set
-        internal bool IsSetContainerFormat()
+        // Check to see if DASHFragmentSelector property is set
+        internal bool IsSetDASHFragmentSelector()
         {
-            return this._containerFormat != null;
+            return this._dashFragmentSelector != null;
         }
 
         /// <summary>
-        /// Gets and sets the property DiscontinuityMode. 
+        /// Gets and sets the property DisplayFragmentNumber. 
         /// <para>
-        /// Specifies when flags marking discontinuities between fragments will be added to the
-        /// media playlists. The default is <code>ALWAYS</code> when <a>HLSFragmentSelector</a>
-        /// is <code>SERVER_TIMESTAMP</code>, and <code>NEVER</code> when it is <code>PRODUCER_TIMESTAMP</code>.
+        /// Fragments are identified in the manifest file based on their sequence number in the
+        /// session. If DisplayFragmentNumber is set to <code>ALWAYS</code>, the Kinesis Video
+        /// Streams fragment number is added to each S element in the manifest file with the attribute
+        /// name “kvs:fn”. These fragment numbers can be used for logging or for use with other
+        /// APIs (e.g. <code>GetMedia</code> and <code>GetMediaForFragmentList</code>). A custom
+        /// MPEG-DASH media player is necessary to leverage these this custom attribute.
         /// </para>
         ///  
         /// <para>
-        /// Media players typically build a timeline of media content to play, based on the timestamps
-        /// of each fragment. This means that if there is any overlap between fragments (as is
-        /// typical if <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>), the media
-        /// player timeline has small gaps between fragments in some places, and overwrites frames
-        /// in other places. When there are discontinuity flags between fragments, the media player
-        /// is expected to reset the timeline, resulting in the fragment being played immediately
-        /// after the previous fragment. We recommend that you always have discontinuity flags
-        /// between fragments if the fragment timestamps are not accurate or if fragments might
-        /// be missing. You should not place discontinuity flags between fragments for the player
-        /// timeline to accurately map to the producer timestamps.
+        /// The default value is <code>NEVER</code>.
         /// </para>
         /// </summary>
-        public HLSDiscontinuityMode DiscontinuityMode
+        public DASHDisplayFragmentNumber DisplayFragmentNumber
         {
-            get { return this._discontinuityMode; }
-            set { this._discontinuityMode = value; }
+            get { return this._displayFragmentNumber; }
+            set { this._displayFragmentNumber = value; }
         }
 
-        // Check to see if DiscontinuityMode property is set
-        internal bool IsSetDiscontinuityMode()
+        // Check to see if DisplayFragmentNumber property is set
+        internal bool IsSetDisplayFragmentNumber()
         {
-            return this._discontinuityMode != null;
+            return this._displayFragmentNumber != null;
         }
 
         /// <summary>
         /// Gets and sets the property DisplayFragmentTimestamp. 
         /// <para>
-        /// Specifies when the fragment start timestamps should be included in the HLS media playlist.
-        /// Typically, media players report the playhead position as a time relative to the start
-        /// of the first fragment in the playback session. However, when the start timestamps
-        /// are included in the HLS media playlist, some media players might report the current
-        /// playhead as an absolute time based on the fragment timestamps. This can be useful
-        /// for creating a playback experience that shows viewers the wall-clock time of the media.
+        /// Per the MPEG-DASH specification, the wall-clock time of fragments in the manifest
+        /// file can be derived using attributes in the manifest itself. However, typically, MPEG-DASH
+        /// compatible media players do not properly handle gaps in the media timeline. Kinesis
+        /// Video Streams adjusts the media timeline in the manifest file to enable playback of
+        /// media with discontinuities. Therefore, the wall-clock time derived from the manifest
+        /// file may be inaccurate. If DisplayFragmentTimestamp is set to <code>ALWAYS</code>,
+        /// the accurate fragment timestamp is added to each S element in the manifest file with
+        /// the attribute name “kvs:ts”. A custom MPEG-DASH media player is necessary to leverage
+        /// this custom attribute.
         /// </para>
         ///  
         /// <para>
-        /// The default is <code>NEVER</code>. When <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>,
-        /// the timestamps will be the server start timestamps. Similarly, when <a>HLSFragmentSelector</a>
+        /// The default value is <code>NEVER</code>. When <a>DASHFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>,
+        /// the timestamps will be the server start timestamps. Similarly, when <a>DASHFragmentSelector</a>
         /// is <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps.
         /// 
         /// </para>
         /// </summary>
-        public HLSDisplayFragmentTimestamp DisplayFragmentTimestamp
+        public DASHDisplayFragmentTimestamp DisplayFragmentTimestamp
         {
             get { return this._displayFragmentTimestamp; }
             set { this._displayFragmentTimestamp = value; }
@@ -369,9 +327,8 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  
         /// <para>
-        /// When a session expires, no new calls to <code>GetHLSMasterPlaylist</code>, <code>GetHLSMediaPlaylist</code>,
-        /// <code>GetMP4InitFragment</code>, <code>GetMP4MediaFragment</code>, or <code>GetTSFragment</code>
-        /// can be made for that session.
+        /// When a session expires, no new calls to <code>GetDashManifest</code>, <code>GetMP4InitFragment</code>,
+        /// or <code>GetMP4MediaFragment</code> can be made for that session.
         /// </para>
         ///  
         /// <para>
@@ -392,36 +349,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HLSFragmentSelector. 
+        /// Gets and sets the property MaxManifestFragmentResults. 
         /// <para>
-        /// The time range of the requested fragment, and the source of the timestamps.
-        /// </para>
-        ///  
-        /// <para>
-        /// This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code>
-        /// or <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code/>
-        /// <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the <code>FragmentSelectorType</code>
-        /// can be set, but the <code>TimestampRange</code> should not be set. If <code>PlaybackMode</code>
-        /// is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code>
-        /// and <code>TimestampRange</code> must be set.
-        /// </para>
-        /// </summary>
-        public HLSFragmentSelector HLSFragmentSelector
-        {
-            get { return this._hlsFragmentSelector; }
-            set { this._hlsFragmentSelector = value; }
-        }
-
-        // Check to see if HLSFragmentSelector property is set
-        internal bool IsSetHLSFragmentSelector()
-        {
-            return this._hlsFragmentSelector != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property MaxMediaPlaylistFragmentResults. 
-        /// <para>
-        /// The maximum number of fragments that are returned in the HLS media playlists.
+        /// The maximum number of fragments that are returned in the MPEG-DASH manifest.
         /// </para>
         ///  
         /// <para>
@@ -431,10 +361,10 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  
         /// <para>
-        /// When there are a higher number of fragments available in a live HLS media playlist,
+        /// When there are a higher number of fragments available in a live MPEG-DASH manifest,
         /// video players often buffer content before starting playback. Increasing the buffer
         /// size increases the playback latency, but it decreases the likelihood that rebuffering
-        /// will occur during playback. We recommend that a live HLS media playlist have a minimum
+        /// will occur during playback. We recommend that a live MPEG-DASH manifest have a minimum
         /// of 3 fragments and a maximum of 10 fragments.
         /// </para>
         ///  
@@ -450,16 +380,16 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public long MaxMediaPlaylistFragmentResults
+        public long MaxManifestFragmentResults
         {
-            get { return this._maxMediaPlaylistFragmentResults.GetValueOrDefault(); }
-            set { this._maxMediaPlaylistFragmentResults = value; }
+            get { return this._maxManifestFragmentResults.GetValueOrDefault(); }
+            set { this._maxManifestFragmentResults = value; }
         }
 
-        // Check to see if MaxMediaPlaylistFragmentResults property is set
-        internal bool IsSetMaxMediaPlaylistFragmentResults()
+        // Check to see if MaxManifestFragmentResults property is set
+        internal bool IsSetMaxManifestFragmentResults()
         {
-            return this._maxMediaPlaylistFragmentResults.HasValue; 
+            return this._maxManifestFragmentResults.HasValue; 
         }
 
         /// <summary>
@@ -473,41 +403,41 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>LIVE</code> </b>: For sessions of this type, the HLS media playlist is
+        ///  <b> <code>LIVE</code> </b>: For sessions of this type, the MPEG-DASH manifest is
         /// continually updated with the latest fragments as they become available. We recommend
-        /// that the media player retrieve a new playlist on a one-second interval. When this
+        /// that the media player retrieve a new manifest on a one-second interval. When this
         /// type of session is played in a media player, the user interface typically displays
         /// a "live" notification, with no scrubber control for choosing the position in the playback
         /// window to display.
         /// </para>
         ///  <note> 
         /// <para>
-        /// In <code>LIVE</code> mode, the newest available fragments are included in an HLS media
-        /// playlist, even if there is a gap between fragments (that is, if a fragment is missing).
+        /// In <code>LIVE</code> mode, the newest available fragments are included in an MPEG-DASH
+        /// manifest, even if there is a gap between fragments (that is, if a fragment is missing).
         /// A gap like this might cause a media player to halt or cause a jump in playback. In
-        /// this mode, fragments are not added to the HLS media playlist if they are older than
+        /// this mode, fragments are not added to the MPEG-DASH manifest if they are older than
         /// the newest fragment in the playlist. If the missing fragment becomes available after
-        /// a subsequent fragment is added to the playlist, the older fragment is not added, and
+        /// a subsequent fragment is added to the manifest, the older fragment is not added, and
         /// the gap is not filled.
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        ///  <b> <code>LIVE_REPLAY</code> </b>: For sessions of this type, the HLS media playlist
+        ///  <b> <code>LIVE_REPLAY</code> </b>: For sessions of this type, the MPEG-DASH manifest
         /// is updated similarly to how it is updated for <code>LIVE</code> mode except that it
         /// starts by including fragments from a given start time. Instead of fragments being
         /// added as they are ingested, fragments are added as the duration of the next fragment
         /// elapses. For example, if the fragments in the session are two seconds long, then a
-        /// new fragment is added to the media playlist every two seconds. This mode is useful
-        /// to be able to start playback from when an event is detected and continue live streaming
+        /// new fragment is added to the manifest every two seconds. This mode is useful to be
+        /// able to start playback from when an event is detected and continue live streaming
         /// media that has not yet been ingested as of the time of the session creation. This
         /// mode is also useful to stream previously archived media without being limited by the
         /// 1,000 fragment limit in the <code>ON_DEMAND</code> mode. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the HLS media playlist
+        ///  <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the MPEG-DASH manifest
         /// contains all the fragments for the session, up to the number that is specified in
-        /// <code>MaxMediaPlaylistFragmentResults</code>. The playlist must be retrieved only
+        /// <code>MaxMediaPlaylistFragmentResults</code>. The manifest must be retrieved only
         /// once for each session. When this type of session is played in a media player, the
         /// user interface typically displays a scrubber control for choosing the position in
         /// the playback window to display.
@@ -516,17 +446,17 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <para>
         /// In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>,
         /// and if there are multiple fragments with the same start timestamp, the fragment that
-        /// has the larger fragment number (that is, the newer fragment) is included in the HLS
-        /// media playlist. The other fragments are not included. Fragments that have different
-        /// timestamps but have overlapping durations are still included in the HLS media playlist.
-        /// This can lead to unexpected behavior in the media player.
+        /// has the larger fragment number (that is, the newer fragment) is included in the MPEG-DASH
+        /// manifest. The other fragments are not included. Fragments that have different timestamps
+        /// but have overlapping durations are still included in the MPEG-DASH manifest. This
+        /// can lead to unexpected behavior in the media player.
         /// </para>
         ///  
         /// <para>
         /// The default is <code>LIVE</code>.
         /// </para>
         /// </summary>
-        public HLSPlaybackMode PlaybackMode
+        public DASHPlaybackMode PlaybackMode
         {
             get { return this._playbackMode; }
             set { this._playbackMode = value; }
@@ -541,8 +471,8 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <summary>
         /// Gets and sets the property StreamARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the stream for which to retrieve the HLS master
-        /// playlist URL.
+        /// The Amazon Resource Name (ARN) of the stream for which to retrieve the MPEG-DASH manifest
+        /// URL.
         /// </para>
         ///  
         /// <para>
@@ -565,7 +495,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <summary>
         /// Gets and sets the property StreamName. 
         /// <para>
-        /// The name of the stream for which to retrieve the HLS master playlist URL.
+        /// The name of the stream for which to retrieve the MPEG-DASH manifest URL.
         /// </para>
         ///  
         /// <para>

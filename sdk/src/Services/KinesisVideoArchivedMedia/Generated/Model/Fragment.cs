@@ -59,7 +59,8 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <summary>
         /// Gets and sets the property FragmentNumber. 
         /// <para>
-        /// The index value of the fragment.
+        /// The unique identifier of the fragment. This value monotonically increases based on
+        /// the ingestion order.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

@@ -54,7 +54,36 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// (or 200 megabits per second) during a <code>GetMediaForFragmentList</code> session.
     /// 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <important> 
+    /// <para>
+    /// If an error is thrown after invoking a Kinesis Video Streams archived media API, in
+    /// addition to the HTTP status code and the response body, it includes the following
+    /// pieces of information: 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>x-amz-ErrorType</code> HTTP header – contains a more specific error type in
+    /// addition to what the HTTP status code provides. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>x-amz-RequestId</code> HTTP header – if you want to report an issue to AWS,
+    /// the support team can better diagnose the problem if given the Request Id.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Both the HTTP status code and the ErrorType header can be utilized to make programmatic
+    /// decisions about whether errors are retry-able and under what conditions, as well as
+    /// provide information on what actions the client programmer might need to take in order
+    /// to successfully try again.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see the <b>Errors</b> section at the bottom of this topic, as
+    /// well as <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/CommonErrors.html">Common
+    /// Errors</a>. 
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class GetMediaForFragmentListRequest : AmazonKinesisVideoArchivedMediaRequest
     {
