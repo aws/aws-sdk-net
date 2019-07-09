@@ -70,6 +70,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                     unmarshalledObject.ActiveJobId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("associatedResources", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AssociatedResources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("basicAuthCredentials", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

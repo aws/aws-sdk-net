@@ -139,7 +139,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        ///  Unique Id for the Job. 
+        ///  Unique Id for an existing job. Required for "RETRY" JobType. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -158,7 +158,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property JobReason. 
         /// <para>
-        ///  Reason for the Job. 
+        ///  Descriptive reason for starting this job. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -177,7 +177,10 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property JobType. 
         /// <para>
-        ///  Type for the Job. 
+        ///  Type for the Job. Available JobTypes are: \n "RELEASE": Start a new job with the
+        /// latest change from the specified branch. Only available for apps that have connected
+        /// to a repository. "RETRY": Retry an existing job. JobId is required for this type of
+        /// job. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=10)]

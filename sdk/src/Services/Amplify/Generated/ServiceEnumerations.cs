@@ -35,6 +35,10 @@ namespace Amazon.Amplify
         /// </summary>
         public static readonly DomainStatus AVAILABLE = new DomainStatus("AVAILABLE");
         /// <summary>
+        /// Constant CREATING for DomainStatus
+        /// </summary>
+        public static readonly DomainStatus CREATING = new DomainStatus("CREATING");
+        /// <summary>
         /// Constant FAILED for DomainStatus
         /// </summary>
         public static readonly DomainStatus FAILED = new DomainStatus("FAILED");
@@ -50,6 +54,14 @@ namespace Amazon.Amplify
         /// Constant PENDING_VERIFICATION for DomainStatus
         /// </summary>
         public static readonly DomainStatus PENDING_VERIFICATION = new DomainStatus("PENDING_VERIFICATION");
+        /// <summary>
+        /// Constant REQUESTING_CERTIFICATE for DomainStatus
+        /// </summary>
+        public static readonly DomainStatus REQUESTING_CERTIFICATE = new DomainStatus("REQUESTING_CERTIFICATE");
+        /// <summary>
+        /// Constant UPDATING for DomainStatus
+        /// </summary>
+        public static readonly DomainStatus UPDATING = new DomainStatus("UPDATING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -163,6 +175,10 @@ namespace Amazon.Amplify
     {
 
         /// <summary>
+        /// Constant MANUAL for JobType
+        /// </summary>
+        public static readonly JobType MANUAL = new JobType("MANUAL");
+        /// <summary>
         /// Constant RELEASE for JobType
         /// </summary>
         public static readonly JobType RELEASE = new JobType("RELEASE");
@@ -216,18 +232,6 @@ namespace Amazon.Amplify
     public class Platform : ConstantClass
     {
 
-        /// <summary>
-        /// Constant ANDROID for Platform
-        /// </summary>
-        public static readonly Platform ANDROID = new Platform("ANDROID");
-        /// <summary>
-        /// Constant IOS for Platform
-        /// </summary>
-        public static readonly Platform IOS = new Platform("IOS");
-        /// <summary>
-        /// Constant REACT_NATIVE for Platform
-        /// </summary>
-        public static readonly Platform REACT_NATIVE = new Platform("REACT_NATIVE");
         /// <summary>
         /// Constant WEB for Platform
         /// </summary>

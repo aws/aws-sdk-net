@@ -76,6 +76,18 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                     unmarshalledObject.AppId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("autoBranchCreationConfig", targetDepth))
+                {
+                    var unmarshaller = AutoBranchCreationConfigUnmarshaller.Instance;
+                    unmarshalledObject.AutoBranchCreationConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("autoBranchCreationPatterns", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AutoBranchCreationPatterns = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("basicAuthCredentials", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -110,6 +122,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("enableAutoBranchCreation", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableAutoBranchCreation = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("enableBasicAuth", targetDepth))

@@ -33,17 +33,19 @@ namespace Amazon.Amplify.Model
     public partial class Step
     {
         private string _artifactsUrl;
+        private string _context;
         private DateTime? _endTime;
         private string _logUrl;
         private Dictionary<string, string> _screenshots = new Dictionary<string, string>();
         private DateTime? _startTime;
         private JobStatus _status;
+        private string _statusReason;
         private string _stepName;
 
         /// <summary>
         /// Gets and sets the property ArtifactsUrl. 
         /// <para>
-        ///  Url to teh artifact for the execution step. 
+        ///  URL to the artifact for the execution step. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000)]
@@ -57,6 +59,24 @@ namespace Amazon.Amplify.Model
         internal bool IsSetArtifactsUrl()
         {
             return this._artifactsUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Context. 
+        /// <para>
+        ///  The context for current step, will include build image if step is build. 
+        /// </para>
+        /// </summary>
+        public string Context
+        {
+            get { return this._context; }
+            set { this._context = value; }
+        }
+
+        // Check to see if Context property is set
+        internal bool IsSetContext()
+        {
+            return this._context != null;
         }
 
         /// <summary>
@@ -81,7 +101,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property LogUrl. 
         /// <para>
-        ///  Url to the logs for the execution step. 
+        ///  URL to the logs for the execution step. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000)]
@@ -100,7 +120,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Screenshots. 
         /// <para>
-        ///  List of screenshot Urls for the execution step, if relevant. 
+        ///  List of screenshot URLs for the execution step, if relevant. 
         /// </para>
         /// </summary>
         public Dictionary<string, string> Screenshots
@@ -151,6 +171,25 @@ namespace Amazon.Amplify.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusReason. 
+        /// <para>
+        ///  The reason for current step status. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1000)]
+        public string StatusReason
+        {
+            get { return this._statusReason; }
+            set { this._statusReason = value; }
+        }
+
+        // Check to see if StatusReason property is set
+        internal bool IsSetStatusReason()
+        {
+            return this._statusReason != null;
         }
 
         /// <summary>

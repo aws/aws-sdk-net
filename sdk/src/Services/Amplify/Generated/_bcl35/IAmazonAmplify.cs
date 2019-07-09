@@ -151,6 +151,59 @@ namespace Amazon.Amplify
 
         #endregion
         
+        #region  CreateDeployment
+
+
+        /// <summary>
+        /// Create a deployment for manual deploy apps. (Apps are not connected to repository)
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDeployment service method.</param>
+        /// 
+        /// <returns>The response from the CreateDeployment service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
+        /// Exception thrown when a resource could not be created because of service limits.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
+        CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDeployment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDeployment operation on AmazonAmplifyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDeployment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
+        IAsyncResult BeginCreateDeployment(CreateDeploymentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDeployment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDeployment.</param>
+        /// 
+        /// <returns>Returns a  CreateDeploymentResult from Amplify.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
+        CreateDeploymentResponse EndCreateDeployment(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateDomainAssociation
 
 
@@ -207,6 +260,65 @@ namespace Amazon.Amplify
         /// <returns>Returns a  CreateDomainAssociationResult from Amplify.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateDomainAssociation">REST API Reference for CreateDomainAssociation Operation</seealso>
         CreateDomainAssociationResponse EndCreateDomainAssociation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateWebhook
+
+
+        /// <summary>
+        /// Create a new webhook on an App.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWebhook service method.</param>
+        /// 
+        /// <returns>The response from the CreateWebhook service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.DependentServiceFailureException">
+        /// Exception thrown when an operation fails due to a dependent service throwing an exception.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
+        /// Exception thrown when a resource could not be created because of service limits.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateWebhook">REST API Reference for CreateWebhook Operation</seealso>
+        CreateWebhookResponse CreateWebhook(CreateWebhookRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateWebhook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateWebhook operation on AmazonAmplifyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateWebhook
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateWebhook">REST API Reference for CreateWebhook Operation</seealso>
+        IAsyncResult BeginCreateWebhook(CreateWebhookRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateWebhook operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateWebhook.</param>
+        /// 
+        /// <returns>Returns a  CreateWebhookResult from Amplify.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateWebhook">REST API Reference for CreateWebhook Operation</seealso>
+        CreateWebhookResponse EndCreateWebhook(IAsyncResult asyncResult);
 
         #endregion
         
@@ -434,6 +546,62 @@ namespace Amazon.Amplify
 
         #endregion
         
+        #region  DeleteWebhook
+
+
+        /// <summary>
+        /// Deletes a webhook.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWebhook service method.</param>
+        /// 
+        /// <returns>The response from the DeleteWebhook service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
+        /// Exception thrown when a resource could not be created because of service limits.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteWebhook">REST API Reference for DeleteWebhook Operation</seealso>
+        DeleteWebhookResponse DeleteWebhook(DeleteWebhookRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteWebhook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWebhook operation on AmazonAmplifyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteWebhook
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteWebhook">REST API Reference for DeleteWebhook Operation</seealso>
+        IAsyncResult BeginDeleteWebhook(DeleteWebhookRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteWebhook operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteWebhook.</param>
+        /// 
+        /// <returns>Returns a  DeleteWebhookResult from Amplify.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteWebhook">REST API Reference for DeleteWebhook Operation</seealso>
+        DeleteWebhookResponse EndDeleteWebhook(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetApp
 
 
@@ -649,6 +817,62 @@ namespace Amazon.Amplify
 
         #endregion
         
+        #region  GetWebhook
+
+
+        /// <summary>
+        /// Retrieves webhook info that corresponds to a webhookId.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWebhook service method.</param>
+        /// 
+        /// <returns>The response from the GetWebhook service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
+        /// Exception thrown when a resource could not be created because of service limits.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetWebhook">REST API Reference for GetWebhook Operation</seealso>
+        GetWebhookResponse GetWebhook(GetWebhookRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetWebhook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetWebhook operation on AmazonAmplifyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetWebhook
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetWebhook">REST API Reference for GetWebhook Operation</seealso>
+        IAsyncResult BeginGetWebhook(GetWebhookRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetWebhook operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetWebhook.</param>
+        /// 
+        /// <returns>Returns a  GetWebhookResult from Amplify.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetWebhook">REST API Reference for GetWebhook Operation</seealso>
+        GetWebhookResponse EndGetWebhook(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListApps
 
 
@@ -852,6 +1076,165 @@ namespace Amazon.Amplify
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// List tags for resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.ResourceNotFoundException">
+        /// Exception thrown when an operation fails due to non-existent resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonAmplifyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from Amplify.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListWebhooks
+
+
+        /// <summary>
+        /// List webhooks with an app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWebhooks service method.</param>
+        /// 
+        /// <returns>The response from the ListWebhooks service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
+        /// Exception thrown when a resource could not be created because of service limits.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListWebhooks">REST API Reference for ListWebhooks Operation</seealso>
+        ListWebhooksResponse ListWebhooks(ListWebhooksRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListWebhooks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListWebhooks operation on AmazonAmplifyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListWebhooks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListWebhooks">REST API Reference for ListWebhooks Operation</seealso>
+        IAsyncResult BeginListWebhooks(ListWebhooksRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListWebhooks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListWebhooks.</param>
+        /// 
+        /// <returns>Returns a  ListWebhooksResult from Amplify.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListWebhooks">REST API Reference for ListWebhooks Operation</seealso>
+        ListWebhooksResponse EndListWebhooks(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartDeployment
+
+
+        /// <summary>
+        /// Start a deployment for manual deploy apps. (Apps are not connected to repository)
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDeployment service method.</param>
+        /// 
+        /// <returns>The response from the StartDeployment service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
+        /// Exception thrown when a resource could not be created because of service limits.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/StartDeployment">REST API Reference for StartDeployment Operation</seealso>
+        StartDeploymentResponse StartDeployment(StartDeploymentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartDeployment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartDeployment operation on AmazonAmplifyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartDeployment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/StartDeployment">REST API Reference for StartDeployment Operation</seealso>
+        IAsyncResult BeginStartDeployment(StartDeploymentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartDeployment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartDeployment.</param>
+        /// 
+        /// <returns>Returns a  StartDeploymentResult from Amplify.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/StartDeployment">REST API Reference for StartDeployment Operation</seealso>
+        StartDeploymentResponse EndStartDeployment(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  StartJob
 
 
@@ -961,6 +1344,106 @@ namespace Amazon.Amplify
         /// <returns>Returns a  StopJobResult from Amplify.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/StopJob">REST API Reference for StopJob Operation</seealso>
         StopJobResponse EndStopJob(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Tag resource with tag key and value.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.ResourceNotFoundException">
+        /// Exception thrown when an operation fails due to non-existent resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonAmplifyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from Amplify.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse EndTagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Untag resource with resourceArn.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.ResourceNotFoundException">
+        /// Exception thrown when an operation fails due to non-existent resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonAmplifyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from Amplify.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1126,6 +1609,62 @@ namespace Amazon.Amplify
         /// <returns>Returns a  UpdateDomainAssociationResult from Amplify.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateDomainAssociation">REST API Reference for UpdateDomainAssociation Operation</seealso>
         UpdateDomainAssociationResponse EndUpdateDomainAssociation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateWebhook
+
+
+        /// <summary>
+        /// Update a webhook.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWebhook service method.</param>
+        /// 
+        /// <returns>The response from the UpdateWebhook service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.DependentServiceFailureException">
+        /// Exception thrown when an operation fails due to a dependent service throwing an exception.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateWebhook">REST API Reference for UpdateWebhook Operation</seealso>
+        UpdateWebhookResponse UpdateWebhook(UpdateWebhookRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateWebhook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWebhook operation on AmazonAmplifyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateWebhook
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateWebhook">REST API Reference for UpdateWebhook Operation</seealso>
+        IAsyncResult BeginUpdateWebhook(UpdateWebhookRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateWebhook operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateWebhook.</param>
+        /// 
+        /// <returns>Returns a  UpdateWebhookResult from Amplify.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateWebhook">REST API Reference for UpdateWebhook Operation</seealso>
+        UpdateWebhookResponse EndUpdateWebhook(IAsyncResult asyncResult);
 
         #endregion
         

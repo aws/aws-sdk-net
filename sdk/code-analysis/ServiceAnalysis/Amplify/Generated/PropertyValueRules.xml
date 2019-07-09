@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.Amplify.Model.CreateAppRequest.AccessToken</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Amplify.Model.CreateAppRequest.BasicAuthCredentials</property>
     <max>2000</max>
   </property-value-rule>
@@ -55,8 +60,30 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Amplify.Model.CreateBranchRequest.DisplayName</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Amplify.Model.CreateBranchRequest.Framework</property>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.CreateDeploymentRequest.AppId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.CreateDeploymentRequest.BranchName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.CreateDeploymentResponse.JobId</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.CreateDeploymentResponse.ZipUploadUrl</property>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CreateDomainAssociationRequest.AppId</property>
@@ -66,6 +93,20 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.CreateDomainAssociationRequest.DomainName</property>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.CreateWebhookRequest.AppId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.CreateWebhookRequest.BranchName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.CreateWebhookRequest.Description</property>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.DeleteAppRequest.AppId</property>
@@ -106,6 +147,10 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Amplify.Model.DeleteWebhookRequest.WebhookId</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Amplify.Model.GetAppRequest.AppId</property>
     <min>1</min>
     <max>255</max>
@@ -141,6 +186,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.GetJobRequest.JobId</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.GetWebhookRequest.WebhookId</property>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -216,6 +265,46 @@
     <max>2000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Amplify.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <pattern>^arn:aws:amplify:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.ListWebhooksRequest.AppId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.ListWebhooksRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.ListWebhooksRequest.NextToken</property>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.ListWebhooksResponse.NextToken</property>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.StartDeploymentRequest.AppId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.StartDeploymentRequest.BranchName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.StartDeploymentRequest.JobId</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.StartDeploymentRequest.SourceUrl</property>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Amplify.Model.StartJobRequest.AppId</property>
     <min>1</min>
     <max>255</max>
@@ -258,6 +347,14 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.StopJobRequest.JobId</property>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.TagResourceRequest.ResourceArn</property>
+    <pattern>^arn:aws:amplify:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.UntagResourceRequest.ResourceArn</property>
+    <pattern>^arn:aws:amplify:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateAppRequest.AppId</property>
@@ -311,6 +408,10 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Amplify.Model.UpdateBranchRequest.DisplayName</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateBranchRequest.Framework</property>
     <max>255</max>
   </property-value-rule>
@@ -321,6 +422,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateDomainAssociationRequest.DomainName</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.UpdateWebhookRequest.BranchName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.UpdateWebhookRequest.Description</property>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.UpdateWebhookRequest.WebhookId</property>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -363,6 +477,19 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.App.Repository</property>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.AutoBranchCreationConfig.BasicAuthCredentials</property>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.AutoBranchCreationConfig.BuildSpec</property>
+    <min>1</min>
+    <max>25000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.AutoBranchCreationConfig.Framework</property>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.BadRequestException.Message</property>
@@ -499,11 +626,19 @@
     <max>2000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Amplify.Model.ResourceNotFoundException.Message</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Amplify.Model.Step.ArtifactsUrl</property>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.Step.LogUrl</property>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.Step.StatusReason</property>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
@@ -526,5 +661,26 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.UnauthorizedException.Message</property>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.Webhook.BranchName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.Webhook.Description</property>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.Webhook.WebhookArn</property>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.Webhook.WebhookId</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.Webhook.WebhookUrl</property>
+    <max>1000</max>
   </property-value-rule>
 </property-value-rules>

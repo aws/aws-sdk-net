@@ -70,6 +70,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                     unmarshalledObject.ArtifactsUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("context", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Context = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("endTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -98,6 +104,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("statusReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("stepName", targetDepth))

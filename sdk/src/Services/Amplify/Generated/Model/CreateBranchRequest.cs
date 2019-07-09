@@ -38,6 +38,7 @@ namespace Amazon.Amplify.Model
         private string _branchName;
         private string _buildSpec;
         private string _description;
+        private string _displayName;
         private bool? _enableAutoBuild;
         private bool? _enableBasicAuth;
         private bool? _enableNotification;
@@ -140,6 +141,25 @@ namespace Amazon.Amplify.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisplayName. 
+        /// <para>
+        ///  Display name for a branch, will use as the default domain prefix. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=255)]
+        public string DisplayName
+        {
+            get { return this._displayName; }
+            set { this._displayName = value; }
+        }
+
+        // Check to see if DisplayName property is set
+        internal bool IsSetDisplayName()
+        {
+            return this._displayName != null;
         }
 
         /// <summary>
@@ -257,6 +277,7 @@ namespace Amazon.Amplify.Model
         ///  Tag for the branch. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

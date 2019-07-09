@@ -96,7 +96,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property ThumbnailUrl. 
         /// <para>
-        ///  Thumbnail Url for Production Branch. 
+        ///  Thumbnail URL for Production Branch. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]

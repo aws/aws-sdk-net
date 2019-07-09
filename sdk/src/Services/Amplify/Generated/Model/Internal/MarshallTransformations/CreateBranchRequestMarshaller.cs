@@ -93,6 +93,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetDisplayName())
+                {
+                    context.Writer.WritePropertyName("displayName");
+                    context.Writer.Write(publicRequest.DisplayName);
+                }
+
                 if(publicRequest.IsSetEnableAutoBuild())
                 {
                     context.Writer.WritePropertyName("enableAutoBuild");

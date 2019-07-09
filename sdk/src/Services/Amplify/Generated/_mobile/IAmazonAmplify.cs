@@ -108,6 +108,37 @@ namespace Amazon.Amplify
 
         #endregion
                 
+        #region  CreateDeployment
+
+
+
+        /// <summary>
+        /// Create a deployment for manual deploy apps. (Apps are not connected to repository)
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDeployment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDeployment service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
+        /// Exception thrown when a resource could not be created because of service limits.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
+        Task<CreateDeploymentResponse> CreateDeploymentAsync(CreateDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateDomainAssociation
 
 
@@ -142,6 +173,43 @@ namespace Amazon.Amplify
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateDomainAssociation">REST API Reference for CreateDomainAssociation Operation</seealso>
         Task<CreateDomainAssociationResponse> CreateDomainAssociationAsync(CreateDomainAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateWebhook
+
+
+
+        /// <summary>
+        /// Create a new webhook on an App.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWebhook service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateWebhook service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.DependentServiceFailureException">
+        /// Exception thrown when an operation fails due to a dependent service throwing an exception.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
+        /// Exception thrown when a resource could not be created because of service limits.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateWebhook">REST API Reference for CreateWebhook Operation</seealso>
+        Task<CreateWebhookResponse> CreateWebhookAsync(CreateWebhookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -281,6 +349,40 @@ namespace Amazon.Amplify
 
         #endregion
                 
+        #region  DeleteWebhook
+
+
+
+        /// <summary>
+        /// Deletes a webhook.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWebhook service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteWebhook service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
+        /// Exception thrown when a resource could not be created because of service limits.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteWebhook">REST API Reference for DeleteWebhook Operation</seealso>
+        Task<DeleteWebhookResponse> DeleteWebhookAsync(DeleteWebhookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetApp
 
 
@@ -408,6 +510,40 @@ namespace Amazon.Amplify
 
         #endregion
                 
+        #region  GetWebhook
+
+
+
+        /// <summary>
+        /// Retrieves webhook info that corresponds to a webhookId.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWebhook service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetWebhook service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
+        /// Exception thrown when a resource could not be created because of service limits.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetWebhook">REST API Reference for GetWebhook Operation</seealso>
+        Task<GetWebhookResponse> GetWebhookAsync(GetWebhookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListApps
 
 
@@ -523,6 +659,99 @@ namespace Amazon.Amplify
 
         #endregion
                 
+        #region  ListTagsForResource
+
+
+
+        /// <summary>
+        /// List tags for resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.ResourceNotFoundException">
+        /// Exception thrown when an operation fails due to non-existent resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListWebhooks
+
+
+
+        /// <summary>
+        /// List webhooks with an app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWebhooks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWebhooks service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
+        /// Exception thrown when a resource could not be created because of service limits.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListWebhooks">REST API Reference for ListWebhooks Operation</seealso>
+        Task<ListWebhooksResponse> ListWebhooksAsync(ListWebhooksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartDeployment
+
+
+
+        /// <summary>
+        /// Start a deployment for manual deploy apps. (Apps are not connected to repository)
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDeployment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartDeployment service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
+        /// Exception thrown when a resource could not be created because of service limits.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/StartDeployment">REST API Reference for StartDeployment Operation</seealso>
+        Task<StartDeploymentResponse> StartDeploymentAsync(StartDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  StartJob
 
 
@@ -588,6 +817,62 @@ namespace Amazon.Amplify
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/StopJob">REST API Reference for StopJob Operation</seealso>
         Task<StopJobResponse> StopJobAsync(StopJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  TagResource
+
+
+
+        /// <summary>
+        /// Tag resource with tag key and value.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.ResourceNotFoundException">
+        /// Exception thrown when an operation fails due to non-existent resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UntagResource
+
+
+
+        /// <summary>
+        /// Untag resource with resourceArn.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.ResourceNotFoundException">
+        /// Exception thrown when an operation fails due to non-existent resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -687,6 +972,40 @@ namespace Amazon.Amplify
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateDomainAssociation">REST API Reference for UpdateDomainAssociation Operation</seealso>
         Task<UpdateDomainAssociationResponse> UpdateDomainAssociationAsync(UpdateDomainAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateWebhook
+
+
+
+        /// <summary>
+        /// Update a webhook.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWebhook service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateWebhook service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.DependentServiceFailureException">
+        /// Exception thrown when an operation fails due to a dependent service throwing an exception.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateWebhook">REST API Reference for UpdateWebhook Operation</seealso>
+        Task<UpdateWebhookResponse> UpdateWebhookAsync(UpdateWebhookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

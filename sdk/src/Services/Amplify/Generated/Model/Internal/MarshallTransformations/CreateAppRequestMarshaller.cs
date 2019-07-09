@@ -66,6 +66,34 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAccessToken())
+                {
+                    context.Writer.WritePropertyName("accessToken");
+                    context.Writer.Write(publicRequest.AccessToken);
+                }
+
+                if(publicRequest.IsSetAutoBranchCreationConfig())
+                {
+                    context.Writer.WritePropertyName("autoBranchCreationConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AutoBranchCreationConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AutoBranchCreationConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetAutoBranchCreationPatterns())
+                {
+                    context.Writer.WritePropertyName("autoBranchCreationPatterns");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAutoBranchCreationPatternsListValue in publicRequest.AutoBranchCreationPatterns)
+                    {
+                            context.Writer.Write(publicRequestAutoBranchCreationPatternsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetBasicAuthCredentials())
                 {
                     context.Writer.WritePropertyName("basicAuthCredentials");
@@ -98,6 +126,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("description");
                     context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetEnableAutoBranchCreation())
+                {
+                    context.Writer.WritePropertyName("enableAutoBranchCreation");
+                    context.Writer.Write(publicRequest.EnableAutoBranchCreation);
                 }
 
                 if(publicRequest.IsSetEnableBasicAuth())

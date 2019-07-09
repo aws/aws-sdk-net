@@ -47,7 +47,7 @@ namespace Amazon.Amplify.Model
         ///  DNS Record for certificate verification. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1000)]
+        [AWSProperty(Max=1000)]
         public string CertificateVerificationDNSRecord
         {
             get { return this._certificateVerificationDNSRecord; }

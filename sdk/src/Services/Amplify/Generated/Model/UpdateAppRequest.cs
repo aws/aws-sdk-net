@@ -34,10 +34,13 @@ namespace Amazon.Amplify.Model
     public partial class UpdateAppRequest : AmazonAmplifyRequest
     {
         private string _appId;
+        private AutoBranchCreationConfig _autoBranchCreationConfig;
+        private List<string> _autoBranchCreationPatterns = new List<string>();
         private string _basicAuthCredentials;
         private string _buildSpec;
         private List<CustomRule> _customRules = new List<CustomRule>();
         private string _description;
+        private bool? _enableAutoBranchCreation;
         private bool? _enableBasicAuth;
         private bool? _enableBranchAutoBuild;
         private Dictionary<string, string> _environmentVariables = new Dictionary<string, string>();
@@ -62,6 +65,42 @@ namespace Amazon.Amplify.Model
         internal bool IsSetAppId()
         {
             return this._appId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoBranchCreationConfig. 
+        /// <para>
+        ///  Automated branch creation config for the Amplify App. 
+        /// </para>
+        /// </summary>
+        public AutoBranchCreationConfig AutoBranchCreationConfig
+        {
+            get { return this._autoBranchCreationConfig; }
+            set { this._autoBranchCreationConfig = value; }
+        }
+
+        // Check to see if AutoBranchCreationConfig property is set
+        internal bool IsSetAutoBranchCreationConfig()
+        {
+            return this._autoBranchCreationConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoBranchCreationPatterns. 
+        /// <para>
+        ///  Automated branch creation glob patterns for the Amplify App. 
+        /// </para>
+        /// </summary>
+        public List<string> AutoBranchCreationPatterns
+        {
+            get { return this._autoBranchCreationPatterns; }
+            set { this._autoBranchCreationPatterns = value; }
+        }
+
+        // Check to see if AutoBranchCreationPatterns property is set
+        internal bool IsSetAutoBranchCreationPatterns()
+        {
+            return this._autoBranchCreationPatterns != null && this._autoBranchCreationPatterns.Count > 0; 
         }
 
         /// <summary>
@@ -137,6 +176,24 @@ namespace Amazon.Amplify.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableAutoBranchCreation. 
+        /// <para>
+        ///  Enables automated branch creation for the Amplify App. 
+        /// </para>
+        /// </summary>
+        public bool EnableAutoBranchCreation
+        {
+            get { return this._enableAutoBranchCreation.GetValueOrDefault(); }
+            set { this._enableAutoBranchCreation = value; }
+        }
+
+        // Check to see if EnableAutoBranchCreation property is set
+        internal bool IsSetEnableAutoBranchCreation()
+        {
+            return this._enableAutoBranchCreation.HasValue; 
         }
 
         /// <summary>

@@ -33,6 +33,7 @@ namespace Amazon.Amplify.Model
     public partial class Branch
     {
         private string _activeJobId;
+        private List<string> _associatedResources = new List<string>();
         private string _basicAuthCredentials;
         private string _branchArn;
         private string _branchName;
@@ -70,6 +71,24 @@ namespace Amazon.Amplify.Model
         internal bool IsSetActiveJobId()
         {
             return this._activeJobId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssociatedResources. 
+        /// <para>
+        ///  List of custom resources that are linked to this branch. 
+        /// </para>
+        /// </summary>
+        public List<string> AssociatedResources
+        {
+            get { return this._associatedResources; }
+            set { this._associatedResources = value; }
+        }
+
+        // Check to see if AssociatedResources property is set
+        internal bool IsSetAssociatedResources()
+        {
+            return this._associatedResources != null && this._associatedResources.Count > 0; 
         }
 
         /// <summary>
@@ -208,10 +227,10 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        ///  Display name for a branch, part of an Amplify App. 
+        ///  Display name for a branch, will use as the default domain prefix. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=255)]
+        [AWSProperty(Required=true, Max=255)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -344,6 +363,7 @@ namespace Amazon.Amplify.Model
         ///  Tag for branch for Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }
@@ -359,7 +379,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property ThumbnailUrl. 
         /// <para>
-        ///  Thumbnail Url for the branch. 
+        ///  Thumbnail URL for the branch. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]

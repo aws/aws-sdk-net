@@ -33,10 +33,14 @@ namespace Amazon.Amplify.Model
     /// </summary>
     public partial class CreateAppRequest : AmazonAmplifyRequest
     {
+        private string _accessToken;
+        private AutoBranchCreationConfig _autoBranchCreationConfig;
+        private List<string> _autoBranchCreationPatterns = new List<string>();
         private string _basicAuthCredentials;
         private string _buildSpec;
         private List<CustomRule> _customRules = new List<CustomRule>();
         private string _description;
+        private bool? _enableAutoBranchCreation;
         private bool? _enableBasicAuth;
         private bool? _enableBranchAutoBuild;
         private Dictionary<string, string> _environmentVariables = new Dictionary<string, string>();
@@ -46,6 +50,62 @@ namespace Amazon.Amplify.Model
         private Platform _platform;
         private string _repository;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property AccessToken. 
+        /// <para>
+        ///  Personal Access token for 3rd party source control system for an Amplify App, used
+        /// to create webhook and read-only deploy key. Token is not stored. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string AccessToken
+        {
+            get { return this._accessToken; }
+            set { this._accessToken = value; }
+        }
+
+        // Check to see if AccessToken property is set
+        internal bool IsSetAccessToken()
+        {
+            return this._accessToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoBranchCreationConfig. 
+        /// <para>
+        ///  Automated branch creation config for the Amplify App. 
+        /// </para>
+        /// </summary>
+        public AutoBranchCreationConfig AutoBranchCreationConfig
+        {
+            get { return this._autoBranchCreationConfig; }
+            set { this._autoBranchCreationConfig = value; }
+        }
+
+        // Check to see if AutoBranchCreationConfig property is set
+        internal bool IsSetAutoBranchCreationConfig()
+        {
+            return this._autoBranchCreationConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoBranchCreationPatterns. 
+        /// <para>
+        ///  Automated branch creation glob patterns for the Amplify App. 
+        /// </para>
+        /// </summary>
+        public List<string> AutoBranchCreationPatterns
+        {
+            get { return this._autoBranchCreationPatterns; }
+            set { this._autoBranchCreationPatterns = value; }
+        }
+
+        // Check to see if AutoBranchCreationPatterns property is set
+        internal bool IsSetAutoBranchCreationPatterns()
+        {
+            return this._autoBranchCreationPatterns != null && this._autoBranchCreationPatterns.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property BasicAuthCredentials. 
@@ -120,6 +180,24 @@ namespace Amazon.Amplify.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableAutoBranchCreation. 
+        /// <para>
+        ///  Enables automated branch creation for the Amplify App. 
+        /// </para>
+        /// </summary>
+        public bool EnableAutoBranchCreation
+        {
+            get { return this._enableAutoBranchCreation.GetValueOrDefault(); }
+            set { this._enableAutoBranchCreation = value; }
+        }
+
+        // Check to see if EnableAutoBranchCreation property is set
+        internal bool IsSetEnableAutoBranchCreation()
+        {
+            return this._enableAutoBranchCreation.HasValue; 
         }
 
         /// <summary>
@@ -222,7 +300,7 @@ namespace Amazon.Amplify.Model
         /// webhook and read-only deploy key. OAuth token is not stored. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=100)]
+        [AWSProperty(Max=100)]
         public string OauthToken
         {
             get { return this._oauthToken; }
@@ -241,7 +319,6 @@ namespace Amazon.Amplify.Model
         ///  Platform / framework for an Amplify App 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public Platform Platform
         {
             get { return this._platform; }
@@ -260,7 +337,7 @@ namespace Amazon.Amplify.Model
         ///  Repository for an Amplify App 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1000)]
+        [AWSProperty(Max=1000)]
         public string Repository
         {
             get { return this._repository; }
@@ -279,6 +356,7 @@ namespace Amazon.Amplify.Model
         ///  Tag for an Amplify App 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

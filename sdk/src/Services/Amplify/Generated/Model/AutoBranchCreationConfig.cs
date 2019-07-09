@@ -1,0 +1,173 @@
+/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the amplify-2017-07-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.Amplify.Model
+{
+    /// <summary>
+    /// Structure with auto branch creation config.
+    /// </summary>
+    public partial class AutoBranchCreationConfig
+    {
+        private string _basicAuthCredentials;
+        private string _buildSpec;
+        private bool? _enableAutoBuild;
+        private bool? _enableBasicAuth;
+        private Dictionary<string, string> _environmentVariables = new Dictionary<string, string>();
+        private string _framework;
+        private Stage _stage;
+
+        /// <summary>
+        /// Gets and sets the property BasicAuthCredentials. 
+        /// <para>
+        ///  Basic Authorization credentials for the auto created branch. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2000)]
+        public string BasicAuthCredentials
+        {
+            get { return this._basicAuthCredentials; }
+            set { this._basicAuthCredentials = value; }
+        }
+
+        // Check to see if BasicAuthCredentials property is set
+        internal bool IsSetBasicAuthCredentials()
+        {
+            return this._basicAuthCredentials != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BuildSpec. 
+        /// <para>
+        ///  BuildSpec for the auto created branch. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=25000)]
+        public string BuildSpec
+        {
+            get { return this._buildSpec; }
+            set { this._buildSpec = value; }
+        }
+
+        // Check to see if BuildSpec property is set
+        internal bool IsSetBuildSpec()
+        {
+            return this._buildSpec != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableAutoBuild. 
+        /// <para>
+        ///  Enables auto building for the auto created branch. 
+        /// </para>
+        /// </summary>
+        public bool EnableAutoBuild
+        {
+            get { return this._enableAutoBuild.GetValueOrDefault(); }
+            set { this._enableAutoBuild = value; }
+        }
+
+        // Check to see if EnableAutoBuild property is set
+        internal bool IsSetEnableAutoBuild()
+        {
+            return this._enableAutoBuild.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableBasicAuth. 
+        /// <para>
+        ///  Enables Basic Auth for the auto created branch. 
+        /// </para>
+        /// </summary>
+        public bool EnableBasicAuth
+        {
+            get { return this._enableBasicAuth.GetValueOrDefault(); }
+            set { this._enableBasicAuth = value; }
+        }
+
+        // Check to see if EnableBasicAuth property is set
+        internal bool IsSetEnableBasicAuth()
+        {
+            return this._enableBasicAuth.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnvironmentVariables. 
+        /// <para>
+        ///  Environment Variables for the auto created branch. 
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> EnvironmentVariables
+        {
+            get { return this._environmentVariables; }
+            set { this._environmentVariables = value; }
+        }
+
+        // Check to see if EnvironmentVariables property is set
+        internal bool IsSetEnvironmentVariables()
+        {
+            return this._environmentVariables != null && this._environmentVariables.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Framework. 
+        /// <para>
+        ///  Framework for the auto created branch. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=255)]
+        public string Framework
+        {
+            get { return this._framework; }
+            set { this._framework = value; }
+        }
+
+        // Check to see if Framework property is set
+        internal bool IsSetFramework()
+        {
+            return this._framework != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Stage. 
+        /// <para>
+        ///  Stage for the auto created branch. 
+        /// </para>
+        /// </summary>
+        public Stage Stage
+        {
+            get { return this._stage; }
+            set { this._stage = value; }
+        }
+
+        // Check to see if Stage property is set
+        internal bool IsSetStage()
+        {
+            return this._stage != null;
+        }
+
+    }
+}
