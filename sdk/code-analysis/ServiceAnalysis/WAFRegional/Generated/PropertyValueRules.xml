@@ -637,6 +637,24 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFRegional.Model.ListTagsForResourceRequest.Limit</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFRegional.Model.ListTagsForResourceRequest.NextMarker</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFRegional.Model.ListTagsForResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1224</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFRegional.Model.ListTagsForResourceResponse.NextMarker</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFRegional.Model.ListWebACLsRequest.Limit</property>
     <min>0</min>
     <max>100</max>
@@ -668,6 +686,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFRegional.Model.PutPermissionPolicyRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1224</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFRegional.Model.TagResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1224</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFRegional.Model.UntagResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1224</max>
   </property-value-rule>
@@ -1079,6 +1107,21 @@
     <property>Amazon.WAFRegional.Model.SubscribedRuleGroupSummary.RuleGroupId</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFRegional.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFRegional.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFRegional.Model.TagInfoForResource.ResourceARN</property>
+    <min>1</min>
+    <max>1224</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFRegional.Model.WAFInvalidParameterException.Parameter</property>

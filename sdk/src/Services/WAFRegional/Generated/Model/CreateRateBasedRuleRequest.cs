@@ -139,6 +139,7 @@ namespace Amazon.WAFRegional.Model
         private string _name;
         private RateKey _rateKey;
         private long? _rateLimit;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property ChangeToken. 
@@ -246,6 +247,22 @@ namespace Amazon.WAFRegional.Model
         internal bool IsSetRateLimit()
         {
             return this._rateLimit.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags.
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

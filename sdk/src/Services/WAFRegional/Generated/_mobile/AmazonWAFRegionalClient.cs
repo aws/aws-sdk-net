@@ -1135,6 +1135,9 @@ namespace Amazon.WAFRegional
         /// </param>
         /// 
         /// <returns>The response from the CreateRateBasedRule service method, as returned by WAFRegional.</returns>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFBadRequestException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFDisallowedNameException">
         /// The name specified is invalid.
         /// </exception>
@@ -1199,6 +1202,12 @@ namespace Amazon.WAFRegional
         /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFTagOperationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFTagOperationInternalErrorException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateRateBasedRule">REST API Reference for CreateRateBasedRule Operation</seealso>
         public virtual Task<CreateRateBasedRuleResponse> CreateRateBasedRuleAsync(CreateRateBasedRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1465,6 +1474,9 @@ namespace Amazon.WAFRegional
         /// </param>
         /// 
         /// <returns>The response from the CreateRule service method, as returned by WAFRegional.</returns>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFBadRequestException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFDisallowedNameException">
         /// The name specified is invalid.
         /// </exception>
@@ -1529,6 +1541,12 @@ namespace Amazon.WAFRegional
         /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFTagOperationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFTagOperationInternalErrorException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateRule">REST API Reference for CreateRule Operation</seealso>
         public virtual Task<CreateRuleResponse> CreateRuleAsync(string name, string changeToken, string metricName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1611,6 +1629,9 @@ namespace Amazon.WAFRegional
         /// </param>
         /// 
         /// <returns>The response from the CreateRule service method, as returned by WAFRegional.</returns>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFBadRequestException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFDisallowedNameException">
         /// The name specified is invalid.
         /// </exception>
@@ -1676,6 +1697,12 @@ namespace Amazon.WAFRegional
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFTagOperationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFTagOperationInternalErrorException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateRule">REST API Reference for CreateRule Operation</seealso>
         public virtual Task<CreateRuleResponse> CreateRuleAsync(CreateRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1736,6 +1763,9 @@ namespace Amazon.WAFRegional
         /// </param>
         /// 
         /// <returns>The response from the CreateRuleGroup service method, as returned by WAFRegional.</returns>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFBadRequestException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFDisallowedNameException">
         /// The name specified is invalid.
         /// </exception>
@@ -1751,6 +1781,12 @@ namespace Amazon.WAFRegional
         /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFTagOperationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFTagOperationInternalErrorException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateRuleGroup">REST API Reference for CreateRuleGroup Operation</seealso>
         public virtual Task<CreateRuleGroupResponse> CreateRuleGroupAsync(CreateRuleGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2233,6 +2269,9 @@ namespace Amazon.WAFRegional
         /// </param>
         /// 
         /// <returns>The response from the CreateWebACL service method, as returned by WAFRegional.</returns>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFBadRequestException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFDisallowedNameException">
         /// The name specified is invalid.
         /// </exception>
@@ -2301,6 +2340,12 @@ namespace Amazon.WAFRegional
         /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFTagOperationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFTagOperationInternalErrorException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateWebACL">REST API Reference for CreateWebACL Operation</seealso>
         public virtual Task<CreateWebACLResponse> CreateWebACLAsync(CreateWebACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3184,6 +3229,12 @@ namespace Amazon.WAFRegional
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFTagOperationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFTagOperationInternalErrorException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteRateBasedRule">REST API Reference for DeleteRateBasedRule Operation</seealso>
         public virtual Task<DeleteRateBasedRuleResponse> DeleteRateBasedRuleAsync(DeleteRateBasedRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -3500,6 +3551,12 @@ namespace Amazon.WAFRegional
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFTagOperationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFTagOperationInternalErrorException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
         public virtual Task<DeleteRuleResponse> DeleteRuleAsync(string ruleId, string changeToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -3598,6 +3655,12 @@ namespace Amazon.WAFRegional
         /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFTagOperationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFTagOperationInternalErrorException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
         public virtual Task<DeleteRuleResponse> DeleteRuleAsync(DeleteRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3739,6 +3802,12 @@ namespace Amazon.WAFRegional
         /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFTagOperationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFTagOperationInternalErrorException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteRuleGroup">REST API Reference for DeleteRuleGroup Operation</seealso>
         public virtual Task<DeleteRuleGroupResponse> DeleteRuleGroupAsync(DeleteRuleGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4178,6 +4247,12 @@ namespace Amazon.WAFRegional
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFTagOperationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFTagOperationInternalErrorException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteWebACL">REST API Reference for DeleteWebACL Operation</seealso>
         public virtual Task<DeleteWebACLResponse> DeleteWebACLAsync(string webACLId, string changeToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -4271,6 +4346,12 @@ namespace Amazon.WAFRegional
         /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFTagOperationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFTagOperationInternalErrorException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteWebACL">REST API Reference for DeleteWebACL Operation</seealso>
         public virtual Task<DeleteWebACLResponse> DeleteWebACLAsync(DeleteWebACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6441,6 +6522,105 @@ namespace Amazon.WAFRegional
 
         #endregion
         
+        #region  ListTagsForResource
+
+        internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by WAFRegional.</returns>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFBadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInvalidParameterException">
+        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
+        /// For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value
+        /// other than <code>IP</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL cannot be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentItemException">
+        /// The operation failed because the referenced object doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFTagOperationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFTagOperationInternalErrorException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListWebACLs
 
         internal virtual ListWebACLsResponse ListWebACLs(ListWebACLsRequest request)
@@ -6748,6 +6928,209 @@ namespace Amazon.WAFRegional
             options.ResponseUnmarshaller = PutPermissionPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutPermissionPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+        internal virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by WAFRegional.</returns>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFBadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInvalidParameterException">
+        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
+        /// For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value
+        /// other than <code>IP</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL cannot be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>AWS WAF Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentItemException">
+        /// The operation failed because the referenced object doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFTagOperationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFTagOperationInternalErrorException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by WAFRegional.</returns>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFBadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInvalidParameterException">
+        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
+        /// For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value
+        /// other than <code>IP</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL cannot be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentItemException">
+        /// The operation failed because the referenced object doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFTagOperationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFTagOperationInternalErrorException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion

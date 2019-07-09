@@ -1461,6 +1461,14 @@ namespace Amazon.WAFRegional
         /// </summary>
         public static readonly ParameterExceptionField SQL_INJECTION_MATCH_FIELD_TYPE = new ParameterExceptionField("SQL_INJECTION_MATCH_FIELD_TYPE");
         /// <summary>
+        /// Constant TAG_KEYS for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField TAG_KEYS = new ParameterExceptionField("TAG_KEYS");
+        /// <summary>
+        /// Constant TAGS for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField TAGS = new ParameterExceptionField("TAGS");
+        /// <summary>
         /// Constant WAF_ACTION for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField WAF_ACTION = new ParameterExceptionField("WAF_ACTION");
@@ -1522,6 +1530,10 @@ namespace Amazon.WAFRegional
         /// Constant INVALID_OPTION for ParameterExceptionReason
         /// </summary>
         public static readonly ParameterExceptionReason INVALID_OPTION = new ParameterExceptionReason("INVALID_OPTION");
+        /// <summary>
+        /// Constant INVALID_TAG_KEY for ParameterExceptionReason
+        /// </summary>
+        public static readonly ParameterExceptionReason INVALID_TAG_KEY = new ParameterExceptionReason("INVALID_TAG_KEY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
