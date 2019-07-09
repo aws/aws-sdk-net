@@ -91,7 +91,7 @@ namespace Amazon.GameLift.Model
         /// is different from the optional "name" field in the rule set body.) 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Max=128)]
         public string Name
         {
             get { return this._name; }

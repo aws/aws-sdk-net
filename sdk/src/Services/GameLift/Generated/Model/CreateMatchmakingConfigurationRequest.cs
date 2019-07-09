@@ -45,22 +45,31 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>Player acceptance</b> -- In each configuration, you have the option to require
-    /// that all players accept participation in a proposed match. To enable this feature,
-    /// set <i>AcceptanceRequired</i> to true and specify a time limit for player acceptance.
-    /// Players have the option to accept or reject a proposed match, and a match does not
-    /// move ahead to game session placement unless all matched players accept. 
+    /// There are two ways to track the progress of matchmaking tickets: (1) polling ticket
+    /// status with <a>DescribeMatchmaking</a>; or (2) receiving notifications with Amazon
+    /// Simple Notification Service (SNS). To use notifications, you first need to set up
+    /// an SNS topic to receive the notifications, and provide the topic ARN in the matchmaking
+    /// configuration. Since notifications promise only "best effort" delivery, we recommend
+    /// calling <code>DescribeMatchmaking</code> if no notifications are received within 30
+    /// seconds.
     /// </para>
     ///  
     /// <para>
-    ///  <b>Matchmaking status notification</b> -- There are two ways to track the progress
-    /// of matchmaking tickets: (1) polling ticket status with <a>DescribeMatchmaking</a>;
-    /// or (2) receiving notifications with Amazon Simple Notification Service (SNS). To use
-    /// notifications, you first need to set up an SNS topic to receive the notifications,
-    /// and provide the topic ARN in the matchmaking configuration (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-notification.html">
-    /// Setting up Notifications for Matchmaking</a>). Since notifications promise only "best
-    /// effort" delivery, we recommend calling <code>DescribeMatchmaking</code> if no notifications
-    /// are received within 30 seconds.
+    ///  <b>Learn more</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-configuration.html">
+    /// Design a FlexMatch Matchmaker</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-notification.html">
+    /// Setting up Notifications for Matchmaking</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -101,6 +110,7 @@ namespace Amazon.GameLift.Model
         private bool? _acceptanceRequired;
         private int? _acceptanceTimeoutSeconds;
         private int? _additionalPlayerCount;
+        private BackfillMode _backfillMode;
         private string _customEventData;
         private string _description;
         private List<GameProperty> _gameProperties = new List<GameProperty>();
@@ -114,8 +124,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property AcceptanceRequired. 
         /// <para>
-        /// Flag that determines whether or not a match that was created with this configuration
-        /// must be accepted by the matched players. To require acceptance, set to TRUE.
+        /// Flag that determines whether a match that was created with this configuration must
+        /// be accepted by the matched players. To require acceptance, set to TRUE.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -174,9 +184,32 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BackfillMode. 
+        /// <para>
+        /// Method used to backfill game sessions created with this matchmaking configuration.
+        /// Specify MANUAL when your game manages backfill requests manually or does not use the
+        /// match backfill feature. Specify AUTOMATIC to have GameLift create a <a>StartMatchBackfill</a>
+        /// request whenever a game session has one or more open slots. Learn more about manual
+        /// and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-backfill.html">
+        /// Backfill Existing Games with FlexMatch</a>. 
+        /// </para>
+        /// </summary>
+        public BackfillMode BackfillMode
+        {
+            get { return this._backfillMode; }
+            set { this._backfillMode = value; }
+        }
+
+        // Check to see if BackfillMode property is set
+        internal bool IsSetBackfillMode()
+        {
+            return this._backfillMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CustomEventData. 
         /// <para>
-        /// Information to attached to all events related to the matchmaking configuration. 
+        /// Information to be added to all events related to this matchmaking configuration. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -261,9 +294,10 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameSessionQueueArns. 
         /// <para>
         /// Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// that is assigned to a game session queue and uniquely identifies it. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
-        /// These queues are used when placing game sessions for matches that are created with
-        /// this matchmaking configuration. Queues can be located in any region.
+        /// that is assigned to a game session queue and uniquely identifies it. Format is <code>arn:aws:gamelift:&lt;region&gt;:&lt;aws
+        /// account&gt;:gamesessionqueue/&lt;queue name&gt;</code>. These queues are used when
+        /// placing game sessions for matches that are created with this matchmaking configuration.
+        /// Queues can be located in any region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -286,7 +320,7 @@ namespace Amazon.GameLift.Model
         /// configuration associated with a matchmaking request or ticket.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -322,7 +356,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property RequestTimeoutSeconds. 
         /// <para>
         /// Maximum duration, in seconds, that a matchmaking ticket can remain in process before
-        /// timing out. Requests that time out can be resubmitted as needed.
+        /// timing out. Requests that fail due to timing out can be resubmitted as needed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=43200)]
@@ -345,7 +379,7 @@ namespace Amazon.GameLift.Model
         /// configuration can only use rule sets that are defined in the same region.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Max=128)]
         public string RuleSetName
         {
             get { return this._ruleSetName; }

@@ -36,6 +36,7 @@ namespace Amazon.GameLift.Model
         private bool? _acceptanceRequired;
         private int? _acceptanceTimeoutSeconds;
         private int? _additionalPlayerCount;
+        private BackfillMode _backfillMode;
         private DateTime? _creationTime;
         private string _customEventData;
         private string _description;
@@ -50,8 +51,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property AcceptanceRequired. 
         /// <para>
-        /// Flag that determines whether or not a match that was created with this configuration
-        /// must be accepted by the matched players. To require acceptance, set to TRUE.
+        /// Flag that determines whether a match that was created with this configuration must
+        /// be accepted by the matched players. To require acceptance, set to TRUE.
         /// </para>
         /// </summary>
         public bool AcceptanceRequired
@@ -109,6 +110,29 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BackfillMode. 
+        /// <para>
+        /// Method used to backfill game sessions created with this matchmaking configuration.
+        /// MANUAL indicates that the game makes backfill requests or does not use the match backfill
+        /// feature. AUTOMATIC indicates that GameLift creates <a>StartMatchBackfill</a> requests
+        /// whenever a game session has one or more open slots. Learn more about manual and automatic
+        /// backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-backfill.html">Backfill
+        /// Existing Games with FlexMatch</a>.
+        /// </para>
+        /// </summary>
+        public BackfillMode BackfillMode
+        {
+            get { return this._backfillMode; }
+            set { this._backfillMode = value; }
+        }
+
+        // Check to see if BackfillMode property is set
+        internal bool IsSetBackfillMode()
+        {
+            return this._backfillMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
         /// Time stamp indicating when this data object was created. Format is a number expressed
@@ -130,7 +154,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property CustomEventData. 
         /// <para>
-        /// Information to attached to all events related to the matchmaking configuration. 
+        /// Information to attach to all events related to the matchmaking configuration. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -215,9 +239,10 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameSessionQueueArns. 
         /// <para>
         /// Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// that is assigned to a game session queue and uniquely identifies it. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
-        /// These queues are used when placing game sessions for matches that are created with
-        /// this matchmaking configuration. Queues can be located in any region.
+        /// that is assigned to a game session queue and uniquely identifies it. Format is <code>arn:aws:gamelift:&lt;region&gt;:&lt;aws
+        /// account&gt;:gamesessionqueue/&lt;queue name&gt;</code>. These queues are used when
+        /// placing game sessions for matches that are created with this matchmaking configuration.
+        /// Queues can be located in any region.
         /// </para>
         /// </summary>
         public List<string> GameSessionQueueArns
@@ -239,7 +264,7 @@ namespace Amazon.GameLift.Model
         /// configuration associated with a matchmaking request or ticket.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -275,7 +300,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property RequestTimeoutSeconds. 
         /// <para>
         /// Maximum duration, in seconds, that a matchmaking ticket can remain in process before
-        /// timing out. Requests that time out can be resubmitted as needed.
+        /// timing out. Requests that fail due to timing out can be resubmitted as needed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=43200)]
@@ -298,7 +323,7 @@ namespace Amazon.GameLift.Model
         /// configuration can only use rule sets that are defined in the same region.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Max=128)]
         public string RuleSetName
         {
             get { return this._ruleSetName; }

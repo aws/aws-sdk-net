@@ -29,7 +29,7 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeMatchmakingConfigurations operation.
-    /// Retrieves the details of FlexMatch matchmaking configurations. with this operation,
+    /// Retrieves the details of FlexMatch matchmaking configurations. With this operation,
     /// you have the following options: (1) retrieve all existing configurations, (2) provide
     /// the names of one or more configurations to retrieve, or (3) retrieve all configurations
     /// that use a specified rule set name. When requesting multiple items, use the pagination
@@ -37,6 +37,19 @@ namespace Amazon.GameLift.Model
     /// is returned for each requested name. When specifying a list of names, only configurations
     /// that currently exist are returned. 
     /// 
+    ///  
+    /// <para>
+    ///  <b>Learn more</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/matchmaker-build.html">
+    /// Setting Up FlexMatch Matchmakers</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations</b> 
+    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateMatchmakingConfiguration</a> 
@@ -145,7 +158,7 @@ namespace Amazon.GameLift.Model
         /// configurations that use this rule set.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Max=128)]
         public string RuleSetName
         {
             get { return this._ruleSetName; }

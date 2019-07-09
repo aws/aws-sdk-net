@@ -45,6 +45,24 @@ namespace Amazon.GameLift.Model
     /// To request matchmaking tickets, provide a list of up to 10 ticket IDs. If the request
     /// is successful, a ticket object is returned for each requested ID that currently exists.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Learn more</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-client.html">
+    /// Add FlexMatch to a Game Client</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguidematch-notification.html">
+    /// Set Up FlexMatch Event Notification</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations</b> 
+    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>StartMatchmaking</a> 

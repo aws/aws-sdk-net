@@ -311,11 +311,29 @@ namespace Amazon.GameLift
         /// <para>
         /// If any player rejects the match, or if acceptances are not received before a specified
         /// timeout, the proposed match is dropped. The matchmaking tickets are then handled in
-        /// one of two ways: For tickets where all players accepted the match, the ticket status
-        /// is returned to <code>SEARCHING</code> to find a new match. For tickets where one or
-        /// more players failed to accept the match, the ticket status is set to <code>FAILED</code>,
+        /// one of two ways: For tickets where one or more players rejected the match, the ticket
+        /// status is returned to <code>SEARCHING</code> to find a new match. For tickets where
+        /// one or more players failed to respond, the ticket status is set to <code>CANCELLED</code>,
         /// and processing is terminated. A new matchmaking request for these players can be submitted
         /// as needed. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-client.html">
+        /// Add FlexMatch to a Game Client</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-events.html">
+        /// FlexMatch Events Reference</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1217,22 +1235,31 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        ///  <b>Player acceptance</b> -- In each configuration, you have the option to require
-        /// that all players accept participation in a proposed match. To enable this feature,
-        /// set <i>AcceptanceRequired</i> to true and specify a time limit for player acceptance.
-        /// Players have the option to accept or reject a proposed match, and a match does not
-        /// move ahead to game session placement unless all matched players accept. 
+        /// There are two ways to track the progress of matchmaking tickets: (1) polling ticket
+        /// status with <a>DescribeMatchmaking</a>; or (2) receiving notifications with Amazon
+        /// Simple Notification Service (SNS). To use notifications, you first need to set up
+        /// an SNS topic to receive the notifications, and provide the topic ARN in the matchmaking
+        /// configuration. Since notifications promise only "best effort" delivery, we recommend
+        /// calling <code>DescribeMatchmaking</code> if no notifications are received within 30
+        /// seconds.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Matchmaking status notification</b> -- There are two ways to track the progress
-        /// of matchmaking tickets: (1) polling ticket status with <a>DescribeMatchmaking</a>;
-        /// or (2) receiving notifications with Amazon Simple Notification Service (SNS). To use
-        /// notifications, you first need to set up an SNS topic to receive the notifications,
-        /// and provide the topic ARN in the matchmaking configuration (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-notification.html">
-        /// Setting up Notifications for Matchmaking</a>). Since notifications promise only "best
-        /// effort" delivery, we recommend calling <code>DescribeMatchmaking</code> if no notifications
-        /// are received within 30 seconds.
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-configuration.html">
+        /// Design a FlexMatch Matchmaker</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-notification.html">
+        /// Setting up Notifications for Matchmaking</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1348,7 +1375,7 @@ namespace Amazon.GameLift
         /// <para>
         /// To create a matchmaking rule set, provide unique rule set name and the rule set body
         /// in JSON format. Rule sets must be defined in the same region as the matchmaking configuration
-        /// they will be used with.
+        /// they are used with.
         /// </para>
         ///  
         /// <para>
@@ -2650,6 +2677,13 @@ namespace Amazon.GameLift
         /// 
         ///  
         /// <para>
+        /// If the fleet being deleted has a VPC peering connection, you first need to get a valid
+        /// authorization (good for 24 hours) by calling <a>CreateVpcPeeringAuthorization</a>.
+        /// You do not need to explicitly delete the VPC peering connection--this is done as part
+        /// of the delete fleet process.
+        /// </para>
+        ///  
+        /// <para>
         /// This action removes the fleet's resources and the fleet record. Once a fleet is deleted,
         /// you can no longer use that fleet.
         /// </para>
@@ -2779,6 +2813,13 @@ namespace Amazon.GameLift
         /// Deletes everything related to a fleet. Before deleting a fleet, you must set the fleet's
         /// desired capacity to zero. See <a>UpdateFleetCapacity</a>.
         /// 
+        ///  
+        /// <para>
+        /// If the fleet being deleted has a VPC peering connection, you first need to get a valid
+        /// authorization (good for 24 hours) by calling <a>CreateVpcPeeringAuthorization</a>.
+        /// You do not need to explicitly delete the VPC peering connection--this is done as part
+        /// of the delete fleet process.
+        /// </para>
         ///  
         /// <para>
         /// This action removes the fleet's resources and the fleet record. Once a fleet is deleted,
@@ -3039,6 +3080,10 @@ namespace Amazon.GameLift
         /// configuration name. A matchmaking configuration cannot be deleted if it is being used
         /// in any active matchmaking tickets.
         /// 
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>CreateMatchmakingConfiguration</a> 
@@ -3489,9 +3534,9 @@ namespace Amazon.GameLift
         #region  DeleteVpcPeeringAuthorization
 
         /// <summary>
-        /// Cancels a pending VPC peering authorization for the specified VPC. If the authorization
-        /// has already been used to create a peering connection, call <a>DeleteVpcPeeringConnection</a>
-        /// to remove the connection. 
+        /// Cancels a pending VPC peering authorization for the specified VPC. If you need to
+        /// delete an existing VPC peering connection, call <a>DeleteVpcPeeringConnection</a>.
+        /// 
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -5848,6 +5893,24 @@ namespace Amazon.GameLift
         /// To request matchmaking tickets, provide a list of up to 10 ticket IDs. If the request
         /// is successful, a ticket object is returned for each requested ID that currently exists.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-client.html">
+        /// Add FlexMatch to a Game Client</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguidematch-notification.html">
+        /// Set Up FlexMatch Event Notification</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>StartMatchmaking</a> 
@@ -5933,7 +5996,7 @@ namespace Amazon.GameLift
         #region  DescribeMatchmakingConfigurations
 
         /// <summary>
-        /// Retrieves the details of FlexMatch matchmaking configurations. with this operation,
+        /// Retrieves the details of FlexMatch matchmaking configurations. With this operation,
         /// you have the following options: (1) retrieve all existing configurations, (2) provide
         /// the names of one or more configurations to retrieve, or (3) retrieve all configurations
         /// that use a specified rule set name. When requesting multiple items, use the pagination
@@ -5941,6 +6004,19 @@ namespace Amazon.GameLift
         /// is returned for each requested name. When specifying a list of names, only configurations
         /// that currently exist are returned. 
         /// 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/matchmaker-build.html">
+        /// Setting Up FlexMatch Matchmakers</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>CreateMatchmakingConfiguration</a> 
@@ -8720,9 +8796,7 @@ namespace Amazon.GameLift
         /// ARN, a matchmaking configuration, and a set of data that describes all current players
         /// in the game session. If successful, a match backfill ticket is created and returned
         /// with status set to QUEUED. The ticket is placed in the matchmaker's ticket pool and
-        /// processed. Track the status of the ticket to respond as needed. For more detail how
-        /// to set up backfilling, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-backfill.html">
-        /// Backfill Existing Games with FlexMatch</a>. 
+        /// processed. Track the status of the ticket to respond as needed. 
         /// </para>
         ///  
         /// <para>
@@ -8732,8 +8806,26 @@ namespace Amazon.GameLift
         /// formed, the matchmaker creates player sessions for the new players. All tickets in
         /// the match are updated with the game session's connection information, and the <a>GameSession</a>
         /// object is updated to include matchmaker data on the new players. For more detail on
-        /// how match backfill requests are processed, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
+        /// how match backfill requests are processed, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-match.html">
         /// How Amazon GameLift FlexMatch Works</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-backfill.html">
+        /// Backfill Existing Games with FlexMatch</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-match.html">
+        /// How GameLift FlexMatch Works</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -8831,9 +8923,7 @@ namespace Amazon.GameLift
         /// game session for optimal performance. A matchmaking request might start with a single
         /// player or a group of players who want to play together. FlexMatch finds additional
         /// players as needed to fill the match. Match type, rules, and the queue used to place
-        /// a new game session are defined in a <code>MatchmakingConfiguration</code>. For complete
-        /// information on setting up and using FlexMatch, see the topic <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
-        /// Adding FlexMatch to Your Game</a>.
+        /// a new game session are defined in a <code>MatchmakingConfiguration</code>. 
         /// 
         ///  
         /// <para>
@@ -8903,7 +8993,35 @@ namespace Amazon.GameLift
         /// is added to the matchmaking tickets. Matched players can use the connection information
         /// to join the game. 
         /// </para>
-        ///  </li> </ol> <ul> <li> 
+        ///  </li> </ol> 
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-client.html">
+        /// Add FlexMatch to a Game Client</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-notification.html">
+        /// Set Up FlexMatch Event Notification</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-tasks.html">
+        /// FlexMatch Integration Roadmap</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-match.html">
+        /// How GameLift FlexMatch Works</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         ///  <a>StartMatchmaking</a> 
         /// </para>
@@ -9277,10 +9395,35 @@ namespace Amazon.GameLift
         #region  StopMatchmaking
 
         /// <summary>
-        /// Cancels a matchmaking ticket that is currently being processed. To stop the matchmaking
-        /// operation, specify the ticket ID. If successful, work on the ticket is stopped, and
-        /// the ticket status is changed to <code>CANCELLED</code>.
+        /// Cancels a matchmaking ticket or match backfill ticket that is currently being processed.
+        /// To stop the matchmaking operation, specify the ticket ID. If successful, work on the
+        /// ticket is stopped, and the ticket status is changed to <code>CANCELLED</code>.
         /// 
+        ///  
+        /// <para>
+        /// This call is also used to turn off automatic backfill for an individual game session.
+        /// This is for game sessions that are created with a matchmaking configuration that has
+        /// automatic backfill enabled. The ticket ID is included in the <code>MatchmakerData</code>
+        /// of an updated game session object, which is provided to the game server.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If the action is successful, the service sends back an empty JSON struct with the
+        /// HTTP 200 response (not an empty HTTP body).
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-client.html">
+        /// Add FlexMatch to a Game Client</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>StartMatchmaking</a> 
@@ -10331,9 +10474,23 @@ namespace Amazon.GameLift
         #region  UpdateMatchmakingConfiguration
 
         /// <summary>
-        /// Updates settings for a FlexMatch matchmaking configuration. To update settings, specify
+        /// Updates settings for a FlexMatch matchmaking configuration. These changes affect all
+        /// matches and game sessions that are created after the update. To update settings, specify
         /// the configuration name to be updated and provide the new settings. 
         /// 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-configuration.html">
+        /// Design a FlexMatch Matchmaker</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>CreateMatchmakingConfiguration</a> 

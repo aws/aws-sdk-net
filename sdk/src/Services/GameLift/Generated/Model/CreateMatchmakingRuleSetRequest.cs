@@ -38,7 +38,7 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// To create a matchmaking rule set, provide unique rule set name and the rule set body
     /// in JSON format. Rule sets must be defined in the same region as the matchmaking configuration
-    /// they will be used with.
+    /// they are used with.
     /// </para>
     ///  
     /// <para>
@@ -115,7 +115,7 @@ namespace Amazon.GameLift.Model
         /// the optional "name" field in the rule set body.) 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -131,8 +131,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property RuleSetBody. 
         /// <para>
-        /// Collection of matchmaking rules, formatted as a JSON string. Note that comments are
-        /// not allowed in JSON, but most elements support a description field.
+        /// Collection of matchmaking rules, formatted as a JSON string. Comments are not allowed
+        /// in JSON, but most elements support a description field.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=65535)]

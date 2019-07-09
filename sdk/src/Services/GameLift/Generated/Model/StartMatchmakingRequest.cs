@@ -36,9 +36,7 @@ namespace Amazon.GameLift.Model
     /// game session for optimal performance. A matchmaking request might start with a single
     /// player or a group of players who want to play together. FlexMatch finds additional
     /// players as needed to fill the match. Match type, rules, and the queue used to place
-    /// a new game session are defined in a <code>MatchmakingConfiguration</code>. For complete
-    /// information on setting up and using FlexMatch, see the topic <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
-    /// Adding FlexMatch to Your Game</a>.
+    /// a new game session are defined in a <code>MatchmakingConfiguration</code>. 
     /// 
     ///  
     /// <para>
@@ -108,7 +106,35 @@ namespace Amazon.GameLift.Model
     /// is added to the matchmaking tickets. Matched players can use the connection information
     /// to join the game. 
     /// </para>
-    ///  </li> </ol> <ul> <li> 
+    ///  </li> </ol> 
+    /// <para>
+    ///  <b>Learn more</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-client.html">
+    /// Add FlexMatch to a Game Client</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-notification.html">
+    /// Set Up FlexMatch Event Notification</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-tasks.html">
+    /// FlexMatch Integration Roadmap</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-match.html">
+    /// How GameLift FlexMatch Works</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations</b> 
+    /// </para>
+    ///  <ul> <li> 
     /// <para>
     ///  <a>StartMatchmaking</a> 
     /// </para>
@@ -143,7 +169,7 @@ namespace Amazon.GameLift.Model
         /// must exist in the same region as this request.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Max=128)]
         public string ConfigurationName
         {
             get { return this._configurationName; }
@@ -186,7 +212,7 @@ namespace Amazon.GameLift.Model
         /// matchmaking ticket status and retrieve match results.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Max=128)]
         public string TicketId
         {
             get { return this._ticketId; }

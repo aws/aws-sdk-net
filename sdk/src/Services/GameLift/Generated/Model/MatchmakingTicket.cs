@@ -54,7 +54,7 @@ namespace Amazon.GameLift.Model
         /// is created for the match.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Max=128)]
         public string ConfigurationName
         {
             get { return this._configurationName; }
@@ -200,12 +200,13 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FAILED</b> -- The matchmaking request was not completed. Tickets with players
-        /// who fail to accept a proposed match are placed in <code>FAILED</code> status.
+        ///  <b>FAILED</b> -- The matchmaking request was not completed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>CANCELLED</b> -- The matchmaking request was canceled with a call to <a>StopMatchmaking</a>.
+        ///  <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result
+        /// of a call to <a>StopMatchmaking</a> or a proposed match that one or more players failed
+        /// to accept.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -275,7 +276,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for a matchmaking ticket.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Max=128)]
         public string TicketId
         {
             get { return this._ticketId; }

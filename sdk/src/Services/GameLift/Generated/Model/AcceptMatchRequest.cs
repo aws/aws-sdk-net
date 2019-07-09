@@ -51,11 +51,29 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// If any player rejects the match, or if acceptances are not received before a specified
     /// timeout, the proposed match is dropped. The matchmaking tickets are then handled in
-    /// one of two ways: For tickets where all players accepted the match, the ticket status
-    /// is returned to <code>SEARCHING</code> to find a new match. For tickets where one or
-    /// more players failed to accept the match, the ticket status is set to <code>FAILED</code>,
+    /// one of two ways: For tickets where one or more players rejected the match, the ticket
+    /// status is returned to <code>SEARCHING</code> to find a new match. For tickets where
+    /// one or more players failed to respond, the ticket status is set to <code>CANCELLED</code>,
     /// and processing is terminated. A new matchmaking request for these players can be submitted
     /// as needed. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Learn more</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-client.html">
+    /// Add FlexMatch to a Game Client</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-events.html">
+    /// FlexMatch Events Reference</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -131,7 +149,7 @@ namespace Amazon.GameLift.Model
         /// otherwise this request will fail.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Max=128)]
         public string TicketId
         {
             get { return this._ticketId; }

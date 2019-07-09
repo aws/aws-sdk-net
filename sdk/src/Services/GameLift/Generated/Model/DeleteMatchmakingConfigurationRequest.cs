@@ -33,6 +33,10 @@ namespace Amazon.GameLift.Model
     /// configuration name. A matchmaking configuration cannot be deleted if it is being used
     /// in any active matchmaking tickets.
     /// 
+    ///  
+    /// <para>
+    ///  <b>Related operations</b> 
+    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateMatchmakingConfiguration</a> 
@@ -77,7 +81,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for a matchmaking configuration
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Max=128)]
         public string Name
         {
             get { return this._name; }

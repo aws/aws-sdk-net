@@ -2,9 +2,8 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.GameLift.Model.AcceptMatchRequest.TicketId</property>
-    <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9-\.]+</pattern>
+    <pattern>[a-zA-Z0-9-\.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateAliasRequest.Description</property>
@@ -144,9 +143,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateMatchmakingConfigurationRequest.Name</property>
-    <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9-\.]+</pattern>
+    <pattern>[a-zA-Z0-9-\.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateMatchmakingConfigurationRequest.NotificationTarget</property>
@@ -161,15 +159,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateMatchmakingConfigurationRequest.RuleSetName</property>
-    <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9-\.]+</pattern>
+    <pattern>[a-zA-Z0-9-\.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateMatchmakingRuleSetRequest.Name</property>
-    <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9-\.]+</pattern>
+    <pattern>[a-zA-Z0-9-\.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateMatchmakingRuleSetRequest.RuleSetBody</property>
@@ -256,15 +252,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DeleteMatchmakingConfigurationRequest.Name</property>
-    <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9-\.]+</pattern>
+    <pattern>[a-zA-Z0-9-\.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DeleteMatchmakingRuleSetRequest.Name</property>
-    <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9-\.]+</pattern>
+    <pattern>[a-zA-Z0-9-\.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DeleteScalingPolicyRequest.FleetId</property>
@@ -489,9 +483,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeMatchmakingConfigurationsRequest.RuleSetName</property>
-    <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9-\.]+</pattern>
+    <pattern>[a-zA-Z0-9-\.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeMatchmakingConfigurationsResponse.NextToken</property>
@@ -752,9 +745,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.StartMatchBackfillRequest.ConfigurationName</property>
-    <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9-\.]+</pattern>
+    <pattern>[a-zA-Z0-9-\.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.StartMatchBackfillRequest.GameSessionArn</property>
@@ -764,21 +756,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.StartMatchBackfillRequest.TicketId</property>
-    <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9-\.]+</pattern>
+    <pattern>[a-zA-Z0-9-\.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.StartMatchmakingRequest.ConfigurationName</property>
-    <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9-\.]+</pattern>
+    <pattern>[a-zA-Z0-9-\.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.StartMatchmakingRequest.TicketId</property>
-    <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9-\.]+</pattern>
+    <pattern>[a-zA-Z0-9-\.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.StopFleetActionsRequest.FleetId</property>
@@ -792,9 +781,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.StopMatchmakingRequest.TicketId</property>
-    <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9-\.]+</pattern>
+    <pattern>[a-zA-Z0-9-\.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateAliasRequest.AliasId</property>
@@ -922,9 +910,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateMatchmakingConfigurationRequest.Name</property>
-    <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9-\.]+</pattern>
+    <pattern>[a-zA-Z0-9-\.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateMatchmakingConfigurationRequest.NotificationTarget</property>
@@ -939,9 +926,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateMatchmakingConfigurationRequest.RuleSetName</property>
-    <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9-\.]+</pattern>
+    <pattern>[a-zA-Z0-9-\.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateRuntimeConfigurationRequest.FleetId</property>
@@ -1384,9 +1370,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.MatchmakingConfiguration.Name</property>
-    <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9-\.]+</pattern>
+    <pattern>[a-zA-Z0-9-\.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.MatchmakingConfiguration.NotificationTarget</property>
@@ -1401,9 +1386,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.MatchmakingConfiguration.RuleSetName</property>
-    <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9-\.]+</pattern>
+    <pattern>[a-zA-Z0-9-\.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.MatchmakingRuleSet.RuleSetBody</property>
@@ -1412,15 +1396,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.MatchmakingRuleSet.RuleSetName</property>
-    <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9-\.]+</pattern>
+    <pattern>[a-zA-Z0-9-\.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.MatchmakingTicket.ConfigurationName</property>
-    <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9-\.]+</pattern>
+    <pattern>[a-zA-Z0-9-\.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.MatchmakingTicket.EstimatedWaitTime</property>
@@ -1428,9 +1410,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.MatchmakingTicket.TicketId</property>
-    <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9-\.]+</pattern>
+    <pattern>[a-zA-Z0-9-\.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.NotFoundException.Message</property>

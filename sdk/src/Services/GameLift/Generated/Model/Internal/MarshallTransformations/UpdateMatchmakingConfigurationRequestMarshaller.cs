@@ -86,6 +86,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AdditionalPlayerCount);
                 }
 
+                if(publicRequest.IsSetBackfillMode())
+                {
+                    context.Writer.WritePropertyName("BackfillMode");
+                    context.Writer.Write(publicRequest.BackfillMode);
+                }
+
                 if(publicRequest.IsSetCustomEventData())
                 {
                     context.Writer.WritePropertyName("CustomEventData");

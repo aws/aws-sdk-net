@@ -29,9 +29,9 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVpcPeeringAuthorization operation.
-    /// Cancels a pending VPC peering authorization for the specified VPC. If the authorization
-    /// has already been used to create a peering connection, call <a>DeleteVpcPeeringConnection</a>
-    /// to remove the connection. 
+    /// Cancels a pending VPC peering authorization for the specified VPC. If you need to
+    /// delete an existing VPC peering connection, call <a>DeleteVpcPeeringConnection</a>.
+    /// 
     /// 
     ///  <ul> <li> 
     /// <para>

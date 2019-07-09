@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Set of rule statements, used with FlexMatch, that determine how to build a certain
-    /// kind of player match. Each rule set describes a type of group to be created and defines
-    /// the parameters for acceptable player matches. Rule sets are used in <a>MatchmakingConfiguration</a>
+    /// Set of rule statements, used with FlexMatch, that determine how to build your player
+    /// matches. Each rule set describes a type of group to be created and defines the parameters
+    /// for acceptable player matches. Rule sets are used in <a>MatchmakingConfiguration</a>
     /// objects.
     /// 
     ///  
@@ -100,8 +100,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property RuleSetBody. 
         /// <para>
-        /// Collection of matchmaking rules, formatted as a JSON string. (Note that comments14
-        /// are not allowed in JSON, but most elements support a description field.)
+        /// Collection of matchmaking rules, formatted as a JSON string. Comments are not allowed
+        /// in JSON, but most elements support a description field.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=65535)]
@@ -123,7 +123,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for a matchmaking rule set
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Max=128)]
         public string RuleSetName
         {
             get { return this._ruleSetName; }

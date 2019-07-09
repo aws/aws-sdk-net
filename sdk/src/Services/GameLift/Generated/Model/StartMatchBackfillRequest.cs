@@ -42,9 +42,7 @@ namespace Amazon.GameLift.Model
     /// ARN, a matchmaking configuration, and a set of data that describes all current players
     /// in the game session. If successful, a match backfill ticket is created and returned
     /// with status set to QUEUED. The ticket is placed in the matchmaker's ticket pool and
-    /// processed. Track the status of the ticket to respond as needed. For more detail how
-    /// to set up backfilling, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-backfill.html">
-    /// Backfill Existing Games with FlexMatch</a>. 
+    /// processed. Track the status of the ticket to respond as needed. 
     /// </para>
     ///  
     /// <para>
@@ -54,8 +52,26 @@ namespace Amazon.GameLift.Model
     /// formed, the matchmaker creates player sessions for the new players. All tickets in
     /// the match are updated with the game session's connection information, and the <a>GameSession</a>
     /// object is updated to include matchmaker data on the new players. For more detail on
-    /// how match backfill requests are processed, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
+    /// how match backfill requests are processed, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-match.html">
     /// How Amazon GameLift FlexMatch Works</a>. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Learn more</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-backfill.html">
+    /// Backfill Existing Games with FlexMatch</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-match.html">
+    /// How GameLift FlexMatch Works</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -96,7 +112,7 @@ namespace Amazon.GameLift.Model
         /// the matchmaking configuration name is "MM-4v4".) Use only the name for this parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Max=128)]
         public string ConfigurationName
         {
             get { return this._configurationName; }
@@ -173,7 +189,7 @@ namespace Amazon.GameLift.Model
         /// match backfill ticket status and retrieve match results.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Max=128)]
         public string TicketId
         {
             get { return this._ticketId; }

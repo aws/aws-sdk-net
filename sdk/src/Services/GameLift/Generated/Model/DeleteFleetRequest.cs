@@ -34,6 +34,13 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
+    /// If the fleet being deleted has a VPC peering connection, you first need to get a valid
+    /// authorization (good for 24 hours) by calling <a>CreateVpcPeeringAuthorization</a>.
+    /// You do not need to explicitly delete the VPC peering connection--this is done as part
+    /// of the delete fleet process.
+    /// </para>
+    ///  
+    /// <para>
     /// This action removes the fleet's resources and the fleet record. Once a fleet is deleted,
     /// you can no longer use that fleet.
     /// </para>

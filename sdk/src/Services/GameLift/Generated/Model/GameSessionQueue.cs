@@ -100,7 +100,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameSessionQueueArn. 
         /// <para>
         /// Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// that is assigned to a game session queue and uniquely identifies it. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+        /// that is assigned to a game session queue and uniquely identifies it. Format is <code>arn:aws:gamelift:&lt;region&gt;:&lt;aws
+        /// account&gt;:gamesessionqueue/&lt;queue name&gt;</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
