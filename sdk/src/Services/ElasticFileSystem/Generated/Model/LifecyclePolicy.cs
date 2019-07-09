@@ -38,15 +38,9 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property TransitionToIA. 
         /// <para>
-        /// A value that indicates how long it takes to transition files to the IA storage class.
-        /// Currently, the only valid value is <code>AFTER_30_DAYS</code>.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>AFTER_30_DAYS</code> indicates files that have not been read from or written
-        /// to for 30 days are transitioned from the Standard storage class to the IA storage
-        /// class. Metadata operations such as listing the contents of a directory don't count
-        /// as a file access event.
+        ///  A value that describes the period of time that a file is not accessed, after which
+        /// it transitions to the IA storage class. Metadata operations such as listing the contents
+        /// of a directory don't count as file access events.
         /// </para>
         /// </summary>
         public TransitionToIARules TransitionToIA
