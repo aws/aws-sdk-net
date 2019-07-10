@@ -1948,6 +1948,46 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  DescribeServiceActionExecutionParameters
+
+        internal virtual DescribeServiceActionExecutionParametersResponse DescribeServiceActionExecutionParameters(DescribeServiceActionExecutionParametersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeServiceActionExecutionParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServiceActionExecutionParametersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeServiceActionExecutionParametersResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceActionExecutionParameters service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeServiceActionExecutionParameters service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeServiceActionExecutionParameters">REST API Reference for DescribeServiceActionExecutionParameters Operation</seealso>
+        public virtual Task<DescribeServiceActionExecutionParametersResponse> DescribeServiceActionExecutionParametersAsync(DescribeServiceActionExecutionParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeServiceActionExecutionParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServiceActionExecutionParametersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeServiceActionExecutionParametersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeTagOption
 
         internal virtual DescribeTagOptionResponse DescribeTagOption(DescribeTagOptionRequest request)

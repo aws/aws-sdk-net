@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ExecuteProvisionedProductServiceAction Request Marshaller
+    /// DescribeServiceActionExecutionParameters Request Marshaller
     /// </summary>       
-    public class ExecuteProvisionedProductServiceActionRequestMarshaller : IMarshaller<IRequest, ExecuteProvisionedProductServiceActionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeServiceActionExecutionParametersRequestMarshaller : IMarshaller<IRequest, DescribeServiceActionExecutionParametersRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ExecuteProvisionedProductServiceActionRequest)input);
+            return this.Marshall((DescribeServiceActionExecutionParametersRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ExecuteProvisionedProductServiceActionRequest publicRequest)
+        public IRequest Marshall(DescribeServiceActionExecutionParametersRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ServiceCatalog");
-            string target = "AWS242ServiceCatalogService.ExecuteProvisionedProductServiceAction";
+            string target = "AWS242ServiceCatalogService.DescribeServiceActionExecutionParameters";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-12-10";            
@@ -72,36 +72,6 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("AcceptLanguage");
                     context.Writer.Write(publicRequest.AcceptLanguage);
-                }
-
-                if(publicRequest.IsSetExecuteToken())
-                {
-                    context.Writer.WritePropertyName("ExecuteToken");
-                    context.Writer.Write(publicRequest.ExecuteToken);
-                }
-
-                else if(!(publicRequest.IsSetExecuteToken()))
-                {
-                    context.Writer.WritePropertyName("ExecuteToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
-                }
-                if(publicRequest.IsSetParameters())
-                {
-                    context.Writer.WritePropertyName("Parameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestParametersKvp in publicRequest.Parameters)
-                    {
-                        context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
-                        var publicRequestParametersValue = publicRequestParametersKvp.Value;
-
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestParametersValueListValue in publicRequestParametersValue)
-                        {
-                                context.Writer.Write(publicRequestParametersValueListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetProvisionedProductId())
@@ -125,9 +95,9 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ExecuteProvisionedProductServiceActionRequestMarshaller _instance = new ExecuteProvisionedProductServiceActionRequestMarshaller();        
+        private static DescribeServiceActionExecutionParametersRequestMarshaller _instance = new DescribeServiceActionExecutionParametersRequestMarshaller();        
 
-        internal static ExecuteProvisionedProductServiceActionRequestMarshaller GetInstance()
+        internal static DescribeServiceActionExecutionParametersRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -135,7 +105,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ExecuteProvisionedProductServiceActionRequestMarshaller Instance
+        public static DescribeServiceActionExecutionParametersRequestMarshaller Instance
         {
             get
             {

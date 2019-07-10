@@ -28,35 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// Container for the parameters to the ExecuteProvisionedProductServiceAction operation.
-    /// Executes a self-service action against a provisioned product.
+    /// Container for the parameters to the DescribeServiceActionExecutionParameters operation.
+    /// 
     /// </summary>
-    public partial class ExecuteProvisionedProductServiceActionRequest : AmazonServiceCatalogRequest
+    public partial class DescribeServiceActionExecutionParametersRequest : AmazonServiceCatalogRequest
     {
         private string _acceptLanguage;
-        private string _executeToken;
-        private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
         private string _provisionedProductId;
         private string _serviceActionId;
 
         /// <summary>
-        /// Gets and sets the property AcceptLanguage. 
-        /// <para>
-        /// The language code.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>en</code> - English (default)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>jp</code> - Japanese
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>zh</code> - Chinese
-        /// </para>
-        ///  </li> </ul>
+        /// Gets and sets the property AcceptLanguage.
         /// </summary>
         [AWSProperty(Max=100)]
         public string AcceptLanguage
@@ -72,45 +54,7 @@ namespace Amazon.ServiceCatalog.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExecuteToken. 
-        /// <para>
-        /// An idempotency token that uniquely identifies the execute request.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
-        public string ExecuteToken
-        {
-            get { return this._executeToken; }
-            set { this._executeToken = value; }
-        }
-
-        // Check to see if ExecuteToken property is set
-        internal bool IsSetExecuteToken()
-        {
-            return this._executeToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Parameters.
-        /// </summary>
-        [AWSProperty(Min=1, Max=200)]
-        public Dictionary<string, List<string>> Parameters
-        {
-            get { return this._parameters; }
-            set { this._parameters = value; }
-        }
-
-        // Check to see if Parameters property is set
-        internal bool IsSetParameters()
-        {
-            return this._parameters != null && this._parameters.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property ProvisionedProductId. 
-        /// <para>
-        /// The identifier of the provisioned product.
-        /// </para>
+        /// Gets and sets the property ProvisionedProductId.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
         public string ProvisionedProductId
@@ -126,10 +70,7 @@ namespace Amazon.ServiceCatalog.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServiceActionId. 
-        /// <para>
-        /// The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.
-        /// </para>
+        /// Gets and sets the property ServiceActionId.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
         public string ServiceActionId

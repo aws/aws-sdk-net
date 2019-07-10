@@ -636,6 +636,22 @@
     <pattern>^[a-zA-Z0-9_\-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.DescribeServiceActionExecutionParametersRequest.AcceptLanguage</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.DescribeServiceActionExecutionParametersRequest.ProvisionedProductId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.DescribeServiceActionExecutionParametersRequest.ServiceActionId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.DescribeTagOptionRequest.Id</property>
     <min>1</min>
     <max>100</max>
@@ -1519,6 +1535,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.ConstraintSummary.Type</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ExecutionParameter.Name</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ExecutionParameter.Type</property>
     <min>1</min>
     <max>1024</max>
   </property-value-rule>
