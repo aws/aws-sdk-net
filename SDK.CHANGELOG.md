@@ -1,3 +1,16 @@
+### 3.3.548.0 (2019-07-10 18:29 UTC)
+* Glacier (3.3.100.46)
+	* Documentation updates for glacier
+* QuickSight (3.3.101.0)
+	* Amazon QuickSight now supports embedding dashboards for all non-federated QuickSight users. This includes IAM users, AD users and users from the QuickSight user pool. The get-dashboard-embed-url API accepts QUICKSIGHT as identity type with a user ARN to authenticate the embeddable dashboard viewer as a non-federated user.
+* ServiceCatalog (3.3.108.0)
+	* This release adds support for Parameters in ExecuteProvisionedProductServiceAction and adds functionality to get the default parameter values for a Self-Service Action execution against a Provisioned Product via DescribeServiceActionExecutionParameters
+* Core 3.3.103.10
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.547.0 (2019-07-09 18:24 UTC)
 * Amplify (3.3.101.0)
 	* This release adds webhook APIs and manual deployment APIs for AWS Amplify Console.
