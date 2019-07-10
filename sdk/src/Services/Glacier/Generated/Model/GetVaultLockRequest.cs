@@ -53,13 +53,13 @@ namespace Amazon.Glacier.Model
     /// A vault lock is put into the <code>InProgress</code> state by calling <a>InitiateVaultLock</a>.
     /// A vault lock is put into the <code>Locked</code> state by calling <a>CompleteVaultLock</a>.
     /// You can abort the vault locking process by calling <a>AbortVaultLock</a>. For more
-    /// information about the vault locking process, <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html">Amazon
+    /// information about the vault locking process, <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html">Amazon
     /// Glacier Vault Lock</a>. 
     /// </para>
     ///  
     /// <para>
     /// If there is no vault lock policy set on the vault, the operation returns a <code>404
-    /// Not found</code> error. For more information about vault lock policies, <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock-policy.html">Amazon
+    /// Not found</code> error. For more information about vault lock policies, <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock-policy.html">Amazon
     /// Glacier Access Control with Vault Lock Policies</a>. 
     /// </para>
     /// </summary>
@@ -73,9 +73,9 @@ namespace Amazon.Glacier.Model
         /// <para>
         /// The <code>AccountId</code> value is the AWS account ID of the account that owns the
         /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
-        /// (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the
-        /// credentials used to sign the request. If you use an account ID, do not include any
-        /// hyphens ('-') in the ID.
+        /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with
+        /// the credentials used to sign the request. If you use an account ID, do not include
+        /// any hyphens ('-') in the ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

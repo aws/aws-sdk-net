@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glacier.Model
 {
     /// <summary>
-    /// The Amazon Glacier response to your request.
+    /// The Amazon S3 Glacier response to your request.
     /// </summary>
     public partial class InitiateMultipartUploadResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The relative URI path of the multipart upload ID Amazon Glacier created.
+        /// The relative URI path of the multipart upload ID Amazon S3 Glacier created.
         /// </para>
         /// </summary>
         public string Location

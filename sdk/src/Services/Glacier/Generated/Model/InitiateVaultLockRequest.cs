@@ -46,7 +46,7 @@ namespace Amazon.Glacier.Model
     ///  </li> </ul> 
     /// <para>
     /// You can set one vault lock policy for each vault and this policy can be up to 20 KB
-    /// in size. For more information about vault lock policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock-policy.html">Amazon
+    /// in size. For more information about vault lock policies, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock-policy.html">Amazon
     /// Glacier Access Control with Vault Lock Policies</a>. 
     /// </para>
     ///  
@@ -67,7 +67,7 @@ namespace Amazon.Glacier.Model
     /// <para>
     /// You can abort the vault locking process by calling <a>AbortVaultLock</a>. You can
     /// get the state of the vault lock by calling <a>GetVaultLock</a>. For more information
-    /// about the vault locking process, <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html">Amazon
+    /// about the vault locking process, <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html">Amazon
     /// Glacier Vault Lock</a>.
     /// </para>
     ///  

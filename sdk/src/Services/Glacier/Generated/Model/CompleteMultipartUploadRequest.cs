@@ -29,9 +29,9 @@ namespace Amazon.Glacier.Model
 {
     /// <summary>
     /// Container for the parameters to the CompleteMultipartUpload operation.
-    /// You call this operation to inform Amazon Glacier that all the archive parts have been
-    /// uploaded and that Amazon Glacier can now assemble the archive from the uploaded parts.
-    /// After assembling and saving the archive to the vault, Amazon Glacier returns the URI
+    /// You call this operation to inform Amazon S3 Glacier (Glacier) that all the archive
+    /// parts have been uploaded and that Glacier can now assemble the archive from the uploaded
+    /// parts. After assembling and saving the archive to the vault, Glacier returns the URI
     /// path of the newly created archive resource. Using the URI path, you can then access
     /// the archive. After you upload an archive, you should save the archive ID returned
     /// to retrieve the archive at a later point. You can also get the vault inventory to
@@ -40,19 +40,18 @@ namespace Amazon.Glacier.Model
     ///  
     /// <para>
     /// In the request, you must include the computed SHA256 tree hash of the entire archive
-    /// you have uploaded. For information about computing a SHA256 tree hash, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html">Computing
-    /// Checksums</a>. On the server side, Amazon Glacier also constructs the SHA256 tree
-    /// hash of the assembled archive. If the values match, Amazon Glacier saves the archive
-    /// to the vault; otherwise, it returns an error, and the operation fails. The <a>ListParts</a>
-    /// operation returns a list of parts uploaded for a specific multipart upload. It includes
-    /// checksum information for each uploaded part that can be used to debug a bad checksum
-    /// issue.
+    /// you have uploaded. For information about computing a SHA256 tree hash, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html">Computing
+    /// Checksums</a>. On the server side, Glacier also constructs the SHA256 tree hash of
+    /// the assembled archive. If the values match, Glacier saves the archive to the vault;
+    /// otherwise, it returns an error, and the operation fails. The <a>ListParts</a> operation
+    /// returns a list of parts uploaded for a specific multipart upload. It includes checksum
+    /// information for each uploaded part that can be used to debug a bad checksum issue.
     /// </para>
     ///  
     /// <para>
-    /// Additionally, Amazon Glacier also checks for any missing content ranges when assembling
-    /// the archive, if missing content ranges are found, Amazon Glacier returns an error
-    /// and the operation fails.
+    /// Additionally, Glacier also checks for any missing content ranges when assembling the
+    /// archive, if missing content ranges are found, Glacier returns an error and the operation
+    /// fails.
     /// </para>
     ///  
     /// <para>
@@ -71,13 +70,13 @@ namespace Amazon.Glacier.Model
     /// An AWS account has full permission to perform all operations (actions). However, AWS
     /// Identity and Access Management (IAM) users don't have any permissions by default.
     /// You must grant them explicit permission to perform specific actions. For more information,
-    /// see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
+    /// see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
     /// Control Using AWS Identity and Access Management (IAM)</a>.
     /// </para>
     ///  
     /// <para>
-    ///  For conceptual information and underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">Uploading
-    /// Large Archives in Parts (Multipart Upload)</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-complete-upload.html">Complete
+    ///  For conceptual information and underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">Uploading
+    /// Large Archives in Parts (Multipart Upload)</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-complete-upload.html">Complete
     /// Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>. 
     /// </para>
     /// </summary>
@@ -100,7 +99,7 @@ namespace Amazon.Glacier.Model
         /// <param name="vaultName">The name of the vault.</param>
         /// <param name="uploadId">The upload ID of the multipart upload.</param>
         /// <param name="archiveSize">The total size, in bytes, of the entire archive. This value should be the sum of all the sizes of the individual parts that you uploaded.</param>
-        /// <param name="checksum">The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash of the individual parts. If the value you specify in the request does not match the SHA256 tree hash of the final assembled archive as computed by Amazon Glacier, Amazon Glacier returns an error and the request fails.</param>
+        /// <param name="checksum">The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash of the individual parts. If the value you specify in the request does not match the SHA256 tree hash of the final assembled archive as computed by Amazon S3 Glacier (Glacier), Glacier returns an error and the request fails.</param>
         public CompleteMultipartUploadRequest(string vaultName, string uploadId, string archiveSize, string checksum)
         {
             _vaultName = vaultName;
@@ -112,11 +111,11 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates CompleteMultipartUploadRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</param>
+        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</param>
         /// <param name="vaultName">The name of the vault.</param>
         /// <param name="uploadId">The upload ID of the multipart upload.</param>
         /// <param name="archiveSize">The total size, in bytes, of the entire archive. This value should be the sum of all the sizes of the individual parts that you uploaded.</param>
-        /// <param name="checksum">The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash of the individual parts. If the value you specify in the request does not match the SHA256 tree hash of the final assembled archive as computed by Amazon Glacier, Amazon Glacier returns an error and the request fails.</param>
+        /// <param name="checksum">The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash of the individual parts. If the value you specify in the request does not match the SHA256 tree hash of the final assembled archive as computed by Amazon S3 Glacier (Glacier), Glacier returns an error and the request fails.</param>
         public CompleteMultipartUploadRequest(string accountId, string vaultName, string uploadId, string archiveSize, string checksum)
         {
             _accountId = accountId;
@@ -131,9 +130,9 @@ namespace Amazon.Glacier.Model
         /// <para>
         /// The <code>AccountId</code> value is the AWS account ID of the account that owns the
         /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
-        /// (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the
-        /// credentials used to sign the request. If you use an account ID, do not include any
-        /// hyphens ('-') in the ID.
+        /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with
+        /// the credentials used to sign the request. If you use an account ID, do not include
+        /// any hyphens ('-') in the ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -173,7 +172,7 @@ namespace Amazon.Glacier.Model
         /// <para>
         /// The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash
         /// of the individual parts. If the value you specify in the request does not match the
-        /// SHA256 tree hash of the final assembled archive as computed by Amazon Glacier, Amazon
+        /// SHA256 tree hash of the final assembled archive as computed by Amazon S3 Glacier (Glacier),
         /// Glacier returns an error and the request fails.
         /// </para>
         /// </summary>

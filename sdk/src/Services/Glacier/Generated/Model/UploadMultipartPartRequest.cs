@@ -42,9 +42,9 @@ namespace Amazon.Glacier.Model
     /// <para>
     ///  <b>SHA256 tree hash does not match</b>To ensure that part data is not corrupted in
     /// transmission, you compute a SHA256 tree hash of the part and include it in your request.
-    /// Upon receiving the part data, Amazon Glacier also computes a SHA256 tree hash. If
-    /// these hash values don't match, the operation fails. For information about computing
-    /// a SHA256 tree hash, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html">Computing
+    /// Upon receiving the part data, Amazon S3 Glacier also computes a SHA256 tree hash.
+    /// If these hash values don't match, the operation fails. For information about computing
+    /// a SHA256 tree hash, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html">Computing
     /// Checksums</a>.
     /// </para>
     ///  </li> <li> 
@@ -79,13 +79,13 @@ namespace Amazon.Glacier.Model
     /// An AWS account has full permission to perform all operations (actions). However, AWS
     /// Identity and Access Management (IAM) users don't have any permissions by default.
     /// You must grant them explicit permission to perform specific actions. For more information,
-    /// see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
+    /// see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
     /// Control Using AWS Identity and Access Management (IAM)</a>.
     /// </para>
     ///  
     /// <para>
-    ///  For conceptual information and underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">Uploading
-    /// Large Archives in Parts (Multipart Upload)</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-upload-part.html">Upload
+    ///  For conceptual information and underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">Uploading
+    /// Large Archives in Parts (Multipart Upload)</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-upload-part.html">Upload
     /// Part </a> in the <i>Amazon Glacier Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -109,7 +109,7 @@ namespace Amazon.Glacier.Model
         /// <param name="vaultName">The name of the vault.</param>
         /// <param name="uploadId">The upload ID of the multipart upload.</param>
         /// <param name="checksum">The SHA256 tree hash of the data being uploaded.</param>
-        /// <param name="range">Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon Glacier uses this information to assemble the archive in the proper sequence. The format of this header follows RFC 2616. An example header is Content-Range:bytes 0-4194303/*.</param>
+        /// <param name="range">Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon S3 Glacier uses this information to assemble the archive in the proper sequence. The format of this header follows RFC 2616. An example header is Content-Range:bytes 0-4194303/*.</param>
         /// <param name="body">The data to upload.</param>
         public UploadMultipartPartRequest(string vaultName, string uploadId, string checksum, string range, Stream body)
         {
@@ -123,11 +123,11 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates UploadMultipartPartRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </param>
+        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </param>
         /// <param name="vaultName">The name of the vault.</param>
         /// <param name="uploadId">The upload ID of the multipart upload.</param>
         /// <param name="checksum">The SHA256 tree hash of the data being uploaded.</param>
-        /// <param name="range">Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon Glacier uses this information to assemble the archive in the proper sequence. The format of this header follows RFC 2616. An example header is Content-Range:bytes 0-4194303/*.</param>
+        /// <param name="range">Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon S3 Glacier uses this information to assemble the archive in the proper sequence. The format of this header follows RFC 2616. An example header is Content-Range:bytes 0-4194303/*.</param>
         /// <param name="body">The data to upload.</param>
         public UploadMultipartPartRequest(string accountId, string vaultName, string uploadId, string checksum, string range, Stream body)
         {
@@ -144,9 +144,9 @@ namespace Amazon.Glacier.Model
         /// <para>
         /// The <code>AccountId</code> value is the AWS account ID of the account that owns the
         /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
-        /// (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the
-        /// credentials used to sign the request. If you use an account ID, do not include any
-        /// hyphens ('-') in the ID. 
+        /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with
+        /// the credentials used to sign the request. If you use an account ID, do not include
+        /// any hyphens ('-') in the ID. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -202,8 +202,8 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property Range. 
         /// <para>
         /// Identifies the range of bytes in the assembled archive that will be uploaded in this
-        /// part. Amazon Glacier uses this information to assemble the archive in the proper sequence.
-        /// The format of this header follows RFC 2616. An example header is Content-Range:bytes
+        /// part. Amazon S3 Glacier uses this information to assemble the archive in the proper
+        /// sequence. The format of this header follows RFC 2616. An example header is Content-Range:bytes
         /// 0-4194303/*.
         /// </para>
         /// </summary>

@@ -103,7 +103,7 @@ namespace Amazon.Glacier.Model
         /// An opaque string that represents where to continue pagination of the vault inventory
         /// retrieval results. You use the marker in a new <b>InitiateJob</b> request to obtain
         /// additional inventory items. If there are no more inventory items, this value is <code>null</code>.
-        /// For more information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering">
+        /// For more information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering">
         /// Range Inventory Retrieval</a>.
         /// </para>
         /// </summary>

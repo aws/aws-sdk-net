@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glacier.Model
 {
     /// <summary>
-    /// Contains the description of an Amazon Glacier job.
+    /// Contains the description of an Amazon S3 Glacier job.
     /// </summary>
     public partial class GlacierJobDescription
     {
@@ -245,7 +245,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// An opaque string that identifies an Amazon Glacier job.
+        /// An opaque string that identifies an Amazon S3 Glacier job.
         /// </para>
         /// </summary>
         public string JobId

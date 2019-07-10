@@ -30,10 +30,10 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// Container for the parameters to the GetVaultAccessPolicy operation.
     /// This operation retrieves the <code>access-policy</code> subresource set on the vault;
-    /// for more information on setting this subresource, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-SetVaultAccessPolicy.html">Set
+    /// for more information on setting this subresource, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-SetVaultAccessPolicy.html">Set
     /// Vault Access Policy (PUT access-policy)</a>. If there is no access policy set on the
     /// vault, the operation returns a <code>404 Not found</code> error. For more information
-    /// about vault access policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon
+    /// about vault access policies, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon
     /// Glacier Access Control with Vault Access Policies</a>.
     /// </summary>
     public partial class GetVaultAccessPolicyRequest : AmazonGlacierRequest
@@ -46,9 +46,9 @@ namespace Amazon.Glacier.Model
         /// <para>
         /// The <code>AccountId</code> value is the AWS account ID of the account that owns the
         /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
-        /// (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the
-        /// credentials used to sign the request. If you use an account ID, do not include any
-        /// hyphens ('-') in the ID.
+        /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with
+        /// the credentials used to sign the request. If you use an account ID, do not include
+        /// any hyphens ('-') in the ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

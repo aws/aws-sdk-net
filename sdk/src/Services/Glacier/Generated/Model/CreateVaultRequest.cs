@@ -31,7 +31,7 @@ namespace Amazon.Glacier.Model
     /// Container for the parameters to the CreateVault operation.
     /// This operation creates a new vault with the specified name. The name of the vault
     /// must be unique within a region for an AWS account. You can create up to 1,000 vaults
-    /// per account. If you need to create more vaults, contact Amazon Glacier.
+    /// per account. If you need to create more vaults, contact Amazon S3 Glacier.
     /// 
     ///  
     /// <para>
@@ -54,13 +54,13 @@ namespace Amazon.Glacier.Model
     /// An AWS account has full permission to perform all operations (actions). However, AWS
     /// Identity and Access Management (IAM) users don't have any permissions by default.
     /// You must grant them explicit permission to perform specific actions. For more information,
-    /// see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
+    /// see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
     /// Control Using AWS Identity and Access Management (IAM)</a>.
     /// </para>
     ///  
     /// <para>
-    ///  For conceptual information and underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/creating-vaults.html">Creating
-    /// a Vault in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-put.html">Create
+    ///  For conceptual information and underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/creating-vaults.html">Creating
+    /// a Vault in Amazon Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-put.html">Create
     /// Vault </a> in the <i>Amazon Glacier Developer Guide</i>. 
     /// </para>
     /// </summary>
@@ -86,7 +86,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates CreateVaultRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</param>
+        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</param>
         /// <param name="vaultName">The name of the vault.</param>
         public CreateVaultRequest(string accountId, string vaultName)
         {
@@ -100,8 +100,8 @@ namespace Amazon.Glacier.Model
         /// The <code>AccountId</code> value is the AWS account ID. This value must match the
         /// AWS account ID associated with the credentials used to sign the request. You can either
         /// specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which
-        /// case Amazon Glacier uses the AWS account ID associated with the credentials used to
-        /// sign the request. If you specify your account ID, do not include any hyphens ('-')
+        /// case Amazon S3 Glacier uses the AWS account ID associated with the credentials used
+        /// to sign the request. If you specify your account ID, do not include any hyphens ('-')
         /// in the ID.
         /// </para>
         /// </summary>

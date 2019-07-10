@@ -48,13 +48,13 @@ namespace Amazon.Glacier.Model
     /// An AWS account has full permission to perform all operations (actions). However, AWS
     /// Identity and Access Management (IAM) users don't have any permissions by default.
     /// You must grant them explicit permission to perform specific actions. For more information,
-    /// see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
+    /// see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
     /// Control Using AWS Identity and Access Management (IAM)</a>.
     /// </para>
     ///  
     /// <para>
-    ///  For conceptual information and underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
-    /// with Archives in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html">Abort
+    ///  For conceptual information and underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
+    /// with Archives in Amazon S3 Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html">Abort
     /// Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>. 
     /// </para>
     /// </summary>
@@ -83,7 +83,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates AbortMultipartUploadRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</param>
+        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</param>
         /// <param name="vaultName">The name of the vault.</param>
         /// <param name="uploadId">The upload ID of the multipart upload to delete.</param>
         public AbortMultipartUploadRequest(string accountId, string vaultName, string uploadId)
@@ -98,9 +98,9 @@ namespace Amazon.Glacier.Model
         /// <para>
         /// The <code>AccountId</code> value is the AWS account ID of the account that owns the
         /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
-        /// (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the
-        /// credentials used to sign the request. If you use an account ID, do not include any
-        /// hyphens ('-') in the ID.
+        /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with
+        /// the credentials used to sign the request. If you use an account ID, do not include
+        /// any hyphens ('-') in the ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

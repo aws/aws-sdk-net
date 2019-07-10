@@ -34,7 +34,7 @@ namespace Amazon.Glacier.Model
     /// the vault lock policy to become unchangeable. A vault lock is put into the <code>InProgress</code>
     /// state by calling <a>InitiateVaultLock</a>. You can obtain the state of the vault lock
     /// by calling <a>GetVaultLock</a>. For more information about the vault locking process,
-    /// <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html">Amazon
+    /// <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html">Amazon
     /// Glacier Vault Lock</a>. 
     /// 
     ///  

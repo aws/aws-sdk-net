@@ -33,7 +33,7 @@ namespace Amazon.Glacier.Model
     /// policy. To configure a vault access policy, send a PUT request to the <code>access-policy</code>
     /// subresource of the vault. An access policy is specific to a vault and is also called
     /// a vault subresource. You can set one access policy per vault and the policy can be
-    /// up to 20 KB in size. For more information about vault access policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon
+    /// up to 20 KB in size. For more information about vault access policies, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon
     /// Glacier Access Control with Vault Access Policies</a>.
     /// </summary>
     public partial class SetVaultAccessPolicyRequest : AmazonGlacierRequest
@@ -47,9 +47,9 @@ namespace Amazon.Glacier.Model
         /// <para>
         /// The <code>AccountId</code> value is the AWS account ID of the account that owns the
         /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
-        /// (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the
-        /// credentials used to sign the request. If you use an account ID, do not include any
-        /// hyphens ('-') in the ID.
+        /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with
+        /// the credentials used to sign the request. If you use an account ID, do not include
+        /// any hyphens ('-') in the ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

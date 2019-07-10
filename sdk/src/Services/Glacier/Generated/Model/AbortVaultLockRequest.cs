@@ -40,8 +40,8 @@ namespace Amazon.Glacier.Model
     /// A vault lock is put into the <code>InProgress</code> state by calling <a>InitiateVaultLock</a>.
     /// A vault lock is put into the <code>Locked</code> state by calling <a>CompleteVaultLock</a>.
     /// You can get the state of a vault lock by calling <a>GetVaultLock</a>. For more information
-    /// about the vault locking process, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html">Amazon
-    /// Glacier Vault Lock</a>. For more information about vault lock policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock-policy.html">Amazon
+    /// about the vault locking process, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html">Amazon
+    /// Glacier Vault Lock</a>. For more information about vault lock policies, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock-policy.html">Amazon
     /// Glacier Access Control with Vault Lock Policies</a>. 
     /// </para>
     ///  

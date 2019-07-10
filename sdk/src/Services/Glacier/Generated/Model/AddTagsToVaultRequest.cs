@@ -33,8 +33,8 @@ namespace Amazon.Glacier.Model
     /// a value. Each vault can have up to 10 tags. If your request would cause the tag limit
     /// for the vault to be exceeded, the operation throws the <code>LimitExceededException</code>
     /// error. If a tag already exists on the vault under a specified key, the existing key
-    /// value will be overwritten. For more information about tags, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging
-    /// Amazon Glacier Resources</a>.
+    /// value will be overwritten. For more information about tags, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging
+    /// Amazon S3 Glacier Resources</a>.
     /// </summary>
     public partial class AddTagsToVaultRequest : AmazonGlacierRequest
     {
@@ -47,9 +47,9 @@ namespace Amazon.Glacier.Model
         /// <para>
         /// The <code>AccountId</code> value is the AWS account ID of the account that owns the
         /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
-        /// (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the
-        /// credentials used to sign the request. If you use an account ID, do not include any
-        /// hyphens ('-') in the ID.
+        /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with
+        /// the credentials used to sign the request. If you use an account ID, do not include
+        /// any hyphens ('-') in the ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

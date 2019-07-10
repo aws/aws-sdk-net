@@ -37,7 +37,7 @@ namespace Amazon.Glacier.Model
     /// <para>
     /// The set policy operation does not affect retrieval jobs that were in progress before
     /// the policy was enacted. For more information about data retrieval policies, see <a
-    /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/data-retrieval-policy.html">Amazon
+    /// href="https://docs.aws.amazon.com/amazonglacier/latest/dev/data-retrieval-policy.html">Amazon
     /// Glacier Data Retrieval Policies</a>. 
     /// </para>
     /// </summary>
