@@ -34,6 +34,7 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.Util.Internal;
 
 using ThirdParty.Json.LitJson;
+using System.Linq;
 
 #if UNITY
 using UnityEngine;
@@ -172,10 +173,18 @@ namespace Amazon.Internal
             }
 
             // Creates a new RegionEndpoint and stores it in the hash
-            private static RegionEndpoint NewEndpoint(string systemName, string displayName)
-            {
-                var regionEndpoint = new RegionEndpoint(systemName, displayName);
-                hashBySystemName.Add(regionEndpoint.SystemName, regionEndpoint);
+            private static RegionEndpoint GetEndpoint(string systemName, string displayName)
+            {                
+                RegionEndpoint regionEndpoint = null;
+                lock (hashBySystemName)
+                {
+                    if (hashBySystemName.TryGetValue(systemName, out regionEndpoint))
+                        return regionEndpoint;
+
+                    regionEndpoint = new RegionEndpoint(systemName, displayName);
+                    hashBySystemName.Add(regionEndpoint.SystemName, regionEndpoint);
+                }
+
                 return regionEndpoint;
             }
 
@@ -188,8 +197,11 @@ namespace Amazon.Internal
                 {
                     if (!RegionEndpoint.loaded)
                         RegionEndpoint.LoadEndpointDefinitions();
-
-                    return hashBySystemName.Values;
+                                        
+                    lock (hashBySystemName)
+                    {
+                        return hashBySystemName.Values.ToList();
+                    }
                 }
             }
 
@@ -204,16 +216,19 @@ namespace Amazon.Internal
                     RegionEndpoint.LoadEndpointDefinitions();
 
                 RegionEndpoint region = null;
-                if (!hashBySystemName.TryGetValue(systemName, out region))
+                lock(hashBySystemName)
                 {
-                    // explicit namespace to avoid collision with UnityEngine.Logger
-                    var logger = Amazon.Runtime.Internal.Util.Logger.GetLogger(typeof(RegionEndpoint));
-                    logger.InfoFormat("Region system name {0} was not found in region data bundled with SDK; assuming new region.", systemName);
+                    if (!hashBySystemName.TryGetValue(systemName, out region))
+                    {
+                        // explicit namespace to avoid collision with UnityEngine.Logger
+                        var logger = Amazon.Runtime.Internal.Util.Logger.GetLogger(typeof(RegionEndpoint));
+                        logger.InfoFormat("Region system name {0} was not found in region data bundled with SDK; assuming new region.", systemName);
 
-                    if (systemName.StartsWith("cn-", StringComparison.Ordinal))
-                        return NewEndpoint(systemName, "China (Unknown)");
-                    return NewEndpoint(systemName, "Unknown");
-                }
+                        if (systemName.StartsWith("cn-", StringComparison.Ordinal))
+                            return GetEndpoint(systemName, "China (Unknown)");
+                        return GetEndpoint(systemName, "Unknown");
+                    }
+                }               
 
                 return region;
             }
