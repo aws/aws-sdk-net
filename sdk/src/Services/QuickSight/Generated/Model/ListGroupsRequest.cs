@@ -82,7 +82,7 @@ namespace Amazon.QuickSight.Model
         /// The maximum number of results to return.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100000)]
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

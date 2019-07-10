@@ -83,6 +83,7 @@ namespace Amazon.QuickSight.Model
         private bool? _resetDisabled;
         private long? _sessionLifetimeInMinutes;
         private bool? _undoRedoDisabled;
+        private string _userArn;
 
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
@@ -197,6 +198,46 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetUndoRedoDisabled()
         {
             return this._undoRedoDisabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserArn. 
+        /// <para>
+        /// The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code> identity type.
+        /// You can use this for any of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon QuickSight users in your account (readers, authors, or admins)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AD users
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Invited non-federated users
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Federated IAM users
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Federated IAM role-based sessions
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string UserArn
+        {
+            get { return this._userArn; }
+            set { this._userArn = value; }
+        }
+
+        // Check to see if UserArn property is set
+        internal bool IsSetUserArn()
+        {
+            return this._userArn != null;
         }
 
     }

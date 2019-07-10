@@ -157,7 +157,7 @@
   <property-value-rule>
     <property>Amazon.QuickSight.Model.ListGroupMembershipsRequest.MaxResults</property>
     <min>1</min>
-    <max>100000</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.ListGroupMembershipsRequest.Namespace</property>
@@ -172,7 +172,7 @@
   <property-value-rule>
     <property>Amazon.QuickSight.Model.ListGroupsRequest.MaxResults</property>
     <min>1</min>
-    <max>100000</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.ListGroupsRequest.Namespace</property>
@@ -187,7 +187,7 @@
   <property-value-rule>
     <property>Amazon.QuickSight.Model.ListUserGroupsRequest.MaxResults</property>
     <min>1</min>
-    <max>100000</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.ListUserGroupsRequest.Namespace</property>
@@ -207,7 +207,7 @@
   <property-value-rule>
     <property>Amazon.QuickSight.Model.ListUsersRequest.MaxResults</property>
     <min>1</min>
-    <max>100000</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.ListUsersRequest.Namespace</property>

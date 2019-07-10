@@ -77,6 +77,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetUndoRedoDisabled())
                 request.Parameters.Add("undo-redo-disabled", StringUtils.FromBool(publicRequest.UndoRedoDisabled));
+            
+            if (publicRequest.IsSetUserArn())
+                request.Parameters.Add("user-arn", StringUtils.FromString(publicRequest.UserArn));
             request.ResourcePath = uriResourcePath;
             request.UseQueryString = true;
 
