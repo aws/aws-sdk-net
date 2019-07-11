@@ -221,6 +221,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Use the Amazon Elasticsearch configuration API to create, configure, and manage Elasticsearch domains.
 * [AWSSDK.ElasticTranscoder](https://www.nuget.org/packages/AWSSDK.ElasticTranscoder/)
 	* Amazon Elastic Transcoder is media transcoding in the cloud. It is designed to be a highly scalable, easy to use and a cost effective way for developers and businesses to convert (or 'transcode') media files from their source format into versions that will playback on devices like smartphones, tablets and PCs.
+* [AWSSDK.EventBridge](https://www.nuget.org/packages/AWSSDK.EventBridge/)
+	* Amazon EventBridge is a serverless event bus service that makes it easy to connect your applications with data from a variety of sources, including AWS services, partner applications, and your own applications.
 * [AWSSDK.FMS](https://www.nuget.org/packages/AWSSDK.FMS/)
 	* This release is the initial release version for AWS Firewall Manager, a new AWS service that makes it easy for customers to centrally configure WAF rules across all their resources (ALBs and CloudFront distributions) and across accounts.
 * [AWSSDK.FSx](https://www.nuget.org/packages/AWSSDK.FSx/)

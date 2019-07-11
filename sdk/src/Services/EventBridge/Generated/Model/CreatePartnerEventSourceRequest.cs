@@ -1,0 +1,131 @@
+/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the eventbridge-2015-10-07.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.EventBridge.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreatePartnerEventSource operation.
+    /// Called by an SaaS partner to create a partner event source.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This operation is not used by AWS customers.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// Each partner event source can be used by one AWS account to create a matching partner
+    /// event bus in that AWS account. A SaaS partner must create one partner event source
+    /// for each AWS account that wants to receive those event types. 
+    /// </para>
+    ///  
+    /// <para>
+    /// A partner event source creates events based on resources in the SaaS partner's service
+    /// or application.
+    /// </para>
+    ///  
+    /// <para>
+    /// An AWS account that creates a partner event bus that matches the partner event source
+    /// can use that event bus to receive events from the partner, and then process them using
+    /// AWS Events rules and targets.
+    /// </para>
+    ///  
+    /// <para>
+    /// Partner event source names follow this format:
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>aws.partner/<i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i> </code>
+    /// 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <i>partner_name</i> is determined during partner registration and identifies the
+    /// partner to AWS customers.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For <i>event_namespace</i>, we recommend that partners use a string that identifies
+    /// the AWS customer within the partner's system. This should not be the customer's AWS
+    /// account ID.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <i>event_name</i> is determined by the partner, and should uniquely identify an event-generating
+    /// resource within the partner system. This should help AWS customers decide whether
+    /// to create an event bus to receive these events.
+    /// </para>
+    ///  </li> </ul>
+    /// </summary>
+    public partial class CreatePartnerEventSourceRequest : AmazonEventBridgeRequest
+    {
+        private string _account;
+        private string _name;
+
+        /// <summary>
+        /// Gets and sets the property Account. 
+        /// <para>
+        /// The AWS account ID of the customer who is permitted to create a matching partner event
+        /// bus for this partner event source.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=12)]
+        public string Account
+        {
+            get { return this._account; }
+            set { this._account = value; }
+        }
+
+        // Check to see if Account property is set
+        internal bool IsSetAccount()
+        {
+            return this._account != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the partner event source. This name must be unique and must be in the
+        /// format <code> <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i> </code>.
+        /// The AWS account that wants to use this partner event source must create a partner
+        /// event bus with a name that matches the name of the partner event source.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+    }
+}
