@@ -29,7 +29,7 @@ namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableRule operation.
-    /// Enables the specified rule. If the rule does not exist, the operation fails.
+    /// Enables the specified rule. If the rule doesn't exist, the operation fails.
     /// 
     ///  
     /// <para>
@@ -39,7 +39,28 @@ namespace Amazon.CloudWatchEvents.Model
     /// </summary>
     public partial class EnableRuleRequest : AmazonCloudWatchEventsRequest
     {
+        private string _eventBusName;
         private string _name;
+
+        /// <summary>
+        /// Gets and sets the property EventBusName. 
+        /// <para>
+        /// The event bus associated with the rule. If you omit this, the default event bus is
+        /// used.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string EventBusName
+        {
+            get { return this._eventBusName; }
+            set { this._eventBusName = value; }
+        }
+
+        // Check to see if EventBusName property is set
+        internal bool IsSetEventBusName()
+        {
+            return this._eventBusName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

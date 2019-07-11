@@ -34,6 +34,7 @@ namespace Amazon.CloudWatchEvents.Model
     {
         private string _arn;
         private string _description;
+        private string _eventBusName;
         private string _eventPattern;
         private string _managedBy;
         private string _name;
@@ -80,10 +81,29 @@ namespace Amazon.CloudWatchEvents.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EventBusName. 
+        /// <para>
+        /// The event bus associated with the rule.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string EventBusName
+        {
+            get { return this._eventBusName; }
+            set { this._eventBusName = value; }
+        }
+
+        // Check to see if EventBusName property is set
+        internal bool IsSetEventBusName()
+        {
+            return this._eventBusName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EventPattern. 
         /// <para>
-        /// The event pattern. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
-        /// and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+        /// The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
+        /// Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
         /// </para>
         /// </summary>
         public string EventPattern
@@ -159,7 +179,8 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property ScheduleExpression. 
         /// <para>
-        /// The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".
+        /// The scheduling expression: for example, <code>"cron(0 20 * * ? *)"</code> or <code>"rate(5
+        /// minutes)"</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

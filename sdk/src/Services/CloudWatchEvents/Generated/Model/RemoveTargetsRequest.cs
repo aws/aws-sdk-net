@@ -46,16 +46,36 @@ namespace Amazon.CloudWatchEvents.Model
     /// </summary>
     public partial class RemoveTargetsRequest : AmazonCloudWatchEventsRequest
     {
+        private string _eventBusName;
         private bool? _force;
         private List<string> _ids = new List<string>();
         private string _rule;
 
         /// <summary>
+        /// Gets and sets the property EventBusName. 
+        /// <para>
+        /// The name of the event bus associated with the rule.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string EventBusName
+        {
+            get { return this._eventBusName; }
+            set { this._eventBusName = value; }
+        }
+
+        // Check to see if EventBusName property is set
+        internal bool IsSetEventBusName()
+        {
+            return this._eventBusName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Force. 
         /// <para>
-        /// If this is a managed rule, created by an AWS service on your behalf, you must specify
+        /// If this is a managed rule created by an AWS service on your behalf, you must specify
         /// <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored
-        /// for rules that are not managed rules. You can check whether a rule is a managed rule
+        /// for rules that aren't managed rules. You can check whether a rule is a managed rule
         /// by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code>
         /// field of the response.
         /// </para>

@@ -33,12 +33,11 @@ namespace Amazon.CloudWatchEvents.Model
     /// 
     ///  
     /// <para>
-    /// If you are setting the event bus of another account as the target, and that account
+    /// If you're setting the event bus of another account as the target and that account
     /// granted permission to your account through an organization instead of directly by
-    /// the account ID, then you must specify a <code>RoleArn</code> with proper permissions
-    /// in the <code>Target</code> structure. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">Sending
-    /// and Receiving Events Between AWS Accounts</a> in the <i>Amazon CloudWatch Events User
-    /// Guide</i>.
+    /// the account ID, you must specify a <code>RoleArn</code> with proper permissions in
+    /// the <code>Target</code> structure. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending
+    /// and Receiving Events Between AWS Accounts</a> in the <i>Amazon EventBridge User Guide</i>.
     /// </para>
     /// </summary>
     public partial class Target
@@ -97,7 +96,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property EcsParameters. 
         /// <para>
-        /// Contains the Amazon ECS task definition and task count to be used, if the event target
+        /// Contains the Amazon ECS task definition and task count to be used if the event target
         /// is an Amazon ECS task. For more information about Amazon ECS tasks, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
         /// Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
         /// </para>
@@ -198,9 +197,9 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property KinesisParameters. 
         /// <para>
-        /// The custom parameter you can use to control the shard assignment, when the target
-        /// is a Kinesis data stream. If you do not include this parameter, the default is to
-        /// use the <code>eventId</code> as the partition key.
+        /// The custom parameter that you can use to control the shard assignment when the target
+        /// is a Kinesis data stream. If you don't include this parameter, the default is to use
+        /// the <code>eventId</code> as the partition key.
         /// </para>
         /// </summary>
         public KinesisParameters KinesisParameters

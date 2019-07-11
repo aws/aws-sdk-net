@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
-    /// This structure specifies the VPC subnets and security groups for the task, and whether
+    /// This structure specifies the VPC subnets and security groups for the task and whether
     /// a public IP address is to be used. This structure is relevant only for ECS tasks that
     /// use the <code>awsvpc</code> network mode.
     /// </summary>
@@ -62,8 +62,8 @@ namespace Amazon.CloudWatchEvents.Model
         /// Gets and sets the property SecurityGroups. 
         /// <para>
         /// Specifies the security groups associated with the task. These security groups must
-        /// all be in the same VPC. You can specify as many as five security groups. If you do
-        /// not specify a security group, the default security group for the VPC is used.
+        /// all be in the same VPC. You can specify as many as five security groups. If you don't
+        /// specify a security group, the default security group for the VPC is used.
         /// </para>
         /// </summary>
         public List<string> SecurityGroups

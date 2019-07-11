@@ -34,6 +34,7 @@ namespace Amazon.CloudWatchEvents.Model
     {
         private string _detail;
         private string _detailType;
+        private string _eventBusName;
         private List<string> _resources = new List<string>();
         private string _source;
         private DateTime? _time;
@@ -41,7 +42,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Detail. 
         /// <para>
-        /// A valid JSON string. There is no other schema imposed. The JSON string may contain
+        /// A valid JSON string. There is no other schema imposed. The JSON string can contain
         /// fields and nested subobjects.
         /// </para>
         /// </summary>
@@ -60,7 +61,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property DetailType. 
         /// <para>
-        /// Free-form string used to decide what fields to expect in the event detail.
+        /// Free-form string used to decide which fields to expect in the event detail.
         /// </para>
         /// </summary>
         public string DetailType
@@ -76,10 +77,30 @@ namespace Amazon.CloudWatchEvents.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EventBusName. 
+        /// <para>
+        /// The event bus that will receive the event. Only the rules that are associated with
+        /// this event bus can match the event.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string EventBusName
+        {
+            get { return this._eventBusName; }
+            set { this._eventBusName = value; }
+        }
+
+        // Check to see if EventBusName property is set
+        internal bool IsSetEventBusName()
+        {
+            return this._eventBusName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
-        /// AWS resources, identified by Amazon Resource Name (ARN), which the event primarily
-        /// concerns. Any number, including zero, may be present.
+        /// AWS resources, identified by Amazon Resource Name (ARN), that the event primarily
+        /// concerns. Any number, including zero, can be present.
         /// </para>
         /// </summary>
         public List<string> Resources
@@ -115,8 +136,8 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Time. 
         /// <para>
-        /// The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>.
-        /// If no time stamp is provided, the time stamp of the <a>PutEvents</a> call is used.
+        /// The timestamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>.
+        /// If no timestamp is provided, the timestamp of the <a>PutEvents</a> call is used.
         /// </para>
         /// </summary>
         public DateTime Time

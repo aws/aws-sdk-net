@@ -29,14 +29,35 @@ namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
     /// Container for the parameters to the RemovePermission operation.
-    /// Revokes the permission of another AWS account to be able to put events to your default
+    /// Revokes the permission of another AWS account to be able to put events to the specified
     /// event bus. Specify the account to revoke by the <code>StatementId</code> value that
     /// you associated with the account when you granted it permission with <code>PutPermission</code>.
     /// You can find the <code>StatementId</code> by using <a>DescribeEventBus</a>.
     /// </summary>
     public partial class RemovePermissionRequest : AmazonCloudWatchEventsRequest
     {
+        private string _eventBusName;
         private string _statementId;
+
+        /// <summary>
+        /// Gets and sets the property EventBusName. 
+        /// <para>
+        /// The name of the event bus to revoke permissions for. If you omit this, the default
+        /// event bus is used.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string EventBusName
+        {
+            get { return this._eventBusName; }
+            set { this._eventBusName = value; }
+        }
+
+        // Check to see if EventBusName property is set
+        internal bool IsSetEventBusName()
+        {
+            return this._eventBusName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property StatementId. 

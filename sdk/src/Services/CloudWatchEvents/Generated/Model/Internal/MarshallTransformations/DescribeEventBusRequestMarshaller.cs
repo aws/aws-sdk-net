@@ -63,7 +63,23 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
 
             string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            request.Content = System.Text.Encoding.UTF8.GetBytes("{}");
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("Name");
+                    context.Writer.Write(publicRequest.Name);
+                }
+
+        
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+            }
+
 
             return request;
         }

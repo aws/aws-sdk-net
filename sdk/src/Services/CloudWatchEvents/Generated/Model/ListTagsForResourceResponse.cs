@@ -37,7 +37,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The list of tag keys and values associated with the rule you specified
+        /// The list of tag keys and values associated with the rule that you specified.
         /// </para>
         /// </summary>
         public List<Tag> Tags

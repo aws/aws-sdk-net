@@ -74,6 +74,12 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetEventBusName())
+                {
+                    context.Writer.WritePropertyName("EventBusName");
+                    context.Writer.Write(publicRequest.EventBusName);
+                }
+
                 if(publicRequest.IsSetEventPattern())
                 {
                     context.Writer.WritePropertyName("EventPattern");

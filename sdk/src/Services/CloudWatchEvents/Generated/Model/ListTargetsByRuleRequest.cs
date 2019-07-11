@@ -33,9 +33,30 @@ namespace Amazon.CloudWatchEvents.Model
     /// </summary>
     public partial class ListTargetsByRuleRequest : AmazonCloudWatchEventsRequest
     {
+        private string _eventBusName;
         private int? _limit;
         private string _nextToken;
         private string _rule;
+
+        /// <summary>
+        /// Gets and sets the property EventBusName. 
+        /// <para>
+        /// The event bus associated with the rule. If you omit this, the default event bus is
+        /// used.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string EventBusName
+        {
+            get { return this._eventBusName; }
+            set { this._eventBusName = value; }
+        }
+
+        // Check to see if EventBusName property is set
+        internal bool IsSetEventBusName()
+        {
+            return this._eventBusName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Limit. 

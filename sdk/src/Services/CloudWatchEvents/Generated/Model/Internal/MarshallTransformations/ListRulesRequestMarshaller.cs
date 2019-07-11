@@ -68,6 +68,12 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEventBusName())
+                {
+                    context.Writer.WritePropertyName("EventBusName");
+                    context.Writer.Write(publicRequest.EventBusName);
+                }
+
                 if(publicRequest.IsSetLimit())
                 {
                     context.Writer.WritePropertyName("Limit");

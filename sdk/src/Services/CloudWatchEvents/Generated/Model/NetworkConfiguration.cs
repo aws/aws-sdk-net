@@ -37,7 +37,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property AwsvpcConfiguration. 
         /// <para>
-        /// Use this structure to specify the VPC subnets and security groups for the task, and
+        /// Use this structure to specify the VPC subnets and security groups for the task and
         /// whether a public IP address is to be used. This structure is relevant only for ECS
         /// tasks that use the <code>awsvpc</code> network mode.
         /// </para>

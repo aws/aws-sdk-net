@@ -33,13 +33,34 @@ namespace Amazon.CloudWatchEvents.Model
     /// 
     ///  
     /// <para>
-    /// DescribeRule does not list the targets of a rule. To see the targets associated with
-    /// a rule, use <a>ListTargetsByRule</a>.
+    ///  <code>DescribeRule</code> doesn't list the targets of a rule. To see the targets
+    /// associated with a rule, use <a>ListTargetsByRule</a>.
     /// </para>
     /// </summary>
     public partial class DescribeRuleRequest : AmazonCloudWatchEventsRequest
     {
+        private string _eventBusName;
         private string _name;
+
+        /// <summary>
+        /// Gets and sets the property EventBusName. 
+        /// <para>
+        /// The event bus associated with the rule. If you omit this, the default event bus is
+        /// used.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string EventBusName
+        {
+            get { return this._eventBusName; }
+            set { this._eventBusName = value; }
+        }
+
+        // Check to see if EventBusName property is set
+        internal bool IsSetEventBusName()
+        {
+            return this._eventBusName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

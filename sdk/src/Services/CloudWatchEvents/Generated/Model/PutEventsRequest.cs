@@ -29,7 +29,8 @@ namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
     /// Container for the parameters to the PutEvents operation.
-    /// Sends custom events to Amazon CloudWatch Events so that they can be matched to rules.
+    /// Sends custom events to EventBridge so that they can be matched to rules. These events
+    /// can be from your custom applications and services.
     /// </summary>
     public partial class PutEventsRequest : AmazonCloudWatchEventsRequest
     {

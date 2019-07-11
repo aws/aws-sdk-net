@@ -45,13 +45,34 @@ namespace Amazon.CloudWatchEvents.Model
     /// Managed rules are rules created and managed by another AWS service on your behalf.
     /// These rules are created by those other AWS services to support functionality in those
     /// services. You can delete these rules using the <code>Force</code> option, but you
-    /// should do so only if you are sure the other service is not still using that rule.
+    /// should do so only if you're sure that the other service isn't still using that rule.
     /// </para>
     /// </summary>
     public partial class DeleteRuleRequest : AmazonCloudWatchEventsRequest
     {
+        private string _eventBusName;
         private bool? _force;
         private string _name;
+
+        /// <summary>
+        /// Gets and sets the property EventBusName. 
+        /// <para>
+        /// The event bus associated with the rule. If you omit this, the default event bus is
+        /// used.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string EventBusName
+        {
+            get { return this._eventBusName; }
+            set { this._eventBusName = value; }
+        }
+
+        // Check to see if EventBusName property is set
+        internal bool IsSetEventBusName()
+        {
+            return this._eventBusName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Force. 
