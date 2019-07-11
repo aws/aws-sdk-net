@@ -95,6 +95,7 @@
       <Directory>$(ProjectDir)/src/Services/elasticmapreduce/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/elasticsearch/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/elastictranscoder/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/eventbridge/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/fms/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/fsx/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/gamelift/bin/Release/net45/</Directory>
@@ -281,6 +282,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ElasticMapReduce.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Elasticsearch.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ElasticTranscoder.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.EventBridge.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.FMS.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.FSx.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.GameLift.dll" Analyze="True" AnalyzeAllChildren="True" />

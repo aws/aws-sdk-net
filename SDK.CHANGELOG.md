@@ -1,3 +1,9 @@
+### 3.3.549.0 (2019-07-11 15:06 UTC)
+* CloudWatchEvents (3.3.101.0)
+	* Adds APIs for partner event sources, partner event buses, and custom event buses. These new features are managed in the EventBridge service.
+* EventBridge (3.3.100.0)
+	* Amazon EventBridge is a serverless event bus service that makes it easy to connect your applications with data from a variety of sources, including AWS services, partner applications, and your own applications.
+
 ### 3.3.548.0 (2019-07-10 18:29 UTC)
 * Glacier (3.3.100.46)
 	* Documentation updates for glacier

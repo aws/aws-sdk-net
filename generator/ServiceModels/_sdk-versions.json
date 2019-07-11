@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.548.0",
+    "ProductVersion" : "3.3.549.0",
     "CoreVersion"    : "3.3.103.10",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -497,7 +497,7 @@
             "InPreview"               : false
         },
         "CloudWatchEvents"                : {
-            "Version" : "3.3.100.46",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.10"
@@ -1474,6 +1474,14 @@
         },
         "EC2InstanceConnect"              : {
             "Version" : "3.3.100.6",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.103.10"
+            },
+            "InPreview"               : false
+        },
+        "EventBridge"                     : {
+            "Version" : "3.3.100.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.10"
