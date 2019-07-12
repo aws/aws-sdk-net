@@ -1,3 +1,18 @@
+### 3.3.550.0 (2019-07-12 18:07 UTC)
+* ApiGatewayV2 (3.3.103.0)
+	* Bug fix (Add tags field to Update Stage , Api and DomainName Responses )
+* Elasticsearch (3.3.101.0)
+	* Amazon Elasticsearch Service now supports M5, C5, and R5 instance types.
+* IdentityManagement (3.3.103.0)
+	* Removed exception that was indicated but never thrown for IAM GetAccessKeyLastUsed API
+* RoboMaker (3.3.104.0)
+	* Added Melodic as a supported Robot Software Suite Version
+* Core 3.3.103.11
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.549.0 (2019-07-11 15:06 UTC)
 * CloudWatchEvents (3.3.101.0)
 	* Adds APIs for partner event sources, partner event buses, and custom event buses. These new features are managed in the EventBridge service.
