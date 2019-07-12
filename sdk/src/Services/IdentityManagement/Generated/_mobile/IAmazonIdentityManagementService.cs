@@ -2667,10 +2667,6 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// 
         /// <returns>The response from the GetAccessKeyLastUsed service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced a resource entity that does not exist.
-        /// The error message describes the resource.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccessKeyLastUsed">REST API Reference for GetAccessKeyLastUsed Operation</seealso>
         Task<GetAccessKeyLastUsedResponse> GetAccessKeyLastUsedAsync(GetAccessKeyLastUsedRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 

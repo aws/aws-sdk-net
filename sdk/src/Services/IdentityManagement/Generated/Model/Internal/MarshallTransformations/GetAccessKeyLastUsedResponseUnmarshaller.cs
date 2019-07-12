@@ -110,10 +110,6 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchEntity"))
-            {
-                return new NoSuchEntityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             return new AmazonIdentityManagementServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
         private static GetAccessKeyLastUsedResponseUnmarshaller _instance = new GetAccessKeyLastUsedResponseUnmarshaller();        
