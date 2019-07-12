@@ -224,7 +224,7 @@
     <property>Amazon.RoboMaker.Model.CreateSimulationJobRequest.IamRole</property>
     <min>1</min>
     <max>255</max>
-    <pattern>arn:.*</pattern>
+    <pattern>arn:aws:iam::\w+:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.CreateSimulationJobResponse.Arn</property>
@@ -242,7 +242,7 @@
     <property>Amazon.RoboMaker.Model.CreateSimulationJobResponse.IamRole</property>
     <min>1</min>
     <max>255</max>
-    <pattern>arn:.*</pattern>
+    <pattern>arn:aws:iam::\w+:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.DeleteFleetRequest.Fleet</property>
@@ -475,7 +475,7 @@
     <property>Amazon.RoboMaker.Model.DescribeSimulationJobResponse.IamRole</property>
     <min>1</min>
     <max>255</max>
-    <pattern>arn:.*</pattern>
+    <pattern>arn:aws:iam::\w+:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.DescribeSimulationJobResponse.Name</property>
@@ -803,7 +803,7 @@
     <property>Amazon.RoboMaker.Model.OutputLocation.S3Bucket</property>
     <min>3</min>
     <max>63</max>
-    <pattern>[a-z0-9][a-z0-9\-]*[a-z0-9]</pattern>
+    <pattern>[a-z0-9][a-z0-9.\-]*[a-z0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.OutputLocation.S3Prefix</property>
@@ -931,7 +931,7 @@
     <property>Amazon.RoboMaker.Model.SimulationJob.IamRole</property>
     <min>1</min>
     <max>255</max>
-    <pattern>arn:.*</pattern>
+    <pattern>arn:aws:iam::\w+:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.SimulationJob.Name</property>
@@ -959,7 +959,7 @@
     <property>Amazon.RoboMaker.Model.Source.S3Bucket</property>
     <min>3</min>
     <max>63</max>
-    <pattern>[a-z0-9][a-z0-9\-]*[a-z0-9]</pattern>
+    <pattern>[a-z0-9][a-z0-9.\-]*[a-z0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.Source.S3Key</property>
@@ -971,7 +971,7 @@
     <property>Amazon.RoboMaker.Model.SourceConfig.S3Bucket</property>
     <min>3</min>
     <max>63</max>
-    <pattern>[a-z0-9][a-z0-9\-]*[a-z0-9]</pattern>
+    <pattern>[a-z0-9][a-z0-9.\-]*[a-z0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.SourceConfig.S3Key</property>

@@ -472,6 +472,10 @@ namespace Amazon.RoboMaker
         /// Constant Kinetic for RobotSoftwareSuiteVersionType
         /// </summary>
         public static readonly RobotSoftwareSuiteVersionType Kinetic = new RobotSoftwareSuiteVersionType("Kinetic");
+        /// <summary>
+        /// Constant Melodic for RobotSoftwareSuiteVersionType
+        /// </summary>
+        public static readonly RobotSoftwareSuiteVersionType Melodic = new RobotSoftwareSuiteVersionType("Melodic");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
