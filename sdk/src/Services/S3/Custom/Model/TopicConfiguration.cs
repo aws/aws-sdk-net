@@ -46,7 +46,7 @@ namespace Amazon.S3.Model
         /// Bucket event for which to send notifications.
         /// <para>
         /// Topic configurations can now contain multiple events. This property is obsolete in favor of the Events property.
-        /// This property will aways get or set the the zeroth element in the Events collection.
+        /// This property will always get or set the the zeroth element in the Events collection.
         /// </para>
         /// </summary>
         [Obsolete("The Event property is now obsolete in favor the Events property.")]

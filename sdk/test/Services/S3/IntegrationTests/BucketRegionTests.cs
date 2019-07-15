@@ -98,7 +98,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 if (runner.TestBucketIsReady)
                 {
-                    Assert.IsTrue(AmazonS3Util.DoesS3BucketExist(runner.USEast1Client, runner.BucketName));
+                    Assert.IsTrue(AmazonS3Util.DoesS3BucketExistV2(runner.USEast1Client, runner.BucketName));
                     RegionEndpoint cachedRegion;
                     Assert.IsTrue(BucketRegionDetector.BucketRegionCache.TryGetValue(runner.BucketName, out cachedRegion));
                     Assert.AreEqual(RegionEndpoint.USWest1, cachedRegion);

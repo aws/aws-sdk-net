@@ -114,7 +114,7 @@ namespace Amazon.S3.Model
         /// The transition rule that describes when objects transition to a different storage class.
         /// <para>
         /// Lifecycle rules can now contain multiple transitions. This property is obsolete in favor of the Transitions property.
-        /// This property will aways get or set the the zeroth element in the Transitions collection.
+        /// This property will always get or set the the zeroth element in the Transitions collection.
         /// </para>
         /// </summary>
         [Obsolete("The Transition property is now obsolete in favor the Transitions property.")]
@@ -163,7 +163,7 @@ namespace Amazon.S3.Model
         /// <para>
         /// Lifecycle rules can now contain multiple noncurrent version transitions. This property
         /// is obsolete in favor of the NoncurrentVersionTransitions property.
-        /// This property will aways get or set the the zeroth element in the NoncurrentVersionTransitions collection.
+        /// This property will always get or set the the zeroth element in the NoncurrentVersionTransitions collection.
         /// </para>
         /// </summary>
         [Obsolete("The NoncurrentVersionTransition property is now obsolete in favor the NoncurrentVersionTransitions property.")]

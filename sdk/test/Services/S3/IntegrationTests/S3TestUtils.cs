@@ -40,7 +40,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public static void WaitForBucket(IAmazonS3 client, string bucketName, int maxSeconds)
         {
             var sleeper = new UtilityMethods.ListSleeper(500, 1000, 2000, 5000);
-            UtilityMethods.WaitUntil(()=> { return AmazonS3Util.DoesS3BucketExist(client, bucketName); }, sleeper, 30);
+            UtilityMethods.WaitUntil(()=> { return AmazonS3Util.DoesS3BucketExistV2(client, bucketName); }, sleeper, 30);
         }
 
         public static void WaitForObject(IAmazonS3 client, string bucketName, string key, int maxSeconds)

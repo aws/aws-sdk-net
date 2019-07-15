@@ -33,13 +33,40 @@ using System.Threading;
 
 namespace Amazon.S3.Util
 {
-    /// <summary>
-    /// Provides utilities used by the Amazon S3 client implementation.
-    /// These utilities might be useful to consumers of the Amazon S3
-    /// library.
-    /// </summary>
     public static partial class AmazonS3Util
     {
+        /// <summary>
+        /// Determines whether an S3 bucket exists or not.
+        /// </summary>
+        /// <param name="bucketName">The name of the bucket to check.</param>
+        /// <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
+        /// <returns>False is returned in case S3 responds with a NoSuchBucket error.
+        /// True is returned in case of success, AccessDenied error or PermanentRedirect error.
+        /// An exception is thrown in case of any other error.</returns>
+        /// <remarks>This method calls GetACL for the bucket.</remarks>
+        public static bool DoesS3BucketExistV2(IAmazonS3 s3Client, string bucketName)
+        {
+            try
+            {
+                s3Client.GetACL(bucketName);
+            }
+            catch (AmazonS3Exception e)
+            {
+                switch (e.ErrorCode)
+                {
+                    // A redirect error or a forbidden error means the bucket exists.
+                    case "AccessDenied":
+                    case "PermanentRedirect":
+                        return true;
+                    case "NoSuchBucket":
+                        return false;
+                    default:
+                        throw;
+                }
+            }
+            return true;
+        }
+
         /// <summary>
         /// Determines whether an S3 bucket exists or not.
         /// This is done by:
@@ -51,6 +78,7 @@ namespace Amazon.S3.Util
         /// <param name="bucketName">The name of the bucket to check.</param>
         /// <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
         /// <returns></returns>
+        [Obsolete("This method is deprecated: its behavior is inconsistent and always uses HTTP. Please use DoesS3BucketExistV2 instead.")]
         public static bool DoesS3BucketExist(IAmazonS3 s3Client, string bucketName)
         {
             if (s3Client == null)
