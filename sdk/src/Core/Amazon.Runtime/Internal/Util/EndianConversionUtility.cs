@@ -57,8 +57,11 @@ namespace Amazon.Runtime.Internal.Util
 #if BIGENDIAN
             return host;
 #else
-            return (((long)HostToNetworkOrder((int)host) & 0xFFFFFFFF) << 32)
-                   | ((long)HostToNetworkOrder((int)(host >> 32)) & 0xFFFFFFFF);
+            unchecked
+            {
+                return (((long)HostToNetworkOrder((int)host) & 0xFFFFFFFF) << 32)
+                     | ((long)HostToNetworkOrder((int)(host >> 32)) & 0xFFFFFFFF);
+            }
 #endif
         }
         public static int HostToNetworkOrder(int host)
@@ -66,8 +69,11 @@ namespace Amazon.Runtime.Internal.Util
 #if BIGENDIAN
             return host;
 #else
-            return (((int)HostToNetworkOrder((short)host) & 0xFFFF) << 16)
-                   | ((int)HostToNetworkOrder((short)(host >> 16)) & 0xFFFF);
+            unchecked
+            {
+                return (((int)HostToNetworkOrder((short)host) & 0xFFFF) << 16)
+                     | ((int)HostToNetworkOrder((short)(host >> 16)) & 0xFFFF);
+            }
 #endif
         }
         public static short HostToNetworkOrder(short host)
@@ -75,7 +81,11 @@ namespace Amazon.Runtime.Internal.Util
 #if BIGENDIAN
             return host;
 #else
-            return (short)((((int)host & 0xFF) << 8) | (int)((host >> 8) & 0xFF));
+            unchecked
+            {
+                return (short)((((int)host & 0xFF) << 8)
+                             | (int)((host >> 8) & 0xFF));
+            }
 #endif
         }
         public static long NetworkToHostOrder(long network)
