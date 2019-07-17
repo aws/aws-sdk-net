@@ -157,13 +157,25 @@ namespace ServiceClientGenerator
             // if the marshal name still isn't set, fall back to the model
             if (marshallName.Length == 0)
             {
-                var modelMarshallName = !isEC2Protocol
-                                            ? member.MarshallName
-                                            : (string.IsNullOrEmpty(member.MarshallLocationName)
-                                                ? member.MarshallName
-                                                : member.MarshallLocationName);
+                string modelMarshallName;
+                if (!string.IsNullOrEmpty(member.MarshallQueryName))
+                {
+                    modelMarshallName = member.MarshallQueryName;
+                }
+                else
+                {
+                    if (isEC2Protocol && !string.IsNullOrEmpty(member.MarshallLocationName))
+                    {
+                        modelMarshallName = member.MarshallLocationName;
+                    }
+                    else
+                    {
+                        modelMarshallName = member.MarshallName;
+                    }
+                    modelMarshallName = TransformMarshallLocationName(isEC2Protocol, modelMarshallName);
+                }
 
-                marshallName.Append(TransformMarshallLocationName(isEC2Protocol, modelMarshallName));
+                marshallName.Append(modelMarshallName);
             }
 
             // also check if we need to emit from a submember as a result of shape substitution
@@ -174,11 +186,22 @@ namespace ServiceClientGenerator
                 var subMember = member.ModelShape.Members.Single(m => m.PropertyName.Equals(valueMember, StringComparison.Ordinal));
                 if (subMember != null)
                 {
-                    var subExpression = string.IsNullOrEmpty(subMember.MarshallLocationName)
-                        ? subMember.MarshallName
-                        : subMember.MarshallLocationName;
+                    string subExpression;
+                    if (!string.IsNullOrEmpty(subMember.MarshallQueryName))
+                    {
+                        subExpression = subMember.MarshallQueryName;
+                    }
+                    else
+                    {
+                        subExpression = string.IsNullOrEmpty(subMember.MarshallLocationName)
+                            ? subMember.MarshallName
+                            : subMember.MarshallLocationName;
 
-                    marshallName.AppendFormat(".{0}", TransformMarshallLocationName(isEC2Protocol, subExpression));
+                        subExpression = TransformMarshallLocationName(isEC2Protocol, subExpression);
+                    }
+
+
+                    marshallName.AppendFormat(".{0}", subExpression);
                 }
             }
 

@@ -231,7 +231,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         {
                                             if(publicRequestSpotFleetRequestConfiglistValuelistValuelistValue.IsSetIpv6Address())
                                             {
-                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "NetworkInterfaceSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Ipv6AddressesSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValuelistValueIndex + "." + "Ipv6Address", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValuelistValue.Ipv6Address));
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "NetworkInterfaceSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Ipv6Addresses" + "." + publicRequestSpotFleetRequestConfiglistValuelistValuelistValueIndex + "." + "Ipv6Address", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValuelistValue.Ipv6Address));
                                             }
                                             publicRequestSpotFleetRequestConfiglistValuelistValuelistValueIndex++;
                                         }
@@ -251,11 +251,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         {
                                             if(publicRequestSpotFleetRequestConfiglistValuelistValuelistValue.IsSetPrimary())
                                             {
-                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "NetworkInterfaceSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "PrivateIpAddressesSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValuelistValueIndex + "." + "Primary", StringUtils.FromBool(publicRequestSpotFleetRequestConfiglistValuelistValuelistValue.Primary));
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "NetworkInterfaceSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "PrivateIpAddresses" + "." + publicRequestSpotFleetRequestConfiglistValuelistValuelistValueIndex + "." + "Primary", StringUtils.FromBool(publicRequestSpotFleetRequestConfiglistValuelistValuelistValue.Primary));
                                             }
                                             if(publicRequestSpotFleetRequestConfiglistValuelistValuelistValue.IsSetPrivateIpAddress())
                                             {
-                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "NetworkInterfaceSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "PrivateIpAddressesSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValuelistValueIndex + "." + "PrivateIpAddress", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValuelistValue.PrivateIpAddress));
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "NetworkInterfaceSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "PrivateIpAddresses" + "." + publicRequestSpotFleetRequestConfiglistValuelistValuelistValueIndex + "." + "PrivateIpAddress", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValuelistValue.PrivateIpAddress));
                                             }
                                             publicRequestSpotFleetRequestConfiglistValuelistValuelistValueIndex++;
                                         }

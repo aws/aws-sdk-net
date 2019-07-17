@@ -379,6 +379,17 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// If present, use instead of MarshallLocationName
+        /// </summary>
+        public string MarshallQueryName
+        {
+            get
+            {
+                return data[ServiceModel.QueryNameKey] == null ? string.Empty : (string)data[ServiceModel.QueryNameKey];
+            }
+        }
+
+        /// <summary>
         /// The name of the location for the marshaller
         /// </summary>
         public string MarshallLocationName

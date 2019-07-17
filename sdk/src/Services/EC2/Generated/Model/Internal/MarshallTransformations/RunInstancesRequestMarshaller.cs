@@ -349,7 +349,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 if(publicRequestlistValuelistValue.IsSetIpv6Address())
                                 {
-                                    request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "Ipv6AddressesSet" + "." + publicRequestlistValuelistValueIndex + "." + "Ipv6Address", StringUtils.FromString(publicRequestlistValuelistValue.Ipv6Address));
+                                    request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "Ipv6Addresses" + "." + publicRequestlistValuelistValueIndex + "." + "Ipv6Address", StringUtils.FromString(publicRequestlistValuelistValue.Ipv6Address));
                                 }
                                 publicRequestlistValuelistValueIndex++;
                             }
@@ -369,11 +369,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 if(publicRequestlistValuelistValue.IsSetPrimary())
                                 {
-                                    request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "PrivateIpAddressesSet" + "." + publicRequestlistValuelistValueIndex + "." + "Primary", StringUtils.FromBool(publicRequestlistValuelistValue.Primary));
+                                    request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "PrivateIpAddresses" + "." + publicRequestlistValuelistValueIndex + "." + "Primary", StringUtils.FromBool(publicRequestlistValuelistValue.Primary));
                                 }
                                 if(publicRequestlistValuelistValue.IsSetPrivateIpAddress())
                                 {
-                                    request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "PrivateIpAddressesSet" + "." + publicRequestlistValuelistValueIndex + "." + "PrivateIpAddress", StringUtils.FromString(publicRequestlistValuelistValue.PrivateIpAddress));
+                                    request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "PrivateIpAddresses" + "." + publicRequestlistValuelistValueIndex + "." + "PrivateIpAddress", StringUtils.FromString(publicRequestlistValuelistValue.PrivateIpAddress));
                                 }
                                 publicRequestlistValuelistValueIndex++;
                             }
