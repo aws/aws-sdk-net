@@ -1,3 +1,11 @@
+### 3.3.551.0 (2019-07-17 19:17 UTC)
+* AutoScaling (3.3.100.48)
+	* Documentation updates for autoscaling
+* ConfigService (3.3.102.0)
+	* This release adds more granularity to the status of an OrganizationConfigRule by adding a new status. It also adds an exception when organization access is denied.
+* DatabaseMigrationService (3.3.101.0)
+	* S3 endpoint settings update: 1) Option to append operation column to full-load files. 2) Option to add a commit timestamp column to full-load and cdc files. Updated DescribeAccountAttributes to include UniqueAccountIdentifier.
+
 ### 3.3.550.0 (2019-07-12 18:07 UTC)
 * ApiGatewayV2 (3.3.103.0)
 	* Bug fix (Add tags field to Update Stage , Api and DomainName Responses )
