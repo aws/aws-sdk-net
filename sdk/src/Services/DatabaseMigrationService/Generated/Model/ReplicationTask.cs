@@ -54,12 +54,12 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property CdcStartPosition. 
         /// <para>
         /// Indicates when you want a change data capture (CDC) operation to start. Use either
-        /// CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start.
-        /// Specifying both values results in an error.
+        /// <code>CdcStartPosition</code> or <code>CdcStartTime</code> to specify when you want
+        /// the CDC operation to start. Specifying both values results in an error.
         /// </para>
         ///  
         /// <para>
-        ///  The value can be in date, checkpoint, or LSN/SCN format.
+        /// The value can be in date, checkpoint, or LSN/SCN format.
         /// </para>
         ///  
         /// <para>

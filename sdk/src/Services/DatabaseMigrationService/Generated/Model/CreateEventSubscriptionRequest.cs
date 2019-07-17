@@ -84,9 +84,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EventCategories. 
         /// <para>
-        ///  A list of event categories for a source type that you want to subscribe to. You can
-        /// see a list of the categories for a given source type by calling the <code>DescribeEventCategories</code>
-        /// action or in the topic <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+        /// A list of event categories for a source type that you want to subscribe to. For more
+        /// information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
         /// with Events and Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
         /// 
         /// </para>
@@ -126,10 +125,17 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SourceIds. 
         /// <para>
-        ///  The list of identifiers of the event sources for which events will be returned. If
-        /// not specified, then all sources are included in the response. An identifier must begin
-        /// with a letter and must contain only ASCII letters, digits, and hyphens; it cannot
-        /// end with a hyphen or contain two consecutive hyphens. 
+        /// A list of identifiers for which AWS DMS provides notification events.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify a value, notifications are provided for all sources.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify multiple values, they must be of the same type. For example, if you
+        /// specify a database instance ID, then all of the other values must be database instance
+        /// IDs.
         /// </para>
         /// </summary>
         public List<string> SourceIds
@@ -154,7 +160,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: replication-instance | migration-task
+        /// Valid values: <code>replication-instance</code> | <code>replication-task</code> 
         /// </para>
         /// </summary>
         public string SourceType
@@ -172,11 +178,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SubscriptionName. 
         /// <para>
-        /// The name of the AWS DMS event notification subscription. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: The name must be less than 255 characters. 
+        /// The name of the AWS DMS event notification subscription. This name must be less than
+        /// 255 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -195,7 +198,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A tag to be attached to the event subscription.
+        /// One or more tags to be assigned to the event subscription.
         /// </para>
         /// </summary>
         public List<Tag> Tags

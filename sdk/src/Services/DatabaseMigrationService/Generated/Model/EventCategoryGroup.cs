@@ -38,8 +38,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EventCategories. 
         /// <para>
-        ///  A list of event categories for a <code>SourceType</code> that you want to subscribe
-        /// to. 
+        ///  A list of event categories from a source type that you've chosen.
         /// </para>
         /// </summary>
         public List<string> EventCategories
@@ -61,7 +60,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: replication-instance | replication-server | security-group | migration-task
+        /// Valid values: replication-instance | replication-server | security-group | replication-task
         /// </para>
         /// </summary>
         public string SourceType

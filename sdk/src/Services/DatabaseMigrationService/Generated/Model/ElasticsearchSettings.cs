@@ -40,7 +40,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EndpointUri. 
         /// <para>
-        /// The endpoint for the ElasticSearch cluster.
+        /// The endpoint for the Elasticsearch cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

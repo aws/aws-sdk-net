@@ -60,8 +60,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property OptInType. 
         /// <para>
-        /// A value that specifies the type of opt-in request, or undoes an opt-in request. An
-        /// opt-in request of type <code>immediate</code> cannot be undone.
+        /// A value that specifies the type of opt-in request, or undoes an opt-in request. You
+        /// can't undo an opt-in request of type <code>immediate</code>.
         /// </para>
         ///  
         /// <para>

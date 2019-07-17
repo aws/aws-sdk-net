@@ -63,7 +63,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: replication-instance | migration-task
+        /// Valid values: replication-instance | replication-task
         /// </para>
         /// </summary>
         public string SourceType

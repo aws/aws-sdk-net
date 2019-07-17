@@ -219,7 +219,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EndpointType. 
         /// <para>
-        /// The type of endpoint.
+        /// The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
         /// </para>
         /// </summary>
         public ReplicationEndpointTypeValue EndpointType
@@ -256,9 +256,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
-        /// The database engine name. Valid values, depending on the EndPointType, include mysql,
+        /// The database engine name. Valid values, depending on the EndpointType, include mysql,
         /// oracle, postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb,
-        /// sybase, sybase, dynamodb, mongodb, and sqlserver.
+        /// sybase, dynamodb, mongodb, and sqlserver.
         /// </para>
         /// </summary>
         public string EngineName
@@ -351,11 +351,18 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS KMS key identifier that is used to encrypt the content on the replication
-        /// instance. If you don't specify a value for the <code>KmsKeyId</code> parameter, then
-        /// AWS DMS uses your default encryption key. AWS KMS creates the default encryption key
-        /// for your AWS account. Your AWS account has a different default encryption key for
-        /// each AWS Region.
+        /// An AWS KMS key identifier that is used to encrypt the connection parameters for the
+        /// endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS
+        /// uses your default encryption key.
+        /// </para>
+        ///  
+        /// <para>
+        /// AWS KMS creates the default encryption key for your AWS account. Your AWS account
+        /// has a different default encryption key for each AWS Region.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -410,7 +417,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property RedshiftSettings. 
         /// <para>
-        /// Settings for the Amazon Redshift endpoint
+        /// Settings for the Amazon Redshift endpoint.
         /// </para>
         /// </summary>
         public RedshiftSettings RedshiftSettings
@@ -483,15 +490,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SslMode. 
         /// <para>
-        /// The SSL mode used to connect to the endpoint.
-        /// </para>
-        ///  
-        /// <para>
-        /// SSL mode can be one of four values: none, require, verify-ca, verify-full. 
-        /// </para>
-        ///  
-        /// <para>
-        /// The default value is none.
+        /// The SSL mode used to connect to the endpoint. The default value is <code>none</code>.
         /// </para>
         /// </summary>
         public DmsSslModeValue SslMode

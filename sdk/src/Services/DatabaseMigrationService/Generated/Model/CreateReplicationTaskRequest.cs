@@ -135,7 +135,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property MigrationType. 
         /// <para>
-        /// The migration type.
+        /// The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -154,7 +155,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicationInstanceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the replication instance.
+        /// The Amazon Resource Name (ARN) of a replication instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -173,7 +174,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicationTaskIdentifier. 
         /// <para>
-        /// The replication task identifier.
+        /// An identifier for the replication task.
         /// </para>
         ///  
         /// <para>
@@ -209,10 +210,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicationTaskSettings. 
         /// <para>
-        /// Settings for the task, such as target metadata settings. For a complete list of task
-        /// settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-        /// Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database Migration
-        /// User Guide.</i> 
+        /// Overall settings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
+        /// Settings</a> in the <i>AWS Database Migration User Guide.</i> 
         /// </para>
         /// </summary>
         public string ReplicationTaskSettings
@@ -230,7 +229,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SourceEndpointArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+        /// An Amazon Resource Name (ARN) that uniquely identifies the source endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -249,13 +248,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property TableMappings. 
         /// <para>
-        /// When using the AWS CLI or boto3, provide the path of the JSON file that contains the
-        /// table mappings. Precede the path with "file://". When working with the DMS API, provide
-        /// the JSON as the parameter value.
-        /// </para>
-        ///  
-        /// <para>
-        /// For example, --table-mappings file://mappingfile.json
+        /// The table mappings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Table
+        /// Mapping</a> in the <i>AWS Database Migration User Guide.</i> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -274,7 +268,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags to be added to the replication instance.
+        /// One or more tags to be assigned to the replication task.
         /// </para>
         /// </summary>
         public List<Tag> Tags
@@ -292,7 +286,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property TargetEndpointArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+        /// An Amazon Resource Name (ARN) that uniquely identifies the target endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

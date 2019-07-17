@@ -370,7 +370,7 @@ namespace Amazon.DatabaseMigrationService
         /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
-        /// AWS DMS cannot access the KMS key.
+        /// AWS DMS cannot access the AWS KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
         /// The resource you are attempting to create already exists.
@@ -408,7 +408,7 @@ namespace Amazon.DatabaseMigrationService
         /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
-        /// AWS DMS cannot access the KMS key.
+        /// AWS DMS cannot access the AWS KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
         /// The resource you are attempting to create already exists.
@@ -462,20 +462,20 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the CreateEventSubscription service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSAccessDeniedException">
-        /// The ciphertext references a key that doesn't exist or DMS account doesn't have an
-        /// access to
+        /// The ciphertext references a key that doesn't exist or that the DMS account doesn't
+        /// have access to.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSDisabledException">
         /// The specified master key (CMK) isn't enabled.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSInvalidStateException">
-        /// The state of the specified KMS resource isn't valid for this request.
+        /// The state of the specified AWS KMS resource isn't valid for this request.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSNotFoundException">
-        /// The specified KMS entity or resource can't be found.
+        /// The specified AWS KMS entity or resource can't be found.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSThrottlingException">
-        /// This request triggered KMS request throttling.
+        /// This request triggered AWS KMS request throttling.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
         /// The resource you are attempting to create already exists.
@@ -534,20 +534,20 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the CreateEventSubscription service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSAccessDeniedException">
-        /// The ciphertext references a key that doesn't exist or DMS account doesn't have an
-        /// access to
+        /// The ciphertext references a key that doesn't exist or that the DMS account doesn't
+        /// have access to.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSDisabledException">
         /// The specified master key (CMK) isn't enabled.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSInvalidStateException">
-        /// The state of the specified KMS resource isn't valid for this request.
+        /// The state of the specified AWS KMS resource isn't valid for this request.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSNotFoundException">
-        /// The specified KMS entity or resource can't be found.
+        /// The specified AWS KMS entity or resource can't be found.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSThrottlingException">
-        /// This request triggered KMS request throttling.
+        /// This request triggered AWS KMS request throttling.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
         /// The resource you are attempting to create already exists.
@@ -598,7 +598,7 @@ namespace Amazon.DatabaseMigrationService
         /// The subnet provided is invalid.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
-        /// AWS DMS cannot access the KMS key.
+        /// AWS DMS cannot access the AWS KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ReplicationSubnetGroupDoesNotCoverEnoughAZsException">
         /// The replication subnet group does not cover enough Availability Zones (AZs). Edit
@@ -649,7 +649,7 @@ namespace Amazon.DatabaseMigrationService
         /// The subnet provided is invalid.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
-        /// AWS DMS cannot access the KMS key.
+        /// AWS DMS cannot access the AWS KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ReplicationSubnetGroupDoesNotCoverEnoughAZsException">
         /// The replication subnet group does not cover enough Availability Zones (AZs). Edit
@@ -774,7 +774,7 @@ namespace Amazon.DatabaseMigrationService
         /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
-        /// AWS DMS cannot access the KMS key.
+        /// AWS DMS cannot access the AWS KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
         /// The resource you are attempting to create already exists.
@@ -812,7 +812,7 @@ namespace Amazon.DatabaseMigrationService
         /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
-        /// AWS DMS cannot access the KMS key.
+        /// AWS DMS cannot access the AWS KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
         /// The resource you are attempting to create already exists.
@@ -1183,10 +1183,13 @@ namespace Amazon.DatabaseMigrationService
 
 
         /// <summary>
-        /// Lists all of the AWS DMS attributes for a customer account. The attributes include
-        /// AWS DMS quotas for the account, such as the number of replication instances allowed.
-        /// The description for a quota includes the quota name, current usage toward that quota,
-        /// and the quota's maximum value.
+        /// Lists all of the AWS DMS attributes for a customer account. These attributes include
+        /// AWS DMS quotas for the account and a unique account identifier in a particular DMS
+        /// region. DMS quotas include a list of resource quotas supported by the account, such
+        /// as the number of replication instances allowed. The description for each resource
+        /// quota, includes the quota name, current usage toward that quota, and the quota's maximum
+        /// value. DMS uses the unique account identifier to name each artifact used by DMS in
+        /// the given region.
         /// 
         ///  
         /// <para>
@@ -1208,10 +1211,13 @@ namespace Amazon.DatabaseMigrationService
 
 
         /// <summary>
-        /// Lists all of the AWS DMS attributes for a customer account. The attributes include
-        /// AWS DMS quotas for the account, such as the number of replication instances allowed.
-        /// The description for a quota includes the quota name, current usage toward that quota,
-        /// and the quota's maximum value.
+        /// Lists all of the AWS DMS attributes for a customer account. These attributes include
+        /// AWS DMS quotas for the account and a unique account identifier in a particular DMS
+        /// region. DMS quotas include a list of resource quotas supported by the account, such
+        /// as the number of replication instances allowed. The description for each resource
+        /// quota, includes the quota name, current usage toward that quota, and the quota's maximum
+        /// value. DMS uses the unique account identifier to name each artifact used by DMS in
+        /// the given region.
         /// 
         ///  
         /// <para>
@@ -2205,7 +2211,7 @@ namespace Amazon.DatabaseMigrationService
         /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
-        /// AWS DMS cannot access the KMS key.
+        /// AWS DMS cannot access the AWS KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
         /// The resource you are attempting to create already exists.
@@ -2240,7 +2246,7 @@ namespace Amazon.DatabaseMigrationService
         /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
-        /// AWS DMS cannot access the KMS key.
+        /// AWS DMS cannot access the AWS KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
         /// The resource you are attempting to create already exists.
@@ -2270,20 +2276,20 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the ModifyEventSubscription service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSAccessDeniedException">
-        /// The ciphertext references a key that doesn't exist or DMS account doesn't have an
-        /// access to
+        /// The ciphertext references a key that doesn't exist or that the DMS account doesn't
+        /// have access to.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSDisabledException">
         /// The specified master key (CMK) isn't enabled.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSInvalidStateException">
-        /// The state of the specified KMS resource isn't valid for this request.
+        /// The state of the specified AWS KMS resource isn't valid for this request.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSNotFoundException">
-        /// The specified KMS entity or resource can't be found.
+        /// The specified AWS KMS entity or resource can't be found.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSThrottlingException">
-        /// This request triggered KMS request throttling.
+        /// This request triggered AWS KMS request throttling.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
@@ -2318,20 +2324,20 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the ModifyEventSubscription service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSAccessDeniedException">
-        /// The ciphertext references a key that doesn't exist or DMS account doesn't have an
-        /// access to
+        /// The ciphertext references a key that doesn't exist or that the DMS account doesn't
+        /// have access to.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSDisabledException">
         /// The specified master key (CMK) isn't enabled.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSInvalidStateException">
-        /// The state of the specified KMS resource isn't valid for this request.
+        /// The state of the specified AWS KMS resource isn't valid for this request.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSNotFoundException">
-        /// The specified KMS entity or resource can't be found.
+        /// The specified AWS KMS entity or resource can't be found.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSThrottlingException">
-        /// This request triggered KMS request throttling.
+        /// This request triggered AWS KMS request throttling.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
@@ -2555,7 +2561,7 @@ namespace Amazon.DatabaseMigrationService
         /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
-        /// AWS DMS cannot access the KMS key.
+        /// AWS DMS cannot access the AWS KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
         /// The resource you are attempting to create already exists.
@@ -2598,7 +2604,7 @@ namespace Amazon.DatabaseMigrationService
         /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
-        /// AWS DMS cannot access the KMS key.
+        /// AWS DMS cannot access the AWS KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
         /// The resource you are attempting to create already exists.
@@ -2688,7 +2694,7 @@ namespace Amazon.DatabaseMigrationService
         /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
-        /// AWS DMS cannot access the KMS key.
+        /// AWS DMS cannot access the AWS KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
@@ -2722,7 +2728,7 @@ namespace Amazon.DatabaseMigrationService
         /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
-        /// AWS DMS cannot access the KMS key.
+        /// AWS DMS cannot access the AWS KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
@@ -3034,7 +3040,7 @@ namespace Amazon.DatabaseMigrationService
         /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
-        /// AWS DMS cannot access the KMS key.
+        /// AWS DMS cannot access the AWS KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
@@ -3066,7 +3072,7 @@ namespace Amazon.DatabaseMigrationService
         /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
-        /// AWS DMS cannot access the KMS key.
+        /// AWS DMS cannot access the AWS KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.

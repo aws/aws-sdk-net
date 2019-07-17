@@ -61,14 +61,15 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property AcceptAnyDate. 
         /// <para>
-        /// Allows any date format, including invalid formats such as 00/00/00 00:00:00, to be
-        /// loaded without generating an error. You can choose TRUE or FALSE (default).
+        /// A value that indicates to allow any date format, including invalid formats such as
+        /// 00/00/00 00:00:00, to be loaded without generating an error. You can choose <code>true</code>
+        /// or <code>false</code> (the default).
         /// </para>
         ///  
         /// <para>
         /// This parameter applies only to TIMESTAMP and DATE columns. Always use ACCEPTANYDATE
-        /// with the DATEFORMAT parameter. If the date format for the data does not match the
-        /// DATEFORMAT specification, Amazon Redshift inserts a NULL value into that field. 
+        /// with the DATEFORMAT parameter. If the date format for the data doesn't match the DATEFORMAT
+        /// specification, Amazon Redshift inserts a NULL value into that field. 
         /// </para>
         /// </summary>
         public bool AcceptAnyDate
@@ -86,7 +87,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property AfterConnectScript. 
         /// <para>
-        /// Code to run after connecting. This should be the code, not a filename.
+        /// Code to run after connecting. This parameter should contain the code itself, not the
+        /// name of a file containing the code.
         /// </para>
         /// </summary>
         public string AfterConnectScript
@@ -104,8 +106,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property BucketFolder. 
         /// <para>
-        /// The location where the CSV files are stored before being uploaded to the S3 bucket.
-        /// 
+        /// The location where the comma-separated value (.csv) files are stored before being
+        /// uploaded to the S3 bucket. 
         /// </para>
         /// </summary>
         public string BucketFolder
@@ -141,8 +143,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ConnectionTimeout. 
         /// <para>
-        /// Sets the amount of time to wait (in milliseconds) before timing out, beginning from
-        /// when you initially establish a connection.
+        /// A value that sets the amount of time to wait (in milliseconds) before timing out,
+        /// beginning from when you initially establish a connection.
         /// </para>
         /// </summary>
         public int ConnectionTimeout
@@ -160,7 +162,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
-        /// The name of the Amazon Redshift data warehouse (service) you are working with.
+        /// The name of the Amazon Redshift data warehouse (service) that you are working with.
         /// </para>
         /// </summary>
         public string DatabaseName
@@ -178,10 +180,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property DateFormat. 
         /// <para>
-        /// The date format you are using. Valid values are <code>auto</code> (case-sensitive),
-        /// your date format string enclosed in quotes, or NULL. If this is left unset (NULL),
-        /// it defaults to a format of 'YYYY-MM-DD'. Using <code>auto</code> recognizes most strings,
-        /// even some that are not supported when you use a date format string. 
+        /// The date format that you are using. Valid values are <code>auto</code> (case-sensitive),
+        /// your date format string enclosed in quotes, or NULL. If this parameter is left unset
+        /// (NULL), it defaults to a format of 'YYYY-MM-DD'. Using <code>auto</code> recognizes
+        /// most strings, even some that aren't supported when you use a date format string. 
         /// </para>
         ///  
         /// <para>
@@ -204,8 +206,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EmptyAsNull. 
         /// <para>
-        /// Specifies whether AWS DMS should migrate empty CHAR and VARCHAR fields as NULL. A
-        /// value of TRUE sets empty CHAR and VARCHAR fields to null. The default is FALSE.
+        /// A value that specifies whether AWS DMS should migrate empty CHAR and VARCHAR fields
+        /// as NULL. A value of <code>true</code> sets empty CHAR and VARCHAR fields to null.
+        /// The default is <code>false</code>.
         /// </para>
         /// </summary>
         public bool EmptyAsNull
@@ -223,11 +226,12 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EncryptionMode. 
         /// <para>
-        /// The type of server side encryption you want to use for your data. This is part of
-        /// the endpoint settings or the extra connections attributes for Amazon S3. You can choose
-        /// either SSE_S3 (default) or SSE_KMS. To use SSE_S3, create an IAM role with a policy
-        /// that allows <code>"arn:aws:s3:::*"</code> to use the following actions: <code>"s3:PutObject",
-        /// "s3:ListBucket"</code>.
+        /// The type of server-side encryption that you want to use for your data. This encryption
+        /// type is part of the endpoint settings or the extra connections attributes for Amazon
+        /// S3. You can choose either <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>.
+        /// To use <code>SSE_S3</code>, create an AWS Identity and Access Management (IAM) role
+        /// with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions:
+        /// <code>"s3:PutObject", "s3:ListBucket"</code> 
         /// </para>
         /// </summary>
         public EncryptionModeValue EncryptionMode
@@ -245,8 +249,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property FileTransferUploadStreams. 
         /// <para>
-        /// Specifies the number of threads used to upload a single file. This accepts a value
-        /// between 1 and 64. It defaults to 10.
+        /// The number of threads used to upload a single file. This parameter accepts a value
+        /// from 1 through 64. It defaults to 10.
         /// </para>
         /// </summary>
         public int FileTransferUploadStreams
@@ -264,8 +268,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property LoadTimeout. 
         /// <para>
-        /// Sets the amount of time to wait (in milliseconds) before timing out, beginning from
-        /// when you begin loading.
+        /// The amount of time to wait (in milliseconds) before timing out, beginning from when
+        /// you begin loading.
         /// </para>
         /// </summary>
         public int LoadTimeout
@@ -283,9 +287,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property MaxFileSize. 
         /// <para>
-        /// Specifies the maximum size (in KB) of any CSV file used to transfer data to Amazon
-        /// Redshift. This accepts a value between 1 and 1048576. It defaults to 32768 KB (32
-        /// MB).
+        /// The maximum size (in KB) of any .csv file used to transfer data to Amazon Redshift.
+        /// This accepts a value from 1 through 1,048,576. It defaults to 32,768 KB (32 MB).
         /// </para>
         /// </summary>
         public int MaxFileSize
@@ -303,7 +306,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Password. 
         /// <para>
-        /// The password for the user named in the username property.
+        /// The password for the user named in the <code>username</code> property.
         /// </para>
         /// </summary>
         public string Password
@@ -339,9 +342,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property RemoveQuotes. 
         /// <para>
-        /// Removes surrounding quotation marks from strings in the incoming data. All characters
-        /// within the quotation marks, including delimiters, are retained. Choose TRUE to remove
-        /// quotation marks. The default is FALSE.
+        /// A value that specifies to remove surrounding quotation marks from strings in the incoming
+        /// data. All characters within the quotation marks, including delimiters, are retained.
+        /// Choose <code>true</code> to remove quotation marks. The default is <code>false</code>.
         /// </para>
         /// </summary>
         public bool RemoveQuotes
@@ -359,8 +362,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplaceChars. 
         /// <para>
-        /// Replaces invalid characters specified in <code>ReplaceInvalidChars</code>, substituting
-        /// the specified value instead. The default is "?".
+        /// A value that specifies to replaces the invalid characters specified in <code>ReplaceInvalidChars</code>,
+        /// substituting the specified characters instead. The default is <code>"?"</code>.
         /// </para>
         /// </summary>
         public string ReplaceChars
@@ -378,7 +381,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplaceInvalidChars. 
         /// <para>
-        /// A list of chars you want to replace. Use with <code>ReplaceChars</code>.
+        /// A list of characters that you want to replace. Use with <code>ReplaceChars</code>.
         /// </para>
         /// </summary>
         public string ReplaceInvalidChars
@@ -414,9 +417,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ServerSideEncryptionKmsKeyId. 
         /// <para>
-        /// If you are using SSE_KMS for the <code>EncryptionMode</code>, provide the KMS Key
-        /// ID. The key you use needs an attached policy that enables IAM user permissions and
-        /// allows use of the key.
+        /// The AWS KMS key ID. If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>,
+        /// provide this key ID. The key that you use needs an attached policy that enables IAM
+        /// user permissions and allows use of the key.
         /// </para>
         /// </summary>
         public string ServerSideEncryptionKmsKeyId
@@ -434,7 +437,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ServiceAccessRoleArn. 
         /// <para>
-        /// The ARN of the role that has access to the Redshift service.
+        /// The Amazon Resource Name (ARN) of the IAM role that has access to the Amazon Redshift
+        /// service.
         /// </para>
         /// </summary>
         public string ServiceAccessRoleArn
@@ -452,15 +456,15 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property TimeFormat. 
         /// <para>
-        /// The time format you want to use. Valid values are <code>auto</code> (case-sensitive),
-        /// 'timeformat_string', 'epochsecs', or 'epochmillisecs'. It defaults to 10. Using <code>auto</code>
-        /// recognizes most strings, even some that are not supported when you use a time format
-        /// string. 
+        /// The time format that you want to use. Valid values are <code>auto</code> (case-sensitive),
+        /// <code>'timeformat_string'</code>, <code>'epochsecs'</code>, or <code>'epochmillisecs'</code>.
+        /// It defaults to 10. Using <code>auto</code> recognizes most strings, even some that
+        /// aren't supported when you use a time format string. 
         /// </para>
         ///  
         /// <para>
-        /// If your date and time values use formats different from each other, set this to <code>auto</code>.
-        /// 
+        /// If your date and time values use formats different from each other, set this parameter
+        /// to <code>auto</code>. 
         /// </para>
         /// </summary>
         public string TimeFormat
@@ -478,9 +482,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property TrimBlanks. 
         /// <para>
-        /// Removes the trailing white space characters from a VARCHAR string. This parameter
-        /// applies only to columns with a VARCHAR data type. Choose TRUE to remove unneeded white
-        /// space. The default is FALSE.
+        /// A value that specifies to remove the trailing white space characters from a VARCHAR
+        /// string. This parameter applies only to columns with a VARCHAR data type. Choose <code>true</code>
+        /// to remove unneeded white space. The default is <code>false</code>.
         /// </para>
         /// </summary>
         public bool TrimBlanks
@@ -498,9 +502,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property TruncateColumns. 
         /// <para>
-        /// Truncates data in columns to the appropriate number of characters, so that it fits
-        /// in the column. Applies only to columns with a VARCHAR or CHAR data type, and rows
-        /// with a size of 4 MB or less. Choose TRUE to truncate data. The default is FALSE.
+        /// A value that specifies to truncate data in columns to the appropriate number of characters,
+        /// so that the data fits in the column. This parameter applies only to columns with a
+        /// VARCHAR or CHAR data type, and rows with a size of 4 MB or less. Choose <code>true</code>
+        /// to truncate data. The default is <code>false</code>.
         /// </para>
         /// </summary>
         public bool TruncateColumns
@@ -536,8 +541,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property WriteBufferSize. 
         /// <para>
-        /// The size of the write buffer to use in rows. Valid values range from 1 to 2048. Defaults
-        /// to 1024. Use this setting to tune performance. 
+        /// The size of the write buffer to use in rows. Valid values range from 1 through 2,048.
+        /// The default is 1,024. Use this setting to tune performance. 
         /// </para>
         /// </summary>
         public int WriteBufferSize

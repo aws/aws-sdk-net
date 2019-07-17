@@ -42,8 +42,12 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be added to.
-        /// AWS DMS resources include a replication instance, endpoint, and a replication task.
+        /// Identifies the AWS DMS resource to which tags should be added. The value for this
+        /// parameter is an Amazon Resource Name (ARN).
+        /// </para>
+        ///  
+        /// <para>
+        /// For AWS DMS, you can tag a replication instance, an endpoint, or a replication task.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +66,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tag to be assigned to the DMS resource.
+        /// One or more tags to be assigned to the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

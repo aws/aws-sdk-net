@@ -112,9 +112,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property WithoutSettings. 
         /// <para>
-        /// Set this flag to avoid returning setting information. Use this to reduce overhead
-        /// when settings are too large. Choose TRUE to use this flag, otherwise choose FALSE
-        /// (default).
+        /// An option to set to avoid returning information about settings. Use this to reduce
+        /// overhead when setting information is too large. To use this option, choose <code>true</code>;
+        /// otherwise, choose <code>false</code> (the default).
         /// </para>
         /// </summary>
         public bool WithoutSettings

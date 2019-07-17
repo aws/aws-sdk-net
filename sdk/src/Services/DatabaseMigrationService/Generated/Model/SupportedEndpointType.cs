@@ -40,7 +40,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EndpointType. 
         /// <para>
-        /// The type of endpoint.
+        /// The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
         /// </para>
         /// </summary>
         public ReplicationEndpointTypeValue EndpointType
@@ -77,9 +77,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
-        /// The database engine name. Valid values, depending on the EndPointType, include mysql,
+        /// The database engine name. Valid values, depending on the EndpointType, include mysql,
         /// oracle, postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb,
-        /// sybase, sybase, dynamodb, mongodb, and sqlserver.
+        /// sybase, dynamodb, mongodb, and sqlserver.
         /// </para>
         /// </summary>
         public string EngineName

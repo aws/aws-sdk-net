@@ -142,6 +142,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExternalTableDefinition = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IncludeOpForFullLoad", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IncludeOpForFullLoad = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ParquetVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -164,6 +170,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServiceAccessRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TimestampColumnName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TimestampColumnName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

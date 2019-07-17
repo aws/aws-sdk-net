@@ -57,6 +57,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     response.AccountQuotas = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("UniqueAccountIdentifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.UniqueAccountIdentifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

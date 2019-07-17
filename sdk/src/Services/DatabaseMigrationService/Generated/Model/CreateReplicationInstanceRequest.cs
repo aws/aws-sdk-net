@@ -70,8 +70,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        /// Indicates that minor engine upgrades will be applied automatically to the replication
-        /// instance during the maintenance window.
+        /// Indicates whether minor engine upgrades will be applied automatically to the replication
+        /// instance during the maintenance window. This parameter defaults to <code>true</code>.
         /// </para>
         ///  
         /// <para>
@@ -93,15 +93,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The EC2 Availability Zone that the replication instance will be created in.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: A random, system-chosen Availability Zone in the endpoint's region.
-        /// </para>
-        ///  
-        /// <para>
-        ///  Example: <code>us-east-1d</code> 
+        /// The AWS Availability Zone where the replication instance will be created. The default
+        /// value is a random, system-chosen Availability Zone in the endpoint's AWS Region, for
+        /// example: <code>us-east-1d</code> 
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -155,11 +149,17 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS KMS key identifier that is used to encrypt the content on the replication
-        /// instance. If you don't specify a value for the <code>KmsKeyId</code> parameter, then
-        /// AWS DMS uses your default encryption key. AWS KMS creates the default encryption key
-        /// for your AWS account. Your AWS account has a different default encryption key for
-        /// each AWS Region.
+        /// An AWS KMS key identifier that is used to encrypt the data on the replication instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS
+        /// uses your default encryption key.
+        /// </para>
+        ///  
+        /// <para>
+        /// AWS KMS creates the default encryption key for your AWS account. Your AWS account
+        /// has a different default encryption key for each AWS Region.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -177,8 +177,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        ///  Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
-        /// <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
+        ///  Specifies whether the replication instance is a Multi-AZ deployment. You cannot set
+        /// the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
         /// 
         /// </para>
         /// </summary>
@@ -206,8 +206,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: A 30-minute window selected at random from an 8-hour block of time per region,
-        /// occurring on a random day of the week.
+        /// Default: A 30-minute window selected at random from an 8-hour block of time per AWS
+        /// Region, occurring on a random day of the week.
         /// </para>
         ///  
         /// <para>
@@ -335,7 +335,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags to be associated with the replication instance.
+        /// One or more tags to be assigned to the replication instance.
         /// </para>
         /// </summary>
         public List<Tag> Tags

@@ -73,11 +73,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property AllowMajorVersionUpgrade. 
         /// <para>
         /// Indicates that major version upgrades are allowed. Changing this parameter does not
-        /// result in an outage and the change is asynchronously applied as soon as possible.
+        /// result in an outage, and the change is asynchronously applied as soon as possible.
         /// </para>
         ///  
         /// <para>
-        /// Constraints: This parameter must be set to true when specifying a value for the <code>EngineVersion</code>
+        /// This parameter must be set to <code>true</code> when specifying a value for the <code>EngineVersion</code>
         /// parameter that is a different major version than the replication instance's current
         /// version.
         /// </para>
@@ -157,8 +157,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        ///  Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
-        /// <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
+        ///  Specifies whether the replication instance is a Multi-AZ deployment. You cannot set
+        /// the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
         /// 
         /// </para>
         /// </summary>

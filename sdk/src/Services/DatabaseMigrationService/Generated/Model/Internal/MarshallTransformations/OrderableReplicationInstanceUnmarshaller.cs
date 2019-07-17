@@ -100,6 +100,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.MinAllocatedStorage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ReleaseStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReleaseStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ReplicationInstanceClass", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

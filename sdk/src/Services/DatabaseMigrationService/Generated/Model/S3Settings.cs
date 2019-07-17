@@ -45,17 +45,19 @@ namespace Amazon.DatabaseMigrationService.Model
         private EncodingTypeValue _encodingType;
         private EncryptionModeValue _encryptionMode;
         private string _externalTableDefinition;
+        private bool? _includeOpForFullLoad;
         private ParquetVersionValue _parquetVersion;
         private int? _rowGroupLength;
         private string _serverSideEncryptionKmsKeyId;
         private string _serviceAccessRoleArn;
+        private string _timestampColumnName;
 
         /// <summary>
         /// Gets and sets the property BucketFolder. 
         /// <para>
         ///  An optional parameter to set a folder name in the S3 bucket. If provided, tables
-        /// are created in the path <code>&lt;bucketFolder&gt;/&lt;schema_name&gt;/&lt;table_name&gt;/</code>.
-        /// If this parameter is not specified, then the path used is <code>&lt;schema_name&gt;/&lt;table_name&gt;/</code>.
+        /// are created in the path <code> <i>bucketFolder</i>/<i>schema_name</i>/<i>table_name</i>/</code>.
+        /// If this parameter is not specified, then the path used is <code> <i>schema_name</i>/<i>table_name</i>/</code>.
         /// 
         /// </para>
         /// </summary>
@@ -92,14 +94,31 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property CdcInsertsOnly. 
         /// <para>
-        /// Option to write only <code>INSERT</code> operations to the comma-separated value (CSV)
-        /// output files. By default, the first field in a CSV record contains the letter <code>I</code>
-        /// (insert), <code>U</code> (update) or <code>D</code> (delete) to indicate whether the
-        /// row was inserted, updated, or deleted at the source database. If <code>cdcInsertsOnly</code>
-        /// is set to true, then only <code>INSERT</code>s are recorded in the CSV file, without
-        /// the <code>I</code> annotation on each line. Valid values are <code>TRUE</code> and
-        /// <code>FALSE</code>.
+        /// A value that enables a change data capture (CDC) load to write only INSERT operations
+        /// to .csv or columnar storage (.parquet) output files. By default (the <code>false</code>
+        /// setting), the first field in a .csv or .parquet record contains the letter I (INSERT),
+        /// U (UPDATE), or D (DELETE). These values indicate whether the row was inserted, updated,
+        /// or deleted at the source database for a CDC load to the target.
         /// </para>
+        ///  
+        /// <para>
+        /// If <code>cdcInsertsOnly</code> is set to <code>true</code> or <code>y</code>, only
+        /// INSERTs from the source database are migrated to the .csv or .parquet file. For .csv
+        /// format only, how these INSERTs are recorded depends on the value of <code>IncludeOpForFullLoad</code>.
+        /// If <code>IncludeOpForFullLoad</code> is set to <code>true</code>, the first field
+        /// of every CDC record is set to I to indicate the INSERT operation at the source. If
+        /// <code>IncludeOpForFullLoad</code> is set to <code>false</code>, every CDC record is
+        /// written without a first field to indicate the INSERT operation at the source. For
+        /// more information about how these settings work together, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating
+        /// Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service
+        /// User Guide.</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// AWS DMS supports this interaction between <code>CdcInsertsOnly</code> and <code>IncludeOpForFullLoad</code>
+        /// in versions 3.1.4 and later. 
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool CdcInsertsOnly
         {
@@ -118,7 +137,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         ///  An optional parameter to use GZIP to compress the target files. Set to GZIP to compress
         /// the target files. Set to NONE (the default) or do not use to leave the files uncompressed.
-        /// Applies to both CSV and PARQUET data formats. 
+        /// Applies to both .csv and .parquet file formats. 
         /// </para>
         /// </summary>
         public CompressionTypeValue CompressionType
@@ -174,17 +193,18 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property DataFormat. 
         /// <para>
-        /// The format of the data which you want to use for output. You can choose one of the
+        /// The format of the data that you want to use for output. You can choose one of the
         /// following: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CSV</code> : This is a row-based format with comma-separated values. 
+        ///  <code>csv</code> : This is a row-based file format with comma-separated values (.csv).
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PARQUET</code> : Apache Parquet is a columnar storage format that features
-        /// efficient compression and provides faster query response. 
+        ///  <code>parquet</code> : Apache Parquet (.parquet) is a columnar storage file format
+        /// that features efficient compression and provides faster query response. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -203,8 +223,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property DataPageSize. 
         /// <para>
-        /// The size of one data page in bytes. Defaults to 1024 * 1024 bytes (1MiB). For <code>PARQUET</code>
-        /// format only. 
+        /// The size of one data page in bytes. This parameter defaults to 1024 * 1024 bytes (1
+        /// MiB). This number is used for .parquet file format only. 
         /// </para>
         /// </summary>
         public int DataPageSize
@@ -224,8 +244,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// The maximum size of an encoded dictionary page of a column. If the dictionary page
         /// exceeds this, this column is stored using an encoding type of <code>PLAIN</code>.
-        /// Defaults to 1024 * 1024 bytes (1MiB), the maximum size of a dictionary page before
-        /// it reverts to <code>PLAIN</code> encoding. For <code>PARQUET</code> format only. 
+        /// This parameter defaults to 1024 * 1024 bytes (1 MiB), the maximum size of a dictionary
+        /// page before it reverts to <code>PLAIN</code> encoding. This size is used for .parquet
+        /// file format only. 
         /// </para>
         /// </summary>
         public int DictPageSizeLimit
@@ -243,10 +264,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EnableStatistics. 
         /// <para>
-        /// Enables statistics for Parquet pages and rowGroups. Choose <code>TRUE</code> to enable
-        /// statistics, choose <code>FALSE</code> to disable. Statistics include <code>NULL</code>,
-        /// <code>DISTINCT</code>, <code>MAX</code>, and <code>MIN</code> values. Defaults to
-        /// <code>TRUE</code>. For <code>PARQUET</code> format only.
+        /// A value that enables statistics for Parquet pages and row groups. Choose <code>true</code>
+        /// to enable statistics, <code>false</code> to disable. Statistics include <code>NULL</code>,
+        /// <code>DISTINCT</code>, <code>MAX</code>, and <code>MIN</code> values. This parameter
+        /// defaults to <code>true</code>. This value is used for .parquet file format only.
         /// </para>
         /// </summary>
         public bool EnableStatistics
@@ -264,17 +285,16 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EncodingType. 
         /// <para>
-        /// The type of encoding you are using: <code>RLE_DICTIONARY</code> (default), <code>PLAIN</code>,
-        /// or <code>PLAIN_DICTIONARY</code>.
+        /// The type of encoding you are using: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <code>RLE_DICTIONARY</code> uses a combination of bit-packing and run-length encoding
-        /// to store repeated values more efficiently.
+        /// to store repeated values more efficiently. This is the default.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PLAIN</code> does not use encoding at all. Values are stored as they are.
+        ///  <code>PLAIN</code> doesn't use encoding at all. Values are stored as they are.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -298,55 +318,55 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EncryptionMode. 
         /// <para>
-        /// The type of server side encryption you want to use for your data. This is part of
-        /// the endpoint settings or the extra connections attributes for Amazon S3. You can choose
-        /// either <code>SSE_S3</code> (default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>,
-        /// you need an IAM role with permission to allow <code>"arn:aws:s3:::dms-*"</code> to
-        /// use the following actions:
+        /// The type of server-side encryption that you want to use for your data. This encryption
+        /// type is part of the endpoint settings or the extra connections attributes for Amazon
+        /// S3. You can choose either <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>.
+        /// To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role
+        /// with permission to allow <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// s3:CreateBucket
+        ///  <code>s3:CreateBucket</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// s3:ListBucket
+        ///  <code>s3:ListBucket</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// s3:DeleteBucket
+        ///  <code>s3:DeleteBucket</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// s3:GetBucketLocation
+        ///  <code>s3:GetBucketLocation</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// s3:GetObject
+        ///  <code>s3:GetObject</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// s3:PutObject
+        ///  <code>s3:PutObject</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// s3:DeleteObject
+        ///  <code>s3:DeleteObject</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// s3:GetObjectVersion
+        ///  <code>s3:GetObjectVersion</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// s3:GetBucketPolicy
+        ///  <code>s3:GetBucketPolicy</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// s3:PutBucketPolicy
+        ///  <code>s3:PutBucketPolicy</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// s3:DeleteBucketPolicy
+        ///  <code>s3:DeleteBucketPolicy</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -381,10 +401,50 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IncludeOpForFullLoad. 
+        /// <para>
+        /// A value that enables a full load to write INSERT operations to the comma-separated
+        /// value (.csv) output files only to indicate how the rows were added to the source database.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// AWS DMS supports <code>IncludeOpForFullLoad</code> in versions 3.1.4 and later.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For full load, records can only be inserted. By default (the <code>false</code> setting),
+        /// no information is recorded in these output files for a full load to indicate that
+        /// the rows were inserted at the source database. If <code>IncludeOpForFullLoad</code>
+        /// is set to <code>true</code> or <code>y</code>, the INSERT is recorded as an I annotation
+        /// in the first field of the .csv file. This allows the format of your target records
+        /// from a full load to be consistent with the target records from a CDC load.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This setting works together with <code>CdcInsertsOnly</code> for output to .csv files
+        /// only. For more information about how these settings work together, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating
+        /// Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service
+        /// User Guide.</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool IncludeOpForFullLoad
+        {
+            get { return this._includeOpForFullLoad.GetValueOrDefault(); }
+            set { this._includeOpForFullLoad = value; }
+        }
+
+        // Check to see if IncludeOpForFullLoad property is set
+        internal bool IsSetIncludeOpForFullLoad()
+        {
+            return this._includeOpForFullLoad.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ParquetVersion. 
         /// <para>
-        /// The version of Apache Parquet format you want to use: <code>PARQUET_1_0</code> (default)
-        /// or <code>PARQUET_2_0</code>.
+        /// The version of the Apache Parquet format that you want to use: <code>parquet_1_0</code>
+        /// (the default) or <code>parquet_2_0</code>.
         /// </para>
         /// </summary>
         public ParquetVersionValue ParquetVersion
@@ -403,8 +463,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property RowGroupLength. 
         /// <para>
         /// The number of rows in a row group. A smaller row group size provides faster reads.
-        /// But as the number of row groups grows, the slower writes become. Defaults to 10,000
-        /// (ten thousand) rows. For <code>PARQUET</code> format only. 
+        /// But as the number of row groups grows, the slower writes become. This parameter defaults
+        /// to 10,000 rows. This number is used for .parquet file format only. 
         /// </para>
         ///  
         /// <para>
@@ -427,14 +487,14 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ServerSideEncryptionKmsKeyId. 
         /// <para>
-        /// If you are using SSE_KMS for the <code>EncryptionMode</code>, provide the KMS Key
-        /// ID. The key you use needs an attached policy that enables IAM user permissions and
-        /// allows use of the key.
+        /// If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide
+        /// the AWS KMS key ID. The key that you use needs an attached policy that enables AWS
+        /// Identity and Access Management (IAM) user permissions and allows use of the key.
         /// </para>
         ///  
         /// <para>
-        /// Here is a CLI example: <code>aws dms create-endpoint --endpoint-identifier &lt;value&gt;
-        /// --endpoint-type target --engine-name s3 --s3-settings ServiceAccessRoleArn=&lt;value&gt;,BucketFolder=&lt;value&gt;,BucketName=&lt;value&gt;,EncryptionMode=SSE_KMS,ServerSideEncryptionKmsKeyId=&lt;value&gt;
+        /// Here is a CLI example: <code>aws dms create-endpoint --endpoint-identifier <i>value</i>
+        /// --endpoint-type target --engine-name s3 --s3-settings ServiceAccessRoleArn=<i>value</i>,BucketFolder=<i>value</i>,BucketName=<i>value</i>,EncryptionMode=SSE_KMS,ServerSideEncryptionKmsKeyId=<i>value</i>
         /// </code> 
         /// </para>
         /// </summary>
@@ -466,6 +526,41 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetServiceAccessRoleArn()
         {
             return this._serviceAccessRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimestampColumnName. 
+        /// <para>
+        /// A value that includes a timestamp column in the Amazon S3 target endpoint data. AWS
+        /// DMS includes an additional column in the migrated data when you set <code>timestampColumnName</code>
+        /// to a non-blank value. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// AWS DMS supports <code>TimestampColumnName</code> in versions 3.1.4 and later.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For a full load, each row of the timestamp column contains a timestamp for when the
+        /// data was transferred from the source to the target by DMS. For a CDC load, each row
+        /// of the timestamp column contains the timestamp for the commit of that row in the source
+        /// database. The format for the timestamp column value is <code>yyyy-MM-dd HH:mm:ss.SSSSSS</code>.
+        /// For CDC, the microsecond precision depends on the commit timestamp supported by DMS
+        /// for the source database. When the <code>AddColumnName</code> setting is set to <code>true</code>,
+        /// DMS also includes the name for the timestamp column that you set as the nonblank value
+        /// of <code>timestampColumnName</code>.
+        /// </para>
+        /// </summary>
+        public string TimestampColumnName
+        {
+            get { return this._timestampColumnName; }
+            set { this._timestampColumnName = value; }
+        }
+
+        // Check to see if TimestampColumnName property is set
+        internal bool IsSetTimestampColumnName()
+        {
+            return this._timestampColumnName != null;
         }
 
     }

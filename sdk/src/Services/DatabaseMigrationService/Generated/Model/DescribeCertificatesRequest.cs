@@ -59,7 +59,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property Marker. 
         /// <para>
         ///  An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
+        /// specified, the response includes only records beyond the marker, up to the vlue specified
         /// by <code>MaxRecords</code>. 
         /// </para>
         /// </summary>

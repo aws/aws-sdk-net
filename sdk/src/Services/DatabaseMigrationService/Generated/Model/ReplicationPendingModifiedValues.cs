@@ -76,8 +76,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        ///  Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
-        /// <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
+        ///  Specifies whether the replication instance is a Multi-AZ deployment. You cannot set
+        /// the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
         /// 
         /// </para>
         /// </summary>

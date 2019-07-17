@@ -38,13 +38,14 @@ namespace Amazon.DatabaseMigrationService.Model
         private int? _includedAllocatedStorage;
         private int? _maxAllocatedStorage;
         private int? _minAllocatedStorage;
+        private ReleaseStatusValues _releaseStatus;
         private string _replicationInstanceClass;
         private string _storageType;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// List of availability zones for this replication instance.
+        /// List of Availability Zones for this replication instance.
         /// </para>
         /// </summary>
         public List<string> AvailabilityZones
@@ -150,6 +151,30 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetMinAllocatedStorage()
         {
             return this._minAllocatedStorage.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReleaseStatus. 
+        /// <para>
+        /// The value returned when the specified <code>EngineVersion</code> of the replication
+        /// instance is in Beta or test mode. This indicates some features might not work as expected.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// AWS DMS supports <code>ReleaseStatus</code> in versions 3.1.4 and later.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ReleaseStatusValues ReleaseStatus
+        {
+            get { return this._releaseStatus; }
+            set { this._releaseStatus = value; }
+        }
+
+        // Check to see if ReleaseStatus property is set
+        internal bool IsSetReleaseStatus()
+        {
+            return this._releaseStatus != null;
         }
 
         /// <summary>

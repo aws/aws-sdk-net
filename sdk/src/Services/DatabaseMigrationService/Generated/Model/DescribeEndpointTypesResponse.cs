@@ -58,7 +58,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SupportedEndpointTypes. 
         /// <para>
-        /// The type of endpoints that are supported.
+        /// The types of endpoints that are supported.
         /// </para>
         /// </summary>
         public List<SupportedEndpointType> SupportedEndpointTypes

@@ -157,7 +157,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: replication-instance | replication-server | security-group | migration-task
+        /// Valid values: replication-instance | replication-server | security-group | replication-task
         /// </para>
         /// </summary>
         public string SourceType

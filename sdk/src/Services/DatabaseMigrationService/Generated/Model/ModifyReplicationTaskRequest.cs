@@ -143,11 +143,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property MigrationType. 
         /// <para>
-        /// The migration type.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values: full-load | cdc | full-load-and-cdc
+        /// The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
+        /// 
         /// </para>
         /// </summary>
         public MigrationTypeValue MigrationType
@@ -238,12 +235,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property TableMappings. 
         /// <para>
         /// When using the AWS CLI or boto3, provide the path of the JSON file that contains the
-        /// table mappings. Precede the path with "file://". When working with the DMS API, provide
-        /// the JSON as the parameter value.
-        /// </para>
-        ///  
-        /// <para>
-        /// For example, --table-mappings file://mappingfile.json
+        /// table mappings. Precede the path with <code>file://</code>. When working with the
+        /// DMS API, provide the JSON as the parameter value, for example: <code>--table-mappings
+        /// file://mappingfile.json</code> 
         /// </para>
         /// </summary>
         public string TableMappings

@@ -40,7 +40,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicationSubnetGroupDescription. 
         /// <para>
-        /// The description of the replication instance subnet group.
+        /// A description for the replication instance subnet group.
         /// </para>
         /// </summary>
         public string ReplicationSubnetGroupDescription

@@ -88,7 +88,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// The EC2 subnet IDs for the subnet group.
+        /// One or more subnet IDs to be assigned to the subnet group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -107,7 +107,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tag to be assigned to the subnet group.
+        /// One or more tags to be assigned to the subnet group.
         /// </para>
         /// </summary>
         public List<Tag> Tags

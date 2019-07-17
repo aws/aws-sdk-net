@@ -223,7 +223,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EndpointType. 
         /// <para>
-        /// The type of endpoint.
+        /// The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
         /// </para>
         /// </summary>
         public ReplicationEndpointTypeValue EndpointType
@@ -241,9 +241,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
-        /// The type of engine for the endpoint. Valid values, depending on the EndPointType,
+        /// The type of engine for the endpoint. Valid values, depending on the EndpointType,
         /// include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift, s3,
-        /// db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.
+        /// db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
         /// </para>
         /// </summary>
         public string EngineName
@@ -299,9 +299,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property KinesisSettings. 
         /// <para>
         /// Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more
-        /// information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping
-        /// ">Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
-        /// Database Migration User Guide.</i> 
+        /// information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
+        /// Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database
+        /// Migration User Guide.</i> 
         /// </para>
         /// </summary>
         public KinesisSettings KinesisSettings
@@ -449,15 +449,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SslMode. 
         /// <para>
-        /// The SSL mode to be used.
-        /// </para>
-        ///  
-        /// <para>
-        /// SSL mode can be one of four values: none, require, verify-ca, verify-full. 
-        /// </para>
-        ///  
-        /// <para>
-        /// The default value is none.
+        /// The SSL mode used to connect to the endpoint. The default value is <code>none</code>.
         /// </para>
         /// </summary>
         public DmsSslModeValue SslMode

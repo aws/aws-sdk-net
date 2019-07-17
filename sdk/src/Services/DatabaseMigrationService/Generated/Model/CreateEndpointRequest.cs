@@ -114,7 +114,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         ///  <code>compressionType</code> - An optional parameter to use GZIP to compress the
         /// target files. To use GZIP, set this value to <code>NONE</code> (the default). To keep
-        /// the files uncompressed, don't use this value. 
+        /// the files uncompressed, don't use this value.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -205,7 +205,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EndpointType. 
         /// <para>
-        /// The type of endpoint.
+        /// The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -224,7 +224,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
-        /// The type of engine for the endpoint. Valid values, depending on the <code>EndPointType</code>
+        /// The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code>
         /// value, include <code>mysql</code>, <code>oracle</code>, <code>postgres</code>, <code>mariadb</code>,
         /// <code>aurora</code>, <code>aurora-postgresql</code>, <code>redshift</code>, <code>s3</code>,
         /// <code>db2</code>, <code>azuredb</code>, <code>sybase</code>, <code>dynamodb</code>,
@@ -265,7 +265,12 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ExtraConnectionAttributes. 
         /// <para>
-        /// Additional attributes associated with the connection.
+        /// Additional attributes associated with the connection. Each attribute is specified
+        /// as a name-value pair associated by an equal sign (=). Multiple attributes are separated
+        /// by a semicolon (;) with no additional white space. For information on the attributes
+        /// available for connecting your source or target endpoint, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working
+        /// with AWS DMS Endpoints</a> in the <i>AWS Database Migration Service User Guide.</i>
+        /// 
         /// </para>
         /// </summary>
         public string ExtraConnectionAttributes
@@ -284,9 +289,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property KinesisSettings. 
         /// <para>
         /// Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more
-        /// information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping
-        /// ">Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
-        /// Database Migration User Guide.</i> 
+        /// information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
+        /// Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database
+        /// Migration User Guide.</i> 
         /// </para>
         /// </summary>
         public KinesisSettings KinesisSettings
@@ -304,10 +309,18 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS KMS key identifier to use to encrypt the connection parameters. If you don't
-        /// specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default
-        /// encryption key. AWS KMS creates the default encryption key for your AWS account. Your
-        /// AWS account has a different default encryption key for each AWS Region.
+        /// An AWS KMS key identifier that is used to encrypt the connection parameters for the
+        /// endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS
+        /// uses your default encryption key.
+        /// </para>
+        ///  
+        /// <para>
+        /// AWS KMS creates the default encryption key for your AWS account. Your AWS account
+        /// has a different default encryption key for each AWS Region.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -455,9 +468,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SslMode. 
         /// <para>
-        /// The Secure Sockets Layer (SSL) mode to use for the SSL connection. The SSL mode can
-        /// be one of four values: <code>none</code>, <code>require</code>, <code>verify-ca</code>,
-        /// <code>verify-full</code>. The default value is <code>none</code>.
+        /// The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is
+        /// <code>none</code> 
         /// </para>
         /// </summary>
         public DmsSslModeValue SslMode
@@ -475,7 +487,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags to be added to the endpoint.
+        /// One or more tags to be assigned to the endpoint.
         /// </para>
         /// </summary>
         public List<Tag> Tags

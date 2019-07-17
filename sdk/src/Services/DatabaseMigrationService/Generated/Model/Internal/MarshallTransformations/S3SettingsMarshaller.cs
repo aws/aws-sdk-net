@@ -123,6 +123,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ExternalTableDefinition);
             }
 
+            if(requestObject.IsSetIncludeOpForFullLoad())
+            {
+                context.Writer.WritePropertyName("IncludeOpForFullLoad");
+                context.Writer.Write(requestObject.IncludeOpForFullLoad);
+            }
+
             if(requestObject.IsSetParquetVersion())
             {
                 context.Writer.WritePropertyName("ParquetVersion");
@@ -145,6 +151,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ServiceAccessRoleArn");
                 context.Writer.Write(requestObject.ServiceAccessRoleArn);
+            }
+
+            if(requestObject.IsSetTimestampColumnName())
+            {
+                context.Writer.WritePropertyName("TimestampColumnName");
+                context.Writer.Write(requestObject.TimestampColumnName);
             }
 
         }
