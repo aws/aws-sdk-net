@@ -89,7 +89,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is not supported if the policy type is <code>StepScaling</code>.
+        /// This parameter is not supported if the policy type is <code>StepScaling</code> or
+        /// <code>TargetTrackingScaling</code>.
         /// </para>
         ///  
         /// <para>

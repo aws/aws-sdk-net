@@ -83,7 +83,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The date and time that the action is scheduled to end. 
+        /// The date and time in UTC for the recurring schedule to end. For example, <code>"2019-06-01T00:00:00Z"</code>.
+        /// 
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -101,7 +102,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxSize. 
         /// <para>
-        /// The maximum size of the group.
+        /// The maximum number of instances in the Auto Scaling group.
         /// </para>
         /// </summary>
         public int MaxSize
@@ -119,7 +120,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MinSize. 
         /// <para>
-        /// The minimum size of the group.
+        /// The minimum number of instances in the Auto Scaling group.
         /// </para>
         /// </summary>
         public int MinSize
@@ -137,7 +138,12 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Recurrence. 
         /// <para>
-        /// The recurring schedule for the action.
+        /// The recurring schedule for the action, in Unix cron syntax format. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>,
+        /// they form the boundaries of when the recurring action starts and stops.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -194,12 +200,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The date and time that the action is scheduled to begin. 
-        /// </para>
-        ///  
-        /// <para>
-        /// When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>,
-        /// they form the boundaries of when the recurring action starts and stops.
+        /// The date and time in UTC for this action to start. For example, <code>"2019-06-01T00:00:00Z"</code>.
+        /// 
         /// </para>
         /// </summary>
         public DateTime StartTime

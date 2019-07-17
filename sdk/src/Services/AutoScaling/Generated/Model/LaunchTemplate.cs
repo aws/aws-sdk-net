@@ -65,11 +65,8 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property Overrides. 
         /// <para>
         /// Any parameters that you specify override the same parameters in the launch template.
-        /// Currently, the only supported override is instance type. 
-        /// </para>
-        ///  
-        /// <para>
-        /// You must specify between 2 and 20 overrides.
+        /// Currently, the only supported override is instance type. You must specify between
+        /// 2 and 20 overrides.
         /// </para>
         /// </summary>
         public List<LaunchTemplateOverrides> Overrides

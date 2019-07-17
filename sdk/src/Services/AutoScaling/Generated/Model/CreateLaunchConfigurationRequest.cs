@@ -200,9 +200,9 @@ namespace Amazon.AutoScaling.Model
         /// EC2 instances launched with an IAM role automatically have AWS security credentials
         /// available. You can use IAM roles with Amazon EC2 Auto Scaling to automatically enable
         /// applications running on your EC2 instances to securely access other AWS resources.
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">Use
-        /// an IAM Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon
-        /// EC2 Auto Scaling User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
+        /// Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2 Auto
+        /// Scaling User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
@@ -254,11 +254,6 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// If you do not specify <code>InstanceId</code>, you must specify both <code>ImageId</code>
-        /// and <code>InstanceType</code>.
-        /// </para>
-        ///  
-        /// <para>
         /// To create a launch configuration with a block device mapping or override any other
         /// instance attributes, specify them as part of the same request.
         /// </para>
@@ -267,6 +262,11 @@ namespace Amazon.AutoScaling.Model
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Create
         /// a Launch Configuration Using an EC2 Instance</a> in the <i>Amazon EC2 Auto Scaling
         /// User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not specify <code>InstanceId</code>, you must specify both <code>ImageId</code>
+        /// and <code>InstanceType</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=19)]
@@ -308,12 +308,12 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// If you do not specify <code>InstanceId</code>, you must specify <code>InstanceType</code>.
+        /// For information about available instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
+        /// Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> 
         /// </para>
         ///  
         /// <para>
-        /// For information about available instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-        /// Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> 
+        /// If you do not specify <code>InstanceId</code>, you must specify <code>InstanceType</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -371,8 +371,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchConfigurationName. 
         /// <para>
-        /// The name of the launch configuration. This name must be unique within the scope of
-        /// your AWS account.
+        /// The name of the launch configuration. This name must be unique per Region per account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -402,13 +401,13 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify this parameter, be sure to specify at least one subnet when you create
-        /// your group.
+        /// If you specify <code>PlacementTenancy</code>, be sure to specify at least one subnet
+        /// when you create your group.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching
-        /// Auto Scaling Instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-vpc-tenancy">Instance
+        /// Placement Tenancy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         ///  
         /// <para>

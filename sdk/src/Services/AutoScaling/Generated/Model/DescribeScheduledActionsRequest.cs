@@ -29,8 +29,9 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeScheduledActions operation.
-    /// Describes the actions scheduled for your Auto Scaling group that haven't run. To describe
-    /// the actions that have already run, use <a>DescribeScalingActivities</a>.
+    /// Describes the actions scheduled for your Auto Scaling group that haven't run or that
+    /// have not reached their end time. To describe the actions that have already run, use
+    /// <a>DescribeScalingActivities</a>.
     /// </summary>
     public partial class DescribeScheduledActionsRequest : AmazonAutoScalingRequest
     {

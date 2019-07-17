@@ -34,7 +34,7 @@ namespace Amazon.AutoScaling.Model
     /// <para>
     /// The instances distribution specifies the distribution of On-Demand Instances and Spot
     /// Instances, the maximum price to pay for Spot Instances, and how the Auto Scaling group
-    /// allocates instance types.
+    /// allocates instance types to fulfill On-Demand and Spot capacity.
     /// </para>
     /// </summary>
     public partial class InstancesDistribution
@@ -102,13 +102,12 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property OnDemandPercentageAboveBaseCapacity. 
         /// <para>
         /// Controls the percentages of On-Demand Instances and Spot Instances for your additional
-        /// capacity beyond <code>OnDemandBaseCapacity</code>.
+        /// capacity beyond <code>OnDemandBaseCapacity</code>. The range is 0–100.
         /// </para>
         ///  
         /// <para>
-        /// The range is 0–100. The default value is <code>100</code>. If you leave this parameter
-        /// set to <code>100</code>, the percentages are 100% for On-Demand Instances and 0% for
-        /// Spot Instances. 
+        /// The default value is <code>100</code>. If you leave this parameter set to <code>100</code>,
+        /// the percentages are 100% for On-Demand Instances and 0% for Spot Instances. 
         /// </para>
         /// </summary>
         public int OnDemandPercentageAboveBaseCapacity
@@ -152,11 +151,11 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The number of Spot pools to use to allocate your Spot capacity. The Spot pools are
         /// determined from the different instance types in the Overrides array of <a>LaunchTemplate</a>.
-        /// 
+        /// The range is 1–20.
         /// </para>
         ///  
         /// <para>
-        /// The range is 1–20 and the default is 2. 
+        /// The default value is <code>2</code>.
         /// </para>
         /// </summary>
         public int SpotInstancePools

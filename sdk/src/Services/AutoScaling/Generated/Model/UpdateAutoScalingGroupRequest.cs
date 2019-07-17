@@ -33,39 +33,56 @@ namespace Amazon.AutoScaling.Model
     /// 
     ///  
     /// <para>
-    /// The new settings take effect on any scaling activities after this call returns. Scaling
-    /// activities that are currently in progress aren't affected.
+    /// To update an Auto Scaling group, specify the name of the group and the parameter that
+    /// you want to change. Any parameters that you don't specify are not changed by this
+    /// update request. The new settings take effect on any scaling activities after this
+    /// call returns. Scaling activities that are currently in progress aren't affected.
     /// </para>
     ///  
     /// <para>
-    /// To update an Auto Scaling group with a launch configuration with <code>InstanceMonitoring</code>
-    /// set to <code>false</code>, you must first disable the collection of group metrics.
-    /// Otherwise, you get an error. If you have previously enabled the collection of group
-    /// metrics, you can disable it using <a>DisableMetricsCollection</a>.
+    /// If you associate a new launch configuration or template with an Auto Scaling group,
+    /// all new instances will get the updated configuration, but existing instances continue
+    /// to run with the configuration that they were originally launched with. When you update
+    /// a group to specify a mixed instances policy instead of a launch configuration or template,
+    /// existing instances may be replaced to match the new purchasing options that you specified
+    /// in the policy. For example, if the group currently has 100% On-Demand capacity and
+    /// the policy specifies 50% Spot capacity, this means that half of your instances will
+    /// be gradually terminated and relaunched as Spot Instances. When replacing instances,
+    /// Amazon EC2 Auto Scaling launches new instances before terminating the old ones, so
+    /// that updating your group does not compromise the performance or availability of your
+    /// application.
     /// </para>
     ///  
     /// <para>
-    /// Note the following:
+    /// Note the following about changing <code>DesiredCapacity</code>, <code>MaxSize</code>,
+    /// or <code>MinSize</code>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
+    /// If a scale-in event occurs as a result of a new <code>DesiredCapacity</code> value
+    /// that is lower than the current size of the group, the Auto Scaling group uses its
+    /// termination policy to determine which instances to terminate.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// If you specify a new value for <code>MinSize</code> without specifying a value for
     /// <code>DesiredCapacity</code>, and the new <code>MinSize</code> is larger than the
-    /// current size of the group, we implicitly call <a>SetDesiredCapacity</a> to set the
-    /// size of the group to the new value of <code>MinSize</code>.
+    /// current size of the group, this sets the group's <code>DesiredCapacity</code> to the
+    /// new <code>MinSize</code> value.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// If you specify a new value for <code>MaxSize</code> without specifying a value for
     /// <code>DesiredCapacity</code>, and the new <code>MaxSize</code> is smaller than the
-    /// current size of the group, we implicitly call <a>SetDesiredCapacity</a> to set the
-    /// size of the group to the new value of <code>MaxSize</code>.
+    /// current size of the group, this sets the group's <code>DesiredCapacity</code> to the
+    /// new <code>MaxSize</code> value.
     /// </para>
-    ///  </li> <li> 
+    ///  </li> </ul> 
     /// <para>
-    /// All other optional parameters are left unchanged if not specified.
+    /// To see which parameters have been set, use <a>DescribeAutoScalingGroups</a>. You can
+    /// also view the scaling policies for an Auto Scaling group using <a>DescribePolicies</a>.
+    /// If the group has scaling policies, you can update them using <a>PutScalingPolicy</a>.
     /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class UpdateAutoScalingGroupRequest : AmazonAutoScalingRequest
     {
@@ -128,11 +145,13 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property DefaultCooldown. 
         /// <para>
         /// The amount of time, in seconds, after a scaling activity completes before another
-        /// scaling activity can start. The default value is <code>300</code>.
+        /// scaling activity can start. The default value is <code>300</code>. This cooldown period
+        /// is not used when a scaling-specific cooldown is specified.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
+        /// Cooldown periods are not supported for target tracking scaling policies, step scaling
+        /// policies, or scheduled scaling. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
         /// Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -223,9 +242,17 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchConfigurationName. 
         /// <para>
-        /// The name of the launch configuration. If you specify this parameter, you can't specify
-        /// a launch template or a mixed instances policy.
+        /// The name of the launch configuration. If you specify <code>LaunchConfigurationName</code>
+        /// in your update request, you can't specify <code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// To update an Auto Scaling group with a launch configuration with <code>InstanceMonitoring</code>
+        /// set to <code>false</code>, you must first disable the collection of group metrics.
+        /// Otherwise, you get an error. If you have previously enabled the collection of group
+        /// metrics, you can disable it using <a>DisableMetricsCollection</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
         public string LaunchConfigurationName
@@ -243,8 +270,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplate. 
         /// <para>
-        /// The launch template and version to use to specify the updates. If you specify this
-        /// parameter, you can't specify a launch configuration or a mixed instances policy.
+        /// The launch template and version to use to specify the updates. If you specify <code>LaunchTemplate</code>
+        /// in your update request, you can't specify <code>LaunchConfigurationName</code> or
+        /// <code>MixedInstancesPolicy</code>.
         /// </para>
         /// </summary>
         public LaunchTemplateSpecification LaunchTemplate
@@ -298,8 +326,12 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MixedInstancesPolicy. 
         /// <para>
-        /// The mixed instances policy to use to specify the updates. If you specify this parameter,
-        /// you can't specify a launch configuration or a launch template. 
+        /// An embedded object that specifies a mixed instances policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// In your call to <code>UpdateAutoScalingGroup</code>, you can make changes to the policy
+        /// that is specified. All optional parameters are left unchanged if not specified.
         /// </para>
         ///  
         /// <para>
@@ -417,7 +449,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property VPCZoneIdentifier. 
         /// <para>
-        /// A comma-separated list of subnet IDs, if you are launching into a VPC.
+        /// A comma-separated list of subnet IDs for virtual private cloud (VPC).
         /// </para>
         ///  
         /// <para>

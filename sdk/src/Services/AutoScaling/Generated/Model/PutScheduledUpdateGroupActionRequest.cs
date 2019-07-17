@@ -73,7 +73,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DesiredCapacity. 
         /// <para>
-        /// The number of EC2 instances that should be running in the group.
+        /// The number of EC2 instances that should be running in the Auto Scaling group.
         /// </para>
         /// </summary>
         public int DesiredCapacity
@@ -91,8 +91,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property EndTimeUtc. 
         /// <para>
-        /// The time for the recurring schedule to end. Amazon EC2 Auto Scaling does not perform
-        /// the action after this time.
+        /// The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling does
+        /// not perform the action after this time. 
         /// </para>
         /// </summary>
         public DateTime EndTimeUtc
@@ -110,7 +110,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxSize. 
         /// <para>
-        /// The maximum size for the Auto Scaling group.
+        /// The maximum number of instances in the Auto Scaling group.
         /// </para>
         /// </summary>
         public int MaxSize
@@ -128,7 +128,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MinSize. 
         /// <para>
-        /// The minimum size for the Auto Scaling group.
+        /// The minimum number of instances in the Auto Scaling group.
         /// </para>
         /// </summary>
         public int MinSize
@@ -150,6 +150,11 @@ namespace Amazon.AutoScaling.Model
         /// of five fields separated by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year]
         /// [Day_of_Week]. The value must be in quotes (for example, <code>"30 0 1 1,6,12 *"</code>).
         /// For more information about this format, see <a href="http://crontab.org">Crontab</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>,
+        /// they form the boundaries of when the recurring action starts and stops.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -187,8 +192,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property StartTimeUtc. 
         /// <para>
-        /// The time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT only
-        /// and in quotes (for example, <code>"2019-06-01T00:00:00Z"</code>).
+        /// The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT
+        /// only and in quotes (for example, <code>"2019-06-01T00:00:00Z"</code>).
         /// </para>
         ///  
         /// <para>
@@ -249,8 +254,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// The time for the recurring schedule to end. Amazon EC2 Auto Scaling does not perform
-        /// the action after this time.
+        /// The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling does
+        /// not perform the action after this time. 
         /// </para>
         /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
@@ -279,8 +284,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// The time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT only
-        /// and in quotes (for example, <code>"2019-06-01T00:00:00Z"</code>).
+        /// The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT
+        /// only and in quotes (for example, <code>"2019-06-01T00:00:00Z"</code>).
         /// </para>
         ///  
         /// <para>

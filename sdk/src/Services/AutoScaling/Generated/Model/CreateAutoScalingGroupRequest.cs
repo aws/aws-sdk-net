@@ -66,8 +66,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        /// The name of the Auto Scaling group. This name must be unique within the scope of your
-        /// AWS account.
+        /// The name of the Auto Scaling group. This name must be unique per Region per account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -135,10 +134,10 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DesiredCapacity. 
         /// <para>
-        /// The number of EC2 instances that should be running in the group. This number must
-        /// be greater than or equal to the minimum size of the group and less than or equal to
-        /// the maximum size of the group. If you do not specify a desired capacity, the default
-        /// is the minimum size of the group.
+        /// The number of Amazon EC2 instances that the Auto Scaling group attempts to maintain.
+        /// This number must be greater than or equal to the minimum size of the group and less
+        /// than or equal to the maximum size of the group. If you do not specify a desired capacity,
+        /// the default is the minimum size of the group.
         /// </para>
         /// </summary>
         public int DesiredCapacity
@@ -213,8 +212,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The ID of the instance used to create a launch configuration for the group. This parameter,
-        /// a launch configuration, a launch template, or a mixed instances policy must be specified.
+        /// The ID of the instance used to create a launch configuration for the group.
         /// </para>
         ///  
         /// <para>
@@ -227,6 +225,11 @@ namespace Amazon.AutoScaling.Model
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Create
         /// an Auto Scaling Group Using an EC2 Instance</a> in the <i>Amazon EC2 Auto Scaling
         /// User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify one of the following parameters in your request: <code>LaunchConfigurationName</code>,
+        /// <code>LaunchTemplate</code>, <code>InstanceId</code>, or <code>MixedInstancesPolicy</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=19)]
@@ -245,14 +248,19 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchConfigurationName. 
         /// <para>
-        /// The name of the launch configuration. This parameter, a launch template, a mixed instances
-        /// policy, or an EC2 instance must be specified.
+        /// The name of the launch configuration.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg.html">Creating
         /// an Auto Scaling Group Using a Launch Configuration</a> in the <i>Amazon EC2 Auto Scaling
         /// User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not specify <code>LaunchConfigurationName</code>, you must specify one of
+        /// the following parameters: <code>InstanceId</code>, <code>LaunchTemplate</code>, or
+        /// <code>MixedInstancesPolicy</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
@@ -271,14 +279,18 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplate. 
         /// <para>
-        /// The launch template to use to launch instances. This parameter, a launch configuration,
-        /// a mixed instances policy, or an EC2 instance must be specified.
+        /// The launch template to use to launch instances.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-launch-template.html">Creating
         /// an Auto Scaling Group Using a Launch Template</a> in the <i>Amazon EC2 Auto Scaling
         /// User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not specify <code>LaunchTemplate</code>, you must specify one of the following
+        /// parameters: <code>InstanceId</code>, <code>LaunchConfigurationName</code>, or <code>MixedInstancesPolicy</code>.
         /// </para>
         /// </summary>
         public LaunchTemplateSpecification LaunchTemplate
@@ -314,13 +326,14 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerNames. 
         /// <para>
-        /// One or more Classic Load Balancers. To specify an Application Load Balancer or a Network
-        /// Load Balancer, use <code>TargetGroupARNs</code> instead.
+        /// A list of Classic Load Balancers associated with this Auto Scaling group. For Application
+        /// Load Balancers and Network Load Balancers, specify a list of target groups using the
+        /// <code>TargetGroupARNs</code> property instead.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using
-        /// a Load Balancer With an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User
+        /// a Load Balancer with an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User
         /// Guide</i>.
         /// </para>
         /// </summary>
@@ -377,14 +390,28 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MixedInstancesPolicy. 
         /// <para>
-        /// The mixed instances policy to use to launch instances. This parameter, a launch template,
-        /// a launch configuration, or an EC2 instance must be specified.
+        /// An embedded object that specifies a mixed instances policy. The required parameters
+        /// must be specified. If optional parameters are unspecified, their default values are
+        /// used.
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes parameters that not only define the distribution of On-Demand
+        /// Instances and Spot Instances, the maximum price to pay for Spot instances, and how
+        /// the Auto Scaling group allocates instance types to fulfill On-Demand and Spot capacity,
+        /// but also the parameters that specify the instance configuration information—the launch
+        /// template and instance types.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
         /// Scaling Groups with Multiple Instance Types and Purchase Options</a> in the <i>Amazon
         /// EC2 Auto Scaling User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify one of the following parameters in your request: <code>LaunchConfigurationName</code>,
+        /// <code>LaunchTemplate</code>, <code>InstanceId</code>, or <code>MixedInstancesPolicy</code>.
         /// </para>
         /// </summary>
         public MixedInstancesPolicy MixedInstancesPolicy
@@ -496,7 +523,15 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property TargetGroupARNs. 
         /// <para>
-        /// The Amazon Resource Names (ARN) of the target groups.
+        /// The Amazon Resource Names (ARN) of the target groups to associate with the Auto Scaling
+        /// group. Instances are registered as targets in a target group, and traffic is routed
+        /// to the target group.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using
+        /// a Load Balancer with an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public List<string> TargetGroupARNs

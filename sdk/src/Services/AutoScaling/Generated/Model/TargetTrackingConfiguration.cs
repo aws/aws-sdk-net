@@ -41,7 +41,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property CustomizedMetricSpecification. 
         /// <para>
-        /// A customized metric. You can specify either a predefined metric or a customized metric.
+        /// A customized metric. You must specify either a predefined metric or a customized metric.
         /// </para>
         /// </summary>
         public CustomizedMetricSpecification CustomizedMetricSpecification
@@ -62,7 +62,7 @@ namespace Amazon.AutoScaling.Model
         /// Indicates whether scaling in by the target tracking scaling policy is disabled. If
         /// scaling in is disabled, the target tracking scaling policy doesn't remove instances
         /// from the Auto Scaling group. Otherwise, the target tracking scaling policy can remove
-        /// instances from the Auto Scaling group. The default is disabled.
+        /// instances from the Auto Scaling group. The default is <code>false</code>.
         /// </para>
         /// </summary>
         public bool DisableScaleIn
@@ -80,7 +80,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PredefinedMetricSpecification. 
         /// <para>
-        /// A predefined metric. You can specify either a predefined metric or a customized metric.
+        /// A predefined metric. You must specify either a predefined metric or a customized metric.
         /// </para>
         /// </summary>
         public PredefinedMetricSpecification PredefinedMetricSpecification

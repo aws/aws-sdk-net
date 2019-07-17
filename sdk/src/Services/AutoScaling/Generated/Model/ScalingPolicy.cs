@@ -243,7 +243,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PolicyType. 
         /// <para>
-        /// The policy type. The valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
+        /// The policy type. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>,
+        /// and <code>TargetTrackingScaling</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
