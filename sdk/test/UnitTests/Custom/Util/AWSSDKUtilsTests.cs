@@ -134,5 +134,58 @@ namespace AWSSDK.UnitTests
             const string text = "qqdglmcdoxtqiwwlucjv      xtehwhfhchtkhgoufyzgtkxvgcmcyvifp  sgseqpnzvaecjcwdjsylcilfkh";
             Assert.IsFalse(AWSSDKUtils.CompressSpaces(text).Contains("  "));
         }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        public void TestIsPropertySet()
+        {
+            var shape = new Amazon.EC2.Model.CreateCapacityReservationRequest();
+            Assert.IsFalse(AWSSDKUtils.IsPropertySet(shape, nameof(shape.EbsOptimized)));
+            Assert.IsFalse(AWSSDKUtils.IsPropertySet(shape, nameof(shape.EndDate)));
+            Assert.IsFalse(AWSSDKUtils.IsPropertySet(shape, nameof(shape.ClientToken)));
+
+            shape.EbsOptimized = true;
+            shape.EndDate = DateTime.UtcNow;
+            shape.ClientToken = "";
+
+            Assert.IsTrue(AWSSDKUtils.IsPropertySet(shape, nameof(shape.EbsOptimized)));
+            Assert.IsTrue(AWSSDKUtils.IsPropertySet(shape, nameof(shape.EndDate)));
+            Assert.IsTrue(AWSSDKUtils.IsPropertySet(shape, nameof(shape.ClientToken)));
+
+            try
+            {
+                AWSSDKUtils.IsPropertySet(shape, "foo");
+                Assert.Fail();
+            }
+            catch (Exception e)
+            {
+                //We expect ArgumentException for non existing properties
+                Assert.IsInstanceOfType(e, typeof(ArgumentException));
+            }
+
+            try
+            {
+                AWSSDKUtils.IsPropertySet(Amazon.EC2.PrincipalType.Account, "foo");
+                Assert.Fail();
+            }
+            catch (Exception e)
+            {
+                //We expect ArgumentException for classes in non-Model namespaces
+                Assert.IsInstanceOfType(e, typeof(ArgumentException));
+            }
+
+            var s3Shape = new Amazon.S3.Model.PutObjectTaggingRequest();
+            try
+            {
+                AWSSDKUtils.IsPropertySet(s3Shape, nameof(s3Shape.BucketName));
+                Assert.Fail();
+            }
+            catch (Exception e)
+            {
+                //We expect ArgumentException for S3 model classes
+                Assert.IsInstanceOfType(e, typeof(ArgumentException));
+            }
+        }
     }
 }

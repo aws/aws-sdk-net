@@ -145,6 +145,25 @@ namespace Amazon.Runtime.Internal.Util
         }
 
         /// <summary>
+        /// Try to get the value associated with the key, if it doesn't exist, use the provided factory method to 
+        /// create a new value and tries adding it to the cache.
+        /// </summary>
+        /// <param name="key">the key to look up</param>
+        /// <param name="factory">the factory method used in case the key is not present in the cache</param>
+        /// <returns>the looked up value or the value created by the factory</returns>
+        public TValue GetOrAdd(TKey key, Func<TKey, TValue> factory)
+        {
+            TValue value;
+            if (TryGetValue(key, out value))
+            {
+                return value;
+            }
+            value = factory(key);
+            AddOrUpdate(key, value);
+            return value;
+        }
+
+        /// <summary>
         /// Clear the LruCache of all entries.
         /// </summary>
         public void Clear()
