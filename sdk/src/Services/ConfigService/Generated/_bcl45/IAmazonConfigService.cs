@@ -559,6 +559,9 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConfigRuleException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
+        /// No permission to call the EnableAWSServiceAccess API.
+        /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
         /// The rule is currently being deleted or the rule is deleting your evaluation results.
         /// Try your request again later.
@@ -579,6 +582,9 @@ namespace Amazon.ConfigService
         /// <returns>The response from the DeleteOrganizationConfigRule service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConfigRuleException">
         /// 
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
+        /// No permission to call the EnableAWSServiceAccess API.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
         /// The rule is currently being deleted or the rule is deleting your evaluation results.
@@ -1821,6 +1827,9 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConfigRuleException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
+        /// No permission to call the EnableAWSServiceAccess API.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules">REST API Reference for DescribeOrganizationConfigRules Operation</seealso>
         DescribeOrganizationConfigRulesResponse DescribeOrganizationConfigRules(DescribeOrganizationConfigRulesRequest request);
 
@@ -1844,6 +1853,9 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConfigRuleException">
         /// 
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
+        /// No permission to call the EnableAWSServiceAccess API.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules">REST API Reference for DescribeOrganizationConfigRules Operation</seealso>
         Task<DescribeOrganizationConfigRulesResponse> DescribeOrganizationConfigRulesAsync(DescribeOrganizationConfigRulesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1869,6 +1881,9 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConfigRuleException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
+        /// No permission to call the EnableAWSServiceAccess API.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRuleStatuses">REST API Reference for DescribeOrganizationConfigRuleStatuses Operation</seealso>
         DescribeOrganizationConfigRuleStatusesResponse DescribeOrganizationConfigRuleStatuses(DescribeOrganizationConfigRuleStatusesRequest request);
 
@@ -1892,6 +1907,9 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConfigRuleException">
         /// 
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
+        /// No permission to call the EnableAWSServiceAccess API.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRuleStatuses">REST API Reference for DescribeOrganizationConfigRuleStatuses Operation</seealso>
         Task<DescribeOrganizationConfigRuleStatusesResponse> DescribeOrganizationConfigRuleStatusesAsync(DescribeOrganizationConfigRuleStatusesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2699,6 +2717,9 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConfigRuleException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
+        /// No permission to call the EnableAWSServiceAccess API.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus">REST API Reference for GetOrganizationConfigRuleDetailedStatus Operation</seealso>
         GetOrganizationConfigRuleDetailedStatusResponse GetOrganizationConfigRuleDetailedStatus(GetOrganizationConfigRuleDetailedStatusRequest request);
 
@@ -2722,6 +2743,9 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConfigRuleException">
         /// 
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
+        /// No permission to call the EnableAWSServiceAccess API.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus">REST API Reference for GetOrganizationConfigRuleDetailedStatus Operation</seealso>
         Task<GetOrganizationConfigRuleDetailedStatusResponse> GetOrganizationConfigRuleDetailedStatusAsync(GetOrganizationConfigRuleDetailedStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));

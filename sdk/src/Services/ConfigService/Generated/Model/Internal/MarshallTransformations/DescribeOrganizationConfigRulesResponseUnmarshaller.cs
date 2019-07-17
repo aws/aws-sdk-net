@@ -90,6 +90,10 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             {
                 return new NoSuchOrganizationConfigRuleException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("OrganizationAccessDeniedException"))
+            {
+                return new OrganizationAccessDeniedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonConfigServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 

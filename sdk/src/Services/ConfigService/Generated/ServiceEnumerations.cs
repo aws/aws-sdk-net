@@ -598,6 +598,18 @@ namespace Amazon.ConfigService
         /// Constant DELETE_SUCCESSFUL for MemberAccountRuleStatus
         /// </summary>
         public static readonly MemberAccountRuleStatus DELETE_SUCCESSFUL = new MemberAccountRuleStatus("DELETE_SUCCESSFUL");
+        /// <summary>
+        /// Constant UPDATE_FAILED for MemberAccountRuleStatus
+        /// </summary>
+        public static readonly MemberAccountRuleStatus UPDATE_FAILED = new MemberAccountRuleStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATE_IN_PROGRESS for MemberAccountRuleStatus
+        /// </summary>
+        public static readonly MemberAccountRuleStatus UPDATE_IN_PROGRESS = new MemberAccountRuleStatus("UPDATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant UPDATE_SUCCESSFUL for MemberAccountRuleStatus
+        /// </summary>
+        public static readonly MemberAccountRuleStatus UPDATE_SUCCESSFUL = new MemberAccountRuleStatus("UPDATE_SUCCESSFUL");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -776,6 +788,18 @@ namespace Amazon.ConfigService
         /// Constant DELETE_SUCCESSFUL for OrganizationRuleStatus
         /// </summary>
         public static readonly OrganizationRuleStatus DELETE_SUCCESSFUL = new OrganizationRuleStatus("DELETE_SUCCESSFUL");
+        /// <summary>
+        /// Constant UPDATE_FAILED for OrganizationRuleStatus
+        /// </summary>
+        public static readonly OrganizationRuleStatus UPDATE_FAILED = new OrganizationRuleStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATE_IN_PROGRESS for OrganizationRuleStatus
+        /// </summary>
+        public static readonly OrganizationRuleStatus UPDATE_IN_PROGRESS = new OrganizationRuleStatus("UPDATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant UPDATE_SUCCESSFUL for OrganizationRuleStatus
+        /// </summary>
+        public static readonly OrganizationRuleStatus UPDATE_SUCCESSFUL = new OrganizationRuleStatus("UPDATE_SUCCESSFUL");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
