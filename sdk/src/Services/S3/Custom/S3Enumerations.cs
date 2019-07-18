@@ -311,6 +311,10 @@ namespace Amazon.S3
         /// </summary>
         public static readonly S3Region GOVW1 = new S3Region("us-gov-west-1");
         /// <summary>
+        /// Specifies that the S3 Bucket should use the AP-EAST-1 locality.
+        /// </summary>
+        public static readonly S3Region APE1 = new S3Region("ap-east-1"); 
+        /// <summary>
         /// Specifies that the S3 Bucket should use the AP-SOUTHEAST-1 locality.
         /// </summary>
         public static readonly S3Region APS1 = new S3Region("ap-southeast-1");
