@@ -72,7 +72,7 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         ///  <b>Required:</b> Only available when creating a replication group in an Amazon VPC
-        /// using redis version <code>3.2.6</code> or <code>4.x</code>.
+        /// using redis version <code>3.2.6</code>, <code>4.x</code> or later.
         /// </para>
         ///  
         /// <para>
@@ -709,7 +709,7 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         ///  <b>Required:</b> Only available when creating a replication group in an Amazon VPC
-        /// using redis version <code>3.2.6</code> or <code>4.x</code>.
+        /// using redis version <code>3.2.6</code>, <code>4.x</code> or later.
         /// </para>
         ///  
         /// <para>

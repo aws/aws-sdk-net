@@ -40,7 +40,7 @@ namespace Amazon.ElastiCache.Model
     /// </para>
     ///  
     /// <para>
-    /// A Redis (cluster mode enabled) replication group is a collection of 1 to 15 node groups
+    /// A Redis (cluster mode enabled) replication group is a collection of 1 to 90 node groups
     /// (shards). Each node group (shard) has one read/write primary node and up to 5 read-only
     /// replica nodes. Writes to the primary are asynchronously propagated to the replicas.
     /// Redis (cluster mode enabled) replication groups partition the data across node groups
@@ -108,7 +108,7 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         ///  <b>Required:</b> Only available when creating a replication group in an Amazon VPC
-        /// using redis version <code>3.2.6</code> or <code>4.x</code>.
+        /// using redis version <code>3.2.6</code>, <code>4.x</code> or later.
         /// </para>
         ///  
         /// <para>
@@ -1005,7 +1005,7 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         ///  <b>Required:</b> Only available when creating a replication group in an Amazon VPC
-        /// using redis version <code>3.2.6</code> or <code>4.x</code>.
+        /// using redis version <code>3.2.6</code>, <code>4.x</code> or later.
         /// </para>
         ///  
         /// <para>

@@ -108,7 +108,7 @@ namespace Amazon.ElastiCache.Model
     ///  
     /// <para>
     ///  <b>Solution:</b> Add List and Read permissions on the bucket. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html">Step
+    /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
     /// 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User Guide.
     /// </para>
     ///  </li> <li> 
@@ -119,7 +119,7 @@ namespace Amazon.ElastiCache.Model
     ///  
     /// <para>
     ///  <b>Solution:</b> Add Upload/Delete permissions on the bucket. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html">Step
+    /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
     /// 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User Guide.
     /// </para>
     ///  </li> <li> 
@@ -130,7 +130,7 @@ namespace Amazon.ElastiCache.Model
     ///  
     /// <para>
     ///  <b>Solution:</b> Add View Permissions on the bucket. For more information, see <a
-    /// href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html">Step
+    /// href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
     /// 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User Guide.
     /// </para>
     ///  </li> </ul>

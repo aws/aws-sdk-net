@@ -638,7 +638,7 @@ namespace Amazon.ElastiCache
         ///  
         /// <para>
         ///  <b>Solution:</b> Add List and Read permissions on the bucket. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html">Step
+        /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
         /// 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User Guide.
         /// </para>
         ///  </li> <li> 
@@ -649,7 +649,7 @@ namespace Amazon.ElastiCache
         ///  
         /// <para>
         ///  <b>Solution:</b> Add Upload/Delete permissions on the bucket. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html">Step
+        /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
         /// 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User Guide.
         /// </para>
         ///  </li> <li> 
@@ -660,7 +660,7 @@ namespace Amazon.ElastiCache
         ///  
         /// <para>
         ///  <b>Solution:</b> Add View Permissions on the bucket. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html">Step
+        /// href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
         /// 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User Guide.
         /// </para>
         ///  </li> </ul>
@@ -777,7 +777,7 @@ namespace Amazon.ElastiCache
         ///  
         /// <para>
         ///  <b>Solution:</b> Add List and Read permissions on the bucket. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html">Step
+        /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
         /// 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User Guide.
         /// </para>
         ///  </li> <li> 
@@ -788,7 +788,7 @@ namespace Amazon.ElastiCache
         ///  
         /// <para>
         ///  <b>Solution:</b> Add Upload/Delete permissions on the bucket. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html">Step
+        /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
         /// 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User Guide.
         /// </para>
         ///  </li> <li> 
@@ -799,7 +799,7 @@ namespace Amazon.ElastiCache
         ///  
         /// <para>
         ///  <b>Solution:</b> Add View Permissions on the bucket. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html">Step
+        /// href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
         /// 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User Guide.
         /// </para>
         ///  </li> </ul>
@@ -1291,7 +1291,7 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  
         /// <para>
-        /// A Redis (cluster mode enabled) replication group is a collection of 1 to 15 node groups
+        /// A Redis (cluster mode enabled) replication group is a collection of 1 to 90 node groups
         /// (shards). Each node group (shard) has one read/write primary node and up to 5 read-only
         /// replica nodes. Writes to the primary are asynchronously propagated to the replicas.
         /// Redis (cluster mode enabled) replication groups partition the data across node groups
@@ -1353,7 +1353,7 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.NodeGroupsPerReplicationGroupQuotaExceededException">
         /// The request cannot be processed because it would exceed the maximum allowed number
-        /// of node groups (shards) in a single replication group. The default maximum is 15
+        /// of node groups (shards) in a single replication group. The default maximum is 90
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.NodeQuotaForClusterExceededException">
         /// The request cannot be processed because it would exceed the allowed number of cache
@@ -1394,7 +1394,7 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  
         /// <para>
-        /// A Redis (cluster mode enabled) replication group is a collection of 1 to 15 node groups
+        /// A Redis (cluster mode enabled) replication group is a collection of 1 to 90 node groups
         /// (shards). Each node group (shard) has one read/write primary node and up to 5 read-only
         /// replica nodes. Writes to the primary are asynchronously propagated to the replicas.
         /// Redis (cluster mode enabled) replication groups partition the data across node groups
@@ -1459,7 +1459,7 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.NodeGroupsPerReplicationGroupQuotaExceededException">
         /// The request cannot be processed because it would exceed the maximum allowed number
-        /// of node groups (shards) in a single replication group. The default maximum is 15
+        /// of node groups (shards) in a single replication group. The default maximum is 90
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.NodeQuotaForClusterExceededException">
         /// The request cannot be processed because it would exceed the allowed number of cache
@@ -1662,7 +1662,7 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.NodeGroupsPerReplicationGroupQuotaExceededException">
         /// The request cannot be processed because it would exceed the maximum allowed number
-        /// of node groups (shards) in a single replication group. The default maximum is 15
+        /// of node groups (shards) in a single replication group. The default maximum is 90
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.NodeQuotaForCustomerExceededException">
         /// The request cannot be processed because it would exceed the allowed number of cache
@@ -1726,7 +1726,7 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.NodeGroupsPerReplicationGroupQuotaExceededException">
         /// The request cannot be processed because it would exceed the maximum allowed number
-        /// of node groups (shards) in a single replication group. The default maximum is 15
+        /// of node groups (shards) in a single replication group. The default maximum is 90
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.NodeQuotaForCustomerExceededException">
         /// The request cannot be processed because it would exceed the allowed number of cache
@@ -3841,7 +3841,7 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.NodeGroupsPerReplicationGroupQuotaExceededException">
         /// The request cannot be processed because it would exceed the maximum allowed number
-        /// of node groups (shards) in a single replication group. The default maximum is 15
+        /// of node groups (shards) in a single replication group. The default maximum is 90
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.NodeQuotaForCustomerExceededException">
         /// The request cannot be processed because it would exceed the allowed number of cache
@@ -3902,7 +3902,7 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.NodeGroupsPerReplicationGroupQuotaExceededException">
         /// The request cannot be processed because it would exceed the maximum allowed number
-        /// of node groups (shards) in a single replication group. The default maximum is 15
+        /// of node groups (shards) in a single replication group. The default maximum is 90
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.NodeQuotaForCustomerExceededException">
         /// The request cannot be processed because it would exceed the allowed number of cache
@@ -4560,7 +4560,7 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.NodeGroupsPerReplicationGroupQuotaExceededException">
         /// The request cannot be processed because it would exceed the maximum allowed number
-        /// of node groups (shards) in a single replication group. The default maximum is 15
+        /// of node groups (shards) in a single replication group. The default maximum is 90
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.NodeQuotaForCustomerExceededException">
         /// The request cannot be processed because it would exceed the allowed number of cache
@@ -4612,7 +4612,7 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.NodeGroupsPerReplicationGroupQuotaExceededException">
         /// The request cannot be processed because it would exceed the maximum allowed number
-        /// of node groups (shards) in a single replication group. The default maximum is 15
+        /// of node groups (shards) in a single replication group. The default maximum is 90
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.NodeQuotaForCustomerExceededException">
         /// The request cannot be processed because it would exceed the allowed number of cache
