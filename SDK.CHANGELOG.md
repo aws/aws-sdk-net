@@ -1,3 +1,13 @@
+### 3.3.552.0 (2019-07-18 20:29 UTC)
+* CodeDeploy (3.3.101.24)
+	* Documentation updates for codedeploy
+* Comprehend (3.3.105.0)
+	* Amazon Comprehend now supports multiple entities for custom entity recognition
+* ECS (3.3.104.0)
+	* This release of Amazon Elastic Container Service (Amazon ECS) introduces support for cluster settings. Cluster settings specify whether CloudWatch Container Insights is enabled or disabled for the cluster.
+* ElastiCache (3.3.102.16)
+	* Updates for Elasticache
+
 ### 3.3.551.0 (2019-07-17 19:17 UTC)
 * AutoScaling (3.3.100.48)
 	* Documentation updates for autoscaling

@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.551.0",
+    "ProductVersion" : "3.3.552.0",
     "CoreVersion"    : "3.3.103.11",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -93,7 +93,7 @@
             "InPreview"               : false
         },
         "CodeDeploy"        : {
-            "Version" : "3.3.101.23",
+            "Version" : "3.3.101.24",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.11"
@@ -159,7 +159,7 @@
             "InPreview"               : false
         },
         "ECS"               : {
-            "Version" : "3.3.103.17",
+            "Version" : "3.3.104.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.11"
@@ -167,7 +167,7 @@
             "InPreview"               : false
         },
         "ElastiCache"       : {
-            "Version" : "3.3.102.15",
+            "Version" : "3.3.102.16",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.11"
@@ -961,7 +961,7 @@
             "InPreview"               : false
         },
         "Comprehend"                      : {
-            "Version" : "3.3.104.29",
+            "Version" : "3.3.105.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.11"
