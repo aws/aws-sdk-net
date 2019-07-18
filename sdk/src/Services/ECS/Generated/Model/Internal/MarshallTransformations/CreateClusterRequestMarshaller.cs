@@ -74,6 +74,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ClusterName);
                 }
 
+                if(publicRequest.IsSetSettings())
+                {
+                    context.Writer.WritePropertyName("settings");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSettingsListValue in publicRequest.Settings)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ClusterSettingMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSettingsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

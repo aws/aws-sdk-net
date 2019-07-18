@@ -45,7 +45,8 @@ namespace Amazon.ECS.Model
         /// is specified, the ARN and resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code>
         /// is specified, the ARN and resource ID for your Amazon ECS container instances is affected.
         /// If <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS container
-        /// instances is affected.
+        /// instances is affected. If <code>containerInsights</code> is specified, the default
+        /// setting for CloudWatch Container Insights for your clusters is affected.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

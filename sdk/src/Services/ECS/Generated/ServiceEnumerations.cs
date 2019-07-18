@@ -191,6 +191,52 @@ namespace Amazon.ECS
 
 
     /// <summary>
+    /// Constants used for properties of type ClusterSettingName.
+    /// </summary>
+    public class ClusterSettingName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ContainerInsights for ClusterSettingName
+        /// </summary>
+        public static readonly ClusterSettingName ContainerInsights = new ClusterSettingName("containerInsights");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterSettingName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterSettingName FindValue(string value)
+        {
+            return FindValue<ClusterSettingName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterSettingName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Compatibility.
     /// </summary>
     public class Compatibility : ConstantClass
@@ -1448,6 +1494,10 @@ namespace Amazon.ECS
         /// Constant AwsvpcTrunking for SettingName
         /// </summary>
         public static readonly SettingName AwsvpcTrunking = new SettingName("awsvpcTrunking");
+        /// <summary>
+        /// Constant ContainerInsights for SettingName
+        /// </summary>
+        public static readonly SettingName ContainerInsights = new SettingName("containerInsights");
         /// <summary>
         /// Constant ContainerInstanceLongArnFormat for SettingName
         /// </summary>

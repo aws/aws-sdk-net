@@ -48,6 +48,7 @@ namespace Amazon.ECS.Model
     public partial class CreateClusterRequest : AmazonECSRequest
     {
         private string _clusterName;
+        private List<ClusterSetting> _settings = new List<ClusterSetting>();
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -68,6 +69,26 @@ namespace Amazon.ECS.Model
         internal bool IsSetClusterName()
         {
             return this._clusterName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Settings. 
+        /// <para>
+        /// The setting to use when creating a cluster. This parameter is used to enable CloudWatch
+        /// Container Insights for a cluster. If this value is specified, it will override the
+        /// <code>containerInsights</code> value set with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
+        /// </para>
+        /// </summary>
+        public List<ClusterSetting> Settings
+        {
+            get { return this._settings; }
+            set { this._settings = value; }
+        }
+
+        // Check to see if Settings property is set
+        internal bool IsSetSettings()
+        {
+            return this._settings != null && this._settings.Count > 0; 
         }
 
         /// <summary>

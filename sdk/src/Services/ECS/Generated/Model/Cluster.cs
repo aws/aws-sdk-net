@@ -41,6 +41,7 @@ namespace Amazon.ECS.Model
         private int? _pendingTasksCount;
         private int? _registeredContainerInstancesCount;
         private int? _runningTasksCount;
+        private List<ClusterSetting> _settings = new List<ClusterSetting>();
         private List<KeyValuePair> _statistics = new List<KeyValuePair>();
         private string _status;
         private List<Tag> _tags = new List<Tag>();
@@ -156,6 +157,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetRunningTasksCount()
         {
             return this._runningTasksCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Settings. 
+        /// <para>
+        /// The settings for the cluster. This parameter indicates whether CloudWatch Container
+        /// Insights is enabled or disabled for a cluster.
+        /// </para>
+        /// </summary>
+        public List<ClusterSetting> Settings
+        {
+            get { return this._settings; }
+            set { this._settings = value; }
+        }
+
+        // Check to see if Settings property is set
+        internal bool IsSetSettings()
+        {
+            return this._settings != null && this._settings.Count > 0; 
         }
 
         /// <summary>

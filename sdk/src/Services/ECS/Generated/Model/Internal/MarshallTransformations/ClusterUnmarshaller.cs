@@ -100,6 +100,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.RunningTasksCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("settings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ClusterSetting, ClusterSettingUnmarshaller>(ClusterSettingUnmarshaller.Instance);
+                    unmarshalledObject.Settings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("statistics", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<KeyValuePair, KeyValuePairUnmarshaller>(KeyValuePairUnmarshaller.Instance);

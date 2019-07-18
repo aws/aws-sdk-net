@@ -28,21 +28,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The current account setting for a resource.
+    /// The settings to use when creating a cluster. This parameter is used to enable CloudWatch
+    /// Container Insights for a cluster.
     /// </summary>
-    public partial class Setting
+    public partial class ClusterSetting
     {
-        private SettingName _name;
-        private string _principalArn;
+        private ClusterSettingName _name;
         private string _value;
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The Amazon ECS resource name.
+        /// The name of the cluster setting. The only supported value is <code>containerInsights</code>.
         /// </para>
         /// </summary>
-        public SettingName Name
+        public ClusterSettingName Name
         {
             get { return this._name; }
             set { this._name = value; }
@@ -55,28 +55,14 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PrincipalArn. 
-        /// <para>
-        /// The ARN of the principal, which can be an IAM user, IAM role, or the root user. If
-        /// this field is omitted, the authenticated user is assumed.
-        /// </para>
-        /// </summary>
-        public string PrincipalArn
-        {
-            get { return this._principalArn; }
-            set { this._principalArn = value; }
-        }
-
-        // Check to see if PrincipalArn property is set
-        internal bool IsSetPrincipalArn()
-        {
-            return this._principalArn != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Whether the account setting is enabled or disabled for the specified resource.
+        /// The value to set for the cluster setting. The supported values are <code>enabled</code>
+        /// and <code>disabled</code>. If <code>enabled</code> is specified, CloudWatch Container
+        /// Insights will be enabled for the cluster, otherwise it will be disabled unless the
+        /// <code>containerInsights</code> account setting is enabled. If a cluster value is specified,
+        /// it will override the <code>containerInsights</code> value set with <a>PutAccountSetting</a>
+        /// or <a>PutAccountSettingDefault</a>.
         /// </para>
         /// </summary>
         public string Value
