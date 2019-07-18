@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EntityRecognizerMetadataEntityTypesListItem Object
+    /// Response Unmarshaller for EntityTypesEvaluationMetrics Object
     /// </summary>  
-    public class EntityRecognizerMetadataEntityTypesListItemUnmarshaller : IUnmarshaller<EntityRecognizerMetadataEntityTypesListItem, XmlUnmarshallerContext>, IUnmarshaller<EntityRecognizerMetadataEntityTypesListItem, JsonUnmarshallerContext>
+    public class EntityTypesEvaluationMetricsUnmarshaller : IUnmarshaller<EntityTypesEvaluationMetrics, XmlUnmarshallerContext>, IUnmarshaller<EntityTypesEvaluationMetrics, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        EntityRecognizerMetadataEntityTypesListItem IUnmarshaller<EntityRecognizerMetadataEntityTypesListItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EntityTypesEvaluationMetrics IUnmarshaller<EntityTypesEvaluationMetrics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,33 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public EntityRecognizerMetadataEntityTypesListItem Unmarshall(JsonUnmarshallerContext context)
+        public EntityTypesEvaluationMetrics Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EntityRecognizerMetadataEntityTypesListItem unmarshalledObject = new EntityRecognizerMetadataEntityTypesListItem();
+            EntityTypesEvaluationMetrics unmarshalledObject = new EntityTypesEvaluationMetrics();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("EvaluationMetrics", targetDepth))
+                if (context.TestExpression("F1Score", targetDepth))
                 {
-                    var unmarshaller = EntityTypesEvaluationMetricsUnmarshaller.Instance;
-                    unmarshalledObject.EvaluationMetrics = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.F1Score = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("NumberOfTrainMentions", targetDepth))
+                if (context.TestExpression("Precision", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfTrainMentions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Precision = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Recall", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Recall = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +88,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         }
 
 
-        private static EntityRecognizerMetadataEntityTypesListItemUnmarshaller _instance = new EntityRecognizerMetadataEntityTypesListItemUnmarshaller();        
+        private static EntityTypesEvaluationMetricsUnmarshaller _instance = new EntityTypesEvaluationMetricsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EntityRecognizerMetadataEntityTypesListItemUnmarshaller Instance
+        public static EntityTypesEvaluationMetricsUnmarshaller Instance
         {
             get
             {

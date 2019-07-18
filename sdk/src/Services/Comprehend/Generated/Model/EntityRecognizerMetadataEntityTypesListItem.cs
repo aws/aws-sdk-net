@@ -32,7 +32,47 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class EntityRecognizerMetadataEntityTypesListItem
     {
+        private EntityTypesEvaluationMetrics _evaluationMetrics;
+        private int? _numberOfTrainMentions;
         private string _type;
+
+        /// <summary>
+        /// Gets and sets the property EvaluationMetrics. 
+        /// <para>
+        /// Detailed information about the accuracy of the entity recognizer for a specific item
+        /// on the list of entity types. 
+        /// </para>
+        /// </summary>
+        public EntityTypesEvaluationMetrics EvaluationMetrics
+        {
+            get { return this._evaluationMetrics; }
+            set { this._evaluationMetrics = value; }
+        }
+
+        // Check to see if EvaluationMetrics property is set
+        internal bool IsSetEvaluationMetrics()
+        {
+            return this._evaluationMetrics != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumberOfTrainMentions. 
+        /// <para>
+        /// indicates the number of times the given entity name was seen in the training data.
+        /// 
+        /// </para>
+        /// </summary>
+        public int NumberOfTrainMentions
+        {
+            get { return this._numberOfTrainMentions.GetValueOrDefault(); }
+            set { this._numberOfTrainMentions = value; }
+        }
+
+        // Check to see if NumberOfTrainMentions property is set
+        internal bool IsSetNumberOfTrainMentions()
+        {
+            return this._numberOfTrainMentions.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Type. 

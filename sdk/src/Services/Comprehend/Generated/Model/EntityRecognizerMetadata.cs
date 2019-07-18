@@ -58,7 +58,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property EvaluationMetrics. 
         /// <para>
-        ///  Detailed information about the accuracy of an entity recognizer.
+        /// Detailed information about the accuracy of an entity recognizer.
         /// </para>
         /// </summary>
         public EntityRecognizerEvaluationMetrics EvaluationMetrics

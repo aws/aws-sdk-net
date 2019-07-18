@@ -95,7 +95,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property EntityTypes. 
         /// <para>
-        /// The entity types in the input data for an entity recognizer.
+        /// The entity types in the input data for an entity recognizer. A maximum of 12 entity
+        /// types can be used at one time to train an entity recognizer.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

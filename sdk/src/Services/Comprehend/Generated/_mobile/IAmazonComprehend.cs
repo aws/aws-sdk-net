@@ -102,7 +102,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For all custom entity
         /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English is accepted.
-        /// For most other APIs, Amazon Comprehend accepts only English or Spanish text.
+        /// For most other APIs, such as those for Custom Classification, Amazon Comprehend accepts
+        /// text in all supported languages. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectEntities">REST API Reference for BatchDetectEntities Operation</seealso>
         Task<BatchDetectEntitiesResponse> BatchDetectEntitiesAsync(BatchDetectEntitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -138,7 +139,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For all custom entity
         /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English is accepted.
-        /// For most other APIs, Amazon Comprehend accepts only English or Spanish text.
+        /// For most other APIs, such as those for Custom Classification, Amazon Comprehend accepts
+        /// text in all supported languages. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectKeyPhrases">REST API Reference for BatchDetectKeyPhrases Operation</seealso>
         Task<BatchDetectKeyPhrasesResponse> BatchDetectKeyPhrasesAsync(BatchDetectKeyPhrasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -176,7 +178,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For all custom entity
         /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English is accepted.
-        /// For most other APIs, Amazon Comprehend accepts only English or Spanish text.
+        /// For most other APIs, such as those for Custom Classification, Amazon Comprehend accepts
+        /// text in all supported languages. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSentiment">REST API Reference for BatchDetectSentiment Operation</seealso>
         Task<BatchDetectSentimentResponse> BatchDetectSentimentAsync(BatchDetectSentimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -214,7 +217,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For all custom entity
         /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English is accepted.
-        /// For most other APIs, Amazon Comprehend accepts only English or Spanish text.
+        /// For most other APIs, such as those for Custom Classification, Amazon Comprehend accepts
+        /// text in all supported languages. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSyntax">REST API Reference for BatchDetectSyntax Operation</seealso>
         Task<BatchDetectSyntaxResponse> BatchDetectSyntaxAsync(BatchDetectSyntaxRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -265,7 +269,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For all custom entity
         /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English is accepted.
-        /// For most other APIs, Amazon Comprehend accepts only English or Spanish text.
+        /// For most other APIs, such as those for Custom Classification, Amazon Comprehend accepts
+        /// text in all supported languages. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDocumentClassifier">REST API Reference for CreateDocumentClassifier Operation</seealso>
         Task<CreateDocumentClassifierResponse> CreateDocumentClassifierAsync(CreateDocumentClassifierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -314,7 +319,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For all custom entity
         /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English is accepted.
-        /// For most other APIs, Amazon Comprehend accepts only English or Spanish text.
+        /// For most other APIs, such as those for Custom Classification, Amazon Comprehend accepts
+        /// text in all supported languages. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateEntityRecognizer">REST API Reference for CreateEntityRecognizer Operation</seealso>
         Task<CreateEntityRecognizerResponse> CreateEntityRecognizerAsync(CreateEntityRecognizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -723,7 +729,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For all custom entity
         /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English is accepted.
-        /// For most other APIs, Amazon Comprehend accepts only English or Spanish text.
+        /// For most other APIs, such as those for Custom Classification, Amazon Comprehend accepts
+        /// text in all supported languages. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectEntities">REST API Reference for DetectEntities Operation</seealso>
         Task<DetectEntitiesResponse> DetectEntitiesAsync(DetectEntitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -755,7 +762,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For all custom entity
         /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English is accepted.
-        /// For most other APIs, Amazon Comprehend accepts only English or Spanish text.
+        /// For most other APIs, such as those for Custom Classification, Amazon Comprehend accepts
+        /// text in all supported languages. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectKeyPhrases">REST API Reference for DetectKeyPhrases Operation</seealso>
         Task<DetectKeyPhrasesResponse> DetectKeyPhrasesAsync(DetectKeyPhrasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -788,7 +796,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For all custom entity
         /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English is accepted.
-        /// For most other APIs, Amazon Comprehend accepts only English or Spanish text.
+        /// For most other APIs, such as those for Custom Classification, Amazon Comprehend accepts
+        /// text in all supported languages. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSentiment">REST API Reference for DetectSentiment Operation</seealso>
         Task<DetectSentimentResponse> DetectSentimentAsync(DetectSentimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -821,7 +830,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For all custom entity
         /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English is accepted.
-        /// For most other APIs, Amazon Comprehend accepts only English or Spanish text.
+        /// For most other APIs, such as those for Custom Classification, Amazon Comprehend accepts
+        /// text in all supported languages. For a list of supported languages, see <a>supported-languages</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSyntax">REST API Reference for DetectSyntax Operation</seealso>
         Task<DetectSyntaxResponse> DetectSyntaxAsync(DetectSyntaxRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -845,8 +855,7 @@ namespace Amazon.Comprehend
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
-        /// The filter specified for the <code>ListDocumentClassificationJobs</code> operation
-        /// is invalid. Specify a different filter.
+        /// The filter specified for the operation is invalid. Specify a different filter.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
         /// The request is invalid.
@@ -876,8 +885,7 @@ namespace Amazon.Comprehend
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
-        /// The filter specified for the <code>ListDocumentClassificationJobs</code> operation
-        /// is invalid. Specify a different filter.
+        /// The filter specified for the operation is invalid. Specify a different filter.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
         /// The request is invalid.
@@ -907,8 +915,7 @@ namespace Amazon.Comprehend
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
-        /// The filter specified for the <code>ListDocumentClassificationJobs</code> operation
-        /// is invalid. Specify a different filter.
+        /// The filter specified for the operation is invalid. Specify a different filter.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
         /// The request is invalid.
@@ -938,8 +945,7 @@ namespace Amazon.Comprehend
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
-        /// The filter specified for the <code>ListDocumentClassificationJobs</code> operation
-        /// is invalid. Specify a different filter.
+        /// The filter specified for the operation is invalid. Specify a different filter.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
         /// The request is invalid.
@@ -978,8 +984,7 @@ namespace Amazon.Comprehend
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
-        /// The filter specified for the <code>ListDocumentClassificationJobs</code> operation
-        /// is invalid. Specify a different filter.
+        /// The filter specified for the operation is invalid. Specify a different filter.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
         /// The request is invalid.
@@ -1009,8 +1014,7 @@ namespace Amazon.Comprehend
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
-        /// The filter specified for the <code>ListDocumentClassificationJobs</code> operation
-        /// is invalid. Specify a different filter.
+        /// The filter specified for the operation is invalid. Specify a different filter.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
         /// The request is invalid.
@@ -1040,8 +1044,7 @@ namespace Amazon.Comprehend
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
-        /// The filter specified for the <code>ListDocumentClassificationJobs</code> operation
-        /// is invalid. Specify a different filter.
+        /// The filter specified for the operation is invalid. Specify a different filter.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
         /// The request is invalid.
@@ -1098,8 +1101,7 @@ namespace Amazon.Comprehend
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
-        /// The filter specified for the <code>ListDocumentClassificationJobs</code> operation
-        /// is invalid. Specify a different filter.
+        /// The filter specified for the operation is invalid. Specify a different filter.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
         /// The request is invalid.
