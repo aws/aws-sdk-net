@@ -29,7 +29,8 @@ namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
     /// Information about whether instances in the original environment are terminated when
-    /// a blue/green deployment is successful.
+    /// a blue/green deployment is successful. <code>BlueInstanceTerminationOption</code>
+    /// does not apply to Lambda deployments.
     /// </summary>
     public partial class BlueInstanceTerminationOption
     {
@@ -68,8 +69,18 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property TerminationWaitTimeInMinutes. 
         /// <para>
-        /// The number of minutes to wait after a successful blue/green deployment before terminating
-        /// instances from the original environment. The maximum setting is 2880 minutes (2 days).
+        /// For an Amazon EC2 deployment, the number of minutes to wait after a successful blue/green
+        /// deployment before terminating instances from the original environment.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For an Amazon ECS deployment, the number of minutes before deleting the original
+        /// (blue) task set. During an Amazon ECS deployment, CodeDeploy shifts traffic from the
+        /// original (blue) task set to a replacement (green) task set. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  The maximum setting is 2880 minutes (2 days). 
         /// </para>
         /// </summary>
         public int TerminationWaitTimeInMinutes

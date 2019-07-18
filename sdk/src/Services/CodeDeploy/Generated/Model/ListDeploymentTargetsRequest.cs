@@ -77,8 +77,20 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property TargetFilters. 
         /// <para>
-        ///  A key used to filter the returned targets. 
+        ///  A key used to filter the returned targets. The two valid values are:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>,
+        /// <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>,
+        /// <code>Succeeded</code>, or <code>Unknown</code>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string
+        /// can be <code>Blue</code> or <code>Green</code>. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public Dictionary<string, List<string>> TargetFilters
         {
