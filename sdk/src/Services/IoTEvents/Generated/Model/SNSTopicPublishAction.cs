@@ -37,7 +37,7 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property TargetArn. 
         /// <para>
-        /// The ARN of the Amazon SNS target to which the message is sent.
+        /// The ARN of the Amazon SNS target where the message is sent.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

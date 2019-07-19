@@ -70,10 +70,28 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
                     unmarshalledObject.ClearTimer = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("firehose", targetDepth))
+                {
+                    var unmarshaller = FirehoseActionUnmarshaller.Instance;
+                    unmarshalledObject.Firehose = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("iotEvents", targetDepth))
+                {
+                    var unmarshaller = IotEventsActionUnmarshaller.Instance;
+                    unmarshalledObject.IotEvents = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("iotTopicPublish", targetDepth))
                 {
                     var unmarshaller = IotTopicPublishActionUnmarshaller.Instance;
                     unmarshalledObject.IotTopicPublish = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lambda", targetDepth))
+                {
+                    var unmarshaller = LambdaActionUnmarshaller.Instance;
+                    unmarshalledObject.Lambda = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("resetTimer", targetDepth))
@@ -98,6 +116,12 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = SNSTopicPublishActionUnmarshaller.Instance;
                     unmarshalledObject.Sns = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sqs", targetDepth))
+                {
+                    var unmarshaller = SqsActionUnmarshaller.Instance;
+                    unmarshalledObject.Sqs = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

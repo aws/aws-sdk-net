@@ -79,7 +79,7 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property Level. 
         /// <para>
-        /// The logging level. Currently, only "ERROR" is supported.
+        /// The logging level.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

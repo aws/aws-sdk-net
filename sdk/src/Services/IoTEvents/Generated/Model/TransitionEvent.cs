@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTEvents.Model
 {
     /// <summary>
-    /// Specifies the actions performed and the next state entered when a <code>condition</code>
+    /// Specifies the actions performed and the next state entered when a <code>"condition"</code>
     /// evaluates to TRUE.
     /// </summary>
     public partial class TransitionEvent
@@ -60,7 +60,7 @@ namespace Amazon.IoTEvents.Model
         /// Gets and sets the property Condition. 
         /// <para>
         /// [Required] A Boolean expression that when TRUE causes the actions to be performed
-        /// and the <code>nextState</code> to be entered.
+        /// and the <code>"nextState"</code> to be entered.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=512)]

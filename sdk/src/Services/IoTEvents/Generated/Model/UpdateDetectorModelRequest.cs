@@ -29,8 +29,8 @@ namespace Amazon.IoTEvents.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDetectorModel operation.
-    /// Updates a detector model. Detectors (instances) spawned by the previous version will
-    /// be deleted and re-created as new inputs arrive.
+    /// Updates a detector model. Detectors (instances) spawned by the previous version are
+    /// deleted and then re-created as new inputs arrive.
     /// </summary>
     public partial class UpdateDetectorModelRequest : AmazonIoTEventsRequest
     {
@@ -80,7 +80,7 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property DetectorModelName. 
         /// <para>
-        /// The name of the detector model to be updated.
+        /// The name of the detector model that is updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

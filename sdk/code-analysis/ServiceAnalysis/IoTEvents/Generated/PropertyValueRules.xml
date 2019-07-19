@@ -142,7 +142,7 @@
     <property>Amazon.IoTEvents.Model.DetectorDebugOption.KeyValue</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[a-zA-Z0-9\-_]+$</pattern>
+    <pattern>^[a-zA-Z0-9\-_:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.DetectorModelConfiguration.DetectorModelDescription</property>
@@ -210,6 +210,10 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTEvents.Model.FirehoseAction.Separator</property>
+    <pattern>([\n\t])|(\r\n)|(,)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTEvents.Model.InputConfiguration.InputDescription</property>
     <max>128</max>
   </property-value-rule>
@@ -230,9 +234,20 @@
     <pattern>^[a-zA-Z][a-zA-Z0-9_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTEvents.Model.IotEventsAction.InputName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTEvents.Model.IotTopicPublishAction.MqttTopic</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEvents.Model.LambdaAction.FunctionArn</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.LoggingOptions.RoleArn</property>

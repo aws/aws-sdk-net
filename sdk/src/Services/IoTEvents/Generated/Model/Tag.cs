@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTEvents.Model
 {
     /// <summary>
-    /// Metadata which can be used to manage the resource.
+    /// Metadata that can be used to manage the resource.
     /// </summary>
     public partial class Tag
     {

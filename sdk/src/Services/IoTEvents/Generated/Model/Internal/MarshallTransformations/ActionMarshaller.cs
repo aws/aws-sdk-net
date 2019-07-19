@@ -56,6 +56,28 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetFirehose())
+            {
+                context.Writer.WritePropertyName("firehose");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FirehoseActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.Firehose, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetIotEvents())
+            {
+                context.Writer.WritePropertyName("iotEvents");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = IotEventsActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.IotEvents, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetIotTopicPublish())
             {
                 context.Writer.WritePropertyName("iotTopicPublish");
@@ -63,6 +85,17 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 
                 var marshaller = IotTopicPublishActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.IotTopicPublish, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetLambda())
+            {
+                context.Writer.WritePropertyName("lambda");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LambdaActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.Lambda, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -107,6 +140,17 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 
                 var marshaller = SNSTopicPublishActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Sns, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetSqs())
+            {
+                context.Writer.WritePropertyName("sqs");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SqsActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.Sqs, context);
 
                 context.Writer.WriteObjectEnd();
             }

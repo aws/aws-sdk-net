@@ -45,7 +45,7 @@ namespace Amazon.IoTEvents.Model
         /// to specify an attribute from the JSON payload that is made available by the input.
         /// Inputs are derived from messages sent to the AWS IoT Events system (<code>BatchPutMessage</code>).
         /// Each such message contains a JSON payload, and the attribute (and its paired value)
-        /// specified here are available for use in the <code>condition</code> expressions used
+        /// specified here are available for use in the <code>"condition"</code> expressions used
         /// by detectors. 
         /// </para>
         ///  

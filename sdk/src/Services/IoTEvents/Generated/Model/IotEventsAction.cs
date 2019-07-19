@@ -28,17 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTEvents.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteInput operation.
-    /// Deletes an input.
+    /// Sends an IoT Events input, passing in information about the detector model instance
+    /// and the event which triggered the action.
     /// </summary>
-    public partial class DeleteInputRequest : AmazonIoTEventsRequest
+    public partial class IotEventsAction
     {
         private string _inputName;
 
         /// <summary>
         /// Gets and sets the property InputName. 
         /// <para>
-        /// The name of the input to delete.
+        /// The name of the AWS IoT Events input where the data is sent.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

@@ -28,16 +28,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTEvents.Model
 {
     /// <summary>
-    /// An action to be performed when the <code>condition</code> is TRUE.
+    /// An action to be performed when the <code>"condition"</code> is TRUE.
     /// </summary>
     public partial class Action
     {
         private ClearTimerAction _clearTimer;
+        private FirehoseAction _firehose;
+        private IotEventsAction _iotEvents;
         private IotTopicPublishAction _iotTopicPublish;
+        private LambdaAction _lambda;
         private ResetTimerAction _resetTimer;
         private SetTimerAction _setTimer;
         private SetVariableAction _setVariable;
         private SNSTopicPublishAction _sns;
+        private SqsAction _sqs;
 
         /// <summary>
         /// Gets and sets the property ClearTimer. 
@@ -58,9 +62,47 @@ namespace Amazon.IoTEvents.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Firehose. 
+        /// <para>
+        /// Sends information about the detector model instance and the event which triggered
+        /// the action to a Kinesis Data Firehose stream.
+        /// </para>
+        /// </summary>
+        public FirehoseAction Firehose
+        {
+            get { return this._firehose; }
+            set { this._firehose = value; }
+        }
+
+        // Check to see if Firehose property is set
+        internal bool IsSetFirehose()
+        {
+            return this._firehose != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IotEvents. 
+        /// <para>
+        /// Sends an IoT Events input, passing in information about the detector model instance
+        /// and the event which triggered the action.
+        /// </para>
+        /// </summary>
+        public IotEventsAction IotEvents
+        {
+            get { return this._iotEvents; }
+            set { this._iotEvents = value; }
+        }
+
+        // Check to see if IotEvents property is set
+        internal bool IsSetIotEvents()
+        {
+            return this._iotEvents != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IotTopicPublish. 
         /// <para>
-        /// Publishes an MQTT message with the given topic to the AWS IoT Message Broker.
+        /// Publishes an MQTT message with the given topic to the AWS IoT message broker.
         /// </para>
         /// </summary>
         public IotTopicPublishAction IotTopicPublish
@@ -73,6 +115,25 @@ namespace Amazon.IoTEvents.Model
         internal bool IsSetIotTopicPublish()
         {
             return this._iotTopicPublish != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Lambda. 
+        /// <para>
+        /// Calls a Lambda function, passing in information about the detector model instance
+        /// and the event which triggered the action.
+        /// </para>
+        /// </summary>
+        public LambdaAction Lambda
+        {
+            get { return this._lambda; }
+            set { this._lambda = value; }
+        }
+
+        // Check to see if Lambda property is set
+        internal bool IsSetLambda()
+        {
+            return this._lambda != null;
         }
 
         /// <summary>
@@ -145,6 +206,25 @@ namespace Amazon.IoTEvents.Model
         internal bool IsSetSns()
         {
             return this._sns != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sqs. 
+        /// <para>
+        /// Sends information about the detector model instance and the event which triggered
+        /// the action to an AWS SQS queue.
+        /// </para>
+        /// </summary>
+        public SqsAction Sqs
+        {
+            get { return this._sqs; }
+            set { this._sqs = value; }
+        }
+
+        // Check to see if Sqs property is set
+        internal bool IsSetSqs()
+        {
+            return this._sqs != null;
         }
 
     }

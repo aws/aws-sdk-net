@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTEvents.Model
 {
     /// <summary>
-    /// Information required to publish the MQTT message via the AWS IoT Message Broker.
+    /// Information required to publish the MQTT message via the AWS IoT message broker.
     /// </summary>
     public partial class IotTopicPublishAction
     {

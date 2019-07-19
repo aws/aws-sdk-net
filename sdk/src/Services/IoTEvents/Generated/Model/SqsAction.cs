@@ -28,51 +28,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTEvents.Model
 {
     /// <summary>
-    /// Container for the parameters to the TagResource operation.
-    /// Adds to or modifies the tags of the given resource. Tags are metadata that can be
-    /// used to manage a resource.
+    /// Sends information about the detector model instance and the event which triggered
+    /// the action to an AWS SQS queue.
     /// </summary>
-    public partial class TagResourceRequest : AmazonIoTEventsRequest
+    public partial class SqsAction
     {
-        private string _resourceArn;
-        private List<Tag> _tags = new List<Tag>();
+        private string _queueUrl;
+        private bool? _useBase64;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. 
+        /// Gets and sets the property QueueUrl. 
         /// <para>
-        /// The ARN of the resource.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
-        public string ResourceArn
-        {
-            get { return this._resourceArn; }
-            set { this._resourceArn = value; }
-        }
-
-        // Check to see if ResourceArn property is set
-        internal bool IsSetResourceArn()
-        {
-            return this._resourceArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// The new or modified tags for the resource.
+        /// The URL of the SQS queue where the data is written.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public List<Tag> Tags
+        public string QueueUrl
         {
-            get { return this._tags; }
-            set { this._tags = value; }
+            get { return this._queueUrl; }
+            set { this._queueUrl = value; }
         }
 
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
+        // Check to see if QueueUrl property is set
+        internal bool IsSetQueueUrl()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._queueUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseBase64. 
+        /// <para>
+        /// Set this to TRUE if you want the data to be Base-64 encoded before it is written to
+        /// the queue. Otherwise, set this to FALSE.
+        /// </para>
+        /// </summary>
+        public bool UseBase64
+        {
+            get { return this._useBase64.GetValueOrDefault(); }
+            set { this._useBase64 = value; }
+        }
+
+        // Check to see if UseBase64 property is set
+        internal bool IsSetUseBase64()
+        {
+            return this._useBase64.HasValue; 
         }
 
     }

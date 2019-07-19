@@ -142,7 +142,7 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Metadata which can be used to manage the detector model.
+        /// Metadata that can be used to manage the detector model.
         /// </para>
         /// </summary>
         public List<Tag> Tags

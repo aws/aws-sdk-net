@@ -28,30 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTEvents.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteInput operation.
-    /// Deletes an input.
+    /// Calls a Lambda function, passing in information about the detector model instance
+    /// and the event which triggered the action.
     /// </summary>
-    public partial class DeleteInputRequest : AmazonIoTEventsRequest
+    public partial class LambdaAction
     {
-        private string _inputName;
+        private string _functionArn;
 
         /// <summary>
-        /// Gets and sets the property InputName. 
+        /// Gets and sets the property FunctionArn. 
         /// <para>
-        /// The name of the input to delete.
+        /// The ARN of the Lambda function which is executed.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
-        public string InputName
+        [AWSProperty(Required=true, Min=1, Max=2048)]
+        public string FunctionArn
         {
-            get { return this._inputName; }
-            set { this._inputName = value; }
+            get { return this._functionArn; }
+            set { this._functionArn = value; }
         }
 
-        // Check to see if InputName property is set
-        internal bool IsSetInputName()
+        // Check to see if FunctionArn property is set
+        internal bool IsSetFunctionArn()
         {
-            return this._inputName != null;
+            return this._functionArn != null;
         }
 
     }
