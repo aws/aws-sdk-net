@@ -30,7 +30,7 @@ namespace Amazon.SQS.Model
     /// <summary>
     /// Container for the parameters to the ReceiveMessage operation.
     /// Retrieves one or more messages (up to 10), from the specified queue. Using the <code>WaitTimeSeconds</code>
-    /// parameter enables long-poll support. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">Amazon
+    /// parameter enables long-poll support. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">Amazon
     /// SQS Long Polling</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. 
     /// 
     ///  
@@ -74,7 +74,7 @@ namespace Amazon.SQS.Model
     ///  </li> </ul> 
     /// <para>
     /// The receipt handle is the identifier you must provide when deleting the message. For
-    /// more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
+    /// more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
     /// and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
     /// </para>
     ///  
@@ -82,7 +82,7 @@ namespace Amazon.SQS.Model
     /// You can provide the <code>VisibilityTimeout</code> parameter in your request. The
     /// parameter is applied to the messages that Amazon SQS returns in the response. If you
     /// don't include the parameter, the overall visibility timeout for the queue is used
-    /// for the returned messages. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+    /// for the returned messages. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
     /// Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
     /// </para>
     ///  
@@ -125,7 +125,8 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property AttributeNames. 
         /// <para>
-        /// A list of s that need to be returned along with each message. These attributes include:
+        /// A list of attributes that need to be returned along with each message. These attributes
+        /// include:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -316,7 +317,7 @@ namespace Amazon.SQS.Model
         /// <para>
         /// During a visibility timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code>
         /// return the same messages and receipt handles. If a retry occurs within the deduplication
-        /// interval, it resets the visibility timeout. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+        /// interval, it resets the visibility timeout. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
         /// Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
         /// </para>
         ///  <important> 
@@ -353,7 +354,7 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  
         /// <para>
-        /// For best practices of using <code>ReceiveRequestAttemptId</code>, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
+        /// For best practices of using <code>ReceiveRequestAttemptId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
         /// the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue Service
         /// Developer Guide</i>.
         /// </para>

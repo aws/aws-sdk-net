@@ -30,7 +30,8 @@ namespace Amazon.SQS.Model
     /// <summary>
     /// Container for the parameters to the ChangeMessageVisibility operation.
     /// Changes the visibility timeout of a specified message in a queue to a new value. The
-    /// maximum allowed timeout value is 12 hours. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+    /// default visibility timeout for a message is 30 seconds. The minimum is 0 seconds.
+    /// The maximum is 12 hours. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
     /// Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
     /// 
     ///  
@@ -38,25 +39,55 @@ namespace Amazon.SQS.Model
     /// For example, you have a message with a visibility timeout of 5 minutes. After 3 minutes,
     /// you call <code>ChangeMessageVisibility</code> with a timeout of 10 minutes. You can
     /// continue to call <code>ChangeMessageVisibility</code> to extend the visibility timeout
-    /// to a maximum of 12 hours. If you try to extend the visibility timeout beyond 12 hours,
-    /// your request is rejected.
+    /// to the maximum allowed time. If you try to extend the visibility timeout beyond the
+    /// maximum, your request is rejected.
     /// </para>
     ///  
     /// <para>
-    /// A message is considered to be <i>in flight</i> after it's received from a queue by
-    /// a consumer, but not yet deleted from the queue.
+    /// An Amazon SQS message has three basic states:
+    /// </para>
+    ///  <ol> <li> 
+    /// <para>
+    /// Sent to a queue by a producer.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Received from the queue by a consumer.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Deleted from the queue.
+    /// </para>
+    ///  </li> </ol> 
+    /// <para>
+    /// A message is considered to be <i>stored</i> after it is sent to a queue by a producer,
+    /// but not yet received from the queue by a consumer (that is, between states 1 and 2).
+    /// There is no limit to the number of stored messages. A message is considered to be
+    /// <i>in flight</i> after it is received from a queue by a consumer, but not yet deleted
+    /// from the queue (that is, between states 2 and 3). There is a limit to the number of
+    /// inflight messages.
     /// </para>
     ///  
     /// <para>
-    /// For standard queues, there can be a maximum of 120,000 inflight messages per queue.
-    /// If you reach this limit, Amazon SQS returns the <code>OverLimit</code> error message.
-    /// To avoid reaching the limit, you should delete messages from the queue after they're
-    /// processed. You can also increase the number of queues you use to process your messages.
+    /// Limits that apply to inflight messages are unrelated to the <i>unlimited</i> number
+    /// of stored messages.
     /// </para>
     ///  
     /// <para>
-    /// For FIFO queues, there can be a maximum of 20,000 inflight messages per queue. If
-    /// you reach this limit, Amazon SQS returns no error messages.
+    /// For most standard queues (depending on queue traffic and message backlog), there can
+    /// be a maximum of approximately 120,000 inflight messages (received from a queue by
+    /// a consumer, but not yet deleted from the queue). If you reach this limit, Amazon SQS
+    /// returns the <code>OverLimit</code> error message. To avoid reaching the limit, you
+    /// should delete messages from the queue after they're processed. You can also increase
+    /// the number of queues you use to process your messages. To request a limit increase,
+    /// <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sqs">file
+    /// a support request</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For FIFO queues, there can be a maximum of 20,000 inflight messages (received from
+    /// a queue by a consumer, but not yet deleted from the queue). If you reach this limit,
+    /// Amazon SQS returns no error messages.
     /// </para>
     ///  <important> 
     /// <para>

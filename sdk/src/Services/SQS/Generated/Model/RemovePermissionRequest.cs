@@ -32,18 +32,24 @@ namespace Amazon.SQS.Model
     /// Revokes any permissions in the queue policy that matches the specified <code>Label</code>
     /// parameter.
     /// 
-    ///  <note> 
+    ///  <note> <ul> <li> 
     /// <para>
     /// Only the owner of a queue can remove permissions from it.
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// Cross-account permissions don't apply to this action. For more information, see see
-    /// <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
+    /// Cross-account permissions don't apply to this action. For more information, see <a
+    /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
     /// Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue
     /// Service Developer Guide</i>.
     /// </para>
-    ///  </note>
+    ///  </li> <li> 
+    /// <para>
+    /// To remove the ability to change queue permissions, you must deny permission to the
+    /// <code>AddPermission</code>, <code>RemovePermission</code>, and <code>SetQueueAttributes</code>
+    /// actions in your IAM policy.
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
     public partial class RemovePermissionRequest : AmazonSQSRequest
     {

@@ -105,7 +105,7 @@ namespace Amazon.SQS.Model
         /// Gets and sets the property MessageAttributes. 
         /// <para>
         /// Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
         /// SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -167,7 +167,7 @@ namespace Amazon.SQS.Model
         /// The token used for deduplication of sent messages. If a message with a particular
         /// <code>MessageDeduplicationId</code> is sent successfully, any messages sent with the
         /// same <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered
-        /// during the 5-minute deduplication interval. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
+        /// during the 5-minute deduplication interval. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
         /// Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
         /// </para>
         ///  <ul> <li> 
@@ -232,7 +232,7 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  
         /// <para>
-        /// For best practices of using <code>MessageDeduplicationId</code>, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using
+        /// For best practices of using <code>MessageDeduplicationId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using
         /// the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service Developer
         /// Guide</i>.
         /// </para>
@@ -281,7 +281,7 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  
         /// <para>
-        /// For best practices of using <code>MessageGroupId</code>, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using
+        /// For best practices of using <code>MessageGroupId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using
         /// the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
         /// </para>
         ///  <important> 
