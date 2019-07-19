@@ -1,3 +1,14 @@
+### 3.3.554.0 (2019-07-19 19:12 UTC)
+* IoTEvents (3.3.101.0)
+	* Adds support for IoT Events, Lambda, SQS and Kinesis Firehose actions.
+* SQS (3.3.100.49)
+	* This release updates the information about the availability of FIFO queues and includes miscellaneous fixes.
+* Core 3.3.103.13
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.553.0 (2019-07-19 01:05 UTC)
 * EC2 (3.3.121.5)
 	* Fixing serialization of the Ipv6Addresses and PrivateIpAddresses fields in RequestSpotFleetRequest, RequestSpotInstancesRequest and RunInstancesRequestMarshaller
