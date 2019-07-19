@@ -1,3 +1,13 @@
+### 3.3.553.0 (2019-07-19 01:05 UTC)
+* EC2 (3.3.121.5)
+	* Fixing serialization of the Ipv6Addresses and PrivateIpAddresses fields in RequestSpotFleetRequest, RequestSpotInstancesRequest and RunInstancesRequestMarshaller
+* S3 (3.3.104.0)
+	* Updated to use new Core, version 3.3.103.12
+	* Adding an HTTPS-capable variant of DoesS3BucketExist; Preventing overflow exception when using S3 SelectObjectContent on PCL platforms
+* Core 3.3.103.12
+	* Fix for concurrency errors in region endpoints indicating that a duplicate key has been added; Adding a utility method allowing to check if value-type properties are set; Added region ap-east-1 Asia Pacific (Hong Kong)
+	* All services packages updated to require new Core
+
 ### 3.3.552.0 (2019-07-18 20:29 UTC)
 * CodeDeploy (3.3.101.24)
 	* Documentation updates for codedeploy
