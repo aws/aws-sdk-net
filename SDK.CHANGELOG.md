@@ -1,3 +1,14 @@
+### 3.3.555.0 (2019-07-22 19:41 UTC)
+* MQ (3.3.102.0)
+	* Adds support for AWS Key Management Service (KMS) to offer server-side encryption. You can now select your own customer managed CMK, or use an AWS managed CMK in your KMS  account.
+* Shield (3.3.101.0)
+	* Adding new VectorType (HTTP_Reflection) and related top contributor types to describe WordPress Pingback DDoS attacks.
+* Core 3.3.103.14
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.554.0 (2019-07-19 19:12 UTC)
 * IoTEvents (3.3.101.0)
 	* Adds support for IoT Events, Lambda, SQS and Kinesis Firehose actions.
