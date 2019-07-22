@@ -105,6 +105,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     response.DeploymentMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("encryptionOptions", targetDepth))
+                {
+                    var unmarshaller = EncryptionOptionsUnmarshaller.Instance;
+                    response.EncryptionOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("engineType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

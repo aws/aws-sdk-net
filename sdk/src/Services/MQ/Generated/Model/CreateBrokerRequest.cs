@@ -38,6 +38,7 @@ namespace Amazon.MQ.Model
         private ConfigurationId _configuration;
         private string _creatorRequestId;
         private DeploymentMode _deploymentMode;
+        private EncryptionOptions _encryptionOptions;
         private EngineType _engineType;
         private string _engineVersion;
         private string _hostInstanceType;
@@ -131,6 +132,21 @@ namespace Amazon.MQ.Model
         internal bool IsSetDeploymentMode()
         {
             return this._deploymentMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionOptions. Encryption options for the broker.
+        /// </summary>
+        public EncryptionOptions EncryptionOptions
+        {
+            get { return this._encryptionOptions; }
+            set { this._encryptionOptions = value; }
+        }
+
+        // Check to see if EncryptionOptions property is set
+        internal bool IsSetEncryptionOptions()
+        {
+            return this._encryptionOptions != null;
         }
 
         /// <summary>

@@ -106,6 +106,17 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DeploymentMode);
                 }
 
+                if(publicRequest.IsSetEncryptionOptions())
+                {
+                    context.Writer.WritePropertyName("encryptionOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EncryptionOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EncryptionOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetEngineType())
                 {
                     context.Writer.WritePropertyName("engineType");
