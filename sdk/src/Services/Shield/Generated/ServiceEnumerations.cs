@@ -104,6 +104,14 @@ namespace Amazon.Shield
         /// Constant SOURCE_USER_AGENT for AttackPropertyIdentifier
         /// </summary>
         public static readonly AttackPropertyIdentifier SOURCE_USER_AGENT = new AttackPropertyIdentifier("SOURCE_USER_AGENT");
+        /// <summary>
+        /// Constant WORDPRESS_PINGBACK_REFLECTOR for AttackPropertyIdentifier
+        /// </summary>
+        public static readonly AttackPropertyIdentifier WORDPRESS_PINGBACK_REFLECTOR = new AttackPropertyIdentifier("WORDPRESS_PINGBACK_REFLECTOR");
+        /// <summary>
+        /// Constant WORDPRESS_PINGBACK_SOURCE for AttackPropertyIdentifier
+        /// </summary>
+        public static readonly AttackPropertyIdentifier WORDPRESS_PINGBACK_SOURCE = new AttackPropertyIdentifier("WORDPRESS_PINGBACK_SOURCE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

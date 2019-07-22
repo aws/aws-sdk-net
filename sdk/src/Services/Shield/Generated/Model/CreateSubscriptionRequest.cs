@@ -40,6 +40,12 @@ namespace Amazon.Shield.Model
     /// </para>
     ///  
     /// <para>
+    /// To use the services of the DRT, you must be subscribed to the <a href="https://aws.amazon.com/premiumsupport/business-support/">Business
+    /// Support plan</a> or the <a href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
+    /// Support plan</a>.
+    /// </para>
+    ///  
+    /// <para>
     /// When you initally create a subscription, your subscription is set to be automatically
     /// renewed at the end of the existing subscription period. You can change this by submitting
     /// an <code>UpdateSubscription</code> request. 

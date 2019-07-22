@@ -30,7 +30,7 @@ namespace Amazon.Shield.Model
     /// <summary>
     /// Container for the parameters to the DisassociateDRTLogBucket operation.
     /// Removes the DDoS Response team's (DRT) access to the specified Amazon S3 bucket containing
-    /// your flow logs.
+    /// your AWS WAF logs.
     /// 
     ///  
     /// <para>
@@ -49,7 +49,7 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property LogBucket. 
         /// <para>
-        /// The Amazon S3 bucket that contains your flow logs.
+        /// The Amazon S3 bucket that contains your AWS WAF logs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=63)]
