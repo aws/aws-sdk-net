@@ -29,7 +29,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDocument operation.
-    /// The document you want to update.
+    /// Updates one or more values for an SSM document.
     /// </summary>
     public partial class UpdateDocumentRequest : AmazonSimpleSystemsManagementRequest
     {

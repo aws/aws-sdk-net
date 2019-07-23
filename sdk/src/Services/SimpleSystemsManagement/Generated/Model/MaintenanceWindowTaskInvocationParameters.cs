@@ -94,7 +94,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StepFunctions. 
         /// <para>
-        /// The parameters for a STEP_FUNCTION task type.
+        /// The parameters for a STEP_FUNCTIONS task type.
         /// </para>
         /// </summary>
         public MaintenanceWindowStepFunctionsParameters StepFunctions

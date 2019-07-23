@@ -59,7 +59,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property StreamUrl. 
         /// <para>
         /// A URL back to SSM Agent on the instance that the Session Manager client uses to send
-        /// commands and receive output from the instance. Format: <code>wss://ssm-messages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.
+        /// commands and receive output from the instance. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.
         /// </para>
         ///  
         /// <para>

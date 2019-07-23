@@ -213,7 +213,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The resource that the task used during execution. For RUN_COMMAND and AUTOMATION task
         /// types, the TaskArn is the Systems Manager Document name/ARN. For LAMBDA tasks, the
-        /// value is the function name/ARN. For STEP_FUNCTION tasks, the value is the state machine
+        /// value is the function name/ARN. For STEP_FUNCTIONS tasks, the value is the state machine
         /// ARN.
         /// </para>
         /// </summary>

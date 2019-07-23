@@ -2184,6 +2184,10 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant INSTANCE for MaintenanceWindowResourceType
         /// </summary>
         public static readonly MaintenanceWindowResourceType INSTANCE = new MaintenanceWindowResourceType("INSTANCE");
+        /// <summary>
+        /// Constant RESOURCE_GROUP for MaintenanceWindowResourceType
+        /// </summary>
+        public static readonly MaintenanceWindowResourceType RESOURCE_GROUP = new MaintenanceWindowResourceType("RESOURCE_GROUP");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

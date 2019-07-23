@@ -60,8 +60,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentVersion. 
         /// <para>
-        /// (Optional) The version of the document that you want to delete. If not provided, all
-        /// versions of the document are deleted.
+        /// The version of the document that you want to delete. If not provided, all versions
+        /// of the document are deleted.
         /// </para>
         /// </summary>
         public string DocumentVersion
@@ -98,8 +98,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property VersionName. 
         /// <para>
-        /// (Optional) The version name of the document that you want to delete. If not provided,
-        /// all versions of the document are deleted.
+        /// The version name of the document that you want to delete. If not provided, all versions
+        /// of the document are deleted.
         /// </para>
         /// </summary>
         public string VersionName

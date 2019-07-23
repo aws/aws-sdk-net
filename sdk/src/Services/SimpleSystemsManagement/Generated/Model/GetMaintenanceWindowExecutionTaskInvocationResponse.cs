@@ -216,7 +216,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property TaskType. 
         /// <para>
         /// Retrieves the task type for a maintenance window. Task types include the following:
-        /// LAMBDA, STEP_FUNCTION, AUTOMATION, RUN_COMMAND.
+        /// LAMBDA, STEP_FUNCTIONS, AUTOMATION, RUN_COMMAND.
         /// </para>
         /// </summary>
         public MaintenanceWindowTaskType TaskType

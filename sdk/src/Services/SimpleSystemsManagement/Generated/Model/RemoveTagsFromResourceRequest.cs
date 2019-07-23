@@ -29,7 +29,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveTagsFromResource operation.
-    /// Removes all tags from the specified resource.
+    /// Removes tag keys from the specified resource.
     /// </summary>
     public partial class RemoveTagsFromResourceRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -40,8 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The resource ID for which you want to remove tags. Use the ID of the resource. Here
-        /// are some examples:
+        /// The ID of the resource from which you want to remove tags. For example:
         /// </para>
         ///  
         /// <para>
@@ -62,8 +61,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  <note> 
         /// <para>
         /// The ManagedInstance type for this API action is only for on-premises managed instances.
-        /// You must specify the name of the managed instance in the following format: mi-ID_number.
-        /// For example, mi-1a2b3c4d5e6f.
+        /// Specify the name of the managed instance in the following format: mi-ID_number. For
+        /// example, mi-1a2b3c4d5e6f.
         /// </para>
         ///  </note>
         /// </summary>
@@ -83,13 +82,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource of which you want to remove a tag.
+        /// The type of resource from which you want to remove a tag.
         /// </para>
         ///  <note> 
         /// <para>
         /// The ManagedInstance type for this API action is only for on-premises managed instances.
-        /// You must specify the name of the managed instance in the following format: mi-ID_number.
-        /// For example, mi-1a2b3c4d5e6f.
+        /// Specify the name of the managed instance in the following format: mi-ID_number. For
+        /// example, mi-1a2b3c4d5e6f.
         /// </para>
         ///  </note>
         /// </summary>

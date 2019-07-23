@@ -29,7 +29,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAvailablePatches operation.
-    /// Lists all patches that could possibly be included in a patch baseline.
+    /// Lists all patches eligible to be included in a patch baseline.
     /// </summary>
     public partial class DescribeAvailablePatchesRequest : AmazonSimpleSystemsManagementRequest
     {

@@ -29,7 +29,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateManagedInstanceRole operation.
-    /// Assigns or changes an Amazon Identity and Access Management (IAM) role to the managed
+    /// Assigns or changes an Amazon Identity and Access Management (IAM) role for the managed
     /// instance.
     /// </summary>
     public partial class UpdateManagedInstanceRoleRequest : AmazonSimpleSystemsManagementRequest

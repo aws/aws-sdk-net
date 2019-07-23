@@ -29,37 +29,38 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateMaintenanceWindowTarget operation.
-    /// Modifies the target of an existing maintenance window. You can't change the target
-    /// type, but you can change the following:
+    /// Modifies the target of an existing maintenance window. You can change the following:
     /// 
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    /// The target from being an ID target to a Tag target, or a Tag target to an ID target.
+    /// Name
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// IDs for an ID target.
+    /// Description
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// Tags for a Tag target.
+    /// Owner
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// Owner.
+    /// IDs for an ID target
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// Name.
+    /// Tags for a Tag target
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// Description.
+    /// From any supported tag type to another. The three supported tag types are ID target,
+    /// Tag target, and resource group. For more information, see <a>Target</a>.
     /// </para>
-    ///  
+    ///  </li> </ul> <note> 
     /// <para>
     /// If a parameter is null, then the corresponding field is not modified.
     /// </para>
+    ///  </note>
     /// </summary>
     public partial class UpdateMaintenanceWindowTargetRequest : AmazonSimpleSystemsManagementRequest
     {

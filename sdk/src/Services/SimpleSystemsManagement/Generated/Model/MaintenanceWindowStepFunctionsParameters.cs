@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The parameters for a STEP_FUNCTION task.
+    /// The parameters for a STEP_FUNCTIONS task.
     /// 
     ///  
     /// <para>
@@ -65,7 +65,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
-        /// The inputs for the STEP_FUNCTION task.
+        /// The inputs for the STEP_FUNCTIONS task.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]
@@ -84,7 +84,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the STEP_FUNCTION task.
+        /// The name of the STEP_FUNCTIONS task.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=80)]

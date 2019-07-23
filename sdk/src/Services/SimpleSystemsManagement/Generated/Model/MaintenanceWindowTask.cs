@@ -213,7 +213,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task
         /// types, <code>TaskArn</code> is the Systems Manager document name or ARN. For LAMBDA
-        /// tasks, it's the function name or ARN. For STEP_FUNCTION tasks, it's the state machine
+        /// tasks, it's the function name or ARN. For STEP_FUNCTIONS tasks, it's the state machine
         /// ARN.
         /// </para>
         /// </summary>
@@ -260,7 +260,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The type of task. The type can be one of the following: RUN_COMMAND, AUTOMATION, LAMBDA,
-        /// or STEP_FUNCTION.
+        /// or STEP_FUNCTIONS.
         /// </para>
         /// </summary>
         public MaintenanceWindowTaskType Type

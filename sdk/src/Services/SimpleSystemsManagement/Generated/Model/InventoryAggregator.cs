@@ -81,7 +81,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// return a count of resources that match and don't match the specified criteria.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10)]
+        [AWSProperty(Min=1, Max=15)]
         public List<InventoryGroup> Groups
         {
             get { return this._groups; }
