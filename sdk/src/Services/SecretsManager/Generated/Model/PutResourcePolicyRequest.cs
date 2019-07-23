@@ -84,7 +84,7 @@ namespace Amazon.SecretsManager.Model
         /// JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=4096)]
+        [AWSProperty(Required=true, Min=1, Max=20480)]
         public string ResourcePolicy
         {
             get { return this._resourcePolicy; }

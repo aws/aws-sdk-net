@@ -320,7 +320,7 @@ namespace Amazon.SecretsManager.Model
         /// only by using the AWS CLI or one of the AWS SDKs.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=7168)]
+        [AWSProperty(Min=0, Max=10240)]
         public MemoryStream SecretBinary
         {
             get { return this._secretBinary; }
@@ -369,7 +369,7 @@ namespace Amazon.SecretsManager.Model
         /// JSON text. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=7168)]
+        [AWSProperty(Min=0, Max=10240)]
         public string SecretString
         {
             get { return this._secretString; }

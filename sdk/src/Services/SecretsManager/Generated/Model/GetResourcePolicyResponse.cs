@@ -86,7 +86,7 @@ namespace Amazon.SecretsManager.Model
         /// Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4096)]
+        [AWSProperty(Min=1, Max=20480)]
         public string ResourcePolicy
         {
             get { return this._resourcePolicy; }

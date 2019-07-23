@@ -42,6 +42,7 @@ namespace Amazon.SecretsManager.Model
         private DateTime? _lastChangedDate;
         private DateTime? _lastRotatedDate;
         private string _name;
+        private string _owningService;
         private bool? _rotationEnabled;
         private string _rotationLambdaARN;
         private RotationRulesType _rotationRules;
@@ -210,6 +211,22 @@ namespace Amazon.SecretsManager.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwningService.
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string OwningService
+        {
+            get { return this._owningService; }
+            set { this._owningService = value; }
+        }
+
+        // Check to see if OwningService property is set
+        internal bool IsSetOwningService()
+        {
+            return this._owningService != null;
         }
 
         /// <summary>

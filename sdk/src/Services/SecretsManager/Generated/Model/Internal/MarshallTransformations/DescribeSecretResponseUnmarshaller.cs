@@ -99,6 +99,12 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OwningService", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.OwningService = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RotationEnabled", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

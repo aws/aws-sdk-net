@@ -115,7 +115,7 @@ namespace Amazon.SecretsManager.Model
         /// or <code>SecretBinary</code> fields.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=7168)]
+        [AWSProperty(Min=0, Max=10240)]
         public MemoryStream SecretBinary
         {
             get { return this._secretBinary; }
@@ -148,7 +148,7 @@ namespace Amazon.SecretsManager.Model
         /// rotation function to parse and interpret those values.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=7168)]
+        [AWSProperty(Min=0, Max=10240)]
         public string SecretString
         {
             get { return this._secretString; }
