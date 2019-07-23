@@ -151,21 +151,39 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
 
         public static T WaitUntilSuccess<T>(Func<T> loadFunction, int sleepSeconds = 5, int maxWaitSeconds = 300)
         {
-            T result = default(T);
+            T result = default(T);            
+            WaitUntil(() =>
+            {                
+                try
+                {
+                    result = loadFunction();
+                    return result != null;
+                }
+                catch
+                {                    
+                    return false;
+                }
+            }, sleepSeconds, maxWaitSeconds);
+            
+            return result;
+        }
+
+        public static void WaitUntilException(Action action, int sleepSeconds = 5, int maxWaitSeconds = 300)
+        {            
             WaitUntil(() =>
             {
                 try
                 {
-                    result = loadFunction();
-                    return true;
-                }
-                catch
-                {
+                    action();
                     return false;
                 }
+                catch (Exception e)
+                {
+                    throw;
+                }
             }, sleepSeconds, maxWaitSeconds);
-            return result;
         }
+
         public static void WaitUntilSuccess(Action action, int sleepSeconds = 5, int maxWaitSeconds = 300)
         {
             if (sleepSeconds < 0) throw new ArgumentOutOfRangeException("sleepSeconds");
@@ -265,6 +283,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
                 var index = Math.Min(attempt, millisecondsList.Length - 1);
                 Thread.Sleep(millisecondsList[index]);
                 attempt++;
+            }
+
+            /// <summary>
+            /// Create a new exponential growth sleeper. The following sleeper will be created:
+            /// ListSleeper(500, 1000, 2000, 5000)
+            /// </summary>
+            /// <returns>A new ListSleeper with exponential growth</returns>
+            public static ListSleeper Create()
+            {
+                return new ListSleeper(500, 1000, 2000, 5000);
             }
         }
     }

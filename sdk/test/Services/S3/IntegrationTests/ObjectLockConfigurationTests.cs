@@ -16,6 +16,7 @@
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
+using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -41,7 +42,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [ClassInitialize()]
         public static void Initialize(TestContext a)
         {   
-            bucketName = S3TestUtils.CreateBucket(Client, new PutBucketRequest
+            bucketName = S3TestUtils.CreateBucketWithWait(Client, new PutBucketRequest
             {
                 ObjectLockEnabledForBucket = true                
             });
@@ -50,7 +51,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [ClassCleanup]
         public static void ClassCleanup()
         {
-            AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);            
+            DeleteBucketObjectsIncludingLocked(Client, bucketName);
+            AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
             BaseClean();
         }
 
@@ -76,6 +78,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             var putResponse = Client.PutObjectLockConfiguration(putRequest);
             Assert.AreEqual(true, putResponse.HttpStatusCode == HttpStatusCode.OK);
+
+            //Make sure the object lock has been enabled
+            var getRequest = new GetObjectLockConfigurationRequest()
+            {
+                BucketName = bucketName
+            };
+            var getResponse = S3TestUtils.WaitForConsistency(() =>
+            {
+                var res = Client.GetObjectLockConfiguration(getRequest);
+                return res.ObjectLockConfiguration?.ObjectLockEnabled == ObjectLockEnabled.Enabled ? res : null;
+            });
 
             return putResponse;
         }
@@ -159,7 +172,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 RequestPayer = RequestPayer.Requester
             };
 
-            var getResponse = Client.GetObjectLegalHold(getRequest);
+            var getResponse = S3TestUtils.WaitForConsistency(() =>
+            {
+                var res = Client.GetObjectLegalHold(getRequest);
+                return res.LegalHold?.Status == status ? res : null;
+            });
+                        
             Assert.AreEqual(true, getResponse.HttpStatusCode == HttpStatusCode.OK);
             Assert.AreEqual(status, getResponse.LegalHold.Status);
         }
@@ -177,7 +195,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             AddObjectLockConfiguration();
 
-            DateTime date = DateTime.Now.AddMinutes(1);
+            DateTime date = DateTime.Now.AddMinutes(15);
             var key = PutObject();
 
             try
@@ -229,7 +247,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             AddObjectLockConfiguration();
 
-            DateTime date = DateTime.Now.AddMinutes(1);
+            DateTime date = DateTime.Now.AddMinutes(15);
             var key = PutObject(date);
 
             try
@@ -307,5 +325,58 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
+        private static void DeleteBucketObjectsIncludingLocked(IAmazonS3 s3Client, string bucketName)
+        {            
+            var listVersionsRequest = new ListVersionsRequest
+            {
+                BucketName = bucketName
+            };
+
+            ListVersionsResponse listVersionsResponse;
+
+            // Iterate through the objects in the bucket and delete them.
+            do
+            {
+                // List all the versions of all the objects in the bucket.
+                listVersionsResponse = s3Client.ListVersions(listVersionsRequest);
+
+                if (listVersionsResponse.Versions.Count == 0)
+                {
+                    // If the bucket has no objects break the loop.
+                    break;
+                }
+
+                var keyVersionList = new List<KeyVersion>(listVersionsResponse.Versions.Count);
+                for (int index = 0; index < listVersionsResponse.Versions.Count; index++)
+                {
+                    keyVersionList.Add(new KeyVersion
+                    {
+                        Key = listVersionsResponse.Versions[index].Key,
+                        VersionId = listVersionsResponse.Versions[index].VersionId
+                    });
+                }
+
+                try
+                {
+                    // Delete the current set of objects.
+                    var deleteObjectsResponse = s3Client.DeleteObjects(new DeleteObjectsRequest
+                    {
+                        BucketName = bucketName,
+                        Objects = keyVersionList,                        
+                        BypassGovernanceRetention = true
+                    });
+                }
+                catch
+                {                    
+                }
+
+                // Set the markers to get next set of objects from the bucket.
+                listVersionsRequest.KeyMarker = listVersionsResponse.NextKeyMarker;
+                listVersionsRequest.VersionIdMarker = listVersionsResponse.NextVersionIdMarker;
+
+            }
+            // Continue listing objects and deleting them until the bucket is empty.
+            while (listVersionsResponse.IsTruncated);
+        }
     }
 }

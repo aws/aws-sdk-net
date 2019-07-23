@@ -40,7 +40,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             writer.Write("This is some sample text.!!");
             writer.Close();
 
-            bucketName = S3TestUtils.CreateBucket(Client);
+            bucketName = S3TestUtils.CreateBucketWithWait(Client);
         }
 
 
@@ -340,6 +340,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 
                 s3Client.PutBucket(testBucketName);
+                S3TestUtils.WaitForBucket(s3Client, testBucketName);
 
                 s3Client.PutObject(new PutObjectRequest
                 {
@@ -622,6 +623,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     BucketName = testBucketName,
                     BucketRegion = S3Region.USW2
                 });
+                S3TestUtils.WaitForBucket(client, testBucketName);
 
                 try
                 {
@@ -1050,9 +1052,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Owner = acl.Owner
                 },
             });
-
-            Thread.Sleep(1000);
-            acl = Client.GetACL(new GetACLRequest() { BucketName = bucketName, Key = "putobjectwithacl" }).AccessControlList;
+                        
+            acl = S3TestUtils.WaitForConsistency(() =>
+            {
+                var res = Client.GetACL(new GetACLRequest() { BucketName = bucketName, Key = "putobjectwithacl" });
+                return res.AccessControlList?.Grants?.Count > 0 ? res.AccessControlList : null;
+            });            
             Assert.AreEqual(1, acl.Grants.Count);
         }
 
@@ -1064,6 +1069,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             PutBucketRequest request = new PutBucketRequest() { BucketName = aclBucketName, CannedACL = S3CannedACL.LogDeliveryWrite };
 
             Client.PutBucket(request);
+            S3TestUtils.WaitForBucket(Client, aclBucketName);
 
             var acl = Client.GetACL(new GetACLRequest() { BucketName = aclBucketName }).AccessControlList;
             Client.DeleteBucket(new DeleteBucketRequest() { BucketName = aclBucketName });

@@ -39,6 +39,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             euS3.PutBucket(euBucketName);
             Client.PutBucket(bucketName);
 
+            S3TestUtils.WaitForBucket(euS3, euBucketName);
+            S3TestUtils.WaitForBucket(Client, bucketName);
+
             euS3.PutBucketVersioning(new PutBucketVersioningRequest
             {
                 BucketName = euBucketName,
@@ -56,6 +59,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Status = VersionStatus.Enabled
                 }
             });
+
+            WaitForEnabledVersioning(euS3, euBucketName);
+            WaitForEnabledVersioning(Client, bucketName);
 
             var roleArn = "arn:aws:iam::pikc123456:role/abcdef";
             var destinationBucketArn = "arn:aws:s3:::" + euBucketName;
@@ -84,11 +90,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                         }
                     }
                 });
-
-                var config = Client.GetBucketReplication(new GetBucketReplicationRequest 
-                { 
-                    BucketName = bucketName
-                }).Configuration;
+                                
+                var config = S3TestUtils.WaitForConsistency(() =>
+                {
+                    var res = Client.GetBucketReplication(new GetBucketReplicationRequest
+                    {
+                        BucketName = bucketName
+                    });
+                    return res.Configuration?.Role == roleArn ? res.Configuration : null;
+                });
 
                 Assert.IsNotNull(config);
                 Assert.IsNotNull(config.Role);
@@ -124,10 +134,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Client.DeleteBucketReplication(new DeleteBucketReplicationRequest { 
                     BucketName = bucketName
                 });
-
-                var noconfig = Client.GetBucketReplication(new GetBucketReplicationRequest {
-                    BucketName = bucketName
-                }).Configuration;
+                                
+                var noconfig = S3TestUtils.WaitForConsistency(() =>
+                {
+                    var res = Client.GetBucketReplication(new GetBucketReplicationRequest
+                    {
+                        BucketName = bucketName
+                    });
+                    return res.Configuration?.Rules.Any() == false ? res.Configuration : null;
+                });
 
                 Assert.IsFalse(noconfig.Rules.Any());
             }
@@ -136,6 +151,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 AmazonS3Util.DeleteS3BucketWithObjects(euS3, euBucketName);
                 AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
             }
+        }
+
+        private void WaitForEnabledVersioning(IAmazonS3 client, string bucketName)
+        {
+            S3TestUtils.WaitForConsistency(() =>
+            {
+                var res = client.GetBucketVersioning(new GetBucketVersioningRequest
+                {
+                    BucketName = bucketName
+                });
+                return res.VersioningConfig?.Status == VersionStatus.Enabled ? res : null;
+            });
         }
     }
 }

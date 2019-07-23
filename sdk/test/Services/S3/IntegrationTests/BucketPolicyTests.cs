@@ -16,7 +16,9 @@
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
+using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Net;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -26,34 +28,29 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     [TestClass]
     public class BucketPolicyTests : TestBase<AmazonS3Client>
     {
-        private static IAmazonS3 s3Client = null;
+        public static string bucketName;
 
-        [ClassInitialize()]
-        public static void Initialize(TestContext a)
+        [TestInitialize]
+        public void Init()
         {
-            var config = new AmazonS3Config();
-            s3Client = new AmazonS3Client(config);
+            bucketName = S3TestUtils.CreateBucketWithWait(Client);
         }
 
-        [ClassCleanup]
-        public static void ClassCleanup()
+        [TestCleanup]
+        public void Cleanup()
         {
-            s3Client.Dispose();
-            BaseClean();
+            AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
         }
 
         [TestMethod]
         [TestCategory("S3")]
         public void TestGetBucketPolicyStatus_IsPublic()
         {
-            var bucketName = S3TestUtils.CreateBucket(s3Client);
-            try
+            //Set the bucket policy to public
+            var putRequest = new PutBucketPolicyRequest
             {
-                //Set the bucket policy to public
-                var putRequest = new PutBucketPolicyRequest
-                {
-                    BucketName = bucketName,
-                    Policy = string.Format(@"{{
+                BucketName = bucketName,
+                Policy = string.Format(@"{{
                               ""Version"":""2012-10-17"",                                 
                               ""Statement"":[
                                 {{
@@ -65,36 +62,33 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                                 }}
                               ]
                             }}", bucketName)
-                };
-                s3Client.PutBucketPolicy(putRequest);
+            };
+            Client.PutBucketPolicy(putRequest);
 
-                //Get the policy status on the bucket
-                GetBucketPolicyStatusRequest getRequest = new GetBucketPolicyStatusRequest
-                {
-                    BucketName = bucketName
-                };
-
-                var getResponse = s3Client.GetBucketPolicyStatus(getRequest);
-                Assert.AreEqual(true, getResponse.PolicyStatus.IsPublic);
-            }
-            finally
+            //Get the policy status on the bucket
+            GetBucketPolicyStatusRequest getRequest = new GetBucketPolicyStatusRequest
             {
-                AmazonS3Util.DeleteS3BucketWithObjects(s3Client, bucketName);
-            }
+                BucketName = bucketName
+            };
+
+            var getResponse = S3TestUtils.WaitForConsistency(() =>
+            {
+                var res = Client.GetBucketPolicyStatus(getRequest);
+                return res.PolicyStatus?.IsPublic == true ? res : null;
+            });
+
+            Assert.AreEqual(true, getResponse.PolicyStatus.IsPublic);
         }
 
         [TestMethod]
         [TestCategory("S3")]
         public void TestGetBucketPolicyStatus_IsNotPublic()
         {
-            var bucketName = S3TestUtils.CreateBucket(s3Client);
-            try
+            //Set the bucket policy to not public
+            var putRequest = new PutBucketPolicyRequest
             {
-                //Set the bucket policy to not public
-                var putRequest = new PutBucketPolicyRequest
-                {
-                    BucketName = bucketName,
-                    Policy = string.Format(@"{{
+                BucketName = bucketName,
+                Policy = string.Format(@"{{
                               ""Version"":""2012-10-17"",                                 
                               ""Statement"":[
                                 {{
@@ -106,30 +100,28 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                                 }}
                               ]
                             }}", bucketName)
-                };
-                s3Client.PutBucketPolicy(putRequest);
+            };
+            Client.PutBucketPolicy(putRequest);
 
-                //Get the policy status on the bucket
-                GetBucketPolicyStatusRequest getRequest = new GetBucketPolicyStatusRequest
-                {
-                    BucketName = bucketName
-                };
-
-                var getResponse = s3Client.GetBucketPolicyStatus(getRequest);
-                Assert.AreEqual(false, getResponse.PolicyStatus.IsPublic);
-            }
-            finally
+            //Get the policy status on the bucket
+            GetBucketPolicyStatusRequest getRequest = new GetBucketPolicyStatusRequest
             {
-                AmazonS3Util.DeleteS3BucketWithObjects(s3Client, bucketName);
-            }
+                BucketName = bucketName
+            };
+
+            var getResponse = S3TestUtils.WaitForConsistency(() =>
+            {
+                var res = Client.GetBucketPolicyStatus(getRequest);
+                return res.PolicyStatus?.IsPublic == false ? res : null;
+            });
+            Assert.AreEqual(false, getResponse.PolicyStatus.IsPublic);
         }
 
         [TestMethod]
         [TestCategory("S3")]
         [ExpectedException(typeof(AmazonS3Exception), "The bucket policy does not exist")]
         public void TestGetBucketPolicyStatus_PolicyNotSet()
-        {
-            var bucketName = S3TestUtils.CreateBucket(s3Client);
+        {            
             try
             {
                 //Get the policy status on the bucket
@@ -138,17 +130,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     BucketName = bucketName
                 };
 
-                var getResponse = s3Client.GetBucketPolicyStatus(getRequest);
+                UtilityMethods.WaitUntilException(() =>
+                {
+                    Client.GetBucketPolicyStatus(getRequest);                    
+                });
             }
             catch (AmazonS3Exception ex)
             {
                 Assert.AreEqual<string>("The bucket policy does not exist", ex.Message);
                 throw;
-            }
-            finally
-            {
-                AmazonS3Util.DeleteS3BucketWithObjects(s3Client, bucketName);
-            }
+            }         
         }
 
     }

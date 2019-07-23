@@ -38,7 +38,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public static void Initialize(TestContext a)
         {
             IAmazonS3 s3Client = new AmazonS3Client();
-            bucketName = S3TestUtils.CreateBucket(s3Client);
+            bucketName = S3TestUtils.CreateBucketWithWait(s3Client);
         }
 
         [ClassCleanup]

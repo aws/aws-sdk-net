@@ -36,7 +36,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [ClassInitialize()]
         public static void ClassInitialize(TestContext a)
         {
-            bucketName = S3TestUtils.CreateBucket(Client);
+            bucketName = S3TestUtils.CreateBucketWithWait(Client);
             fullPath = Path.GetFullPath(testFile);
             File.WriteAllText(fullPath, testContent);
         }
@@ -46,7 +46,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
             BaseClean();
-            Directory.Delete(BasePath, true);
+            if (Directory.Exists(BasePath))
+            {
+                Directory.Delete(BasePath, true);
+            }
         }
 
         [TestMethod]

@@ -39,7 +39,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [ClassInitialize()]
         public static void Initialize(TestContext a)
         {
-            bucketName = S3TestUtils.CreateBucket(Client);
+            bucketName = S3TestUtils.CreateBucketWithWait(Client);
 
             foreach (var key in keys)
             {

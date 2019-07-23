@@ -35,23 +35,27 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     /// Tests for StorageInsightsInventory
     /// </summary>
     [TestClass]
-    public class StorageInsightsInventoryTests
+    public class StorageInsightsInventoryTests : TestBase<AmazonS3Client>
     {
         public static string bucketName;
-        public static AmazonS3Client Client;
 
-        public static void CreateTestBase()
+        [TestInitialize]
+        public void Init()
         {
-            Client = new AmazonS3Client();
-            bucketName = S3TestUtils.CreateBucket(Client);
+            bucketName = S3TestUtils.CreateBucketWithWait(Client);
+        }
+
+        [TestCleanup]
+        public void Cleanup()
+        {
+            AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
         }
 
         [TestCategory("S3")]
         [TestMethod]
         public void BucketAnalyticsConfigurationsTestWithSigV4()
         {
-            AWSConfigsS3.UseSignatureVersion4 = true;
-            CreateTestBase();
+            AWSConfigsS3.UseSignatureVersion4 = true;         
             BucketInventoryConfigurationsAndFilterTest();
         }
 
@@ -59,8 +63,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestMethod]
         public void BucketAnalyticsConfigurationsTestWithS3SigV2()
         {
-            AWSConfigsS3.UseSignatureVersion4 = false;
-            CreateTestBase();
+            AWSConfigsS3.UseSignatureVersion4 = false;            
             BucketInventoryConfigurationsAndFilterTest();
         }
 
@@ -114,7 +117,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 InventoryId = "configId"
             };
 
-            var getBucketInventoryConfigurationResponse = Client.GetBucketInventoryConfiguration(getBucketInventoryConfigurationRequest);
+            var getBucketInventoryConfigurationResponse = S3TestUtils.WaitForConsistency(() =>
+            {
+                var res = Client.GetBucketInventoryConfiguration(getBucketInventoryConfigurationRequest);
+                return res.InventoryConfiguration?.InventoryId == putBucketInventoryConfigurationRequest.InventoryConfiguration.InventoryId ? res : null;
+            });
+
             var getInventoryConfiguration = getBucketInventoryConfigurationResponse.InventoryConfiguration;
             var putInventoryConfiguration = putBucketInventoryConfigurationRequest.InventoryConfiguration;
             GetBucketInventoryAndValidate(getInventoryConfiguration, putInventoryConfiguration);

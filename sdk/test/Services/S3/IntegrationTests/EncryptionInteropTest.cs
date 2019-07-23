@@ -13,6 +13,7 @@ using Amazon.S3.Encryption;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using System.Text.RegularExpressions;
 using Amazon.Runtime;
+using Amazon.S3.Util;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -107,6 +108,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestCleanup]
         public void Cleanup()
         {
+            if(bucketName != null)
+            {
+                AmazonS3Util.DeleteS3BucketWithObjects(s3Client, bucketName);
+            }            
+
             kmsClient.Dispose();
             s3Client.Dispose();
             s3EncryptionClientMetadataMode.Dispose();
@@ -298,6 +304,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             var newBucketName = InteropBucketRoot + DateTime.UtcNow.ToFileTime();
             s3Client.PutBucket(newBucketName);
+            S3TestUtils.WaitForBucket(s3Client, newBucketName);
             return newBucketName;
         }
 

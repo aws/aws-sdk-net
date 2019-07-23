@@ -68,7 +68,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             using (var client = new AmazonS3Client(region))
             {
-                var bucketName = S3TestUtils.CreateBucket(client);
+                var bucketName = S3TestUtils.CreateBucketWithWait(client);
                 client.PutACL(new PutACLRequest
                 {
                     BucketName = bucketName,
@@ -103,7 +103,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var useast1Client = new AmazonS3Client(RegionEndpoint.USEast1);
             var eucentral1Client = new AmazonS3Client(RegionEndpoint.EUCentral1);
 
-            var bucketName = S3TestUtils.CreateBucket(eucentral1Client);
+            var bucketName = S3TestUtils.CreateBucketWithWait(eucentral1Client);
             try
             {
                 var response = useast1Client.PutObject(new PutObjectRequest
@@ -139,7 +139,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             // there is no distinction given for buckets that have not had DNS
             // propagated yet so a new bucket will suffice
-            var bucketName = S3TestUtils.CreateBucket(eucentral1Client);
+            var bucketName = S3TestUtils.CreateBucketWithWait(eucentral1Client);
             try
             {
                 var response = uswest2Client.PutObject(new PutObjectRequest

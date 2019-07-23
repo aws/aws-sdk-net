@@ -35,23 +35,27 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     /// Tests for StorageInsightsAnalytics
     /// </summary>
     [TestClass]
-    public class StorageInsightsAnalyticsTests
+    public class StorageInsightsAnalyticsTests : TestBase<AmazonS3Client>
     {
         public static string bucketName;
-        public static AmazonS3Client Client;
-
-        public static void CreateTestBase()
+        
+        [TestInitialize]
+        public void Init()
         {
-            Client = new AmazonS3Client();
-            bucketName = S3TestUtils.CreateBucket(Client);
+            bucketName = S3TestUtils.CreateBucketWithWait(Client);
+        }
+
+        [TestCleanup]
+        public void Cleanup()
+        {
+            AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
         }
 
         [TestCategory("S3")]
         [TestMethod]
         public void BucketAnalyticsConfigurationsTestWithSigV4()
         {
-            AWSConfigsS3.UseSignatureVersion4 = true;
-            CreateTestBase();
+            AWSConfigsS3.UseSignatureVersion4 = true;            
             BucketAnalyticsConfigurationsAndFilterTest();
             BucketAnalyticsConfigurationsPrefixFilterTest();
             BucketAnalyticsConfigurationsTagFilterTest();
@@ -61,8 +65,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestMethod]
         public void BucketAnalyticsConfigurationsTestWithS3SigV2()
         {
-            AWSConfigsS3.UseSignatureVersion4 = false;
-            CreateTestBase();
+            AWSConfigsS3.UseSignatureVersion4 = false;            
             BucketAnalyticsConfigurationsAndFilterTest();
             BucketAnalyticsConfigurationsPrefixFilterTest();
             BucketAnalyticsConfigurationsTagFilterTest();
@@ -116,7 +119,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 AnalyticsId = "configId"
             };
 
-            var getBucketAnalyticsConfigurationResponse = Client.GetBucketAnalyticsConfiguration(getBucketAnalyticsConfigurationRequest);
+            var getBucketAnalyticsConfigurationResponse = S3TestUtils.WaitForConsistency(() =>
+            {
+                var res = Client.GetBucketAnalyticsConfiguration(getBucketAnalyticsConfigurationRequest);
+                return res.AnalyticsConfiguration?.AnalyticsId == putBucketAnalyticsConfigurationRequest.AnalyticsConfiguration.AnalyticsId ? res : null;
+            });
+            
             var getAnalyticsConfiguration = getBucketAnalyticsConfigurationResponse.AnalyticsConfiguration;
             var putAnalyticsConfiguration = putBucketAnalyticsConfigurationRequest.AnalyticsConfiguration;
 
@@ -181,8 +189,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 BucketName = bucketName,
                 AnalyticsId = "configId"
             };
+                        
+            var getBucketAnalyticsConfigurationResponse = S3TestUtils.WaitForConsistency(() =>
+            {
+                var res = Client.GetBucketAnalyticsConfiguration(getBucketAnalyticsConfigurationRequest);
+                return res.AnalyticsConfiguration?.AnalyticsId == putBucketAnalyticsConfigurationRequest.AnalyticsConfiguration.AnalyticsId ? res : null;
+            });
 
-            var getBucketAnalyticsConfigurationResponse = Client.GetBucketAnalyticsConfiguration(getBucketAnalyticsConfigurationRequest);
             var getAnalyticsConfiguration = getBucketAnalyticsConfigurationResponse.AnalyticsConfiguration;
             var putAnalyticsConfiguration = putBucketAnalyticsConfigurationRequest.AnalyticsConfiguration;
 
@@ -240,8 +253,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 BucketName = bucketName,
                 AnalyticsId = "configId"
             };
+                        
+            var getBucketAnalyticsConfigurationResponse = S3TestUtils.WaitForConsistency(() =>
+            {
+                var res = Client.GetBucketAnalyticsConfiguration(getBucketAnalyticsConfigurationRequest);
+                return res.AnalyticsConfiguration?.AnalyticsId == putBucketAnalyticsConfigurationRequest.AnalyticsConfiguration.AnalyticsId ? res : null;
+            });
 
-            var getBucketAnalyticsConfigurationResponse = Client.GetBucketAnalyticsConfiguration(getBucketAnalyticsConfigurationRequest);
             var getAnalyticsConfiguration = getBucketAnalyticsConfigurationResponse.AnalyticsConfiguration;
             var putAnalyticsConfiguration = putBucketAnalyticsConfigurationRequest.AnalyticsConfiguration;
             Assert.AreEqual(((AnalyticsTagPredicate)getAnalyticsConfiguration.AnalyticsFilter.AnalyticsFilterPredicate).Tag.Key, "tagK");

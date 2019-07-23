@@ -38,7 +38,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public static void Initialize(TestContext a)
         {
             s3Client = new AmazonS3Client(TestRegionEndpoint);
-            bucketName = S3TestUtils.CreateBucket(s3Client);
+            bucketName = S3TestUtils.CreateBucketWithWait(s3Client);
             BucketAccelerateStatus bucketStatus = null;
 
             s3Client.PutBucketAccelerateConfiguration(new PutBucketAccelerateConfigurationRequest
@@ -50,7 +50,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
             });
 
-            bucketStatus = s3Client.GetBucketAccelerateConfiguration(bucketName).Status;
+            var response = S3TestUtils.WaitForConsistency(() =>
+            {
+                var res = s3Client.GetBucketAccelerateConfiguration(bucketName);
+                return res.Status == BucketAccelerateStatus.Enabled ? res : null;
+            });
+
+            bucketStatus = response.Status;
             Assert.AreEqual(BucketAccelerateStatus.Enabled, bucketStatus);
         }
 
@@ -224,11 +230,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.IsNotNull(buckets);
             var newBucket = UtilityMethods.GenerateName();
             client.PutBucket(newBucket);
-            UtilityMethods.WaitUntil(() => 
+
+            S3TestUtils.WaitForConsistency(() =>
             {
-                return client.ListBuckets().Buckets.Any(b => b.BucketName.Equals(newBucket, StringComparison.Ordinal));
+                var result = client.ListBuckets().Buckets.Any(b => b.BucketName.Equals(newBucket, StringComparison.Ordinal));
+                return result ? (bool?)true : null;
             });
-            client.DeleteBucket(newBucket);
+
+            try
+            {
+                client.DeleteBucket(newBucket);
+            }
+            catch
+            {
+                Console.WriteLine($"Failed to clean up new bucket {newBucket}. Ignore leftover bucket.");
+            }
         }        
     }
 }

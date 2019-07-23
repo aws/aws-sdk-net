@@ -40,7 +40,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public void GetObjectFromNonDefaultEndpoint()
         {
             var client = new AmazonS3Client(RegionEndpoint.USWest2);
-            var bucketName = S3TestUtils.CreateBucket(client);
+            var bucketName = S3TestUtils.CreateBucketWithWait(client);
             try
             {
                 var putObjectRequest = new PutObjectRequest
@@ -72,7 +72,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             var client = new AmazonS3Client(RegionEndpoint.USWest2);
             var defaultEndpointClient = new AmazonS3Client(RegionEndpoint.USEast1);
-            var bucketName = S3TestUtils.CreateBucket(client);
+            var bucketName = S3TestUtils.CreateBucketWithWait(client);
             try
             {
                 var putObjectRequest = new PutObjectRequest
@@ -145,7 +145,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             };
             using(var client = new AmazonS3Client(config))
             {
-                var bucketName = S3TestUtils.CreateBucket(client);
+                var bucketName = S3TestUtils.CreateBucketWithWait(client);
                 try
                 {
                     var putObjectRequest = new PutObjectRequest
@@ -237,7 +237,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             using (var newClient = new AmazonS3Client())
             {
-                var bucketName = S3TestUtils.CreateBucket(newClient);
+                var bucketName = S3TestUtils.CreateBucketWithWait(newClient);
                 try
                 {
                     VerifyPresignedPut(bucketName, key, keyId);
@@ -269,7 +269,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         private void TestSseKms(string keyId)
         {
-            var bucketName = S3TestUtils.CreateBucket(Client);
+            var bucketName = S3TestUtils.CreateBucketWithWait(Client);
             try
             {
                 var putObjectRequest = new PutObjectRequest

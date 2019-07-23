@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestCategory("S3")]
         public void ServerSideEncryptionBYOKPutAndGet()
         {
-            var bucketName = S3TestUtils.CreateBucket(Client);
+            var bucketName = S3TestUtils.CreateBucketWithWait(Client);
 
             try
             {
@@ -182,7 +182,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestCategory("S3")]
         public void ServerSideEncryptionBYOKTransferUtility()
         {
-            var bucketName = S3TestUtils.CreateBucket(Client);
+            var bucketName = S3TestUtils.CreateBucketWithWait(Client);
             try
             {
                 Aes aesEncryption = Aes.Create();

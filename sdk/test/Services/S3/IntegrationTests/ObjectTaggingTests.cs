@@ -24,7 +24,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [ClassInitialize()]
         public static void ClassInitialize(TestContext a)
         {
-            bucketName = S3TestUtils.CreateBucket(Client);
+            bucketName = S3TestUtils.CreateBucketWithWait(Client);
         }
 
         [ClassCleanup]
@@ -52,8 +52,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             };
 
             Client.PutBucketTagging(request);
-
-            var tags = Client.GetBucketTagging(new GetBucketTaggingRequest { BucketName = bucketName}).TagSet;
+                        
+            var tags = S3TestUtils.WaitForConsistency(() =>
+            {
+                var res = Client.GetBucketTagging(new GetBucketTaggingRequest { BucketName = bucketName });
+                return res.TagSet?.FirstOrDefault(x => string.Equals(x.Key, "TagBucketKey")) != null ? res.TagSet : null;
+            });
 
             var tag = tags.FirstOrDefault(x => string.Equals(x.Key, "TagBucketKey"));
             Assert.IsNotNull(tag);
@@ -113,15 +117,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             //
             // Set up the test by uploading mulitple versions of an object
             //
-
-            Client.PutBucketVersioning(new PutBucketVersioningRequest{
-                BucketName = bucketName,
-                VersioningConfig = new S3BucketVersioningConfig{
-                    Status = VersionStatus.Enabled
-                }
-            });
-
-            Client.PutObject(new PutObjectRequest{
+            EnableBucketVersioning();
+            
+            var putResponseV = Client.PutObject(new PutObjectRequest{
                 BucketName = bucketName,
                 Key = key,
                 ContentBody = "hello",
@@ -136,7 +134,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Key = key
             });
 
-            Client.PutObject(new PutObjectRequest
+            Assert.AreEqual(putResponseV.VersionId, metadataResponse.VersionId);
+
+            var putResponseV2 = Client.PutObject(new PutObjectRequest
             {
                 BucketName = bucketName,
                 Key = key,
@@ -153,11 +153,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Key = key
             });
 
+            Assert.AreEqual(putResponseV2.VersionId, metadataResponse2.VersionId);
+
             //
             // Verify that object tagging are correctly associated with the version
             //
 
-            var taggingResponse = Client.GetObjectTagging(new GetObjectTaggingRequest{
+            var taggingResponse = Client.GetObjectTagging(new GetObjectTaggingRequest
+            {
                 BucketName = bucketName,
                 Key = key,
                 VersionId = metadataResponse.VersionId
@@ -184,14 +187,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             // Set up the test by uploading mulitple versions of an object
             //
 
-            Client.PutBucketVersioning(new PutBucketVersioningRequest
-            {
-                BucketName = bucketName,
-                VersioningConfig = new S3BucketVersioningConfig
-                {
-                    Status = VersionStatus.Enabled
-                }
-            });
+            EnableBucketVersioning();
 
             Client.PutObject(new PutObjectRequest
             {
@@ -269,6 +265,28 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             Assert.AreEqual("Value2", taggingResponse.Tagging[0].Value);
         }
+
+        private void EnableBucketVersioning()
+        {
+            Client.PutBucketVersioning(new PutBucketVersioningRequest
+            {
+                BucketName = bucketName,
+                VersioningConfig = new S3BucketVersioningConfig
+                {
+                    Status = VersionStatus.Enabled
+                }
+            });
+
+            //Wait for versioning to be set on the bucket or multiple PutObject with the same key may not add a new version
+            S3TestUtils.WaitForConsistency(() =>
+            {
+                var res = Client.GetBucketVersioning(new GetBucketVersioningRequest
+                {
+                    BucketName = bucketName
+                });
+                return res.VersioningConfig?.Status == VersionStatus.Enabled ? res : null;
+            });
+        }
     }
 
     [TestClass]
@@ -286,7 +304,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             transferClient = new TransferUtility(Client);
 
             tempFilePath = System.IO.Path.GetTempFileName();
-            bucketName = S3TestUtils.CreateBucket(Client);
+            bucketName = S3TestUtils.CreateBucketWithWait(Client);
 
             UtilityMethods.GenerateFile(tempFilePath, 1024 * 1024 * 20);
         }
@@ -305,8 +323,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
             }
             finally{};
-
-            BaseClean();
         }
 
         [TestMethod]

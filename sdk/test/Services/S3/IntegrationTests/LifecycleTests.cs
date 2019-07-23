@@ -68,7 +68,7 @@ namespace S3UnitTest
         [TestInitialize]
         public void Init()
         {
-            bucketName = S3TestUtils.CreateBucket(Client);
+            bucketName = S3TestUtils.CreateBucketWithWait(Client);
         }
 
         [TestCleanup]
@@ -197,7 +197,12 @@ namespace S3UnitTest
                 BucketName = bucketName,
                 Configuration = configuration
             });
-            s3Configuration = Client.GetLifecycleConfiguration(bucketName).Configuration;
+            
+            s3Configuration = S3TestUtils.WaitForConsistency(() =>
+            {
+                var res = Client.GetLifecycleConfiguration(bucketName);
+                return res.Configuration?.Rules?.Count == configuration.Rules.Count ? res.Configuration : null;
+            });
 
             string abortRuleId = null;
             Assert.IsNotNull(s3Configuration);
@@ -317,8 +322,12 @@ namespace S3UnitTest
                     }
                 }
             });
-
-            var actualConfig = client.GetLifecycleConfiguration(bucketName).Configuration;
+                        
+            var actualConfig = S3TestUtils.WaitForConsistency(() =>
+            {
+                var res = client.GetLifecycleConfiguration(bucketName);
+                return res.Configuration?.Rules?.Count == 1 ? res.Configuration : null;
+            });
             Assert.IsNotNull(actualConfig);
             Assert.IsNotNull(actualConfig.Rules);
             Assert.AreEqual(1, actualConfig.Rules.Count);

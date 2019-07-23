@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             using (var snsClient = new AmazonSimpleNotificationServiceClient())
             {
                 var snsCreateResponse = snsClient.CreateTopic("events-test-" + DateTime.Now.Ticks);
-                var bucketName = S3TestUtils.CreateBucket(s3Client);
+                var bucketName = S3TestUtils.CreateBucketWithWait(s3Client);
 
                 try
                 {
@@ -68,8 +68,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     };
 
                     s3Client.PutBucketNotification(putRequest);
-
-                    var getResponse = s3Client.GetBucketNotification(bucketName);
+                                        
+                    var getResponse = S3TestUtils.WaitForConsistency(() =>
+                    {
+                        var res = s3Client.GetBucketNotification(bucketName);
+                        return res.TopicConfigurations?.Count > 0 && res.TopicConfigurations[0].Id == "the-topic-test" ? res : null;
+                    });
 
                     Assert.AreEqual(1, getResponse.TopicConfigurations.Count);
                     Assert.AreEqual(1, getResponse.TopicConfigurations[0].Events.Count);
@@ -100,7 +104,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             using (var sqsClient = new AmazonSQSClient())
             {
                 var createResponse = sqsClient.CreateQueue("events-test-" + DateTime.Now.Ticks);
-                var bucketName = S3TestUtils.CreateBucket(s3Client);
+                var bucketName = S3TestUtils.CreateBucketWithWait(s3Client);
+                
                 try
                 {
                     var queueArn = sqsClient.AuthorizeS3ToSendMessage(createResponse.QueueUrl, bucketName);
@@ -131,7 +136,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
                     s3Client.PutBucketNotification(putRequest);
 
-                    var getResponse = s3Client.GetBucketNotification(bucketName);
+                    var getResponse = S3TestUtils.WaitForConsistency(() =>
+                    {
+                        var res = s3Client.GetBucketNotification(bucketName);
+                        return res.QueueConfigurations?.Count > 0 && res.QueueConfigurations[0].Id == "the-queue-test" ? res : null;
+                    });
 
                     Assert.AreEqual(1, getResponse.QueueConfigurations.Count);
                     Assert.AreEqual(1, getResponse.QueueConfigurations[0].Events.Count);
@@ -149,7 +158,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
                     // Purge queue to remove test message sent configuration was setup.
                     sqsClient.PurgeQueue(createResponse.QueueUrl);
-                    Thread.Sleep(TimeSpan.FromSeconds(1));
+                    //We must wait 60 seconds or the next message being sent to the queue could be deleted while the queue is being purged.
+                    Thread.Sleep(TimeSpan.FromSeconds(60));                    
 
                     var putObjectRequest = new PutObjectRequest
                     {
@@ -163,7 +173,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     string messageBody = null;
                     for (int i = 0; i < 5 && messageBody == null; i++)
                     {
-                        var receiveResponse = sqsClient.ReceiveMessage(new ReceiveMessageRequest { QueueUrl = createResponse.QueueUrl, WaitTimeSeconds = 20 });
+                         var receiveResponse = sqsClient.ReceiveMessage(new ReceiveMessageRequest { QueueUrl = createResponse.QueueUrl, WaitTimeSeconds = 20 });
                         if (receiveResponse.Messages.Count != 0)
                         {
                             messageBody = receiveResponse.Messages[0].Body;

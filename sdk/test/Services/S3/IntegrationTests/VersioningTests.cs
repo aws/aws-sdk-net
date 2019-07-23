@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [ClassInitialize()]
         public static void Initialize(TestContext tc)
         {
-            bucketName = S3TestUtils.CreateBucket(Client);
+            bucketName = S3TestUtils.CreateBucketWithWait(Client);
             Client.PutBucketVersioning(new PutBucketVersioningRequest
             {
                 BucketName = bucketName,
@@ -40,6 +40,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 {
                     Status = VersionStatus.Enabled
                 }
+            });
+
+            S3TestUtils.WaitForConsistency(() =>
+            {
+                var res = Client.GetBucketVersioning(new GetBucketVersioningRequest
+                {
+                    BucketName = bucketName
+                });
+                return res.VersioningConfig?.Status == VersionStatus.Enabled ? res : null;
             });
         }
 
@@ -65,8 +74,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     ContentBody = content
                 });
             }
+                        
+            var response = S3TestUtils.WaitForConsistency(() =>
+            {
+                var res = Client.ListVersions(bucketName);                
+                return res.Versions?.Count == count ? res : null;
+            });
 
-            var versions = Client.ListVersions(bucketName).Versions;
+            var versions = response.Versions;
             Assert.AreEqual(count, versions.Count);
 
             foreach(var version in versions)

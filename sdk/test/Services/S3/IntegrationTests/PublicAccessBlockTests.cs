@@ -29,21 +29,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     public class PublicAccessBlockTests : TestBase<AmazonS3Client>
     {
         private static string bucketName;
-        private static IAmazonS3 s3Client = null;        
-
+     
         [ClassInitialize()]
         public static void Initialize(TestContext a)
-        {
-            var config = new AmazonS3Config();
-            s3Client = new AmazonS3Client(config);
-            bucketName = S3TestUtils.CreateBucketWithWait(s3Client);
+        {            
+            bucketName = S3TestUtils.CreateBucketWithWait(Client);
         }
 
         [ClassCleanup]
         public static void ClassCleanup()
         {
-            AmazonS3Util.DeleteS3BucketWithObjects(s3Client, bucketName);
-            s3Client.Dispose();
+            AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);         
             BaseClean();
         }
                 
@@ -76,27 +72,29 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 BucketName = bucketName
             };
 
-            GetPublicAccessBlockResponse getResponse = null;
-
-            var sleeper = new UtilityMethods.ListSleeper(500, 1000, 2000, 5000, 10000, 15000);
-            UtilityMethods.WaitUntil(() =>
+            if(expectedConfiguration == null)
             {
-                getResponse = client.GetPublicAccessBlock(getRequest);
-                if (expectedConfiguration == null)
+                //If expectedConfiguration is null then we want GetPublicAccessBlock to throw an exception because the configuration was removed.
+                //Wait until the configuration was removed / until an exception is thrown.
+                UtilityMethods.WaitUntilException(() =>
                 {
-                        //If expectedConfiguration is null then we want GetPublicAccessBlock to throw an exception because the configuration was removed.
-                        //Wait until the configuration was removed / until an exception is thrown.
-                        return false;
-                }
+                    client.GetPublicAccessBlock(getRequest);
+                });
 
-                return getResponse.HttpStatusCode == HttpStatusCode.OK
-                    && expectedConfiguration.BlockPublicAcls == getResponse.PublicAccessBlockConfiguration.BlockPublicAcls
-                    && expectedConfiguration.BlockPublicPolicy == getResponse.PublicAccessBlockConfiguration.BlockPublicPolicy
-                    && expectedConfiguration.IgnorePublicAcls == getResponse.PublicAccessBlockConfiguration.IgnorePublicAcls
-                    && expectedConfiguration.RestrictPublicBuckets == getResponse.PublicAccessBlockConfiguration.RestrictPublicBuckets;
-            }, sleeper, 30);
+                Assert.Fail("An expected exception was not thrown");
+            }
+            
+            var getResponse = S3TestUtils.WaitForConsistency(() =>
+            {
+                var res = client.GetPublicAccessBlock(getRequest);                
 
-            Assert.AreEqual(true, getResponse != null && getResponse.HttpStatusCode == HttpStatusCode.OK);
+                return res.HttpStatusCode == HttpStatusCode.OK
+                    && expectedConfiguration.BlockPublicAcls == res.PublicAccessBlockConfiguration.BlockPublicAcls
+                    && expectedConfiguration.BlockPublicPolicy == res.PublicAccessBlockConfiguration.BlockPublicPolicy
+                    && expectedConfiguration.IgnorePublicAcls == res.PublicAccessBlockConfiguration.IgnorePublicAcls
+                    && expectedConfiguration.RestrictPublicBuckets == res.PublicAccessBlockConfiguration.RestrictPublicBuckets ? res : null;
+            });
+                        
             Assert.AreEqual(expectedConfiguration.BlockPublicAcls, getResponse.PublicAccessBlockConfiguration.BlockPublicAcls);
             Assert.AreEqual(expectedConfiguration.BlockPublicPolicy, getResponse.PublicAccessBlockConfiguration.BlockPublicPolicy);
             Assert.AreEqual(expectedConfiguration.IgnorePublicAcls, getResponse.PublicAccessBlockConfiguration.IgnorePublicAcls);
@@ -113,21 +111,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 //Add public access block configuration
                 PublicAccessBlockConfiguration configuration;
-                Call_PutPublicAccessBlock(s3Client, bucketName, out configuration);
+                Call_PutPublicAccessBlock(Client, bucketName, out configuration);
 
                 //Verify the configuration exists            
-                Call_GetPublicAccessBlock(s3Client, bucketName, configuration);
+                Call_GetPublicAccessBlock(Client, bucketName, configuration);
 
                 //Delete the configuration
                 var deleteRequest = new DeletePublicAccessBlockRequest
                 {
                     BucketName = bucketName
                 };
-                var deleteResponse = s3Client.DeletePublicAccessBlock(deleteRequest);
+                var deleteResponse = Client.DeletePublicAccessBlock(deleteRequest);
                 Assert.AreEqual(true, deleteResponse.HttpStatusCode == HttpStatusCode.NoContent);
 
                 //Verify the configuration was deleted. This call will throw a public access block configuration was not found message.
-                Call_GetPublicAccessBlock(s3Client, bucketName, null);
+                Call_GetPublicAccessBlock(Client, bucketName, null);
             }
             catch (AmazonS3Exception ex)
             {
@@ -141,7 +139,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public void TestPutPublicAccessBlock()
         {
             PublicAccessBlockConfiguration configuration;
-            Call_PutPublicAccessBlock(s3Client, bucketName, out configuration);            
+            Call_PutPublicAccessBlock(Client, bucketName, out configuration);            
         }
 
         [TestMethod]
@@ -176,10 +174,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 System.Reflection.PropertyInfo property = putRequest.PublicAccessBlockConfiguration.GetType().GetProperty(propertyName);
                 property.SetValue(configuration, true);
 
-                var putResponse = s3Client.PutPublicAccessBlock(putRequest);
+                var putResponse = Client.PutPublicAccessBlock(putRequest);
                 Assert.AreEqual(true, putResponse.HttpStatusCode == HttpStatusCode.OK);
 
-                Call_GetPublicAccessBlock(s3Client, bucketName, configuration);                
+                Call_GetPublicAccessBlock(Client, bucketName, configuration);                
             }
         }
         

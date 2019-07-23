@@ -23,7 +23,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public void Initialize()
         {
             usEastClient = new AmazonS3Client(RegionEndpoint.USEast1);
-            eastBucketName = S3TestUtils.CreateBucket(usEastClient);
+            eastBucketName = S3TestUtils.CreateBucketWithWait(usEastClient);
             usEastClient.PutObject(new PutObjectRequest
             {
                 BucketName = eastBucketName,
@@ -31,7 +31,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 ContentBody = testContent
             });
             var usWestClient = new AmazonS3Client(RegionEndpoint.USWest1);
-            westBucketName = S3TestUtils.CreateBucket(usWestClient);
+            westBucketName = S3TestUtils.CreateBucketWithWait(usWestClient);
         }
 
         [TestCleanup]
