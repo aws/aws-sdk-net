@@ -429,6 +429,43 @@ namespace Amazon.SecurityToken
 
         #endregion
         
+        #region  GetAccessKeyInfo
+        internal virtual GetAccessKeyInfoResponse GetAccessKeyInfo(GetAccessKeyInfoRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccessKeyInfoRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccessKeyInfoResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccessKeyInfoResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccessKeyInfo operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessKeyInfo operation on AmazonSecurityTokenServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetAccessKeyInfo">REST API Reference for GetAccessKeyInfo Operation</seealso>
+        public virtual void GetAccessKeyInfoAsync(GetAccessKeyInfoRequest request, AmazonServiceCallback<GetAccessKeyInfoRequest, GetAccessKeyInfoResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetAccessKeyInfoRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetAccessKeyInfoResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<GetAccessKeyInfoRequest,GetAccessKeyInfoResponse> responseObject 
+                            = new AmazonServiceResult<GetAccessKeyInfoRequest,GetAccessKeyInfoResponse>((GetAccessKeyInfoRequest)req, (GetAccessKeyInfoResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  GetCallerIdentity
         internal virtual GetCallerIdentityResponse GetCallerIdentity(GetCallerIdentityRequest request)
         {

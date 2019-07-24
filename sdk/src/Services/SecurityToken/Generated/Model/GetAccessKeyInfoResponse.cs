@@ -28,32 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// A reference to the IAM managed policy that is passed as a session policy for a role
-    /// session or a federated user session.
+    /// This is the response object from the GetAccessKeyInfo operation.
     /// </summary>
-    public partial class PolicyDescriptorType
+    public partial class GetAccessKeyInfoResponse : AmazonWebServiceResponse
     {
-        private string _arn;
+        private string _account;
 
         /// <summary>
-        /// Gets and sets the property Arn. 
+        /// Gets and sets the property Account. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM managed policy to use as a session policy
-        /// for the role. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        /// The number used to identify the AWS account.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
-        public string Arn
+        public string Account
         {
-            get { return this._arn; }
-            set { this._arn = value; }
+            get { return this._account; }
+            set { this._account = value; }
         }
 
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
+        // Check to see if Account property is set
+        internal bool IsSetAccount()
         {
-            return this._arn != null;
+            return this._account != null;
         }
 
     }

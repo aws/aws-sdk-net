@@ -140,6 +140,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("SecurityToken")]
+        public void GetAccessKeyInfoMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetAccessKeyInfo");
+
+            var request = InstantiateClassGenerator.Execute<GetAccessKeyInfoRequest>();
+            var marshaller = new GetAccessKeyInfoRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GetAccessKeyInfoResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetAccessKeyInfoResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SecurityToken")]
         public void GetCallerIdentityMarshallTest()
         {
             var operation = service_model.FindOperation("GetCallerIdentity");

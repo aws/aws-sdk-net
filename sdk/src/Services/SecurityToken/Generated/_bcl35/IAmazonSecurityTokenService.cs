@@ -780,6 +780,72 @@ namespace Amazon.SecurityToken
 
         #endregion
         
+        #region  GetAccessKeyInfo
+
+
+        /// <summary>
+        /// Returns the account identifier for the specified access key ID.
+        /// 
+        ///  
+        /// <para>
+        /// Access keys consist of two parts: an access key ID (for example, <code>AKIAIOSFODNN7EXAMPLE</code>)
+        /// and a secret access key (for example, <code>wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY</code>).
+        /// For more information about access keys, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html">Managing
+        /// Access Keys for IAM Users</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you pass an access key ID to this operation, it returns the ID of the AWS account
+        /// to which the keys belong. Access key IDs beginning with <code>AKIA</code> are long-term
+        /// credentials for an IAM user or the AWS account root user. Access key IDs beginning
+        /// with <code>ASIA</code> are temporary credentials that are created using STS operations.
+        /// If the account in the response belongs to you, you can sign in as the root user and
+        /// review your root user access keys. Then, you can pull a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report">credentials
+        /// report</a> to learn which IAM user owns the keys. To learn who requested the temporary
+        /// credentials for an <code>ASIA</code> access key, view the STS events in your <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration">CloudTrail
+        /// logs</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation does not indicate the state of the access key. The key might be active,
+        /// inactive, or deleted. Active keys might not have permissions to perform an operation.
+        /// Providing a deleted keys might return an error that the key doesn't exist.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessKeyInfo service method.</param>
+        /// 
+        /// <returns>The response from the GetAccessKeyInfo service method, as returned by SecurityTokenService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetAccessKeyInfo">REST API Reference for GetAccessKeyInfo Operation</seealso>
+        GetAccessKeyInfoResponse GetAccessKeyInfo(GetAccessKeyInfoRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccessKeyInfo operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessKeyInfo operation on AmazonSecurityTokenServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccessKeyInfo
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetAccessKeyInfo">REST API Reference for GetAccessKeyInfo Operation</seealso>
+        IAsyncResult BeginGetAccessKeyInfo(GetAccessKeyInfoRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccessKeyInfo operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccessKeyInfo.</param>
+        /// 
+        /// <returns>Returns a  GetAccessKeyInfoResult from SecurityTokenService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetAccessKeyInfo">REST API Reference for GetAccessKeyInfo Operation</seealso>
+        GetAccessKeyInfoResponse EndGetAccessKeyInfo(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetCallerIdentity
 
 

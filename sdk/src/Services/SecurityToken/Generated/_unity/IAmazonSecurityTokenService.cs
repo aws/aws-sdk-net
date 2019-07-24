@@ -204,6 +204,23 @@ namespace Amazon.SecurityToken
 
         #endregion
         
+        #region  GetAccessKeyInfo
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccessKeyInfo operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessKeyInfo operation on AmazonSecurityTokenServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetAccessKeyInfo">REST API Reference for GetAccessKeyInfo Operation</seealso>
+        void GetAccessKeyInfoAsync(GetAccessKeyInfoRequest request, AmazonServiceCallback<GetAccessKeyInfoRequest, GetAccessKeyInfoResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
         #region  GetCallerIdentity
 
 
