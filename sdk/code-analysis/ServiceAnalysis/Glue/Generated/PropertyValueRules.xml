@@ -134,6 +134,12 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.CreateJobRequest.GlueVersion</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^\w+\.\w+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.CreateJobRequest.Name</property>
     <min>1</min>
     <max>255</max>
@@ -146,11 +152,6 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.CreateJobRequest.Timeout</property>
     <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Glue.Model.CreateJobRequest.WorkerType</property>
-    <min>1</min>
-    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CreateJobResponse.Name</property>
@@ -798,11 +799,6 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Glue.Model.StartJobRunRequest.WorkerType</property>
-    <min>1</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Glue.Model.StartJobRunResponse.JobRunId</property>
     <min>1</min>
     <max>255</max>
@@ -1315,6 +1311,12 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.Job.GlueVersion</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^\w+\.\w+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.Job.Name</property>
     <min>1</min>
     <max>255</max>
@@ -1335,6 +1337,12 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.JobCommand.PythonVersion</property>
     <pattern>^[2-3]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.JobRun.GlueVersion</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^\w+\.\w+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.JobRun.Id</property>
@@ -1369,6 +1377,12 @@
     <property>Amazon.Glue.Model.JobUpdate.Description</property>
     <min>0</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.JobUpdate.GlueVersion</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^\w+\.\w+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.JobUpdate.SecurityConfiguration</property>

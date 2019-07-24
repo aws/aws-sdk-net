@@ -29,7 +29,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDevEndpoint operation.
-    /// Retrieves information about a specified DevEndpoint.
+    /// Retrieves information about a specified development endpoint.
     /// 
     ///  <note> 
     /// <para>
@@ -47,7 +47,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property EndpointName. 
         /// <para>
-        /// Name of the DevEndpoint for which to retrieve information.
+        /// Name of the <code>DevEndpoint</code> to retrieve information for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

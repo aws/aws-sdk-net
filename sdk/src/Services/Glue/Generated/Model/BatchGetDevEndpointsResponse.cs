@@ -38,7 +38,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DevEndpoints. 
         /// <para>
-        /// A list of DevEndpoint definitions.
+        /// A list of <code>DevEndpoint</code> definitions.
         /// </para>
         /// </summary>
         public List<DevEndpoint> DevEndpoints
@@ -56,7 +56,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DevEndpointsNotFound. 
         /// <para>
-        /// A list of DevEndpoints not found.
+        /// A list of <code>DevEndpoints</code> not found.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]

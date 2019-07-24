@@ -39,6 +39,7 @@ namespace Amazon.Glue.Model
         private Dictionary<string, string> _defaultArguments = new Dictionary<string, string>();
         private string _description;
         private ExecutionProperty _executionProperty;
+        private string _glueVersion;
         private string _logUri;
         private double? _maxCapacity;
         private int? _maxRetries;
@@ -182,6 +183,32 @@ namespace Amazon.Glue.Model
         internal bool IsSetExecutionProperty()
         {
             return this._executionProperty != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GlueVersion. 
+        /// <para>
+        /// Glue version determines the versions of Apache Spark and Python that AWS Glue supports.
+        /// The Python version indicates the version supported for jobs of type Spark. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about the available AWS Glue versions and corresponding Spark
+        /// and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue
+        /// version</a> in the developer guide.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string GlueVersion
+        {
+            get { return this._glueVersion; }
+            set { this._glueVersion = value; }
+        }
+
+        // Check to see if GlueVersion property is set
+        internal bool IsSetGlueVersion()
+        {
+            return this._glueVersion != null;
         }
 
         /// <summary>

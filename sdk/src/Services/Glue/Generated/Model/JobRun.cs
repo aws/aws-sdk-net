@@ -38,6 +38,7 @@ namespace Amazon.Glue.Model
         private DateTime? _completedOn;
         private string _errorMessage;
         private int? _executionTime;
+        private string _glueVersion;
         private string _id;
         private string _jobName;
         private JobRunState _jobRunState;
@@ -187,6 +188,36 @@ namespace Amazon.Glue.Model
         internal bool IsSetExecutionTime()
         {
             return this._executionTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GlueVersion. 
+        /// <para>
+        /// Glue version determines the versions of Apache Spark and Python that AWS Glue supports.
+        /// The Python version indicates the version supported for jobs of type Spark. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about the available AWS Glue versions and corresponding Spark
+        /// and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue
+        /// version</a> in the developer guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// Jobs that are created without specifying a Glue version default to Glue 0.9.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string GlueVersion
+        {
+            get { return this._glueVersion; }
+            set { this._glueVersion = value; }
+        }
+
+        // Check to see if GlueVersion property is set
+        internal bool IsSetGlueVersion()
+        {
+            return this._glueVersion != null;
         }
 
         /// <summary>

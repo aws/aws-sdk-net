@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Defines a point which a job can resume processing.
+    /// Defines a point that a job can resume processing.
     /// </summary>
     public partial class JobBookmarkEntry
     {
@@ -77,7 +77,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// Name of the job in question.
+        /// The name of the job in question.
         /// </para>
         /// </summary>
         public string JobName
@@ -113,7 +113,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// Version of the job.
+        /// The version of the job.
         /// </para>
         /// </summary>
         public int Version

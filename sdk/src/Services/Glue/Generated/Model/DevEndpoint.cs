@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// A development endpoint where a developer can remotely debug ETL scripts.
+    /// A development endpoint where a developer can remotely debug extract, transform, and
+    /// load (ETL) scripts.
     /// </summary>
     public partial class DevEndpoint
     {
@@ -42,6 +43,7 @@ namespace Amazon.Glue.Model
         private DateTime? _lastModifiedTimestamp;
         private string _lastUpdateStatus;
         private int? _numberOfNodes;
+        private int? _numberOfWorkers;
         private string _privateAddress;
         private string _publicAddress;
         private string _publicKey;
@@ -52,17 +54,19 @@ namespace Amazon.Glue.Model
         private string _status;
         private string _subnetId;
         private string _vpcId;
+        private WorkerType _workerType;
         private string _yarnEndpointAddress;
         private int? _zeppelinRemoteSparkInterpreterPort;
 
         /// <summary>
         /// Gets and sets the property Arguments. 
         /// <para>
-        /// A map of arguments used to configure the DevEndpoint.
+        /// A map of arguments used to configure the <code>DevEndpoint</code>.
         /// </para>
         ///  
         /// <para>
-        /// Note that currently, we only support "--enable-glue-datacatalog": "" as a valid argument.
+        /// Currently, only <code>"--enable-glue-datacatalog": ""</code> is supported as a valid
+        /// argument.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -81,7 +85,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The AWS availability zone where this DevEndpoint is located.
+        /// The AWS Availability Zone where this <code>DevEndpoint</code> is located.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -117,7 +121,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property EndpointName. 
         /// <para>
-        /// The name of the DevEndpoint.
+        /// The name of the <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         public string EndpointName
@@ -135,12 +139,14 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ExtraJarsS3Path. 
         /// <para>
-        /// Path to one or more Java Jars in an S3 bucket that should be loaded in your DevEndpoint.
+        /// The path to one or more Java <code>.jar</code> files in an S3 bucket that should be
+        /// loaded in your <code>DevEndpoint</code>.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// Please note that only pure Java/Scala libraries can currently be used on a DevEndpoint.
+        /// You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.
         /// </para>
+        ///  </note>
         /// </summary>
         public string ExtraJarsS3Path
         {
@@ -157,15 +163,17 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ExtraPythonLibsS3Path. 
         /// <para>
-        /// Path(s) to one or more Python libraries in an S3 bucket that should be loaded in your
-        /// DevEndpoint. Multiple values must be complete paths separated by a comma.
+        /// The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded
+        /// in your <code>DevEndpoint</code>. Multiple values must be complete paths separated
+        /// by a comma.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// Please note that only pure Python libraries can currently be used on a DevEndpoint.
-        /// Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a>
-        /// Python data analysis library, are not yet supported.
+        /// You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries
+        /// that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a>
+        /// Python data analysis library, are not currently supported.
         /// </para>
+        ///  </note>
         /// </summary>
         public string ExtraPythonLibsS3Path
         {
@@ -182,7 +190,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// The reason for a current failure in this DevEndpoint.
+        /// The reason for a current failure in this <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         public string FailureReason
@@ -200,7 +208,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTimestamp. 
         /// <para>
-        /// The point in time at which this DevEndpoint was last modified.
+        /// The point in time at which this <code>DevEndpoint</code> was last modified.
         /// </para>
         /// </summary>
         public DateTime LastModifiedTimestamp
@@ -236,7 +244,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NumberOfNodes. 
         /// <para>
-        /// The number of AWS Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
+        /// The number of AWS Glue Data Processing Units (DPUs) allocated to this <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         public int NumberOfNodes
@@ -252,11 +260,35 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NumberOfWorkers. 
+        /// <para>
+        /// The number of workers of a defined <code>workerType</code> that are allocated to the
+        /// development endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149
+        /// for <code>G.2X</code>. 
+        /// </para>
+        /// </summary>
+        public int NumberOfWorkers
+        {
+            get { return this._numberOfWorkers.GetValueOrDefault(); }
+            set { this._numberOfWorkers = value; }
+        }
+
+        // Check to see if NumberOfWorkers property is set
+        internal bool IsSetNumberOfWorkers()
+        {
+            return this._numberOfWorkers.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PrivateAddress. 
         /// <para>
-        /// A private IP address to access the DevEndpoint within a VPC, if the DevEndpoint is
-        /// created within one. The PrivateAddress field is present only when you create the DevEndpoint
-        /// within your virtual private cloud (VPC).
+        /// A private IP address to access the <code>DevEndpoint</code> within a VPC if the <code>DevEndpoint</code>
+        /// is created within one. The <code>PrivateAddress</code> field is present only when
+        /// you create the <code>DevEndpoint</code> within your VPC.
         /// </para>
         /// </summary>
         public string PrivateAddress
@@ -274,8 +306,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property PublicAddress. 
         /// <para>
-        /// The public IP address used by this DevEndpoint. The PublicAddress field is present
-        /// only when you create a non-VPC (virtual private cloud) DevEndpoint.
+        /// The public IP address used by this <code>DevEndpoint</code>. The <code>PublicAddress</code>
+        /// field is present only when you create a non-virtual private cloud (VPC) <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         public string PublicAddress
@@ -293,9 +325,9 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property PublicKey. 
         /// <para>
-        /// The public key to be used by this DevEndpoint for authentication. This attribute is
-        /// provided for backward compatibility, as the recommended attribute to use is public
-        /// keys.
+        /// The public key to be used by this <code>DevEndpoint</code> for authentication. This
+        /// attribute is provided for backward compatibility because the recommended attribute
+        /// to use is public keys.
         /// </para>
         /// </summary>
         public string PublicKey
@@ -313,16 +345,16 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property PublicKeys. 
         /// <para>
-        /// A list of public keys to be used by the DevEndpoints for authentication. The use of
-        /// this attribute is preferred over a single public key because the public keys allow
-        /// you to have a different private key per client.
+        /// A list of public keys to be used by the <code>DevEndpoints</code> for authentication.
+        /// Using this attribute is preferred over a single public key because the public keys
+        /// allow you to have a different private key per client.
         /// </para>
         ///  <note> 
         /// <para>
         /// If you previously created an endpoint with a public key, you must remove that key
-        /// to be able to set a list of public keys: call the <code>UpdateDevEndpoint</code> API
-        /// with the public key content in the <code>deletePublicKeys</code> attribute, and the
-        /// list of new keys in the <code>addPublicKeys</code> attribute.
+        /// to be able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API
+        /// operation with the public key content in the <code>deletePublicKeys</code> attribute,
+        /// and the list of new keys in the <code>addPublicKeys</code> attribute.
         /// </para>
         ///  </note>
         /// </summary>
@@ -342,7 +374,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The AWS ARN of the IAM role used in this DevEndpoint.
+        /// The Amazon Resource Name (ARN) of the IAM role used in this <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         public string RoleArn
@@ -360,7 +392,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SecurityConfiguration. 
         /// <para>
-        /// The name of the SecurityConfiguration structure to be used with this DevEndpoint.
+        /// The name of the <code>SecurityConfiguration</code> structure to be used with this
+        /// <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -379,7 +412,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// A list of security group identifiers used in this DevEndpoint.
+        /// A list of security group identifiers used in this <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         public List<string> SecurityGroupIds
@@ -397,7 +430,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of this DevEndpoint.
+        /// The current status of this <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         public string Status
@@ -415,7 +448,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// The subnet ID for this DevEndpoint.
+        /// The subnet ID for this <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         public string SubnetId
@@ -433,7 +466,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// The ID of the virtual private cloud (VPC) used by this DevEndpoint.
+        /// The ID of the virtual private cloud (VPC) used by this <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         public string VpcId
@@ -449,9 +482,46 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property WorkerType. 
+        /// <para>
+        /// The type of predefined worker that is allocated to the development endpoint. Accepts
+        /// a value of Standard, G.1X, or G.2X.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory
+        /// and a 50GB disk, and 2 executors per worker.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of
+        /// memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker
+        /// type for memory-intensive jobs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of
+        /// memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker
+        /// type for memory-intensive jobs.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public WorkerType WorkerType
+        {
+            get { return this._workerType; }
+            set { this._workerType = value; }
+        }
+
+        // Check to see if WorkerType property is set
+        internal bool IsSetWorkerType()
+        {
+            return this._workerType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property YarnEndpointAddress. 
         /// <para>
-        /// The YARN endpoint address used by this DevEndpoint.
+        /// The YARN endpoint address used by this <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         public string YarnEndpointAddress

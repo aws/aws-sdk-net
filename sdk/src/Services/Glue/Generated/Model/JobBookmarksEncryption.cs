@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies how Job bookmark data should be encrypted.
+    /// Specifies how job bookmark data should be encrypted.
     /// </summary>
     public partial class JobBookmarksEncryption
     {
@@ -38,7 +38,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property JobBookmarksEncryptionMode. 
         /// <para>
-        /// The encryption mode to use for Job bookmarks data.
+        /// The encryption mode to use for job bookmarks data.
         /// </para>
         /// </summary>
         public JobBookmarksEncryptionMode JobBookmarksEncryptionMode
@@ -56,7 +56,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
-        /// The AWS ARN of the KMS key to be used to encrypt the data.
+        /// The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.
         /// </para>
         /// </summary>
         public string KmsKeyArn

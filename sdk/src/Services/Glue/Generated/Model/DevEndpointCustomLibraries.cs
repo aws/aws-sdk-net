@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Custom libraries to be loaded into a DevEndpoint.
+    /// Custom libraries to be loaded into a development endpoint.
     /// </summary>
     public partial class DevEndpointCustomLibraries
     {
@@ -38,12 +38,14 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ExtraJarsS3Path. 
         /// <para>
-        /// Path to one or more Java Jars in an S3 bucket that should be loaded in your DevEndpoint.
+        /// The path to one or more Java <code>.jar</code> files in an S3 bucket that should be
+        /// loaded in your <code>DevEndpoint</code>.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// Please note that only pure Java/Scala libraries can currently be used on a DevEndpoint.
+        /// You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.
         /// </para>
+        ///  </note>
         /// </summary>
         public string ExtraJarsS3Path
         {
@@ -60,15 +62,17 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ExtraPythonLibsS3Path. 
         /// <para>
-        /// Path(s) to one or more Python libraries in an S3 bucket that should be loaded in your
-        /// DevEndpoint. Multiple values must be complete paths separated by a comma.
+        /// The paths to one or more Python libraries in an Amazon Simple Storage Service (Amazon
+        /// S3) bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values
+        /// must be complete paths separated by a comma.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// Please note that only pure Python libraries can currently be used on a DevEndpoint.
-        /// Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a>
-        /// Python data analysis library, are not yet supported.
+        /// You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries
+        /// that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a>
+        /// Python data analysis library, are not currently supported.
         /// </para>
+        ///  </note>
         /// </summary>
         public string ExtraPythonLibsS3Path
         {

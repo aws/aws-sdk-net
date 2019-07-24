@@ -38,7 +38,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DevEndpoints. 
         /// <para>
-        /// A list of DevEndpoint definitions.
+        /// A list of <code>DevEndpoint</code> definitions.
         /// </para>
         /// </summary>
         public List<DevEndpoint> DevEndpoints
@@ -56,7 +56,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A continuation token, if not all DevEndpoint definitions have yet been returned.
+        /// A continuation token, if not all <code>DevEndpoint</code> definitions have yet been
+        /// returned.
         /// </para>
         /// </summary>
         public string NextToken

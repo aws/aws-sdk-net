@@ -29,7 +29,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDevEndpoint operation.
-    /// Updates a specified DevEndpoint.
+    /// Updates a specified development endpoint.
     /// </summary>
     public partial class UpdateDevEndpointRequest : AmazonGlueRequest
     {
@@ -45,7 +45,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property AddArguments. 
         /// <para>
-        /// The map of arguments to add the map of arguments used to configure the DevEndpoint.
+        /// The map of arguments to add the map of arguments used to configure the <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -64,7 +64,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property AddPublicKeys. 
         /// <para>
-        /// The list of public keys for the DevEndpoint to use.
+        /// The list of public keys for the <code>DevEndpoint</code> to use.
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]
@@ -83,7 +83,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CustomLibraries. 
         /// <para>
-        /// Custom Python or Java libraries to be loaded in the DevEndpoint.
+        /// Custom Python or Java libraries to be loaded in the <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         public DevEndpointCustomLibraries CustomLibraries
@@ -102,7 +102,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property DeleteArguments. 
         /// <para>
         /// The list of argument keys to be deleted from the map of arguments used to configure
-        /// the DevEndpoint.
+        /// the <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         public List<string> DeleteArguments
@@ -120,7 +120,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DeletePublicKeys. 
         /// <para>
-        /// The list of public keys to be deleted from the DevEndpoint.
+        /// The list of public keys to be deleted from the <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]
@@ -139,7 +139,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property EndpointName. 
         /// <para>
-        /// The name of the DevEndpoint to be updated.
+        /// The name of the <code>DevEndpoint</code> to be updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -158,7 +158,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property PublicKey. 
         /// <para>
-        /// The public key for the DevEndpoint to use.
+        /// The public key for the <code>DevEndpoint</code> to use.
         /// </para>
         /// </summary>
         public string PublicKey
@@ -176,8 +176,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property UpdateEtlLibraries. 
         /// <para>
-        /// True if the list of custom libraries to be loaded in the development endpoint needs
-        /// to be updated, or False otherwise.
+        ///  <code>True</code> if the list of custom libraries to be loaded in the development
+        /// endpoint needs to be updated, or <code>False</code> if otherwise.
         /// </para>
         /// </summary>
         public bool UpdateEtlLibraries

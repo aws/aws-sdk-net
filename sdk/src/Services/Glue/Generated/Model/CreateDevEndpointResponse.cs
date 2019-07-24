@@ -40,19 +40,21 @@ namespace Amazon.Glue.Model
         private string _extraPythonLibsS3Path;
         private string _failureReason;
         private int? _numberOfNodes;
+        private int? _numberOfWorkers;
         private string _roleArn;
         private string _securityConfiguration;
         private List<string> _securityGroupIds = new List<string>();
         private string _status;
         private string _subnetId;
         private string _vpcId;
+        private WorkerType _workerType;
         private string _yarnEndpointAddress;
         private int? _zeppelinRemoteSparkInterpreterPort;
 
         /// <summary>
         /// Gets and sets the property Arguments. 
         /// <para>
-        /// The map of arguments used to configure this DevEndpoint.
+        /// The map of arguments used to configure this <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -71,7 +73,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The AWS availability zone where this DevEndpoint is located.
+        /// The AWS Availability Zone where this <code>DevEndpoint</code> is located.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -89,7 +91,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CreatedTimestamp. 
         /// <para>
-        /// The point in time at which this DevEndpoint was created.
+        /// The point in time at which this <code>DevEndpoint</code> was created.
         /// </para>
         /// </summary>
         public DateTime CreatedTimestamp
@@ -107,7 +109,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property EndpointName. 
         /// <para>
-        /// The name assigned to the new DevEndpoint.
+        /// The name assigned to the new <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         public string EndpointName
@@ -125,7 +127,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ExtraJarsS3Path. 
         /// <para>
-        /// Path to one or more Java Jars in an S3 bucket that will be loaded in your DevEndpoint.
+        /// Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded
+        /// in your <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         public string ExtraJarsS3Path
@@ -143,8 +146,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ExtraPythonLibsS3Path. 
         /// <para>
-        /// Path(s) to one or more Python libraries in an S3 bucket that will be loaded in your
-        /// DevEndpoint.
+        /// The paths to one or more Python libraries in an S3 bucket that will be loaded in your
+        /// <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         public string ExtraPythonLibsS3Path
@@ -162,7 +165,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// The reason for a current failure in this DevEndpoint.
+        /// The reason for a current failure in this <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         public string FailureReason
@@ -196,9 +199,28 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NumberOfWorkers. 
+        /// <para>
+        /// The number of workers of a defined <code>workerType</code> that are allocated to the
+        /// development endpoint.
+        /// </para>
+        /// </summary>
+        public int NumberOfWorkers
+        {
+            get { return this._numberOfWorkers.GetValueOrDefault(); }
+            set { this._numberOfWorkers = value; }
+        }
+
+        // Check to see if NumberOfWorkers property is set
+        internal bool IsSetNumberOfWorkers()
+        {
+            return this._numberOfWorkers.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The AWS ARN of the role assigned to the new DevEndpoint.
+        /// The Amazon Resource Name (ARN) of the role assigned to the new <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         public string RoleArn
@@ -216,7 +238,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SecurityConfiguration. 
         /// <para>
-        /// The name of the SecurityConfiguration structure being used with this DevEndpoint.
+        /// The name of the <code>SecurityConfiguration</code> structure being used with this
+        /// <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -235,7 +258,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// The security groups assigned to the new DevEndpoint.
+        /// The security groups assigned to the new <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         public List<string> SecurityGroupIds
@@ -253,7 +276,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the new DevEndpoint.
+        /// The current status of the new <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         public string Status
@@ -271,7 +294,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// The subnet ID assigned to the new DevEndpoint.
+        /// The subnet ID assigned to the new <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         public string SubnetId
@@ -289,7 +312,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// The ID of the VPC used by this DevEndpoint.
+        /// The ID of the virtual private cloud (VPC) used by this <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         public string VpcId
@@ -305,9 +328,28 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property WorkerType. 
+        /// <para>
+        /// The type of predefined worker that is allocated to the development endpoint. May be
+        /// a value of Standard, G.1X, or G.2X.
+        /// </para>
+        /// </summary>
+        public WorkerType WorkerType
+        {
+            get { return this._workerType; }
+            set { this._workerType = value; }
+        }
+
+        // Check to see if WorkerType property is set
+        internal bool IsSetWorkerType()
+        {
+            return this._workerType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property YarnEndpointAddress. 
         /// <para>
-        /// The address of the YARN endpoint used by this DevEndpoint.
+        /// The address of the YARN endpoint used by this <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         public string YarnEndpointAddress

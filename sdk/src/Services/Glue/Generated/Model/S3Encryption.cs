@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies how S3 data should be encrypted.
+    /// Specifies how Amazon Simple Storage Service (Amazon S3) data should be encrypted.
     /// </summary>
     public partial class S3Encryption
     {
@@ -38,7 +38,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
-        /// The AWS ARN of the KMS key to be used to encrypt the data.
+        /// The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.
         /// </para>
         /// </summary>
         public string KmsKeyArn
@@ -56,7 +56,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property S3EncryptionMode. 
         /// <para>
-        /// The encryption mode to use for S3 data.
+        /// The encryption mode to use for Amazon S3 data.
         /// </para>
         /// </summary>
         public S3EncryptionMode S3EncryptionMode

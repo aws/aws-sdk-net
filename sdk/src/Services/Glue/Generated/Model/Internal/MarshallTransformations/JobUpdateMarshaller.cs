@@ -104,6 +104,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetGlueVersion())
+            {
+                context.Writer.WritePropertyName("GlueVersion");
+                context.Writer.Write(requestObject.GlueVersion);
+            }
+
             if(requestObject.IsSetLogUri())
             {
                 context.Writer.WritePropertyName("LogUri");

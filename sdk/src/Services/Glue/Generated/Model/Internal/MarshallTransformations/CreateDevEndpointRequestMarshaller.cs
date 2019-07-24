@@ -106,6 +106,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NumberOfNodes);
                 }
 
+                if(publicRequest.IsSetNumberOfWorkers())
+                {
+                    context.Writer.WritePropertyName("NumberOfWorkers");
+                    context.Writer.Write(publicRequest.NumberOfWorkers);
+                }
+
                 if(publicRequest.IsSetPublicKey())
                 {
                     context.Writer.WritePropertyName("PublicKey");
@@ -164,6 +170,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                             context.Writer.Write(publicRequestTagsValue);
                     }
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetWorkerType())
+                {
+                    context.Writer.WritePropertyName("WorkerType");
+                    context.Writer.Write(publicRequest.WorkerType);
                 }
 
         

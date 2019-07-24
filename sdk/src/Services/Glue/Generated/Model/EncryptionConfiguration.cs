@@ -39,7 +39,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CloudWatchEncryption. 
         /// <para>
-        /// The encryption configuration for CloudWatch.
+        /// The encryption configuration for Amazon CloudWatch.
         /// </para>
         /// </summary>
         public CloudWatchEncryption CloudWatchEncryption
@@ -57,7 +57,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property JobBookmarksEncryption. 
         /// <para>
-        /// The encryption configuration for Job Bookmarks.
+        /// The encryption configuration for job bookmarks.
         /// </para>
         /// </summary>
         public JobBookmarksEncryption JobBookmarksEncryption
@@ -75,7 +75,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property S3Encryption. 
         /// <para>
-        /// The encryption configuration for S3 data.
+        /// The encryption configuration for Amazon Simple Storage Service (Amazon S3) data.
         /// </para>
         /// </summary>
         public List<S3Encryption> S3Encryption

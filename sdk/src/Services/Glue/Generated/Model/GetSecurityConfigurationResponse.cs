@@ -37,7 +37,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SecurityConfiguration. 
         /// <para>
-        /// The requested security configuration
+        /// The requested security configuration.
         /// </para>
         /// </summary>
         public SecurityConfiguration SecurityConfiguration

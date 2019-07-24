@@ -29,7 +29,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDevEndpoint operation.
-    /// Creates a new DevEndpoint.
+    /// Creates a new development endpoint.
     /// </summary>
     public partial class CreateDevEndpointRequest : AmazonGlueRequest
     {
@@ -38,6 +38,7 @@ namespace Amazon.Glue.Model
         private string _extraJarsS3Path;
         private string _extraPythonLibsS3Path;
         private int? _numberOfNodes;
+        private int? _numberOfWorkers;
         private string _publicKey;
         private List<string> _publicKeys = new List<string>();
         private string _roleArn;
@@ -45,11 +46,12 @@ namespace Amazon.Glue.Model
         private List<string> _securityGroupIds = new List<string>();
         private string _subnetId;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private WorkerType _workerType;
 
         /// <summary>
         /// Gets and sets the property Arguments. 
         /// <para>
-        /// A map of arguments used to configure the DevEndpoint.
+        /// A map of arguments used to configure the <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -68,7 +70,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property EndpointName. 
         /// <para>
-        /// The name to be assigned to the new DevEndpoint.
+        /// The name to be assigned to the new <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -87,7 +89,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ExtraJarsS3Path. 
         /// <para>
-        /// Path to one or more Java Jars in an S3 bucket that should be loaded in your DevEndpoint.
+        /// The path to one or more Java <code>.jar</code> files in an S3 bucket that should be
+        /// loaded in your <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         public string ExtraJarsS3Path
@@ -105,15 +108,17 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ExtraPythonLibsS3Path. 
         /// <para>
-        /// Path(s) to one or more Python libraries in an S3 bucket that should be loaded in your
-        /// DevEndpoint. Multiple values must be complete paths separated by a comma.
+        /// The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded
+        /// in your <code>DevEndpoint</code>. Multiple values must be complete paths separated
+        /// by a comma.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// Please note that only pure Python libraries can currently be used on a DevEndpoint.
-        /// Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a>
+        /// You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries
+        /// that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a>
         /// Python data analysis library, are not yet supported.
         /// </para>
+        ///  </note>
         /// </summary>
         public string ExtraPythonLibsS3Path
         {
@@ -130,7 +135,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NumberOfNodes. 
         /// <para>
-        /// The number of AWS Glue Data Processing Units (DPUs) to allocate to this DevEndpoint.
+        /// The number of AWS Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         public int NumberOfNodes
@@ -146,11 +151,35 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NumberOfWorkers. 
+        /// <para>
+        /// The number of workers of a defined <code>workerType</code> that are allocated to the
+        /// development endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149
+        /// for <code>G.2X</code>. 
+        /// </para>
+        /// </summary>
+        public int NumberOfWorkers
+        {
+            get { return this._numberOfWorkers.GetValueOrDefault(); }
+            set { this._numberOfWorkers = value; }
+        }
+
+        // Check to see if NumberOfWorkers property is set
+        internal bool IsSetNumberOfWorkers()
+        {
+            return this._numberOfWorkers.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PublicKey. 
         /// <para>
-        /// The public key to be used by this DevEndpoint for authentication. This attribute is
-        /// provided for backward compatibility, as the recommended attribute to use is public
-        /// keys.
+        /// The public key to be used by this <code>DevEndpoint</code> for authentication. This
+        /// attribute is provided for backward compatibility because the recommended attribute
+        /// to use is public keys.
         /// </para>
         /// </summary>
         public string PublicKey
@@ -168,14 +197,14 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property PublicKeys. 
         /// <para>
-        /// A list of public keys to be used by the DevEndpoints for authentication. The use of
-        /// this attribute is preferred over a single public key because the public keys allow
-        /// you to have a different private key per client.
+        /// A list of public keys to be used by the development endpoints for authentication.
+        /// The use of this attribute is preferred over a single public key because the public
+        /// keys allow you to have a different private key per client.
         /// </para>
         ///  <note> 
         /// <para>
         /// If you previously created an endpoint with a public key, you must remove that key
-        /// to be able to set a list of public keys: call the <code>UpdateDevEndpoint</code> API
+        /// to be able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API
         /// with the public key content in the <code>deletePublicKeys</code> attribute, and the
         /// list of new keys in the <code>addPublicKeys</code> attribute.
         /// </para>
@@ -197,7 +226,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The IAM role for the DevEndpoint.
+        /// The IAM role for the <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -216,7 +245,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SecurityConfiguration. 
         /// <para>
-        /// The name of the SecurityConfiguration structure to be used with this DevEndpoint.
+        /// The name of the <code>SecurityConfiguration</code> structure to be used with this
+        /// <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -235,7 +265,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// Security group IDs for the security groups to be used by the new DevEndpoint.
+        /// Security group IDs for the security groups to be used by the new <code>DevEndpoint</code>.
         /// </para>
         /// </summary>
         public List<string> SecurityGroupIds
@@ -253,7 +283,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// The subnet ID for the new DevEndpoint to use.
+        /// The subnet ID for the new <code>DevEndpoint</code> to use.
         /// </para>
         /// </summary>
         public string SubnetId
@@ -272,7 +302,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The tags to use with this DevEndpoint. You may use tags to limit access to the DevEndpoint.
-        /// For more information about tags in AWS Glue, see <a href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS
+        /// For more information about tags in AWS Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS
         /// Tags in AWS Glue</a> in the developer guide.
         /// </para>
         /// </summary>
@@ -287,6 +317,43 @@ namespace Amazon.Glue.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkerType. 
+        /// <para>
+        /// The type of predefined worker that is allocated to the development endpoint. Accepts
+        /// a value of Standard, G.1X, or G.2X.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory
+        /// and a 50GB disk, and 2 executors per worker.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of
+        /// memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker
+        /// type for memory-intensive jobs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of
+        /// memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker
+        /// type for memory-intensive jobs.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public WorkerType WorkerType
+        {
+            get { return this._workerType; }
+            set { this._workerType = value; }
+        }
+
+        // Check to see if WorkerType property is set
+        internal bool IsSetWorkerType()
+        {
+            return this._workerType != null;
         }
 
     }

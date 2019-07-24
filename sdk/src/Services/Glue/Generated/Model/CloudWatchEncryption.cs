@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies how CloudWatch data should be encrypted.
+    /// Specifies how Amazon CloudWatch data should be encrypted.
     /// </summary>
     public partial class CloudWatchEncryption
     {
@@ -56,7 +56,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
-        /// The AWS ARN of the KMS key to be used to encrypt the data.
+        /// The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.
         /// </para>
         /// </summary>
         public string KmsKeyArn

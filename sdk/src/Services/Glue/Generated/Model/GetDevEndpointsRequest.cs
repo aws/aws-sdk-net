@@ -29,7 +29,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDevEndpoints operation.
-    /// Retrieves all the DevEndpoints in this AWS account.
+    /// Retrieves all the development endpoints in this AWS account.
     /// 
     ///  <note> 
     /// <para>

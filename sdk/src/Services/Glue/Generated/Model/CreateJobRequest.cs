@@ -39,6 +39,7 @@ namespace Amazon.Glue.Model
         private Dictionary<string, string> _defaultArguments = new Dictionary<string, string>();
         private string _description;
         private ExecutionProperty _executionProperty;
+        private string _glueVersion;
         private string _logUri;
         private double? _maxCapacity;
         private int? _maxRetries;
@@ -49,7 +50,7 @@ namespace Amazon.Glue.Model
         private string _securityConfiguration;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private int? _timeout;
-        private string _workerType;
+        private WorkerType _workerType;
 
         /// <summary>
         /// Gets and sets the property AllocatedCapacity. 
@@ -185,6 +186,36 @@ namespace Amazon.Glue.Model
         internal bool IsSetExecutionProperty()
         {
             return this._executionProperty != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GlueVersion. 
+        /// <para>
+        /// Glue version determines the versions of Apache Spark and Python that AWS Glue supports.
+        /// The Python version indicates the version supported for jobs of type Spark. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about the available AWS Glue versions and corresponding Spark
+        /// and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue
+        /// version</a> in the developer guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// Jobs that are created without specifying a Glue version default to Glue 0.9.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string GlueVersion
+        {
+            get { return this._glueVersion; }
+            set { this._glueVersion = value; }
+        }
+
+        // Check to see if GlueVersion property is set
+        internal bool IsSetGlueVersion()
+        {
+            return this._glueVersion != null;
         }
 
         /// <summary>
@@ -432,8 +463,7 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
-        public string WorkerType
+        public WorkerType WorkerType
         {
             get { return this._workerType; }
             set { this._workerType = value; }

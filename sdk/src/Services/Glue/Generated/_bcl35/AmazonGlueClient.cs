@@ -652,10 +652,10 @@ namespace Amazon.Glue
         #region  BatchGetDevEndpoints
 
         /// <summary>
-        /// Returns a list of resource metadata for a given list of DevEndpoint names. After calling
-        /// the <code>ListDevEndpoints</code> operation, you can call this operation to access
-        /// the data to which you have been granted permissions. This operation supports all IAM
-        /// permissions, including permission conditions that uses tags.
+        /// Returns a list of resource metadata for a given list of development endpoint names.
+        /// After calling the <code>ListDevEndpoints</code> operation, you can call this operation
+        /// to access the data to which you have been granted permissions. This operation supports
+        /// all IAM permissions, including permission conditions that uses tags.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetDevEndpoints service method.</param>
         /// 
@@ -1325,7 +1325,7 @@ namespace Amazon.Glue
         #region  CreateDevEndpoint
 
         /// <summary>
-        /// Creates a new DevEndpoint.
+        /// Creates a new development endpoint.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDevEndpoint service method.</param>
         /// 
@@ -1616,7 +1616,11 @@ namespace Amazon.Glue
         #region  CreateSecurityConfiguration
 
         /// <summary>
-        /// Creates a new security configuration.
+        /// Creates a new security configuration. A security configuration is a set of security
+        /// properties that can be used by AWS Glue. You can use a security configuration to encrypt
+        /// data at rest. For information about using security configurations in AWS Glue, see
+        /// <a href="https://docs.aws.amazon.com/glue/latest/dg/encryption-security-configuration.html">Encrypting
+        /// Data Written by Crawlers, Jobs, and Development Endpoints</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSecurityConfiguration service method.</param>
         /// 
@@ -2255,7 +2259,7 @@ namespace Amazon.Glue
         #region  DeleteDevEndpoint
 
         /// <summary>
-        /// Deletes a specified DevEndpoint.
+        /// Deletes a specified development endpoint.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDevEndpoint service method.</param>
         /// 
@@ -3674,7 +3678,7 @@ namespace Amazon.Glue
         #region  GetDevEndpoint
 
         /// <summary>
-        /// Retrieves information about a specified DevEndpoint.
+        /// Retrieves information about a specified development endpoint.
         /// 
         ///  <note> 
         /// <para>
@@ -3749,7 +3753,7 @@ namespace Amazon.Glue
         #region  GetDevEndpoints
 
         /// <summary>
-        /// Retrieves all the DevEndpoints in this AWS account.
+        /// Retrieves all the development endpoints in this AWS account.
         /// 
         ///  <note> 
         /// <para>
@@ -7152,7 +7156,7 @@ namespace Amazon.Glue
         #region  UpdateDevEndpoint
 
         /// <summary>
-        /// Updates a specified DevEndpoint.
+        /// Updates a specified development endpoint.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDevEndpoint service method.</param>
         /// 

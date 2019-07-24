@@ -29,10 +29,10 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchGetDevEndpoints operation.
-    /// Returns a list of resource metadata for a given list of DevEndpoint names. After calling
-    /// the <code>ListDevEndpoints</code> operation, you can call this operation to access
-    /// the data to which you have been granted permissions. This operation supports all IAM
-    /// permissions, including permission conditions that uses tags.
+    /// Returns a list of resource metadata for a given list of development endpoint names.
+    /// After calling the <code>ListDevEndpoints</code> operation, you can call this operation
+    /// to access the data to which you have been granted permissions. This operation supports
+    /// all IAM permissions, including permission conditions that uses tags.
     /// </summary>
     public partial class BatchGetDevEndpointsRequest : AmazonGlueRequest
     {
@@ -41,8 +41,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DevEndpointNames. 
         /// <para>
-        /// The list of DevEndpoint names, which may be the names returned from the <code>ListDevEndpoint</code>
-        /// operation.
+        /// The list of <code>DevEndpoint</code> names, which might be the names returned from
+        /// the <code>ListDevEndpoint</code> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=25)]
