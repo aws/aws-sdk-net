@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CopyTagsFromSource. 
         /// <para>
-        /// Copies the tags from the specified instance to all snapshots.
+        /// Copies the tags from the specified volume to corresponding snapshot.
         /// </para>
         /// </summary>
         public CopyTagsFromSource CopyTagsFromSource

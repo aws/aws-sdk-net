@@ -94,7 +94,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>attachment.attach.time</code> - The time that the network interface was attached
+        ///  <code>attachment.attach-time</code> - The time that the network interface was attached
         /// to an instance.
         /// </para>
         ///  </li> <li> 

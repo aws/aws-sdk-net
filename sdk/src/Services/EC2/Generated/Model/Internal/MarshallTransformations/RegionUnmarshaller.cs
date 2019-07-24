@@ -60,6 +60,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("optInStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OptInStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("regionName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

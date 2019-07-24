@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
     ///  <code>domain-name-servers</code> - The IP addresses of up to four domain name servers,
     /// or AmazonProvidedDNS. The default DHCP option set specifies AmazonProvidedDNS. If
     /// specifying more than one domain name server, specify the IP addresses in a single
-    /// parameter, separated by commas. ITo have your instance to receive a custom DNS hostname
+    /// parameter, separated by commas. To have your instance receive a custom DNS hostname
     /// as specified in <code>domain-name</code>, you must set <code>domain-name-servers</code>
     /// to a custom DNS server.
     /// </para>

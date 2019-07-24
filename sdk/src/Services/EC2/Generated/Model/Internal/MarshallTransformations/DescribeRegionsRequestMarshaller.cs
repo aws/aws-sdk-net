@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAllRegions())
+                {
+                    request.Parameters.Add("AllRegions", StringUtils.FromBool(publicRequest.AllRegions));
+                }
                 if(publicRequest.IsSetFilters())
                 {
                     int publicRequestlistValueIndex = 1;

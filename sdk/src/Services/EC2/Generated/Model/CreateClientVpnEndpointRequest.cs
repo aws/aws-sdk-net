@@ -42,6 +42,7 @@ namespace Amazon.EC2.Model
         private string _description;
         private List<string> _dnsServers = new List<string>();
         private string _serverCertificateArn;
+        private bool? _splitTunnel;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
         private TransportProtocol _transportProtocol;
 
@@ -204,6 +205,33 @@ namespace Amazon.EC2.Model
         internal bool IsSetServerCertificateArn()
         {
             return this._serverCertificateArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SplitTunnel. 
+        /// <para>
+        /// Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, split-tunnel on a VPN endpoint is disabled.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about split-tunnel VPN endpoints, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel
+        /// AWS Client VPN Endpoint</a> in the <i>AWS Client VPN Administrator Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool SplitTunnel
+        {
+            get { return this._splitTunnel.GetValueOrDefault(); }
+            set { this._splitTunnel = value; }
+        }
+
+        // Check to see if SplitTunnel property is set
+        internal bool IsSetSplitTunnel()
+        {
+            return this._splitTunnel.HasValue; 
         }
 
         /// <summary>

@@ -29,21 +29,43 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeRegions operation.
-    /// Describes the Regions that are currently available to you. The API returns a list
-    /// of all the Regions, including Regions that are disabled for your account. For information
-    /// about enabling Regions for your account, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-account-payment.html#manage-account-payment-enable-disable-regions">Enabling
-    /// and Disabling Regions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+    /// Describes the Regions that are enabled for your account, or all Regions.
     /// 
     ///  
     /// <para>
     /// For a list of the Regions supported by Amazon EC2, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region">
     /// Regions and Endpoints</a>.
     /// </para>
+    ///  
+    /// <para>
+    /// For information about enabling and disabling Regions for your account, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html">Managing
+    /// AWS Regions</a> in the <i>AWS General Reference</i>.
+    /// </para>
     /// </summary>
     public partial class DescribeRegionsRequest : AmazonEC2Request
     {
+        private bool? _allRegions;
         private List<Filter> _filters = new List<Filter>();
         private List<string> _regionNames = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property AllRegions. 
+        /// <para>
+        /// Indicates whether to display all Regions, including Regions that are disabled for
+        /// your account.
+        /// </para>
+        /// </summary>
+        public bool AllRegions
+        {
+            get { return this._allRegions.GetValueOrDefault(); }
+            set { this._allRegions = value; }
+        }
+
+        // Check to see if AllRegions property is set
+        internal bool IsSetAllRegions()
+        {
+            return this._allRegions.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -75,7 +97,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RegionNames. 
         /// <para>
-        /// The names of the Regions.
+        /// The names of the Regions. You can specify any Regions, whether they are enabled and
+        /// disabled for your account.
         /// </para>
         /// </summary>
         public List<string> RegionNames

@@ -1406,7 +1406,7 @@ namespace Amazon.EC2
         ///  <code>domain-name-servers</code> - The IP addresses of up to four domain name servers,
         /// or AmazonProvidedDNS. The default DHCP option set specifies AmazonProvidedDNS. If
         /// specifying more than one domain name server, specify the IP addresses in a single
-        /// parameter, separated by commas. ITo have your instance to receive a custom DNS hostname
+        /// parameter, separated by commas. To have your instance receive a custom DNS hostname
         /// as specified in <code>domain-name</code>, you must set <code>domain-name-servers</code>
         /// to a custom DNS server.
         /// </para>
@@ -5418,15 +5418,17 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the Regions that are currently available to you. The API returns a list
-        /// of all the Regions, including Regions that are disabled for your account. For information
-        /// about enabling Regions for your account, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-account-payment.html#manage-account-payment-enable-disable-regions">Enabling
-        /// and Disabling Regions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+        /// Describes the Regions that are enabled for your account, or all Regions.
         /// 
         ///  
         /// <para>
         /// For a list of the Regions supported by Amazon EC2, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region">
         /// Regions and Endpoints</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about enabling and disabling Regions for your account, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html">Managing
+        /// AWS Regions</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -5440,15 +5442,17 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the Regions that are currently available to you. The API returns a list
-        /// of all the Regions, including Regions that are disabled for your account. For information
-        /// about enabling Regions for your account, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-account-payment.html#manage-account-payment-enable-disable-regions">Enabling
-        /// and Disabling Regions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+        /// Describes the Regions that are enabled for your account, or all Regions.
         /// 
         ///  
         /// <para>
         /// For a list of the Regions supported by Amazon EC2, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region">
         /// Regions and Endpoints</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about enabling and disabling Regions for your account, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html">Managing
+        /// AWS Regions</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRegions service method.</param>

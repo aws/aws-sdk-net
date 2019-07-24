@@ -101,6 +101,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ServerCertificateArn", StringUtils.FromString(publicRequest.ServerCertificateArn));
                 }
+                if(publicRequest.IsSetSplitTunnel())
+                {
+                    request.Parameters.Add("SplitTunnel", StringUtils.FromBool(publicRequest.SplitTunnel));
+                }
             }
             return request;
         }
