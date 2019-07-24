@@ -1635,6 +1635,57 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  GetApplicationDateRangeKpi
+
+        internal virtual GetApplicationDateRangeKpiResponse GetApplicationDateRangeKpi(GetApplicationDateRangeKpiRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApplicationDateRangeKpiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApplicationDateRangeKpiResponseUnmarshaller.Instance;
+
+            return Invoke<GetApplicationDateRangeKpiResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves (queries) pre-aggregated data for a standard metric that applies to an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetApplicationDateRangeKpi service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetApplicationDateRangeKpi service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        public virtual Task<GetApplicationDateRangeKpiResponse> GetApplicationDateRangeKpiAsync(GetApplicationDateRangeKpiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApplicationDateRangeKpiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApplicationDateRangeKpiResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetApplicationDateRangeKpiResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetApplicationSettings
 
         internal virtual GetApplicationSettingsResponse GetApplicationSettings(GetApplicationSettingsRequest request)
@@ -1887,6 +1938,57 @@ namespace Amazon.Pinpoint
             options.ResponseUnmarshaller = GetCampaignActivitiesResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetCampaignActivitiesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetCampaignDateRangeKpi
+
+        internal virtual GetCampaignDateRangeKpiResponse GetCampaignDateRangeKpi(GetCampaignDateRangeKpiRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCampaignDateRangeKpiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCampaignDateRangeKpiResponseUnmarshaller.Instance;
+
+            return Invoke<GetCampaignDateRangeKpiResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves (queries) pre-aggregated data for a standard metric that applies to a campaign.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCampaignDateRangeKpi service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCampaignDateRangeKpi service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        public virtual Task<GetCampaignDateRangeKpiResponse> GetCampaignDateRangeKpiAsync(GetCampaignDateRangeKpiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCampaignDateRangeKpiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCampaignDateRangeKpiResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCampaignDateRangeKpiResponse>(request, options, cancellationToken);
         }
 
         #endregion

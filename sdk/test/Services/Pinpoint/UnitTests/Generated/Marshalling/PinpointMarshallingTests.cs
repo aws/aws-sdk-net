@@ -908,6 +908,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Pinpoint")]
+        public void GetApplicationDateRangeKpiMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetApplicationDateRangeKpi");
+
+            var request = InstantiateClassGenerator.Execute<GetApplicationDateRangeKpiRequest>();
+            var marshaller = new GetApplicationDateRangeKpiRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetApplicationDateRangeKpi", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetApplicationDateRangeKpiResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetApplicationDateRangeKpiResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Pinpoint")]
         public void GetApplicationSettingsMarshallTest()
         {
             var operation = service_model.FindOperation("GetApplicationSettings");
@@ -1060,6 +1092,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = GetCampaignActivitiesResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as GetCampaignActivitiesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Pinpoint")]
+        public void GetCampaignDateRangeKpiMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetCampaignDateRangeKpi");
+
+            var request = InstantiateClassGenerator.Execute<GetCampaignDateRangeKpiRequest>();
+            var marshaller = new GetCampaignDateRangeKpiRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetCampaignDateRangeKpi", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetCampaignDateRangeKpiResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetCampaignDateRangeKpiResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
