@@ -1,3 +1,18 @@
+### 3.3.557.0 (2019-07-24 18:19 UTC)
+* EC2 (3.3.122.0)
+	* This release introduces support for split tunnel with AWS Client VPN, and also adds support for opt-in Regions in DescribeRegions API. In addition, customers can now also tag Launch Templates on creation.
+* Glue (3.3.106.0)
+	* This release provides GlueVersion option for Job APIs and WorkerType option for DevEndpoint APIs. Job APIs enable users to pick specific GlueVersion for a specific job and pin the job to a specific runtime environment. DevEndpoint APIs enable users to pick different WorkerType for memory intensive workload.
+* Pinpoint (3.3.101.0)
+	* This release adds support for programmatic access to many of the same campaign metrics that are displayed on the Amazon Pinpoint console. You can now use the Amazon Pinpoint API to monitor and assess performance data for campaigns, and integrate metrics data with other reporting tools. We update the metrics data continuously, resulting in a data latency timeframe that is limited to approximately two hours.
+* SecurityToken (3.3.102.0)
+	* New STS GetAccessKeyInfo API operation that returns the account identifier for the specified access key ID.
+* Core 3.3.103.15
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.556.0 (2019-07-23 19:44 UTC)
 * SecretsManager (3.3.101.0)
 	* This release increases the maximum allowed size of SecretString or SecretBinary from 7KB to 10KB in the CreateSecret, UpdateSecret, PutSecretValue and GetSecretValue APIs. This release also increases the maximum allowed size of ResourcePolicy from 4KB to 20KB in the GetResourcePolicy and PutResourcePolicy APIs.
