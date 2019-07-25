@@ -28,41 +28,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECR.Model
 {
     /// <summary>
-    /// Container for the parameters to the PutLifecyclePolicy operation.
-    /// Creates or updates a lifecycle policy. For information about lifecycle policy syntax,
-    /// see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle
-    /// Policy Template</a>.
+    /// This is the response object from the PutImageTagMutability operation.
     /// </summary>
-    public partial class PutLifecyclePolicyRequest : AmazonECRRequest
+    public partial class PutImageTagMutabilityResponse : AmazonWebServiceResponse
     {
-        private string _lifecyclePolicyText;
+        private ImageTagMutability _imageTagMutability;
         private string _registryId;
         private string _repositoryName;
 
         /// <summary>
-        /// Gets and sets the property LifecyclePolicyText. 
+        /// Gets and sets the property ImageTagMutability. 
         /// <para>
-        /// The JSON repository policy text to apply to the repository.
+        /// The image tag mutability setting for the repository.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=100, Max=30720)]
-        public string LifecyclePolicyText
+        public ImageTagMutability ImageTagMutability
         {
-            get { return this._lifecyclePolicyText; }
-            set { this._lifecyclePolicyText = value; }
+            get { return this._imageTagMutability; }
+            set { this._imageTagMutability = value; }
         }
 
-        // Check to see if LifecyclePolicyText property is set
-        internal bool IsSetLifecyclePolicyText()
+        // Check to see if ImageTagMutability property is set
+        internal bool IsSetImageTagMutability()
         {
-            return this._lifecyclePolicyText != null;
+            return this._imageTagMutability != null;
         }
 
         /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The AWS account ID associated with the registry that contains the repository. If you
-        /// do&#x2028; not specify a registry, the default registry is assumed.
+        /// The registry ID associated with the request.
         /// </para>
         /// </summary>
         public string RegistryId
@@ -80,10 +75,10 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The name of the repository to receive the policy.
+        /// The repository name associated with the request.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=256)]
+        [AWSProperty(Min=2, Max=256)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

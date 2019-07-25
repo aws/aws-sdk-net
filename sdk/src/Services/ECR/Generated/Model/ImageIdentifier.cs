@@ -59,6 +59,7 @@ namespace Amazon.ECR.Model
         /// The tag used for the image.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=300)]
         public string ImageTag
         {
             get { return this._imageTag; }

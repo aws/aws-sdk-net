@@ -72,6 +72,7 @@ namespace Amazon.ECR.Model
         /// the Docker Image Manifest V2 Schema 2 or OCI formats.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=300)]
         public string ImageTag
         {
             get { return this._imageTag; }

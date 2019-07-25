@@ -33,6 +33,7 @@ namespace Amazon.ECR.Model
     public partial class Repository
     {
         private DateTime? _createdAt;
+        private ImageTagMutability _imageTagMutability;
         private string _registryId;
         private string _repositoryArn;
         private string _repositoryName;
@@ -54,6 +55,24 @@ namespace Amazon.ECR.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageTagMutability. 
+        /// <para>
+        /// The tag mutability setting for the repository.
+        /// </para>
+        /// </summary>
+        public ImageTagMutability ImageTagMutability
+        {
+            get { return this._imageTagMutability; }
+            set { this._imageTagMutability = value; }
+        }
+
+        // Check to see if ImageTagMutability property is set
+        internal bool IsSetImageTagMutability()
+        {
+            return this._imageTagMutability != null;
         }
 
         /// <summary>

@@ -30,6 +30,8 @@ namespace Amazon.ECR.Model
     /// <summary>
     /// Container for the parameters to the SetRepositoryPolicy operation.
     /// Applies a repository policy on a specified repository to control access permissions.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicies.html">Amazon
+    /// ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
     /// </summary>
     public partial class SetRepositoryPolicyRequest : AmazonECRRequest
     {
@@ -61,7 +63,10 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property PolicyText. 
         /// <para>
-        /// The JSON repository policy text to apply to the repository.
+        /// The JSON repository policy text to apply to the repository. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicyExamples.html">Amazon
+        /// ECR Repository Policy Examples</a> in the <i>Amazon Elastic Container Registry User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10240)]

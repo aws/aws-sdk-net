@@ -31,12 +31,15 @@ namespace Amazon.ECR
     /// <summary>
     /// Interface for accessing ECR
     ///
+    /// Amazon Elastic Container Registry 
+    /// <para>
     /// Amazon Elastic Container Registry (Amazon ECR) is a managed Docker registry service.
     /// Customers can use the familiar Docker CLI to push, pull, and manage images. Amazon
     /// ECR provides a secure, scalable, and reliable registry. Amazon ECR supports private
     /// Docker repositories with resource-based permissions using IAM so that specific users
     /// or Amazon EC2 instances can access repositories and images. Developers can use the
     /// Docker CLI to author and manage images.
+    /// </para>
     /// </summary>
     public partial interface IAmazonECR : IAmazonService, IDisposable
     {
@@ -222,7 +225,7 @@ namespace Amazon.ECR
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.LimitExceededException">
         /// The operation did not succeed because it would have exceeded a service limit for your
-        /// account. For more information, see <a href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon
         /// ECR Default Service Limits</a> in the Amazon Elastic Container Registry User Guide.
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.RepositoryAlreadyExistsException">
@@ -704,6 +707,10 @@ namespace Amazon.ECR
         /// The specified image has already been pushed, and there were no changes to the manifest
         /// or image tag after the last push.
         /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ImageTagAlreadyExistsException">
+        /// The specified image is tagged with a tag that already exists. The repository is configured
+        /// for tag immutability.
+        /// </exception>
         /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
@@ -713,7 +720,7 @@ namespace Amazon.ECR
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.LimitExceededException">
         /// The operation did not succeed because it would have exceeded a service limit for your
-        /// account. For more information, see <a href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon
         /// ECR Default Service Limits</a> in the Amazon Elastic Container Registry User Guide.
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
@@ -728,13 +735,41 @@ namespace Amazon.ECR
 
         #endregion
                 
+        #region  PutImageTagMutability
+
+
+
+        /// <summary>
+        /// Updates the image tag mutability settings for a repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutImageTagMutability service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutImageTagMutability service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageTagMutability">REST API Reference for PutImageTagMutability Operation</seealso>
+        Task<PutImageTagMutabilityResponse> PutImageTagMutabilityAsync(PutImageTagMutabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  PutLifecyclePolicy
 
 
 
         /// <summary>
         /// Creates or updates a lifecycle policy. For information about lifecycle policy syntax,
-        /// see <a href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle
+        /// see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle
         /// Policy Template</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLifecyclePolicy service method.</param>
@@ -764,6 +799,8 @@ namespace Amazon.ECR
 
         /// <summary>
         /// Applies a repository policy on a specified repository to control access permissions.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicies.html">Amazon
+        /// ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetRepositoryPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -925,7 +962,7 @@ namespace Amazon.ECR
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.LimitExceededException">
         /// The operation did not succeed because it would have exceeded a service limit for your
-        /// account. For more information, see <a href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon
         /// ECR Default Service Limits</a> in the Amazon Elastic Container Registry User Guide.
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">

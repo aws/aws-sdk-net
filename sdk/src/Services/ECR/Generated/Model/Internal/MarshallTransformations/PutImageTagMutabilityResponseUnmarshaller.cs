@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECR.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PutImage operation
+    /// Response Unmarshaller for PutImageTagMutability operation
     /// </summary>  
-    public class PutImageResponseUnmarshaller : JsonResponseUnmarshaller
+    public class PutImageTagMutabilityResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,28 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            PutImageResponse response = new PutImageResponse();
+            PutImageTagMutabilityResponse response = new PutImageTagMutabilityResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("image", targetDepth))
+                if (context.TestExpression("imageTagMutability", targetDepth))
                 {
-                    var unmarshaller = ImageUnmarshaller.Instance;
-                    response.Image = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ImageTagMutability = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("registryId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RegistryId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("repositoryName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RepositoryName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -72,25 +84,9 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ImageAlreadyExistsException"))
-            {
-                return new ImageAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ImageTagAlreadyExistsException"))
-            {
-                return new ImageTagAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
             {
                 return new InvalidParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("LayersNotFoundException"))
-            {
-                return new LayersNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-            {
-                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("RepositoryNotFoundException"))
             {
@@ -103,9 +99,9 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             return new AmazonECRException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static PutImageResponseUnmarshaller _instance = new PutImageResponseUnmarshaller();        
+        private static PutImageTagMutabilityResponseUnmarshaller _instance = new PutImageTagMutabilityResponseUnmarshaller();        
 
-        internal static PutImageResponseUnmarshaller GetInstance()
+        internal static PutImageTagMutabilityResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -113,7 +109,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PutImageResponseUnmarshaller Instance
+        public static PutImageTagMutabilityResponseUnmarshaller Instance
         {
             get
             {

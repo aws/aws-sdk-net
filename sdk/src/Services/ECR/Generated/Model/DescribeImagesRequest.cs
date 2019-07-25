@@ -158,7 +158,7 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// A list of repositories to describe.
+        /// The repository that contains the images to describe.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=256)]

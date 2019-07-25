@@ -70,6 +70,12 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("imageTagMutability", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ImageTagMutability = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("registryId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
