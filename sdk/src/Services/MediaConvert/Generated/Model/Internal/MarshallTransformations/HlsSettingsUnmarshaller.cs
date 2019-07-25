@@ -70,6 +70,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.AudioGroupId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("audioOnlyContainer", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AudioOnlyContainer = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("audioRenditionSets", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -30,10 +30,10 @@ namespace Amazon.MediaConvert.Model
     /// <summary>
     /// Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group
     /// of settings related to audio encoding. The settings in this group vary depending on
-    /// the value you choose for Audio codec (Codec). For each codec enum you choose, define
-    /// the corresponding settings object. The following lists the codec enum, settings object
-    /// pairs. * AAC, AacSettings * MP2, Mp2Settings * WAV, WavSettings * AIFF, AiffSettings
-    /// * AC3, Ac3Settings * EAC3, Eac3Settings
+    /// the value that you choose for Audio codec (Codec). For each codec enum that you choose,
+    /// define the corresponding settings object. The following lists the codec enum, settings
+    /// object pairs. * AAC, AacSettings * MP2, Mp2Settings * WAV, WavSettings * AIFF, AiffSettings
+    /// * AC3, Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings
     /// </summary>
     public partial class AudioCodecSettings
     {
@@ -41,6 +41,7 @@ namespace Amazon.MediaConvert.Model
         private Ac3Settings _ac3Settings;
         private AiffSettings _aiffSettings;
         private AudioCodec _codec;
+        private Eac3AtmosSettings _eac3AtmosSettings;
         private Eac3Settings _eac3Settings;
         private Mp2Settings _mp2Settings;
         private WavSettings _wavSettings;
@@ -110,6 +111,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetCodec()
         {
             return this._codec != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Eac3AtmosSettings. Required when you set (Codec) under
+        /// (AudioDescriptions)>(CodecSettings) to the value EAC3_ATMOS.
+        /// </summary>
+        public Eac3AtmosSettings Eac3AtmosSettings
+        {
+            get { return this._eac3AtmosSettings; }
+            set { this._eac3AtmosSettings = value; }
+        }
+
+        // Check to see if Eac3AtmosSettings property is set
+        internal bool IsSetEac3AtmosSettings()
+        {
+            return this._eac3AtmosSettings != null;
         }
 
         /// <summary>

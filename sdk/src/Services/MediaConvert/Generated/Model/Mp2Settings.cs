@@ -38,7 +38,7 @@ namespace Amazon.MediaConvert.Model
         private int? _sampleRate;
 
         /// <summary>
-        /// Gets and sets the property Bitrate. Average bitrate in bits/second.
+        /// Gets and sets the property Bitrate. Specify the average bitrate in bits per second.
         /// </summary>
         [AWSProperty(Min=32000, Max=384000)]
         public int Bitrate

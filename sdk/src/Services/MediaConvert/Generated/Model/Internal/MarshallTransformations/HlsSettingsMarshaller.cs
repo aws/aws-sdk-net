@@ -51,6 +51,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AudioGroupId);
             }
 
+            if(requestObject.IsSetAudioOnlyContainer())
+            {
+                context.Writer.WritePropertyName("audioOnlyContainer");
+                context.Writer.Write(requestObject.AudioOnlyContainer);
+            }
+
             if(requestObject.IsSetAudioRenditionSets())
             {
                 context.Writer.WritePropertyName("audioRenditionSets");

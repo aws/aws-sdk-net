@@ -58,8 +58,9 @@ namespace Amazon.MediaConvert.Model
         private int? _timestampDeltaMilliseconds;
 
         /// <summary>
-        /// Gets and sets the property AdMarkers. Choose one or more ad marker types to pass SCTE35
-        /// signals through to this group of Apple HLS outputs.
+        /// Gets and sets the property AdMarkers. Choose one or more ad marker types to decorate
+        /// your Apple HLS manifest. This setting does not determine whether SCTE-35 markers appear
+        /// in the outputs themselves.
         /// </summary>
         public List<string> AdMarkers
         {

@@ -124,7 +124,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Mp4Settings. Settings for MP4 Container
+        /// Gets and sets the property Mp4Settings. Settings for MP4 container. You can create
+        /// audio-only AAC outputs with this container.
         /// </summary>
         public Mp4Settings Mp4Settings
         {

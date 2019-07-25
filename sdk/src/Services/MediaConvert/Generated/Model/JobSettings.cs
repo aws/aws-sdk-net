@@ -126,7 +126,12 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NielsenConfiguration. Settings for Nielsen Configuration
+        /// Gets and sets the property NielsenConfiguration. Settings for your Nielsen configuration.
+        /// If you don't do Nielsen measurement and analytics, ignore these settings. When you
+        /// enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3
+        /// tagging for all outputs in the job. To enable Nielsen configuration programmatically,
+        /// include an instance of nielsenConfiguration in your JSON job specification. Even if
+        /// you don't include any children of nielsenConfiguration, you still enable the setting.
         /// </summary>
         public NielsenConfiguration NielsenConfiguration
         {

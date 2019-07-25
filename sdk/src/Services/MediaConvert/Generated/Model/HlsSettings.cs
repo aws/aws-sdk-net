@@ -33,6 +33,7 @@ namespace Amazon.MediaConvert.Model
     public partial class HlsSettings
     {
         private string _audioGroupId;
+        private HlsAudioOnlyContainer _audioOnlyContainer;
         private string _audioRenditionSets;
         private HlsAudioTrackType _audioTrackType;
         private HlsIFrameOnlyManifest _iFrameOnlyManifest;
@@ -52,6 +53,25 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetAudioGroupId()
         {
             return this._audioGroupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AudioOnlyContainer. Use this setting only in audio-only
+        /// outputs. Choose MPEG-2 Transport Stream (M2TS) to create a file in an MPEG2-TS container.
+        /// Keep the default value Automatic (AUTOMATIC) to create an audio-only file in a raw
+        /// container. Regardless of the value that you specify here, if this output has video,
+        /// the service will place the output into an MPEG2-TS container.
+        /// </summary>
+        public HlsAudioOnlyContainer AudioOnlyContainer
+        {
+            get { return this._audioOnlyContainer; }
+            set { this._audioOnlyContainer = value; }
+        }
+
+        // Check to see if AudioOnlyContainer property is set
+        internal bool IsSetAudioOnlyContainer()
+        {
+            return this._audioOnlyContainer != null;
         }
 
         /// <summary>

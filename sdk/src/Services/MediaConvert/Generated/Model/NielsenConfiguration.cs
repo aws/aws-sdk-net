@@ -28,7 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Settings for Nielsen Configuration
+    /// Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics,
+    /// ignore these settings. When you enable Nielsen configuration (nielsenConfiguration),
+    /// MediaConvert enables PCM to ID3 tagging for all outputs in the job. To enable Nielsen
+    /// configuration programmatically, include an instance of nielsenConfiguration in your
+    /// JSON job specification. Even if you don't include any children of nielsenConfiguration,
+    /// you still enable the setting.
     /// </summary>
     public partial class NielsenConfiguration
     {
@@ -36,11 +41,10 @@ namespace Amazon.MediaConvert.Model
         private string _distributorId;
 
         /// <summary>
-        /// Gets and sets the property BreakoutCode. Use Nielsen Configuration (NielsenConfiguration)
-        /// to set the Nielsen measurement system breakout code. Supported values are 0, 3, 7,
-        /// and 9.
+        /// Gets and sets the property BreakoutCode. Nielsen has discontinued the use of breakout
+        /// code functionality. If you must include this property, set the value to zero.
         /// </summary>
-        [AWSProperty(Min=0, Max=9)]
+        [AWSProperty(Min=0, Max=0)]
         public int BreakoutCode
         {
             get { return this._breakoutCode.GetValueOrDefault(); }

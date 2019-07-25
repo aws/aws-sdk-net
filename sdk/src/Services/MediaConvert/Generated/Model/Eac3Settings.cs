@@ -72,8 +72,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Bitrate. Average bitrate in bits/second. Valid bitrates
-        /// depend on the coding mode.
+        /// Gets and sets the property Bitrate. Specify the average bitrate in bits per second.
+        /// Valid bitrates depend on the coding mode.
         /// </summary>
         [AWSProperty(Min=64000, Max=640000)]
         public int Bitrate
@@ -89,8 +89,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BitstreamMode. Specifies the "Bitstream Mode" (bsmod) for
-        /// the emitted E-AC-3 stream. See ATSC A/52-2012 (Annex E) for background on these values.
+        /// Gets and sets the property BitstreamMode. Specify the bitstream mode for the E-AC-3
+        /// stream that the encoder emits. For more information about the EAC3 bitstream mode,
+        /// see ATSC A/52-2012 (Annex E).
         /// </summary>
         public Eac3BitstreamMode BitstreamMode
         {
@@ -154,8 +155,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DynamicRangeCompressionLine. Enables Dynamic Range Compression
-        /// that restricts the absolute peak level for a signal.
+        /// Gets and sets the property DynamicRangeCompressionLine. Specify the absolute peak
+        /// level for a signal with dynamic range compression.
         /// </summary>
         public Eac3DynamicRangeCompressionLine DynamicRangeCompressionLine
         {
@@ -170,8 +171,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DynamicRangeCompressionRf. Enables Heavy Dynamic Range
-        /// Compression, ensures that the instantaneous signal peaks do not exceed specified levels.
+        /// Gets and sets the property DynamicRangeCompressionRf. Specify how the service limits
+        /// the audio dynamic range when compressing the audio.
         /// </summary>
         public Eac3DynamicRangeCompressionRf DynamicRangeCompressionRf
         {
@@ -218,8 +219,14 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LoRoCenterMixLevel. Left only/Right only center mix level.
-        /// Only used for 3/2 coding mode.Valid values: 3.0, 1.5, 0.0, -1.5 -3.0 -4.5 -6.0 -60
+        /// Gets and sets the property LoRoCenterMixLevel. Specify a value for the following Dolby
+        /// Digital Plus setting: Left only/Right only center mix (Lo/Ro center). MediaConvert
+        /// uses this value for downmixing. How the service uses this value depends on the value
+        /// that you choose for Stereo downmix (Eac3StereoDownmix). Valid values: 3.0, 1.5, 0.0,
+        /// -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies
+        /// only if you keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for
+        /// the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding
+        /// mode, the service ignores Left only/Right only center (loRoCenterMixLevel).
         /// </summary>
         public double LoRoCenterMixLevel
         {
@@ -234,8 +241,14 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LoRoSurroundMixLevel. Left only/Right only surround mix
-        /// level. Only used for 3/2 coding mode.Valid values: -1.5 -3.0 -4.5 -6.0 -60
+        /// Gets and sets the property LoRoSurroundMixLevel. Specify a value for the following
+        /// Dolby Digital Plus setting: Left only/Right only (Lo/Ro surround). MediaConvert uses
+        /// this value for downmixing. How the service uses this value depends on the value that
+        /// you choose for Stereo downmix (Eac3StereoDownmix). Valid values: -1.5, -3.0, -4.5,
+        /// -6.0, and -60. The value -60 mutes the channel. This setting applies only if you keep
+        /// the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding
+        /// mode (Eac3CodingMode). If you choose a different value for Coding mode, the service
+        /// ignores Left only/Right only surround (loRoSurroundMixLevel).
         /// </summary>
         public double LoRoSurroundMixLevel
         {
@@ -250,8 +263,14 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LtRtCenterMixLevel. Left total/Right total center mix level.
-        /// Only used for 3/2 coding mode.Valid values: 3.0, 1.5, 0.0, -1.5 -3.0 -4.5 -6.0 -60
+        /// Gets and sets the property LtRtCenterMixLevel. Specify a value for the following Dolby
+        /// Digital Plus setting: Left total/Right total center mix (Lt/Rt center). MediaConvert
+        /// uses this value for downmixing. How the service uses this value depends on the value
+        /// that you choose for Stereo downmix (Eac3StereoDownmix). Valid values: 3.0, 1.5, 0.0,
+        /// -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies
+        /// only if you keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for
+        /// the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding
+        /// mode, the service ignores Left total/Right total center (ltRtCenterMixLevel).
         /// </summary>
         public double LtRtCenterMixLevel
         {
@@ -266,8 +285,14 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LtRtSurroundMixLevel. Left total/Right total surround mix
-        /// level. Only used for 3/2 coding mode.Valid values: -1.5 -3.0 -4.5 -6.0 -60
+        /// Gets and sets the property LtRtSurroundMixLevel. Specify a value for the following
+        /// Dolby Digital Plus setting: Left total/Right total surround mix (Lt/Rt surround).
+        /// MediaConvert uses this value for downmixing. How the service uses this value depends
+        /// on the value that you choose for Stereo downmix (Eac3StereoDownmix). Valid values:
+        /// -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies
+        /// only if you keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for
+        /// the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding
+        /// mode, the service ignores Left total/Right total surround (ltRtSurroundMixLevel).
         /// </summary>
         public double LtRtSurroundMixLevel
         {
@@ -335,7 +360,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SampleRate. Sample rate in hz. Sample rate is always 48000.
+        /// Gets and sets the property SampleRate. This value is always 48000. It represents the
+        /// sample rate in Hz.
         /// </summary>
         [AWSProperty(Min=48000, Max=48000)]
         public int SampleRate
@@ -351,8 +377,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StereoDownmix. Stereo downmix preference. Only used for
-        /// 3/2 coding mode.
+        /// Gets and sets the property StereoDownmix. Choose how the service does stereo downmixing.
+        /// This setting only applies if you keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2)
+        /// for the setting Coding mode (Eac3CodingMode). If you choose a different value for
+        /// Coding mode, the service ignores Stereo downmix (Eac3StereoDownmix).
         /// </summary>
         public Eac3StereoDownmix StereoDownmix
         {

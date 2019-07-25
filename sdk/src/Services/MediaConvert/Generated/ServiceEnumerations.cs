@@ -857,6 +857,10 @@ namespace Amazon.MediaConvert
         /// </summary>
         public static readonly AudioCodec EAC3 = new AudioCodec("EAC3");
         /// <summary>
+        /// Constant EAC3_ATMOS for AudioCodec
+        /// </summary>
+        public static readonly AudioCodec EAC3_ATMOS = new AudioCodec("EAC3_ATMOS");
+        /// <summary>
         /// Constant MP2 for AudioCodec
         /// </summary>
         public static readonly AudioCodec MP2 = new AudioCodec("MP2");
@@ -1018,6 +1022,14 @@ namespace Amazon.MediaConvert
         /// Constant ITU_BS_1770_2 for AudioNormalizationAlgorithm
         /// </summary>
         public static readonly AudioNormalizationAlgorithm ITU_BS_1770_2 = new AudioNormalizationAlgorithm("ITU_BS_1770_2");
+        /// <summary>
+        /// Constant ITU_BS_1770_3 for AudioNormalizationAlgorithm
+        /// </summary>
+        public static readonly AudioNormalizationAlgorithm ITU_BS_1770_3 = new AudioNormalizationAlgorithm("ITU_BS_1770_3");
+        /// <summary>
+        /// Constant ITU_BS_1770_4 for AudioNormalizationAlgorithm
+        /// </summary>
+        public static readonly AudioNormalizationAlgorithm ITU_BS_1770_4 = new AudioNormalizationAlgorithm("ITU_BS_1770_4");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -3622,6 +3634,454 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DvbSubtitleTeletextSpacing(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Eac3AtmosBitstreamMode.
+    /// </summary>
+    public class Eac3AtmosBitstreamMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETE_MAIN for Eac3AtmosBitstreamMode
+        /// </summary>
+        public static readonly Eac3AtmosBitstreamMode COMPLETE_MAIN = new Eac3AtmosBitstreamMode("COMPLETE_MAIN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Eac3AtmosBitstreamMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Eac3AtmosBitstreamMode FindValue(string value)
+        {
+            return FindValue<Eac3AtmosBitstreamMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Eac3AtmosBitstreamMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Eac3AtmosCodingMode.
+    /// </summary>
+    public class Eac3AtmosCodingMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CODING_MODE_9_1_6 for Eac3AtmosCodingMode
+        /// </summary>
+        public static readonly Eac3AtmosCodingMode CODING_MODE_9_1_6 = new Eac3AtmosCodingMode("CODING_MODE_9_1_6");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Eac3AtmosCodingMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Eac3AtmosCodingMode FindValue(string value)
+        {
+            return FindValue<Eac3AtmosCodingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Eac3AtmosCodingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Eac3AtmosDialogueIntelligence.
+    /// </summary>
+    public class Eac3AtmosDialogueIntelligence : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for Eac3AtmosDialogueIntelligence
+        /// </summary>
+        public static readonly Eac3AtmosDialogueIntelligence DISABLED = new Eac3AtmosDialogueIntelligence("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for Eac3AtmosDialogueIntelligence
+        /// </summary>
+        public static readonly Eac3AtmosDialogueIntelligence ENABLED = new Eac3AtmosDialogueIntelligence("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Eac3AtmosDialogueIntelligence(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Eac3AtmosDialogueIntelligence FindValue(string value)
+        {
+            return FindValue<Eac3AtmosDialogueIntelligence>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Eac3AtmosDialogueIntelligence(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Eac3AtmosDynamicRangeCompressionLine.
+    /// </summary>
+    public class Eac3AtmosDynamicRangeCompressionLine : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FILM_LIGHT for Eac3AtmosDynamicRangeCompressionLine
+        /// </summary>
+        public static readonly Eac3AtmosDynamicRangeCompressionLine FILM_LIGHT = new Eac3AtmosDynamicRangeCompressionLine("FILM_LIGHT");
+        /// <summary>
+        /// Constant FILM_STANDARD for Eac3AtmosDynamicRangeCompressionLine
+        /// </summary>
+        public static readonly Eac3AtmosDynamicRangeCompressionLine FILM_STANDARD = new Eac3AtmosDynamicRangeCompressionLine("FILM_STANDARD");
+        /// <summary>
+        /// Constant MUSIC_LIGHT for Eac3AtmosDynamicRangeCompressionLine
+        /// </summary>
+        public static readonly Eac3AtmosDynamicRangeCompressionLine MUSIC_LIGHT = new Eac3AtmosDynamicRangeCompressionLine("MUSIC_LIGHT");
+        /// <summary>
+        /// Constant MUSIC_STANDARD for Eac3AtmosDynamicRangeCompressionLine
+        /// </summary>
+        public static readonly Eac3AtmosDynamicRangeCompressionLine MUSIC_STANDARD = new Eac3AtmosDynamicRangeCompressionLine("MUSIC_STANDARD");
+        /// <summary>
+        /// Constant NONE for Eac3AtmosDynamicRangeCompressionLine
+        /// </summary>
+        public static readonly Eac3AtmosDynamicRangeCompressionLine NONE = new Eac3AtmosDynamicRangeCompressionLine("NONE");
+        /// <summary>
+        /// Constant SPEECH for Eac3AtmosDynamicRangeCompressionLine
+        /// </summary>
+        public static readonly Eac3AtmosDynamicRangeCompressionLine SPEECH = new Eac3AtmosDynamicRangeCompressionLine("SPEECH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Eac3AtmosDynamicRangeCompressionLine(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Eac3AtmosDynamicRangeCompressionLine FindValue(string value)
+        {
+            return FindValue<Eac3AtmosDynamicRangeCompressionLine>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Eac3AtmosDynamicRangeCompressionLine(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Eac3AtmosDynamicRangeCompressionRf.
+    /// </summary>
+    public class Eac3AtmosDynamicRangeCompressionRf : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FILM_LIGHT for Eac3AtmosDynamicRangeCompressionRf
+        /// </summary>
+        public static readonly Eac3AtmosDynamicRangeCompressionRf FILM_LIGHT = new Eac3AtmosDynamicRangeCompressionRf("FILM_LIGHT");
+        /// <summary>
+        /// Constant FILM_STANDARD for Eac3AtmosDynamicRangeCompressionRf
+        /// </summary>
+        public static readonly Eac3AtmosDynamicRangeCompressionRf FILM_STANDARD = new Eac3AtmosDynamicRangeCompressionRf("FILM_STANDARD");
+        /// <summary>
+        /// Constant MUSIC_LIGHT for Eac3AtmosDynamicRangeCompressionRf
+        /// </summary>
+        public static readonly Eac3AtmosDynamicRangeCompressionRf MUSIC_LIGHT = new Eac3AtmosDynamicRangeCompressionRf("MUSIC_LIGHT");
+        /// <summary>
+        /// Constant MUSIC_STANDARD for Eac3AtmosDynamicRangeCompressionRf
+        /// </summary>
+        public static readonly Eac3AtmosDynamicRangeCompressionRf MUSIC_STANDARD = new Eac3AtmosDynamicRangeCompressionRf("MUSIC_STANDARD");
+        /// <summary>
+        /// Constant NONE for Eac3AtmosDynamicRangeCompressionRf
+        /// </summary>
+        public static readonly Eac3AtmosDynamicRangeCompressionRf NONE = new Eac3AtmosDynamicRangeCompressionRf("NONE");
+        /// <summary>
+        /// Constant SPEECH for Eac3AtmosDynamicRangeCompressionRf
+        /// </summary>
+        public static readonly Eac3AtmosDynamicRangeCompressionRf SPEECH = new Eac3AtmosDynamicRangeCompressionRf("SPEECH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Eac3AtmosDynamicRangeCompressionRf(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Eac3AtmosDynamicRangeCompressionRf FindValue(string value)
+        {
+            return FindValue<Eac3AtmosDynamicRangeCompressionRf>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Eac3AtmosDynamicRangeCompressionRf(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Eac3AtmosMeteringMode.
+    /// </summary>
+    public class Eac3AtmosMeteringMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ITU_BS_1770_1 for Eac3AtmosMeteringMode
+        /// </summary>
+        public static readonly Eac3AtmosMeteringMode ITU_BS_1770_1 = new Eac3AtmosMeteringMode("ITU_BS_1770_1");
+        /// <summary>
+        /// Constant ITU_BS_1770_2 for Eac3AtmosMeteringMode
+        /// </summary>
+        public static readonly Eac3AtmosMeteringMode ITU_BS_1770_2 = new Eac3AtmosMeteringMode("ITU_BS_1770_2");
+        /// <summary>
+        /// Constant ITU_BS_1770_3 for Eac3AtmosMeteringMode
+        /// </summary>
+        public static readonly Eac3AtmosMeteringMode ITU_BS_1770_3 = new Eac3AtmosMeteringMode("ITU_BS_1770_3");
+        /// <summary>
+        /// Constant ITU_BS_1770_4 for Eac3AtmosMeteringMode
+        /// </summary>
+        public static readonly Eac3AtmosMeteringMode ITU_BS_1770_4 = new Eac3AtmosMeteringMode("ITU_BS_1770_4");
+        /// <summary>
+        /// Constant LEQ_A for Eac3AtmosMeteringMode
+        /// </summary>
+        public static readonly Eac3AtmosMeteringMode LEQ_A = new Eac3AtmosMeteringMode("LEQ_A");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Eac3AtmosMeteringMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Eac3AtmosMeteringMode FindValue(string value)
+        {
+            return FindValue<Eac3AtmosMeteringMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Eac3AtmosMeteringMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Eac3AtmosStereoDownmix.
+    /// </summary>
+    public class Eac3AtmosStereoDownmix : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DPL2 for Eac3AtmosStereoDownmix
+        /// </summary>
+        public static readonly Eac3AtmosStereoDownmix DPL2 = new Eac3AtmosStereoDownmix("DPL2");
+        /// <summary>
+        /// Constant NOT_INDICATED for Eac3AtmosStereoDownmix
+        /// </summary>
+        public static readonly Eac3AtmosStereoDownmix NOT_INDICATED = new Eac3AtmosStereoDownmix("NOT_INDICATED");
+        /// <summary>
+        /// Constant STEREO for Eac3AtmosStereoDownmix
+        /// </summary>
+        public static readonly Eac3AtmosStereoDownmix STEREO = new Eac3AtmosStereoDownmix("STEREO");
+        /// <summary>
+        /// Constant SURROUND for Eac3AtmosStereoDownmix
+        /// </summary>
+        public static readonly Eac3AtmosStereoDownmix SURROUND = new Eac3AtmosStereoDownmix("SURROUND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Eac3AtmosStereoDownmix(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Eac3AtmosStereoDownmix FindValue(string value)
+        {
+            return FindValue<Eac3AtmosStereoDownmix>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Eac3AtmosStereoDownmix(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Eac3AtmosSurroundExMode.
+    /// </summary>
+    public class Eac3AtmosSurroundExMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for Eac3AtmosSurroundExMode
+        /// </summary>
+        public static readonly Eac3AtmosSurroundExMode DISABLED = new Eac3AtmosSurroundExMode("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for Eac3AtmosSurroundExMode
+        /// </summary>
+        public static readonly Eac3AtmosSurroundExMode ENABLED = new Eac3AtmosSurroundExMode("ENABLED");
+        /// <summary>
+        /// Constant NOT_INDICATED for Eac3AtmosSurroundExMode
+        /// </summary>
+        public static readonly Eac3AtmosSurroundExMode NOT_INDICATED = new Eac3AtmosSurroundExMode("NOT_INDICATED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Eac3AtmosSurroundExMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Eac3AtmosSurroundExMode FindValue(string value)
+        {
+            return FindValue<Eac3AtmosSurroundExMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Eac3AtmosSurroundExMode(string value)
         {
             return FindValue(value);
         }
@@ -7222,6 +7682,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HlsAdMarkers(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HlsAudioOnlyContainer.
+    /// </summary>
+    public class HlsAudioOnlyContainer : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTOMATIC for HlsAudioOnlyContainer
+        /// </summary>
+        public static readonly HlsAudioOnlyContainer AUTOMATIC = new HlsAudioOnlyContainer("AUTOMATIC");
+        /// <summary>
+        /// Constant M2TS for HlsAudioOnlyContainer
+        /// </summary>
+        public static readonly HlsAudioOnlyContainer M2TS = new HlsAudioOnlyContainer("M2TS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HlsAudioOnlyContainer(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HlsAudioOnlyContainer FindValue(string value)
+        {
+            return FindValue<HlsAudioOnlyContainer>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HlsAudioOnlyContainer(string value)
         {
             return FindValue(value);
         }

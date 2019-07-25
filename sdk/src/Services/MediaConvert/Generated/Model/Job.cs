@@ -189,9 +189,8 @@ namespace Amazon.MediaConvert.Model
         /// AWS Elemental MediaConvert provides jobPercentComplete in CloudWatch STATUS_UPDATE
         /// events and in the response to GetJob and ListJobs requests. The jobPercentComplete
         /// estimate is reliable for the following input containers: Quicktime, Transport Stream,
-        /// MP4, and MXF. For some jobs, including audio-only jobs and jobs that use input clipping,
-        /// the service can't provide information about job progress. In those cases, jobPercentComplete
-        /// returns a null value.
+        /// MP4, and MXF. For some jobs, the service can't provide information about job progress.
+        /// In those cases, jobPercentComplete returns a null value.
         /// </summary>
         public int JobPercentComplete
         {

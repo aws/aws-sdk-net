@@ -88,6 +88,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Codec = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("eac3AtmosSettings", targetDepth))
+                {
+                    var unmarshaller = Eac3AtmosSettingsUnmarshaller.Instance;
+                    unmarshalledObject.Eac3AtmosSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("eac3Settings", targetDepth))
                 {
                     var unmarshaller = Eac3SettingsUnmarshaller.Instance;

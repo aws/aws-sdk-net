@@ -82,9 +82,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Bitrate. Average bitrate in bits/second. Required for VBR
-        /// and CBR. For MS Smooth outputs, bitrates must be unique when rounded down to the nearest
-        /// multiple of 1000.
+        /// Gets and sets the property Bitrate. Specify the average bitrate in bits per second.
+        /// Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique when rounded
+        /// down to the nearest multiple of 1000.
         /// </summary>
         [AWSProperty(Min=1000, Max=288000000)]
         public int Bitrate

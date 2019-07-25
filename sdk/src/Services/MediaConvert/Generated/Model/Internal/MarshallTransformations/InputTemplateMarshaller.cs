@@ -102,6 +102,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetCrop())
+            {
+                context.Writer.WritePropertyName("crop");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RectangleMarshaller.Instance;
+                marshaller.Marshall(requestObject.Crop, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDeblockFilter())
             {
                 context.Writer.WritePropertyName("deblockFilter");
@@ -151,6 +162,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetPosition())
+            {
+                context.Writer.WritePropertyName("position");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RectangleMarshaller.Instance;
+                marshaller.Marshall(requestObject.Position, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetProgramNumber())

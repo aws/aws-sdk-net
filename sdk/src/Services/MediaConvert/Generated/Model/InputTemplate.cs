@@ -35,12 +35,14 @@ namespace Amazon.MediaConvert.Model
         private Dictionary<string, AudioSelectorGroup> _audioSelectorGroups = new Dictionary<string, AudioSelectorGroup>();
         private Dictionary<string, AudioSelector> _audioSelectors = new Dictionary<string, AudioSelector>();
         private Dictionary<string, CaptionSelector> _captionSelectors = new Dictionary<string, CaptionSelector>();
+        private Rectangle _crop;
         private InputDeblockFilter _deblockFilter;
         private InputDenoiseFilter _denoiseFilter;
         private InputFilterEnable _filterEnable;
         private int? _filterStrength;
         private ImageInserter _imageInserter;
         private List<InputClipping> _inputClippings = new List<InputClipping>();
+        private Rectangle _position;
         private int? _programNumber;
         private InputPsiControl _psiControl;
         private InputTimecodeSource _timecodeSource;
@@ -95,6 +97,24 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetCaptionSelectors()
         {
             return this._captionSelectors != null && this._captionSelectors.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Crop. Use Cropping selection (crop) to specify the video
+        /// area that the service will include in the output video frame. If you specify a value
+        /// here, it will override any value that you specify in the output setting Cropping selection
+        /// (crop).
+        /// </summary>
+        public Rectangle Crop
+        {
+            get { return this._crop; }
+            set { this._crop = value; }
+        }
+
+        // Check to see if Crop property is set
+        internal bool IsSetCrop()
+        {
+            return this._crop != null;
         }
 
         /// <summary>
@@ -205,6 +225,27 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetInputClippings()
         {
             return this._inputClippings != null && this._inputClippings.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Position. Use Selection placement (position) to define
+        /// the video area in your output frame. The area outside of the rectangle that you specify
+        /// here is black. If you specify a value here, it will override any value that you specify
+        /// in the output setting Selection placement (position). If you specify a value here,
+        /// this will override any AFD values in your input, even if you set Respond to AFD (RespondToAfd)
+        /// to Respond (RESPOND). If you specify a value here, this will ignore anything that
+        /// you specify for the setting Scaling Behavior (scalingBehavior).
+        /// </summary>
+        public Rectangle Position
+        {
+            get { return this._position; }
+            set { this._position = value; }
+        }
+
+        // Check to see if Position property is set
+        internal bool IsSetPosition()
+        {
+            return this._position != null;
         }
 
         /// <summary>

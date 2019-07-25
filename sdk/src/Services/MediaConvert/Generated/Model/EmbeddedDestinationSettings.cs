@@ -34,17 +34,17 @@ namespace Amazon.MediaConvert.Model
     public partial class EmbeddedDestinationSettings
     {
         private int? _destination608ChannelNumber;
+        private int? _destination708ServiceNumber;
 
         /// <summary>
         /// Gets and sets the property Destination608ChannelNumber. Ignore this setting unless
-        /// your input captions are SCC format and your output container is MXF. With this combination
-        /// of input captions format and output container, you can optionally use this setting
-        /// to replace the input channel number with the track number that you specify. Specify
-        /// a different number for each output captions track. If you don't specify an output
-        /// track number, the system uses the input channel number for the output channel number.
-        /// This setting applies to each output individually. You can optionally combine two captions
-        /// channels in your output. The two output channel numbers can be one of the following
-        /// pairs: 1,3; 2,4; 1,4; or 2,3.
+        /// your input captions are SCC format. With SCC inputs, you can optionally use this setting
+        /// to replace the input channel number with the channel number that you specify. Specify
+        /// a different number for each output captions track for a particular output. If you
+        /// don't specify an output channel number, the system uses the input channel number for
+        /// the output channel number. You can optionally combine two captions channels in your
+        /// output. The two output channel numbers can be one of the following pairs: 1,3; 2,4;
+        /// 1,4; or 2,3.
         /// </summary>
         [AWSProperty(Min=1, Max=4)]
         public int Destination608ChannelNumber
@@ -57,6 +57,28 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetDestination608ChannelNumber()
         {
             return this._destination608ChannelNumber.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Destination708ServiceNumber. Ignore this setting unless
+        /// your input captions are SCC format and you are performing SCC upconvert. With SCC
+        /// inputs, you can optionally use this setting to specify the 708 service number that
+        /// is in the output. Specify a different service number for each output captions track
+        /// for a particular output. If you don't specify an output track number, the system uses
+        /// the 608 channel number for the output 708 service number. You can combine two captions
+        /// channels in your output. Service numbers must be distinct.
+        /// </summary>
+        [AWSProperty(Min=1, Max=6)]
+        public int Destination708ServiceNumber
+        {
+            get { return this._destination708ServiceNumber.GetValueOrDefault(); }
+            set { this._destination708ServiceNumber = value; }
+        }
+
+        // Check to see if Destination708ServiceNumber property is set
+        internal bool IsSetDestination708ServiceNumber()
+        {
+            return this._destination708ServiceNumber.HasValue; 
         }
 
     }

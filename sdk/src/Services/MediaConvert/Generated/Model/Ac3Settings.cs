@@ -43,8 +43,8 @@ namespace Amazon.MediaConvert.Model
         private int? _sampleRate;
 
         /// <summary>
-        /// Gets and sets the property Bitrate. Average bitrate in bits/second. Valid bitrates
-        /// depend on the coding mode.
+        /// Gets and sets the property Bitrate. Specify the average bitrate in bits per second.
+        /// Valid bitrates depend on the coding mode.
         /// </summary>
         [AWSProperty(Min=64000, Max=640000)]
         public int Bitrate
@@ -60,8 +60,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BitstreamMode. Specifies the "Bitstream Mode" (bsmod) for
-        /// the emitted AC-3 stream. See ATSC A/52-2012 for background on these values.
+        /// Gets and sets the property BitstreamMode. Specify the bitstream mode for the AC-3
+        /// stream that the encoder emits. For more information about the AC3 bitstream mode,
+        /// see ATSC A/52-2012 (Annex E).
         /// </summary>
         public Ac3BitstreamMode BitstreamMode
         {
@@ -160,7 +161,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SampleRate. Sample rate in hz. Sample rate is always 48000.
+        /// Gets and sets the property SampleRate. This value is always 48000. It represents the
+        /// sample rate in Hz.
         /// </summary>
         [AWSProperty(Min=48000, Max=48000)]
         public int SampleRate

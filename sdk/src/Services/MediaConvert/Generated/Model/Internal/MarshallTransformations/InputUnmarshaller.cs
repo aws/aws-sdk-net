@@ -82,6 +82,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.CaptionSelectors = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("crop", targetDepth))
+                {
+                    var unmarshaller = RectangleUnmarshaller.Instance;
+                    unmarshalledObject.Crop = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("deblockFilter", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -128,6 +134,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<InputClipping, InputClippingUnmarshaller>(InputClippingUnmarshaller.Instance);
                     unmarshalledObject.InputClippings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("position", targetDepth))
+                {
+                    var unmarshaller = RectangleUnmarshaller.Instance;
+                    unmarshalledObject.Position = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("programNumber", targetDepth))
