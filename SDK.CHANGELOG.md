@@ -1,3 +1,16 @@
+### 3.3.558.0 (2019-07-25 18:10 UTC)
+* ECR (3.3.101.0)
+	* This release adds support for immutable image tags.
+* MediaConvert (3.3.104.0)
+	* AWS Elemental MediaConvert has added several features including support for: audio normalization using ITU BS.1770-3, 1770-4 algorithms, extension of job progress indicators, input cropping rectangle & output position rectangle filters per input, and dual SCC caption mapping to additional codecs and containers. 
+* MediaLive (3.3.104.0)
+	* AWS Elemental MediaLive is adding Input Clipping, Immediate Mode Input Switching, and Dynamic Inputs.
+* Core 3.3.103.16
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.557.0 (2019-07-24 18:19 UTC)
 * EC2 (3.3.122.0)
 	* This release introduces support for split tunnel with AWS Client VPN, and also adds support for opt-in Regions in DescribeRegions API. In addition, customers can now also tag Launch Templates on creation.
