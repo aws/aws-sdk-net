@@ -70,6 +70,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.InputAttachmentNameReference = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("inputClippingSettings", targetDepth))
+                {
+                    var unmarshaller = InputClippingSettingsUnmarshaller.Instance;
+                    unmarshalledObject.InputClippingSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("urlPath", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.UrlPath = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

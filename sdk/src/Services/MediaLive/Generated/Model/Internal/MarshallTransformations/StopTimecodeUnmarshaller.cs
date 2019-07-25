@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ScheduleActionStartSettings Object
+    /// Response Unmarshaller for StopTimecode Object
     /// </summary>  
-    public class ScheduleActionStartSettingsUnmarshaller : IUnmarshaller<ScheduleActionStartSettings, XmlUnmarshallerContext>, IUnmarshaller<ScheduleActionStartSettings, JsonUnmarshallerContext>
+    public class StopTimecodeUnmarshaller : IUnmarshaller<StopTimecode, XmlUnmarshallerContext>, IUnmarshaller<StopTimecode, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ScheduleActionStartSettings IUnmarshaller<ScheduleActionStartSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        StopTimecode IUnmarshaller<StopTimecode, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ScheduleActionStartSettings Unmarshall(JsonUnmarshallerContext context)
+        public StopTimecode Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ScheduleActionStartSettings unmarshalledObject = new ScheduleActionStartSettings();
+            StopTimecode unmarshalledObject = new StopTimecode();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("fixedModeScheduleActionStartSettings", targetDepth))
+                if (context.TestExpression("lastFrameClippingBehavior", targetDepth))
                 {
-                    var unmarshaller = FixedModeScheduleActionStartSettingsUnmarshaller.Instance;
-                    unmarshalledObject.FixedModeScheduleActionStartSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastFrameClippingBehavior = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("followModeScheduleActionStartSettings", targetDepth))
+                if (context.TestExpression("timecode", targetDepth))
                 {
-                    var unmarshaller = FollowModeScheduleActionStartSettingsUnmarshaller.Instance;
-                    unmarshalledObject.FollowModeScheduleActionStartSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("immediateModeScheduleActionStartSettings", targetDepth))
-                {
-                    var unmarshaller = ImmediateModeScheduleActionStartSettingsUnmarshaller.Instance;
-                    unmarshalledObject.ImmediateModeScheduleActionStartSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Timecode = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static ScheduleActionStartSettingsUnmarshaller _instance = new ScheduleActionStartSettingsUnmarshaller();        
+        private static StopTimecodeUnmarshaller _instance = new StopTimecodeUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ScheduleActionStartSettingsUnmarshaller Instance
+        public static StopTimecodeUnmarshaller Instance
         {
             get
             {

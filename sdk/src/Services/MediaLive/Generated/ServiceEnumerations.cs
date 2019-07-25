@@ -6315,6 +6315,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type InputSourceType.
+    /// </summary>
+    public class InputSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DYNAMIC for InputSourceType
+        /// </summary>
+        public static readonly InputSourceType DYNAMIC = new InputSourceType("DYNAMIC");
+        /// <summary>
+        /// Constant STATIC for InputSourceType
+        /// </summary>
+        public static readonly InputSourceType STATIC = new InputSourceType("STATIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputSourceType FindValue(string value)
+        {
+            return FindValue<InputSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InputState.
     /// </summary>
     public class InputState : ConstantClass
@@ -6370,6 +6420,56 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InputState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InputTimecodeSource.
+    /// </summary>
+    public class InputTimecodeSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EMBEDDED for InputTimecodeSource
+        /// </summary>
+        public static readonly InputTimecodeSource EMBEDDED = new InputTimecodeSource("EMBEDDED");
+        /// <summary>
+        /// Constant ZEROBASED for InputTimecodeSource
+        /// </summary>
+        public static readonly InputTimecodeSource ZEROBASED = new InputTimecodeSource("ZEROBASED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputTimecodeSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputTimecodeSource FindValue(string value)
+        {
+            return FindValue<InputTimecodeSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputTimecodeSource(string value)
         {
             return FindValue(value);
         }
@@ -6440,6 +6540,56 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InputType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LastFrameClippingBehavior.
+    /// </summary>
+    public class LastFrameClippingBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXCLUDE_LAST_FRAME for LastFrameClippingBehavior
+        /// </summary>
+        public static readonly LastFrameClippingBehavior EXCLUDE_LAST_FRAME = new LastFrameClippingBehavior("EXCLUDE_LAST_FRAME");
+        /// <summary>
+        /// Constant INCLUDE_LAST_FRAME for LastFrameClippingBehavior
+        /// </summary>
+        public static readonly LastFrameClippingBehavior INCLUDE_LAST_FRAME = new LastFrameClippingBehavior("INCLUDE_LAST_FRAME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LastFrameClippingBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LastFrameClippingBehavior FindValue(string value)
+        {
+            return FindValue<LastFrameClippingBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LastFrameClippingBehavior(string value)
         {
             return FindValue(value);
         }

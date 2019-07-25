@@ -37,6 +37,7 @@ namespace Amazon.MediaLive.Model
         private List<InputDestination> _destinations = new List<InputDestination>();
         private string _id;
         private InputClass _inputClass;
+        private InputSourceType _inputSourceType;
         private List<MediaConnectFlow> _mediaConnectFlows = new List<MediaConnectFlow>();
         private string _name;
         private string _roleArn;
@@ -127,6 +128,23 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetInputClass()
         {
             return this._inputClass != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InputSourceType. Certain pull input sources can be dynamic,
+        /// meaning that they can have their URL's dynamically changesduring input switch actions.
+        /// Presently, this functionality only works with MP4_FILE inputs.
+        /// </summary>
+        public InputSourceType InputSourceType
+        {
+            get { return this._inputSourceType; }
+            set { this._inputSourceType = value; }
+        }
+
+        // Check to see if InputSourceType property is set
+        internal bool IsSetInputSourceType()
+        {
+            return this._inputSourceType != null;
         }
 
         /// <summary>

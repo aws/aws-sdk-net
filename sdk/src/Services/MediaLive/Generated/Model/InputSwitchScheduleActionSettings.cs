@@ -28,15 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Settings for the action to switch an input.
+    /// Settings for the "switch input" action: to switch from ingesting one input to ingesting
+    /// another input.
     /// </summary>
     public partial class InputSwitchScheduleActionSettings
     {
         private string _inputAttachmentNameReference;
+        private InputClippingSettings _inputClippingSettings;
+        private List<string> _urlPath = new List<string>();
 
         /// <summary>
         /// Gets and sets the property InputAttachmentNameReference. The name of the input attachment
-        /// that should be switched to by this action.
+        /// (not the name of the input!) to switch to. The name is specified in the channel configuration.
         /// </summary>
         [AWSProperty(Required=true)]
         public string InputAttachmentNameReference
@@ -49,6 +52,40 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetInputAttachmentNameReference()
         {
             return this._inputAttachmentNameReference != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InputClippingSettings. Settings to let you create a clip
+        /// of the file input, in order to set up the input to ingest only a portion of the file.
+        /// </summary>
+        public InputClippingSettings InputClippingSettings
+        {
+            get { return this._inputClippingSettings; }
+            set { this._inputClippingSettings = value; }
+        }
+
+        // Check to see if InputClippingSettings property is set
+        internal bool IsSetInputClippingSettings()
+        {
+            return this._inputClippingSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UrlPath. The value for the variable portion of the URL
+        /// for the dynamic input, for this instance of the input. Each time you use the same
+        /// dynamic input in an input switch action, you can provide a different value, in order
+        /// to connect the input to a different content source.
+        /// </summary>
+        public List<string> UrlPath
+        {
+            get { return this._urlPath; }
+            set { this._urlPath = value; }
+        }
+
+        // Check to see if UrlPath property is set
+        internal bool IsSetUrlPath()
+        {
+            return this._urlPath != null && this._urlPath.Count > 0; 
         }
 
     }

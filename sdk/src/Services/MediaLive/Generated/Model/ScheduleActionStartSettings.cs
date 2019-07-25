@@ -28,16 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Settings to specify the start time for an action.
+    /// Settings to specify when an action should occur. Only one of the options must be selected.
     /// </summary>
     public partial class ScheduleActionStartSettings
     {
         private FixedModeScheduleActionStartSettings _fixedModeScheduleActionStartSettings;
         private FollowModeScheduleActionStartSettings _followModeScheduleActionStartSettings;
+        private ImmediateModeScheduleActionStartSettings _immediateModeScheduleActionStartSettings;
 
         /// <summary>
-        /// Gets and sets the property FixedModeScheduleActionStartSettings. Holds the start time
-        /// for the action.
+        /// Gets and sets the property FixedModeScheduleActionStartSettings. Option for specifying
+        /// the start time for an action.
         /// </summary>
         public FixedModeScheduleActionStartSettings FixedModeScheduleActionStartSettings
         {
@@ -52,8 +53,8 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FollowModeScheduleActionStartSettings. Specifies an action
-        /// to follow for scheduling this action.
+        /// Gets and sets the property FollowModeScheduleActionStartSettings. Option for specifying
+        /// an action as relative to another action.
         /// </summary>
         public FollowModeScheduleActionStartSettings FollowModeScheduleActionStartSettings
         {
@@ -65,6 +66,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetFollowModeScheduleActionStartSettings()
         {
             return this._followModeScheduleActionStartSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImmediateModeScheduleActionStartSettings. Option for specifying
+        /// an action that should be applied immediately.
+        /// </summary>
+        public ImmediateModeScheduleActionStartSettings ImmediateModeScheduleActionStartSettings
+        {
+            get { return this._immediateModeScheduleActionStartSettings; }
+            set { this._immediateModeScheduleActionStartSettings = value; }
+        }
+
+        // Check to see if ImmediateModeScheduleActionStartSettings property is set
+        internal bool IsSetImmediateModeScheduleActionStartSettings()
+        {
+            return this._immediateModeScheduleActionStartSettings != null;
         }
 
     }

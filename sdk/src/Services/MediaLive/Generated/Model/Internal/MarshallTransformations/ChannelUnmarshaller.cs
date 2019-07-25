@@ -124,6 +124,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("pipelineDetails", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<PipelineDetail, PipelineDetailUnmarshaller>(PipelineDetailUnmarshaller.Instance);
+                    unmarshalledObject.PipelineDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("pipelinesRunningCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

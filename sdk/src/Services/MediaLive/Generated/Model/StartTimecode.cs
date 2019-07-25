@@ -28,30 +28,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// MediaPackage Output Destination Settings
+    /// Settings to identify the start of the clip.
     /// </summary>
-    public partial class MediaPackageOutputDestinationSettings
+    public partial class StartTimecode
     {
-        private string _channelId;
+        private string _timecode;
 
         /// <summary>
-        /// Gets and sets the property ChannelId. ID of the channel in MediaPackage that is the
-        /// destination for this output group. You do not need to specify the individual inputs
-        /// in MediaPackage; MediaLive will handle the connection of the two MediaLive pipelines
-        /// to the two MediaPackage inputs. The MediaPackage channel and MediaLive channel must
-        /// be in the same region.
+        /// Gets and sets the property Timecode. The timecode for the frame where you want to
+        /// start the clip. Optional; if not specified, the clip starts at first frame in the
+        /// file. Enter the timecode as HH:MM:SS:FF or HH:MM:SS;FF.
         /// </summary>
-        [AWSProperty(Min=1)]
-        public string ChannelId
+        public string Timecode
         {
-            get { return this._channelId; }
-            set { this._channelId = value; }
+            get { return this._timecode; }
+            set { this._timecode = value; }
         }
 
-        // Check to see if ChannelId property is set
-        internal bool IsSetChannelId()
+        // Check to see if Timecode property is set
+        internal bool IsSetTimecode()
         {
-            return this._channelId != null;
+            return this._timecode != null;
         }
 
     }

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ScheduleActionStartSettings Object
+    /// Response Unmarshaller for ImmediateModeScheduleActionStartSettings Object
     /// </summary>  
-    public class ScheduleActionStartSettingsUnmarshaller : IUnmarshaller<ScheduleActionStartSettings, XmlUnmarshallerContext>, IUnmarshaller<ScheduleActionStartSettings, JsonUnmarshallerContext>
+    public class ImmediateModeScheduleActionStartSettingsUnmarshaller : IUnmarshaller<ImmediateModeScheduleActionStartSettings, XmlUnmarshallerContext>, IUnmarshaller<ImmediateModeScheduleActionStartSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ScheduleActionStartSettings IUnmarshaller<ScheduleActionStartSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ImmediateModeScheduleActionStartSettings IUnmarshaller<ImmediateModeScheduleActionStartSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,47 +53,29 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ScheduleActionStartSettings Unmarshall(JsonUnmarshallerContext context)
+        public ImmediateModeScheduleActionStartSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ScheduleActionStartSettings unmarshalledObject = new ScheduleActionStartSettings();
+            ImmediateModeScheduleActionStartSettings unmarshalledObject = new ImmediateModeScheduleActionStartSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("fixedModeScheduleActionStartSettings", targetDepth))
-                {
-                    var unmarshaller = FixedModeScheduleActionStartSettingsUnmarshaller.Instance;
-                    unmarshalledObject.FixedModeScheduleActionStartSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("followModeScheduleActionStartSettings", targetDepth))
-                {
-                    var unmarshaller = FollowModeScheduleActionStartSettingsUnmarshaller.Instance;
-                    unmarshalledObject.FollowModeScheduleActionStartSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("immediateModeScheduleActionStartSettings", targetDepth))
-                {
-                    var unmarshaller = ImmediateModeScheduleActionStartSettingsUnmarshaller.Instance;
-                    unmarshalledObject.ImmediateModeScheduleActionStartSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static ScheduleActionStartSettingsUnmarshaller _instance = new ScheduleActionStartSettingsUnmarshaller();        
+        private static ImmediateModeScheduleActionStartSettingsUnmarshaller _instance = new ImmediateModeScheduleActionStartSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ScheduleActionStartSettingsUnmarshaller Instance
+        public static ImmediateModeScheduleActionStartSettingsUnmarshaller Instance
         {
             get
             {

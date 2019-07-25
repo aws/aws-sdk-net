@@ -28,31 +28,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// MediaPackage Output Destination Settings
+    /// Settings to configure an action so that it occurs immediately. This is only supported
+    /// for input switch actions currently.
     /// </summary>
-    public partial class MediaPackageOutputDestinationSettings
+    public partial class ImmediateModeScheduleActionStartSettings
     {
-        private string _channelId;
-
-        /// <summary>
-        /// Gets and sets the property ChannelId. ID of the channel in MediaPackage that is the
-        /// destination for this output group. You do not need to specify the individual inputs
-        /// in MediaPackage; MediaLive will handle the connection of the two MediaLive pipelines
-        /// to the two MediaPackage inputs. The MediaPackage channel and MediaLive channel must
-        /// be in the same region.
-        /// </summary>
-        [AWSProperty(Min=1)]
-        public string ChannelId
-        {
-            get { return this._channelId; }
-            set { this._channelId = value; }
-        }
-
-        // Check to see if ChannelId property is set
-        internal bool IsSetChannelId()
-        {
-            return this._channelId != null;
-        }
 
     }
 }

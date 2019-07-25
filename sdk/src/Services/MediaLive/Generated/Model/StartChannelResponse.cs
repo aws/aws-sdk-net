@@ -42,6 +42,7 @@ namespace Amazon.MediaLive.Model
         private InputSpecification _inputSpecification;
         private LogLevel _logLevel;
         private string _name;
+        private List<PipelineDetail> _pipelineDetails = new List<PipelineDetail>();
         private int? _pipelinesRunningCount;
         private string _roleArn;
         private ChannelState _state;
@@ -199,6 +200,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PipelineDetails. Runtime details for the pipelines of a
+        /// running channel.
+        /// </summary>
+        public List<PipelineDetail> PipelineDetails
+        {
+            get { return this._pipelineDetails; }
+            set { this._pipelineDetails = value; }
+        }
+
+        // Check to see if PipelineDetails property is set
+        internal bool IsSetPipelineDetails()
+        {
+            return this._pipelineDetails != null && this._pipelineDetails.Count > 0; 
         }
 
         /// <summary>

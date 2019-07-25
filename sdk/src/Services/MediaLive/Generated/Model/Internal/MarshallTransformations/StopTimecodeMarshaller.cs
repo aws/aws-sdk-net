@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// InputSwitchScheduleActionSettings Marshaller
+    /// StopTimecode Marshaller
     /// </summary>       
-    public class InputSwitchScheduleActionSettingsMarshaller : IRequestMarshaller<InputSwitchScheduleActionSettings, JsonMarshallerContext> 
+    public class StopTimecodeMarshaller : IRequestMarshaller<StopTimecode, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,34 +43,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(InputSwitchScheduleActionSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(StopTimecode requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetInputAttachmentNameReference())
+            if(requestObject.IsSetLastFrameClippingBehavior())
             {
-                context.Writer.WritePropertyName("inputAttachmentNameReference");
-                context.Writer.Write(requestObject.InputAttachmentNameReference);
+                context.Writer.WritePropertyName("lastFrameClippingBehavior");
+                context.Writer.Write(requestObject.LastFrameClippingBehavior);
             }
 
-            if(requestObject.IsSetInputClippingSettings())
+            if(requestObject.IsSetTimecode())
             {
-                context.Writer.WritePropertyName("inputClippingSettings");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = InputClippingSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.InputClippingSettings, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetUrlPath())
-            {
-                context.Writer.WritePropertyName("urlPath");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectUrlPathListValue in requestObject.UrlPath)
-                {
-                        context.Writer.Write(requestObjectUrlPathListValue);
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("timecode");
+                context.Writer.Write(requestObject.Timecode);
             }
 
         }
@@ -78,7 +62,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static InputSwitchScheduleActionSettingsMarshaller Instance = new InputSwitchScheduleActionSettingsMarshaller();
+        public readonly static StopTimecodeMarshaller Instance = new StopTimecodeMarshaller();
 
     }
 }
