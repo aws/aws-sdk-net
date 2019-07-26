@@ -90,6 +90,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.JobRoleArn);
             }
 
+            if(requestObject.IsSetLinuxParameters())
+            {
+                context.Writer.WritePropertyName("linuxParameters");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LinuxParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.LinuxParameters, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetMemory())
             {
                 context.Writer.WritePropertyName("memory");

@@ -298,7 +298,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
-        /// The VPC subnets into which the compute resources are launched. 
+        /// The VPC subnets into which the compute resources are launched. For more information,
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
+        /// and Subnets</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

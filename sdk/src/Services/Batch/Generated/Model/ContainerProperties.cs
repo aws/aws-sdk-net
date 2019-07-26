@@ -38,6 +38,7 @@ namespace Amazon.Batch.Model
         private string _image;
         private string _instanceType;
         private string _jobRoleArn;
+        private LinuxParameters _linuxParameters;
         private int? _memory;
         private List<MountPoint> _mountPoints = new List<MountPoint>();
         private bool? _privileged;
@@ -187,6 +188,25 @@ namespace Amazon.Batch.Model
         internal bool IsSetJobRoleArn()
         {
             return this._jobRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LinuxParameters. 
+        /// <para>
+        /// Linux-specific modifications that are applied to the container, such as Linux kernel
+        /// capabilities.
+        /// </para>
+        /// </summary>
+        public LinuxParameters LinuxParameters
+        {
+            get { return this._linuxParameters; }
+            set { this._linuxParameters = value; }
+        }
+
+        // Check to see if LinuxParameters property is set
+        internal bool IsSetLinuxParameters()
+        {
+            return this._linuxParameters != null;
         }
 
         /// <summary>

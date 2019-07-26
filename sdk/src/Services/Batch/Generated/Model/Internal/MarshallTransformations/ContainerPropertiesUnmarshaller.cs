@@ -94,6 +94,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.JobRoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("linuxParameters", targetDepth))
+                {
+                    var unmarshaller = LinuxParametersUnmarshaller.Instance;
+                    unmarshalledObject.LinuxParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("memory", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

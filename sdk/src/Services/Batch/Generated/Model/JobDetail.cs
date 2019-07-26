@@ -323,8 +323,8 @@ namespace Amazon.Batch.Model
         ///  <note> 
         /// <para>
         /// If your jobs do not progress to <code>STARTING</code>, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
-        /// Stuck in <code>RUNNABLE</code> Status</a> in the troubleshooting section of the <i>AWS
-        /// Batch User Guide</i>.
+        /// Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch User
+        /// Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
