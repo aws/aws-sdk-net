@@ -2818,6 +2818,102 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  GetJobBookmark
+
+        internal virtual GetJobBookmarkResponse GetJobBookmark(GetJobBookmarkRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetJobBookmarkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJobBookmarkResponseUnmarshaller.Instance;
+
+            return Invoke<GetJobBookmarkResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information on a job bookmark entry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJobBookmark service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetJobBookmark service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobBookmark">REST API Reference for GetJobBookmark Operation</seealso>
+        public virtual Task<GetJobBookmarkResponse> GetJobBookmarkAsync(GetJobBookmarkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetJobBookmarkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJobBookmarkResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetJobBookmarkResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetJobBookmarks
+
+        internal virtual GetJobBookmarksResponse GetJobBookmarks(GetJobBookmarksRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetJobBookmarksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJobBookmarksResponseUnmarshaller.Instance;
+
+            return Invoke<GetJobBookmarksResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information on the job bookmark entries. The list is ordered on decreasing
+        /// version numbers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJobBookmarks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetJobBookmarks service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobBookmarks">REST API Reference for GetJobBookmarks Operation</seealso>
+        public virtual Task<GetJobBookmarksResponse> GetJobBookmarksAsync(GetJobBookmarksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetJobBookmarksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJobBookmarksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetJobBookmarksResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetJobRun
 
         internal virtual GetJobRunResponse GetJobRun(GetJobRunRequest request)

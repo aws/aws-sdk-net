@@ -82,10 +82,22 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.JobName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PreviousRunId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PreviousRunId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Run", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.Run = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RunId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RunId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Version", targetDepth))

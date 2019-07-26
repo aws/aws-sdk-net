@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ResetJobBookmark Request Marshaller
+    /// GetJobBookmarks Request Marshaller
     /// </summary>       
-    public class ResetJobBookmarkRequestMarshaller : IMarshaller<IRequest, ResetJobBookmarkRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetJobBookmarksRequestMarshaller : IMarshaller<IRequest, GetJobBookmarksRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ResetJobBookmarkRequest)input);
+            return this.Marshall((GetJobBookmarksRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ResetJobBookmarkRequest publicRequest)
+        public IRequest Marshall(GetJobBookmarksRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Glue");
-            string target = "AWSGlue.ResetJobBookmark";
+            string target = "AWSGlue.GetJobBookmarks";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-03-31";            
@@ -74,10 +74,16 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.JobName);
                 }
 
-                if(publicRequest.IsSetRunId())
+                if(publicRequest.IsSetMaxResults())
                 {
-                    context.Writer.WritePropertyName("RunId");
-                    context.Writer.Write(publicRequest.RunId);
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
+                }
+
+                if(publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
         
@@ -89,9 +95,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ResetJobBookmarkRequestMarshaller _instance = new ResetJobBookmarkRequestMarshaller();        
+        private static GetJobBookmarksRequestMarshaller _instance = new GetJobBookmarksRequestMarshaller();        
 
-        internal static ResetJobBookmarkRequestMarshaller GetInstance()
+        internal static GetJobBookmarksRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -99,7 +105,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResetJobBookmarkRequestMarshaller Instance
+        public static GetJobBookmarksRequestMarshaller Instance
         {
             get
             {

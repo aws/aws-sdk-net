@@ -35,7 +35,9 @@ namespace Amazon.Glue.Model
         private int? _attempt;
         private string _jobBookmark;
         private string _jobName;
+        private string _previousRunId;
         private int? _run;
+        private string _runId;
         private int? _version;
 
         /// <summary>
@@ -93,6 +95,24 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PreviousRunId. 
+        /// <para>
+        /// The unique run identifier associated with the previous job run..
+        /// </para>
+        /// </summary>
+        public string PreviousRunId
+        {
+            get { return this._previousRunId; }
+            set { this._previousRunId = value; }
+        }
+
+        // Check to see if PreviousRunId property is set
+        internal bool IsSetPreviousRunId()
+        {
+            return this._previousRunId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Run. 
         /// <para>
         /// The run ID number.
@@ -108,6 +128,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetRun()
         {
             return this._run.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RunId. 
+        /// <para>
+        /// The unique run identifier associated with this job run.
+        /// </para>
+        /// </summary>
+        public string RunId
+        {
+            get { return this._runId; }
+            set { this._runId = value; }
+        }
+
+        // Check to see if RunId property is set
+        internal bool IsSetRunId()
+        {
+            return this._runId != null;
         }
 
         /// <summary>

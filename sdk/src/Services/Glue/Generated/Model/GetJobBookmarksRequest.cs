@@ -28,13 +28,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Container for the parameters to the ResetJobBookmark operation.
-    /// Resets a bookmark entry.
+    /// Container for the parameters to the GetJobBookmarks operation.
+    /// Returns information on the job bookmark entries. The list is ordered on decreasing
+    /// version numbers.
     /// </summary>
-    public partial class ResetJobBookmarkRequest : AmazonGlueRequest
+    public partial class GetJobBookmarksRequest : AmazonGlueRequest
     {
         private string _jobName;
-        private string _runId;
+        private int? _maxResults;
+        private int? _nextToken;
 
         /// <summary>
         /// Gets and sets the property JobName. 
@@ -56,21 +58,39 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RunId. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The unique run identifier associated with this job run.
+        /// The maximum size of the response.
         /// </para>
         /// </summary>
-        public string RunId
+        public int MaxResults
         {
-            get { return this._runId; }
-            set { this._runId = value; }
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if RunId property is set
-        internal bool IsSetRunId()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._runId != null;
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// A continuation token, if this is a continuation call.
+        /// </para>
+        /// </summary>
+        public int NextToken
+        {
+            get { return this._nextToken.GetValueOrDefault(); }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken.HasValue; 
         }
 
     }

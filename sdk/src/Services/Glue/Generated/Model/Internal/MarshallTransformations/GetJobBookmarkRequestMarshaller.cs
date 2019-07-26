@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ResetJobBookmark Request Marshaller
+    /// GetJobBookmark Request Marshaller
     /// </summary>       
-    public class ResetJobBookmarkRequestMarshaller : IMarshaller<IRequest, ResetJobBookmarkRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetJobBookmarkRequestMarshaller : IMarshaller<IRequest, GetJobBookmarkRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ResetJobBookmarkRequest)input);
+            return this.Marshall((GetJobBookmarkRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ResetJobBookmarkRequest publicRequest)
+        public IRequest Marshall(GetJobBookmarkRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Glue");
-            string target = "AWSGlue.ResetJobBookmark";
+            string target = "AWSGlue.GetJobBookmark";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-03-31";            
@@ -89,9 +89,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ResetJobBookmarkRequestMarshaller _instance = new ResetJobBookmarkRequestMarshaller();        
+        private static GetJobBookmarkRequestMarshaller _instance = new GetJobBookmarkRequestMarshaller();        
 
-        internal static ResetJobBookmarkRequestMarshaller GetInstance()
+        internal static GetJobBookmarkRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -99,7 +99,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResetJobBookmarkRequestMarshaller Instance
+        public static GetJobBookmarkRequestMarshaller Instance
         {
             get
             {

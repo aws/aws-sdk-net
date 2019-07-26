@@ -28,10 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Container for the parameters to the ResetJobBookmark operation.
-    /// Resets a bookmark entry.
+    /// Container for the parameters to the GetJobBookmark operation.
+    /// Returns information on a job bookmark entry.
     /// </summary>
-    public partial class ResetJobBookmarkRequest : AmazonGlueRequest
+    public partial class GetJobBookmarkRequest : AmazonGlueRequest
     {
         private string _jobName;
         private string _runId;
