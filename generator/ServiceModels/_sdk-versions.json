@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.558.0",
+    "ProductVersion" : "3.3.559.0",
     "CoreVersion"    : "3.3.103.16",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -85,7 +85,7 @@
             "InPreview"               : false
         },
         "CloudWatchLogs"    : {
-            "Version" : "3.3.100.53",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.16"
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.122.1",
+            "Version" : "3.3.123.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.16"
@@ -705,7 +705,7 @@
             "InPreview"               : false
         },
         "Batch"                           : {
-            "Version" : "3.3.101.48",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.16"
@@ -801,7 +801,7 @@
             "InPreview"               : false
         },
         "Greengrass"                      : {
-            "Version" : "3.3.101.49",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.16"
@@ -825,7 +825,7 @@
             "InPreview"               : false
         },
         "Glue"                            : {
-            "Version" : "3.3.106.1",
+            "Version" : "3.3.107.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.16"
@@ -857,7 +857,7 @@
             "InPreview"               : false
         },
         "CostExplorer"                    : {
-            "Version" : "3.3.101.8",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.16"
@@ -1289,7 +1289,7 @@
             "InPreview"               : false
         },
         "MediaConnect"                    : {
-            "Version" : "3.3.102.22",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.16"

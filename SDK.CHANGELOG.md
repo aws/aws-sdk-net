@@ -1,3 +1,19 @@
+### 3.3.559.0 (2019-07-26 18:23 UTC)
+* Batch (3.3.102.0)
+	* AWS Batch now supports SDK auto-pagination and Job-level docker devices.
+* CloudWatchLogs (3.3.101.0)
+	* Allow for specifying multiple log groups in an Insights query, and deprecate storedByte field for LogStreams and interleaved field for FilterLogEventsRequest.
+* CostExplorer (3.3.102.0)
+	* Adds support for resource optimization recommendations.
+* EC2 (3.3.123.0)
+	* You can now create EC2 Capacity Reservations using Availability Zone ID or Availability Zone name. You can view usage of Amazon EC2 Capacity Reservations per AWS account.
+* Glue (3.3.107.0)
+	* This release provides GetJobBookmark and GetJobBookmarks APIs. These APIs enable users to look at specific versions or all versions of the JobBookmark for a specific job. This release also enables resetting the job bookmark to a specific run via an enhancement of the ResetJobBookmark API.
+* Greengrass (3.3.102.0)
+	* Greengrass OTA service supports openwrt/aarch64 and openwrt/armv7l platforms.
+* MediaConnect (3.3.103.0)
+	* This release adds support for the Zixi pull protocol on outputs.
+
 ### 3.3.558.0 (2019-07-25 18:10 UTC)
 * ECR (3.3.101.0)
 	* This release adds support for immutable image tags.
