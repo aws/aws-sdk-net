@@ -195,6 +195,10 @@ namespace Amazon.CostExplorer
         /// </summary>
         public static readonly Dimension RESERVATION_ID = new Dimension("RESERVATION_ID");
         /// <summary>
+        /// Constant RIGHTSIZING_TYPE for Dimension
+        /// </summary>
+        public static readonly Dimension RIGHTSIZING_TYPE = new Dimension("RIGHTSIZING_TYPE");
+        /// <summary>
         /// Constant SCOPE for Dimension
         /// </summary>
         public static readonly Dimension SCOPE = new Dimension("SCOPE");
@@ -592,6 +596,56 @@ namespace Amazon.CostExplorer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PaymentOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RightsizingType.
+    /// </summary>
+    public class RightsizingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MODIFY for RightsizingType
+        /// </summary>
+        public static readonly RightsizingType MODIFY = new RightsizingType("MODIFY");
+        /// <summary>
+        /// Constant TERMINATE for RightsizingType
+        /// </summary>
+        public static readonly RightsizingType TERMINATE = new RightsizingType("TERMINATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RightsizingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RightsizingType FindValue(string value)
+        {
+            return FindValue<RightsizingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RightsizingType(string value)
         {
             return FindValue(value);
         }

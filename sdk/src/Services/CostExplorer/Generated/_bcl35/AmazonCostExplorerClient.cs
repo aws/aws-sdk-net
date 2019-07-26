@@ -737,6 +737,75 @@ namespace Amazon.CostExplorer
 
         #endregion
         
+        #region  GetRightsizingRecommendation
+
+        /// <summary>
+        /// Creates recommendations that helps you save cost by identifying idle and underutilized
+        /// Amazon EC2 instances.
+        /// 
+        ///  
+        /// <para>
+        /// Recommendations are generated to either downsize or terminate instances, along with
+        /// providing savings detail and metrics. For details on calculation and function, see
+        /// <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-what-is.html">Optimizing
+        /// Your Cost with Rightsizing Recommendations</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRightsizingRecommendation service method.</param>
+        /// 
+        /// <returns>The response from the GetRightsizingRecommendation service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetRightsizingRecommendation">REST API Reference for GetRightsizingRecommendation Operation</seealso>
+        public virtual GetRightsizingRecommendationResponse GetRightsizingRecommendation(GetRightsizingRecommendationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRightsizingRecommendationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRightsizingRecommendationResponseUnmarshaller.Instance;
+
+            return Invoke<GetRightsizingRecommendationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRightsizingRecommendation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRightsizingRecommendation operation on AmazonCostExplorerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRightsizingRecommendation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetRightsizingRecommendation">REST API Reference for GetRightsizingRecommendation Operation</seealso>
+        public virtual IAsyncResult BeginGetRightsizingRecommendation(GetRightsizingRecommendationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRightsizingRecommendationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRightsizingRecommendationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetRightsizingRecommendation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRightsizingRecommendation.</param>
+        /// 
+        /// <returns>Returns a  GetRightsizingRecommendationResult from CostExplorer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetRightsizingRecommendation">REST API Reference for GetRightsizingRecommendation Operation</seealso>
+        public virtual GetRightsizingRecommendationResponse EndGetRightsizingRecommendation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetRightsizingRecommendationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetTags
 
         /// <summary>
@@ -825,7 +894,7 @@ namespace Amazon.CostExplorer
         /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.UnresolvableUsageUnitException">
         /// Cost Explorer was unable to identify the usage unit. Provide <code>UsageType/UsageTypeGroup</code>
-        /// filter selections that contain matching units, for example: <code>hours</code>.(
+        /// filter selections that contain matching units, for example: <code>hours</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetUsageForecast">REST API Reference for GetUsageForecast Operation</seealso>
         public virtual GetUsageForecastResponse GetUsageForecast(GetUsageForecastRequest request)
