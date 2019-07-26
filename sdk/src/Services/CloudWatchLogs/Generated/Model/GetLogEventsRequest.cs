@@ -169,6 +169,11 @@ namespace Amazon.CloudWatchLogs.Model
         /// If the value is true, the earliest log events are returned first. If the value is
         /// false, the latest log events are returned first. The default value is false.
         /// </para>
+        ///  
+        /// <para>
+        /// If you are using <code>nextToken</code> in this operation, you must specify <code>true</code>
+        /// for <code>startFromHead</code>.
+        /// </para>
         /// </summary>
         public bool StartFromHead
         {

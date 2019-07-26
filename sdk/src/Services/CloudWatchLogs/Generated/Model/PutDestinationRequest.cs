@@ -31,17 +31,17 @@ namespace Amazon.CloudWatchLogs.Model
     /// Container for the parameters to the PutDestination operation.
     /// Creates or updates a destination. A destination encapsulates a physical resource (such
     /// as an Amazon Kinesis stream) and enables you to subscribe to a real-time stream of
-    /// log events for a different account, ingested using <a>PutLogEvents</a>. Currently,
-    /// the only supported physical resource is a Kinesis stream belonging to the same account
-    /// as the destination.
+    /// log events for a different account, ingested using <a>PutLogEvents</a>. A destination
+    /// can be an Amazon Kinesis stream, Amazon Kinesis Data Firehose strea, or an AWS Lambda
+    /// function.
     /// 
     ///  
     /// <para>
-    /// Through an access policy, a destination controls what is written to its Kinesis stream.
-    /// By default, <code>PutDestination</code> does not set any access policy with the destination,
-    /// which means a cross-account user cannot call <a>PutSubscriptionFilter</a> against
-    /// this destination. To enable this, the destination owner must call <a>PutDestinationPolicy</a>
-    /// after <code>PutDestination</code>.
+    /// Through an access policy, a destination controls what is written to it. By default,
+    /// <code>PutDestination</code> does not set any access policy with the destination, which
+    /// means a cross-account user cannot call <a>PutSubscriptionFilter</a> against this destination.
+    /// To enable this, the destination owner must call <a>PutDestinationPolicy</a> after
+    /// <code>PutDestination</code>.
     /// </para>
     /// </summary>
     public partial class PutDestinationRequest : AmazonCloudWatchLogsRequest

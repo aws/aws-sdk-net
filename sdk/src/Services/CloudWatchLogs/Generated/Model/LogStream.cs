@@ -173,6 +173,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The <code>storedBytes</code> parameter for log groups is not affected.
         /// </para>
         /// </summary>
+        [Obsolete("Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected.")]
         [AWSProperty(Min=0)]
         public long StoredBytes
         {

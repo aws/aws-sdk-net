@@ -48,6 +48,7 @@ namespace Amazon.CloudWatchLogs.Model
         private long? _endTime;
         private int? _limit;
         private string _logGroupName;
+        private List<string> _logGroupNames = new List<string>();
         private string _queryString;
         private long? _startTime;
 
@@ -97,8 +98,13 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// The log group on which to perform the query.
         /// </para>
+        ///  
+        /// <para>
+        /// A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a
+        /// <code>logGroupName</code> parameter, but not both.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=512)]
+        [AWSProperty(Min=1, Max=512)]
         public string LogGroupName
         {
             get { return this._logGroupName; }
@@ -109,6 +115,29 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetLogGroupName()
         {
             return this._logGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogGroupNames. 
+        /// <para>
+        /// The list of log groups to be queried. You can include up to 20 log groups.
+        /// </para>
+        ///  
+        /// <para>
+        /// A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a
+        /// <code>logGroupName</code> parameter, but not both.
+        /// </para>
+        /// </summary>
+        public List<string> LogGroupNames
+        {
+            get { return this._logGroupNames; }
+            set { this._logGroupNames = value; }
+        }
+
+        // Check to see if LogGroupNames property is set
+        internal bool IsSetLogGroupNames()
+        {
+            return this._logGroupNames != null && this._logGroupNames.Count > 0; 
         }
 
         /// <summary>

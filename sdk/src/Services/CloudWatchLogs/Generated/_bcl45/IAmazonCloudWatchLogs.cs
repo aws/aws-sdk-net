@@ -247,6 +247,11 @@ namespace Amazon.CloudWatchLogs
         /// bucket. To separate out log data for each export task, you can specify a prefix to
         /// be used as the Amazon S3 key prefix for all exported objects.
         /// </para>
+        ///  
+        /// <para>
+        /// Exporting to S3 buckets that are encrypted with AES-256 is supported. Exporting to
+        /// S3 buckets encrypted with SSE-KMS is not supported. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateExportTask service method.</param>
         /// 
@@ -291,6 +296,11 @@ namespace Amazon.CloudWatchLogs
         /// You can export logs from multiple log groups or multiple time ranges to the same S3
         /// bucket. To separate out log data for each export task, you can specify a prefix to
         /// be used as the Amazon S3 key prefix for all exported objects.
+        /// </para>
+        ///  
+        /// <para>
+        /// Exporting to S3 buckets that are encrypted with AES-256 is supported. Exporting to
+        /// S3 buckets encrypted with SSE-KMS is not supported. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateExportTask service method.</param>
@@ -1683,8 +1693,7 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Returns the results from the specified query. If the query is in progress, partial
-        /// results of that current execution are returned.
+        /// Returns the results from the specified query.
         /// 
         ///  
         /// <para>
@@ -1696,6 +1705,13 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         ///  <code>GetQueryResults</code> does not start a query execution. To run a query, use
         /// .
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value of the <code>Status</code> field in the output is <code>Running</code>,
+        /// this operation returns only partial results. If you see a value of <code>Scheduled</code>
+        /// or <code>Running</code> for the status, you can retry the operation later to see the
+        /// final results. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetQueryResults service method.</param>
@@ -1716,8 +1732,7 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Returns the results from the specified query. If the query is in progress, partial
-        /// results of that current execution are returned.
+        /// Returns the results from the specified query.
         /// 
         ///  
         /// <para>
@@ -1729,6 +1744,13 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         ///  <code>GetQueryResults</code> does not start a query execution. To run a query, use
         /// .
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value of the <code>Status</code> field in the output is <code>Running</code>,
+        /// this operation returns only partial results. If you see a value of <code>Scheduled</code>
+        /// or <code>Running</code> for the status, you can retry the operation later to see the
+        /// final results. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetQueryResults service method.</param>
@@ -1797,17 +1819,17 @@ namespace Amazon.CloudWatchLogs
         /// <summary>
         /// Creates or updates a destination. A destination encapsulates a physical resource (such
         /// as an Amazon Kinesis stream) and enables you to subscribe to a real-time stream of
-        /// log events for a different account, ingested using <a>PutLogEvents</a>. Currently,
-        /// the only supported physical resource is a Kinesis stream belonging to the same account
-        /// as the destination.
+        /// log events for a different account, ingested using <a>PutLogEvents</a>. A destination
+        /// can be an Amazon Kinesis stream, Amazon Kinesis Data Firehose strea, or an AWS Lambda
+        /// function.
         /// 
         ///  
         /// <para>
-        /// Through an access policy, a destination controls what is written to its Kinesis stream.
-        /// By default, <code>PutDestination</code> does not set any access policy with the destination,
-        /// which means a cross-account user cannot call <a>PutSubscriptionFilter</a> against
-        /// this destination. To enable this, the destination owner must call <a>PutDestinationPolicy</a>
-        /// after <code>PutDestination</code>.
+        /// Through an access policy, a destination controls what is written to it. By default,
+        /// <code>PutDestination</code> does not set any access policy with the destination, which
+        /// means a cross-account user cannot call <a>PutSubscriptionFilter</a> against this destination.
+        /// To enable this, the destination owner must call <a>PutDestinationPolicy</a> after
+        /// <code>PutDestination</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutDestination service method.</param>
@@ -1830,17 +1852,17 @@ namespace Amazon.CloudWatchLogs
         /// <summary>
         /// Creates or updates a destination. A destination encapsulates a physical resource (such
         /// as an Amazon Kinesis stream) and enables you to subscribe to a real-time stream of
-        /// log events for a different account, ingested using <a>PutLogEvents</a>. Currently,
-        /// the only supported physical resource is a Kinesis stream belonging to the same account
-        /// as the destination.
+        /// log events for a different account, ingested using <a>PutLogEvents</a>. A destination
+        /// can be an Amazon Kinesis stream, Amazon Kinesis Data Firehose strea, or an AWS Lambda
+        /// function.
         /// 
         ///  
         /// <para>
-        /// Through an access policy, a destination controls what is written to its Kinesis stream.
-        /// By default, <code>PutDestination</code> does not set any access policy with the destination,
-        /// which means a cross-account user cannot call <a>PutSubscriptionFilter</a> against
-        /// this destination. To enable this, the destination owner must call <a>PutDestinationPolicy</a>
-        /// after <code>PutDestination</code>.
+        /// Through an access policy, a destination controls what is written to it. By default,
+        /// <code>PutDestination</code> does not set any access policy with the destination, which
+        /// means a cross-account user cannot call <a>PutSubscriptionFilter</a> against this destination.
+        /// To enable this, the destination owner must call <a>PutDestinationPolicy</a> after
+        /// <code>PutDestination</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutDestination service method.</param>

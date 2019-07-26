@@ -29,8 +29,7 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the GetQueryResults operation.
-    /// Returns the results from the specified query. If the query is in progress, partial
-    /// results of that current execution are returned.
+    /// Returns the results from the specified query.
     /// 
     ///  
     /// <para>
@@ -42,6 +41,13 @@ namespace Amazon.CloudWatchLogs.Model
     /// <para>
     ///  <code>GetQueryResults</code> does not start a query execution. To run a query, use
     /// .
+    /// </para>
+    ///  
+    /// <para>
+    /// If the value of the <code>Status</code> field in the output is <code>Running</code>,
+    /// this operation returns only partial results. If you see a value of <code>Scheduled</code>
+    /// or <code>Running</code> for the status, you can retry the operation later to see the
+    /// final results. 
     /// </para>
     /// </summary>
     public partial class GetQueryResultsRequest : AmazonCloudWatchLogsRequest

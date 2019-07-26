@@ -111,6 +111,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// events from multiple log streams within a log group.
         /// </para>
         /// </summary>
+        [Obsolete("Starting on June 17, 2019, this parameter will be ignored and the value will be assumed to be true. The response from this operation will always interleave events from multiple log streams within a log group.")]
         public bool Interleaved
         {
             get { return this._interleaved.GetValueOrDefault(); }

@@ -46,6 +46,11 @@ namespace Amazon.CloudWatchLogs.Model
     /// bucket. To separate out log data for each export task, you can specify a prefix to
     /// be used as the Amazon S3 key prefix for all exported objects.
     /// </para>
+    ///  
+    /// <para>
+    /// Exporting to S3 buckets that are encrypted with AES-256 is supported. Exporting to
+    /// S3 buckets encrypted with SSE-KMS is not supported. 
+    /// </para>
     /// </summary>
     public partial class CreateExportTaskRequest : AmazonCloudWatchLogsRequest
     {
