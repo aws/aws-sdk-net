@@ -208,8 +208,8 @@ namespace Amazon.MediaConnect.Model
 
         /// <summary>
         /// Gets and sets the property WhitelistCidr. The range of IP addresses that should be
-        /// allowed to contribute content to your source. These IP addresses should in the form
-        /// of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+        /// allowed to contribute content to your source. These IP addresses should be in the
+        /// form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
         /// </summary>
         public string WhitelistCidr
         {

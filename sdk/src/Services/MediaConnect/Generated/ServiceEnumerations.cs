@@ -143,6 +143,10 @@ namespace Amazon.MediaConnect
         /// </summary>
         public static readonly Protocol RtpFec = new Protocol("rtp-fec");
         /// <summary>
+        /// Constant ZixiPull for Protocol
+        /// </summary>
+        public static readonly Protocol ZixiPull = new Protocol("zixi-pull");
+        /// <summary>
         /// Constant ZixiPush for Protocol
         /// </summary>
         public static readonly Protocol ZixiPush = new Protocol("zixi-push");

@@ -33,6 +33,7 @@ namespace Amazon.MediaConnect.Model
     /// </summary>
     public partial class UpdateFlowOutputRequest : AmazonMediaConnectRequest
     {
+        private List<string> _cidrAllowList = new List<string>();
         private string _description;
         private string _destination;
         private UpdateEncryption _encryption;
@@ -41,8 +42,26 @@ namespace Amazon.MediaConnect.Model
         private string _outputArn;
         private int? _port;
         private Protocol _protocol;
+        private string _remoteId;
         private int? _smoothingLatency;
         private string _streamId;
+
+        /// <summary>
+        /// Gets and sets the property CidrAllowList. The range of IP addresses that should be
+        /// allowed to initiate output requests to this flow. These IP addresses should be in
+        /// the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+        /// </summary>
+        public List<string> CidrAllowList
+        {
+            get { return this._cidrAllowList; }
+            set { this._cidrAllowList = value; }
+        }
+
+        // Check to see if CidrAllowList property is set
+        internal bool IsSetCidrAllowList()
+        {
+            return this._cidrAllowList != null && this._cidrAllowList.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Description. A description of the output. This description
@@ -171,6 +190,21 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetProtocol()
         {
             return this._protocol != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoteId. The remote ID for the Zixi-pull stream.
+        /// </summary>
+        public string RemoteId
+        {
+            get { return this._remoteId; }
+            set { this._remoteId = value; }
+        }
+
+        // Check to see if RemoteId property is set
+        internal bool IsSetRemoteId()
+        {
+            return this._remoteId != null;
         }
 
         /// <summary>

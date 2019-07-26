@@ -32,11 +32,30 @@ namespace Amazon.MediaConnect.Model
     /// </summary>
     public partial class Transport
     {
+        private List<string> _cidrAllowList = new List<string>();
         private int? _maxBitrate;
         private int? _maxLatency;
         private Protocol _protocol;
+        private string _remoteId;
         private int? _smoothingLatency;
         private string _streamId;
+
+        /// <summary>
+        /// Gets and sets the property CidrAllowList. The range of IP addresses that should be
+        /// allowed to initiate output requests to this flow. These IP addresses should be in
+        /// the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+        /// </summary>
+        public List<string> CidrAllowList
+        {
+            get { return this._cidrAllowList; }
+            set { this._cidrAllowList = value; }
+        }
+
+        // Check to see if CidrAllowList property is set
+        internal bool IsSetCidrAllowList()
+        {
+            return this._cidrAllowList != null && this._cidrAllowList.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxBitrate. The smoothing max bitrate for RTP and RTP-FEC
@@ -84,6 +103,21 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetProtocol()
         {
             return this._protocol != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoteId. The remote ID for the Zixi-pull stream.
+        /// </summary>
+        public string RemoteId
+        {
+            get { return this._remoteId; }
+            set { this._remoteId = value; }
+        }
+
+        // Check to see if RemoteId property is set
+        internal bool IsSetRemoteId()
+        {
+            return this._remoteId != null;
         }
 
         /// <summary>

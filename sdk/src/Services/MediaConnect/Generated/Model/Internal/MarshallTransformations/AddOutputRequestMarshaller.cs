@@ -45,6 +45,17 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AddOutputRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCidrAllowList())
+            {
+                context.Writer.WritePropertyName("cidrAllowList");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCidrAllowListListValue in requestObject.CidrAllowList)
+                {
+                        context.Writer.Write(requestObjectCidrAllowListListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
@@ -90,6 +101,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("protocol");
                 context.Writer.Write(requestObject.Protocol);
+            }
+
+            if(requestObject.IsSetRemoteId())
+            {
+                context.Writer.WritePropertyName("remoteId");
+                context.Writer.Write(requestObject.RemoteId);
             }
 
             if(requestObject.IsSetSmoothingLatency())

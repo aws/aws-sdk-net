@@ -64,6 +64,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("cidrAllowList", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.CidrAllowList = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("maxBitrate", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -80,6 +86,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Protocol = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("remoteId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RemoteId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("smoothingLatency", targetDepth))

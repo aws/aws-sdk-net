@@ -32,6 +32,7 @@ namespace Amazon.MediaConnect.Model
     /// </summary>
     public partial class AddOutputRequest
     {
+        private List<string> _cidrAllowList = new List<string>();
         private string _description;
         private string _destination;
         private Encryption _encryption;
@@ -39,8 +40,26 @@ namespace Amazon.MediaConnect.Model
         private string _name;
         private int? _port;
         private Protocol _protocol;
+        private string _remoteId;
         private int? _smoothingLatency;
         private string _streamId;
+
+        /// <summary>
+        /// Gets and sets the property CidrAllowList. The range of IP addresses that should be
+        /// allowed to initiate output requests to this flow. These IP addresses should be in
+        /// the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+        /// </summary>
+        public List<string> CidrAllowList
+        {
+            get { return this._cidrAllowList; }
+            set { this._cidrAllowList = value; }
+        }
+
+        // Check to see if CidrAllowList property is set
+        internal bool IsSetCidrAllowList()
+        {
+            return this._cidrAllowList != null && this._cidrAllowList.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Description. A description of the output. This description
@@ -63,7 +82,6 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property Destination. The IP address from which video will be sent
         /// to output destinations.
         /// </summary>
-        [AWSProperty(Required=true)]
         public string Destination
         {
             get { return this._destination; }
@@ -128,7 +146,6 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property Port. The port to use when content is distributed to this
         /// output.
         /// </summary>
-        [AWSProperty(Required=true)]
         public int Port
         {
             get { return this._port.GetValueOrDefault(); }
@@ -155,6 +172,21 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetProtocol()
         {
             return this._protocol != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoteId. The remote ID for the Zixi-pull output stream.
+        /// </summary>
+        public string RemoteId
+        {
+            get { return this._remoteId; }
+            set { this._remoteId = value; }
+        }
+
+        // Check to see if RemoteId property is set
+        internal bool IsSetRemoteId()
+        {
+            return this._remoteId != null;
         }
 
         /// <summary>
