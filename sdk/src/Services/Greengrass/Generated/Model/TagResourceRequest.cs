@@ -29,7 +29,8 @@ namespace Amazon.Greengrass.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Add tags to a resource.
+    /// Add resource tags to a Greengrass Resource. Valid resources are Group, Connector,
+    /// Core, Device, Function, Logger, Subscription, and Resource Defintions, and also BulkDeploymentIds.
     /// </summary>
     public partial class TagResourceRequest : AmazonGreengrassRequest
     {
@@ -53,9 +54,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. A map of the key-value pairs for the resource tag.
+        /// Gets and sets the property Tags.
         /// </summary>
-        [AWSProperty(Required=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

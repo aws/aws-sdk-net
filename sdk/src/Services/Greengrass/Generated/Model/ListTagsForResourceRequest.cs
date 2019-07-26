@@ -29,7 +29,7 @@ namespace Amazon.Greengrass.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Retrieves the tags for a resource.
+    /// Retrieves a list of resource tags for a resource arn.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonGreengrassRequest
     {

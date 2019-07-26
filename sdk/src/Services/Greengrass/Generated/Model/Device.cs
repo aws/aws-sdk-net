@@ -41,6 +41,7 @@ namespace Amazon.Greengrass.Model
         /// Gets and sets the property CertificateArn. The ARN of the certificate associated with
         /// the device.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CertificateArn
         {
             get { return this._certificateArn; }
@@ -58,6 +59,7 @@ namespace Amazon.Greengrass.Model
         /// value must be unique within the device definition version. Max length is 128 characters
         /// with pattern ''[a-zA-Z0-9:_-]+''.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -89,6 +91,7 @@ namespace Amazon.Greengrass.Model
         /// <summary>
         /// Gets and sets the property ThingArn. The thing ARN of the device.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ThingArn
         {
             get { return this._thingArn; }

@@ -72,6 +72,7 @@ namespace Amazon.Greengrass.Model
         /// value must be unique within the function definition version. Max length is 128 characters
         /// with pattern ''[a-zA-Z0-9:_-]+''.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }

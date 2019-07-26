@@ -41,6 +41,7 @@ namespace Amazon.Greengrass.Model
         /// Gets and sets the property RoleArn. The ARN of the service role you wish to associate
         /// with your account.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RoleArn
         {
             get { return this._roleArn; }

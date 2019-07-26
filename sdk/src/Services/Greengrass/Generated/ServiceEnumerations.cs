@@ -599,6 +599,10 @@ namespace Amazon.Greengrass
         /// </summary>
         public static readonly UpdateTargetsArchitecture Armv7l = new UpdateTargetsArchitecture("armv7l");
         /// <summary>
+        /// Constant Openwrt for UpdateTargetsArchitecture
+        /// </summary>
+        public static readonly UpdateTargetsArchitecture Openwrt = new UpdateTargetsArchitecture("openwrt");
+        /// <summary>
         /// Constant X86_64 for UpdateTargetsArchitecture
         /// </summary>
         public static readonly UpdateTargetsArchitecture X86_64 = new UpdateTargetsArchitecture("x86_64");

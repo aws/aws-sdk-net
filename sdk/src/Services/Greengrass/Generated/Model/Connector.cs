@@ -40,6 +40,7 @@ namespace Amazon.Greengrass.Model
         /// <summary>
         /// Gets and sets the property ConnectorArn. The ARN of the connector.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConnectorArn
         {
             get { return this._connectorArn; }
@@ -57,6 +58,7 @@ namespace Amazon.Greengrass.Model
         /// value must be unique within the connector definition version. Max length is 128 characters
         /// with pattern [a-zA-Z0-9:_-]+.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }

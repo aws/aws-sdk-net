@@ -42,6 +42,7 @@ namespace Amazon.Greengrass.Model
         /// This value must be unique within the subscription definition version. Max length is
         /// 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -59,6 +60,7 @@ namespace Amazon.Greengrass.Model
         /// ARN, a Lambda function ARN, a connector ARN, 'cloud' (which represents the AWS IoT
         /// cloud), or 'GGShadowService'.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Source
         {
             get { return this._source; }
@@ -74,6 +76,7 @@ namespace Amazon.Greengrass.Model
         /// <summary>
         /// Gets and sets the property Subject. The MQTT topic used to route the message.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Subject
         {
             get { return this._subject; }
@@ -91,6 +94,7 @@ namespace Amazon.Greengrass.Model
         /// a Lambda function ARN, a connector ARN, 'cloud' (which represents the AWS IoT cloud),
         /// or 'GGShadowService'.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Target
         {
             get { return this._target; }

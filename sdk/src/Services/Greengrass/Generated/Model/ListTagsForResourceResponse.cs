@@ -35,7 +35,7 @@ namespace Amazon.Greengrass.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Tags. A map of the key-value pairs for the resource tag.
+        /// Gets and sets the property Tags.
         /// </summary>
         public Dictionary<string, string> Tags
         {

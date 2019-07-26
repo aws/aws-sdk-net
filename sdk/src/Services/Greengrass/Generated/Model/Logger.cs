@@ -41,6 +41,7 @@ namespace Amazon.Greengrass.Model
         /// <summary>
         /// Gets and sets the property Component. The component that will be subject to logging.
         /// </summary>
+        [AWSProperty(Required=true)]
         public LoggerComponent Component
         {
             get { return this._component; }
@@ -58,6 +59,7 @@ namespace Amazon.Greengrass.Model
         /// value must be unique within the logger definition version. Max length is 128 characters
         /// with pattern ''[a-zA-Z0-9:_-]+''.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -73,6 +75,7 @@ namespace Amazon.Greengrass.Model
         /// <summary>
         /// Gets and sets the property Level. The level of the logs.
         /// </summary>
+        [AWSProperty(Required=true)]
         public LoggerLevel Level
         {
             get { return this._level; }
@@ -104,6 +107,7 @@ namespace Amazon.Greengrass.Model
         /// <summary>
         /// Gets and sets the property Type. The type of log output which will be used.
         /// </summary>
+        [AWSProperty(Required=true)]
         public LoggerType Type
         {
             get { return this._type; }

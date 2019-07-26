@@ -103,7 +103,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LatestVersion. The latest version of the definition.
+        /// Gets and sets the property LatestVersion. The ID of the latest version associated
+        /// with the definition.
         /// </summary>
         public string LatestVersion
         {
@@ -118,8 +119,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LatestVersionArn. The ARN of the latest version of the
-        /// definition.
+        /// Gets and sets the property LatestVersionArn. The ARN of the latest version associated
+        /// with the definition.
         /// </summary>
         public string LatestVersionArn
         {

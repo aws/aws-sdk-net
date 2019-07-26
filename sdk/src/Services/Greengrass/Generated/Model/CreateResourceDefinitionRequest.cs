@@ -88,7 +88,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. Tag(s) to add to the new resource
+        /// Gets and sets the property Tags. Tag(s) to add to the new resource.
         /// </summary>
         public Dictionary<string, string> Tags
         {

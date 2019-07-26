@@ -56,8 +56,9 @@ namespace Amazon.Greengrass.Model
 
         /// <summary>
         /// Gets and sets the property RoleArn. The ARN of the role you wish to associate with
-        /// this group.
+        /// this group. The existence of the role is not validated.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RoleArn
         {
             get { return this._roleArn; }

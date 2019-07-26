@@ -117,7 +117,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. The tags for the definition.
+        /// Gets and sets the property Tags. Tag(s) attached to the resource arn.
         /// </summary>
         public Dictionary<string, string> Tags
         {

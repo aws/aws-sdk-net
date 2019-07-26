@@ -41,6 +41,7 @@ namespace Amazon.Greengrass.Model
         /// Lambda function configuration. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
         /// This must be unique within a Greengrass group.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -58,6 +59,7 @@ namespace Amazon.Greengrass.Model
         /// on the AWS IoT Greengrass console. Max length 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
         /// This must be unique within a Greengrass group.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -74,6 +76,7 @@ namespace Amazon.Greengrass.Model
         /// Gets and sets the property ResourceDataContainer. A container of data for all resource
         /// types.
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceDataContainer ResourceDataContainer
         {
             get { return this._resourceDataContainer; }

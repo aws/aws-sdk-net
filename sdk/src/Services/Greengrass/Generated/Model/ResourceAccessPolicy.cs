@@ -55,6 +55,7 @@ namespace Amazon.Greengrass.Model
         /// Gets and sets the property ResourceId. The ID of the resource. (This ID is assigned
         /// to the resource when you create the resource definiton.)
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceId
         {
             get { return this._resourceId; }

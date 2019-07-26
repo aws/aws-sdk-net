@@ -63,6 +63,7 @@ namespace Amazon.Greengrass.Model
         /// <summary>
         /// Gets and sets the property S3UrlSignerRole.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string S3UrlSignerRole
         {
             get { return this._s3UrlSignerRole; }
@@ -78,6 +79,7 @@ namespace Amazon.Greengrass.Model
         /// <summary>
         /// Gets and sets the property SoftwareToUpdate.
         /// </summary>
+        [AWSProperty(Required=true)]
         public SoftwareToUpdate SoftwareToUpdate
         {
             get { return this._softwareToUpdate; }
@@ -108,6 +110,7 @@ namespace Amazon.Greengrass.Model
         /// <summary>
         /// Gets and sets the property UpdateTargets.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> UpdateTargets
         {
             get { return this._updateTargets; }
@@ -123,6 +126,7 @@ namespace Amazon.Greengrass.Model
         /// <summary>
         /// Gets and sets the property UpdateTargetsArchitecture.
         /// </summary>
+        [AWSProperty(Required=true)]
         public UpdateTargetsArchitecture UpdateTargetsArchitecture
         {
             get { return this._updateTargetsArchitecture; }
@@ -138,6 +142,7 @@ namespace Amazon.Greengrass.Model
         /// <summary>
         /// Gets and sets the property UpdateTargetsOperatingSystem.
         /// </summary>
+        [AWSProperty(Required=true)]
         public UpdateTargetsOperatingSystem UpdateTargetsOperatingSystem
         {
             get { return this._updateTargetsOperatingSystem; }

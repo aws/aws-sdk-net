@@ -76,6 +76,7 @@ namespace Amazon.Greengrass.Model
         /// Gets and sets the property DeploymentType. The type of deployment. When used for ''CreateDeployment'',
         /// only ''NewDeployment'' and ''Redeployment'' are valid.
         /// </summary>
+        [AWSProperty(Required=true)]
         public DeploymentType DeploymentType
         {
             get { return this._deploymentType; }

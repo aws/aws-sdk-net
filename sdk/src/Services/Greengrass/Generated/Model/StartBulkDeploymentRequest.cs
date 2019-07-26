@@ -64,6 +64,7 @@ namespace Amazon.Greengrass.Model
         /// action for all group versions that are listed in the input file. This IAM role must
         /// have access to the S3 bucket containing the input file.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ExecutionRoleArn
         {
             get { return this._executionRoleArn; }
@@ -84,6 +85,7 @@ namespace Amazon.Greengrass.Model
         /// This file must be less than 100 MB. Currently, AWS IoT Greengrass supports only ''NewDeployment''
         /// deployment types.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InputFileUri
         {
             get { return this._inputFileUri; }
@@ -97,7 +99,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. Tag(s) to add to the new resource
+        /// Gets and sets the property Tags. Tag(s) to add to the new resource.
         /// </summary>
         public Dictionary<string, string> Tags
         {

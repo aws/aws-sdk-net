@@ -4500,7 +4500,7 @@ namespace Amazon.Greengrass
         #region  ListTagsForResource
 
         /// <summary>
-        /// Retrieves the tags for a resource.
+        /// Retrieves a list of resource tags for a resource arn.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -4735,7 +4735,8 @@ namespace Amazon.Greengrass
         #region  TagResource
 
         /// <summary>
-        /// Add tags to a resource.
+        /// Add resource tags to a Greengrass Resource. Valid resources are Group, Connector,
+        /// Core, Device, Function, Logger, Subscription, and Resource Defintions, and also BulkDeploymentIds.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -4792,7 +4793,7 @@ namespace Amazon.Greengrass
         #region  UntagResource
 
         /// <summary>
-        /// Remove tags with specified keys from a resource.
+        /// Remove resource tags from a Greengrass Resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 

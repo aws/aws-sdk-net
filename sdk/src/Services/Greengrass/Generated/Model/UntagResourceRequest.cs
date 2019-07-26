@@ -29,7 +29,7 @@ namespace Amazon.Greengrass.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Remove tags with specified keys from a resource.
+    /// Remove resource tags from a Greengrass Resource.
     /// </summary>
     public partial class UntagResourceRequest : AmazonGreengrassRequest
     {
@@ -53,8 +53,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagKeys. A list of the keys to remove from the resource
-        /// tags.
+        /// Gets and sets the property TagKeys. An array of tag keys to delete
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> TagKeys
