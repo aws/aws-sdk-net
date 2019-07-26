@@ -17082,6 +17082,60 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetCapacityReservationUsage
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityReservationUsage service method.</param>
+        /// 
+        /// <returns>The response from the GetCapacityReservationUsage service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityReservationUsage">REST API Reference for GetCapacityReservationUsage Operation</seealso>
+        public virtual GetCapacityReservationUsageResponse GetCapacityReservationUsage(GetCapacityReservationUsageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCapacityReservationUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCapacityReservationUsageResponseUnmarshaller.Instance;
+
+            return Invoke<GetCapacityReservationUsageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCapacityReservationUsage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityReservationUsage operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCapacityReservationUsage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityReservationUsage">REST API Reference for GetCapacityReservationUsage Operation</seealso>
+        public virtual IAsyncResult BeginGetCapacityReservationUsage(GetCapacityReservationUsageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCapacityReservationUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCapacityReservationUsageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCapacityReservationUsage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCapacityReservationUsage.</param>
+        /// 
+        /// <returns>Returns a  GetCapacityReservationUsageResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityReservationUsage">REST API Reference for GetCapacityReservationUsage Operation</seealso>
+        public virtual GetCapacityReservationUsageResponse EndGetCapacityReservationUsage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetCapacityReservationUsageResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetConsoleOutput
 
         /// <summary>

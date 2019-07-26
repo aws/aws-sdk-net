@@ -62,6 +62,7 @@ namespace Amazon.EC2.Model
     public partial class CreateCapacityReservationRequest : AmazonEC2Request
     {
         private string _availabilityZone;
+        private string _availabilityZoneId;
         private string _clientToken;
         private bool? _ebsOptimized;
         private DateTime? _endDate;
@@ -80,7 +81,6 @@ namespace Amazon.EC2.Model
         /// The Availability Zone in which to create the Capacity Reservation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string AvailabilityZone
         {
             get { return this._availabilityZone; }
@@ -91,6 +91,21 @@ namespace Amazon.EC2.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneId.
+        /// </summary>
+        public string AvailabilityZoneId
+        {
+            get { return this._availabilityZoneId; }
+            set { this._availabilityZoneId = value; }
+        }
+
+        // Check to see if AvailabilityZoneId property is set
+        internal bool IsSetAvailabilityZoneId()
+        {
+            return this._availabilityZoneId != null;
         }
 
         /// <summary>

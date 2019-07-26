@@ -60,10 +60,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("availabilityZoneId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AvailabilityZoneId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("availableInstanceCount", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
                         unmarshalledObject.AvailableInstanceCount = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("capacityReservationArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CapacityReservationArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("capacityReservationId", targetDepth))
@@ -118,6 +130,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ownerId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("state", targetDepth))

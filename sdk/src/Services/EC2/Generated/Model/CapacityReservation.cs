@@ -33,7 +33,9 @@ namespace Amazon.EC2.Model
     public partial class CapacityReservation
     {
         private string _availabilityZone;
+        private string _availabilityZoneId;
         private int? _availableInstanceCount;
+        private string _capacityReservationArn;
         private string _capacityReservationId;
         private DateTime? _createDate;
         private bool? _ebsOptimized;
@@ -43,6 +45,7 @@ namespace Amazon.EC2.Model
         private InstanceMatchCriteria _instanceMatchCriteria;
         private CapacityReservationInstancePlatform _instancePlatform;
         private string _instanceType;
+        private string _ownerId;
         private CapacityReservationState _state;
         private List<Tag> _tags = new List<Tag>();
         private CapacityReservationTenancy _tenancy;
@@ -67,6 +70,21 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AvailabilityZoneId.
+        /// </summary>
+        public string AvailabilityZoneId
+        {
+            get { return this._availabilityZoneId; }
+            set { this._availabilityZoneId = value; }
+        }
+
+        // Check to see if AvailabilityZoneId property is set
+        internal bool IsSetAvailabilityZoneId()
+        {
+            return this._availabilityZoneId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AvailableInstanceCount. 
         /// <para>
         /// The remaining capacity. Indicates the number of instances that can be launched in
@@ -83,6 +101,21 @@ namespace Amazon.EC2.Model
         internal bool IsSetAvailableInstanceCount()
         {
             return this._availableInstanceCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityReservationArn.
+        /// </summary>
+        public string CapacityReservationArn
+        {
+            get { return this._capacityReservationArn; }
+            set { this._capacityReservationArn = value; }
+        }
+
+        // Check to see if CapacityReservationArn property is set
+        internal bool IsSetCapacityReservationArn()
+        {
+            return this._capacityReservationArn != null;
         }
 
         /// <summary>
@@ -280,6 +313,21 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerId.
+        /// </summary>
+        public string OwnerId
+        {
+            get { return this._ownerId; }
+            set { this._ownerId = value; }
+        }
+
+        // Check to see if OwnerId property is set
+        internal bool IsSetOwnerId()
+        {
+            return this._ownerId != null;
         }
 
         /// <summary>

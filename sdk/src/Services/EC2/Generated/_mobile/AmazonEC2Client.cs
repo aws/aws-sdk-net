@@ -12273,6 +12273,40 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetCapacityReservationUsage
+
+        internal virtual GetCapacityReservationUsageResponse GetCapacityReservationUsage(GetCapacityReservationUsageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCapacityReservationUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCapacityReservationUsageResponseUnmarshaller.Instance;
+
+            return Invoke<GetCapacityReservationUsageResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityReservationUsage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCapacityReservationUsage service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityReservationUsage">REST API Reference for GetCapacityReservationUsage Operation</seealso>
+        public virtual Task<GetCapacityReservationUsageResponse> GetCapacityReservationUsageAsync(GetCapacityReservationUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCapacityReservationUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCapacityReservationUsageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCapacityReservationUsageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetConsoleOutput
 
         internal virtual GetConsoleOutputResponse GetConsoleOutput(GetConsoleOutputRequest request)

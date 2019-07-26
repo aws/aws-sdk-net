@@ -5994,6 +5994,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void GetCapacityReservationUsageMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetCapacityReservationUsage");
+
+            var request = InstantiateClassGenerator.Execute<GetCapacityReservationUsageRequest>();
+            var marshaller = new GetCapacityReservationUsageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = GetCapacityReservationUsageResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetCapacityReservationUsageResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void GetConsoleOutputMarshallTest()
         {
             var operation = service_model.FindOperation("GetConsoleOutput");
