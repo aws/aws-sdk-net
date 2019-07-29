@@ -1,3 +1,12 @@
+### 3.3.560.0 (2019-07-29 18:12 UTC)
+* CodeCommit (3.3.104.0)
+	* This release supports better exception handling for merges.
+* Core 3.3.103.17
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.559.0 (2019-07-26 18:23 UTC)
 * Batch (3.3.102.0)
 	* AWS Batch now supports SDK auto-pagination and Job-level docker devices.
