@@ -1372,6 +1372,11 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.CommitRequiredException">
         /// A commit was not specified.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ConcurrentReferenceUpdateException">
+        /// The merge cannot be completed because the target branch has been modified. Another
+        /// user might have modified the target branch while the merge was in progress. Wait a
+        /// few minutes, and then try again.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
         /// An encryption integrity check failed.
         /// </exception>
@@ -4049,6 +4054,11 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.CommitRequiredException">
         /// A commit was not specified.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ConcurrentReferenceUpdateException">
+        /// The merge cannot be completed because the target branch has been modified. Another
+        /// user might have modified the target branch while the merge was in progress. Wait a
+        /// few minutes, and then try again.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
         /// An encryption integrity check failed.
         /// </exception>
@@ -4172,6 +4182,11 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommitRequiredException">
         /// A commit was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ConcurrentReferenceUpdateException">
+        /// The merge cannot be completed because the target branch has been modified. Another
+        /// user might have modified the target branch while the merge was in progress. Wait a
+        /// few minutes, and then try again.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
         /// An encryption integrity check failed.
@@ -4366,6 +4381,11 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.CommitRequiredException">
         /// A commit was not specified.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ConcurrentReferenceUpdateException">
+        /// The merge cannot be completed because the target branch has been modified. Another
+        /// user might have modified the target branch while the merge was in progress. Wait a
+        /// few minutes, and then try again.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
         /// An encryption integrity check failed.
         /// </exception>
@@ -4541,6 +4561,11 @@ namespace Amazon.CodeCommit
         /// <param name="request">Container for the necessary parameters to execute the MergePullRequestByFastForward service method.</param>
         /// 
         /// <returns>The response from the MergePullRequestByFastForward service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.ConcurrentReferenceUpdateException">
+        /// The merge cannot be completed because the target branch has been modified. Another
+        /// user might have modified the target branch while the merge was in progress. Wait a
+        /// few minutes, and then try again.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
         /// An encryption integrity check failed.
         /// </exception>
@@ -4664,6 +4689,11 @@ namespace Amazon.CodeCommit
         /// <returns>The response from the MergePullRequestBySquash service method, as returned by CodeCommit.</returns>
         /// <exception cref="Amazon.CodeCommit.Model.CommitMessageLengthExceededException">
         /// The commit message is too long. Provide a shorter string.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ConcurrentReferenceUpdateException">
+        /// The merge cannot be completed because the target branch has been modified. Another
+        /// user might have modified the target branch while the merge was in progress. Wait a
+        /// few minutes, and then try again.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
         /// An encryption integrity check failed.
@@ -4855,6 +4885,11 @@ namespace Amazon.CodeCommit
         /// <returns>The response from the MergePullRequestByThreeWay service method, as returned by CodeCommit.</returns>
         /// <exception cref="Amazon.CodeCommit.Model.CommitMessageLengthExceededException">
         /// The commit message is too long. Provide a shorter string.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ConcurrentReferenceUpdateException">
+        /// The merge cannot be completed because the target branch has been modified. Another
+        /// user might have modified the target branch while the merge was in progress. Wait a
+        /// few minutes, and then try again.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
         /// An encryption integrity check failed.

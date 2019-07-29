@@ -46,7 +46,7 @@ namespace Amazon.CodeCommit.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// While no content is required in the array, you must include the array itself.
+        /// Although no content is required in the array, you must include the array itself.
         /// </para>
         ///  </note>
         /// </summary>
@@ -85,7 +85,7 @@ namespace Amazon.CodeCommit.Model
         /// Gets and sets the property DestinationArn. 
         /// <para>
         /// The ARN of the resource that is the target for a trigger. For example, the ARN of
-        /// a topic in Amazon Simple Notification Service (SNS).
+        /// a topic in Amazon SNS.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -105,7 +105,7 @@ namespace Amazon.CodeCommit.Model
         /// Gets and sets the property Events. 
         /// <para>
         /// The repository events that will cause the trigger to run actions in another service,
-        /// such as sending a notification through Amazon Simple Notification Service (SNS). 
+        /// such as sending a notification through Amazon SNS. 
         /// </para>
         ///  <note> 
         /// <para>
