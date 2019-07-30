@@ -258,10 +258,10 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property StartRecordIdentifier. 
         /// <para>
-        ///  <i>Weighted resource record sets only:</i> If results were truncated for a given
-        /// DNS name and type, specify the value of <code>NextRecordIdentifier</code> from the
-        /// previous response to get the next resource record set that has the current DNS name
-        /// and type.
+        ///  <i>Resource record sets that have a routing policy other than simple:</i> If results
+        /// were truncated for a given DNS name and type, specify the value of <code>NextRecordIdentifier</code>
+        /// from the previous response to get the next resource record set that has the current
+        /// DNS name and type.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
