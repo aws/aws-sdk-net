@@ -40,6 +40,7 @@ namespace Amazon.MediaConvert.Model
         private string _description;
         private DateTime? _lastUpdated;
         private string _name;
+        private int? _priority;
         private string _queue;
         private JobTemplateSettings _settings;
         private StatusUpdateInterval _statusUpdateInterval;
@@ -156,6 +157,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Priority. Relative priority on the job.
+        /// </summary>
+        [AWSProperty(Min=-50, Max=50)]
+        public int Priority
+        {
+            get { return this._priority.GetValueOrDefault(); }
+            set { this._priority = value; }
+        }
+
+        // Check to see if Priority property is set
+        internal bool IsSetPriority()
+        {
+            return this._priority.HasValue; 
         }
 
         /// <summary>

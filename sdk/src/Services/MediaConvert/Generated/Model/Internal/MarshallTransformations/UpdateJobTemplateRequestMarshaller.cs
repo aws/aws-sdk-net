@@ -92,6 +92,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetPriority())
+                {
+                    context.Writer.WritePropertyName("priority");
+                    context.Writer.Write(publicRequest.Priority);
+                }
+
                 if(publicRequest.IsSetQueue())
                 {
                     context.Writer.WritePropertyName("queue");

@@ -44,6 +44,7 @@ namespace Amazon.MediaConvert.Model
         private int? _jobPercentComplete;
         private string _jobTemplate;
         private List<OutputGroupDetail> _outputGroupDetails = new List<OutputGroupDetail>();
+        private int? _priority;
         private string _queue;
         private int? _retryCount;
         private string _role;
@@ -233,6 +234,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetOutputGroupDetails()
         {
             return this._outputGroupDetails != null && this._outputGroupDetails.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Priority. Relative priority on the job.
+        /// </summary>
+        [AWSProperty(Min=-50, Max=50)]
+        public int Priority
+        {
+            get { return this._priority.GetValueOrDefault(); }
+            set { this._priority = value; }
+        }
+
+        // Check to see if Priority property is set
+        internal bool IsSetPriority()
+        {
+            return this._priority.HasValue; 
         }
 
         /// <summary>

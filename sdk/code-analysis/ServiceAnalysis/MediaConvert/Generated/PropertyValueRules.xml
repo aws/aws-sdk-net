@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.CreateJobRequest.Priority</property>
+    <min>-50</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.CreateJobTemplateRequest.Priority</property>
+    <min>-50</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.ListJobsRequest.MaxResults</property>
     <min>1</min>
     <max>20</max>
@@ -19,6 +29,11 @@
     <property>Amazon.MediaConvert.Model.ListQueuesRequest.MaxResults</property>
     <min>1</min>
     <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.UpdateJobTemplateRequest.Priority</property>
+    <min>-50</min>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.AacSettings.Bitrate</property>
@@ -812,9 +827,19 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.Job.Priority</property>
+    <min>-50</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.JobSettings.AdAvailOffset</property>
     <min>-1000</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.JobTemplate.Priority</property>
+    <min>-50</min>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.JobTemplateSettings.AdAvailOffset</property>

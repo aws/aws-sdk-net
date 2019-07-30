@@ -38,6 +38,7 @@ namespace Amazon.MediaConvert.Model
         private BillingTagsSource _billingTagsSource;
         private string _clientRequestToken;
         private string _jobTemplate;
+        private int? _priority;
         private string _queue;
         private string _role;
         private JobSettings _settings;
@@ -110,6 +111,26 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetJobTemplate()
         {
             return this._jobTemplate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Priority. Specify the relative priority for this job. In
+        /// any given queue, the service begins processing the job with the highest value first.
+        /// When more than one job has the same priority, the service begins processing the job
+        /// that you submitted first. If you don't specify a priority, the service uses the default
+        /// value 0.
+        /// </summary>
+        [AWSProperty(Min=-50, Max=50)]
+        public int Priority
+        {
+            get { return this._priority.GetValueOrDefault(); }
+            set { this._priority = value; }
+        }
+
+        // Check to see if Priority property is set
+        internal bool IsSetPriority()
+        {
+            return this._priority.HasValue; 
         }
 
         /// <summary>

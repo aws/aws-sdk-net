@@ -130,6 +130,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.OutputGroupDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("priority", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Priority = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("queue", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
