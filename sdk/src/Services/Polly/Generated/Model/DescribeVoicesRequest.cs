@@ -58,9 +58,29 @@ namespace Amazon.Polly.Model
     /// </summary>
     public partial class DescribeVoicesRequest : AmazonPollyRequest
     {
+        private Engine _engine;
         private bool? _includeAdditionalLanguageCodes;
         private LanguageCode _languageCode;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property Engine. 
+        /// <para>
+        /// Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon
+        /// Polly when processing input text for speech synthesis. 
+        /// </para>
+        /// </summary>
+        public Engine Engine
+        {
+            get { return this._engine; }
+            set { this._engine = value; }
+        }
+
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
+        {
+            return this._engine != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IncludeAdditionalLanguageCodes. 

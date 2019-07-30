@@ -60,6 +60,9 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
 
             string uriResourcePath = "/v1/voices";
             
+            if (publicRequest.IsSetEngine())
+                request.Parameters.Add("Engine", StringUtils.FromString(publicRequest.Engine));
+            
             if (publicRequest.IsSetIncludeAdditionalLanguageCodes())
                 request.Parameters.Add("IncludeAdditionalLanguageCodes", StringUtils.FromBool(publicRequest.IncludeAdditionalLanguageCodes));
             

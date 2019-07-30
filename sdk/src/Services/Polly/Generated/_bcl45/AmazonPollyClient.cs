@@ -255,7 +255,7 @@ namespace Amazon.Polly
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+        /// For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
         /// Lexicons</a>.
         /// </para>
         /// </summary>
@@ -294,7 +294,7 @@ namespace Amazon.Polly
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+        /// For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
         /// Lexicons</a>.
         /// </para>
         /// </summary>
@@ -438,7 +438,7 @@ namespace Amazon.Polly
 
         /// <summary>
         /// Returns the content of the specified pronunciation lexicon stored in an AWS Region.
-        /// For more information, see <a href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+        /// For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
         /// Lexicons</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLexicon service method.</param>
@@ -471,7 +471,7 @@ namespace Amazon.Polly
 
         /// <summary>
         /// Returns the content of the specified pronunciation lexicon stored in an AWS Region.
-        /// For more information, see <a href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+        /// For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
         /// Lexicons</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLexicon service method.</param>
@@ -574,7 +574,7 @@ namespace Amazon.Polly
 
         /// <summary>
         /// Returns a list of pronunciation lexicons stored in an AWS Region. For more information,
-        /// see <a href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+        /// see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
         /// Lexicons</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLexicons service method.</param>
@@ -599,7 +599,7 @@ namespace Amazon.Polly
 
         /// <summary>
         /// Returns a list of pronunciation lexicons stored in an AWS Region. For more information,
-        /// see <a href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+        /// see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
         /// Lexicons</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLexicons service method.</param>
@@ -694,7 +694,7 @@ namespace Amazon.Polly
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+        /// For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
         /// Lexicons</a>.
         /// </para>
         /// </summary>
@@ -723,7 +723,7 @@ namespace Amazon.Polly
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.UnsupportedPlsLanguageException">
         /// The language specified in the lexicon is unsupported. For a list of supported languages,
-        /// see <a href="http://docs.aws.amazon.com/polly/latest/dg/API_LexiconAttributes.html">Lexicon
+        /// see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_LexiconAttributes.html">Lexicon
         /// Attributes</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon">REST API Reference for PutLexicon Operation</seealso>
@@ -745,7 +745,7 @@ namespace Amazon.Polly
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+        /// For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
         /// Lexicons</a>.
         /// </para>
         /// </summary>
@@ -777,7 +777,7 @@ namespace Amazon.Polly
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.UnsupportedPlsLanguageException">
         /// The language specified in the lexicon is unsupported. For a list of supported languages,
-        /// see <a href="http://docs.aws.amazon.com/polly/latest/dg/API_LexiconAttributes.html">Lexicon
+        /// see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_LexiconAttributes.html">Lexicon
         /// Attributes</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon">REST API Reference for PutLexicon Operation</seealso>
@@ -806,6 +806,10 @@ namespace Amazon.Polly
         /// <param name="request">Container for the necessary parameters to execute the StartSpeechSynthesisTask service method.</param>
         /// 
         /// <returns>The response from the StartSpeechSynthesisTask service method, as returned by Polly.</returns>
+        /// <exception cref="Amazon.Polly.Model.EngineNotSupportedException">
+        /// This engine is not compatible with the voice that you have designated. Choose a new
+        /// voice that is compatible with the engine or change the engine and restart the operation.
+        /// </exception>
         /// <exception cref="Amazon.Polly.Model.InvalidS3BucketException">
         /// The provided Amazon S3 bucket name is invalid. Please check your input with S3 bucket
         /// naming requirements and try again.
@@ -881,6 +885,10 @@ namespace Amazon.Polly
         /// </param>
         /// 
         /// <returns>The response from the StartSpeechSynthesisTask service method, as returned by Polly.</returns>
+        /// <exception cref="Amazon.Polly.Model.EngineNotSupportedException">
+        /// This engine is not compatible with the voice that you have designated. Choose a new
+        /// voice that is compatible with the engine or change the engine and restart the operation.
+        /// </exception>
         /// <exception cref="Amazon.Polly.Model.InvalidS3BucketException">
         /// The provided Amazon S3 bucket name is invalid. Please check your input with S3 bucket
         /// naming requirements and try again.
@@ -950,12 +958,16 @@ namespace Amazon.Polly
         /// Synthesizes UTF-8 input, plain text or SSML, to a stream of bytes. SSML input must
         /// be valid, well-formed SSML. Some alphabets might not be available with all the voices
         /// (for example, Cyrillic might not be read at all by English voices) unless phoneme
-        /// mapping is used. For more information, see <a href="http://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html">How
+        /// mapping is used. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html">How
         /// it Works</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SynthesizeSpeech service method.</param>
         /// 
         /// <returns>The response from the SynthesizeSpeech service method, as returned by Polly.</returns>
+        /// <exception cref="Amazon.Polly.Model.EngineNotSupportedException">
+        /// This engine is not compatible with the voice that you have designated. Choose a new
+        /// voice that is compatible with the engine or change the engine and restart the operation.
+        /// </exception>
         /// <exception cref="Amazon.Polly.Model.InvalidSampleRateException">
         /// The specified sample rate is not valid.
         /// </exception>
@@ -1009,7 +1021,7 @@ namespace Amazon.Polly
         /// Synthesizes UTF-8 input, plain text or SSML, to a stream of bytes. SSML input must
         /// be valid, well-formed SSML. Some alphabets might not be available with all the voices
         /// (for example, Cyrillic might not be read at all by English voices) unless phoneme
-        /// mapping is used. For more information, see <a href="http://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html">How
+        /// mapping is used. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html">How
         /// it Works</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SynthesizeSpeech service method.</param>
@@ -1018,6 +1030,10 @@ namespace Amazon.Polly
         /// </param>
         /// 
         /// <returns>The response from the SynthesizeSpeech service method, as returned by Polly.</returns>
+        /// <exception cref="Amazon.Polly.Model.EngineNotSupportedException">
+        /// This engine is not compatible with the voice that you have designated. Choose a new
+        /// voice that is compatible with the engine or change the engine and restart the operation.
+        /// </exception>
         /// <exception cref="Amazon.Polly.Model.InvalidSampleRateException">
         /// The specified sample rate is not valid.
         /// </exception>

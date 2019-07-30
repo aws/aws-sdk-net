@@ -36,7 +36,7 @@ namespace Amazon.Polly.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+    /// For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
     /// Lexicons</a>.
     /// </para>
     /// </summary>

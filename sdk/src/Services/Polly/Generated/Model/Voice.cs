@@ -38,6 +38,7 @@ namespace Amazon.Polly.Model
         private LanguageCode _languageCode;
         private string _languageName;
         private string _name;
+        private List<string> _supportedEngines = new List<string>();
 
         /// <summary>
         /// Gets and sets the property AdditionalLanguageCodes. 
@@ -154,6 +155,25 @@ namespace Amazon.Polly.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedEngines. 
+        /// <para>
+        /// Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported
+        /// by a given voice.
+        /// </para>
+        /// </summary>
+        public List<string> SupportedEngines
+        {
+            get { return this._supportedEngines; }
+            set { this._supportedEngines = value; }
+        }
+
+        // Check to see if SupportedEngines property is set
+        internal bool IsSetSupportedEngines()
+        {
+            return this._supportedEngines != null && this._supportedEngines.Count > 0; 
         }
 
     }

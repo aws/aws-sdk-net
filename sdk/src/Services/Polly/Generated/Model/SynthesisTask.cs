@@ -33,6 +33,7 @@ namespace Amazon.Polly.Model
     public partial class SynthesisTask
     {
         private DateTime? _creationTime;
+        private Engine _engine;
         private LanguageCode _languageCode;
         private List<string> _lexiconNames = new List<string>();
         private OutputFormat _outputFormat;
@@ -63,6 +64,26 @@ namespace Amazon.Polly.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Engine. 
+        /// <para>
+        /// Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly
+        /// to use when processing input text for speech synthesis. Using a voice that is not
+        /// supported for the engine selected will result in an error.
+        /// </para>
+        /// </summary>
+        public Engine Engine
+        {
+            get { return this._engine; }
+            set { this._engine = value; }
+        }
+
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
+        {
+            return this._engine != null;
         }
 
         /// <summary>
@@ -176,8 +197,9 @@ namespace Amazon.Polly.Model
         /// </para>
         ///  
         /// <para>
-        /// The valid values for mp3 and ogg_vorbis are "8000", "16000", and "22050". The default
-        /// value is "22050".
+        /// The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000".
+        /// The default value for standard voices is "22050". The default value for neural voices
+        /// is "24000".
         /// </para>
         ///  
         /// <para>

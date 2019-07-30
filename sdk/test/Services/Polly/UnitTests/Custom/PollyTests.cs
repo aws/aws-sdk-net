@@ -39,7 +39,8 @@ namespace AWSSDK.UnitTests
                 "Text",
                 "TextType",
                 "VoiceId",
-                "LanguageCode"
+                "LanguageCode",
+                "Engine"
             };
             var actualPropertyNames = new HashSet<string>(typeof(SynthesizeSpeechRequest).GetProperties().Select(p => p.Name).ToArray());
 

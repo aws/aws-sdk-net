@@ -30,7 +30,7 @@ namespace Amazon.Polly.Model
     /// <summary>
     /// Container for the parameters to the ListLexicons operation.
     /// Returns a list of pronunciation lexicons stored in an AWS Region. For more information,
-    /// see <a href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+    /// see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
     /// Lexicons</a>.
     /// </summary>
     public partial class ListLexiconsRequest : AmazonPollyRequest

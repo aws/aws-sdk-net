@@ -66,6 +66,12 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEngine())
+                {
+                    context.Writer.WritePropertyName("Engine");
+                    context.Writer.Write(publicRequest.Engine);
+                }
+
                 if(publicRequest.IsSetLanguageCode())
                 {
                     context.Writer.WritePropertyName("LanguageCode");

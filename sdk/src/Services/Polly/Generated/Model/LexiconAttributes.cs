@@ -29,7 +29,7 @@ namespace Amazon.Polly.Model
 {
     /// <summary>
     /// Contains metadata describing the lexicon such as the number of lexemes, language code,
-    /// and so on. For more information, see <a href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+    /// and so on. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
     /// Lexicons</a>.
     /// </summary>
     public partial class LexiconAttributes
