@@ -1,3 +1,16 @@
+### 3.3.561.0 (2019-07-30 18:10 UTC)
+* MediaConvert (3.3.105.0)
+	* MediaConvert adds support for specifying priority (-50 to 50) on jobs submitted to on demand or reserved queues
+* Polly (3.3.102.0)
+	* Amazon Polly adds support for Neural text-to-speech engine.
+* Route53 (3.3.102.0)
+	* Amazon Route 53 now supports the Middle East (Bahrain) Region (me-south-1) for latency records, geoproximity records, and private DNS for Amazon VPCs in that region.
+* Core 3.3.103.18
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.560.0 (2019-07-29 18:12 UTC)
 * CodeCommit (3.3.104.0)
 	* This release supports better exception handling for merges.
