@@ -1,3 +1,8 @@
+### 3.3.561.1 (2019-08-01 21:25 UTC)
+* Core 3.3.103.19
+	* Allow "Assume Role" profiles to reference other "Assume Role" profiles as their source
+	* All services packages updated to require new Core
+
 ### 3.3.561.0 (2019-07-30 18:10 UTC)
 * MediaConvert (3.3.105.0)
 	* MediaConvert adds support for specifying priority (-50 to 50) on jobs submitted to on demand or reserved queues
