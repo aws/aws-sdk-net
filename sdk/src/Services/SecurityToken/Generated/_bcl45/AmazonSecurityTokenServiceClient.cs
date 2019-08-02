@@ -1490,16 +1490,16 @@ namespace Amazon.SecurityToken
         /// credentials for an IAM user or the AWS account root user. Access key IDs beginning
         /// with <code>ASIA</code> are temporary credentials that are created using STS operations.
         /// If the account in the response belongs to you, you can sign in as the root user and
-        /// review your root user access keys. Then, you can pull a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report">credentials
+        /// review your root user access keys. Then, you can pull a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">credentials
         /// report</a> to learn which IAM user owns the keys. To learn who requested the temporary
-        /// credentials for an <code>ASIA</code> access key, view the STS events in your <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration">CloudTrail
+        /// credentials for an <code>ASIA</code> access key, view the STS events in your <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">CloudTrail
         /// logs</a>.
         /// </para>
         ///  
         /// <para>
         /// This operation does not indicate the state of the access key. The key might be active,
         /// inactive, or deleted. Active keys might not have permissions to perform an operation.
-        /// Providing a deleted keys might return an error that the key doesn't exist.
+        /// Providing a deleted access key might return an error that the key doesn't exist.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessKeyInfo service method.</param>
@@ -1533,16 +1533,16 @@ namespace Amazon.SecurityToken
         /// credentials for an IAM user or the AWS account root user. Access key IDs beginning
         /// with <code>ASIA</code> are temporary credentials that are created using STS operations.
         /// If the account in the response belongs to you, you can sign in as the root user and
-        /// review your root user access keys. Then, you can pull a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report">credentials
+        /// review your root user access keys. Then, you can pull a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">credentials
         /// report</a> to learn which IAM user owns the keys. To learn who requested the temporary
-        /// credentials for an <code>ASIA</code> access key, view the STS events in your <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration">CloudTrail
+        /// credentials for an <code>ASIA</code> access key, view the STS events in your <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">CloudTrail
         /// logs</a>.
         /// </para>
         ///  
         /// <para>
         /// This operation does not indicate the state of the access key. The key might be active,
         /// inactive, or deleted. Active keys might not have permissions to perform an operation.
-        /// Providing a deleted keys might return an error that the key doesn't exist.
+        /// Providing a deleted access key might return an error that the key doesn't exist.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessKeyInfo service method.</param>
@@ -1567,7 +1567,19 @@ namespace Amazon.SecurityToken
 
 
         /// <summary>
-        /// Returns details about the IAM identity whose credentials are used to call the API.
+        /// Returns details about the IAM user or role whose credentials are used to call the
+        /// operation.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// No permissions are required to perform this operation. If an administrator adds a
+        /// policy to your IAM user or role that explicitly denies access to the <code>sts:GetCallerIdentity</code>
+        /// action, you can still perform this operation. Permissions are not required because
+        /// the same information is returned when an IAM user or role is denied access. To view
+        /// an example response, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_access-denied-delete-mfa">I
+        /// Am Not Authorized to Perform: iam:DeleteVirtualMFADevice</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCallerIdentity service method.</param>
         /// 
@@ -1584,7 +1596,19 @@ namespace Amazon.SecurityToken
 
 
         /// <summary>
-        /// Returns details about the IAM identity whose credentials are used to call the API.
+        /// Returns details about the IAM user or role whose credentials are used to call the
+        /// operation.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// No permissions are required to perform this operation. If an administrator adds a
+        /// policy to your IAM user or role that explicitly denies access to the <code>sts:GetCallerIdentity</code>
+        /// action, you can still perform this operation. Permissions are not required because
+        /// the same information is returned when an IAM user or role is denied access. To view
+        /// an example response, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_access-denied-delete-mfa">I
+        /// Am Not Authorized to Perform: iam:DeleteVirtualMFADevice</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCallerIdentity service method.</param>
         /// <param name="cancellationToken">
