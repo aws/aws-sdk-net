@@ -20,9 +20,6 @@
     <NoWarn>CS1591;CS1572;CS1573;CS1570;CS0109;CS0252</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="Generators\Component\Component1.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Update="Generators\CodeAnalysis\CodeAnalysisAssemblyInfo.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -52,21 +49,6 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>VsixTestProfileFile.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Generators\Component\Component.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Component.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Generators\Component\Details.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Generators\Component\GettingStarted.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GettingStarted.tt</DependentUpon>
     </Compile>
     <Compile Update="Generators\Examples\ExampleCode.cs">
       <AutoGen>True</AutoGen>
@@ -383,18 +365,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Update="Generators\Component\Component.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>Component.cs</LastGenOutput>
-    </None>
-    <None Update="Generators\Component\Details.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>Details.cs</LastGenOutput>
-    </None>
-    <None Update="Generators\Component\GettingStarted.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>GettingStarted.cs</LastGenOutput>
-    </None>
     <None Update="Generators\Marshallers\EndpointDiscoveryMarshaller.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>EndpointDiscoveryMarshaller.cs</LastGenOutput>

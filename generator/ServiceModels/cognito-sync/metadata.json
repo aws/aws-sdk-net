@@ -2,8 +2,7 @@
     "active": true, 
     "dependencies": [
         "CognitoIdentity"
-    ], 
-    "enable-xamarin-component": true, 
+    ],
     "license-url": "http://aws.amazon.com/asl/", 
     "nuget-dependencies": {
         "Net35": [

@@ -234,8 +234,6 @@ namespace ServiceClientGenerator
         public List<string> Tags { get; set; }
         public bool NetStandardSupport { get; set; }
 
-        public bool EnableXamarinComponent { get; set; }
-
         public string ServiceVersion
         {
             get

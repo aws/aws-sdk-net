@@ -1,6 +1,5 @@
 {
-    "active": true, 
-    "enable-xamarin-component": true, 
+    "active": true,
     "platforms": [
         "Unity"
     ], 
