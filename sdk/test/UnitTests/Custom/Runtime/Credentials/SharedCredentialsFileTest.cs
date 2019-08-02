@@ -35,6 +35,12 @@ namespace AWSSDK.UnitTests
     {
         private static readonly Guid UniqueKey = Guid.NewGuid();
 
+        private static readonly string DefaultProfileText = new StringBuilder()
+            .AppendLine("[default]")
+            .AppendLine("aws_access_key_id=aws_access_key_id")
+            .AppendLine("aws_secret_access_key=aws_secret_access_key")
+            .ToString();
+
         private static readonly string SessionProfileText = new StringBuilder()
             .AppendLine("[session_profile]")
             .AppendLine("aws_access_key_id=session_aws_access_key_id")
@@ -210,7 +216,7 @@ namespace AWSSDK.UnitTests
             .Append("property2=value2")
             .ToString();
 
-        private static readonly Dictionary<string,string> UpdatedProfileWithPropertiesBefore = new Dictionary<string, string>()
+        private static readonly Dictionary<string, string> UpdatedProfileWithPropertiesBefore = new Dictionary<string, string>()
         {
             { "property1", "value1" },
             { "property2", "value2" },
@@ -257,6 +263,15 @@ namespace AWSSDK.UnitTests
             .AppendLine("; other comment")
             .AppendLine("property=value")
             .ToString();
+
+        [TestMethod]
+        public void ReadDefaultConfigProfile()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(null, DefaultProfileText))
+            {
+                tester.TestTryGetProfile("default", true, true);
+            }
+        }
 
         [TestMethod]
         public void ReadBasicProfile()
@@ -319,7 +334,7 @@ namespace AWSSDK.UnitTests
                 AssertExtensions.ExpectException(() =>
                 {
                     tester.AssertWriteProfile("basic_profile", BasicProfileOptions, properties, BasicProfileCredentialsText);
-                }, typeof(ArgumentException), "The profile properties dictionary cannot contain a key named "+ propertyName +
+                }, typeof(ArgumentException), "The profile properties dictionary cannot contain a key named " + propertyName +
                 " because it is in the name mapping dictionary.");
             }
         }
@@ -391,8 +406,8 @@ namespace AWSSDK.UnitTests
         public void WriteEndpointDiscoveryEnabledOnlyProfile()
         {
             using (var tester = new SharedCredentialsFileTestFixture())
-            {                
-                tester.AssertWriteProfile("endpoint_discovery_enabled_only_profile", EndpointDiscoveryEnabledOnlyProfileOptions, true, EndpointDiscoveryEnabledOnlyProfileText);             
+            {
+                tester.AssertWriteProfile("endpoint_discovery_enabled_only_profile", EndpointDiscoveryEnabledOnlyProfileOptions, true, EndpointDiscoveryEnabledOnlyProfileText);
             }
         }
 
@@ -871,9 +886,9 @@ namespace AWSSDK.UnitTests
             if (addUniqueKey)
                 profileText += "toolkit_artifact_guid=" + UniqueKey + Environment.NewLine;
 
-            var anotherSection = addAnotherSection ? "[another_section]" + Environment.NewLine + "propertyx=valuex" + Environment.NewLine: "";
+            var anotherSection = addAnotherSection ? "[another_section]" + Environment.NewLine + "propertyx=valuex" + Environment.NewLine : "";
 
-                using (var tester = new SharedCredentialsFileTestFixture(profileText + anotherSection))
+            using (var tester = new SharedCredentialsFileTestFixture(profileText + anotherSection))
             {
                 // read the profile
                 CredentialProfile profile1;
