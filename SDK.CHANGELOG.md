@@ -1,3 +1,12 @@
+### 3.3.561.2 (2019-08-02 18:51 UTC)
+* SecurityToken (3.3.102.5)
+	* Documentation updates for sts
+* Core 3.3.103.20
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.561.1 (2019-08-01 21:25 UTC)
 * Core 3.3.103.19
 	* Allow "Assume Role" profiles to reference other "Assume Role" profiles as their source
