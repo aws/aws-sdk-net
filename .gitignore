@@ -37,7 +37,6 @@ Include/**
 **/*.userprefs
 /sdk/test/CrossPlatformTests/CommonTests/Resources/settings.json
 packages
-/sdk/xamarin-components/**/*.xam
 /sdk/test/Unity/Unity3DTests/Assets/Resources/settings.json
 /sdk/test/Unity/Unity3DTests/Assets/Resources/awsconfig.xml
 /sdk/test/Unity/Unity3DTests/Unity3DTests.CSharp.csproj

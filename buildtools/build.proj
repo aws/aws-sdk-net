@@ -113,7 +113,6 @@
     </Target>
 
     <UsingTask TaskName="CustomTasks.UpdateFxCopProject" AssemblyFile="$(CustomTasksAssembly)"/>
-    <UsingTask TaskName="CustomTasks.XamarinComponent" AssemblyFile="$(CustomTasksAssembly)"/>
     <UsingTask TaskName="CustomTasks.UnityPackage" AssemblyFile="$(CustomTasksAssembly)"/>
     <UsingTask TaskName="CustomTasks.UnityBuild" AssemblyFile="$(CustomTasksAssembly)"/>
     <UsingTask TaskName="CustomTasks.TimingTask" AssemblyFile="$(CustomTasksAssembly)"/>

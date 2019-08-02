@@ -2,8 +2,7 @@
     "active": true, 
     "dependencies": [
         "SecurityToken"
-    ], 
-    "enable-xamarin-component": true, 
+    ],
     "platforms": [
         "Unity"
     ], 

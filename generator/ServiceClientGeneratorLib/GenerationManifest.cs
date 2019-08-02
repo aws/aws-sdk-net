@@ -38,7 +38,6 @@ namespace ServiceClientGenerator
             public const string DependencyVersionKey = "version";
             public const string DependencyHintPathKey = "hint-path";
             public const string ParentBaseNameKey = "parent-base-name";
-            public const string EnableXamarinComponent = "enable-xamarin-component";
             public const string TagsKey = "tags";
             public const string UsePclProjectDependenciesKey = "use-pcl-project-dependencies";
             public const string LicenseUrlKey = "license-url";
@@ -255,8 +254,7 @@ namespace ServiceClientGenerator
                 DefaultRegion = Utils.JsonDataToString(modelNode[ModelsSectionKeys.DefaultRegionKey]),
                 GenerateConstructors = modelNode[ModelsSectionKeys.GenerateClientConstructorsKey] == null || (bool)modelNode[ModelsSectionKeys.GenerateClientConstructorsKey], // A way to prevent generating basic constructors
                 SupportedMobilePlatforms = modelNode[ModelsSectionKeys.PlatformsKey] == null ? new List<string>() : (from object pcf in modelNode[ModelsSectionKeys.PlatformsKey]
-                                                                                                                        select pcf.ToString()).ToList(),
-                EnableXamarinComponent = modelNode.PropertyNames.Contains(ModelsSectionKeys.EnableXamarinComponent) && (bool)modelNode[ModelsSectionKeys.EnableXamarinComponent]
+                                                                                                                        select pcf.ToString()).ToList()
             };
 
             if (modelNode[ModelsSectionKeys.PclVariantsKey] != null)

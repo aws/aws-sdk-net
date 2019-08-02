@@ -9,7 +9,6 @@ using ServiceClientGenerator.Generators.NuGet;
 using ServiceClientGenerator.Generators.SourceFiles;
 using ServiceClientGenerator.Generators.TestFiles;
 using StructureGenerator = ServiceClientGenerator.Generators.SourceFiles.StructureGenerator;
-using ServiceClientGenerator.Generators.Component;
 
 using Json.LitJson;
 using System.Collections.Concurrent;
@@ -65,11 +64,6 @@ namespace ServiceClientGenerator
         public string GeneratedFilesRoot { get; private set; }
 
         /// <summary>
-        /// The folder where all the xamarin componenets would be present
-        /// </summary>
-        public string ComponentsFilesRoot { get; private set; }
-
-        /// <summary>
         /// The folder where all the sample files are located
         /// </summary>
         public string SampleFilesRoot { get; private set; }
@@ -103,7 +97,6 @@ namespace ServiceClientGenerator
         public const string CommonTestSubFoldername = "Common";
         public const string UnitTestsSubFoldername = "UnitTests";
         public const string IntegrationTestsSubFolderName = "IntegrationTests";
-        public const string XamarinComponentsSubFolderName = "xamarin-components";
 
 
         // Records any new project files we produce as part of generation. If this collection is
@@ -131,9 +124,6 @@ namespace ServiceClientGenerator
 
             TestFilesRoot = Path.Combine(Options.SdkRootFolder, TestsSubFoldername);
 
-            ComponentsFilesRoot = Path.Combine(Options.SdkRootFolder, XamarinComponentsSubFolderName, Configuration.ServiceFolderName);
-
-            SampleFilesRoot = options.SamplesRootFolder;
             codeGeneratedServiceNames.Add(Configuration.ServiceFolderName);
         }
 
@@ -179,9 +169,6 @@ namespace ServiceClientGenerator
                 if (!this.Configuration.IsChildConfig)
                 {
                     ExecuteNugetFileGenerators();
-
-                    if (this.Configuration.EnableXamarinComponent)
-                        GenerateXamarinComponents();
 
                     GenerateCodeAnalysisProject();
                 }
@@ -909,96 +896,6 @@ namespace ServiceClientGenerator
             var pcGenerator = new PackagesConfig() { Session = session };
             var text = pcGenerator.TransformText();
             WriteFile(ServiceFilesRoot, string.Empty, "packages.config", text);
-        }
-
-        void GenerateXamarinComponents()
-        {
-            var coreVersion = GenerationManifest.CoreVersion;
-
-            // we're generating services only, so can automatically add the core runtime
-            // as a dependency
-            var awsDependencies = new Dictionary<string, string>(StringComparer.Ordinal);
-
-            if (Configuration.ServiceDependencies != null)
-            {
-                var dependencies = Configuration.ServiceDependencies;
-                foreach (var kvp in dependencies)
-                {
-                    var service = kvp.Key;
-                    var version = kvp.Value;
-                    var dependentService = GenerationManifest.ServiceConfigurations.FirstOrDefault(x => string.Equals(x.Namespace, "Amazon." + service, StringComparison.InvariantCultureIgnoreCase));
-
-                    string previewFlag;
-                    if (dependentService != null && dependentService.InPreview)
-                    {
-                        previewFlag = GenerationManifest.PreviewLabel;
-                    }
-                    else if (string.Equals(service, "Core", StringComparison.InvariantCultureIgnoreCase) && GenerationManifest.DefaultToPreview)
-                    {
-                        previewFlag = GenerationManifest.PreviewLabel;
-                    }
-                    else
-                    {
-                        previewFlag = string.Empty;
-                    }
-
-                    var verTokens = version.Split('.');
-                    var versionRange = string.Format("[{0}{3}, {1}.{2}{3})", version, verTokens[0], int.Parse(verTokens[1]) + 1, previewFlag);
-
-                    awsDependencies.Add(string.Format("AWSSDK.{0}", service), string.Format("{0}{1}", version, previewFlag));
-                }
-            }
-
-            var assemblyVersion = Configuration.ServiceFileVersion;
-            var assemblyName = Configuration.Namespace.Replace("Amazon.", "AWSSDK.");
-            var assemblyTitle = "AWSSDK - " + Configuration.ServiceModel.ServiceFullName;
-            var componentTitle = assemblyTitle;
-            bool componentUsesAlternateLicense = !string.IsNullOrEmpty(Configuration.LicenseUrl) && Configuration.LicenseUrl != GenerationManifest.ApacheLicenseURL;
-            if (!string.IsNullOrEmpty(Configuration.NugetPackageTitleSuffix))
-                componentTitle += " " + Configuration.NugetPackageTitleSuffix;
-
-            if (string.IsNullOrEmpty(Configuration.ServiceModel.Customizations.XamarinSolutionSamplePath))
-                throw new Exception("Xamarin component flag enabled but samples are missing");
-
-            var session = new Dictionary<string, object>
-            {
-                { "AssemblyName", assemblyName },
-                { "AssemblyTitle",  assemblyTitle },
-                { "ComponentTitle",  componentTitle },
-                { "AssemblyDescription", Configuration.AssemblyDescription },
-                { "AssemblyVersion", assemblyVersion },
-                { "AWSDependencies", awsDependencies },
-                { "BaseName", this.Configuration.ClassName },
-                { "ProjectFileConfigurations", this.ProjectFileConfigurations},
-                { "Documentation",string.IsNullOrEmpty(Configuration.ServiceModel.Documentation)?Configuration.Synopsis:Configuration.ServiceModel.Documentation },
-                { "SolutionFilePath", string.IsNullOrEmpty(Configuration.ServiceModel.Customizations.XamarinSolutionSamplePath)?"":Path.Combine(SampleFilesRoot,Configuration.ServiceModel.Customizations.XamarinSolutionSamplePath) },
-                { "UsesAlternateLicense", componentUsesAlternateLicense },
-                { "Synopsis", Configuration.Synopsis},
-                { "ExtraTags", Configuration.Tags.Count == 0 ? string.Empty : " " + string.Join(" ", Configuration.Tags) }
-            };
-
-            session["NuGetPreviewFlag"] = Configuration.InPreview ? this.GenerationManifest.PreviewLabel : "";
-
-            var componentGenerator = new Component { Session = session };
-            var text = componentGenerator.TransformText();
-            var yamlFilename = "component.yaml";
-            WriteFile(ComponentsFilesRoot, string.Empty, yamlFilename, text);
-
-            var detailsMarkdownGenerator = new Details { Session = session };
-            text = ConvertHtmlToMarkDown(detailsMarkdownGenerator.TransformText());
-
-            // sanitize the line endings from the markup generation, as we can get
-            // odd combinations of line endings
-            var lines = text.Split(new[] { "\r\n", "\n", "\r" }, StringSplitOptions.None);
-            var normalizedText = string.Join(Environment.NewLine, lines);
-
-            var detailsFileName = "Details.md";
-            WriteFile(ComponentsFilesRoot, string.Empty, detailsFileName, normalizedText);
-
-            var gettingStartedMarkdownGenerator = new GettingStarted { Session = session };
-            text = ConvertHtmlToMarkDown(gettingStartedMarkdownGenerator.TransformText());
-            var gettingStartedFileName = "GettingStarted.md";
-            WriteFile(ComponentsFilesRoot, string.Empty, gettingStartedFileName, text);
         }
 
         string ConvertHtmlToMarkDown(string text)

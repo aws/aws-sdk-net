@@ -72,11 +72,6 @@ namespace ServiceClientGenerator
         public string UnityPath { get; set; }
 
         /// <summary>
-        /// The Root folder beneath which all the samples are present. Samples are used for xamarin components.
-        /// </summary>
-        public string SamplesRootFolder { get; set; }
-
-        /// <summary>
         /// If set the solution files will be rebuilt even if no new projects were added.
         /// </summary>
         public bool ForceSolutionRebuilt { get; set; }
@@ -102,8 +97,6 @@ namespace ServiceClientGenerator
             Versions = Path.Combine("..", "..", "..", "ServiceModels", "_sdk-versions.json");
             ModelsFolder = Path.Combine("..", "..", "..", "ServiceModels");
             SdkRootFolder = Path.Combine("..", "..", "..", "..", "sdk");
-            SamplesRootFolder = Path.Combine("..", "..", "..", "..", "aws-sdk-net-samples");
-
             //TODO: fix for OSX environments
             UnityPath = Path.Combine("C:\\", "Program Files", "Unity");
 

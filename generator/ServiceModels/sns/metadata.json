@@ -1,6 +1,5 @@
 {
-    "base-name": "SimpleNotificationService", 
-    "enable-xamarin-component": true, 
+    "base-name": "SimpleNotificationService",
     "platforms": [
         "Unity"
     ], 
