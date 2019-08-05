@@ -1,3 +1,11 @@
+### 3.3.562.0 (2019-08-05 18:08 UTC)
+* DataSync (3.3.103.0)
+	* Support VPC endpoints.
+* EC2 (3.3.124.0)
+	* Amazon EC2 now supports a new Spot allocation strategy "Capacity-optimized" that fulfills your request using Spot Instance pools that are optimally chosen based on the available Spot capacity.
+* IoT (3.3.101.0)
+	* In this release, AWS IoT Device Defender introduces audit mitigation actions that can be applied to audit findings to help mitigate security issues.
+
 ### 3.3.561.2 (2019-08-02 18:51 UTC)
 * SecurityToken (3.3.102.5)
 	* Documentation updates for sts

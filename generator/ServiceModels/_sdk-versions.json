@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.561.2",
+    "ProductVersion" : "3.3.562.0",
     "CoreVersion"    : "3.3.103.20",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.123.4",
+            "Version" : "3.3.124.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.20"
@@ -465,7 +465,7 @@
             "InPreview"               : false
         },
         "IoT"                             : {
-            "Version" : "3.3.100.56",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.20"
@@ -1249,7 +1249,7 @@
             "InPreview"               : false
         },
         "DataSync"                        : {
-            "Version" : "3.3.102.34",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.20"
