@@ -756,7 +756,7 @@ namespace Amazon.IoT
         #region  AttachSecurityProfile
 
         /// <summary>
-        /// Associates a Device Defender security profile with a thing group or with this account.
+        /// Associates a Device Defender security profile with a thing group or this account.
         /// Each thing group or account can have up to five security profiles associated with
         /// it.
         /// </summary>
@@ -935,6 +935,73 @@ namespace Amazon.IoT
         public virtual AttachThingPrincipalResponse EndAttachThingPrincipal(IAsyncResult asyncResult)
         {
             return EndInvoke<AttachThingPrincipalResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CancelAuditMitigationActionsTask
+
+        /// <summary>
+        /// Cancels a mitigation action task that is in progress. If the task is not in progress,
+        /// an InvalidRequestException occurs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelAuditMitigationActionsTask service method.</param>
+        /// 
+        /// <returns>The response from the CancelAuditMitigationActionsTask service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelAuditMitigationActionsTask">REST API Reference for CancelAuditMitigationActionsTask Operation</seealso>
+        public virtual CancelAuditMitigationActionsTaskResponse CancelAuditMitigationActionsTask(CancelAuditMitigationActionsTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelAuditMitigationActionsTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelAuditMitigationActionsTaskResponseUnmarshaller.Instance;
+
+            return Invoke<CancelAuditMitigationActionsTaskResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelAuditMitigationActionsTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelAuditMitigationActionsTask operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelAuditMitigationActionsTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelAuditMitigationActionsTask">REST API Reference for CancelAuditMitigationActionsTask Operation</seealso>
+        public virtual IAsyncResult BeginCancelAuditMitigationActionsTask(CancelAuditMitigationActionsTaskRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelAuditMitigationActionsTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelAuditMitigationActionsTaskResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelAuditMitigationActionsTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelAuditMitigationActionsTask.</param>
+        /// 
+        /// <returns>Returns a  CancelAuditMitigationActionsTaskResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelAuditMitigationActionsTask">REST API Reference for CancelAuditMitigationActionsTask Operation</seealso>
+        public virtual CancelAuditMitigationActionsTaskResponse EndCancelAuditMitigationActionsTask(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CancelAuditMitigationActionsTaskResponse>(asyncResult);
         }
 
         #endregion
@@ -2123,6 +2190,76 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  CreateMitigationAction
+
+        /// <summary>
+        /// Defines an action that can be applied to audit findings by using StartAuditMitigationActionsTask.
+        /// Each mitigation action can apply only one type of change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMitigationAction service method.</param>
+        /// 
+        /// <returns>The response from the CreateMitigationAction service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateMitigationAction">REST API Reference for CreateMitigationAction Operation</seealso>
+        public virtual CreateMitigationActionResponse CreateMitigationAction(CreateMitigationActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMitigationActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMitigationActionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMitigationActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMitigationAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMitigationAction operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMitigationAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateMitigationAction">REST API Reference for CreateMitigationAction Operation</seealso>
+        public virtual IAsyncResult BeginCreateMitigationAction(CreateMitigationActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMitigationActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMitigationActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateMitigationAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMitigationAction.</param>
+        /// 
+        /// <returns>Returns a  CreateMitigationActionResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateMitigationAction">REST API Reference for CreateMitigationAction Operation</seealso>
+        public virtual CreateMitigationActionResponse EndCreateMitigationAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateMitigationActionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateOTAUpdate
 
         /// <summary>
@@ -2611,6 +2748,9 @@ namespace Amazon.IoT
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
         /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ThrottlingException">
         /// The rate exceeds the limit.
@@ -3406,8 +3546,8 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// A certificate cannot be deleted if it has a policy attached to it or if its status
-        /// is set to ACTIVE. To delete a certificate, first use the <a>DetachPrincipalPolicy</a>
+        /// A certificate cannot be deleted if it has a policy or IoT thing attached to it or
+        /// if its status is set to ACTIVE. To delete a certificate, first use the <a>DetachPrincipalPolicy</a>
         /// API to detach all policies. Next, use the <a>UpdateCertificate</a> API to set the
         /// certificate to the INACTIVE status.
         /// </para>
@@ -3453,8 +3593,8 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// A certificate cannot be deleted if it has a policy attached to it or if its status
-        /// is set to ACTIVE. To delete a certificate, first use the <a>DetachPrincipalPolicy</a>
+        /// A certificate cannot be deleted if it has a policy or IoT thing attached to it or
+        /// if its status is set to ACTIVE. To delete a certificate, first use the <a>DetachPrincipalPolicy</a>
         /// API to detach all policies. Next, use the <a>UpdateCertificate</a> API to set the
         /// certificate to the INACTIVE status.
         /// </para>
@@ -3751,6 +3891,69 @@ namespace Amazon.IoT
         public virtual DeleteJobExecutionResponse EndDeleteJobExecution(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteJobExecutionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteMitigationAction
+
+        /// <summary>
+        /// Deletes a defined mitigation action from your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMitigationAction service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMitigationAction service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteMitigationAction">REST API Reference for DeleteMitigationAction Operation</seealso>
+        public virtual DeleteMitigationActionResponse DeleteMitigationAction(DeleteMitigationActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMitigationActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMitigationActionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMitigationActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMitigationAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMitigationAction operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMitigationAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteMitigationAction">REST API Reference for DeleteMitigationAction Operation</seealso>
+        public virtual IAsyncResult BeginDeleteMitigationAction(DeleteMitigationActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMitigationActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMitigationActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteMitigationAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMitigationAction.</param>
+        /// 
+        /// <returns>Returns a  DeleteMitigationActionResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteMitigationAction">REST API Reference for DeleteMitigationAction Operation</seealso>
+        public virtual DeleteMitigationActionResponse EndDeleteMitigationAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteMitigationActionResponse>(asyncResult);
         }
 
         #endregion
@@ -5000,6 +5203,141 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DescribeAuditFinding
+
+        /// <summary>
+        /// Gets information about a single audit finding. Properties include the reason for noncompliance,
+        /// the severity of the issue, and when the audit that returned the finding was started.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAuditFinding service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAuditFinding service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAuditFinding">REST API Reference for DescribeAuditFinding Operation</seealso>
+        public virtual DescribeAuditFindingResponse DescribeAuditFinding(DescribeAuditFindingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAuditFindingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAuditFindingResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAuditFindingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAuditFinding operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAuditFinding operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAuditFinding
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAuditFinding">REST API Reference for DescribeAuditFinding Operation</seealso>
+        public virtual IAsyncResult BeginDescribeAuditFinding(DescribeAuditFindingRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAuditFindingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAuditFindingResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAuditFinding operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAuditFinding.</param>
+        /// 
+        /// <returns>Returns a  DescribeAuditFindingResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAuditFinding">REST API Reference for DescribeAuditFinding Operation</seealso>
+        public virtual DescribeAuditFindingResponse EndDescribeAuditFinding(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAuditFindingResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeAuditMitigationActionsTask
+
+        /// <summary>
+        /// Gets information about an audit mitigation task that is used to apply mitigation actions
+        /// to a set of audit findings. Properties include the actions being applied, the audit
+        /// checks to which they're being applied, the task status, and aggregated task statistics.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAuditMitigationActionsTask service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAuditMitigationActionsTask service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAuditMitigationActionsTask">REST API Reference for DescribeAuditMitigationActionsTask Operation</seealso>
+        public virtual DescribeAuditMitigationActionsTaskResponse DescribeAuditMitigationActionsTask(DescribeAuditMitigationActionsTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAuditMitigationActionsTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAuditMitigationActionsTaskResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAuditMitigationActionsTaskResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAuditMitigationActionsTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAuditMitigationActionsTask operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAuditMitigationActionsTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAuditMitigationActionsTask">REST API Reference for DescribeAuditMitigationActionsTask Operation</seealso>
+        public virtual IAsyncResult BeginDescribeAuditMitigationActionsTask(DescribeAuditMitigationActionsTaskRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAuditMitigationActionsTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAuditMitigationActionsTaskResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAuditMitigationActionsTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAuditMitigationActionsTask.</param>
+        /// 
+        /// <returns>Returns a  DescribeAuditMitigationActionsTaskResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAuditMitigationActionsTask">REST API Reference for DescribeAuditMitigationActionsTask Operation</seealso>
+        public virtual DescribeAuditMitigationActionsTaskResponse EndDescribeAuditMitigationActionsTask(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAuditMitigationActionsTaskResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeAuditTask
 
         /// <summary>
@@ -5804,6 +6142,72 @@ namespace Amazon.IoT
         public virtual DescribeJobExecutionResponse EndDescribeJobExecution(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeJobExecutionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeMitigationAction
+
+        /// <summary>
+        /// Gets information about a mitigation action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMitigationAction service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMitigationAction service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeMitigationAction">REST API Reference for DescribeMitigationAction Operation</seealso>
+        public virtual DescribeMitigationActionResponse DescribeMitigationAction(DescribeMitigationActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMitigationActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMitigationActionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMitigationActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMitigationAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMitigationAction operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMitigationAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeMitigationAction">REST API Reference for DescribeMitigationAction Operation</seealso>
+        public virtual IAsyncResult BeginDescribeMitigationAction(DescribeMitigationActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMitigationActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMitigationActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeMitigationAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMitigationAction.</param>
+        /// 
+        /// <returns>Returns a  DescribeMitigationActionResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeMitigationAction">REST API Reference for DescribeMitigationAction Operation</seealso>
+        public virtual DescribeMitigationActionResponse EndDescribeMitigationAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeMitigationActionResponse>(asyncResult);
         }
 
         #endregion
@@ -7995,6 +8399,132 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  ListAuditMitigationActionsExecutions
+
+        /// <summary>
+        /// Gets the status of audit mitigation action tasks that were executed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAuditMitigationActionsExecutions service method.</param>
+        /// 
+        /// <returns>The response from the ListAuditMitigationActionsExecutions service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditMitigationActionsExecutions">REST API Reference for ListAuditMitigationActionsExecutions Operation</seealso>
+        public virtual ListAuditMitigationActionsExecutionsResponse ListAuditMitigationActionsExecutions(ListAuditMitigationActionsExecutionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAuditMitigationActionsExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAuditMitigationActionsExecutionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAuditMitigationActionsExecutionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAuditMitigationActionsExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAuditMitigationActionsExecutions operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAuditMitigationActionsExecutions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditMitigationActionsExecutions">REST API Reference for ListAuditMitigationActionsExecutions Operation</seealso>
+        public virtual IAsyncResult BeginListAuditMitigationActionsExecutions(ListAuditMitigationActionsExecutionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAuditMitigationActionsExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAuditMitigationActionsExecutionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAuditMitigationActionsExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAuditMitigationActionsExecutions.</param>
+        /// 
+        /// <returns>Returns a  ListAuditMitigationActionsExecutionsResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditMitigationActionsExecutions">REST API Reference for ListAuditMitigationActionsExecutions Operation</seealso>
+        public virtual ListAuditMitigationActionsExecutionsResponse EndListAuditMitigationActionsExecutions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAuditMitigationActionsExecutionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAuditMitigationActionsTasks
+
+        /// <summary>
+        /// Gets a list of audit mitigation action tasks that match the specified filters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAuditMitigationActionsTasks service method.</param>
+        /// 
+        /// <returns>The response from the ListAuditMitigationActionsTasks service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditMitigationActionsTasks">REST API Reference for ListAuditMitigationActionsTasks Operation</seealso>
+        public virtual ListAuditMitigationActionsTasksResponse ListAuditMitigationActionsTasks(ListAuditMitigationActionsTasksRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAuditMitigationActionsTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAuditMitigationActionsTasksResponseUnmarshaller.Instance;
+
+            return Invoke<ListAuditMitigationActionsTasksResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAuditMitigationActionsTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAuditMitigationActionsTasks operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAuditMitigationActionsTasks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditMitigationActionsTasks">REST API Reference for ListAuditMitigationActionsTasks Operation</seealso>
+        public virtual IAsyncResult BeginListAuditMitigationActionsTasks(ListAuditMitigationActionsTasksRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAuditMitigationActionsTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAuditMitigationActionsTasksResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAuditMitigationActionsTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAuditMitigationActionsTasks.</param>
+        /// 
+        /// <returns>Returns a  ListAuditMitigationActionsTasksResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditMitigationActionsTasks">REST API Reference for ListAuditMitigationActionsTasks Operation</seealso>
+        public virtual ListAuditMitigationActionsTasksResponse EndListAuditMitigationActionsTasks(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAuditMitigationActionsTasksResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListAuditTasks
 
         /// <summary>
@@ -8709,6 +9239,69 @@ namespace Amazon.IoT
         public virtual ListJobsResponse EndListJobs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListMitigationActions
+
+        /// <summary>
+        /// Gets a list of all mitigation actions that match the specified filter criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMitigationActions service method.</param>
+        /// 
+        /// <returns>The response from the ListMitigationActions service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListMitigationActions">REST API Reference for ListMitigationActions Operation</seealso>
+        public virtual ListMitigationActionsResponse ListMitigationActions(ListMitigationActionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMitigationActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMitigationActionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMitigationActionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMitigationActions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMitigationActions operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMitigationActions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListMitigationActions">REST API Reference for ListMitigationActions Operation</seealso>
+        public virtual IAsyncResult BeginListMitigationActions(ListMitigationActionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMitigationActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMitigationActionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMitigationActions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMitigationActions.</param>
+        /// 
+        /// <returns>Returns a  ListMitigationActionsResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListMitigationActions">REST API Reference for ListMitigationActions Operation</seealso>
+        public virtual ListMitigationActionsResponse EndListMitigationActions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListMitigationActionsResponse>(asyncResult);
         }
 
         #endregion
@@ -10731,7 +11324,7 @@ namespace Amazon.IoT
         /// <summary>
         /// Lists the Device Defender security profile violations discovered during the given
         /// time period. You can use filters to limit the results to those alerts issued for a
-        /// particular security profile, behavior or thing (device).
+        /// particular security profile, behavior, or thing (device).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListViolationEvents service method.</param>
         /// 
@@ -11839,6 +12432,76 @@ namespace Amazon.IoT
         public virtual SetV2LoggingOptionsResponse EndSetV2LoggingOptions(IAsyncResult asyncResult)
         {
             return EndInvoke<SetV2LoggingOptionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartAuditMitigationActionsTask
+
+        /// <summary>
+        /// Starts a task that applies a set of mitigation actions to the specified target.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAuditMitigationActionsTask service method.</param>
+        /// 
+        /// <returns>The response from the StartAuditMitigationActionsTask service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.TaskAlreadyExistsException">
+        /// This exception occurs if you attempt to start a task with the same task-id as an existing
+        /// task but with a different clientRequestToken.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StartAuditMitigationActionsTask">REST API Reference for StartAuditMitigationActionsTask Operation</seealso>
+        public virtual StartAuditMitigationActionsTaskResponse StartAuditMitigationActionsTask(StartAuditMitigationActionsTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAuditMitigationActionsTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAuditMitigationActionsTaskResponseUnmarshaller.Instance;
+
+            return Invoke<StartAuditMitigationActionsTaskResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartAuditMitigationActionsTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartAuditMitigationActionsTask operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartAuditMitigationActionsTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StartAuditMitigationActionsTask">REST API Reference for StartAuditMitigationActionsTask Operation</seealso>
+        public virtual IAsyncResult BeginStartAuditMitigationActionsTask(StartAuditMitigationActionsTaskRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAuditMitigationActionsTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAuditMitigationActionsTaskResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartAuditMitigationActionsTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartAuditMitigationActionsTask.</param>
+        /// 
+        /// <returns>Returns a  StartAuditMitigationActionsTaskResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StartAuditMitigationActionsTask">REST API Reference for StartAuditMitigationActionsTask Operation</seealso>
+        public virtual StartAuditMitigationActionsTaskResponse EndStartAuditMitigationActionsTask(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartAuditMitigationActionsTaskResponse>(asyncResult);
         }
 
         #endregion
@@ -13180,6 +13843,72 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  UpdateMitigationAction
+
+        /// <summary>
+        /// Updates the definition for the specified mitigation action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMitigationAction service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMitigationAction service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateMitigationAction">REST API Reference for UpdateMitigationAction Operation</seealso>
+        public virtual UpdateMitigationActionResponse UpdateMitigationAction(UpdateMitigationActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMitigationActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMitigationActionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMitigationActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMitigationAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMitigationAction operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMitigationAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateMitigationAction">REST API Reference for UpdateMitigationAction Operation</seealso>
+        public virtual IAsyncResult BeginUpdateMitigationAction(UpdateMitigationActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMitigationActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMitigationActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateMitigationAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMitigationAction.</param>
+        /// 
+        /// <returns>Returns a  UpdateMitigationActionResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateMitigationAction">REST API Reference for UpdateMitigationAction Operation</seealso>
+        public virtual UpdateMitigationActionResponse EndUpdateMitigationAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateMitigationActionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateRoleAlias
 
         /// <summary>
@@ -13255,8 +13984,8 @@ namespace Amazon.IoT
         #region  UpdateScheduledAudit
 
         /// <summary>
-        /// Updates a scheduled audit, including what checks are performed and how often the audit
-        /// takes place.
+        /// Updates a scheduled audit, including which checks are performed and how often the
+        /// audit takes place.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateScheduledAudit service method.</param>
         /// 

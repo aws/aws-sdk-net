@@ -40,7 +40,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property ExpectedVersion. 
         /// <para>
         /// The expected version of the security profile. A new version is generated whenever
-        /// the security profile is updated. If you specify a value that is different than the
+        /// the security profile is updated. If you specify a value that is different from the
         /// actual version, a <code>VersionConflictException</code> is thrown.
         /// </para>
         /// </summary>

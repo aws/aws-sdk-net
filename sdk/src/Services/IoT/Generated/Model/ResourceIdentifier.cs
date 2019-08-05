@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Information identifying the non-compliant resource.
+    /// Information that identifies the noncompliant resource.
     /// </summary>
     public partial class ResourceIdentifier
     {
@@ -98,7 +98,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property CognitoIdentityPoolId. 
         /// <para>
-        /// The ID of the Cognito Identity Pool.
+        /// The ID of the Amazon Cognito identity pool.
         /// </para>
         /// </summary>
         public string CognitoIdentityPoolId

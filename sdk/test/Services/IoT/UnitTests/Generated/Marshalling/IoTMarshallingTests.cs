@@ -255,6 +255,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("IoT")]
+        public void CancelAuditMitigationActionsTaskMarshallTest()
+        {
+            var operation = service_model.FindOperation("CancelAuditMitigationActionsTask");
+
+            var request = InstantiateClassGenerator.Execute<CancelAuditMitigationActionsTaskRequest>();
+            var marshaller = new CancelAuditMitigationActionsTaskRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CancelAuditMitigationActionsTask", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CancelAuditMitigationActionsTaskResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CancelAuditMitigationActionsTaskResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("IoT")]
         public void CancelAuditTaskMarshallTest()
         {
             var operation = service_model.FindOperation("CancelAuditTask");
@@ -569,6 +601,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = CreateKeysAndCertificateResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as CreateKeysAndCertificateResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("IoT")]
+        public void CreateMitigationActionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateMitigationAction");
+
+            var request = InstantiateClassGenerator.Execute<CreateMitigationActionRequest>();
+            var marshaller = new CreateMitigationActionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateMitigationAction", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateMitigationActionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CreateMitigationActionResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -1125,6 +1189,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("IoT")]
+        public void DeleteMitigationActionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteMitigationAction");
+
+            var request = InstantiateClassGenerator.Execute<DeleteMitigationActionRequest>();
+            var marshaller = new DeleteMitigationActionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteMitigationAction", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DeleteMitigationActionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DeleteMitigationActionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("IoT")]
         public void DeleteOTAUpdateMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteOTAUpdate");
@@ -1545,6 +1641,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("IoT")]
+        public void DescribeAuditFindingMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAuditFinding");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAuditFindingRequest>();
+            var marshaller = new DescribeAuditFindingRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DescribeAuditFinding", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DescribeAuditFindingResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DescribeAuditFindingResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("IoT")]
+        public void DescribeAuditMitigationActionsTaskMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAuditMitigationActionsTask");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAuditMitigationActionsTaskRequest>();
+            var marshaller = new DescribeAuditMitigationActionsTaskRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DescribeAuditMitigationActionsTask", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DescribeAuditMitigationActionsTaskResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DescribeAuditMitigationActionsTaskResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("IoT")]
         public void DescribeAuditTaskMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeAuditTask");
@@ -1889,6 +2049,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = DescribeJobExecutionResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as DescribeJobExecutionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("IoT")]
+        public void DescribeMitigationActionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeMitigationAction");
+
+            var request = InstantiateClassGenerator.Execute<DescribeMitigationActionRequest>();
+            var marshaller = new DescribeMitigationActionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DescribeMitigationAction", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DescribeMitigationActionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DescribeMitigationActionResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -2733,6 +2925,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("IoT")]
+        public void ListAuditMitigationActionsExecutionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListAuditMitigationActionsExecutions");
+
+            var request = InstantiateClassGenerator.Execute<ListAuditMitigationActionsExecutionsRequest>();
+            var marshaller = new ListAuditMitigationActionsExecutionsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListAuditMitigationActionsExecutions", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListAuditMitigationActionsExecutionsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListAuditMitigationActionsExecutionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("IoT")]
+        public void ListAuditMitigationActionsTasksMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListAuditMitigationActionsTasks");
+
+            var request = InstantiateClassGenerator.Execute<ListAuditMitigationActionsTasksRequest>();
+            var marshaller = new ListAuditMitigationActionsTasksRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListAuditMitigationActionsTasks", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListAuditMitigationActionsTasksResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListAuditMitigationActionsTasksResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("IoT")]
         public void ListAuditTasksMarshallTest()
         {
             var operation = service_model.FindOperation("ListAuditTasks");
@@ -3045,6 +3301,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = ListJobsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as ListJobsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("IoT")]
+        public void ListMitigationActionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListMitigationActions");
+
+            var request = InstantiateClassGenerator.Execute<ListMitigationActionsRequest>();
+            var marshaller = new ListMitigationActionsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListMitigationActions", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListMitigationActionsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListMitigationActionsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -4243,6 +4531,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("IoT")]
+        public void StartAuditMitigationActionsTaskMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartAuditMitigationActionsTask");
+
+            var request = InstantiateClassGenerator.Execute<StartAuditMitigationActionsTaskRequest>();
+            var marshaller = new StartAuditMitigationActionsTaskRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("StartAuditMitigationActionsTask", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = StartAuditMitigationActionsTaskResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as StartAuditMitigationActionsTaskResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("IoT")]
         public void StartOnDemandAuditTaskMarshallTest()
         {
             var operation = service_model.FindOperation("StartOnDemandAuditTask");
@@ -4735,6 +5055,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var internalRequest = marshaller.Marshall(request);
             TestTools.RequestValidator.Validate("UpdateJob", request, internalRequest, service_model);            
 
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("IoT")]
+        public void UpdateMitigationActionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateMitigationAction");
+
+            var request = InstantiateClassGenerator.Execute<UpdateMitigationActionRequest>();
+            var marshaller = new UpdateMitigationActionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateMitigationAction", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateMitigationActionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpdateMitigationActionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
         

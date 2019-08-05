@@ -31,7 +31,7 @@ namespace Amazon.IoT.Model
     /// Container for the parameters to the ListViolationEvents operation.
     /// Lists the Device Defender security profile violations discovered during the given
     /// time period. You can use filters to limit the results to those alerts issued for a
-    /// particular security profile, behavior or thing (device).
+    /// particular security profile, behavior, or thing (device).
     /// </summary>
     public partial class ListViolationEventsRequest : AmazonIoTRequest
     {

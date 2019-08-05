@@ -63,7 +63,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property DayOfWeek. 
         /// <para>
         /// The day of the week on which the scheduled audit takes place. One of "SUN", "MON",
-        /// "TUE", "WED", "THU", "FRI" or "SAT".
+        /// "TUE", "WED", "THU", "FRI", or "SAT".
         /// </para>
         /// </summary>
         public DayOfWeek DayOfWeek
@@ -81,8 +81,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Frequency. 
         /// <para>
-        /// How often the scheduled audit takes place. One of "DAILY", "WEEKLY", "BIWEEKLY" or
-        /// "MONTHLY". The actual start time of each audit is determined by the system.
+        /// How often the scheduled audit takes place. One of "DAILY", "WEEKLY", "BIWEEKLY", or
+        /// "MONTHLY". The start time of each audit is determined by the system.
         /// </para>
         /// </summary>
         public AuditFrequency Frequency
@@ -137,9 +137,9 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property TargetCheckNames. 
         /// <para>
-        /// Which checks are performed during the scheduled audit. (Note that checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks including those that are enabled or <code>UpdateAccountAuditConfiguration</code>
+        /// Which checks are performed during the scheduled audit. Checks must be enabled for
+        /// your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
+        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
         /// to select which checks are enabled.)
         /// </para>
         /// </summary>

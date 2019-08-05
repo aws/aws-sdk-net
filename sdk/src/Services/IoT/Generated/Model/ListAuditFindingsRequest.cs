@@ -119,7 +119,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property ResourceIdentifier. 
         /// <para>
-        /// Information identifying the non-compliant resource.
+        /// Information identifying the noncompliant resource.
         /// </para>
         /// </summary>
         public ResourceIdentifier ResourceIdentifier

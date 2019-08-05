@@ -33,8 +33,8 @@ namespace Amazon.IoT.Model
     /// 
     ///  
     /// <para>
-    /// A certificate cannot be deleted if it has a policy attached to it or if its status
-    /// is set to ACTIVE. To delete a certificate, first use the <a>DetachPrincipalPolicy</a>
+    /// A certificate cannot be deleted if it has a policy or IoT thing attached to it or
+    /// if its status is set to ACTIVE. To delete a certificate, first use the <a>DetachPrincipalPolicy</a>
     /// API to detach all policies. Next, use the <a>UpdateCertificate</a> API to set the
     /// certificate to the INACTIVE status.
     /// </para>
@@ -67,7 +67,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property ForceDelete. 
         /// <para>
-        /// Forces a certificate request to be deleted.
+        /// Forces the deletion of a certificate if it is inactive and is not attached to an IoT
+        /// thing.
         /// </para>
         /// </summary>
         public bool ForceDelete

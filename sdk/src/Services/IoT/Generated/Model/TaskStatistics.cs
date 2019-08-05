@@ -79,7 +79,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property FailedChecks. 
         /// <para>
-        /// The number of checks 
+        /// The number of checks.
         /// </para>
         /// </summary>
         public int FailedChecks
@@ -115,7 +115,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property NonCompliantChecks. 
         /// <para>
-        /// The number of checks that found non-compliant resources.
+        /// The number of checks that found noncompliant resources.
         /// </para>
         /// </summary>
         public int NonCompliantChecks

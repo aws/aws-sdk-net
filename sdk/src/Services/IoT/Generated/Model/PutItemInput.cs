@@ -38,7 +38,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// The table where the message data will be written
+        /// The table where the message data will be written.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

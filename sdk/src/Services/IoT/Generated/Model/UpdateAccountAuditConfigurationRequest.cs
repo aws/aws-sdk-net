@@ -42,12 +42,12 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property AuditCheckConfigurations. 
         /// <para>
         /// Specifies which audit checks are enabled and disabled for this account. Use <code>DescribeAccountAuditConfiguration</code>
-        /// to see the list of all checks including those that are currently enabled.
+        /// to see the list of all checks, including those that are currently enabled.
         /// </para>
         ///  
         /// <para>
-        /// Note that some data collection may begin immediately when certain checks are enabled.
-        /// When a check is disabled, any data collected so far in relation to the check is deleted.
+        /// Some data collection might start immediately when certain checks are enabled. When
+        /// a check is disabled, any data collected so far in relation to the check is deleted.
         /// </para>
         ///  
         /// <para>
@@ -56,8 +56,8 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  
         /// <para>
-        /// On the first call to <code>UpdateAccountAuditConfiguration</code> this parameter is
-        /// required and must specify at least one enabled check.
+        /// On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter
+        /// is required and must specify at least one enabled check.
         /// </para>
         /// </summary>
         public Dictionary<string, AuditCheckConfiguration> AuditCheckConfigurations
@@ -94,8 +94,8 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The ARN of the role that grants permission to AWS IoT to access information about
-        /// your devices, policies, certificates and other items as necessary when performing
-        /// an audit.
+        /// your devices, policies, certificates and other items as required when performing an
+        /// audit.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

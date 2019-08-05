@@ -42,7 +42,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property CheckCompliant. 
         /// <para>
-        /// True if the check completed and found all resources compliant.
+        /// True if the check is complete and found all resources compliant.
         /// </para>
         /// </summary>
         public bool CheckCompliant
@@ -60,7 +60,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property CheckRunStatus. 
         /// <para>
-        /// The completion status of this check, one of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION",
+        /// The completion status of this check. One of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION",
         /// "CANCELED", "COMPLETED_COMPLIANT", "COMPLETED_NON_COMPLIANT", or "FAILED".
         /// </para>
         /// </summary>
@@ -79,8 +79,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// The code of any error encountered when performing this check during this audit. One
-        /// of "INSUFFICIENT_PERMISSIONS", or "AUDIT_CHECK_DISABLED".
+        /// The code of any error encountered when this check is performed during this audit.
+        /// One of "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".
         /// </para>
         /// </summary>
         public string ErrorCode
@@ -98,7 +98,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// The message associated with any error encountered when performing this check during
+        /// The message associated with any error encountered when this check is performed during
         /// this audit.
         /// </para>
         /// </summary>
@@ -118,7 +118,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property NonCompliantResourcesCount. 
         /// <para>
-        /// The number of resources that the check found non-compliant.
+        /// The number of resources that were found noncompliant during the check.
         /// </para>
         /// </summary>
         public long NonCompliantResourcesCount

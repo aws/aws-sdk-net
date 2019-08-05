@@ -1,0 +1,80 @@
+/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the iot-2015-05-28.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.IoT.Model
+{
+    /// <summary>
+    /// Parameters used when defining a mitigation action that move a set of things to a thing
+    /// group.
+    /// </summary>
+    public partial class AddThingsToThingGroupParams
+    {
+        private bool? _overrideDynamicGroups;
+        private List<string> _thingGroupNames = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property OverrideDynamicGroups. 
+        /// <para>
+        /// Specifies if this mitigation action can move the things that triggered the mitigation
+        /// action even if they are part of one or more dynamic things groups.
+        /// </para>
+        /// </summary>
+        public bool OverrideDynamicGroups
+        {
+            get { return this._overrideDynamicGroups.GetValueOrDefault(); }
+            set { this._overrideDynamicGroups = value; }
+        }
+
+        // Check to see if OverrideDynamicGroups property is set
+        internal bool IsSetOverrideDynamicGroups()
+        {
+            return this._overrideDynamicGroups.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThingGroupNames. 
+        /// <para>
+        /// The list of groups to which you want to add the things that triggered the mitigation
+        /// action. You can add a thing to a maximum of 10 groups, but you cannot add a thing
+        /// to more than one group in the same hierarchy.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
+        public List<string> ThingGroupNames
+        {
+            get { return this._thingGroupNames; }
+            set { this._thingGroupNames = value; }
+        }
+
+        // Check to see if ThingGroupNames property is set
+        internal bool IsSetThingGroupNames()
+        {
+            return this._thingGroupNames != null && this._thingGroupNames.Count > 0; 
+        }
+
+    }
+}

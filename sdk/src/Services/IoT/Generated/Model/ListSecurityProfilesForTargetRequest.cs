@@ -78,7 +78,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Recursive. 
         /// <para>
-        /// If true, return child groups as well.
+        /// If true, return child groups too.
         /// </para>
         /// </summary>
         public bool Recursive

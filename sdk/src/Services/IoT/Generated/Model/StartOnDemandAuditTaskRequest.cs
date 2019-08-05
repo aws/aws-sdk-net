@@ -40,7 +40,7 @@ namespace Amazon.IoT.Model
         /// <para>
         /// Which checks are performed during the audit. The checks you specify must be enabled
         /// for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code>
-        /// to see the list of all checks including those that are enabled or <code>UpdateAccountAuditConfiguration</code>
+        /// to see the list of all checks, including those that are enabled or <code>UpdateAccountAuditConfiguration</code>
         /// to select which checks are enabled.
         /// </para>
         /// </summary>

@@ -29,8 +29,8 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateScheduledAudit operation.
-    /// Updates a scheduled audit, including what checks are performed and how often the audit
-    /// takes place.
+    /// Updates a scheduled audit, including which checks are performed and how often the
+    /// audit takes place.
     /// </summary>
     public partial class UpdateScheduledAuditRequest : AmazonIoTRequest
     {
@@ -65,7 +65,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property DayOfWeek. 
         /// <para>
         /// The day of the week on which the scheduled audit takes place. Can be one of "SUN",
-        /// "MON", "TUE", "WED", "THU", "FRI" or "SAT". This field is required if the "frequency"
+        /// "MON", "TUE", "WED", "THU", "FRI", or "SAT". This field is required if the "frequency"
         /// parameter is set to "WEEKLY" or "BIWEEKLY".
         /// </para>
         /// </summary>
@@ -84,8 +84,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Frequency. 
         /// <para>
-        /// How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY", "BIWEEKLY"
-        /// or "MONTHLY". The actual start time of each audit is determined by the system.
+        /// How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY", "BIWEEKLY",
+        /// or "MONTHLY". The start time of each audit is determined by the system.
         /// </para>
         /// </summary>
         public AuditFrequency Frequency
@@ -124,7 +124,7 @@ namespace Amazon.IoT.Model
         /// <para>
         /// Which checks are performed during the scheduled audit. Checks must be enabled for
         /// your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks including those that are enabled or <code>UpdateAccountAuditConfiguration</code>
+        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
         /// to select which checks are enabled.)
         /// </para>
         /// </summary>
