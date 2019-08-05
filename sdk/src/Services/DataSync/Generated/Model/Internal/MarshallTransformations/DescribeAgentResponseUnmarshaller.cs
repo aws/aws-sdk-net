@@ -63,10 +63,10 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     response.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EndpointOptions", targetDepth))
+                if (context.TestExpression("EndpointType", targetDepth))
                 {
-                    var unmarshaller = EndpointOptionsUnmarshaller.Instance;
-                    response.EndpointOptions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.EndpointType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastConnectionTime", targetDepth))

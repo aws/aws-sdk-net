@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// A pattern that determines which files to include in the transfer or which files to
-    /// exclude.
+    /// Specifies which files, folders and objects to include or exclude when transferring
+    /// files from source to destination.
     /// </summary>
     public partial class FilterRule
     {
@@ -37,10 +37,10 @@ namespace Amazon.DataSync.Model
         private string _value;
 
         /// <summary>
-        /// Gets and sets the property FilterType.  
+        /// Gets and sets the property FilterType. 
         /// <para>
-        /// Specifies the type of filter rule pattern to apply. DataSync only supports the SIMPLE_PATTERN
-        /// rule type.
+        /// The type of filter rule to apply. AWS DataSync only supports the SIMPLE_PATTERN rule
+        /// type.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -57,10 +57,15 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Value.  
+        /// Gets and sets the property Value. 
         /// <para>
-        /// A pattern that defines the filter. The filter might include or exclude files is a
-        /// transfer.
+        /// A single filter string that consists of the patterns to include or exclude. The patterns
+        /// are delimited by "|" (that is, a pipe), for example: <code>/folder1|/folder2</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  
         /// </para>
         /// </summary>
         [AWSProperty(Max=409600)]

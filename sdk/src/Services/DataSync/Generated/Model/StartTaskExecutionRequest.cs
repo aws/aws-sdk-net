@@ -40,8 +40,8 @@ namespace Amazon.DataSync.Model
     /// </para>
     ///  
     /// <para>
-    /// For detailed information, see <i>Task Execution</i> in "https://docs.aws.amazon.com/datasync/latest/userguide/how-datasync-works.html#terminology"
-    /// (Components and Terminology) in the <i>AWS DataSync User Guide</i>.
+    /// For detailed information, see the Task Execution section in the Components and Terminology
+    /// topic in the <i>AWS DataSync User Guide</i>.
     /// </para>
     /// </summary>
     public partial class StartTaskExecutionRequest : AmazonDataSyncRequest
@@ -51,11 +51,16 @@ namespace Amazon.DataSync.Model
         private string _taskArn;
 
         /// <summary>
-        /// Gets and sets the property Includes.  
+        /// Gets and sets the property Includes. 
         /// <para>
-        /// A filter that determines which files to include in the transfer during a task execution
-        /// based on the specified pattern in the filter. When multiple include filters are set,
-        /// they are interpreted as an OR.
+        /// A list of filter rules that determines which files to include when running a task.
+        /// The pattern should contain a single filter string that consists of the patterns to
+        /// include. The patterns are delimited by "|" (that is, a pipe). For example: <code>"/folder1|/folder2"</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]

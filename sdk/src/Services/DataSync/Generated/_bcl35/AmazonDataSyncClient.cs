@@ -324,19 +324,19 @@ namespace Amazon.DataSync
         /// process associates your agent with your account. In the activation process, you specify
         /// information such as the AWS Region that you want to activate the agent in. You activate
         /// the agent in the AWS Region where your target locations (in Amazon S3 or Amazon EFS)
-        /// reside. Your tasks are created in this AWS Region. 
+        /// reside. Your tasks are created in this AWS Region.
         /// 
+        ///  
+        /// <para>
+        /// You can activate the agent in a VPC (Virtual private Cloud) or provide the agent access
+        /// to a VPC endpoint so you can run tasks without going over the public Internet.
+        /// </para>
         ///  
         /// <para>
         /// You can use an agent for more than one location. If a task uses multiple agents, all
         /// of them need to have status AVAILABLE for the task to run. If you use multiple agents
         /// for a source location, the status of all the agents must be AVAILABLE for the task
         /// to run. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-agents.html#activating-agent"
-        /// (Activating an Agent) in the <i>AWS DataSync User Guide.</i> 
         /// </para>
         ///  
         /// <para>
@@ -533,8 +533,8 @@ namespace Amazon.DataSync
         /// </para>
         ///  
         /// <para>
-        /// For more information, see "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html#create-s3-location"
-        /// (Configuring Amazon S3 Location Settings) in the <i>AWS DataSync User Guide</i>.
+        /// For more information, see Configuring Amazon S3 Location Settings in the <i>AWS DataSync
+        /// User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationS3 service method.</param>
@@ -1551,8 +1551,8 @@ namespace Amazon.DataSync
         /// </para>
         ///  
         /// <para>
-        /// For detailed information, see <i>Task Execution</i> in "https://docs.aws.amazon.com/datasync/latest/userguide/how-datasync-works.html#terminology"
-        /// (Components and Terminology) in the <i>AWS DataSync User Guide</i>.
+        /// For detailed information, see the Task Execution section in the Components and Terminology
+        /// topic in the <i>AWS DataSync User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTaskExecution service method.</param>

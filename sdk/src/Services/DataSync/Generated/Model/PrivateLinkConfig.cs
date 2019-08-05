@@ -28,17 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// 
+    /// The VPC endpoint, subnet and security group that an agent uses to access IP addresses
+    /// in a VPC (Virtual Private Cloud).
     /// </summary>
     public partial class PrivateLinkConfig
     {
         private string _privateLinkEndpoint;
         private List<string> _securityGroupArns = new List<string>();
         private List<string> _subnetArns = new List<string>();
+        private string _vpcEndpointId;
 
         /// <summary>
-        /// Gets and sets the property PrivateLinkEndpoint.
+        /// Gets and sets the property PrivateLinkEndpoint. 
+        /// <para>
+        /// The private endpoint that is configured for an agent that has access to IP addresses
+        /// in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>.
+        /// An agent that is configured with this endpoint will not be accessible over the public
+        /// Internet.
+        /// </para>
         /// </summary>
+        [AWSProperty(Min=7, Max=15)]
         public string PrivateLinkEndpoint
         {
             get { return this._privateLinkEndpoint; }
@@ -52,7 +61,12 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SecurityGroupArns.
+        /// Gets and sets the property SecurityGroupArns. 
+        /// <para>
+        /// The Amazon Resource Names (ARNs) of the security groups that are configured for the
+        /// EC2 resource that hosts an agent activated in a VPC or an agent that has access to
+        /// a VPC endpoint.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
         public List<string> SecurityGroupArns
@@ -68,7 +82,11 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SubnetArns.
+        /// Gets and sets the property SubnetArns. 
+        /// <para>
+        /// The Amazon Resource Names (ARNs) of the subnets that are configured for an agent activated
+        /// in a VPC or an agent that has access to a VPC endpoint.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
         public List<string> SubnetArns
@@ -81,6 +99,25 @@ namespace Amazon.DataSync.Model
         internal bool IsSetSubnetArns()
         {
             return this._subnetArns != null && this._subnetArns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcEndpointId. 
+        /// <para>
+        /// The ID of the VPC endpoint that is configured for an agent. An agent that is configured
+        /// with a VPC endpoint will not be accessible over the public Internet.
+        /// </para>
+        /// </summary>
+        public string VpcEndpointId
+        {
+            get { return this._vpcEndpointId; }
+            set { this._vpcEndpointId = value; }
+        }
+
+        // Check to see if VpcEndpointId property is set
+        internal bool IsSetVpcEndpointId()
+        {
+            return this._vpcEndpointId != null;
         }
 
     }

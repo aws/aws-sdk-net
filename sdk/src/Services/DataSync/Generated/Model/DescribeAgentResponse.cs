@@ -34,7 +34,7 @@ namespace Amazon.DataSync.Model
     {
         private string _agentArn;
         private DateTime? _creationTime;
-        private EndpointOptions _endpointOptions;
+        private EndpointType _endpointType;
         private DateTime? _lastConnectionTime;
         private string _name;
         private PrivateLinkConfig _privateLinkConfig;
@@ -78,18 +78,22 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EndpointOptions.
+        /// Gets and sets the property EndpointType. 
+        /// <para>
+        /// The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint,
+        /// the agent is not accessible over the public Internet. 
+        /// </para>
         /// </summary>
-        public EndpointOptions EndpointOptions
+        public EndpointType EndpointType
         {
-            get { return this._endpointOptions; }
-            set { this._endpointOptions = value; }
+            get { return this._endpointType; }
+            set { this._endpointType = value; }
         }
 
-        // Check to see if EndpointOptions property is set
-        internal bool IsSetEndpointOptions()
+        // Check to see if EndpointType property is set
+        internal bool IsSetEndpointType()
         {
-            return this._endpointOptions != null;
+            return this._endpointType != null;
         }
 
         /// <summary>
@@ -130,7 +134,10 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PrivateLinkConfig.
+        /// Gets and sets the property PrivateLinkConfig. 
+        /// <para>
+        /// The subnet and the security group that DataSync used to access a VPC endpoint.
+        /// </para>
         /// </summary>
         public PrivateLinkConfig PrivateLinkConfig
         {

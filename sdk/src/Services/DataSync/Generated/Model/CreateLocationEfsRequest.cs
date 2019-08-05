@@ -65,9 +65,8 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  
         /// <para>
-        /// For information about security groups and mount targets, see "https://docs.aws.amazon.com/efs/latest/ug/security-considerations.html#network-access"
-        /// (Security Groups for Amazon EC2 Instances and Mount Targets) in the <i>Amazon EFS
-        /// User Guide</i>.
+        /// For information about security groups and mount targets, see Security Groups for Amazon
+        /// EC2 Instances and Mount Targets in the <i>Amazon EFS User Guide.</i> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

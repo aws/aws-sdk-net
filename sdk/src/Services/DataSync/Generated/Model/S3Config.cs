@@ -33,8 +33,8 @@ namespace Amazon.DataSync.Model
     /// 
     ///  
     /// <para>
-    /// For detailed information about using such a role, see "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html#create-s3-location"
-    /// (Creating a Location for Amazon S3) in the <i>AWS DataSync User Guide</i>.
+    /// For detailed information about using such a role, see Creating a Location for Amazon
+    /// S3 in the <i>AWS DataSync User Guide</i>.
     /// </para>
     /// </summary>
     public partial class S3Config
