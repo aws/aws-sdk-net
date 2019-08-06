@@ -1,3 +1,7 @@
+### 3.3.562.1 (2019-08-06 18:08 UTC)
+* Batch (3.3.102.5)
+	* Documentation updates for AWS Batch
+
 ### 3.3.562.0 (2019-08-05 18:08 UTC)
 * DataSync (3.3.103.0)
 	* Support VPC endpoints.

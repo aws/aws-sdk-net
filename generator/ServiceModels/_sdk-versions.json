@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.562.0",
+    "ProductVersion" : "3.3.562.1",
     "CoreVersion"    : "3.3.103.20",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -705,7 +705,7 @@
             "InPreview"               : false
         },
         "Batch"                           : {
-            "Version" : "3.3.102.4",
+            "Version" : "3.3.102.5",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.20"
