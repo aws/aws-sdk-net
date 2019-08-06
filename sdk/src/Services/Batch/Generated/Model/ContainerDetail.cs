@@ -190,8 +190,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property LinuxParameters. 
         /// <para>
-        /// Linux-specific modifications that are applied to the container, such as Linux kernel
-        /// capabilities.
+        /// Linux-specific modifications that are applied to the container, such as details for
+        /// device mappings.
         /// </para>
         /// </summary>
         public LinuxParameters LinuxParameters
