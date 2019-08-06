@@ -140,6 +140,8 @@ namespace Amazon.Runtime
         private static ImmutableCredentials FetchCredentials()
         {
             var securityCredentials = EC2InstanceMetadata.IAMSecurityCredentials;
+            if (securityCredentials == null)
+                throw new AmazonServiceException("Unable to get IAM security credentials from EC2 Instance Metadata Service.");
 
             string firstRole = null;
             foreach (var role in securityCredentials.Keys)
