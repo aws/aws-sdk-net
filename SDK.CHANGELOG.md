@@ -1,3 +1,11 @@
+### 3.3.563.1 (2019-08-07 21:49 UTC)
+* S3 (3.3.104.10)
+	* Updated to use new Core, version 3.3.103.22
+	* Fixes issues with encoding of slashes and %2F within resource paths.
+* Core 3.3.103.22
+	* Fixes issues with encoding of slashes and %2F within resource paths.
+	* All services packages updated to require new Core
+
 ### 3.3.563.0 (2019-08-07 19:29 UTC)
 * ApplicationInsights (3.3.101.0)
 	* CloudWatch Application Insights for .NET and SQL Server now provides integration with AWS Systems Manager OpsCenter. This integration allows you to view and resolve problems and operational issues detected for selected applications.
