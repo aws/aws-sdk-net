@@ -1,3 +1,12 @@
+### 3.3.563.0 (2019-08-07 19:29 UTC)
+* ApplicationInsights (3.3.101.0)
+	* CloudWatch Application Insights for .NET and SQL Server now provides integration with AWS Systems Manager OpsCenter. This integration allows you to view and resolve problems and operational issues detected for selected applications.
+* Core 3.3.103.21
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.562.1 (2019-08-06 18:08 UTC)
 * Batch (3.3.102.5)
 	* Documentation updates for AWS Batch
