@@ -59,8 +59,8 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-01-12";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/policies";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/policies";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

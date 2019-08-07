@@ -56,11 +56,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "POST";
-            string uriResourcePath = "/2019-03-26/distribution/{DistributionId}/invalidation";
             if (!publicRequest.IsSetDistributionId())
                 throw new AmazonCloudFrontException("Request object does not have required field DistributionId set");
-            uriResourcePath = uriResourcePath.Replace("{DistributionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.DistributionId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{DistributionId}", StringUtils.FromString(publicRequest.DistributionId));
+            request.ResourcePath = "/2019-03-26/distribution/{DistributionId}/invalidation";
+            request.MarshallerVersion = 2;
 
             var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))

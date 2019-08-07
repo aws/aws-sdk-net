@@ -59,11 +59,11 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-15";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/backup/plans/{backupPlanId}/selections/";
             if (!publicRequest.IsSetBackupPlanId())
                 throw new AmazonBackupException("Request object does not have required field BackupPlanId set");
-            uriResourcePath = uriResourcePath.Replace("{backupPlanId}", StringUtils.FromStringWithSlashEncoding(publicRequest.BackupPlanId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{backupPlanId}", StringUtils.FromString(publicRequest.BackupPlanId));
+            request.ResourcePath = "/backup/plans/{backupPlanId}/selections/";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

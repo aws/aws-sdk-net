@@ -58,17 +58,17 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-09-25";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/2012-09-25/jobsByPipeline/{PipelineId}";
             if (!publicRequest.IsSetPipelineId())
                 throw new AmazonElasticTranscoderException("Request object does not have required field PipelineId set");
-            uriResourcePath = uriResourcePath.Replace("{PipelineId}", StringUtils.FromStringWithSlashEncoding(publicRequest.PipelineId));
+            request.AddPathResource("{PipelineId}", StringUtils.FromString(publicRequest.PipelineId));
             
             if (publicRequest.IsSetAscending())
                 request.Parameters.Add("Ascending", StringUtils.FromString(publicRequest.Ascending));
             
             if (publicRequest.IsSetPageToken())
                 request.Parameters.Add("PageToken", StringUtils.FromString(publicRequest.PageToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2012-09-25/jobsByPipeline/{PipelineId}";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -59,11 +59,11 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-06-07";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/greengrass/definition/devices/{DeviceDefinitionId}/versions";
             if (!publicRequest.IsSetDeviceDefinitionId())
                 throw new AmazonGreengrassException("Request object does not have required field DeviceDefinitionId set");
-            uriResourcePath = uriResourcePath.Replace("{DeviceDefinitionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.DeviceDefinitionId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{DeviceDefinitionId}", StringUtils.FromString(publicRequest.DeviceDefinitionId));
+            request.ResourcePath = "/greengrass/definition/devices/{DeviceDefinitionId}/versions";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

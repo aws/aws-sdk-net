@@ -59,11 +59,11 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-06-07";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/greengrass/definition/loggers/{LoggerDefinitionId}/versions";
             if (!publicRequest.IsSetLoggerDefinitionId())
                 throw new AmazonGreengrassException("Request object does not have required field LoggerDefinitionId set");
-            uriResourcePath = uriResourcePath.Replace("{LoggerDefinitionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.LoggerDefinitionId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{LoggerDefinitionId}", StringUtils.FromString(publicRequest.LoggerDefinitionId));
+            request.ResourcePath = "/greengrass/definition/loggers/{LoggerDefinitionId}/versions";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

@@ -58,17 +58,17 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-06-07";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/greengrass/definition/devices/{DeviceDefinitionId}/versions/{DeviceDefinitionVersionId}";
             if (!publicRequest.IsSetDeviceDefinitionId())
                 throw new AmazonGreengrassException("Request object does not have required field DeviceDefinitionId set");
-            uriResourcePath = uriResourcePath.Replace("{DeviceDefinitionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.DeviceDefinitionId));
+            request.AddPathResource("{DeviceDefinitionId}", StringUtils.FromString(publicRequest.DeviceDefinitionId));
             if (!publicRequest.IsSetDeviceDefinitionVersionId())
                 throw new AmazonGreengrassException("Request object does not have required field DeviceDefinitionVersionId set");
-            uriResourcePath = uriResourcePath.Replace("{DeviceDefinitionVersionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.DeviceDefinitionVersionId));
+            request.AddPathResource("{DeviceDefinitionVersionId}", StringUtils.FromString(publicRequest.DeviceDefinitionVersionId));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/greengrass/definition/devices/{DeviceDefinitionId}/versions/{DeviceDefinitionVersionId}";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -58,14 +58,14 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-08";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/contact/attributes/{InstanceId}/{InitialContactId}";
             if (!publicRequest.IsSetInitialContactId())
                 throw new AmazonConnectException("Request object does not have required field InitialContactId set");
-            uriResourcePath = uriResourcePath.Replace("{InitialContactId}", StringUtils.FromStringWithSlashEncoding(publicRequest.InitialContactId));
+            request.AddPathResource("{InitialContactId}", StringUtils.FromString(publicRequest.InitialContactId));
             if (!publicRequest.IsSetInstanceId())
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
-            uriResourcePath = uriResourcePath.Replace("{InstanceId}", StringUtils.FromStringWithSlashEncoding(publicRequest.InstanceId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
+            request.ResourcePath = "/contact/attributes/{InstanceId}/{InitialContactId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -58,7 +58,6 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-14";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/devices";
             
             if (publicRequest.IsSetDeviceType())
                 request.Parameters.Add("deviceType", StringUtils.FromString(publicRequest.DeviceType));
@@ -68,7 +67,8 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/devices";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

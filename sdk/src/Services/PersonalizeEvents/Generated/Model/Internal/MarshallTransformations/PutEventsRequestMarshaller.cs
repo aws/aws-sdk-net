@@ -59,8 +59,8 @@ namespace Amazon.PersonalizeEvents.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-03-22";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/events";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/events";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

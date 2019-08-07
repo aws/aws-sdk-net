@@ -58,7 +58,6 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-01-12";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/policies";
             
             if (publicRequest.IsSetPolicyIds())
                 request.ParameterCollection.Add("policyIds", publicRequest.PolicyIds);
@@ -74,7 +73,8 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetTargetTags())
                 request.ParameterCollection.Add("targetTags", publicRequest.TargetTags);
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/policies";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

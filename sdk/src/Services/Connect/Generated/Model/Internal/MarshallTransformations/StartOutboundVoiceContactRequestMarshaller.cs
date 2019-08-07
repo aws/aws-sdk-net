@@ -59,8 +59,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-08";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/contact/outbound-voice";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/contact/outbound-voice";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

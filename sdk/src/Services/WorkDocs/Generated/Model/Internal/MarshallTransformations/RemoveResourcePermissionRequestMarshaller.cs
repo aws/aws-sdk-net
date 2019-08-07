@@ -58,17 +58,17 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-05-01";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/api/v1/resources/{ResourceId}/permissions/{PrincipalId}";
             if (!publicRequest.IsSetPrincipalId())
                 throw new AmazonWorkDocsException("Request object does not have required field PrincipalId set");
-            uriResourcePath = uriResourcePath.Replace("{PrincipalId}", StringUtils.FromStringWithSlashEncoding(publicRequest.PrincipalId));
+            request.AddPathResource("{PrincipalId}", StringUtils.FromString(publicRequest.PrincipalId));
             if (!publicRequest.IsSetResourceId())
                 throw new AmazonWorkDocsException("Request object does not have required field ResourceId set");
-            uriResourcePath = uriResourcePath.Replace("{ResourceId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceId));
+            request.AddPathResource("{ResourceId}", StringUtils.FromString(publicRequest.ResourceId));
             
             if (publicRequest.IsSetPrincipalType())
                 request.Parameters.Add("type", StringUtils.FromString(publicRequest.PrincipalType));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/api/v1/resources/{ResourceId}/permissions/{PrincipalId}";
+            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetAuthenticationToken())
                 request.Headers["Authentication"] = publicRequest.AuthenticationToken;

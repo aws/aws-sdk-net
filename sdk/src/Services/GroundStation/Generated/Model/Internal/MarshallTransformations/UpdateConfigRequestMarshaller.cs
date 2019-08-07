@@ -59,14 +59,14 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-05-23";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/config/{configType}/{configId}";
             if (!publicRequest.IsSetConfigId())
                 throw new AmazonGroundStationException("Request object does not have required field ConfigId set");
-            uriResourcePath = uriResourcePath.Replace("{configId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ConfigId));
+            request.AddPathResource("{configId}", StringUtils.FromString(publicRequest.ConfigId));
             if (!publicRequest.IsSetConfigType())
                 throw new AmazonGroundStationException("Request object does not have required field ConfigType set");
-            uriResourcePath = uriResourcePath.Replace("{configType}", StringUtils.FromStringWithSlashEncoding(publicRequest.ConfigType));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{configType}", StringUtils.FromString(publicRequest.ConfigType));
+            request.ResourcePath = "/config/{configType}/{configId}";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

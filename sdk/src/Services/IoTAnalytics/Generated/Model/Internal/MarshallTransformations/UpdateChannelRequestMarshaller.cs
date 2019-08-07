@@ -59,11 +59,11 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/channels/{channelName}";
             if (!publicRequest.IsSetChannelName())
                 throw new AmazonIoTAnalyticsException("Request object does not have required field ChannelName set");
-            uriResourcePath = uriResourcePath.Replace("{channelName}", StringUtils.FromStringWithSlashEncoding(publicRequest.ChannelName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{channelName}", StringUtils.FromString(publicRequest.ChannelName));
+            request.ResourcePath = "/channels/{channelName}";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

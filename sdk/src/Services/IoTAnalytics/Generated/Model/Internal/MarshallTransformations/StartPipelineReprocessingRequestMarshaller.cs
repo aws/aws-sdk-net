@@ -59,11 +59,11 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/pipelines/{pipelineName}/reprocessing";
             if (!publicRequest.IsSetPipelineName())
                 throw new AmazonIoTAnalyticsException("Request object does not have required field PipelineName set");
-            uriResourcePath = uriResourcePath.Replace("{pipelineName}", StringUtils.FromStringWithSlashEncoding(publicRequest.PipelineName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{pipelineName}", StringUtils.FromString(publicRequest.PipelineName));
+            request.ResourcePath = "/pipelines/{pipelineName}/reprocessing";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

@@ -56,20 +56,20 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3Control");
             request.HttpMethod = "POST";
-            string uriResourcePath = "/v20180820/jobs/{id}/status";
         
             if(publicRequest.IsSetAccountId())
                 request.Headers["x-amz-account-id"] = publicRequest.AccountId;
             if (!publicRequest.IsSetJobId())
                 throw new AmazonS3ControlException("Request object does not have required field JobId set");
-            uriResourcePath = uriResourcePath.Replace("{id}", StringUtils.FromStringWithSlashEncoding(publicRequest.JobId));
+            request.AddPathResource("{id}", StringUtils.FromString(publicRequest.JobId));
             
             if (publicRequest.IsSetRequestedJobStatus())
                 request.Parameters.Add("requestedJobStatus", StringUtils.FromString(publicRequest.RequestedJobStatus));
             
             if (publicRequest.IsSetStatusUpdateReason())
                 request.Parameters.Add("statusUpdateReason", StringUtils.FromString(publicRequest.StatusUpdateReason));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/v20180820/jobs/{id}/status";
+            request.MarshallerVersion = 2;
 
 
             request.UseQueryString = true;

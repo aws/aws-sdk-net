@@ -58,7 +58,6 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-26";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/members";
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
@@ -68,7 +67,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetOnlyAssociated())
                 request.Parameters.Add("OnlyAssociated", StringUtils.FromBool(publicRequest.OnlyAssociated));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/members";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

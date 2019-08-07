@@ -56,7 +56,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
             request.HttpMethod = "GET";
-            string uriResourcePath = "/2013-04-01/trafficpolicyinstances/hostedzone";
             
             if (publicRequest.IsSetHostedZoneId())
                 request.Parameters.Add("id", StringUtils.FromString(publicRequest.HostedZoneId));
@@ -69,7 +68,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetMaxItems())
                 request.Parameters.Add("maxitems", StringUtils.FromString(publicRequest.MaxItems));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2013-04-01/trafficpolicyinstances/hostedzone";
+            request.MarshallerVersion = 2;
 
 
             request.UseQueryString = true;

@@ -58,11 +58,11 @@ namespace Amazon.Mobile.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-01";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/projects/{projectId}";
             if (!publicRequest.IsSetProjectId())
                 throw new AmazonMobileException("Request object does not have required field ProjectId set");
-            uriResourcePath = uriResourcePath.Replace("{projectId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ProjectId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{projectId}", StringUtils.FromString(publicRequest.ProjectId));
+            request.ResourcePath = "/projects/{projectId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -59,8 +59,8 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-09-25";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/2012-09-25/presets";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2012-09-25/presets";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

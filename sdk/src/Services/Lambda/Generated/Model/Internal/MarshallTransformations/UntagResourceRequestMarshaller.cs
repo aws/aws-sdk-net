@@ -58,14 +58,14 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-03-31";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/2017-03-31/tags/{ARN}";
             if (!publicRequest.IsSetResource())
                 throw new AmazonLambdaException("Request object does not have required field Resource set");
-            uriResourcePath = uriResourcePath.Replace("{ARN}", StringUtils.FromStringWithSlashEncoding(publicRequest.Resource));
+            request.AddPathResource("{ARN}", StringUtils.FromString(publicRequest.Resource));
             
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2017-03-31/tags/{ARN}";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

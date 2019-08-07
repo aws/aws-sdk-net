@@ -59,8 +59,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-12-01";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/v1/apps";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/v1/apps";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

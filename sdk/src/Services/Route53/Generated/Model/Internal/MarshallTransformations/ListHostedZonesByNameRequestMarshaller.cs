@@ -56,7 +56,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
             request.HttpMethod = "GET";
-            string uriResourcePath = "/2013-04-01/hostedzonesbyname";
             
             if (publicRequest.IsSetDNSName())
                 request.Parameters.Add("dnsname", StringUtils.FromString(publicRequest.DNSName));
@@ -66,7 +65,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetMaxItems())
                 request.Parameters.Add("maxitems", StringUtils.FromString(publicRequest.MaxItems));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2013-04-01/hostedzonesbyname";
+            request.MarshallerVersion = 2;
 
 
             request.UseQueryString = true;

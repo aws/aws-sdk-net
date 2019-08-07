@@ -58,11 +58,11 @@ namespace Amazon.PinpointSMSVoice.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-05";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/v1/sms-voice/configuration-sets/{ConfigurationSetName}/event-destinations";
             if (!publicRequest.IsSetConfigurationSetName())
                 throw new AmazonPinpointSMSVoiceException("Request object does not have required field ConfigurationSetName set");
-            uriResourcePath = uriResourcePath.Replace("{ConfigurationSetName}", StringUtils.FromStringWithSlashEncoding(publicRequest.ConfigurationSetName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{ConfigurationSetName}", StringUtils.FromString(publicRequest.ConfigurationSetName));
+            request.ResourcePath = "/v1/sms-voice/configuration-sets/{ConfigurationSetName}/event-destinations";
+            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -129,7 +129,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             var destinationKey = copyObjectRequest.DestinationKey.StartsWith("/", StringComparison.Ordinal) 
                                     ? copyObjectRequest.DestinationKey.Substring(1) 
                                     : copyObjectRequest.DestinationKey;
-            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
+			request.MarshallerVersion = 2;
+			request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
                                                  S3Transforms.ToStringValue(copyObjectRequest.DestinationBucket),
                                                  S3Transforms.ToStringValue(destinationKey));
 

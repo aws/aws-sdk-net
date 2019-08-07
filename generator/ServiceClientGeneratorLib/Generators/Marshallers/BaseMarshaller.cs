@@ -19,7 +19,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+    #line 1 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class BaseMarshaller : Generators.BaseGenerator
     {
@@ -33,7 +33,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 8 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 8 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
     // Adds the neccesary namespaces for the marshaller
 protected void AddCommonUsingStatements()
@@ -43,7 +43,7 @@ protected void AddCommonUsingStatements()
         #line default
         #line hidden
         
-        #line 12 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 12 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("using System;\r\nusing System.Collections.Generic;\r\nusing System.Globalization;\r\nus" +
         "ing System.IO;\r\nusing System.Text;\r\nusing System.Xml.Serialization;\r\n\r\nusing ");
 
@@ -51,14 +51,14 @@ this.Write("using System;\r\nusing System.Collections.Generic;\r\nusing System.G
         #line default
         #line hidden
         
-        #line 20 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 20 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
 
         
         #line default
         #line hidden
         
-        #line 20 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 20 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".Model;\r\nusing Amazon.Runtime;\r\nusing Amazon.Runtime.Internal;\r\nusing Amazon.Runt" +
         "ime.Internal.Transform;\r\nusing Amazon.Runtime.Internal.Util;\r\n");
 
@@ -66,7 +66,7 @@ this.Write(".Model;\r\nusing Amazon.Runtime;\r\nusing Amazon.Runtime.Internal;\r
         #line default
         #line hidden
         
-        #line 25 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 25 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
     }
 
@@ -74,7 +74,15 @@ this.Write(".Model;\r\nusing Amazon.Runtime;\r\nusing Amazon.Runtime.Internal;\r
         #line default
         #line hidden
         
-        #line 29 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 29 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+
+    protected int MarshallerVersion
+    {
+        get
+        {
+            return 2;
+        }
+    }
 
 	// Only applicable for rest-json and rest-xml
     // Generates code to add members to the header of the request
@@ -88,42 +96,42 @@ this.Write(".Model;\r\nusing Amazon.Runtime;\r\nusing Amazon.Runtime.Internal;\r
         #line default
         #line hidden
         
-        #line 37 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 45 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\r\n\t\t\tif(");
 
         
         #line default
         #line hidden
         
-        #line 38 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 46 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 38 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 46 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 38 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 46 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 38 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 46 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("())\r\n");
 
         
         #line default
         #line hidden
         
-        #line 39 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 47 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             if (member.CustomMarshallerTransformation != null)
             {
@@ -132,70 +140,70 @@ this.Write("())\r\n");
         #line default
         #line hidden
         
-        #line 42 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 50 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\trequest.Headers[\"");
 
         
         #line default
         #line hidden
         
-        #line 43 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 51 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 43 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 51 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\"] = ");
 
         
         #line default
         #line hidden
         
-        #line 43 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 51 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.CustomMarshallerTransformation));
 
         
         #line default
         #line hidden
         
-        #line 43 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 51 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 43 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 51 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 43 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 51 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 43 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 51 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 43 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 51 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 44 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 52 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
         
             }
             else if (member.IsJsonValue)
@@ -205,56 +213,56 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 48 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 56 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\trequest.Headers[\"");
 
         
         #line default
         #line hidden
         
-        #line 49 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 57 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 49 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 57 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\"] = Convert.ToBase64String(Encoding.UTF8.GetBytes(");
 
         
         #line default
         #line hidden
         
-        #line 49 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 57 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 49 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 57 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 49 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 57 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 49 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 57 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 50 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 58 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             }
             else
@@ -271,70 +279,70 @@ this.Write("));\r\n");
         #line default
         #line hidden
         
-        #line 61 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 69 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\trequest.Headers[\"");
 
         
         #line default
         #line hidden
         
-        #line 62 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 70 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 62 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 70 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\"] = ");
 
         
         #line default
         #line hidden
         
-        #line 62 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 70 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
 
         
         #line default
         #line hidden
         
-        #line 62 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 70 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 62 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 70 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 62 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 70 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 62 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 70 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 62 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 70 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 63 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 71 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 					
 				}
 				else
@@ -344,56 +352,56 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 67 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 75 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\trequest.Headers[\"");
 
         
         #line default
         #line hidden
         
-        #line 68 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 76 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 68 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 76 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\"] = ");
 
         
         #line default
         #line hidden
         
-        #line 68 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 76 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 68 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 76 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 68 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 76 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 68 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 76 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(";\r\n");
 
         
         #line default
         #line hidden
         
-        #line 69 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 77 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 			
 				}
 		    }
@@ -401,7 +409,7 @@ this.Write(";\r\n");
 	}
 
 	// Only applicable for rest-json and rest-xml
-    // Generates code to add the operation's requestURIMembers to the uriResourcePath
+    // Generates code to add the operation's requestURIMembers to the PathResources request dictionary
 	protected void ProcessUriMembers(string variableName, Operation operation)
 	{
 		foreach(var member in operation.RequestUriMembers)
@@ -418,98 +426,98 @@ this.Write(";\r\n");
         #line default
         #line hidden
         
-        #line 88 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("\t\t\turiResourcePath = uriResourcePath.Replace(\"");
+        #line 96 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("\t\t\trequest.AddPathResource(\"");
 
         
         #line default
         #line hidden
         
-        #line 89 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 97 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(marshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 89 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 97 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 89 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 97 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 89 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 97 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 89 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 97 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 89 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 97 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("() ? ");
 
         
         #line default
         #line hidden
         
-        #line 89 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 97 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
 
         
         #line default
         #line hidden
         
-        #line 89 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 97 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 89 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 97 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 89 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 97 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 89 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 97 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 89 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 97 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".TrimStart(\'/\')) : string.Empty);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 90 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 98 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
 				}
 				else
@@ -519,98 +527,98 @@ this.Write(".TrimStart(\'/\')) : string.Empty);\r\n");
         #line default
         #line hidden
         
-        #line 94 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("\t\t\turiResourcePath = uriResourcePath.Replace(\"");
+        #line 102 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("\t\t\trequest.AddPathResource(\"");
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 103 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(marshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 103 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 103 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 103 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 103 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 103 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("() ? ");
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshallerWithSlashEncoder));
+        #line 103 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 103 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 103 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 103 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 103 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 103 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(") : string.Empty);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 96 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 104 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
 				}
 
@@ -622,70 +630,70 @@ this.Write(") : string.Empty);\r\n");
         #line default
         #line hidden
         
-        #line 102 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 110 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("            if (!");
 
         
         #line default
         #line hidden
         
-        #line 103 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 111 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 103 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 111 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 103 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 111 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 103 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 111 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("())\r\n                throw new ");
 
         
         #line default
         #line hidden
         
-        #line 104 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 112 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseException));
 
         
         #line default
         #line hidden
         
-        #line 104 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 112 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(\"Request object does not have required field ");
 
         
         #line default
         #line hidden
         
-        #line 104 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 112 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 104 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 112 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(" set\");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 105 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 113 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
 			if(isGreedy)
 				{
@@ -694,70 +702,70 @@ this.Write(" set\");\r\n");
         #line default
         #line hidden
         
-        #line 108 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("\t\t\turiResourcePath = uriResourcePath.Replace(\"");
+        #line 116 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("\t\t\trequest.AddPathResource(\"");
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 117 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(marshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 117 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 117 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 117 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 117 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 117 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 117 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 117 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".TrimStart(\'/\')));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 110 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 118 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
 				}
 				else
@@ -767,70 +775,70 @@ this.Write(".TrimStart(\'/\')));\r\n");
         #line default
         #line hidden
         
-        #line 114 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("\t\t\turiResourcePath = uriResourcePath.Replace(\"");
+        #line 122 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("\t\t\trequest.AddPathResource(\"");
 
         
         #line default
         #line hidden
         
-        #line 115 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 123 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(marshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 115 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 123 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 115 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshallerWithSlashEncoder));
+        #line 123 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
 
         
         #line default
         #line hidden
         
-        #line 115 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 123 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 115 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 123 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 115 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 123 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 115 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 123 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 115 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 123 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 116 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 124 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
 				}
             }
@@ -839,34 +847,6 @@ this.Write("));\r\n");
 
 	protected void ProcessRequestUri(Operation operation)
 	{
-
-        
-        #line default
-        #line hidden
-        
-        #line 124 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("\t\t\tstring uriResourcePath = \"");
-
-        
-        #line default
-        #line hidden
-        
-        #line 125 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(operation.RequestUri));
-
-        
-        #line default
-        #line hidden
-        
-        #line 125 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("\";\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 126 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-
 		foreach(var staticQueryParam in operation.StaticQueryParameters)
 		{
 			if(staticQueryParam.Value != null)
@@ -876,42 +856,42 @@ this.Write("\";\r\n");
         #line default
         #line hidden
         
-        #line 131 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 136 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\trequest.AddSubResource(\"");
 
         
         #line default
         #line hidden
         
-        #line 132 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 137 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(staticQueryParam.Key));
 
         
         #line default
         #line hidden
         
-        #line 132 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 137 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 132 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 137 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(staticQueryParam.Value));
 
         
         #line default
         #line hidden
         
-        #line 132 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 137 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 133 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 138 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 			
 			}
 			else
@@ -921,28 +901,28 @@ this.Write("\");\r\n");
         #line default
         #line hidden
         
-        #line 137 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 142 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\trequest.AddSubResource(\"");
 
         
         #line default
         #line hidden
         
-        #line 138 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 143 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(staticQueryParam.Key));
 
         
         #line default
         #line hidden
         
-        #line 138 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 143 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 139 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 144 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 						
 			}
 		}
@@ -962,42 +942,42 @@ this.Write("\");\r\n");
         #line default
         #line hidden
         
-        #line 153 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 158 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\r\n\t\t\tif (");
 
         
         #line default
         #line hidden
         
-        #line 154 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 159 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 154 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 159 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 154 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 159 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 154 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 159 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("())\r\n");
 
         
         #line default
         #line hidden
         
-        #line 155 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 160 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
                 if (member.CustomMarshallerTransformation != null)
                 {
@@ -1006,70 +986,70 @@ this.Write("())\r\n");
         #line default
         #line hidden
         
-        #line 158 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 163 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\trequest.Parameters.Add(\"");
 
         
         #line default
         #line hidden
         
-        #line 159 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 164 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 159 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 164 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 159 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 164 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.CustomMarshallerTransformation));
 
         
         #line default
         #line hidden
         
-        #line 159 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 164 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 159 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 164 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 159 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 164 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 159 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 164 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 159 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 164 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 160 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 165 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
         
                 }
                 else if (member.IsMap)
@@ -1085,35 +1065,35 @@ this.Write("));\r\n");
         #line default
         #line hidden
         
-        #line 170 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 175 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("            {\r\n                foreach(var kvp in ");
 
         
         #line default
         #line hidden
         
-        #line 172 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 177 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 172 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 177 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 172 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 177 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 172 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 177 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(")\r\n                {\r\n                    request.Parameters.Add(kvp.Key, kvp.Val" +
         "ue);\r\n                }\r\n            }\r\n");
 
@@ -1121,7 +1101,7 @@ this.Write(")\r\n                {\r\n                    request.Parameters.Add
         #line default
         #line hidden
         
-        #line 177 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 182 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
                 }
                 else if (member.IsList)
@@ -1137,56 +1117,56 @@ this.Write(")\r\n                {\r\n                    request.Parameters.Add
         #line default
         #line hidden
         
-        #line 187 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 192 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("                request.ParameterCollection.Add(\"");
 
         
         #line default
         #line hidden
         
-        #line 188 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 193 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 188 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 193 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 188 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 193 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 188 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 193 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 188 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 193 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 188 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 193 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 189 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 194 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
                 }
                 else
@@ -1196,70 +1176,70 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 193 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 198 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\trequest.Parameters.Add(\"");
 
         
         #line default
         #line hidden
         
-        #line 194 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 199 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 194 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 199 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 194 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 199 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
 
         
         #line default
         #line hidden
         
-        #line 194 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 199 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 194 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 199 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 194 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 199 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 194 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 199 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 194 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 199 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 195 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 200 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 			
 				}
 			}
@@ -1277,14 +1257,14 @@ this.Write("));\r\n");
         #line default
         #line hidden
         
-        #line 207 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 212 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\r\n            var hostPrefixLabels = new\r\n            {\r\n");
 
         
         #line default
         #line hidden
         
-        #line 211 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 216 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             foreach(var member in operation.RequestHostPrefixMembers)
             {
@@ -1294,70 +1274,70 @@ this.Write("\r\n            var hostPrefixLabels = new\r\n            {\r\n");
         #line default
         #line hidden
         
-        #line 215 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 220 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("                ");
 
         
         #line default
         #line hidden
         
-        #line 215 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 220 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 215 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 220 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(" = ");
 
         
         #line default
         #line hidden
         
-        #line 215 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 220 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
 
         
         #line default
         #line hidden
         
-        #line 215 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 220 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 215 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 220 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 215 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 220 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 215 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 220 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 215 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 220 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("),\r\n");
 
         
         #line default
         #line hidden
         
-        #line 216 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 221 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             }     
 
@@ -1365,14 +1345,14 @@ this.Write("),\r\n");
         #line default
         #line hidden
         
-        #line 218 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 223 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("            };\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 221 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 226 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             foreach(var member in operation.RequestHostPrefixMembers)
             {
@@ -1381,49 +1361,49 @@ this.Write("            };\r\n\r\n");
         #line default
         #line hidden
         
-        #line 224 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 229 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("            if (!HostPrefixUtils.IsValidLabelValue(hostPrefixLabels.");
 
         
         #line default
         #line hidden
         
-        #line 225 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 230 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 225 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 230 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("))\r\n                throw new ");
 
         
         #line default
         #line hidden
         
-        #line 226 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 231 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseException));
 
         
         #line default
         #line hidden
         
-        #line 226 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 231 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(\"");
 
         
         #line default
         #line hidden
         
-        #line 226 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 231 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 226 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 231 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(" can only contain alphanumeric characters and dashes and must be between 1 and 63" +
         " characters long.\");\t\t\r\n");
 
@@ -1431,7 +1411,7 @@ this.Write(" can only contain alphanumeric characters and dashes and must be bet
         #line default
         #line hidden
         
-        #line 227 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 232 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             }     
         }
@@ -1440,28 +1420,28 @@ this.Write(" can only contain alphanumeric characters and dashes and must be bet
         #line default
         #line hidden
         
-        #line 230 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 235 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("            \r\n            request.HostPrefix = $\"");
 
         
         #line default
         #line hidden
         
-        #line 231 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 236 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.EndpointHostPrefix.Replace("{", "{hostPrefixLabels.")));
 
         
         #line default
         #line hidden
         
-        #line 231 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 236 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\";\r\n");
 
         
         #line default
         #line hidden
         
-        #line 232 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 237 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
 	}
 

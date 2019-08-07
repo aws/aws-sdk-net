@@ -58,11 +58,11 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-02-01";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/2015-02-01/file-systems/{FileSystemId}";
             if (!publicRequest.IsSetFileSystemId())
                 throw new AmazonElasticFileSystemException("Request object does not have required field FileSystemId set");
-            uriResourcePath = uriResourcePath.Replace("{FileSystemId}", StringUtils.FromStringWithSlashEncoding(publicRequest.FileSystemId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{FileSystemId}", StringUtils.FromString(publicRequest.FileSystemId));
+            request.ResourcePath = "/2015-02-01/file-systems/{FileSystemId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

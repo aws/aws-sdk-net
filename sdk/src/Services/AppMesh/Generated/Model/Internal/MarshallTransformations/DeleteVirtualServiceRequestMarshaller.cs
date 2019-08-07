@@ -58,14 +58,14 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-01-25";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/v20190125/meshes/{meshName}/virtualServices/{virtualServiceName}";
             if (!publicRequest.IsSetMeshName())
                 throw new AmazonAppMeshException("Request object does not have required field MeshName set");
-            uriResourcePath = uriResourcePath.Replace("{meshName}", StringUtils.FromStringWithSlashEncoding(publicRequest.MeshName));
+            request.AddPathResource("{meshName}", StringUtils.FromString(publicRequest.MeshName));
             if (!publicRequest.IsSetVirtualServiceName())
                 throw new AmazonAppMeshException("Request object does not have required field VirtualServiceName set");
-            uriResourcePath = uriResourcePath.Replace("{virtualServiceName}", StringUtils.FromStringWithSlashEncoding(publicRequest.VirtualServiceName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{virtualServiceName}", StringUtils.FromString(publicRequest.VirtualServiceName));
+            request.ResourcePath = "/v20190125/meshes/{meshName}/virtualServices/{virtualServiceName}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

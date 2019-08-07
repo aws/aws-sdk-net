@@ -59,14 +59,14 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-05-01";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/api/v1/documents/{DocumentId}/versions/{VersionId}/comment";
             if (!publicRequest.IsSetDocumentId())
                 throw new AmazonWorkDocsException("Request object does not have required field DocumentId set");
-            uriResourcePath = uriResourcePath.Replace("{DocumentId}", StringUtils.FromStringWithSlashEncoding(publicRequest.DocumentId));
+            request.AddPathResource("{DocumentId}", StringUtils.FromString(publicRequest.DocumentId));
             if (!publicRequest.IsSetVersionId())
                 throw new AmazonWorkDocsException("Request object does not have required field VersionId set");
-            uriResourcePath = uriResourcePath.Replace("{VersionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.VersionId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{VersionId}", StringUtils.FromString(publicRequest.VersionId));
+            request.ResourcePath = "/api/v1/documents/{DocumentId}/versions/{VersionId}/comment";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

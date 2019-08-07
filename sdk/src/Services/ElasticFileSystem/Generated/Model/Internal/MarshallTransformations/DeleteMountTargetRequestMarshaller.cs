@@ -58,11 +58,11 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-02-01";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/2015-02-01/mount-targets/{MountTargetId}";
             if (!publicRequest.IsSetMountTargetId())
                 throw new AmazonElasticFileSystemException("Request object does not have required field MountTargetId set");
-            uriResourcePath = uriResourcePath.Replace("{MountTargetId}", StringUtils.FromStringWithSlashEncoding(publicRequest.MountTargetId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{MountTargetId}", StringUtils.FromString(publicRequest.MountTargetId));
+            request.ResourcePath = "/2015-02-01/mount-targets/{MountTargetId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

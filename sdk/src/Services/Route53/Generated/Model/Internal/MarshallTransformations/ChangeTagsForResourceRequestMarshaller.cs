@@ -56,14 +56,14 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
             request.HttpMethod = "POST";
-            string uriResourcePath = "/2013-04-01/tags/{ResourceType}/{ResourceId}";
             if (!publicRequest.IsSetResourceType())
                 throw new AmazonRoute53Exception("Request object does not have required field ResourceType set");
-            uriResourcePath = uriResourcePath.Replace("{ResourceType}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceType));
+            request.AddPathResource("{ResourceType}", StringUtils.FromString(publicRequest.ResourceType));
             if (!publicRequest.IsSetResourceId())
                 throw new AmazonRoute53Exception("Request object does not have required field ResourceId set");
-            uriResourcePath = uriResourcePath.Replace("{ResourceId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{ResourceId}", StringUtils.FromString(publicRequest.ResourceId));
+            request.ResourcePath = "/2013-04-01/tags/{ResourceType}/{ResourceId}";
+            request.MarshallerVersion = 2;
 
             var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))

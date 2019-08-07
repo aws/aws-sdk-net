@@ -58,14 +58,14 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-01";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/clusters";
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/clusters";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

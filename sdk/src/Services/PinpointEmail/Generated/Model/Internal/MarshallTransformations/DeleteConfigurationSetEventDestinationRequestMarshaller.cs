@@ -58,14 +58,14 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-26";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/v1/email/configuration-sets/{ConfigurationSetName}/event-destinations/{EventDestinationName}";
             if (!publicRequest.IsSetConfigurationSetName())
                 throw new AmazonPinpointEmailException("Request object does not have required field ConfigurationSetName set");
-            uriResourcePath = uriResourcePath.Replace("{ConfigurationSetName}", StringUtils.FromStringWithSlashEncoding(publicRequest.ConfigurationSetName));
+            request.AddPathResource("{ConfigurationSetName}", StringUtils.FromString(publicRequest.ConfigurationSetName));
             if (!publicRequest.IsSetEventDestinationName())
                 throw new AmazonPinpointEmailException("Request object does not have required field EventDestinationName set");
-            uriResourcePath = uriResourcePath.Replace("{EventDestinationName}", StringUtils.FromStringWithSlashEncoding(publicRequest.EventDestinationName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{EventDestinationName}", StringUtils.FromString(publicRequest.EventDestinationName));
+            request.ResourcePath = "/v1/email/configuration-sets/{ConfigurationSetName}/event-destinations/{EventDestinationName}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

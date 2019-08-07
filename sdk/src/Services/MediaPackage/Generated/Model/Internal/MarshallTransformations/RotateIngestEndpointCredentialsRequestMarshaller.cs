@@ -59,14 +59,14 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-12";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/channels/{id}/ingest_endpoints/{ingest_endpoint_id}/credentials";
             if (!publicRequest.IsSetId())
                 throw new AmazonMediaPackageException("Request object does not have required field Id set");
-            uriResourcePath = uriResourcePath.Replace("{id}", StringUtils.FromStringWithSlashEncoding(publicRequest.Id));
+            request.AddPathResource("{id}", StringUtils.FromString(publicRequest.Id));
             if (!publicRequest.IsSetIngestEndpointId())
                 throw new AmazonMediaPackageException("Request object does not have required field IngestEndpointId set");
-            uriResourcePath = uriResourcePath.Replace("{ingest_endpoint_id}", StringUtils.FromStringWithSlashEncoding(publicRequest.IngestEndpointId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{ingest_endpoint_id}", StringUtils.FromString(publicRequest.IngestEndpointId));
+            request.ResourcePath = "/channels/{id}/ingest_endpoints/{ingest_endpoint_id}/credentials";
+            request.MarshallerVersion = 2;
 
             return request;
         }

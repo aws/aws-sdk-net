@@ -58,14 +58,14 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/v2LoggingLevel";
             
             if (publicRequest.IsSetTargetName())
                 request.Parameters.Add("targetName", StringUtils.FromString(publicRequest.TargetName));
             
             if (publicRequest.IsSetTargetType())
                 request.Parameters.Add("targetType", StringUtils.FromString(publicRequest.TargetType));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/v2LoggingLevel";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

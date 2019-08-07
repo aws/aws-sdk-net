@@ -59,8 +59,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-01";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/settings";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/settings";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

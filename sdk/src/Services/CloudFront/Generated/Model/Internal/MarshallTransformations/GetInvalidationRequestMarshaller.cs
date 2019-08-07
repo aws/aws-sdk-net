@@ -56,14 +56,14 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "GET";
-            string uriResourcePath = "/2019-03-26/distribution/{DistributionId}/invalidation/{Id}";
             if (!publicRequest.IsSetDistributionId())
                 throw new AmazonCloudFrontException("Request object does not have required field DistributionId set");
-            uriResourcePath = uriResourcePath.Replace("{DistributionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.DistributionId));
+            request.AddPathResource("{DistributionId}", StringUtils.FromString(publicRequest.DistributionId));
             if (!publicRequest.IsSetId())
                 throw new AmazonCloudFrontException("Request object does not have required field Id set");
-            uriResourcePath = uriResourcePath.Replace("{Id}", StringUtils.FromStringWithSlashEncoding(publicRequest.Id));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.Id));
+            request.ResourcePath = "/2019-03-26/distribution/{DistributionId}/invalidation/{Id}";
+            request.MarshallerVersion = 2;
 
 
             return request;

@@ -56,7 +56,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(putBucketRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutBucketRequest.BucketName");
 
-            request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(putBucketRequest.BucketName));
+			request.MarshallerVersion = 2;
+			request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(putBucketRequest.BucketName));
 
             var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = Encoding.UTF8, OmitXmlDeclaration = true }))

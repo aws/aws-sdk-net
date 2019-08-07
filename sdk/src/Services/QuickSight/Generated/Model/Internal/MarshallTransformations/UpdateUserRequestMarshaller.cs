@@ -59,17 +59,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-01";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/accounts/{AwsAccountId}/namespaces/{Namespace}/users/{UserName}";
             if (!publicRequest.IsSetAwsAccountId())
                 throw new AmazonQuickSightException("Request object does not have required field AwsAccountId set");
-            uriResourcePath = uriResourcePath.Replace("{AwsAccountId}", StringUtils.FromStringWithSlashEncoding(publicRequest.AwsAccountId));
+            request.AddPathResource("{AwsAccountId}", StringUtils.FromString(publicRequest.AwsAccountId));
             if (!publicRequest.IsSetNamespace())
                 throw new AmazonQuickSightException("Request object does not have required field Namespace set");
-            uriResourcePath = uriResourcePath.Replace("{Namespace}", StringUtils.FromStringWithSlashEncoding(publicRequest.Namespace));
+            request.AddPathResource("{Namespace}", StringUtils.FromString(publicRequest.Namespace));
             if (!publicRequest.IsSetUserName())
                 throw new AmazonQuickSightException("Request object does not have required field UserName set");
-            uriResourcePath = uriResourcePath.Replace("{UserName}", StringUtils.FromStringWithSlashEncoding(publicRequest.UserName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{UserName}", StringUtils.FromString(publicRequest.UserName));
+            request.ResourcePath = "/accounts/{AwsAccountId}/namespaces/{Namespace}/users/{UserName}";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

@@ -59,11 +59,11 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-25";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/signing-profiles/{profileName}";
             if (!publicRequest.IsSetProfileName())
                 throw new AmazonSignerException("Request object does not have required field ProfileName set");
-            uriResourcePath = uriResourcePath.Replace("{profileName}", StringUtils.FromStringWithSlashEncoding(publicRequest.ProfileName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{profileName}", StringUtils.FromString(publicRequest.ProfileName));
+            request.ResourcePath = "/signing-profiles/{profileName}";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

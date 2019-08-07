@@ -59,11 +59,11 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-06-07";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/greengrass/definition/resources/{ResourceDefinitionId}/versions";
             if (!publicRequest.IsSetResourceDefinitionId())
                 throw new AmazonGreengrassException("Request object does not have required field ResourceDefinitionId set");
-            uriResourcePath = uriResourcePath.Replace("{ResourceDefinitionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceDefinitionId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{ResourceDefinitionId}", StringUtils.FromString(publicRequest.ResourceDefinitionId));
+            request.ResourcePath = "/greengrass/definition/resources/{ResourceDefinitionId}/versions";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

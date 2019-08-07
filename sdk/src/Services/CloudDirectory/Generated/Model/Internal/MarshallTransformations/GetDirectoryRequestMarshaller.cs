@@ -59,8 +59,8 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-01-11";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/amazonclouddirectory/2017-01-11/directory/get";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/amazonclouddirectory/2017-01-11/directory/get";
+            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetDirectoryArn())
                 request.Headers["x-amz-data-partition"] = publicRequest.DirectoryArn;

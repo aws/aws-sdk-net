@@ -58,14 +58,14 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/jobs/{jobId}";
             if (!publicRequest.IsSetJobId())
                 throw new AmazonIoTException("Request object does not have required field JobId set");
-            uriResourcePath = uriResourcePath.Replace("{jobId}", StringUtils.FromStringWithSlashEncoding(publicRequest.JobId));
+            request.AddPathResource("{jobId}", StringUtils.FromString(publicRequest.JobId));
             
             if (publicRequest.IsSetForce())
                 request.Parameters.Add("force", StringUtils.FromBool(publicRequest.Force));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/jobs/{jobId}";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

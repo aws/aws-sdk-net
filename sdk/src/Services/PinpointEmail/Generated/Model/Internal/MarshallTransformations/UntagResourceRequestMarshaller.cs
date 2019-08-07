@@ -58,14 +58,14 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-26";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/v1/email/tags";
             
             if (publicRequest.IsSetResourceArn())
                 request.Parameters.Add("ResourceArn", StringUtils.FromString(publicRequest.ResourceArn));
             
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("TagKeys", publicRequest.TagKeys);
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/v1/email/tags";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -58,11 +58,11 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-12-01";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/v1/apps/{application-id}/channels/gcm";
             if (!publicRequest.IsSetApplicationId())
                 throw new AmazonPinpointException("Request object does not have required field ApplicationId set");
-            uriResourcePath = uriResourcePath.Replace("{application-id}", StringUtils.FromStringWithSlashEncoding(publicRequest.ApplicationId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{application-id}", StringUtils.FromString(publicRequest.ApplicationId));
+            request.ResourcePath = "/v1/apps/{application-id}/channels/gcm";
+            request.MarshallerVersion = 2;
 
             return request;
         }

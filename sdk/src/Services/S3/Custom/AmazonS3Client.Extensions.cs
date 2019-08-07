@@ -243,6 +243,7 @@ namespace Amazon.S3
             foreach (string k in getPreSignedUrlRequest.Parameters.Keys)
                 queryParameters.Add(k, getPreSignedUrlRequest.Parameters[k]);
 
+			request.MarshallerVersion = 2;
             request.ResourcePath = uriResourcePath.ToString();
             request.UseQueryString = true;
 

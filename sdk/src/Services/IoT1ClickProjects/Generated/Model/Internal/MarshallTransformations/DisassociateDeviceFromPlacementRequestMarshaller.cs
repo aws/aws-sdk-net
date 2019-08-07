@@ -58,17 +58,17 @@ namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-14";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/projects/{projectName}/placements/{placementName}/devices/{deviceTemplateName}";
             if (!publicRequest.IsSetDeviceTemplateName())
                 throw new AmazonIoT1ClickProjectsException("Request object does not have required field DeviceTemplateName set");
-            uriResourcePath = uriResourcePath.Replace("{deviceTemplateName}", StringUtils.FromStringWithSlashEncoding(publicRequest.DeviceTemplateName));
+            request.AddPathResource("{deviceTemplateName}", StringUtils.FromString(publicRequest.DeviceTemplateName));
             if (!publicRequest.IsSetPlacementName())
                 throw new AmazonIoT1ClickProjectsException("Request object does not have required field PlacementName set");
-            uriResourcePath = uriResourcePath.Replace("{placementName}", StringUtils.FromStringWithSlashEncoding(publicRequest.PlacementName));
+            request.AddPathResource("{placementName}", StringUtils.FromString(publicRequest.PlacementName));
             if (!publicRequest.IsSetProjectName())
                 throw new AmazonIoT1ClickProjectsException("Request object does not have required field ProjectName set");
-            uriResourcePath = uriResourcePath.Replace("{projectName}", StringUtils.FromStringWithSlashEncoding(publicRequest.ProjectName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{projectName}", StringUtils.FromString(publicRequest.ProjectName));
+            request.ResourcePath = "/projects/{projectName}/placements/{placementName}/devices/{deviceTemplateName}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

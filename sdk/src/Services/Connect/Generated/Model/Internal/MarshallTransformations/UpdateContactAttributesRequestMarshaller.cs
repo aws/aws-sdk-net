@@ -59,8 +59,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-08";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/contact/attributes";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/contact/attributes";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

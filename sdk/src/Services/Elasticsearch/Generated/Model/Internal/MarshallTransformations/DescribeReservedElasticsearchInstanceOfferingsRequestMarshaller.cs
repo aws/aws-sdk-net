@@ -58,7 +58,6 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-01-01";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/2015-01-01/es/reservedInstanceOfferings";
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
@@ -68,7 +67,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetReservedElasticsearchInstanceOfferingId())
                 request.Parameters.Add("offeringId", StringUtils.FromString(publicRequest.ReservedElasticsearchInstanceOfferingId));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2015-01-01/es/reservedInstanceOfferings";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

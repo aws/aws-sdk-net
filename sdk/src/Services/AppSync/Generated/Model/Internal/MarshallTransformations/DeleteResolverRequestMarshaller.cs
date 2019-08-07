@@ -58,17 +58,17 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/v1/apis/{apiId}/types/{typeName}/resolvers/{fieldName}";
             if (!publicRequest.IsSetApiId())
                 throw new AmazonAppSyncException("Request object does not have required field ApiId set");
-            uriResourcePath = uriResourcePath.Replace("{apiId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ApiId));
+            request.AddPathResource("{apiId}", StringUtils.FromString(publicRequest.ApiId));
             if (!publicRequest.IsSetFieldName())
                 throw new AmazonAppSyncException("Request object does not have required field FieldName set");
-            uriResourcePath = uriResourcePath.Replace("{fieldName}", StringUtils.FromStringWithSlashEncoding(publicRequest.FieldName));
+            request.AddPathResource("{fieldName}", StringUtils.FromString(publicRequest.FieldName));
             if (!publicRequest.IsSetTypeName())
                 throw new AmazonAppSyncException("Request object does not have required field TypeName set");
-            uriResourcePath = uriResourcePath.Replace("{typeName}", StringUtils.FromStringWithSlashEncoding(publicRequest.TypeName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{typeName}", StringUtils.FromString(publicRequest.TypeName));
+            request.ResourcePath = "/v1/apis/{apiId}/types/{typeName}/resolvers/{fieldName}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

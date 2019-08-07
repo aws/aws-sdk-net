@@ -58,17 +58,17 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-29";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/v2/apis/{apiId}/integrations/{integrationId}/integrationresponses/{integrationResponseId}";
             if (!publicRequest.IsSetApiId())
                 throw new AmazonApiGatewayV2Exception("Request object does not have required field ApiId set");
-            uriResourcePath = uriResourcePath.Replace("{apiId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ApiId));
+            request.AddPathResource("{apiId}", StringUtils.FromString(publicRequest.ApiId));
             if (!publicRequest.IsSetIntegrationId())
                 throw new AmazonApiGatewayV2Exception("Request object does not have required field IntegrationId set");
-            uriResourcePath = uriResourcePath.Replace("{integrationId}", StringUtils.FromStringWithSlashEncoding(publicRequest.IntegrationId));
+            request.AddPathResource("{integrationId}", StringUtils.FromString(publicRequest.IntegrationId));
             if (!publicRequest.IsSetIntegrationResponseId())
                 throw new AmazonApiGatewayV2Exception("Request object does not have required field IntegrationResponseId set");
-            uriResourcePath = uriResourcePath.Replace("{integrationResponseId}", StringUtils.FromStringWithSlashEncoding(publicRequest.IntegrationResponseId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{integrationResponseId}", StringUtils.FromString(publicRequest.IntegrationResponseId));
+            request.ResourcePath = "/v2/apis/{apiId}/integrations/{integrationId}/integrationresponses/{integrationResponseId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -58,8 +58,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-01-01";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/2015-01-01/es/role";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2015-01-01/es/role";
+            request.MarshallerVersion = 2;
 
             return request;
         }

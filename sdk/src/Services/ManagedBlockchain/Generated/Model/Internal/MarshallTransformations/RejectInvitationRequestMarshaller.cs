@@ -58,11 +58,11 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-24";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/invitations/{invitationId}";
             if (!publicRequest.IsSetInvitationId())
                 throw new AmazonManagedBlockchainException("Request object does not have required field InvitationId set");
-            uriResourcePath = uriResourcePath.Replace("{invitationId}", StringUtils.FromStringWithSlashEncoding(publicRequest.InvitationId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{invitationId}", StringUtils.FromString(publicRequest.InvitationId));
+            request.ResourcePath = "/invitations/{invitationId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -58,14 +58,14 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/datasets/{datasetName}/content";
             if (!publicRequest.IsSetDatasetName())
                 throw new AmazonIoTAnalyticsException("Request object does not have required field DatasetName set");
-            uriResourcePath = uriResourcePath.Replace("{datasetName}", StringUtils.FromStringWithSlashEncoding(publicRequest.DatasetName));
+            request.AddPathResource("{datasetName}", StringUtils.FromString(publicRequest.DatasetName));
             
             if (publicRequest.IsSetVersionId())
                 request.Parameters.Add("versionId", StringUtils.FromString(publicRequest.VersionId));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/datasets/{datasetName}/content";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -59,11 +59,11 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-03-31";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/2014-11-13/functions/{FunctionName}/invoke-async/";
             if (!publicRequest.IsSetFunctionName())
                 throw new AmazonLambdaException("Request object does not have required field FunctionName set");
-            uriResourcePath = uriResourcePath.Replace("{FunctionName}", StringUtils.FromStringWithSlashEncoding(publicRequest.FunctionName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{FunctionName}", StringUtils.FromString(publicRequest.FunctionName));
+            request.ResourcePath = "/2014-11-13/functions/{FunctionName}/invoke-async/";
+            request.MarshallerVersion = 2;
             request.ContentStream =  publicRequest.InvokeArgsStream ?? new MemoryStream();
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);

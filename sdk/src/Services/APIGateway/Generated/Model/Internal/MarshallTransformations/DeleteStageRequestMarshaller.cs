@@ -58,14 +58,14 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/restapis/{restapi_id}/stages/{stage_name}";
             if (!publicRequest.IsSetRestApiId())
                 throw new AmazonAPIGatewayException("Request object does not have required field RestApiId set");
-            uriResourcePath = uriResourcePath.Replace("{restapi_id}", StringUtils.FromStringWithSlashEncoding(publicRequest.RestApiId));
+            request.AddPathResource("{restapi_id}", StringUtils.FromString(publicRequest.RestApiId));
             if (!publicRequest.IsSetStageName())
                 throw new AmazonAPIGatewayException("Request object does not have required field StageName set");
-            uriResourcePath = uriResourcePath.Replace("{stage_name}", StringUtils.FromStringWithSlashEncoding(publicRequest.StageName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{stage_name}", StringUtils.FromString(publicRequest.StageName));
+            request.ResourcePath = "/restapis/{restapi_id}/stages/{stage_name}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

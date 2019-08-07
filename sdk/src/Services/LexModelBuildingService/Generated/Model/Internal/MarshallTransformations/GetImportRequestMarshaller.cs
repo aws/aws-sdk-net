@@ -58,11 +58,11 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-04-19";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/imports/{importId}";
             if (!publicRequest.IsSetImportId())
                 throw new AmazonLexModelBuildingServiceException("Request object does not have required field ImportId set");
-            uriResourcePath = uriResourcePath.Replace("{importId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ImportId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{importId}", StringUtils.FromString(publicRequest.ImportId));
+            request.ResourcePath = "/imports/{importId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

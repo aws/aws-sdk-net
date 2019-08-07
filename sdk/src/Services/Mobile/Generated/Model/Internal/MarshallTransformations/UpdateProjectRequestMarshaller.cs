@@ -59,11 +59,11 @@ namespace Amazon.Mobile.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-01";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/update";
             
             if (publicRequest.IsSetProjectId())
                 request.Parameters.Add("projectId", StringUtils.FromString(publicRequest.ProjectId));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/update";
+            request.MarshallerVersion = 2;
             request.ContentStream =  publicRequest.Contents ?? new MemoryStream();
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);

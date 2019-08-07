@@ -58,11 +58,11 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/groups/{GroupName}/query";
             if (!publicRequest.IsSetGroupName())
                 throw new AmazonResourceGroupsException("Request object does not have required field GroupName set");
-            uriResourcePath = uriResourcePath.Replace("{GroupName}", StringUtils.FromStringWithSlashEncoding(publicRequest.GroupName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{GroupName}", StringUtils.FromString(publicRequest.GroupName));
+            request.ResourcePath = "/groups/{GroupName}/query";
+            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -58,11 +58,11 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-06-07";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/greengrass/bulk/deployments/{BulkDeploymentId}/status";
             if (!publicRequest.IsSetBulkDeploymentId())
                 throw new AmazonGreengrassException("Request object does not have required field BulkDeploymentId set");
-            uriResourcePath = uriResourcePath.Replace("{BulkDeploymentId}", StringUtils.FromStringWithSlashEncoding(publicRequest.BulkDeploymentId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{BulkDeploymentId}", StringUtils.FromString(publicRequest.BulkDeploymentId));
+            request.ResourcePath = "/greengrass/bulk/deployments/{BulkDeploymentId}/status";
+            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -58,17 +58,17 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-06-07";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/greengrass/definition/functions/{FunctionDefinitionId}/versions/{FunctionDefinitionVersionId}";
             if (!publicRequest.IsSetFunctionDefinitionId())
                 throw new AmazonGreengrassException("Request object does not have required field FunctionDefinitionId set");
-            uriResourcePath = uriResourcePath.Replace("{FunctionDefinitionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.FunctionDefinitionId));
+            request.AddPathResource("{FunctionDefinitionId}", StringUtils.FromString(publicRequest.FunctionDefinitionId));
             if (!publicRequest.IsSetFunctionDefinitionVersionId())
                 throw new AmazonGreengrassException("Request object does not have required field FunctionDefinitionVersionId set");
-            uriResourcePath = uriResourcePath.Replace("{FunctionDefinitionVersionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.FunctionDefinitionVersionId));
+            request.AddPathResource("{FunctionDefinitionVersionId}", StringUtils.FromString(publicRequest.FunctionDefinitionVersionId));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/greengrass/definition/functions/{FunctionDefinitionId}/versions/{FunctionDefinitionVersionId}";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -58,11 +58,11 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-06-07";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/greengrass/groups/{GroupId}/certificateauthorities";
             if (!publicRequest.IsSetGroupId())
                 throw new AmazonGreengrassException("Request object does not have required field GroupId set");
-            uriResourcePath = uriResourcePath.Replace("{GroupId}", StringUtils.FromStringWithSlashEncoding(publicRequest.GroupId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{GroupId}", StringUtils.FromString(publicRequest.GroupId));
+            request.ResourcePath = "/greengrass/groups/{GroupId}/certificateauthorities";
+            request.MarshallerVersion = 2;
 
             return request;
         }

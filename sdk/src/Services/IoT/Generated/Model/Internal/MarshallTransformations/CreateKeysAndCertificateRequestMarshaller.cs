@@ -59,11 +59,11 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/keys-and-certificate";
             
             if (publicRequest.IsSetSetAsActive())
                 request.Parameters.Add("setAsActive", StringUtils.FromBool(publicRequest.SetAsActive));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/keys-and-certificate";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

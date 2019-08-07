@@ -58,11 +58,11 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/webhooks/{webhookId}";
             if (!publicRequest.IsSetWebhookId())
                 throw new AmazonAmplifyException("Request object does not have required field WebhookId set");
-            uriResourcePath = uriResourcePath.Replace("{webhookId}", StringUtils.FromStringWithSlashEncoding(publicRequest.WebhookId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{webhookId}", StringUtils.FromString(publicRequest.WebhookId));
+            request.ResourcePath = "/webhooks/{webhookId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

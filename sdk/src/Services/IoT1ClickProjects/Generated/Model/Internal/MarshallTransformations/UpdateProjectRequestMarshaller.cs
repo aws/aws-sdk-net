@@ -59,11 +59,11 @@ namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-14";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/projects/{projectName}";
             if (!publicRequest.IsSetProjectName())
                 throw new AmazonIoT1ClickProjectsException("Request object does not have required field ProjectName set");
-            uriResourcePath = uriResourcePath.Replace("{projectName}", StringUtils.FromStringWithSlashEncoding(publicRequest.ProjectName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{projectName}", StringUtils.FromString(publicRequest.ProjectName));
+            request.ResourcePath = "/projects/{projectName}";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

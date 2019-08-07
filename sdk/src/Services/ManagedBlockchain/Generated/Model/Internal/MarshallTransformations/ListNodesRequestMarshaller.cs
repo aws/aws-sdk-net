@@ -58,13 +58,12 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-24";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/networks/{networkId}/members/{memberId}/nodes";
             if (!publicRequest.IsSetMemberId())
                 throw new AmazonManagedBlockchainException("Request object does not have required field MemberId set");
-            uriResourcePath = uriResourcePath.Replace("{memberId}", StringUtils.FromStringWithSlashEncoding(publicRequest.MemberId));
+            request.AddPathResource("{memberId}", StringUtils.FromString(publicRequest.MemberId));
             if (!publicRequest.IsSetNetworkId())
                 throw new AmazonManagedBlockchainException("Request object does not have required field NetworkId set");
-            uriResourcePath = uriResourcePath.Replace("{networkId}", StringUtils.FromStringWithSlashEncoding(publicRequest.NetworkId));
+            request.AddPathResource("{networkId}", StringUtils.FromString(publicRequest.NetworkId));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
@@ -74,7 +73,8 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetStatus())
                 request.Parameters.Add("status", StringUtils.FromString(publicRequest.Status));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/networks/{networkId}/members/{memberId}/nodes";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

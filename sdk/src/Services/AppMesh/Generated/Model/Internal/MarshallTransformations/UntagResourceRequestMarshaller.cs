@@ -59,11 +59,11 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-01-25";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/v20190125/untag";
             
             if (publicRequest.IsSetResourceArn())
                 request.Parameters.Add("resourceArn", StringUtils.FromString(publicRequest.ResourceArn));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/v20190125/untag";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

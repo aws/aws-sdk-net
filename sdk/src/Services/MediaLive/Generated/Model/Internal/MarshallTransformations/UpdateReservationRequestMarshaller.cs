@@ -59,11 +59,11 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-14";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/prod/reservations/{reservationId}";
             if (!publicRequest.IsSetReservationId())
                 throw new AmazonMediaLiveException("Request object does not have required field ReservationId set");
-            uriResourcePath = uriResourcePath.Replace("{reservationId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ReservationId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{reservationId}", StringUtils.FromString(publicRequest.ReservationId));
+            request.ResourcePath = "/prod/reservations/{reservationId}";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

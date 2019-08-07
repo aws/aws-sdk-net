@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+    #line 1 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class RestXmlRequestMarshaller : BaseRequestMarshaller
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
         public override string TransformText()
         {
             
-            #line 6 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            #line 6 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
 	AddLicenseHeader();
 	
@@ -40,28 +40,28 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("using System.Xml;\r\n\r\nnamespace ");
             
-            #line 13 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            #line 13 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model.Internal.MarshallTransformations\r\n{\r\n\t/// <summary>\r\n\t/// ");
             
-            #line 16 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            #line 16 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write(" Request Marshaller\r\n\t/// </summary>       \r\n\tpublic class ");
             
-            #line 18 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            #line 18 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write("RequestMarshaller : IMarshaller<IRequest, ");
             
-            #line 18 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            #line 18 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
@@ -77,7 +77,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
         {
             return this.Marshall((");
             
-            #line 27 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            #line 27 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
@@ -87,7 +87,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
                     " name=\"publicRequest\"></param>\r\n        /// <returns></returns>\r\n\t\tpublic IReque" +
                     "st Marshall(");
             
-            #line 35 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            #line 35 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
@@ -95,14 +95,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("Request publicRequest)\r\n\t\t{\r\n\t\t\tvar request = new DefaultRequest(publicRequest, \"" +
                     "");
             
-            #line 37 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            #line 37 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write("\");\r\n");
             
-            #line 38 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            #line 38 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
 	// Assign HttpMethod if present or default to POST
 	if(!string.IsNullOrWhiteSpace(this.Operation.HttpMethod)){		
@@ -112,14 +112,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\trequest.HttpMethod = \"");
             
-            #line 42 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            #line 42 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.HttpMethod));
             
             #line default
             #line hidden
             this.Write("\";\r\n");
             
-            #line 43 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            #line 43 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
 	}
 	var requestStructure = this.Operation.RequestStructure;
@@ -135,9 +135,23 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line default
             #line hidden
-            this.Write("\t\t\trequest.ResourcePath = uriResourcePath;\r\n\r\n");
+            this.Write("\t\t\trequest.ResourcePath = \"");
             
-            #line 57 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            #line 55 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.RequestUri));
+            
+            #line default
+            #line hidden
+            this.Write("\";\r\n\t\t\trequest.MarshallerVersion = ");
+            
+            #line 56 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(MarshallerVersion));
+            
+            #line default
+            #line hidden
+            this.Write(";\r\n\r\n");
+            
+            #line 58 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
    
 	// Process any members which are marshalled as part of the request body
 	if(this.Operation.RequestHasBodyMembers || shouldMarshallPayload)
@@ -150,7 +164,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\r\n");
             
-            #line 65 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            #line 66 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
 	// If there aren't any members that are marshalled as part of the body or streamed	
 	if(this.Operation.UseQueryString)
@@ -161,7 +175,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\trequest.UseQueryString = true;\r\n");
             
-            #line 71 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            #line 72 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 	}	
 
 	if(!string.IsNullOrEmpty(this.Operation.EndpointHostPrefix))
@@ -174,7 +188,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\treturn request;\r\n\t\t}\r\n");
             
-            #line 80 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            #line 81 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 				
 	this.AddRequestSingletonMethod();
 
@@ -185,7 +199,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 86 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 87 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
 
 	void ProcessRequestBodyMembers(string variableName, Operation operation)
@@ -195,7 +209,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
         #line default
         #line hidden
         
-        #line 90 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 91 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\tvar stringWriter = new StringWriter(CultureInfo.InvariantCulture);\r\n\t\t\tusing (" +
         "var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encodin" +
         "g = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))\r\n\t\t\t{   \r\n");
@@ -204,7 +218,7 @@ this.Write("\t\t\tvar stringWriter = new StringWriter(CultureInfo.InvariantCultu
         #line default
         #line hidden
         
-        #line 94 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 95 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
 		if(operation.RequestPayloadMember==null)
 		{
@@ -213,42 +227,42 @@ this.Write("\t\t\tvar stringWriter = new StringWriter(CultureInfo.InvariantCultu
         #line default
         #line hidden
         
-        #line 97 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 98 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t\txmlWriter.WriteStartElement(\"");
 
         
         #line default
         #line hidden
         
-        #line 98 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 99 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Input.LocationName));
 
         
         #line default
         #line hidden
         
-        #line 98 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 99 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 98 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 99 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.XmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 98 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 99 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\");\t\r\n");
 
         
         #line default
         #line hidden
         
-        #line 99 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 100 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
 		}
 		else
@@ -258,56 +272,56 @@ this.Write("\");\t\r\n");
         #line default
         #line hidden
         
-        #line 103 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 104 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t\tif (");
 
         
         #line default
         #line hidden
         
-        #line 104 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 105 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName + ".IsSet" + operation.RequestPayloadMember.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 104 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 105 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("())\r\n\t\t\t\t{\r\n\t\t\t\t\txmlWriter.WriteStartElement(\"");
 
         
         #line default
         #line hidden
         
-        #line 106 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 107 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.RequestPayloadMember.MarshallName));
 
         
         #line default
         #line hidden
         
-        #line 106 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 107 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 106 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 107 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.XmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 106 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 107 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 107 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 108 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
 			PushIndent("	");
 		}
@@ -334,119 +348,119 @@ this.Write("\");\r\n");
         #line default
         #line hidden
         
-        #line 128 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 129 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t\tif(");
 
         
         #line default
         #line hidden
         
-        #line 129 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 130 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 129 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 130 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 129 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 130 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 129 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 130 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("())\r\n\t\t\t\t\txmlWriter.WriteElementString(\"");
 
         
         #line default
         #line hidden
         
-        #line 130 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 131 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
 
         
         #line default
         #line hidden
         
-        #line 130 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 131 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 130 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 131 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.XmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 130 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 131 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 130 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 131 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
 
         
         #line default
         #line hidden
         
-        #line 130 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 131 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 130 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 131 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 130 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 131 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 130 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 131 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 130 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 131 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture((member.UseNullable ? ".Value" : string.Empty)));
 
         
         #line default
         #line hidden
         
-        #line 130 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 131 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("));\t\t\t\t\t\r\n");
 
         
         #line default
         #line hidden
         
-        #line 131 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 132 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
 				if(member.IsIdempotent)
 				{
@@ -455,42 +469,42 @@ this.Write("));\t\t\t\t\t\r\n");
         #line default
         #line hidden
         
-        #line 134 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 135 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t\telse\t\t\t\t\r\n\t\t\t\t\txmlWriter.WriteElementString(\"");
 
         
         #line default
         #line hidden
         
-        #line 136 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 137 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
 
         
         #line default
         #line hidden
         
-        #line 136 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 137 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 136 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 137 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.XmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 136 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 137 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\", Guid.NewGuid().ToString());\t\t\t\t\r\n");
 
         
         #line default
         #line hidden
         
-        #line 137 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 138 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 					
 				}
 
@@ -498,21 +512,21 @@ this.Write("\", Guid.NewGuid().ToString());\t\t\t\t\r\n");
         #line default
         #line hidden
         
-        #line 140 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 141 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(""));
 
         
         #line default
         #line hidden
         
-        #line 140 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 141 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\r\n");
 
         
         #line default
         #line hidden
         
-        #line 141 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 142 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
 			}
 			
@@ -522,14 +536,14 @@ this.Write("\r\n");
         #line default
         #line hidden
         
-        #line 145 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 146 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\r\n\t\t\t\txmlWriter.WriteEndElement();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 148 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 149 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
 		if(operation.RequestPayloadMember!=null)
 		{
@@ -538,14 +552,14 @@ this.Write("\r\n\t\t\t\txmlWriter.WriteEndElement();\r\n");
         #line default
         #line hidden
         
-        #line 151 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 152 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t}\r\n");
 
         
         #line default
         #line hidden
         
-        #line 153 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 154 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
 			PopIndent();
 		}
@@ -554,7 +568,7 @@ this.Write("\t\t\t}\r\n");
         #line default
         #line hidden
         
-        #line 156 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 157 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(@"			}
 			try 
 			{
@@ -567,14 +581,14 @@ this.Write(@"			}
         #line default
         #line hidden
         
-        #line 163 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 164 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.APIVersion));
 
         
         #line default
         #line hidden
         
-        #line 163 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 164 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\";            \r\n\t\t\t} \r\n\t\t\tcatch (EncoderFallbackException e) \r\n\t\t\t{\r\n\t\t\t\tthrow ne" +
         "w AmazonServiceException(\"Unable to marshall request to XML\", e);\r\n\t\t\t}\r\n");
 
@@ -582,7 +596,7 @@ this.Write("\";            \r\n\t\t\t} \r\n\t\t\tcatch (EncoderFallbackException
         #line default
         #line hidden
         
-        #line 169 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 170 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 				       
 	}
 
@@ -609,119 +623,119 @@ this.Write("\";            \r\n\t\t\t} \r\n\t\t\tcatch (EncoderFallbackException
         #line default
         #line hidden
         
-        #line 190 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 191 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t\tif(");
 
         
         #line default
         #line hidden
         
-        #line 191 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 192 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 191 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 192 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 191 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 192 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 191 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 192 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("())\r\n\t\t\t\t\txmlWriter.WriteElementString(\"");
 
         
         #line default
         #line hidden
         
-        #line 192 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 193 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
 
         
         #line default
         #line hidden
         
-        #line 192 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 193 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 192 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 193 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(xmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 192 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 193 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 192 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 193 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
 
         
         #line default
         #line hidden
         
-        #line 192 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 193 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 192 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 193 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 192 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 193 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 192 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 193 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 192 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 193 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture((member.UseNullable ? ".Value" : string.Empty)));
 
         
         #line default
         #line hidden
         
-        #line 192 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 193 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("));\t\t\t\t \r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 194 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 195 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
 			}
 		}
@@ -739,56 +753,56 @@ this.Write("));\t\t\t\t \r\n\r\n");
         #line default
         #line hidden
         
-        #line 206 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 207 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t\t\r\n\t\t\t\tif (");
 
         
         #line default
         #line hidden
         
-        #line 207 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 208 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 207 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 208 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(" != null) \r\n\t\t\t\t{\r\n\t\t\t\t\txmlWriter.WriteStartElement(\"");
 
         
         #line default
         #line hidden
         
-        #line 209 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 210 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(marshallName));
 
         
         #line default
         #line hidden
         
-        #line 209 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 210 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 209 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 210 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(xmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 209 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 210 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\");\t\t\t\r\n");
 
         
         #line default
         #line hidden
         
-        #line 210 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 211 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
 			PushIndent("	");
 			ProcessMembers(variableName, shape.Members, xmlNamespace);
@@ -798,14 +812,14 @@ this.Write("\");\t\t\t\r\n");
         #line default
         #line hidden
         
-        #line 214 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 215 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t\t\txmlWriter.WriteEndElement();\r\n\t\t\t\t}\r\n");
 
         
         #line default
         #line hidden
         
-        #line 217 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 218 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 		
 	}
 
@@ -818,140 +832,140 @@ this.Write("\t\t\t\t\txmlWriter.WriteEndElement();\r\n\t\t\t\t}\r\n");
         #line default
         #line hidden
         
-        #line 224 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 225 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t\tvar ");
 
         
         #line default
         #line hidden
         
-        #line 225 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 226 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(listVariable));
 
         
         #line default
         #line hidden
         
-        #line 225 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 226 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(" = ");
 
         
         #line default
         #line hidden
         
-        #line 225 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 226 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 225 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 226 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 225 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 226 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 225 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 226 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(";\r\n\t\t\t\tif (");
 
         
         #line default
         #line hidden
         
-        #line 226 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 227 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(listVariable));
 
         
         #line default
         #line hidden
         
-        #line 226 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 227 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(" != null && ");
 
         
         #line default
         #line hidden
         
-        #line 226 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 227 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(listVariable));
 
         
         #line default
         #line hidden
         
-        #line 226 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 227 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(".Count > 0) \r\n\t\t\t\t{\t\t\t\t\t\t\r\n\t\t\t\t\txmlWriter.WriteStartElement(\"");
 
         
         #line default
         #line hidden
         
-        #line 228 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 229 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
 
         
         #line default
         #line hidden
         
-        #line 228 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 229 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 228 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 229 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(xmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 228 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 229 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\");\r\n\t\t\t\t\tforeach (var ");
 
         
         #line default
         #line hidden
         
-        #line 229 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 230 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(listItemVariable));
 
         
         #line default
         #line hidden
         
-        #line 229 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 230 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(" in ");
 
         
         #line default
         #line hidden
         
-        #line 229 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 230 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(listVariable));
 
         
         #line default
         #line hidden
         
-        #line 229 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 230 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(") \r\n\t\t\t\t\t{\r\n");
 
         
         #line default
         #line hidden
         
-        #line 231 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 232 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
 			PushIndent("	");			
 			if(member.Shape.ListShape.IsStructure)
@@ -969,70 +983,70 @@ this.Write(") \r\n\t\t\t\t\t{\r\n");
         #line default
         #line hidden
         
-        #line 243 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 244 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t\t\txmlWriter.WriteStartElement(\"");
 
         
         #line default
         #line hidden
         
-        #line 244 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 245 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(listMarshallName));
 
         
         #line default
         #line hidden
         
-        #line 244 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 245 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 244 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 245 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(xmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 244 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 245 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\");\r\n                    xmlWriter.WriteValue(");
 
         
         #line default
         #line hidden
         
-        #line 245 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 246 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ListShape.PrimitiveMarshaller(MarshallLocation.Body)));
 
         
         #line default
         #line hidden
         
-        #line 245 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 246 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 245 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 246 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(listItemVariable));
 
         
         #line default
         #line hidden
         
-        #line 245 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 246 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("));\r\n                    xmlWriter.WriteEndElement();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 247 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 248 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 				
 
 				}
@@ -1044,56 +1058,56 @@ this.Write("));\r\n                    xmlWriter.WriteEndElement();\r\n");
         #line default
         #line hidden
         
-        #line 253 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 254 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t\t\txmlWriter.WriteStartElement(\"");
 
         
         #line default
         #line hidden
         
-        #line 254 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 255 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(listMarshallName));
 
         
         #line default
         #line hidden
         
-        #line 254 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 255 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 254 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 255 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(xmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 254 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 255 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\");\r\n                    xmlWriter.WriteValue(");
 
         
         #line default
         #line hidden
         
-        #line 255 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 256 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(listItemVariable));
 
         
         #line default
         #line hidden
         
-        #line 255 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 256 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(");\r\n                    xmlWriter.WriteEndElement();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 257 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 258 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 				
 				}
 			}
@@ -1103,14 +1117,14 @@ this.Write(");\r\n                    xmlWriter.WriteEndElement();\r\n");
         #line default
         #line hidden
         
-        #line 261 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 262 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t\t\t}\t\t\t\r\n\t\t\t\t\txmlWriter.WriteEndElement();\t\t\t\r\n\t\t\t\t}\r\n");
 
         
         #line default
         #line hidden
         
-        #line 265 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 266 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 				
 	}
 
@@ -1121,70 +1135,70 @@ this.Write("\t\t\t\t\t}\t\t\t\r\n\t\t\t\t\txmlWriter.WriteEndElement();\t\t\t\r\
         #line default
         #line hidden
         
-        #line 270 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 271 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t\t\txmlWriter.WriteStartElement(\"");
 
         
         #line default
         #line hidden
         
-        #line 271 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 272 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
 
         
         #line default
         #line hidden
         
-        #line 271 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 272 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 271 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 272 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(xmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 271 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 272 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\");\r\n\t\t\t\t\tforeach (var kvp in ");
 
         
         #line default
         #line hidden
         
-        #line 272 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 273 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 272 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 273 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 272 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 273 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 272 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 273 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(") \r\n\t\t\t\t\t{\r\n");
 
         
         #line default
         #line hidden
         
-        #line 274 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 275 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
 			PushIndent("	");						
 
@@ -1192,56 +1206,56 @@ this.Write(") \r\n\t\t\t\t\t{\r\n");
         #line default
         #line hidden
         
-        #line 276 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 277 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t\t\txmlWriter.WriteStartElement(\"entry\", \"");
 
         
         #line default
         #line hidden
         
-        #line 277 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 278 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(xmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 277 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 278 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\");\r\n\t\t\t\t\txmlWriter.WriteElementString(\"key\", \"");
 
         
         #line default
         #line hidden
         
-        #line 278 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 279 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(xmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 278 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 279 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\", kvp.Key);\r\n\t\t\t\t\txmlWriter.WriteElementString(\"value\", \"");
 
         
         #line default
         #line hidden
         
-        #line 279 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 280 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(xmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 279 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 280 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\", kvp.Value);\r\n\t\t\t\t\txmlWriter.WriteEndElement();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 281 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 282 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 				
 			PopIndent();			
 
@@ -1249,14 +1263,14 @@ this.Write("\", kvp.Value);\r\n\t\t\t\t\txmlWriter.WriteEndElement();\r\n");
         #line default
         #line hidden
         
-        #line 283 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 284 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t\t\t}\t\t\t\r\n\t\t\t\t\txmlWriter.WriteEndElement();\t\t\t\t\r\n");
 
         
         #line default
         #line hidden
         
-        #line 286 "C:\Dev\Worktrees\XmlSrvUpg\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 287 "C:\Dev\Worktrees\UrlSegments\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 				
 	}
 

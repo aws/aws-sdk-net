@@ -59,14 +59,14 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-12-01";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/v1/apps/{application-id}/attributes/{attribute-type}";
             if (!publicRequest.IsSetApplicationId())
                 throw new AmazonPinpointException("Request object does not have required field ApplicationId set");
-            uriResourcePath = uriResourcePath.Replace("{application-id}", StringUtils.FromStringWithSlashEncoding(publicRequest.ApplicationId));
+            request.AddPathResource("{application-id}", StringUtils.FromString(publicRequest.ApplicationId));
             if (!publicRequest.IsSetAttributeType())
                 throw new AmazonPinpointException("Request object does not have required field AttributeType set");
-            uriResourcePath = uriResourcePath.Replace("{attribute-type}", StringUtils.FromStringWithSlashEncoding(publicRequest.AttributeType));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{attribute-type}", StringUtils.FromString(publicRequest.AttributeType));
+            request.ResourcePath = "/v1/apps/{application-id}/attributes/{attribute-type}";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

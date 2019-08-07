@@ -58,7 +58,6 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-01-25";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/v20190125/tags";
             
             if (publicRequest.IsSetLimit())
                 request.Parameters.Add("limit", StringUtils.FromInt(publicRequest.Limit));
@@ -68,7 +67,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetResourceArn())
                 request.Parameters.Add("resourceArn", StringUtils.FromString(publicRequest.ResourceArn));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/v20190125/tags";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

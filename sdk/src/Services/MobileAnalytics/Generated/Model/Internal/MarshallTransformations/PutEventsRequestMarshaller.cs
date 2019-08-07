@@ -59,8 +59,8 @@ namespace Amazon.MobileAnalytics.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-06-05";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/2014-06-05/events";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2014-06-05/events";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

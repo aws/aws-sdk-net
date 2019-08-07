@@ -58,17 +58,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/billing-groups/{billingGroupName}/things";
             if (!publicRequest.IsSetBillingGroupName())
                 throw new AmazonIoTException("Request object does not have required field BillingGroupName set");
-            uriResourcePath = uriResourcePath.Replace("{billingGroupName}", StringUtils.FromStringWithSlashEncoding(publicRequest.BillingGroupName));
+            request.AddPathResource("{billingGroupName}", StringUtils.FromString(publicRequest.BillingGroupName));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/billing-groups/{billingGroupName}/things";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

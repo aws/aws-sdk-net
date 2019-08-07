@@ -59,11 +59,11 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-14";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/prod/channels/{channelId}/channelClass";
             if (!publicRequest.IsSetChannelId())
                 throw new AmazonMediaLiveException("Request object does not have required field ChannelId set");
-            uriResourcePath = uriResourcePath.Replace("{channelId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ChannelId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{channelId}", StringUtils.FromString(publicRequest.ChannelId));
+            request.ResourcePath = "/prod/channels/{channelId}/channelClass";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

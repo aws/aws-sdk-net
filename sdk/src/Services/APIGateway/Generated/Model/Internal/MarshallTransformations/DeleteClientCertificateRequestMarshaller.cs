@@ -58,11 +58,11 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/clientcertificates/{clientcertificate_id}";
             if (!publicRequest.IsSetClientCertificateId())
                 throw new AmazonAPIGatewayException("Request object does not have required field ClientCertificateId set");
-            uriResourcePath = uriResourcePath.Replace("{clientcertificate_id}", StringUtils.FromStringWithSlashEncoding(publicRequest.ClientCertificateId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{clientcertificate_id}", StringUtils.FromString(publicRequest.ClientCertificateId));
+            request.ResourcePath = "/clientcertificates/{clientcertificate_id}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

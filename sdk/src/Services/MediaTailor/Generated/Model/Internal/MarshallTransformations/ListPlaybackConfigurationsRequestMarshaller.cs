@@ -58,14 +58,14 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-23";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/playbackConfigurations";
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/playbackConfigurations";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

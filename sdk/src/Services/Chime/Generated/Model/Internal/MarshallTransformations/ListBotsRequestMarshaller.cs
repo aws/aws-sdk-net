@@ -58,17 +58,17 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-01";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/accounts/{accountId}/bots";
             if (!publicRequest.IsSetAccountId())
                 throw new AmazonChimeException("Request object does not have required field AccountId set");
-            uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromStringWithSlashEncoding(publicRequest.AccountId));
+            request.AddPathResource("{accountId}", StringUtils.FromString(publicRequest.AccountId));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("max-results", StringUtils.FromInt(publicRequest.MaxResults));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("next-token", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/accounts/{accountId}/bots";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

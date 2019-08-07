@@ -59,20 +59,20 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-01";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/accounts/{AwsAccountId}/namespaces/{Namespace}/groups/{GroupName}/members/{MemberName}";
             if (!publicRequest.IsSetAwsAccountId())
                 throw new AmazonQuickSightException("Request object does not have required field AwsAccountId set");
-            uriResourcePath = uriResourcePath.Replace("{AwsAccountId}", StringUtils.FromStringWithSlashEncoding(publicRequest.AwsAccountId));
+            request.AddPathResource("{AwsAccountId}", StringUtils.FromString(publicRequest.AwsAccountId));
             if (!publicRequest.IsSetGroupName())
                 throw new AmazonQuickSightException("Request object does not have required field GroupName set");
-            uriResourcePath = uriResourcePath.Replace("{GroupName}", StringUtils.FromStringWithSlashEncoding(publicRequest.GroupName));
+            request.AddPathResource("{GroupName}", StringUtils.FromString(publicRequest.GroupName));
             if (!publicRequest.IsSetMemberName())
                 throw new AmazonQuickSightException("Request object does not have required field MemberName set");
-            uriResourcePath = uriResourcePath.Replace("{MemberName}", StringUtils.FromStringWithSlashEncoding(publicRequest.MemberName));
+            request.AddPathResource("{MemberName}", StringUtils.FromString(publicRequest.MemberName));
             if (!publicRequest.IsSetNamespace())
                 throw new AmazonQuickSightException("Request object does not have required field Namespace set");
-            uriResourcePath = uriResourcePath.Replace("{Namespace}", StringUtils.FromStringWithSlashEncoding(publicRequest.Namespace));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{Namespace}", StringUtils.FromString(publicRequest.Namespace));
+            request.ResourcePath = "/accounts/{AwsAccountId}/namespaces/{Namespace}/groups/{GroupName}/members/{MemberName}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

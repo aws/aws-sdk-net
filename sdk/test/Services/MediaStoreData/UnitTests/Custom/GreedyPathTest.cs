@@ -6,6 +6,7 @@ using System.Reflection;
 using AWSSDK_DotNet35.UnitTests.TestTools;
 using Amazon;
 using Amazon.MediaStoreData.Model.Internal.MarshallTransformations;
+using Amazon.Util;
 
 namespace AWSSDK_DotNet35.UnitTests
 {
@@ -23,6 +24,7 @@ namespace AWSSDK_DotNet35.UnitTests
             var marshaller = new GetObjectRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
+            internalRequest.ResourcePath = AWSSDKUtils.ResolveResourcePath(internalRequest.ResourcePath, internalRequest.PathResources);
             Assert.AreEqual(internalRequest.ResourcePath, request.Path);
         }
 
@@ -37,6 +39,7 @@ namespace AWSSDK_DotNet35.UnitTests
             var marshaller = new GetObjectRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
+            internalRequest.ResourcePath = AWSSDKUtils.ResolveResourcePath(internalRequest.ResourcePath, internalRequest.PathResources);
             Assert.AreEqual(internalRequest.ResourcePath, "/" + request.Path);
         }
     }

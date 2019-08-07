@@ -72,8 +72,10 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 		ProcessQueryStringMembers("publicRequest", this.Operation);
 	}
 #>
-			request.ResourcePath = uriResourcePath;
-<#    
+			request.ResourcePath = "<#=this.Operation.RequestUri #>";
+			request.MarshallerVersion = <#=MarshallerVersion #>;
+<#  
+
     var payload= this.Operation.RequestPayloadMember;
     var shouldMarshallPayload = (payload != null && !payload.IsMemoryStream);
 	// Process any members which are marshalled as part of the request body

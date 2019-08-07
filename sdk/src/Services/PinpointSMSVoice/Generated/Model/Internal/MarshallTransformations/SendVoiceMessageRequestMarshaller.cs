@@ -59,8 +59,8 @@ namespace Amazon.PinpointSMSVoice.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-05";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/v1/sms-voice/voice/message";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/v1/sms-voice/voice/message";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

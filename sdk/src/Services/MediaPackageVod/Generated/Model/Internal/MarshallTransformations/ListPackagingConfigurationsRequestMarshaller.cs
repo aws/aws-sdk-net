@@ -58,7 +58,6 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-07";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/packaging_configurations";
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
@@ -68,7 +67,8 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetPackagingGroupId())
                 request.Parameters.Add("packagingGroupId", StringUtils.FromString(publicRequest.PackagingGroupId));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/packaging_configurations";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -58,7 +58,6 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-25";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/signing-jobs";
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
@@ -74,7 +73,8 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetStatus())
                 request.Parameters.Add("status", StringUtils.FromString(publicRequest.Status));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/signing-jobs";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

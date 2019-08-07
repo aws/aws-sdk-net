@@ -58,8 +58,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/indexing/config";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/indexing/config";
+            request.MarshallerVersion = 2;
 
             return request;
         }

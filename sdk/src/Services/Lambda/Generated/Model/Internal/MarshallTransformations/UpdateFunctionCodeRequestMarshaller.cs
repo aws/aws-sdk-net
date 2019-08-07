@@ -59,11 +59,11 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-03-31";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/2015-03-31/functions/{FunctionName}/code";
             if (!publicRequest.IsSetFunctionName())
                 throw new AmazonLambdaException("Request object does not have required field FunctionName set");
-            uriResourcePath = uriResourcePath.Replace("{FunctionName}", StringUtils.FromStringWithSlashEncoding(publicRequest.FunctionName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{FunctionName}", StringUtils.FromString(publicRequest.FunctionName));
+            request.ResourcePath = "/2015-03-31/functions/{FunctionName}/code";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

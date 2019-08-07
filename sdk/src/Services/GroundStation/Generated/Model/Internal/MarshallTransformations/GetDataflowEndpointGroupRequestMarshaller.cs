@@ -58,11 +58,11 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-05-23";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/dataflowEndpointGroup/{dataflowEndpointGroupId}";
             if (!publicRequest.IsSetDataflowEndpointGroupId())
                 throw new AmazonGroundStationException("Request object does not have required field DataflowEndpointGroupId set");
-            uriResourcePath = uriResourcePath.Replace("{dataflowEndpointGroupId}", StringUtils.FromStringWithSlashEncoding(publicRequest.DataflowEndpointGroupId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{dataflowEndpointGroupId}", StringUtils.FromString(publicRequest.DataflowEndpointGroupId));
+            request.ResourcePath = "/dataflowEndpointGroup/{dataflowEndpointGroupId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

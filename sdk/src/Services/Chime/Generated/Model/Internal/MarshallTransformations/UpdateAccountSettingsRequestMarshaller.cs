@@ -59,11 +59,11 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-01";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/accounts/{accountId}/settings";
             if (!publicRequest.IsSetAccountId())
                 throw new AmazonChimeException("Request object does not have required field AccountId set");
-            uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromStringWithSlashEncoding(publicRequest.AccountId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{accountId}", StringUtils.FromString(publicRequest.AccountId));
+            request.ResourcePath = "/accounts/{accountId}/settings";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

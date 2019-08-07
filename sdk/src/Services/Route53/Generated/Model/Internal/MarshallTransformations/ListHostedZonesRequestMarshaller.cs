@@ -56,7 +56,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
             request.HttpMethod = "GET";
-            string uriResourcePath = "/2013-04-01/hostedzone";
             
             if (publicRequest.IsSetMarker())
                 request.Parameters.Add("marker", StringUtils.FromString(publicRequest.Marker));
@@ -66,7 +65,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetDelegationSetId())
                 request.Parameters.Add("delegationsetid", StringUtils.FromString(publicRequest.DelegationSetId));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2013-04-01/hostedzone";
+            request.MarshallerVersion = 2;
 
 
             request.UseQueryString = true;

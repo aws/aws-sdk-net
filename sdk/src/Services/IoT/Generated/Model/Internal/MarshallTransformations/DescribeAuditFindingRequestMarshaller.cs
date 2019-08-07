@@ -58,11 +58,11 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/audit/findings/{findingId}";
             if (!publicRequest.IsSetFindingId())
                 throw new AmazonIoTException("Request object does not have required field FindingId set");
-            uriResourcePath = uriResourcePath.Replace("{findingId}", StringUtils.FromStringWithSlashEncoding(publicRequest.FindingId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{findingId}", StringUtils.FromString(publicRequest.FindingId));
+            request.ResourcePath = "/audit/findings/{findingId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

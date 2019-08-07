@@ -58,14 +58,14 @@ namespace Amazon.PinpointSMSVoice.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-05";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/v1/sms-voice/configuration-sets";
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
             
             if (publicRequest.IsSetPageSize())
                 request.Parameters.Add("PageSize", StringUtils.FromString(publicRequest.PageSize));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/v1/sms-voice/configuration-sets";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

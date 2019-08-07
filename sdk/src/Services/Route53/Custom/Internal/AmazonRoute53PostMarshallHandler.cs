@@ -11,7 +11,9 @@ namespace Amazon.Route53.Internal
     /// Custom pipeline handler
     /// </summary>
     public class AmazonRoute53PostMarshallHandler : PipelineHandler
-    {
+    {           
+        private static readonly HashSet<string> FixPathLookup = new HashSet<string>(new string[] { "/hostedzone/", "/change/", "/delegationset/" });
+
         /// <summary>
         /// Calls pre invoke logic before calling the next handler 
         /// in the pipeline.
@@ -71,18 +73,39 @@ namespace Amazon.Route53.Internal
         private static void ProcessRequestHandlers(IExecutionContext executionContext)
         {
             var request = executionContext.RequestContext.Request;
+            FixDuplicationInResourcePath(request.ResourcePath, request.PathResources);
+        }
 
-            if (request.ResourcePath.Contains("/hostedzone/%2Fhostedzone%2F"))
-            {
-                request.ResourcePath = request.ResourcePath.Replace("/hostedzone/%2Fhostedzone%2F", "/hostedzone/");
-            }
-            if (request.ResourcePath.Contains("/change/%2Fchange%2F"))
-            {
-                request.ResourcePath = request.ResourcePath.Replace("/change/%2Fchange%2F", "/change/");
-            }
-            if (request.ResourcePath.Contains("/delegationset/%2Fdelegationset%2F"))
-            {
-                request.ResourcePath = request.ResourcePath.Replace("/delegationset/%2Fdelegationset%2F", "/delegationset/");
+        /// <summary>
+        /// Removes duplicated values out of the resourcePath in Route52 paths for the limited set
+        /// of values: "/hostedzone/", "/change/", "/delegationset/". Example: /hostedzone/{id} 
+        /// where {id} = /hostedzone/123456 would result in /hostedzone//hostedzone/123456
+        /// but must result in /hostedzone/123456
+        /// </summary>
+        /// <param name="resourcePath">The patterned resource path</param>
+        /// <param name="pathResources">The key/values to key replacement in the patterned resource path</param>
+        private static void FixDuplicationInResourcePath(string resourcePath, IDictionary<string, string> pathResources)
+        {            
+            var segments = resourcePath.Split(new char[] { '/' }, StringSplitOptions.None);
+            var testSegments = segments.Select(segment => segment.Length == 0 || segment.EndsWith("}", StringComparison.Ordinal) ? segment : "/" + segment + "/");
+            var prevSegment = string.Empty;
+                        
+            foreach(var segment in testSegments)
+            {                
+                if(segment.Length == 0 || segment.StartsWith("/", StringComparison.Ordinal))
+                {
+                    //Not a {key} so don't need to check for duplication.
+                    prevSegment = segment;
+                    continue;
+                }
+
+                //Else this is a {key} which could contain previous segment duplication that must be removed.
+                //Example: /hostedzone/{id} where {id} = /hostedzone/123456 would result in /hostedzone//hostedzone/123456
+                var keyValue = pathResources[segment];
+                if(FixPathLookup.Contains(prevSegment) && keyValue != null && keyValue.StartsWith(prevSegment, StringComparison.Ordinal))
+                {
+                    pathResources[segment] = prevSegment = keyValue.Substring(prevSegment.Length);                    
+                }
             }
         }
     }

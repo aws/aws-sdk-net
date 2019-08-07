@@ -58,10 +58,9 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-05-01";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/api/v1/folders/{FolderId}/path";
             if (!publicRequest.IsSetFolderId())
                 throw new AmazonWorkDocsException("Request object does not have required field FolderId set");
-            uriResourcePath = uriResourcePath.Replace("{FolderId}", StringUtils.FromStringWithSlashEncoding(publicRequest.FolderId));
+            request.AddPathResource("{FolderId}", StringUtils.FromString(publicRequest.FolderId));
             
             if (publicRequest.IsSetFields())
                 request.Parameters.Add("fields", StringUtils.FromString(publicRequest.Fields));
@@ -71,7 +70,8 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetMarker())
                 request.Parameters.Add("marker", StringUtils.FromString(publicRequest.Marker));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/api/v1/folders/{FolderId}/path";
+            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetAuthenticationToken())
                 request.Headers["Authentication"] = publicRequest.AuthenticationToken;

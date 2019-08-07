@@ -58,17 +58,17 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/v1/apis/{apiId}/schema";
             if (!publicRequest.IsSetApiId())
                 throw new AmazonAppSyncException("Request object does not have required field ApiId set");
-            uriResourcePath = uriResourcePath.Replace("{apiId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ApiId));
+            request.AddPathResource("{apiId}", StringUtils.FromString(publicRequest.ApiId));
             
             if (publicRequest.IsSetFormat())
                 request.Parameters.Add("format", StringUtils.FromString(publicRequest.Format));
             
             if (publicRequest.IsSetIncludeDirectives())
                 request.Parameters.Add("includeDirectives", StringUtils.FromBool(publicRequest.IncludeDirectives));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/v1/apis/{apiId}/schema";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

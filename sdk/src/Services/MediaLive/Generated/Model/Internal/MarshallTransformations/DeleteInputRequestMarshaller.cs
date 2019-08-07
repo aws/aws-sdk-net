@@ -58,11 +58,11 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-14";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/prod/inputs/{inputId}";
             if (!publicRequest.IsSetInputId())
                 throw new AmazonMediaLiveException("Request object does not have required field InputId set");
-            uriResourcePath = uriResourcePath.Replace("{inputId}", StringUtils.FromStringWithSlashEncoding(publicRequest.InputId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{inputId}", StringUtils.FromString(publicRequest.InputId));
+            request.ResourcePath = "/prod/inputs/{inputId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

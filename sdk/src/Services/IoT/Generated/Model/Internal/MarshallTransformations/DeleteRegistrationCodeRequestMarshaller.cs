@@ -58,8 +58,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/registrationcode";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/registrationcode";
+            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -58,14 +58,14 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-01";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/accounts/{accountId}/bots/{botId}/events-configuration";
             if (!publicRequest.IsSetAccountId())
                 throw new AmazonChimeException("Request object does not have required field AccountId set");
-            uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromStringWithSlashEncoding(publicRequest.AccountId));
+            request.AddPathResource("{accountId}", StringUtils.FromString(publicRequest.AccountId));
             if (!publicRequest.IsSetBotId())
                 throw new AmazonChimeException("Request object does not have required field BotId set");
-            uriResourcePath = uriResourcePath.Replace("{botId}", StringUtils.FromStringWithSlashEncoding(publicRequest.BotId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{botId}", StringUtils.FromString(publicRequest.BotId));
+            request.ResourcePath = "/accounts/{accountId}/bots/{botId}/events-configuration";
+            request.MarshallerVersion = 2;
 
             return request;
         }

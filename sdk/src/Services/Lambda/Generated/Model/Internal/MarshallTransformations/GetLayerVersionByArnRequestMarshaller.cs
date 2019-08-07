@@ -58,12 +58,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-03-31";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/2018-10-31/layers";
             request.AddSubResource("find", "LayerVersion");
             
             if (publicRequest.IsSetArn())
                 request.Parameters.Add("Arn", StringUtils.FromString(publicRequest.Arn));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2018-10-31/layers";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

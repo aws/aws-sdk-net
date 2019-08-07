@@ -58,17 +58,17 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-01-25";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/v20190125/meshes/{meshName}/virtualRouter/{virtualRouterName}/routes/{routeName}";
             if (!publicRequest.IsSetMeshName())
                 throw new AmazonAppMeshException("Request object does not have required field MeshName set");
-            uriResourcePath = uriResourcePath.Replace("{meshName}", StringUtils.FromStringWithSlashEncoding(publicRequest.MeshName));
+            request.AddPathResource("{meshName}", StringUtils.FromString(publicRequest.MeshName));
             if (!publicRequest.IsSetRouteName())
                 throw new AmazonAppMeshException("Request object does not have required field RouteName set");
-            uriResourcePath = uriResourcePath.Replace("{routeName}", StringUtils.FromStringWithSlashEncoding(publicRequest.RouteName));
+            request.AddPathResource("{routeName}", StringUtils.FromString(publicRequest.RouteName));
             if (!publicRequest.IsSetVirtualRouterName())
                 throw new AmazonAppMeshException("Request object does not have required field VirtualRouterName set");
-            uriResourcePath = uriResourcePath.Replace("{virtualRouterName}", StringUtils.FromStringWithSlashEncoding(publicRequest.VirtualRouterName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{virtualRouterName}", StringUtils.FromString(publicRequest.VirtualRouterName));
+            request.ResourcePath = "/v20190125/meshes/{meshName}/virtualRouter/{virtualRouterName}/routes/{routeName}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

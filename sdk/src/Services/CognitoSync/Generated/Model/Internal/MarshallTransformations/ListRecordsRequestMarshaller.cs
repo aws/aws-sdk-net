@@ -58,16 +58,15 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-06-30";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/records";
             if (!publicRequest.IsSetDatasetName())
                 throw new AmazonCognitoSyncException("Request object does not have required field DatasetName set");
-            uriResourcePath = uriResourcePath.Replace("{DatasetName}", StringUtils.FromStringWithSlashEncoding(publicRequest.DatasetName));
+            request.AddPathResource("{DatasetName}", StringUtils.FromString(publicRequest.DatasetName));
             if (!publicRequest.IsSetIdentityId())
                 throw new AmazonCognitoSyncException("Request object does not have required field IdentityId set");
-            uriResourcePath = uriResourcePath.Replace("{IdentityId}", StringUtils.FromStringWithSlashEncoding(publicRequest.IdentityId));
+            request.AddPathResource("{IdentityId}", StringUtils.FromString(publicRequest.IdentityId));
             if (!publicRequest.IsSetIdentityPoolId())
                 throw new AmazonCognitoSyncException("Request object does not have required field IdentityPoolId set");
-            uriResourcePath = uriResourcePath.Replace("{IdentityPoolId}", StringUtils.FromStringWithSlashEncoding(publicRequest.IdentityPoolId));
+            request.AddPathResource("{IdentityPoolId}", StringUtils.FromString(publicRequest.IdentityPoolId));
             
             if (publicRequest.IsSetLastSyncCount())
                 request.Parameters.Add("lastSyncCount", StringUtils.FromLong(publicRequest.LastSyncCount));
@@ -80,7 +79,8 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetSyncSessionToken())
                 request.Parameters.Add("syncSessionToken", StringUtils.FromString(publicRequest.SyncSessionToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/records";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

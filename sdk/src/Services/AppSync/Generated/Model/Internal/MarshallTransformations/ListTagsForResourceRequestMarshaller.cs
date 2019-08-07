@@ -58,11 +58,11 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/v1/tags/{resourceArn}";
             if (!publicRequest.IsSetResourceArn())
                 throw new AmazonAppSyncException("Request object does not have required field ResourceArn set");
-            uriResourcePath = uriResourcePath.Replace("{resourceArn}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceArn));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{resourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
+            request.ResourcePath = "/v1/tags/{resourceArn}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

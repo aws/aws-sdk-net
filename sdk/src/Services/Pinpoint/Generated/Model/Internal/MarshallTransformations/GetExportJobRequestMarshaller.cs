@@ -58,14 +58,14 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-12-01";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/v1/apps/{application-id}/jobs/export/{job-id}";
             if (!publicRequest.IsSetApplicationId())
                 throw new AmazonPinpointException("Request object does not have required field ApplicationId set");
-            uriResourcePath = uriResourcePath.Replace("{application-id}", StringUtils.FromStringWithSlashEncoding(publicRequest.ApplicationId));
+            request.AddPathResource("{application-id}", StringUtils.FromString(publicRequest.ApplicationId));
             if (!publicRequest.IsSetJobId())
                 throw new AmazonPinpointException("Request object does not have required field JobId set");
-            uriResourcePath = uriResourcePath.Replace("{job-id}", StringUtils.FromStringWithSlashEncoding(publicRequest.JobId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{job-id}", StringUtils.FromString(publicRequest.JobId));
+            request.ResourcePath = "/v1/apps/{application-id}/jobs/export/{job-id}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

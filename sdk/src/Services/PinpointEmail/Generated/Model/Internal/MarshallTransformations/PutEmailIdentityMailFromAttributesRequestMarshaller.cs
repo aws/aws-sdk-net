@@ -59,11 +59,11 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-26";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/v1/email/identities/{EmailIdentity}/mail-from";
             if (!publicRequest.IsSetEmailIdentity())
                 throw new AmazonPinpointEmailException("Request object does not have required field EmailIdentity set");
-            uriResourcePath = uriResourcePath.Replace("{EmailIdentity}", StringUtils.FromStringWithSlashEncoding(publicRequest.EmailIdentity));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{EmailIdentity}", StringUtils.FromString(publicRequest.EmailIdentity));
+            request.ResourcePath = "/v1/email/identities/{EmailIdentity}/mail-from";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

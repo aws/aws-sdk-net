@@ -533,6 +533,19 @@ namespace Amazon.Runtime
             {
                 if (resourcePath.StartsWith("/", StringComparison.Ordinal))
                     resourcePath = resourcePath.Substring(1);
+
+                if(iRequest.MarshallerVersion >= 2)
+                {
+                    if (AWSSDKUtils.HasBidiControlCharacters(resourcePath) || iRequest.PathResources.Any(v => AWSSDKUtils.HasBidiControlCharacters(v.Value)))
+                    {
+                        resourcePath = string.Join("/", AWSSDKUtils.SplitResourcePathIntoSegments(resourcePath, iRequest.PathResources).ToArray());
+                        throw new AmazonClientException(string.Format(CultureInfo.InvariantCulture,
+                            "Target resource path [{0}] has bidirectional characters, which are not supported" +
+                            "by System.Uri and thus cannot be handled by the .NET SDK.", resourcePath));
+                    }                    
+
+                    resourcePath = AWSSDKUtils.ResolveResourcePath(resourcePath, iRequest.PathResources);
+                }                                                
             }
 
             // Construct any sub resource/query parameter additions to append to the
@@ -561,12 +574,21 @@ namespace Amazon.Runtime
             }
 
 
-            if (AWSSDKUtils.HasBidiControlCharacters(resourcePath))
-                throw new AmazonClientException(string.Format(CultureInfo.InvariantCulture,
-                    "Target resource path [{0}] has bidirectional characters, which are not supported" +
-                    "by System.Uri and thus cannot be handled by the .NET SDK.", resourcePath));
+            var parameterizedPath = string.Empty;
+            if(iRequest.MarshallerVersion >= 2)
+            {
+                parameterizedPath = string.Concat(resourcePath, sb);
+            }
+            else
+            {
+                if (AWSSDKUtils.HasBidiControlCharacters(resourcePath))                
+                        throw new AmazonClientException(string.Format(CultureInfo.InvariantCulture,
+                            "Target resource path [{0}] has bidirectional characters, which are not supported" +
+                            "by System.Uri and thus cannot be handled by the .NET SDK.", resourcePath));
 
-            var parameterizedPath = string.Concat(AWSSDKUtils.ProtectEncodedSlashUrlEncode(resourcePath, true), sb);
+                parameterizedPath = string.Concat(AWSSDKUtils.ProtectEncodedSlashUrlEncode(resourcePath, true), sb);
+            }
+            
             var hasSlash = url.AbsoluteUri.EndsWith("/", StringComparison.Ordinal) || parameterizedPath.StartsWith("/", StringComparison.Ordinal);
             var uri = hasSlash
                 ? new Uri(url.AbsoluteUri + parameterizedPath)

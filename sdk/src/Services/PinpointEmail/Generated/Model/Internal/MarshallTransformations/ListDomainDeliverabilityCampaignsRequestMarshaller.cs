@@ -58,10 +58,9 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-26";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/v1/email/deliverability-dashboard/domains/{SubscribedDomain}/campaigns";
             if (!publicRequest.IsSetSubscribedDomain())
                 throw new AmazonPinpointEmailException("Request object does not have required field SubscribedDomain set");
-            uriResourcePath = uriResourcePath.Replace("{SubscribedDomain}", StringUtils.FromStringWithSlashEncoding(publicRequest.SubscribedDomain));
+            request.AddPathResource("{SubscribedDomain}", StringUtils.FromString(publicRequest.SubscribedDomain));
             
             if (publicRequest.IsSetEndDate())
                 request.Parameters.Add("EndDate", StringUtils.FromDateTimeToISO8601(publicRequest.EndDate));
@@ -74,7 +73,8 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetStartDate())
                 request.Parameters.Add("StartDate", StringUtils.FromDateTimeToISO8601(publicRequest.StartDate));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/v1/email/deliverability-dashboard/domains/{SubscribedDomain}/campaigns";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

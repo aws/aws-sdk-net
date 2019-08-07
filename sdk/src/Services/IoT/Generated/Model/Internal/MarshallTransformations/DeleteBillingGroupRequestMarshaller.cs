@@ -58,14 +58,14 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/billing-groups/{billingGroupName}";
             if (!publicRequest.IsSetBillingGroupName())
                 throw new AmazonIoTException("Request object does not have required field BillingGroupName set");
-            uriResourcePath = uriResourcePath.Replace("{billingGroupName}", StringUtils.FromStringWithSlashEncoding(publicRequest.BillingGroupName));
+            request.AddPathResource("{billingGroupName}", StringUtils.FromString(publicRequest.BillingGroupName));
             
             if (publicRequest.IsSetExpectedVersion())
                 request.Parameters.Add("expectedVersion", StringUtils.FromLong(publicRequest.ExpectedVersion));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/billing-groups/{billingGroupName}";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

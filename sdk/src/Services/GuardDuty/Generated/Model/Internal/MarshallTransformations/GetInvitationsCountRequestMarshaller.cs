@@ -58,8 +58,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-28";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/invitation/count";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/invitation/count";
+            request.MarshallerVersion = 2;
 
             return request;
         }

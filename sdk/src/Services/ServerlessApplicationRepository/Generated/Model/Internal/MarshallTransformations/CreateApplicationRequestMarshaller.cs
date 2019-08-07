@@ -59,8 +59,8 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-08";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/applications";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/applications";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

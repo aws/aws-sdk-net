@@ -58,14 +58,14 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-14";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/v1/flows/{flowArn}/outputs/{outputArn}";
             if (!publicRequest.IsSetFlowArn())
                 throw new AmazonMediaConnectException("Request object does not have required field FlowArn set");
-            uriResourcePath = uriResourcePath.Replace("{flowArn}", StringUtils.FromStringWithSlashEncoding(publicRequest.FlowArn));
+            request.AddPathResource("{flowArn}", StringUtils.FromString(publicRequest.FlowArn));
             if (!publicRequest.IsSetOutputArn())
                 throw new AmazonMediaConnectException("Request object does not have required field OutputArn set");
-            uriResourcePath = uriResourcePath.Replace("{outputArn}", StringUtils.FromStringWithSlashEncoding(publicRequest.OutputArn));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{outputArn}", StringUtils.FromString(publicRequest.OutputArn));
+            request.ResourcePath = "/v1/flows/{flowArn}/outputs/{outputArn}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

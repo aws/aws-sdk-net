@@ -58,14 +58,14 @@ namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-14";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/projects";
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/projects";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -58,14 +58,14 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/restapis/{restapi_id}/documentation/parts/{part_id}";
             if (!publicRequest.IsSetDocumentationPartId())
                 throw new AmazonAPIGatewayException("Request object does not have required field DocumentationPartId set");
-            uriResourcePath = uriResourcePath.Replace("{part_id}", StringUtils.FromStringWithSlashEncoding(publicRequest.DocumentationPartId));
+            request.AddPathResource("{part_id}", StringUtils.FromString(publicRequest.DocumentationPartId));
             if (!publicRequest.IsSetRestApiId())
                 throw new AmazonAPIGatewayException("Request object does not have required field RestApiId set");
-            uriResourcePath = uriResourcePath.Replace("{restapi_id}", StringUtils.FromStringWithSlashEncoding(publicRequest.RestApiId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{restapi_id}", StringUtils.FromString(publicRequest.RestApiId));
+            request.ResourcePath = "/restapis/{restapi_id}/documentation/parts/{part_id}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

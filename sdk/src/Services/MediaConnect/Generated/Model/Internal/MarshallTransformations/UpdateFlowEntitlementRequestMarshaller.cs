@@ -59,14 +59,14 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-14";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/v1/flows/{flowArn}/entitlements/{entitlementArn}";
             if (!publicRequest.IsSetEntitlementArn())
                 throw new AmazonMediaConnectException("Request object does not have required field EntitlementArn set");
-            uriResourcePath = uriResourcePath.Replace("{entitlementArn}", StringUtils.FromStringWithSlashEncoding(publicRequest.EntitlementArn));
+            request.AddPathResource("{entitlementArn}", StringUtils.FromString(publicRequest.EntitlementArn));
             if (!publicRequest.IsSetFlowArn())
                 throw new AmazonMediaConnectException("Request object does not have required field FlowArn set");
-            uriResourcePath = uriResourcePath.Replace("{flowArn}", StringUtils.FromStringWithSlashEncoding(publicRequest.FlowArn));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{flowArn}", StringUtils.FromString(publicRequest.FlowArn));
+            request.ResourcePath = "/v1/flows/{flowArn}/entitlements/{entitlementArn}";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

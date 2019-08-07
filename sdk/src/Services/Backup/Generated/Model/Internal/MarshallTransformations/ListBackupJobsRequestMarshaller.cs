@@ -58,7 +58,6 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-15";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/backup-jobs/";
             
             if (publicRequest.IsSetByBackupVaultName())
                 request.Parameters.Add("backupVaultName", StringUtils.FromString(publicRequest.ByBackupVaultName));
@@ -83,7 +82,8 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/backup-jobs/";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -72,6 +72,8 @@ namespace Amazon.Util
         internal const string S3Accelerate = "s3-accelerate";
         internal const string S3Control = "s3-control";
 
+        private const int DefaultMarshallerVersion = 1;
+
         private static readonly string _userAgent = InternalSDKUtils.BuildUserAgentString(string.Empty);
 
         #endregion
@@ -281,7 +283,7 @@ namespace Amazon.Util
         public static string CanonicalizeResourcePath(Uri endpoint, string resourcePath)
         {
             // This overload is kept for backward compatibility in existing code bases.
-            return CanonicalizeResourcePath(endpoint, resourcePath, false);
+            return CanonicalizeResourcePath(endpoint, resourcePath, false, null, DefaultMarshallerVersion);
         }
 
         /// <summary>
@@ -297,6 +299,26 @@ namespace Amazon.Util
         /// </remarks>
         /// <returns>Canonicalized resource path for the endpoint</returns>
         public static string CanonicalizeResourcePath(Uri endpoint, string resourcePath, bool detectPreEncode)
+        {
+            // This overload is kept for backward compatibility in existing code bases.
+            return CanonicalizeResourcePath(endpoint, resourcePath, detectPreEncode, null, DefaultMarshallerVersion);
+        }
+
+        /// <summary>
+        /// Returns the canonicalized resource path for the service endpoint
+        /// </summary>
+        /// <param name="endpoint">Endpoint URL for the request</param>
+        /// <param name="resourcePath">Resource path for the request</param>
+        /// <param name="detectPreEncode">If true pre URL encode path segments if necessary.
+        /// S3 is currently the only service that does not expect pre URL encoded segments.</param>
+        /// <param name="pathResources">Dictionary of key/value parameters containing the values for the ResourcePath key replacements</param>
+        /// <param name="marshallerVersion">The version of the marshaller that constructed the request object.</param>
+        /// <remarks>
+        /// If resourcePath begins or ends with slash, the resulting canonicalized
+        /// path will follow suit.
+        /// </remarks>
+        /// <returns>Canonicalized resource path for the endpoint</returns>
+        public static string CanonicalizeResourcePath(Uri endpoint, string resourcePath, bool detectPreEncode, IDictionary<string, string> pathResources, int marshallerVersion)
         {
             if (endpoint != null)
             {
@@ -316,10 +338,19 @@ namespace Amazon.Util
             if (string.IsNullOrEmpty(resourcePath))
                 return Slash;
 
-            // split path at / into segments
-            var pathSegments = resourcePath.Split(new char[] { SlashChar }, StringSplitOptions.None);
-
-            IEnumerable<string> encodedSegments = pathSegments;
+            
+            
+            IEnumerable<string> encodedSegments;
+            if(marshallerVersion >= 2)
+            {
+                encodedSegments = AWSSDKUtils.SplitResourcePathIntoSegments(resourcePath, pathResources);
+            }
+            else
+            {
+                //split path at / into segments
+                encodedSegments = resourcePath.Split(new char[] { SlashChar }, StringSplitOptions.None);                
+            }
+            
             var pathWasPreEncoded = false;
             if (detectPreEncode)
             {
@@ -330,17 +361,33 @@ namespace Amazon.Util
                 // For everything else URL pre encode the resource path segments.
                 if (!S3Uri.IsS3Uri(endpoint))
                 {
-                    encodedSegments = encodedSegments.Select(segment => ProtectEncodedSlashUrlEncode(segment, true));
+                    if(marshallerVersion >= 2)
+                    {
+                        encodedSegments = encodedSegments.Select(segment => UrlEncode(segment, true).Replace(Slash, EncodedSlash));
+                    }
+                    else
+                    {
+                        encodedSegments = encodedSegments.Select(segment => ProtectEncodedSlashUrlEncode(segment, true));
+                    }
+                    
                     pathWasPreEncoded = true;
                 }
             }
 
-            // Encode for canonicalization
-            encodedSegments = encodedSegments.Select(segment => UrlEncode(segment, false));
+            var canonicalizedResourcePath = string.Empty;
+            if(marshallerVersion >= 2)
+            {
+                canonicalizedResourcePath = AWSSDKUtils.JoinResourcePathSegments(encodedSegments, false);
+            }
+            else
+            {
+                // Encode for canonicalization
+                encodedSegments = encodedSegments.Select(segment => UrlEncode(segment, false));
 
-            // join the encoded segments with /
-            var canonicalizedResourcePath = string.Join(Slash, encodedSegments.ToArray());
-
+                // join the encoded segments with /
+                canonicalizedResourcePath = string.Join(Slash, encodedSegments.ToArray());
+            }
+            
             // Get the logger each time (it's cached) because we shouldn't store it in a static variable.
             Logger.GetLogger(typeof(AWSSDKUtils)).DebugFormat("{0} encoded {1}{2} for canonicalization: {3}",
                 pathWasPreEncoded ? "Double" : "Single",
@@ -349,6 +396,84 @@ namespace Amazon.Util
                 canonicalizedResourcePath);
 
             return canonicalizedResourcePath;
+        }
+
+        /// <summary>
+        /// Splits the resourcePath at / into segments then resolves any keys with the path resource values. Greedy
+        /// key values will be split into multiple segments at each /.
+        /// </summary>
+        /// <param name="resourcePath">The patterned resourcePath</param>
+        /// <param name="pathResources">The key/value lookup for the patterned resourcePath</param>
+        /// <returns>A list of path segments where all keys in the resourcePath have been resolved to one or more path segment values</returns>
+        public static IEnumerable<string> SplitResourcePathIntoSegments(string resourcePath, IDictionary<string, string> pathResources)
+        {
+            var splitChars = new char[] { SlashChar };
+            var pathSegments = resourcePath.Split(splitChars, StringSplitOptions.None);
+            if(pathResources == null || pathResources.Count == 0)
+            {
+                return pathSegments;
+            }
+
+            //Otherwise there are key/values that need to be resolved
+            var resolvedSegments = new List<string>();
+            foreach(var segment in pathSegments)
+            {
+                if (!pathResources.ContainsKey(segment))
+                {
+                    resolvedSegments.Add(segment);
+                    continue;
+                }
+
+                //Determine if the path is greedy. If greedy the segment will be split at each / into multiple segments.
+                if (segment.EndsWith("+}", StringComparison.Ordinal))
+                {
+                    resolvedSegments.AddRange(pathResources[segment].Split(splitChars, StringSplitOptions.None));
+                }
+                else
+                {
+                    resolvedSegments.Add(pathResources[segment]);
+                }
+            }
+
+            return resolvedSegments;
+        }
+
+        /// <summary>
+        /// Joins all path segments with the / character and encodes each segment before joining.
+        /// </summary>
+        /// <param name="pathSegments">The segments of a URL path split at each / character</param>
+        /// <param name="path">If the path property is specified,
+        /// the accepted path characters {/+:} are not encoded.</param>
+        /// <returns>A joined URL with encoded segments</returns>
+        public static string JoinResourcePathSegments(IEnumerable<string> pathSegments, bool path)
+        {
+            // Encode for canonicalization
+            pathSegments = pathSegments.Select(segment => UrlEncode(segment, path));
+
+            if (path)
+            {
+                pathSegments = pathSegments.Select(segment => segment.Replace(Slash, EncodedSlash));
+            }
+
+            // join the encoded segments with /
+            return string.Join(Slash, pathSegments.ToArray());
+        }
+
+        /// <summary>
+        /// Takes a patterned resource path and resolves it using the key/value path resources into
+        /// a segmented encoded URL.
+        /// </summary>
+        /// <param name="resourcePath">The patterned resourcePath</param>
+        /// <param name="pathResources">The key/value lookup for the patterned resourcePath</param>
+        /// <returns>A segmented encoded URL</returns>
+        public static string ResolveResourcePath(string resourcePath, IDictionary<string, string> pathResources)
+        {
+            if (string.IsNullOrEmpty(resourcePath))
+            {
+                return resourcePath;
+            }
+
+            return JoinResourcePathSegments(SplitResourcePathIntoSegments(resourcePath, pathResources), true);
         }
 
         /// <summary>
@@ -858,7 +983,7 @@ namespace Amazon.Util
         /// </summary>
         /// <param name="data">The string to encode</param>
         /// <param name="path">Whether the string is a URL path or not</param>
-        /// <returns>The encoded string with any previously encoded %2F preserved</returns>
+        /// <returns>The encoded string with any previously encoded %2F preserved</returns>        
         public static string ProtectEncodedSlashUrlEncode(string data, bool path)
         {
             if (string.IsNullOrEmpty(data))

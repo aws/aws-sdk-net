@@ -59,17 +59,17 @@ namespace Amazon.Mobile.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-01";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/bundles/{bundleId}";
             if (!publicRequest.IsSetBundleId())
                 throw new AmazonMobileException("Request object does not have required field BundleId set");
-            uriResourcePath = uriResourcePath.Replace("{bundleId}", StringUtils.FromStringWithSlashEncoding(publicRequest.BundleId));
+            request.AddPathResource("{bundleId}", StringUtils.FromString(publicRequest.BundleId));
             
             if (publicRequest.IsSetPlatform())
                 request.Parameters.Add("platform", StringUtils.FromString(publicRequest.Platform));
             
             if (publicRequest.IsSetProjectId())
                 request.Parameters.Add("projectId", StringUtils.FromString(publicRequest.ProjectId));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/bundles/{bundleId}";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

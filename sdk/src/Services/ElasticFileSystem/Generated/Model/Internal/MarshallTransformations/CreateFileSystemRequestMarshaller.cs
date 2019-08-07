@@ -59,8 +59,8 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-02-01";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/2015-02-01/file-systems";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2015-02-01/file-systems";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

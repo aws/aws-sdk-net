@@ -56,8 +56,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "POST";
-            string uriResourcePath = "/2019-03-26/origin-access-identity/cloudfront";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2019-03-26/origin-access-identity/cloudfront";
+            request.MarshallerVersion = 2;
 
             var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))

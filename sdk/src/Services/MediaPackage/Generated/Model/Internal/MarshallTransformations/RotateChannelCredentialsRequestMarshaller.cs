@@ -59,11 +59,11 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-12";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/channels/{id}/credentials";
             if (!publicRequest.IsSetId())
                 throw new AmazonMediaPackageException("Request object does not have required field Id set");
-            uriResourcePath = uriResourcePath.Replace("{id}", StringUtils.FromStringWithSlashEncoding(publicRequest.Id));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{id}", StringUtils.FromString(publicRequest.Id));
+            request.ResourcePath = "/channels/{id}/credentials";
+            request.MarshallerVersion = 2;
 
             return request;
         }

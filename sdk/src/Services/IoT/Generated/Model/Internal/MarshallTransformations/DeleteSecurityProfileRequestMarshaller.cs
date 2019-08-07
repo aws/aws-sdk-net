@@ -58,14 +58,14 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/security-profiles/{securityProfileName}";
             if (!publicRequest.IsSetSecurityProfileName())
                 throw new AmazonIoTException("Request object does not have required field SecurityProfileName set");
-            uriResourcePath = uriResourcePath.Replace("{securityProfileName}", StringUtils.FromStringWithSlashEncoding(publicRequest.SecurityProfileName));
+            request.AddPathResource("{securityProfileName}", StringUtils.FromString(publicRequest.SecurityProfileName));
             
             if (publicRequest.IsSetExpectedVersion())
                 request.Parameters.Add("expectedVersion", StringUtils.FromLong(publicRequest.ExpectedVersion));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/security-profiles/{securityProfileName}";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -59,11 +59,11 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-05-01";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/api/v1/organizations/{OrganizationId}/subscriptions";
             if (!publicRequest.IsSetOrganizationId())
                 throw new AmazonWorkDocsException("Request object does not have required field OrganizationId set");
-            uriResourcePath = uriResourcePath.Replace("{OrganizationId}", StringUtils.FromStringWithSlashEncoding(publicRequest.OrganizationId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{OrganizationId}", StringUtils.FromString(publicRequest.OrganizationId));
+            request.ResourcePath = "/api/v1/organizations/{OrganizationId}/subscriptions";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

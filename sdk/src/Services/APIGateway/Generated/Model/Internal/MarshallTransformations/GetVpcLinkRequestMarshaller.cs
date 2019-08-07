@@ -58,11 +58,11 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/vpclinks/{vpclink_id}";
             if (!publicRequest.IsSetVpcLinkId())
                 throw new AmazonAPIGatewayException("Request object does not have required field VpcLinkId set");
-            uriResourcePath = uriResourcePath.Replace("{vpclink_id}", StringUtils.FromStringWithSlashEncoding(publicRequest.VpcLinkId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{vpclink_id}", StringUtils.FromString(publicRequest.VpcLinkId));
+            request.ResourcePath = "/vpclinks/{vpclink_id}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

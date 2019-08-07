@@ -58,10 +58,9 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-24";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/networks/{networkId}/members";
             if (!publicRequest.IsSetNetworkId())
                 throw new AmazonManagedBlockchainException("Request object does not have required field NetworkId set");
-            uriResourcePath = uriResourcePath.Replace("{networkId}", StringUtils.FromStringWithSlashEncoding(publicRequest.NetworkId));
+            request.AddPathResource("{networkId}", StringUtils.FromString(publicRequest.NetworkId));
             
             if (publicRequest.IsSetIsOwned())
                 request.Parameters.Add("isOwned", StringUtils.FromBool(publicRequest.IsOwned));
@@ -77,7 +76,8 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetStatus())
                 request.Parameters.Add("status", StringUtils.FromString(publicRequest.Status));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/networks/{networkId}/members";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

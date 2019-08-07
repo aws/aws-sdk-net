@@ -59,11 +59,11 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-26";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/v1/email/configuration-sets/{ConfigurationSetName}/event-destinations";
             if (!publicRequest.IsSetConfigurationSetName())
                 throw new AmazonPinpointEmailException("Request object does not have required field ConfigurationSetName set");
-            uriResourcePath = uriResourcePath.Replace("{ConfigurationSetName}", StringUtils.FromStringWithSlashEncoding(publicRequest.ConfigurationSetName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{ConfigurationSetName}", StringUtils.FromString(publicRequest.ConfigurationSetName));
+            request.ResourcePath = "/v1/email/configuration-sets/{ConfigurationSetName}/event-destinations";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

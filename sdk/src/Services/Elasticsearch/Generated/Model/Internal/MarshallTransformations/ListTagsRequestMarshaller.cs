@@ -58,11 +58,11 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-01-01";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/2015-01-01/tags/";
             
             if (publicRequest.IsSetARN())
                 request.Parameters.Add("arn", StringUtils.FromString(publicRequest.ARN));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2015-01-01/tags/";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

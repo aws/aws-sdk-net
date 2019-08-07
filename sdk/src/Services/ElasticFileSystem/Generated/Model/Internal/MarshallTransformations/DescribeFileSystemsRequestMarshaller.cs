@@ -58,7 +58,6 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-02-01";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/2015-02-01/file-systems";
             
             if (publicRequest.IsSetCreationToken())
                 request.Parameters.Add("CreationToken", StringUtils.FromString(publicRequest.CreationToken));
@@ -71,7 +70,8 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetMaxItems())
                 request.Parameters.Add("MaxItems", StringUtils.FromInt(publicRequest.MaxItems));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2015-02-01/file-systems";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

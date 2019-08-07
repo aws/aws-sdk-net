@@ -59,11 +59,11 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-01-01";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/2015-01-01/es/domain/{DomainName}/config";
             if (!publicRequest.IsSetDomainName())
                 throw new AmazonElasticsearchException("Request object does not have required field DomainName set");
-            uriResourcePath = uriResourcePath.Replace("{DomainName}", StringUtils.FromStringWithSlashEncoding(publicRequest.DomainName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{DomainName}", StringUtils.FromString(publicRequest.DomainName));
+            request.ResourcePath = "/2015-01-01/es/domain/{DomainName}/config";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

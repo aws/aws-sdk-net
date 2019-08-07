@@ -59,8 +59,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-01";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/clusters";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/clusters";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

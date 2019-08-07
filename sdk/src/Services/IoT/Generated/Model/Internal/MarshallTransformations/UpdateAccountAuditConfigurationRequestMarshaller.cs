@@ -59,8 +59,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "PATCH";
 
-            string uriResourcePath = "/audit/configuration";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/audit/configuration";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

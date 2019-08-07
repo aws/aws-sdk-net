@@ -58,7 +58,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-01";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/phone-numbers";
             
             if (publicRequest.IsSetFilterName())
                 request.Parameters.Add("filter-name", StringUtils.FromString(publicRequest.FilterName));
@@ -77,7 +76,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetStatus())
                 request.Parameters.Add("status", StringUtils.FromString(publicRequest.Status));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/phone-numbers";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

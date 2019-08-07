@@ -58,12 +58,12 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-06-01";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/{accountId}/vaults/{vaultName}";
-            uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromStringWithSlashEncoding(publicRequest.AccountId) : string.Empty);
+            request.AddPathResource("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
             if (!publicRequest.IsSetVaultName())
                 throw new AmazonGlacierException("Request object does not have required field VaultName set");
-            uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromStringWithSlashEncoding(publicRequest.VaultName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{vaultName}", StringUtils.FromString(publicRequest.VaultName));
+            request.ResourcePath = "/{accountId}/vaults/{vaultName}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

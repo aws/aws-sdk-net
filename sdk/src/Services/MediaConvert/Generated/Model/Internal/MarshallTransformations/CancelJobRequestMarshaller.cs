@@ -58,11 +58,11 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-29";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/2017-08-29/jobs/{id}";
             if (!publicRequest.IsSetId())
                 throw new AmazonMediaConvertException("Request object does not have required field Id set");
-            uriResourcePath = uriResourcePath.Replace("{id}", StringUtils.FromStringWithSlashEncoding(publicRequest.Id));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{id}", StringUtils.FromString(publicRequest.Id));
+            request.ResourcePath = "/2017-08-29/jobs/{id}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -58,14 +58,14 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-01-04";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/deleteresourceshare";
             
             if (publicRequest.IsSetClientToken())
                 request.Parameters.Add("clientToken", StringUtils.FromString(publicRequest.ClientToken));
             
             if (publicRequest.IsSetResourceShareArn())
                 request.Parameters.Add("resourceShareArn", StringUtils.FromString(publicRequest.ResourceShareArn));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/deleteresourceshare";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

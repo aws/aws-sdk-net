@@ -58,14 +58,14 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/apps/{appId}/domains/{domainName}";
             if (!publicRequest.IsSetAppId())
                 throw new AmazonAmplifyException("Request object does not have required field AppId set");
-            uriResourcePath = uriResourcePath.Replace("{appId}", StringUtils.FromStringWithSlashEncoding(publicRequest.AppId));
+            request.AddPathResource("{appId}", StringUtils.FromString(publicRequest.AppId));
             if (!publicRequest.IsSetDomainName())
                 throw new AmazonAmplifyException("Request object does not have required field DomainName set");
-            uriResourcePath = uriResourcePath.Replace("{domainName}", StringUtils.FromStringWithSlashEncoding(publicRequest.DomainName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{domainName}", StringUtils.FromString(publicRequest.DomainName));
+            request.ResourcePath = "/apps/{appId}/domains/{domainName}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

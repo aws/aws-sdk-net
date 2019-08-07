@@ -59,8 +59,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-29";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/2017-08-29/certificates";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2017-08-29/certificates";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

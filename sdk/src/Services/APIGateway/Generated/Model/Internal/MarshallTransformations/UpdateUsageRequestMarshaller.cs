@@ -59,14 +59,14 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";            
             request.HttpMethod = "PATCH";
 
-            string uriResourcePath = "/usageplans/{usageplanId}/keys/{keyId}/usage";
             if (!publicRequest.IsSetKeyId())
                 throw new AmazonAPIGatewayException("Request object does not have required field KeyId set");
-            uriResourcePath = uriResourcePath.Replace("{keyId}", StringUtils.FromStringWithSlashEncoding(publicRequest.KeyId));
+            request.AddPathResource("{keyId}", StringUtils.FromString(publicRequest.KeyId));
             if (!publicRequest.IsSetUsagePlanId())
                 throw new AmazonAPIGatewayException("Request object does not have required field UsagePlanId set");
-            uriResourcePath = uriResourcePath.Replace("{usageplanId}", StringUtils.FromStringWithSlashEncoding(publicRequest.UsagePlanId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{usageplanId}", StringUtils.FromString(publicRequest.UsagePlanId));
+            request.ResourcePath = "/usageplans/{usageplanId}/keys/{keyId}/usage";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

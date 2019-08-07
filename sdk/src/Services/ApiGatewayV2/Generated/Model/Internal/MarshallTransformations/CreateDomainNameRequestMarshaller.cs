@@ -59,8 +59,8 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-29";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/v2/domainnames";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/v2/domainnames";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

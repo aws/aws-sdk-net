@@ -59,17 +59,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/cacertificate/{caCertificateId}";
             if (!publicRequest.IsSetCertificateId())
                 throw new AmazonIoTException("Request object does not have required field CertificateId set");
-            uriResourcePath = uriResourcePath.Replace("{caCertificateId}", StringUtils.FromStringWithSlashEncoding(publicRequest.CertificateId));
+            request.AddPathResource("{caCertificateId}", StringUtils.FromString(publicRequest.CertificateId));
             
             if (publicRequest.IsSetNewAutoRegistrationStatus())
                 request.Parameters.Add("newAutoRegistrationStatus", StringUtils.FromString(publicRequest.NewAutoRegistrationStatus));
             
             if (publicRequest.IsSetNewStatus())
                 request.Parameters.Add("newStatus", StringUtils.FromString(publicRequest.NewStatus));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/cacertificate/{caCertificateId}";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

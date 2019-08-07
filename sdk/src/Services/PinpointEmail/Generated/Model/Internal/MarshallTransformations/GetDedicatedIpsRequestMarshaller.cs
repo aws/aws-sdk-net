@@ -58,7 +58,6 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-26";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/v1/email/dedicated-ips";
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
@@ -68,7 +67,8 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetPoolName())
                 request.Parameters.Add("PoolName", StringUtils.FromString(publicRequest.PoolName));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/v1/email/dedicated-ips";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

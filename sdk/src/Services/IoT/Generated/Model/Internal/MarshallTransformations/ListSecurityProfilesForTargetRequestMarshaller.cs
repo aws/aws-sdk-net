@@ -58,7 +58,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/security-profiles-for-target";
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
@@ -71,7 +70,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetSecurityProfileTargetArn())
                 request.Parameters.Add("securityProfileTargetArn", StringUtils.FromString(publicRequest.SecurityProfileTargetArn));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/security-profiles-for-target";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

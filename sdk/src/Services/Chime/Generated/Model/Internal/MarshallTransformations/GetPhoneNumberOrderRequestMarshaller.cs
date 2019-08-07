@@ -58,11 +58,11 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-01";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/phone-number-orders/{phoneNumberOrderId}";
             if (!publicRequest.IsSetPhoneNumberOrderId())
                 throw new AmazonChimeException("Request object does not have required field PhoneNumberOrderId set");
-            uriResourcePath = uriResourcePath.Replace("{phoneNumberOrderId}", StringUtils.FromStringWithSlashEncoding(publicRequest.PhoneNumberOrderId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{phoneNumberOrderId}", StringUtils.FromString(publicRequest.PhoneNumberOrderId));
+            request.ResourcePath = "/phone-number-orders/{phoneNumberOrderId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

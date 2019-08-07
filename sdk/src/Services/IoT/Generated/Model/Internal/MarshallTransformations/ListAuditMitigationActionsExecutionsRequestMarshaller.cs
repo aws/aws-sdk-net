@@ -58,7 +58,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/audit/mitigationactions/executions";
             
             if (publicRequest.IsSetActionStatus())
                 request.Parameters.Add("actionStatus", StringUtils.FromString(publicRequest.ActionStatus));
@@ -74,7 +73,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetTaskId())
                 request.Parameters.Add("taskId", StringUtils.FromString(publicRequest.TaskId));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/audit/mitigationactions/executions";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

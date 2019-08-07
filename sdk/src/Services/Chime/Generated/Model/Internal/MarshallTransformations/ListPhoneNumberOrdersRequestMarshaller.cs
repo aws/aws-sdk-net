@@ -58,14 +58,14 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-01";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/phone-number-orders";
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("max-results", StringUtils.FromInt(publicRequest.MaxResults));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("next-token", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/phone-number-orders";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

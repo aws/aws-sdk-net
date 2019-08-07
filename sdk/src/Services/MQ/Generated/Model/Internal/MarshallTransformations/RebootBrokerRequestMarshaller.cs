@@ -59,11 +59,11 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/v1/brokers/{broker-id}/reboot";
             if (!publicRequest.IsSetBrokerId())
                 throw new AmazonMQException("Request object does not have required field BrokerId set");
-            uriResourcePath = uriResourcePath.Replace("{broker-id}", StringUtils.FromStringWithSlashEncoding(publicRequest.BrokerId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{broker-id}", StringUtils.FromString(publicRequest.BrokerId));
+            request.ResourcePath = "/v1/brokers/{broker-id}/reboot";
+            request.MarshallerVersion = 2;
 
             return request;
         }

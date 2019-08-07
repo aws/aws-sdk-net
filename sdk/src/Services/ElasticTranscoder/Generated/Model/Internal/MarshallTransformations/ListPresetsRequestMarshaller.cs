@@ -58,14 +58,14 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-09-25";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/2012-09-25/presets";
             
             if (publicRequest.IsSetAscending())
                 request.Parameters.Add("Ascending", StringUtils.FromString(publicRequest.Ascending));
             
             if (publicRequest.IsSetPageToken())
                 request.Parameters.Add("PageToken", StringUtils.FromString(publicRequest.PageToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2012-09-25/presets";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

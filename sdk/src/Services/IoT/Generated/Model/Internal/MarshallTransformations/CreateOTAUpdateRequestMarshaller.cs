@@ -59,11 +59,11 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/otaUpdates/{otaUpdateId}";
             if (!publicRequest.IsSetOtaUpdateId())
                 throw new AmazonIoTException("Request object does not have required field OtaUpdateId set");
-            uriResourcePath = uriResourcePath.Replace("{otaUpdateId}", StringUtils.FromStringWithSlashEncoding(publicRequest.OtaUpdateId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{otaUpdateId}", StringUtils.FromString(publicRequest.OtaUpdateId));
+            request.ResourcePath = "/otaUpdates/{otaUpdateId}";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

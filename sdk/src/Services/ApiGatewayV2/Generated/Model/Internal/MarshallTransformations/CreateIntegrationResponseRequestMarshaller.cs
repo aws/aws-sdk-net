@@ -59,14 +59,14 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-29";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/v2/apis/{apiId}/integrations/{integrationId}/integrationresponses";
             if (!publicRequest.IsSetApiId())
                 throw new AmazonApiGatewayV2Exception("Request object does not have required field ApiId set");
-            uriResourcePath = uriResourcePath.Replace("{apiId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ApiId));
+            request.AddPathResource("{apiId}", StringUtils.FromString(publicRequest.ApiId));
             if (!publicRequest.IsSetIntegrationId())
                 throw new AmazonApiGatewayV2Exception("Request object does not have required field IntegrationId set");
-            uriResourcePath = uriResourcePath.Replace("{integrationId}", StringUtils.FromStringWithSlashEncoding(publicRequest.IntegrationId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{integrationId}", StringUtils.FromString(publicRequest.IntegrationId));
+            request.ResourcePath = "/v2/apis/{apiId}/integrations/{integrationId}/integrationresponses";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

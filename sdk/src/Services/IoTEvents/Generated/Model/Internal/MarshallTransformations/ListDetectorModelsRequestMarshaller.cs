@@ -58,14 +58,14 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-27";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/detector-models";
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/detector-models";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

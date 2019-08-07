@@ -58,17 +58,17 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-12-01";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/v1/apps/{application-id}/campaigns/{campaign-id}/versions/{version}";
             if (!publicRequest.IsSetApplicationId())
                 throw new AmazonPinpointException("Request object does not have required field ApplicationId set");
-            uriResourcePath = uriResourcePath.Replace("{application-id}", StringUtils.FromStringWithSlashEncoding(publicRequest.ApplicationId));
+            request.AddPathResource("{application-id}", StringUtils.FromString(publicRequest.ApplicationId));
             if (!publicRequest.IsSetCampaignId())
                 throw new AmazonPinpointException("Request object does not have required field CampaignId set");
-            uriResourcePath = uriResourcePath.Replace("{campaign-id}", StringUtils.FromStringWithSlashEncoding(publicRequest.CampaignId));
+            request.AddPathResource("{campaign-id}", StringUtils.FromString(publicRequest.CampaignId));
             if (!publicRequest.IsSetVersion())
                 throw new AmazonPinpointException("Request object does not have required field Version set");
-            uriResourcePath = uriResourcePath.Replace("{version}", StringUtils.FromStringWithSlashEncoding(publicRequest.Version));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{version}", StringUtils.FromString(publicRequest.Version));
+            request.ResourcePath = "/v1/apps/{application-id}/campaigns/{campaign-id}/versions/{version}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

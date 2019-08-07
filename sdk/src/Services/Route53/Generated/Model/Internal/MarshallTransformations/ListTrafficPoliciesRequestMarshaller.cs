@@ -56,14 +56,14 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
             request.HttpMethod = "GET";
-            string uriResourcePath = "/2013-04-01/trafficpolicies";
             
             if (publicRequest.IsSetTrafficPolicyIdMarker())
                 request.Parameters.Add("trafficpolicyid", StringUtils.FromString(publicRequest.TrafficPolicyIdMarker));
             
             if (publicRequest.IsSetMaxItems())
                 request.Parameters.Add("maxitems", StringUtils.FromString(publicRequest.MaxItems));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2013-04-01/trafficpolicies";
+            request.MarshallerVersion = 2;
 
 
             request.UseQueryString = true;

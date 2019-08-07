@@ -58,14 +58,14 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-05-01";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/api/v1/organizations/{OrganizationId}/subscriptions/{SubscriptionId}";
             if (!publicRequest.IsSetOrganizationId())
                 throw new AmazonWorkDocsException("Request object does not have required field OrganizationId set");
-            uriResourcePath = uriResourcePath.Replace("{OrganizationId}", StringUtils.FromStringWithSlashEncoding(publicRequest.OrganizationId));
+            request.AddPathResource("{OrganizationId}", StringUtils.FromString(publicRequest.OrganizationId));
             if (!publicRequest.IsSetSubscriptionId())
                 throw new AmazonWorkDocsException("Request object does not have required field SubscriptionId set");
-            uriResourcePath = uriResourcePath.Replace("{SubscriptionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.SubscriptionId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{SubscriptionId}", StringUtils.FromString(publicRequest.SubscriptionId));
+            request.ResourcePath = "/api/v1/organizations/{OrganizationId}/subscriptions/{SubscriptionId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

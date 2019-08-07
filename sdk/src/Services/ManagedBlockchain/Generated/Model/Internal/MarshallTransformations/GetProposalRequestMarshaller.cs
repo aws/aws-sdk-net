@@ -58,14 +58,14 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-24";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/networks/{networkId}/proposals/{proposalId}";
             if (!publicRequest.IsSetNetworkId())
                 throw new AmazonManagedBlockchainException("Request object does not have required field NetworkId set");
-            uriResourcePath = uriResourcePath.Replace("{networkId}", StringUtils.FromStringWithSlashEncoding(publicRequest.NetworkId));
+            request.AddPathResource("{networkId}", StringUtils.FromString(publicRequest.NetworkId));
             if (!publicRequest.IsSetProposalId())
                 throw new AmazonManagedBlockchainException("Request object does not have required field ProposalId set");
-            uriResourcePath = uriResourcePath.Replace("{proposalId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ProposalId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{proposalId}", StringUtils.FromString(publicRequest.ProposalId));
+            request.ResourcePath = "/networks/{networkId}/proposals/{proposalId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

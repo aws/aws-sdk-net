@@ -59,11 +59,11 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-12-01";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/v1/apps/{application-id}/settings";
             if (!publicRequest.IsSetApplicationId())
                 throw new AmazonPinpointException("Request object does not have required field ApplicationId set");
-            uriResourcePath = uriResourcePath.Replace("{application-id}", StringUtils.FromStringWithSlashEncoding(publicRequest.ApplicationId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{application-id}", StringUtils.FromString(publicRequest.ApplicationId));
+            request.ResourcePath = "/v1/apps/{application-id}/settings";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

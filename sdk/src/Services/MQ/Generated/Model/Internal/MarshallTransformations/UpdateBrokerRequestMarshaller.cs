@@ -59,11 +59,11 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/v1/brokers/{broker-id}";
             if (!publicRequest.IsSetBrokerId())
                 throw new AmazonMQException("Request object does not have required field BrokerId set");
-            uriResourcePath = uriResourcePath.Replace("{broker-id}", StringUtils.FromStringWithSlashEncoding(publicRequest.BrokerId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{broker-id}", StringUtils.FromString(publicRequest.BrokerId));
+            request.ResourcePath = "/v1/brokers/{broker-id}";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

@@ -58,14 +58,14 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-12-01";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/v1/tags/{resource-arn}";
             if (!publicRequest.IsSetResourceArn())
                 throw new AmazonPinpointException("Request object does not have required field ResourceArn set");
-            uriResourcePath = uriResourcePath.Replace("{resource-arn}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceArn));
+            request.AddPathResource("{resource-arn}", StringUtils.FromString(publicRequest.ResourceArn));
             
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/v1/tags/{resource-arn}";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

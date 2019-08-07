@@ -58,11 +58,11 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/role-aliases/{roleAlias}";
             if (!publicRequest.IsSetRoleAlias())
                 throw new AmazonIoTException("Request object does not have required field RoleAlias set");
-            uriResourcePath = uriResourcePath.Replace("{roleAlias}", StringUtils.FromStringWithSlashEncoding(publicRequest.RoleAlias));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{roleAlias}", StringUtils.FromString(publicRequest.RoleAlias));
+            request.ResourcePath = "/role-aliases/{roleAlias}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

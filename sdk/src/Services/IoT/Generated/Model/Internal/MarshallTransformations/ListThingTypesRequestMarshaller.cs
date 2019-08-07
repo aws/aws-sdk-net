@@ -58,7 +58,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/thing-types";
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
@@ -68,7 +67,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetThingTypeName())
                 request.Parameters.Add("thingTypeName", StringUtils.FromString(publicRequest.ThingTypeName));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/thing-types";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

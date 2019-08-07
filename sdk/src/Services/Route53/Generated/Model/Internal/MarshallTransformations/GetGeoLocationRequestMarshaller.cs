@@ -56,7 +56,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
             request.HttpMethod = "GET";
-            string uriResourcePath = "/2013-04-01/geolocation";
             
             if (publicRequest.IsSetContinentCode())
                 request.Parameters.Add("continentcode", StringUtils.FromString(publicRequest.ContinentCode));
@@ -66,7 +65,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetSubdivisionCode())
                 request.Parameters.Add("subdivisioncode", StringUtils.FromString(publicRequest.SubdivisionCode));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2013-04-01/geolocation";
+            request.MarshallerVersion = 2;
 
 
             request.UseQueryString = true;

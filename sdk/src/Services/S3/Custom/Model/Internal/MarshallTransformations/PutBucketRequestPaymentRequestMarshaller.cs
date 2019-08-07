@@ -45,7 +45,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(putBucketRequestPaymentRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutBucketRequestPaymentRequest.BucketName");
 
-            request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(putBucketRequestPaymentRequest.BucketName));
+			request.MarshallerVersion = 2;
+			request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(putBucketRequestPaymentRequest.BucketName));
 
             request.AddSubResource("requestPayment");
 

@@ -59,11 +59,11 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-26";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/v1/email/dedicated-ips/{IP}/warmup";
             if (!publicRequest.IsSetIp())
                 throw new AmazonPinpointEmailException("Request object does not have required field Ip set");
-            uriResourcePath = uriResourcePath.Replace("{IP}", StringUtils.FromStringWithSlashEncoding(publicRequest.Ip));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{IP}", StringUtils.FromString(publicRequest.Ip));
+            request.ResourcePath = "/v1/email/dedicated-ips/{IP}/warmup";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

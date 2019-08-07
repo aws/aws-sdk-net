@@ -61,8 +61,8 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-01-17";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/";
+            request.MarshallerVersion = 2;
             request.Content = System.Text.Encoding.UTF8.GetBytes("{}");
 
             return request;

@@ -58,17 +58,17 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-09-25";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/2012-09-25/jobsByStatus/{Status}";
             if (!publicRequest.IsSetStatus())
                 throw new AmazonElasticTranscoderException("Request object does not have required field Status set");
-            uriResourcePath = uriResourcePath.Replace("{Status}", StringUtils.FromStringWithSlashEncoding(publicRequest.Status));
+            request.AddPathResource("{Status}", StringUtils.FromString(publicRequest.Status));
             
             if (publicRequest.IsSetAscending())
                 request.Parameters.Add("Ascending", StringUtils.FromString(publicRequest.Ascending));
             
             if (publicRequest.IsSetPageToken())
                 request.Parameters.Add("PageToken", StringUtils.FromString(publicRequest.PageToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2012-09-25/jobsByStatus/{Status}";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

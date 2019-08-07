@@ -59,8 +59,8 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-01-04";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/listprincipals";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/listprincipals";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

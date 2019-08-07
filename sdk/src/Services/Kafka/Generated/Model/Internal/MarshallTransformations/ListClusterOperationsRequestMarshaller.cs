@@ -58,17 +58,17 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-14";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/v1/clusters/{clusterArn}/operations";
             if (!publicRequest.IsSetClusterArn())
                 throw new AmazonKafkaException("Request object does not have required field ClusterArn set");
-            uriResourcePath = uriResourcePath.Replace("{clusterArn}", StringUtils.FromStringWithSlashEncoding(publicRequest.ClusterArn));
+            request.AddPathResource("{clusterArn}", StringUtils.FromString(publicRequest.ClusterArn));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/v1/clusters/{clusterArn}/operations";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

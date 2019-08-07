@@ -59,11 +59,11 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-15";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/backup-vaults/{backupVaultName}/access-policy";
             if (!publicRequest.IsSetBackupVaultName())
                 throw new AmazonBackupException("Request object does not have required field BackupVaultName set");
-            uriResourcePath = uriResourcePath.Replace("{backupVaultName}", StringUtils.FromStringWithSlashEncoding(publicRequest.BackupVaultName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{backupVaultName}", StringUtils.FromString(publicRequest.BackupVaultName));
+            request.ResourcePath = "/backup-vaults/{backupVaultName}/access-policy";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

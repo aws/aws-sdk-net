@@ -61,8 +61,8 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-01";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

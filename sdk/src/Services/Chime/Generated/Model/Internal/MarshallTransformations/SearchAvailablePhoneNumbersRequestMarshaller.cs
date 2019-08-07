@@ -58,7 +58,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-01";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/search";
             request.AddSubResource("type", "phone-numbers");
             
             if (publicRequest.IsSetAreaCode())
@@ -81,7 +80,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetTollFreePrefix())
                 request.Parameters.Add("toll-free-prefix", StringUtils.FromString(publicRequest.TollFreePrefix));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/search";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

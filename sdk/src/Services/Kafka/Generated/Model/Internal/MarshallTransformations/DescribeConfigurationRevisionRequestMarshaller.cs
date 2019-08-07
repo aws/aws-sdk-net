@@ -58,14 +58,14 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-14";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/v1/configurations/{arn}/revisions/{revision}";
             if (!publicRequest.IsSetArn())
                 throw new AmazonKafkaException("Request object does not have required field Arn set");
-            uriResourcePath = uriResourcePath.Replace("{arn}", StringUtils.FromStringWithSlashEncoding(publicRequest.Arn));
+            request.AddPathResource("{arn}", StringUtils.FromString(publicRequest.Arn));
             if (!publicRequest.IsSetRevision())
                 throw new AmazonKafkaException("Request object does not have required field Revision set");
-            uriResourcePath = uriResourcePath.Replace("{revision}", StringUtils.FromLong(publicRequest.Revision));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{revision}", StringUtils.FromLong(publicRequest.Revision));
+            request.ResourcePath = "/v1/configurations/{arn}/revisions/{revision}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

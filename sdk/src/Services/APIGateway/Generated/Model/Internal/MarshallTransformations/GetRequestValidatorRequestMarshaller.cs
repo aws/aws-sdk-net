@@ -58,14 +58,14 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/restapis/{restapi_id}/requestvalidators/{requestvalidator_id}";
             if (!publicRequest.IsSetRequestValidatorId())
                 throw new AmazonAPIGatewayException("Request object does not have required field RequestValidatorId set");
-            uriResourcePath = uriResourcePath.Replace("{requestvalidator_id}", StringUtils.FromStringWithSlashEncoding(publicRequest.RequestValidatorId));
+            request.AddPathResource("{requestvalidator_id}", StringUtils.FromString(publicRequest.RequestValidatorId));
             if (!publicRequest.IsSetRestApiId())
                 throw new AmazonAPIGatewayException("Request object does not have required field RestApiId set");
-            uriResourcePath = uriResourcePath.Replace("{restapi_id}", StringUtils.FromStringWithSlashEncoding(publicRequest.RestApiId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{restapi_id}", StringUtils.FromString(publicRequest.RestApiId));
+            request.ResourcePath = "/restapis/{restapi_id}/requestvalidators/{requestvalidator_id}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

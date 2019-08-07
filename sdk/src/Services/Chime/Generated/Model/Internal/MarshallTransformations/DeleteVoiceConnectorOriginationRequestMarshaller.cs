@@ -58,11 +58,11 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-01";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/voice-connectors/{voiceConnectorId}/origination";
             if (!publicRequest.IsSetVoiceConnectorId())
                 throw new AmazonChimeException("Request object does not have required field VoiceConnectorId set");
-            uriResourcePath = uriResourcePath.Replace("{voiceConnectorId}", StringUtils.FromStringWithSlashEncoding(publicRequest.VoiceConnectorId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{voiceConnectorId}", StringUtils.FromString(publicRequest.VoiceConnectorId));
+            request.ResourcePath = "/voice-connectors/{voiceConnectorId}/origination";
+            request.MarshallerVersion = 2;
 
             return request;
         }

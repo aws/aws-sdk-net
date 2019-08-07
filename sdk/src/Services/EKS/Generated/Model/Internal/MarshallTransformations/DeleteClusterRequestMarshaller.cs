@@ -58,11 +58,11 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-01";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/clusters/{name}";
             if (!publicRequest.IsSetName())
                 throw new AmazonEKSException("Request object does not have required field Name set");
-            uriResourcePath = uriResourcePath.Replace("{name}", StringUtils.FromStringWithSlashEncoding(publicRequest.Name));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
+            request.ResourcePath = "/clusters/{name}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

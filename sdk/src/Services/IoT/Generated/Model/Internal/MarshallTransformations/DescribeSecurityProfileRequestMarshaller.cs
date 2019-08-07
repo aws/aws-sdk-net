@@ -58,11 +58,11 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/security-profiles/{securityProfileName}";
             if (!publicRequest.IsSetSecurityProfileName())
                 throw new AmazonIoTException("Request object does not have required field SecurityProfileName set");
-            uriResourcePath = uriResourcePath.Replace("{securityProfileName}", StringUtils.FromStringWithSlashEncoding(publicRequest.SecurityProfileName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{securityProfileName}", StringUtils.FromString(publicRequest.SecurityProfileName));
+            request.ResourcePath = "/security-profiles/{securityProfileName}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -59,8 +59,8 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-12";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/channels";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/channels";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

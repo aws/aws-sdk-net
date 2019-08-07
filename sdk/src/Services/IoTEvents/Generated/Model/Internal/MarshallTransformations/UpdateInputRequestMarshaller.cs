@@ -59,11 +59,11 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-27";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/inputs/{inputName}";
             if (!publicRequest.IsSetInputName())
                 throw new AmazonIoTEventsException("Request object does not have required field InputName set");
-            uriResourcePath = uriResourcePath.Replace("{inputName}", StringUtils.FromStringWithSlashEncoding(publicRequest.InputName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{inputName}", StringUtils.FromString(publicRequest.InputName));
+            request.ResourcePath = "/inputs/{inputName}";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

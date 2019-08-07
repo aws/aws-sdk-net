@@ -58,14 +58,14 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-08";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/applications";
             
             if (publicRequest.IsSetMaxItems())
                 request.Parameters.Add("maxItems", StringUtils.FromInt(publicRequest.MaxItems));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/applications";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

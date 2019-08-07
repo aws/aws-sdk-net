@@ -59,14 +59,14 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/jobs/{jobId}/cancel";
             if (!publicRequest.IsSetJobId())
                 throw new AmazonIoTException("Request object does not have required field JobId set");
-            uriResourcePath = uriResourcePath.Replace("{jobId}", StringUtils.FromStringWithSlashEncoding(publicRequest.JobId));
+            request.AddPathResource("{jobId}", StringUtils.FromString(publicRequest.JobId));
             
             if (publicRequest.IsSetForce())
                 request.Parameters.Add("force", StringUtils.FromBool(publicRequest.Force));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/jobs/{jobId}/cancel";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

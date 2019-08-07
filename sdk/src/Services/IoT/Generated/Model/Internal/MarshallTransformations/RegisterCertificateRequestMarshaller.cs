@@ -59,11 +59,11 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/certificate/register";
             
             if (publicRequest.IsSetSetAsActive())
                 request.Parameters.Add("setAsActive", StringUtils.FromBool(publicRequest.SetAsActive));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/certificate/register";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

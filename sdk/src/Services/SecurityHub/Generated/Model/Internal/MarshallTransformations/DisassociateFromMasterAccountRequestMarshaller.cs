@@ -59,8 +59,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-26";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/master/disassociate";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/master/disassociate";
+            request.MarshallerVersion = 2;
 
             return request;
         }

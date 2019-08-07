@@ -58,7 +58,6 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-25";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/signing-profiles";
             
             if (publicRequest.IsSetIncludeCanceled())
                 request.Parameters.Add("includeCanceled", StringUtils.FromBool(publicRequest.IncludeCanceled));
@@ -68,7 +67,8 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/signing-profiles";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

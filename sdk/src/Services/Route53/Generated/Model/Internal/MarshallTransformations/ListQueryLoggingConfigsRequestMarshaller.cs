@@ -56,7 +56,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
             request.HttpMethod = "GET";
-            string uriResourcePath = "/2013-04-01/queryloggingconfig";
             
             if (publicRequest.IsSetHostedZoneId())
                 request.Parameters.Add("hostedzoneid", StringUtils.FromString(publicRequest.HostedZoneId));
@@ -66,7 +65,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxresults", StringUtils.FromString(publicRequest.MaxResults));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2013-04-01/queryloggingconfig";
+            request.MarshallerVersion = 2;
 
 
             request.UseQueryString = true;

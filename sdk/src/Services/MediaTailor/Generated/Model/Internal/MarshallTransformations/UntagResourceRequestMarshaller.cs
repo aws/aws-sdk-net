@@ -58,14 +58,14 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-23";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/tags/{ResourceArn}";
             if (!publicRequest.IsSetResourceArn())
                 throw new AmazonMediaTailorException("Request object does not have required field ResourceArn set");
-            uriResourcePath = uriResourcePath.Replace("{ResourceArn}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceArn));
+            request.AddPathResource("{ResourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
             
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/tags/{ResourceArn}";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -40,7 +40,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(getBucketMetricsConfigurationRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "GetBucketMetricsConfigurationRequest.BucketName");
 
-            request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(getBucketMetricsConfigurationRequest.BucketName));
+			request.MarshallerVersion = 2;
+			request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(getBucketMetricsConfigurationRequest.BucketName));
             request.AddSubResource("metrics");
             request.AddSubResource("id", getBucketMetricsConfigurationRequest.MetricsId);
             request.UseQueryString = true;

@@ -58,7 +58,6 @@ namespace Amazon.MediaStoreData.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-01";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/";
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
@@ -68,7 +67,8 @@ namespace Amazon.MediaStoreData.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetPath())
                 request.Parameters.Add("Path", StringUtils.FromString(publicRequest.Path));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

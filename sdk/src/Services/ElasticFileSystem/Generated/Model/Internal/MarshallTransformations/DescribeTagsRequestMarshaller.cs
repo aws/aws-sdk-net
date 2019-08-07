@@ -58,17 +58,17 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-02-01";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/2015-02-01/tags/{FileSystemId}/";
             if (!publicRequest.IsSetFileSystemId())
                 throw new AmazonElasticFileSystemException("Request object does not have required field FileSystemId set");
-            uriResourcePath = uriResourcePath.Replace("{FileSystemId}", StringUtils.FromStringWithSlashEncoding(publicRequest.FileSystemId));
+            request.AddPathResource("{FileSystemId}", StringUtils.FromString(publicRequest.FileSystemId));
             
             if (publicRequest.IsSetMarker())
                 request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
             
             if (publicRequest.IsSetMaxItems())
                 request.Parameters.Add("MaxItems", StringUtils.FromInt(publicRequest.MaxItems));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2015-02-01/tags/{FileSystemId}/";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

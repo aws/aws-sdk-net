@@ -58,14 +58,14 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-15";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/backup-vaults/{backupVaultName}/recovery-points/{recoveryPointArn}/restore-metadata";
             if (!publicRequest.IsSetBackupVaultName())
                 throw new AmazonBackupException("Request object does not have required field BackupVaultName set");
-            uriResourcePath = uriResourcePath.Replace("{backupVaultName}", StringUtils.FromStringWithSlashEncoding(publicRequest.BackupVaultName));
+            request.AddPathResource("{backupVaultName}", StringUtils.FromString(publicRequest.BackupVaultName));
             if (!publicRequest.IsSetRecoveryPointArn())
                 throw new AmazonBackupException("Request object does not have required field RecoveryPointArn set");
-            uriResourcePath = uriResourcePath.Replace("{recoveryPointArn}", StringUtils.FromStringWithSlashEncoding(publicRequest.RecoveryPointArn));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{recoveryPointArn}", StringUtils.FromString(publicRequest.RecoveryPointArn));
+            request.ResourcePath = "/backup-vaults/{backupVaultName}/recovery-points/{recoveryPointArn}/restore-metadata";
+            request.MarshallerVersion = 2;
 
             return request;
         }

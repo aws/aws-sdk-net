@@ -58,11 +58,11 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-08";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/user/federate/{InstanceId}";
             if (!publicRequest.IsSetInstanceId())
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
-            uriResourcePath = uriResourcePath.Replace("{InstanceId}", StringUtils.FromStringWithSlashEncoding(publicRequest.InstanceId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
+            request.ResourcePath = "/user/federate/{InstanceId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

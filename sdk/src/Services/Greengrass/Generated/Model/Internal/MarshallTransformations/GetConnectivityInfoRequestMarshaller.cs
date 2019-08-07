@@ -58,11 +58,11 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-06-07";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/greengrass/things/{ThingName}/connectivityInfo";
             if (!publicRequest.IsSetThingName())
                 throw new AmazonGreengrassException("Request object does not have required field ThingName set");
-            uriResourcePath = uriResourcePath.Replace("{ThingName}", StringUtils.FromStringWithSlashEncoding(publicRequest.ThingName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{ThingName}", StringUtils.FromString(publicRequest.ThingName));
+            request.ResourcePath = "/greengrass/things/{ThingName}/connectivityInfo";
+            request.MarshallerVersion = 2;
 
             return request;
         }

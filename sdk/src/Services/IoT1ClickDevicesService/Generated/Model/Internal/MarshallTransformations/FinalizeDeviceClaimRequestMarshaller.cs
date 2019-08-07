@@ -59,11 +59,11 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-14";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/devices/{deviceId}/finalize-claim";
             if (!publicRequest.IsSetDeviceId())
                 throw new AmazonIoT1ClickDevicesServiceException("Request object does not have required field DeviceId set");
-            uriResourcePath = uriResourcePath.Replace("{deviceId}", StringUtils.FromStringWithSlashEncoding(publicRequest.DeviceId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{deviceId}", StringUtils.FromString(publicRequest.DeviceId));
+            request.ResourcePath = "/devices/{deviceId}/finalize-claim";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

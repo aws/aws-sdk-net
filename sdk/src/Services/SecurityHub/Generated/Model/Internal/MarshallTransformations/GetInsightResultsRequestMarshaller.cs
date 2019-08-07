@@ -58,11 +58,11 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-26";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/insights/results/{InsightArn+}";
             if (!publicRequest.IsSetInsightArn())
                 throw new AmazonSecurityHubException("Request object does not have required field InsightArn set");
-            uriResourcePath = uriResourcePath.Replace("{InsightArn+}", StringUtils.FromString(publicRequest.InsightArn.TrimStart('/')));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{InsightArn+}", StringUtils.FromString(publicRequest.InsightArn.TrimStart('/')));
+            request.ResourcePath = "/insights/results/{InsightArn+}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

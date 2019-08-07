@@ -59,12 +59,12 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-01";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/voice-connectors/{voiceConnectorId}";
             request.AddSubResource("operation", "associate-phone-numbers");
             if (!publicRequest.IsSetVoiceConnectorId())
                 throw new AmazonChimeException("Request object does not have required field VoiceConnectorId set");
-            uriResourcePath = uriResourcePath.Replace("{voiceConnectorId}", StringUtils.FromStringWithSlashEncoding(publicRequest.VoiceConnectorId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{voiceConnectorId}", StringUtils.FromString(publicRequest.VoiceConnectorId));
+            request.ResourcePath = "/voice-connectors/{voiceConnectorId}";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

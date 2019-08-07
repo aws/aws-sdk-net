@@ -58,7 +58,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/thing-groups";
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
@@ -74,7 +73,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetRecursive())
                 request.Parameters.Add("recursive", StringUtils.FromBool(publicRequest.Recursive));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/thing-groups";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

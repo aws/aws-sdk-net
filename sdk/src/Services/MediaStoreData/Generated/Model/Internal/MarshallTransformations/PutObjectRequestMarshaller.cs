@@ -59,11 +59,11 @@ namespace Amazon.MediaStoreData.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-01";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/{Path+}";
             if (!publicRequest.IsSetPath())
                 throw new AmazonMediaStoreDataException("Request object does not have required field Path set");
-            uriResourcePath = uriResourcePath.Replace("{Path+}", StringUtils.FromString(publicRequest.Path.TrimStart('/')));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{Path+}", StringUtils.FromString(publicRequest.Path.TrimStart('/')));
+            request.ResourcePath = "/{Path+}";
+            request.MarshallerVersion = 2;
             request.ContentStream =  publicRequest.Body ?? new MemoryStream();
             if(request.ContentStream.CanSeek)
             {

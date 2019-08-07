@@ -59,8 +59,8 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-04-12";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/CreateGroup";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/CreateGroup";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

@@ -37,7 +37,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "GET";
 
-            request.ResourcePath = "/";
+			request.MarshallerVersion = 2;
+			request.ResourcePath = "/";
             request.UseQueryString = true;
 
             return request;

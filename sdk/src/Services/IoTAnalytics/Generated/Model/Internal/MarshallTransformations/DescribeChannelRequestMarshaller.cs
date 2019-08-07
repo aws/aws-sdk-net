@@ -58,14 +58,14 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/channels/{channelName}";
             if (!publicRequest.IsSetChannelName())
                 throw new AmazonIoTAnalyticsException("Request object does not have required field ChannelName set");
-            uriResourcePath = uriResourcePath.Replace("{channelName}", StringUtils.FromStringWithSlashEncoding(publicRequest.ChannelName));
+            request.AddPathResource("{channelName}", StringUtils.FromString(publicRequest.ChannelName));
             
             if (publicRequest.IsSetIncludeStatistics())
                 request.Parameters.Add("includeStatistics", StringUtils.FromBool(publicRequest.IncludeStatistics));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/channels/{channelName}";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;
