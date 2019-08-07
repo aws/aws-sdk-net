@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateApplication Request Marshaller
+    /// UpdateApplication Request Marshaller
     /// </summary>       
-    public class CreateApplicationRequestMarshaller : IMarshaller<IRequest, CreateApplicationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateApplicationRequestMarshaller : IMarshaller<IRequest, UpdateApplicationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateApplicationRequest)input);
+            return this.Marshall((UpdateApplicationRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateApplicationRequest publicRequest)
+        public IRequest Marshall(UpdateApplicationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ApplicationInsights");
-            string target = "EC2WindowsBarleyService.CreateApplication";
+            string target = "EC2WindowsBarleyService.UpdateApplication";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-25";            
@@ -80,6 +80,12 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.OpsItemSNSTopicArn);
                 }
 
+                if(publicRequest.IsSetRemoveSNSTopic())
+                {
+                    context.Writer.WritePropertyName("RemoveSNSTopic");
+                    context.Writer.Write(publicRequest.RemoveSNSTopic);
+                }
+
                 if(publicRequest.IsSetResourceGroupName())
                 {
                     context.Writer.WritePropertyName("ResourceGroupName");
@@ -95,9 +101,9 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateApplicationRequestMarshaller _instance = new CreateApplicationRequestMarshaller();        
+        private static UpdateApplicationRequestMarshaller _instance = new UpdateApplicationRequestMarshaller();        
 
-        internal static CreateApplicationRequestMarshaller GetInstance()
+        internal static UpdateApplicationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -105,7 +111,7 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateApplicationRequestMarshaller Instance
+        public static UpdateApplicationRequestMarshaller Instance
         {
             get
             {

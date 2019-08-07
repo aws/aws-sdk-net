@@ -70,6 +70,18 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                     unmarshalledObject.LifeCycle = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OpsCenterEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.OpsCenterEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OpsItemSNSTopicArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OpsItemSNSTopicArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Remarks", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

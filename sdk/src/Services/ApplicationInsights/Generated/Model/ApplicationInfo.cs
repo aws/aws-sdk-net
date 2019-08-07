@@ -33,6 +33,8 @@ namespace Amazon.ApplicationInsights.Model
     public partial class ApplicationInfo
     {
         private string _lifeCycle;
+        private bool? _opsCenterEnabled;
+        private string _opsItemSNSTopicArn;
         private string _remarks;
         private string _resourceGroupName;
 
@@ -55,10 +57,48 @@ namespace Amazon.ApplicationInsights.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OpsCenterEnabled. 
+        /// <para>
+        ///  Indicates whether Application Insights will create opsItems for any problem detected
+        /// by Application Insights for an application. 
+        /// </para>
+        /// </summary>
+        public bool OpsCenterEnabled
+        {
+            get { return this._opsCenterEnabled.GetValueOrDefault(); }
+            set { this._opsCenterEnabled = value; }
+        }
+
+        // Check to see if OpsCenterEnabled property is set
+        internal bool IsSetOpsCenterEnabled()
+        {
+            return this._opsCenterEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OpsItemSNSTopicArn. 
+        /// <para>
+        ///  The SNS topic provided to Application Insights that is associated to the created
+        /// opsItems to receive SNS notifications for opsItem updates. 
+        /// </para>
+        /// </summary>
+        public string OpsItemSNSTopicArn
+        {
+            get { return this._opsItemSNSTopicArn; }
+            set { this._opsItemSNSTopicArn = value; }
+        }
+
+        // Check to see if OpsItemSNSTopicArn property is set
+        internal bool IsSetOpsItemSNSTopicArn()
+        {
+            return this._opsItemSNSTopicArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Remarks. 
         /// <para>
-        /// The issues on the user side that are blocking Application Insights from fully monitoring
-        /// the application.
+        /// The issues on the user side that block Application Insights from successfully monitoring
+        /// an application.
         /// </para>
         /// </summary>
         public string Remarks

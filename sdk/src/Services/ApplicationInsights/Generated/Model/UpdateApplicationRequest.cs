@@ -28,13 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationInsights.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateApplication operation.
-    /// Adds an application that is created from a resource group.
+    /// Container for the parameters to the UpdateApplication operation.
+    /// Updates the application.
     /// </summary>
-    public partial class CreateApplicationRequest : AmazonApplicationInsightsRequest
+    public partial class UpdateApplicationRequest : AmazonApplicationInsightsRequest
     {
         private bool? _opsCenterEnabled;
         private string _opsItemSNSTopicArn;
+        private bool? _removeSNSTopic;
         private string _resourceGroupName;
 
         /// <summary>
@@ -60,7 +61,7 @@ namespace Amazon.ApplicationInsights.Model
         /// Gets and sets the property OpsItemSNSTopicArn. 
         /// <para>
         ///  The SNS topic provided to Application Insights that is associated to the created
-        /// opsItem. Allows you to receive notifications for updates to the opsItem. 
+        /// opsItem. Allows you to receive notifications for updates to the opsItem.
         /// </para>
         /// </summary>
         public string OpsItemSNSTopicArn
@@ -73,6 +74,24 @@ namespace Amazon.ApplicationInsights.Model
         internal bool IsSetOpsItemSNSTopicArn()
         {
             return this._opsItemSNSTopicArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoveSNSTopic. 
+        /// <para>
+        ///  Disassociates the SNS topic from the opsItem created for detected problems.
+        /// </para>
+        /// </summary>
+        public bool RemoveSNSTopic
+        {
+            get { return this._removeSNSTopic.GetValueOrDefault(); }
+            set { this._removeSNSTopic = value; }
+        }
+
+        // Check to see if RemoveSNSTopic property is set
+        internal bool IsSetRemoveSNSTopic()
+        {
+            return this._removeSNSTopic.HasValue; 
         }
 
         /// <summary>

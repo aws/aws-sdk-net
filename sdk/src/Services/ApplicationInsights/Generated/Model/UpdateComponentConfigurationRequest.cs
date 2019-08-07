@@ -122,7 +122,7 @@ namespace Amazon.ApplicationInsights.Model
         /// Gets and sets the property Tier. 
         /// <para>
         /// The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-        /// <code>DOT_NET_WEB_TIER</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+        /// <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
         /// </para>
         /// </summary>
         public string Tier

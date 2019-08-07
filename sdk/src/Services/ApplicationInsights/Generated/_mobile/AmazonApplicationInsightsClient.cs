@@ -870,6 +870,49 @@ namespace Amazon.ApplicationInsights
 
         #endregion
         
+        #region  UpdateApplication
+
+        internal virtual UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateApplicationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateApplication service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
+        public virtual Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateApplicationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateComponent
 
         internal virtual UpdateComponentResponse UpdateComponent(UpdateComponentRequest request)
