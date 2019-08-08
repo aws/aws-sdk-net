@@ -74,8 +74,8 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file that contains
-        /// the JDBC driver to use.
+        ///  <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service (Amazon S3)
+        /// path of the JAR file that contains the JDBC driver to use.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -91,7 +91,7 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CONFIG_FILES</code> - (Reserved for future use).
+        ///  <code>CONFIG_FILES</code> - (Reserved for future use.)
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -104,7 +104,7 @@ namespace Amazon.Glue.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether
-        /// Secure Sockets Layer (SSL) with hostname matching will be enforced for the JDBC connection
+        /// Secure Sockets Layer (SSL) with hostname matching is enforced for the JDBC connection
         /// on the client. The default is false.
         /// </para>
         ///  </li> </ul>

@@ -342,7 +342,12 @@ namespace Amazon.Glue.Model
         /// memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker
         /// type for memory-intensive jobs.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// Known issue: when a development endpoint is created with the <code>G.2X</code> <code>WorkerType</code>
+        /// configuration, the Spark drivers for the development endpoint will run on 4 vCPU,
+        /// 16 GB of memory, and a 64 GB disk. 
+        /// </para>
         /// </summary>
         public WorkerType WorkerType
         {

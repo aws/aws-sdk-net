@@ -41,7 +41,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CatalogId. 
         /// <para>
-        /// The ID of the Data Catalog where the partition to be deleted resides. If none is supplied,
+        /// The ID of the Data Catalog where the partition to be deleted resides. If none is provided,
         /// the AWS account ID is used by default.
         /// </para>
         /// </summary>
@@ -99,7 +99,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// The name of the table where the partition to be deleted is located.
+        /// The name of the table that contains the partition to be deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

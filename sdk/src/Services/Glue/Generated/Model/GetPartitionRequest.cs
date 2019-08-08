@@ -41,7 +41,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CatalogId. 
         /// <para>
-        /// The ID of the Data Catalog where the partition in question resides. If none is supplied,
+        /// The ID of the Data Catalog where the partition in question resides. If none is provided,
         /// the AWS account ID is used by default.
         /// </para>
         /// </summary>

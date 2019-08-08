@@ -37,7 +37,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        /// Errors encountered when trying to create the requested partitions.
+        /// The errors encountered when trying to create the requested partitions.
         /// </para>
         /// </summary>
         public List<PartitionError> Errors

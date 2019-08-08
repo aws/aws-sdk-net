@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// The structure used to create and update a partion.
+    /// The structure used to create and update a partition.
     /// </summary>
     public partial class PartitionInput
     {

@@ -33,13 +33,13 @@ namespace Amazon.Glue.Model
     /// 
     ///  <note> 
     /// <para>
-    /// After completing this operation, you will no longer have access to the table versions
-    /// and partitions that belong to the deleted table. AWS Glue deletes these "orphaned"
-    /// resources asynchronously in a timely manner, at the discretion of the service.
+    /// After completing this operation, you no longer have access to the table versions and
+    /// partitions that belong to the deleted table. AWS Glue deletes these "orphaned" resources
+    /// asynchronously in a timely manner, at the discretion of the service.
     /// </para>
     ///  
     /// <para>
-    /// To ensure immediate deletion of all related resources, before calling <code>BatchDeleteTable</code>,
+    /// To ensure the immediate deletion of all related resources, before calling <code>BatchDeleteTable</code>,
     /// use <code>DeleteTableVersion</code> or <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code>
     /// or <code>BatchDeletePartition</code>, to delete any resources that belong to the table.
     /// </para>
@@ -54,7 +54,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CatalogId. 
         /// <para>
-        /// The ID of the Data Catalog where the table resides. If none is supplied, the AWS account
+        /// The ID of the Data Catalog where the table resides. If none is provided, the AWS account
         /// ID is used by default.
         /// </para>
         /// </summary>
@@ -74,7 +74,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
-        /// The name of the catalog database where the tables to delete reside. For Hive compatibility,
+        /// The name of the catalog database in which the tables to delete reside. For Hive compatibility,
         /// this name is entirely lowercase.
         /// </para>
         /// </summary>

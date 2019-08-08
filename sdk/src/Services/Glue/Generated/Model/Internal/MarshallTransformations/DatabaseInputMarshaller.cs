@@ -45,6 +45,22 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DatabaseInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCreateTableDefaultPermissions())
+            {
+                context.Writer.WritePropertyName("CreateTableDefaultPermissions");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCreateTableDefaultPermissionsListValue in requestObject.CreateTableDefaultPermissions)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PrincipalPermissionsMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCreateTableDefaultPermissionsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");

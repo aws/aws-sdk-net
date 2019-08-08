@@ -38,7 +38,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ErrorDetail. 
         /// <para>
-        /// Detail about the error.
+        /// The details about the error.
         /// </para>
         /// </summary>
         public ErrorDetail ErrorDetail
@@ -56,7 +56,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// Name of the table. For Hive compatibility, this must be entirely lowercase.
+        /// The name of the table. For Hive compatibility, this must be entirely lowercase.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

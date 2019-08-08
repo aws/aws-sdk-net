@@ -56,7 +56,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property UnprocessedKeys. 
         /// <para>
-        /// A list of the partition values in the request for which partions were not returned.
+        /// A list of the partition values in the request for which partitions were not returned.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]

@@ -32,15 +32,34 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class DatabaseInput
     {
+        private List<PrincipalPermissions> _createTableDefaultPermissions = new List<PrincipalPermissions>();
         private string _description;
         private string _locationUri;
         private string _name;
         private Dictionary<string, string> _parameters = new Dictionary<string, string>();
 
         /// <summary>
+        /// Gets and sets the property CreateTableDefaultPermissions. 
+        /// <para>
+        /// Creates a set of default permissions on the table for principals. 
+        /// </para>
+        /// </summary>
+        public List<PrincipalPermissions> CreateTableDefaultPermissions
+        {
+            get { return this._createTableDefaultPermissions; }
+            set { this._createTableDefaultPermissions = value; }
+        }
+
+        // Check to see if CreateTableDefaultPermissions property is set
+        internal bool IsSetCreateTableDefaultPermissions()
+        {
+            return this._createTableDefaultPermissions != null && this._createTableDefaultPermissions.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Description of the database
+        /// A description of the database.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -59,7 +78,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property LocationUri. 
         /// <para>
-        /// The location of the database (for example, an HDFS path).
+        /// The location of the database (for example, an HDFS path). 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -78,8 +97,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the database. For Hive compatibility, this is folded to lowercase when it
-        /// is stored.
+        /// The name of the database. For Hive compatibility, this is folded to lowercase when
+        /// it is stored.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -98,7 +117,11 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// Thes key-value pairs define parameters and properties of the database.
+        /// These key-value pairs define parameters and properties of the database.
+        /// </para>
+        ///  
+        /// <para>
+        /// These key-value pairs define parameters and properties of the database.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Parameters

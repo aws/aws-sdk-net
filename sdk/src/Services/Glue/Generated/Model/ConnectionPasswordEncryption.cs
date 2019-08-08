@@ -43,7 +43,7 @@ namespace Amazon.Glue.Model
     /// <para>
     /// This encryption requires that you set AWS KMS key permissions to enable or restrict
     /// access on the password key according to your security requirements. For example, you
-    /// might want only admin users to have decrypt permission on the password key.
+    /// might want only administrators to have decrypt permission on the password key.
     /// </para>
     /// </summary>
     public partial class ConnectionPasswordEncryption

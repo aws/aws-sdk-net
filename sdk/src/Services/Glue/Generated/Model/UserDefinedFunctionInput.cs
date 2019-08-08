@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// A structure used to create or updata a user-defined function.
+    /// A structure used to create or update a user-defined function.
     /// </summary>
     public partial class UserDefinedFunctionInput
     {

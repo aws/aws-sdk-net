@@ -39,7 +39,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ImportCompleted. 
         /// <para>
-        /// True if the migration has completed, or False otherwise.
+        ///  <code>True</code> if the migration has completed, or <code>False</code> otherwise.
         /// </para>
         /// </summary>
         public bool ImportCompleted

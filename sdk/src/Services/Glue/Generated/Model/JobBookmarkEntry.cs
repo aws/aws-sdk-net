@@ -97,7 +97,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property PreviousRunId. 
         /// <para>
-        /// The unique run identifier associated with the previous job run..
+        /// The unique run identifier associated with the previous job run.
         /// </para>
         /// </summary>
         public string PreviousRunId
@@ -133,7 +133,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property RunId. 
         /// <para>
-        /// The unique run identifier associated with this job run.
+        /// The run ID number.
         /// </para>
         /// </summary>
         public string RunId

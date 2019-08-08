@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Structure used to create or update the table.
+    /// A structure used to define a table.
     /// </summary>
     public partial class TableInput
     {
@@ -48,7 +48,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Description of the table.
+        /// A description of the table.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -67,7 +67,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property LastAccessTime. 
         /// <para>
-        /// Last time the table was accessed.
+        /// The last time that the table was accessed.
         /// </para>
         /// </summary>
         public DateTime LastAccessTime
@@ -85,7 +85,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property LastAnalyzedTime. 
         /// <para>
-        /// Last time column statistics were computed for this table.
+        /// The last time that column statistics were computed for this table.
         /// </para>
         /// </summary>
         public DateTime LastAnalyzedTime
@@ -103,8 +103,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the table. For Hive compatibility, this is folded to lowercase when it is
-        /// stored.
+        /// The table name. For Hive compatibility, this is folded to lowercase when it is stored.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -123,7 +122,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// Owner of the table.
+        /// The table owner.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -165,7 +164,7 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
-        /// When creating a table used by Athena, and you do not specify any <code>partitionKeys</code>,
+        /// When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>,
         /// you must at least set the value of <code>partitionKeys</code> to an empty list. For
         /// example:
         /// </para>
@@ -189,7 +188,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Retention. 
         /// <para>
-        /// Retention time for this table.
+        /// The retention time for this table.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
