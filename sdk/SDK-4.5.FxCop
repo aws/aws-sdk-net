@@ -126,6 +126,7 @@
       <Directory>$(ProjectDir)/src/Services/kinesisvideo/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/kinesisvideoarchivedmedia/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/kinesisvideomedia/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/lakeformation/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/lambda/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/lex/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/lexmodelbuildingservice/bin/Release/net45/</Directory>
@@ -313,6 +314,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.KinesisVideo.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.KinesisVideoArchivedMedia.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.KinesisVideoMedia.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.LakeFormation.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Lambda.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Lex.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.LexModelBuildingService.dll" Analyze="True" AnalyzeAllChildren="True" />

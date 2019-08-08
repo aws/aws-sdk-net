@@ -1,3 +1,18 @@
+### 3.3.564.0 (2019-08-08 19:48 UTC)
+* CodeBuild (3.3.102.0)
+	* CodeBuild adds CloudFormation support for SourceCredential
+* Glue (3.3.108.0)
+	* You can now use AWS Glue to find matching records across dataset even without identifiers to join on by using the new FindMatches ML Transform. Find related products, places, suppliers, customers, and more by teaching a custom machine learning transformation that you can use to identify matching matching records as part of your analysis, data cleaning, or master data management project by adding the FindMatches transformation to your Glue ETL Jobs. If your problem is more along the lines of deduplication, you can use the FindMatches in much the same way to identify customers who have signed up more than ones, products that have accidentally been added to your product catalog more than once, and so forth. Using the FindMatches MLTransform, you can teach a Transform your definition of a duplicate through examples, and it will use machine learning to identify other potential duplicates in your dataset. As with data integration, you can then use your new Transform in your deduplication projects by adding the FindMatches transformation to your Glue ETL Jobs. This release also contains additional APIs that support AWS Lake Formation.
+* LakeFormation (3.3.100.0)
+	* Lake Formation: (New Service) AWS Lake Formation is a fully managed service that makes it easier for customers to build, secure and manage data lakes.  AWS Lake Formation simplifies and automates many of the complex manual steps usually required to create data lakes including collecting, cleaning and cataloging data and securely making that data available for analytics and machine learning.
+* OpsWorksCM (3.3.101.0)
+	* This release adds support for Chef Automate 2 specific engine attributes.
+* Core 3.3.103.23
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.563.1 (2019-08-07 21:49 UTC)
 * S3 (3.3.104.10)
 	* Updated to use new Core, version 3.3.103.22
