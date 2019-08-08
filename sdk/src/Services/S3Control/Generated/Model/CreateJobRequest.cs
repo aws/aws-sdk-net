@@ -66,7 +66,7 @@ namespace Amazon.S3Control.Model
         /// twice. You can use any string up to the maximum length.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }

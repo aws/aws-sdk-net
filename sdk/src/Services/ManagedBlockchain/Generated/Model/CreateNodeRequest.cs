@@ -47,7 +47,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// generated automatically if you use an AWS SDK or the AWS CLI.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }

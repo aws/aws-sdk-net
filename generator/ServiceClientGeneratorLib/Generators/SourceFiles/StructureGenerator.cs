@@ -268,7 +268,7 @@ if(this.StructureType == StructureType.Request && this.Operation.AuthType.HasVal
 					}
 
 					var propertyAttributes = new List<string>();
-					if(member.IsRequired)
+					if(member.IsRequired && !member.IsIdempotent)
 					{
 						propertyAttributes.Add("Required=true");
 					}

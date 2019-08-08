@@ -45,7 +45,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The unique, user-specified identifier for the request that ensures idempotency.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=10, Max=150)]
+        [AWSProperty(Min=10, Max=150)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }

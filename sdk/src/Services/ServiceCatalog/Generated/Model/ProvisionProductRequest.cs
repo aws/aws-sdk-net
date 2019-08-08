@@ -230,7 +230,7 @@ namespace Amazon.ServiceCatalog.Model
         /// An idempotency token that uniquely identifies the provisioning request.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=128)]
         public string ProvisionToken
         {
             get { return this._provisionToken; }

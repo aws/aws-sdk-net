@@ -99,7 +99,7 @@ namespace <#=this.Config.Namespace#>.Model
 					}
 
 					var propertyAttributes = new List<string>();
-					if(member.IsRequired)
+					if(member.IsRequired && !member.IsIdempotent)
 					{
 						propertyAttributes.Add("Required=true");
 					}
