@@ -80,6 +80,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ServerType);
                 }
 
+                if(publicRequest.IsSetShouldOverwrite())
+                {
+                    context.Writer.WritePropertyName("shouldOverwrite");
+                    context.Writer.Write(publicRequest.ShouldOverwrite);
+                }
+
                 if(publicRequest.IsSetToken())
                 {
                     context.Writer.WritePropertyName("token");

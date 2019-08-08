@@ -181,13 +181,13 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property PrivilegedMode. 
         /// <para>
         /// Enables running the Docker daemon inside a Docker container. Set to true only if the
-        /// build project is be used to build Docker images, and the specified build environment
-        /// image is not provided by AWS CodeBuild with Docker support. Otherwise, all associated
-        /// builds that attempt to interact with the Docker daemon fail. You must also start the
-        /// Docker daemon so that builds can interact with it. One way to do this is to initialize
-        /// the Docker daemon during the install phase of your build spec by running the following
-        /// build commands. (Do not run these commands if the specified build environment image
-        /// is provided by AWS CodeBuild with Docker support.)
+        /// build project is used to build Docker images. Otherwise, a build that attempts to
+        /// interact with the Docker daemon fails.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can initialize the Docker daemon during the install phase of your build by adding
+        /// one of the following sets of commands to the install phase of your buildspec file:
         /// </para>
         ///  
         /// <para>

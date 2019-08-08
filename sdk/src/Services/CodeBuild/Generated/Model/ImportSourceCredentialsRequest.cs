@@ -36,6 +36,7 @@ namespace Amazon.CodeBuild.Model
     {
         private AuthType _authType;
         private ServerType _serverType;
+        private bool? _shouldOverwrite;
         private string _token;
         private string _username;
 
@@ -77,6 +78,26 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetServerType()
         {
             return this._serverType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShouldOverwrite. 
+        /// <para>
+        ///  Set to <code>false</code> to prevent overwriting the repository source credentials.
+        /// Set to <code>true</code> to overwrite the repository source credentials. The default
+        /// value is <code>true</code>. 
+        /// </para>
+        /// </summary>
+        public bool ShouldOverwrite
+        {
+            get { return this._shouldOverwrite.GetValueOrDefault(); }
+            set { this._shouldOverwrite = value; }
+        }
+
+        // Check to see if ShouldOverwrite property is set
+        internal bool IsSetShouldOverwrite()
+        {
+            return this._shouldOverwrite.HasValue; 
         }
 
         /// <summary>
