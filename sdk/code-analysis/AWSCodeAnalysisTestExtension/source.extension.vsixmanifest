@@ -223,6 +223,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.KinesisVideoArchivedMedia.CodeAnalysis" Path="|AWSSDK.KinesisVideoArchivedMedia.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.KinesisVideoMedia.CodeAnalysis" Path="|AWSSDK.KinesisVideoMedia.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.KinesisVideoMedia.CodeAnalysis" Path="|AWSSDK.KinesisVideoMedia.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.LakeFormation.CodeAnalysis" Path="|AWSSDK.LakeFormation.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.LakeFormation.CodeAnalysis" Path="|AWSSDK.LakeFormation.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Lambda.CodeAnalysis" Path="|AWSSDK.Lambda.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Lambda.CodeAnalysis" Path="|AWSSDK.Lambda.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Lex.CodeAnalysis" Path="|AWSSDK.Lex.CodeAnalysis|"/>

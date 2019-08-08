@@ -468,6 +468,10 @@
       <Project>{A0EA3790-C2AB-4E1C-818F-AE0E138035EE}</Project>
       <Name>AWSSDK.KinesisVideoMedia.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/LakeFormation/AWSSDK.LakeFormation.CodeAnalysis.csproj">
+      <Project>{BE474B80-0BBF-4387-895F-30998E8838C8}</Project>
+      <Name>AWSSDK.LakeFormation.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Lambda/AWSSDK.Lambda.CodeAnalysis.csproj">
       <Project>{942679C5-C064-4B55-B264-97A00B6F9CD6}</Project>
       <Name>AWSSDK.Lambda.CodeAnalysis</Name>
