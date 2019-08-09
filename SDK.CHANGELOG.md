@@ -1,3 +1,20 @@
+### 3.3.565.0 (2019-08-09 18:16 UTC)
+* GuardDuty (3.3.103.0)
+	* New "evidence" field in the finding model to provide evidence information explaining why the finding has been triggered. Currently only threat-intelligence findings have this field. Some documentation updates.
+* IoT (3.3.102.0)
+	* This release adds Quality of Service (QoS) support for AWS IoT rules engine republish action.
+* Lex (3.3.101.0)
+	* Manage Amazon Lex session state using APIs on the client
+* MediaConvert (3.3.106.0)
+	* AWS Elemental MediaConvert has added support for multi-DRM SPEKE with CMAF outputs, MP3 ingest, and options for improved video quality. 
+* Redshift (3.3.103.0)
+	* Add expectedNextSnapshotScheduleTime and expectedNextSnapshotScheduleTimeStatus to redshift cluster object.
+* Core 3.3.103.24
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.564.0 (2019-08-08 19:48 UTC)
 * CodeBuild (3.3.102.0)
 	* CodeBuild adds CloudFormation support for SourceCredential
