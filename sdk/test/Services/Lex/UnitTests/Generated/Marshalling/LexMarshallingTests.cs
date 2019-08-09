@@ -44,6 +44,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Lex")]
+        public void DeleteSessionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteSession");
+
+            var request = InstantiateClassGenerator.Execute<DeleteSessionRequest>();
+            var marshaller = new DeleteSessionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteSession", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DeleteSessionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DeleteSessionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lex")]
+        public void GetSessionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSession");
+
+            var request = InstantiateClassGenerator.Execute<GetSessionRequest>();
+            var marshaller = new GetSessionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetSession", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetSessionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetSessionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lex")]
         public void PostContentMarshallTest()
         {
             var operation = service_model.FindOperation("PostContent");
@@ -109,6 +173,47 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = PostTextResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as PostTextResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lex")]
+        public void PutSessionMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutSession");
+
+            var request = InstantiateClassGenerator.Execute<PutSessionRequest>();
+            var marshaller = new PutSessionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("PutSession", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amz-lex-dialog-state","x-amz-lex-dialog-state_Value"},
+                    {"x-amz-lex-intent-name","x-amz-lex-intent-name_Value"},
+                    {"x-amz-lex-message","x-amz-lex-message_Value"},
+                    {"x-amz-lex-message-format","x-amz-lex-message-format_Value"},
+                    {"x-amz-lex-session-attributes",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-session-attributes_Value"))},
+                    {"x-amz-lex-session-id","x-amz-lex-session-id_Value"},
+                    {"x-amz-lex-slots",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-slots_Value"))},
+                    {"x-amz-lex-slot-to-elicit","x-amz-lex-slot-to-elicit_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = PutSessionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as PutSessionResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

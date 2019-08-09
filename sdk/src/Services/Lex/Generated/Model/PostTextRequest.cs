@@ -29,8 +29,8 @@ namespace Amazon.Lex.Model
 {
     /// <summary>
     /// Container for the parameters to the PostText operation.
-    /// Sends user input (text-only) to Amazon Lex. Client applications can use this API to
-    /// send requests to Amazon Lex at runtime. Amazon Lex then interprets the user input
+    /// Sends user input (text or SSML) to Amazon Lex. Client applications can use this API
+    /// to send requests to Amazon Lex at runtime. Amazon Lex then interprets the user input
     /// using the machine learning model it built for the bot. 
     /// 
     ///  
@@ -102,7 +102,7 @@ namespace Amazon.Lex.Model
     ///  </li> </ul> 
     /// <para>
     ///  In addition, Amazon Lex also returns your application-specific <code>sessionAttributes</code>.
-    /// For more information, see <a href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
+    /// For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
     /// Conversation Context</a>. 
     /// </para>
     /// </summary>
@@ -184,7 +184,7 @@ namespace Amazon.Lex.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
+        /// For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
         /// Request Attributes</a>.
         /// </para>
         /// </summary>
@@ -207,7 +207,7 @@ namespace Amazon.Lex.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
+        /// For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
         /// Session Attributes</a>.
         /// </para>
         /// </summary>

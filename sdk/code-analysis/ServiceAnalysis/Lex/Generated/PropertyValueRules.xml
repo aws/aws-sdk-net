@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.Lex.Model.DeleteSessionRequest.UserId</property>
+    <min>2</min>
+    <max>100</max>
+    <pattern>[0-9a-zA-Z._:-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lex.Model.DeleteSessionResponse.UserId</property>
+    <min>2</min>
+    <max>100</max>
+    <pattern>[0-9a-zA-Z._:-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lex.Model.GetSessionRequest.UserId</property>
+    <min>2</min>
+    <max>100</max>
+    <pattern>[0-9a-zA-Z._:-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lex.Model.PostContentRequest.UserId</property>
     <min>2</min>
     <max>100</max>
@@ -28,6 +46,17 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lex.Model.PutSessionRequest.UserId</property>
+    <min>2</min>
+    <max>100</max>
+    <pattern>[0-9a-zA-Z._:-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lex.Model.PutSessionResponse.Message</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lex.Model.Button.Text</property>
     <min>1</min>
     <max>15</max>
@@ -36,6 +65,11 @@
     <property>Amazon.Lex.Model.Button.Value</property>
     <min>1</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lex.Model.DialogAction.Message</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lex.Model.GenericAttachment.AttachmentLinkUrl</property>

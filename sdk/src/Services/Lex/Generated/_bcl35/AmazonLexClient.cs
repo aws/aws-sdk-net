@@ -245,6 +245,143 @@ namespace Amazon.Lex
         #endregion
 
 
+        #region  DeleteSession
+
+        /// <summary>
+        /// Removes session information for a specified bot, alias, and user ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSession service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSession service method, as returned by Lex.</returns>
+        /// <exception cref="Amazon.Lex.Model.BadRequestException">
+        /// Request validation failed, there is no usable message in the context, or the bot
+        /// build failed, is still in progress, or contains unbuilt changes.
+        /// </exception>
+        /// <exception cref="Amazon.Lex.Model.ConflictException">
+        /// Two clients are using the same AWS account, Amazon Lex bot, and user ID.
+        /// </exception>
+        /// <exception cref="Amazon.Lex.Model.InternalFailureException">
+        /// Internal service error. Retry the call.
+        /// </exception>
+        /// <exception cref="Amazon.Lex.Model.LimitExceededException">
+        /// Exceeded a limit.
+        /// </exception>
+        /// <exception cref="Amazon.Lex.Model.NotFoundException">
+        /// The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/DeleteSession">REST API Reference for DeleteSession Operation</seealso>
+        public virtual DeleteSessionResponse DeleteSession(DeleteSessionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSessionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSessionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSession operation on AmazonLexClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSession
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/DeleteSession">REST API Reference for DeleteSession Operation</seealso>
+        public virtual IAsyncResult BeginDeleteSession(DeleteSessionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSessionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteSession operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSession.</param>
+        /// 
+        /// <returns>Returns a  DeleteSessionResult from Lex.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/DeleteSession">REST API Reference for DeleteSession Operation</seealso>
+        public virtual DeleteSessionResponse EndDeleteSession(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteSessionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetSession
+
+        /// <summary>
+        /// Returns session information for a specified bot, alias, and user ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSession service method.</param>
+        /// 
+        /// <returns>The response from the GetSession service method, as returned by Lex.</returns>
+        /// <exception cref="Amazon.Lex.Model.BadRequestException">
+        /// Request validation failed, there is no usable message in the context, or the bot
+        /// build failed, is still in progress, or contains unbuilt changes.
+        /// </exception>
+        /// <exception cref="Amazon.Lex.Model.InternalFailureException">
+        /// Internal service error. Retry the call.
+        /// </exception>
+        /// <exception cref="Amazon.Lex.Model.LimitExceededException">
+        /// Exceeded a limit.
+        /// </exception>
+        /// <exception cref="Amazon.Lex.Model.NotFoundException">
+        /// The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/GetSession">REST API Reference for GetSession Operation</seealso>
+        public virtual GetSessionResponse GetSession(GetSessionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSessionResponseUnmarshaller.Instance;
+
+            return Invoke<GetSessionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSession operation on AmazonLexClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSession
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/GetSession">REST API Reference for GetSession Operation</seealso>
+        public virtual IAsyncResult BeginGetSession(GetSessionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSessionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSession operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSession.</param>
+        /// 
+        /// <returns>Returns a  GetSessionResult from Lex.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/GetSession">REST API Reference for GetSession Operation</seealso>
+        public virtual GetSessionResponse EndGetSession(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSessionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PostContent
 
         /// <summary>
@@ -327,7 +464,7 @@ namespace Amazon.Lex
         ///  </li> </ul> 
         /// <para>
         ///  In addition, Amazon Lex also returns your application-specific <code>sessionAttributes</code>.
-        /// For more information, see <a href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
+        /// For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
         /// Conversation Context</a>. 
         /// </para>
         /// </summary>
@@ -434,8 +571,8 @@ namespace Amazon.Lex
         #region  PostText
 
         /// <summary>
-        /// Sends user input (text-only) to Amazon Lex. Client applications can use this API to
-        /// send requests to Amazon Lex at runtime. Amazon Lex then interprets the user input
+        /// Sends user input (text or SSML) to Amazon Lex. Client applications can use this API
+        /// to send requests to Amazon Lex at runtime. Amazon Lex then interprets the user input
         /// using the machine learning model it built for the bot. 
         /// 
         ///  
@@ -507,7 +644,7 @@ namespace Amazon.Lex
         ///  </li> </ul> 
         /// <para>
         ///  In addition, Amazon Lex also returns your application-specific <code>sessionAttributes</code>.
-        /// For more information, see <a href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
+        /// For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
         /// Conversation Context</a>. 
         /// </para>
         /// </summary>
@@ -598,6 +735,109 @@ namespace Amazon.Lex
         public virtual PostTextResponse EndPostText(IAsyncResult asyncResult)
         {
             return EndInvoke<PostTextResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutSession
+
+        /// <summary>
+        /// Creates a new session or modifies an existing session with an Amazon Lex bot. Use
+        /// this operation to enable your application to set the state of the bot.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/how-session-api.html">Managing
+        /// Sessions</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutSession service method.</param>
+        /// 
+        /// <returns>The response from the PutSession service method, as returned by Lex.</returns>
+        /// <exception cref="Amazon.Lex.Model.BadGatewayException">
+        /// Either the Amazon Lex bot is still building, or one of the dependent services (Amazon
+        /// Polly, AWS Lambda) failed with an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.Lex.Model.BadRequestException">
+        /// Request validation failed, there is no usable message in the context, or the bot
+        /// build failed, is still in progress, or contains unbuilt changes.
+        /// </exception>
+        /// <exception cref="Amazon.Lex.Model.ConflictException">
+        /// Two clients are using the same AWS account, Amazon Lex bot, and user ID.
+        /// </exception>
+        /// <exception cref="Amazon.Lex.Model.DependencyFailedException">
+        /// One of the dependencies, such as AWS Lambda or Amazon Polly, threw an exception.
+        /// For example, 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// If Amazon Lex does not have sufficient permissions to call a Lambda function.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If a Lambda function takes longer than 30 seconds to execute.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without
+        /// removing any slot values.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Lex.Model.InternalFailureException">
+        /// Internal service error. Retry the call.
+        /// </exception>
+        /// <exception cref="Amazon.Lex.Model.LimitExceededException">
+        /// Exceeded a limit.
+        /// </exception>
+        /// <exception cref="Amazon.Lex.Model.NotAcceptableException">
+        /// The accept header in the request does not have a valid value.
+        /// </exception>
+        /// <exception cref="Amazon.Lex.Model.NotFoundException">
+        /// The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PutSession">REST API Reference for PutSession Operation</seealso>
+        public virtual PutSessionResponse PutSession(PutSessionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutSessionResponseUnmarshaller.Instance;
+
+            return Invoke<PutSessionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutSession operation on AmazonLexClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutSession
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PutSession">REST API Reference for PutSession Operation</seealso>
+        public virtual IAsyncResult BeginPutSession(PutSessionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutSessionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutSession operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutSession.</param>
+        /// 
+        /// <returns>Returns a  PutSessionResult from Lex.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PutSession">REST API Reference for PutSession Operation</seealso>
+        public virtual PutSessionResponse EndPutSession(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutSessionResponse>(asyncResult);
         }
 
         #endregion

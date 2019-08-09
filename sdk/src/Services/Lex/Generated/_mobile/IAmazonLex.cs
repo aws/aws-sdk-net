@@ -45,6 +45,71 @@ namespace Amazon.Lex
     public partial interface IAmazonLex : IAmazonService, IDisposable
     {
                 
+        #region  DeleteSession
+
+
+
+        /// <summary>
+        /// Removes session information for a specified bot, alias, and user ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSession service method, as returned by Lex.</returns>
+        /// <exception cref="Amazon.Lex.Model.BadRequestException">
+        /// Request validation failed, there is no usable message in the context, or the bot
+        /// build failed, is still in progress, or contains unbuilt changes.
+        /// </exception>
+        /// <exception cref="Amazon.Lex.Model.ConflictException">
+        /// Two clients are using the same AWS account, Amazon Lex bot, and user ID.
+        /// </exception>
+        /// <exception cref="Amazon.Lex.Model.InternalFailureException">
+        /// Internal service error. Retry the call.
+        /// </exception>
+        /// <exception cref="Amazon.Lex.Model.LimitExceededException">
+        /// Exceeded a limit.
+        /// </exception>
+        /// <exception cref="Amazon.Lex.Model.NotFoundException">
+        /// The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/DeleteSession">REST API Reference for DeleteSession Operation</seealso>
+        Task<DeleteSessionResponse> DeleteSessionAsync(DeleteSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetSession
+
+
+
+        /// <summary>
+        /// Returns session information for a specified bot, alias, and user ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSession service method, as returned by Lex.</returns>
+        /// <exception cref="Amazon.Lex.Model.BadRequestException">
+        /// Request validation failed, there is no usable message in the context, or the bot
+        /// build failed, is still in progress, or contains unbuilt changes.
+        /// </exception>
+        /// <exception cref="Amazon.Lex.Model.InternalFailureException">
+        /// Internal service error. Retry the call.
+        /// </exception>
+        /// <exception cref="Amazon.Lex.Model.LimitExceededException">
+        /// Exceeded a limit.
+        /// </exception>
+        /// <exception cref="Amazon.Lex.Model.NotFoundException">
+        /// The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/GetSession">REST API Reference for GetSession Operation</seealso>
+        Task<GetSessionResponse> GetSessionAsync(GetSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  PostContent
 
 
@@ -129,7 +194,7 @@ namespace Amazon.Lex
         ///  </li> </ul> 
         /// <para>
         ///  In addition, Amazon Lex also returns your application-specific <code>sessionAttributes</code>.
-        /// For more information, see <a href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
+        /// For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
         /// Conversation Context</a>. 
         /// </para>
         /// </summary>
@@ -200,8 +265,8 @@ namespace Amazon.Lex
 
 
         /// <summary>
-        /// Sends user input (text-only) to Amazon Lex. Client applications can use this API to
-        /// send requests to Amazon Lex at runtime. Amazon Lex then interprets the user input
+        /// Sends user input (text or SSML) to Amazon Lex. Client applications can use this API
+        /// to send requests to Amazon Lex at runtime. Amazon Lex then interprets the user input
         /// using the machine learning model it built for the bot. 
         /// 
         ///  
@@ -273,7 +338,7 @@ namespace Amazon.Lex
         ///  </li> </ul> 
         /// <para>
         ///  In addition, Amazon Lex also returns your application-specific <code>sessionAttributes</code>.
-        /// For more information, see <a href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
+        /// For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
         /// Conversation Context</a>. 
         /// </para>
         /// </summary>
@@ -327,6 +392,73 @@ namespace Amazon.Lex
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostText">REST API Reference for PostText Operation</seealso>
         Task<PostTextResponse> PostTextAsync(PostTextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutSession
+
+
+
+        /// <summary>
+        /// Creates a new session or modifies an existing session with an Amazon Lex bot. Use
+        /// this operation to enable your application to set the state of the bot.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/how-session-api.html">Managing
+        /// Sessions</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutSession service method, as returned by Lex.</returns>
+        /// <exception cref="Amazon.Lex.Model.BadGatewayException">
+        /// Either the Amazon Lex bot is still building, or one of the dependent services (Amazon
+        /// Polly, AWS Lambda) failed with an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.Lex.Model.BadRequestException">
+        /// Request validation failed, there is no usable message in the context, or the bot
+        /// build failed, is still in progress, or contains unbuilt changes.
+        /// </exception>
+        /// <exception cref="Amazon.Lex.Model.ConflictException">
+        /// Two clients are using the same AWS account, Amazon Lex bot, and user ID.
+        /// </exception>
+        /// <exception cref="Amazon.Lex.Model.DependencyFailedException">
+        /// One of the dependencies, such as AWS Lambda or Amazon Polly, threw an exception.
+        /// For example, 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// If Amazon Lex does not have sufficient permissions to call a Lambda function.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If a Lambda function takes longer than 30 seconds to execute.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without
+        /// removing any slot values.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Lex.Model.InternalFailureException">
+        /// Internal service error. Retry the call.
+        /// </exception>
+        /// <exception cref="Amazon.Lex.Model.LimitExceededException">
+        /// Exceeded a limit.
+        /// </exception>
+        /// <exception cref="Amazon.Lex.Model.NotAcceptableException">
+        /// The accept header in the request does not have a valid value.
+        /// </exception>
+        /// <exception cref="Amazon.Lex.Model.NotFoundException">
+        /// The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PutSession">REST API Reference for PutSession Operation</seealso>
+        Task<PutSessionResponse> PutSessionAsync(PutSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

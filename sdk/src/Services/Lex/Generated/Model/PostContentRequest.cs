@@ -109,7 +109,7 @@ namespace Amazon.Lex.Model
     ///  </li> </ul> 
     /// <para>
     ///  In addition, Amazon Lex also returns your application-specific <code>sessionAttributes</code>.
-    /// For more information, see <a href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
+    /// For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
     /// Conversation Context</a>. 
     /// </para>
     /// </summary>
@@ -146,7 +146,12 @@ namespace Amazon.Lex.Model
         /// in the <code>Accept</code> header). For example, if you specify <code>audio/mpeg</code>
         /// as the value, Amazon Lex returns speech in the MPEG format.
         /// </para>
-        ///  
+        ///  </li> <li> 
+        /// <para>
+        /// If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code>
+        /// in 16-bit, little endian format. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// The following are the accepted values:
         /// </para>
@@ -325,7 +330,7 @@ namespace Amazon.Lex.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
+        /// For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
         /// Request Attributes</a>.
         /// </para>
         /// </summary>
@@ -355,7 +360,7 @@ namespace Amazon.Lex.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
+        /// For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
         /// Session Attributes</a>.
         /// </para>
         /// </summary>
