@@ -5214,7 +5214,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Returns the total amount of snapshot usage and provisioned storage for a user in megabytes.
+        /// Returns the total amount of snapshot usage and provisioned storage in megabytes.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStorage service method.</param>
         /// 
@@ -5231,7 +5231,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Returns the total amount of snapshot usage and provisioned storage for a user in megabytes.
+        /// Returns the total amount of snapshot usage and provisioned storage in megabytes.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStorage service method.</param>
         /// <param name="cancellationToken">

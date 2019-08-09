@@ -132,7 +132,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property NodeType. 
         /// <para>
-        /// The new node type for the nodes you are adding.
+        /// The new node type for the nodes you are adding. If not specified, the cluster's current
+        /// node type is used.
         /// </para>
         /// </summary>
         public string NodeType

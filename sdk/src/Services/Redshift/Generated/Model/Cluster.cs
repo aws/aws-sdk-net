@@ -55,6 +55,8 @@ namespace Amazon.Redshift.Model
         private bool? _encrypted;
         private Endpoint _endpoint;
         private bool? _enhancedVpcRouting;
+        private DateTime? _expectedNextSnapshotScheduleTime;
+        private string _expectedNextSnapshotScheduleTimeStatus;
         private HsmStatus _hsmStatus;
         private List<ClusterIamRole> _iamRoles = new List<ClusterIamRole>();
         private string _kmsKeyId;
@@ -612,6 +614,53 @@ namespace Amazon.Redshift.Model
         internal bool IsSetEnhancedVpcRouting()
         {
             return this._enhancedVpcRouting.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExpectedNextSnapshotScheduleTime. 
+        /// <para>
+        /// The date and time when the next snapshot is expected to be taken for clusters with
+        /// a valid snapshot schedule and backups enabled. 
+        /// </para>
+        /// </summary>
+        public DateTime ExpectedNextSnapshotScheduleTime
+        {
+            get { return this._expectedNextSnapshotScheduleTime.GetValueOrDefault(); }
+            set { this._expectedNextSnapshotScheduleTime = value; }
+        }
+
+        // Check to see if ExpectedNextSnapshotScheduleTime property is set
+        internal bool IsSetExpectedNextSnapshotScheduleTime()
+        {
+            return this._expectedNextSnapshotScheduleTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExpectedNextSnapshotScheduleTimeStatus. 
+        /// <para>
+        ///  The status of next expected snapshot for clusters having a valid snapshot schedule
+        /// and backups enabled. Possible values are the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// OnTrack - The next snapshot is expected to be taken on time. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Pending - The next snapshot is pending to be taken. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string ExpectedNextSnapshotScheduleTimeStatus
+        {
+            get { return this._expectedNextSnapshotScheduleTimeStatus; }
+            set { this._expectedNextSnapshotScheduleTimeStatus = value; }
+        }
+
+        // Check to see if ExpectedNextSnapshotScheduleTimeStatus property is set
+        internal bool IsSetExpectedNextSnapshotScheduleTimeStatus()
+        {
+            return this._expectedNextSnapshotScheduleTimeStatus != null;
         }
 
         /// <summary>
