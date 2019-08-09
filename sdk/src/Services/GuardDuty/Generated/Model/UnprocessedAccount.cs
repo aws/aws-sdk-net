@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// 
+    /// Contains information about the accounts that were not processed.
     /// </summary>
     public partial class UnprocessedAccount
     {

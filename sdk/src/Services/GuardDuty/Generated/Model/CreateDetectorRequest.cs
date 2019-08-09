@@ -29,9 +29,10 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDetector operation.
-    /// Creates a single Amazon GuardDuty detector. A detector is an object that represents
-    /// the GuardDuty service. A detector must be created in order for GuardDuty to become
-    /// operational.
+    /// Creates a single Amazon GuardDuty detector. A detector is a resource that represents
+    /// the GuardDuty service. To start using GuardDuty, you must create a detector in each
+    /// region that you enable the service. You can have only one detector per account per
+    /// region.
     /// </summary>
     public partial class CreateDetectorRequest : AmazonGuardDutyRequest
     {

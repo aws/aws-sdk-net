@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// 
+    /// Contains information about the Master account and invitation.
     /// </summary>
     public partial class Master
     {
@@ -40,7 +40,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// Master account ID
+        /// The ID of the account used as the Master account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -77,7 +77,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property InvitedAt. 
         /// <para>
-        /// Timestamp at which the invitation was sent
+        /// Timestamp at which the invitation was sent.
         /// </para>
         /// </summary>
         public string InvitedAt

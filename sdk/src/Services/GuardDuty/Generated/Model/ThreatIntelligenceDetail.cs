@@ -28,47 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about the security group.
+    /// An instance of a threat intelligence detail that constitutes evidence for the finding.
     /// </summary>
-    public partial class SecurityGroup
+    public partial class ThreatIntelligenceDetail
     {
-        private string _groupId;
-        private string _groupName;
+        private string _threatListName;
+        private List<string> _threatNames = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property GroupId. 
+        /// Gets and sets the property ThreatListName. 
         /// <para>
-        /// EC2 instance's security group ID.
+        /// The name of the threat intelligence list that triggered the finding.
         /// </para>
         /// </summary>
-        public string GroupId
+        public string ThreatListName
         {
-            get { return this._groupId; }
-            set { this._groupId = value; }
+            get { return this._threatListName; }
+            set { this._threatListName = value; }
         }
 
-        // Check to see if GroupId property is set
-        internal bool IsSetGroupId()
+        // Check to see if ThreatListName property is set
+        internal bool IsSetThreatListName()
         {
-            return this._groupId != null;
+            return this._threatListName != null;
         }
 
         /// <summary>
-        /// Gets and sets the property GroupName. 
+        /// Gets and sets the property ThreatNames. 
         /// <para>
-        /// EC2 instance's security group name.
+        /// A list of names of the threats in the threat intelligence list that triggered the
+        /// finding.
         /// </para>
         /// </summary>
-        public string GroupName
+        public List<string> ThreatNames
         {
-            get { return this._groupName; }
-            set { this._groupName = value; }
+            get { return this._threatNames; }
+            set { this._threatNames = value; }
         }
 
-        // Check to see if GroupName property is set
-        internal bool IsSetGroupName()
+        // Check to see if ThreatNames property is set
+        internal bool IsSetThreatNames()
         {
-            return this._groupName != null;
+            return this._threatNames != null && this._threatNames.Count > 0; 
         }
 
     }

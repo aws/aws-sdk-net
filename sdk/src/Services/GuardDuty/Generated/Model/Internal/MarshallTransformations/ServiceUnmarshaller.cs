@@ -100,6 +100,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.EventLastSeen = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("evidence", targetDepth))
+                {
+                    var unmarshaller = EvidenceUnmarshaller.Instance;
+                    unmarshalledObject.Evidence = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("resourceRole", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

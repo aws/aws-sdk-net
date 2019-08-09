@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// 
+    /// Contains information about the condition.
     /// </summary>
     public partial class Condition
     {
@@ -48,7 +48,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Eq. 
         /// <para>
-        /// Represents the equal condition to be applied to a single field when querying for findings.
+        /// Deprecated. Represents the equal condition to be applied to a single field when querying
+        /// for findings.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated and the Equals property should be used instead.")]
@@ -65,7 +66,11 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Equals.
+        /// Gets and sets the property Equals. 
+        /// <para>
+        /// Represents an <b>equal</b> condition to be applied to a single field when querying
+        /// for findings.
+        /// </para>
         /// </summary>
         public List<string> Equals
         {
@@ -120,8 +125,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Gt. 
         /// <para>
-        /// Represents a greater than condition to be applied to a single field when querying
-        /// for findings.
+        /// Deprecated. Represents a greater than condition to be applied to a single field when
+        /// querying for findings.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated and the GreaterThan property should be used instead.")]
@@ -140,8 +145,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Gte. 
         /// <para>
-        /// Represents a greater than equal condition to be applied to a single field when querying
-        /// for findings.
+        /// Deprecated. Represents a greater than equal condition to be applied to a single field
+        /// when querying for findings.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated and the GreaterThanOrEqual property should be used instead.")]
@@ -198,8 +203,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Lt. 
         /// <para>
-        /// Represents a less than condition to be applied to a single field when querying for
-        /// findings.
+        /// Deprecated. Represents a less than condition to be applied to a single field when
+        /// querying for findings.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated and the LessThan property should be used instead.")]
@@ -218,8 +223,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Lte. 
         /// <para>
-        /// Represents a less than equal condition to be applied to a single field when querying
-        /// for findings.
+        /// Deprecated. Represents a less than equal condition to be applied to a single field
+        /// when querying for findings.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated and the LessThanOrEqual property should be used instead.")]
@@ -238,8 +243,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Neq. 
         /// <para>
-        /// Represents the not equal condition to be applied to a single field when querying for
-        /// findings.
+        /// Deprecated. Represents the not equal condition to be applied to a single field when
+        /// querying for findings.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated and the NotEquals property should be used instead.")]
@@ -256,7 +261,11 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NotEquals.
+        /// Gets and sets the property NotEquals. 
+        /// <para>
+        /// Represents an <b>not equal</b> condition to be applied to a single field when querying
+        /// for findings.
+        /// </para>
         /// </summary>
         public List<string> NotEquals
         {

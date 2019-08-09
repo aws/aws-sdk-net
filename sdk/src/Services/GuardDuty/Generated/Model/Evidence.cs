@@ -28,47 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about the security group.
+    /// Contains information about the reason that the finding was generated.
     /// </summary>
-    public partial class SecurityGroup
+    public partial class Evidence
     {
-        private string _groupId;
-        private string _groupName;
+        private List<ThreatIntelligenceDetail> _threatIntelligenceDetails = new List<ThreatIntelligenceDetail>();
 
         /// <summary>
-        /// Gets and sets the property GroupId. 
+        /// Gets and sets the property ThreatIntelligenceDetails. 
         /// <para>
-        /// EC2 instance's security group ID.
+        /// A list of threat intelligence details related to the evidence.
         /// </para>
         /// </summary>
-        public string GroupId
+        public List<ThreatIntelligenceDetail> ThreatIntelligenceDetails
         {
-            get { return this._groupId; }
-            set { this._groupId = value; }
+            get { return this._threatIntelligenceDetails; }
+            set { this._threatIntelligenceDetails = value; }
         }
 
-        // Check to see if GroupId property is set
-        internal bool IsSetGroupId()
+        // Check to see if ThreatIntelligenceDetails property is set
+        internal bool IsSetThreatIntelligenceDetails()
         {
-            return this._groupId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property GroupName. 
-        /// <para>
-        /// EC2 instance's security group name.
-        /// </para>
-        /// </summary>
-        public string GroupName
-        {
-            get { return this._groupName; }
-            set { this._groupName = value; }
-        }
-
-        // Check to see if GroupName property is set
-        internal bool IsSetGroupName()
-        {
-            return this._groupName != null;
+            return this._threatIntelligenceDetails != null && this._threatIntelligenceDetails.Count > 0; 
         }
 
     }

@@ -29,7 +29,14 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the ArchiveFindings operation.
-    /// Archives Amazon GuardDuty findings specified by the list of finding IDs.
+    /// Archives GuardDuty findings specified by the list of finding IDs.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Only the master account can archive findings. Member accounts do not have permission
+    /// to archive findings from their accounts.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ArchiveFindingsRequest : AmazonGuardDutyRequest
     {

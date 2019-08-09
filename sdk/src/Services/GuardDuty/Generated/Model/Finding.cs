@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// 
+    /// Contains information about the finding.
     /// </summary>
     public partial class Finding
     {
@@ -51,7 +51,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// AWS account ID where the activity occurred that prompted GuardDuty to generate a finding.
+        /// The ID of the account in which the finding was generated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -70,7 +70,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of a finding described by the action.
+        /// The ARN for the finding.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -89,7 +89,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Confidence. 
         /// <para>
-        /// The confidence level of a finding.
+        /// The confidence score for the finding.
         /// </para>
         /// </summary>
         public double Confidence
@@ -107,7 +107,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The time stamp at which a finding was generated.
+        /// The time and date at which the finding was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -126,7 +126,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of a finding.
+        /// The description of the finding.
         /// </para>
         /// </summary>
         public string Description
@@ -144,7 +144,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier that corresponds to a finding described by the action.
+        /// The ID of the finding.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -163,7 +163,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Partition. 
         /// <para>
-        /// The AWS resource partition.
+        /// The partition associated with the finding.
         /// </para>
         /// </summary>
         public string Partition
@@ -181,7 +181,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS region where the activity occurred that prompted GuardDuty to generate a finding.
+        /// The Region in which the finding was generated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -198,11 +198,7 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Resource. 
-        /// <para>
-        /// The AWS resource associated with the activity that prompted GuardDuty to generate
-        /// a finding.
-        /// </para>
+        /// Gets and sets the property Resource.
         /// </summary>
         [AWSProperty(Required=true)]
         public Resource Resource
@@ -220,7 +216,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property SchemaVersion. 
         /// <para>
-        /// Findings' schema version.
+        /// The version of the schema used for the finding.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -237,10 +233,7 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Service. 
-        /// <para>
-        /// Additional information assigned to the generated finding by GuardDuty.
-        /// </para>
+        /// Gets and sets the property Service.
         /// </summary>
         public Service Service
         {
@@ -257,7 +250,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Severity. 
         /// <para>
-        /// The severity of a finding.
+        /// The severity of the finding.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -276,7 +269,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
-        /// The title of a finding.
+        /// The title for the finding.
         /// </para>
         /// </summary>
         public string Title
@@ -294,7 +287,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of a finding described by the action.
+        /// The type of the finding.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
@@ -313,7 +306,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The time stamp at which a finding was last updated.
+        /// The time and date at which the finding was laste updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
