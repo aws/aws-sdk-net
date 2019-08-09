@@ -32,8 +32,28 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class RepublishAction
     {
+        private int? _qos;
         private string _roleArn;
         private string _topic;
+
+        /// <summary>
+        /// Gets and sets the property Qos. 
+        /// <para>
+        /// The Quality of Service (QoS) level to use when republishing messages.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public int Qos
+        {
+            get { return this._qos.GetValueOrDefault(); }
+            set { this._qos = value; }
+        }
+
+        // Check to see if Qos property is set
+        internal bool IsSetQos()
+        {
+            return this._qos.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property RoleArn. 

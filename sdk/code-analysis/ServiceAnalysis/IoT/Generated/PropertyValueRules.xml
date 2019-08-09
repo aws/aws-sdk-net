@@ -2222,6 +2222,11 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.RepublishAction.Qos</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.ResourceIdentifier.Account</property>
     <min>12</min>
     <max>12</max>

@@ -96,7 +96,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Target. 
         /// <para>
-        /// The group for which the policies will be listed.
+        /// The group or principal for which the policies will be listed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
