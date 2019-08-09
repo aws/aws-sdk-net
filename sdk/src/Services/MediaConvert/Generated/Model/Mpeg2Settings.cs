@@ -491,8 +491,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SceneChangeDetect. Scene change detection (inserts I-frames
-        /// on scene changes).
+        /// Gets and sets the property SceneChangeDetect. Enable this setting to insert I-frames
+        /// at scene changes that the service automatically detects. This improves video quality
+        /// and is enabled by default.
         /// </summary>
         public Mpeg2SceneChangeDetect SceneChangeDetect
         {

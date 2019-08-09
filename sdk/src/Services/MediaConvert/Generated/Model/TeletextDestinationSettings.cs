@@ -33,6 +33,7 @@ namespace Amazon.MediaConvert.Model
     public partial class TeletextDestinationSettings
     {
         private string _pageNumber;
+        private List<string> _pageTypes = new List<string>();
 
         /// <summary>
         /// Gets and sets the property PageNumber. Set pageNumber to the Teletext page number
@@ -51,6 +52,25 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetPageNumber()
         {
             return this._pageNumber != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PageTypes. Specify the page types for this Teletext page.
+        /// If you don't specify a value here, the service sets the page type to the default value
+        /// Subtitle (PAGE_TYPE_SUBTITLE). If you pass through the entire set of Teletext data,
+        /// don't use this field. When you pass through a set of Teletext pages, your output has
+        /// the same page types as your input.
+        /// </summary>
+        public List<string> PageTypes
+        {
+            get { return this._pageTypes; }
+            set { this._pageTypes = value; }
+        }
+
+        // Check to see if PageTypes property is set
+        internal bool IsSetPageTypes()
+        {
+            return this._pageTypes != null && this._pageTypes.Count > 0; 
         }
 
     }

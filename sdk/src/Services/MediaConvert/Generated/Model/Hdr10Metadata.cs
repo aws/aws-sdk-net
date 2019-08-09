@@ -28,14 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Use the "HDR master display information" (Hdr10Metadata) settings to correct HDR metadata
-    /// or to provide missing metadata. These values vary depending on the input video and
-    /// must be provided by a color grader. Range is 0 to 50,000; each increment represents
-    /// 0.00002 in CIE1931 color coordinate. Note that these settings are not color correction.
-    /// Note that if you are creating HDR outputs inside of an HLS CMAF package, to comply
-    /// with the Apple specification, you must use the following settings. Set "MP4 packaging
-    /// type" (writeMp4PackagingType) to HVC1 (HVC1). Set "Profile" (H265Settings > codecProfile)
-    /// to Main10/High (MAIN10_HIGH). Set "Level" (H265Settings > codecLevel) to 5 (LEVEL_5).
+    /// Use these settings to specify static color calibration metadata, as defined by SMPTE
+    /// ST 2086. These values don't affect the pixel values that are encoded in the video
+    /// stream. They are intended to help the downstream video player display content in a
+    /// way that reflects the intentions of the the content creator.
     /// </summary>
     public partial class Hdr10Metadata
     {
@@ -130,7 +126,8 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property MaxContentLightLevel. Maximum light level among all samples
-        /// in the coded video sequence, in units of candelas per square meter.
+        /// in the coded video sequence, in units of candelas per square meter.  This setting
+        /// doesn't have a default value; you must specify a value that is suitable for the content.
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
         public int MaxContentLightLevel
@@ -147,7 +144,9 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property MaxFrameAverageLightLevel. Maximum average light level
-        /// of any frame in the coded video sequence, in units of candelas per square meter.
+        /// of any frame in the coded video sequence, in units of candelas per square meter. This
+        /// setting doesn't have a default value; you must specify a value that is suitable for
+        /// the content.
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
         public int MaxFrameAverageLightLevel

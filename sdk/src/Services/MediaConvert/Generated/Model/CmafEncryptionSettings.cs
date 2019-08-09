@@ -35,6 +35,7 @@ namespace Amazon.MediaConvert.Model
         private string _constantInitializationVector;
         private CmafEncryptionType _encryptionMethod;
         private CmafInitializationVectorInManifest _initializationVectorInManifest;
+        private SpekeKeyProviderCmaf _spekeKeyProvider;
         private StaticKeyProvider _staticKeyProvider;
         private CmafKeyProviderType _type;
 
@@ -57,9 +58,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EncryptionMethod. Encrypts the segments with the given
-        /// encryption scheme. Leave blank to disable. Selecting 'Disabled' in the web interface
-        /// also disables encryption.
+        /// Gets and sets the property EncryptionMethod. For DRM with CMAF, the encryption type
+        /// is always sample AES.
         /// </summary>
         public CmafEncryptionType EncryptionMethod
         {
@@ -74,10 +74,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InitializationVectorInManifest. The Initialization Vector
-        /// is a 128-bit number used in conjunction with the key for encrypting blocks. If set
-        /// to INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization
-        /// Vector is not in the manifest.
+        /// Gets and sets the property InitializationVectorInManifest. When you use DRM with CMAF
+        /// outputs, choose whether the service writes the 128-bit encryption initialization vector
+        /// in the HLS and DASH manifests.
         /// </summary>
         public CmafInitializationVectorInManifest InitializationVectorInManifest
         {
@@ -89,6 +88,23 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetInitializationVectorInManifest()
         {
             return this._initializationVectorInManifest != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpekeKeyProvider. Use these settings when doing DRM encryption
+        /// with a SPEKE-compliant key provider, if your output group type is CMAF. If your output
+        /// group type is HLS, MS Smooth, or DASH, use the SpekeKeyProvider settings instead.
+        /// </summary>
+        public SpekeKeyProviderCmaf SpekeKeyProvider
+        {
+            get { return this._spekeKeyProvider; }
+            set { this._spekeKeyProvider = value; }
+        }
+
+        // Check to see if SpekeKeyProvider property is set
+        internal bool IsSetSpekeKeyProvider()
+        {
+            return this._spekeKeyProvider != null;
         }
 
         /// <summary>
@@ -108,8 +124,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type. Indicates which type of key provider is used for
-        /// encryption.
+        /// Gets and sets the property Type. Specify whether your DRM encryption key is static
+        /// or from a key provider that follows the SPEKE standard. For more information about
+        /// SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
         /// </summary>
         public CmafKeyProviderType Type
         {

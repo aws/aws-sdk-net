@@ -38,6 +38,7 @@ namespace Amazon.MediaConvert.Model
         private string _name;
         private PricingPlan _pricingPlan;
         private ReservationPlanSettings _reservationPlanSettings;
+        private QueueStatus _status;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
@@ -106,6 +107,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetReservationPlanSettings()
         {
             return this._reservationPlanSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. Initial state of the queue. If you create a paused
+        /// queue, then jobs in that queue won't begin.
+        /// </summary>
+        public QueueStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
         /// <summary>

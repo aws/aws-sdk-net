@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NoiseReducer Object
+    /// Response Unmarshaller for NoiseReducerTemporalFilterSettings Object
     /// </summary>  
-    public class NoiseReducerUnmarshaller : IUnmarshaller<NoiseReducer, XmlUnmarshallerContext>, IUnmarshaller<NoiseReducer, JsonUnmarshallerContext>
+    public class NoiseReducerTemporalFilterSettingsUnmarshaller : IUnmarshaller<NoiseReducerTemporalFilterSettings, XmlUnmarshallerContext>, IUnmarshaller<NoiseReducerTemporalFilterSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        NoiseReducer IUnmarshaller<NoiseReducer, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        NoiseReducerTemporalFilterSettings IUnmarshaller<NoiseReducerTemporalFilterSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,33 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public NoiseReducer Unmarshall(JsonUnmarshallerContext context)
+        public NoiseReducerTemporalFilterSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            NoiseReducer unmarshalledObject = new NoiseReducer();
+            NoiseReducerTemporalFilterSettings unmarshalledObject = new NoiseReducerTemporalFilterSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("filter", targetDepth))
+                if (context.TestExpression("aggressiveMode", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Filter = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.AggressiveMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("filterSettings", targetDepth))
+                if (context.TestExpression("speed", targetDepth))
                 {
-                    var unmarshaller = NoiseReducerFilterSettingsUnmarshaller.Instance;
-                    unmarshalledObject.FilterSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Speed = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("spatialFilterSettings", targetDepth))
+                if (context.TestExpression("strength", targetDepth))
                 {
-                    var unmarshaller = NoiseReducerSpatialFilterSettingsUnmarshaller.Instance;
-                    unmarshalledObject.SpatialFilterSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("temporalFilterSettings", targetDepth))
-                {
-                    var unmarshaller = NoiseReducerTemporalFilterSettingsUnmarshaller.Instance;
-                    unmarshalledObject.TemporalFilterSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Strength = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +88,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         }
 
 
-        private static NoiseReducerUnmarshaller _instance = new NoiseReducerUnmarshaller();        
+        private static NoiseReducerTemporalFilterSettingsUnmarshaller _instance = new NoiseReducerTemporalFilterSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NoiseReducerUnmarshaller Instance
+        public static NoiseReducerTemporalFilterSettingsUnmarshaller Instance
         {
             get
             {

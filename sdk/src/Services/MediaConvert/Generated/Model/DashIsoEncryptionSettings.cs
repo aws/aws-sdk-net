@@ -56,7 +56,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SpekeKeyProvider. Settings for use with a SPEKE key provider
+        /// Gets and sets the property SpekeKeyProvider. Use these settings when doing DRM encryption
+        /// with a SPEKE-compliant key provider, if your output group type is HLS, MS Smooth,
+        /// or DASH. If your output group type is CMAF, use the SpekeKeyProviderCmaf settings
+        /// instead.
         /// </summary>
         public SpekeKeyProvider SpekeKeyProvider
         {

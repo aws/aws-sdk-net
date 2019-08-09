@@ -2093,6 +2093,10 @@ namespace Amazon.MediaConvert
     {
 
         /// <summary>
+        /// Constant SPEKE for CmafKeyProviderType
+        /// </summary>
+        public static readonly CmafKeyProviderType SPEKE = new CmafKeyProviderType("SPEKE");
+        /// <summary>
         /// Constant STATIC_KEY for CmafKeyProviderType
         /// </summary>
         public static readonly CmafKeyProviderType STATIC_KEY = new CmafKeyProviderType("STATIC_KEY");
@@ -5982,6 +5986,10 @@ namespace Amazon.MediaConvert
         /// Constant ENABLED for H264SceneChangeDetect
         /// </summary>
         public static readonly H264SceneChangeDetect ENABLED = new H264SceneChangeDetect("ENABLED");
+        /// <summary>
+        /// Constant TRANSITION_DETECTION for H264SceneChangeDetect
+        /// </summary>
+        public static readonly H264SceneChangeDetect TRANSITION_DETECTION = new H264SceneChangeDetect("TRANSITION_DETECTION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -7198,6 +7206,10 @@ namespace Amazon.MediaConvert
         /// Constant ENABLED for H265SceneChangeDetect
         /// </summary>
         public static readonly H265SceneChangeDetect ENABLED = new H265SceneChangeDetect("ENABLED");
+        /// <summary>
+        /// Constant TRANSITION_DETECTION for H265SceneChangeDetect
+        /// </summary>
+        public static readonly H265SceneChangeDetect TRANSITION_DETECTION = new H265SceneChangeDetect("TRANSITION_DETECTION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -12248,6 +12260,10 @@ namespace Amazon.MediaConvert
         /// Constant SPATIAL for NoiseReducerFilter
         /// </summary>
         public static readonly NoiseReducerFilter SPATIAL = new NoiseReducerFilter("SPATIAL");
+        /// <summary>
+        /// Constant TEMPORAL for NoiseReducerFilter
+        /// </summary>
+        public static readonly NoiseReducerFilter TEMPORAL = new NoiseReducerFilter("TEMPORAL");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -13436,6 +13452,68 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StatusUpdateInterval(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TeletextPageType.
+    /// </summary>
+    public class TeletextPageType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PAGE_TYPE_ADDL_INFO for TeletextPageType
+        /// </summary>
+        public static readonly TeletextPageType PAGE_TYPE_ADDL_INFO = new TeletextPageType("PAGE_TYPE_ADDL_INFO");
+        /// <summary>
+        /// Constant PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE for TeletextPageType
+        /// </summary>
+        public static readonly TeletextPageType PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE = new TeletextPageType("PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE");
+        /// <summary>
+        /// Constant PAGE_TYPE_INITIAL for TeletextPageType
+        /// </summary>
+        public static readonly TeletextPageType PAGE_TYPE_INITIAL = new TeletextPageType("PAGE_TYPE_INITIAL");
+        /// <summary>
+        /// Constant PAGE_TYPE_PROGRAM_SCHEDULE for TeletextPageType
+        /// </summary>
+        public static readonly TeletextPageType PAGE_TYPE_PROGRAM_SCHEDULE = new TeletextPageType("PAGE_TYPE_PROGRAM_SCHEDULE");
+        /// <summary>
+        /// Constant PAGE_TYPE_SUBTITLE for TeletextPageType
+        /// </summary>
+        public static readonly TeletextPageType PAGE_TYPE_SUBTITLE = new TeletextPageType("PAGE_TYPE_SUBTITLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TeletextPageType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TeletextPageType FindValue(string value)
+        {
+            return FindValue<TeletextPageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TeletextPageType(string value)
         {
             return FindValue(value);
         }

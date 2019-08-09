@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TeletextDestinationSettings Marshaller
+    /// NoiseReducerTemporalFilterSettings Marshaller
     /// </summary>       
-    public class TeletextDestinationSettingsMarshaller : IRequestMarshaller<TeletextDestinationSettings, JsonMarshallerContext> 
+    public class NoiseReducerTemporalFilterSettingsMarshaller : IRequestMarshaller<NoiseReducerTemporalFilterSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,24 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TeletextDestinationSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(NoiseReducerTemporalFilterSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetPageNumber())
+            if(requestObject.IsSetAggressiveMode())
             {
-                context.Writer.WritePropertyName("pageNumber");
-                context.Writer.Write(requestObject.PageNumber);
+                context.Writer.WritePropertyName("aggressiveMode");
+                context.Writer.Write(requestObject.AggressiveMode);
             }
 
-            if(requestObject.IsSetPageTypes())
+            if(requestObject.IsSetSpeed())
             {
-                context.Writer.WritePropertyName("pageTypes");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectPageTypesListValue in requestObject.PageTypes)
-                {
-                        context.Writer.Write(requestObjectPageTypesListValue);
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("speed");
+                context.Writer.Write(requestObject.Speed);
+            }
+
+            if(requestObject.IsSetStrength())
+            {
+                context.Writer.WritePropertyName("strength");
+                context.Writer.Write(requestObject.Strength);
             }
 
         }
@@ -67,7 +68,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static TeletextDestinationSettingsMarshaller Instance = new TeletextDestinationSettingsMarshaller();
+        public readonly static NoiseReducerTemporalFilterSettingsMarshaller Instance = new NoiseReducerTemporalFilterSettingsMarshaller();
 
     }
 }

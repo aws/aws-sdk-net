@@ -73,6 +73,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetTemporalFilterSettings())
+            {
+                context.Writer.WritePropertyName("temporalFilterSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = NoiseReducerTemporalFilterSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.TemporalFilterSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

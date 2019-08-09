@@ -107,8 +107,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ColorMetadata. Enable Insert color metadata (ColorMetadata)
-        /// to include color metadata in this output. This setting is enabled by default.
+        /// Gets and sets the property ColorMetadata. Choose Insert (INSERT) for this setting
+        /// to include color metadata in this output. Choose Ignore (IGNORE) to exclude color
+        /// metadata from this output. If you don't specify a value, the service sets this to
+        /// Insert by default.
         /// </summary>
         public ColorMetadata ColorMetadata
         {
