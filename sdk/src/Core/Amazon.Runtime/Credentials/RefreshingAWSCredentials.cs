@@ -38,7 +38,7 @@ namespace Amazon.Runtime
         {
             public ImmutableCredentials Credentials
             {
-                get; 
+                get;
                 set;
             }
             public DateTime Expiration { get; set; }
@@ -51,6 +51,11 @@ namespace Amazon.Runtime
             {
                 Credentials = credentials;
                 Expiration = expiration;
+            }
+
+            internal bool IsExpired()
+            {
+                return IsExpiredWithin(TimeSpan.Zero);
             }
 
             internal bool IsExpiredWithin(TimeSpan preemptExpiryTime)
@@ -69,6 +74,8 @@ namespace Amazon.Runtime
 
         private TimeSpan _preemptExpiryTime = TimeSpan.FromMinutes(0);
         private bool _disposed;
+        private bool _credentialsCleared = true;
+
 #if BCL35 || UNITY
         /// <summary>
         /// Semaphore to control thread access to GetCredentialsAsync method.
@@ -92,7 +99,7 @@ namespace Amazon.Runtime
         #region Properties
 
         /// <summary>
-        /// The time before actual expiration to expire the credentials.        
+        /// The time before actual expiration to expire the credentials.
         /// Property cannot be set to a negative TimeSpan.
         /// </summary>
         public TimeSpan PreemptExpiryTime
@@ -122,8 +129,9 @@ namespace Amazon.Runtime
                 // If credentials are expired or we don't have any state yet, update
                 if (ShouldUpdate)
                 {
-                    currentState = GenerateNewCredentials();
-                    UpdateToGeneratedCredentials(currentState);
+                    var state = GenerateNewCredentials();
+                    UpdateToGeneratedCredentials(state);
+                    _credentialsCleared = false;
                 }
                 return currentState.Credentials.Copy();
             }
@@ -142,8 +150,9 @@ namespace Amazon.Runtime
                 // If credentials are expired, update
                 if (ShouldUpdate)
                 {
-                    currentState = await GenerateNewCredentialsAsync().ConfigureAwait(false);
-                    UpdateToGeneratedCredentials(currentState);
+                    var state = await GenerateNewCredentialsAsync().ConfigureAwait(false);
+                    UpdateToGeneratedCredentials(state);
+                    _credentialsCleared = false;
                 }
                 return currentState.Credentials.Copy();
             }
@@ -160,26 +169,27 @@ namespace Amazon.Runtime
 
         private void UpdateToGeneratedCredentials(CredentialsRefreshState state)
         {
+            currentState = state;
+            if (state == null)
+                throw new AmazonClientException("Unable to generate temporary credentials");
+
             // Check if the new credentials are already expired
-            if (ShouldUpdate)
+            if (state.IsExpired())
             {
-                string errorMessage;
-                if (state == null)
-                    errorMessage = "Unable to generate temporary credentials";
-                else
-                    errorMessage = string.Format(CultureInfo.InvariantCulture,
-                        "The retrieved credentials have already expired: Now = {0}, Credentials expiration = {1}",
+                string errorMessage = string.Format(CultureInfo.InvariantCulture,
+                    "The retrieved credentials have already expired: Now = {0}, Credentials expiration = {1}",
 #pragma warning disable CS0612 // Type or member is obsolete
-                        AWSSDKUtils.CorrectedUtcNow.ToLocalTime(), state.Expiration);
+                    AWSSDKUtils.CorrectedUtcNow.ToLocalTime(),
 #pragma warning restore CS0612 // Type or member is obsolete
+                    state.Expiration);
                 throw new AmazonClientException(errorMessage);
             }
 
-            // Offset the Expiration by PreemptExpiryTime. This produces the expiration window 
+            // Offset the Expiration by PreemptExpiryTime. This produces the expiration window
             // where the credentials should be updated before they actually expire.
             state.Expiration -= PreemptExpiryTime;
 
-            if (ShouldUpdate)
+            if (state.IsExpired())
             {
                 // This could happen if the default value of PreemptExpiryTime is
                 // overridden and set too high such that ShouldUpdate returns true.
@@ -189,7 +199,7 @@ namespace Amazon.Runtime
 #pragma warning disable CS0612 // Type or member is obsolete
                     AWSSDKUtils.CorrectedUtcNow.ToLocalTime(),
 #pragma warning restore CS0612 // Type or member is obsolete
-                    currentState.Expiration, PreemptExpiryTime);
+                    state.Expiration, PreemptExpiryTime);
             }
         }
 
@@ -197,21 +207,20 @@ namespace Amazon.Runtime
 
         // should update if:
 
+        // Credentials have been cleared by ClearCredentials().
         //  credentials have not been loaded yet
-        // it's past the expiration time. At this point currentState.Expiration may 
-        // have the PreemptExpiryTime baked into to the expiration from a call to 
-        // UpdateToGeneratedCredentials but it may not if this is new application 
+        // it's past the expiration time. At this point currentState.Expiration may
+        // have the PreemptExpiryTime baked into to the expiration from a call to
+        // UpdateToGeneratedCredentials but it may not if this is new application
         // load.
         protected bool ShouldUpdate
         {
             get
             {
-                // it's past the expiration time. At this point currentState.Expiration may 
-                // have the PreemptExpiryTime baked into to the expiration from a call to 
-                // UpdateToGeneratedCredentials but it may not if this is new application 
-                // load.
-                var isExpired = currentState?.IsExpiredWithin(TimeSpan.Zero) ?? true;
-                if (currentState != null && isExpired)
+                if (currentState == null || _credentialsCleared)
+                    return true;
+                var isExpired = currentState.IsExpired();
+                if (isExpired)
                 {
 #pragma warning disable CS0612 // Type or member is obsolete
                     _logger.InfoFormat("Determined refreshing credentials should update. Expiration time: {0}, Current time: {1}",
@@ -226,7 +235,7 @@ namespace Amazon.Runtime
 
         /// <summary>
         /// When overridden in a derived class, generates new credentials and new expiration date.
-        /// 
+        ///
         /// Called on first credentials request and when expiration date is in the past.
         /// </summary>
         /// <returns></returns>
@@ -237,7 +246,7 @@ namespace Amazon.Runtime
 #if AWS_ASYNC_API
         /// <summary>
         /// When overridden in a derived class, generates new credentials and new expiration date.
-        /// 
+        ///
         /// Called on first credentials request and when expiration date is in the past.
         /// </summary>
         /// <returns></returns>
@@ -257,26 +266,18 @@ namespace Amazon.Runtime
 
             _disposed = true;
         }
-        
+
         #endregion
 
         #region Public Methods
 
-        
+
         /// <summary>
         /// Clears currently-stored credentials, forcing the next GetCredentials call to generate new credentials.
         /// </summary>
         public virtual void ClearCredentials()
         {
-            _updateGeneratedCredentialsSemaphore.Wait();
-            try
-            {
-                currentState = null;
-            }
-            finally
-            {
-                _updateGeneratedCredentialsSemaphore.Release();
-            }
+            _credentialsCleared = true;
         }
 
         public void Dispose()

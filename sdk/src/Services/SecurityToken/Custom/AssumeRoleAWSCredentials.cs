@@ -13,7 +13,7 @@ namespace Amazon.SecurityToken
     /// AssumeRole or AssumeRoleWithSAML action.
     /// </summary>
     [Obsolete("This class has been replaced by Amazon.Runtime.AssumeRoleAWSCredentials and Amazon.Runtime.StoredProfileFederatedCredentials, and will be removed in a future version.", false)]
-    public partial class STSAssumeRoleAWSCredentials : RefreshingAWSCredentials, IDisposable
+    public partial class STSAssumeRoleAWSCredentials : RefreshingAWSCredentials
     {
 #if !UNITY
         private IAmazonSecurityTokenService _stsClient;
@@ -81,7 +81,7 @@ namespace Amazon.SecurityToken
         /// </summary>
         /// <param name="disposing">Whether this object is being disposed via a call to Dispose
         /// or garbage collected.</param>
-        protected virtual void Dispose(bool disposing)
+        protected override void Dispose(bool disposing)
         {
             if (!this._isDisposed)
             {
@@ -91,16 +91,9 @@ namespace Amazon.SecurityToken
                     _stsClient = null;
                 }
                 this._isDisposed = true;
-            }
-        }
 
-        /// <summary>
-        /// Disposes of all managed and unmanaged resources.
-        /// </summary>
-        public void Dispose()
-        {
-            this.Dispose(true);
-            GC.SuppressFinalize(this);
+                base.Dispose(disposing);
+            }
         }
 
         #endregion
