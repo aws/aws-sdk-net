@@ -129,7 +129,7 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property ActionsEnabled. 
         /// <para>
         /// Indicates whether actions should be executed during any changes to the alarm state.
-        /// The default is TRUE.
+        /// The default is <code>TRUE</code>.
         /// </para>
         /// </summary>
         public bool ActionsEnabled
@@ -398,7 +398,9 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        /// The name for the metric associated with the alarm.
+        /// The name for the metric associated with the alarm. For each <code>PutMetricAlarm</code>
+        /// operation, you must specify either <code>MetricName</code> or a <code>Metrics</code>
+        /// array.
         /// </para>
         ///  
         /// <para>
@@ -425,8 +427,14 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property Metrics. 
         /// <para>
         /// An array of <code>MetricDataQuery</code> structures that enable you to create an alarm
-        /// based on the result of a metric math expression. Each item in the <code>Metrics</code>
-        /// array either retrieves a metric or performs a math expression.
+        /// based on the result of a metric math expression. For each <code>PutMetricAlarm</code>
+        /// operation, you must specify either <code>MetricName</code> or a <code>Metrics</code>
+        /// array.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each item in the <code>Metrics</code> array either retrieves a metric or performs
+        /// a math expression.
         /// </para>
         ///  
         /// <para>
@@ -517,6 +525,12 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
+        ///  <code>Period</code> is required for alarms based on static thresholds. If you are
+        /// creating an alarm based on a metric math expression, you specify the period for each
+        /// metric within the objects in the <code>Metrics</code> array.
+        /// </para>
+        ///  
+        /// <para>
         /// Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code>
         /// call with a <code>StorageResolution</code> of 1. If you specify a period of 10 or
         /// 30 for a metric that does not have sub-minute resolution, the alarm still attempts
@@ -597,6 +611,11 @@ namespace Amazon.CloudWatch.Model
         /// <para>
         /// The value against which the specified statistic is compared.
         /// </para>
+        ///  
+        /// <para>
+        /// This parameter is required for alarms based on static thresholds, but should not be
+        /// used for alarms based on anomaly detection models.
+        /// </para>
         /// </summary>
         public double Threshold
         {
@@ -676,8 +695,20 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify a unit, you must use a unit that is appropriate for the metric. Otherwise,
-        /// the CloudWatch alarm can get stuck in the <code>INSUFFICIENT DATA</code> state. 
+        /// If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have
+        /// been published for the metric and attempts to evaluate the alarm. Usually metrics
+        /// are published with only one unit, so the alarm will work as intended.
+        /// </para>
+        ///  
+        /// <para>
+        /// However, if the metric is published with multiple types of units and you don't specify
+        /// a unit, the alarm's behavior is not defined and will behave un-predictably.
+        /// </para>
+        ///  
+        /// <para>
+        /// We recommend omitting <code>Unit</code> so that you don't inadvertently specify an
+        /// incorrect unit that is not published for this metric. Doing so causes the alarm to
+        /// be stuck in the <code>INSUFFICIENT DATA</code> state.
         /// </para>
         /// </summary>
         public StandardUnit Unit

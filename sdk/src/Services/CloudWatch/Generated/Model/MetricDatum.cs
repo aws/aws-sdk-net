@@ -177,8 +177,11 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property Unit. 
         /// <para>
         /// When you are using a <code>Put</code> operation, this defines what unit you want to
-        /// use when storing the metric. In a <code>Get</code> operation, this displays the unit
-        /// that is used for the metric.
+        /// use when storing the metric.
+        /// </para>
+        ///  
+        /// <para>
+        /// In a <code>Get</code> operation, this displays the unit that is used for the metric.
         /// </para>
         /// </summary>
         public StandardUnit Unit

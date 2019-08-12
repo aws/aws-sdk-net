@@ -118,8 +118,8 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// You cannot specify a namespace that begins with "AWS/". Namespaces that begin with
-        /// "AWS/" are reserved for use by Amazon Web Services products.
+        /// To avoid conflicts with AWS service namespaces, you should not specify a namespace
+        /// that begins with <code>AWS/</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
