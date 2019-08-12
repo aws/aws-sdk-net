@@ -1,3 +1,18 @@
+### 3.3.566.0 (2019-08-12 18:14 UTC)
+* ApplicationAutoScaling (3.3.100.61)
+	* Documentation updates for Application Auto Scaling
+* AutoScaling (3.3.100.62)
+	* Amazon EC2 Auto Scaling now supports a new Spot allocation strategy "capacity-optimized" that fulfills your request using Spot Instance pools that are optimally chosen based on the available Spot capacity.
+* CloudWatch (3.3.102.16)
+	* Documentation updates for monitoring
+* Rekognition (3.3.101.0)
+	* Adding new Emotion, Fear
+* Core 3.3.103.25
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.565.0 (2019-08-09 18:16 UTC)
 * GuardDuty (3.3.103.0)
 	* New "evidence" field in the finding model to provide evidence information explaining why the finding has been triggered. Currently only threat-intelligence findings have this field. Some documentation updates.
