@@ -125,13 +125,25 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property SpotAllocationStrategy. 
         /// <para>
-        /// Indicates how to allocate Spot capacity across Spot pools.
+        /// Indicates how to allocate instances across Spot Instance pools. 
         /// </para>
         ///  
         /// <para>
-        /// The only valid value is <code>lowest-price</code>, which is also the default value.
-        /// The Auto Scaling group selects the cheapest Spot pools and evenly allocates your Spot
-        /// capacity across the number of Spot pools that you specify. 
+        /// If the allocation strategy is <code>lowest-price</code>, the Auto Scaling group launches
+        /// instances using the Spot pools with the lowest price, and evenly allocates your instances
+        /// across the number of Spot pools that you specify. If the allocation strategy is <code>capacity-optimized</code>,
+        /// the Auto Scaling group launches instances using Spot pools that are optimally chosen
+        /// based on the available Spot capacity. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The default Spot allocation strategy for calls that you make through the API, the
+        /// AWS CLI, or the AWS SDKs is <code>lowest-price</code>. The default Spot allocation
+        /// strategy for the AWS Management Console is <code>capacity-optimized</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>lowest-price</code> | <code>capacity-optimized</code> 
         /// </para>
         /// </summary>
         public string SpotAllocationStrategy
@@ -149,13 +161,14 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property SpotInstancePools. 
         /// <para>
-        /// The number of Spot pools to use to allocate your Spot capacity. The Spot pools are
-        /// determined from the different instance types in the Overrides array of <a>LaunchTemplate</a>.
-        /// The range is 1–20.
+        /// The number of Spot Instance pools across which to allocate your Spot Instances. The
+        /// Spot pools are determined from the different instance types in the Overrides array
+        /// of <a>LaunchTemplate</a>. The range is 1–20. The default value is <code>2</code>.
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>2</code>.
+        /// Valid only when the Spot allocation strategy is <code>lowest-price</code>. 
         /// </para>
         /// </summary>
         public int SpotInstancePools

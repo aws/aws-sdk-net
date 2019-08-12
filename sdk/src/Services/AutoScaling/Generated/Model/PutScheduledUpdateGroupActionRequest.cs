@@ -222,7 +222,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property TimeUtc. 
         /// <para>
-        /// This parameter is deprecated.
+        /// This parameter is no longer used.
         /// </para>
         /// </summary>
         public DateTime TimeUtc
@@ -325,7 +325,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is deprecated.
+        /// This parameter is no longer used.
         /// </para>
         /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +

@@ -61,7 +61,7 @@ namespace Amazon.AutoScaling.Model
     ///  </li> <li> 
     /// <para>
     /// If you need more time, record the lifecycle action heartbeat to keep the instance
-    /// in a pending state using using <a>RecordLifecycleActionHeartbeat</a>.
+    /// in a pending state using <a>RecordLifecycleActionHeartbeat</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
