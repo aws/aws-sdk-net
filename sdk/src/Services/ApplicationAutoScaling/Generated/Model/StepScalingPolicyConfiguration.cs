@@ -41,8 +41,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property AdjustmentType. 
         /// <para>
-        /// The adjustment type, which specifies how the <code>ScalingAdjustment</code> parameter
-        /// in a <a>StepAdjustment</a> is interpreted.
+        /// Specifies whether the <code>ScalingAdjustment</code> value in a <a>StepAdjustment</a>
+        /// is an absolute number or a percentage of the current capacity. 
         /// </para>
         /// </summary>
         public AdjustmentType AdjustmentType
