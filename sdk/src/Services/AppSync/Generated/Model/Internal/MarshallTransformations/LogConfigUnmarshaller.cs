@@ -70,6 +70,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     unmarshalledObject.CloudWatchLogsRoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("excludeVerboseContent", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ExcludeVerboseContent = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("fieldLogLevel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
