@@ -1,3 +1,12 @@
+### 3.3.567.0 (2019-08-13 19:35 UTC)
+* AppSync (3.3.102.0)
+	* Adds a configuration option for AppSync GraphQL APIs
+* Core 3.3.103.26
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.566.0 (2019-08-12 18:14 UTC)
 * ApplicationAutoScaling (3.3.100.61)
 	* Documentation updates for Application Auto Scaling
