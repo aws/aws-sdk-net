@@ -1,3 +1,12 @@
+### 3.3.568.0 (2019-08-14 18:15 UTC)
+* EC2 (3.3.125.0)
+	* This release adds a new API called SendDiagnosticInterrupt, which allows you to send diagnostic interrupts to your EC2 instance.
+* Core 3.3.103.27
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.567.0 (2019-08-13 19:35 UTC)
 * AppSync (3.3.102.0)
 	* Adds a configuration option for AppSync GraphQL APIs
