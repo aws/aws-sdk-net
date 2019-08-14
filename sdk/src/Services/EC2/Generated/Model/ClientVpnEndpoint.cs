@@ -252,7 +252,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SplitTunnel. 
         /// <para>
-        /// Indicates whether split-tunnel is enabled in the AWS Client VPN endpoint endpoint.
+        /// Indicates whether split-tunnel is enabled in the AWS Client VPN endpoint.
         /// </para>
         ///  
         /// <para>

@@ -171,8 +171,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property DnsServers. 
         /// <para>
         /// Information about the DNS servers to be used for DNS resolution. A Client VPN endpoint
-        /// can have up to two DNS servers. If no DNS server is specified, the DNS address of
-        /// the VPC that is to be associated with Client VPN endpoint is used as the DNS server.
+        /// can have up to two DNS servers. If no DNS server is specified, the DNS address configured
+        /// on the device is used for the DNS server.
         /// </para>
         /// </summary>
         public List<string> DnsServers
@@ -210,7 +210,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SplitTunnel. 
         /// <para>
-        /// Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint endpoint.
+        /// Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint.
         /// </para>
         ///  
         /// <para>

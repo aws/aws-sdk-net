@@ -70,7 +70,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AvailabilityZoneId.
+        /// Gets and sets the property AvailabilityZoneId. 
+        /// <para>
+        /// The Availability Zone ID of the Capacity Reservation.
+        /// </para>
         /// </summary>
         public string AvailabilityZoneId
         {
@@ -104,7 +107,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CapacityReservationArn.
+        /// Gets and sets the property CapacityReservationArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Capacity Reservation.
+        /// </para>
         /// </summary>
         public string CapacityReservationArn
         {
@@ -316,7 +322,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OwnerId.
+        /// Gets and sets the property OwnerId. 
+        /// <para>
+        /// The ID of the AWS account that owns the Capacity Reservation.
+        /// </para>
         /// </summary>
         public string OwnerId
         {
@@ -343,13 +352,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>cancelled</code> - The Capacity Reservation expired automatically at the date
+        ///  <code>expired</code> - The Capacity Reservation expired automatically at the date
         /// and time specified in your request. The reserved capacity is no longer available for
         /// your use.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>expired</code> - The Capacity Reservation was manually cancelled. The reserved
+        ///  <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved
         /// capacity is no longer available for your use.
         /// </para>
         ///  </li> <li> 
@@ -428,7 +437,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TotalInstanceCount. 
         /// <para>
-        /// The number of instances for which the Capacity Reservation reserves capacity.
+        /// The total number of instances for which the Capacity Reservation reserves capacity.
         /// </para>
         /// </summary>
         public int TotalInstanceCount

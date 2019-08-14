@@ -94,7 +94,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AvailabilityZoneId.
+        /// Gets and sets the property AvailabilityZoneId. 
+        /// <para>
+        /// The ID of the Availability Zone in which to create the Capacity Reservation.
+        /// </para>
         /// </summary>
         public string AvailabilityZoneId
         {

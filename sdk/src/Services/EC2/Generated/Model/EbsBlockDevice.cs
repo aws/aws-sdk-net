@@ -207,12 +207,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VolumeType. 
         /// <para>
-        /// The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b>
-        /// property.
+        /// The volume type. If you set the type to <code>io1</code>, you must also specify the
+        /// IOPS that the volume supports.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>standard</code> 
+        /// Default: <code>gp2</code> 
         /// </para>
         /// </summary>
         public VolumeType VolumeType

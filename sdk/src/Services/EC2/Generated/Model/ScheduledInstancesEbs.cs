@@ -160,7 +160,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>standard</code> 
+        /// Default: <code>gp2</code> 
         /// </para>
         /// </summary>
         public string VolumeType

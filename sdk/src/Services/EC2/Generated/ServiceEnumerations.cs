@@ -4451,6 +4451,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType I3enLarge = new InstanceType("i3en.large");
         /// <summary>
+        /// Constant I3enMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType I3enMetal = new InstanceType("i3en.metal");
+        /// <summary>
         /// Constant I3enXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType I3enXlarge = new InstanceType("i3en.xlarge");

@@ -300,10 +300,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Defaults: If no volume type is specified, the default is <code>standard</code> in
-        /// us-east-1, eu-west-1, eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1,
-        /// ap-northeast-2, ap-southeast-1, ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1.
-        /// In all other Regions, EBS defaults to <code>gp2</code>.
+        /// Default: <code>gp2</code> 
         /// </para>
         /// </summary>
         public VolumeType VolumeType

@@ -7982,6 +7982,25 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void SendDiagnosticInterruptMarshallTest()
+        {
+            var operation = service_model.FindOperation("SendDiagnosticInterrupt");
+
+            var request = InstantiateClassGenerator.Execute<SendDiagnosticInterruptRequest>();
+            var marshaller = new SendDiagnosticInterruptRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void StartInstancesMarshallTest()
         {
             var operation = service_model.FindOperation("StartInstances");

@@ -29,7 +29,10 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCapacityReservationUsage operation.
-    /// 
+    /// Gets usage information about a Capacity Reservation. If the Capacity Reservation is
+    /// shared, it shows usage information for the Capacity Reservation owner and each AWS
+    /// account that is currently using the shared capacity. If the Capacity Reservation is
+    /// not shared, it shows only the Capacity Reservation owner's usage.
     /// </summary>
     public partial class GetCapacityReservationUsageRequest : AmazonEC2Request
     {
@@ -38,7 +41,10 @@ namespace Amazon.EC2.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property CapacityReservationId.
+        /// Gets and sets the property CapacityReservationId. 
+        /// <para>
+        /// The ID of the Capacity Reservation.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string CapacityReservationId
@@ -54,7 +60,15 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return for the request in a single page. The remaining
+        /// results can be seen by sending another request with the returned nextToken value.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid range: Minimum value of 1. Maximum value of 1000.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
@@ -70,7 +84,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token to retrieve the next page of results.
+        /// </para>
         /// </summary>
         public string NextToken
         {

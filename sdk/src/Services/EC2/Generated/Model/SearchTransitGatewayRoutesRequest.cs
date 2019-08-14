@@ -83,7 +83,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>type</code> - The type of roue (<code>propagated</code> | <code>static</code>).
+        ///  <code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).
         /// </para>
         ///  </li> </ul>
         /// </summary>
