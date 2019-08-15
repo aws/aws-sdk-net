@@ -66,7 +66,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken.
         /// </summary>
-        [AWSProperty(Required=true, Min=10, Max=150)]
+        [AWSProperty(Min=10, Max=150)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }

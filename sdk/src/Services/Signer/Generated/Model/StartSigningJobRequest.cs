@@ -82,7 +82,6 @@ namespace Amazon.Signer.Model
         /// token return the same response as the first call.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }

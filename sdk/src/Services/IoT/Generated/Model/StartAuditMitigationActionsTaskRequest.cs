@@ -66,7 +66,7 @@ namespace Amazon.IoT.Model
         /// If you omit this value, a unique client request token is generated automatically.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
