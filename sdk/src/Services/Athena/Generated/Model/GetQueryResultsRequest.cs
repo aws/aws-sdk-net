@@ -45,7 +45,7 @@ namespace Amazon.Athena.Model
         /// The maximum number of results (rows) to return in this request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1000)]
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

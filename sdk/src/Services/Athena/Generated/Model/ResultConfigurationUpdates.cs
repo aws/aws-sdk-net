@@ -60,11 +60,11 @@ namespace Amazon.Athena.Model
         /// Gets and sets the property OutputLocation. 
         /// <para>
         /// The location in Amazon S3 where your query results are stored, such as <code>s3://path/to/query/bucket/</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Queries
-        /// and Query Result Files.</a> If workgroup settings override client-side settings, then
-        /// the query uses the location for the query results and the encryption configuration
-        /// that are specified for the workgroup. The "workgroup settings override" is specified
-        /// in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query
+        /// Results</a> If workgroup settings override client-side settings, then the query uses
+        /// the location for the query results and the encryption configuration that are specified
+        /// for the workgroup. The "workgroup settings override" is specified in EnforceWorkGroupConfiguration
+        /// (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
         /// </para>
         /// </summary>
         public string OutputLocation

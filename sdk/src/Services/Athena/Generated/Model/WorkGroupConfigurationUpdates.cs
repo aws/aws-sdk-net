@@ -40,6 +40,7 @@ namespace Amazon.Athena.Model
         private bool? _enforceWorkGroupConfiguration;
         private bool? _publishCloudWatchMetricsEnabled;
         private bool? _removeBytesScannedCutoffPerQuery;
+        private bool? _requesterPaysEnabled;
         private ResultConfigurationUpdates _resultConfigurationUpdates;
 
         /// <summary>
@@ -117,6 +118,29 @@ namespace Amazon.Athena.Model
         internal bool IsSetRemoveBytesScannedCutoffPerQuery()
         {
             return this._removeBytesScannedCutoffPerQuery.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequesterPaysEnabled. 
+        /// <para>
+        /// If set to <code>true</code>, allows members assigned to a workgroup to specify Amazon
+        /// S3 Requester Pays buckets in queries. If set to <code>false</code>, workgroup members
+        /// cannot query data from Requester Pays buckets, and queries that retrieve data from
+        /// Requester Pays buckets cause an error. The default is <code>false</code>. For more
+        /// information about Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester
+        /// Pays Buckets</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool RequesterPaysEnabled
+        {
+            get { return this._requesterPaysEnabled.GetValueOrDefault(); }
+            set { this._requesterPaysEnabled = value; }
+        }
+
+        // Check to see if RequesterPaysEnabled property is set
+        internal bool IsSetRequesterPaysEnabled()
+        {
+            return this._requesterPaysEnabled.HasValue; 
         }
 
         /// <summary>

@@ -44,7 +44,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.GetQueryResultsRequest.MaxResults</property>
-    <min>0</min>
+    <min>1</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>

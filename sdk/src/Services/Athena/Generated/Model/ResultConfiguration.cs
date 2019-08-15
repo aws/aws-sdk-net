@@ -30,8 +30,7 @@ namespace Amazon.Athena.Model
     /// <summary>
     /// The location in Amazon S3 where query results are stored and the encryption option,
     /// if any, used for query results. These are known as "client-side settings". If workgroup
-    /// settings override client-side settings, then the query uses the location for the query
-    /// results and the encryption configuration that are specified for the workgroup.
+    /// settings override client-side settings, then the query uses the workgroup settings.
     /// </summary>
     public partial class ResultConfiguration
     {
@@ -66,11 +65,12 @@ namespace Amazon.Athena.Model
         /// Gets and sets the property OutputLocation. 
         /// <para>
         /// The location in Amazon S3 where your query results are stored, such as <code>s3://path/to/query/bucket/</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Queries
-        /// and Query Result Files.</a> If workgroup settings override client-side settings, then
-        /// the query uses the location for the query results and the encryption configuration
-        /// that are specified for the workgroup. The "workgroup settings override" is specified
-        /// in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
+        /// To run the query, you must specify the query results location using one of the ways:
+        /// either for individual queries using either this setting (client-side), or in the workgroup,
+        /// using <a>WorkGroupConfiguration</a>. If none of them is set, Athena issues an error
+        /// that no output location is provided. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query
+        /// Results</a>. If workgroup settings override client-side settings, then the query uses
+        /// the settings specified for the workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
         /// </para>
         /// </summary>
         public string OutputLocation
