@@ -1,3 +1,17 @@
+### 3.3.569.0 (2019-08-15 19:06 UTC)
+* AppMesh (3.3.103.0)
+	* This release adds support for http header based routing and route prioritization.
+* Athena (3.3.101.0)
+	* This release adds support for querying S3 Requester Pays buckets. Users can enable this feature through their Workgroup settings.
+* CodeCommit (3.3.105.0)
+	* This release adds an API, BatchGetCommits, that allows retrieval of metadata for multiple commits in an AWS CodeCommit repository.
+* EC2 (3.3.126.0)
+	* This release adds an option to use private certificates from AWS Certificate Manager (ACM) to authenticate a Site-to-Site VPN connection's tunnel endpoints and customer gateway device. 
+* Glue (3.3.109.0)
+	* GetJobBookmarks API is withdrawn.
+* StorageGateway (3.3.108.0)
+	* CreateSnapshotFromVolumeRecoveryPoint API supports new parameter: Tags (to be attached to the created resource)
+
 ### 3.3.568.0 (2019-08-14 18:15 UTC)
 * EC2 (3.3.125.0)
 	* This release adds a new API called SendDiagnosticInterrupt, which allows you to send diagnostic interrupts to your EC2 instance.
