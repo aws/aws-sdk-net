@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Net;
+using System.Threading;
 
 namespace Amazon.Runtime.Internal
 {
@@ -282,32 +283,41 @@ namespace Amazon.Runtime.Internal
         /// <returns></returns>
         public virtual async System.Threading.Tasks.Task<IWebResponseData> GetResponseAsync(System.Threading.CancellationToken cancellationToken)
         {
-            try
+            using (var linkedTokenSource = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken))
+            using (linkedTokenSource.Token.Register(() => this.Abort(), useSynchronizationContext: false))
             {
-                using(cancellationToken.Register(()=> this.Abort(), useSynchronizationContext: false))
+                linkedTokenSource.CancelAfter(_request.Timeout);
+                
+                try
                 {
                     var response = await _request.GetResponseAsync().ConfigureAwait(false) as HttpWebResponse;
                     return new HttpWebRequestResponseData(response);
                 }
-            }
-            catch (WebException webException)
-            {
-                // After HttpWebRequest.Abort() is called, GetResponseAsync throws a WebException.
-                // If request has been cancelled using cancellationToken, wrap the
-                // WebException in an OperationCancelledException.
-                if (cancellationToken.IsCancellationRequested)
+                catch (WebException webException)
                 {
-                    throw new OperationCanceledException(webException.Message, webException, cancellationToken);
-                }
+                    // After HttpWebRequest.Abort() is called, GetResponseAsync throws a WebException.
+                    // If request has been cancelled using cancellationToken, wrap the
+                    // WebException in an OperationCancelledException.
+                    if (cancellationToken.IsCancellationRequested)
+                    {
+                        throw new OperationCanceledException(webException.Message, webException, cancellationToken);
+                    }
+                    
+                    if (linkedTokenSource.Token.IsCancellationRequested)
+                    {
+                        throw new OperationCanceledException(webException.Message, webException, linkedTokenSource.Token);
+                    }                    
 
-                var errorResponse = webException.Response as HttpWebResponse;
-                if (errorResponse != null)
-                {
-                    throw new HttpErrorResponseException(webException.Message,
-                        webException,
-                        new HttpWebRequestResponseData(errorResponse));
+                    var errorResponse = webException.Response as HttpWebResponse;
+                    if (errorResponse != null)
+                    {
+                        throw new HttpErrorResponseException(webException.Message,
+                            webException,
+                            new HttpWebRequestResponseData(errorResponse));
+                    }
+
+                    throw;
                 }
-                throw;
             }
         }
 
