@@ -66,6 +66,7 @@ namespace Amazon.EC2.Model
     public partial class CreateCustomerGatewayRequest : AmazonEC2Request
     {
         private int? _bgpAsn;
+        private string _certificateArn;
         private string _publicIp;
         private GatewayType _type;
 
@@ -111,13 +112,30 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CertificateArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the customer gateway certificate.
+        /// </para>
+        /// </summary>
+        public string CertificateArn
+        {
+            get { return this._certificateArn; }
+            set { this._certificateArn = value; }
+        }
+
+        // Check to see if CertificateArn property is set
+        internal bool IsSetCertificateArn()
+        {
+            return this._certificateArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PublicIp. 
         /// <para>
         /// The Internet-routable IP address for the customer gateway's outside interface. The
         /// address must be static.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string PublicIp
         {
             get { return this._publicIp; }

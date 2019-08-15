@@ -7197,6 +7197,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void ModifyVpnTunnelCertificateMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyVpnTunnelCertificate");
+
+            var request = InstantiateClassGenerator.Execute<ModifyVpnTunnelCertificateRequest>();
+            var marshaller = new ModifyVpnTunnelCertificateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ModifyVpnTunnelCertificateResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyVpnTunnelCertificateResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void MonitorInstancesMarshallTest()
         {
             var operation = service_model.FindOperation("MonitorInstances");

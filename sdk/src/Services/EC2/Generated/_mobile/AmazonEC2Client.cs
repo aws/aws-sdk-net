@@ -14630,6 +14630,40 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyVpnTunnelCertificate
+
+        internal virtual ModifyVpnTunnelCertificateResponse ModifyVpnTunnelCertificate(ModifyVpnTunnelCertificateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVpnTunnelCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVpnTunnelCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVpnTunnelCertificateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modifies the VPN tunnel endpoint certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpnTunnelCertificate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyVpnTunnelCertificate service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnTunnelCertificate">REST API Reference for ModifyVpnTunnelCertificate Operation</seealso>
+        public virtual Task<ModifyVpnTunnelCertificateResponse> ModifyVpnTunnelCertificateAsync(ModifyVpnTunnelCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVpnTunnelCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVpnTunnelCertificateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyVpnTunnelCertificateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  MonitorInstances
 
         internal virtual MonitorInstancesResponse MonitorInstances(MonitorInstancesRequest request)

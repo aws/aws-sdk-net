@@ -20479,6 +20479,60 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyVpnTunnelCertificate
+
+        /// <summary>
+        /// Modifies the VPN tunnel endpoint certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpnTunnelCertificate service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVpnTunnelCertificate service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnTunnelCertificate">REST API Reference for ModifyVpnTunnelCertificate Operation</seealso>
+        public virtual ModifyVpnTunnelCertificateResponse ModifyVpnTunnelCertificate(ModifyVpnTunnelCertificateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVpnTunnelCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVpnTunnelCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVpnTunnelCertificateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyVpnTunnelCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpnTunnelCertificate operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyVpnTunnelCertificate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnTunnelCertificate">REST API Reference for ModifyVpnTunnelCertificate Operation</seealso>
+        public virtual IAsyncResult BeginModifyVpnTunnelCertificate(ModifyVpnTunnelCertificateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVpnTunnelCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVpnTunnelCertificateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyVpnTunnelCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyVpnTunnelCertificate.</param>
+        /// 
+        /// <returns>Returns a  ModifyVpnTunnelCertificateResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnTunnelCertificate">REST API Reference for ModifyVpnTunnelCertificate Operation</seealso>
+        public virtual ModifyVpnTunnelCertificateResponse EndModifyVpnTunnelCertificate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyVpnTunnelCertificateResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  MonitorInstances
 
         /// <summary>

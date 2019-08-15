@@ -106,8 +106,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property PolicyDocument. 
         /// <para>
         /// A policy to attach to the endpoint that controls access to the service. The policy
-        /// must be in valid JSON format. If this parameter is not specified, we attach a default
-        /// policy that allows full access to the service.
+        /// must be in valid JSON format.
         /// </para>
         /// </summary>
         public string PolicyDocument
