@@ -2,9 +2,13 @@
 * CognitoIdentity (3.3.100.64)
 	* Fix call hanging issue in CognitoAWSCredentials
 * S3 (3.3.104.16)
-	* Add missing ContentRange property to GetObjectMetadataResponse
+	* PR [#1298](https://github.com/aws/aws-sdk-net/pull/1298) Add missing ContentRange property to GetObjectMetadataResponse. Thanks [eangelov](https://github.com/eangelov)
 * Core 3.3.103.28
-	* Fixed issue in .NET Framework async calls not handling timeout correctly. Better error handling when no EC2 instance metadata found. Fixed issue looking for "default" profile in ~/.aws/config file. Updated generator to not mark idempotency tokens as required. Fix call hanging issue in RefreshAWSCredentials impacting CognitoAWSCredentials
+	* PR [#1276](https://github.com/aws/aws-sdk-net/pull/1276) Fixed issue in .NET Framework async calls not handling timeout correctly. Thanks [Daniel Marbach](https://github.com/danielmarbach)
+    * PR [#1370](https://github.com/aws/aws-sdk-net/pull/1370) Better error handling when no EC2 instance metadata found. Thanks [Martin Costello](https://github.com/martincostello)
+    * PR [#1366](https://github.com/aws/aws-sdk-net/pull/1366) Fixed issue looking for "default" profile in ~/.aws/config file. Thanks [Jesse Mandel](https://github.com/supergibbs)
+    * Updated generator to not mark idempotency tokens as required. 
+    * Fix call hanging issue in RefreshAWSCredentials impacting CognitoAWSCredentials
 	* All services packages updated to require new Core
 
 ### 3.3.569.0 (2019-08-15 19:06 UTC)
