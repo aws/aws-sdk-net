@@ -1,3 +1,12 @@
+### 3.3.569.1 (2019-08-15 21:36 UTC)
+* CognitoIdentity (3.3.100.64)
+	* Fix call hanging issue in CognitoAWSCredentials
+* S3 (3.3.104.16)
+	* Add missing ContentRange property to GetObjectMetadataResponse
+* Core 3.3.103.28
+	* Fixed issue in .NET Framework async calls not handling timeout correctly. Better error handling when no EC2 instance metadata found. Fixed issue looking for "default" profile in ~/.aws/config file. Updated generator to not mark idempotency tokens as required. Fix call hanging issue in RefreshAWSCredentials impacting CognitoAWSCredentials
+	* All services packages updated to require new Core
+
 ### 3.3.569.0 (2019-08-15 19:06 UTC)
 * AppMesh (3.3.103.0)
 	* This release adds support for http header based routing and route prioritization.
