@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for HttpRouteMatch Object
+    /// Response Unmarshaller for MatchRange Object
     /// </summary>  
-    public class HttpRouteMatchUnmarshaller : IUnmarshaller<HttpRouteMatch, XmlUnmarshallerContext>, IUnmarshaller<HttpRouteMatch, JsonUnmarshallerContext>
+    public class MatchRangeUnmarshaller : IUnmarshaller<MatchRange, XmlUnmarshallerContext>, IUnmarshaller<MatchRange, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        HttpRouteMatch IUnmarshaller<HttpRouteMatch, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MatchRange IUnmarshaller<MatchRange, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public HttpRouteMatch Unmarshall(JsonUnmarshallerContext context)
+        public MatchRange Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            HttpRouteMatch unmarshalledObject = new HttpRouteMatch();
+            MatchRange unmarshalledObject = new MatchRange();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("headers", targetDepth))
+                if (context.TestExpression("end", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<HttpRouteHeader, HttpRouteHeaderUnmarshaller>(HttpRouteHeaderUnmarshaller.Instance);
-                    unmarshalledObject.Headers = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.End = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("method", targetDepth))
+                if (context.TestExpression("start", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Method = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("prefix", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Prefix = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("scheme", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Scheme = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.Start = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         }
 
 
-        private static HttpRouteMatchUnmarshaller _instance = new HttpRouteMatchUnmarshaller();        
+        private static MatchRangeUnmarshaller _instance = new MatchRangeUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static HttpRouteMatchUnmarshaller Instance
+        public static MatchRangeUnmarshaller Instance
         {
             get
             {

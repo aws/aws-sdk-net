@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for HttpRouteMatch Object
+    /// Response Unmarshaller for HeaderMatchMethod Object
     /// </summary>  
-    public class HttpRouteMatchUnmarshaller : IUnmarshaller<HttpRouteMatch, XmlUnmarshallerContext>, IUnmarshaller<HttpRouteMatch, JsonUnmarshallerContext>
+    public class HeaderMatchMethodUnmarshaller : IUnmarshaller<HeaderMatchMethod, XmlUnmarshallerContext>, IUnmarshaller<HeaderMatchMethod, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        HttpRouteMatch IUnmarshaller<HttpRouteMatch, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        HeaderMatchMethod IUnmarshaller<HeaderMatchMethod, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public HttpRouteMatch Unmarshall(JsonUnmarshallerContext context)
+        public HeaderMatchMethod Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            HttpRouteMatch unmarshalledObject = new HttpRouteMatch();
+            HeaderMatchMethod unmarshalledObject = new HeaderMatchMethod();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("headers", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<HttpRouteHeader, HttpRouteHeaderUnmarshaller>(HttpRouteHeaderUnmarshaller.Instance);
-                    unmarshalledObject.Headers = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("method", targetDepth))
+                if (context.TestExpression("exact", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Method = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Exact = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("prefix", targetDepth))
@@ -82,10 +76,22 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                     unmarshalledObject.Prefix = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("scheme", targetDepth))
+                if (context.TestExpression("range", targetDepth))
+                {
+                    var unmarshaller = MatchRangeUnmarshaller.Instance;
+                    unmarshalledObject.Range = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("regex", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Scheme = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Regex = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("suffix", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Suffix = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +100,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         }
 
 
-        private static HttpRouteMatchUnmarshaller _instance = new HttpRouteMatchUnmarshaller();        
+        private static HeaderMatchMethodUnmarshaller _instance = new HeaderMatchMethodUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static HttpRouteMatchUnmarshaller Instance
+        public static HeaderMatchMethodUnmarshaller Instance
         {
             get
             {

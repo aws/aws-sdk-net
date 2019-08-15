@@ -265,6 +265,26 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppMesh.Model.HeaderMatchMethod.Exact</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.HeaderMatchMethod.Prefix</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.HeaderMatchMethod.Regex</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.HeaderMatchMethod.Suffix</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppMesh.Model.HealthCheckPolicy.HealthyThreshold</property>
     <min>2</min>
     <max>10</max>
@@ -288,6 +308,11 @@
     <property>Amazon.AppMesh.Model.HealthCheckPolicy.UnhealthyThreshold</property>
     <min>2</min>
     <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.HttpRouteHeader.Name</property>
+    <min>1</min>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppMesh.Model.MeshData.MeshName</property>
@@ -333,6 +358,11 @@
     <property>Amazon.AppMesh.Model.RouteRef.VirtualRouterName</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.RouteSpec.Priority</property>
+    <min>0</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppMesh.Model.TagRef.Key</property>

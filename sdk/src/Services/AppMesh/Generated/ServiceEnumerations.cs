@@ -75,6 +75,134 @@ namespace Amazon.AppMesh
 
 
     /// <summary>
+    /// Constants used for properties of type HttpMethod.
+    /// </summary>
+    public class HttpMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Connect for HttpMethod
+        /// </summary>
+        public static readonly HttpMethod Connect = new HttpMethod("connect");
+        /// <summary>
+        /// Constant Delete for HttpMethod
+        /// </summary>
+        public static readonly HttpMethod Delete = new HttpMethod("delete");
+        /// <summary>
+        /// Constant Get for HttpMethod
+        /// </summary>
+        public static readonly HttpMethod Get = new HttpMethod("get");
+        /// <summary>
+        /// Constant Head for HttpMethod
+        /// </summary>
+        public static readonly HttpMethod Head = new HttpMethod("head");
+        /// <summary>
+        /// Constant Options for HttpMethod
+        /// </summary>
+        public static readonly HttpMethod Options = new HttpMethod("options");
+        /// <summary>
+        /// Constant Patch for HttpMethod
+        /// </summary>
+        public static readonly HttpMethod Patch = new HttpMethod("patch");
+        /// <summary>
+        /// Constant Post for HttpMethod
+        /// </summary>
+        public static readonly HttpMethod Post = new HttpMethod("post");
+        /// <summary>
+        /// Constant Put for HttpMethod
+        /// </summary>
+        public static readonly HttpMethod Put = new HttpMethod("put");
+        /// <summary>
+        /// Constant Trace for HttpMethod
+        /// </summary>
+        public static readonly HttpMethod Trace = new HttpMethod("trace");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HttpMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HttpMethod FindValue(string value)
+        {
+            return FindValue<HttpMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HttpMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HttpScheme.
+    /// </summary>
+    public class HttpScheme : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Http for HttpScheme
+        /// </summary>
+        public static readonly HttpScheme Http = new HttpScheme("http");
+        /// <summary>
+        /// Constant Https for HttpScheme
+        /// </summary>
+        public static readonly HttpScheme Https = new HttpScheme("https");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HttpScheme(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HttpScheme FindValue(string value)
+        {
+            return FindValue<HttpScheme>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HttpScheme(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MeshStatusCode.
     /// </summary>
     public class MeshStatusCode : ConstantClass

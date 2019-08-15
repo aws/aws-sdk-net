@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// HttpRouteMatch Marshaller
+    /// HttpRouteHeader Marshaller
     /// </summary>       
-    public class HttpRouteMatchMarshaller : IRequestMarshaller<HttpRouteMatch, JsonMarshallerContext> 
+    public class HttpRouteHeaderMarshaller : IRequestMarshaller<HttpRouteHeader, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,40 +43,29 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(HttpRouteMatch requestObject, JsonMarshallerContext context)
+        public void Marshall(HttpRouteHeader requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetHeaders())
+            if(requestObject.IsSetInvert())
             {
-                context.Writer.WritePropertyName("headers");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectHeadersListValue in requestObject.Headers)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = HttpRouteHeaderMarshaller.Instance;
-                    marshaller.Marshall(requestObjectHeadersListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("invert");
+                context.Writer.Write(requestObject.Invert);
             }
 
-            if(requestObject.IsSetMethod())
+            if(requestObject.IsSetMatch())
             {
-                context.Writer.WritePropertyName("method");
-                context.Writer.Write(requestObject.Method);
+                context.Writer.WritePropertyName("match");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = HeaderMatchMethodMarshaller.Instance;
+                marshaller.Marshall(requestObject.Match, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetPrefix())
+            if(requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("prefix");
-                context.Writer.Write(requestObject.Prefix);
-            }
-
-            if(requestObject.IsSetScheme())
-            {
-                context.Writer.WritePropertyName("scheme");
-                context.Writer.Write(requestObject.Scheme);
+                context.Writer.WritePropertyName("name");
+                context.Writer.Write(requestObject.Name);
             }
 
         }
@@ -84,7 +73,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static HttpRouteMatchMarshaller Instance = new HttpRouteMatchMarshaller();
+        public readonly static HttpRouteHeaderMarshaller Instance = new HttpRouteHeaderMarshaller();
 
     }
 }

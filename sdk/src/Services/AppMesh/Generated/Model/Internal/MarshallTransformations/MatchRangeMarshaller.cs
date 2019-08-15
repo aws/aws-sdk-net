@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// HttpRouteMatch Marshaller
+    /// MatchRange Marshaller
     /// </summary>       
-    public class HttpRouteMatchMarshaller : IRequestMarshaller<HttpRouteMatch, JsonMarshallerContext> 
+    public class MatchRangeMarshaller : IRequestMarshaller<MatchRange, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,40 +43,18 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(HttpRouteMatch requestObject, JsonMarshallerContext context)
+        public void Marshall(MatchRange requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetHeaders())
+            if(requestObject.IsSetEnd())
             {
-                context.Writer.WritePropertyName("headers");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectHeadersListValue in requestObject.Headers)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = HttpRouteHeaderMarshaller.Instance;
-                    marshaller.Marshall(requestObjectHeadersListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("end");
+                context.Writer.Write(requestObject.End);
             }
 
-            if(requestObject.IsSetMethod())
+            if(requestObject.IsSetStart())
             {
-                context.Writer.WritePropertyName("method");
-                context.Writer.Write(requestObject.Method);
-            }
-
-            if(requestObject.IsSetPrefix())
-            {
-                context.Writer.WritePropertyName("prefix");
-                context.Writer.Write(requestObject.Prefix);
-            }
-
-            if(requestObject.IsSetScheme())
-            {
-                context.Writer.WritePropertyName("scheme");
-                context.Writer.Write(requestObject.Scheme);
+                context.Writer.WritePropertyName("start");
+                context.Writer.Write(requestObject.Start);
             }
 
         }
@@ -84,7 +62,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static HttpRouteMatchMarshaller Instance = new HttpRouteMatchMarshaller();
+        public readonly static MatchRangeMarshaller Instance = new MatchRangeMarshaller();
 
     }
 }

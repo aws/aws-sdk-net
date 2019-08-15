@@ -33,7 +33,47 @@ namespace Amazon.AppMesh.Model
     /// </summary>
     public partial class HttpRouteMatch
     {
+        private List<HttpRouteHeader> _headers = new List<HttpRouteHeader>();
+        private HttpMethod _method;
         private string _prefix;
+        private HttpScheme _scheme;
+
+        /// <summary>
+        /// Gets and sets the property Headers. 
+        /// <para>
+        /// The client request headers to match on.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<HttpRouteHeader> Headers
+        {
+            get { return this._headers; }
+            set { this._headers = value; }
+        }
+
+        // Check to see if Headers property is set
+        internal bool IsSetHeaders()
+        {
+            return this._headers != null && this._headers.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Method. 
+        /// <para>
+        /// The client request header method to match on.
+        /// </para>
+        /// </summary>
+        public HttpMethod Method
+        {
+            get { return this._method; }
+            set { this._method = value; }
+        }
+
+        // Check to see if Method property is set
+        internal bool IsSetMethod()
+        {
+            return this._method != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Prefix. 
@@ -57,6 +97,24 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetPrefix()
         {
             return this._prefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Scheme. 
+        /// <para>
+        /// The client request scheme to match on.
+        /// </para>
+        /// </summary>
+        public HttpScheme Scheme
+        {
+            get { return this._scheme; }
+            set { this._scheme = value; }
+        }
+
+        // Check to see if Scheme property is set
+        internal bool IsSetScheme()
+        {
+            return this._scheme != null;
         }
 
     }

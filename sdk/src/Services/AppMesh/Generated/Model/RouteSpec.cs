@@ -33,6 +33,7 @@ namespace Amazon.AppMesh.Model
     public partial class RouteSpec
     {
         private HttpRoute _httpRoute;
+        private int? _priority;
         private TcpRoute _tcpRoute;
 
         /// <summary>
@@ -51,6 +52,26 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetHttpRoute()
         {
             return this._httpRoute != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Priority. 
+        /// <para>
+        /// The priority for the route. Routes are matched based on the specified value, where
+        /// 0 is         the highest priority.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
+        public int Priority
+        {
+            get { return this._priority.GetValueOrDefault(); }
+            set { this._priority = value; }
+        }
+
+        // Check to see if Priority property is set
+        internal bool IsSetPriority()
+        {
+            return this._priority.HasValue; 
         }
 
         /// <summary>
