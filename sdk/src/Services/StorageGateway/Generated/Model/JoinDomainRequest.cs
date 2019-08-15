@@ -102,9 +102,9 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property OrganizationalUnit. 
         /// <para>
-        /// The organizational unit (OU) is a container with an Active Directory that can hold
-        /// users, groups, computers, and other OUs and this parameter specifies the OU that the
-        /// gateway will join within the AD domain.
+        /// The organizational unit (OU) is a container in an Active Directory that can hold users,
+        /// groups, computers, and other OUs and this parameter specifies the OU that the gateway
+        /// will join within the AD domain.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

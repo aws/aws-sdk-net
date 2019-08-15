@@ -35,6 +35,7 @@ namespace Amazon.StorageGateway.Model
         private string _description;
         private int? _recurrenceInHours;
         private int? _startAt;
+        private List<Tag> _tags = new List<Tag>();
         private string _timezone;
         private string _volumeARN;
 
@@ -95,6 +96,26 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetStartAt()
         {
             return this._startAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of up to 50 tags assigned to the snapshot schedule, sorted alphabetically by
+        /// key name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned,
+        /// you can view all tags using the <code>ListTagsForResource</code> API operation.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>
