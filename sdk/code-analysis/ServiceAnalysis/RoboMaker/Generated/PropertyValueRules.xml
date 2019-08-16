@@ -708,6 +708,30 @@
     <pattern>(\$LATEST)|[0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DataSource.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DataSource.S3Bucket</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[a-z0-9][a-z0-9.\-]*[a-z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DataSourceConfig.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DataSourceConfig.S3Bucket</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[a-z0-9][a-z0-9.\-]*[a-z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RoboMaker.Model.DeploymentApplicationConfig.Application</property>
     <min>1</min>
     <max>1224</max>
@@ -886,6 +910,12 @@
     <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RoboMaker.Model.S3KeyOutput.S3Key</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RoboMaker.Model.SimulationApplicationConfig.Application</property>
     <min>1</min>
     <max>1224</max>
@@ -953,7 +983,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.SimulationSoftwareSuite.Version</property>
-    <pattern>7|9</pattern>
+    <pattern>7|9|Kinetic|Melodic</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.Source.S3Bucket</property>

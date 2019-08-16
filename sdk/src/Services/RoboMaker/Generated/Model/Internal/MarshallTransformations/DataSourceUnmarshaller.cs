@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeploymentConfig Object
+    /// Response Unmarshaller for DataSource Object
     /// </summary>  
-    public class DeploymentConfigUnmarshaller : IUnmarshaller<DeploymentConfig, XmlUnmarshallerContext>, IUnmarshaller<DeploymentConfig, JsonUnmarshallerContext>
+    public class DataSourceUnmarshaller : IUnmarshaller<DataSource, XmlUnmarshallerContext>, IUnmarshaller<DataSource, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DeploymentConfig IUnmarshaller<DeploymentConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DataSource IUnmarshaller<DataSource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,33 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DeploymentConfig Unmarshall(JsonUnmarshallerContext context)
+        public DataSource Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DeploymentConfig unmarshalledObject = new DeploymentConfig();
+            DataSource unmarshalledObject = new DataSource();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("concurrentDeploymentPercentage", targetDepth))
+                if (context.TestExpression("name", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.ConcurrentDeploymentPercentage = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("failureThresholdPercentage", targetDepth))
+                if (context.TestExpression("s3Bucket", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.FailureThresholdPercentage = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.S3Bucket = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("robotDeploymentTimeoutInSeconds", targetDepth))
+                if (context.TestExpression("s3Keys", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.RobotDeploymentTimeoutInSeconds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<S3KeyOutput, S3KeyOutputUnmarshaller>(S3KeyOutputUnmarshaller.Instance);
+                    unmarshalledObject.S3Keys = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +88,12 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static DeploymentConfigUnmarshaller _instance = new DeploymentConfigUnmarshaller();        
+        private static DataSourceUnmarshaller _instance = new DataSourceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeploymentConfigUnmarshaller Instance
+        public static DataSourceUnmarshaller Instance
         {
             get
             {

@@ -30,13 +30,7 @@ namespace Amazon.RoboMaker.Model
     /// <summary>
     /// Container for the parameters to the ListDeploymentJobs operation.
     /// Returns a list of deployment jobs for a fleet. You can optionally provide filters
-    /// to retrieve specific deployment jobs. 
-    /// 
-    ///  <note> 
-    /// <para>
-    ///  
-    /// </para>
-    ///  </note>
+    /// to retrieve specific deployment jobs.
     /// </summary>
     public partial class ListDeploymentJobsRequest : AmazonRoboMakerRequest
     {

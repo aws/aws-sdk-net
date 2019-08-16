@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DeploymentConfig Marshaller
+    /// LoggingConfig Marshaller
     /// </summary>       
-    public class DeploymentConfigMarshaller : IRequestMarshaller<DeploymentConfig, JsonMarshallerContext> 
+    public class LoggingConfigMarshaller : IRequestMarshaller<LoggingConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,24 +43,12 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DeploymentConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(LoggingConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetConcurrentDeploymentPercentage())
+            if(requestObject.IsSetRecordAllRosTopics())
             {
-                context.Writer.WritePropertyName("concurrentDeploymentPercentage");
-                context.Writer.Write(requestObject.ConcurrentDeploymentPercentage);
-            }
-
-            if(requestObject.IsSetFailureThresholdPercentage())
-            {
-                context.Writer.WritePropertyName("failureThresholdPercentage");
-                context.Writer.Write(requestObject.FailureThresholdPercentage);
-            }
-
-            if(requestObject.IsSetRobotDeploymentTimeoutInSeconds())
-            {
-                context.Writer.WritePropertyName("robotDeploymentTimeoutInSeconds");
-                context.Writer.Write(requestObject.RobotDeploymentTimeoutInSeconds);
+                context.Writer.WritePropertyName("recordAllRosTopics");
+                context.Writer.Write(requestObject.RecordAllRosTopics);
             }
 
         }
@@ -68,7 +56,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static DeploymentConfigMarshaller Instance = new DeploymentConfigMarshaller();
+        public readonly static LoggingConfigMarshaller Instance = new LoggingConfigMarshaller();
 
     }
 }

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeploymentConfig Object
+    /// Response Unmarshaller for S3KeyOutput Object
     /// </summary>  
-    public class DeploymentConfigUnmarshaller : IUnmarshaller<DeploymentConfig, XmlUnmarshallerContext>, IUnmarshaller<DeploymentConfig, JsonUnmarshallerContext>
+    public class S3KeyOutputUnmarshaller : IUnmarshaller<S3KeyOutput, XmlUnmarshallerContext>, IUnmarshaller<S3KeyOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DeploymentConfig IUnmarshaller<DeploymentConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        S3KeyOutput IUnmarshaller<S3KeyOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DeploymentConfig Unmarshall(JsonUnmarshallerContext context)
+        public S3KeyOutput Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DeploymentConfig unmarshalledObject = new DeploymentConfig();
+            S3KeyOutput unmarshalledObject = new S3KeyOutput();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("concurrentDeploymentPercentage", targetDepth))
+                if (context.TestExpression("etag", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.ConcurrentDeploymentPercentage = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Etag = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("failureThresholdPercentage", targetDepth))
+                if (context.TestExpression("s3Key", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.FailureThresholdPercentage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("robotDeploymentTimeoutInSeconds", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.RobotDeploymentTimeoutInSeconds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.S3Key = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static DeploymentConfigUnmarshaller _instance = new DeploymentConfigUnmarshaller();        
+        private static S3KeyOutputUnmarshaller _instance = new S3KeyOutputUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeploymentConfigUnmarshaller Instance
+        public static S3KeyOutputUnmarshaller Instance
         {
             get
             {

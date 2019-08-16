@@ -76,6 +76,12 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ClientRequestToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dataSources", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DataSource, DataSourceUnmarshaller>(DataSourceUnmarshaller.Instance);
+                    unmarshalledObject.DataSources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("failureBehavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -110,6 +116,12 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("loggingConfig", targetDepth))
+                {
+                    var unmarshaller = LoggingConfigUnmarshaller.Instance;
+                    unmarshalledObject.LoggingConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("maxJobDurationInSeconds", targetDepth))

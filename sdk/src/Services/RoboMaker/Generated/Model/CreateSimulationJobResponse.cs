@@ -34,11 +34,13 @@ namespace Amazon.RoboMaker.Model
     {
         private string _arn;
         private string _clientRequestToken;
+        private List<DataSource> _dataSources = new List<DataSource>();
         private FailureBehavior _failureBehavior;
         private SimulationJobErrorCode _failureCode;
         private string _iamRole;
         private DateTime? _lastStartedAt;
         private DateTime? _lastUpdatedAt;
+        private LoggingConfig _loggingConfig;
         private long? _maxJobDurationInSeconds;
         private OutputLocation _outputLocation;
         private List<RobotApplicationConfig> _robotApplications = new List<RobotApplicationConfig>();
@@ -85,6 +87,24 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataSources. 
+        /// <para>
+        /// The data sources for the simulation job.
+        /// </para>
+        /// </summary>
+        public List<DataSource> DataSources
+        {
+            get { return this._dataSources; }
+            set { this._dataSources = value; }
+        }
+
+        // Check to see if DataSources property is set
+        internal bool IsSetDataSources()
+        {
+            return this._dataSources != null && this._dataSources.Count > 0; 
         }
 
         /// <summary>
@@ -166,6 +186,18 @@ namespace Amazon.RoboMaker.Model
         /// <para>
         /// Etag for SimulationApplication does not match value during version creation.
         /// </para>
+        ///  </dd> <dt>WrongRegionS3Output</dt> <dd> 
+        /// <para>
+        /// S3 output bucket is in a different region than AWS RoboMaker.
+        /// </para>
+        ///  </dd> <dt>WrongRegionRobotApplication</dt> <dd> 
+        /// <para>
+        /// RobotApplication bucket is in a different region than AWS RoboMaker.
+        /// </para>
+        ///  </dd> <dt>WrongRegionSimulationApplication</dt> <dd> 
+        /// <para>
+        /// SimulationApplication bucket is in a different region than AWS RoboMaker.
+        /// </para>
         ///  </dd> </dl>
         /// </summary>
         public SimulationJobErrorCode FailureCode
@@ -234,6 +266,24 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetLastUpdatedAt()
         {
             return this._lastUpdatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoggingConfig. 
+        /// <para>
+        /// The logging configuration.
+        /// </para>
+        /// </summary>
+        public LoggingConfig LoggingConfig
+        {
+            get { return this._loggingConfig; }
+            set { this._loggingConfig = value; }
+        }
+
+        // Check to see if LoggingConfig property is set
+        internal bool IsSetLoggingConfig()
+        {
+            return this._loggingConfig != null;
         }
 
         /// <summary>

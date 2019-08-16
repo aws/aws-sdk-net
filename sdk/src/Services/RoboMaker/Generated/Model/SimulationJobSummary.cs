@@ -33,6 +33,7 @@ namespace Amazon.RoboMaker.Model
     public partial class SimulationJobSummary
     {
         private string _arn;
+        private List<string> _dataSourceNames = new List<string>();
         private DateTime? _lastUpdatedAt;
         private string _name;
         private List<string> _robotApplicationNames = new List<string>();
@@ -56,6 +57,24 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataSourceNames. 
+        /// <para>
+        /// The names of the data sources.
+        /// </para>
+        /// </summary>
+        public List<string> DataSourceNames
+        {
+            get { return this._dataSourceNames; }
+            set { this._dataSourceNames = value; }
+        }
+
+        // Check to see if DataSourceNames property is set
+        internal bool IsSetDataSourceNames()
+        {
+            return this._dataSourceNames != null && this._dataSourceNames.Count > 0; 
         }
 
         /// <summary>
@@ -101,7 +120,6 @@ namespace Amazon.RoboMaker.Model
         /// A list of simulation job robot application names.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1)]
         public List<string> RobotApplicationNames
         {
             get { return this._robotApplicationNames; }
@@ -120,7 +138,6 @@ namespace Amazon.RoboMaker.Model
         /// A list of simulation job simulation application names.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1)]
         public List<string> SimulationApplicationNames
         {
             get { return this._simulationApplicationNames; }

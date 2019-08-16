@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DeploymentConfig Marshaller
+    /// DataSourceConfig Marshaller
     /// </summary>       
-    public class DeploymentConfigMarshaller : IRequestMarshaller<DeploymentConfig, JsonMarshallerContext> 
+    public class DataSourceConfigMarshaller : IRequestMarshaller<DataSourceConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,24 +43,29 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DeploymentConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(DataSourceConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetConcurrentDeploymentPercentage())
+            if(requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("concurrentDeploymentPercentage");
-                context.Writer.Write(requestObject.ConcurrentDeploymentPercentage);
+                context.Writer.WritePropertyName("name");
+                context.Writer.Write(requestObject.Name);
             }
 
-            if(requestObject.IsSetFailureThresholdPercentage())
+            if(requestObject.IsSetS3Bucket())
             {
-                context.Writer.WritePropertyName("failureThresholdPercentage");
-                context.Writer.Write(requestObject.FailureThresholdPercentage);
+                context.Writer.WritePropertyName("s3Bucket");
+                context.Writer.Write(requestObject.S3Bucket);
             }
 
-            if(requestObject.IsSetRobotDeploymentTimeoutInSeconds())
+            if(requestObject.IsSetS3Keys())
             {
-                context.Writer.WritePropertyName("robotDeploymentTimeoutInSeconds");
-                context.Writer.Write(requestObject.RobotDeploymentTimeoutInSeconds);
+                context.Writer.WritePropertyName("s3Keys");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectS3KeysListValue in requestObject.S3Keys)
+                {
+                        context.Writer.Write(requestObjectS3KeysListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }
@@ -68,7 +73,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static DeploymentConfigMarshaller Instance = new DeploymentConfigMarshaller();
+        public readonly static DataSourceConfigMarshaller Instance = new DataSourceConfigMarshaller();
 
     }
 }

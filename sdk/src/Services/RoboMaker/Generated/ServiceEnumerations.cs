@@ -597,6 +597,10 @@ namespace Amazon.RoboMaker
         /// </summary>
         public static readonly SimulationJobErrorCode BadPermissionsRobotApplication = new SimulationJobErrorCode("BadPermissionsRobotApplication");
         /// <summary>
+        /// Constant BadPermissionsS3Object for SimulationJobErrorCode
+        /// </summary>
+        public static readonly SimulationJobErrorCode BadPermissionsS3Object = new SimulationJobErrorCode("BadPermissionsS3Object");
+        /// <summary>
         /// Constant BadPermissionsS3Output for SimulationJobErrorCode
         /// </summary>
         public static readonly SimulationJobErrorCode BadPermissionsS3Output = new SimulationJobErrorCode("BadPermissionsS3Output");
@@ -625,6 +629,22 @@ namespace Amazon.RoboMaker
         /// </summary>
         public static readonly SimulationJobErrorCode InvalidBundleSimulationApplication = new SimulationJobErrorCode("InvalidBundleSimulationApplication");
         /// <summary>
+        /// Constant InvalidInput for SimulationJobErrorCode
+        /// </summary>
+        public static readonly SimulationJobErrorCode InvalidInput = new SimulationJobErrorCode("InvalidInput");
+        /// <summary>
+        /// Constant InvalidS3Resource for SimulationJobErrorCode
+        /// </summary>
+        public static readonly SimulationJobErrorCode InvalidS3Resource = new SimulationJobErrorCode("InvalidS3Resource");
+        /// <summary>
+        /// Constant MismatchedEtag for SimulationJobErrorCode
+        /// </summary>
+        public static readonly SimulationJobErrorCode MismatchedEtag = new SimulationJobErrorCode("MismatchedEtag");
+        /// <summary>
+        /// Constant ResourceNotFound for SimulationJobErrorCode
+        /// </summary>
+        public static readonly SimulationJobErrorCode ResourceNotFound = new SimulationJobErrorCode("ResourceNotFound");
+        /// <summary>
         /// Constant RobotApplicationCrash for SimulationJobErrorCode
         /// </summary>
         public static readonly SimulationJobErrorCode RobotApplicationCrash = new SimulationJobErrorCode("RobotApplicationCrash");
@@ -648,6 +668,10 @@ namespace Amazon.RoboMaker
         /// Constant WrongRegionRobotApplication for SimulationJobErrorCode
         /// </summary>
         public static readonly SimulationJobErrorCode WrongRegionRobotApplication = new SimulationJobErrorCode("WrongRegionRobotApplication");
+        /// <summary>
+        /// Constant WrongRegionS3Bucket for SimulationJobErrorCode
+        /// </summary>
+        public static readonly SimulationJobErrorCode WrongRegionS3Bucket = new SimulationJobErrorCode("WrongRegionS3Bucket");
         /// <summary>
         /// Constant WrongRegionS3Output for SimulationJobErrorCode
         /// </summary>
@@ -784,6 +808,10 @@ namespace Amazon.RoboMaker
         /// Constant Gazebo for SimulationSoftwareSuiteType
         /// </summary>
         public static readonly SimulationSoftwareSuiteType Gazebo = new SimulationSoftwareSuiteType("Gazebo");
+        /// <summary>
+        /// Constant RosbagPlay for SimulationSoftwareSuiteType
+        /// </summary>
+        public static readonly SimulationSoftwareSuiteType RosbagPlay = new SimulationSoftwareSuiteType("RosbagPlay");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

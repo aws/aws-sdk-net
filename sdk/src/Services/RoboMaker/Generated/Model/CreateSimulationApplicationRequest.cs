@@ -65,7 +65,6 @@ namespace Amazon.RoboMaker.Model
         /// The rendering engine for the simulation application.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public RenderingEngine RenderingEngine
         {
             get { return this._renderingEngine; }
