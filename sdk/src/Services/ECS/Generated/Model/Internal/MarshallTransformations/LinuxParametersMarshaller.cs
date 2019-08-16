@@ -78,10 +78,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.InitProcessEnabled);
             }
 
+            if(requestObject.IsSetMaxSwap())
+            {
+                context.Writer.WritePropertyName("maxSwap");
+                context.Writer.Write(requestObject.MaxSwap);
+            }
+
             if(requestObject.IsSetSharedMemorySize())
             {
                 context.Writer.WritePropertyName("sharedMemorySize");
                 context.Writer.Write(requestObject.SharedMemorySize);
+            }
+
+            if(requestObject.IsSetSwappiness())
+            {
+                context.Writer.WritePropertyName("swappiness");
+                context.Writer.Write(requestObject.Swappiness);
             }
 
             if(requestObject.IsSetTmpfs())

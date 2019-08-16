@@ -677,17 +677,6 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code>
-        /// and <code>splunk</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
-        /// <code>syslog</code>, <code>gelf</code>, <code>fluentd</code>, <code>splunk</code>,
-        /// <code>journald</code>, and <code>json-file</code>.
-        /// </para>
-        ///  
-        /// <para>
         /// This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
         /// Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker

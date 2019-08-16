@@ -50,8 +50,8 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
-        /// <code>syslog</code>, <code>gelf</code>, <code>fluentd</code>, <code>splunk</code>,
-        /// <code>journald</code>, and <code>json-file</code>.
+        /// <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
+        /// <code>logentries</code>, <code>syslog</code>, <code>splunk</code>, and <code>syslog</code>.
         /// </para>
         ///  
         /// <para>

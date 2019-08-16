@@ -39,12 +39,12 @@ namespace Amazon.ECS.Model
     /// When you delete a service, if there are still running tasks that require cleanup,
     /// the service status moves from <code>ACTIVE</code> to <code>DRAINING</code>, and the
     /// service is no longer visible in the console or in the <a>ListServices</a> API operation.
-    /// After the tasks have stopped, then the service status moves from <code>DRAINING</code>
-    /// to <code>INACTIVE</code>. Services in the <code>DRAINING</code> or <code>INACTIVE</code>
-    /// status can still be viewed with the <a>DescribeServices</a> API operation. However,
-    /// in the future, <code>INACTIVE</code> services may be cleaned up and purged from Amazon
-    /// ECS record keeping, and <a>DescribeServices</a> calls on those services return a <code>ServiceNotFoundException</code>
-    /// error.
+    /// After all tasks have transitioned to either <code>STOPPING</code> or <code>STOPPED</code>
+    /// status, the service status moves from <code>DRAINING</code> to <code>INACTIVE</code>.
+    /// Services in the <code>DRAINING</code> or <code>INACTIVE</code> status can still be
+    /// viewed with the <a>DescribeServices</a> API operation. However, in the future, <code>INACTIVE</code>
+    /// services may be cleaned up and purged from Amazon ECS record keeping, and <a>DescribeServices</a>
+    /// calls on those services return a <code>ServiceNotFoundException</code> error.
     /// </para>
     ///  </note> <important> 
     /// <para>

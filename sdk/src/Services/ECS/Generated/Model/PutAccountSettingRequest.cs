@@ -29,11 +29,15 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Container for the parameters to the PutAccountSetting operation.
-    /// Modifies an account setting. If you change the account setting for the root user,
-    /// the default settings for all of the IAM users and roles for which no individual account
-    /// setting has been specified are reset. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
-    /// Settings</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// Modifies an account setting. Account settings are set on a per-Region basis.
     /// 
+    ///  
+    /// <para>
+    /// If you change the account setting for the root user, the default settings for all
+    /// of the IAM users and roles for which no individual account setting has been specified
+    /// are reset. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
+    /// Settings</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// </para>
     ///  
     /// <para>
     /// When <code>serviceLongArnFormat</code>, <code>taskLongArnFormat</code>, or <code>containerInstanceLongArnFormat</code>
