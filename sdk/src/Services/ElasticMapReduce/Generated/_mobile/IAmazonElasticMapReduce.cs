@@ -464,6 +464,32 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
                 
+        #region  GetBlockPublicAccessConfiguration
+
+
+
+        /// <summary>
+        /// Returns the Amazon EMR block public access configuration for your AWS account in the
+        /// current Region. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure
+        /// Block Public Access for Amazon EMR</a> in the <i>Amazon EMR Management Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBlockPublicAccessConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetBlockPublicAccessConfiguration service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetBlockPublicAccessConfiguration">REST API Reference for GetBlockPublicAccessConfiguration Operation</seealso>
+        Task<GetBlockPublicAccessConfigurationResponse> GetBlockPublicAccessConfigurationAsync(GetBlockPublicAccessConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListBootstrapActions
 
 
@@ -824,6 +850,32 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
                 
+        #region  PutBlockPublicAccessConfiguration
+
+
+
+        /// <summary>
+        /// Creates or updates an Amazon EMR block public access configuration for your AWS account
+        /// in the current Region. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure
+        /// Block Public Access for Amazon EMR</a> in the <i>Amazon EMR Management Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBlockPublicAccessConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutBlockPublicAccessConfiguration service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutBlockPublicAccessConfiguration">REST API Reference for PutBlockPublicAccessConfiguration Operation</seealso>
+        Task<PutBlockPublicAccessConfigurationResponse> PutBlockPublicAccessConfigurationAsync(PutBlockPublicAccessConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  RemoveAutoScalingPolicy
 
 
@@ -982,11 +1034,16 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
+        /// <i>This member will be deprecated.</i> 
+        /// 
+        ///  
+        /// <para>
         /// Sets whether all AWS Identity and Access Management (IAM) users under your account
         /// can access the specified clusters (job flows). This action works on running clusters.
         /// You can also set the visibility of a cluster when you launch it using the <code>VisibleToAllUsers</code>
         /// parameter of <a>RunJobFlow</a>. The SetVisibleToAllUsers action can be called only
         /// by an IAM user who created the cluster or the AWS account that owns the cluster.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetVisibleToAllUsers service method.</param>
         /// <param name="cancellationToken">
