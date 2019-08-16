@@ -1,3 +1,16 @@
+### 3.3.570.0 (2019-08-16 19:18 UTC)
+* ECS (3.3.105.0)
+	* This release of Amazon Elastic Container Service (Amazon ECS) introduces support for controlling the usage of swap space on a per-container basis for Linux containers.
+* ElasticMapReduce (3.3.102.0)
+	* Amazon EMR  has introduced an account level configuration called Block Public Access that allows you to block clusters with ports open to traffic from public IP sources (i.e. 0.0.0.0/0 for IPv4 and ::/0 for IPv6) from launching.  Individual ports or port ranges can be added as exceptions to allow public access.
+* RoboMaker (3.3.105.0)
+	* Two feature release: 1. AWS RoboMaker introduces log-based simulation. Log-based simulation allows you to play back pre-recorded log data such as sensor streams for testing robotic functions like localization, mapping, and object detection. Use the AWS RoboMaker SDK to test your robotic applications.  2.  AWS RoboMaker allow customer to setup a robot deployment timeout when CreateDeploymentJob.
+* Core 3.3.103.29
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.569.1 (2019-08-15 21:36 UTC)
 * CognitoIdentity (3.3.100.64)
 	* Fix call hanging issue in CognitoAWSCredentials
