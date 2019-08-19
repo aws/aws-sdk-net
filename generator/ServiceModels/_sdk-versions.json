@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.570.0",
+    "ProductVersion" : "3.3.571.0",
     "CoreVersion"    : "3.3.103.29",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -713,7 +713,7 @@
             "InPreview"               : false
         },
         "CostAndUsageReport"              : {
-            "Version" : "3.3.100.65",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.29"
@@ -1321,7 +1321,7 @@
             "InPreview"               : false
         },
         "AppMesh"                         : {
-            "Version" : "3.3.103.2",
+            "Version" : "3.3.104.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.29"
