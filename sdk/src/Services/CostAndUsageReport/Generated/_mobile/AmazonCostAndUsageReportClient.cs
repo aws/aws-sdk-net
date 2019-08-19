@@ -343,6 +343,46 @@ namespace Amazon.CostAndUsageReport
 
         #endregion
         
+        #region  ModifyReportDefinition
+
+        internal virtual ModifyReportDefinitionResponse ModifyReportDefinition(ModifyReportDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyReportDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyReportDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyReportDefinitionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Allows you to programatically update your report preferences.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyReportDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyReportDefinition service method, as returned by CostAndUsageReport.</returns>
+        /// <exception cref="Amazon.CostAndUsageReport.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostAndUsageReport.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/ModifyReportDefinition">REST API Reference for ModifyReportDefinition Operation</seealso>
+        public virtual Task<ModifyReportDefinitionResponse> ModifyReportDefinitionAsync(ModifyReportDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyReportDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyReportDefinitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyReportDefinitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutReportDefinition
 
         internal virtual PutReportDefinitionResponse PutReportDefinition(PutReportDefinitionRequest request)
