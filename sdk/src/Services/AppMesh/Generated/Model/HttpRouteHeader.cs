@@ -40,7 +40,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property Invert. 
         /// <para>
         /// Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code>
-        ///         method and value. The default value is <code>False</code>.
+        /// method and value. The default value is <code>False</code>.
         /// </para>
         /// </summary>
         public bool Invert

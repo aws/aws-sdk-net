@@ -81,41 +81,41 @@ namespace Amazon.AppMesh
     {
 
         /// <summary>
-        /// Constant Connect for HttpMethod
+        /// Constant CONNECT for HttpMethod
         /// </summary>
-        public static readonly HttpMethod Connect = new HttpMethod("connect");
+        public static readonly HttpMethod CONNECT = new HttpMethod("CONNECT");
         /// <summary>
-        /// Constant Delete for HttpMethod
+        /// Constant DELETE for HttpMethod
         /// </summary>
-        public static readonly HttpMethod Delete = new HttpMethod("delete");
+        public static readonly HttpMethod DELETE = new HttpMethod("DELETE");
         /// <summary>
-        /// Constant Get for HttpMethod
+        /// Constant GET for HttpMethod
         /// </summary>
-        public static readonly HttpMethod Get = new HttpMethod("get");
+        public static readonly HttpMethod GET = new HttpMethod("GET");
         /// <summary>
-        /// Constant Head for HttpMethod
+        /// Constant HEAD for HttpMethod
         /// </summary>
-        public static readonly HttpMethod Head = new HttpMethod("head");
+        public static readonly HttpMethod HEAD = new HttpMethod("HEAD");
         /// <summary>
-        /// Constant Options for HttpMethod
+        /// Constant OPTIONS for HttpMethod
         /// </summary>
-        public static readonly HttpMethod Options = new HttpMethod("options");
+        public static readonly HttpMethod OPTIONS = new HttpMethod("OPTIONS");
         /// <summary>
-        /// Constant Patch for HttpMethod
+        /// Constant PATCH for HttpMethod
         /// </summary>
-        public static readonly HttpMethod Patch = new HttpMethod("patch");
+        public static readonly HttpMethod PATCH = new HttpMethod("PATCH");
         /// <summary>
-        /// Constant Post for HttpMethod
+        /// Constant POST for HttpMethod
         /// </summary>
-        public static readonly HttpMethod Post = new HttpMethod("post");
+        public static readonly HttpMethod POST = new HttpMethod("POST");
         /// <summary>
-        /// Constant Put for HttpMethod
+        /// Constant PUT for HttpMethod
         /// </summary>
-        public static readonly HttpMethod Put = new HttpMethod("put");
+        public static readonly HttpMethod PUT = new HttpMethod("PUT");
         /// <summary>
-        /// Constant Trace for HttpMethod
+        /// Constant TRACE for HttpMethod
         /// </summary>
-        public static readonly HttpMethod Trace = new HttpMethod("trace");
+        public static readonly HttpMethod TRACE = new HttpMethod("TRACE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

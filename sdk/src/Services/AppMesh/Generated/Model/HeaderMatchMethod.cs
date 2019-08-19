@@ -29,7 +29,7 @@ namespace Amazon.AppMesh.Model
 {
     /// <summary>
     /// An object representing the method and value to match the header value sent with a
-    ///         request. Specify one match method.
+    /// request. Specify one match method.
     /// </summary>
     public partial class HeaderMatchMethod
     {
@@ -80,8 +80,8 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Range. 
         /// <para>
-        /// The object that specifies the range of numbers within which the header value sent
-        /// by the client         must be included.
+        /// The object that specifies the range of numbers that the header value sent by the client
+        /// must be included in.
         /// </para>
         /// </summary>
         public MatchRange Range

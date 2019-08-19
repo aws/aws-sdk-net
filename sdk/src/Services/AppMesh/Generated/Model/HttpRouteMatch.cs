@@ -102,7 +102,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Scheme. 
         /// <para>
-        /// The client request scheme to match on.
+        /// The client request header scheme to match on.
         /// </para>
         /// </summary>
         public HttpScheme Scheme
