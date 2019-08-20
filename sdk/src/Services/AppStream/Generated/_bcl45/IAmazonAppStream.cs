@@ -1772,7 +1772,7 @@ namespace Amazon.AppStream
         ///  
         /// <para>
         /// For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -1793,7 +1793,7 @@ namespace Amazon.AppStream
         ///  
         /// <para>
         /// For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -1832,6 +1832,9 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
         /// The attempted operation is not permitted.
         /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotAvailableException">
+        /// The specified resource exists and is not in use, but isn't available.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
@@ -1861,6 +1864,9 @@ namespace Amazon.AppStream
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
         /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotAvailableException">
+        /// The specified resource exists and is not in use, but isn't available.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -2036,7 +2042,7 @@ namespace Amazon.AppStream
         ///  
         /// <para>
         /// For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
@@ -2074,7 +2080,7 @@ namespace Amazon.AppStream
         ///  
         /// <para>
         /// For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
@@ -2111,7 +2117,7 @@ namespace Amazon.AppStream
         ///  
         /// <para>
         /// For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
@@ -2135,7 +2141,7 @@ namespace Amazon.AppStream
         ///  
         /// <para>
         /// For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>

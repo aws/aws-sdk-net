@@ -40,6 +40,7 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class CreateImageBuilderRequest : AmazonAppStreamRequest
     {
+        private List<AccessEndpoint> _accessEndpoints = new List<AccessEndpoint>();
         private string _appstreamAgentVersion;
         private string _description;
         private string _displayName;
@@ -51,6 +52,26 @@ namespace Amazon.AppStream.Model
         private string _name;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private VpcConfig _vpcConfig;
+
+        /// <summary>
+        /// Gets and sets the property AccessEndpoints. 
+        /// <para>
+        /// The list of virtual private cloud (VPC) interface endpoint objects. Administrators
+        /// can connect to the image builder only through the specified endpoints.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=4)]
+        public List<AccessEndpoint> AccessEndpoints
+        {
+            get { return this._accessEndpoints; }
+            set { this._accessEndpoints = value; }
+        }
+
+        // Check to see if AccessEndpoints property is set
+        internal bool IsSetAccessEndpoints()
+        {
+            return this._accessEndpoints != null && this._accessEndpoints.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AppstreamAgentVersion. 
@@ -245,7 +266,7 @@ namespace Amazon.AppStream.Model
         ///  
         /// <para>
         /// For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

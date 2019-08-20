@@ -64,6 +64,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AccessEndpoints", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AccessEndpoint, AccessEndpointUnmarshaller>(AccessEndpointUnmarshaller.Instance);
+                    unmarshalledObject.AccessEndpoints = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AppstreamAgentVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -446,7 +446,7 @@ namespace Amazon.AppStream.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

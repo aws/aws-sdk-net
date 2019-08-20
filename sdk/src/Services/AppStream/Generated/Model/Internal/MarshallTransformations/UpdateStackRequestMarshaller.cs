@@ -68,6 +68,22 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAccessEndpoints())
+                {
+                    context.Writer.WritePropertyName("AccessEndpoints");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAccessEndpointsListValue in publicRequest.AccessEndpoints)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AccessEndpointMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAccessEndpointsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetApplicationSettings())
                 {
                     context.Writer.WritePropertyName("ApplicationSettings");

@@ -32,6 +32,7 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class ImageBuilder
     {
+        private List<AccessEndpoint> _accessEndpoints = new List<AccessEndpoint>();
         private string _appstreamAgentVersion;
         private string _arn;
         private DateTime? _createdTime;
@@ -48,6 +49,26 @@ namespace Amazon.AppStream.Model
         private ImageBuilderState _state;
         private ImageBuilderStateChangeReason _stateChangeReason;
         private VpcConfig _vpcConfig;
+
+        /// <summary>
+        /// Gets and sets the property AccessEndpoints. 
+        /// <para>
+        /// The list of virtual private cloud (VPC) interface endpoint objects. Administrators
+        /// can connect to the image builder only through the specified endpoints.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=4)]
+        public List<AccessEndpoint> AccessEndpoints
+        {
+            get { return this._accessEndpoints; }
+            set { this._accessEndpoints = value; }
+        }
+
+        // Check to see if AccessEndpoints property is set
+        internal bool IsSetAccessEndpoints()
+        {
+            return this._accessEndpoints != null && this._accessEndpoints.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AppstreamAgentVersion. 
