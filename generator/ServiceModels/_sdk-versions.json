@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.571.0",
+    "ProductVersion" : "3.3.572.0",
     "CoreVersion"    : "3.3.103.29",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -641,7 +641,7 @@
             "InPreview"               : false
         },
         "AppStream"                       : {
-            "Version" : "3.3.102.32",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.29"
@@ -945,7 +945,7 @@
             "InPreview"               : false
         },
         "SageMaker"                       : {
-            "Version" : "3.3.102.34",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.29"
@@ -1001,7 +1001,7 @@
             "InPreview"               : false
         },
         "AlexaForBusiness"                : {
-            "Version" : "3.3.105.24",
+            "Version" : "3.3.106.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.29"
@@ -1257,7 +1257,7 @@
             "InPreview"               : false
         },
         "Transfer"                        : {
-            "Version" : "3.3.102.53",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.29"

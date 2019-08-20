@@ -1,3 +1,13 @@
+### 3.3.572.0 (2019-08-20 18:42 UTC)
+* AlexaForBusiness (3.3.106.0)
+	* Adding support for optional locale input in CreateProfile and UpdateProfile APIs
+* AppStream (3.3.103.0)
+	* Includes API updates to support streaming through VPC endpoints for image builders and stacks.
+* SageMaker (3.3.103.0)
+	* Amazon SageMaker introduces Managed Spot Training. Increases the maximum number of metric definitions to 40 for SageMaker Training and Hyperparameter Tuning Jobs. SageMaker Neo adds support for Acer aiSage and Qualcomm QCS605 and QCS603. 
+* Transfer (3.3.103.0)
+	* New field in response of TestIdentityProvider
+
 ### 3.3.571.0 (2019-08-19 18:08 UTC)
 * AppMesh (3.3.104.0)
 	* Fix for HttpMethod enum
