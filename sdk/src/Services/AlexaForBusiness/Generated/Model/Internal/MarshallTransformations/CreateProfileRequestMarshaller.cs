@@ -91,6 +91,12 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DistanceUnit);
                 }
 
+                if(publicRequest.IsSetLocale())
+                {
+                    context.Writer.WritePropertyName("Locale");
+                    context.Writer.Write(publicRequest.Locale);
+                }
+
                 if(publicRequest.IsSetMaxVolumeLimit())
                 {
                     context.Writer.WritePropertyName("MaxVolumeLimit");
