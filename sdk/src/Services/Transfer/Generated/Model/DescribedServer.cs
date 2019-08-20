@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// Describe the properties of the server that was specified. Information returned includes:
-    /// the server Amazon Resource Name (ARN), the authentication configuration and type,
-    /// the logging role, server Id and state, and assigned tags or metadata.
+    /// Describes the properties of the server that was specified. Information returned includes
+    /// the following: the server Amazon Resource Name (ARN), the authentication configuration
+    /// and type, the logging role, the server ID and state, and assigned tags or metadata.
     /// </summary>
     public partial class DescribedServer
     {
@@ -106,8 +106,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property HostKeyFingerprint. 
         /// <para>
-        /// This value contains the Message-Digest Algorithm (MD5) hash of the server's host key.
-        /// This value is equivalent to the output of <code>ssh-keygen -l -E md5 -f my-new-server-key</code>
+        /// This value contains the message-digest algorithm (MD5) hash of the server's host key.
+        /// This value is equivalent to the output of the <code>ssh-keygen -l -E md5 -f my-new-server-key</code>
         /// command.
         /// </para>
         /// </summary>
@@ -146,7 +146,7 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property IdentityProviderType. 
         /// <para>
         /// This property defines the mode of authentication method enabled for this service.
-        /// A value of <code>SERVICE_MANAGED</code>, means that you are using this Server to store
+        /// A value of <code>SERVICE_MANAGED</code> means that you are using this server to store
         /// and access SFTP user credentials within the service. A value of <code>API_GATEWAY</code>
         /// indicates that you have integrated an API Gateway endpoint that will be invoked for
         /// authenticating your user into the service.
@@ -169,7 +169,7 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// This property is an AWS Identity and Access Management (IAM) entity that allows the
         /// server to turn on Amazon CloudWatch logging for Amazon S3 events. When set, user activity
-        /// can be view in your CloudWatch logs.
+        /// can be viewed in your CloudWatch logs.
         /// </para>
         /// </summary>
         public string LoggingRole
@@ -187,7 +187,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// This property is a unique system assigned identifier for the SFTP server that you
+        /// This property is a unique system-assigned identifier for the SFTP server that you
         /// instantiate.
         /// </para>
         /// </summary>
@@ -212,7 +212,7 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  
         /// <para>
-        /// The states of <code>STARTING</code> and <code>STOPPING</code> indicated that the server
+        /// The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server
         /// is in an intermediate state, either not fully able to respond, or not fully offline.
         /// The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an
         /// error condition.

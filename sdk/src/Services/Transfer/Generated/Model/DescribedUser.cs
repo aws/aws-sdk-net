@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// Returns properties of the user that you wish to describe.
+    /// Returns properties of the user that you want to describe.
     /// </summary>
     public partial class DescribedUser
     {
@@ -63,9 +63,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property HomeDirectory. 
         /// <para>
-        /// This property specifies the landing directory (or folder) which is the location that
+        /// This property specifies the landing directory (or folder), which is the location that
         /// files are written to or read from in an Amazon S3 bucket for the described user. An
-        /// example would be: <code>/<i>bucket_name</i>/home/<i>username</i> </code>.
+        /// example is <code>/<i>bucket_name</i>/home/<i>username</i> </code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

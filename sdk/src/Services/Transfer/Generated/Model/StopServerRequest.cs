@@ -37,7 +37,7 @@ namespace Amazon.Transfer.Model
     /// 
     ///  
     /// <para>
-    /// The states of <code>STOPPING</code> indicates that the server is in an intermediate
+    /// The state of <code>STOPPING</code> indicates that the server is in an intermediate
     /// state, either not fully able to respond, or not fully offline. The values of <code>STOP_FAILED</code>
     /// can indicate an error condition.
     /// </para>

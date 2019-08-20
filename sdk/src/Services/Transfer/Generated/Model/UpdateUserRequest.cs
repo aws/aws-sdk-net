@@ -50,9 +50,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property HomeDirectory. 
         /// <para>
-        /// The HomeDirectory parameter specifies the landing directory (folder) for a user when
-        /// they log in to the server using their client. An example would be: <code>/home/<i>username</i>
-        /// </code>.
+        /// A parameter that specifies the landing directory (folder) for a user when they log
+        /// in to the server using their client. An example is <code>/home/<i>username</i> </code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -73,10 +72,27 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// Allows you to supply a scope-down policy for your user so you can use the same AWS
         /// Identity and Access Management (IAM) role across multiple users. The policy scopes
-        /// down users access to portions of your Amazon S3 bucket. Variables you can use inside
+        /// down user access to portions of your Amazon S3 bucket. Variables you can use inside
         /// this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>,
         /// and <code>${Transfer:HomeBucket}</code>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For scope-down policies, AWS Transfer for SFTP stores the policy as a JSON blob, instead
+        /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob
+        /// and pass it in the <code>Policy</code> argument.
+        /// </para>
+        ///  
+        /// <para>
+        /// For an example of a scope-down policy, see "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating
+        /// a Scope-Down Policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html"
+        /// in the <i>AWS Security Token Service API Reference</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Policy
         {
@@ -137,10 +153,10 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property UserName. 
         /// <para>
         /// A unique string that identifies a user and is associated with a server as specified
-        /// by the ServerId. This is the string that will be used by your user when they log in
-        /// to your SFTP server. This user name is a minimum of 3 and a maximum of 32 characters
-        /// long. The following are valid characters: a-z, A-Z, 0-9, underscore, and hyphen. The
-        /// user name can't start with a hyphen.
+        /// by the <code>ServerId</code>. This is the string that will be used by your user when
+        /// they log in to your SFTP server. This user name is a minimum of 3 and a maximum of
+        /// 32 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore,
+        /// and hyphen. The user name can't start with a hyphen.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

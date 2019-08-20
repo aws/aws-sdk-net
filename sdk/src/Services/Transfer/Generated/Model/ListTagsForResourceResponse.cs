@@ -60,7 +60,7 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// When you can get additional results from the <code>ListTagsForResource</code> call,
         /// a <code>NextToken</code> parameter is returned in the output. You can then pass in
-        /// a subsequent command the <code>NextToken</code> parameter to continue listing additional
+        /// a subsequent command to the <code>NextToken</code> parameter to continue listing additional
         /// tags.
         /// </para>
         /// </summary>
@@ -81,8 +81,7 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// Key-value pairs that are assigned to a resource, usually for the purpose of grouping
-        /// and searching for items. Tags are metadata that you define that you can use for any
-        /// purpose.
+        /// and searching for items. Tags are metadata that you define.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

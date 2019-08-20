@@ -29,17 +29,13 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateUser operation.
-    /// Adds a user and associate them with an existing Secure File Transfer Protocol (SFTP)
-    /// server. Using parameters for <code>CreateUser</code>, you can specify the user name,
-    /// set the home directory, store the user's public key, and assign the user's AWS Identity
-    /// and Access Management (IAM) role. You can also optionally add a scope-down policy,
-    /// and assign metadata with tags that can be used to group and search for users.
-    /// 
-    ///  
-    /// <para>
-    /// The response returns the <code>UserName</code> and <code>ServerId</code> values of
-    /// the new user for that server.
-    /// </para>
+    /// Creates a user and associates them with an existing Secure File Transfer Protocol
+    /// (SFTP) server. You can only create and associate users with SFTP servers that have
+    /// the <code>IdentityProviderType</code> set to <code>SERVICE_MANAGED</code>. Using parameters
+    /// for <code>CreateUser</code>, you can specify the user name, set the home directory,
+    /// store the user's public key, and assign the user's AWS Identity and Access Management
+    /// (IAM) role. You can also optionally add a scope-down policy, and assign metadata with
+    /// tags that can be used to group and search for users.
     /// </summary>
     public partial class CreateUserRequest : AmazonTransferRequest
     {
@@ -76,9 +72,26 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// A scope-down policy for your user so you can use the same IAM role across multiple
         /// users. This policy scopes down user access to portions of their Amazon S3 bucket.
-        /// Variables you can use inside this policy include <code>${Transfer:UserName}</code>,
+        /// Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
         /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For scope-down policies, AWS Transfer for SFTP stores the policy as a JSON blob, instead
+        /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob
+        /// and pass it in the <code>Policy</code> argument.
+        /// </para>
+        ///  
+        /// <para>
+        /// For an example of a scope-down policy, see "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating
+        /// a Scope-Down Policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html"
+        /// in the <i>AWS Security Token Service API Reference</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Policy
         {
@@ -138,7 +151,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property SshPublicKeyBody. 
         /// <para>
-        /// The public portion of the Secure Shall (SSH) key used to authenticate the user to
+        /// The public portion of the Secure Shell (SSH) key used to authenticate the user to
         /// the SFTP server.
         /// </para>
         /// </summary>

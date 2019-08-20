@@ -46,7 +46,7 @@ namespace Amazon.Transfer
     /// changes for your customers and partners, or their applications. With your data in
     /// S3, you can use it with AWS services for processing, analytics, machine learning,
     /// and archiving. Getting started with AWS Transfer for SFTP (AWS SFTP) is easy; there
-    /// is no infrastructure to buy and setup.
+    /// is no infrastructure to buy and set up.
     /// </summary>
     public partial class AmazonTransferClient : AmazonServiceClient, IAmazonTransfer
     {
@@ -266,14 +266,9 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Instantiates an autoscaling virtual server based on Secure File Transfer Protocol
-        /// (SFTP) in AWS. The call returns the <code>ServerId</code> property assigned by the
-        /// service to the newly created server. Reference this <code>ServerId</code> property
-        /// when you make updates to your server, or work with users.
-        /// 
-        ///  
-        /// <para>
-        /// The response returns the <code>ServerId</code> value for the newly created server.
-        /// </para>
+        /// (SFTP) in AWS. When you make updates to your server or when you work with users, use
+        /// the service-generated <code>ServerId</code> property that is assigned to the newly
+        /// created server.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateServer service method.</param>
         /// <param name="cancellationToken">
@@ -319,17 +314,13 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Adds a user and associate them with an existing Secure File Transfer Protocol (SFTP)
-        /// server. Using parameters for <code>CreateUser</code>, you can specify the user name,
-        /// set the home directory, store the user's public key, and assign the user's AWS Identity
-        /// and Access Management (IAM) role. You can also optionally add a scope-down policy,
-        /// and assign metadata with tags that can be used to group and search for users.
-        /// 
-        ///  
-        /// <para>
-        /// The response returns the <code>UserName</code> and <code>ServerId</code> values of
-        /// the new user for that server.
-        /// </para>
+        /// Creates a user and associates them with an existing Secure File Transfer Protocol
+        /// (SFTP) server. You can only create and associate users with SFTP servers that have
+        /// the <code>IdentityProviderType</code> set to <code>SERVICE_MANAGED</code>. Using parameters
+        /// for <code>CreateUser</code>, you can specify the user name, set the home directory,
+        /// store the user's public key, and assign the user's AWS Identity and Access Management
+        /// (IAM) role. You can also optionally add a scope-down policy, and assign metadata with
+        /// tags that can be used to group and search for users.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
         /// <param name="cancellationToken">
@@ -379,13 +370,11 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Deletes the Secure File Transfer Protocol (SFTP) server that you specify. If you used
-        /// <code>SERVICE_MANAGED</code> as your <code>IdentityProviderType</code>, you need to
-        /// delete all users associated with this server before deleting the server itself
+        /// Deletes the Secure File Transfer Protocol (SFTP) server that you specify.
         /// 
         ///  
         /// <para>
-        /// No response returns from this call.
+        /// No response returns from this operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteServer service method.</param>
@@ -437,7 +426,7 @@ namespace Amazon.Transfer
         /// 
         ///  
         /// <para>
-        /// No response is returned from this call.
+        /// No response is returned from this operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSshPublicKey service method.</param>
@@ -489,7 +478,7 @@ namespace Amazon.Transfer
         /// 
         ///  
         /// <para>
-        /// No response returns from this call.
+        /// No response returns from this operation.
         /// </para>
         ///  <note> 
         /// <para>
@@ -918,7 +907,7 @@ namespace Amazon.Transfer
         /// 
         ///  
         /// <para>
-        /// The states of <code>STOPPING</code> indicates that the server is in an intermediate
+        /// The state of <code>STOPPING</code> indicates that the server is in an intermediate
         /// state, either not fully able to respond, or not fully offline. The values of <code>STOP_FAILED</code>
         /// can indicate an error condition.
         /// </para>
@@ -1023,9 +1012,9 @@ namespace Amazon.Transfer
         /// <summary>
         /// If the <code>IdentityProviderType</code> of the server is <code>API_Gateway</code>,
         /// tests whether your API Gateway is set up successfully. We highly recommend that you
-        /// call this method to test your authentication method as soon as you create your server.
-        /// By doing so, you can troubleshoot issues with the API Gateway integration to ensure
-        /// that your users can successfully use the service.
+        /// call this operation to test your authentication method as soon as you create your
+        /// server. By doing so, you can troubleshoot issues with the API Gateway integration
+        /// to ensure that your users can successfully use the service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestIdentityProvider service method.</param>
         /// <param name="cancellationToken">

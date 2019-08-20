@@ -41,7 +41,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// This property is the unique Amazon Resource Name (ARN) for the user that you wish
+        /// This property is the unique Amazon Resource Name (ARN) for the user that you want
         /// to learn about.
         /// </para>
         /// </summary>
@@ -82,8 +82,8 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property Role. 
         /// <para>
         /// The role in use by this user. A <i>role</i> is an AWS Identity and Access Management
-        /// (IAM) entity that in this case allows the SFTP server to act on a user's behalf. It
-        /// allows the server to inherit the trust relationship that enables that user to perform
+        /// (IAM) entity that, in this case, allows the SFTP server to act on a user's behalf.
+        /// It allows the server to inherit the trust relationship that enables that user to perform
         /// file operations to their Amazon S3 bucket.
         /// </para>
         /// </summary>

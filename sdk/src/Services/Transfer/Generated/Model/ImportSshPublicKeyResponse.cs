@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// This response identifies the user, server they belong to, and the identifier of the
-    /// SSH public key associated with that user. A user can have more than one key on each
-    /// server that they are associate with.
+    /// This response identifies the user, the server they belong to, and the identifier of
+    /// the SSH public key associated with that user. A user can have more than one key on
+    /// each server that they are associated with.
     /// </summary>
     public partial class ImportSshPublicKeyResponse : AmazonWebServiceResponse
     {

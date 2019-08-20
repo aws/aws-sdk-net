@@ -82,8 +82,8 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property IdentityProviderType. 
         /// <para>
         /// The authentication method used to validate a user for the server that was specified.
-        /// listed. This can include Secure Shell (SSH), user name and password combinations,
-        /// or your own custom authentication method. Valid values include <code>SERVICE_MANAGED</code>
+        /// This can include Secure Shell (SSH), user name and password combinations, or your
+        /// own custom authentication method. Valid values include <code>SERVICE_MANAGED</code>
         /// or <code>API_GATEWAY</code>.
         /// </para>
         /// </summary>
@@ -147,7 +147,7 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  
         /// <para>
-        /// The states of <code>STARTING</code> and <code>STOPPING</code> indicated that the server
+        /// The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server
         /// is in an intermediate state, either not fully able to respond, or not fully offline.
         /// The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an
         /// error condition.

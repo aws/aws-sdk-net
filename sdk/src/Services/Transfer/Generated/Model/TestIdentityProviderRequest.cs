@@ -31,9 +31,9 @@ namespace Amazon.Transfer.Model
     /// Container for the parameters to the TestIdentityProvider operation.
     /// If the <code>IdentityProviderType</code> of the server is <code>API_Gateway</code>,
     /// tests whether your API Gateway is set up successfully. We highly recommend that you
-    /// call this method to test your authentication method as soon as you create your server.
-    /// By doing so, you can troubleshoot issues with the API Gateway integration to ensure
-    /// that your users can successfully use the service.
+    /// call this operation to test your authentication method as soon as you create your
+    /// server. By doing so, you can troubleshoot issues with the API Gateway integration
+    /// to ensure that your users can successfully use the service.
     /// </summary>
     public partial class TestIdentityProviderRequest : AmazonTransferRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// A system assigned identifier for a specific server. That server's user authentication
+        /// A system-assigned identifier for a specific server. That server's user authentication
         /// method is tested with a user name and password.
         /// </para>
         /// </summary>
@@ -64,7 +64,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// This request parameter is name of the user account to be tested.
+        /// This request parameter is the name of the user account to be tested.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

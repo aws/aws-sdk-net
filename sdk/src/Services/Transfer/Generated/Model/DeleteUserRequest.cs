@@ -33,7 +33,7 @@ namespace Amazon.Transfer.Model
     /// 
     ///  
     /// <para>
-    /// No response returns from this call.
+    /// No response returns from this operation.
     /// </para>
     ///  <note> 
     /// <para>
