@@ -73,6 +73,13 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>EnableManagedSpotTraining</code> - Optimize the cost of training machine learning
+    /// models by up to 80% by using Amazon EC2 Spot instances. For more information, see
+    /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html">Managed
+    /// Spot Training</a>. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>RoleARN</code> - The Amazon Resource Number (ARN) that Amazon SageMaker assumes
     /// to perform tasks on your behalf during model training. You must grant this role the
     /// necessary permissions so that Amazon SageMaker can successfully complete model training.
@@ -80,8 +87,9 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>StoppingCondition</code> - Sets a time limit for training. Use this parameter
-    /// to cap model training costs. 
+    ///  <code>StoppingCondition</code> - To help cap training costs, use <code>MaxRuntimeInSeconds</code>
+    /// to set a time limit for training. Use <code>MaxWaitTimeInSeconds</code> to specify
+    /// how long you are willing to to wait for a managed spot training job to complete. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -92,7 +100,9 @@ namespace Amazon.SageMaker.Model
     public partial class CreateTrainingJobRequest : AmazonSageMakerRequest
     {
         private AlgorithmSpecification _algorithmSpecification;
+        private CheckpointConfig _checkpointConfig;
         private bool? _enableInterContainerTrafficEncryption;
+        private bool? _enableManagedSpotTraining;
         private bool? _enableNetworkIsolation;
         private Dictionary<string, string> _hyperParameters = new Dictionary<string, string>();
         private List<Channel> _inputDataConfig = new List<Channel>();
@@ -128,6 +138,25 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CheckpointConfig. 
+        /// <para>
+        /// Contains information about the output location for managed spot training checkpoint
+        /// data.
+        /// </para>
+        /// </summary>
+        public CheckpointConfig CheckpointConfig
+        {
+            get { return this._checkpointConfig; }
+            set { this._checkpointConfig = value; }
+        }
+
+        // Check to see if CheckpointConfig property is set
+        internal bool IsSetCheckpointConfig()
+        {
+            return this._checkpointConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EnableInterContainerTrafficEncryption. 
         /// <para>
         /// To encrypt all communications between ML compute instances in distributed training,
@@ -148,6 +177,34 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEnableInterContainerTrafficEncryption()
         {
             return this._enableInterContainerTrafficEncryption.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableManagedSpotTraining. 
+        /// <para>
+        /// To train models using managed spot training, choose <code>True</code>. Managed spot
+        /// training provides a fully managed and scalable infrastructure for training machine
+        /// learning models. this option is useful when training jobs can be interrupted and when
+        /// there is flexibility when the training job is run. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The complete and intermediate results of jobs are stored in an Amazon S3 bucket, and
+        /// can be used as a starting point to train models incrementally. Amazon SageMaker provides
+        /// metrics and logs in CloudWatch. They can be used to see when managed spot training
+        /// jobs are running, interrupted, resumed, or completed. 
+        /// </para>
+        /// </summary>
+        public bool EnableManagedSpotTraining
+        {
+            get { return this._enableManagedSpotTraining.GetValueOrDefault(); }
+            set { this._enableManagedSpotTraining = value; }
+        }
+
+        // Check to see if EnableManagedSpotTraining property is set
+        internal bool IsSetEnableManagedSpotTraining()
+        {
+            return this._enableManagedSpotTraining.HasValue; 
         }
 
         /// <summary>

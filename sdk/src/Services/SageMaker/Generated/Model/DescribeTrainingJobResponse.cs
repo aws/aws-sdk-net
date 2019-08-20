@@ -33,8 +33,11 @@ namespace Amazon.SageMaker.Model
     public partial class DescribeTrainingJobResponse : AmazonWebServiceResponse
     {
         private AlgorithmSpecification _algorithmSpecification;
+        private int? _billableTimeInSeconds;
+        private CheckpointConfig _checkpointConfig;
         private DateTime? _creationTime;
         private bool? _enableInterContainerTrafficEncryption;
+        private bool? _enableManagedSpotTraining;
         private bool? _enableNetworkIsolation;
         private string _failureReason;
         private List<MetricData> _finalMetricDataList = new List<MetricData>();
@@ -54,6 +57,7 @@ namespace Amazon.SageMaker.Model
         private string _trainingJobName;
         private TrainingJobStatus _trainingJobStatus;
         private DateTime? _trainingStartTime;
+        private int? _trainingTimeInSeconds;
         private string _tuningJobArn;
         private VpcConfig _vpcConfig;
 
@@ -74,6 +78,46 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetAlgorithmSpecification()
         {
             return this._algorithmSpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BillableTimeInSeconds. 
+        /// <para>
+        /// The billable time in seconds.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can calculate the savings from using managed spot training using the formula <code>(1
+        /// - BillableTimeInSeconds / TrainingTimeInSeconds) * 100</code>. For example, if <code>BillableTimeInSeconds</code>
+        /// is 100 and <code>TrainingTimeInSeconds</code> is 500, the savings is 80%.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int BillableTimeInSeconds
+        {
+            get { return this._billableTimeInSeconds.GetValueOrDefault(); }
+            set { this._billableTimeInSeconds = value; }
+        }
+
+        // Check to see if BillableTimeInSeconds property is set
+        internal bool IsSetBillableTimeInSeconds()
+        {
+            return this._billableTimeInSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CheckpointConfig.
+        /// </summary>
+        public CheckpointConfig CheckpointConfig
+        {
+            get { return this._checkpointConfig; }
+            set { this._checkpointConfig = value; }
+        }
+
+        // Check to see if CheckpointConfig property is set
+        internal bool IsSetCheckpointConfig()
+        {
+            return this._checkpointConfig != null;
         }
 
         /// <summary>
@@ -115,6 +159,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEnableInterContainerTrafficEncryption()
         {
             return this._enableInterContainerTrafficEncryption.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableManagedSpotTraining. 
+        /// <para>
+        /// A Boolean indicating whether managed spot training is enabled (<code>True</code>)
+        /// or not (<code>False</code>).
+        /// </para>
+        /// </summary>
+        public bool EnableManagedSpotTraining
+        {
+            get { return this._enableManagedSpotTraining.GetValueOrDefault(); }
+            set { this._enableManagedSpotTraining = value; }
+        }
+
+        // Check to see if EnableManagedSpotTraining property is set
+        internal bool IsSetEnableManagedSpotTraining()
+        {
+            return this._enableManagedSpotTraining.HasValue; 
         }
 
         /// <summary>
@@ -170,7 +233,7 @@ namespace Amazon.SageMaker.Model
         /// dates and times that the training algorithm emitted to Amazon CloudWatch.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=20)]
+        [AWSProperty(Min=0, Max=40)]
         public List<MetricData> FinalMetricDataList
         {
             get { return this._finalMetricDataList; }
@@ -385,6 +448,16 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the maximum
+        /// allowed wait time.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Interrupted</code> - The job stopped because the managed spot training instances
+        /// were interrupted. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>Stopped</code> - The training job has stopped.
         /// </para>
         ///  </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul> <li> 
@@ -448,9 +521,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property StoppingCondition. 
         /// <para>
-        /// Specifies a limit to how long a model training job can run. When the job reaches the
-        /// time limit, Amazon SageMaker ends the training job. Use this API to cap model training
-        /// costs.
+        /// Specifies a limit to how long a model training job can run. It also specifies the
+        /// maximum time to wait for a spot instance. When the job reaches the time limit, Amazon
+        /// SageMaker ends the training job. Use this API to cap model training costs.
         /// </para>
         ///  
         /// <para>
@@ -601,6 +674,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTrainingStartTime()
         {
             return this._trainingStartTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingTimeInSeconds. 
+        /// <para>
+        /// The training time in seconds.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int TrainingTimeInSeconds
+        {
+            get { return this._trainingTimeInSeconds.GetValueOrDefault(); }
+            set { this._trainingTimeInSeconds = value; }
+        }
+
+        // Check to see if TrainingTimeInSeconds property is set
+        internal bool IsSetTrainingTimeInSeconds()
+        {
+            return this._trainingTimeInSeconds.HasValue; 
         }
 
         /// <summary>

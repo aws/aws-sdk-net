@@ -60,7 +60,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property OnCreate. 
         /// <para>
-        /// The shell script that runs only once, when you create a notebook instance
+        /// The shell script that runs only once, when you create a notebook instance. The shell
+        /// script must be a base64-encoded string.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1)]
@@ -80,7 +81,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property OnStart. 
         /// <para>
         /// The shell script that runs every time you start a notebook instance, including when
-        /// you create the notebook instance.
+        /// you create the notebook instance. The shell script must be a base64-encoded string.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1)]

@@ -33,7 +33,9 @@ namespace Amazon.SageMaker.Model
     public partial class HyperParameterTrainingJobDefinition
     {
         private HyperParameterAlgorithmSpecification _algorithmSpecification;
+        private CheckpointConfig _checkpointConfig;
         private bool? _enableInterContainerTrafficEncryption;
+        private bool? _enableManagedSpotTraining;
         private bool? _enableNetworkIsolation;
         private List<Channel> _inputDataConfig = new List<Channel>();
         private OutputDataConfig _outputDataConfig;
@@ -64,6 +66,21 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CheckpointConfig.
+        /// </summary>
+        public CheckpointConfig CheckpointConfig
+        {
+            get { return this._checkpointConfig; }
+            set { this._checkpointConfig = value; }
+        }
+
+        // Check to see if CheckpointConfig property is set
+        internal bool IsSetCheckpointConfig()
+        {
+            return this._checkpointConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EnableInterContainerTrafficEncryption. 
         /// <para>
         /// To encrypt all communications between ML compute instances in distributed training,
@@ -83,6 +100,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEnableInterContainerTrafficEncryption()
         {
             return this._enableInterContainerTrafficEncryption.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableManagedSpotTraining. 
+        /// <para>
+        /// A Boolean indicating whether managed spot training is enabled (<code>True</code>)
+        /// or not (<code>False</code>).
+        /// </para>
+        /// </summary>
+        public bool EnableManagedSpotTraining
+        {
+            get { return this._enableManagedSpotTraining.GetValueOrDefault(); }
+            set { this._enableManagedSpotTraining = value; }
+        }
+
+        // Check to see if EnableManagedSpotTraining property is set
+        internal bool IsSetEnableManagedSpotTraining()
+        {
+            return this._enableManagedSpotTraining.HasValue; 
         }
 
         /// <summary>
@@ -222,9 +258,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property StoppingCondition. 
         /// <para>
-        /// Specifies a limit to how long a model hyperparameter training job can run. When the
-        /// job reaches the time limit, Amazon SageMaker ends the training job. Use this API to
-        /// cap model training costs.
+        /// Specifies a limit to how long a model hyperparameter training job can run. It also
+        /// specifies how long you are willing to wait for a managed spot training job to complete.
+        /// When the job reaches the a limit, Amazon SageMaker ends the training job. Use this
+        /// API to cap model training costs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

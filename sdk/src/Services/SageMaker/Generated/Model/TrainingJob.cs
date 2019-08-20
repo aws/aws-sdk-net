@@ -162,7 +162,7 @@ namespace Amazon.SageMaker.Model
         /// if the training job was configured to use metrics.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=20)]
+        [AWSProperty(Min=0, Max=40)]
         public List<MetricData> FinalMetricDataList
         {
             get { return this._finalMetricDataList; }

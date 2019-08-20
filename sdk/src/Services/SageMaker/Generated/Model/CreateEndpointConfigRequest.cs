@@ -111,7 +111,7 @@ namespace Amazon.SageMaker.Model
         /// to host at this endpoint.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<ProductionVariant> ProductionVariants
         {
             get { return this._productionVariants; }

@@ -65,7 +65,7 @@ namespace Amazon.SageMaker.Model
         /// emits.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=20)]
+        [AWSProperty(Min=0, Max=40)]
         public List<MetricDefinition> MetricDefinitions
         {
             get { return this._metricDefinitions; }

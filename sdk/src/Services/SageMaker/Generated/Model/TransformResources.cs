@@ -61,8 +61,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property InstanceType. 
         /// <para>
         /// The ML compute instance type for the transform job. If you are using built-in algorithms
-        /// to transform moderately sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code>instance
-        /// types.
+        /// to transform moderately sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code>
+        /// instance types.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

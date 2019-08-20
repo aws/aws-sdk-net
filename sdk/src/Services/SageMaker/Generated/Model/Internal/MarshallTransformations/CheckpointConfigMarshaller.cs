@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// StoppingCondition Marshaller
+    /// CheckpointConfig Marshaller
     /// </summary>       
-    public class StoppingConditionMarshaller : IRequestMarshaller<StoppingCondition, JsonMarshallerContext> 
+    public class CheckpointConfigMarshaller : IRequestMarshaller<CheckpointConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,18 +43,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(StoppingCondition requestObject, JsonMarshallerContext context)
+        public void Marshall(CheckpointConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetMaxRuntimeInSeconds())
+            if(requestObject.IsSetLocalPath())
             {
-                context.Writer.WritePropertyName("MaxRuntimeInSeconds");
-                context.Writer.Write(requestObject.MaxRuntimeInSeconds);
+                context.Writer.WritePropertyName("LocalPath");
+                context.Writer.Write(requestObject.LocalPath);
             }
 
-            if(requestObject.IsSetMaxWaitTimeInSeconds())
+            if(requestObject.IsSetS3Uri())
             {
-                context.Writer.WritePropertyName("MaxWaitTimeInSeconds");
-                context.Writer.Write(requestObject.MaxWaitTimeInSeconds);
+                context.Writer.WritePropertyName("S3Uri");
+                context.Writer.Write(requestObject.S3Uri);
             }
 
         }
@@ -62,7 +62,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static StoppingConditionMarshaller Instance = new StoppingConditionMarshaller();
+        public readonly static CheckpointConfigMarshaller Instance = new CheckpointConfigMarshaller();
 
     }
 }

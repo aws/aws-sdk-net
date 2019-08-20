@@ -72,7 +72,7 @@ namespace Amazon.SageMaker.Model
     ///  </li> </ol> 
     /// <para>
     /// After creating the notebook instance, Amazon SageMaker returns its Amazon Resource
-    /// Name (ARN).
+    /// Name (ARN). You can't change the name of a notebook instance after you create it.
     /// </para>
     ///  
     /// <para>

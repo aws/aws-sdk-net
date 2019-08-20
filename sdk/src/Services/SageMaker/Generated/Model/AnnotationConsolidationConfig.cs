@@ -174,6 +174,41 @@ namespace Amazon.SageMaker.Model
         ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
         /// 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Named entity eecognition</i> - Groups similar selections and calculates aggregate
+        /// boundaries, resolving to most-assigned label.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-NamedEntityRecognition</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-NamedEntityRecognition</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-NamedEntityRecognition</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
+        /// 
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation

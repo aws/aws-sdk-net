@@ -79,10 +79,27 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetCheckpointConfig())
+                {
+                    context.Writer.WritePropertyName("CheckpointConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CheckpointConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CheckpointConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetEnableInterContainerTrafficEncryption())
                 {
                     context.Writer.WritePropertyName("EnableInterContainerTrafficEncryption");
                     context.Writer.Write(publicRequest.EnableInterContainerTrafficEncryption);
+                }
+
+                if(publicRequest.IsSetEnableManagedSpotTraining())
+                {
+                    context.Writer.WritePropertyName("EnableManagedSpotTraining");
+                    context.Writer.Write(publicRequest.EnableManagedSpotTraining);
                 }
 
                 if(publicRequest.IsSetEnableNetworkIsolation())

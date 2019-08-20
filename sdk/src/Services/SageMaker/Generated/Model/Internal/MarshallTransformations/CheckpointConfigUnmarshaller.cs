@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StoppingCondition Object
+    /// Response Unmarshaller for CheckpointConfig Object
     /// </summary>  
-    public class StoppingConditionUnmarshaller : IUnmarshaller<StoppingCondition, XmlUnmarshallerContext>, IUnmarshaller<StoppingCondition, JsonUnmarshallerContext>
+    public class CheckpointConfigUnmarshaller : IUnmarshaller<CheckpointConfig, XmlUnmarshallerContext>, IUnmarshaller<CheckpointConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        StoppingCondition IUnmarshaller<StoppingCondition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CheckpointConfig IUnmarshaller<CheckpointConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public StoppingCondition Unmarshall(JsonUnmarshallerContext context)
+        public CheckpointConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            StoppingCondition unmarshalledObject = new StoppingCondition();
+            CheckpointConfig unmarshalledObject = new CheckpointConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("MaxRuntimeInSeconds", targetDepth))
+                if (context.TestExpression("LocalPath", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MaxRuntimeInSeconds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LocalPath = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("MaxWaitTimeInSeconds", targetDepth))
+                if (context.TestExpression("S3Uri", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MaxWaitTimeInSeconds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.S3Uri = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static StoppingConditionUnmarshaller _instance = new StoppingConditionUnmarshaller();        
+        private static CheckpointConfigUnmarshaller _instance = new CheckpointConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StoppingConditionUnmarshaller Instance
+        public static CheckpointConfigUnmarshaller Instance
         {
             get
             {

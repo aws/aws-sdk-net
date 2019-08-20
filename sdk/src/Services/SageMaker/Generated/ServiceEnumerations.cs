@@ -3015,6 +3015,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly SecondaryStatus Failed = new SecondaryStatus("Failed");
         /// <summary>
+        /// Constant Interrupted for SecondaryStatus
+        /// </summary>
+        public static readonly SecondaryStatus Interrupted = new SecondaryStatus("Interrupted");
+        /// <summary>
         /// Constant LaunchingMLInstances for SecondaryStatus
         /// </summary>
         public static readonly SecondaryStatus LaunchingMLInstances = new SecondaryStatus("LaunchingMLInstances");
@@ -3022,6 +3026,10 @@ namespace Amazon.SageMaker
         /// Constant MaxRuntimeExceeded for SecondaryStatus
         /// </summary>
         public static readonly SecondaryStatus MaxRuntimeExceeded = new SecondaryStatus("MaxRuntimeExceeded");
+        /// <summary>
+        /// Constant MaxWaitTimeExceeded for SecondaryStatus
+        /// </summary>
+        public static readonly SecondaryStatus MaxWaitTimeExceeded = new SecondaryStatus("MaxWaitTimeExceeded");
         /// <summary>
         /// Constant PreparingTrainingStack for SecondaryStatus
         /// </summary>
@@ -3251,6 +3259,10 @@ namespace Amazon.SageMaker
     {
 
         /// <summary>
+        /// Constant Aisage for TargetDevice
+        /// </summary>
+        public static readonly TargetDevice Aisage = new TargetDevice("aisage");
+        /// <summary>
         /// Constant Deeplens for TargetDevice
         /// </summary>
         public static readonly TargetDevice Deeplens = new TargetDevice("deeplens");
@@ -3294,6 +3306,14 @@ namespace Amazon.SageMaker
         /// Constant Ml_p3 for TargetDevice
         /// </summary>
         public static readonly TargetDevice Ml_p3 = new TargetDevice("ml_p3");
+        /// <summary>
+        /// Constant Qcs603 for TargetDevice
+        /// </summary>
+        public static readonly TargetDevice Qcs603 = new TargetDevice("qcs603");
+        /// <summary>
+        /// Constant Qcs605 for TargetDevice
+        /// </summary>
+        public static readonly TargetDevice Qcs605 = new TargetDevice("qcs605");
         /// <summary>
         /// Constant Rasp3b for TargetDevice
         /// </summary>
