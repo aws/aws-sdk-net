@@ -40,7 +40,6 @@ namespace Amazon.PersonalizeRuntime.Model
         /// A list of items in order of most likely interest to the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
         public List<PredictedItem> PersonalizedRanking
         {
             get { return this._personalizedRanking; }
