@@ -225,6 +225,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon EventBridge is a serverless event bus service that makes it easy to connect your applications with data from a variety of sources, including AWS services, partner applications, and your own applications.
 * [AWSSDK.FMS](https://www.nuget.org/packages/AWSSDK.FMS/)
 	* This release is the initial release version for AWS Firewall Manager, a new AWS service that makes it easy for customers to centrally configure WAF rules across all their resources (ALBs and CloudFront distributions) and across accounts.
+* [AWSSDK.ForecastQueryService](https://www.nuget.org/packages/AWSSDK.ForecastQueryService/)
+	* Amazon Forecast is a fully managed machine learning service that makes it easy for customers to generate accurate forecasts using their historical time-series data
 * [AWSSDK.ForecastService](https://www.nuget.org/packages/AWSSDK.ForecastService/)
 	* Amazon Forecast is a fully managed machine learning service that makes it easy for customers to generate accurate forecasts using their historical time-series data
 * [AWSSDK.FSx](https://www.nuget.org/packages/AWSSDK.FSx/)

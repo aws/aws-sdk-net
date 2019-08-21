@@ -1,3 +1,19 @@
+### 3.3.573.0 (2019-08-21 18:23 UTC)
+* ElastiCache (3.3.103.0)
+	* ElastiCache extends support for Scale down for Redis Cluster-mode enabled and disabled replication groups 
+* ForecastQueryService (3.3.100.0)
+	* Amazon Forecast is a fully managed machine learning service that makes it easy for customers to generate accurate forecasts using their historical time-series data
+* ForecastService (3.3.100.0)
+	* Amazon Forecast is a fully managed machine learning service that makes it easy for customers to generate accurate forecasts using their historical time-series data
+* PersonalizeRuntime (3.3.101.0)
+	* Increased limits on number of items recommended and reranked: The maximum number of results returned from getRecommendations API has been increased to 200. The maximum number of items which can be reranked via getPersonalizedRanking API has been increased to 200.
+* Rekognition (3.3.101.5)
+	* Documentation updates for Amazon Rekognition.
+* SageMaker (3.3.104.0)
+	* Amazon SageMaker now supports Amazon EFS and Amazon FSx for Lustre file systems as data sources for training machine learning models. Amazon SageMaker now supports running training jobs on ml.p3dn.24xlarge instance type. This instance type is offered as a limited private preview for certain SageMaker customers. If you are interested in joining the private preview, please reach out to the SageMaker Product Management team via AWS Support."
+* SQS (3.3.101.0)
+	* This release provides a way to add metadata tags to a queue when it is created. You can use tags to organize and identify your Amazon SQS queues for cost allocation.
+
 ### 3.3.572.0 (2019-08-20 18:42 UTC)
 * AlexaForBusiness (3.3.106.0)
 	* Adding support for optional locale input in CreateProfile and UpdateProfile APIs

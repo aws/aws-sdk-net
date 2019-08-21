@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.572.0",
+    "ProductVersion" : "3.3.573.0",
     "CoreVersion"    : "3.3.103.29",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -167,7 +167,7 @@
             "InPreview"               : false
         },
         "ElastiCache"       : {
-            "Version" : "3.3.102.34",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.29"
@@ -361,7 +361,7 @@
             "InPreview"               : false
         },
         "SQS"                       : {
-            "Version" : "3.3.100.65",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.29"
@@ -609,7 +609,7 @@
             "InPreview"               : false
         },
         "Rekognition"                     : {
-            "Version" : "3.3.101.4",
+            "Version" : "3.3.101.5",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.29"
@@ -945,7 +945,7 @@
             "InPreview"               : false
         },
         "SageMaker"                       : {
-            "Version" : "3.3.103.0",
+            "Version" : "3.3.104.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.29"
@@ -1433,7 +1433,7 @@
             "InPreview"               : false
         },
         "PersonalizeRuntime"              : {
-            "Version" : "3.3.100.34",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.29"
@@ -1490,6 +1490,22 @@
         },
         "LakeFormation"                   : {
             "Version" : "3.3.100.6",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.103.29"
+            },
+            "InPreview"               : false
+        },
+        "ForecastService"                 : {
+            "Version" : "3.3.100.0",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.103.29"
+            },
+            "InPreview"               : false
+        },
+        "ForecastQueryService"            : {
+            "Version" : "3.3.100.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.29"

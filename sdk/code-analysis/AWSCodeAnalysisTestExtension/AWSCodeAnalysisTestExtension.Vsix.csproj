@@ -352,6 +352,10 @@
       <Project>{7814E166-D2B9-432C-B5D7-49E0B665B400}</Project>
       <Name>AWSSDK.FMS.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ForecastQueryService/AWSSDK.ForecastQueryService.CodeAnalysis.csproj">
+      <Project>{99006693-45E0-431E-B024-C5D81307EFA1}</Project>
+      <Name>AWSSDK.ForecastQueryService.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/ForecastService/AWSSDK.ForecastService.CodeAnalysis.csproj">
       <Project>{F69573A3-075C-498B-84E6-9FE7BDF4F0E7}</Project>
       <Name>AWSSDK.ForecastService.CodeAnalysis</Name>
