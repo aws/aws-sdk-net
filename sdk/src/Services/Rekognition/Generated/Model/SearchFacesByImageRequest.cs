@@ -102,7 +102,8 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property FaceMatchThreshold. 
         /// <para>
         /// (Optional) Specifies the minimum confidence in the face match to return. For example,
-        /// don't return any matches where confidence in matches is less than 70%.
+        /// don't return any matches where confidence in matches is less than 70%. The default
+        /// value is 80%.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

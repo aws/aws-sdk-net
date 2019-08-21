@@ -29,17 +29,17 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the GetContentModeration operation.
-    /// Gets the content moderation analysis results for a Amazon Rekognition Video analysis
-    /// started by <a>StartContentModeration</a>.
+    /// Gets the unsafe content analysis results for a Amazon Rekognition Video analysis started
+    /// by <a>StartContentModeration</a>.
     /// 
     ///  
     /// <para>
-    /// Content moderation analysis of a video is an asynchronous operation. You start analysis
+    /// Unsafe content analysis of a video is an asynchronous operation. You start analysis
     /// by calling <a>StartContentModeration</a> which returns a job identifier (<code>JobId</code>).
     /// When analysis finishes, Amazon Rekognition Video publishes a completion status to
     /// the Amazon Simple Notification Service topic registered in the initial call to <code>StartContentModeration</code>.
-    /// To get the results of the content moderation analysis, first check that the status
-    /// value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetContentModeration</code>
+    /// To get the results of the unsafe content analysis, first check that the status value
+    /// published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetContentModeration</code>
     /// and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartContentModeration</code>.
     /// 
     /// </para>
@@ -50,8 +50,8 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>GetContentModeration</code> returns detected content moderation labels, and
-    /// the time they are detected, in an array, <code>ModerationLabels</code>, of <a>ContentModerationDetection</a>
+    ///  <code>GetContentModeration</code> returns detected unsafe content labels, and the
+    /// time they are detected, in an array, <code>ModerationLabels</code>, of <a>ContentModerationDetection</a>
     /// objects. 
     /// </para>
     ///  
@@ -86,8 +86,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The identifier for the content moderation job. Use <code>JobId</code> to identify
-        /// the job in a subsequent call to <code>GetContentModeration</code>.
+        /// The identifier for the unsafe content job. Use <code>JobId</code> to identify the
+        /// job in a subsequent call to <code>GetContentModeration</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -129,7 +129,7 @@ namespace Amazon.Rekognition.Model
         /// <para>
         /// If the previous response was incomplete (because there is more data to retrieve),
         /// Amazon Rekognition returns a pagination token in the response. You can use this pagination
-        /// token to retrieve the next set of content moderation labels.
+        /// token to retrieve the next set of unsafe content labels.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

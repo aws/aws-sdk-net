@@ -108,8 +108,9 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property JobTag. 
         /// <para>
-        /// Unique identifier you specify to identify the job in the completion status published
-        /// to the Amazon Simple Notification Service topic. 
+        /// An identifier you specify that's returned in the completion notification that's published
+        /// to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code>
+        /// to group related jobs and identify them in the completion notification.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
