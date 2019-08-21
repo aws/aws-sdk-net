@@ -106,6 +106,7 @@ namespace Amazon.SQS.Model
     {
         private Dictionary<string, string> _attributes = new Dictionary<string, string>();
         private string _queueName;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -326,6 +327,65 @@ namespace Amazon.SQS.Model
         internal bool IsSetQueueName()
         {
             return this._queueName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a
+        /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
+        /// Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you use queue tags, keep the following guidelines in mind:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Adding more than 50 tags to a queue isn't recommended.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tags are case-sensitive.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A new tag with a key identical to that of an existing tag overwrites the existing
+        /// tag.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For a full list of tag restrictions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Limits
+        /// Related to Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// To be able to tag a queue on creation, you must have the <code>sqs:CreateQueue</code>
+        /// and <code>sqs:TagQueue</code> permissions.
+        /// </para>
+        ///  
+        /// <para>
+        /// Cross-account permissions don't apply to this action. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
+        /// Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue
+        /// Service Developer Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }
