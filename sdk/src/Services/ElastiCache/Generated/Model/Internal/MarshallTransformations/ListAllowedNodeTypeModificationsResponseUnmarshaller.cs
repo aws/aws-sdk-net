@@ -81,6 +81,13 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
+                    if (context.TestExpression("ScaleDownModifications/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.ScaleDownModifications.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("ScaleUpModifications/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
