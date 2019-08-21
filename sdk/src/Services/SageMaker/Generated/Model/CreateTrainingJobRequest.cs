@@ -57,13 +57,13 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>InputDataConfig</code> - Describes the training dataset and the Amazon S3 location
-    /// where it is stored.
+    ///  <code>InputDataConfig</code> - Describes the training dataset and the Amazon S3,
+    /// EFS, or FSx location where it is stored.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>OutputDataConfig</code> - Identifies the Amazon S3 location where you want
-    /// Amazon SageMaker to save the results of model training. 
+    ///  <code>OutputDataConfig</code> - Identifies the Amazon S3 bucket where you want Amazon
+    /// SageMaker to save the results of model training. 
     /// </para>
     ///   </li> <li> 
     /// <para>
@@ -272,15 +272,16 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Algorithms can accept input data from one or more channels. For example, an algorithm
         /// might have two channels of input data, <code>training_data</code> and <code>validation_data</code>.
-        /// The configuration for each channel provides the S3 location where the input data is
-        /// stored. It also provides information about the stored data: the MIME type, compression
-        /// method, and whether the data is wrapped in RecordIO format. 
+        /// The configuration for each channel provides the S3, EFS, or FSx location where the
+        /// input data is stored. It also provides information about the stored data: the MIME
+        /// type, compression method, and whether the data is wrapped in RecordIO format. 
         /// </para>
         ///  
         /// <para>
         /// Depending on the input mode that the algorithm supports, Amazon SageMaker either copies
         /// input data files from an S3 bucket to a local directory in the Docker container, or
-        /// makes it available as input streams. 
+        /// makes it available as input streams. For example, if you specify an EFS location,
+        /// input data files will be made available as input streams. They do not need to be downloaded.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
@@ -299,7 +300,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property OutputDataConfig. 
         /// <para>
-        /// Specifies the path to the S3 bucket where you want to store model artifacts. Amazon
+        /// Specifies the path to the S3 location where you want to store model artifacts. Amazon
         /// SageMaker creates subfolders for the artifacts. 
         /// </para>
         /// </summary>

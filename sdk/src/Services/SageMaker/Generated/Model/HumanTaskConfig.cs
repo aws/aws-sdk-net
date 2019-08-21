@@ -196,6 +196,34 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        ///  <b>Canada (Central) (ca-central-1):</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ca-central-1:918755190332:function:PRE-BoundingBox</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ca-central-1:918755190332:function:PRE-ImageMultiClass</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ca-central-1:918755190332:function:PRE-SemanticSegmentation</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ca-central-1:918755190332:function:PRE-TextMultiClass</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ca-central-1:918755190332:function:PRE-NamedEntityRecognition</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         ///  <b>EU (Ireland) (eu-west-1):</b> 
         /// </para>
         ///  <ul> <li> 
@@ -218,6 +246,60 @@ namespace Amazon.SageMaker.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-NamedEntityRecognition</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>EU (London) (eu-west-2):</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:eu-west-2:487402164563:function:PRE-BoundingBox</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:eu-west-2:487402164563:function:PRE-ImageMultiClass</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:eu-west-2:487402164563:function:PRE-SemanticSegmentation</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:eu-west-2:487402164563:function:PRE-TextMultiClass</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:eu-west-2:487402164563:function:PRE-NamedEntityRecognition</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>EU Frankfurt (eu-central-1):</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:eu-central-1:203001061592:function:PRE-BoundingBox</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:eu-central-1:203001061592:function:PRE-ImageMultiClass</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:eu-central-1:203001061592:function:PRE-SemanticSegmentation</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:eu-central-1:203001061592:function:PRE-TextMultiClass</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:eu-central-1:203001061592:function:PRE-NamedEntityRecognition</code>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -247,6 +329,88 @@ namespace Amazon.SageMaker.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-NamedEntityRecognition</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Asia Pacific (Seoul) (ap-northeast-2):</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ap-northeast-2:845288260483:function:PRE-BoundingBox</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ap-northeast-2:845288260483:function:PRE-ImageMultiClass</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ap-northeast-2:845288260483:function:PRE-SemanticSegmentation</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ap-northeast-2:845288260483:function:PRE-TextMultiClass</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ap-northeast-2:845288260483:function:PRE-NamedEntityRecognition</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Asia Pacific (Mumbai) (ap-south-1):</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ap-south-1:565803892007:function:PRE-BoundingBox</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ap-south-1:565803892007:function:PRE-ImageMultiClass</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ap-south-1:565803892007:function:PRE-SemanticSegmentation</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ap-south-1:565803892007:function:PRE-TextMultiClass</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ap-south-1:565803892007:function:PRE-NamedEntityRecognition</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Asia Pacific (Singapore) (ap-southeast-1):</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ap-southeast-1:377565633583:function:PRE-BoundingBox</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ap-southeast-1:377565633583:function:PRE-ImageMultiClass</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ap-southeast-1:377565633583:function:PRE-SemanticSegmentation</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ap-southeast-1:377565633583:function:PRE-TextMultiClass</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ap-southeast-1:377565633583:function:PRE-NamedEntityRecognition</code>
         /// 
         /// </para>
         ///  </li> </ul> 

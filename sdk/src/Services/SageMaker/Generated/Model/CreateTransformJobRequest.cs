@@ -133,7 +133,7 @@ namespace Amazon.SageMaker.Model
         /// The input filter provided allows you to exclude input data that is not needed for
         /// inference in a batch transform job. The output filter provided allows you to include
         /// input data relevant to interpreting the predictions in the output from the job. For
-        /// more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate
+        /// more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate
         /// Prediction Results with their Corresponding Input Records</a>.
         /// </para>
         /// </summary>
@@ -177,7 +177,7 @@ namespace Amazon.SageMaker.Model
         /// Amazon SageMaker checks the optional execution-parameters to determine the optimal
         /// settings for your chosen algorithm. If the execution-parameters endpoint is not enabled,
         /// the default value is <code>1</code>. For more information on execution-parameters,
-        /// see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How
         /// Containers Serve Requests</a>. For built-in algorithms, you don't need to set a value
         /// for <code>MaxConcurrentTransforms</code>.
         /// </para>

@@ -38,7 +38,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property UiTemplateS3Uri. 
         /// <para>
         /// The Amazon S3 bucket location of the UI template. For more information about the contents
-        /// of a UI template, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
+        /// of a UI template, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
         /// Creating Your Custom Labeling Task Template</a>.
         /// </para>
         /// </summary>

@@ -58,7 +58,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// An array of hyperparameter tuning jobs that are used as the starting point for the
         /// new hyperparameter tuning job. For more information about warm starting a hyperparameter
-        /// tuning job, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-warm-start.html">Using
+        /// tuning job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-warm-start.html">Using
         /// a Previous Hyperparameter Tuning Job as a Starting Point</a>.
         /// </para>
         ///  

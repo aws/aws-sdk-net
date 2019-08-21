@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DataSource Marshaller
+    /// FileSystemDataSource Marshaller
     /// </summary>       
-    public class DataSourceMarshaller : IRequestMarshaller<DataSource, JsonMarshallerContext> 
+    public class FileSystemDataSourceMarshaller : IRequestMarshaller<FileSystemDataSource, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,30 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DataSource requestObject, JsonMarshallerContext context)
+        public void Marshall(FileSystemDataSource requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetFileSystemDataSource())
+            if(requestObject.IsSetDirectoryPath())
             {
-                context.Writer.WritePropertyName("FileSystemDataSource");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = FileSystemDataSourceMarshaller.Instance;
-                marshaller.Marshall(requestObject.FileSystemDataSource, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("DirectoryPath");
+                context.Writer.Write(requestObject.DirectoryPath);
             }
 
-            if(requestObject.IsSetS3DataSource())
+            if(requestObject.IsSetFileSystemAccessMode())
             {
-                context.Writer.WritePropertyName("S3DataSource");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("FileSystemAccessMode");
+                context.Writer.Write(requestObject.FileSystemAccessMode);
+            }
 
-                var marshaller = S3DataSourceMarshaller.Instance;
-                marshaller.Marshall(requestObject.S3DataSource, context);
+            if(requestObject.IsSetFileSystemId())
+            {
+                context.Writer.WritePropertyName("FileSystemId");
+                context.Writer.Write(requestObject.FileSystemId);
+            }
 
-                context.Writer.WriteObjectEnd();
+            if(requestObject.IsSetFileSystemType())
+            {
+                context.Writer.WritePropertyName("FileSystemType");
+                context.Writer.Write(requestObject.FileSystemType);
             }
 
         }
@@ -72,7 +74,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static DataSourceMarshaller Instance = new DataSourceMarshaller();
+        public readonly static FileSystemDataSourceMarshaller Instance = new FileSystemDataSourceMarshaller();
 
     }
 }

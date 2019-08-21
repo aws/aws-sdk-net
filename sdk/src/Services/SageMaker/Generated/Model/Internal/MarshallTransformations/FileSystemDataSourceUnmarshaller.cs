@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DataSource Object
+    /// Response Unmarshaller for FileSystemDataSource Object
     /// </summary>  
-    public class DataSourceUnmarshaller : IUnmarshaller<DataSource, XmlUnmarshallerContext>, IUnmarshaller<DataSource, JsonUnmarshallerContext>
+    public class FileSystemDataSourceUnmarshaller : IUnmarshaller<FileSystemDataSource, XmlUnmarshallerContext>, IUnmarshaller<FileSystemDataSource, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DataSource IUnmarshaller<DataSource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FileSystemDataSource IUnmarshaller<FileSystemDataSource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,39 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DataSource Unmarshall(JsonUnmarshallerContext context)
+        public FileSystemDataSource Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DataSource unmarshalledObject = new DataSource();
+            FileSystemDataSource unmarshalledObject = new FileSystemDataSource();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("FileSystemDataSource", targetDepth))
+                if (context.TestExpression("DirectoryPath", targetDepth))
                 {
-                    var unmarshaller = FileSystemDataSourceUnmarshaller.Instance;
-                    unmarshalledObject.FileSystemDataSource = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DirectoryPath = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("S3DataSource", targetDepth))
+                if (context.TestExpression("FileSystemAccessMode", targetDepth))
                 {
-                    var unmarshaller = S3DataSourceUnmarshaller.Instance;
-                    unmarshalledObject.S3DataSource = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FileSystemAccessMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FileSystemId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FileSystemId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FileSystemType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FileSystemType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +94,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static DataSourceUnmarshaller _instance = new DataSourceUnmarshaller();        
+        private static FileSystemDataSourceUnmarshaller _instance = new FileSystemDataSourceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DataSourceUnmarshaller Instance
+        public static FileSystemDataSourceUnmarshaller Instance
         {
             get
             {

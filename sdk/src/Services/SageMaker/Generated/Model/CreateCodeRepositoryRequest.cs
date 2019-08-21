@@ -37,7 +37,7 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
-    /// The repository can be hosted either in <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+    /// The repository can be hosted either in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
     /// CodeCommit</a> or in any other Git repository.
     /// </para>
     /// </summary>

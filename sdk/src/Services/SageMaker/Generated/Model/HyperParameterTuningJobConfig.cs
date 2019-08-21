@@ -102,7 +102,7 @@ namespace Amazon.SageMaker.Model
         /// Specifies how hyperparameter tuning chooses the combinations of hyperparameter values
         /// to use for the training job it launches. To use the Bayesian search stategy, set this
         /// to <code>Bayesian</code>. To randomly search, set it to <code>Random</code>. For information
-        /// about search strategies, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
+        /// about search strategies, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
         /// Hyperparameter Tuning Works</a>.
         /// </para>
         /// </summary>
@@ -133,7 +133,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Amazon SageMaker stops training jobs launched by the hyperparameter tuning job when
         /// they are unlikely to perform better than previously completed training jobs. For more
-        /// information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
+        /// information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
         /// Training Jobs Early</a>.
         /// </para>
         ///  </dd> </dl>
