@@ -595,6 +595,60 @@ namespace Amazon.DataSync
 
 
     /// <summary>
+    /// Constants used for properties of type SmbVersion.
+    /// </summary>
+    public class SmbVersion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTOMATIC for SmbVersion
+        /// </summary>
+        public static readonly SmbVersion AUTOMATIC = new SmbVersion("AUTOMATIC");
+        /// <summary>
+        /// Constant SMB2 for SmbVersion
+        /// </summary>
+        public static readonly SmbVersion SMB2 = new SmbVersion("SMB2");
+        /// <summary>
+        /// Constant SMB3 for SmbVersion
+        /// </summary>
+        public static readonly SmbVersion SMB3 = new SmbVersion("SMB3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SmbVersion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SmbVersion FindValue(string value)
+        {
+            return FindValue<SmbVersion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SmbVersion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TaskExecutionStatus.
     /// </summary>
     public class TaskExecutionStatus : ConstantClass

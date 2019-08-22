@@ -499,6 +499,46 @@ namespace Amazon.DataSync
 
         #endregion
         
+        #region  CreateLocationSmb
+
+        internal virtual CreateLocationSmbResponse CreateLocationSmb(CreateLocationSmbRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocationSmbRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocationSmbResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLocationSmbResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an endpoint for a Server Message Block (SMB) file system.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocationSmb service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLocationSmb service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationSmb">REST API Reference for CreateLocationSmb Operation</seealso>
+        public virtual Task<CreateLocationSmbResponse> CreateLocationSmbAsync(CreateLocationSmbRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocationSmbRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocationSmbResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateLocationSmbResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateTask
 
         internal virtual CreateTaskResponse CreateTask(CreateTaskRequest request)
@@ -839,6 +879,46 @@ namespace Amazon.DataSync
             options.ResponseUnmarshaller = DescribeLocationS3ResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeLocationS3Response>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeLocationSmb
+
+        internal virtual DescribeLocationSmbResponse DescribeLocationSmb(DescribeLocationSmbRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocationSmbRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocationSmbResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLocationSmbResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns metadata, such as the path and user information about a SMB location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocationSmb service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLocationSmb service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationSmb">REST API Reference for DescribeLocationSmb Operation</seealso>
+        public virtual Task<DescribeLocationSmbResponse> DescribeLocationSmbAsync(DescribeLocationSmbRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocationSmbRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocationSmbResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeLocationSmbResponse>(request, options, cancellationToken);
         }
 
         #endregion

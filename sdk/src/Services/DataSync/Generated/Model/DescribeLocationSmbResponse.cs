@@ -28,20 +28,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// DescribeLocationNfsResponse
+    /// DescribeLocationSmbResponse
     /// </summary>
-    public partial class DescribeLocationNfsResponse : AmazonWebServiceResponse
+    public partial class DescribeLocationSmbResponse : AmazonWebServiceResponse
     {
+        private List<string> _agentArns = new List<string>();
         private DateTime? _creationTime;
+        private string _domain;
         private string _locationArn;
         private string _locationUri;
-        private NfsMountOptions _mountOptions;
-        private OnPremConfig _onPremConfig;
+        private SmbMountOptions _mountOptions;
+        private string _user;
+
+        /// <summary>
+        /// Gets and sets the property AgentArns. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the source SMB file system location that is created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public List<string> AgentArns
+        {
+            get { return this._agentArns; }
+            set { this._agentArns = value; }
+        }
+
+        // Check to see if AgentArns property is set
+        internal bool IsSetAgentArns()
+        {
+            return this._agentArns != null && this._agentArns.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The time that the NFS location was created.
+        /// The time that the SMB location was created.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -57,9 +78,28 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Domain. 
+        /// <para>
+        /// The name of the domain that the SMB server belongs to.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=253)]
+        public string Domain
+        {
+            get { return this._domain; }
+            set { this._domain = value; }
+        }
+
+        // Check to see if Domain property is set
+        internal bool IsSetDomain()
+        {
+            return this._domain != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LocationArn. 
         /// <para>
-        /// The Amazon resource Name (ARN) of the NFS location that was described.
+        /// The Amazon resource Name (ARN) of the SMB location that was described.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -78,7 +118,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationUri. 
         /// <para>
-        /// The URL of the source NFS location that was described.
+        /// The URL of the source SBM location that was described.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4355)]
@@ -97,10 +137,10 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property MountOptions. 
         /// <para>
-        /// The NFS mount options that DataSync used to mount your NFS share.
+        /// The mount options that are available for DataSync to use to access an SMB location.
         /// </para>
         /// </summary>
-        public NfsMountOptions MountOptions
+        public SmbMountOptions MountOptions
         {
             get { return this._mountOptions; }
             set { this._mountOptions = value; }
@@ -113,18 +153,22 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OnPremConfig.
+        /// Gets and sets the property User. 
+        /// <para>
+        /// The user who is logged on the SMB server.
+        /// </para>
         /// </summary>
-        public OnPremConfig OnPremConfig
+        [AWSProperty(Max=104)]
+        public string User
         {
-            get { return this._onPremConfig; }
-            set { this._onPremConfig = value; }
+            get { return this._user; }
+            set { this._user = value; }
         }
 
-        // Check to see if OnPremConfig property is set
-        internal bool IsSetOnPremConfig()
+        // Check to see if User property is set
+        internal bool IsSetUser()
         {
-            return this._onPremConfig != null;
+            return this._user != null;
         }
 
     }
