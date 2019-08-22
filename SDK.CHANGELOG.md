@@ -1,3 +1,14 @@
+### 3.3.574.0 (2019-08-22 18:31 UTC)
+* DataSync (3.3.104.0)
+	* This release adds support for SMB location type.
+* RDS (3.3.108.0)
+	* This release allows users to enable RDS Data API while creating Aurora Serverless databases. 
+* Core 3.3.103.30
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.573.0 (2019-08-21 18:23 UTC)
 * ElastiCache (3.3.103.0)
 	* ElastiCache extends support for Scale down for Redis Cluster-mode enabled and disabled replication groups 
