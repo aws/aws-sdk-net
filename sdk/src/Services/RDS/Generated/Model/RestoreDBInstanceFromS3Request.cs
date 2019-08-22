@@ -389,7 +389,14 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
         /// A value that indicates whether to enable mapping of AWS Identity and Access Management
-        /// (IAM) accounts to database accounts. By default, mapping is disabled.
+        /// (IAM) accounts to database accounts. By default, mapping is disabled. For information
+        /// about the supported DB engines, see <a>CreateDBInstance</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
+        /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User
+        /// Guide.</i> 
         /// </para>
         /// </summary>
         public bool EnableIAMDatabaseAuthentication
@@ -476,7 +483,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property Iops. 
         /// <para>
         /// The amount of Provisioned IOPS (input/output operations per second) to allocate initially
-        /// for the DB instance. For information about valid Iops values, see see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
+        /// for the DB instance. For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
         /// RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User
         /// Guide.</i> 
         /// </para>

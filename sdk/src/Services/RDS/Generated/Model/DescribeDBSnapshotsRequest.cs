@@ -132,8 +132,34 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// This parameter is not currently supported.
+        /// A filter that specifies one or more DB snapshots to describe.
         /// </para>
+        ///  
+        /// <para>
+        /// Supported filters:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon
+        /// Resource Names (ARNs).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>db-snapshot-id</code> - Accepts DB snapshot identifiers.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>dbi-resource-id</code> - Accepts identifiers of source DB instances.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>snapshot-type</code> - Accepts types of DB snapshots.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>engine</code> - Accepts names of database engines.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {

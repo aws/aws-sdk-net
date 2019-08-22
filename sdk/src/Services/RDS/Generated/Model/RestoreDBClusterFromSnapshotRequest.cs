@@ -318,6 +318,11 @@ namespace Amazon.RDS.Model
         /// A value that indicates whether to enable mapping of AWS Identity and Access Management
         /// (IAM) accounts to database accounts. By default, mapping is disabled.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
+        /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// </para>
         /// </summary>
         public bool EnableIAMDatabaseAuthentication
         {
@@ -381,6 +386,53 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property EngineVersion. 
         /// <para>
         /// The version of the database engine to use for the new DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible
+        /// Aurora), use the following command:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL
+        /// 5.7-compatible Aurora), use the following command:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// To list all of the available engine versions for <code>aurora-postgresql</code>, use
+        /// the following command:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Aurora MySQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+        /// <code>5.7.mysql_aurora.2.04.5</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Aurora PostgreSQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>9.6.3</code>, <code>10.7</code> 
         /// </para>
         /// </summary>
         public string EngineVersion

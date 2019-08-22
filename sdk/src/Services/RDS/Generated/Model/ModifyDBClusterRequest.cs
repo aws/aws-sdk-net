@@ -363,6 +363,11 @@ namespace Amazon.RDS.Model
         /// A value that indicates whether to enable mapping of AWS Identity and Access Management
         /// (IAM) accounts to database accounts. By default, mapping is disabled.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
+        /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// </para>
         /// </summary>
         public bool EnableIAMDatabaseAuthentication
         {
@@ -385,7 +390,33 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For a list of valid engine versions, use <a>DescribeDBEngineVersions</a>.
+        /// To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible
+        /// Aurora), use the following command:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL
+        /// 5.7-compatible Aurora), use the following command:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// To list all of the available engine versions for <code>aurora-postgresql</code>, use
+        /// the following command:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
+        /// 
         /// </para>
         /// </summary>
         public string EngineVersion

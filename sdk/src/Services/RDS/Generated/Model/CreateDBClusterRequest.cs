@@ -62,6 +62,7 @@ namespace Amazon.RDS.Model
         private string _dbSubnetGroupName;
         private bool? _deletionProtection;
         private List<string> _enableCloudwatchLogsExports = new List<string>();
+        private bool? _enableHttpEndpoint;
         private bool? _enableIAMDatabaseAuthentication;
         private string _engine;
         private string _engineMode;
@@ -356,10 +357,45 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnableHttpEndpoint. 
+        /// <para>
+        /// A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless
+        /// DB cluster. By default, the HTTP endpoint is disabled.
+        /// </para>
+        ///  
+        /// <para>
+        /// When enabled, the HTTP endpoint provides a connectionless web service API for running
+        /// SQL queries on the Aurora Serverless DB cluster. You can also query your database
+        /// from inside the RDS console with the query editor.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+        /// the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool EnableHttpEndpoint
+        {
+            get { return this._enableHttpEndpoint.GetValueOrDefault(); }
+            set { this._enableHttpEndpoint = value; }
+        }
+
+        // Check to see if EnableHttpEndpoint property is set
+        internal bool IsSetEnableHttpEndpoint()
+        {
+            return this._enableHttpEndpoint.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
         /// A value that indicates whether to enable mapping of AWS Identity and Access Management
         /// (IAM) accounts to database accounts. By default, mapping is disabled.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
+        /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i> 
         /// </para>
         /// </summary>
         public bool EnableIAMDatabaseAuthentication
@@ -424,11 +460,42 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
+        /// To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible
+        /// Aurora), use the following command:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL
+        /// 5.7-compatible Aurora), use the following command:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// To list all of the available engine versions for <code>aurora-postgresql</code>, use
+        /// the following command:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Aurora MySQL</b> 
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>5.6.10a</code>, <code>5.7.12</code> 
+        /// Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+        /// <code>5.7.mysql_aurora.2.04.5</code> 
         /// </para>
         ///  
         /// <para>
@@ -436,7 +503,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>9.6.3</code> 
+        /// Example: <code>9.6.3</code>, <code>10.7</code> 
         /// </para>
         /// </summary>
         public string EngineVersion

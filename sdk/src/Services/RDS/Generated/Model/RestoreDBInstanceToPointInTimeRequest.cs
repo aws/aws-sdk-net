@@ -366,21 +366,15 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
         /// A value that indicates whether to enable mapping of AWS Identity and Access Management
-        /// (IAM) accounts to database accounts. By default, mapping is disabled.
+        /// (IAM) accounts to database accounts. By default, mapping is disabled. For information
+        /// about the supported DB engines, see <a>CreateDBInstance</a>.
         /// </para>
         ///  
         /// <para>
-        /// You can enable IAM database authentication for the following database engines
+        /// For more information about IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
+        /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User
+        /// Guide.</i> 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// For MySQL 5.6, minor version 5.6.34 or higher
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// For MySQL 5.7, minor version 5.7.16 or higher
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public bool EnableIAMDatabaseAuthentication
         {

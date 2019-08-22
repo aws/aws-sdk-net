@@ -830,7 +830,32 @@ namespace Amazon.RDS.Model
         /// <para>
         /// For MySQL 5.7, minor version 5.7.16 or higher
         /// </para>
-        ///  </li> </ul>
+        ///  </li> <li> 
+        /// <para>
+        /// For MySQL 8.0, minor version 8.0.16 or higher
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>PostgreSQL</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For PostgreSQL 9.5, minor version 9.5.15 or higher
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PostgreSQL 9.6, minor version 9.6.11 or higher
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PostgreSQL 10.6, 10.7, and 10.9
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
+        /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User
+        /// Guide.</i> 
+        /// </para>
         /// </summary>
         public bool EnableIAMDatabaseAuthentication
         {
@@ -1040,8 +1065,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property Iops. 
         /// <para>
         /// The amount of Provisioned IOPS (input/output operations per second) to be initially
-        /// allocated for the DB instance. For information about valid Iops values, see see <a
-        /// href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
+        /// allocated for the DB instance. For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
         /// RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User
         /// Guide</i>. 
         /// </para>

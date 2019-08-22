@@ -92,6 +92,12 @@ namespace Amazon.RDS.Model
         /// Resource Names (ARNs). The results list will only include information about the DB
         /// instances identified by these ARNs.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results
+        /// list will only include information about the DB instances identified by these resource
+        /// identifiers.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
