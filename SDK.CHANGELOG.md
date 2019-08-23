@@ -1,3 +1,16 @@
+### 3.3.575.0 (2019-08-23 18:12 UTC)
+* EC2 (3.3.127.0)
+	* This release of EC2 VM Import Export adds support for exporting Amazon Machine Image(AMI)s to a VM file
+* MediaPackageVod (3.3.101.0)
+	* Adds optional Constant Initialization Vector (IV) to HLS Encryption for MediaPackage VOD.
+* TranscribeService (3.3.106.0)
+	* Amazon Transcribe - support transcriptions from audio sources in Russian (ru-RU) and Chinese (zh-CN).
+* Core 3.3.103.31
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.574.0 (2019-08-22 18:31 UTC)
 * DataSync (3.3.104.0)
 	* This release adds support for SMB location type.
