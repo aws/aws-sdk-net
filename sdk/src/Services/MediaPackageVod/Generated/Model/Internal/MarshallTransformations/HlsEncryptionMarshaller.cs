@@ -45,6 +45,12 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HlsEncryption requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetConstantInitializationVector())
+            {
+                context.Writer.WritePropertyName("constantInitializationVector");
+                context.Writer.Write(requestObject.ConstantInitializationVector);
+            }
+
             if(requestObject.IsSetEncryptionMethod())
             {
                 context.Writer.WritePropertyName("encryptionMethod");

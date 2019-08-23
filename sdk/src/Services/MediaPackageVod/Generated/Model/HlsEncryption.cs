@@ -32,8 +32,26 @@ namespace Amazon.MediaPackageVod.Model
     /// </summary>
     public partial class HlsEncryption
     {
+        private string _constantInitializationVector;
         private EncryptionMethod _encryptionMethod;
         private SpekeKeyProvider _spekeKeyProvider;
+
+        /// <summary>
+        /// Gets and sets the property ConstantInitializationVector. A constant initialization
+        /// vector for encryption (optional).When not specified the initialization vector will
+        /// be periodically rotated.
+        /// </summary>
+        public string ConstantInitializationVector
+        {
+            get { return this._constantInitializationVector; }
+            set { this._constantInitializationVector = value; }
+        }
+
+        // Check to see if ConstantInitializationVector property is set
+        internal bool IsSetConstantInitializationVector()
+        {
+            return this._constantInitializationVector != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EncryptionMethod. The encryption method to use.
