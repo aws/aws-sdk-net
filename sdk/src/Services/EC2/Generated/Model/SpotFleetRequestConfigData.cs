@@ -75,8 +75,8 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// If the allocation strategy is <code>capacityOptimized</code>, Spot Fleet launches
-        /// instances from Spot Instance pools that are optimally chosen based on the available
-        /// Spot Instance capacity.
+        /// instances from Spot Instance pools with optimal capacity for the number of instances
+        /// that are launching.
         /// </para>
         /// </summary>
         public AllocationStrategy AllocationStrategy

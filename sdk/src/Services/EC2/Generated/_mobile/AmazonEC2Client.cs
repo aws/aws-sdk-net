@@ -7066,6 +7066,40 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeExportImageTasks
+
+        internal virtual DescribeExportImageTasksResponse DescribeExportImageTasks(DescribeExportImageTasksRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeExportImageTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeExportImageTasksResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeExportImageTasksResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the specified export image tasks or all your export image tasks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExportImageTasks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeExportImageTasks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportImageTasks">REST API Reference for DescribeExportImageTasks Operation</seealso>
+        public virtual Task<DescribeExportImageTasksResponse> DescribeExportImageTasksAsync(DescribeExportImageTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeExportImageTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeExportImageTasksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeExportImageTasksResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeExportTasks
 
         internal virtual DescribeExportTasksResponse DescribeExportTasks()
@@ -7083,7 +7117,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the specified export tasks or all your export tasks.
+        /// Describes the specified export instance tasks or all your export instance tasks.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -7099,7 +7133,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the specified export tasks or all your export tasks.
+        /// Describes the specified export instance tasks or all your export instance tasks.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeExportTasks service method.</param>
         /// <param name="cancellationToken">
@@ -12237,6 +12271,42 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ExportImage
+
+        internal virtual ExportImageResponse ExportImage(ExportImageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportImageResponseUnmarshaller.Instance;
+
+            return Invoke<ExportImageResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Exports an Amazon Machine Image (AMI) to a VM file. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport_image.html">Exporting
+        /// a VM Directory from an Amazon Machine Image (AMI)</a> in the <i>VM Import/Export User
+        /// Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportImage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExportImage service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportImage">REST API Reference for ExportImage Operation</seealso>
+        public virtual Task<ExportImageResponse> ExportImageAsync(ExportImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportImageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ExportImageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ExportTransitGatewayRoutes
 
         internal virtual ExportTransitGatewayRoutesResponse ExportTransitGatewayRoutes(ExportTransitGatewayRoutesRequest request)
@@ -13162,8 +13232,8 @@ namespace Amazon.EC2
         /// using the Spot Instance pool with the lowest price. If the allocation strategy is
         /// <code>diversified</code>, the EC2 Fleet distributes the instances across the Spot
         /// Instance pools. If the allocation strategy is <code>capacityOptimized</code>, EC2
-        /// Fleet launches instances from Spot Instance pools that are optimally chosen based
-        /// on the available Spot Instance capacity.
+        /// Fleet launches instances from Spot Instance pools with optimal capacity for the number
+        /// of instances that are launching.
         /// </para>
         ///  
         /// <para>
@@ -13882,8 +13952,8 @@ namespace Amazon.EC2
         /// instances using the Spot Instance pool with the lowest price. If the allocation strategy
         /// is <code>diversified</code>, the Spot Fleet distributes the instances across the Spot
         /// Instance pools. If the allocation strategy is <code>capacityOptimized</code>, Spot
-        /// Fleet launches instances from Spot Instance pools that are optimally chosen based
-        /// on the available Spot Instance capacity.
+        /// Fleet launches instances from Spot Instance pools with optimal capacity for the number
+        /// of instances that are launching.
         /// </para>
         ///  
         /// <para>
@@ -16310,8 +16380,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about configuring your operating system to generate a crash dump
-        /// when a kernel panic or stop error occurs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html#diagnostic-interrupt">Send
-        /// a Diagnostic Interrupt</a> (Linux instances) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/unreachable-instance.html#diagnostic-interrupt">Send
+        /// when a kernel panic or stop error occurs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/diagnostic-interrupt.html">Send
+        /// a Diagnostic Interrupt</a> (Linux instances) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/diagnostic-interrupt.html">Send
         /// a Diagnostic Interrupt</a> (Windows instances).
         /// </para>
         /// </summary>

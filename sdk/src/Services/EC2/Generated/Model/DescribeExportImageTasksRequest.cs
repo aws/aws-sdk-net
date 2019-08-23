@@ -28,16 +28,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeImportImageTasks operation.
-    /// Displays details about an import virtual machine or import snapshot tasks that are
-    /// already created.
+    /// Container for the parameters to the DescribeExportImageTasks operation.
+    /// Describes the specified export image tasks or all your export image tasks.
     /// </summary>
-    public partial class DescribeImportImageTasksRequest : AmazonEC2Request
+    public partial class DescribeExportImageTasksRequest : AmazonEC2Request
     {
+        private List<string> _exportImageTaskIds = new List<string>();
         private List<Filter> _filters = new List<Filter>();
-        private List<string> _importTaskIds = new List<string>();
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property ExportImageTaskIds. 
+        /// <para>
+        /// The IDs of the export image tasks.
+        /// </para>
+        /// </summary>
+        public List<string> ExportImageTaskIds
+        {
+            get { return this._exportImageTaskIds; }
+            set { this._exportImageTaskIds = value; }
+        }
+
+        // Check to see if ExportImageTaskIds property is set
+        internal bool IsSetExportImageTaskIds()
+        {
+            return this._exportImageTaskIds != null && this._exportImageTaskIds.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -59,29 +76,12 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ImportTaskIds. 
-        /// <para>
-        /// The IDs of the import image tasks.
-        /// </para>
-        /// </summary>
-        public List<string> ImportTaskIds
-        {
-            get { return this._importTaskIds; }
-            set { this._importTaskIds = value; }
-        }
-
-        // Check to see if ImportTaskIds property is set
-        internal bool IsSetImportTaskIds()
-        {
-            return this._importTaskIds != null && this._importTaskIds.Count > 0; 
-        }
-
-        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return in a single call.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=500)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

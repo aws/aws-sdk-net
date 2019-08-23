@@ -47,8 +47,8 @@ namespace Amazon.EC2.Model
     /// using the Spot Instance pool with the lowest price. If the allocation strategy is
     /// <code>diversified</code>, the EC2 Fleet distributes the instances across the Spot
     /// Instance pools. If the allocation strategy is <code>capacityOptimized</code>, EC2
-    /// Fleet launches instances from Spot Instance pools that are optimally chosen based
-    /// on the available Spot Instance capacity.
+    /// Fleet launches instances from Spot Instance pools with optimal capacity for the number
+    /// of instances that are launching.
     /// </para>
     ///  
     /// <para>

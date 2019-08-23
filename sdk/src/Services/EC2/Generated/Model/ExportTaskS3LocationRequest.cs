@@ -28,49 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The CPU options for the instance. Both the core count and threads per core must be
-    /// specified in the request.
+    /// Describes the destination for an export image task.
     /// </summary>
-    public partial class LaunchTemplateCpuOptionsRequest
+    public partial class ExportTaskS3LocationRequest
     {
-        private int? _coreCount;
-        private int? _threadsPerCore;
+        private string _s3Bucket;
+        private string _s3Prefix;
 
         /// <summary>
-        /// Gets and sets the property CoreCount. 
+        /// Gets and sets the property S3Bucket. 
         /// <para>
-        /// The number of CPU cores for the instance.
+        /// The destination S3 bucket.
         /// </para>
         /// </summary>
-        public int CoreCount
+        [AWSProperty(Required=true)]
+        public string S3Bucket
         {
-            get { return this._coreCount.GetValueOrDefault(); }
-            set { this._coreCount = value; }
+            get { return this._s3Bucket; }
+            set { this._s3Bucket = value; }
         }
 
-        // Check to see if CoreCount property is set
-        internal bool IsSetCoreCount()
+        // Check to see if S3Bucket property is set
+        internal bool IsSetS3Bucket()
         {
-            return this._coreCount.HasValue; 
+            return this._s3Bucket != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ThreadsPerCore. 
+        /// Gets and sets the property S3Prefix. 
         /// <para>
-        /// The number of threads per CPU core. To disable multithreading for the instance, specify
-        /// a value of 1. Otherwise, specify the default value of 2.
+        /// The prefix (logical hierarchy) in the bucket.
         /// </para>
         /// </summary>
-        public int ThreadsPerCore
+        public string S3Prefix
         {
-            get { return this._threadsPerCore.GetValueOrDefault(); }
-            set { this._threadsPerCore = value; }
+            get { return this._s3Prefix; }
+            set { this._s3Prefix = value; }
         }
 
-        // Check to see if ThreadsPerCore property is set
-        internal bool IsSetThreadsPerCore()
+        // Check to see if S3Prefix property is set
+        internal bool IsSetS3Prefix()
         {
-            return this._threadsPerCore.HasValue; 
+            return this._s3Prefix != null;
         }
 
     }

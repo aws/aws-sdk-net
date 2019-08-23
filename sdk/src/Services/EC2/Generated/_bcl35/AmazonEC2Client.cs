@@ -9979,10 +9979,64 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeExportImageTasks
+
+        /// <summary>
+        /// Describes the specified export image tasks or all your export image tasks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExportImageTasks service method.</param>
+        /// 
+        /// <returns>The response from the DescribeExportImageTasks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportImageTasks">REST API Reference for DescribeExportImageTasks Operation</seealso>
+        public virtual DescribeExportImageTasksResponse DescribeExportImageTasks(DescribeExportImageTasksRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeExportImageTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeExportImageTasksResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeExportImageTasksResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeExportImageTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExportImageTasks operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeExportImageTasks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportImageTasks">REST API Reference for DescribeExportImageTasks Operation</seealso>
+        public virtual IAsyncResult BeginDescribeExportImageTasks(DescribeExportImageTasksRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeExportImageTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeExportImageTasksResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeExportImageTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeExportImageTasks.</param>
+        /// 
+        /// <returns>Returns a  DescribeExportImageTasksResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportImageTasks">REST API Reference for DescribeExportImageTasks Operation</seealso>
+        public virtual DescribeExportImageTasksResponse EndDescribeExportImageTasks(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeExportImageTasksResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeExportTasks
 
         /// <summary>
-        /// Describes the specified export tasks or all your export tasks.
+        /// Describes the specified export instance tasks or all your export instance tasks.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeExportTasks service method, as returned by EC2.</returns>
@@ -9993,7 +10047,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describes the specified export tasks or all your export tasks.
+        /// Describes the specified export instance tasks or all your export instance tasks.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeExportTasks service method.</param>
         /// 
@@ -17026,6 +17080,62 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ExportImage
+
+        /// <summary>
+        /// Exports an Amazon Machine Image (AMI) to a VM file. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport_image.html">Exporting
+        /// a VM Directory from an Amazon Machine Image (AMI)</a> in the <i>VM Import/Export User
+        /// Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportImage service method.</param>
+        /// 
+        /// <returns>The response from the ExportImage service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportImage">REST API Reference for ExportImage Operation</seealso>
+        public virtual ExportImageResponse ExportImage(ExportImageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportImageResponseUnmarshaller.Instance;
+
+            return Invoke<ExportImageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExportImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExportImage operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExportImage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportImage">REST API Reference for ExportImage Operation</seealso>
+        public virtual IAsyncResult BeginExportImage(ExportImageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportImageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExportImage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExportImage.</param>
+        /// 
+        /// <returns>Returns a  ExportImageResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportImage">REST API Reference for ExportImage Operation</seealso>
+        public virtual ExportImageResponse EndExportImage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ExportImageResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ExportTransitGatewayRoutes
 
         /// <summary>
@@ -18380,8 +18490,8 @@ namespace Amazon.EC2
         /// using the Spot Instance pool with the lowest price. If the allocation strategy is
         /// <code>diversified</code>, the EC2 Fleet distributes the instances across the Spot
         /// Instance pools. If the allocation strategy is <code>capacityOptimized</code>, EC2
-        /// Fleet launches instances from Spot Instance pools that are optimally chosen based
-        /// on the available Spot Instance capacity.
+        /// Fleet launches instances from Spot Instance pools with optimal capacity for the number
+        /// of instances that are launching.
         /// </para>
         ///  
         /// <para>
@@ -19400,8 +19510,8 @@ namespace Amazon.EC2
         /// instances using the Spot Instance pool with the lowest price. If the allocation strategy
         /// is <code>diversified</code>, the Spot Fleet distributes the instances across the Spot
         /// Instance pools. If the allocation strategy is <code>capacityOptimized</code>, Spot
-        /// Fleet launches instances from Spot Instance pools that are optimally chosen based
-        /// on the available Spot Instance capacity.
+        /// Fleet launches instances from Spot Instance pools with optimal capacity for the number
+        /// of instances that are launching.
         /// </para>
         ///  
         /// <para>
@@ -22868,8 +22978,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about configuring your operating system to generate a crash dump
-        /// when a kernel panic or stop error occurs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html#diagnostic-interrupt">Send
-        /// a Diagnostic Interrupt</a> (Linux instances) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/unreachable-instance.html#diagnostic-interrupt">Send
+        /// when a kernel panic or stop error occurs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/diagnostic-interrupt.html">Send
+        /// a Diagnostic Interrupt</a> (Linux instances) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/diagnostic-interrupt.html">Send
         /// a Diagnostic Interrupt</a> (Windows instances).
         /// </para>
         /// </summary>

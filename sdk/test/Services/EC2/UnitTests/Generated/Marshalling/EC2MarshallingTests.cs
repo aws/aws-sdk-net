@@ -3490,6 +3490,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DescribeExportImageTasksMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeExportImageTasks");
+
+            var request = InstantiateClassGenerator.Execute<DescribeExportImageTasksRequest>();
+            var marshaller = new DescribeExportImageTasksRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeExportImageTasksResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeExportImageTasksResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DescribeExportTasksMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeExportTasks");
@@ -5961,6 +5985,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = ExportClientVpnClientConfigurationResponseUnmarshaller.Instance.Unmarshall(context)
                 as ExportClientVpnClientConfigurationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void ExportImageMarshallTest()
+        {
+            var operation = service_model.FindOperation("ExportImage");
+
+            var request = InstantiateClassGenerator.Execute<ExportImageRequest>();
+            var marshaller = new ExportImageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ExportImageResponseUnmarshaller.Instance.Unmarshall(context)
+                as ExportImageResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
