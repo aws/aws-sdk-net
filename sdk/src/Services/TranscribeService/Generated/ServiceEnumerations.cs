@@ -86,6 +86,14 @@ namespace Amazon.TranscribeService
         /// Constant PtBR for LanguageCode
         /// </summary>
         public static readonly LanguageCode PtBR = new LanguageCode("pt-BR");
+        /// <summary>
+        /// Constant RuRU for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode RuRU = new LanguageCode("ru-RU");
+        /// <summary>
+        /// Constant ZhCN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode ZhCN = new LanguageCode("zh-CN");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

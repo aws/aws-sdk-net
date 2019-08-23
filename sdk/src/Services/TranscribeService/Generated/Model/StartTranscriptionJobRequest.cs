@@ -103,6 +103,13 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// The sample rate, in Hertz, of the audio track in the input media file. 
         /// </para>
+        ///  
+        /// <para>
+        /// If you do not specify the media sample rate, Amazon Transcribe determines the sample
+        /// rate. If you specify the sample rate, it must match the sample rate detected by Amazon
+        /// Transcribe. In most cases, you should leave the <code>MediaSampleRateHertz</code>
+        /// field blank and let Amazon Transcribe determine the sample rate.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=8000, Max=48000)]
         public int MediaSampleRateHertz
@@ -128,7 +135,7 @@ namespace Amazon.TranscribeService.Model
         /// in the specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation,
         /// the operation returns this location in the <code>TranscriptFileUri</code> field. The
         /// S3 bucket must have permissions that allow Amazon Transcribe to put files in the bucket.
-        /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user">Permissions
+        /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
         /// Required for IAM User Roles</a>.
         /// </para>
         ///  
