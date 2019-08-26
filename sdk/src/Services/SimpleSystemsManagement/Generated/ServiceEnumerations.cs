@@ -2855,6 +2855,10 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         public static readonly ParameterTier Advanced = new ParameterTier("Advanced");
         /// <summary>
+        /// Constant IntelligentTiering for ParameterTier
+        /// </summary>
+        public static readonly ParameterTier IntelligentTiering = new ParameterTier("Intelligent-Tiering");
+        /// <summary>
         /// Constant Standard for ParameterTier
         /// </summary>
         public static readonly ParameterTier Standard = new ParameterTier("Standard");
