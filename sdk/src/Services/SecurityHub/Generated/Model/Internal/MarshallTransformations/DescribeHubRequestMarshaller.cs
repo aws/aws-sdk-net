@@ -58,25 +58,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-26";            
             request.HttpMethod = "GET";
 
+            
+            if (publicRequest.IsSetHubArn())
+                request.Parameters.Add("HubArn", StringUtils.FromString(publicRequest.HubArn));
             request.ResourcePath = "/accounts";
             request.MarshallerVersion = 2;
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
-            {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetHubArn())
-                {
-                    context.Writer.WritePropertyName("HubArn");
-                    context.Writer.Write(publicRequest.HubArn);
-                }
-
-        
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-            }
-
+            request.UseQueryString = true;
 
             return request;
         }

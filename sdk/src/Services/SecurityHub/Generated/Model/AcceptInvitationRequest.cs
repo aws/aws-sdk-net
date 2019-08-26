@@ -45,6 +45,7 @@ namespace Amazon.SecurityHub.Model
         /// The ID of the invitation sent from the Security Hub master account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InvitationId
         {
             get { return this._invitationId; }
@@ -63,6 +64,7 @@ namespace Amazon.SecurityHub.Model
         /// The account ID of the Security Hub master account that sent the invitation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MasterId
         {
             get { return this._masterId; }
