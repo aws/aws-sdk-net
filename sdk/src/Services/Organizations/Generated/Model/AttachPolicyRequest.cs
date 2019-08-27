@@ -40,31 +40,30 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// If you attach an SCP to a root, it affects all accounts in the organization
+    /// If you attach an SCP to a root, it affects all accounts in the organization.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// If you attach an SCP to an OU, it affects all accounts in that OU and in any child
-    /// OUs
+    /// OUs.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If you attach the policy directly to an account, it affects only that account
+    /// If you attach the policy directly to an account, it affects only that account.
     /// </para>
     ///  </li> </ul> 
     /// <para>
     /// SCPs are JSON policies that specify the maximum permissions for an organization or
-    /// organizational unit (OU). When you attach one SCP to a higher level root or OU, and
-    /// you also attach a different SCP to a child OU or to an account, the child policy can
-    /// further restrict only the permissions that pass through the parent filter and are
-    /// available to the child. An SCP that is attached to a child can't grant a permission
-    /// that the paren't hasn't already granted. For example, imagine that the parent SCP
-    /// allows permissions A, B, C, D, and E. The child SCP allows C, D, E, F, and G. The
-    /// result is that the accounts affected by the child SCP are allowed to use only C, D,
-    /// and E. They can't use A or B because the child OU filtered them out. They also can't
-    /// use F and G because the parent OU filtered them out. They can't be granted back by
-    /// the child SCP; child SCPs can only filter the permissions they receive from the parent
-    /// SCP.
+    /// organizational unit (OU). You can attach one SCP to a higher level root or OU, and
+    /// a different SCP to a child OU or to an account. The child policy can further restrict
+    /// only the permissions that pass through the parent filter and are available to the
+    /// child. An SCP that is attached to a child can't grant a permission that the parent
+    /// hasn't already granted. For example, imagine that the parent SCP allows permissions
+    /// A, B, C, D, and E. The child SCP allows C, D, E, F, and G. The result is that the
+    /// accounts affected by the child SCP are allowed to use only C, D, and E. They can't
+    /// use A or B because the child OU filtered them out. They also can't use F and G because
+    /// the parent OU filtered them out. They can't be granted back by the child SCP; child
+    /// SCPs can only filter the permissions they receive from the parent SCP.
     /// </para>
     ///  
     /// <para>
@@ -129,18 +128,18 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Root: a string that begins with "r-" followed by from 4 to 32 lower-case letters or
-        /// digits.
+        ///  <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lower-case
+        /// letters or digits.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Account: a string that consists of exactly 12 digits.
+        ///  <b>Account</b> - A string that consists of exactly 12 digits.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Organizational unit (OU): a string that begins with "ou-" followed by from 4 to 32
-        /// lower-case letters or digits (the ID of the root that the OU is in) followed by a
-        /// second "-" dash and from 8 to 32 additional lower-case letters or digits.
+        ///  <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from
+        /// 4 to 32 lower-case letters or digits (the ID of the root that the OU is in) followed
+        /// by a second "-" dash and from 8 to 32 additional lower-case letters or digits.
         /// </para>
         ///  </li> </ul>
         /// </summary>

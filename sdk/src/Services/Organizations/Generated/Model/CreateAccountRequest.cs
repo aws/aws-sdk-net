@@ -51,8 +51,8 @@ namespace Amazon.Organizations.Model
     ///  </li> </ul>  
     /// <para>
     /// The user who calls the API to create an account must have the <code>organizations:CreateAccount</code>
-    /// permission. If you enabled all features in the organization, AWS Organizations will
-    /// create the required service-linked role named <code>AWSServiceRoleForOrganizations</code>.
+    /// permission. If you enabled all features in the organization, AWS Organizations creates
+    /// the required service-linked role named <code>AWSServiceRoleForOrganizations</code>.
     /// For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs">AWS
     /// Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User Guide</i>.
     /// </para>

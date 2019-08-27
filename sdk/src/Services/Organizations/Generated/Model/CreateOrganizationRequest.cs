@@ -73,7 +73,7 @@ namespace Amazon.Organizations.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>ALL</code>: In addition to all the features supported by the consolidated billing
-        /// feature set, the master account can also apply any type of policy to any member account
+        /// feature set, the master account can also apply any policy type to any member account
         /// in the organization. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All
         /// features</a> in the <i>AWS Organizations User Guide.</i> 
         /// </para>

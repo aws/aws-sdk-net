@@ -493,31 +493,30 @@ namespace Amazon.Organizations
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you attach an SCP to a root, it affects all accounts in the organization
+        /// If you attach an SCP to a root, it affects all accounts in the organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you attach an SCP to an OU, it affects all accounts in that OU and in any child
-        /// OUs
+        /// OUs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you attach the policy directly to an account, it affects only that account
+        /// If you attach the policy directly to an account, it affects only that account.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// SCPs are JSON policies that specify the maximum permissions for an organization or
-        /// organizational unit (OU). When you attach one SCP to a higher level root or OU, and
-        /// you also attach a different SCP to a child OU or to an account, the child policy can
-        /// further restrict only the permissions that pass through the parent filter and are
-        /// available to the child. An SCP that is attached to a child can't grant a permission
-        /// that the paren't hasn't already granted. For example, imagine that the parent SCP
-        /// allows permissions A, B, C, D, and E. The child SCP allows C, D, E, F, and G. The
-        /// result is that the accounts affected by the child SCP are allowed to use only C, D,
-        /// and E. They can't use A or B because the child OU filtered them out. They also can't
-        /// use F and G because the parent OU filtered them out. They can't be granted back by
-        /// the child SCP; child SCPs can only filter the permissions they receive from the parent
-        /// SCP.
+        /// organizational unit (OU). You can attach one SCP to a higher level root or OU, and
+        /// a different SCP to a child OU or to an account. The child policy can further restrict
+        /// only the permissions that pass through the parent filter and are available to the
+        /// child. An SCP that is attached to a child can't grant a permission that the parent
+        /// hasn't already granted. For example, imagine that the parent SCP allows permissions
+        /// A, B, C, D, and E. The child SCP allows C, D, E, F, and G. The result is that the
+        /// accounts affected by the child SCP are allowed to use only C, D, and E. They can't
+        /// use A or B because the child OU filtered them out. They also can't use F and G because
+        /// the parent OU filtered them out. They can't be granted back by the child SCP; child
+        /// SCPs can only filter the permissions they receive from the parent SCP.
         /// </para>
         ///  
         /// <para>
@@ -1068,8 +1067,8 @@ namespace Amazon.Organizations
         ///  </li> </ul>  
         /// <para>
         /// The user who calls the API to create an account must have the <code>organizations:CreateAccount</code>
-        /// permission. If you enabled all features in the organization, AWS Organizations will
-        /// create the required service-linked role named <code>AWSServiceRoleForOrganizations</code>.
+        /// permission. If you enabled all features in the organization, AWS Organizations creates
+        /// the required service-linked role named <code>AWSServiceRoleForOrganizations</code>.
         /// For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs">AWS
         /// Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User Guide</i>.
         /// </para>
@@ -4571,8 +4570,8 @@ namespace Amazon.Organizations
         /// If you instead attach a second SCP and leave the <code>FullAWSAccess</code> SCP still
         /// attached, and specify <code>"Effect": "Deny"</code> in the second SCP to override
         /// the <code>"Effect": "Allow"</code> in the <code>FullAWSAccess</code> policy (or any
-        /// other attached SCP), you're using the authorization strategy of <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_blacklist">blacklisting</a>.
-        /// 
+        /// other attached SCP), you're using the authorization strategy of <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_blacklist">blacklisting</a>
+        /// . 
         /// </para>
         ///  
         /// <para>
@@ -5240,16 +5239,20 @@ namespace Amazon.Organizations
         /// 
         ///  
         /// <para>
+        /// This is an asynchronous request that AWS performs in the background. If you disable
+        /// a policy for a root, it still appears enabled for the organization if <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all
+        /// features</a> are enabled for the organization. AWS recommends that you first use <a>ListRoots</a>
+        /// to see the status of policy types for a specified root, and then use this operation.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
         /// This operation can be called only from the organization's master account.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// If you disable a policy type for a root, it still shows as enabled for the organization
-        /// if all features are enabled in that organization. Use <a>ListRoots</a> to see the
-        /// status of policy types for a specified root. Use <a>DescribeOrganization</a> to see
-        /// the status of policy types in the organization.
+        ///  To view the status of available policy types in the organization, use <a>DescribeOrganization</a>.
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisablePolicyType service method.</param>
         /// 
@@ -6170,17 +6173,19 @@ namespace Amazon.Organizations
         /// 
         ///  
         /// <para>
+        /// This is an asynchronous request that AWS performs in the background. AWS recommends
+        /// that you first use <a>ListRoots</a> to see the status of policy types for a specified
+        /// root, and then use this operation. 
+        /// </para>
+        ///  
+        /// <para>
         /// This operation can be called only from the organization's master account.
         /// </para>
         ///  
         /// <para>
         /// You can enable a policy type in a root only if that policy type is available in the
-        /// organization. Use <a>DescribeOrganization</a> to view the status of available policy
-        /// types in the organization.
-        /// </para>
-        ///  
-        /// <para>
-        /// To view the status of policy type in a root, use <a>ListRoots</a>.
+        /// organization. To view the status of available policy types in the organization, use
+        /// <a>DescribeOrganization</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnablePolicyType service method.</param>

@@ -37,16 +37,20 @@ namespace Amazon.Organizations.Model
     /// 
     ///  
     /// <para>
+    /// This is an asynchronous request that AWS performs in the background. If you disable
+    /// a policy for a root, it still appears enabled for the organization if <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all
+    /// features</a> are enabled for the organization. AWS recommends that you first use <a>ListRoots</a>
+    /// to see the status of policy types for a specified root, and then use this operation.
+    /// 
+    /// </para>
+    ///  
+    /// <para>
     /// This operation can be called only from the organization's master account.
     /// </para>
-    ///  <note> 
+    ///  
     /// <para>
-    /// If you disable a policy type for a root, it still shows as enabled for the organization
-    /// if all features are enabled in that organization. Use <a>ListRoots</a> to see the
-    /// status of policy types for a specified root. Use <a>DescribeOrganization</a> to see
-    /// the status of policy types in the organization.
+    ///  To view the status of available policy types in the organization, use <a>DescribeOrganization</a>.
     /// </para>
-    ///  </note>
     /// </summary>
     public partial class DisablePolicyTypeRequest : AmazonOrganizationsRequest
     {
