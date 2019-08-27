@@ -1,3 +1,12 @@
+### 3.3.576.1 (2019-08-27 18:10 UTC)
+* Organizations (3.3.103.26)
+	* Documentation updates for organizations
+* Core 3.3.103.32
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.576.0 (2019-08-26 18:09 UTC)
 * SecurityHub (3.3.104.0)
 	* This release resolves an issue with the DescribeHub action, changes the MasterId and InvitationId parameters for AcceptInvitation to Required, and changes the AccountIds parameter for DeleteInvitations and DeclineInvitations to Required.
