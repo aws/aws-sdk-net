@@ -33,6 +33,12 @@ namespace Amazon.GlobalAccelerator.Model
     /// inbound connections and direct traffic to one or more endpoint groups, each of which
     /// includes endpoints, such as Network Load Balancers. To see an AWS CLI example of creating
     /// an accelerator, scroll down to <b>Example</b>.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// You must specify the US-West-2 (Oregon) Region to create or update accelerators.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CreateAcceleratorRequest : AmazonGlobalAcceleratorRequest
     {

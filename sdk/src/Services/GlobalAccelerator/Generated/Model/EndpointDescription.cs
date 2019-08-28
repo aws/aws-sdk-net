@@ -33,17 +33,51 @@ namespace Amazon.GlobalAccelerator.Model
     /// </summary>
     public partial class EndpointDescription
     {
+        private bool? _clientIPPreservationEnabled;
         private string _endpointId;
         private string _healthReason;
         private HealthState _healthState;
         private int? _weight;
 
         /// <summary>
+        /// Gets and sets the property ClientIPPreservationEnabled. 
+        /// <para>
+        /// Indicates whether client IP address preservation is enabled for an Application Load
+        /// Balancer endpoint. The value is true or false. The default value is true for new accelerators.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code>
+        /// request header as traffic travels to applications on the Application Load Balancer
+        /// endpoint fronted by the accelerator.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/introduction-how-it-works-client-ip.html">
+        /// Viewing Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global Accelerator
+        /// Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool ClientIPPreservationEnabled
+        {
+            get { return this._clientIPPreservationEnabled.GetValueOrDefault(); }
+            set { this._clientIPPreservationEnabled = value; }
+        }
+
+        // Check to see if ClientIPPreservationEnabled property is set
+        internal bool IsSetClientIPPreservationEnabled()
+        {
+            return this._clientIPPreservationEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EndpointId. 
         /// <para>
         /// An ID for the endpoint. If the endpoint is a Network Load Balancer or Application
         /// Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint
-        /// is an Elastic IP address, this is the Elastic IP address allocation ID.
+        /// is an Elastic IP address, this is the Elastic IP address allocation ID. An Application
+        /// Load Balancer can be either internal or internet-facing.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

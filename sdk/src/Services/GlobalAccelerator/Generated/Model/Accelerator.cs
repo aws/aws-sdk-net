@@ -83,7 +83,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Indicates whether theaccelerator is enabled. The value is true or false. The default
+        /// Indicates whether the accelerator is enabled. The value is true or false. The default
         /// value is true. 
         /// </para>
         ///  
@@ -125,7 +125,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property IpSets. 
         /// <para>
-        /// IP address set associated with the accelerator.
+        /// The static IP addresses that Global Accelerator associates with the accelerator.
         /// </para>
         /// </summary>
         public List<IpSet> IpSets
@@ -161,8 +161,8 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the accelerator. The name can have a maximum of 32 characters, must contain
-        /// only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.
+        /// The name of the accelerator. The name must contain only alphanumeric characters or
+        /// hyphens (-), and must not begin or end with a hyphen.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

@@ -39,10 +39,10 @@ namespace Amazon.GlobalAccelerator.Model
         /// Gets and sets the property AcceleratorArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the accelerator with the attributes that you want
-        /// to describe. Value is required.
+        /// to describe.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=255)]
+        [AWSProperty(Required=true, Max=255)]
         public string AcceleratorArn
         {
             get { return this._acceleratorArn; }
