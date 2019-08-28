@@ -129,6 +129,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetSimulateReservedQueue())
+                {
+                    context.Writer.WritePropertyName("simulateReservedQueue");
+                    context.Writer.Write(publicRequest.SimulateReservedQueue);
+                }
+
                 if(publicRequest.IsSetStatusUpdateInterval())
                 {
                     context.Writer.WritePropertyName("statusUpdateInterval");

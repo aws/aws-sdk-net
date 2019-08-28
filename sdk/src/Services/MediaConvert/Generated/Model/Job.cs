@@ -49,6 +49,7 @@ namespace Amazon.MediaConvert.Model
         private int? _retryCount;
         private string _role;
         private JobSettings _settings;
+        private SimulateReservedQueue _simulateReservedQueue;
         private JobStatus _status;
         private StatusUpdateInterval _statusUpdateInterval;
         private Timing _timing;
@@ -317,6 +318,25 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetSettings()
         {
             return this._settings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SimulateReservedQueue. Enable this setting when you run
+        /// a test job to estimate how many reserved transcoding slots (RTS) you need. When this
+        /// is enabled, MediaConvert runs your job from an on-demand queue with similar performance
+        /// to what you will see with one RTS in a reserved queue. This setting is disabled by
+        /// default.
+        /// </summary>
+        public SimulateReservedQueue SimulateReservedQueue
+        {
+            get { return this._simulateReservedQueue; }
+            set { this._simulateReservedQueue = value; }
+        }
+
+        // Check to see if SimulateReservedQueue property is set
+        internal bool IsSetSimulateReservedQueue()
+        {
+            return this._simulateReservedQueue != null;
         }
 
         /// <summary>
