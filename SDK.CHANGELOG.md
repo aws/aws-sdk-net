@@ -1,3 +1,11 @@
+### 3.3.577.0 (2019-08-28 18:33 UTC)
+* GlobalAccelerator (3.3.101.0)
+	* API Update for AWS Global Accelerator Client IP Preservation
+* MediaConvert (3.3.107.0)
+	* This release adds the ability to send a job to an on-demand queue while simulating the performance of a job sent to a reserved queue. Use this setting to estimate the number of reserved transcoding slots (RTS) you need for a reserved queue.
+* SQS (3.3.102.0)
+	* Added support for message system attributes, which currently lets you send AWS X-Ray trace IDs through Amazon SQS.
+
 ### 3.3.576.1 (2019-08-27 18:10 UTC)
 * Organizations (3.3.103.26)
 	* Documentation updates for organizations
