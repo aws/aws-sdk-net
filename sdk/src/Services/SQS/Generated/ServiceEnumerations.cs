@@ -39,6 +39,10 @@ namespace Amazon.SQS
         /// </summary>
         public static readonly MessageSystemAttributeName ApproximateReceiveCount = new MessageSystemAttributeName("ApproximateReceiveCount");
         /// <summary>
+        /// Constant AWSTraceHeader for MessageSystemAttributeName
+        /// </summary>
+        public static readonly MessageSystemAttributeName AWSTraceHeader = new MessageSystemAttributeName("AWSTraceHeader");
+        /// <summary>
         /// Constant MessageDeduplicationId for MessageSystemAttributeName
         /// </summary>
         public static readonly MessageSystemAttributeName MessageDeduplicationId = new MessageSystemAttributeName("MessageDeduplicationId");
@@ -88,6 +92,52 @@ namespace Amazon.SQS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MessageSystemAttributeName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MessageSystemAttributeNameForSends.
+    /// </summary>
+    public class MessageSystemAttributeNameForSends : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWSTraceHeader for MessageSystemAttributeNameForSends
+        /// </summary>
+        public static readonly MessageSystemAttributeNameForSends AWSTraceHeader = new MessageSystemAttributeNameForSends("AWSTraceHeader");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MessageSystemAttributeNameForSends(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MessageSystemAttributeNameForSends FindValue(string value)
+        {
+            return FindValue<MessageSystemAttributeNameForSends>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MessageSystemAttributeNameForSends(string value)
         {
             return FindValue(value);
         }

@@ -118,6 +118,50 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("MessageGroupId", StringUtils.FromString(publicRequest.MessageGroupId));
                 }
+                if(publicRequest.IsSetMessageSystemAttributes())
+                {
+                    int mapIndex = 1;
+                    foreach(var key in publicRequest.MessageSystemAttributes.Keys)
+                    {
+                        MessageSystemAttributeValue value;
+                        bool hasValue = publicRequest.MessageSystemAttributes.TryGetValue(key, out value);
+                        request.Parameters.Add("MessageSystemAttribute" + "." + mapIndex + "." + "Name", StringUtils.FromString(key));
+                        if (hasValue)
+                        {
+                            if(value.IsSetBinaryListValues())
+                            {
+                                int valuelistValueIndex = 1;
+                                foreach(var valuelistValue in value.BinaryListValues)
+                                {
+                                    request.Parameters.Add("MessageSystemAttribute" + "." + mapIndex + "." + "Value" + "." + "BinaryListValue" + "." + "member" + "." + valuelistValueIndex, StringUtils.FromMemoryStream(valuelistValue));
+                                    valuelistValueIndex++;
+                                }
+                            }
+                            if(value.IsSetBinaryValue())
+                            {
+                                request.Parameters.Add("MessageSystemAttribute" + "." + mapIndex + "." + "Value" + "." + "BinaryValue", StringUtils.FromMemoryStream(value.BinaryValue));
+                            }
+                            if(value.IsSetDataType())
+                            {
+                                request.Parameters.Add("MessageSystemAttribute" + "." + mapIndex + "." + "Value" + "." + "DataType", StringUtils.FromString(value.DataType));
+                            }
+                            if(value.IsSetStringListValues())
+                            {
+                                int valuelistValueIndex = 1;
+                                foreach(var valuelistValue in value.StringListValues)
+                                {
+                                    request.Parameters.Add("MessageSystemAttribute" + "." + mapIndex + "." + "Value" + "." + "StringListValue" + "." + "member" + "." + valuelistValueIndex, StringUtils.FromString(valuelistValue));
+                                    valuelistValueIndex++;
+                                }
+                            }
+                            if(value.IsSetStringValue())
+                            {
+                                request.Parameters.Add("MessageSystemAttribute" + "." + mapIndex + "." + "Value" + "." + "StringValue", StringUtils.FromString(value.StringValue));
+                            }
+                        }
+                        mapIndex++;
+                    }
+                }
                 if(publicRequest.IsSetQueueUrl())
                 {
                     request.Parameters.Add("QueueUrl", StringUtils.FromString(publicRequest.QueueUrl));

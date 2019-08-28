@@ -34,6 +34,7 @@ namespace Amazon.SQS.Model
     {
         private string _md5OfMessageAttributes;
         private string _md5OfMessageBody;
+        private string _md5OfMessageSystemAttributes;
         private string _messageId;
         private string _sequenceNumber;
 
@@ -75,6 +76,26 @@ namespace Amazon.SQS.Model
         internal bool IsSetMD5OfMessageBody()
         {
             return this._md5OfMessageBody != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MD5OfMessageSystemAttributes. 
+        /// <para>
+        /// An MD5 digest of the non-URL-encoded message system attribute string. You can use
+        /// this attribute to verify that Amazon SQS received the message correctly. Amazon SQS
+        /// URL-decodes the message before creating the MD5 digest.
+        /// </para>
+        /// </summary>
+        public string MD5OfMessageSystemAttributes
+        {
+            get { return this._md5OfMessageSystemAttributes; }
+            set { this._md5OfMessageSystemAttributes = value; }
+        }
+
+        // Check to see if MD5OfMessageSystemAttributes property is set
+        internal bool IsSetMD5OfMessageSystemAttributes()
+        {
+            return this._md5OfMessageSystemAttributes != null;
         }
 
         /// <summary>

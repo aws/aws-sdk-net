@@ -145,6 +145,10 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>AWSTraceHeader</code> - Returns the AWS X-Ray trace header string. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>SenderId</code> 
         /// </para>
         ///  <ul> <li> 
