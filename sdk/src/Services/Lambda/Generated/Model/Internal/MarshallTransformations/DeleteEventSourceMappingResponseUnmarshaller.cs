@@ -81,6 +81,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.LastProcessingResult = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MaximumBatchingWindowInSeconds", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.MaximumBatchingWindowInSeconds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("State", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

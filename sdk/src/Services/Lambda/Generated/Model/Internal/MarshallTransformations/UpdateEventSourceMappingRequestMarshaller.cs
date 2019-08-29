@@ -87,6 +87,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FunctionName);
                 }
 
+                if(publicRequest.IsSetMaximumBatchingWindowInSeconds())
+                {
+                    context.Writer.WritePropertyName("MaximumBatchingWindowInSeconds");
+                    context.Writer.Write(publicRequest.MaximumBatchingWindowInSeconds);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

@@ -90,6 +90,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FunctionName);
                 }
 
+                if(publicRequest.IsSetMaximumBatchingWindowInSeconds())
+                {
+                    context.Writer.WritePropertyName("MaximumBatchingWindowInSeconds");
+                    context.Writer.Write(publicRequest.MaximumBatchingWindowInSeconds);
+                }
+
                 if(publicRequest.IsSetStartingPosition())
                 {
                     context.Writer.WritePropertyName("StartingPosition");

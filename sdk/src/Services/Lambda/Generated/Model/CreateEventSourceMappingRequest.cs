@@ -59,6 +59,7 @@ namespace Amazon.Lambda.Model
         private bool? _enabled;
         private string _eventSourceArn;
         private string _functionName;
+        private int? _maximumBatchingWindowInSeconds;
         private EventSourcePosition _startingPosition;
         private DateTime? _startingPositionTimestamp;
 
@@ -184,6 +185,22 @@ namespace Amazon.Lambda.Model
         internal bool IsSetFunctionName()
         {
             return this._functionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaximumBatchingWindowInSeconds.
+        /// </summary>
+        [AWSProperty(Min=0, Max=300)]
+        public int MaximumBatchingWindowInSeconds
+        {
+            get { return this._maximumBatchingWindowInSeconds.GetValueOrDefault(); }
+            set { this._maximumBatchingWindowInSeconds = value; }
+        }
+
+        // Check to see if MaximumBatchingWindowInSeconds property is set
+        internal bool IsSetMaximumBatchingWindowInSeconds()
+        {
+            return this._maximumBatchingWindowInSeconds.HasValue; 
         }
 
         /// <summary>
