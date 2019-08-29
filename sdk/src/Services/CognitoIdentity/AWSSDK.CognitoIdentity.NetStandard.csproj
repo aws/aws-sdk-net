@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netstandard1.3;netstandard2.0</TargetFrameworks>
     <DefineConstants>$(DefineConstants);NETSTANDARD;AWS_ASYNC_API</DefineConstants>
@@ -18,7 +18,7 @@
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
-    <NetStandardImplicitPackageVersion  Condition="'$(TargetFramework)' == 'netstandard1.3'">1.6.0</NetStandardImplicitPackageVersion>
+    <NetStandardImplicitPackageVersion Condition="'$(TargetFramework)' == 'netstandard1.3'">1.6.0</NetStandardImplicitPackageVersion>
   </PropertyGroup>
   <Choose>
     <When Condition=" '$(AWSKeyFile)' == '' ">
@@ -53,11 +53,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Services\SecurityToken\AWSSDK.SecurityToken.NetStandard.csproj"/>
-    <ProjectReference Include="..\..\Core\AWSSDK.Core.NetStandard.csproj"/>
+    <ProjectReference Include="..\..\Services\SecurityToken\AWSSDK.SecurityToken.NetStandard.csproj" />
+    <ProjectReference Include="..\..\Core\AWSSDK.Core.NetStandard.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="obj\AWSSDK.CognitoIdentity.Net35\Debug\net35\" />
+    <Folder Include="obj\AWSSDK.CognitoIdentity.Net45\Debug\" />
+    <Folder Include="obj\AWSSDK.CognitoIdentity.Net45\Debug\net45\" />
   </ItemGroup>
 
 </Project>

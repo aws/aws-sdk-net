@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net35</TargetFramework>
     <DefineConstants>$(DefineConstants);BCL;BCL35;AWS_APM_API;CODE_ANALYSIS;LOCAL_FILE</DefineConstants>
@@ -51,14 +51,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\AWSSDK.Core.Net35.csproj"/>
+    <ProjectReference Include="..\..\Core\AWSSDK.Core.Net35.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="System.Configuration"/>
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data.Entity">
         <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\System.Data.Entity.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="obj\AWSSDK.Lambda.Net45\Debug\net45\" />
   </ItemGroup>
 
 </Project>

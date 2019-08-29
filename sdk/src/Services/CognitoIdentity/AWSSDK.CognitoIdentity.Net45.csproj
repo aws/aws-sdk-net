@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net45</TargetFramework>
     <DefineConstants>$(DefineConstants);BCL;BCL45;AWS_ASYNC_API;CODE_ANALYSIS;LOCAL_FILE</DefineConstants>
@@ -47,12 +47,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Services\SecurityToken\AWSSDK.SecurityToken.Net45.csproj"/>
-    <ProjectReference Include="..\..\Core\AWSSDK.Core.Net45.csproj"/>
+    <ProjectReference Include="..\..\Services\SecurityToken\AWSSDK.SecurityToken.Net45.csproj" />
+    <ProjectReference Include="..\..\Core\AWSSDK.Core.Net45.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="System.Configuration"/>
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="obj\AWSSDK.CognitoIdentity.Net35\Debug\net35\" />
+    <Folder Include="obj\AWSSDK.CognitoIdentity.NetStandard\Debug\netstandard1.3\" />
+    <Folder Include="obj\AWSSDK.CognitoIdentity.NetStandard\Debug\netstandard2.0\" />
   </ItemGroup>
 
 </Project>

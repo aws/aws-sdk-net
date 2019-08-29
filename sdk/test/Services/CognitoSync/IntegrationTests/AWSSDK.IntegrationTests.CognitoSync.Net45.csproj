@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net45</TargetFramework>
     <DefineConstants>$(DefineConstants);DEBUG;TRACE;;BCL;BCL45;ASYNC_AWAIT;LOCAL_FILE</DefineConstants>
@@ -52,6 +52,10 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Web" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="obj\net35\Debug\" />
   </ItemGroup>
 
 </Project>
