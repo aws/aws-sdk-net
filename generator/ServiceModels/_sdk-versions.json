@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.577.0",
+    "ProductVersion" : "3.3.578.0",
     "CoreVersion"    : "3.3.103.32",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -159,7 +159,7 @@
             "InPreview"               : false
         },
         "ECS"               : {
-            "Version" : "3.3.105.3",
+            "Version" : "3.3.106.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.32"
@@ -167,7 +167,7 @@
             "InPreview"               : false
         },
         "ElastiCache"       : {
-            "Version" : "3.3.103.3",
+            "Version" : "3.3.104.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.32"
@@ -241,7 +241,7 @@
             "InPreview"               : false
         },
         "Lambda"               : {
-            "Version" : "3.3.102.50",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.32"
@@ -417,7 +417,7 @@
             "InPreview"               : false
         },
         "CodePipeline"              : {
-            "Version" : "3.3.102.49",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.32"
@@ -553,7 +553,7 @@
             "InPreview"               : false
         },
         "ApplicationAutoScaling"          : {
-            "Version" : "3.3.100.68",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.32"

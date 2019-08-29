@@ -1,3 +1,15 @@
+### 3.3.578.0 (2019-08-29 19:29 UTC)
+* ApplicationAutoScaling (3.3.101.0)
+	* With the current release, you can suspend and later resume any of the following scaling actions in Application Auto Scaling: scheduled scaling actions, dynamic scaling in actions, dynamic scaling out actions.
+* CodePipeline (3.3.103.0)
+	* Introducing pipeline execution trigger details in ListPipelineExecutions API.
+* ECS (3.3.106.0)
+	* This release of Amazon Elastic Container Service (Amazon ECS) introduces support for including Docker container IDs in the API response when describing and stopping tasks. This enables customers to easily map containers to the tasks they are associated with.
+* ElastiCache (3.3.104.0)
+	* Amazon ElastiCache for Redis now supports encryption at rest using customer managed customer master keys (CMKs) in AWS Key Management Service (KMS). Amazon ElastiCache now supports cluster names upto 40 characters for replicationGoups and upto 50 characters for cacheClusters.
+* Lambda (3.3.103.0)
+	* Adds a "MaximumBatchingWindowInSeconds" parameter to event source mapping api's. Usable by Dynamodb and Kinesis event sources.
+
 ### 3.3.577.0 (2019-08-28 18:33 UTC)
 * GlobalAccelerator (3.3.101.0)
 	* API Update for AWS Global Accelerator Client IP Preservation
