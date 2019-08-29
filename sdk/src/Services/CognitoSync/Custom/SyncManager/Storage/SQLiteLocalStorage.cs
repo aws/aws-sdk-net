@@ -33,8 +33,6 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         internal const string DB_FILE_NAME = "aws_cognito_sync.db";
 
         #region constructor
-
-#if !UNITY
         /// <summary>
         /// Creates a new instance of SQLiteLocalStorage
         /// </summary>
@@ -43,7 +41,6 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             _logger = Logger.GetLogger(this.GetType());
             SetupDatabase();
         }
-#endif
 #if PCL
         static SQLiteLocalStorage()
         {

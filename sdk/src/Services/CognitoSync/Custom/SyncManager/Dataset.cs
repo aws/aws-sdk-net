@@ -353,14 +353,12 @@ namespace Amazon.CognitoSync.SyncManager
 
 #if BCL35
         private void RunSyncOperation(int retry)
-#elif UNITY
-        private void RunSyncOperation(int retry, Runtime.AsyncOptions options)
 #else
         private async Task RunSyncOperationAsync(int retry, CancellationToken cancellationToken)
 #endif
         {
             long lastSyncCount = Local.GetLastSyncCount(IdentityId, DatasetName);
-#if !(BCL35 || UNITY)
+#if !(BCL35)
             ExceptionDispatchInfo capturedException = null;
 #endif
             // if dataset is deleted locally, push it to remote
@@ -368,7 +366,7 @@ namespace Amazon.CognitoSync.SyncManager
             {
                 try
                 {
-#if BCL35||UNITY
+#if BCL35
                     Remote.DeleteDataset(DatasetName);
 #else
                     await Remote.DeleteDatasetAsync(DatasetName, cancellationToken).ConfigureAwait(false);
@@ -382,22 +380,14 @@ namespace Amazon.CognitoSync.SyncManager
                 {
                     _logger.InfoFormat("{0} , dataset : {1}", e.Message, this.DatasetName);
                     EndSynchronizeAndCleanup();
-#if UNITY
-                    FireSyncFailureEvent(e, options);
-#else
                     FireSyncFailureEvent(e);
-#endif 
                     return;
                 }
 
                 Local.PurgeDataset(IdentityId, DatasetName);
                 _logger.InfoFormat("OnSyncSuccess: dataset delete is pushed to remote - {0}", this.DatasetName);
                 EndSynchronizeAndCleanup();
-#if UNITY
-                FireSyncSuccessEvent(new List<Record>(), options);
-#else
                 FireSyncSuccessEvent(new List<Record>());
-#endif
                 return;
             }
 
@@ -406,7 +396,7 @@ namespace Amazon.CognitoSync.SyncManager
             DatasetUpdates datasetUpdates = null;
             try
             {
-#if BCL35||UNITY
+#if BCL35
                 datasetUpdates = Remote.ListUpdates(DatasetName, lastSyncCount);
 #else
                 datasetUpdates = await Remote.ListUpdatesAsync(DatasetName, lastSyncCount, cancellationToken).ConfigureAwait(false);
@@ -416,11 +406,7 @@ namespace Amazon.CognitoSync.SyncManager
             {
                 _logger.Error(listUpdatesException, string.Empty);
                 EndSynchronizeAndCleanup();
-#if UNITY
-                FireSyncFailureEvent(listUpdatesException, options);
-#else
                 FireSyncFailureEvent(listUpdatesException);
-#endif
                 return;
             }
 
@@ -432,18 +418,12 @@ namespace Amazon.CognitoSync.SyncManager
                     if (retry == 0)
                     {
                         EndSynchronizeAndCleanup();
-#if UNITY
-                        FireSyncFailureEvent(new SyncManagerException("Out of retries"), options);
-#else
                         FireSyncFailureEvent(new SyncManagerException("Out of retries"));
-#endif
                     }
                     else
                     {
 #if BCL35
                         this.RunSyncOperation(--retry);
-#elif UNITY
-                        this.RunSyncOperation(--retry, options);
 #else
                         await this.RunSyncOperationAsync(--retry, cancellationToken).ConfigureAwait(false);
 #endif
@@ -454,11 +434,7 @@ namespace Amazon.CognitoSync.SyncManager
                 {
                     _logger.InfoFormat("OnSyncFailure: Manual Cancel");
                     EndSynchronizeAndCleanup();
-#if UNITY
-                    FireSyncFailureEvent(new SyncManagerException("Manual cancel"), options);
-#else
                     FireSyncFailureEvent(new SyncManagerException("Manual cancel"));
-#endif
                     return;
                 }
             }
@@ -475,22 +451,14 @@ namespace Amazon.CognitoSync.SyncManager
                     Local.PurgeDataset(IdentityId, DatasetName);
                     _logger.InfoFormat("OnSyncSuccess");
                     EndSynchronizeAndCleanup();
-#if UNITY
-                    FireSyncSuccessEvent(new List<Record>(), options);
-#else
                     FireSyncSuccessEvent(new List<Record>());
-#endif
                     return;
                 }
                 else
                 {
                     _logger.InfoFormat("OnSyncFailure");
                     EndSynchronizeAndCleanup();
-#if UNITY
-                    FireSyncFailureEvent(new SyncManagerException("Manual cancel"), options);
-#else
                     FireSyncFailureEvent(new SyncManagerException("Manual cancel"));
-#endif
                     return;
                 }
             }
@@ -535,11 +503,7 @@ namespace Amazon.CognitoSync.SyncManager
                     {
                         _logger.InfoFormat("User cancelled conflict resolution");
                         EndSynchronizeAndCleanup();
-#if UNITY
-                        FireSyncFailureEvent(new OperationCanceledException("User cancelled conflict resolution"), options);
-#else
                         FireSyncFailureEvent(new OperationCanceledException("User cancelled conflict resolution"));
-#endif
                         return;
                     }
                 }
@@ -575,7 +539,7 @@ namespace Amazon.CognitoSync.SyncManager
 
                 try
                 {
-#if BCL35 || UNITY
+#if BCL35
                     List<Record> result = Remote.PutRecords(DatasetName, localChanges, datasetUpdates.SyncSessionToken);
 #else
                     List<Record> result = await Remote.PutRecordsAsync(DatasetName, localChanges, datasetUpdates.SyncSessionToken, cancellationToken).ConfigureAwait(false);
@@ -602,11 +566,7 @@ namespace Amazon.CognitoSync.SyncManager
 
                     _logger.InfoFormat("OnSyncSuccess");
                     EndSynchronizeAndCleanup();
-#if UNITY
-                    FireSyncSuccessEvent(remoteRecords, options);
-#else
                     FireSyncSuccessEvent(remoteRecords);
-#endif
                     return;
 
                 }
@@ -616,11 +576,7 @@ namespace Amazon.CognitoSync.SyncManager
                     if (retry == 0)
                     {
                         EndSynchronizeAndCleanup();
-#if UNITY
-                        FireSyncFailureEvent(e, options);
-#else
                         FireSyncFailureEvent(e);
-#endif
                     }
                     else
                     {
@@ -634,11 +590,6 @@ namespace Amazon.CognitoSync.SyncManager
                     }
                     return;
                 }
-#elif UNITY
-                        RunSyncOperation(--retry, options);
-                    }
-                    return;
-                }
 #else
                         capturedException = ExceptionDispatchInfo.Capture(e);
                     }
@@ -648,14 +599,10 @@ namespace Amazon.CognitoSync.SyncManager
                 {
                     _logger.InfoFormat("OnSyncFailure {0}", e.Message);
                     EndSynchronizeAndCleanup();
-#if UNITY
-                    FireSyncFailureEvent(e, options);
-#else
                     FireSyncFailureEvent(e);
-#endif
                     return;
                 }
-#if !(BCL35 || UNITY)
+#if !(BCL35)
                 if (capturedException != null)
                     await RunSyncOperationAsync(--retry, cancellationToken).ConfigureAwait(false);
 
@@ -666,19 +613,13 @@ namespace Amazon.CognitoSync.SyncManager
             {
                 _logger.InfoFormat("OnSyncSuccess");
                 EndSynchronizeAndCleanup();
-#if UNITY
-                FireSyncSuccessEvent(remoteRecords, options);
-#else
                 FireSyncSuccessEvent(remoteRecords);
-#endif
                 return;
             }
         }
 
 #if BCL35
         private void SynchornizeInternal()
-#elif UNITY
-        private void SynchornizeInternal(Runtime.AsyncOptions options)
 #else
         private async Task SynchornizeInternalAsync(CancellationToken cancellationToken)
 #endif
@@ -687,7 +628,7 @@ namespace Amazon.CognitoSync.SyncManager
             //make sure we have the latest identity id
             try
             {
-#if BCL35 || UNITY
+#if BCL35
                 CognitoCredentials.GetIdentityId();
 #else
             await CognitoCredentials.GetIdentityIdAsync().ConfigureAwait(false);
@@ -707,17 +648,11 @@ namespace Amazon.CognitoSync.SyncManager
                 if (!resume)
                 {
                     EndSynchronizeAndCleanup();
-#if UNITY
-                    FireSyncFailureEvent(new OperationCanceledException(string.Format(CultureInfo.InvariantCulture, "Sync canceled on merge for dataset - {0}", this.DatasetName)), options);
-#else
                     FireSyncFailureEvent(new OperationCanceledException(string.Format(CultureInfo.InvariantCulture, "Sync canceled on merge for dataset - {0}", this.DatasetName)));
-#endif
                     return;
                 }
 #if BCL35
                 RunSyncOperation(MAX_RETRY);
-#elif UNITY
-                RunSyncOperation(MAX_RETRY, options);
 #else
                 await RunSyncOperationAsync(MAX_RETRY, cancellationToken).ConfigureAwait(false);
 #endif
@@ -725,11 +660,7 @@ namespace Amazon.CognitoSync.SyncManager
             catch (Exception e)
             {
                 EndSynchronizeAndCleanup();
-#if UNITY
-                FireSyncFailureEvent(e, options);
-#else
                 FireSyncFailureEvent(e);
-#endif
                 _logger.Error(e, "");
             }
 

@@ -36,11 +36,6 @@ using Amazon.Util.Internal;
 using ThirdParty.Json.LitJson;
 using System.Linq;
 
-#if UNITY
-using UnityEngine;
-using Amazon.Runtime.Internal;
-#endif
-
 namespace Amazon.Internal
 {
     public class RegionEndpointProviderV2 : IRegionEndpointProvider
@@ -220,7 +215,6 @@ namespace Amazon.Internal
                 {
                     if (!hashBySystemName.TryGetValue(systemName, out region))
                     {
-                        // explicit namespace to avoid collision with UnityEngine.Logger
                         var logger = Amazon.Runtime.Internal.Util.Logger.GetLogger(typeof(RegionEndpoint));
                         logger.InfoFormat("Region system name {0} was not found in region data bundled with SDK; assuming new region.", systemName);
 
@@ -257,12 +251,10 @@ namespace Amazon.Internal
 #endif
                         LoadEndpointDefinitionsFromEmbeddedResource();
                     }
-#if !UNITY
                     else if (endpointsPath.StartsWith("http", StringComparison.OrdinalIgnoreCase))
                     {
                         LoadEndpointDefinitionFromWeb(endpointsPath);
                     }
-#endif
 #if BCL || NETSTANDARD
                     else
                     {
@@ -345,7 +337,6 @@ namespace Amazon.Internal
                 }
             }
 #endif
-#if !UNITY
             static void LoadEndpointDefinitionFromWeb(string url)
             {
                 int retries = 0;
@@ -371,7 +362,6 @@ namespace Amazon.Internal
                     Util.AWSSDKUtils.Sleep(delay);
                 }
             }
-#endif
             /// <summary>
             /// This is a testing method and should not be called by production applications.
             /// </summary>

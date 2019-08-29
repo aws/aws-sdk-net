@@ -67,11 +67,6 @@ namespace ServiceClientGenerator
         public bool Clean { get; set; }
 
         /// <summary>
-        /// The path to the Unity installation directory. Defaults to 'C:\Program Files\Unity'.
-        /// </summary>
-        public string UnityPath { get; set; }
-
-        /// <summary>
         /// The Root folder beneath which all the samples are present. Samples are used for xamarin components.
         /// </summary>
         public string SamplesRootFolder { get; set; }
@@ -103,9 +98,6 @@ namespace ServiceClientGenerator
             ModelsFolder = Path.Combine("..", "..", "..", "ServiceModels");
             SdkRootFolder = Path.Combine("..", "..", "..", "..", "sdk");
             SamplesRootFolder = Path.Combine("..", "..", "..", "..", "aws-sdk-net-samples");
-
-            //TODO: fix for OSX environments
-            UnityPath = Path.Combine("C:\\", "Program Files", "Unity");
 
             ServiceModels = string.Empty; // process all services
             CompileCustomizations = true;

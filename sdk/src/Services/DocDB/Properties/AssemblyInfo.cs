@@ -13,8 +13,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon DocumentDB with MongoDB compatibility. Amazon DocumentDB is a fast, reliable, and fully managed MongoDB compatible database service.")]
 #elif PCL
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon DocumentDB with MongoDB compatibility. Amazon DocumentDB is a fast, reliable, and fully managed MongoDB compatible database service.")]
-#elif UNITY
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Amazon DocumentDB with MongoDB compatibility. Amazon DocumentDB is a fast, reliable, and fully managed MongoDB compatible database service.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Amazon DocumentDB with MongoDB compatibility. Amazon DocumentDB is a fast, reliable, and fully managed MongoDB compatible database service.")]
 #elif NETSTANDARD20
@@ -48,7 +46,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyVersion("3.3")]
 [assembly: AssemblyFileVersion("3.3.101.13")]
 
-#if WINDOWS_PHONE || UNITY
+#if WINDOWS_PHONE
 [assembly: System.CLSCompliant(false)]
 # else
 [assembly: System.CLSCompliant(true)]

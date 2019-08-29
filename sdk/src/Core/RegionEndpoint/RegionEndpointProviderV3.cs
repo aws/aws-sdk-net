@@ -27,11 +27,6 @@ using System.IO;
 using System.Text.RegularExpressions;
 using ThirdParty.Json.LitJson;
 
-#if UNITY
-using UnityEngine;
-using Amazon.Runtime.Internal;
-#endif
-
 namespace Amazon.Internal
 {
     public class RegionEndpointV3 : IRegionEndpoint

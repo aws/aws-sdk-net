@@ -84,8 +84,6 @@ namespace ServiceClientGenerator
                     var projectReferences = new List<ProjectReference>();
                     projectProperties.ProjectReferences = projectReferences.OrderBy(x => x.Name).ToList();
 
-                    projectProperties.UnityPath = Options.UnityPath;
-
                     GenerateProjectFile(projectFileConfiguration, projectConfigurationData, projectProperties, coreFilesRoot, projectFilename);
                 }
             }
@@ -106,8 +104,6 @@ namespace ServiceClientGenerator
             {
                 var projectType = projectFileConfiguration.Name;
 
-                if (projectType.Equals("Unity", StringComparison.InvariantCultureIgnoreCase) && !serviceConfiguration.SupportedInUnity) 
-                    continue;
                 if (projectType.Equals("NetStandard", StringComparison.InvariantCultureIgnoreCase) && !serviceConfiguration.NetStandardSupport)
                     continue;
 
@@ -185,7 +181,7 @@ namespace ServiceClientGenerator
                     foreach (var dependency in serviceConfiguration.ServiceDependencies)
                     {
                         var pt = projectType;
-                        if (!(pt.StartsWith(@"Net") || pt.StartsWith(@"Unity")) && serviceConfiguration.UsePclProjectDependencies)
+                        if (!pt.StartsWith(@"Net") && serviceConfiguration.UsePclProjectDependencies)
                             pt = @"PCL";
 
                         var dependencyProjectName = "AWSSDK." + dependency.Key + "." + pt;
@@ -210,8 +206,6 @@ namespace ServiceClientGenerator
 
 
                 projectProperties.ProjectReferences = projectReferences.OrderBy(x => x.Name).ToList();
-
-                projectProperties.UnityPath = Options.UnityPath;
 
                 if (serviceConfiguration.ReferenceDependencies != null &&
                     serviceConfiguration.ReferenceDependencies.ContainsKey(projectFileConfiguration.Name))

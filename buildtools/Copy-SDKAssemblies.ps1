@@ -69,11 +69,6 @@ Function Copy-SdkAssemblies
         [Parameter()]
         [string]
         $PublicKeyToken = "",
-		
-		#added to support unity assemblies
-		[Parameter()]
-		[bool]
-		$ValidatePublicKeyToken = $true,
 
         [Parameter()]
         [string[]]
@@ -109,7 +104,6 @@ Function Copy-SdkAssemblies
                         
             $filter = "bin\$BuildType\$p\AWSSDK.$servicename.*"
 			
-			#unity sdk doesnot support all services currently
 			$sourceDirectory = $null
 			$sourceDirectory = [System.IO.Path]::Combine($dir.FullName, 'bin', $BuildType, $p)
 			Write-Debug "Checking if $sourceDirectory exists"
@@ -230,8 +224,8 @@ $args = @{
 
 Copy-SDKAssemblies -SourceRoot ..\sdk\src\Core -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck -Platforms @("net35","net45","pcl","monoandroid","Xamarin.iOS10","windows8","wpa81") -BuildType $BuildType
 
-#for unity the assemblies are not signed, so we copy them seperately and override the check
-Copy-SDKAssemblies -SourceRoot ..\sdk\src\Core -Destination ..\Deployment\assemblies -Platforms @("unity", "netstandard1.3", "netstandard2.0") -BuildType $BuildType -ValidatePublicKeyToken $false
+#TODO: Why are we not validating the signatures on netstandard dlls?
+Copy-SDKAssemblies -SourceRoot ..\sdk\src\Core -Destination ..\Deployment\assemblies -Platforms @("netstandard1.3", "netstandard2.0") -BuildType $BuildType -ValidatePublicKeyToken $false
 
 $services = gci ..\sdk\src\services
 foreach ($s in $services)
@@ -239,7 +233,7 @@ foreach ($s in $services)
     if ($builtservices -eq $null -Or $builtservices.contains($s.Name.ToLower()))
     {
         Copy-SDKAssemblies -SourceRoot $s.FullName -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck  -BuildType $BuildType
-        Copy-SDKAssemblies -SourceRoot $s.FullName -Destination ..\Deployment\assemblies -Platforms @("unity", "netstandard1.3", "netstandard2.0") -ValidatePublicKeyToken $false  -BuildType $BuildType
+        Copy-SDKAssemblies -SourceRoot $s.FullName -Destination ..\Deployment\assemblies -Platforms @("netstandard1.3", "netstandard2.0") -ValidatePublicKeyToken $false  -BuildType $BuildType
     }
 }
 

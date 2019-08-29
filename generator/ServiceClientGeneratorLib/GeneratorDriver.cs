@@ -89,7 +89,6 @@ namespace ServiceClientGenerator
         private const string Bcl35SubFolder = "_bcl35";
         private const string Bcl45SubFolder = "_bcl45";
         private const string MobileSubFolder = "_mobile";
-        private const string UnitySubFolder = "_unity";
         private string MarshallingTestsSubFolder = string.Format("UnitTests{0}Generated{0}Marshalling", Path.DirectorySeparatorChar);
         private string CustomizationTestsSubFolder = string.Format("UnitTests{0}Generated{0}Customizations", Path.DirectorySeparatorChar);
 
@@ -168,12 +167,6 @@ namespace ServiceClientGenerator
 
             if (string.IsNullOrEmpty(Options.SelfServiceModel))
             {
-                //unity version
-                if (Configuration.SupportedInUnity)
-                {
-                    ExecuteGenerator(new ServiceInterfaceUnity(), "IAmazon" + Configuration.ClassName + ".cs", UnitySubFolder);
-                    ExecuteGenerator(new ServiceClientUnity(), "Amazon" + Configuration.ClassName + "Client.cs", UnitySubFolder);
-                }
                 // Do not generate AssemblyInfo.cs and nuspec file for child model.
                 // Use the one generated for the parent model.
                 if (!this.Configuration.IsChildConfig)

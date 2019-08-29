@@ -23,16 +23,8 @@ namespace Amazon.CognitoIdentity
         private static object refreshIdLock = new object();
         private string identityId;
         private static int DefaultDurationSeconds = (int)TimeSpan.FromHours(1).TotalSeconds;
-#if !UNITY
         private IAmazonCognitoIdentity cib;
-#else
-        private AmazonCognitoIdentityClient cib;
-#endif
-#if !UNITY
         private IAmazonSecurityTokenService sts;
-#else
-        private AmazonSecurityTokenServiceClient sts;
-#endif
         private bool IsIdentitySet
         {
             get
@@ -346,7 +338,7 @@ namespace Amazon.CognitoIdentity
                     IdentityPoolId = IdentityPoolId,
                     Logins = Logins
                 };
-#if BCL || UNITY
+#if BCL
                 var response = cib.GetId(getIdRequest);
 #else
                 var response = Amazon.Runtime.Internal.Util.AsyncHelpers.RunSync<GetIdResponse>(() => cib.GetIdAsync(getIdRequest));
@@ -517,13 +509,8 @@ namespace Amazon.CognitoIdentity
             UnAuthRoleArn = unAuthRoleArn;
             AuthRoleArn = authRoleArn;
             Logins = new Dictionary<string, string>(StringComparer.Ordinal);
-#if !UNITY
             cib = cibClient;
             sts = stsClient;
-#else
-            cib = (AmazonCognitoIdentityClient)cibClient;
-            sts = (AmazonSecurityTokenServiceClient)stsClient;
-#endif
             //check cache for identity id
             string cachedIdentity = GetCachedIdentityId();
 

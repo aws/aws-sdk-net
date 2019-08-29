@@ -1,8 +1,5 @@
 {
     "active": true, 
     "enable-xamarin-component": true, 
-    "platforms": [
-        "Unity"
-    ], 
     "synopsis": "Amazon Simple Storage Service (Amazon S3), provides developers and IT teams with secure, durable, highly-scalable object storage."
 }

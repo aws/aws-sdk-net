@@ -376,13 +376,8 @@ namespace Amazon.Runtime
         protected virtual void Initialize()
         {
         }
-
-#if UNITY
-        /// <summary>
-        /// Overrides the default request timeout value.
-        /// On Unity platform this value is not used as Unity HTTP client does not support timeouts.
-        /// </summary>
-#elif BCL35
+        
+#if BCL35
         /// <summary>
         /// Overrides the default request timeout value.
         /// This field does not impact Begin*/End* calls. A manual timeout must be implemented.
@@ -671,7 +666,6 @@ namespace Amazon.Runtime
 #endif
         /// <summary>
         /// Overrides the default read-write timeout value.
-        /// On Unity platform, this value is not used as Unity HTTP client does not support timeouts, so 
         /// </summary>
         /// <remarks>
         /// <para>

@@ -413,42 +413,6 @@ namespace Amazon.Runtime.Internal.Util
         {
             _logger = Logger.GetLogger(this.GetType());
         }
-
-#if UNITY 
-        /// <summary>
-        /// Calculates the hash for the stream so far and disables any further
-        /// hashing.
-        /// </summary>
-        public override void CalculateHash()
-        {
-            if (!FinishedHashing)
-            {
-                if (ExpectedLength < 0 || CurrentPosition == ExpectedLength)
-                {
-                    CalculatedHash = Algorithm.AppendLastBlock(new byte[0]);
-                }
-                else
-                    CalculatedHash = new byte[0];
-
-                if (CalculatedHash.Length > 0 && ExpectedHash != null && ExpectedHash.Length > 0)
-                {
-                    // In Unity, the http client (either WWW or UnityWebRequest) unzips responses
-                    // that have Content-Encoding "gzip". After unzipping, it replaces the response
-                    // data with the unzipped content, removes the Content-Encoding header, and
-                    // makes no indication that the transformation has occured. Therefore, we can
-                    // not throw an exception when the hash or the decompreesed data does not match
-                    // the expected hash of the compressed data.
-                    if (!CompareHashes(ExpectedHash, CalculatedHash))
-                        _logger.InfoFormat(
-                            "The expected hash is not equal to the calculated hash. This can " + 
-                            "occur when the Http client decompresses a response body from " + 
-                            "gzip format before the hash is calculated, in which case this" +
-                            "is not an error.");
-                }
-            }
-        }
-#endif
-
 #endregion
 
     }

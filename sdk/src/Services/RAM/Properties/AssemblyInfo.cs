@@ -13,8 +13,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Resource Access Manager. AWS Resource Access Manager (AWS RAM) enables you to share your resources with any AWS account or through AWS Organizations.")]
 #elif PCL
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  AWS Resource Access Manager. AWS Resource Access Manager (AWS RAM) enables you to share your resources with any AWS account or through AWS Organizations.")]
-#elif UNITY
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - AWS Resource Access Manager. AWS Resource Access Manager (AWS RAM) enables you to share your resources with any AWS account or through AWS Organizations.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- AWS Resource Access Manager. AWS Resource Access Manager (AWS RAM) enables you to share your resources with any AWS account or through AWS Organizations.")]
 #elif NETSTANDARD20
@@ -48,7 +46,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyVersion("3.3")]
 [assembly: AssemblyFileVersion("3.3.100.55")]
 
-#if WINDOWS_PHONE || UNITY
+#if WINDOWS_PHONE
 [assembly: System.CLSCompliant(false)]
 # else
 [assembly: System.CLSCompliant(true)]

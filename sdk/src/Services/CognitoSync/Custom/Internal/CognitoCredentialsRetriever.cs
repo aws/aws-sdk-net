@@ -48,7 +48,7 @@ namespace Amazon.CognitoSync.Internal
             : base(credentials)
         { }
 
-#if BCL || UNITY
+#if BCL
         /// <summary>
         /// Custom pipeline handler
         /// </summary>

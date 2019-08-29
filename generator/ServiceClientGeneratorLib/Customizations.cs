@@ -397,9 +397,6 @@ namespace ServiceClientGenerator
     {
         public const string RetainOriginalMemberOrderingKey = "retainOriginalMemberOrdering";
         public const string RuntimePipelineOverrideKey = "runtimePipelineOverride";
-        public const string UnityOverridesKey = "unityOverrides";
-        public const string UnityGenerateSyncClientKey = "generateSyncClient";
-        public const string UnityExclusionApiKey = "exclusionApi";
         public const string OverridesKey = "overrides";
         public const string OperationKey = "operation";
         public const string TargetTypeKey = "targetType";
@@ -499,6 +496,7 @@ namespace ServiceClientGenerator
                 {
                     return _runtimePipelineOverride;
                 }
+
                 var data = _documentRoot[RuntimePipelineOverrideKey];
                 if (data != null)
                 {
@@ -506,119 +504,24 @@ namespace ServiceClientGenerator
 
                     foreach (var item in data[OverridesKey])
                     {
-                        var jsonData = (JsonData)item;
+                        var jsonData = (JsonData) item;
                         _runtimePipelineOverride.Overrides.Add(
                             new RuntimePipelineOverride.Override()
                             {
-                                OverrideMethod = jsonData[OperationKey] != null ? jsonData[OperationKey].ToString() : null,
-                                TargetType = jsonData[TargetTypeKey] != null ? jsonData[TargetTypeKey].ToString() : null,
+                                OverrideMethod = jsonData[OperationKey] != null
+                                    ? jsonData[OperationKey].ToString()
+                                    : null,
+                                TargetType =
+                                    jsonData[TargetTypeKey] != null ? jsonData[TargetTypeKey].ToString() : null,
                                 NewType = jsonData[NewTypeKey] != null ? jsonData[NewTypeKey].ToString() : null,
-                                ConstructorInput = jsonData[ConstructorInputKey] != null ? jsonData[ConstructorInputKey].ToString() : ""
+                                ConstructorInput = jsonData[ConstructorInputKey] != null
+                                    ? jsonData[ConstructorInputKey].ToString()
+                                    : ""
                             });
                     }
                 }
+
                 return _runtimePipelineOverride;
-            }
-        }
-
-        RuntimePipelineOverride _unityRuntimePipelineOverride;
-
-        /// <summary>
-        /// Allows customizing pipeline overrides to be added to the client specific to unity
-        /// </summary>
-        public RuntimePipelineOverride UnityPipelineOverride
-        {
-            get
-            {
-                if (_unityRuntimePipelineOverride != null)
-                {
-                    return _unityRuntimePipelineOverride;
-                }
-                var data = _documentRoot[UnityOverridesKey];
-                if (data == null)
-                    return null;
-
-                data = data[RuntimePipelineOverrideKey];
-
-                if (data != null)
-                {
-                    _unityRuntimePipelineOverride = new RuntimePipelineOverride();
-
-                    foreach (var item in data[OverridesKey])
-                    {
-                        var jsonData = (JsonData)item;
-                        _unityRuntimePipelineOverride.Overrides.Add(
-                            new RuntimePipelineOverride.Override()
-                            {
-                                OverrideMethod = jsonData[OperationKey] != null ? jsonData[OperationKey].ToString() : null,
-                                TargetType = jsonData[TargetTypeKey] != null ? jsonData[TargetTypeKey].ToString() : null,
-                                NewType = jsonData[NewTypeKey] != null ? jsonData[NewTypeKey].ToString() : null,
-                                ConstructorInput = jsonData[ConstructorInputKey] != null ? jsonData[ConstructorInputKey].ToString() : ""
-                            });
-                    }
-                }
-                return _unityRuntimePipelineOverride;
-            }
-        }
-
-        public bool GenerateSyncClientForUnity
-        {
-            get
-            {
-                var data = _documentRoot[UnityOverridesKey];
-                if (data == null)
-                    return false;
-
-                var flag = data[UnityGenerateSyncClientKey];
-                if (flag != null && flag.IsBoolean)
-                {
-                    return (bool)flag;
-                }
-                else if (flag != null && flag.IsString)
-                {
-                    return bool.Parse((string)flag);
-                }
-                return false;
-            }
-        }
-
-        public List<string> UnityExclusionApi
-        {
-            get
-            {
-                var data = _documentRoot[UnityOverridesKey];
-                if (data == null)
-                    return new List<string>();
-
-                data = data[UnityExclusionApiKey];
-
-                if (data != null)
-                {
-                    return (from object pcf in data select pcf.ToString()).ToList();
-                }
-                return new List<string>();
-            }
-        }
-
-        public bool AllowHttpMethodOverride
-        {
-            get
-            {
-                var data = _documentRoot[UnityOverridesKey];
-                if (data == null)
-                    return false;
-
-                if (!data.PropertyNames.Contains(XHttpMethodOverrideKey))
-                    return false;
-
-                if(data[XHttpMethodOverrideKey].IsBoolean)
-                {
-                    return (bool)data[XHttpMethodOverrideKey];
-                }
-                else
-                {
-                    return false;
-                }
             }
         }
 

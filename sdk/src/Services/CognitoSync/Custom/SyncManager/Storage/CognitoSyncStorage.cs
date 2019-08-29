@@ -21,11 +21,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
     {
         private readonly string identityPoolId;
 
-#if UNITY
-        private readonly AmazonCognitoSyncClient client;
-#else
         private readonly IAmazonCognitoSync client;
-#endif
 
         private readonly CognitoAWSCredentials cognitoCredentials;
 

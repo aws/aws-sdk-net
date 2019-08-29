@@ -52,19 +52,6 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 #if BCL
             ClientContextConfiguration = new ClientContextConfig();
 #endif
-
-#if UNITY
-            var root = new RootConfig();
-            var section = root.GetServiceSection(mobileAnalyticsKey);
-            if (section == null)
-            {
-                return;
-            }
-
-            var rootSection = new MobileAnalyticsManagerConfigSectionRoot(section);
-            if (rootSection.SectionConfig != null)
-                Configure(rootSection.SectionConfig);
-#endif
         }
 
 #if BCL
