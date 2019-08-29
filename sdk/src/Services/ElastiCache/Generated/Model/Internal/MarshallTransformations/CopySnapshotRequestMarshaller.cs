@@ -58,6 +58,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetKmsKeyId())
+                {
+                    request.Parameters.Add("KmsKeyId", StringUtils.FromString(publicRequest.KmsKeyId));
+                }
                 if(publicRequest.IsSetSourceSnapshotName())
                 {
                     request.Parameters.Add("SourceSnapshotName", StringUtils.FromString(publicRequest.SourceSnapshotName));

@@ -40,6 +40,7 @@ namespace Amazon.ElastiCache.Model
     public partial class CreateSnapshotRequest : AmazonElastiCacheRequest
     {
         private string _cacheClusterId;
+        private string _kmsKeyId;
         private string _replicationGroupId;
         private string _snapshotName;
 
@@ -59,6 +60,24 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetCacheClusterId()
         {
             return this._cacheClusterId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The ID of the KMS key used to encrypt the snapshot.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>

@@ -137,9 +137,28 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class CopySnapshotRequest : AmazonElastiCacheRequest
     {
+        private string _kmsKeyId;
         private string _sourceSnapshotName;
         private string _targetBucket;
         private string _targetSnapshotName;
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The ID of the KMS key used to encrypt the target snapshot.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SourceSnapshotName. 

@@ -74,6 +74,7 @@ namespace Amazon.ElastiCache.Model
         private string _cacheSubnetGroupName;
         private string _engine;
         private string _engineVersion;
+        private string _kmsKeyId;
         private List<NodeGroupConfiguration> _nodeGroupConfiguration = new List<NodeGroupConfiguration>();
         private string _notificationTopicArn;
         private int? _numCacheClusters;
@@ -510,6 +511,24 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The ID of the KMS key used to encrypt the disk on the cluster.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NodeGroupConfiguration. 
         /// <para>
         /// A list of node group (shard) configuration options. Each node group (shard) configuration
@@ -813,7 +832,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// A name must contain from 1 to 20 alphanumeric characters or hyphens.
+        /// A name must contain from 1 to 40 alphanumeric characters or hyphens.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -995,8 +1014,8 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         /// This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>,
-        /// the <code>EngineVersion</code> parameter is <code>3.2.6</code> or <code>4.x</code>,
-        /// and the cluster is being created in an Amazon VPC.
+        /// the <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or
+        /// later, and the cluster is being created in an Amazon VPC.
         /// </para>
         ///  
         /// <para>
