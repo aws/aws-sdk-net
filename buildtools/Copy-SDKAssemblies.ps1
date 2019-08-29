@@ -118,7 +118,7 @@ Function Copy-SdkAssemblies
             {
                 $assemblyName = $a.Name
                 $assemblyExtension = [System.IO.Path]::GetExtension($assemblyName).ToLower()
-                if ($assemblyExtension -eq ".dll" -And $ValidatePublicKeyToken)
+                if ($assemblyExtension -eq ".dll")
                 {
                     $aToken = Get-PublicKeyToken -AssemblyPath $a.FullName
                     Write-Debug "File $assemblyName has token = $aToken"
@@ -225,15 +225,15 @@ $args = @{
 Copy-SDKAssemblies -SourceRoot ..\sdk\src\Core -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck -Platforms @("net35","net45","pcl","monoandroid","Xamarin.iOS10","windows8","wpa81") -BuildType $BuildType
 
 #TODO: Why are we not validating the signatures on netstandard dlls?
-Copy-SDKAssemblies -SourceRoot ..\sdk\src\Core -Destination ..\Deployment\assemblies -Platforms @("netstandard1.3", "netstandard2.0") -BuildType $BuildType -ValidatePublicKeyToken $false
+Copy-SDKAssemblies -SourceRoot ..\sdk\src\Core -Destination ..\Deployment\assemblies -Platforms @("netstandard1.3", "netstandard2.0") -BuildType $BuildType
 
-$services = gci ..\sdk\src\services
+$services = Get-ChildItem ..\sdk\src\services
 foreach ($s in $services)
 {
-    if ($builtservices -eq $null -Or $builtservices.contains($s.Name.ToLower()))
+    if ($null -eq $builtservices -Or $builtservices.contains($s.Name.ToLower()))
     {
         Copy-SDKAssemblies -SourceRoot $s.FullName -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck  -BuildType $BuildType
-        Copy-SDKAssemblies -SourceRoot $s.FullName -Destination ..\Deployment\assemblies -Platforms @("netstandard1.3", "netstandard2.0") -ValidatePublicKeyToken $false  -BuildType $BuildType
+        Copy-SDKAssemblies -SourceRoot $s.FullName -Destination ..\Deployment\assemblies -Platforms @("netstandard1.3", "netstandard2.0") -BuildType $BuildType
     }
 }
 
