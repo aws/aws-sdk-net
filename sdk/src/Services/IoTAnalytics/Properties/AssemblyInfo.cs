@@ -13,8 +13,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS IoT Analytics. AWS IoT Analytics is a fully-managed service that makes it easy to run and operationalize sophisticated analytics on massive volumes of IoT data without having to worry about the cost and complexity typically required to build an IoT analytics platform.")]
 #elif PCL
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  AWS IoT Analytics. AWS IoT Analytics is a fully-managed service that makes it easy to run and operationalize sophisticated analytics on massive volumes of IoT data without having to worry about the cost and complexity typically required to build an IoT analytics platform.")]
-#elif UNITY
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - AWS IoT Analytics. AWS IoT Analytics is a fully-managed service that makes it easy to run and operationalize sophisticated analytics on massive volumes of IoT data without having to worry about the cost and complexity typically required to build an IoT analytics platform.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- AWS IoT Analytics. AWS IoT Analytics is a fully-managed service that makes it easy to run and operationalize sophisticated analytics on massive volumes of IoT data without having to worry about the cost and complexity typically required to build an IoT analytics platform.")]
 #elif NETSTANDARD20
@@ -48,7 +46,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyVersion("3.3")]
 [assembly: AssemblyFileVersion("3.3.104.64")]
 
-#if WINDOWS_PHONE || UNITY
+#if WINDOWS_PHONE
 [assembly: System.CLSCompliant(false)]
 # else
 [assembly: System.CLSCompliant(true)]

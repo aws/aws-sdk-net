@@ -13,8 +13,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Pinpoint Email Service. This is the first release of the Amazon Pinpoint Email API. You can use this API to configure and send transactional email from your Amazon Pinpoint account to specific email addresses. Unlike campaign-based email that you send from Amazon Pinpoint, you don't have to create segments and campaigns in order to send transactional email. ")]
 #elif PCL
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon Pinpoint Email Service. This is the first release of the Amazon Pinpoint Email API. You can use this API to configure and send transactional email from your Amazon Pinpoint account to specific email addresses. Unlike campaign-based email that you send from Amazon Pinpoint, you don't have to create segments and campaigns in order to send transactional email. ")]
-#elif UNITY
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Amazon Pinpoint Email Service. This is the first release of the Amazon Pinpoint Email API. You can use this API to configure and send transactional email from your Amazon Pinpoint account to specific email addresses. Unlike campaign-based email that you send from Amazon Pinpoint, you don't have to create segments and campaigns in order to send transactional email. ")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Amazon Pinpoint Email Service. This is the first release of the Amazon Pinpoint Email API. You can use this API to configure and send transactional email from your Amazon Pinpoint account to specific email addresses. Unlike campaign-based email that you send from Amazon Pinpoint, you don't have to create segments and campaigns in order to send transactional email. ")]
 #elif NETSTANDARD20
@@ -48,7 +46,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyVersion("3.3")]
 [assembly: AssemblyFileVersion("3.3.104.66")]
 
-#if WINDOWS_PHONE || UNITY
+#if WINDOWS_PHONE
 [assembly: System.CLSCompliant(false)]
 # else
 [assembly: System.CLSCompliant(true)]

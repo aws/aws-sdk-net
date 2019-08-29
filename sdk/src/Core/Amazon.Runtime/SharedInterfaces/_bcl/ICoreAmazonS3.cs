@@ -14,7 +14,6 @@ namespace Amazon.Runtime.SharedInterfaces
     /// </summary>
     public partial interface ICoreAmazonS3
     {
-#if !UNITY
         /// <summary>
         /// Get all the object keys for the particular bucket and key prefix.
         /// </summary>
@@ -97,6 +96,5 @@ namespace Amazon.Runtime.SharedInterfaces
         /// <param name="bucketName"></param>
         /// <returns></returns>
         bool DoesS3BucketExist(string bucketName);
-#endif
     }
 }

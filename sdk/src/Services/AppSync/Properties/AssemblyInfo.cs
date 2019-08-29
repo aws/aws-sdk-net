@@ -13,8 +13,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS AppSync. AWS AppSync is an enterprise-level, fully managed GraphQL service with real-time data synchronization and offline programming features.")]
 #elif PCL
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  AWS AppSync. AWS AppSync is an enterprise-level, fully managed GraphQL service with real-time data synchronization and offline programming features.")]
-#elif UNITY
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - AWS AppSync. AWS AppSync is an enterprise-level, fully managed GraphQL service with real-time data synchronization and offline programming features.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- AWS AppSync. AWS AppSync is an enterprise-level, fully managed GraphQL service with real-time data synchronization and offline programming features.")]
 #elif NETSTANDARD20
@@ -48,7 +46,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyVersion("3.3")]
 [assembly: AssemblyFileVersion("3.3.104.18")]
 
-#if WINDOWS_PHONE || UNITY
+#if WINDOWS_PHONE
 [assembly: System.CLSCompliant(false)]
 # else
 [assembly: System.CLSCompliant(true)]

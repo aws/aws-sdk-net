@@ -73,9 +73,6 @@
     <Compile Include="Endpoint\IFileSystem.cs" />
     <Compile Include="Endpoint\Test\EndpointOverriderTests.cs" />
     <Compile Include="SelfServiceTasks.cs" />
-    <Compile Include="TimingTask.cs" />
-    <Compile Include="UnityBuild.cs" />
-    <Compile Include="UnityPackage.cs" />
     <Compile Include="ValidateIntegTests.cs" />
     <Compile Include="FxCop.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

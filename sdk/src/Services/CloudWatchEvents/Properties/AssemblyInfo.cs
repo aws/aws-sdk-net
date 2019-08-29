@@ -13,8 +13,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon CloudWatch Events. Amazon CloudWatch Events helps you to respond to state changes in your AWS resources. When your resources change state they automatically send events into an event stream. You can create rules that match selected events in the stream and route them to targets to take action. You can also use rules to take action on a pre-determined schedule.")]
 #elif PCL
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon CloudWatch Events. Amazon CloudWatch Events helps you to respond to state changes in your AWS resources. When your resources change state they automatically send events into an event stream. You can create rules that match selected events in the stream and route them to targets to take action. You can also use rules to take action on a pre-determined schedule.")]
-#elif UNITY
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Amazon CloudWatch Events. Amazon CloudWatch Events helps you to respond to state changes in your AWS resources. When your resources change state they automatically send events into an event stream. You can create rules that match selected events in the stream and route them to targets to take action. You can also use rules to take action on a pre-determined schedule.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Amazon CloudWatch Events. Amazon CloudWatch Events helps you to respond to state changes in your AWS resources. When your resources change state they automatically send events into an event stream. You can create rules that match selected events in the stream and route them to targets to take action. You can also use rules to take action on a pre-determined schedule.")]
 #elif NETSTANDARD20
@@ -48,7 +46,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyVersion("3.3")]
 [assembly: AssemblyFileVersion("3.3.102.13")]
 
-#if WINDOWS_PHONE || UNITY
+#if WINDOWS_PHONE
 [assembly: System.CLSCompliant(false)]
 # else
 [assembly: System.CLSCompliant(true)]

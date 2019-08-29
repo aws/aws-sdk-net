@@ -160,7 +160,7 @@ namespace Amazon.S3
 
         private static void SetProxyIfAvailableAndConfigured(IClientConfig config, HttpWebRequest httpWebRequest)
         {
-#if BCL || UNITY || NETSTANDARD
+#if BCL || NETSTANDARD
             var proxy = GetProxyIfAvailableAndConfigured(config);
             if (proxy != null)
             {
@@ -171,7 +171,7 @@ namespace Amazon.S3
 #if !PCL
         private static IWebProxy GetProxyIfAvailableAndConfigured(IClientConfig config)
         {
-#if BCL || UNITY || NETSTANDARD
+#if BCL || NETSTANDARD
             return config.GetWebProxy();
 #else
             return null;

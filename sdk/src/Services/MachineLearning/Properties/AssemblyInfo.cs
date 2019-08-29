@@ -13,8 +13,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Machine Learning. Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.")]
 #elif PCL
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon Machine Learning. Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.")]
-#elif UNITY
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Amazon Machine Learning. Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Amazon Machine Learning. Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.")]
 #elif NETSTANDARD20
@@ -48,7 +46,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyVersion("3.3")]
 [assembly: AssemblyFileVersion("3.3.100.147")]
 
-#if WINDOWS_PHONE || UNITY
+#if WINDOWS_PHONE
 [assembly: System.CLSCompliant(false)]
 # else
 [assembly: System.CLSCompliant(true)]

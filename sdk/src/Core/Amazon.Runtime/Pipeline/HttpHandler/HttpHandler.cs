@@ -108,7 +108,7 @@ namespace Amazon.Runtime.Internal
                 {
                     if (webException.Response != null)
                     {
-#if BCL35 || UNITY
+#if BCL35
                         webException.Response.Close();
 #else
                         webException.Response.Dispose();
@@ -228,13 +228,6 @@ namespace Amazon.Runtime.Internal
                     executionContext.ResponseContext.AsyncResult =
                         new RuntimeAsyncResult(executionContext.RequestContext.Callback, 
                             executionContext.RequestContext.State);
-
-#if UNITY
-                    executionContext.ResponseContext.AsyncResult.AsyncOptions = executionContext.RequestContext.AsyncOptions;
-                    executionContext.ResponseContext.AsyncResult.Action = executionContext.RequestContext.Action;
-                    executionContext.ResponseContext.AsyncResult.Request = executionContext.RequestContext.OriginalRequest;
-#endif 
-
                 }
 
                 // Set request headers

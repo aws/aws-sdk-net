@@ -750,23 +750,6 @@ namespace Amazon.Runtime.Internal.Auth
 
             var builder = new StringBuilder();
             
-            #if UNITY
-            //incase of il2cpp scripting backend the sorted headers is broken.
-            //so we order by the keys again
-            if(AWSSDKUtils.IsIL2CPP)
-            {
-                foreach (var entry in sortedHeaders.OrderBy(kvp=>kvp.Key.ToLowerInvariant()))
-                {
-                    builder.Append(entry.Key.ToLowerInvariant());
-                    builder.Append(":");
-                    builder.Append(AWSSDKUtils.CompressSpaces(entry.Value));
-                    builder.Append("\n");
-                }
-                
-                return builder.ToString();
-            }
-            #endif
-            
             foreach (var entry in sortedHeaders)
             {
                 builder.Append(entry.Key.ToLowerInvariant());
@@ -785,21 +768,6 @@ namespace Amazon.Runtime.Internal.Auth
         protected static string CanonicalizeHeaderNames(IEnumerable<KeyValuePair<string, string>> sortedHeaders)
         {
             var builder = new StringBuilder();
-            
-            #if UNITY
-            //incase of il2cpp scripting backend the sorted headers is broken.
-            //so we order by the keys again
-            if(AWSSDKUtils.IsIL2CPP)
-            {
-                foreach (var header in sortedHeaders.OrderBy(kvp =>kvp.Key.ToLowerInvariant()))
-                {
-                    if (builder.Length > 0)
-                        builder.Append(";");
-                    builder.Append(header.Key.ToLowerInvariant());
-                }
-                return builder.ToString();
-            }
-            #endif
             
             foreach (var header in sortedHeaders)
             {

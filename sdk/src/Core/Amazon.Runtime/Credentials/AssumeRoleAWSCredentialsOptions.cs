@@ -41,7 +41,7 @@ namespace Amazon.Runtime
         /// <summary>
         /// The proxy settings to use when calling AssumeRole.
         /// </summary>
-#if BCL || UNITY
+#if BCL
         public WebProxy ProxySettings { get; set; }
 #elif NETSTANDARD
         public IWebProxy ProxySettings { get; set; }

@@ -48,11 +48,6 @@ namespace ServiceClientGenerator
         public string NugetPackagesLocation { get; set; }
 
         /// <summary>
-        /// Used to generate the HintPath for Reference elements relative to Unity dependencies
-        /// </summary>
-        public string UnityPath { get; set; }
-
-        /// <summary>
         /// Used to generate the TargetFramework or TargetFrameworks element of the project file
         /// </summary>
         public IEnumerable<string> TargetFrameworks { get; set; }

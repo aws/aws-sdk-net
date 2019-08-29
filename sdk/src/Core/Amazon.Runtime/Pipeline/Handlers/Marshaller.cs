@@ -78,32 +78,8 @@ namespace Amazon.Runtime.Internal
             var requestContext = executionContext.RequestContext;
             requestContext.Request = requestContext.Marshaller.Marshall(requestContext.OriginalRequest);
             requestContext.Request.AuthenticationRegion = requestContext.ClientConfig.AuthenticationRegion;
-
-#if !UNITY
-            string userAgentHeader = HeaderKeys.UserAgentHeader;
-#if BCL || NETSTANDARD
-            if ((requestContext.ClientConfig as ClientConfig)?.UseAlternateUserAgentHeader ?? false)
-            {
-                userAgentHeader = HeaderKeys.XAmzUserAgentHeader;
-            }
-#endif
-
-            requestContext.Request.Headers[userAgentHeader] = requestContext.ClientConfig.UserAgent
-                + " " + (executionContext.RequestContext.IsAsync ? "ClientAsync" : "ClientSync");
-#else
-            if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
-            {
-                requestContext.Request.Headers[HeaderKeys.UserAgentHeader] = requestContext.ClientConfig.UserAgent
-            + " " + (executionContext.RequestContext.IsAsync ? "ClientAsync" : "ClientSync")
-            + " UnityWWW";
-            }
-            else
-            {
-                requestContext.Request.Headers[HeaderKeys.XAmzUserAgentHeader] = requestContext.ClientConfig.UserAgent
-            + " " + (executionContext.RequestContext.IsAsync ? "ClientAsync" : "ClientSync")
-            + " UnityWebRequest";
-            }
-#endif
+            requestContext.Request.Headers[HeaderKeys.UserAgentHeader] = requestContext.ClientConfig.UserAgent
+            + " " + (executionContext.RequestContext.IsAsync ? "ClientAsync" : "ClientSync");
 
 #if NETSTANDARD
             var method = requestContext.Request.HttpMethod.ToUpperInvariant();

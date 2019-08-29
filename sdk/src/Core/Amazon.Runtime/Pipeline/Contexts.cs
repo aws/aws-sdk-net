@@ -65,12 +65,6 @@ namespace Amazon.Runtime
     {
         AsyncCallback Callback { get; }
         object State { get; }
-
-#if UNITY
-
-        AsyncOptions AsyncOptions { get; }
-        Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> Action { get; }
-#endif
     }    
 
     public interface IAsyncResponseContext : IResponseContext
@@ -185,11 +179,6 @@ namespace Amazon.Runtime.Internal
 
         public AsyncCallback Callback { get; set; }
         public object State { get; set; }
-#if UNITY
-
-        public AsyncOptions AsyncOptions { get; set; }
-        public Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> Action { get; set; }
-#endif
     }
 
     public class ResponseContext : IResponseContext

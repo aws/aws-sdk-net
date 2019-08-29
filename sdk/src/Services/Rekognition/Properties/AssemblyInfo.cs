@@ -13,8 +13,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Rekognition. AWS Rekognition service does image processing and concept recognition, face detection and identification, face verification, similar face search and face clustering.")]
 #elif PCL
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon Rekognition. AWS Rekognition service does image processing and concept recognition, face detection and identification, face verification, similar face search and face clustering.")]
-#elif UNITY
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Amazon Rekognition. AWS Rekognition service does image processing and concept recognition, face detection and identification, face verification, similar face search and face clustering.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Amazon Rekognition. AWS Rekognition service does image processing and concept recognition, face detection and identification, face verification, similar face search and face clustering.")]
 #elif NETSTANDARD20
@@ -48,7 +46,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyVersion("3.3")]
 [assembly: AssemblyFileVersion("3.3.104.14")]
 
-#if WINDOWS_PHONE || UNITY
+#if WINDOWS_PHONE
 [assembly: System.CLSCompliant(false)]
 # else
 [assembly: System.CLSCompliant(true)]

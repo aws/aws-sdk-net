@@ -53,7 +53,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         internal IEnumerable<string> StoreAsEpoch { get { return Config.AttributesToStoreAsEpoch; } }
         internal IEnumerable<string> KeyNames { get { return Keys.Keys; } }
 
-#if PCL || UNITY || NETSTANDARD
+#if PCL || NETSTANDARD
         internal AmazonDynamoDBClient DDBClient { get; private set; }
 #else
         internal IAmazonDynamoDB DDBClient { get; private set; }
@@ -374,7 +374,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             if (ddbClient == null)
                 throw new ArgumentNullException("ddbClient");
 
-#if PCL || UNITY || NETSTANDARD
+#if PCL || NETSTANDARD
             DDBClient = ddbClient as AmazonDynamoDBClient;
 #else
             DDBClient = ddbClient;
@@ -408,7 +408,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return table;
         }
 
-#if !UNITY
         /// <summary>
         /// Creates a Table object with the specified name, using the
         /// passed-in client to load the table definition.
@@ -508,8 +507,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 return false;
             }
         }
-
-#endif
         #endregion
 
         #region Conversion methods

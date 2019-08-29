@@ -186,6 +186,9 @@
     <Compile Include="Amazon.Util\_pcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="destinationDirectoryPath\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Library\*.cs">
       <SubType>Code</SubType>
     </Compile>

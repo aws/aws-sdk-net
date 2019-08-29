@@ -611,13 +611,6 @@ namespace Amazon
         /// </summary>
         File = 4
 #endif
-#if UNITY
-        ,
-        /// <summary>
-        /// Log using UnityEngine.Debug.
-        /// </summary>
-        UnityLogger = 8
-#endif
     }
 
     /// <summary>

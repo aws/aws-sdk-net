@@ -24,7 +24,6 @@ namespace Amazon.Runtime.SharedInterfaces
         /// <returns></returns>
         string GeneratePreSignedURL(string bucketName, string objectKey, DateTime expiration, IDictionary<string, object> additionalProperties);
         
-#if !UNITY
 #if AWS_APM_API
 
         /// <summary>
@@ -115,7 +114,6 @@ namespace Amazon.Runtime.SharedInterfaces
         /// <param name="result"></param>
         /// <returns></returns>
         Stream EndGetObjectStream(IAsyncResult result);
-#endif
 #endif
     }
 }

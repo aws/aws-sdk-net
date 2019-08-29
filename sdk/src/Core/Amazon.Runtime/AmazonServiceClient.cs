@@ -218,45 +218,6 @@ namespace Amazon.Runtime
             return response;
         }
 
-#if UNITY
-        [Obsolete("BeginInvoke taking marshallers is obsolete. Use BeginInvoke taking InvokeOptionsBase instead.")]
-        protected IAsyncResult BeginInvoke<TRequest>(TRequest request,
-           IMarshaller<IRequest, AmazonWebServiceRequest> marshaller, ResponseUnmarshaller unmarshaller, AsyncOptions asyncOptions,
-            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper)
-           where TRequest : AmazonWebServiceRequest
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = marshaller;
-            options.ResponseUnmarshaller = unmarshaller;
-            return BeginInvoke(request, options, asyncOptions, callbackHelper);
-        }
-
-        protected IAsyncResult BeginInvoke(AmazonWebServiceRequest request, InvokeOptionsBase options, AsyncOptions asyncOptions,
-            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper)
-        {
-            ThrowIfDisposed();
-
-            asyncOptions = asyncOptions ?? new AsyncOptions();
-            var executionContext = new AsyncExecutionContext(
-                new AsyncRequestContext(this.Config.LogMetrics, Signer)
-                {
-                    ClientConfig = this.Config,
-                    Marshaller = options.RequestMarshaller,
-                    OriginalRequest = request,
-                    Unmarshaller = options.ResponseUnmarshaller,
-                    Action = callbackHelper,
-                    AsyncOptions = asyncOptions,
-                    IsAsync = true,
-                    ServiceMetaData = this.ServiceMetadata,
-                    Options = options
-                },
-                new AsyncResponseContext()
-            );
-
-            return this.RuntimePipeline.InvokeAsync(executionContext);
-        }
-#endif
-
 #if AWS_ASYNC_API
 
         [Obsolete("InvokeAsync taking marshallers is obsolete. Use InvokeAsync taking InvokeOptionsBase instead.")]
@@ -454,20 +415,6 @@ namespace Amazon.Runtime
 #if BCL
             var httpRequestFactory = new HttpWebRequestFactory(new AmazonSecurityProtocolManager());
             var httpHandler = new HttpHandler<Stream>(httpRequestFactory, this);
-#elif UNITY
-            IHttpRequestFactory<string> httpRequestFactory = null;
-            HttpHandler<string> httpHandler = null;
-
-            if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
-            {
-                httpRequestFactory = new UnityWwwRequestFactory();
-                httpHandler = new HttpHandler<string>(httpRequestFactory, this);
-            }
-            else
-            {
-                httpRequestFactory = new UnityWebRequestFactory();
-                httpHandler = new HttpHandler<string>(httpRequestFactory, this);
-            }
 #else
             var httpRequestFactory = new HttpRequestMessageFactory(this.Config);
             var httpHandler = new HttpHandler<System.Net.Http.HttpContent>(httpRequestFactory, this);
@@ -503,9 +450,6 @@ namespace Amazon.Runtime
                     preMarshallHandler,
                     errorCallbackHandler,
                     new MetricsHandler()
-#if UNITY
-                    ,new ThreadPoolExecutionHandler(10)//remove the hardcoded to unity config
-#endif
                 },
                 _logger
             );

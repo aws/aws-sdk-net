@@ -13,8 +13,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon AppStream. Amazon AppStream is a fully managed, secure application streaming service that allows you to stream desktop applications from AWS to a web browser.")]
 #elif PCL
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon AppStream. Amazon AppStream is a fully managed, secure application streaming service that allows you to stream desktop applications from AWS to a web browser.")]
-#elif UNITY
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Amazon AppStream. Amazon AppStream is a fully managed, secure application streaming service that allows you to stream desktop applications from AWS to a web browser.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Amazon AppStream. Amazon AppStream is a fully managed, secure application streaming service that allows you to stream desktop applications from AWS to a web browser.")]
 #elif NETSTANDARD20
@@ -48,7 +46,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyVersion("3.3")]
 [assembly: AssemblyFileVersion("3.3.105.56")]
 
-#if WINDOWS_PHONE || UNITY
+#if WINDOWS_PHONE
 [assembly: System.CLSCompliant(false)]
 # else
 [assembly: System.CLSCompliant(true)]

@@ -13,8 +13,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Personalize Runtime. Amazon Personalize is a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications.")]
 #elif PCL
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon Personalize Runtime. Amazon Personalize is a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications.")]
-#elif UNITY
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Amazon Personalize Runtime. Amazon Personalize is a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Amazon Personalize Runtime. Amazon Personalize is a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications.")]
 #elif NETSTANDARD20
@@ -48,7 +46,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyVersion("3.3")]
 [assembly: AssemblyFileVersion("3.3.102.32")]
 
-#if WINDOWS_PHONE || UNITY
+#if WINDOWS_PHONE
 [assembly: System.CLSCompliant(false)]
 # else
 [assembly: System.CLSCompliant(true)]

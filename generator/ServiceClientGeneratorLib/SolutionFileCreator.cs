@@ -33,7 +33,6 @@ namespace ServiceClientGenerator
             public const string PCL = "PCL";
             public const string Android = "Android";
             public const string IOS = "iOS";
-            public const string Unity = "Unity";
             public const string Partial = "partial";
 
         }
@@ -203,10 +202,6 @@ namespace ServiceClientGenerator
                     GetProjectConfig(ProjectTypes.WinPhoneSilverlight8)
                 };
 
-            var unityProjectConfigs = new List<ProjectFileConfiguration>{
-                    GetProjectConfig(ProjectTypes.Unity)
-                };
-
             var netStandardProjectConfigs = new List<ProjectFileConfiguration> {
                     GetProjectConfig(ProjectTypes.NetStandard)
                 };            
@@ -215,7 +210,6 @@ namespace ServiceClientGenerator
             GenerateVS2017Solution("AWSSDK.Net35.sln", true, false, net35ProjectConfigs);
             GenerateVS2017Solution("AWSSDK.Net45.sln", true, false, net45ProjectConfigs);
             GenerateCombinedSolution("AWSSDK.PCL.sln", true, pclProjectConfigs);
-            GenerateCombinedSolution("AWSSDK.Unity.sln", false, unityProjectConfigs);
 
             GenerateVS2017Solution("AWSSDK.NetStandard.sln", true, false, netStandardProjectConfigs);            
 
@@ -332,7 +326,6 @@ namespace ServiceClientGenerator
                 case ProjectTypes.PCL:
                 case ProjectTypes.Android:
                 case ProjectTypes.IOS:
-                case ProjectTypes.Unity:
                 case ProjectTypes.Partial:
                     return StandardPlatformConfigurations;
                 default:

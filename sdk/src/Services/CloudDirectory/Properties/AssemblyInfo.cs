@@ -13,8 +13,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon CloudDirectory. Cloud Directory (CD) is a multi-tenant, hierarchical data store for use by other AWS services to store directory data for AWS resources, including both metadata about resources and policy data governing resources.")]
 #elif PCL
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon CloudDirectory. Cloud Directory (CD) is a multi-tenant, hierarchical data store for use by other AWS services to store directory data for AWS resources, including both metadata about resources and policy data governing resources.")]
-#elif UNITY
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Amazon CloudDirectory. Cloud Directory (CD) is a multi-tenant, hierarchical data store for use by other AWS services to store directory data for AWS resources, including both metadata about resources and policy data governing resources.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Amazon CloudDirectory. Cloud Directory (CD) is a multi-tenant, hierarchical data store for use by other AWS services to store directory data for AWS resources, including both metadata about resources and policy data governing resources.")]
 #elif NETSTANDARD20
@@ -48,7 +46,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyVersion("3.3")]
 [assembly: AssemblyFileVersion("3.3.100.147")]
 
-#if WINDOWS_PHONE || UNITY
+#if WINDOWS_PHONE
 [assembly: System.CLSCompliant(false)]
 # else
 [assembly: System.CLSCompliant(true)]

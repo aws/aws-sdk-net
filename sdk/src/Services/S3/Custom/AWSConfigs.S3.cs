@@ -59,7 +59,7 @@ namespace Amazon
 #endif
             UseSigV4SetExplicitly = false;
 
-#if BCL || UNITY
+#if BCL
 
             var appSettingValue = AWSConfigs.GetConfig(S3UseSignatureVersion4Key);
             if (!string.IsNullOrEmpty(appSettingValue))
@@ -121,29 +121,6 @@ namespace Amazon
         /// </summary>
         internal static bool UseSigV4SetExplicitly { get; private set; }
     }
-
-#if UNITY
-    internal class V4ClientSectionRoot
-    {
-        private const string s3Key = "s3";
-
-        public V4ClientSectionRoot(XElement section)
-        {
-            if (section == null)
-                return;
-
-            this.S3 = AWSConfigs.GetObject<V4ClientSection>(section, s3Key);
-        }
-
-        public V4ClientSection S3 { get; set; }
-    }
-
-    internal class V4ClientSection : ConfigurationElement
-    {
-        public bool? UseSignatureVersion4 { get; set; }
-    }
-
-#endif
 
 
 #if BCL

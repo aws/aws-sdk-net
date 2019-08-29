@@ -24,11 +24,6 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 
-#if UNITY
-using UnityEngine;
-using Amazon.Runtime.Internal;
-#endif
-
 namespace Amazon
 {
     /// <summary>

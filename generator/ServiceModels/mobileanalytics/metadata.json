@@ -21,9 +21,6 @@
             }
         ]
     }, 
-    "platforms": [
-        "Unity"
-    ], 
     "reference-dependencies": {
         "Net35": [
             {
@@ -59,16 +56,6 @@
                 "hint-path": "SQLitePCLRaw.bundle_green.1.0.1\\lib\\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\\SQLitePCLRaw.batteries_green.dll", 
                 "name": "SQLitePCLRaw.batteries_green", 
                 "version": "1.0.1"
-            }
-        ], 
-        "Unity": [
-            {
-                "hint-path": "Editor\\Data\\Mono\\lib\\mono\\2.0\\System.Data.dll", 
-                "name": "System.Data"
-            }, 
-            {
-                "hint-path": "Editor\\Data\\Mono\\lib\\mono\\2.0\\Mono.Data.SQLite.dll", 
-                "name": "Mono.Data.SQLite"
             }
         ]
     }, 
