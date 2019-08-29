@@ -39,6 +39,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         private string _roleARN;
         private ScalableDimension _scalableDimension;
         private ServiceNamespace _serviceNamespace;
+        private SuspendedState _suspendedState;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -282,6 +283,21 @@ namespace Amazon.ApplicationAutoScaling.Model
         internal bool IsSetServiceNamespace()
         {
             return this._serviceNamespace != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SuspendedState.
+        /// </summary>
+        public SuspendedState SuspendedState
+        {
+            get { return this._suspendedState; }
+            set { this._suspendedState = value; }
+        }
+
+        // Check to see if SuspendedState property is set
+        internal bool IsSetSuspendedState()
+        {
+            return this._suspendedState != null;
         }
 
     }

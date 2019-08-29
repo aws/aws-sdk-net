@@ -66,6 +66,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         private string _roleARN;
         private ScalableDimension _scalableDimension;
         private ServiceNamespace _serviceNamespace;
+        private SuspendedState _suspendedState;
 
         /// <summary>
         /// Gets and sets the property MaxCapacity. 
@@ -297,6 +298,51 @@ namespace Amazon.ApplicationAutoScaling.Model
         internal bool IsSetServiceNamespace()
         {
             return this._serviceNamespace != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SuspendedState. 
+        /// <para>
+        /// An embedded object that contains attributes and attribute values that are used to
+        /// suspend and resume automatic scaling. Setting the value of an attribute to <code>true</code>
+        /// suspends the specified scaling activities. Setting it to <code>false</code> (default)
+        /// resumes the specified scaling activities. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Suspension Outcomes</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For <code>DynamicScalingInSuspended</code>, while a suspension is in effect, all scale-in
+        /// activities that are triggered by a scaling policy are suspended.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <code>DynamicScalingOutSuspended</code>, while a suspension is in effect, all
+        /// scale-out activities that are triggered by a scaling policy are suspended.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <code>ScheduledScalingSuspended</code>, while a suspension is in effect, all scaling
+        /// activities that involve scheduled actions are suspended. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspend
+        /// and Resume Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+        /// </para>
+        /// </summary>
+        public SuspendedState SuspendedState
+        {
+            get { return this._suspendedState; }
+            set { this._suspendedState = value; }
+        }
+
+        // Check to see if SuspendedState property is set
+        internal bool IsSetSuspendedState()
+        {
+            return this._suspendedState != null;
         }
 
     }

@@ -104,6 +104,17 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ServiceNamespace);
                 }
 
+                if(publicRequest.IsSetSuspendedState())
+                {
+                    context.Writer.WritePropertyName("SuspendedState");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SuspendedStateMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SuspendedState, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
