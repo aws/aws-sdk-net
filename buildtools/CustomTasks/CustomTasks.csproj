@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="BuildTaskBase.cs" />
     <Compile Include="SelfServiceTasks.cs" />
+    <Compile Include="TimingTask.cs" />
     <Compile Include="ValidateIntegTests.cs" />
     <Compile Include="XamarinComponent.cs" />
     <Compile Include="FxCop.cs" />
