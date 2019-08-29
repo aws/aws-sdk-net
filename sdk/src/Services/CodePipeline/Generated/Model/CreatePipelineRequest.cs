@@ -30,6 +30,14 @@ namespace Amazon.CodePipeline.Model
     /// <summary>
     /// Container for the parameters to the CreatePipeline operation.
     /// Creates a pipeline.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// In the pipeline structure, you must include either <code>artifactStore</code> or <code>artifactStores</code>
+    /// in your pipeline, but you cannot use both. If you create a cross-region action in
+    /// your pipeline, you must use <code>artifactStores</code>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreatePipelineRequest : AmazonCodePipelineRequest
     {

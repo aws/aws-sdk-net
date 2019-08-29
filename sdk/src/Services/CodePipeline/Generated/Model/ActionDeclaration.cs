@@ -44,7 +44,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property ActionTypeId. 
         /// <para>
-        /// The configuration information for the action type.
+        /// Specifies the action type and the provider of the action.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,7 +63,27 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// The action declaration's configuration.
+        /// The action's configuration. These are key-value pairs that specify input values for
+        /// an action. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action
+        /// Structure Requirements in CodePipeline</a>. For the list of configuration properties
+        /// for the AWS CloudFormation action type in CodePipeline, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration
+        /// Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For template
+        /// snippets with examples, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using
+        /// Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS CloudFormation
+        /// User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The values can be represented in either JSON or YAML format. For example, the JSON
+        /// configuration item format is as follows: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>JSON:</i> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"Configuration" : { Key : Value },</code> 
         /// </para>
         /// </summary>
         public Dictionary<string, string> Configuration

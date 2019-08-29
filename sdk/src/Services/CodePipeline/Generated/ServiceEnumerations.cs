@@ -831,6 +831,72 @@ namespace Amazon.CodePipeline
 
 
     /// <summary>
+    /// Constants used for properties of type TriggerType.
+    /// </summary>
+    public class TriggerType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CloudWatchEvent for TriggerType
+        /// </summary>
+        public static readonly TriggerType CloudWatchEvent = new TriggerType("CloudWatchEvent");
+        /// <summary>
+        /// Constant CreatePipeline for TriggerType
+        /// </summary>
+        public static readonly TriggerType CreatePipeline = new TriggerType("CreatePipeline");
+        /// <summary>
+        /// Constant PollForSourceChanges for TriggerType
+        /// </summary>
+        public static readonly TriggerType PollForSourceChanges = new TriggerType("PollForSourceChanges");
+        /// <summary>
+        /// Constant PutActionRevision for TriggerType
+        /// </summary>
+        public static readonly TriggerType PutActionRevision = new TriggerType("PutActionRevision");
+        /// <summary>
+        /// Constant StartPipelineExecution for TriggerType
+        /// </summary>
+        public static readonly TriggerType StartPipelineExecution = new TriggerType("StartPipelineExecution");
+        /// <summary>
+        /// Constant Webhook for TriggerType
+        /// </summary>
+        public static readonly TriggerType Webhook = new TriggerType("Webhook");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TriggerType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TriggerType FindValue(string value)
+        {
+            return FindValue<TriggerType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TriggerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type WebhookAuthenticationType.
     /// </summary>
     public class WebhookAuthenticationType : ConstantClass

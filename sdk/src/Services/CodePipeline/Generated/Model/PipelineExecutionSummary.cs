@@ -37,6 +37,7 @@ namespace Amazon.CodePipeline.Model
         private List<SourceRevision> _sourceRevisions = new List<SourceRevision>();
         private DateTime? _startTime;
         private PipelineExecutionStatus _status;
+        private ExecutionTrigger _trigger;
 
         /// <summary>
         /// Gets and sets the property LastUpdateTime. 
@@ -144,6 +145,25 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Trigger. 
+        /// <para>
+        /// The interaction or event that started a pipeline execution, such as automated change
+        /// detection or a <code>StartPipelineExecution</code> API call.
+        /// </para>
+        /// </summary>
+        public ExecutionTrigger Trigger
+        {
+            get { return this._trigger; }
+            set { this._trigger = value; }
+        }
+
+        // Check to see if Trigger property is set
+        internal bool IsSetTrigger()
+        {
+            return this._trigger != null;
         }
 
     }

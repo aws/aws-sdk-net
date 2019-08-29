@@ -510,6 +510,14 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Creates a pipeline.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// In the pipeline structure, you must include either <code>artifactStore</code> or <code>artifactStores</code>
+        /// in your pipeline, but you cannot use both. If you create a cross-region action in
+        /// your pipeline, you must use <code>artifactStores</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="pipeline">Represents the structure of actions and stages to be performed in the pipeline. </param>
         /// 
@@ -550,6 +558,14 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Creates a pipeline.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// In the pipeline structure, you must include either <code>artifactStore</code> or <code>artifactStores</code>
+        /// in your pipeline, but you cannot use both. If you create a cross-region action in
+        /// your pipeline, you must use <code>artifactStores</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePipeline service method.</param>
         /// 
@@ -591,6 +607,14 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Creates a pipeline.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// In the pipeline structure, you must include either <code>artifactStore</code> or <code>artifactStores</code>
+        /// in your pipeline, but you cannot use both. If you create a cross-region action in
+        /// your pipeline, you must use <code>artifactStores</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="pipeline">Represents the structure of actions and stages to be performed in the pipeline. </param>
         /// <param name="cancellationToken">
@@ -635,6 +659,14 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Creates a pipeline.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// In the pipeline structure, you must include either <code>artifactStore</code> or <code>artifactStores</code>
+        /// in your pipeline, but you cannot use both. If you create a cross-region action in
+        /// your pipeline, you must use <code>artifactStores</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePipeline service method.</param>
         /// <param name="cancellationToken">

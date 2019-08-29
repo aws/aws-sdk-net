@@ -29,6 +29,14 @@ namespace Amazon.CodePipeline.Model
 {
     /// <summary>
     /// The Amazon S3 bucket where artifacts are stored for the pipeline.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// You must include either <code>artifactStore</code> or <code>artifactStores</code>
+    /// in your pipeline, but you cannot use both. If you create a cross-region action in
+    /// your pipeline, you must use <code>artifactStores</code>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ArtifactStore
     {

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PipelineExecutionSummary Object
+    /// Response Unmarshaller for ExecutionTrigger Object
     /// </summary>  
-    public class PipelineExecutionSummaryUnmarshaller : IUnmarshaller<PipelineExecutionSummary, XmlUnmarshallerContext>, IUnmarshaller<PipelineExecutionSummary, JsonUnmarshallerContext>
+    public class ExecutionTriggerUnmarshaller : IUnmarshaller<ExecutionTrigger, XmlUnmarshallerContext>, IUnmarshaller<ExecutionTrigger, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PipelineExecutionSummary IUnmarshaller<PipelineExecutionSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ExecutionTrigger IUnmarshaller<ExecutionTrigger, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,27 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PipelineExecutionSummary Unmarshall(JsonUnmarshallerContext context)
+        public ExecutionTrigger Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PipelineExecutionSummary unmarshalledObject = new PipelineExecutionSummary();
+            ExecutionTrigger unmarshalledObject = new ExecutionTrigger();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("lastUpdateTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdateTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("pipelineExecutionId", targetDepth))
+                if (context.TestExpression("triggerDetail", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PipelineExecutionId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TriggerDetail = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("sourceRevisions", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<SourceRevision, SourceRevisionUnmarshaller>(SourceRevisionUnmarshaller.Instance);
-                    unmarshalledObject.SourceRevisions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("startTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("triggerType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("trigger", targetDepth))
-                {
-                    var unmarshaller = ExecutionTriggerUnmarshaller.Instance;
-                    unmarshalledObject.Trigger = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TriggerType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +82,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         }
 
 
-        private static PipelineExecutionSummaryUnmarshaller _instance = new PipelineExecutionSummaryUnmarshaller();        
+        private static ExecutionTriggerUnmarshaller _instance = new ExecutionTriggerUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PipelineExecutionSummaryUnmarshaller Instance
+        public static ExecutionTriggerUnmarshaller Instance
         {
             get
             {
