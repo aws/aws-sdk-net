@@ -1060,9 +1060,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property StartTimeout. 
         /// <para>
-        /// Time duration to wait before giving up on resolving dependencies for a container.
-        /// For example, you specify two containers in a task definition with containerA having
-        /// a dependency on containerB reaching a <code>COMPLETE</code>, <code>SUCCESS</code>,
+        /// Time duration (in seconds) to wait before giving up on resolving dependencies for
+        /// a container. For example, you specify two containers in a task definition with containerA
+        /// having a dependency on containerB reaching a <code>COMPLETE</code>, <code>SUCCESS</code>,
         /// or <code>HEALTHY</code> status. If a <code>startTimeout</code> value is specified
         /// for containerB and it does not reach the desired status within that time then containerA
         /// will give up and not start. This results in the task transitioning to a <code>STOPPED</code>
@@ -1103,11 +1103,11 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property StopTimeout. 
         /// <para>
-        /// Time duration to wait before the container is forcefully killed if it doesn't exit
-        /// normally on its own. For tasks using the Fargate launch type, the max <code>stopTimeout</code>
-        /// value is 2 minutes. This parameter is available for tasks using the Fargate launch
-        /// type in the Ohio (us-east-2) region only and the task or service requires platform
-        /// version 1.3.0 or later.
+        /// Time duration (in seconds) to wait before the container is forcefully killed if it
+        /// doesn't exit normally on its own. For tasks using the Fargate launch type, the max
+        /// <code>stopTimeout</code> value is 2 minutes. This parameter is available for tasks
+        /// using the Fargate launch type in the Ohio (us-east-2) region only and the task or
+        /// service requires platform version 1.3.0 or later.
         /// </para>
         ///  
         /// <para>

@@ -129,14 +129,15 @@ namespace Amazon.ECS
         /// <summary>
         /// Runs and maintains a desired number of tasks from a specified task definition. If
         /// the number of tasks running in a service drops below the <code>desiredCount</code>,
-        /// Amazon ECS spawns another copy of the task in the specified cluster. To update an
-        /// existing service, see <a>UpdateService</a>.
+        /// Amazon ECS runs another copy of the task in the specified cluster. To update an existing
+        /// service, see <a>UpdateService</a>.
         /// 
         ///  
         /// <para>
         /// In addition to maintaining the desired count of tasks in your service, you can optionally
-        /// run your service behind a load balancer. The load balancer distributes traffic across
-        /// the tasks that are associated with the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
+        /// run your service behind one or more load balancers. The load balancers distribute
+        /// traffic across the tasks that are associated with the service. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
         /// Load Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  

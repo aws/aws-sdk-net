@@ -28,32 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// Details on a load balancer to be used with a service or task set.
-    /// 
-    ///  
-    /// <para>
-    /// If the service is using the <code>ECS</code> deployment controller, you are limited
-    /// to one load balancer or target group.
-    /// </para>
-    ///  
-    /// <para>
-    /// If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service
-    /// is required to use either an Application Load Balancer or Network Load Balancer. When
-    /// you are creating an AWS CodeDeploy deployment group, you specify two target groups
-    /// (referred to as a <code>targetGroupPair</code>). Each target group binds to a separate
-    /// task set in the deployment. The load balancer can also have up to two listeners, a
-    /// required listener for production traffic and an optional listener that allows you
-    /// to test new revisions of the service before routing production traffic to it.
-    /// </para>
-    ///  
-    /// <para>
-    /// Services with tasks that use the <code>awsvpc</code> network mode (for example, those
-    /// with the Fargate launch type) only support Application Load Balancers and Network
-    /// Load Balancers. Classic Load Balancers are not supported. Also, when you create any
-    /// target groups for these services, you must choose <code>ip</code> as the target type,
-    /// not <code>instance</code>. Tasks that use the <code>awsvpc</code> network mode are
-    /// associated with an elastic network interface, not an Amazon EC2 instance.
-    /// </para>
+    /// Details on the load balancer or load balancers to use with a service or task set.
     /// </summary>
     public partial class LoadBalancer
     {
@@ -85,8 +60,9 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ContainerPort. 
         /// <para>
         /// The port on the container to associate with the load balancer. This port must correspond
-        /// to a <code>containerPort</code> in the service's task definition. Your container instances
-        /// must allow ingress traffic on the <code>hostPort</code> of the port mapping.
+        /// to a <code>containerPort</code> in the task definition the tasks in the service are
+        /// using. For tasks that use the EC2 launch type, the container instance they are launched
+        /// on must allow ingress traffic on the <code>hostPort</code> of the port mapping.
         /// </para>
         /// </summary>
         public int ContainerPort
@@ -108,8 +84,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// A load balancer name is only specified when using a classic load balancer. If you
-        /// are using an application load balancer or a network load balancer this should be omitted.
+        /// A load balancer name is only specified when using a Classic Load Balancer. If you
+        /// are using an Application Load Balancer or a Network Load Balancer this should be omitted.
         /// </para>
         /// </summary>
         public string LoadBalancerName
@@ -132,21 +108,30 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// A target group ARN is only specified when using an application load balancer or a
-        /// network load balancer. If you are using a classic load balancer this should be omitted.
+        /// A target group ARN is only specified when using an Application Load Balancer or Network
+        /// Load Balancer. If you are using a Classic Load Balancer this should be omitted.
         /// </para>
         ///  
         /// <para>
-        /// For services using the <code>ECS</code> deployment controller, you are limited to
-        /// one target group. For services using the <code>CODE_DEPLOY</code> deployment controller,
-        /// you are required to define two target groups for the load balancer.
+        /// For services using the <code>ECS</code> deployment controller, you can specify one
+        /// or multiple target groups. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Registering
+        /// Multiple Target Groups with a Service</a> in the <i>Amazon Elastic Container Service
+        /// Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For services using the <code>CODE_DEPLOY</code> deployment controller, you are required
+        /// to define two target groups for the load balancer. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html">Blue/Green
+        /// Deployment with CodeDeploy</a> in the <i>Amazon Elastic Container Service Developer
+        /// Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
         /// If your service's task definition uses the <code>awsvpc</code> network mode (which
         /// is required for the Fargate launch type), you must choose <code>ip</code> as the target
-        /// type, not <code>instance</code>, because tasks that use the <code>awsvpc</code> network
-        /// mode are associated with an elastic network interface, not an Amazon EC2 instance.
+        /// type, not <code>instance</code>, when creating your target groups because tasks that
+        /// use the <code>awsvpc</code> network mode are associated with an elastic network interface,
+        /// not an Amazon EC2 instance.
         /// </para>
         ///  </important>
         /// </summary>

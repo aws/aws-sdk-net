@@ -44,6 +44,7 @@ namespace Amazon.ECS.Model
         private List<NetworkBinding> _networkBindings = new List<NetworkBinding>();
         private List<NetworkInterface> _networkInterfaces = new List<NetworkInterface>();
         private string _reason;
+        private string _runtimeId;
         private string _taskArn;
 
         /// <summary>
@@ -263,6 +264,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetReason()
         {
             return this._reason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuntimeId. 
+        /// <para>
+        /// The ID of the Docker container.
+        /// </para>
+        /// </summary>
+        public string RuntimeId
+        {
+            get { return this._runtimeId; }
+            set { this._runtimeId = value; }
+        }
+
+        // Check to see if RuntimeId property is set
+        internal bool IsSetRuntimeId()
+        {
+            return this._runtimeId != null;
         }
 
         /// <summary>
