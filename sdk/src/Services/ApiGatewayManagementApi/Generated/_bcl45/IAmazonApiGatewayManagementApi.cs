@@ -41,6 +41,98 @@ namespace Amazon.ApiGatewayManagementApi
     {
 
         
+        #region  DeleteConnection
+
+
+        /// <summary>
+        /// Delete the connection with the provided id.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnection service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConnection service method, as returned by ApiGatewayManagementApi.</returns>
+        /// <exception cref="Amazon.ApiGatewayManagementApi.Model.ForbiddenException">
+        /// The caller is not authorized to invoke this operation.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayManagementApi.Model.GoneException">
+        /// The connection with the provided id no longer exists.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayManagementApi.Model.LimitExceededException">
+        /// The client is sending more than the allowed number of requests per unit of time or
+        /// the WebSocket client side buffer is full.
+        /// </exception>
+        DeleteConnectionResponse DeleteConnection(DeleteConnectionRequest request);
+
+
+
+        /// <summary>
+        /// Delete the connection with the provided id.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteConnection service method, as returned by ApiGatewayManagementApi.</returns>
+        /// <exception cref="Amazon.ApiGatewayManagementApi.Model.ForbiddenException">
+        /// The caller is not authorized to invoke this operation.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayManagementApi.Model.GoneException">
+        /// The connection with the provided id no longer exists.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayManagementApi.Model.LimitExceededException">
+        /// The client is sending more than the allowed number of requests per unit of time or
+        /// the WebSocket client side buffer is full.
+        /// </exception>
+        Task<DeleteConnectionResponse> DeleteConnectionAsync(DeleteConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetConnection
+
+
+        /// <summary>
+        /// Get information about the connection with the provided id.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnection service method.</param>
+        /// 
+        /// <returns>The response from the GetConnection service method, as returned by ApiGatewayManagementApi.</returns>
+        /// <exception cref="Amazon.ApiGatewayManagementApi.Model.ForbiddenException">
+        /// The caller is not authorized to invoke this operation.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayManagementApi.Model.GoneException">
+        /// The connection with the provided id no longer exists.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayManagementApi.Model.LimitExceededException">
+        /// The client is sending more than the allowed number of requests per unit of time or
+        /// the WebSocket client side buffer is full.
+        /// </exception>
+        GetConnectionResponse GetConnection(GetConnectionRequest request);
+
+
+
+        /// <summary>
+        /// Get information about the connection with the provided id.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConnection service method, as returned by ApiGatewayManagementApi.</returns>
+        /// <exception cref="Amazon.ApiGatewayManagementApi.Model.ForbiddenException">
+        /// The caller is not authorized to invoke this operation.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayManagementApi.Model.GoneException">
+        /// The connection with the provided id no longer exists.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayManagementApi.Model.LimitExceededException">
+        /// The client is sending more than the allowed number of requests per unit of time or
+        /// the WebSocket client side buffer is full.
+        /// </exception>
+        Task<GetConnectionResponse> GetConnectionAsync(GetConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  PostToConnection
 
 
@@ -57,7 +149,8 @@ namespace Amazon.ApiGatewayManagementApi
         /// The connection with the provided id no longer exists.
         /// </exception>
         /// <exception cref="Amazon.ApiGatewayManagementApi.Model.LimitExceededException">
-        /// The client is sending more than the allowed number of requests per unit of time.
+        /// The client is sending more than the allowed number of requests per unit of time or
+        /// the WebSocket client side buffer is full.
         /// </exception>
         /// <exception cref="Amazon.ApiGatewayManagementApi.Model.PayloadTooLargeException">
         /// The data has exceeded the maximum size allowed.
@@ -82,7 +175,8 @@ namespace Amazon.ApiGatewayManagementApi
         /// The connection with the provided id no longer exists.
         /// </exception>
         /// <exception cref="Amazon.ApiGatewayManagementApi.Model.LimitExceededException">
-        /// The client is sending more than the allowed number of requests per unit of time.
+        /// The client is sending more than the allowed number of requests per unit of time or
+        /// the WebSocket client side buffer is full.
         /// </exception>
         /// <exception cref="Amazon.ApiGatewayManagementApi.Model.PayloadTooLargeException">
         /// The data has exceeded the maximum size allowed.

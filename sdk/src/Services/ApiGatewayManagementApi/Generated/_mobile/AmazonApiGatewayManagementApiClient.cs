@@ -247,6 +247,92 @@ namespace Amazon.ApiGatewayManagementApi
         #endregion
 
 
+        #region  DeleteConnection
+
+        internal virtual DeleteConnectionResponse DeleteConnection(DeleteConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConnectionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete the connection with the provided id.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteConnection service method, as returned by ApiGatewayManagementApi.</returns>
+        /// <exception cref="Amazon.ApiGatewayManagementApi.Model.ForbiddenException">
+        /// The caller is not authorized to invoke this operation.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayManagementApi.Model.GoneException">
+        /// The connection with the provided id no longer exists.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayManagementApi.Model.LimitExceededException">
+        /// The client is sending more than the allowed number of requests per unit of time or
+        /// the WebSocket client side buffer is full.
+        /// </exception>
+        public virtual Task<DeleteConnectionResponse> DeleteConnectionAsync(DeleteConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteConnectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetConnection
+
+        internal virtual GetConnectionResponse GetConnection(GetConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<GetConnectionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get information about the connection with the provided id.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConnection service method, as returned by ApiGatewayManagementApi.</returns>
+        /// <exception cref="Amazon.ApiGatewayManagementApi.Model.ForbiddenException">
+        /// The caller is not authorized to invoke this operation.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayManagementApi.Model.GoneException">
+        /// The connection with the provided id no longer exists.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayManagementApi.Model.LimitExceededException">
+        /// The client is sending more than the allowed number of requests per unit of time or
+        /// the WebSocket client side buffer is full.
+        /// </exception>
+        public virtual Task<GetConnectionResponse> GetConnectionAsync(GetConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetConnectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PostToConnection
 
         internal virtual PostToConnectionResponse PostToConnection(PostToConnectionRequest request)
@@ -276,7 +362,8 @@ namespace Amazon.ApiGatewayManagementApi
         /// The connection with the provided id no longer exists.
         /// </exception>
         /// <exception cref="Amazon.ApiGatewayManagementApi.Model.LimitExceededException">
-        /// The client is sending more than the allowed number of requests per unit of time.
+        /// The client is sending more than the allowed number of requests per unit of time or
+        /// the WebSocket client side buffer is full.
         /// </exception>
         /// <exception cref="Amazon.ApiGatewayManagementApi.Model.PayloadTooLargeException">
         /// The data has exceeded the maximum size allowed.

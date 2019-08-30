@@ -240,6 +240,128 @@ namespace Amazon.ApiGatewayManagementApi
         #endregion
 
 
+        #region  DeleteConnection
+
+        /// <summary>
+        /// Delete the connection with the provided id.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnection service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConnection service method, as returned by ApiGatewayManagementApi.</returns>
+        /// <exception cref="Amazon.ApiGatewayManagementApi.Model.ForbiddenException">
+        /// The caller is not authorized to invoke this operation.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayManagementApi.Model.GoneException">
+        /// The connection with the provided id no longer exists.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayManagementApi.Model.LimitExceededException">
+        /// The client is sending more than the allowed number of requests per unit of time or
+        /// the WebSocket client side buffer is full.
+        /// </exception>
+        public virtual DeleteConnectionResponse DeleteConnection(DeleteConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConnectionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnection operation on AmazonApiGatewayManagementApiClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConnection
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginDeleteConnection(DeleteConnectionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConnection.</param>
+        /// 
+        /// <returns>Returns a  DeleteConnectionResult from ApiGatewayManagementApi.</returns>
+        public virtual DeleteConnectionResponse EndDeleteConnection(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteConnectionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetConnection
+
+        /// <summary>
+        /// Get information about the connection with the provided id.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnection service method.</param>
+        /// 
+        /// <returns>The response from the GetConnection service method, as returned by ApiGatewayManagementApi.</returns>
+        /// <exception cref="Amazon.ApiGatewayManagementApi.Model.ForbiddenException">
+        /// The caller is not authorized to invoke this operation.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayManagementApi.Model.GoneException">
+        /// The connection with the provided id no longer exists.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayManagementApi.Model.LimitExceededException">
+        /// The client is sending more than the allowed number of requests per unit of time or
+        /// the WebSocket client side buffer is full.
+        /// </exception>
+        public virtual GetConnectionResponse GetConnection(GetConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<GetConnectionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetConnection operation on AmazonApiGatewayManagementApiClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConnection
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginGetConnection(GetConnectionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetConnection.</param>
+        /// 
+        /// <returns>Returns a  GetConnectionResult from ApiGatewayManagementApi.</returns>
+        public virtual GetConnectionResponse EndGetConnection(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetConnectionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PostToConnection
 
         /// <summary>
@@ -255,7 +377,8 @@ namespace Amazon.ApiGatewayManagementApi
         /// The connection with the provided id no longer exists.
         /// </exception>
         /// <exception cref="Amazon.ApiGatewayManagementApi.Model.LimitExceededException">
-        /// The client is sending more than the allowed number of requests per unit of time.
+        /// The client is sending more than the allowed number of requests per unit of time or
+        /// the WebSocket client side buffer is full.
         /// </exception>
         /// <exception cref="Amazon.ApiGatewayManagementApi.Model.PayloadTooLargeException">
         /// The data has exceeded the maximum size allowed.
