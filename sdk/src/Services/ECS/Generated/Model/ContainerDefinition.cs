@@ -45,6 +45,7 @@ namespace Amazon.ECS.Model
         private List<KeyValuePair> _environment = new List<KeyValuePair>();
         private bool? _essential;
         private List<HostEntry> _extraHosts = new List<HostEntry>();
+        private FirelensConfiguration _firelensConfiguration;
         private HealthCheck _healthCheck;
         private string _hostname;
         private string _image;
@@ -476,6 +477,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetExtraHosts()
         {
             return this._extraHosts != null && this._extraHosts.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FirelensConfiguration. 
+        /// <para>
+        /// The FireLens configuration for the container. This is used to specify and configure
+        /// a log router for container logs.
+        /// </para>
+        /// </summary>
+        public FirelensConfiguration FirelensConfiguration
+        {
+            get { return this._firelensConfiguration; }
+            set { this._firelensConfiguration = value; }
+        }
+
+        // Check to see if FirelensConfiguration property is set
+        internal bool IsSetFirelensConfiguration()
+        {
+            return this._firelensConfiguration != null;
         }
 
         /// <summary>

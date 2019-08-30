@@ -180,6 +180,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetFirelensConfiguration())
+            {
+                context.Writer.WritePropertyName("firelensConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FirelensConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.FirelensConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetHealthCheck())
             {
                 context.Writer.WritePropertyName("healthCheck");
