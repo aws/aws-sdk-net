@@ -37,6 +37,7 @@ namespace Amazon.MQ.Model
         private ConfigurationId _configuration;
         private string _engineVersion;
         private Logs _logs;
+        private List<string> _securityGroups = new List<string>();
 
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. The new value of automatic upgrades
@@ -115,6 +116,22 @@ namespace Amazon.MQ.Model
         internal bool IsSetLogs()
         {
             return this._logs != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityGroups. The list of security groups (1 minimum,
+        /// 5 maximum) that authorize connections to brokers.
+        /// </summary>
+        public List<string> SecurityGroups
+        {
+            get { return this._securityGroups; }
+            set { this._securityGroups = value; }
+        }
+
+        // Check to see if SecurityGroups property is set
+        internal bool IsSetSecurityGroups()
+        {
+            return this._securityGroups != null && this._securityGroups.Count > 0; 
         }
 
     }

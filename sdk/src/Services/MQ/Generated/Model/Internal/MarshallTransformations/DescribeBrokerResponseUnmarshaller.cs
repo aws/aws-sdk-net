@@ -147,6 +147,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     response.PendingEngineVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("pendingSecurityGroups", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.PendingSecurityGroups = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("publiclyAccessible", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

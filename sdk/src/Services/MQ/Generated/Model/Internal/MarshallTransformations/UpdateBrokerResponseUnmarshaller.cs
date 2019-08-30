@@ -81,6 +81,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     response.Logs = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("securityGroups", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.SecurityGroups = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

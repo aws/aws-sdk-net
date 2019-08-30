@@ -103,6 +103,17 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetSecurityGroups())
+                {
+                    context.Writer.WritePropertyName("securityGroups");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSecurityGroupsListValue in publicRequest.SecurityGroups)
+                    {
+                            context.Writer.Write(publicRequestSecurityGroupsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

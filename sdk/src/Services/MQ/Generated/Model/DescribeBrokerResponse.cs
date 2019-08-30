@@ -48,6 +48,7 @@ namespace Amazon.MQ.Model
         private LogsSummary _logs;
         private WeeklyStartTime _maintenanceWindowStartTime;
         private string _pendingEngineVersion;
+        private List<string> _pendingSecurityGroups = new List<string>();
         private bool? _publiclyAccessible;
         private List<string> _securityGroups = new List<string>();
         private List<string> _subnetIds = new List<string>();
@@ -309,6 +310,22 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PendingSecurityGroups. The list of pending security groups
+        /// to authorize connections to brokers.
+        /// </summary>
+        public List<string> PendingSecurityGroups
+        {
+            get { return this._pendingSecurityGroups; }
+            set { this._pendingSecurityGroups = value; }
+        }
+
+        // Check to see if PendingSecurityGroups property is set
+        internal bool IsSetPendingSecurityGroups()
+        {
+            return this._pendingSecurityGroups != null && this._pendingSecurityGroups.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PubliclyAccessible. Required. Enables connections from
         /// applications outside of the VPC that hosts the broker's subnets.
         /// </summary>
@@ -325,8 +342,8 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SecurityGroups. Required. The list of rules (1 minimum,
-        /// 125 maximum) that authorize connections to brokers.
+        /// Gets and sets the property SecurityGroups. The list of security groups (1 minimum,
+        /// 5 maximum) that authorize connections to brokers.
         /// </summary>
         public List<string> SecurityGroups
         {
