@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.578.0",
+    "ProductVersion" : "3.3.579.0",
     "CoreVersion"    : "3.3.103.32",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -159,7 +159,7 @@
             "InPreview"               : false
         },
         "ECS"               : {
-            "Version" : "3.3.106.0",
+            "Version" : "3.3.107.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.32"
@@ -905,7 +905,7 @@
             "InPreview"               : false
         },
         "MQ"                              : {
-            "Version" : "3.3.102.18",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.32"
@@ -1337,7 +1337,7 @@
             "InPreview"               : false
         },
         "ApiGatewayManagementApi"         : {
-            "Version" : "3.3.100.68",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.32"

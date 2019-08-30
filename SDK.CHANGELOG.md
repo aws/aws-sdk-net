@@ -1,3 +1,11 @@
+### 3.3.579.0 (2019-08-30 18:08 UTC)
+* ApiGatewayManagementApi (3.3.101.0)
+	* You can use getConnection to return information about the connection (when it is connected, IP address, etc) and deleteConnection to disconnect the given connection
+* ECS (3.3.107.0)
+	* This release of Amazon Elastic Container Service (Amazon ECS) introduces support for modifying the cluster settings for existing clusters, which enables you to toggle whether Container Insights is enabled or not. Support is also introduced for custom log routing using the ECS FireLens integration.
+* MQ (3.3.103.0)
+	* Adds support for updating security groups selection of an Amazon MQ broker.
+
 ### 3.3.578.0 (2019-08-29 19:29 UTC)
 * ApplicationAutoScaling (3.3.101.0)
 	* With the current release, you can suspend and later resume any of the following scaling actions in Application Auto Scaling: scheduled scaling actions, dynamic scaling in actions, dynamic scaling out actions.
