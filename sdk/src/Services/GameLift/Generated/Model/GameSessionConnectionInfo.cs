@@ -36,10 +36,26 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class GameSessionConnectionInfo
     {
+        private string _dnsName;
         private string _gameSessionArn;
         private string _ipAddress;
         private List<MatchedPlayerSession> _matchedPlayerSessions = new List<MatchedPlayerSession>();
         private int? _port;
+
+        /// <summary>
+        /// Gets and sets the property DnsName.
+        /// </summary>
+        public string DnsName
+        {
+            get { return this._dnsName; }
+            set { this._dnsName = value; }
+        }
+
+        // Check to see if DnsName property is set
+        internal bool IsSetDnsName()
+        {
+            return this._dnsName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property GameSessionArn. 

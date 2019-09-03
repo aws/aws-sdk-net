@@ -74,6 +74,17 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.BuildId);
                 }
 
+                if(publicRequest.IsSetCertificateConfiguration())
+                {
+                    context.Writer.WritePropertyName("CertificateConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CertificateConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CertificateConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("Description");

@@ -88,6 +88,7 @@ namespace Amazon.GameLift.Model
         private DateTime? _creationTime;
         private string _creatorId;
         private int? _currentPlayerSessionCount;
+        private string _dnsName;
         private string _fleetId;
         private List<GameProperty> _gameProperties = new List<GameProperty>();
         private string _gameSessionData;
@@ -158,6 +159,21 @@ namespace Amazon.GameLift.Model
         internal bool IsSetCurrentPlayerSessionCount()
         {
             return this._currentPlayerSessionCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DnsName.
+        /// </summary>
+        public string DnsName
+        {
+            get { return this._dnsName; }
+            set { this._dnsName = value; }
+        }
+
+        // Check to see if DnsName property is set
+        internal bool IsSetDnsName()
+        {
+            return this._dnsName != null;
         }
 
         /// <summary>

@@ -52,6 +52,7 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class GameSessionPlacement
     {
+        private string _dnsName;
         private DateTime? _endTime;
         private List<GameProperty> _gameProperties = new List<GameProperty>();
         private string _gameSessionArn;
@@ -69,6 +70,21 @@ namespace Amazon.GameLift.Model
         private int? _port;
         private DateTime? _startTime;
         private GameSessionPlacementState _status;
+
+        /// <summary>
+        /// Gets and sets the property DnsName.
+        /// </summary>
+        public string DnsName
+        {
+            get { return this._dnsName; }
+            set { this._dnsName = value; }
+        }
+
+        // Check to see if DnsName property is set
+        internal bool IsSetDnsName()
+        {
+            return this._dnsName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EndTime. 

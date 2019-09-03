@@ -70,6 +70,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.BuildId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CertificateConfiguration", targetDepth))
+                {
+                    var unmarshaller = CertificateConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.CertificateConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GameSessionConnectionInfo Object
+    /// Response Unmarshaller for CertificateConfiguration Object
     /// </summary>  
-    public class GameSessionConnectionInfoUnmarshaller : IUnmarshaller<GameSessionConnectionInfo, XmlUnmarshallerContext>, IUnmarshaller<GameSessionConnectionInfo, JsonUnmarshallerContext>
+    public class CertificateConfigurationUnmarshaller : IUnmarshaller<CertificateConfiguration, XmlUnmarshallerContext>, IUnmarshaller<CertificateConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        GameSessionConnectionInfo IUnmarshaller<GameSessionConnectionInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CertificateConfiguration IUnmarshaller<CertificateConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,21 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public GameSessionConnectionInfo Unmarshall(JsonUnmarshallerContext context)
+        public CertificateConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            GameSessionConnectionInfo unmarshalledObject = new GameSessionConnectionInfo();
+            CertificateConfiguration unmarshalledObject = new CertificateConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DnsName", targetDepth))
+                if (context.TestExpression("CertificateType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DnsName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("GameSessionArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GameSessionArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("IpAddress", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IpAddress = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MatchedPlayerSessions", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<MatchedPlayerSession, MatchedPlayerSessionUnmarshaller>(MatchedPlayerSessionUnmarshaller.Instance);
-                    unmarshalledObject.MatchedPlayerSessions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Port", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Port = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CertificateType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +76,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         }
 
 
-        private static GameSessionConnectionInfoUnmarshaller _instance = new GameSessionConnectionInfoUnmarshaller();        
+        private static CertificateConfigurationUnmarshaller _instance = new CertificateConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GameSessionConnectionInfoUnmarshaller Instance
+        public static CertificateConfigurationUnmarshaller Instance
         {
             get
             {
