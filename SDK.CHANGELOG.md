@@ -1,3 +1,11 @@
+### 3.3.580.0 (2019-09-03 19:34 UTC)
+* ECS (3.3.108.0)
+	* This release of Amazon Elastic Container Service (Amazon ECS) introduces support for attaching Amazon Elastic Inference accelerators to your containers. This enables you to run deep learning inference workloads with hardware acceleration in a more efficient way.
+* GameLift (3.3.103.0)
+	* You can now make use of PKI resources to provide more secure connections between your game clients and servers.  To learn more, please refer to the public Amazon GameLift documentation.
+* ResourceGroupsTaggingAPI (3.3.102.32)
+	* Documentation updates for resourcegroupstaggingapi
+
 ### 3.3.579.0 (2019-08-30 18:08 UTC)
 * ApiGatewayManagementApi (3.3.101.0)
 	* You can use getConnection to return information about the connection (when it is connected, IP address, etc) and deleteConnection to disconnect the given connection
