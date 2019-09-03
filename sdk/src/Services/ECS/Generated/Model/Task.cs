@@ -44,6 +44,7 @@ namespace Amazon.ECS.Model
         private DateTime? _executionStoppedAt;
         private string _group;
         private HealthStatus _healthStatus;
+        private List<InferenceAccelerator> _inferenceAccelerators = new List<InferenceAccelerator>();
         private string _lastStatus;
         private LaunchType _launchType;
         private string _memory;
@@ -334,6 +335,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetHealthStatus()
         {
             return this._healthStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InferenceAccelerators. 
+        /// <para>
+        /// The Elastic Inference accelerator associated with the task.
+        /// </para>
+        /// </summary>
+        public List<InferenceAccelerator> InferenceAccelerators
+        {
+            get { return this._inferenceAccelerators; }
+            set { this._inferenceAccelerators = value; }
+        }
+
+        // Check to see if InferenceAccelerators property is set
+        internal bool IsSetInferenceAccelerators()
+        {
+            return this._inferenceAccelerators != null && this._inferenceAccelerators.Count > 0; 
         }
 
         /// <summary>

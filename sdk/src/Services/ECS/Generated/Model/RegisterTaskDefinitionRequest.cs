@@ -61,6 +61,7 @@ namespace Amazon.ECS.Model
         private string _cpu;
         private string _executionRoleArn;
         private string _family;
+        private List<InferenceAccelerator> _inferenceAccelerators = new List<InferenceAccelerator>();
         private IpcMode _ipcMode;
         private string _memory;
         private NetworkMode _networkMode;
@@ -195,6 +196,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetFamily()
         {
             return this._family != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InferenceAccelerators. 
+        /// <para>
+        /// The Elastic Inference accelerators to use for the containers in the task.
+        /// </para>
+        /// </summary>
+        public List<InferenceAccelerator> InferenceAccelerators
+        {
+            get { return this._inferenceAccelerators; }
+            set { this._inferenceAccelerators = value; }
+        }
+
+        // Check to see if InferenceAccelerators property is set
+        internal bool IsSetInferenceAccelerators()
+        {
+            return this._inferenceAccelerators != null && this._inferenceAccelerators.Count > 0; 
         }
 
         /// <summary>

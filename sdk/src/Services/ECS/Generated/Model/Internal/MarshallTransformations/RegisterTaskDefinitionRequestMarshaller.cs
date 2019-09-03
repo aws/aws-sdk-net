@@ -102,6 +102,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Family);
                 }
 
+                if(publicRequest.IsSetInferenceAccelerators())
+                {
+                    context.Writer.WritePropertyName("inferenceAccelerators");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestInferenceAcceleratorsListValue in publicRequest.InferenceAccelerators)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = InferenceAcceleratorMarshaller.Instance;
+                        marshaller.Marshall(publicRequestInferenceAcceleratorsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetIpcMode())
                 {
                     context.Writer.WritePropertyName("ipcMode");

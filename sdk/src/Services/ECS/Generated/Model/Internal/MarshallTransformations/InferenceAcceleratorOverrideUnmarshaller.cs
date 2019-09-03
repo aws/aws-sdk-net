@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TaskOverride Object
+    /// Response Unmarshaller for InferenceAcceleratorOverride Object
     /// </summary>  
-    public class TaskOverrideUnmarshaller : IUnmarshaller<TaskOverride, XmlUnmarshallerContext>, IUnmarshaller<TaskOverride, JsonUnmarshallerContext>
+    public class InferenceAcceleratorOverrideUnmarshaller : IUnmarshaller<InferenceAcceleratorOverride, XmlUnmarshallerContext>, IUnmarshaller<InferenceAcceleratorOverride, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TaskOverride IUnmarshaller<TaskOverride, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        InferenceAcceleratorOverride IUnmarshaller<InferenceAcceleratorOverride, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public TaskOverride Unmarshall(JsonUnmarshallerContext context)
+        public InferenceAcceleratorOverride Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            TaskOverride unmarshalledObject = new TaskOverride();
+            InferenceAcceleratorOverride unmarshalledObject = new InferenceAcceleratorOverride();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("containerOverrides", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ContainerOverride, ContainerOverrideUnmarshaller>(ContainerOverrideUnmarshaller.Instance);
-                    unmarshalledObject.ContainerOverrides = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("executionRoleArn", targetDepth))
+                if (context.TestExpression("deviceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionRoleArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeviceName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("inferenceAcceleratorOverrides", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<InferenceAcceleratorOverride, InferenceAcceleratorOverrideUnmarshaller>(InferenceAcceleratorOverrideUnmarshaller.Instance);
-                    unmarshalledObject.InferenceAcceleratorOverrides = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("taskRoleArn", targetDepth))
+                if (context.TestExpression("deviceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskRoleArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeviceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         }
 
 
-        private static TaskOverrideUnmarshaller _instance = new TaskOverrideUnmarshaller();        
+        private static InferenceAcceleratorOverrideUnmarshaller _instance = new InferenceAcceleratorOverrideUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TaskOverrideUnmarshaller Instance
+        public static InferenceAcceleratorOverrideUnmarshaller Instance
         {
             get
             {

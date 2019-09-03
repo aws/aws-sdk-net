@@ -28,9 +28,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The type and amount of a resource to assign to a container. The only supported resource
-    /// is a GPU. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html">Working
-    /// with GPUs on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>
+    /// The type and amount of a resource to assign to a container. The supported resource
+    /// types are GPUs and Elastic Inference accelerators. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html">Working
+    /// with GPUs on Amazon ECS</a> or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-eia.html">Working
+    /// with Amazon Elastic Inference on Amazon ECS</a> in the <i>Amazon Elastic Container
+    /// Service Developer Guide</i>
     /// </summary>
     public partial class ResourceRequirement
     {
@@ -40,7 +42,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of resource to assign to a container. The only supported value is <code>GPU</code>.
+        /// The type of resource to assign to a container. The supported values are <code>GPU</code>
+        /// or <code>InferenceAccelerator</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,10 +62,20 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The number of physical <code>GPUs</code> the Amazon ECS container agent will reserve
-        /// for the container. The number of GPUs reserved for all containers in a task should
-        /// not exceed the number of available GPUs on the container instance the task is launched
-        /// on.
+        /// The value for the specified resource type.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <code>GPU</code> type is used, the value is the number of physical <code>GPUs</code>
+        /// the Amazon ECS container agent will reserve for the container. The number of GPUs
+        /// reserved for all containers in a task should not exceed the number of available GPUs
+        /// on the container instance the task is launched on.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <code>InferenceAccelerator</code> type is used, the <code>value</code> should
+        /// match the <code>deviceName</code> for an <a>InferenceAccelerator</a> specified in
+        /// a task definition.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

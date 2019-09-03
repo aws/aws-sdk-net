@@ -136,6 +136,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.HealthStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("inferenceAccelerators", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<InferenceAccelerator, InferenceAcceleratorUnmarshaller>(InferenceAcceleratorUnmarshaller.Instance);
+                    unmarshalledObject.InferenceAccelerators = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

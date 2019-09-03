@@ -242,10 +242,18 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Memory. 
         /// <para>
-        /// The amount (in MiB) of memory used by the task. If using the EC2 launch type, this
-        /// field is optional and any value can be used. If using the Fargate launch type, this
-        /// field is required and you must use one of the following values, which determines your
-        /// range of valid values for the <code>cpu</code> parameter:
+        /// The amount (in MiB) of memory used by the task.
+        /// </para>
+        ///  
+        /// <para>
+        /// If using the EC2 launch type, this field is optional and any value can be used. If
+        /// a task-level memory value is specified then the container-level memory value is optional.
+        /// </para>
+        ///  
+        /// <para>
+        /// If using the Fargate launch type, this field is required and you must use one of the
+        /// following values, which determines your range of valid values for the <code>cpu</code>
+        /// parameter:
         /// </para>
         ///  <ul> <li> 
         /// <para>

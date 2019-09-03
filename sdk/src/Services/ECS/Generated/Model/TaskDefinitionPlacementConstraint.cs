@@ -28,17 +28,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// An object representing a constraint on task placement in the task definition.
+    /// An object representing a constraint on task placement in the task definition. For
+    /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task
+    /// Placement Constraints</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// 
-    ///  
+    ///  <note> 
     /// <para>
     /// If you are using the Fargate launch type, task placement constraints are not supported.
     /// </para>
-    ///  
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task
-    /// Placement Constraints</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-    /// </para>
+    ///  </note>
     /// </summary>
     public partial class TaskDefinitionPlacementConstraint
     {
@@ -68,9 +66,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of constraint. The <code>DistinctInstance</code> constraint ensures that
-        /// each task in a particular group is running on a different container instance. The
-        /// <code>MemberOf</code> constraint restricts selection to be from a group of valid candidates.
+        /// The type of constraint. The <code>MemberOf</code> constraint restricts selection to
+        /// be from a group of valid candidates.
         /// </para>
         /// </summary>
         public TaskDefinitionPlacementConstraintType Type

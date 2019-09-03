@@ -263,6 +263,12 @@ namespace Amazon.ECS.Model
         /// The number of instantiations of the specified task definition to place and keep running
         /// on your cluster.
         /// </para>
+        ///  
+        /// <para>
+        /// This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or is
+        /// not specified. If <code>schedulingStrategy</code> is <code>DAEMON</code> then this
+        /// is not required.
+        /// </para>
         /// </summary>
         public int DesiredCount
         {

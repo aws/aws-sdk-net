@@ -1310,6 +1310,10 @@ namespace Amazon.ECS
         /// Constant GPU for ResourceType
         /// </summary>
         public static readonly ResourceType GPU = new ResourceType("GPU");
+        /// <summary>
+        /// Constant InferenceAccelerator for ResourceType
+        /// </summary>
+        public static readonly ResourceType InferenceAccelerator = new ResourceType("InferenceAccelerator");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
