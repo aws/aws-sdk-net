@@ -69,13 +69,40 @@ namespace Amazon.ResourceGroupsTaggingAPI
     /// List all existing values for the specified key in the specified region for the AWS
     /// account
     /// </para>
+    ///  </li> </ul>  
+    /// <para>
+    /// To use resource groups tagging API operations, you must add the following permissions
+    /// to your IAM policy:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>tag:GetResources</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>tag:TagResources</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>tag:UntagResources</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>tag:GetTagKeys</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>tag:GetTagValues</code> 
+    /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// To make full use of the resource groups tagging API operations, you might need additional
-    /// IAM permissions, including permission to access the resources of individual services
-    /// as well as permission to view and apply tags to those resources. For more information,
-    /// see <a href="http://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/obtaining-permissions-for-resource-groups.html">Obtaining
-    /// Permissions for Resource Groups and Tag Editor</a>.
+    /// You'll also need permissions to access the resources of individual services so that
+    /// you can tag and untag those resources.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information on IAM policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage.html">Managing
+    /// IAM Policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -100,11 +127,19 @@ namespace Amazon.ResourceGroupsTaggingAPI
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// AWS App Mesh
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// Amazon Athena
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// Amazon Aurora
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// AWS Backup
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -149,6 +184,14 @@ namespace Amazon.ResourceGroupsTaggingAPI
     ///  </li> <li> 
     /// <para>
     /// AWS CodeBuild
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// AWS CodeCommit
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// AWS CodePipeline
     /// </para>
     ///  </li> <li> 
     /// <para>
