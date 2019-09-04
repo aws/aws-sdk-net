@@ -84,8 +84,14 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// The format of the input media file.
         /// </para>
+        ///  
+        /// <para>
+        ///  If you do not specify the format of the media file, Amazon Transcribe determines
+        /// the format. If the format is not recognized, Amazon Transcribe returns an <code>InternalFailureException</code>
+        /// exception. If you specify the format, it must match the format detected by Amazon
+        /// Transcribe, otherwise you get an <code>InternalFailureException</code> exception.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public MediaFormat MediaFormat
         {
             get { return this._mediaFormat; }
@@ -101,7 +107,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property MediaSampleRateHertz. 
         /// <para>
-        /// The sample rate, in Hertz, of the audio track in the input media file. 
+        /// The sample rate of the audio track in the input media file in Hertz. 
         /// </para>
         ///  
         /// <para>
