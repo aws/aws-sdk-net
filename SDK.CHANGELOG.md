@@ -1,3 +1,16 @@
+### 3.3.581.0 (2019-09-04 18:17 UTC)
+* EKS (3.3.102.0)
+	* Amazon EKS DescribeCluster API returns a new OIDC issuer field that can be used to create OIDC identity provider for IAM for Service Accounts feature.
+* StepFunctions (3.3.101.0)
+	* Added support for new history events
+* TranscribeService (3.3.107.0)
+	* MediaFormat is now optional for StartTranscriptionJob API.
+* Core 3.3.103.33
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.580.0 (2019-09-03 19:34 UTC)
 * ECS (3.3.108.0)
 	* This release of Amazon Elastic Container Service (Amazon ECS) introduces support for attaching Amazon Elastic Inference accelerators to your containers. This enables you to run deep learning inference workloads with hardware acceleration in a more efficient way.
