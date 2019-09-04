@@ -37,6 +37,7 @@ namespace Amazon.EKS.Model
         private string _clientRequestToken;
         private DateTime? _createdAt;
         private string _endpoint;
+        private Identity _identity;
         private Logging _logging;
         private string _name;
         private string _platformVersion;
@@ -134,6 +135,24 @@ namespace Amazon.EKS.Model
         internal bool IsSetEndpoint()
         {
             return this._endpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Identity. 
+        /// <para>
+        /// The identity provider information for the cluster.
+        /// </para>
+        /// </summary>
+        public Identity Identity
+        {
+            get { return this._identity; }
+            set { this._identity = value; }
+        }
+
+        // Check to see if Identity property is set
+        internal bool IsSetIdentity()
+        {
+            return this._identity != null;
         }
 
         /// <summary>
