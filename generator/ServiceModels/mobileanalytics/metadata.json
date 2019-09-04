@@ -1,7 +1,6 @@
 {
     "active": true, 
-    "netstandard-support": false, 
-    "enable-xamarin-component": true, 
+    "netstandard-support": false,
     "nuget-dependencies": {
         "Net35": [
             {
