@@ -13,8 +13,6 @@ namespace SDKDocGenerator.Writers
     public abstract class BaseWriter
     {
         protected FrameworkVersion _version;
-        protected bool _unityVersionOfAsyncExists = false;
-        protected bool _referAsyncAlternativeUnity = false;
         protected bool _referAsyncAlternativePCL = false;
 
         public static readonly List<TableColumnHeader> FieldTableColumnHeaders = new List<TableColumnHeader>
@@ -530,10 +528,9 @@ namespace SDKDocGenerator.Writers
             var docs45 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("net45"), wrapper);
             var docsCore = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("netstandard1.3"), wrapper);
             var docsPCL = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("pcl"), wrapper);
-            var docsUnity = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("unity"), wrapper);
 
-            // If there is no documentation then assume it is available for all platforms, excluding Unity.
-            var boolNoDocs = docs35 == null && docs45 == null && docsCore == null && docsPCL == null && docsUnity == null;
+            // If there is no documentation then assume it is available for all platforms.
+            var boolNoDocs = docs35 == null && docs45 == null && docsCore == null && docsPCL == null;
 
             // .NET core Framework
             if (boolNoDocs || (wrapper != null && docsCore != null))
@@ -563,13 +560,6 @@ namespace SDKDocGenerator.Writers
                 writer.WriteLine("Supported in: Xamarin Android<br/>");
                 writer.WriteLine("Supported in: Xamarin iOS (Unified)<br/>");
                 writer.WriteLine("Supported in: Xamarin.Forms<br/>");
-            }
-
-            if (docsUnity != null || _unityVersionOfAsyncExists || _referAsyncAlternativeUnity)
-            {
-                writer.WriteLine("<p><strong>Unity: </strong><br/>");
-                writer.WriteLine("Supported Versions: 4.6 and above<br/>");
-                writer.WriteLine("Supported Platforms: Android, iOS, Standalone<br/>");
             }
 
             AddSectionClosing(writer);
