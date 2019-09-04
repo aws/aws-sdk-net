@@ -46,7 +46,6 @@
     <Compile Remove="**/_pcl/**" />
     <Compile Remove="**/_pcl-sl/**" />
     <Compile Remove="**/_pclReference/**" />
-    <Compile Remove="**/_unity/**" />
     <Compile Remove="**/_win8/**" />
     <Compile Remove="**/_winPhone81/**" />
     <Compile Remove="**/_winPhoneSilverlight8/**" />

@@ -39,7 +39,6 @@
     <Compile Remove="**/_pcl/**" />
     <Compile Remove="**/_pcl-sl/**" />
     <Compile Remove="**/_bcl35/**" />
-    <Compile Remove="**/_unity/**" />
     <Compile Remove="**/_android/**" />
     <Compile Remove="**/_ios/**" />
     <Compile Remove="**/_pclReference/**" />

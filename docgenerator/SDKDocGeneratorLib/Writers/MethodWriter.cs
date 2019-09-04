@@ -21,12 +21,6 @@ namespace SDKDocGenerator.Writers
             : base(artifacts, version, methodInfo)
         {
             this._methodInfo = methodInfo;
-            // true when this is an Async method and the unity version is present
-            this._unityVersionOfAsyncExists = NDocUtilities.FindDocumentationUnityAsync(Artifacts.NDocForPlatform("unity"), methodInfo) != null;
-            // refer to asynchronous versions if the synchronous version doesn't exist but the async version does
-            this._referAsyncAlternativeUnity = (NDocUtilities.FindDocumentationUnityAsyncAlternative(Artifacts.NDocForPlatform("unity"), methodInfo) != null) &&
-                (Artifacts.NDocForPlatform("unity") != null) &&
-                (NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("unity"), methodInfo) == null);
             this._referAsyncAlternativePCL = (NDocUtilities.FindDocumentationPCLAsyncAlternative(Artifacts.NDocForPlatform("pcl"), methodInfo) != null) &&
                 (Artifacts.NDocForPlatform("pcl") != null) &&
                 (NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("pcl"), methodInfo) == null);
@@ -112,31 +106,17 @@ namespace SDKDocGenerator.Writers
             {
                 const string net35PatternNote = " For .NET 3.5 the operation is implemented as a pair of methods using the standard naming convention of "
                                                 + "<b>Begin</b><i>{0}</i> and <b>End</b><i>{0}</i>.";
-                const string unityPatternNote = " For Unity the operation does not take <i>CancellationToken</i> as a parameter, and instead takes"
-                                              + " <i>AmazonServiceCallback&lt;{0}Request, {0}Response&gt;</i> and <i>AsyncOptions</i> as additional parameters.";
                 const string patternNote = "<div class=\"noteblock\"><div class=\"noteheader\">Note:</div>"
                                            + "<p>This is an asynchronous operation using the standard naming convention for .NET 4.5 or higher."
-                                           + "{0}{1}</p></div>";
+                                           + "{0}</p></div>";
 
                 var name = this._methodInfo.Name.Substring(0, this._methodInfo.Name.Length - 5);
-                writer.WriteLine(patternNote, string.Format(net35PatternNote, name), this._unityVersionOfAsyncExists ? string.Format(unityPatternNote, name) : string.Empty);
+                writer.WriteLine(patternNote, string.Format(net35PatternNote, name));
             }
 
-            if (this._referAsyncAlternativeUnity || this._referAsyncAlternativePCL)
+            if (this._referAsyncAlternativePCL)
             {
-                string platforms = string.Empty;
-                if (this._referAsyncAlternativeUnity && this._referAsyncAlternativePCL)
-                {
-                    platforms = ".NET Core, PCL and Unity";
-                }
-                else if (this._referAsyncAlternativeUnity)
-                {
-                    platforms = "Unity";
-                }
-                else
-                {
-                    platforms = ".NET Core and PCL";
-                }
+                string platforms = ".NET Core and PCL";
                 const string syncPatternNote =
                     "<div class=\"noteblock\"><div class=\"noteheader\">Note:</div>"
                     + "<p> For {0} this operation is only available in asynchronous form. Please refer to <i>{1}</i><b>Async</b>.</p></div>";

@@ -216,7 +216,8 @@ namespace Amazon.Runtime.Internal.Util
         }
 #endif
 
-#if !PCL && !UNITY && !NETSTANDARD
+#if !PCL && !NETSTANDARD
+
         public override IAsyncResult BeginRead(byte[] buffer, int offset, int count, AsyncCallback callback, Object state)
         {
             throw new NotSupportedException();
