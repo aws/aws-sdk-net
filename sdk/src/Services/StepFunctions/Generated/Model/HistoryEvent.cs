@@ -50,6 +50,11 @@ namespace Amazon.StepFunctions.Model
         private LambdaFunctionStartFailedEventDetails _lambdaFunctionStartFailedEventDetails;
         private LambdaFunctionSucceededEventDetails _lambdaFunctionSucceededEventDetails;
         private LambdaFunctionTimedOutEventDetails _lambdaFunctionTimedOutEventDetails;
+        private MapIterationEventDetails _mapIterationAbortedEventDetails;
+        private MapIterationEventDetails _mapIterationFailedEventDetails;
+        private MapIterationEventDetails _mapIterationStartedEventDetails;
+        private MapIterationEventDetails _mapIterationSucceededEventDetails;
+        private MapStateStartedEventDetails _mapStateStartedEventDetails;
         private long? _previousEventId;
         private StateEnteredEventDetails _stateEnteredEventDetails;
         private StateExitedEventDetails _stateExitedEventDetails;
@@ -345,6 +350,96 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetLambdaFunctionTimedOutEventDetails()
         {
             return this._lambdaFunctionTimedOutEventDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MapIterationAbortedEventDetails. 
+        /// <para>
+        /// Contains details about an iteration of a Map state that was aborted.
+        /// </para>
+        /// </summary>
+        public MapIterationEventDetails MapIterationAbortedEventDetails
+        {
+            get { return this._mapIterationAbortedEventDetails; }
+            set { this._mapIterationAbortedEventDetails = value; }
+        }
+
+        // Check to see if MapIterationAbortedEventDetails property is set
+        internal bool IsSetMapIterationAbortedEventDetails()
+        {
+            return this._mapIterationAbortedEventDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MapIterationFailedEventDetails. 
+        /// <para>
+        /// Contains details about an iteration of a Map state that failed.
+        /// </para>
+        /// </summary>
+        public MapIterationEventDetails MapIterationFailedEventDetails
+        {
+            get { return this._mapIterationFailedEventDetails; }
+            set { this._mapIterationFailedEventDetails = value; }
+        }
+
+        // Check to see if MapIterationFailedEventDetails property is set
+        internal bool IsSetMapIterationFailedEventDetails()
+        {
+            return this._mapIterationFailedEventDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MapIterationStartedEventDetails. 
+        /// <para>
+        /// Contains details about an iteration of a Map state that was started.
+        /// </para>
+        /// </summary>
+        public MapIterationEventDetails MapIterationStartedEventDetails
+        {
+            get { return this._mapIterationStartedEventDetails; }
+            set { this._mapIterationStartedEventDetails = value; }
+        }
+
+        // Check to see if MapIterationStartedEventDetails property is set
+        internal bool IsSetMapIterationStartedEventDetails()
+        {
+            return this._mapIterationStartedEventDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MapIterationSucceededEventDetails. 
+        /// <para>
+        /// Contains details about an iteration of a Map state that succeeded.
+        /// </para>
+        /// </summary>
+        public MapIterationEventDetails MapIterationSucceededEventDetails
+        {
+            get { return this._mapIterationSucceededEventDetails; }
+            set { this._mapIterationSucceededEventDetails = value; }
+        }
+
+        // Check to see if MapIterationSucceededEventDetails property is set
+        internal bool IsSetMapIterationSucceededEventDetails()
+        {
+            return this._mapIterationSucceededEventDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MapStateStartedEventDetails. 
+        /// <para>
+        /// Contains details about Map state that was started.
+        /// </para>
+        /// </summary>
+        public MapStateStartedEventDetails MapStateStartedEventDetails
+        {
+            get { return this._mapStateStartedEventDetails; }
+            set { this._mapStateStartedEventDetails = value; }
+        }
+
+        // Check to see if MapStateStartedEventDetails property is set
+        internal bool IsSetMapStateStartedEventDetails()
+        {
+            return this._mapStateStartedEventDetails != null;
         }
 
         /// <summary>

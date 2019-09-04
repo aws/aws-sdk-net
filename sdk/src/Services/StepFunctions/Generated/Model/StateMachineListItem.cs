@@ -66,7 +66,7 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// whitespace
+        /// white space
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -177,6 +177,46 @@ namespace Amazon.StepFunctions
         /// </summary>
         public static readonly HistoryEventType LambdaFunctionTimedOut = new HistoryEventType("LambdaFunctionTimedOut");
         /// <summary>
+        /// Constant MapIterationAborted for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType MapIterationAborted = new HistoryEventType("MapIterationAborted");
+        /// <summary>
+        /// Constant MapIterationFailed for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType MapIterationFailed = new HistoryEventType("MapIterationFailed");
+        /// <summary>
+        /// Constant MapIterationStarted for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType MapIterationStarted = new HistoryEventType("MapIterationStarted");
+        /// <summary>
+        /// Constant MapIterationSucceeded for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType MapIterationSucceeded = new HistoryEventType("MapIterationSucceeded");
+        /// <summary>
+        /// Constant MapStateAborted for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType MapStateAborted = new HistoryEventType("MapStateAborted");
+        /// <summary>
+        /// Constant MapStateEntered for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType MapStateEntered = new HistoryEventType("MapStateEntered");
+        /// <summary>
+        /// Constant MapStateExited for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType MapStateExited = new HistoryEventType("MapStateExited");
+        /// <summary>
+        /// Constant MapStateFailed for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType MapStateFailed = new HistoryEventType("MapStateFailed");
+        /// <summary>
+        /// Constant MapStateStarted for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType MapStateStarted = new HistoryEventType("MapStateStarted");
+        /// <summary>
+        /// Constant MapStateSucceeded for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType MapStateSucceeded = new HistoryEventType("MapStateSucceeded");
+        /// <summary>
         /// Constant ParallelStateAborted for HistoryEventType
         /// </summary>
         public static readonly HistoryEventType ParallelStateAborted = new HistoryEventType("ParallelStateAborted");

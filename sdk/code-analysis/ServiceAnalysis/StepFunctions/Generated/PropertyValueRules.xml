@@ -195,7 +195,7 @@
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.ListExecutionsRequest.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>3096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.ListExecutionsRequest.StateMachineArn</property>
@@ -205,7 +205,7 @@
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.ListExecutionsResponse.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>3096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.ListStateMachinesRequest.MaxResults</property>
@@ -482,6 +482,19 @@
     <property>Amazon.StepFunctions.Model.LambdaFunctionTimedOutEventDetails.Error</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.MapIterationEventDetails.Index</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.MapIterationEventDetails.Name</property>
+    <min>1</min>
+    <max>80</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.MapStateStartedEventDetails.Length</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.ResourceNotFound.ResourceName</property>

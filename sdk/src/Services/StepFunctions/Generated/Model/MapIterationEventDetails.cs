@@ -28,36 +28,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListTagsForResource operation.
-    /// List tags for a given resource.
-    /// 
-    ///  
-    /// <para>
-    /// Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_
-    /// . : / = + - @</code>.
-    /// </para>
+    /// Contains details about an iteration of a Map state.
     /// </summary>
-    public partial class ListTagsForResourceRequest : AmazonStepFunctionsRequest
+    public partial class MapIterationEventDetails
     {
-        private string _resourceArn;
+        private int? _index;
+        private string _name;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. 
+        /// Gets and sets the property Index. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the Step Functions state machine or activity.
+        /// The index of the array belonging to the Map state iteration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
-        public string ResourceArn
+        [AWSProperty(Min=0)]
+        public int Index
         {
-            get { return this._resourceArn; }
-            set { this._resourceArn = value; }
+            get { return this._index.GetValueOrDefault(); }
+            set { this._index = value; }
         }
 
-        // Check to see if ResourceArn property is set
-        internal bool IsSetResourceArn()
+        // Check to see if Index property is set
+        internal bool IsSetIndex()
         {
-            return this._resourceArn != null;
+            return this._index.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the iteration’s parent Map state.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=80)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
         }
 
     }

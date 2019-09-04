@@ -64,7 +64,7 @@ namespace Amazon.StepFunctions.Model
         /// token will return an <i>HTTP 400 InvalidToken</i> error.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=3096)]
         public string NextToken
         {
             get { return this._nextToken; }
