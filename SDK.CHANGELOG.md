@@ -1,3 +1,12 @@
+### 3.3.582.0 (2019-09-05 18:11 UTC)
+* ConfigService (3.3.103.0)
+	* AWS Config now includes the option for marking RemediationConfigurations as automatic, removing the need to call the StartRemediationExecution API. Manual control over resource execution rate is also included, and RemediationConfigurations are now ARN addressable. Exceptions to exclude account resources from being remediated can be configured with the new PutRemediationExceptions, DescribeRemediationExceptions, and DeleteRemediationExceptions APIs.
+* Core 3.3.103.34
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.581.0 (2019-09-04 18:17 UTC)
 * EKS (3.3.102.0)
 	* Amazon EKS DescribeCluster API returns a new OIDC issuer field that can be used to create OIDC identity provider for IAM for Service Accounts feature.
