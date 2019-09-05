@@ -36,7 +36,11 @@ namespace Amazon.ConfigService.Model
         private List<MemberAccountStatus> _organizationConfigRuleDetailedStatus = new List<MemberAccountStatus>();
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The <code>nextToken</code> string returned on a previous page that you use to get
+        /// the next page of results in a paginated response. 
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -51,7 +55,10 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OrganizationConfigRuleDetailedStatus.
+        /// Gets and sets the property OrganizationConfigRuleDetailedStatus. 
+        /// <para>
+        /// A list of <code>MemberAccountStatus</code> objects.
+        /// </para>
         /// </summary>
         public List<MemberAccountStatus> OrganizationConfigRuleDetailedStatus
         {

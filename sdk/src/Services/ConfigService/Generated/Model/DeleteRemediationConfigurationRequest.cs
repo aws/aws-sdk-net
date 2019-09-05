@@ -42,7 +42,7 @@ namespace Amazon.ConfigService.Model
         /// The name of the AWS Config rule for which you want to delete remediation configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ConfigRuleName
         {
             get { return this._configRuleName; }

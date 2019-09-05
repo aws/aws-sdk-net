@@ -29,7 +29,24 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeOrganizationConfigRuleStatuses operation.
+    /// Provides organization config rule deployment status for an organization.
     /// 
+    ///  <note> 
+    /// <para>
+    /// The status is not considered successful until organization config rule is successfully
+    /// deployed in all the member accounts with an exception of excluded accounts.
+    /// </para>
+    ///  
+    /// <para>
+    /// When you specify the limit and the next token, you receive a paginated response. Limit
+    /// and next token are not applicable if you specify organization config rule names. It
+    /// is only applicable, when you request all the organization config rules.
+    /// </para>
+    ///  
+    /// <para>
+    /// Only a master account can call this API.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeOrganizationConfigRuleStatusesRequest : AmazonConfigServiceRequest
     {
@@ -38,7 +55,11 @@ namespace Amazon.ConfigService.Model
         private List<string> _organizationConfigRuleNames = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Limit.
+        /// Gets and sets the property Limit. 
+        /// <para>
+        /// The maximum number of <code>OrganizationConfigRuleStatuses</code> returned on each
+        /// page. If you do no specify a number, AWS Config uses the default. The default is 100.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public int Limit
@@ -54,7 +75,11 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The <code>nextToken</code> string returned on a previous page that you use to get
+        /// the next page of results in a paginated response. 
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -69,7 +94,12 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OrganizationConfigRuleNames.
+        /// Gets and sets the property OrganizationConfigRuleNames. 
+        /// <para>
+        /// The names of organization config rules for which you want status details. If you do
+        /// not specify any names, AWS Config returns details for all your organization AWS Confg
+        /// rules.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=25)]
         public List<string> OrganizationConfigRuleNames

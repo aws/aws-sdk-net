@@ -28,7 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// 
+    /// An object that specifies organization managed rule metadata such as resource type
+    /// and ID of AWS resource along with the rule identifier. It also provides the frequency
+    /// with which you want AWS Config to run evaluations for the rule if the trigger type
+    /// is periodic.
     /// </summary>
     public partial class OrganizationManagedRuleMetadata
     {
@@ -42,7 +45,10 @@ namespace Amazon.ConfigService.Model
         private string _tagValueScope;
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description that you provide for organization config rule.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
         public string Description
@@ -58,7 +64,10 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InputParameters.
+        /// Gets and sets the property InputParameters. 
+        /// <para>
+        /// A string, in JSON format, that is passed to organization config rule Lambda function.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string InputParameters
@@ -74,7 +83,18 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaximumExecutionFrequency.
+        /// Gets and sets the property MaximumExecutionFrequency. 
+        /// <para>
+        /// The maximum frequency with which AWS Config runs evaluations for a rule. You are using
+        /// an AWS managed rule that is triggered at a periodic frequency.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// By default, rules with a periodic trigger are evaluated every 24 hours. To change
+        /// the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code>
+        /// parameter.
+        /// </para>
+        ///  </note>
         /// </summary>
         public MaximumExecutionFrequency MaximumExecutionFrequency
         {
@@ -89,7 +109,10 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceIdScope.
+        /// Gets and sets the property ResourceIdScope. 
+        /// <para>
+        /// The ID of the AWS resource that was evaluated.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=768)]
         public string ResourceIdScope
@@ -105,7 +128,10 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceTypesScope.
+        /// Gets and sets the property ResourceTypesScope. 
+        /// <para>
+        /// The type of the AWS resource that was evaluated.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public List<string> ResourceTypesScope
@@ -121,7 +147,13 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RuleIdentifier.
+        /// Gets and sets the property RuleIdentifier. 
+        /// <para>
+        /// For organization config managed rules, a predefined identifier from a list. For example,
+        /// <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see
+        /// <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
+        /// AWS Managed Config Rules</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string RuleIdentifier
@@ -137,7 +169,11 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagKeyScope.
+        /// Gets and sets the property TagKeyScope. 
+        /// <para>
+        /// One part of a key-value pair that make up a tag. A key is a general label that acts
+        /// like a category for more specific tag values. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
         public string TagKeyScope
@@ -153,7 +189,11 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagValueScope.
+        /// Gets and sets the property TagValueScope. 
+        /// <para>
+        /// The optional part of a key-value pair that make up a tag. A value acts as a descriptor
+        /// within a tag category (key).
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string TagValueScope

@@ -64,10 +64,40 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Arn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Automatic", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Automatic = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ConfigRuleName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConfigRuleName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CreatedByService", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CreatedByService = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ExecutionControls", targetDepth))
+                {
+                    var unmarshaller = ExecutionControlsUnmarshaller.Instance;
+                    unmarshalledObject.ExecutionControls = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MaximumAutomaticAttempts", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaximumAutomaticAttempts = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Parameters", targetDepth))
@@ -80,6 +110,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RetryAttemptSeconds", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.RetryAttemptSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TargetId", targetDepth))

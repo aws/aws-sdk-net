@@ -33,12 +33,55 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class RemediationConfiguration
     {
+        private string _arn;
+        private bool? _automatic;
         private string _configRuleName;
+        private string _createdByService;
+        private ExecutionControls _executionControls;
+        private int? _maximumAutomaticAttempts;
         private Dictionary<string, RemediationParameterValue> _parameters = new Dictionary<string, RemediationParameterValue>();
         private string _resourceType;
+        private long? _retryAttemptSeconds;
         private string _targetId;
         private RemediationTargetType _targetType;
         private string _targetVersion;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// Amazon Resource Name (ARN) of remediation configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Automatic. 
+        /// <para>
+        /// The remediation is triggered automatically.
+        /// </para>
+        /// </summary>
+        public bool Automatic
+        {
+            get { return this._automatic.GetValueOrDefault(); }
+            set { this._automatic = value; }
+        }
+
+        // Check to see if Automatic property is set
+        internal bool IsSetAutomatic()
+        {
+            return this._automatic.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ConfigRuleName. 
@@ -46,7 +89,7 @@ namespace Amazon.ConfigService.Model
         /// The name of the AWS Config rule.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ConfigRuleName
         {
             get { return this._configRuleName; }
@@ -57,6 +100,69 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetConfigRuleName()
         {
             return this._configRuleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedByService. 
+        /// <para>
+        /// Name of the service that owns the service linked rule, if applicable.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string CreatedByService
+        {
+            get { return this._createdByService; }
+            set { this._createdByService = value; }
+        }
+
+        // Check to see if CreatedByService property is set
+        internal bool IsSetCreatedByService()
+        {
+            return this._createdByService != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionControls. 
+        /// <para>
+        /// An ExecutionControls object.
+        /// </para>
+        /// </summary>
+        public ExecutionControls ExecutionControls
+        {
+            get { return this._executionControls; }
+            set { this._executionControls = value; }
+        }
+
+        // Check to see if ExecutionControls property is set
+        internal bool IsSetExecutionControls()
+        {
+            return this._executionControls != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaximumAutomaticAttempts. 
+        /// <para>
+        /// The maximum number of failed attempts for auto-remediation. If you do not select a
+        /// number, the default is 5.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds
+        /// as 50 seconds, AWS Config throws an exception after the 5th failed attempt within
+        /// 50 seconds.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=25)]
+        public int MaximumAutomaticAttempts
+        {
+            get { return this._maximumAutomaticAttempts.GetValueOrDefault(); }
+            set { this._maximumAutomaticAttempts = value; }
+        }
+
+        // Check to see if MaximumAutomaticAttempts property is set
+        internal bool IsSetMaximumAutomaticAttempts()
+        {
+            return this._maximumAutomaticAttempts.HasValue; 
         }
 
         /// <summary>
@@ -94,6 +200,32 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetResourceType()
         {
             return this._resourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetryAttemptSeconds. 
+        /// <para>
+        /// Maximum time in seconds that AWS Config runs auto-remediation. If you do not select
+        /// a number, the default is 60 seconds. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if you specify RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts
+        /// as 5, AWS Config will run auto-remediations 5 times within 50 seconds before throwing
+        /// an exception. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2678000)]
+        public long RetryAttemptSeconds
+        {
+            get { return this._retryAttemptSeconds.GetValueOrDefault(); }
+            set { this._retryAttemptSeconds = value; }
+        }
+
+        // Check to see if RetryAttemptSeconds property is set
+        internal bool IsSetRetryAttemptSeconds()
+        {
+            return this._retryAttemptSeconds.HasValue; 
         }
 
         /// <summary>

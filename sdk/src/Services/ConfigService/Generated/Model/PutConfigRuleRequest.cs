@@ -106,7 +106,10 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// An array of tag object.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags

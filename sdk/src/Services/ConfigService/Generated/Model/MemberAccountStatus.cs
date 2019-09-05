@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// 
+    /// Organization config rule creation or deletion status in each member account. This
+    /// includes the name of the rule, the status, error code and error message when the rule
+    /// creation or deletion failed.
     /// </summary>
     public partial class MemberAccountStatus
     {
@@ -40,7 +42,10 @@ namespace Amazon.ConfigService.Model
         private MemberAccountRuleStatus _memberAccountRuleStatus;
 
         /// <summary>
-        /// Gets and sets the property AccountId.
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The 12-digit account ID of a member account.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string AccountId
@@ -56,7 +61,10 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ConfigRuleName.
+        /// Gets and sets the property ConfigRuleName. 
+        /// <para>
+        /// The name of config rule deployed in the member account.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
         public string ConfigRuleName
@@ -72,7 +80,11 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ErrorCode.
+        /// Gets and sets the property ErrorCode. 
+        /// <para>
+        /// An error code that is returned when config rule creation or deletion failed in the
+        /// member account.
+        /// </para>
         /// </summary>
         public string ErrorCode
         {
@@ -87,7 +99,11 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ErrorMessage.
+        /// Gets and sets the property ErrorMessage. 
+        /// <para>
+        /// An error message indicating that config rule account creation or deletion has failed
+        /// due to an error in the member account.
+        /// </para>
         /// </summary>
         public string ErrorMessage
         {
@@ -102,7 +118,10 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastUpdateTime.
+        /// Gets and sets the property LastUpdateTime. 
+        /// <para>
+        /// The timestamp of the last status update.
+        /// </para>
         /// </summary>
         public DateTime LastUpdateTime
         {
@@ -117,7 +136,59 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MemberAccountRuleStatus.
+        /// Gets and sets the property MemberAccountRuleStatus. 
+        /// <para>
+        /// Indicates deployment status for config rule in the member account. When master account
+        /// calls <code>PutOrganizationConfigRule</code> action for the first time, config rule
+        /// status is created in the member account. When master account calls <code>PutOrganizationConfigRule</code>
+        /// action for the second time, config rule status is updated in the member account. Config
+        /// rule status is deleted when the master account deletes <code>OrganizationConfigRule</code>
+        /// and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  AWS Config sets the state of the rule to:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CREATE_SUCCESSFUL</code> when config rule has been created in the member account.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CREATE_IN_PROGRESS</code> when config rule is being created in the member account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CREATE_FAILED</code> when config rule creation has failed in the member account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETE_FAILED</code> when config rule deletion has failed in the member account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETE_IN_PROGRESS</code> when config rule is being deleted in the member account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETE_SUCCESSFUL</code> when config rule has been deleted in the member account.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UPDATE_SUCCESSFUL</code> when config rule has been updated in the member account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UPDATE_IN_PROGRESS</code> when config rule is being updated in the member account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UPDATE_FAILED</code> when config rule deletion has failed in the member account.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public MemberAccountRuleStatus MemberAccountRuleStatus
