@@ -27,7 +27,6 @@ namespace WindowsConsoleApp
                 };
                 runner.CategoriesToRun = new string[]
                 {
-                    "SyncManager"
                 };
 
                 allPassed = runner.ExecuteAllTests();

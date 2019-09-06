@@ -28,7 +28,6 @@
     <Compile Remove="**/obj/**" />
     <None Remove="**/obj/**" />
     <Compile Remove="**/obj/**" />
-    <Compile Include="..\..\CognitoIdentity\IntegrationTests\CognitoIdentity.cs" />
     <Compile Include="..\..\Lambda\IntegrationTests\LambdaTests.cs" />
   </ItemGroup>
 
