@@ -32,8 +32,8 @@ namespace Amazon.KinesisAnalytics.Model
     /// If you specify a tag that already exists, the tag value is replaced with the value
     /// that you specify in the request. Note that the maximum number of application tags
     /// includes system tags. The maximum number of user-defined application tags is 50. For
-    /// more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-    /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management Guide</i>.
+    /// more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using
+    /// Tagging</a>.
     /// </summary>
     public partial class Tag
     {

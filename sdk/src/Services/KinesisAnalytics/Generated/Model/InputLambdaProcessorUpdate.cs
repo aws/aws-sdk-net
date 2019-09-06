@@ -39,7 +39,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property ResourceARNUpdate. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the new <a href="https://docs.aws.amazon.com/ambda/">AWS
+        /// The Amazon Resource Name (ARN) of the new <a href="https://docs.aws.amazon.com/lambda/">AWS
         /// Lambda</a> function that is used to preprocess the records in the stream.
         /// </para>
         ///  <note> 
