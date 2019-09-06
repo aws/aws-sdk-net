@@ -893,7 +893,7 @@ namespace ThirdParty.Json.LitJson
                     if (p_info.CanRead)
                     {
                         writer.WritePropertyName(p_data.Info.Name);
-#if BCL || UNITY || NETSTANDARD
+#if BCL || NETSTANDARD
                         WriteValue(p_info.GetGetMethod().Invoke(obj, null),
                                     writer, writer_is_private, depth + 1);
 #else

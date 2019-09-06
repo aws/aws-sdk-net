@@ -12,9 +12,6 @@
             }
         ]
     },
-	"unityOverrides":{
-		"generateSyncClient" : true
-	},
     "emitIsSetProperties":{
         "AttributeValue" : [
             "BOOL",

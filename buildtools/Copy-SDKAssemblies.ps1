@@ -63,17 +63,12 @@ Function Copy-SdkAssemblies
         # The platforms to copy. Defaults to all if not specified.
         [Parameter()]
         [string[]]
-        $Platforms = @("net35","net45", "pcl", "monoandroid", "Xamarin.iOS10", "windows8", "wpa81"),
+        $Platforms = @("net35","net45","netstandard1.3","netstandard2.0","pcl","monoandroid","Xamarin.iOS10","windows8","wpa81"),
         
         # The public key token that all assemblies should have. Optional.
         [Parameter()]
         [string]
         $PublicKeyToken = "",
-		
-		#added to support unity assemblies
-		[Parameter()]
-		[bool]
-		$ValidatePublicKeyToken = $true,
 
         [Parameter()]
         [string[]]
@@ -109,7 +104,6 @@ Function Copy-SdkAssemblies
                         
             $filter = "bin\$BuildType\$p\AWSSDK.$servicename.*"
 			
-			#unity sdk doesnot support all services currently
 			$sourceDirectory = $null
 			$sourceDirectory = [System.IO.Path]::Combine($dir.FullName, 'bin', $BuildType, $p)
 			Write-Debug "Checking if $sourceDirectory exists"
@@ -124,7 +118,7 @@ Function Copy-SdkAssemblies
             {
                 $assemblyName = $a.Name
                 $assemblyExtension = [System.IO.Path]::GetExtension($assemblyName).ToLower()
-                if ($assemblyExtension -eq ".dll" -And $ValidatePublicKeyToken)
+                if ($assemblyExtension -eq ".dll")
                 {
                     $aToken = Get-PublicKeyToken -AssemblyPath $a.FullName
                     Write-Debug "File $assemblyName has token = $aToken"
@@ -228,26 +222,14 @@ $args = @{
 	"BuildType" = $BuildType
 }
 
-Copy-SDKAssemblies -SourceRoot ..\sdk\src\Core -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck -Platforms @("net35","net45","pcl","monoandroid","Xamarin.iOS10","windows8","wpa81") -BuildType $BuildType
+Copy-SDKAssemblies -SourceRoot ..\sdk\src\Core -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck -BuildType $BuildType
 
-#for unity the assemblies are not signed, so we copy them seperately and override the check
-Copy-SDKAssemblies -SourceRoot ..\sdk\src\Core -Destination ..\Deployment\assemblies -Platforms @("unity", "netstandard1.3", "netstandard2.0") -BuildType $BuildType -ValidatePublicKeyToken $false
-
-$services = gci ..\sdk\src\services
+$services = Get-ChildItem ..\sdk\src\services
 foreach ($s in $services)
 {
-    if ($builtservices -eq $null -Or $builtservices.contains($s.Name.ToLower()))
+    if ($null -eq $builtservices -Or $builtservices.contains($s.Name.ToLower()))
     {
-        Copy-SDKAssemblies -SourceRoot $s.FullName -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck  -BuildType $BuildType
-        Copy-SDKAssemblies -SourceRoot $s.FullName -Destination ..\Deployment\assemblies -Platforms @("unity", "netstandard1.3", "netstandard2.0") -ValidatePublicKeyToken $false  -BuildType $BuildType
+        Copy-SDKAssemblies -SourceRoot $s.FullName -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck -BuildType $BuildType
     }
 }
-
-Write-Verbose "Copying $BuildType SDK assemblies to deployment folders for NetStandard platforms"
-$args = @{
-	"Destination" = "..\Deployment\assemblies"
-	"PublicKeyToken" = $PublicKeyTokenToCheck
-	"BuildType" = $BuildType
-}
-#Copy-CoreClrSdkAssemblies -SourceRoot ..\sdk\artifacts\bin @args -Verbose
 

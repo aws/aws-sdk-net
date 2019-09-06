@@ -542,7 +542,6 @@ namespace Amazon.S3.Model
         }
 
 #endif
-#if !UNITY
         #region Progress Event
 
         /// <summary>
@@ -687,10 +686,7 @@ namespace Amazon.S3.Model
             }
         }
 #endif
-#endif
     }
-
-#if !UNITY
     /// <summary>
     /// Encapsulates the information needed to provide
     /// download progress for the Write Object Event.
@@ -765,7 +761,6 @@ namespace Amazon.S3.Model
         /// True if writing is complete
         /// </summary>
         public bool IsCompleted { get; private set; }
-    }
-#endif    
+    }  
 }
     

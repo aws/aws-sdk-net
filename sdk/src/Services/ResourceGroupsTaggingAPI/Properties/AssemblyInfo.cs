@@ -13,8 +13,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Resource Groups Tagging API. Resource Groups Tagging APIs can help you organize your resources and enable you to simplify resource management, access management, and cost allocation.")]
 #elif PCL
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  AWS Resource Groups Tagging API. Resource Groups Tagging APIs can help you organize your resources and enable you to simplify resource management, access management, and cost allocation.")]
-#elif UNITY
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - AWS Resource Groups Tagging API. Resource Groups Tagging APIs can help you organize your resources and enable you to simplify resource management, access management, and cost allocation.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- AWS Resource Groups Tagging API. Resource Groups Tagging APIs can help you organize your resources and enable you to simplify resource management, access management, and cost allocation.")]
 #elif NETSTANDARD20
@@ -48,7 +46,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyVersion("3.3")]
 [assembly: AssemblyFileVersion("3.3.102.18")]
 
-#if WINDOWS_PHONE || UNITY
+#if WINDOWS_PHONE
 [assembly: System.CLSCompliant(false)]
 # else
 [assembly: System.CLSCompliant(true)]

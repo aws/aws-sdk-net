@@ -40,8 +40,6 @@
     <Compile Remove="**/_bcl45/**"/>
     <Compile Remove="**/_bcl/**"/>
     <Compile Remove="**/_bcl+sl/**"/>
-    <Compile Remove="**/_bcl+unity/**"/>
-    <Compile Remove="**/_unity/**"/>
     <Compile Remove="**/_android/**"/>
     <Compile Remove="**/_ios/**"/>
     <Compile Remove="**/_pclReference/**"/>

@@ -71,7 +71,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         {
         }
 
-#if BCL35||UNITY
+#if BCL35
         /// <summary>
         /// Enqueues the events for delivery. The event is stored in an instance of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.IEventStore"/>.
         /// </summary>

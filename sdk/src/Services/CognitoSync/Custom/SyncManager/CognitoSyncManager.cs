@@ -13,9 +13,6 @@ using Amazon.CognitoSync.SyncManager.Internal;
 using Amazon.CognitoIdentity;
 using Logger = Amazon.Runtime.Internal.Util.Logger;
 using Amazon.Util.Internal;
-#if UNITY
-using UnityEngine;
-#endif
 #if BCL45 || PCL
 using System.Threading.Tasks;
 #endif

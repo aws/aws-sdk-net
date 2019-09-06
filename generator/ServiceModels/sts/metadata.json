@@ -2,9 +2,6 @@
     "base-name": "SecurityTokenService", 
     "default-region": "USEast1", 
     "namespace": "Amazon.SecurityToken", 
-    "platforms": [
-        "Unity"
-    ], 
     "synopsis": "The AWS Security Token Service (AWS STS) enables you to provide trusted users with temporary credentials that provide controlled access to your AWS resources.", 
     "tags": [
         "STS"

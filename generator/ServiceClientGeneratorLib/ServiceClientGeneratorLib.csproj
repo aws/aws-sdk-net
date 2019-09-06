@@ -110,11 +110,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PCLProjectFile.tt</DependentUpon>
     </Compile>
-    <Compile Update="Generators\ProjectFiles\UnityProjectFile.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UnityProjectFile.tt</DependentUpon>
-    </Compile>
     <Compile Update="Generators\ProjectFiles\Win8ProjectFile.cs">
       <DependentUpon>Win8ProjectFile.tt</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -139,16 +134,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>InternalSDKUtils.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Generators\SourceFiles\ServiceClientUnity.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ServiceClientUnity.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Generators\SourceFiles\ServiceInterfaceUnity.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ServiceInterfaceUnity.tt</DependentUpon>
     </Compile>
     <Compile Update="Generators\SourceFiles\AssemblyInfo.cs">
       <DependentUpon>AssemblyInfo.tt</DependentUpon>
@@ -389,10 +374,6 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>UnitTestProjectFile.cs</LastGenOutput>
     </None>
-    <None Update="Generators\ProjectFiles\UnityProjectFile.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>UnityProjectFile.cs</LastGenOutput>
-    </None>
     <None Update="Generators\ProjectFiles\Win8ProjectFile.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>Win8ProjectFile.cs</LastGenOutput>
@@ -529,10 +510,6 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ServiceClientsMobile.cs</LastGenOutput>
     </None>
-    <None Update="Generators\SourceFiles\ServiceClientUnity.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ServiceClientUnity.cs</LastGenOutput>
-    </None>
     <None Update="Generators\SourceFiles\ServiceConfig.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ServiceConfig.cs</LastGenOutput>
@@ -552,10 +529,6 @@
     <None Update="Generators\SourceFiles\ServiceInterfaceMobile.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ServiceInterfaceMobile.cs</LastGenOutput>
-    </None>
-    <None Update="Generators\SourceFiles\ServiceInterfaceUnity.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ServiceInterfaceUnity.cs</LastGenOutput>
     </None>
     <None Update="Generators\TestFiles\SimpleConstructorTests.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

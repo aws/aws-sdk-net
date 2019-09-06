@@ -267,7 +267,7 @@ namespace Amazon.Runtime.Internal.Transform
     {
         #region Private members
 
-#if BCL35 || UNITY
+#if BCL35
         private static readonly XmlReaderSettings READER_SETTINGS = new XmlReaderSettings() { ProhibitDtd = false, IgnoreWhitespace = true };
 #else
         private static readonly XmlReaderSettings READER_SETTINGS = new XmlReaderSettings() { DtdProcessing = DtdProcessing.Ignore, IgnoreWhitespace = true };

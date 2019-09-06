@@ -97,7 +97,7 @@ namespace Amazon.Runtime
                 var stsConfig = ServiceClientHelpers.CreateServiceConfig(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CONFIG_NAME);
                 stsConfig.RegionEndpoint = region;
 
-#if BCL || UNITY || NETSTANDARD
+#if BCL || NETSTANDARD
                 if (Options != null && Options.ProxySettings != null)
                 {
                     stsConfig.SetWebProxy(Options.ProxySettings);

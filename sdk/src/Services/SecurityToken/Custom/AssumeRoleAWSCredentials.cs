@@ -15,11 +15,7 @@ namespace Amazon.SecurityToken
     [Obsolete("This class has been replaced by Amazon.Runtime.AssumeRoleAWSCredentials and Amazon.Runtime.StoredProfileFederatedCredentials, and will be removed in a future version.", false)]
     public partial class STSAssumeRoleAWSCredentials : RefreshingAWSCredentials, IDisposable
     {
-#if !UNITY
         private IAmazonSecurityTokenService _stsClient;
-#else
-        private AmazonSecurityTokenServiceClient _stsClient;
-#endif
         private AssumeRoleRequest _assumeRequest;
         private AssumeRoleWithSAMLRequest _assumeSamlRequest;
         private bool _isDisposed = false;
@@ -37,11 +33,7 @@ namespace Amazon.SecurityToken
         {
             if (sts == null) throw new ArgumentNullException("sts");
             if (assumeRoleRequest == null) throw new ArgumentNullException("assumeRoleRequest");
-#if !UNITY
             _stsClient = sts;
-#else
-            _stsClient = (AmazonSecurityTokenServiceClient)sts;
-#endif
             _assumeRequest = assumeRoleRequest;
             PreemptExpiryTime = _defaultPreemptExpiryTime;
         }

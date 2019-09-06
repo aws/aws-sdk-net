@@ -13,8 +13,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Marketplace Entitlement Service. AWS Marketplace Entitlement Service enables AWS Marketplace sellers to determine the capacity purchased by their customers.")]
 #elif PCL
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  AWS Marketplace Entitlement Service. AWS Marketplace Entitlement Service enables AWS Marketplace sellers to determine the capacity purchased by their customers.")]
-#elif UNITY
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - AWS Marketplace Entitlement Service. AWS Marketplace Entitlement Service enables AWS Marketplace sellers to determine the capacity purchased by their customers.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- AWS Marketplace Entitlement Service. AWS Marketplace Entitlement Service enables AWS Marketplace sellers to determine the capacity purchased by their customers.")]
 #elif NETSTANDARD20
@@ -48,7 +46,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyVersion("3.3")]
 [assembly: AssemblyFileVersion("3.3.100.55")]
 
-#if WINDOWS_PHONE || UNITY
+#if WINDOWS_PHONE
 [assembly: System.CLSCompliant(false)]
 # else
 [assembly: System.CLSCompliant(true)]

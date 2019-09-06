@@ -446,23 +446,6 @@ namespace ServiceClientGenerator
             get { return this.DocumentRoot[MetadataKey][ApiVersionKey].ToString(); }
         }
 
-        /// <summary>
-        /// returns if an operation is supported by the unity API or not.
-        /// </summary>
-        public bool AvailableInWWW(Operation operation)
-        {
-            if (Customizations.UnityExclusionApi.Contains(operation.Name))
-                return false;
-
-            if (!Customizations.AllowHttpMethodOverride)
-            {
-                if (!(operation.HttpMethod.ToUpper().Equals("GET") || operation.HttpMethod.ToUpper().Equals("POST")))
-                    return false;
-            }
-
-            return true;
-        }
-
 
         /// <summary>
         /// The service model represented as a string

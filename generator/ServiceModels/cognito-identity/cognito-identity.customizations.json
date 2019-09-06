@@ -1,7 +1,4 @@
 {
-	"unityOverrides":{
-		"generateSyncClient" : true
-	},
 	"shapeSubstitutions": {
         "CognitoIdentityProvider": {
             "renameShape": "CognitoIdentityProviderInfo"

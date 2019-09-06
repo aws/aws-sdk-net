@@ -29,7 +29,7 @@ namespace Amazon
         {
             try
             {
-#if BCL || UNITY
+#if BCL
                 var root = new RootConfig();
                 var section = root.GetServiceSection(dynamoDBKey);
                 if (section == null)
@@ -94,7 +94,7 @@ namespace Amazon
         /// </summary>
         public static DynamoDBContextConfig Context { get; private set; }
 
-#if BCL || UNITY
+#if BCL
         internal static void Configure(DynamoDBSection section)
         {
             Context = new DynamoDBContextConfig();
@@ -171,7 +171,7 @@ namespace Amazon.Util
             TypeMappings = new Dictionary<Type, TypeMapping>();
         }
 
-#if BCL || UNITY
+#if BCL
         internal void Configure(DynamoDBContextSection section)
         {
             if (section != null && section.ElementInformation.IsPresent)
@@ -261,7 +261,7 @@ namespace Amazon.Util
             PropertyConfigs = new Dictionary<string, PropertyConfig>(StringComparer.Ordinal);
         }
 
-#if BCL || UNITY
+#if BCL
         internal TypeMapping(TypeMappingElement mapping)
             : this(mapping.Type, mapping.TargetTable)
         {
@@ -314,7 +314,7 @@ namespace Amazon.Util
             Name = propertyName;
         }
 
-#if BCL || UNITY
+#if BCL
         internal PropertyConfig(PropertyConfigElement prop)
             : this(prop.Name)
         {
