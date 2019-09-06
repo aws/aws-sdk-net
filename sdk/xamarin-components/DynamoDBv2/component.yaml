@@ -14,17 +14,17 @@ samples:
 publisher-url: http://aws.amazon.com/mobile/sdk/
 packages:
   android:
-  - AWSSDK.Core, Version=3.3.103.34
-  - AWSSDK.DynamoDBv2,Version=3.3.101.61
+  - AWSSDK.Core, Version=3.3.103.35
+  - AWSSDK.DynamoDBv2,Version=3.3.101.62
   ios-unified:
-  - AWSSDK.Core, Version=3.3.103.34
-  - AWSSDK.DynamoDBv2,Version=3.3.101.61
+  - AWSSDK.Core, Version=3.3.103.35
+  - AWSSDK.DynamoDBv2,Version=3.3.101.62
   winphone-8.0:
-  - AWSSDK.Core, Version=3.3.103.34
-  - AWSSDK.DynamoDBv2,Version=3.3.101.61
+  - AWSSDK.Core, Version=3.3.103.35
+  - AWSSDK.DynamoDBv2,Version=3.3.101.62
   winphone-8.1:
-  - AWSSDK.Core, Version=3.3.103.34
-  - AWSSDK.DynamoDBv2,Version=3.3.101.61
-version: 3.3.101.61
+  - AWSSDK.Core, Version=3.3.103.35
+  - AWSSDK.DynamoDBv2,Version=3.3.101.62
+version: 3.3.101.62
 is-shell: true
 no_build: true
