@@ -67,11 +67,6 @@ namespace ServiceClientGenerator
         public bool Clean { get; set; }
 
         /// <summary>
-        /// The Root folder beneath which all the samples are present. Samples are used for xamarin components.
-        /// </summary>
-        public string SamplesRootFolder { get; set; }
-
-        /// <summary>
         /// If set the solution files will be rebuilt even if no new projects were added.
         /// </summary>
         public bool ForceSolutionRebuilt { get; set; }
@@ -89,7 +84,7 @@ namespace ServiceClientGenerator
         {
             Verbose = false;
             WaitOnExit = false;
-            DisablePCLSupport = false;
+            DisablePCLSupport = true;
 
             // default paths are relative to executing generator assembly
             // in bin/debug or bin/release
