@@ -59,12 +59,9 @@
     </Target>
 
 	<Target Name="setup-production-doc-build" Condition="'$(DocBuildReleaseBuild)'=='True'">
-		<MSBuild Projects ="$(MSBuildProjectFullPath)" Targets="get-reference-syncmanager" Properties="TargetRepository=$(MSBuildProjectDirectory)\.."/>
 		<MSBuild Projects ="$(MSBuildProjectFullPath)" Targets="get-reference-sdk" Properties="TargetRepository=$(MSBuildProjectDirectory)\.."/>
 
-		
 		<ItemGroup>
-			<SyncAssemblies Include="$(MSBuildProjectDirectory)\..\Include\syncmanager\**\*.*"/>
 			<SDKDAssemblies Include="$(MSBuildProjectDirectory)\..\Include\sdk\assemblies\**\*.*"/>
 		</ItemGroup>	
 		

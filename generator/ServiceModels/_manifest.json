@@ -112,7 +112,7 @@
             "template": "VS2017ProjectFile",
             "binSubFolder" : "",
             "configurations" : [],
-            "excludeFolders": ["_pcl", "_pcl-sl", "_bcl35", "_bcl45", "_bcl", "_bcl+sl", "_android", "_ios", "_pclReference", "_win8", "_winPhone81", "_winPhoneSilverlight8", "_winstorage", "Custom/SyncManager", "obj"]
+            "excludeFolders": ["_pcl", "_pcl-sl", "_bcl35", "_bcl45", "_bcl", "_bcl+sl", "_android", "_ios", "_pclReference", "_win8", "_winPhone81", "_winPhoneSilverlight8", "_winstorage", "obj"]
         }        
     ],
     "unittestprojects":[

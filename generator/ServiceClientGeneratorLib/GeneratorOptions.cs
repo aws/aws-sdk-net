@@ -103,7 +103,6 @@ namespace ServiceClientGenerator
             Versions = Path.Combine("..", "..", "..", "ServiceModels", "_sdk-versions.json");
             ModelsFolder = Path.Combine("..", "..", "..", "ServiceModels");
             SdkRootFolder = Path.Combine("..", "..", "..", "..", "sdk");
-
             ServiceModels = string.Empty; // process all services
             CompileCustomizations = true;
             Clean = false;
