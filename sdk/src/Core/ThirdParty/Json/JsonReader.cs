@@ -347,8 +347,7 @@ namespace ThirdParty.Json.LitJson
                         this.token == JsonToken.UInt ||
                         this.token == JsonToken.Long ||
                         this.token == JsonToken.ULong ||
-                        this.token == JsonToken.Null ||
-                        this.token == JsonToken.String
+                        this.token == JsonToken.Null
                         ))
                     {
                         // If we found a value but we are not in an array or object then the document is an invalid json document.
