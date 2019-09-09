@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for HttpRoute Object
+    /// Response Unmarshaller for Duration Object
     /// </summary>  
-    public class HttpRouteUnmarshaller : IUnmarshaller<HttpRoute, XmlUnmarshallerContext>, IUnmarshaller<HttpRoute, JsonUnmarshallerContext>
+    public class DurationUnmarshaller : IUnmarshaller<Duration, XmlUnmarshallerContext>, IUnmarshaller<Duration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        HttpRoute IUnmarshaller<HttpRoute, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Duration IUnmarshaller<Duration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public HttpRoute Unmarshall(JsonUnmarshallerContext context)
+        public Duration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            HttpRoute unmarshalledObject = new HttpRoute();
+            Duration unmarshalledObject = new Duration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("action", targetDepth))
+                if (context.TestExpression("unit", targetDepth))
                 {
-                    var unmarshaller = HttpRouteActionUnmarshaller.Instance;
-                    unmarshalledObject.Action = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Unit = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("match", targetDepth))
+                if (context.TestExpression("value", targetDepth))
                 {
-                    var unmarshaller = HttpRouteMatchUnmarshaller.Instance;
-                    unmarshalledObject.Match = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("retryPolicy", targetDepth))
-                {
-                    var unmarshaller = HttpRetryPolicyUnmarshaller.Instance;
-                    unmarshalledObject.RetryPolicy = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         }
 
 
-        private static HttpRouteUnmarshaller _instance = new HttpRouteUnmarshaller();        
+        private static DurationUnmarshaller _instance = new DurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static HttpRouteUnmarshaller Instance
+        public static DurationUnmarshaller Instance
         {
             get
             {

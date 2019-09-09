@@ -34,6 +34,7 @@ namespace Amazon.AppMesh.Model
     {
         private HttpRouteAction _action;
         private HttpRouteMatch _match;
+        private HttpRetryPolicy _retryPolicy;
 
         /// <summary>
         /// Gets and sets the property Action. 
@@ -71,6 +72,24 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetMatch()
         {
             return this._match != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetryPolicy. 
+        /// <para>
+        /// An object that represents a retry policy.
+        /// </para>
+        /// </summary>
+        public HttpRetryPolicy RetryPolicy
+        {
+            get { return this._retryPolicy; }
+            set { this._retryPolicy = value; }
+        }
+
+        // Check to see if RetryPolicy property is set
+        internal bool IsSetRetryPolicy()
+        {
+            return this._retryPolicy != null;
         }
 
     }

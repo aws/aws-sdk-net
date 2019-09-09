@@ -25,6 +25,56 @@ namespace Amazon.AppMesh
 {
 
     /// <summary>
+    /// Constants used for properties of type DurationUnit.
+    /// </summary>
+    public class DurationUnit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Ms for DurationUnit
+        /// </summary>
+        public static readonly DurationUnit Ms = new DurationUnit("ms");
+        /// <summary>
+        /// Constant S for DurationUnit
+        /// </summary>
+        public static readonly DurationUnit S = new DurationUnit("s");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DurationUnit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DurationUnit FindValue(string value)
+        {
+            return FindValue<DurationUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DurationUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EgressFilterType.
     /// </summary>
     public class EgressFilterType : ConstantClass
@@ -354,6 +404,52 @@ namespace Amazon.AppMesh
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RouteStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TcpRetryPolicyEvent.
+    /// </summary>
+    public class TcpRetryPolicyEvent : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ConnectionError for TcpRetryPolicyEvent
+        /// </summary>
+        public static readonly TcpRetryPolicyEvent ConnectionError = new TcpRetryPolicyEvent("connection-error");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TcpRetryPolicyEvent(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TcpRetryPolicyEvent FindValue(string value)
+        {
+            return FindValue<TcpRetryPolicyEvent>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TcpRetryPolicyEvent(string value)
         {
             return FindValue(value);
         }

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// HttpRoute Marshaller
+    /// Duration Marshaller
     /// </summary>       
-    public class HttpRouteMarshaller : IRequestMarshaller<HttpRoute, JsonMarshallerContext> 
+    public class DurationMarshaller : IRequestMarshaller<Duration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,39 +43,18 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(HttpRoute requestObject, JsonMarshallerContext context)
+        public void Marshall(Duration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAction())
+            if(requestObject.IsSetUnit())
             {
-                context.Writer.WritePropertyName("action");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = HttpRouteActionMarshaller.Instance;
-                marshaller.Marshall(requestObject.Action, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("unit");
+                context.Writer.Write(requestObject.Unit);
             }
 
-            if(requestObject.IsSetMatch())
+            if(requestObject.IsSetValue())
             {
-                context.Writer.WritePropertyName("match");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = HttpRouteMatchMarshaller.Instance;
-                marshaller.Marshall(requestObject.Match, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetRetryPolicy())
-            {
-                context.Writer.WritePropertyName("retryPolicy");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = HttpRetryPolicyMarshaller.Instance;
-                marshaller.Marshall(requestObject.RetryPolicy, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("value");
+                context.Writer.Write(requestObject.Value);
             }
 
         }
@@ -83,7 +62,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static HttpRouteMarshaller Instance = new HttpRouteMarshaller();
+        public readonly static DurationMarshaller Instance = new DurationMarshaller();
 
     }
 }

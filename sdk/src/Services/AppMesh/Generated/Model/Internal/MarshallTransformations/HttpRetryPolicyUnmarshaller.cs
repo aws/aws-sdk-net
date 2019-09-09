@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for HttpRoute Object
+    /// Response Unmarshaller for HttpRetryPolicy Object
     /// </summary>  
-    public class HttpRouteUnmarshaller : IUnmarshaller<HttpRoute, XmlUnmarshallerContext>, IUnmarshaller<HttpRoute, JsonUnmarshallerContext>
+    public class HttpRetryPolicyUnmarshaller : IUnmarshaller<HttpRetryPolicy, XmlUnmarshallerContext>, IUnmarshaller<HttpRetryPolicy, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        HttpRoute IUnmarshaller<HttpRoute, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        HttpRetryPolicy IUnmarshaller<HttpRetryPolicy, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,39 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public HttpRoute Unmarshall(JsonUnmarshallerContext context)
+        public HttpRetryPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            HttpRoute unmarshalledObject = new HttpRoute();
+            HttpRetryPolicy unmarshalledObject = new HttpRetryPolicy();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("action", targetDepth))
+                if (context.TestExpression("httpRetryEvents", targetDepth))
                 {
-                    var unmarshaller = HttpRouteActionUnmarshaller.Instance;
-                    unmarshalledObject.Action = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.HttpRetryEvents = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("match", targetDepth))
+                if (context.TestExpression("maxRetries", targetDepth))
                 {
-                    var unmarshaller = HttpRouteMatchUnmarshaller.Instance;
-                    unmarshalledObject.Match = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.MaxRetries = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("retryPolicy", targetDepth))
+                if (context.TestExpression("perRetryTimeout", targetDepth))
                 {
-                    var unmarshaller = HttpRetryPolicyUnmarshaller.Instance;
-                    unmarshalledObject.RetryPolicy = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DurationUnmarshaller.Instance;
+                    unmarshalledObject.PerRetryTimeout = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("tcpRetryEvents", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.TcpRetryEvents = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +94,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         }
 
 
-        private static HttpRouteUnmarshaller _instance = new HttpRouteUnmarshaller();        
+        private static HttpRetryPolicyUnmarshaller _instance = new HttpRetryPolicyUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static HttpRouteUnmarshaller Instance
+        public static HttpRetryPolicyUnmarshaller Instance
         {
             get
             {

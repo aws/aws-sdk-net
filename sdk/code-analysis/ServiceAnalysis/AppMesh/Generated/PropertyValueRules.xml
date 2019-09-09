@@ -260,6 +260,10 @@
     <pattern>((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^.$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppMesh.Model.Duration.Value</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppMesh.Model.FileAccessLog.Path</property>
     <min>1</min>
     <max>255</max>
@@ -308,6 +312,10 @@
     <property>Amazon.AppMesh.Model.HealthCheckPolicy.UnhealthyThreshold</property>
     <min>2</min>
     <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.HttpRetryPolicy.MaxRetries</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppMesh.Model.HttpRouteHeader.Name</property>
