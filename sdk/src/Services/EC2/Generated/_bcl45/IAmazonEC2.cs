@@ -2170,7 +2170,7 @@ namespace Amazon.EC2
         /// is the appliance at your end of the VPN connection. (The device on the AWS side of
         /// the VPN connection is the virtual private gateway.) You must provide the Internet-routable
         /// IP address of the customer gateway's external interface. The IP address must be static
-        /// and may be behind a device performing network address translation (NAT).
+        /// and can be behind a device performing network address translation (NAT).
         /// 
         ///  
         /// <para>
@@ -2213,7 +2213,7 @@ namespace Amazon.EC2
         /// is the appliance at your end of the VPN connection. (The device on the AWS side of
         /// the VPN connection is the virtual private gateway.) You must provide the Internet-routable
         /// IP address of the customer gateway's external interface. The IP address must be static
-        /// and may be behind a device performing network address translation (NAT).
+        /// and can be behind a device performing network address translation (NAT).
         /// 
         ///  
         /// <para>
@@ -4752,7 +4752,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Creates a VPN connection between an existing virtual private gateway and a VPN customer
-        /// gateway. The supported connection types is <code>ipsec.1</code>.
+        /// gateway. The supported connection type is <code>ipsec.1</code>.
         /// 
         ///  
         /// <para>
@@ -4791,7 +4791,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Creates a VPN connection between an existing virtual private gateway and a VPN customer
-        /// gateway. The supported connection types is <code>ipsec.1</code>.
+        /// gateway. The supported connection type is <code>ipsec.1</code>.
         /// 
         ///  
         /// <para>
@@ -15705,7 +15705,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the target gateway of a AWS Site-to-Site VPN connection. The following migration
+        /// Modifies the target gateway of an AWS Site-to-Site VPN connection. The following migration
         /// options are available:
         /// 
         ///  <ul> <li> 
@@ -15779,7 +15779,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the target gateway of a AWS Site-to-Site VPN connection. The following migration
+        /// Modifies the target gateway of an AWS Site-to-Site VPN connection. The following migration
         /// options are available:
         /// 
         ///  <ul> <li> 
@@ -15880,6 +15880,42 @@ namespace Amazon.EC2
         /// <returns>The response from the ModifyVpnTunnelCertificate service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnTunnelCertificate">REST API Reference for ModifyVpnTunnelCertificate Operation</seealso>
         Task<ModifyVpnTunnelCertificateResponse> ModifyVpnTunnelCertificateAsync(ModifyVpnTunnelCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ModifyVpnTunnelOptions
+
+
+        /// <summary>
+        /// Modifies the options for a VPN tunnel in an AWS Site-to-Site VPN connection. You can
+        /// modify multiple options for a tunnel in a single request, but you can only modify
+        /// one tunnel at a time. For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNTunnels.html">Site-to-Site
+        /// VPN Tunnel Options for Your Site-to-Site VPN Connection</a> in the <i>AWS Site-to-Site
+        /// VPN User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpnTunnelOptions service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVpnTunnelOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnTunnelOptions">REST API Reference for ModifyVpnTunnelOptions Operation</seealso>
+        ModifyVpnTunnelOptionsResponse ModifyVpnTunnelOptions(ModifyVpnTunnelOptionsRequest request);
+
+
+
+        /// <summary>
+        /// Modifies the options for a VPN tunnel in an AWS Site-to-Site VPN connection. You can
+        /// modify multiple options for a tunnel in a single request, but you can only modify
+        /// one tunnel at a time. For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNTunnels.html">Site-to-Site
+        /// VPN Tunnel Options for Your Site-to-Site VPN Connection</a> in the <i>AWS Site-to-Site
+        /// VPN User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpnTunnelOptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyVpnTunnelOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnTunnelOptions">REST API Reference for ModifyVpnTunnelOptions Operation</seealso>
+        Task<ModifyVpnTunnelOptionsResponse> ModifyVpnTunnelOptionsAsync(ModifyVpnTunnelOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

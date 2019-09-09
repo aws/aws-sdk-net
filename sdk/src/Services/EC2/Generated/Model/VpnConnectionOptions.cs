@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
     public partial class VpnConnectionOptions
     {
         private bool? _staticRoutesOnly;
+        private List<TunnelOption> _tunnelOptions = new List<TunnelOption>();
 
         /// <summary>
         /// Gets and sets the property StaticRoutesOnly. 
@@ -51,6 +52,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetStaticRoutesOnly()
         {
             return this._staticRoutesOnly.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TunnelOptions. 
+        /// <para>
+        /// Indicates the VPN tunnel options.
+        /// </para>
+        /// </summary>
+        public List<TunnelOption> TunnelOptions
+        {
+            get { return this._tunnelOptions; }
+            set { this._tunnelOptions = value; }
+        }
+
+        // Check to see if TunnelOptions property is set
+        internal bool IsSetTunnelOptions()
+        {
+            return this._tunnelOptions != null && this._tunnelOptions.Count > 0; 
         }
 
     }

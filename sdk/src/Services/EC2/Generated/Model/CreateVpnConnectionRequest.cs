@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the CreateVpnConnection operation.
     /// Creates a VPN connection between an existing virtual private gateway and a VPN customer
-    /// gateway. The supported connection types is <code>ipsec.1</code>.
+    /// gateway. The supported connection type is <code>ipsec.1</code>.
     /// 
     ///  
     /// <para>

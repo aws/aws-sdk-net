@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VpnConnectionOptions Object
+    /// Response Unmarshaller for IKEVersionsListValue Object
     /// </summary>  
-    public class VpnConnectionOptionsUnmarshaller : IUnmarshaller<VpnConnectionOptions, XmlUnmarshallerContext>, IUnmarshaller<VpnConnectionOptions, JsonUnmarshallerContext>
+    public class IKEVersionsListValueUnmarshaller : IUnmarshaller<IKEVersionsListValue, XmlUnmarshallerContext>, IUnmarshaller<IKEVersionsListValue, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public VpnConnectionOptions Unmarshall(XmlUnmarshallerContext context)
+        public IKEVersionsListValue Unmarshall(XmlUnmarshallerContext context)
         {
-            VpnConnectionOptions unmarshalledObject = new VpnConnectionOptions();
+            IKEVersionsListValue unmarshalledObject = new IKEVersionsListValue();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,17 +54,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("staticRoutesOnly", targetDepth))
+                    if (context.TestExpression("value", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        unmarshalledObject.StaticRoutesOnly = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("tunnelOptionSet/item", targetDepth))
-                    {
-                        var unmarshaller = TunnelOptionUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.TunnelOptions.Add(item);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -82,18 +75,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public VpnConnectionOptions Unmarshall(JsonUnmarshallerContext context)
+        public IKEVersionsListValue Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static VpnConnectionOptionsUnmarshaller _instance = new VpnConnectionOptionsUnmarshaller();        
+        private static IKEVersionsListValueUnmarshaller _instance = new IKEVersionsListValueUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VpnConnectionOptionsUnmarshaller Instance
+        public static IKEVersionsListValueUnmarshaller Instance
         {
             get
             {

@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The tunnel options for a VPN connection.
+    /// The AWS Site-to-Site VPN tunnel options to modify.
     /// </summary>
-    public partial class VpnTunnelOptionsSpecification
+    public partial class ModifyVpnTunnelOptionsSpecification
     {
         private int? _dpdTimeoutSeconds;
         private List<IKEVersionsRequestListValue> _ikeVersions = new List<IKEVersionsRequestListValue>();
@@ -295,7 +295,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property PreSharedKey. 
         /// <para>
         /// The pre-shared key (PSK) to establish initial authentication between the virtual private
-        /// gateway and customer gateway.
+        /// gateway and the customer gateway.
         /// </para>
         ///  
         /// <para>

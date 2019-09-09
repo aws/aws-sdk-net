@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyVpnConnection operation.
-    /// Modifies the target gateway of a AWS Site-to-Site VPN connection. The following migration
+    /// Modifies the target gateway of an AWS Site-to-Site VPN connection. The following migration
     /// options are available:
     /// 
     ///  <ul> <li> 
