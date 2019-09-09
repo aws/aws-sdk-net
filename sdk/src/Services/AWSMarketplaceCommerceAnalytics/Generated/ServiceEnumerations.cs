@@ -99,6 +99,14 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// </summary>
         public static readonly DataSetType DisbursedAmountByProduct = new DataSetType("disbursed_amount_by_product");
         /// <summary>
+        /// Constant Monthly_revenue_field_demonstration_usage for DataSetType
+        /// </summary>
+        public static readonly DataSetType Monthly_revenue_field_demonstration_usage = new DataSetType("monthly_revenue_field_demonstration_usage");
+        /// <summary>
+        /// Constant Monthly_revenue_flexible_payment_schedule for DataSetType
+        /// </summary>
+        public static readonly DataSetType Monthly_revenue_flexible_payment_schedule = new DataSetType("monthly_revenue_flexible_payment_schedule");
+        /// <summary>
         /// Constant MonthlyRevenueAnnualSubscriptions for DataSetType
         /// </summary>
         public static readonly DataSetType MonthlyRevenueAnnualSubscriptions = new DataSetType("monthly_revenue_annual_subscriptions");
