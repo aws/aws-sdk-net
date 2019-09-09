@@ -624,6 +624,10 @@
       <Project>{7B4CD7CD-B44B-480D-AE98-1B20E21676FD}</Project>
       <Name>AWSSDK.QLDB.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/QLDBSession/AWSSDK.QLDBSession.CodeAnalysis.csproj">
+      <Project>{E14ECCA1-E77C-4691-A8D8-95C2A0478748}</Project>
+      <Name>AWSSDK.QLDBSession.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/QuickSight/AWSSDK.QuickSight.CodeAnalysis.csproj">
       <Project>{E715F370-3832-4FB7-B508-283A87F7F36F}</Project>
       <Name>AWSSDK.QuickSight.CodeAnalysis</Name>

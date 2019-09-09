@@ -301,6 +301,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Pricing.CodeAnalysis" Path="|AWSSDK.Pricing.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.QLDB.CodeAnalysis" Path="|AWSSDK.QLDB.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.QLDB.CodeAnalysis" Path="|AWSSDK.QLDB.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.QLDBSession.CodeAnalysis" Path="|AWSSDK.QLDBSession.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.QLDBSession.CodeAnalysis" Path="|AWSSDK.QLDBSession.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.QuickSight.CodeAnalysis" Path="|AWSSDK.QuickSight.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.QuickSight.CodeAnalysis" Path="|AWSSDK.QuickSight.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.RAM.CodeAnalysis" Path="|AWSSDK.RAM.CodeAnalysis|"/>
