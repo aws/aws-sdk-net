@@ -71,6 +71,17 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.PackageName);
             }
 
+            if(requestObject.IsSetPortForwardingConfig())
+            {
+                context.Writer.WritePropertyName("portForwardingConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PortForwardingConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.PortForwardingConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

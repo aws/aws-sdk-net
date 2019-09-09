@@ -44,6 +44,7 @@ namespace Amazon.RoboMaker.Model
         private LoggingConfig _loggingConfig;
         private long? _maxJobDurationInSeconds;
         private string _name;
+        private NetworkInterface _networkInterface;
         private OutputLocation _outputLocation;
         private List<RobotApplicationConfig> _robotApplications = new List<RobotApplicationConfig>();
         private List<SimulationApplicationConfig> _simulationApplications = new List<SimulationApplicationConfig>();
@@ -331,6 +332,24 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkInterface. 
+        /// <para>
+        /// The network interface information for the simulation job.
+        /// </para>
+        /// </summary>
+        public NetworkInterface NetworkInterface
+        {
+            get { return this._networkInterface; }
+            set { this._networkInterface = value; }
+        }
+
+        // Check to see if NetworkInterface property is set
+        internal bool IsSetNetworkInterface()
+        {
+            return this._networkInterface != null;
         }
 
         /// <summary>

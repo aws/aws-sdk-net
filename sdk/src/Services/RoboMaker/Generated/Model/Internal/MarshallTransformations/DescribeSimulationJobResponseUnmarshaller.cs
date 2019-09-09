@@ -123,6 +123,12 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("networkInterface", targetDepth))
+                {
+                    var unmarshaller = NetworkInterfaceUnmarshaller.Instance;
+                    response.NetworkInterface = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("outputLocation", targetDepth))
                 {
                     var unmarshaller = OutputLocationUnmarshaller.Instance;

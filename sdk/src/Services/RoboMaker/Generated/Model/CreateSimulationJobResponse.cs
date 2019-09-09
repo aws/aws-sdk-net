@@ -186,18 +186,6 @@ namespace Amazon.RoboMaker.Model
         /// <para>
         /// Etag for SimulationApplication does not match value during version creation.
         /// </para>
-        ///  </dd> <dt>WrongRegionS3Output</dt> <dd> 
-        /// <para>
-        /// S3 output bucket is in a different region than AWS RoboMaker.
-        /// </para>
-        ///  </dd> <dt>WrongRegionRobotApplication</dt> <dd> 
-        /// <para>
-        /// RobotApplication bucket is in a different region than AWS RoboMaker.
-        /// </para>
-        ///  </dd> <dt>WrongRegionSimulationApplication</dt> <dd> 
-        /// <para>
-        /// SimulationApplication bucket is in a different region than AWS RoboMaker.
-        /// </para>
         ///  </dd> </dl>
         /// </summary>
         public SimulationJobErrorCode FailureCode

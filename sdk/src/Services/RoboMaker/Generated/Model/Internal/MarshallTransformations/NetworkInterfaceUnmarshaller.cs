@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LaunchConfig Object
+    /// Response Unmarshaller for NetworkInterface Object
     /// </summary>  
-    public class LaunchConfigUnmarshaller : IUnmarshaller<LaunchConfig, XmlUnmarshallerContext>, IUnmarshaller<LaunchConfig, JsonUnmarshallerContext>
+    public class NetworkInterfaceUnmarshaller : IUnmarshaller<NetworkInterface, XmlUnmarshallerContext>, IUnmarshaller<NetworkInterface, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LaunchConfig IUnmarshaller<LaunchConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        NetworkInterface IUnmarshaller<NetworkInterface, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,33 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LaunchConfig Unmarshall(JsonUnmarshallerContext context)
+        public NetworkInterface Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LaunchConfig unmarshalledObject = new LaunchConfig();
+            NetworkInterface unmarshalledObject = new NetworkInterface();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("environmentVariables", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.EnvironmentVariables = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("launchFile", targetDepth))
+                if (context.TestExpression("networkInterfaceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LaunchFile = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NetworkInterfaceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("packageName", targetDepth))
+                if (context.TestExpression("privateIpAddress", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PackageName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PrivateIpAddress = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("portForwardingConfig", targetDepth))
+                if (context.TestExpression("publicIpAddress", targetDepth))
                 {
-                    var unmarshaller = PortForwardingConfigUnmarshaller.Instance;
-                    unmarshalledObject.PortForwardingConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PublicIpAddress = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +88,12 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static LaunchConfigUnmarshaller _instance = new LaunchConfigUnmarshaller();        
+        private static NetworkInterfaceUnmarshaller _instance = new NetworkInterfaceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LaunchConfigUnmarshaller Instance
+        public static NetworkInterfaceUnmarshaller Instance
         {
             get
             {
