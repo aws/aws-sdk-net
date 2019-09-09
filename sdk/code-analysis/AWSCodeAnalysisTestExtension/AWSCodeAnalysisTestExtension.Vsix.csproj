@@ -620,6 +620,10 @@
       <Project>{9329CB2C-3AFF-4AFC-BDE5-638A24A81952}</Project>
       <Name>AWSSDK.Pricing.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/QLDB/AWSSDK.QLDB.CodeAnalysis.csproj">
+      <Project>{7B4CD7CD-B44B-480D-AE98-1B20E21676FD}</Project>
+      <Name>AWSSDK.QLDB.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/QuickSight/AWSSDK.QuickSight.CodeAnalysis.csproj">
       <Project>{E715F370-3832-4FB7-B508-283A87F7F36F}</Project>
       <Name>AWSSDK.QuickSight.CodeAnalysis</Name>
