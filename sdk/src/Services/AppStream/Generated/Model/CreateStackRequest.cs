@@ -48,7 +48,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property AccessEndpoints. 
         /// <para>
-        /// The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack
+        /// The list of interface VPC endpoint (interface endpoint) objects. Users of the stack
         /// can connect to AppStream 2.0 only through the specified endpoints.
         /// </para>
         /// </summary>

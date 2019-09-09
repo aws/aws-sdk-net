@@ -28,11 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// Describes a virtual private cloud (VPC) interface endpoint that lets you create a
-    /// private connection between the VPC that you specify and AppStream 2.0. When you specify
-    /// a VPC interface endpoint for a stack, users of the stack can connect to AppStream
-    /// 2.0 only through that endpoint. When you specify a VPC interface endpoint for an image
-    /// builder, administrators can connect to the image builder only through that endpoint.
+    /// Describes an interface VPC endpoint (interface endpoint) that lets you create a private
+    /// connection between the virtual private cloud (VPC) that you specify and AppStream
+    /// 2.0. When you specify an interface endpoint for a stack, users of the stack can connect
+    /// to AppStream 2.0 only through that endpoint. When you specify an interface endpoint
+    /// for an image builder, administrators can connect to the image builder only through
+    /// that endpoint.
     /// </summary>
     public partial class AccessEndpoint
     {
@@ -42,7 +43,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property EndpointType. 
         /// <para>
-        /// The type of VPC interface endpoint.
+        /// The type of interface endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +62,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property VpceId. 
         /// <para>
-        /// The identifier (ID) of the VPC in which the endpoint is used.
+        /// The identifier (ID) of the VPC in which the interface endpoint is used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

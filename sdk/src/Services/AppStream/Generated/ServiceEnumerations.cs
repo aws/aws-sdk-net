@@ -197,6 +197,10 @@ namespace Amazon.AppStream
         /// </summary>
         public static readonly FleetAttribute DOMAIN_JOIN_INFO = new FleetAttribute("DOMAIN_JOIN_INFO");
         /// <summary>
+        /// Constant IAM_ROLE_ARN for FleetAttribute
+        /// </summary>
+        public static readonly FleetAttribute IAM_ROLE_ARN = new FleetAttribute("IAM_ROLE_ARN");
+        /// <summary>
         /// Constant VPC_CONFIGURATION for FleetAttribute
         /// </summary>
         public static readonly FleetAttribute VPC_CONFIGURATION = new FleetAttribute("VPC_CONFIGURATION");
@@ -334,6 +338,10 @@ namespace Amazon.AppStream
         /// Constant INVALID_SUBNET_CONFIGURATION for FleetErrorCode
         /// </summary>
         public static readonly FleetErrorCode INVALID_SUBNET_CONFIGURATION = new FleetErrorCode("INVALID_SUBNET_CONFIGURATION");
+        /// <summary>
+        /// Constant MACHINE_ROLE_IS_MISSING for FleetErrorCode
+        /// </summary>
+        public static readonly FleetErrorCode MACHINE_ROLE_IS_MISSING = new FleetErrorCode("MACHINE_ROLE_IS_MISSING");
         /// <summary>
         /// Constant NETWORK_INTERFACE_LIMIT_EXCEEDED for FleetErrorCode
         /// </summary>
@@ -960,6 +968,10 @@ namespace Amazon.AppStream
         /// Constant FEEDBACK_URL for StackAttribute
         /// </summary>
         public static readonly StackAttribute FEEDBACK_URL = new StackAttribute("FEEDBACK_URL");
+        /// <summary>
+        /// Constant IAM_ROLE_ARN for StackAttribute
+        /// </summary>
+        public static readonly StackAttribute IAM_ROLE_ARN = new StackAttribute("IAM_ROLE_ARN");
         /// <summary>
         /// Constant REDIRECT_URL for StackAttribute
         /// </summary>

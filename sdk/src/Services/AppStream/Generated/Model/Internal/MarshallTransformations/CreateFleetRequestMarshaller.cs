@@ -120,6 +120,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FleetType);
                 }
 
+                if(publicRequest.IsSetIamRoleArn())
+                {
+                    context.Writer.WritePropertyName("IamRoleArn");
+                    context.Writer.Write(publicRequest.IamRoleArn);
+                }
+
                 if(publicRequest.IsSetIdleDisconnectTimeoutInSeconds())
                 {
                     context.Writer.WritePropertyName("IdleDisconnectTimeoutInSeconds");

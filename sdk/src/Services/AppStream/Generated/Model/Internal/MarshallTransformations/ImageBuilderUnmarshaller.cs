@@ -112,6 +112,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     unmarshalledObject.EnableDefaultInternetAccess = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IamRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IamRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ImageArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -40,6 +40,7 @@ namespace Amazon.AppStream.Model
         private string _displayName;
         private DomainJoinInfo _domainJoinInfo;
         private bool? _enableDefaultInternetAccess;
+        private string _iamRoleArn;
         private string _imageArn;
         private List<ResourceError> _imageBuilderErrors = new List<ResourceError>();
         private string _instanceType;
@@ -199,6 +200,27 @@ namespace Amazon.AppStream.Model
         internal bool IsSetEnableDefaultInternetAccess()
         {
             return this._enableDefaultInternetAccess.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IamRoleArn. 
+        /// <para>
+        /// The ARN of the IAM role that is applied to the image builder. To assume a role, the
+        /// image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API
+        /// operation and passes the ARN of the role to use. The operation creates a new session
+        /// with temporary credentials. 
+        /// </para>
+        /// </summary>
+        public string IamRoleArn
+        {
+            get { return this._iamRoleArn; }
+            set { this._iamRoleArn = value; }
+        }
+
+        // Check to see if IamRoleArn property is set
+        internal bool IsSetIamRoleArn()
+        {
+            return this._iamRoleArn != null;
         }
 
         /// <summary>
