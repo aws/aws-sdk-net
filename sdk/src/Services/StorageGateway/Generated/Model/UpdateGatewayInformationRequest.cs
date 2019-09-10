@@ -43,9 +43,35 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class UpdateGatewayInformationRequest : AmazonStorageGatewayRequest
     {
+        private string _cloudWatchLogGroupARN;
         private string _gatewayARN;
         private string _gatewayName;
         private string _gatewayTimezone;
+
+        /// <summary>
+        /// Gets and sets the property CloudWatchLogGroupARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you want to
+        /// use to monitor and log events in the gateway. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What
+        /// Is Amazon CloudWatch Logs?</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=562)]
+        public string CloudWatchLogGroupARN
+        {
+            get { return this._cloudWatchLogGroupARN; }
+            set { this._cloudWatchLogGroupARN = value; }
+        }
+
+        // Check to see if CloudWatchLogGroupARN property is set
+        internal bool IsSetCloudWatchLogGroupARN()
+        {
+            return this._cloudWatchLogGroupARN != null;
+        }
 
         /// <summary>
         /// Gets and sets the property GatewayARN.

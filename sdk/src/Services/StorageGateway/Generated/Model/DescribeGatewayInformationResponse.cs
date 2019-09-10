@@ -32,6 +32,7 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class DescribeGatewayInformationResponse : AmazonWebServiceResponse
     {
+        private string _cloudWatchLogGroupARN;
         private string _ec2InstanceId;
         private string _ec2InstanceRegion;
         private string _gatewayARN;
@@ -45,6 +46,26 @@ namespace Amazon.StorageGateway.Model
         private string _nextUpdateAvailabilityDate;
         private List<Tag> _tags = new List<Tag>();
         private string _vpcEndpoint;
+
+        /// <summary>
+        /// Gets and sets the property CloudWatchLogGroupARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to
+        /// monitor and log events in the gateway.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=562)]
+        public string CloudWatchLogGroupARN
+        {
+            get { return this._cloudWatchLogGroupARN; }
+            set { this._cloudWatchLogGroupARN = value; }
+        }
+
+        // Check to see if CloudWatchLogGroupARN property is set
+        internal bool IsSetCloudWatchLogGroupARN()
+        {
+            return this._cloudWatchLogGroupARN != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Ec2InstanceId. 

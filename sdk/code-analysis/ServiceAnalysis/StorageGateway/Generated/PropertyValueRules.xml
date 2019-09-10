@@ -571,6 +571,10 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.DescribeGatewayInformationResponse.CloudWatchLogGroupARN</property>
+    <max>562</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.DescribeGatewayInformationResponse.GatewayARN</property>
     <min>50</min>
     <max>500</max>
@@ -1150,6 +1154,10 @@
     <property>Amazon.StorageGateway.Model.UpdateChapCredentialsResponse.TargetARN</property>
     <min>50</min>
     <max>800</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateGatewayInformationRequest.CloudWatchLogGroupARN</property>
+    <max>562</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateGatewayInformationRequest.GatewayARN</property>

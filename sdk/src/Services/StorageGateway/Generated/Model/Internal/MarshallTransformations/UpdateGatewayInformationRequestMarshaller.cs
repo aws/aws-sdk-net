@@ -68,6 +68,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCloudWatchLogGroupARN())
+                {
+                    context.Writer.WritePropertyName("CloudWatchLogGroupARN");
+                    context.Writer.Write(publicRequest.CloudWatchLogGroupARN);
+                }
+
                 if(publicRequest.IsSetGatewayARN())
                 {
                     context.Writer.WritePropertyName("GatewayARN");
