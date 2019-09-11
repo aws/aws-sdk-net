@@ -1,3 +1,17 @@
+### 3.3.585.0 (2019-09-11 19:29 UTC)
+* ConfigService (3.3.104.0)
+	* Adding input validation for the OrganizationConfigRuleName string.
+* EC2 (3.3.129.0)
+	* This release adds support for new data fields and log format in VPC flow logs.
+* MediaConnect (3.3.104.0)
+	* This release adds support for the RIST protocol on sources and outputs.
+* RDS (3.3.109.0)
+	* This release allows customers to specify a custom parameter group when creating a Read Replica, for DB engines which support this feature.
+* SimpleEmail (3.3.101.43)
+	* Updated API documentation to correct broken links, and to update content based on customer feedback.
+* StepFunctions (3.3.102.0)
+	* Fixing letter case in Map history event details to be small case
+
 ### 3.3.584.0 (2019-09-10 18:12 UTC)
 * StorageGateway (3.3.109.0)
 	* The CloudWatchLogGroupARN parameter of the UpdateGatewayInformation API allows for configuring the gateway to use a CloudWatch log-group where Storage Gateway health events will be logged. 
