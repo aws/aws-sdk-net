@@ -29,25 +29,21 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the SetIdentityDkimEnabled operation.
-    /// Enables or disables Easy DKIM signing of email sent from an identity:
+    /// Enables or disables Easy DKIM signing of email sent from an identity. If Easy DKIM
+    /// signing is enabled for a domain, then Amazon SES uses DKIM to sign all email that
+    /// it sends from addresses on that domain. If Easy DKIM signing is enabled for an email
+    /// address, then Amazon SES uses DKIM to sign all email it sends from that address.
     /// 
-    ///  <ul> <li> 
-    /// <para>
-    /// If Easy DKIM signing is enabled for a domain name identity (such as <code>example.com</code>),
-    /// then Amazon SES will DKIM-sign all email sent by addresses under that domain name
-    /// (for example, <code>user@example.com</code>).
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// If Easy DKIM signing is enabled for an email address, then Amazon SES will DKIM-sign
-    /// all email sent by that email address.
-    /// </para>
-    ///  </li> </ul> 
+    ///  <note> 
     /// <para>
     /// For email addresses (for example, <code>user@example.com</code>), you can only enable
-    /// Easy DKIM signing if the corresponding domain (in this case, <code>example.com</code>)
-    /// has been set up for Easy DKIM using the AWS Console or the <code>VerifyDomainDkim</code>
-    /// operation.
+    /// DKIM signing if the corresponding domain (in this case, <code>example.com</code>)
+    /// has been set up to use Easy DKIM.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// You can enable DKIM signing for an identity at any time after you start the verification
+    /// process for the identity, even if the verification process isn't complete. 
     /// </para>
     ///  
     /// <para>
