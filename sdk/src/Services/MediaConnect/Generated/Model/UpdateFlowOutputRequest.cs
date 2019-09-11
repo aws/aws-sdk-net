@@ -209,7 +209,7 @@ namespace Amazon.MediaConnect.Model
 
         /// <summary>
         /// Gets and sets the property SmoothingLatency. The smoothing latency in milliseconds
-        /// for RTP and RTP-FEC streams.
+        /// for RIST, RTP, and RTP-FEC streams.
         /// </summary>
         public int SmoothingLatency
         {

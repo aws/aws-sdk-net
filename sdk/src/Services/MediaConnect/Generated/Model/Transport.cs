@@ -58,8 +58,8 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxBitrate. The smoothing max bitrate for RTP and RTP-FEC
-        /// streams.
+        /// Gets and sets the property MaxBitrate. The smoothing max bitrate for RIST, RTP, and
+        /// RTP-FEC streams.
         /// </summary>
         public int MaxBitrate
         {
@@ -74,8 +74,8 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxLatency. The maximum latency in milliseconds for Zixi-based
-        /// streams.
+        /// Gets and sets the property MaxLatency. The maximum latency in milliseconds. This parameter
+        /// applies only to RIST-based and Zixi-based streams.
         /// </summary>
         public int MaxLatency
         {
@@ -122,7 +122,7 @@ namespace Amazon.MediaConnect.Model
 
         /// <summary>
         /// Gets and sets the property SmoothingLatency. The smoothing latency in milliseconds
-        /// for RTP and RTP-FEC streams.
+        /// for RIST, RTP, and RTP-FEC streams.
         /// </summary>
         public int SmoothingLatency
         {
