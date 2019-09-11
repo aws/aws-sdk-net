@@ -68,7 +68,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CustomEndpointType. 
         /// <para>
-        /// The type associated with a custom endpoint. One of: <code>READER</code>, <code>ANY</code>.
+        /// The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>,
+        /// <code>ANY</code>.
         /// </para>
         /// </summary>
         public string CustomEndpointType

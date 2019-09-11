@@ -58,6 +58,7 @@ namespace Amazon.RDS.Model
         private bool? _copyTagsToSnapshot;
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
+        private string _dbParameterGroupName;
         private string _dbSubnetGroupName;
         private bool? _deletionProtection;
         private List<string> _enableCloudwatchLogsExports = new List<string>();
@@ -209,6 +210,48 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBInstanceIdentifier()
         {
             return this._dbInstanceIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBParameterGroupName. 
+        /// <para>
+        /// The name of the DB parameter group to associate with this DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not specify a value for <code>DBParameterGroupName</code>, then Amazon RDS
+        /// uses the <code>DBParameterGroup</code> of source DB instance for a same region Read
+        /// Replica, or the default <code>DBParameterGroup</code> for the specified DB engine
+        /// for a cross region Read Replica.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be 1 to 255 letters, numbers, or hyphens.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can't end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string DBParameterGroupName
+        {
+            get { return this._dbParameterGroupName; }
+            set { this._dbParameterGroupName = value; }
+        }
+
+        // Check to see if DBParameterGroupName property is set
+        internal bool IsSetDBParameterGroupName()
+        {
+            return this._dbParameterGroupName != null;
         }
 
         /// <summary>

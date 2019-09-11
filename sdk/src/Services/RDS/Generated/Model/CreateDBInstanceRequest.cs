@@ -637,8 +637,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBParameterGroupName. 
         /// <para>
-        /// The name of the DB parameter group to associate with this DB instance. If this argument
-        /// is omitted, the default DBParameterGroup for the specified engine is used.
+        /// The name of the DB parameter group to associate with this DB instance. If you do not
+        /// specify a value for <code>DBParameterGroupName</code>, then the default <code>DBParameterGroup</code>
+        /// for the specified DB engine is used.
         /// </para>
         ///  
         /// <para>

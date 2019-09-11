@@ -67,7 +67,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates ModifyDBParameterGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbParameterGroupName">The name of the DB parameter group. Constraints: <ul> <li> If supplied, must match the name of an existing DBParameterGroup. </li> </ul></param>
+        /// <param name="dbParameterGroupName">The name of the DB parameter group. Constraints: <ul> <li> If supplied, must match the name of an existing <code>DBParameterGroup</code>. </li> </ul></param>
         /// <param name="parameters">An array of parameter names, values, and the apply method for the parameter update. At least one parameter name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters can be modified in a single request. Valid Values (for the application method): <code>immediate | pending-reboot</code>  <note> You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for both dynamic and static parameters, and changes are applied when you reboot the DB instance without failover. </note></param>
         public ModifyDBParameterGroupRequest(string dbParameterGroupName, List<Parameter> parameters)
         {
@@ -86,7 +86,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If supplied, must match the name of an existing DBParameterGroup.
+        /// If supplied, must match the name of an existing <code>DBParameterGroup</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

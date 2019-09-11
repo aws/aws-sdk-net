@@ -51,7 +51,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates ResetDBParameterGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbParameterGroupName">The name of the DB parameter group. Constraints: <ul> <li> Must match the name of an existing DBParameterGroup. </li> </ul></param>
+        /// <param name="dbParameterGroupName">The name of the DB parameter group. Constraints: <ul> <li> Must match the name of an existing <code>DBParameterGroup</code>. </li> </ul></param>
         public ResetDBParameterGroupRequest(string dbParameterGroupName)
         {
             _dbParameterGroupName = dbParameterGroupName;
@@ -68,7 +68,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must match the name of an existing DBParameterGroup.
+        /// Must match the name of an existing <code>DBParameterGroup</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
