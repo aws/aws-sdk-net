@@ -40,6 +40,7 @@ namespace Amazon.EC2.Model
         private string _flowLogStatus;
         private string _logDestination;
         private LogDestinationType _logDestinationType;
+        private string _logFormat;
         private string _logGroupName;
         private string _resourceId;
         private TrafficType _trafficType;
@@ -197,6 +198,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetLogDestinationType()
         {
             return this._logDestinationType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogFormat. 
+        /// <para>
+        /// The format of the flow log record.
+        /// </para>
+        /// </summary>
+        public string LogFormat
+        {
+            get { return this._logFormat; }
+            set { this._logFormat = value; }
+        }
+
+        // Check to see if LogFormat property is set
+        internal bool IsSetLogFormat()
+        {
+            return this._logFormat != null;
         }
 
         /// <summary>

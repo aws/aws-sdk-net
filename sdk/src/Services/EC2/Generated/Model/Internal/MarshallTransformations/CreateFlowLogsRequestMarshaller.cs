@@ -74,6 +74,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("LogDestinationType", StringUtils.FromString(publicRequest.LogDestinationType));
                 }
+                if(publicRequest.IsSetLogFormat())
+                {
+                    request.Parameters.Add("LogFormat", StringUtils.FromString(publicRequest.LogFormat));
+                }
                 if(publicRequest.IsSetLogGroupName())
                 {
                     request.Parameters.Add("LogGroupName", StringUtils.FromString(publicRequest.LogGroupName));
