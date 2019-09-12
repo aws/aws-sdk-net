@@ -1,3 +1,18 @@
+### 3.3.586.0 (2019-09-12 19:16 UTC)
+* EC2 (3.3.130.0)
+	* Fix for FleetActivityStatus and FleetStateCode enum
+* ElasticLoadBalancingV2 (3.3.102.36)
+	* Documentation updates for elasticloadbalancingv2: This release adds support for TLS SNI on Network Load Balancers 
+* MediaLive (3.3.105.0)
+	* AWS Elemental MediaLive now supports High Efficiency Video Coding (HEVC) for standard-definition (SD), high-definition (HD), and ultra-high-definition (UHD) encoding with HDR support.Encoding with HEVC offers a number of advantages. While UHD video requires an advanced codec beyond H.264 (AVC), high frame rate (HFR) or High Dynamic Range (HDR) content in HD also benefit from HEVC's advancements. In addition, benefits can be achieved with HD and SD content even if HDR and HFR are not needed.
+* WorkMailMessageFlow (3.3.100.0)
+	* This release allows customers to access email messages as they flow to and from Amazon WorkMail.
+* Core 3.3.103.37
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.585.0 (2019-09-11 19:29 UTC)
 * ConfigService (3.3.104.0)
 	* Adding input validation for the OrganizationConfigRuleName string.

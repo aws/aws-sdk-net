@@ -210,6 +210,7 @@
       <Directory>$(ProjectDir)/src/Services/workdocs/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/worklink/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/workmail/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/workmailmessageflow/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/workspaces/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/xray/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Core/bin/Release/net45/</Directory>
@@ -402,6 +403,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.WorkDocs.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.WorkLink.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.WorkMail.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.WorkMailMessageFlow.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.WorkSpaces.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.XRay.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Core.dll" Analyze="True" AnalyzeAllChildren="False">
