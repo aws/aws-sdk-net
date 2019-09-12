@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VideoCodecSettings Object
+    /// Response Unmarshaller for H265ColorSpaceSettings Object
     /// </summary>  
-    public class VideoCodecSettingsUnmarshaller : IUnmarshaller<VideoCodecSettings, XmlUnmarshallerContext>, IUnmarshaller<VideoCodecSettings, JsonUnmarshallerContext>
+    public class H265ColorSpaceSettingsUnmarshaller : IUnmarshaller<H265ColorSpaceSettings, XmlUnmarshallerContext>, IUnmarshaller<H265ColorSpaceSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        VideoCodecSettings IUnmarshaller<VideoCodecSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        H265ColorSpaceSettings IUnmarshaller<H265ColorSpaceSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,39 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public VideoCodecSettings Unmarshall(JsonUnmarshallerContext context)
+        public H265ColorSpaceSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            VideoCodecSettings unmarshalledObject = new VideoCodecSettings();
+            H265ColorSpaceSettings unmarshalledObject = new H265ColorSpaceSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("frameCaptureSettings", targetDepth))
+                if (context.TestExpression("colorSpacePassthroughSettings", targetDepth))
                 {
-                    var unmarshaller = FrameCaptureSettingsUnmarshaller.Instance;
-                    unmarshalledObject.FrameCaptureSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ColorSpacePassthroughSettingsUnmarshaller.Instance;
+                    unmarshalledObject.ColorSpacePassthroughSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("h264Settings", targetDepth))
+                if (context.TestExpression("hdr10Settings", targetDepth))
                 {
-                    var unmarshaller = H264SettingsUnmarshaller.Instance;
-                    unmarshalledObject.H264Settings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = Hdr10SettingsUnmarshaller.Instance;
+                    unmarshalledObject.Hdr10Settings = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("h265Settings", targetDepth))
+                if (context.TestExpression("rec601Settings", targetDepth))
                 {
-                    var unmarshaller = H265SettingsUnmarshaller.Instance;
-                    unmarshalledObject.H265Settings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = Rec601SettingsUnmarshaller.Instance;
+                    unmarshalledObject.Rec601Settings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("rec709Settings", targetDepth))
+                {
+                    var unmarshaller = Rec709SettingsUnmarshaller.Instance;
+                    unmarshalledObject.Rec709Settings = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +94,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static VideoCodecSettingsUnmarshaller _instance = new VideoCodecSettingsUnmarshaller();        
+        private static H265ColorSpaceSettingsUnmarshaller _instance = new H265ColorSpaceSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VideoCodecSettingsUnmarshaller Instance
+        public static H265ColorSpaceSettingsUnmarshaller Instance
         {
             get
             {

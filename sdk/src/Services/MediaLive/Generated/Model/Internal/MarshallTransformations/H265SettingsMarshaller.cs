@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// H264Settings Marshaller
+    /// H265Settings Marshaller
     /// </summary>       
-    public class H264SettingsMarshaller : IRequestMarshaller<H264Settings, JsonMarshallerContext> 
+    public class H265SettingsMarshaller : IRequestMarshaller<H265Settings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(H264Settings requestObject, JsonMarshallerContext context)
+        public void Marshall(H265Settings requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetAdaptiveQuantization())
             {
@@ -57,16 +57,16 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AfdSignaling);
             }
 
+            if(requestObject.IsSetAlternativeTransferFunction())
+            {
+                context.Writer.WritePropertyName("alternativeTransferFunction");
+                context.Writer.Write(requestObject.AlternativeTransferFunction);
+            }
+
             if(requestObject.IsSetBitrate())
             {
                 context.Writer.WritePropertyName("bitrate");
                 context.Writer.Write(requestObject.Bitrate);
-            }
-
-            if(requestObject.IsSetBufFillPct())
-            {
-                context.Writer.WritePropertyName("bufFillPct");
-                context.Writer.Write(requestObject.BufFillPct);
             }
 
             if(requestObject.IsSetBufSize())
@@ -86,16 +86,10 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("colorSpaceSettings");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = H264ColorSpaceSettingsMarshaller.Instance;
+                var marshaller = H265ColorSpaceSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ColorSpaceSettings, context);
 
                 context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetEntropyEncoding())
-            {
-                context.Writer.WritePropertyName("entropyEncoding");
-                context.Writer.Write(requestObject.EntropyEncoding);
             }
 
             if(requestObject.IsSetFixedAfd())
@@ -110,12 +104,6 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.FlickerAq);
             }
 
-            if(requestObject.IsSetFramerateControl())
-            {
-                context.Writer.WritePropertyName("framerateControl");
-                context.Writer.Write(requestObject.FramerateControl);
-            }
-
             if(requestObject.IsSetFramerateDenominator())
             {
                 context.Writer.WritePropertyName("framerateDenominator");
@@ -128,22 +116,10 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.FramerateNumerator);
             }
 
-            if(requestObject.IsSetGopBReference())
-            {
-                context.Writer.WritePropertyName("gopBReference");
-                context.Writer.Write(requestObject.GopBReference);
-            }
-
             if(requestObject.IsSetGopClosedCadence())
             {
                 context.Writer.WritePropertyName("gopClosedCadence");
                 context.Writer.Write(requestObject.GopClosedCadence);
-            }
-
-            if(requestObject.IsSetGopNumBFrames())
-            {
-                context.Writer.WritePropertyName("gopNumBFrames");
-                context.Writer.Write(requestObject.GopNumBFrames);
             }
 
             if(requestObject.IsSetGopSize())
@@ -180,18 +156,6 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("minIInterval");
                 context.Writer.Write(requestObject.MinIInterval);
-            }
-
-            if(requestObject.IsSetNumRefFrames())
-            {
-                context.Writer.WritePropertyName("numRefFrames");
-                context.Writer.Write(requestObject.NumRefFrames);
-            }
-
-            if(requestObject.IsSetParControl())
-            {
-                context.Writer.WritePropertyName("parControl");
-                context.Writer.Write(requestObject.ParControl);
             }
 
             if(requestObject.IsSetParDenominator())
@@ -242,34 +206,10 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Slices);
             }
 
-            if(requestObject.IsSetSoftness())
+            if(requestObject.IsSetTier())
             {
-                context.Writer.WritePropertyName("softness");
-                context.Writer.Write(requestObject.Softness);
-            }
-
-            if(requestObject.IsSetSpatialAq())
-            {
-                context.Writer.WritePropertyName("spatialAq");
-                context.Writer.Write(requestObject.SpatialAq);
-            }
-
-            if(requestObject.IsSetSubgopLength())
-            {
-                context.Writer.WritePropertyName("subgopLength");
-                context.Writer.Write(requestObject.SubgopLength);
-            }
-
-            if(requestObject.IsSetSyntax())
-            {
-                context.Writer.WritePropertyName("syntax");
-                context.Writer.Write(requestObject.Syntax);
-            }
-
-            if(requestObject.IsSetTemporalAq())
-            {
-                context.Writer.WritePropertyName("temporalAq");
-                context.Writer.Write(requestObject.TemporalAq);
+                context.Writer.WritePropertyName("tier");
+                context.Writer.Write(requestObject.Tier);
             }
 
             if(requestObject.IsSetTimecodeInsertion())
@@ -283,7 +223,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static H264SettingsMarshaller Instance = new H264SettingsMarshaller();
+        public readonly static H265SettingsMarshaller Instance = new H265SettingsMarshaller();
 
     }
 }

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// VideoCodecSettings Marshaller
+    /// H265ColorSpaceSettings Marshaller
     /// </summary>       
-    public class VideoCodecSettingsMarshaller : IRequestMarshaller<VideoCodecSettings, JsonMarshallerContext> 
+    public class H265ColorSpaceSettingsMarshaller : IRequestMarshaller<H265ColorSpaceSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,37 +43,48 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(VideoCodecSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(H265ColorSpaceSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetFrameCaptureSettings())
+            if(requestObject.IsSetColorSpacePassthroughSettings())
             {
-                context.Writer.WritePropertyName("frameCaptureSettings");
+                context.Writer.WritePropertyName("colorSpacePassthroughSettings");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = FrameCaptureSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.FrameCaptureSettings, context);
+                var marshaller = ColorSpacePassthroughSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ColorSpacePassthroughSettings, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetH264Settings())
+            if(requestObject.IsSetHdr10Settings())
             {
-                context.Writer.WritePropertyName("h264Settings");
+                context.Writer.WritePropertyName("hdr10Settings");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = H264SettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.H264Settings, context);
+                var marshaller = Hdr10SettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Hdr10Settings, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetH265Settings())
+            if(requestObject.IsSetRec601Settings())
             {
-                context.Writer.WritePropertyName("h265Settings");
+                context.Writer.WritePropertyName("rec601Settings");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = H265SettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.H265Settings, context);
+                var marshaller = Rec601SettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Rec601Settings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetRec709Settings())
+            {
+                context.Writer.WritePropertyName("rec709Settings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = Rec709SettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Rec709Settings, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -83,7 +94,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static VideoCodecSettingsMarshaller Instance = new VideoCodecSettingsMarshaller();
+        public readonly static H265ColorSpaceSettingsMarshaller Instance = new H265ColorSpaceSettingsMarshaller();
 
     }
 }

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for H264Settings Object
+    /// Response Unmarshaller for H265Settings Object
     /// </summary>  
-    public class H264SettingsUnmarshaller : IUnmarshaller<H264Settings, XmlUnmarshallerContext>, IUnmarshaller<H264Settings, JsonUnmarshallerContext>
+    public class H265SettingsUnmarshaller : IUnmarshaller<H265Settings, XmlUnmarshallerContext>, IUnmarshaller<H265Settings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        H264Settings IUnmarshaller<H264Settings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        H265Settings IUnmarshaller<H265Settings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,13 +53,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public H264Settings Unmarshall(JsonUnmarshallerContext context)
+        public H265Settings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            H264Settings unmarshalledObject = new H264Settings();
+            H265Settings unmarshalledObject = new H265Settings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -76,16 +76,16 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.AfdSignaling = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("alternativeTransferFunction", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AlternativeTransferFunction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("bitrate", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.Bitrate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("bufFillPct", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.BufFillPct = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("bufSize", targetDepth))
@@ -102,14 +102,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("colorSpaceSettings", targetDepth))
                 {
-                    var unmarshaller = H264ColorSpaceSettingsUnmarshaller.Instance;
+                    var unmarshaller = H265ColorSpaceSettingsUnmarshaller.Instance;
                     unmarshalledObject.ColorSpaceSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("entropyEncoding", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EntropyEncoding = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("fixedAfd", targetDepth))
@@ -124,12 +118,6 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.FlickerAq = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("framerateControl", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FramerateControl = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("framerateDenominator", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -142,22 +130,10 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.FramerateNumerator = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("gopBReference", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GopBReference = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("gopClosedCadence", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.GopClosedCadence = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("gopNumBFrames", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.GopNumBFrames = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("gopSize", targetDepth))
@@ -194,18 +170,6 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.MinIInterval = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("numRefFrames", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.NumRefFrames = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("parControl", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ParControl = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("parDenominator", targetDepth))
@@ -256,34 +220,10 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.Slices = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("softness", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Softness = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("spatialAq", targetDepth))
+                if (context.TestExpression("tier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SpatialAq = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("subgopLength", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SubgopLength = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("syntax", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Syntax = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("temporalAq", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TemporalAq = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Tier = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("timecodeInsertion", targetDepth))
@@ -298,12 +238,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static H264SettingsUnmarshaller _instance = new H264SettingsUnmarshaller();        
+        private static H265SettingsUnmarshaller _instance = new H265SettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static H264SettingsUnmarshaller Instance
+        public static H265SettingsUnmarshaller Instance
         {
             get
             {

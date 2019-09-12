@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MsSmoothOutputSettings Marshaller
+    /// Rec601Settings Marshaller
     /// </summary>       
-    public class MsSmoothOutputSettingsMarshaller : IRequestMarshaller<MsSmoothOutputSettings, JsonMarshallerContext> 
+    public class Rec601SettingsMarshaller : IRequestMarshaller<Rec601Settings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,26 +43,14 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MsSmoothOutputSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(Rec601Settings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetH265PackagingType())
-            {
-                context.Writer.WritePropertyName("h265PackagingType");
-                context.Writer.Write(requestObject.H265PackagingType);
-            }
-
-            if(requestObject.IsSetNameModifier())
-            {
-                context.Writer.WritePropertyName("nameModifier");
-                context.Writer.Write(requestObject.NameModifier);
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static MsSmoothOutputSettingsMarshaller Instance = new MsSmoothOutputSettingsMarshaller();
+        public readonly static Rec601SettingsMarshaller Instance = new Rec601SettingsMarshaller();
 
     }
 }

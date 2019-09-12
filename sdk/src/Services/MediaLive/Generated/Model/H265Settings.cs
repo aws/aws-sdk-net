@@ -28,54 +28,44 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// H264 Settings
+    /// H265 Settings
     /// </summary>
-    public partial class H264Settings
+    public partial class H265Settings
     {
-        private H264AdaptiveQuantization _adaptiveQuantization;
+        private H265AdaptiveQuantization _adaptiveQuantization;
         private AfdSignaling _afdSignaling;
+        private H265AlternativeTransferFunction _alternativeTransferFunction;
         private int? _bitrate;
-        private int? _bufFillPct;
         private int? _bufSize;
-        private H264ColorMetadata _colorMetadata;
-        private H264ColorSpaceSettings _colorSpaceSettings;
-        private H264EntropyEncoding _entropyEncoding;
+        private H265ColorMetadata _colorMetadata;
+        private H265ColorSpaceSettings _colorSpaceSettings;
         private FixedAfd _fixedAfd;
-        private H264FlickerAq _flickerAq;
-        private H264FramerateControl _framerateControl;
+        private H265FlickerAq _flickerAq;
         private int? _framerateDenominator;
         private int? _framerateNumerator;
-        private H264GopBReference _gopBReference;
         private int? _gopClosedCadence;
-        private int? _gopNumBFrames;
         private double? _gopSize;
-        private H264GopSizeUnits _gopSizeUnits;
-        private H264Level _level;
-        private H264LookAheadRateControl _lookAheadRateControl;
+        private H265GopSizeUnits _gopSizeUnits;
+        private H265Level _level;
+        private H265LookAheadRateControl _lookAheadRateControl;
         private int? _maxBitrate;
         private int? _minIInterval;
-        private int? _numRefFrames;
-        private H264ParControl _parControl;
         private int? _parDenominator;
         private int? _parNumerator;
-        private H264Profile _profile;
+        private H265Profile _profile;
         private int? _qvbrQualityLevel;
-        private H264RateControlMode _rateControlMode;
-        private H264ScanType _scanType;
-        private H264SceneChangeDetect _sceneChangeDetect;
+        private H265RateControlMode _rateControlMode;
+        private H265ScanType _scanType;
+        private H265SceneChangeDetect _sceneChangeDetect;
         private int? _slices;
-        private int? _softness;
-        private H264SpatialAq _spatialAq;
-        private H264SubGopLength _subgopLength;
-        private H264Syntax _syntax;
-        private H264TemporalAq _temporalAq;
-        private H264TimecodeInsertionBehavior _timecodeInsertion;
+        private H265Tier _tier;
+        private H265TimecodeInsertionBehavior _timecodeInsertion;
 
         /// <summary>
         /// Gets and sets the property AdaptiveQuantization. Adaptive quantization. Allows intra-frame
         /// quantizers to vary to improve visual quality.
         /// </summary>
-        public H264AdaptiveQuantization AdaptiveQuantization
+        public H265AdaptiveQuantization AdaptiveQuantization
         {
             get { return this._adaptiveQuantization; }
             set { this._adaptiveQuantization = value; }
@@ -106,12 +96,29 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AlternativeTransferFunction. Whether or not EML should
+        /// insert an Alternative Transfer Function SEI message to support backwards compatibility
+        /// with non-HDR decoders and displays.
+        /// </summary>
+        public H265AlternativeTransferFunction AlternativeTransferFunction
+        {
+            get { return this._alternativeTransferFunction; }
+            set { this._alternativeTransferFunction = value; }
+        }
+
+        // Check to see if AlternativeTransferFunction property is set
+        internal bool IsSetAlternativeTransferFunction()
+        {
+            return this._alternativeTransferFunction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Bitrate. Average bitrate in bits/second. Required when
         /// the rate control mode is VBR or CBR. Not used for QVBR. In an MS Smooth output group,
         /// each output must have a unique value when its bitrate is rounded down to the nearest
         /// multiple of 1000.
         /// </summary>
-        [AWSProperty(Min=1000)]
+        [AWSProperty(Min=100000, Max=40000000)]
         public int Bitrate
         {
             get { return this._bitrate.GetValueOrDefault(); }
@@ -125,26 +132,9 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BufFillPct. Percentage of the buffer that should initially
-        /// be filled (HRD buffer model).
-        /// </summary>
-        [AWSProperty(Min=0, Max=100)]
-        public int BufFillPct
-        {
-            get { return this._bufFillPct.GetValueOrDefault(); }
-            set { this._bufFillPct = value; }
-        }
-
-        // Check to see if BufFillPct property is set
-        internal bool IsSetBufFillPct()
-        {
-            return this._bufFillPct.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property BufSize. Size of buffer (HRD buffer model) in bits.
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Min=100000, Max=80000000)]
         public int BufSize
         {
             get { return this._bufSize.GetValueOrDefault(); }
@@ -160,7 +150,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property ColorMetadata. Includes colorspace metadata in the output.
         /// </summary>
-        public H264ColorMetadata ColorMetadata
+        public H265ColorMetadata ColorMetadata
         {
             get { return this._colorMetadata; }
             set { this._colorMetadata = value; }
@@ -175,7 +165,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property ColorSpaceSettings. Color Space settings
         /// </summary>
-        public H264ColorSpaceSettings ColorSpaceSettings
+        public H265ColorSpaceSettings ColorSpaceSettings
         {
             get { return this._colorSpaceSettings; }
             set { this._colorSpaceSettings = value; }
@@ -185,22 +175,6 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetColorSpaceSettings()
         {
             return this._colorSpaceSettings != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property EntropyEncoding. Entropy encoding mode.  Use cabac (must
-        /// be in Main or High profile) or cavlc.
-        /// </summary>
-        public H264EntropyEncoding EntropyEncoding
-        {
-            get { return this._entropyEncoding; }
-            set { this._entropyEncoding = value; }
-        }
-
-        // Check to see if EntropyEncoding property is set
-        internal bool IsSetEntropyEncoding()
-        {
-            return this._entropyEncoding != null;
         }
 
         /// <summary>
@@ -223,7 +197,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property FlickerAq. If set to enabled, adjust quantization within
         /// each frame to reduce flicker or 'pop' on I-frames.
         /// </summary>
-        public H264FlickerAq FlickerAq
+        public H265FlickerAq FlickerAq
         {
             get { return this._flickerAq; }
             set { this._flickerAq = value; }
@@ -236,28 +210,9 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FramerateControl. This field indicates how the output video
-        /// frame rate is specified.  If "specified" is selected then the output video frame rate
-        /// is determined by framerateNumerator and framerateDenominator, else if "initializeFromSource"
-        /// is selected then the output video frame rate will be set equal to the input video
-        /// frame rate of the first input.
-        /// </summary>
-        public H264FramerateControl FramerateControl
-        {
-            get { return this._framerateControl; }
-            set { this._framerateControl = value; }
-        }
-
-        // Check to see if FramerateControl property is set
-        internal bool IsSetFramerateControl()
-        {
-            return this._framerateControl != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property FramerateDenominator. Framerate denominator.
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=3003)]
         public int FramerateDenominator
         {
             get { return this._framerateDenominator.GetValueOrDefault(); }
@@ -274,7 +229,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property FramerateNumerator. Framerate numerator - framerate is
         /// a fraction, e.g. 24000 / 1001 = 23.976 fps.
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Required=true, Min=1)]
         public int FramerateNumerator
         {
             get { return this._framerateNumerator.GetValueOrDefault(); }
@@ -285,21 +240,6 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetFramerateNumerator()
         {
             return this._framerateNumerator.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property GopBReference. Documentation update needed
-        /// </summary>
-        public H264GopBReference GopBReference
-        {
-            get { return this._gopBReference; }
-            set { this._gopBReference = value; }
-        }
-
-        // Check to see if GopBReference property is set
-        internal bool IsSetGopBReference()
-        {
-            return this._gopBReference != null;
         }
 
         /// <summary>
@@ -319,22 +259,6 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetGopClosedCadence()
         {
             return this._gopClosedCadence.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property GopNumBFrames. Number of B-frames between reference frames.
-        /// </summary>
-        [AWSProperty(Min=0, Max=7)]
-        public int GopNumBFrames
-        {
-            get { return this._gopNumBFrames.GetValueOrDefault(); }
-            set { this._gopNumBFrames = value; }
-        }
-
-        // Check to see if GopNumBFrames property is set
-        internal bool IsSetGopNumBFrames()
-        {
-            return this._gopNumBFrames.HasValue; 
         }
 
         /// <summary>
@@ -358,7 +282,7 @@ namespace Amazon.MediaLive.Model
         /// frames or seconds. If seconds the system will convert the gopSize into a frame count
         /// at run time.
         /// </summary>
-        public H264GopSizeUnits GopSizeUnits
+        public H265GopSizeUnits GopSizeUnits
         {
             get { return this._gopSizeUnits; }
             set { this._gopSizeUnits = value; }
@@ -371,9 +295,9 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Level. H.264 Level.
+        /// Gets and sets the property Level. H.265 Level.
         /// </summary>
-        public H264Level Level
+        public H265Level Level
         {
             get { return this._level; }
             set { this._level = value; }
@@ -390,7 +314,7 @@ namespace Amazon.MediaLive.Model
         /// can decrease latency and memory usage, while high can produce better quality for certain
         /// content.
         /// </summary>
-        public H264LookAheadRateControl LookAheadRateControl
+        public H265LookAheadRateControl LookAheadRateControl
         {
             get { return this._lookAheadRateControl; }
             set { this._lookAheadRateControl = value; }
@@ -403,11 +327,9 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxBitrate. For QVBR: See the tooltip for Quality levelFor
-        /// VBR: Set the maximum bitrate in order to accommodate expected spikes in the complexity
-        /// of the video.
+        /// Gets and sets the property MaxBitrate. For QVBR: See the tooltip for Quality level
         /// </summary>
-        [AWSProperty(Min=1000)]
+        [AWSProperty(Min=100000, Max=40000000)]
         public int MaxBitrate
         {
             get { return this._maxBitrate.GetValueOrDefault(); }
@@ -443,42 +365,6 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NumRefFrames. Number of reference frames to use. The encoder
-        /// may use more than requested if using B-frames and/or interlaced encoding.
-        /// </summary>
-        [AWSProperty(Min=1, Max=6)]
-        public int NumRefFrames
-        {
-            get { return this._numRefFrames.GetValueOrDefault(); }
-            set { this._numRefFrames = value; }
-        }
-
-        // Check to see if NumRefFrames property is set
-        internal bool IsSetNumRefFrames()
-        {
-            return this._numRefFrames.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property ParControl. This field indicates how the output pixel aspect
-        /// ratio is specified.  If "specified" is selected then the output video pixel aspect
-        /// ratio is determined by parNumerator and parDenominator, else if "initializeFromSource"
-        /// is selected then the output pixsel aspect ratio will be set equal to the input video
-        /// pixel aspect ratio of the first input.
-        /// </summary>
-        public H264ParControl ParControl
-        {
-            get { return this._parControl; }
-            set { this._parControl = value; }
-        }
-
-        // Check to see if ParControl property is set
-        internal bool IsSetParControl()
-        {
-            return this._parControl != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property ParDenominator. Pixel Aspect Ratio denominator.
         /// </summary>
         [AWSProperty(Min=1)]
@@ -497,6 +383,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property ParNumerator. Pixel Aspect Ratio numerator.
         /// </summary>
+        [AWSProperty(Min=1)]
         public int ParNumerator
         {
             get { return this._parNumerator.GetValueOrDefault(); }
@@ -510,9 +397,9 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Profile. H.264 Profile.
+        /// Gets and sets the property Profile. H.265 Profile.
         /// </summary>
-        public H264Profile Profile
+        public H265Profile Profile
         {
             get { return this._profile; }
             set { this._profile = value; }
@@ -548,13 +435,11 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property RateControlMode. Rate control mode.QVBR: Quality will match
         /// the specified quality level except when it is constrained by themaximum bitrate. 
-        /// Recommended if you or your viewers pay for bandwidth.VBR: Quality and bitrate vary,
-        /// depending on the video complexity. Recommended instead of QVBRif you want to maintain
-        /// a specific average bitrate over the duration of the channel.CBR: Quality varies, depending
+        /// Recommended if you or your viewers pay for bandwidth.CBR: Quality varies, depending
         /// on the video complexity. Recommended only if you distributeyour assets to devices
         /// that cannot handle variable bitrates.
         /// </summary>
-        public H264RateControlMode RateControlMode
+        public H265RateControlMode RateControlMode
         {
             get { return this._rateControlMode; }
             set { this._rateControlMode = value; }
@@ -570,7 +455,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property ScanType. Sets the scan type of the output to progressive
         /// or top-field-first interlaced.
         /// </summary>
-        public H264ScanType ScanType
+        public H265ScanType ScanType
         {
             get { return this._scanType; }
             set { this._scanType = value; }
@@ -583,11 +468,9 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SceneChangeDetect. Scene change detection.- On: inserts
-        /// I-frames when scene change is detected.- Off: does not force an I-frame when scene
-        /// change is detected.
+        /// Gets and sets the property SceneChangeDetect. Scene change detection.
         /// </summary>
-        public H264SceneChangeDetect SceneChangeDetect
+        public H265SceneChangeDetect SceneChangeDetect
         {
             get { return this._sceneChangeDetect; }
             set { this._sceneChangeDetect = value; }
@@ -606,7 +489,7 @@ namespace Amazon.MediaLive.Model
         /// is optional; when no value is specified the encoder will choose the number of slices
         /// based on encode resolution.
         /// </summary>
-        [AWSProperty(Min=1, Max=32)]
+        [AWSProperty(Min=1, Max=16)]
         public int Slices
         {
             get { return this._slices.GetValueOrDefault(); }
@@ -620,84 +503,18 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Softness. Softness. Selects quantizer matrix, larger values
-        /// reduce high-frequency content in the encoded image.
+        /// Gets and sets the property Tier. H.265 Tier.
         /// </summary>
-        [AWSProperty(Min=0, Max=128)]
-        public int Softness
+        public H265Tier Tier
         {
-            get { return this._softness.GetValueOrDefault(); }
-            set { this._softness = value; }
+            get { return this._tier; }
+            set { this._tier = value; }
         }
 
-        // Check to see if Softness property is set
-        internal bool IsSetSoftness()
+        // Check to see if Tier property is set
+        internal bool IsSetTier()
         {
-            return this._softness.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property SpatialAq. If set to enabled, adjust quantization within
-        /// each frame based on spatial variation of content complexity.
-        /// </summary>
-        public H264SpatialAq SpatialAq
-        {
-            get { return this._spatialAq; }
-            set { this._spatialAq = value; }
-        }
-
-        // Check to see if SpatialAq property is set
-        internal bool IsSetSpatialAq()
-        {
-            return this._spatialAq != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SubgopLength. If set to fixed, use gopNumBFrames B-frames
-        /// per sub-GOP. If set to dynamic, optimize the number of B-frames used for each sub-GOP
-        /// to improve visual quality.
-        /// </summary>
-        public H264SubGopLength SubgopLength
-        {
-            get { return this._subgopLength; }
-            set { this._subgopLength = value; }
-        }
-
-        // Check to see if SubgopLength property is set
-        internal bool IsSetSubgopLength()
-        {
-            return this._subgopLength != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Syntax. Produces a bitstream compliant with SMPTE RP-2027.
-        /// </summary>
-        public H264Syntax Syntax
-        {
-            get { return this._syntax; }
-            set { this._syntax = value; }
-        }
-
-        // Check to see if Syntax property is set
-        internal bool IsSetSyntax()
-        {
-            return this._syntax != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property TemporalAq. If set to enabled, adjust quantization within
-        /// each frame based on temporal variation of content complexity.
-        /// </summary>
-        public H264TemporalAq TemporalAq
-        {
-            get { return this._temporalAq; }
-            set { this._temporalAq = value; }
-        }
-
-        // Check to see if TemporalAq property is set
-        internal bool IsSetTemporalAq()
-        {
-            return this._temporalAq != null;
+            return this._tier != null;
         }
 
         /// <summary>
@@ -705,7 +522,7 @@ namespace Amazon.MediaLive.Model
         /// into the video elementary stream.- 'disabled': Do not include timecodes- 'picTimingSei':
         /// Pass through picture timing SEI messages from the source specified in Timecode Config
         /// </summary>
-        public H264TimecodeInsertionBehavior TimecodeInsertion
+        public H265TimecodeInsertionBehavior TimecodeInsertion
         {
             get { return this._timecodeInsertion; }
             set { this._timecodeInsertion = value; }

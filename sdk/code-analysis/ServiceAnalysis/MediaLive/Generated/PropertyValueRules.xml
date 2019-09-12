@@ -289,6 +289,67 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.H265Settings.Bitrate</property>
+    <min>100000</min>
+    <max>40000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.H265Settings.BufSize</property>
+    <min>100000</min>
+    <max>80000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.H265Settings.FramerateDenominator</property>
+    <min>1</min>
+    <max>3003</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.H265Settings.FramerateNumerator</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.H265Settings.GopClosedCadence</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.H265Settings.MaxBitrate</property>
+    <min>100000</min>
+    <max>40000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.H265Settings.MinIInterval</property>
+    <min>0</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.H265Settings.ParDenominator</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.H265Settings.ParNumerator</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.H265Settings.QvbrQualityLevel</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.H265Settings.Slices</property>
+    <min>1</min>
+    <max>16</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.Hdr10Settings.MaxCll</property>
+    <min>0</min>
+    <max>32768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.Hdr10Settings.MaxFall</property>
+    <min>0</min>
+    <max>32768</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.HlsAkamaiSettings.ConnectionRetryInterval</property>
     <min>0</min>
   </property-value-rule>
@@ -656,14 +717,6 @@
     <property>Amazon.MediaLive.Model.Scte35TimeSignalApos.AdAvailOffset</property>
     <min>-1000</min>
     <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MediaLive.Model.ServiceDescriptor.ProviderName</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MediaLive.Model.ServiceDescriptor.ServiceName</property>
-    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.StaticImageActivateScheduleActionSettings.Duration</property>

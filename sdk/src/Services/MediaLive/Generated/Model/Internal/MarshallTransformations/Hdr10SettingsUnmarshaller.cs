@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VideoCodecSettings Object
+    /// Response Unmarshaller for Hdr10Settings Object
     /// </summary>  
-    public class VideoCodecSettingsUnmarshaller : IUnmarshaller<VideoCodecSettings, XmlUnmarshallerContext>, IUnmarshaller<VideoCodecSettings, JsonUnmarshallerContext>
+    public class Hdr10SettingsUnmarshaller : IUnmarshaller<Hdr10Settings, XmlUnmarshallerContext>, IUnmarshaller<Hdr10Settings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        VideoCodecSettings IUnmarshaller<VideoCodecSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Hdr10Settings IUnmarshaller<Hdr10Settings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public VideoCodecSettings Unmarshall(JsonUnmarshallerContext context)
+        public Hdr10Settings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            VideoCodecSettings unmarshalledObject = new VideoCodecSettings();
+            Hdr10Settings unmarshalledObject = new Hdr10Settings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("frameCaptureSettings", targetDepth))
+                if (context.TestExpression("maxCll", targetDepth))
                 {
-                    var unmarshaller = FrameCaptureSettingsUnmarshaller.Instance;
-                    unmarshalledObject.FrameCaptureSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxCll = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("h264Settings", targetDepth))
+                if (context.TestExpression("maxFall", targetDepth))
                 {
-                    var unmarshaller = H264SettingsUnmarshaller.Instance;
-                    unmarshalledObject.H264Settings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("h265Settings", targetDepth))
-                {
-                    var unmarshaller = H265SettingsUnmarshaller.Instance;
-                    unmarshalledObject.H265Settings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxFall = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static VideoCodecSettingsUnmarshaller _instance = new VideoCodecSettingsUnmarshaller();        
+        private static Hdr10SettingsUnmarshaller _instance = new Hdr10SettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VideoCodecSettingsUnmarshaller Instance
+        public static Hdr10SettingsUnmarshaller Instance
         {
             get
             {

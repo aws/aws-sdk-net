@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MsSmoothOutputSettings Marshaller
+    /// H264ColorSpaceSettings Marshaller
     /// </summary>       
-    public class MsSmoothOutputSettingsMarshaller : IRequestMarshaller<MsSmoothOutputSettings, JsonMarshallerContext> 
+    public class H264ColorSpaceSettingsMarshaller : IRequestMarshaller<H264ColorSpaceSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,18 +43,39 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MsSmoothOutputSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(H264ColorSpaceSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetH265PackagingType())
+            if(requestObject.IsSetColorSpacePassthroughSettings())
             {
-                context.Writer.WritePropertyName("h265PackagingType");
-                context.Writer.Write(requestObject.H265PackagingType);
+                context.Writer.WritePropertyName("colorSpacePassthroughSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ColorSpacePassthroughSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ColorSpacePassthroughSettings, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetNameModifier())
+            if(requestObject.IsSetRec601Settings())
             {
-                context.Writer.WritePropertyName("nameModifier");
-                context.Writer.Write(requestObject.NameModifier);
+                context.Writer.WritePropertyName("rec601Settings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = Rec601SettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Rec601Settings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetRec709Settings())
+            {
+                context.Writer.WritePropertyName("rec709Settings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = Rec709SettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Rec709Settings, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }
@@ -62,7 +83,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static MsSmoothOutputSettingsMarshaller Instance = new MsSmoothOutputSettingsMarshaller();
+        public readonly static H264ColorSpaceSettingsMarshaller Instance = new H264ColorSpaceSettingsMarshaller();
 
     }
 }
