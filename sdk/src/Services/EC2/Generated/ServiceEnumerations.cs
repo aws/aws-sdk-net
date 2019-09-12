@@ -2787,13 +2787,13 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly FleetActivityStatus Fulfilled = new FleetActivityStatus("fulfilled");
         /// <summary>
-        /// Constant PendingFulfillment for FleetActivityStatus
+        /// Constant Pending_fulfillment for FleetActivityStatus
         /// </summary>
-        public static readonly FleetActivityStatus PendingFulfillment = new FleetActivityStatus("pending-fulfillment");
+        public static readonly FleetActivityStatus Pending_fulfillment = new FleetActivityStatus("pending_fulfillment");
         /// <summary>
-        /// Constant PendingTermination for FleetActivityStatus
+        /// Constant Pending_termination for FleetActivityStatus
         /// </summary>
-        public static readonly FleetActivityStatus PendingTermination = new FleetActivityStatus("pending-termination");
+        public static readonly FleetActivityStatus Pending_termination = new FleetActivityStatus("pending_termination");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2999,13 +2999,13 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly FleetStateCode Deleted = new FleetStateCode("deleted");
         /// <summary>
-        /// Constant DeletedRunning for FleetStateCode
+        /// Constant Deleted_running for FleetStateCode
         /// </summary>
-        public static readonly FleetStateCode DeletedRunning = new FleetStateCode("deleted-running");
+        public static readonly FleetStateCode Deleted_running = new FleetStateCode("deleted_running");
         /// <summary>
-        /// Constant DeletedTerminating for FleetStateCode
+        /// Constant Deleted_terminating for FleetStateCode
         /// </summary>
-        public static readonly FleetStateCode DeletedTerminating = new FleetStateCode("deleted-terminating");
+        public static readonly FleetStateCode Deleted_terminating = new FleetStateCode("deleted_terminating");
         /// <summary>
         /// Constant Failed for FleetStateCode
         /// </summary>
