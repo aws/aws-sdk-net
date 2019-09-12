@@ -95,9 +95,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Target.FailedHealthChecks</code> - The health checks failed because the connection
-        /// to the target timed out, the target response was malformed, or the target failed the
-        /// health check for an unknown reason.
+        ///  <code>Target.FailedHealthChecks</code> - The load balancer received an error while
+        /// establishing a connection to the target or the target response was malformed.
         /// </para>
         ///  </li> <li> 
         /// <para>

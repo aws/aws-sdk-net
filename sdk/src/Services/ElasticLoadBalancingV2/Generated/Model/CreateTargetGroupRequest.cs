@@ -375,7 +375,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property VpcId. 
         /// <para>
         /// The identifier of the virtual private cloud (VPC). If the target is a Lambda function,
-        /// this parameter does not apply.
+        /// this parameter does not apply. Otherwise, this parameter is required.
         /// </para>
         /// </summary>
         public string VpcId
