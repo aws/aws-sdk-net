@@ -221,6 +221,11 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             TypeFactory.EmptyTypes,
         };
+        private static ITypeInfo[][] validArrayConstructorInputs = new ITypeInfo[][]
+        {
+            //supports one dimension only
+            new ITypeInfo[] { TypeFactory.GetTypeInfo(typeof(int)) } 
+        };
         private static ITypeInfo[][] validConverterConstructorInputs = new ITypeInfo[][]
         {
             TypeFactory.EmptyTypes,
@@ -230,6 +235,10 @@ namespace Amazon.DynamoDBv2.DataModel
         public static object InstantiateConverter(Type objectType, IDynamoDBContext context)
         {
             return InstantiateHelper(objectType, validConverterConstructorInputs, new object[] { context });
+        }
+        public static object InstantiateArray(Type objectType,int length)
+        {
+            return InstantiateHelper(objectType, validArrayConstructorInputs, new object[] { length });
         }
         public static object Instantiate(Type objectType)
         {
@@ -243,7 +252,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 throw new InvalidOperationException("Cannot instantiate type " + objectType.FullName);
 
             var objectTypeWrapper = TypeFactory.GetTypeInfo(objectType);
-            var constructors = GetConstructors(objectTypeWrapper, validConverterConstructorInputs).ToList();
+            var constructors = GetConstructors(objectTypeWrapper, validConstructorInputs).ToList();
 
             if (constructors != null && constructors.Count > 0)
             {
@@ -272,6 +281,10 @@ namespace Amazon.DynamoDBv2.DataModel
         public static bool CanInstantiate(Type objectType)
         {
             return CanInstantiateHelper(objectType, validConstructorInputs);
+        }
+        public static bool CanInstantiateArray(Type objectType)
+        {
+            return CanInstantiateHelper(objectType, validArrayConstructorInputs);
         }
         public static bool CanInstantiateConverter(Type objectType)
         {
