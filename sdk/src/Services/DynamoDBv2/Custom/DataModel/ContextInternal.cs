@@ -405,9 +405,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         private bool TryFromListToArray(Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig, out object output)
         {
-            if ((!Utils.ImplementsInterface(targetType, typeof(ICollection<>)) &&
-                !Utils.ImplementsInterface(targetType, typeof(IList))) ||
-                !Utils.CanInstantiateArray(targetType))
+            if (!Utils.CanInstantiateArray(targetType))
             {
                 output = null;
                 return false;
