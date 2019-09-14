@@ -332,6 +332,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                             new Product { Id = 14, Name = "CloudDebugger" },
                             new Product { Id = 15, Name = "CloudDebuggerTester" }
                         },
+                        FeaturedBrands = new string[]{ "Cloud", "Debugger" },
                         CompetitorProducts = new Dictionary<string, List<Product>>
                         {
                             {
@@ -400,6 +401,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.AreEqual(product.CompanyInfo.FeaturedProducts.Length, retrieved.CompanyInfo.FeaturedProducts.Length);
                 Assert.AreEqual(product.CompanyInfo.FeaturedProducts[0].Id, retrieved.CompanyInfo.FeaturedProducts[0].Id);
                 Assert.AreEqual(product.CompanyInfo.FeaturedProducts[1].Id, retrieved.CompanyInfo.FeaturedProducts[1].Id);
+                Assert.AreEqual(product.CompanyInfo.FeaturedBrands.Length, retrieved.CompanyInfo.FeaturedBrands.Length);
+                Assert.AreEqual(product.CompanyInfo.FeaturedBrands[0], retrieved.CompanyInfo.FeaturedBrands[0]);
+                Assert.AreEqual(product.CompanyInfo.FeaturedBrands[1], retrieved.CompanyInfo.FeaturedBrands[1]);
                 Assert.AreEqual(product.Map.Count, retrieved.Map.Count);
                 Assert.AreEqual(product.CompanyInfo.CompetitorProducts.Count, retrieved.CompanyInfo.CompetitorProducts.Count);
                 
@@ -873,6 +877,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             public Product MostPopularProduct { get; set; }
             public List<Product> AllProducts { get; set; }
             public Product[] FeaturedProducts { get; set; }
+            public string[] FeaturedBrands { get; set; }
             public Dictionary<string, List<Product>> CompetitorProducts { get; set; }
 
             [DynamoDBIgnore]

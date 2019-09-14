@@ -126,6 +126,13 @@ namespace Amazon.DynamoDBv2.DataModel
 
         public static bool ItemsToCollection(Type targetType, IEnumerable<object> items, out object result)
         {
+            return targetType.IsArray ?
+                ItemsToArray(targetType, items, out result):  //targetType is Array
+                ItemsToIList(targetType, items, out result);  //targetType is IList or has Add method.
+        }
+
+        private static bool ItemsToIList(Type targetType, IEnumerable<object> items, out object result)
+        {
             result = Utils.Instantiate(targetType);
 
             var ilist = result as IList;
@@ -147,6 +154,20 @@ namespace Amazon.DynamoDBv2.DataModel
 
             result = null;
             return false;
+        }
+
+        private static bool ItemsToArray(Type targetType, IEnumerable<object> items, out object result)
+        {
+            var itemlist = items.ToList();
+            var array = (Array)InstantiateArray(targetType, itemlist.Count);
+
+            for (int i = 0; i < itemlist.Count; i++)
+            {
+                var item = itemlist[i];
+                array.SetValue(item, i);
+            }
+            result = array;
+            return true;
         }
 
         #endregion
@@ -223,7 +244,7 @@ namespace Amazon.DynamoDBv2.DataModel
         };
         private static ITypeInfo[][] validArrayConstructorInputs = new ITypeInfo[][]
         {
-            //supports one dimension only
+            //supports one dimension Array only
             new ITypeInfo[] { TypeFactory.GetTypeInfo(typeof(int)) } 
         };
         private static ITypeInfo[][] validConverterConstructorInputs = new ITypeInfo[][]

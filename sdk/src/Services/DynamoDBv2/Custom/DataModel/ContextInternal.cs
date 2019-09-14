@@ -362,11 +362,11 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             var targetTypeWrapper = TypeFactory.GetTypeInfo(targetType);
             return targetTypeWrapper.IsArray ?
-                 TryFromListToArray(targetType, list, flatConfig, out output) :
-                 TryFromListToCollection(targetType, list, flatConfig, out output);
+                 TryFromListToArray(targetType, list, flatConfig, out output) : //targetType is Array
+                 TryFromListToIList(targetType, list, flatConfig, out output) ; //targetType is IList or has Add method.
         }
 
-        private bool TryFromListToCollection(Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig, out object output)
+        private bool TryFromListToIList(Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig, out object output)
         {
             var targetTypeWrapper = TypeFactory.GetTypeInfo(targetType);
             if ((!Utils.ImplementsInterface(targetType, typeof(ICollection<>)) &&
