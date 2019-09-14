@@ -284,7 +284,7 @@ namespace Amazon.DynamoDBv2.DataModel
         }
         public static bool CanInstantiateArray(Type objectType)
         {
-            return CanInstantiateHelper(objectType, validArrayConstructorInputs);
+            return objectType.IsArray && CanInstantiateHelper(objectType, validArrayConstructorInputs);
         }
         public static bool CanInstantiateConverter(Type objectType)
         {
