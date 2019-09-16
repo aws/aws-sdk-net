@@ -1,3 +1,14 @@
+### 3.3.587.0 (2019-09-16 18:10 UTC)
+* EKS (3.3.103.0)
+	* This release lets customers add tags to an Amazon EKS cluster. These tags can be used to control access to the EKS API for managing the cluster using IAM. The Amazon EKS TagResource API allows customers to associate tags with their cluster. Customers can list tags for a cluster using the ListTagsForResource API and remove tags from a cluster with the UntagResource API. Note: tags are specific to the EKS cluster resource, they do not propagate to other AWS resources used by the cluster.
+* MediaConvert (3.3.108.0)
+	* AWS Elemental MediaConvert SDK has added support for multi-DRM SPEKE with CMAF outputs, MP3 ingest, and options for improved video quality.
+* Core 3.3.103.38
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.586.0 (2019-09-12 19:16 UTC)
 * EC2 (3.3.130.0)
 	* Fix for FleetActivityStatus and FleetStateCode enum
