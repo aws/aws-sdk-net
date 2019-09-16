@@ -44,6 +44,7 @@ namespace Amazon.EKS.Model
         private VpcConfigResponse _resourcesVpcConfig;
         private string _roleArn;
         private ClusterStatus _status;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _version;
 
         /// <summary>
@@ -267,6 +268,26 @@ namespace Amazon.EKS.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The metadata that you apply to the cluster to assist with categorization and organization.
+        /// Each tag consists of a key and an optional value, both of which you define.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>
