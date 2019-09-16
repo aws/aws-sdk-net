@@ -785,6 +785,106 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type AncillaryConvert608To708.
+    /// </summary>
+    public class AncillaryConvert608To708 : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for AncillaryConvert608To708
+        /// </summary>
+        public static readonly AncillaryConvert608To708 DISABLED = new AncillaryConvert608To708("DISABLED");
+        /// <summary>
+        /// Constant UPCONVERT for AncillaryConvert608To708
+        /// </summary>
+        public static readonly AncillaryConvert608To708 UPCONVERT = new AncillaryConvert608To708("UPCONVERT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AncillaryConvert608To708(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AncillaryConvert608To708 FindValue(string value)
+        {
+            return FindValue<AncillaryConvert608To708>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AncillaryConvert608To708(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AncillaryTerminateCaptions.
+    /// </summary>
+    public class AncillaryTerminateCaptions : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for AncillaryTerminateCaptions
+        /// </summary>
+        public static readonly AncillaryTerminateCaptions DISABLED = new AncillaryTerminateCaptions("DISABLED");
+        /// <summary>
+        /// Constant END_OF_INPUT for AncillaryTerminateCaptions
+        /// </summary>
+        public static readonly AncillaryTerminateCaptions END_OF_INPUT = new AncillaryTerminateCaptions("END_OF_INPUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AncillaryTerminateCaptions(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AncillaryTerminateCaptions FindValue(string value)
+        {
+            return FindValue<AncillaryTerminateCaptions>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AncillaryTerminateCaptions(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AntiAlias.
     /// </summary>
     public class AntiAlias : ConstantClass
@@ -1737,6 +1837,10 @@ namespace Amazon.MediaConvert
         /// </summary>
         public static readonly CaptionDestinationType EMBEDDED_PLUS_SCTE20 = new CaptionDestinationType("EMBEDDED_PLUS_SCTE20");
         /// <summary>
+        /// Constant IMSC for CaptionDestinationType
+        /// </summary>
+        public static readonly CaptionDestinationType IMSC = new CaptionDestinationType("IMSC");
+        /// <summary>
         /// Constant SCC for CaptionDestinationType
         /// </summary>
         public static readonly CaptionDestinationType SCC = new CaptionDestinationType("SCC");
@@ -1996,6 +2100,10 @@ namespace Amazon.MediaConvert
     public class CmafEncryptionType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AES_CTR for CmafEncryptionType
+        /// </summary>
+        public static readonly CmafEncryptionType AES_CTR = new CmafEncryptionType("AES_CTR");
         /// <summary>
         /// Constant SAMPLE_AES for CmafEncryptionType
         /// </summary>
@@ -4900,6 +5008,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EmbeddedConvert608To708(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EmbeddedTerminateCaptions.
+    /// </summary>
+    public class EmbeddedTerminateCaptions : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for EmbeddedTerminateCaptions
+        /// </summary>
+        public static readonly EmbeddedTerminateCaptions DISABLED = new EmbeddedTerminateCaptions("DISABLED");
+        /// <summary>
+        /// Constant END_OF_INPUT for EmbeddedTerminateCaptions
+        /// </summary>
+        public static readonly EmbeddedTerminateCaptions END_OF_INPUT = new EmbeddedTerminateCaptions("END_OF_INPUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EmbeddedTerminateCaptions(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EmbeddedTerminateCaptions FindValue(string value)
+        {
+            return FindValue<EmbeddedTerminateCaptions>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EmbeddedTerminateCaptions(string value)
         {
             return FindValue(value);
         }
@@ -8610,6 +8768,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HlsTimedMetadataId3Frame(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImscStylePassthrough.
+    /// </summary>
+    public class ImscStylePassthrough : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ImscStylePassthrough
+        /// </summary>
+        public static readonly ImscStylePassthrough DISABLED = new ImscStylePassthrough("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ImscStylePassthrough
+        /// </summary>
+        public static readonly ImscStylePassthrough ENABLED = new ImscStylePassthrough("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImscStylePassthrough(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImscStylePassthrough FindValue(string value)
+        {
+            return FindValue<ImscStylePassthrough>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImscStylePassthrough(string value)
         {
             return FindValue(value);
         }

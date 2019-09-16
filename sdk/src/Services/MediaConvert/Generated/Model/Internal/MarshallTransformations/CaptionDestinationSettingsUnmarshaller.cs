@@ -88,6 +88,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.EmbeddedDestinationSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("imscDestinationSettings", targetDepth))
+                {
+                    var unmarshaller = ImscDestinationSettingsUnmarshaller.Instance;
+                    unmarshalledObject.ImscDestinationSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sccDestinationSettings", targetDepth))
                 {
                     var unmarshaller = SccDestinationSettingsUnmarshaller.Instance;

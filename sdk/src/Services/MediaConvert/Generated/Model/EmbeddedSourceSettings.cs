@@ -35,11 +35,14 @@ namespace Amazon.MediaConvert.Model
         private EmbeddedConvert608To708 _convert608To708;
         private int? _source608ChannelNumber;
         private int? _source608TrackNumber;
+        private EmbeddedTerminateCaptions _terminateCaptions;
 
         /// <summary>
-        /// Gets and sets the property Convert608To708. When set to UPCONVERT, 608 data is both
-        /// passed through via the "608 compatibility bytes" fields of the 708 wrapper as well
-        /// as translated into 708. 708 data present in the source content will be discarded.
+        /// Gets and sets the property Convert608To708. Specify whether this set of input captions
+        /// appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT),
+        /// MediaConvert includes the captions data in two ways: it passes the 608 data through
+        /// using the 608 compatibility bytes fields of the 708 wrapper, and it also translates
+        /// the 608 data into 708.
         /// </summary>
         public EmbeddedConvert608To708 Convert608To708
         {
@@ -86,6 +89,23 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetSource608TrackNumber()
         {
             return this._source608TrackNumber.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TerminateCaptions. By default, the service terminates any
+        /// unterminated captions at the end of each input. If you want the caption to continue
+        /// onto your next input, disable this setting.
+        /// </summary>
+        public EmbeddedTerminateCaptions TerminateCaptions
+        {
+            get { return this._terminateCaptions; }
+            set { this._terminateCaptions = value; }
+        }
+
+        // Check to see if TerminateCaptions property is set
+        internal bool IsSetTerminateCaptions()
+        {
+            return this._terminateCaptions != null;
         }
 
     }

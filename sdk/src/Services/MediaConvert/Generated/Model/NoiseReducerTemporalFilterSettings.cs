@@ -73,10 +73,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Strength. Relative strength of noise reducing filter. Higher
-        /// values produce stronger filtering. Recommended Range: * [0 .. 2] for complexity reduction
-        /// with minimal sharpness loss * [2 .. 8] for complexity reduction with image preservation
-        /// * [8 .. 16] for noise reduction. Reduce noise combined high complexity reduction
+        /// Gets and sets the property Strength. Specify the strength of the noise reducing filter
+        /// on this output. Higher values produce stronger filtering. We recommend the following
+        /// value ranges, depending on the result that you want: * 0-2 for complexity reduction
+        /// with minimal sharpness loss * 2-8 for complexity reduction with image preservation
+        /// * 8-16 for a high level of complexity reduction
         /// </summary>
         [AWSProperty(Min=0, Max=16)]
         public int Strength

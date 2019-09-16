@@ -58,8 +58,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EncryptionMethod. For DRM with CMAF, the encryption type
-        /// is always sample AES.
+        /// Gets and sets the property EncryptionMethod. Specify the encryption scheme that you
+        /// want the service to use when encrypting your CMAF segments. Choose AES-CBC subsample
+        /// (SAMPLE-AES) or AES_CTR (AES-CTR).
         /// </summary>
         public CmafEncryptionType EncryptionMethod
         {
@@ -91,9 +92,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SpekeKeyProvider. Use these settings when doing DRM encryption
-        /// with a SPEKE-compliant key provider, if your output group type is CMAF. If your output
-        /// group type is HLS, MS Smooth, or DASH, use the SpekeKeyProvider settings instead.
+        /// Gets and sets the property SpekeKeyProvider. If your output group type is CMAF, use
+        /// these settings when doing DRM encryption with a SPEKE-compliant key provider. If your
+        /// output group type is HLS, DASH, or Microsoft Smooth, use the SpekeKeyProvider settings
+        /// instead.
         /// </summary>
         public SpekeKeyProviderCmaf SpekeKeyProvider
         {

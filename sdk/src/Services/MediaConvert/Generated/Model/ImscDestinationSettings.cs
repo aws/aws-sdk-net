@@ -28,29 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the value
-    /// SpekeKeyProvider.
+    /// Settings specific to IMSC caption outputs.
     /// </summary>
-    public partial class MsSmoothEncryptionSettings
+    public partial class ImscDestinationSettings
     {
-        private SpekeKeyProvider _spekeKeyProvider;
+        private ImscStylePassthrough _stylePassthrough;
 
         /// <summary>
-        /// Gets and sets the property SpekeKeyProvider. If your output group type is HLS, DASH,
-        /// or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant
-        /// key provider.  If your output group type is CMAF, use the SpekeKeyProviderCmaf settings
-        /// instead.
+        /// Gets and sets the property StylePassthrough. Keep this setting enabled to have MediaConvert
+        /// use the font style and position information from the captions source in the output.
+        /// This option is available only when your input captions are CFF-TT, IMSC, SMPTE-TT,
+        /// or TTML. Disable this setting for simplified output captions.
         /// </summary>
-        public SpekeKeyProvider SpekeKeyProvider
+        public ImscStylePassthrough StylePassthrough
         {
-            get { return this._spekeKeyProvider; }
-            set { this._spekeKeyProvider = value; }
+            get { return this._stylePassthrough; }
+            set { this._stylePassthrough = value; }
         }
 
-        // Check to see if SpekeKeyProvider property is set
-        internal bool IsSetSpekeKeyProvider()
+        // Check to see if StylePassthrough property is set
+        internal bool IsSetStylePassthrough()
         {
-            return this._spekeKeyProvider != null;
+            return this._stylePassthrough != null;
         }
 
     }

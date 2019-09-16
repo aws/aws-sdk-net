@@ -62,7 +62,7 @@ namespace Amazon.MediaConvert.Model
         /// the data in these channels, so the number of channels in your final output might be
         /// different.
         /// </summary>
-        [AWSProperty(Min=1, Max=16)]
+        [AWSProperty(Min=1, Max=64)]
         public int ChannelsIn
         {
             get { return this._channelsIn.GetValueOrDefault(); }
@@ -77,9 +77,9 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property ChannelsOut. Specify the number of channels in this output
-        /// after remixing. Valid values: 1, 2, 4, 6, 8
+        /// after remixing. Valid values: 1, 2, 4, 6, 8... 64. (1 and even numbers to 64.)
         /// </summary>
-        [AWSProperty(Min=1, Max=8)]
+        [AWSProperty(Min=1, Max=64)]
         public int ChannelsOut
         {
             get { return this._channelsOut.GetValueOrDefault(); }

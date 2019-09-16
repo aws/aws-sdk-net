@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EmbeddedSourceSettings Object
+    /// Response Unmarshaller for ImscDestinationSettings Object
     /// </summary>  
-    public class EmbeddedSourceSettingsUnmarshaller : IUnmarshaller<EmbeddedSourceSettings, XmlUnmarshallerContext>, IUnmarshaller<EmbeddedSourceSettings, JsonUnmarshallerContext>
+    public class ImscDestinationSettingsUnmarshaller : IUnmarshaller<ImscDestinationSettings, XmlUnmarshallerContext>, IUnmarshaller<ImscDestinationSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        EmbeddedSourceSettings IUnmarshaller<EmbeddedSourceSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ImscDestinationSettings IUnmarshaller<ImscDestinationSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public EmbeddedSourceSettings Unmarshall(JsonUnmarshallerContext context)
+        public ImscDestinationSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EmbeddedSourceSettings unmarshalledObject = new EmbeddedSourceSettings();
+            ImscDestinationSettings unmarshalledObject = new ImscDestinationSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("convert608To708", targetDepth))
+                if (context.TestExpression("stylePassthrough", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Convert608To708 = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("source608ChannelNumber", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Source608ChannelNumber = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("source608TrackNumber", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Source608TrackNumber = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("terminateCaptions", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TerminateCaptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StylePassthrough = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         }
 
 
-        private static EmbeddedSourceSettingsUnmarshaller _instance = new EmbeddedSourceSettingsUnmarshaller();        
+        private static ImscDestinationSettingsUnmarshaller _instance = new ImscDestinationSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EmbeddedSourceSettingsUnmarshaller Instance
+        public static ImscDestinationSettingsUnmarshaller Instance
         {
             get
             {

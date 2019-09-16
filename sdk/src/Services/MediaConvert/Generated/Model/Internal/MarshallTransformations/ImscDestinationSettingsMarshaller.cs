@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EmbeddedSourceSettings Marshaller
+    /// ImscDestinationSettings Marshaller
     /// </summary>       
-    public class EmbeddedSourceSettingsMarshaller : IRequestMarshaller<EmbeddedSourceSettings, JsonMarshallerContext> 
+    public class ImscDestinationSettingsMarshaller : IRequestMarshaller<ImscDestinationSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,30 +43,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EmbeddedSourceSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(ImscDestinationSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetConvert608To708())
+            if(requestObject.IsSetStylePassthrough())
             {
-                context.Writer.WritePropertyName("convert608To708");
-                context.Writer.Write(requestObject.Convert608To708);
-            }
-
-            if(requestObject.IsSetSource608ChannelNumber())
-            {
-                context.Writer.WritePropertyName("source608ChannelNumber");
-                context.Writer.Write(requestObject.Source608ChannelNumber);
-            }
-
-            if(requestObject.IsSetSource608TrackNumber())
-            {
-                context.Writer.WritePropertyName("source608TrackNumber");
-                context.Writer.Write(requestObject.Source608TrackNumber);
-            }
-
-            if(requestObject.IsSetTerminateCaptions())
-            {
-                context.Writer.WritePropertyName("terminateCaptions");
-                context.Writer.Write(requestObject.TerminateCaptions);
+                context.Writer.WritePropertyName("stylePassthrough");
+                context.Writer.Write(requestObject.StylePassthrough);
             }
 
         }
@@ -74,7 +56,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static EmbeddedSourceSettingsMarshaller Instance = new EmbeddedSourceSettingsMarshaller();
+        public readonly static ImscDestinationSettingsMarshaller Instance = new ImscDestinationSettingsMarshaller();
 
     }
 }

@@ -37,6 +37,7 @@ namespace Amazon.MediaConvert.Model
         private CaptionDestinationType _destinationType;
         private DvbSubDestinationSettings _dvbSubDestinationSettings;
         private EmbeddedDestinationSettings _embeddedDestinationSettings;
+        private ImscDestinationSettings _imscDestinationSettings;
         private SccDestinationSettings _sccDestinationSettings;
         private TeletextDestinationSettings _teletextDestinationSettings;
         private TtmlDestinationSettings _ttmlDestinationSettings;
@@ -59,8 +60,8 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property DestinationType. Specify the format for this set of captions
         /// on this output. The default format is embedded without SCTE-20. Other options are
-        /// embedded with SCTE-20, burn-in, DVB-sub, SCC, SRT, teletext, TTML, and web-VTT. If
-        /// you are using SCTE-20, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create
+        /// embedded with SCTE-20, burn-in, DVB-sub, IMSC, SCC, SRT, teletext, TTML, and web-VTT.
+        /// If you are using SCTE-20, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create
         /// an output that complies with the SCTE-43 spec. To create a non-compliant output where
         /// the embedded captions come first, choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
         /// </summary>
@@ -105,6 +106,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetEmbeddedDestinationSettings()
         {
             return this._embeddedDestinationSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImscDestinationSettings. Settings specific to IMSC caption
+        /// outputs.
+        /// </summary>
+        public ImscDestinationSettings ImscDestinationSettings
+        {
+            get { return this._imscDestinationSettings; }
+            set { this._imscDestinationSettings = value; }
+        }
+
+        // Check to see if ImscDestinationSettings property is set
+        internal bool IsSetImscDestinationSettings()
+        {
+            return this._imscDestinationSettings != null;
         }
 
         /// <summary>
