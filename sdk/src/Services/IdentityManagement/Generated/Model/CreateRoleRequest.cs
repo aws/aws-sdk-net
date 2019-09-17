@@ -79,7 +79,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  Upon success, the response includes the same trust policy as a URL-encoded JSON string.
+        ///  Upon success, the response includes the same trust policy in JSON format.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=131072)]

@@ -36,7 +36,7 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// This data type is used as an input parameter to <code> <a>SimulateCustomPolicy</a>
-    /// </code> and <code> <a>SimulateCustomPolicy</a> </code>.
+    /// </code> and <code> <a>SimulatePrincipalPolicy</a> </code>.
     /// </para>
     /// </summary>
     public partial class ContextEntry
