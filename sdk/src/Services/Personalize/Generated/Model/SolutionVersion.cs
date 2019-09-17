@@ -44,6 +44,7 @@ namespace Amazon.Personalize.Model
         private SolutionConfig _solutionConfig;
         private string _solutionVersionArn;
         private string _status;
+        private double? _trainingHours;
 
         /// <summary>
         /// Gets and sets the property CreationDateTime. 
@@ -276,6 +277,25 @@ namespace Amazon.Personalize.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingHours. 
+        /// <para>
+        /// The time used to train the model. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public double TrainingHours
+        {
+            get { return this._trainingHours.GetValueOrDefault(); }
+            set { this._trainingHours = value; }
+        }
+
+        // Check to see if TrainingHours property is set
+        internal bool IsSetTrainingHours()
+        {
+            return this._trainingHours.HasValue; 
         }
 
     }
