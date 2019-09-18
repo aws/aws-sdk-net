@@ -29,7 +29,7 @@ namespace Amazon.RAM.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateResourceShare operation.
-    /// Updates the specified resource share.
+    /// Updates the specified resource share that you own.
     /// </summary>
     public partial class UpdateResourceShareRequest : AmazonRAMRequest
     {
@@ -41,8 +41,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property AllowExternalPrincipals. 
         /// <para>
-        /// Indicates whether principals outside your organization can be associated with a resource
-        /// share.
+        /// Indicates whether principals outside your AWS organization can be associated with
+        /// a resource share.
         /// </para>
         /// </summary>
         public bool AllowExternalPrincipals

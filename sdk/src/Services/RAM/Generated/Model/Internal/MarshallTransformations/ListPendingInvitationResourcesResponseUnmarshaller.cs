@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RAM.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RejectResourceShareInvitation operation
+    /// Response Unmarshaller for ListPendingInvitationResources operation
     /// </summary>  
-    public class RejectResourceShareInvitationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListPendingInvitationResourcesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,22 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            RejectResourceShareInvitationResponse response = new RejectResourceShareInvitationResponse();
+            ListPendingInvitationResourcesResponse response = new ListPendingInvitationResourcesResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("clientToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ClientToken = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("resourceShareInvitation", targetDepth))
+                if (context.TestExpression("resources", targetDepth))
                 {
-                    var unmarshaller = ResourceShareInvitationUnmarshaller.Instance;
-                    response.ResourceShareInvitation = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<Resource, ResourceUnmarshaller>(ResourceUnmarshaller.Instance);
+                    response.Resources = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -78,25 +78,21 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("IdempotentParameterMismatchException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidNextTokenException"))
             {
-                return new IdempotentParameterMismatchException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidNextTokenException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidClientTokenException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
             {
-                return new InvalidClientTokenException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("MalformedArnException"))
             {
                 return new MalformedArnException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotPermittedException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("MissingRequiredParameterException"))
             {
-                return new OperationNotPermittedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceShareInvitationAlreadyAcceptedException"))
-            {
-                return new ResourceShareInvitationAlreadyAcceptedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new MissingRequiredParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceShareInvitationAlreadyRejectedException"))
             {
@@ -121,9 +117,9 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             return new AmazonRAMException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static RejectResourceShareInvitationResponseUnmarshaller _instance = new RejectResourceShareInvitationResponseUnmarshaller();        
+        private static ListPendingInvitationResourcesResponseUnmarshaller _instance = new ListPendingInvitationResourcesResponseUnmarshaller();        
 
-        internal static RejectResourceShareInvitationResponseUnmarshaller GetInstance()
+        internal static ListPendingInvitationResourcesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -131,7 +127,7 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RejectResourceShareInvitationResponseUnmarshaller Instance
+        public static ListPendingInvitationResourcesResponseUnmarshaller Instance
         {
             get
             {

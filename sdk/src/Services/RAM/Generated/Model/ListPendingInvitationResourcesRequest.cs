@@ -28,15 +28,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetResourcePolicies operation.
-    /// Gets the policies for the specified resources that you own and have shared.
+    /// Container for the parameters to the ListPendingInvitationResources operation.
+    /// Lists the resources in a resource share that is shared with you but that the invitation
+    /// is still pending for.
     /// </summary>
-    public partial class GetResourcePoliciesRequest : AmazonRAMRequest
+    public partial class ListPendingInvitationResourcesRequest : AmazonRAMRequest
     {
         private int? _maxResults;
         private string _nextToken;
-        private string _principal;
-        private List<string> _resourceArns = new List<string>();
+        private string _resourceShareInvitationArn;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -77,40 +77,22 @@ namespace Amazon.RAM.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Principal. 
+        /// Gets and sets the property ResourceShareInvitationArn. 
         /// <para>
-        /// The principal.
-        /// </para>
-        /// </summary>
-        public string Principal
-        {
-            get { return this._principal; }
-            set { this._principal = value; }
-        }
-
-        // Check to see if Principal property is set
-        internal bool IsSetPrincipal()
-        {
-            return this._principal != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ResourceArns. 
-        /// <para>
-        /// The Amazon Resource Names (ARN) of the resources.
+        /// The Amazon Resource Name (ARN) of the invitation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public List<string> ResourceArns
+        public string ResourceShareInvitationArn
         {
-            get { return this._resourceArns; }
-            set { this._resourceArns = value; }
+            get { return this._resourceShareInvitationArn; }
+            set { this._resourceShareInvitationArn = value; }
         }
 
-        // Check to see if ResourceArns property is set
-        internal bool IsSetResourceArns()
+        // Check to see if ResourceShareInvitationArn property is set
+        internal bool IsSetResourceShareInvitationArn()
         {
-            return this._resourceArns != null && this._resourceArns.Count > 0; 
+            return this._resourceShareInvitationArn != null;
         }
 
     }

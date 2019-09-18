@@ -29,7 +29,8 @@ namespace Amazon.RAM.Model
 {
     /// <summary>
     /// Container for the parameters to the ListResources operation.
-    /// Lists the resources that the specified principal can access.
+    /// Lists the resources that you added to a resource shares or the resources that are
+    /// shared with you.
     /// </summary>
     public partial class ListResourcesRequest : AmazonRAMRequest
     {
@@ -156,6 +157,11 @@ namespace Amazon.RAM.Model
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// The resource type.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>route53resolver:ResolverRule</code> | <code>ec2:TransitGateway</code>
+        /// | <code>ec2:Subnet</code> | <code>license-manager:LicenseConfiguration</code> 
         /// </para>
         /// </summary>
         public string ResourceType

@@ -28,50 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// Container for the parameters to the UntagResource operation.
-    /// Removes the specified tags from the specified resource share that you own.
+    /// This is the response object from the ListPendingInvitationResources operation.
     /// </summary>
-    public partial class UntagResourceRequest : AmazonRAMRequest
+    public partial class ListPendingInvitationResourcesResponse : AmazonWebServiceResponse
     {
-        private string _resourceShareArn;
-        private List<string> _tagKeys = new List<string>();
+        private string _nextToken;
+        private List<Resource> _resources = new List<Resource>();
 
         /// <summary>
-        /// Gets and sets the property ResourceShareArn. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource share.
+        /// The token to use to retrieve the next page of results. This value is <code>null</code>
+        /// when there are no more results to return.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string ResourceShareArn
+        public string NextToken
         {
-            get { return this._resourceShareArn; }
-            set { this._resourceShareArn = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if ResourceShareArn property is set
-        internal bool IsSetResourceShareArn()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._resourceShareArn != null;
+            return this._nextToken != null;
         }
 
         /// <summary>
-        /// Gets and sets the property TagKeys. 
+        /// Gets and sets the property Resources. 
         /// <para>
-        /// The tag keys of the tags to remove.
+        /// Information about the resources included the resource share.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public List<string> TagKeys
+        public List<Resource> Resources
         {
-            get { return this._tagKeys; }
-            set { this._tagKeys = value; }
+            get { return this._resources; }
+            set { this._resources = value; }
         }
 
-        // Check to see if TagKeys property is set
-        internal bool IsSetTagKeys()
+        // Check to see if Resources property is set
+        internal bool IsSetResources()
         {
-            return this._tagKeys != null && this._tagKeys.Count > 0; 
+            return this._resources != null && this._resources.Count > 0; 
         }
 
     }

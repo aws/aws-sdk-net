@@ -29,7 +29,7 @@ namespace Amazon.RAM.Model
 {
     /// <summary>
     /// Container for the parameters to the GetResourceShareAssociations operation.
-    /// Gets the associations for the specified resource share.
+    /// Gets the resources or principals for the resource shares that you own.
     /// </summary>
     public partial class GetResourceShareAssociationsRequest : AmazonRAMRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property AssociationStatus. 
         /// <para>
-        /// The status of the association.
+        /// The association status.
         /// </para>
         /// </summary>
         public ResourceShareAssociationStatus AssociationStatus
@@ -119,7 +119,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property Principal. 
         /// <para>
-        /// The principal.
+        /// The principal. You cannot specify this parameter if the association type is <code>RESOURCE</code>.
         /// </para>
         /// </summary>
         public string Principal
@@ -137,7 +137,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource.
+        /// The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter
+        /// if the association type is <code>PRINCIPAL</code>.
         /// </para>
         /// </summary>
         public string ResourceArn

@@ -29,7 +29,7 @@ namespace Amazon.RAM.Model
 {
     /// <summary>
     /// Container for the parameters to the GetResourceShareInvitations operation.
-    /// Gets the specified invitations for resource sharing.
+    /// Gets the invitations for resource sharing that you've received.
     /// </summary>
     public partial class GetResourceShareInvitationsRequest : AmazonRAMRequest
     {

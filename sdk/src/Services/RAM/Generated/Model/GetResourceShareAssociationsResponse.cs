@@ -57,7 +57,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ResourceShareAssociations. 
         /// <para>
-        /// Information about the association.
+        /// Information about the associations.
         /// </para>
         /// </summary>
         public List<ResourceShareAssociation> ResourceShareAssociations
