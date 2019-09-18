@@ -56,6 +56,17 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetVpcEndpointIds())
+            {
+                context.Writer.WritePropertyName("vpcEndpointIds");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectVpcEndpointIdsListValue in requestObject.VpcEndpointIds)
+                {
+                        context.Writer.Write(requestObjectVpcEndpointIdsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>
