@@ -1,3 +1,16 @@
+### 3.3.589.0 (2019-09-18 20:39 UTC)
+* APIGateway (3.3.103.0)
+	* Amazon API Gateway simplifies accessing PRIVATE APIs by allowing you to associate one or more Amazon Virtual Private Cloud (VPC) Endpoints to a private API. API Gateway will create and manage DNS alias records necessary for easily invoking the private APIs. With this feature, you can leverage private APIs in web applications hosted within your VPCs.
+* RAM (3.3.101.0)
+	* AWS RAM provides a new ListPendingInvitationResources API action that lists the resources in a resource share that is shared with you but that the invitation is still pending for
+* WAFRegional (3.3.102.0)
+	* Lowering the threshold for Rate Based rule from 2000 to 100.
+* Core 3.3.103.40
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.588.0 (2019-09-17 18:07 UTC)
 * Athena (3.3.102.0)
 	* This release adds DataManifestLocation field indicating the location and file name of the data manifest file. Users can get a list of files that the Athena query wrote or intended to write from the manifest file.
