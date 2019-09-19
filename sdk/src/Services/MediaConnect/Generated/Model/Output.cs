@@ -32,6 +32,7 @@ namespace Amazon.MediaConnect.Model
     /// </summary>
     public partial class Output
     {
+        private int? _dataTransferSubscriberFeePercent;
         private string _description;
         private string _destination;
         private Encryption _encryption;
@@ -41,6 +42,22 @@ namespace Amazon.MediaConnect.Model
         private string _outputArn;
         private int? _port;
         private Transport _transport;
+
+        /// <summary>
+        /// Gets and sets the property DataTransferSubscriberFeePercent. Percentage from 0-100
+        /// of the data transfer cost to be billed to the subscriber.
+        /// </summary>
+        public int DataTransferSubscriberFeePercent
+        {
+            get { return this._dataTransferSubscriberFeePercent.GetValueOrDefault(); }
+            set { this._dataTransferSubscriberFeePercent = value; }
+        }
+
+        // Check to see if DataTransferSubscriberFeePercent property is set
+        internal bool IsSetDataTransferSubscriberFeePercent()
+        {
+            return this._dataTransferSubscriberFeePercent.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Description. A description of the output.
