@@ -483,7 +483,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property FirelensConfiguration. 
         /// <para>
         /// The FireLens configuration for the container. This is used to specify and configure
-        /// a log router for container logs.
+        /// a log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom
+        /// Log Routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public FirelensConfiguration FirelensConfiguration
