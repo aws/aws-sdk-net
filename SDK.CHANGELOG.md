@@ -1,3 +1,16 @@
+### 3.3.590.0 (2019-09-19 21:40 UTC)
+* ECS (3.3.109.0)
+	* This release of Amazon Elastic Container Service (Amazon ECS) introduces support for container image manifest digests. This enables you to identify all tasks launched using a container image pulled from ECR in order to correlate what was built with where it is running.
+* Glue (3.3.110.0)
+	* AWS Glue DevEndpoints now supports GlueVersion, enabling you to choose Apache Spark 2.4.3 (in addition to Apache Spark 2.2.1). In addition to supporting the latest version of Spark, you will also have the ability to choose between Python 2 and Python 3.
+* MediaConnect (3.3.105.0)
+	* When you grant an entitlement, you can now specify the percentage of the entitlement data transfer that you want the subscriber to be responsible for.
+* Core 3.3.103.41
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.589.0 (2019-09-18 20:39 UTC)
 * APIGateway (3.3.103.0)
 	* Amazon API Gateway simplifies accessing PRIVATE APIs by allowing you to associate one or more Amazon Virtual Private Cloud (VPC) Endpoints to a private API. API Gateway will create and manage DNS alias records necessary for easily invoking the private APIs. With this feature, you can leverage private APIs in web applications hosted within your VPCs.
