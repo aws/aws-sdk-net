@@ -131,6 +131,12 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.CreateDevEndpointRequest.GlueVersion</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^\w+\.\w+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.CreateDevEndpointRequest.RoleArn</property>
     <pattern>arn:aws:iam::\d{12}:role/.*</pattern>
   </property-value-rule>
@@ -138,6 +144,12 @@
     <property>Amazon.Glue.Model.CreateDevEndpointRequest.SecurityConfiguration</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateDevEndpointResponse.GlueVersion</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^\w+\.\w+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CreateDevEndpointResponse.RoleArn</property>
@@ -1446,6 +1458,12 @@
     <property>Amazon.Glue.Model.DataLakePrincipal.DataLakePrincipalIdentifier</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DevEndpoint.GlueVersion</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^\w+\.\w+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DevEndpoint.RoleArn</property>

@@ -93,6 +93,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     response.FailureReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("GlueVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.GlueVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NumberOfNodes", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

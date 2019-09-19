@@ -37,6 +37,7 @@ namespace Amazon.Glue.Model
         private string _endpointName;
         private string _extraJarsS3Path;
         private string _extraPythonLibsS3Path;
+        private string _glueVersion;
         private int? _numberOfNodes;
         private int? _numberOfWorkers;
         private string _publicKey;
@@ -130,6 +131,44 @@ namespace Amazon.Glue.Model
         internal bool IsSetExtraPythonLibsS3Path()
         {
             return this._extraPythonLibsS3Path != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GlueVersion. 
+        /// <para>
+        /// Glue version determines the versions of Apache Spark and Python that AWS Glue supports.
+        /// The Python version indicates the version supported for running your ETL scripts on
+        /// development endpoints. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about the available AWS Glue versions and corresponding Spark
+        /// and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue
+        /// version</a> in the developer guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// Development endpoints that are created without specifying a Glue version default to
+        /// Glue 0.9.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify a version of Python support for development endpoints by using the
+        /// <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code>
+        /// APIs. If no arguments are provided, the version defaults to Python 2.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string GlueVersion
+        {
+            get { return this._glueVersion; }
+            set { this._glueVersion = value; }
+        }
+
+        // Check to see if GlueVersion property is set
+        internal bool IsSetGlueVersion()
+        {
+            return this._glueVersion != null;
         }
 
         /// <summary>

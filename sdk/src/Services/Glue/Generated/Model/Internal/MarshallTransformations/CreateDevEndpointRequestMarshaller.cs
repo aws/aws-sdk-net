@@ -100,6 +100,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ExtraPythonLibsS3Path);
                 }
 
+                if(publicRequest.IsSetGlueVersion())
+                {
+                    context.Writer.WritePropertyName("GlueVersion");
+                    context.Writer.Write(publicRequest.GlueVersion);
+                }
+
                 if(publicRequest.IsSetNumberOfNodes())
                 {
                     context.Writer.WritePropertyName("NumberOfNodes");
