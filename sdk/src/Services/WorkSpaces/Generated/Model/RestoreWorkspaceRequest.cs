@@ -28,51 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Describes a WorkSpace that could not be rebooted. (<a>RebootWorkspaces</a>), rebuilt
-    /// (<a>RebuildWorkspaces</a>), restored (<a>RestoreWorkspace</a>), terminated (<a>TerminateWorkspaces</a>),
-    /// started (<a>StartWorkspaces</a>), or stopped (<a>StopWorkspaces</a>).
+    /// Container for the parameters to the RestoreWorkspace operation.
+    /// Restores the specified WorkSpace to its last known healthy state.
+    /// 
+    ///  
+    /// <para>
+    /// You cannot restore a WorkSpace unless its state is <code> AVAILABLE</code>, <code>ERROR</code>,
+    /// or <code>UNHEALTHY</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Restoring a WorkSpace is a potentially destructive action that can result in the loss
+    /// of data. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/restore-workspace.html">Restore
+    /// a WorkSpace</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// This operation is asynchronous and returns before the WorkSpace is completely restored.
+    /// </para>
     /// </summary>
-    public partial class FailedWorkspaceChangeRequest
+    public partial class RestoreWorkspaceRequest : AmazonWorkSpacesRequest
     {
-        private string _errorCode;
-        private string _errorMessage;
         private string _workspaceId;
-
-        /// <summary>
-        /// Gets and sets the property ErrorCode. 
-        /// <para>
-        /// The error code that is returned if the WorkSpace cannot be rebooted.
-        /// </para>
-        /// </summary>
-        public string ErrorCode
-        {
-            get { return this._errorCode; }
-            set { this._errorCode = value; }
-        }
-
-        // Check to see if ErrorCode property is set
-        internal bool IsSetErrorCode()
-        {
-            return this._errorCode != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ErrorMessage. 
-        /// <para>
-        /// The text of the error message that is returned if the WorkSpace cannot be rebooted.
-        /// </para>
-        /// </summary>
-        public string ErrorMessage
-        {
-            get { return this._errorMessage; }
-            set { this._errorMessage = value; }
-        }
-
-        // Check to see if ErrorMessage property is set
-        internal bool IsSetErrorMessage()
-        {
-            return this._errorMessage != null;
-        }
 
         /// <summary>
         /// Gets and sets the property WorkspaceId. 
@@ -80,6 +57,7 @@ namespace Amazon.WorkSpaces.Model
         /// The identifier of the WorkSpace.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string WorkspaceId
         {
             get { return this._workspaceId; }

@@ -161,6 +161,10 @@
     <max>63</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeWorkspaceSnapshotsRequest.WorkspaceId</property>
+    <pattern>^ws-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DisassociateIpGroupsRequest.DirectoryId</property>
     <pattern>^d-[0-9a-f]{8,63}$</pattern>
   </property-value-rule>
@@ -217,6 +221,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.ModifyWorkspaceStateRequest.WorkspaceId</property>
+    <pattern>^ws-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.RestoreWorkspaceRequest.WorkspaceId</property>
     <pattern>^ws-[0-9a-z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
