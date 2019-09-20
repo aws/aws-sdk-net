@@ -1729,8 +1729,9 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Add resource tags to a Greengrass Resource. Valid resources are Group, Connector,
-        /// Core, Device, Function, Logger, Subscription, and Resource Defintions, and also BulkDeploymentIds.
+        /// Adds tags to a Greengrass resource. Valid resources are 'Group', 'ConnectorDefinition',
+        /// 'CoreDefinition', 'DeviceDefinition', 'FunctionDefinition', 'LoggerDefinition', 'SubscriptionDefinition',
+        /// 'ResourceDefinition', and 'BulkDeployment'.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">

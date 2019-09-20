@@ -34,6 +34,7 @@ namespace Amazon.Greengrass.Model
     {
         private string _iotJobArn;
         private string _iotJobId;
+        private string _platformSoftwareVersion;
 
         /// <summary>
         /// Gets and sets the property IotJobArn. The IoT Job ARN corresponding to this update.
@@ -63,6 +64,22 @@ namespace Amazon.Greengrass.Model
         internal bool IsSetIotJobId()
         {
             return this._iotJobId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlatformSoftwareVersion. The software version installed
+        /// on the device or devices after the update.
+        /// </summary>
+        public string PlatformSoftwareVersion
+        {
+            get { return this._platformSoftwareVersion; }
+            set { this._platformSoftwareVersion = value; }
+        }
+
+        // Check to see if PlatformSoftwareVersion property is set
+        internal bool IsSetPlatformSoftwareVersion()
+        {
+            return this._platformSoftwareVersion != null;
         }
 
     }

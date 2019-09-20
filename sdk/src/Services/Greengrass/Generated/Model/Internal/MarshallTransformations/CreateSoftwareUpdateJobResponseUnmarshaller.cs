@@ -63,6 +63,12 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                     response.IotJobId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PlatformSoftwareVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PlatformSoftwareVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
