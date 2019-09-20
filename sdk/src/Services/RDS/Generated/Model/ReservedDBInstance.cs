@@ -38,6 +38,7 @@ namespace Amazon.RDS.Model
         private int? _dbInstanceCount;
         private int? _duration;
         private double? _fixedPrice;
+        private string _leaseId;
         private bool? _multiAZ;
         private string _offeringType;
         private string _productDescription;
@@ -137,6 +138,29 @@ namespace Amazon.RDS.Model
         internal bool IsSetFixedPrice()
         {
             return this._fixedPrice.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LeaseId. 
+        /// <para>
+        /// The unique identifier for the lease associated with the reserved DB instance.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// AWS Support might request the lease ID for an issue related to a reserved DB instance.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string LeaseId
+        {
+            get { return this._leaseId; }
+            set { this._leaseId = value; }
+        }
+
+        // Check to see if LeaseId property is set
+        internal bool IsSetLeaseId()
+        {
+            return this._leaseId != null;
         }
 
         /// <summary>

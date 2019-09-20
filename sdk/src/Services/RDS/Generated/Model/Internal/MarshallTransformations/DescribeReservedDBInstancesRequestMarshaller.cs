@@ -87,6 +87,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetLeaseId())
+                {
+                    request.Parameters.Add("LeaseId", StringUtils.FromString(publicRequest.LeaseId));
+                }
                 if(publicRequest.IsSetMarker())
                 {
                     request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
