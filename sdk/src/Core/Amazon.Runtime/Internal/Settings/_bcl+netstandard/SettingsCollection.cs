@@ -164,7 +164,7 @@ namespace Amazon.Runtime.Internal.Settings
 
             public bool IsEmpty
             {
-                get { return this._values == null || (this._values != null && this._values.Count == 0); }
+                get { return this._values == null || this._values.Count == 0; }
             }
 
             public IEnumerable<string> Keys
