@@ -3996,6 +3996,68 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  DescribeNodeConfigurationOptions
+
+        /// <summary>
+        /// Returns properties of possible node configurations such as node type, number of nodes,
+        /// and disk usage for the specified action type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNodeConfigurationOptions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeNodeConfigurationOptions service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotNotFoundException">
+        /// The snapshot identifier does not refer to an existing cluster snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterSnapshotStateException">
+        /// The specified cluster snapshot is not in the <code>available</code> state, or other
+        /// accounts are authorized to access the snapshot.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeNodeConfigurationOptions">REST API Reference for DescribeNodeConfigurationOptions Operation</seealso>
+        public virtual DescribeNodeConfigurationOptionsResponse DescribeNodeConfigurationOptions(DescribeNodeConfigurationOptionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNodeConfigurationOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNodeConfigurationOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeNodeConfigurationOptionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeNodeConfigurationOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNodeConfigurationOptions operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeNodeConfigurationOptions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeNodeConfigurationOptions">REST API Reference for DescribeNodeConfigurationOptions Operation</seealso>
+        public virtual IAsyncResult BeginDescribeNodeConfigurationOptions(DescribeNodeConfigurationOptionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNodeConfigurationOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNodeConfigurationOptionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeNodeConfigurationOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeNodeConfigurationOptions.</param>
+        /// 
+        /// <returns>Returns a  DescribeNodeConfigurationOptionsResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeNodeConfigurationOptions">REST API Reference for DescribeNodeConfigurationOptions Operation</seealso>
+        public virtual DescribeNodeConfigurationOptionsResponse EndDescribeNodeConfigurationOptions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeNodeConfigurationOptionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeOrderableClusterOptions
 
         /// <summary>

@@ -64,6 +64,7 @@ namespace Amazon.Redshift.Model
         private int? _manualSnapshotRetentionPeriod;
         private string _masterUsername;
         private string _modifyStatus;
+        private DateTime? _nextMaintenanceWindowStartTime;
         private string _nodeType;
         private int? _numberOfNodes;
         private List<string> _pendingActions = new List<string>();
@@ -801,6 +802,24 @@ namespace Amazon.Redshift.Model
         internal bool IsSetModifyStatus()
         {
             return this._modifyStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextMaintenanceWindowStartTime. 
+        /// <para>
+        /// The date and time in UTC when system maintenance can begin.
+        /// </para>
+        /// </summary>
+        public DateTime NextMaintenanceWindowStartTime
+        {
+            get { return this._nextMaintenanceWindowStartTime.GetValueOrDefault(); }
+            set { this._nextMaintenanceWindowStartTime = value; }
+        }
+
+        // Check to see if NextMaintenanceWindowStartTime property is set
+        internal bool IsSetNextMaintenanceWindowStartTime()
+        {
+            return this._nextMaintenanceWindowStartTime.HasValue; 
         }
 
         /// <summary>

@@ -251,6 +251,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.ModifyStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("NextMaintenanceWindowStartTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.NextMaintenanceWindowStartTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("NodeType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
