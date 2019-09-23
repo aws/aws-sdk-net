@@ -32,7 +32,7 @@ namespace Amazon.IoT1ClickDevicesService
     public partial class AmazonIoT1ClickDevicesServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.101.78");
+            InternalSDKUtils.BuildUserAgentString("3.3.101.79");
 
         private string _userAgent = UserAgentString;
 

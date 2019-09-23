@@ -1,3 +1,14 @@
+### 3.3.592.0 (2019-09-23 19:08 UTC)
+* RDSDataService (3.3.102.0)
+	* RDS Data API now supports Amazon Aurora Serverless PostgreSQL databases.
+* Redshift (3.3.104.0)
+	* Adds API operation DescribeNodeConfigurationOptions and associated data structures.
+* Core 3.3.103.43
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.591.0 (2019-09-20 23:11 UTC)
 * EC2 (3.3.131.0)
 	* G4 instances are Amazon EC2 instances based on NVIDIA T4 GPUs and are designed to provide cost-effective machine learning inference for applications, like image classification, object detection, recommender systems, automated speech recognition, and language translation. G4 instances are also a cost-effective platform for building and running graphics-intensive applications, such as remote graphics workstations, video transcoding, photo-realistic design, and game streaming in the cloud. To get started with G4 instances visit https://aws.amazon.com/ec2/instance-types/g4.
