@@ -45,6 +45,17 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Field requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetArrayValue())
+            {
+                context.Writer.WritePropertyName("arrayValue");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ArrayValueMarshaller.Instance;
+                marshaller.Marshall(requestObject.ArrayValue, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetBlobValue())
             {
                 context.Writer.WritePropertyName("blobValue");

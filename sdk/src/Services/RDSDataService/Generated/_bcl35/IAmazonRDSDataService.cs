@@ -29,17 +29,21 @@ namespace Amazon.RDSDataService
     /// <summary>
     /// Interface for accessing RDSDataService
     ///
-    /// Amazon RDS Data Service        
+    /// Amazon RDS Data Service 
     /// <para>
-    /// Amazon RDS provides an HTTP endpoint to run SQL statements on an Amazon Aurora   
-    ///         Serverless DB cluster. To run these statements, you work with the Data Service
-    ///            API.
-    /// </para>
-    ///         
+    /// Amazon RDS provides an HTTP endpoint to run SQL statements on an Amazon Aurora Serverless
+    /// DB cluster. To run these statements, you work with the Data Service API.
+    /// 
+    ///  
     /// <para>
     /// For more information about the Data Service API, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-    /// the Data API for Aurora                Serverless</a> in the <i>Amazon Aurora User
-    /// Guide</i>.
+    /// the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// If you have questions or comments related to the Data API, send email to <a href="mailto:Rds-data-api-feedback@amazon.com">Rds-data-api-feedback@amazon.com</a>.
+    /// </para>
+    ///  </note>
     /// </para>
     /// </summary>
     public partial interface IAmazonRDSDataService : IAmazonService, IDisposable
@@ -52,19 +56,18 @@ namespace Amazon.RDSDataService
         /// <summary>
         /// Runs a batch SQL statement over an array of data.
         /// 
-        ///         
+        ///  
         /// <para>
-        /// You can run bulk update and insert operations for multiple records using a DML   
-        ///          statement with different parameter sets. Bulk operations can provide a significant
-        ///             performance improvement over individual insert and update operations.
+        /// You can run bulk update and insert operations for multiple records using a DML statement
+        /// with different parameter sets. Bulk operations can provide a significant performance
+        /// improvement over individual insert and update operations.
         /// </para>
-        ///         <important>                
+        ///  <important> 
         /// <para>
-        /// If a call isn't part of a transaction because it doesn't include the             
-        ///       <code>transactionID</code> parameter, changes that result from the call are
-        ///                committed automatically.
+        /// If a call isn't part of a transaction because it doesn't include the <code>transactionID</code>
+        /// parameter, changes that result from the call are committed automatically.
         /// </para>
-        ///             </important>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchExecuteStatement service method.</param>
         /// 
@@ -79,8 +82,7 @@ namespace Amazon.RDSDataService
         /// An internal error occurred.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.ServiceUnavailableErrorException">
-        /// The service specified by the <code>resourceArn</code> parameter is not           
-        /// available.
+        /// The service specified by the <code>resourceArn</code> parameter is not available.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.StatementTimeoutException">
         /// The execution of the SQL statement timed out.
@@ -122,24 +124,14 @@ namespace Amazon.RDSDataService
         /// <summary>
         /// Starts a SQL transaction.
         /// 
-        ///                 <important>            
-        /// <para>
-        /// A transaction can run for a maximum of 24 hours. A transaction is terminated and 
-        ///                rolled back automatically after 24 hours.
-        /// </para>
-        ///             
-        /// <para>
-        /// A transaction times out if no calls use its transaction ID in three minutes.     
-        ///            If a transaction times out before it's committed, it's rolled back    
-        ///            automatically.
-        /// </para>
-        ///             
-        /// <para>
-        /// DDL statements inside a transaction cause an implicit commit. We recommend       
-        ///          that you run each DDL statement in a separate <code>ExecuteStatement</code>
-        /// call with                 <code>continueAfterTimeout</code> enabled.
-        /// </para>
-        ///         </important>
+        ///  <pre><code> &lt;important&gt; &lt;p&gt;A transaction can run for a maximum of 24
+        /// hours. A transaction is terminated and rolled back automatically after 24 hours.&lt;/p&gt;
+        /// &lt;p&gt;A transaction times out if no calls use its transaction ID in three minutes.
+        /// If a transaction times out before it's committed, it's rolled back automatically.&lt;/p&gt;
+        /// &lt;p&gt;DDL statements inside a transaction cause an implicit commit. We recommend
+        /// that you run each DDL statement in a separate &lt;code&gt;ExecuteStatement&lt;/code&gt;
+        /// call with &lt;code&gt;continueAfterTimeout&lt;/code&gt; enabled.&lt;/p&gt; &lt;/important&gt;
+        /// </code></pre>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BeginTransaction service method.</param>
         /// 
@@ -154,8 +146,7 @@ namespace Amazon.RDSDataService
         /// An internal error occurred.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.ServiceUnavailableErrorException">
-        /// The service specified by the <code>resourceArn</code> parameter is not           
-        /// available.
+        /// The service specified by the <code>resourceArn</code> parameter is not available.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.StatementTimeoutException">
         /// The execution of the SQL statement timed out.
@@ -196,7 +187,7 @@ namespace Amazon.RDSDataService
 
         /// <summary>
         /// Ends a SQL transaction started with the <code>BeginTransaction</code> operation and
-        ///            commits the changes.
+        /// commits the changes.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CommitTransaction service method.</param>
         /// 
@@ -215,8 +206,7 @@ namespace Amazon.RDSDataService
         /// value can't be found.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.ServiceUnavailableErrorException">
-        /// The service specified by the <code>resourceArn</code> parameter is not           
-        /// available.
+        /// The service specified by the <code>resourceArn</code> parameter is not available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/CommitTransaction">REST API Reference for CommitTransaction Operation</seealso>
         CommitTransactionResponse CommitTransaction(CommitTransactionRequest request);
@@ -255,12 +245,12 @@ namespace Amazon.RDSDataService
         /// <summary>
         /// Runs one or more SQL statements.
         /// 
-        ///         <important>            
+        ///  <important> 
         /// <para>
-        /// This operation is deprecated. Use the <code>BatchExecuteStatement</code> or      
-        ///              <code>ExecuteStatement</code> operation.
+        /// This operation is deprecated. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code>
+        /// operation.
         /// </para>
-        ///         </important>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExecuteSql service method.</param>
         /// 
@@ -275,8 +265,7 @@ namespace Amazon.RDSDataService
         /// An internal error occurred.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.ServiceUnavailableErrorException">
-        /// The service specified by the <code>resourceArn</code> parameter is not           
-        /// available.
+        /// The service specified by the <code>resourceArn</code> parameter is not available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ExecuteSql">REST API Reference for ExecuteSql Operation</seealso>
         [Obsolete("ExecuteSql has been deprecated.  Please use ExecuteStatement or BatchExecuteStatement instead.")]
@@ -318,13 +307,12 @@ namespace Amazon.RDSDataService
         /// <summary>
         /// Runs a SQL statement against a database.
         /// 
-        ///         <important>                
+        ///  <important> 
         /// <para>
-        /// If a call isn't part of a transaction because it doesn't include the             
-        ///       <code>transactionID</code> parameter, changes that result from the call are
-        ///                committed automatically.
+        /// If a call isn't part of a transaction because it doesn't include the <code>transactionID</code>
+        /// parameter, changes that result from the call are committed automatically.
         /// </para>
-        ///             </important>        
+        ///  </important> 
         /// <para>
         /// The response size limit is 1 MB or 1,000 records. If the call returns more than 1
         /// MB of response data or over 1,000 records, the call is terminated.
@@ -343,8 +331,7 @@ namespace Amazon.RDSDataService
         /// An internal error occurred.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.ServiceUnavailableErrorException">
-        /// The service specified by the <code>resourceArn</code> parameter is not           
-        /// available.
+        /// The service specified by the <code>resourceArn</code> parameter is not available.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.StatementTimeoutException">
         /// The execution of the SQL statement timed out.
@@ -403,8 +390,7 @@ namespace Amazon.RDSDataService
         /// value can't be found.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.ServiceUnavailableErrorException">
-        /// The service specified by the <code>resourceArn</code> parameter is not           
-        /// available.
+        /// The service specified by the <code>resourceArn</code> parameter is not available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/RollbackTransaction">REST API Reference for RollbackTransaction Operation</seealso>
         RollbackTransactionResponse RollbackTransaction(RollbackTransactionRequest request);

@@ -29,7 +29,7 @@ namespace Amazon.RDSDataService.Model
 {
     /// <summary>
     /// The response elements represent the output of a request to perform a rollback of a
-    ///            transaction.
+    /// transaction.
     /// </summary>
     public partial class RollbackTransactionResponse : AmazonWebServiceResponse
     {
@@ -41,7 +41,7 @@ namespace Amazon.RDSDataService.Model
         /// The status of the rollback operation.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=128)]
+        [AWSProperty(Min=0, Max=128)]
         public string TransactionStatus
         {
             get { return this._transactionStatus; }

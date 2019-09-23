@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDSDataService.Model
 {
     /// <summary>
-    /// The response elements represent the output of a request to start a SQL           
-    /// transaction.
+    /// The response elements represent the output of a request to start a SQL transaction.
     /// </summary>
     public partial class BeginTransactionResponse : AmazonWebServiceResponse
     {
@@ -41,7 +40,7 @@ namespace Amazon.RDSDataService.Model
         /// The transaction ID of the transaction started by the call.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=192)]
+        [AWSProperty(Min=0, Max=192)]
         public string TransactionId
         {
             get { return this._transactionId; }

@@ -32,12 +32,31 @@ namespace Amazon.RDSDataService.Model
     /// </summary>
     public partial class Field
     {
+        private ArrayValue _arrayValue;
         private MemoryStream _blobValue;
         private bool? _booleanValue;
         private double? _doubleValue;
         private bool? _isNull;
         private long? _longValue;
         private string _stringValue;
+
+        /// <summary>
+        /// Gets and sets the property ArrayValue. 
+        /// <para>
+        /// An array of values.
+        /// </para>
+        /// </summary>
+        public ArrayValue ArrayValue
+        {
+            get { return this._arrayValue; }
+            set { this._arrayValue = value; }
+        }
+
+        // Check to see if ArrayValue property is set
+        internal bool IsSetArrayValue()
+        {
+            return this._arrayValue != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BlobValue. 

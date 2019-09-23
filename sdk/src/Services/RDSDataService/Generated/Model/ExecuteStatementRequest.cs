@@ -31,13 +31,12 @@ namespace Amazon.RDSDataService.Model
     /// Container for the parameters to the ExecuteStatement operation.
     /// Runs a SQL statement against a database.
     /// 
-    ///         <important>                
+    ///  <important> 
     /// <para>
-    /// If a call isn't part of a transaction because it doesn't include the             
-    ///       <code>transactionID</code> parameter, changes that result from the call are
-    ///                committed automatically.
+    /// If a call isn't part of a transaction because it doesn't include the <code>transactionID</code>
+    /// parameter, changes that result from the call are committed automatically.
     /// </para>
-    ///             </important>        
+    ///  </important> 
     /// <para>
     /// The response size limit is 1 MB or 1,000 records. If the call returns more than 1
     /// MB of response data or over 1,000 records, the call is terminated.
@@ -50,6 +49,7 @@ namespace Amazon.RDSDataService.Model
         private bool? _includeResultMetadata;
         private List<SqlParameter> _parameters = new List<SqlParameter>();
         private string _resourceArn;
+        private ResultSetOptions _resultSetOptions;
         private string _schema;
         private string _secretArn;
         private string _sql;
@@ -58,17 +58,16 @@ namespace Amazon.RDSDataService.Model
         /// <summary>
         /// Gets and sets the property ContinueAfterTimeout. 
         /// <para>
-        /// A value that indicates whether to continue running the statement after           
-        ///  the call times out. By default, the statement stops running when the call       
-        ///      times out.
+        /// A value that indicates whether to continue running the statement after the call times
+        /// out. By default, the statement stops running when the call times out.
         /// </para>
-        ///         <important>            
+        ///  <important> 
         /// <para>
-        /// For DDL statements, we recommend continuing to run the statement after           
-        ///     the call times out. When a DDL statement terminates before it is finished    
-        ///            running, it can result in errors and possibly corrupted data structures.
+        /// For DDL statements, we recommend continuing to run the statement after the call times
+        /// out. When a DDL statement terminates before it is finished running, it can result
+        /// in errors and possibly corrupted data structures.
         /// </para>
-        ///         </important>
+        ///  </important>
         /// </summary>
         public bool ContinueAfterTimeout
         {
@@ -88,7 +87,7 @@ namespace Amazon.RDSDataService.Model
         /// The name of the database.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=64)]
+        [AWSProperty(Min=0, Max=64)]
         public string Database
         {
             get { return this._database; }
@@ -143,7 +142,7 @@ namespace Amazon.RDSDataService.Model
         /// The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=100)]
+        [AWSProperty(Required=true, Min=11, Max=100)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -157,12 +156,30 @@ namespace Amazon.RDSDataService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResultSetOptions. 
+        /// <para>
+        /// Options that control how the result set is returned.
+        /// </para>
+        /// </summary>
+        public ResultSetOptions ResultSetOptions
+        {
+            get { return this._resultSetOptions; }
+            set { this._resultSetOptions = value; }
+        }
+
+        // Check to see if ResultSetOptions property is set
+        internal bool IsSetResultSetOptions()
+        {
+            return this._resultSetOptions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Schema. 
         /// <para>
         /// The name of the database schema.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=64)]
+        [AWSProperty(Min=0, Max=64)]
         public string Schema
         {
             get { return this._schema; }
@@ -181,7 +198,7 @@ namespace Amazon.RDSDataService.Model
         /// The name or ARN of the secret that enables access to the DB cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=100)]
+        [AWSProperty(Required=true, Min=11, Max=100)]
         public string SecretArn
         {
             get { return this._secretArn; }
@@ -200,7 +217,7 @@ namespace Amazon.RDSDataService.Model
         /// The SQL statement to run.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=65536)]
+        [AWSProperty(Required=true, Min=0, Max=65536)]
         public string Sql
         {
             get { return this._sql; }
@@ -216,16 +233,16 @@ namespace Amazon.RDSDataService.Model
         /// <summary>
         /// Gets and sets the property TransactionId. 
         /// <para>
-        /// The identifier of a transaction that was started by using the                <code>BeginTransaction</code>
-        /// operation. Specify the transaction ID of the            transaction that you want
-        /// to include the SQL statement in.
+        /// The identifier of a transaction that was started by using the <code>BeginTransaction</code>
+        /// operation. Specify the transaction ID of the transaction that you want to include
+        /// the SQL statement in.
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// If the SQL statement is not part of a transaction, don't set this parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=192)]
+        [AWSProperty(Min=0, Max=192)]
         public string TransactionId
         {
             get { return this._transactionId; }

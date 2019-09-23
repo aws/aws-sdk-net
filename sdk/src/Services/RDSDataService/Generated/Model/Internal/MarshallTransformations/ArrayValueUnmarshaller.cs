@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Field Object
+    /// Response Unmarshaller for ArrayValue Object
     /// </summary>  
-    public class FieldUnmarshaller : IUnmarshaller<Field, XmlUnmarshallerContext>, IUnmarshaller<Field, JsonUnmarshallerContext>
+    public class ArrayValueUnmarshaller : IUnmarshaller<ArrayValue, XmlUnmarshallerContext>, IUnmarshaller<ArrayValue, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Field IUnmarshaller<Field, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ArrayValue IUnmarshaller<ArrayValue, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,57 +53,45 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Field Unmarshall(JsonUnmarshallerContext context)
+        public ArrayValue Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Field unmarshalledObject = new Field();
+            ArrayValue unmarshalledObject = new ArrayValue();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arrayValue", targetDepth))
+                if (context.TestExpression("arrayValues", targetDepth))
                 {
-                    var unmarshaller = ArrayValueUnmarshaller.Instance;
-                    unmarshalledObject.ArrayValue = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ArrayValue, ArrayValueUnmarshaller>(ArrayValueUnmarshaller.Instance);
+                    unmarshalledObject.ArrayValues = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("blobValue", targetDepth))
+                if (context.TestExpression("booleanValues", targetDepth))
                 {
-                    var unmarshaller = MemoryStreamUnmarshaller.Instance;
-                    unmarshalledObject.BlobValue = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<bool, BoolUnmarshaller>(BoolUnmarshaller.Instance);
+                    unmarshalledObject.BooleanValues = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("booleanValue", targetDepth))
+                if (context.TestExpression("doubleValues", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.BooleanValue = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
+                    unmarshalledObject.DoubleValues = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("doubleValue", targetDepth))
+                if (context.TestExpression("longValues", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
-                    unmarshalledObject.DoubleValue = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<long, LongUnmarshaller>(LongUnmarshaller.Instance);
+                    unmarshalledObject.LongValues = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("isNull", targetDepth))
+                if (context.TestExpression("stringValues", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.IsNull = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("longValue", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.LongValue = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("stringValue", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StringValue = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.StringValues = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +100,12 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
         }
 
 
-        private static FieldUnmarshaller _instance = new FieldUnmarshaller();        
+        private static ArrayValueUnmarshaller _instance = new ArrayValueUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FieldUnmarshaller Instance
+        public static ArrayValueUnmarshaller Instance
         {
             get
             {

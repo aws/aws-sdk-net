@@ -31,19 +31,18 @@ namespace Amazon.RDSDataService.Model
     /// Container for the parameters to the BatchExecuteStatement operation.
     /// Runs a batch SQL statement over an array of data.
     /// 
-    ///         
+    ///  
     /// <para>
-    /// You can run bulk update and insert operations for multiple records using a DML   
-    ///          statement with different parameter sets. Bulk operations can provide a significant
-    ///             performance improvement over individual insert and update operations.
+    /// You can run bulk update and insert operations for multiple records using a DML statement
+    /// with different parameter sets. Bulk operations can provide a significant performance
+    /// improvement over individual insert and update operations.
     /// </para>
-    ///         <important>                
+    ///  <important> 
     /// <para>
-    /// If a call isn't part of a transaction because it doesn't include the             
-    ///       <code>transactionID</code> parameter, changes that result from the call are
-    ///                committed automatically.
+    /// If a call isn't part of a transaction because it doesn't include the <code>transactionID</code>
+    /// parameter, changes that result from the call are committed automatically.
     /// </para>
-    ///             </important>
+    ///  </important>
     /// </summary>
     public partial class BatchExecuteStatementRequest : AmazonRDSDataServiceRequest
     {
@@ -61,7 +60,7 @@ namespace Amazon.RDSDataService.Model
         /// The name of the database.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=64)]
+        [AWSProperty(Min=0, Max=64)]
         public string Database
         {
             get { return this._database; }
@@ -98,7 +97,7 @@ namespace Amazon.RDSDataService.Model
         /// The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=100)]
+        [AWSProperty(Required=true, Min=11, Max=100)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -117,7 +116,7 @@ namespace Amazon.RDSDataService.Model
         /// The name of the database schema.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=64)]
+        [AWSProperty(Min=0, Max=64)]
         public string Schema
         {
             get { return this._schema; }
@@ -136,7 +135,7 @@ namespace Amazon.RDSDataService.Model
         /// The name or ARN of the secret that enables access to the DB cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=100)]
+        [AWSProperty(Required=true, Min=11, Max=100)]
         public string SecretArn
         {
             get { return this._secretArn; }
@@ -155,7 +154,7 @@ namespace Amazon.RDSDataService.Model
         /// The SQL statement to run.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=65536)]
+        [AWSProperty(Required=true, Min=0, Max=65536)]
         public string Sql
         {
             get { return this._sql; }
@@ -171,16 +170,16 @@ namespace Amazon.RDSDataService.Model
         /// <summary>
         /// Gets and sets the property TransactionId. 
         /// <para>
-        /// The identifier of a transaction that was started by using the                <code>BeginTransaction</code>
-        /// operation. Specify the transaction ID of the            transaction that you want
-        /// to include the SQL statement in.
+        /// The identifier of a transaction that was started by using the <code>BeginTransaction</code>
+        /// operation. Specify the transaction ID of the transaction that you want to include
+        /// the SQL statement in.
         /// </para>
-        ///         
+        ///  
         /// <para>
-        /// If the SQL statement is not part of a transaction, don't set this            parameter.
+        /// If the SQL statement is not part of a transaction, don't set this parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=192)]
+        [AWSProperty(Min=0, Max=192)]
         public string TransactionId
         {
             get { return this._transactionId; }

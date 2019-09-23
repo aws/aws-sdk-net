@@ -31,24 +31,14 @@ namespace Amazon.RDSDataService.Model
     /// Container for the parameters to the BeginTransaction operation.
     /// Starts a SQL transaction.
     /// 
-    ///                 <important>            
-    /// <para>
-    /// A transaction can run for a maximum of 24 hours. A transaction is terminated and 
-    ///                rolled back automatically after 24 hours.
-    /// </para>
-    ///             
-    /// <para>
-    /// A transaction times out if no calls use its transaction ID in three minutes.     
-    ///            If a transaction times out before it's committed, it's rolled back    
-    ///            automatically.
-    /// </para>
-    ///             
-    /// <para>
-    /// DDL statements inside a transaction cause an implicit commit. We recommend       
-    ///          that you run each DDL statement in a separate <code>ExecuteStatement</code>
-    /// call with                 <code>continueAfterTimeout</code> enabled.
-    /// </para>
-    ///         </important>
+    ///  <pre><code> &lt;important&gt; &lt;p&gt;A transaction can run for a maximum of 24
+    /// hours. A transaction is terminated and rolled back automatically after 24 hours.&lt;/p&gt;
+    /// &lt;p&gt;A transaction times out if no calls use its transaction ID in three minutes.
+    /// If a transaction times out before it's committed, it's rolled back automatically.&lt;/p&gt;
+    /// &lt;p&gt;DDL statements inside a transaction cause an implicit commit. We recommend
+    /// that you run each DDL statement in a separate &lt;code&gt;ExecuteStatement&lt;/code&gt;
+    /// call with &lt;code&gt;continueAfterTimeout&lt;/code&gt; enabled.&lt;/p&gt; &lt;/important&gt;
+    /// </code></pre>
     /// </summary>
     public partial class BeginTransactionRequest : AmazonRDSDataServiceRequest
     {
@@ -63,7 +53,7 @@ namespace Amazon.RDSDataService.Model
         /// The name of the database.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=64)]
+        [AWSProperty(Min=0, Max=64)]
         public string Database
         {
             get { return this._database; }
@@ -82,7 +72,7 @@ namespace Amazon.RDSDataService.Model
         /// The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=100)]
+        [AWSProperty(Required=true, Min=11, Max=100)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -101,7 +91,7 @@ namespace Amazon.RDSDataService.Model
         /// The name of the database schema.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=64)]
+        [AWSProperty(Min=0, Max=64)]
         public string Schema
         {
             get { return this._schema; }
@@ -120,7 +110,7 @@ namespace Amazon.RDSDataService.Model
         /// The name or ARN of the secret that enables access to the DB cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=100)]
+        [AWSProperty(Required=true, Min=11, Max=100)]
         public string SecretArn
         {
             get { return this._secretArn; }
