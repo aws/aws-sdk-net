@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.592.0",
+    "ProductVersion" : "3.3.593.0",
     "CoreVersion"    : "3.3.103.43",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -1049,7 +1049,7 @@
             "InPreview"               : false
         },
         "TranscribeService"               : {
-            "Version" : "3.3.107.10",
+            "Version" : "3.3.108.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.43"
@@ -1249,7 +1249,7 @@
             "InPreview"               : false
         },
         "DataSync"                        : {
-            "Version" : "3.3.104.13",
+            "Version" : "3.3.105.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.43"
@@ -1273,7 +1273,7 @@
             "InPreview"               : false
         },
         "ComprehendMedical"               : {
-            "Version" : "3.3.100.79",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.43"

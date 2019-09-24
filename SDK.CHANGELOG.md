@@ -1,3 +1,11 @@
+### 3.3.593.0 (2019-09-24 18:14 UTC)
+* ComprehendMedical (3.3.101.0)
+	* Use Amazon Comprehend Medical to analyze medical text stored in the specified Amazon S3 bucket. Use the console to create and manage batch analysis jobs, or use the batch APIs to detect both medical entities and protected health information (PHI). The batch APIs start, stop, list, and retrieve information about batch analysis jobs. This release also includes DetectEntitiesV2 operation which returns the Acuity and Direction entities as attributes instead of types.
+* DataSync (3.3.105.0)
+	* Added S3StorageClass, OverwriteMode sync option, and ONLY_FILES_TRANSFERRED setting for the VerifyMode sync option.
+* TranscribeService (3.3.108.0)
+	* With this update Amazon Transcribe enables you to provide an AWS KMS key to encrypt your transcription output.
+
 ### 3.3.592.0 (2019-09-23 19:08 UTC)
 * RDSDataService (3.3.102.0)
 	* RDS Data API now supports Amazon Aurora Serverless PostgreSQL databases.
