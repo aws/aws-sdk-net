@@ -33,6 +33,7 @@ namespace Amazon.ComprehendMedical.Model
     public partial class DetectEntitiesResponse : AmazonWebServiceResponse
     {
         private List<Entity> _entities = new List<Entity>();
+        private string _modelVersion;
         private string _paginationToken;
         private List<UnmappedAttribute> _unmappedAttributes = new List<UnmappedAttribute>();
 
@@ -41,7 +42,7 @@ namespace Amazon.ComprehendMedical.Model
         /// <para>
         ///  The collection of medical entities extracted from the input text and their associated
         /// information. For each entity, the response provides the entity text, the entity category,
-        /// where the entity text begins and ends, and the level of confidence that Comprehend
+        /// where the entity text begins and ends, and the level of confidence that Amazon Comprehend
         /// Medical has in the detection and analysis. Attributes and traits of the entity are
         /// also returned.
         /// </para>
@@ -60,10 +61,31 @@ namespace Amazon.ComprehendMedical.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ModelVersion. 
+        /// <para>
+        /// The version of the model used to analyze the documents. The version number looks like
+        /// X.X.X. You can use this information to track the model used for a particular batch
+        /// of documents.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1)]
+        public string ModelVersion
+        {
+            get { return this._modelVersion; }
+            set { this._modelVersion = value; }
+        }
+
+        // Check to see if ModelVersion property is set
+        internal bool IsSetModelVersion()
+        {
+            return this._modelVersion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PaginationToken. 
         /// <para>
-        ///  If the result of the previous request to DetectEntities was truncated, include the
-        /// Paginationtoken to fetch the next page of entities.
+        ///  If the result of the previous request to <code>DetectEntities</code> was truncated,
+        /// include the <code>PaginationToken</code> to fetch the next page of entities.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

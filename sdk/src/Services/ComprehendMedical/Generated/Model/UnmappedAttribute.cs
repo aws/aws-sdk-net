@@ -57,7 +57,7 @@ namespace Amazon.ComprehendMedical.Model
         /// Gets and sets the property Type. 
         /// <para>
         ///  The type of the attribute, could be one of the following values: "MEDICATION", "MEDICAL_CONDITION",
-        /// "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or "PERSONAL_HEALTH_INFORMATION". 
+        /// "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or "PROTECTED_HEALTH_INFORMATION". 
         /// </para>
         /// </summary>
         public EntityType Type
