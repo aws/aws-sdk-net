@@ -75,6 +75,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     response.S3Config = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("S3StorageClass", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.S3StorageClass = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

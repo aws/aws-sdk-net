@@ -85,6 +85,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetS3StorageClass())
+                {
+                    context.Writer.WritePropertyName("S3StorageClass");
+                    context.Writer.Write(publicRequest.S3StorageClass);
+                }
+
                 if(publicRequest.IsSetSubdirectory())
                 {
                     context.Writer.WritePropertyName("Subdirectory");

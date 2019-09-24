@@ -387,6 +387,56 @@ namespace Amazon.DataSync
 
 
     /// <summary>
+    /// Constants used for properties of type OverwriteMode.
+    /// </summary>
+    public class OverwriteMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALWAYS for OverwriteMode
+        /// </summary>
+        public static readonly OverwriteMode ALWAYS = new OverwriteMode("ALWAYS");
+        /// <summary>
+        /// Constant NEVER for OverwriteMode
+        /// </summary>
+        public static readonly OverwriteMode NEVER = new OverwriteMode("NEVER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OverwriteMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OverwriteMode FindValue(string value)
+        {
+            return FindValue<OverwriteMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OverwriteMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PhaseStatus.
     /// </summary>
     public class PhaseStatus : ConstantClass
@@ -588,6 +638,72 @@ namespace Amazon.DataSync
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PreserveDevices(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type S3StorageClass.
+    /// </summary>
+    public class S3StorageClass : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEEP_ARCHIVE for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass DEEP_ARCHIVE = new S3StorageClass("DEEP_ARCHIVE");
+        /// <summary>
+        /// Constant GLACIER for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass GLACIER = new S3StorageClass("GLACIER");
+        /// <summary>
+        /// Constant INTELLIGENT_TIERING for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass INTELLIGENT_TIERING = new S3StorageClass("INTELLIGENT_TIERING");
+        /// <summary>
+        /// Constant ONEZONE_IA for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass ONEZONE_IA = new S3StorageClass("ONEZONE_IA");
+        /// <summary>
+        /// Constant STANDARD for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass STANDARD = new S3StorageClass("STANDARD");
+        /// <summary>
+        /// Constant STANDARD_IA for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass STANDARD_IA = new S3StorageClass("STANDARD_IA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3StorageClass(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3StorageClass FindValue(string value)
+        {
+            return FindValue<S3StorageClass>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3StorageClass(string value)
         {
             return FindValue(value);
         }
@@ -840,6 +956,10 @@ namespace Amazon.DataSync
         /// Constant NONE for VerifyMode
         /// </summary>
         public static readonly VerifyMode NONE = new VerifyMode("NONE");
+        /// <summary>
+        /// Constant ONLY_FILES_TRANSFERRED for VerifyMode
+        /// </summary>
+        public static readonly VerifyMode ONLY_FILES_TRANSFERRED = new VerifyMode("ONLY_FILES_TRANSFERRED");
         /// <summary>
         /// Constant POINT_IN_TIME_CONSISTENT for VerifyMode
         /// </summary>

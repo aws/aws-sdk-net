@@ -134,7 +134,10 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PrivateLinkConfig.
+        /// Gets and sets the property PrivateLinkConfig. 
+        /// <para>
+        /// The subnet and the security group that DataSync used to access a VPC endpoint.
+        /// </para>
         /// </summary>
         public PrivateLinkConfig PrivateLinkConfig
         {

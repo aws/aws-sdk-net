@@ -65,7 +65,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The name of the domain that the SMB server belongs to.
+        /// The name of the Windows domain that the SMB server belongs to.
         /// </para>
         /// </summary>
         [AWSProperty(Max=253)]
@@ -84,7 +84,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property MountOptions. 
         /// <para>
-        /// The mount options that are available for DataSync to use to access an SMB location.
+        /// The mount options used by DataSync to access the SMB server.
         /// </para>
         /// </summary>
         public SmbMountOptions MountOptions
@@ -102,7 +102,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Password. 
         /// <para>
-        /// The password of the user who has permission to access the SMB server.
+        /// The password of the user who can mount the share, has the permissions to access files
+        /// and folders in the SMB share.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=104)]
@@ -122,7 +123,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property ServerHostname. 
         /// <para>
         /// The name of the SMB server. This value is the IP address or Domain Name Service (DNS)
-        /// name of the SMB server. An agent that is installed on-premises uses this host name
+        /// name of the SMB server. An agent that is installed on-premises uses this hostname
         /// to mount the SMB server in a network.
         /// </para>
         ///  <note> 
@@ -199,7 +200,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property User. 
         /// <para>
-        /// The user who can mount the share, has the permissions to access files and directories
+        /// The user who can mount the share, has the permissions to access files and folders
         /// in the SMB share.
         /// </para>
         /// </summary>

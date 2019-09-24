@@ -40,14 +40,15 @@ namespace Amazon.DataSync.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see Configuring Amazon S3 Location Settings in the <i>AWS DataSync
-    /// User Guide.</i> 
+    /// For more information, see https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html#create-s3-location
+    /// in the <i>AWS DataSync User Guide.</i> 
     /// </para>
     /// </summary>
     public partial class CreateLocationS3Request : AmazonDataSyncRequest
     {
         private string _s3BucketArn;
         private S3Config _s3Config;
+        private S3StorageClass _s3StorageClass;
         private string _subdirectory;
         private List<TagListEntry> _tags = new List<TagListEntry>();
 
@@ -84,6 +85,29 @@ namespace Amazon.DataSync.Model
         internal bool IsSetS3Config()
         {
             return this._s3Config != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3StorageClass. 
+        /// <para>
+        /// The Amazon S3 storage class that you want to store your files in when this location
+        /// is used as a task destination. For more information about S3 storage classes, see
+        /// <a href="https://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>
+        /// in the <i>Amazon Simple Storage Service Developer Guide</i>. Some storage classes
+        /// have behaviors that can affect your S3 storage cost. For detailed information, see
+        /// <a>using-storage-classes</a>.
+        /// </para>
+        /// </summary>
+        public S3StorageClass S3StorageClass
+        {
+            get { return this._s3StorageClass; }
+            set { this._s3StorageClass = value; }
+        }
+
+        // Check to see if S3StorageClass property is set
+        internal bool IsSetS3StorageClass()
+        {
+            return this._s3StorageClass != null;
         }
 
         /// <summary>

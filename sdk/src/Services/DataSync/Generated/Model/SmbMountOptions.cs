@@ -39,8 +39,7 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// The specific SMB version that you want DataSync to use to mount your SMB share. If
         /// you don't specify a version, DataSync defaults to <code>AUTOMATIC</code>. That is,
-        /// DataSync automatically selects a version based on negotiation with the SMB Server
-        /// server.
+        /// DataSync automatically selects a version based on negotiation with the SMB server.
         /// </para>
         /// </summary>
         public SmbVersion Version

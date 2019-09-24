@@ -80,7 +80,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The name of the domain that the SMB server belongs to.
+        /// The name of the Windows domain that the SMB server belongs to.
         /// </para>
         /// </summary>
         [AWSProperty(Max=253)]
@@ -155,7 +155,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property User. 
         /// <para>
-        /// The user who is logged on the SMB server.
+        /// The user who can mount the share, has the permissions to access files and folders
+        /// in the SMB share.
         /// </para>
         /// </summary>
         [AWSProperty(Max=104)]

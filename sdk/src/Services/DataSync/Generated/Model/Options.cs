@@ -47,6 +47,7 @@ namespace Amazon.DataSync.Model
         private long? _bytesPerSecond;
         private Gid _gid;
         private Mtime _mtime;
+        private OverwriteMode _overwriteMode;
         private PosixPermissions _posixPermissions;
         private PreserveDeletedFiles _preserveDeletedFiles;
         private PreserveDevices _preserveDevices;
@@ -190,6 +191,34 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OverwriteMode. 
+        /// <para>
+        /// A value that determines whether files at the destination should be overwritten or
+        /// preserved when copying files. If set to <code>NEVER</code> a destination file will
+        /// not be replaced by a source file, even if the destination file differs from the source
+        /// file. If you modify files in the destination and you sync the files, you can use this
+        /// value to protect against overwriting those changes. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Some storage classes have specific behaviors that can affect your S3 storage cost.
+        /// For detailed information, see <a>using-storage-classes</a> in the <i>AWS DataSync
+        /// User Guide</i>.
+        /// </para>
+        /// </summary>
+        public OverwriteMode OverwriteMode
+        {
+            get { return this._overwriteMode; }
+            set { this._overwriteMode = value; }
+        }
+
+        // Check to see if OverwriteMode property is set
+        internal bool IsSetOverwriteMode()
+        {
+            return this._overwriteMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PosixPermissions. 
         /// <para>
         /// A value that determines which users or groups can access a file for a specific purpose
@@ -229,7 +258,10 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property PreserveDeletedFiles. 
         /// <para>
         /// A value that specifies whether files in the destination that don't exist in the source
-        /// file system should be preserved. 
+        /// file system should be preserved. This option can affect your storage cost. If your
+        /// task deletes objects, you might incur minimum storage duration charges for certain
+        /// storage classes. For detailed information, see <a>using-storage-classes</a> in the
+        /// <i>AWS DataSync User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -338,6 +370,10 @@ namespace Amazon.DataSync.Model
         ///  
         /// <para>
         /// POINT_IN_TIME_CONSISTENT: Perform verification (recommended). 
+        /// </para>
+        ///  
+        /// <para>
+        /// ONLY_FILES_TRANSFERRED: Perform verification on only files that were transferred.
         /// </para>
         ///  
         /// <para>
