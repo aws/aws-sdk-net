@@ -4,6 +4,7 @@
     <property>Amazon.TranscribeService.Model.CreateVocabularyRequest.VocabularyFileUri</property>
     <min>1</min>
     <max>2000</max>
+    <pattern>(s3://|http(s*)://).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.CreateVocabularyRequest.VocabularyName</property>
@@ -45,6 +46,7 @@
     <property>Amazon.TranscribeService.Model.GetVocabularyResponse.DownloadUri</property>
     <min>1</min>
     <max>2000</max>
+    <pattern>(s3://|http(s*)://).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.GetVocabularyResponse.VocabularyName</property>
@@ -66,10 +68,12 @@
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.ListTranscriptionJobsRequest.NextToken</property>
     <max>8192</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.ListTranscriptionJobsResponse.NextToken</property>
     <max>8192</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.ListVocabulariesRequest.MaxResults</property>
@@ -85,10 +89,12 @@
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.ListVocabulariesRequest.NextToken</property>
     <max>8192</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.ListVocabulariesResponse.NextToken</property>
     <max>8192</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.StartTranscriptionJobRequest.MediaSampleRateHertz</property>
@@ -97,7 +103,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.StartTranscriptionJobRequest.OutputBucketName</property>
+    <max>64</max>
     <pattern>[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.StartTranscriptionJobRequest.OutputEncryptionKMSKeyId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.StartTranscriptionJobRequest.TranscriptionJobName</property>
@@ -109,6 +122,7 @@
     <property>Amazon.TranscribeService.Model.UpdateVocabularyRequest.VocabularyFileUri</property>
     <min>1</min>
     <max>2000</max>
+    <pattern>(s3://|http(s*)://).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.UpdateVocabularyRequest.VocabularyName</property>
@@ -126,6 +140,7 @@
     <property>Amazon.TranscribeService.Model.Media.MediaFileUri</property>
     <min>1</min>
     <max>2000</max>
+    <pattern>(s3://|http(s*)://).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.Settings.MaxSpeakerLabels</property>
@@ -142,6 +157,7 @@
     <property>Amazon.TranscribeService.Model.Transcript.TranscriptFileUri</property>
     <min>1</min>
     <max>2000</max>
+    <pattern>(s3://|http(s*)://).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.TranscriptionJob.MediaSampleRateHertz</property>

@@ -103,6 +103,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.OutputBucketName);
                 }
 
+                if(publicRequest.IsSetOutputEncryptionKMSKeyId())
+                {
+                    context.Writer.WritePropertyName("OutputEncryptionKMSKeyId");
+                    context.Writer.Write(publicRequest.OutputEncryptionKMSKeyId);
+                }
+
                 if(publicRequest.IsSetSettings())
                 {
                     context.Writer.WritePropertyName("Settings");

@@ -38,6 +38,7 @@ namespace Amazon.TranscribeService.Model
         private MediaFormat _mediaFormat;
         private int? _mediaSampleRateHertz;
         private string _outputBucketName;
+        private string _outputEncryptionKMSKeyId;
         private Settings _settings;
         private string _transcriptionJobName;
 
@@ -84,13 +85,6 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// The format of the input media file.
         /// </para>
-        ///  
-        /// <para>
-        ///  If you do not specify the format of the media file, Amazon Transcribe determines
-        /// the format. If the format is not recognized, Amazon Transcribe returns an <code>InternalFailureException</code>
-        /// exception. If you specify the format, it must match the format detected by Amazon
-        /// Transcribe, otherwise you get an <code>InternalFailureException</code> exception.
-        /// </para>
         /// </summary>
         public MediaFormat MediaFormat
         {
@@ -107,7 +101,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property MediaSampleRateHertz. 
         /// <para>
-        /// The sample rate of the audio track in the input media file in Hertz. 
+        /// The sample rate, in Hertz, of the audio track in the input media file. 
         /// </para>
         ///  
         /// <para>
@@ -157,6 +151,7 @@ namespace Amazon.TranscribeService.Model
         /// the transcription.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string OutputBucketName
         {
             get { return this._outputBucketName; }
@@ -167,6 +162,22 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetOutputBucketName()
         {
             return this._outputBucketName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputEncryptionKMSKeyId.
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string OutputEncryptionKMSKeyId
+        {
+            get { return this._outputEncryptionKMSKeyId; }
+            set { this._outputEncryptionKMSKeyId = value; }
+        }
+
+        // Check to see if OutputEncryptionKMSKeyId property is set
+        internal bool IsSetOutputEncryptionKMSKeyId()
+        {
+            return this._outputEncryptionKMSKeyId != null;
         }
 
         /// <summary>
