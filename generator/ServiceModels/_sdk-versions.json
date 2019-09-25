@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.593.0",
+    "ProductVersion" : "3.3.594.0",
     "CoreVersion"    : "3.3.103.43",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -521,7 +521,7 @@
             "InPreview"               : false
         },
         "DatabaseMigrationService"        : {
-            "Version" : "3.3.101.32",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.43"
@@ -945,7 +945,7 @@
             "InPreview"               : false
         },
         "SageMaker"                       : {
-            "Version" : "3.3.104.14",
+            "Version" : "3.3.105.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.43"
@@ -1265,7 +1265,7 @@
             "InPreview"               : false
         },
         "GlobalAccelerator"               : {
-            "Version" : "3.3.101.11",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.43"

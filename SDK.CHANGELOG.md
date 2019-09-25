@@ -1,3 +1,11 @@
+### 3.3.594.0 (2019-09-25 18:23 UTC)
+* DatabaseMigrationService (3.3.102.0)
+	* This release adds a new DeleteConnection API to delete the connection between a replication instance and an endpoint. It also adds an optional S3 setting to specify the precision of any TIMESTAMP column values written to an S3 object file in .parquet format.
+* GlobalAccelerator (3.3.102.0)
+	* API Update for AWS Global Accelerator to support for DNS aliasing.
+* SageMaker (3.3.105.0)
+	* Enable G4D and R5 instances in SageMaker Hosting Services
+
 ### 3.3.593.0 (2019-09-24 18:14 UTC)
 * ComprehendMedical (3.3.101.0)
 	* Use Amazon Comprehend Medical to analyze medical text stored in the specified Amazon S3 bucket. Use the console to create and manage batch analysis jobs, or use the batch APIs to detect both medical entities and protected health information (PHI). The batch APIs start, stop, list, and retrieve information about batch analysis jobs. This release also includes DetectEntitiesV2 operation which returns the Acuity and Direction entities as attributes instead of types.
