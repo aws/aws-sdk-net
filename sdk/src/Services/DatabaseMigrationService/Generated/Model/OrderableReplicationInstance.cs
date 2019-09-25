@@ -161,7 +161,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// AWS DMS supports <code>ReleaseStatus</code> in versions 3.1.4 and later.
+        /// AWS DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.
         /// </para>
         ///  </note>
         /// </summary>

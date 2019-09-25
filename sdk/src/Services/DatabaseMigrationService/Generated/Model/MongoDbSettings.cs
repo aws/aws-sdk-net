@@ -57,7 +57,7 @@ namespace Amazon.DatabaseMigrationService.Model
         ///  
         /// <para>
         /// DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1.
-        /// This attribute is not used when authType=No.
+        /// This setting is not used when authType=No.
         /// </para>
         /// </summary>
         public AuthMechanismValue AuthMechanism
@@ -75,7 +75,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property AuthSource. 
         /// <para>
-        ///  The MongoDB database name. This attribute is not used when <code>authType=NO</code>.
+        ///  The MongoDB database name. This setting is not used when <code>authType=NO</code>.
         /// 
         /// </para>
         ///  
@@ -144,7 +144,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property DocsToInvestigate. 
         /// <para>
         ///  Indicates the number of documents to preview to determine the document organization.
-        /// Use this attribute when <code>NestingLevel</code> is set to ONE. 
+        /// Use this setting when <code>NestingLevel</code> is set to ONE. 
         /// </para>
         ///  
         /// <para>
@@ -166,7 +166,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ExtractDocId. 
         /// <para>
-        ///  Specifies the document ID. Use this attribute when <code>NestingLevel</code> is set
+        ///  Specifies the document ID. Use this setting when <code>NestingLevel</code> is set
         /// to NONE. 
         /// </para>
         ///  

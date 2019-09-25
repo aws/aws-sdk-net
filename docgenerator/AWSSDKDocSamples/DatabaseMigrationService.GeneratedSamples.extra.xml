@@ -116,6 +116,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DeleteConnection(Amazon.DatabaseMigrationService.Model.DeleteConnectionRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DeleteConnection(Amazon.DatabaseMigrationService.Model.DeleteConnectionRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DeleteConnectionRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DeleteConnectionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deletes the connection between the replication instance and the endpoint.
+                </para>
+                <code
+                    title="Delete Connection"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="delete-connection-1481751957981" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DeleteEndpoint(Amazon.DatabaseMigrationService.Model.DeleteEndpointRequest)" />
             <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DeleteEndpoint(Amazon.DatabaseMigrationService.Model.DeleteEndpointRequest)" />
             <member name="T:Amazon.DatabaseMigrationService.Model.DeleteEndpointRequest" />
