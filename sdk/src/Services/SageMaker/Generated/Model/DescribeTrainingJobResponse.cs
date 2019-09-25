@@ -429,6 +429,11 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>Interrupted</code> - The job stopped because the managed spot training instances
+        /// were interrupted. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>Uploading</code> - Training is complete and the model artifacts are being uploaded
         /// to the S3 location.
         /// </para>
@@ -450,11 +455,6 @@ namespace Amazon.SageMaker.Model
         /// <para>
         ///  <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the maximum
         /// allowed wait time.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Interrupted</code> - The job stopped because the managed spot training instances
-        /// were interrupted. 
         /// </para>
         ///  </li> <li> 
         /// <para>
