@@ -36,6 +36,7 @@ namespace Amazon.GlobalAccelerator.Model
     {
         private string _acceleratorArn;
         private DateTime? _createdTime;
+        private string _dnsName;
         private bool? _enabled;
         private IpAddressType _ipAddressType;
         private List<IpSet> _ipSets = new List<IpSet>();
@@ -78,6 +79,37 @@ namespace Amazon.GlobalAccelerator.Model
         internal bool IsSetCreatedTime()
         {
             return this._createdTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DnsName. 
+        /// <para>
+        /// The Domain Name System (DNS) name that Global Accelerator creates that points to your
+        /// accelerator's static IP addresses. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The naming convention for the DNS name is: a lower case letter a, followed by a 16-bit
+        /// random hex string, followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about the default DNS name, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing">Support
+        /// for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=255)]
+        public string DnsName
+        {
+            get { return this._dnsName; }
+            set { this._dnsName = value; }
+        }
+
+        // Check to see if DnsName property is set
+        internal bool IsSetDnsName()
+        {
+            return this._dnsName != null;
         }
 
         /// <summary>
