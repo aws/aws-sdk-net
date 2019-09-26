@@ -175,7 +175,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the IAM service role that will perform the declared action. This is assumed
+        /// The ARN of the IAM service role that performs the declared action. This is assumed
         /// through the roleArn for the pipeline.
         /// </para>
         /// </summary>

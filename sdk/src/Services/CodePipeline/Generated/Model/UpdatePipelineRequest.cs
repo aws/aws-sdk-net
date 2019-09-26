@@ -30,9 +30,9 @@ namespace Amazon.CodePipeline.Model
     /// <summary>
     /// Container for the parameters to the UpdatePipeline operation.
     /// Updates a specified pipeline with edits or changes to its structure. Use a JSON file
-    /// with the pipeline structure in conjunction with <code>UpdatePipeline</code> to provide
-    /// the full structure of the pipeline. Updating the pipeline increases the version number
-    /// of the pipeline by 1.
+    /// with the pipeline structure and <code>UpdatePipeline</code> to provide the full structure
+    /// of the pipeline. Updating the pipeline increases the version number of the pipeline
+    /// by 1.
     /// </summary>
     public partial class UpdatePipelineRequest : AmazonCodePipelineRequest
     {

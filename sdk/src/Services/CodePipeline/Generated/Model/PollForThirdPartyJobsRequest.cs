@@ -29,8 +29,8 @@ namespace Amazon.CodePipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the PollForThirdPartyJobs operation.
-    /// Determines whether there are any third party jobs for a job worker to act on. Only
-    /// used for partner actions.
+    /// Determines whether there are any third party jobs for a job worker to act on. Used
+    /// for partner actions only.
     /// 
     ///  <important> 
     /// <para>

@@ -42,7 +42,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Authentication. 
         /// <para>
-        /// Supported options are GITHUB_HMAC, IP and UNAUTHENTICATED.
+        /// Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -52,12 +52,12 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  IP will reject webhooks trigger requests unless they originate from an IP within
+        ///  IP rejects webhooks trigger requests unless they originate from an IP address in
         /// the IP range whitelisted in the authentication configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  UNAUTHENTICATED will accept all webhook trigger requests regardless of origin.
+        ///  UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.
         /// </para>
         ///  </li> </ul>
         /// </summary>

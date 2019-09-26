@@ -38,9 +38,9 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property AllowedIPRange. 
         /// <para>
-        /// The property used to configure acceptance of webhooks within a specific IP range.
-        /// For IP, only the <code>AllowedIPRange</code> property must be set, and this property
-        /// must be set to a valid CIDR range.
+        /// The property used to configure acceptance of webhooks in an IP address range. For
+        /// IP, only the <code>AllowedIPRange</code> property must be set. This property must
+        /// be set to a valid CIDR range.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

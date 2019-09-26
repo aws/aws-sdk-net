@@ -30,10 +30,9 @@ namespace Amazon.CodePipeline.Model
     /// <summary>
     /// Container for the parameters to the DeleteWebhook operation.
     /// Deletes a previously created webhook by name. Deleting the webhook stops AWS CodePipeline
-    /// from starting a pipeline every time an external event occurs. The API will return
-    /// successfully when trying to delete a webhook that is already deleted. If a deleted
-    /// webhook is re-created by calling PutWebhook with the same name, it will have a different
-    /// URL.
+    /// from starting a pipeline every time an external event occurs. The API returns successfully
+    /// when trying to delete a webhook that is already deleted. If a deleted webhook is re-created
+    /// by calling PutWebhook with the same name, it will have a different URL.
     /// </summary>
     public partial class DeleteWebhookRequest : AmazonCodePipelineRequest
     {

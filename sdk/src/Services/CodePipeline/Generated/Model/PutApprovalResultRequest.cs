@@ -120,8 +120,8 @@ namespace Amazon.CodePipeline.Model
         /// Gets and sets the property Token. 
         /// <para>
         /// The system-generated token used to identify a unique approval request. The token for
-        /// each open approval request can be obtained using the <a>GetPipelineState</a> action
-        /// and is used to validate that the approval request corresponding to this token is still
+        /// each open approval request can be obtained using the <a>GetPipelineState</a> action.
+        /// It is used to validate that the approval request corresponding to this token is still
         /// valid.
         /// </para>
         /// </summary>

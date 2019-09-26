@@ -68,9 +68,9 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property ArtifactStores. 
         /// <para>
-        /// A mapping of <code>artifactStore</code> objects and their corresponding regions. There
-        /// must be an artifact store for the pipeline region and for each cross-region action
-        /// within the pipeline.
+        /// A mapping of <code>artifactStore</code> objects and their corresponding AWS Regions.
+        /// There must be an artifact store for the pipeline Region and for each cross-region
+        /// action in the pipeline.
         /// </para>
         ///  <note> 
         /// <para>
@@ -155,7 +155,7 @@ namespace Amazon.CodePipeline.Model
         /// Gets and sets the property Version. 
         /// <para>
         /// The version number of the pipeline. A new pipeline always has a version number of
-        /// 1. This number is automatically incremented when a pipeline is updated.
+        /// 1. This number is incremented when a pipeline is updated.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

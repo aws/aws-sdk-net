@@ -30,7 +30,7 @@ namespace Amazon.CodePipeline.Model
     /// <summary>
     /// Container for the parameters to the DeregisterWebhookWithThirdParty operation.
     /// Removes the connection between the webhook that was created by CodePipeline and the
-    /// external tool with events to be detected. Currently only supported for webhooks that
+    /// external tool with events to be detected. Currently supported only for webhooks that
     /// target an action type of GitHub.
     /// </summary>
     public partial class DeregisterWebhookWithThirdPartyRequest : AmazonCodePipelineRequest

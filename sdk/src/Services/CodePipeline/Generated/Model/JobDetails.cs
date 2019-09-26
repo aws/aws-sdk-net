@@ -57,8 +57,8 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Data. 
         /// <para>
-        /// Represents additional information about a job required for a job worker to complete
-        /// the job. 
+        /// Represents other information about a job required for a job worker to complete the
+        /// job. 
         /// </para>
         /// </summary>
         public JobData Data

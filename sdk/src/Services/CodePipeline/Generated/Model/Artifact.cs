@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents information about an artifact that will be worked upon by actions in the
-    /// pipeline.
+    /// Represents information about an artifact that is worked on by actions in the pipeline.
     /// </summary>
     public partial class Artifact
     {

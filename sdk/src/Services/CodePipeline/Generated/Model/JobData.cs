@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents additional information about a job required for a job worker to complete
-    /// the job.
+    /// Represents other information about a job required for a job worker to complete the
+    /// job.
     /// </summary>
     public partial class JobData
     {
@@ -102,8 +102,8 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property ContinuationToken. 
         /// <para>
-        /// A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires
-        /// in order to continue the job asynchronously.
+        /// A system-generated token, such as a AWS CodeDeploy deployment ID, required by a job
+        /// to continue the job asynchronously.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -181,7 +181,7 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for Custom
+        /// Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom
         /// jobs.
         /// </para>
         ///  </note>

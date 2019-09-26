@@ -62,7 +62,7 @@ namespace Amazon.CodePipeline.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of an artifact. This name might be system-generated, such as "MyApp", or
-        /// might be defined by the user when an action is created.
+        /// defined by the user when an action is created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

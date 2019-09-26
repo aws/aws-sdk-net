@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// A response to a <code>PollForThirdPartyJobs </code>request returned by AWS CodePipeline
-    /// when there is a job to be worked upon by a partner action.
+    /// A response to a <code>PollForThirdPartyJobs</code> request returned by AWS CodePipeline
+    /// when there is a job to be worked on by a partner action.
     /// </summary>
     public partial class ThirdPartyJob
     {

@@ -29,7 +29,7 @@ namespace Amazon.CodePipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Gets the set of key/value pairs (metadata) that are used to manage the resource.
+    /// Gets the set of key-value pairs (metadata) that are used to manage the resource.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonCodePipelineRequest
     {
@@ -60,8 +60,8 @@ namespace Amazon.CodePipeline.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The token that was returned from the previous API call, which would be used to return
-        /// the next page of the list. However, the ListTagsforResource call lists all available
-        /// tags in one call and does not use pagination.
+        /// the next page of the list. The ListTagsforResource call lists all available tags in
+        /// one call and does not use pagination.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

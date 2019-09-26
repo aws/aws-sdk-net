@@ -29,7 +29,10 @@ namespace Amazon.CodePipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the RetryStageExecution operation.
-    /// Resumes the pipeline execution by retrying the last failed actions in a stage.
+    /// Resumes the pipeline execution by retrying the last failed actions in a stage. You
+    /// can retry a stage immediately if any of the actions in the stage fail. When you retry,
+    /// all actions that are still in progress continue working, and failed actions are triggered
+    /// again.
     /// </summary>
     public partial class RetryStageExecutionRequest : AmazonCodePipelineRequest
     {

@@ -30,7 +30,7 @@ namespace Amazon.CodePipeline.Model
     /// <summary>
     /// Container for the parameters to the PutThirdPartyJobFailureResult operation.
     /// Represents the failure of a third party job as returned to the pipeline by a job worker.
-    /// Only used for partner actions.
+    /// Used for partner actions only.
     /// </summary>
     public partial class PutThirdPartyJobFailureResultRequest : AmazonCodePipelineRequest
     {

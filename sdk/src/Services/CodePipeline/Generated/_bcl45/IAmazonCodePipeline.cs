@@ -39,13 +39,13 @@ namespace Amazon.CodePipeline
     /// <para>
     /// This is the AWS CodePipeline API Reference. This guide provides descriptions of the
     /// actions and data types for AWS CodePipeline. Some functionality for your pipeline
-    /// is only configurable through the API. For additional information, see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS
+    /// can only be configured through the API. For more information, see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS
     /// CodePipeline User Guide</a>.
     /// </para>
     ///  
     /// <para>
     /// You can use the AWS CodePipeline API to work with pipelines, stages, actions, and
-    /// transitions, as described below.
+    /// transitions.
     /// </para>
     ///  
     /// <para>
@@ -58,7 +58,7 @@ namespace Amazon.CodePipeline
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreatePipeline</a>, which creates a uniquely-named pipeline.
+    ///  <a>CreatePipeline</a>, which creates a uniquely named pipeline.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -83,7 +83,7 @@ namespace Amazon.CodePipeline
     /// <para>
     ///  <a>ListActionExecutions</a>, which returns action-level details for past executions.
     /// The details include full stage and action-level details, including individual action
-    /// duration, status, any errors which occurred during the execution, and input and output
+    /// duration, status, any errors that occurred during the execution, and input and output
     /// artifact location details.
     /// </para>
     ///  </li> <li> 
@@ -98,7 +98,7 @@ namespace Amazon.CodePipeline
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>StartPipelineExecution</a>, which runs the the most recent revision of an artifact
+    ///  <a>StartPipelineExecution</a>, which runs the most recent revision of an artifact
     /// through the pipeline.
     /// </para>
     ///  </li> <li> 
@@ -109,24 +109,24 @@ namespace Amazon.CodePipeline
     ///  </li> </ul> 
     /// <para>
     /// Pipelines include <i>stages</i>. Each stage contains one or more actions that must
-    /// complete before the next stage begins. A stage will result in success or failure.
-    /// If a stage fails, then the pipeline stops at that stage and will remain stopped until
-    /// either a new version of an artifact appears in the source location, or a user takes
-    /// action to re-run the most recent artifact through the pipeline. You can call <a>GetPipelineState</a>,
+    /// complete before the next stage begins. A stage results in success or failure. If a
+    /// stage fails, the pipeline stops at that stage and remains stopped until either a new
+    /// version of an artifact appears in the source location, or a user takes action to rerun
+    /// the most recent artifact through the pipeline. You can call <a>GetPipelineState</a>,
     /// which displays the status of a pipeline, including the status of stages in the pipeline,
     /// or <a>GetPipeline</a>, which returns the entire structure of the pipeline, including
     /// the stages of that pipeline. For more information about the structure of stages and
-    /// actions, also refer to the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS
+    /// actions, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS
     /// CodePipeline Pipeline Structure Reference</a>.
     /// </para>
     ///  
     /// <para>
-    /// Pipeline stages include <i>actions</i>, which are categorized into categories such
-    /// as source or build actions performed within a stage of a pipeline. For example, you
-    /// can use a source action to import artifacts into a pipeline from a source such as
-    /// Amazon S3. Like stages, you do not work with actions directly in most cases, but you
-    /// do define and interact with actions when working with pipeline operations such as
-    /// <a>CreatePipeline</a> and <a>GetPipelineState</a>. Valid action categories are:
+    /// Pipeline stages include <i>actions</i> that are categorized into categories such as
+    /// source or build actions performed in a stage of a pipeline. For example, you can use
+    /// a source action to import artifacts into a pipeline from a source such as Amazon S3.
+    /// Like stages, you do not work with actions directly in most cases, but you do define
+    /// and interact with actions when working with pipeline operations such as <a>CreatePipeline</a>
+    /// and <a>GetPipelineState</a>. Valid action categories are:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -178,9 +178,8 @@ namespace Amazon.CodePipeline
     ///  
     /// <para>
     /// For third-party integrators or developers who want to create their own integrations
-    /// with AWS CodePipeline, the expected sequence varies from the standard API user. In
-    /// order to integrate with AWS CodePipeline, developers will need to work with the following
-    /// items:
+    /// with AWS CodePipeline, the expected sequence varies from the standard API user. To
+    /// integrate with AWS CodePipeline, developers need to work with the following items:
     /// </para>
     ///  
     /// <para>
@@ -194,19 +193,19 @@ namespace Amazon.CodePipeline
     ///  <ul> <li> 
     /// <para>
     ///  <a>AcknowledgeJob</a>, which confirms whether a job worker has received the specified
-    /// job,
+    /// job.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>GetJobDetails</a>, which returns the details of a job,
+    ///  <a>GetJobDetails</a>, which returns the details of a job.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>PollForJobs</a>, which determines whether there are any jobs to act upon, 
+    ///  <a>PollForJobs</a>, which determines whether there are any jobs to act on.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>PutJobFailureResult</a>, which provides details of a job failure, and
+    ///  <a>PutJobFailureResult</a>, which provides details of a job failure. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -225,21 +224,21 @@ namespace Amazon.CodePipeline
     ///  <ul> <li> 
     /// <para>
     ///  <a>AcknowledgeThirdPartyJob</a>, which confirms whether a job worker has received
-    /// the specified job,
+    /// the specified job.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a>GetThirdPartyJobDetails</a>, which requests the details of a job for a partner
-    /// action,
+    /// action.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a>PollForThirdPartyJobs</a>, which determines whether there are any jobs to act
-    /// upon, 
+    /// on. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>PutThirdPartyJobFailureResult</a>, which provides details of a job failure, and
+    ///  <a>PutThirdPartyJobFailureResult</a>, which provides details of a job failure.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -256,17 +255,17 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Returns information about a specified job and whether that job has been received by
-        /// the job worker. Only used for custom actions.
+        /// the job worker. Used for custom actions only.
         /// </summary>
         /// <param name="jobId">The unique system-generated ID of the job for which you want to confirm receipt.</param>
         /// <param name="nonce">A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response of the <a>PollForJobs</a> request that returned this job.</param>
         /// 
         /// <returns>The response from the AcknowledgeJob service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidNonceException">
-        /// The specified nonce was specified in an invalid format.
+        /// The nonce was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -276,16 +275,16 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Returns information about a specified job and whether that job has been received by
-        /// the job worker. Only used for custom actions.
+        /// the job worker. Used for custom actions only.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcknowledgeJob service method.</param>
         /// 
         /// <returns>The response from the AcknowledgeJob service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidNonceException">
-        /// The specified nonce was specified in an invalid format.
+        /// The nonce was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -296,7 +295,7 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Returns information about a specified job and whether that job has been received by
-        /// the job worker. Only used for custom actions.
+        /// the job worker. Used for custom actions only.
         /// </summary>
         /// <param name="jobId">The unique system-generated ID of the job for which you want to confirm receipt.</param>
         /// <param name="nonce">A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response of the <a>PollForJobs</a> request that returned this job.</param>
@@ -306,10 +305,10 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>The response from the AcknowledgeJob service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidNonceException">
-        /// The specified nonce was specified in an invalid format.
+        /// The nonce was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -320,7 +319,7 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Returns information about a specified job and whether that job has been received by
-        /// the job worker. Only used for custom actions.
+        /// the job worker. Used for custom actions only.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcknowledgeJob service method.</param>
         /// <param name="cancellationToken">
@@ -329,10 +328,10 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>The response from the AcknowledgeJob service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidNonceException">
-        /// The specified nonce was specified in an invalid format.
+        /// The nonce was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -346,7 +345,7 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Confirms a job worker has received the specified job. Only used for partner actions.
+        /// Confirms a job worker has received the specified job. Used for partner actions only.
         /// </summary>
         /// <param name="clientToken">The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</param>
         /// <param name="jobId">The unique system-generated ID of the job.</param>
@@ -357,10 +356,10 @@ namespace Amazon.CodePipeline
         /// The client token was specified in an invalid format
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidNonceException">
-        /// The specified nonce was specified in an invalid format.
+        /// The nonce was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -369,7 +368,7 @@ namespace Amazon.CodePipeline
         AcknowledgeThirdPartyJobResponse AcknowledgeThirdPartyJob(string clientToken, string jobId, string nonce);
 
         /// <summary>
-        /// Confirms a job worker has received the specified job. Only used for partner actions.
+        /// Confirms a job worker has received the specified job. Used for partner actions only.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcknowledgeThirdPartyJob service method.</param>
         /// 
@@ -378,10 +377,10 @@ namespace Amazon.CodePipeline
         /// The client token was specified in an invalid format
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidNonceException">
-        /// The specified nonce was specified in an invalid format.
+        /// The nonce was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -391,7 +390,7 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Confirms a job worker has received the specified job. Only used for partner actions.
+        /// Confirms a job worker has received the specified job. Used for partner actions only.
         /// </summary>
         /// <param name="clientToken">The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</param>
         /// <param name="jobId">The unique system-generated ID of the job.</param>
@@ -405,10 +404,10 @@ namespace Amazon.CodePipeline
         /// The client token was specified in an invalid format
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidNonceException">
-        /// The specified nonce was specified in an invalid format.
+        /// The nonce was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -418,7 +417,7 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Confirms a job worker has received the specified job. Only used for partner actions.
+        /// Confirms a job worker has received the specified job. Used for partner actions only.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcknowledgeThirdPartyJob service method.</param>
         /// <param name="cancellationToken">
@@ -430,10 +429,10 @@ namespace Amazon.CodePipeline
         /// The client token was specified in an invalid format
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidNonceException">
-        /// The specified nonce was specified in an invalid format.
+        /// The nonce was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -526,16 +525,16 @@ namespace Amazon.CodePipeline
         /// Unable to modify the tag due to a simultaneous update request.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidActionDeclarationException">
-        /// The specified action declaration was specified in an invalid format.
+        /// The action declaration was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidBlockerDeclarationException">
         /// Reserved for future use.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidStageDeclarationException">
-        /// The specified stage declaration was specified in an invalid format.
+        /// The stage declaration was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidStructureException">
-        /// The specified structure was specified in an invalid format.
+        /// The structure was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidTagsException">
         /// The specified resource tags are invalid.
@@ -574,16 +573,16 @@ namespace Amazon.CodePipeline
         /// Unable to modify the tag due to a simultaneous update request.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidActionDeclarationException">
-        /// The specified action declaration was specified in an invalid format.
+        /// The action declaration was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidBlockerDeclarationException">
         /// Reserved for future use.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidStageDeclarationException">
-        /// The specified stage declaration was specified in an invalid format.
+        /// The stage declaration was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidStructureException">
-        /// The specified structure was specified in an invalid format.
+        /// The structure was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidTagsException">
         /// The specified resource tags are invalid.
@@ -626,16 +625,16 @@ namespace Amazon.CodePipeline
         /// Unable to modify the tag due to a simultaneous update request.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidActionDeclarationException">
-        /// The specified action declaration was specified in an invalid format.
+        /// The action declaration was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidBlockerDeclarationException">
         /// Reserved for future use.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidStageDeclarationException">
-        /// The specified stage declaration was specified in an invalid format.
+        /// The stage declaration was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidStructureException">
-        /// The specified structure was specified in an invalid format.
+        /// The structure was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidTagsException">
         /// The specified resource tags are invalid.
@@ -678,16 +677,16 @@ namespace Amazon.CodePipeline
         /// Unable to modify the tag due to a simultaneous update request.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidActionDeclarationException">
-        /// The specified action declaration was specified in an invalid format.
+        /// The action declaration was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidBlockerDeclarationException">
         /// Reserved for future use.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidStageDeclarationException">
-        /// The specified stage declaration was specified in an invalid format.
+        /// The stage declaration was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidStructureException">
-        /// The specified structure was specified in an invalid format.
+        /// The structure was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidTagsException">
         /// The specified resource tags are invalid.
@@ -714,8 +713,8 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Marks a custom action as deleted. <code>PollForJobs</code> for the custom action will
-        /// fail after the action is marked for deletion. Only used for custom actions.
+        /// Marks a custom action as deleted. <code>PollForJobs</code> for the custom action fails
+        /// after the action is marked for deletion. Used for custom actions only.
         /// 
         ///  <important> 
         /// <para>
@@ -741,8 +740,8 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Marks a custom action as deleted. <code>PollForJobs</code> for the custom action will
-        /// fail after the action is marked for deletion. Only used for custom actions.
+        /// Marks a custom action as deleted. <code>PollForJobs</code> for the custom action fails
+        /// after the action is marked for deletion. Used for custom actions only.
         /// 
         ///  <important> 
         /// <para>
@@ -848,10 +847,9 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Deletes a previously created webhook by name. Deleting the webhook stops AWS CodePipeline
-        /// from starting a pipeline every time an external event occurs. The API will return
-        /// successfully when trying to delete a webhook that is already deleted. If a deleted
-        /// webhook is re-created by calling PutWebhook with the same name, it will have a different
-        /// URL.
+        /// from starting a pipeline every time an external event occurs. The API returns successfully
+        /// when trying to delete a webhook that is already deleted. If a deleted webhook is re-created
+        /// by calling PutWebhook with the same name, it will have a different URL.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteWebhook service method.</param>
         /// 
@@ -869,10 +867,9 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Deletes a previously created webhook by name. Deleting the webhook stops AWS CodePipeline
-        /// from starting a pipeline every time an external event occurs. The API will return
-        /// successfully when trying to delete a webhook that is already deleted. If a deleted
-        /// webhook is re-created by calling PutWebhook with the same name, it will have a different
-        /// URL.
+        /// from starting a pipeline every time an external event occurs. The API returns successfully
+        /// when trying to delete a webhook that is already deleted. If a deleted webhook is re-created
+        /// by calling PutWebhook with the same name, it will have a different URL.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteWebhook service method.</param>
         /// <param name="cancellationToken">
@@ -896,7 +893,7 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Removes the connection between the webhook that was created by CodePipeline and the
-        /// external tool with events to be detected. Currently only supported for webhooks that
+        /// external tool with events to be detected. Currently supported only for webhooks that
         /// target an action type of GitHub.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterWebhookWithThirdParty service method.</param>
@@ -915,7 +912,7 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Removes the connection between the webhook that was created by CodePipeline and the
-        /// external tool with events to be detected. Currently only supported for webhooks that
+        /// external tool with events to be detected. Currently supported only for webhooks that
         /// target an action type of GitHub.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterWebhookWithThirdParty service method.</param>
@@ -945,10 +942,10 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>The response from the DisableStageTransition service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.StageNotFoundException">
-        /// The specified stage was specified in an invalid format or cannot be found.
+        /// The stage was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -968,10 +965,10 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>The response from the DisableStageTransition service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.StageNotFoundException">
-        /// The specified stage was specified in an invalid format or cannot be found.
+        /// The stage was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -991,10 +988,10 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>The response from the EnableStageTransition service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.StageNotFoundException">
-        /// The specified stage was specified in an invalid format or cannot be found.
+        /// The stage was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1014,10 +1011,10 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>The response from the EnableStageTransition service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.StageNotFoundException">
-        /// The specified stage was specified in an invalid format or cannot be found.
+        /// The stage was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1031,14 +1028,14 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Returns information about a job. Only used for custom actions.
+        /// Returns information about a job. Used for custom actions only.
         /// 
         ///  <important> 
         /// <para>
         /// When this API is called, AWS CodePipeline returns temporary credentials for the Amazon
         /// S3 bucket used to store artifacts for the pipeline, if the action requires access
-        /// to that Amazon S3 bucket for input or output artifacts. Additionally, this API returns
-        /// any secret values defined for the action.
+        /// to that Amazon S3 bucket for input or output artifacts. This API also returns any
+        /// secret values defined for the action.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1046,7 +1043,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>The response from the GetJobDetails service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1055,14 +1052,14 @@ namespace Amazon.CodePipeline
         GetJobDetailsResponse GetJobDetails(string jobId);
 
         /// <summary>
-        /// Returns information about a job. Only used for custom actions.
+        /// Returns information about a job. Used for custom actions only.
         /// 
         ///  <important> 
         /// <para>
         /// When this API is called, AWS CodePipeline returns temporary credentials for the Amazon
         /// S3 bucket used to store artifacts for the pipeline, if the action requires access
-        /// to that Amazon S3 bucket for input or output artifacts. Additionally, this API returns
-        /// any secret values defined for the action.
+        /// to that Amazon S3 bucket for input or output artifacts. This API also returns any
+        /// secret values defined for the action.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1070,7 +1067,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>The response from the GetJobDetails service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1080,14 +1077,14 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Returns information about a job. Only used for custom actions.
+        /// Returns information about a job. Used for custom actions only.
         /// 
         ///  <important> 
         /// <para>
         /// When this API is called, AWS CodePipeline returns temporary credentials for the Amazon
         /// S3 bucket used to store artifacts for the pipeline, if the action requires access
-        /// to that Amazon S3 bucket for input or output artifacts. Additionally, this API returns
-        /// any secret values defined for the action.
+        /// to that Amazon S3 bucket for input or output artifacts. This API also returns any
+        /// secret values defined for the action.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1098,7 +1095,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>The response from the GetJobDetails service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1108,14 +1105,14 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Returns information about a job. Only used for custom actions.
+        /// Returns information about a job. Used for custom actions only.
         /// 
         ///  <important> 
         /// <para>
         /// When this API is called, AWS CodePipeline returns temporary credentials for the Amazon
         /// S3 bucket used to store artifacts for the pipeline, if the action requires access
-        /// to that Amazon S3 bucket for input or output artifacts. Additionally, this API returns
-        /// any secret values defined for the action.
+        /// to that Amazon S3 bucket for input or output artifacts. This API also returns any
+        /// secret values defined for the action.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1126,7 +1123,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>The response from the GetJobDetails service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1144,15 +1141,15 @@ namespace Amazon.CodePipeline
         /// return the entire structure of a pipeline in JSON format, which can then be modified
         /// and used to update the pipeline structure with <a>UpdatePipeline</a>.
         /// </summary>
-        /// <param name="name">The name of the pipeline for which you want to get information. Pipeline names must be unique under an Amazon Web Services (AWS) user account.</param>
-        /// <param name="version">The version number of the pipeline. If you do not specify a version, defaults to the most current version.</param>
+        /// <param name="name">The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user account.</param>
+        /// <param name="version">The version number of the pipeline. If you do not specify a version, defaults to the current version.</param>
         /// 
         /// <returns>The response from the GetPipeline service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineVersionNotFoundException">
-        /// The specified pipeline version was specified in an invalid format or cannot be found.
+        /// The pipeline version was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1165,14 +1162,14 @@ namespace Amazon.CodePipeline
         /// return the entire structure of a pipeline in JSON format, which can then be modified
         /// and used to update the pipeline structure with <a>UpdatePipeline</a>.
         /// </summary>
-        /// <param name="name">The name of the pipeline for which you want to get information. Pipeline names must be unique under an Amazon Web Services (AWS) user account.</param>
+        /// <param name="name">The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user account.</param>
         /// 
         /// <returns>The response from the GetPipeline service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineVersionNotFoundException">
-        /// The specified pipeline version was specified in an invalid format or cannot be found.
+        /// The pipeline version was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1189,10 +1186,10 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>The response from the GetPipeline service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineVersionNotFoundException">
-        /// The specified pipeline version was specified in an invalid format or cannot be found.
+        /// The pipeline version was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1206,18 +1203,18 @@ namespace Amazon.CodePipeline
         /// return the entire structure of a pipeline in JSON format, which can then be modified
         /// and used to update the pipeline structure with <a>UpdatePipeline</a>.
         /// </summary>
-        /// <param name="name">The name of the pipeline for which you want to get information. Pipeline names must be unique under an Amazon Web Services (AWS) user account.</param>
-        /// <param name="version">The version number of the pipeline. If you do not specify a version, defaults to the most current version.</param>
+        /// <param name="name">The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user account.</param>
+        /// <param name="version">The version number of the pipeline. If you do not specify a version, defaults to the current version.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
         /// <returns>The response from the GetPipeline service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineVersionNotFoundException">
-        /// The specified pipeline version was specified in an invalid format or cannot be found.
+        /// The pipeline version was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1230,17 +1227,17 @@ namespace Amazon.CodePipeline
         /// return the entire structure of a pipeline in JSON format, which can then be modified
         /// and used to update the pipeline structure with <a>UpdatePipeline</a>.
         /// </summary>
-        /// <param name="name">The name of the pipeline for which you want to get information. Pipeline names must be unique under an Amazon Web Services (AWS) user account.</param>
+        /// <param name="name">The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user account.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
         /// <returns>The response from the GetPipeline service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineVersionNotFoundException">
-        /// The specified pipeline version was specified in an invalid format or cannot be found.
+        /// The pipeline version was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1261,10 +1258,10 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>The response from the GetPipeline service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineVersionNotFoundException">
-        /// The specified pipeline version was specified in an invalid format or cannot be found.
+        /// The pipeline version was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1289,7 +1286,7 @@ namespace Amazon.CodePipeline
         /// execution ID does not belong to the specified pipeline.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1314,7 +1311,7 @@ namespace Amazon.CodePipeline
         /// execution ID does not belong to the specified pipeline.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1341,7 +1338,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>The response from the GetPipelineState service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1363,7 +1360,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>The response from the GetPipelineState service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1389,7 +1386,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>The response from the GetPipelineState service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1415,7 +1412,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>The response from the GetPipelineState service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1429,14 +1426,14 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Requests the details of a job for a third party action. Only used for partner actions.
+        /// Requests the details of a job for a third party action. Used for partner actions only.
         /// 
         ///  <important> 
         /// <para>
         /// When this API is called, AWS CodePipeline returns temporary credentials for the Amazon
         /// S3 bucket used to store artifacts for the pipeline, if the action requires access
-        /// to that Amazon S3 bucket for input or output artifacts. Additionally, this API returns
-        /// any secret values defined for the action.
+        /// to that Amazon S3 bucket for input or output artifacts. This API also returns any
+        /// secret values defined for the action.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1448,10 +1445,10 @@ namespace Amazon.CodePipeline
         /// The client token was specified in an invalid format
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidJobException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1460,14 +1457,14 @@ namespace Amazon.CodePipeline
         GetThirdPartyJobDetailsResponse GetThirdPartyJobDetails(string clientToken, string jobId);
 
         /// <summary>
-        /// Requests the details of a job for a third party action. Only used for partner actions.
+        /// Requests the details of a job for a third party action. Used for partner actions only.
         /// 
         ///  <important> 
         /// <para>
         /// When this API is called, AWS CodePipeline returns temporary credentials for the Amazon
         /// S3 bucket used to store artifacts for the pipeline, if the action requires access
-        /// to that Amazon S3 bucket for input or output artifacts. Additionally, this API returns
-        /// any secret values defined for the action.
+        /// to that Amazon S3 bucket for input or output artifacts. This API also returns any
+        /// secret values defined for the action.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1478,10 +1475,10 @@ namespace Amazon.CodePipeline
         /// The client token was specified in an invalid format
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidJobException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1491,14 +1488,14 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Requests the details of a job for a third party action. Only used for partner actions.
+        /// Requests the details of a job for a third party action. Used for partner actions only.
         /// 
         ///  <important> 
         /// <para>
         /// When this API is called, AWS CodePipeline returns temporary credentials for the Amazon
         /// S3 bucket used to store artifacts for the pipeline, if the action requires access
-        /// to that Amazon S3 bucket for input or output artifacts. Additionally, this API returns
-        /// any secret values defined for the action.
+        /// to that Amazon S3 bucket for input or output artifacts. This API also returns any
+        /// secret values defined for the action.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1513,10 +1510,10 @@ namespace Amazon.CodePipeline
         /// The client token was specified in an invalid format
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidJobException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1526,14 +1523,14 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Requests the details of a job for a third party action. Only used for partner actions.
+        /// Requests the details of a job for a third party action. Used for partner actions only.
         /// 
         ///  <important> 
         /// <para>
         /// When this API is called, AWS CodePipeline returns temporary credentials for the Amazon
         /// S3 bucket used to store artifacts for the pipeline, if the action requires access
-        /// to that Amazon S3 bucket for input or output artifacts. Additionally, this API returns
-        /// any secret values defined for the action.
+        /// to that Amazon S3 bucket for input or output artifacts. This API also returns any
+        /// secret values defined for the action.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1547,10 +1544,10 @@ namespace Amazon.CodePipeline
         /// The client token was specified in an invalid format
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidJobException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1571,14 +1568,14 @@ namespace Amazon.CodePipeline
         /// <returns>The response from the ListActionExecutions service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
         /// The next token was specified in an invalid format. Make sure that the next token you
-        /// provided is the token returned by a previous call.
+        /// provide is the token returned by a previous call.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineExecutionNotFoundException">
         /// The pipeline execution was specified in an invalid format or cannot be found, or an
         /// execution ID does not belong to the specified pipeline.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1599,14 +1596,14 @@ namespace Amazon.CodePipeline
         /// <returns>The response from the ListActionExecutions service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
         /// The next token was specified in an invalid format. Make sure that the next token you
-        /// provided is the token returned by a previous call.
+        /// provide is the token returned by a previous call.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineExecutionNotFoundException">
         /// The pipeline execution was specified in an invalid format or cannot be found, or an
         /// execution ID does not belong to the specified pipeline.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1626,7 +1623,7 @@ namespace Amazon.CodePipeline
         /// <returns>The response from the ListActionTypes service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
         /// The next token was specified in an invalid format. Make sure that the next token you
-        /// provided is the token returned by a previous call.
+        /// provide is the token returned by a previous call.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1642,7 +1639,7 @@ namespace Amazon.CodePipeline
         /// <returns>The response from the ListActionTypes service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
         /// The next token was specified in an invalid format. Make sure that the next token you
-        /// provided is the token returned by a previous call.
+        /// provide is the token returned by a previous call.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1658,7 +1655,7 @@ namespace Amazon.CodePipeline
         /// <returns>The response from the ListActionTypes service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
         /// The next token was specified in an invalid format. Make sure that the next token you
-        /// provided is the token returned by a previous call.
+        /// provide is the token returned by a previous call.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1677,7 +1674,7 @@ namespace Amazon.CodePipeline
         /// <returns>The response from the ListActionTypes service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
         /// The next token was specified in an invalid format. Make sure that the next token you
-        /// provided is the token returned by a previous call.
+        /// provide is the token returned by a previous call.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1696,7 +1693,7 @@ namespace Amazon.CodePipeline
         /// <returns>The response from the ListActionTypes service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
         /// The next token was specified in an invalid format. Make sure that the next token you
-        /// provided is the token returned by a previous call.
+        /// provide is the token returned by a previous call.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1716,7 +1713,7 @@ namespace Amazon.CodePipeline
         /// <returns>The response from the ListActionTypes service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
         /// The next token was specified in an invalid format. Make sure that the next token you
-        /// provided is the token returned by a previous call.
+        /// provide is the token returned by a previous call.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1737,10 +1734,10 @@ namespace Amazon.CodePipeline
         /// <returns>The response from the ListPipelineExecutions service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
         /// The next token was specified in an invalid format. Make sure that the next token you
-        /// provided is the token returned by a previous call.
+        /// provide is the token returned by a previous call.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1761,10 +1758,10 @@ namespace Amazon.CodePipeline
         /// <returns>The response from the ListPipelineExecutions service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
         /// The next token was specified in an invalid format. Make sure that the next token you
-        /// provided is the token returned by a previous call.
+        /// provide is the token returned by a previous call.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1784,7 +1781,7 @@ namespace Amazon.CodePipeline
         /// <returns>The response from the ListPipelines service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
         /// The next token was specified in an invalid format. Make sure that the next token you
-        /// provided is the token returned by a previous call.
+        /// provide is the token returned by a previous call.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1800,7 +1797,7 @@ namespace Amazon.CodePipeline
         /// <returns>The response from the ListPipelines service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
         /// The next token was specified in an invalid format. Make sure that the next token you
-        /// provided is the token returned by a previous call.
+        /// provide is the token returned by a previous call.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1819,7 +1816,7 @@ namespace Amazon.CodePipeline
         /// <returns>The response from the ListPipelines service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
         /// The next token was specified in an invalid format. Make sure that the next token you
-        /// provided is the token returned by a previous call.
+        /// provide is the token returned by a previous call.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1839,7 +1836,7 @@ namespace Amazon.CodePipeline
         /// <returns>The response from the ListPipelines service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
         /// The next token was specified in an invalid format. Make sure that the next token you
-        /// provided is the token returned by a previous call.
+        /// provide is the token returned by a previous call.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1853,7 +1850,7 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Gets the set of key/value pairs (metadata) that are used to manage the resource.
+        /// Gets the set of key-value pairs (metadata) that are used to manage the resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -1863,10 +1860,10 @@ namespace Amazon.CodePipeline
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
         /// The next token was specified in an invalid format. Make sure that the next token you
-        /// provided is the token returned by a previous call.
+        /// provide is the token returned by a previous call.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ResourceNotFoundException">
-        /// The specified resource was specified in an invalid format.
+        /// The resource was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1877,7 +1874,7 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Gets the set of key/value pairs (metadata) that are used to manage the resource.
+        /// Gets the set of key-value pairs (metadata) that are used to manage the resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -1890,10 +1887,10 @@ namespace Amazon.CodePipeline
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
         /// The next token was specified in an invalid format. Make sure that the next token you
-        /// provided is the token returned by a previous call.
+        /// provide is the token returned by a previous call.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ResourceNotFoundException">
-        /// The specified resource was specified in an invalid format.
+        /// The resource was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1907,16 +1904,16 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Gets a listing of all the webhooks in this region for this account. The output lists
-        /// all webhooks and includes the webhook URL and ARN, as well the configuration for each
-        /// webhook.
+        /// Gets a listing of all the webhooks in this AWS Region for this account. The output
+        /// lists all webhooks and includes the webhook URL and ARN and the configuration for
+        /// each webhook.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWebhooks service method.</param>
         /// 
         /// <returns>The response from the ListWebhooks service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
         /// The next token was specified in an invalid format. Make sure that the next token you
-        /// provided is the token returned by a previous call.
+        /// provide is the token returned by a previous call.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1927,9 +1924,9 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Gets a listing of all the webhooks in this region for this account. The output lists
-        /// all webhooks and includes the webhook URL and ARN, as well the configuration for each
-        /// webhook.
+        /// Gets a listing of all the webhooks in this AWS Region for this account. The output
+        /// lists all webhooks and includes the webhook URL and ARN and the configuration for
+        /// each webhook.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWebhooks service method.</param>
         /// <param name="cancellationToken">
@@ -1939,7 +1936,7 @@ namespace Amazon.CodePipeline
         /// <returns>The response from the ListWebhooks service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
         /// The next token was specified in an invalid format. Make sure that the next token you
-        /// provided is the token returned by a previous call.
+        /// provide is the token returned by a previous call.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -1953,8 +1950,8 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Returns information about any jobs for AWS CodePipeline to act upon. <code>PollForJobs</code>
-        /// is only valid for action types with "Custom" in the owner field. If the action type
+        /// Returns information about any jobs for AWS CodePipeline to act on. <code>PollForJobs</code>
+        /// is valid only for action types with "Custom" in the owner field. If the action type
         /// contains "AWS" or "ThirdParty" in the owner field, the <code>PollForJobs</code> action
         /// returns an error.
         /// 
@@ -1962,8 +1959,8 @@ namespace Amazon.CodePipeline
         /// <para>
         /// When this API is called, AWS CodePipeline returns temporary credentials for the Amazon
         /// S3 bucket used to store artifacts for the pipeline, if the action requires access
-        /// to that Amazon S3 bucket for input or output artifacts. Additionally, this API returns
-        /// any secret values defined for the action.
+        /// to that Amazon S3 bucket for input or output artifacts. This API also returns any
+        /// secret values defined for the action.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1982,8 +1979,8 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Returns information about any jobs for AWS CodePipeline to act upon. <code>PollForJobs</code>
-        /// is only valid for action types with "Custom" in the owner field. If the action type
+        /// Returns information about any jobs for AWS CodePipeline to act on. <code>PollForJobs</code>
+        /// is valid only for action types with "Custom" in the owner field. If the action type
         /// contains "AWS" or "ThirdParty" in the owner field, the <code>PollForJobs</code> action
         /// returns an error.
         /// 
@@ -1991,8 +1988,8 @@ namespace Amazon.CodePipeline
         /// <para>
         /// When this API is called, AWS CodePipeline returns temporary credentials for the Amazon
         /// S3 bucket used to store artifacts for the pipeline, if the action requires access
-        /// to that Amazon S3 bucket for input or output artifacts. Additionally, this API returns
-        /// any secret values defined for the action.
+        /// to that Amazon S3 bucket for input or output artifacts. This API also returns any
+        /// secret values defined for the action.
         /// </para>
         ///  </important>
         /// </summary>
@@ -2017,8 +2014,8 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Determines whether there are any third party jobs for a job worker to act on. Only
-        /// used for partner actions.
+        /// Determines whether there are any third party jobs for a job worker to act on. Used
+        /// for partner actions only.
         /// 
         ///  <important> 
         /// <para>
@@ -2043,8 +2040,8 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Determines whether there are any third party jobs for a job worker to act on. Only
-        /// used for partner actions.
+        /// Determines whether there are any third party jobs for a job worker to act on. Used
+        /// for partner actions only.
         /// 
         ///  <important> 
         /// <para>
@@ -2084,10 +2081,10 @@ namespace Amazon.CodePipeline
         /// The specified action cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.StageNotFoundException">
-        /// The specified stage was specified in an invalid format or cannot be found.
+        /// The stage was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -2110,10 +2107,10 @@ namespace Amazon.CodePipeline
         /// The specified action cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.StageNotFoundException">
-        /// The specified stage was specified in an invalid format or cannot be found.
+        /// The stage was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -2143,10 +2140,10 @@ namespace Amazon.CodePipeline
         /// The approval request already received a response or has expired.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.StageNotFoundException">
-        /// The specified stage was specified in an invalid format or cannot be found.
+        /// The stage was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -2176,10 +2173,10 @@ namespace Amazon.CodePipeline
         /// The approval request already received a response or has expired.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.StageNotFoundException">
-        /// The specified stage was specified in an invalid format or cannot be found.
+        /// The stage was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -2193,18 +2190,18 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Represents the failure of a job as returned to the pipeline by a job worker. Only
-        /// used for custom actions.
+        /// Represents the failure of a job as returned to the pipeline by a job worker. Used
+        /// for custom actions only.
         /// </summary>
         /// <param name="jobId">The unique system-generated ID of the job that failed. This is the same ID returned from <code>PollForJobs</code>.</param>
         /// <param name="failureDetails">The details about the failure of a job.</param>
         /// 
         /// <returns>The response from the PutJobFailureResult service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidJobStateException">
-        /// The specified job state was specified in an invalid format.
+        /// The job state was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -2213,17 +2210,17 @@ namespace Amazon.CodePipeline
         PutJobFailureResultResponse PutJobFailureResult(string jobId, FailureDetails failureDetails);
 
         /// <summary>
-        /// Represents the failure of a job as returned to the pipeline by a job worker. Only
-        /// used for custom actions.
+        /// Represents the failure of a job as returned to the pipeline by a job worker. Used
+        /// for custom actions only.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutJobFailureResult service method.</param>
         /// 
         /// <returns>The response from the PutJobFailureResult service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidJobStateException">
-        /// The specified job state was specified in an invalid format.
+        /// The job state was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -2233,8 +2230,8 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Represents the failure of a job as returned to the pipeline by a job worker. Only
-        /// used for custom actions.
+        /// Represents the failure of a job as returned to the pipeline by a job worker. Used
+        /// for custom actions only.
         /// </summary>
         /// <param name="jobId">The unique system-generated ID of the job that failed. This is the same ID returned from <code>PollForJobs</code>.</param>
         /// <param name="failureDetails">The details about the failure of a job.</param>
@@ -2244,10 +2241,10 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>The response from the PutJobFailureResult service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidJobStateException">
-        /// The specified job state was specified in an invalid format.
+        /// The job state was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -2257,8 +2254,8 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Represents the failure of a job as returned to the pipeline by a job worker. Only
-        /// used for custom actions.
+        /// Represents the failure of a job as returned to the pipeline by a job worker. Used
+        /// for custom actions only.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutJobFailureResult service method.</param>
         /// <param name="cancellationToken">
@@ -2267,10 +2264,10 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>The response from the PutJobFailureResult service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidJobStateException">
-        /// The specified job state was specified in an invalid format.
+        /// The job state was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -2284,17 +2281,17 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Represents the success of a job as returned to the pipeline by a job worker. Only
-        /// used for custom actions.
+        /// Represents the success of a job as returned to the pipeline by a job worker. Used
+        /// for custom actions only.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutJobSuccessResult service method.</param>
         /// 
         /// <returns>The response from the PutJobSuccessResult service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidJobStateException">
-        /// The specified job state was specified in an invalid format.
+        /// The job state was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -2305,8 +2302,8 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Represents the success of a job as returned to the pipeline by a job worker. Only
-        /// used for custom actions.
+        /// Represents the success of a job as returned to the pipeline by a job worker. Used
+        /// for custom actions only.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutJobSuccessResult service method.</param>
         /// <param name="cancellationToken">
@@ -2315,10 +2312,10 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>The response from the PutJobSuccessResult service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidJobStateException">
-        /// The specified job state was specified in an invalid format.
+        /// The job state was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -2333,7 +2330,7 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Represents the failure of a third party job as returned to the pipeline by a job worker.
-        /// Only used for partner actions.
+        /// Used for partner actions only.
         /// </summary>
         /// <param name="jobId">The ID of the job that failed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.</param>
         /// <param name="clientToken">The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</param>
@@ -2344,10 +2341,10 @@ namespace Amazon.CodePipeline
         /// The client token was specified in an invalid format
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidJobStateException">
-        /// The specified job state was specified in an invalid format.
+        /// The job state was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -2357,7 +2354,7 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Represents the failure of a third party job as returned to the pipeline by a job worker.
-        /// Only used for partner actions.
+        /// Used for partner actions only.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutThirdPartyJobFailureResult service method.</param>
         /// 
@@ -2366,10 +2363,10 @@ namespace Amazon.CodePipeline
         /// The client token was specified in an invalid format
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidJobStateException">
-        /// The specified job state was specified in an invalid format.
+        /// The job state was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -2380,7 +2377,7 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Represents the failure of a third party job as returned to the pipeline by a job worker.
-        /// Only used for partner actions.
+        /// Used for partner actions only.
         /// </summary>
         /// <param name="jobId">The ID of the job that failed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.</param>
         /// <param name="clientToken">The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</param>
@@ -2394,10 +2391,10 @@ namespace Amazon.CodePipeline
         /// The client token was specified in an invalid format
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidJobStateException">
-        /// The specified job state was specified in an invalid format.
+        /// The job state was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -2408,7 +2405,7 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Represents the failure of a third party job as returned to the pipeline by a job worker.
-        /// Only used for partner actions.
+        /// Used for partner actions only.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutThirdPartyJobFailureResult service method.</param>
         /// <param name="cancellationToken">
@@ -2420,10 +2417,10 @@ namespace Amazon.CodePipeline
         /// The client token was specified in an invalid format
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidJobStateException">
-        /// The specified job state was specified in an invalid format.
+        /// The job state was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -2438,7 +2435,7 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Represents the success of a third party job as returned to the pipeline by a job worker.
-        /// Only used for partner actions.
+        /// Used for partner actions only.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutThirdPartyJobSuccessResult service method.</param>
         /// 
@@ -2447,10 +2444,10 @@ namespace Amazon.CodePipeline
         /// The client token was specified in an invalid format
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidJobStateException">
-        /// The specified job state was specified in an invalid format.
+        /// The job state was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -2462,7 +2459,7 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Represents the success of a third party job as returned to the pipeline by a job worker.
-        /// Only used for partner actions.
+        /// Used for partner actions only.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutThirdPartyJobSuccessResult service method.</param>
         /// <param name="cancellationToken">
@@ -2474,10 +2471,10 @@ namespace Amazon.CodePipeline
         /// The client token was specified in an invalid format
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidJobStateException">
-        /// The specified job state was specified in an invalid format.
+        /// The job state was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
-        /// The specified job was specified in an invalid format or cannot be found.
+        /// The job was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -2519,7 +2516,7 @@ namespace Amazon.CodePipeline
         /// for the account.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.TooManyTagsException">
         /// The tags limit for a resource has been exceeded.
@@ -2564,7 +2561,7 @@ namespace Amazon.CodePipeline
         /// for the account.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.TooManyTagsException">
         /// The tags limit for a resource has been exceeded.
@@ -2623,7 +2620,10 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Resumes the pipeline execution by retrying the last failed actions in a stage.
+        /// Resumes the pipeline execution by retrying the last failed actions in a stage. You
+        /// can retry a stage immediately if any of the actions in the stage fail. When you retry,
+        /// all actions that are still in progress continue working, and failed actions are triggered
+        /// again.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RetryStageExecution service method.</param>
         /// 
@@ -2633,15 +2633,14 @@ namespace Amazon.CodePipeline
         /// with the request is out of date.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.StageNotFoundException">
-        /// The specified stage was specified in an invalid format or cannot be found.
+        /// The stage was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.StageNotRetryableException">
-        /// The specified stage can't be retried because the pipeline structure or stage state
-        /// changed after the stage was not completed; the stage contains no failed actions; one
-        /// or more actions are still in progress; or another retry attempt is already in progress.
+        /// Unable to retry. The pipeline structure or stage state might have changed while actions
+        /// awaited retry, or the stage contains no failed actions.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -2652,7 +2651,10 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Resumes the pipeline execution by retrying the last failed actions in a stage.
+        /// Resumes the pipeline execution by retrying the last failed actions in a stage. You
+        /// can retry a stage immediately if any of the actions in the stage fail. When you retry,
+        /// all actions that are still in progress continue working, and failed actions are triggered
+        /// again.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RetryStageExecution service method.</param>
         /// <param name="cancellationToken">
@@ -2665,15 +2667,14 @@ namespace Amazon.CodePipeline
         /// with the request is out of date.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.StageNotFoundException">
-        /// The specified stage was specified in an invalid format or cannot be found.
+        /// The stage was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.StageNotRetryableException">
-        /// The specified stage can't be retried because the pipeline structure or stage state
-        /// changed after the stage was not completed; the stage contains no failed actions; one
-        /// or more actions are still in progress; or another retry attempt is already in progress.
+        /// Unable to retry. The pipeline structure or stage state might have changed while actions
+        /// awaited retry, or the stage contains no failed actions.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -2694,7 +2695,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>The response from the StartPipelineExecution service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -2710,7 +2711,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>The response from the StartPipelineExecution service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -2730,7 +2731,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>The response from the StartPipelineExecution service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -2750,7 +2751,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>The response from the StartPipelineExecution service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
-        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -2780,7 +2781,7 @@ namespace Amazon.CodePipeline
         /// The specified resource tags are invalid.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ResourceNotFoundException">
-        /// The specified resource was specified in an invalid format.
+        /// The resource was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.TooManyTagsException">
         /// The tags limit for a resource has been exceeded.
@@ -2813,7 +2814,7 @@ namespace Amazon.CodePipeline
         /// The specified resource tags are invalid.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ResourceNotFoundException">
-        /// The specified resource was specified in an invalid format.
+        /// The resource was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.TooManyTagsException">
         /// The tags limit for a resource has been exceeded.
@@ -2845,7 +2846,7 @@ namespace Amazon.CodePipeline
         /// The specified resource tags are invalid.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ResourceNotFoundException">
-        /// The specified resource was specified in an invalid format.
+        /// The resource was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -2874,7 +2875,7 @@ namespace Amazon.CodePipeline
         /// The specified resource tags are invalid.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ResourceNotFoundException">
-        /// The specified resource was specified in an invalid format.
+        /// The resource was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -2889,24 +2890,24 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Updates a specified pipeline with edits or changes to its structure. Use a JSON file
-        /// with the pipeline structure in conjunction with <code>UpdatePipeline</code> to provide
-        /// the full structure of the pipeline. Updating the pipeline increases the version number
-        /// of the pipeline by 1.
+        /// with the pipeline structure and <code>UpdatePipeline</code> to provide the full structure
+        /// of the pipeline. Updating the pipeline increases the version number of the pipeline
+        /// by 1.
         /// </summary>
         /// <param name="pipeline">The name of the pipeline to be updated.</param>
         /// 
         /// <returns>The response from the UpdatePipeline service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidActionDeclarationException">
-        /// The specified action declaration was specified in an invalid format.
+        /// The action declaration was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidBlockerDeclarationException">
         /// Reserved for future use.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidStageDeclarationException">
-        /// The specified stage declaration was specified in an invalid format.
+        /// The stage declaration was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidStructureException">
-        /// The specified structure was specified in an invalid format.
+        /// The structure was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.LimitExceededException">
         /// The number of pipelines associated with the AWS account has exceeded the limit allowed
@@ -2920,24 +2921,24 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Updates a specified pipeline with edits or changes to its structure. Use a JSON file
-        /// with the pipeline structure in conjunction with <code>UpdatePipeline</code> to provide
-        /// the full structure of the pipeline. Updating the pipeline increases the version number
-        /// of the pipeline by 1.
+        /// with the pipeline structure and <code>UpdatePipeline</code> to provide the full structure
+        /// of the pipeline. Updating the pipeline increases the version number of the pipeline
+        /// by 1.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePipeline service method.</param>
         /// 
         /// <returns>The response from the UpdatePipeline service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidActionDeclarationException">
-        /// The specified action declaration was specified in an invalid format.
+        /// The action declaration was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidBlockerDeclarationException">
         /// Reserved for future use.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidStageDeclarationException">
-        /// The specified stage declaration was specified in an invalid format.
+        /// The stage declaration was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidStructureException">
-        /// The specified structure was specified in an invalid format.
+        /// The structure was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.LimitExceededException">
         /// The number of pipelines associated with the AWS account has exceeded the limit allowed
@@ -2952,9 +2953,9 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Updates a specified pipeline with edits or changes to its structure. Use a JSON file
-        /// with the pipeline structure in conjunction with <code>UpdatePipeline</code> to provide
-        /// the full structure of the pipeline. Updating the pipeline increases the version number
-        /// of the pipeline by 1.
+        /// with the pipeline structure and <code>UpdatePipeline</code> to provide the full structure
+        /// of the pipeline. Updating the pipeline increases the version number of the pipeline
+        /// by 1.
         /// </summary>
         /// <param name="pipeline">The name of the pipeline to be updated.</param>
         /// <param name="cancellationToken">
@@ -2963,16 +2964,16 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>The response from the UpdatePipeline service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidActionDeclarationException">
-        /// The specified action declaration was specified in an invalid format.
+        /// The action declaration was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidBlockerDeclarationException">
         /// Reserved for future use.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidStageDeclarationException">
-        /// The specified stage declaration was specified in an invalid format.
+        /// The stage declaration was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidStructureException">
-        /// The specified structure was specified in an invalid format.
+        /// The structure was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.LimitExceededException">
         /// The number of pipelines associated with the AWS account has exceeded the limit allowed
@@ -2987,9 +2988,9 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Updates a specified pipeline with edits or changes to its structure. Use a JSON file
-        /// with the pipeline structure in conjunction with <code>UpdatePipeline</code> to provide
-        /// the full structure of the pipeline. Updating the pipeline increases the version number
-        /// of the pipeline by 1.
+        /// with the pipeline structure and <code>UpdatePipeline</code> to provide the full structure
+        /// of the pipeline. Updating the pipeline increases the version number of the pipeline
+        /// by 1.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePipeline service method.</param>
         /// <param name="cancellationToken">
@@ -2998,16 +2999,16 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>The response from the UpdatePipeline service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidActionDeclarationException">
-        /// The specified action declaration was specified in an invalid format.
+        /// The action declaration was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidBlockerDeclarationException">
         /// Reserved for future use.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidStageDeclarationException">
-        /// The specified stage declaration was specified in an invalid format.
+        /// The stage declaration was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidStructureException">
-        /// The specified structure was specified in an invalid format.
+        /// The structure was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.LimitExceededException">
         /// The number of pipelines associated with the AWS account has exceeded the limit allowed

@@ -30,7 +30,7 @@ namespace Amazon.CodePipeline.Model
     /// <summary>
     /// Container for the parameters to the AcknowledgeJob operation.
     /// Returns information about a specified job and whether that job has been received by
-    /// the job worker. Only used for custom actions.
+    /// the job worker. Used for custom actions only.
     /// </summary>
     public partial class AcknowledgeJobRequest : AmazonCodePipelineRequest
     {

@@ -41,7 +41,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property ActionName. 
         /// <para>
-        /// The name of the action that will process the revision.
+        /// The name of the action that processes the revision.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -79,7 +79,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property PipelineName. 
         /// <para>
-        /// The name of the pipeline that will start processing the revision to the source.
+        /// The name of the pipeline that starts processing the revision to the source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -98,7 +98,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property StageName. 
         /// <para>
-        /// The name of the stage that contains the action that will act upon the revision.
+        /// The name of the stage that contains the action that acts on the revision.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
