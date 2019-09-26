@@ -1,3 +1,14 @@
+### 3.3.595.0 (2019-09-26 18:13 UTC)
+* CodePipeline (3.3.103.12)
+	* Documentation updates for CodePipeline
+* SimpleSystemsManagement (3.3.107.0)
+	* This release updates the AWS Systems Manager Parameter Store PutParameter and LabelParameterVersion APIs to return the "Tier" of parameter created/updated and the "parameter version" labeled respectively. 
+* Core 3.3.103.44
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.594.0 (2019-09-25 18:23 UTC)
 * DatabaseMigrationService (3.3.102.0)
 	* This release adds a new DeleteConnection API to delete the connection between a replication instance and an endpoint. It also adds an optional S3 setting to specify the precision of any TIMESTAMP column values written to an S3 object file in .parquet format.

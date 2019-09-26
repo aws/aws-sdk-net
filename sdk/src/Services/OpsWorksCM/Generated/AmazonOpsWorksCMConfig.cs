@@ -32,7 +32,7 @@ namespace Amazon.OpsWorksCM
     public partial class AmazonOpsWorksCMConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.101.20");
+            InternalSDKUtils.BuildUserAgentString("3.3.101.21");
 
         private string _userAgent = UserAgentString;
 
