@@ -389,7 +389,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  </li> </ul> 
         /// <para>
         /// For more information about configuring the default tier option, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
-        /// a Default Parameter Tier</a> in the AWS Systems Manager User Guide.
+        /// a Default Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         public ParameterTier Tier

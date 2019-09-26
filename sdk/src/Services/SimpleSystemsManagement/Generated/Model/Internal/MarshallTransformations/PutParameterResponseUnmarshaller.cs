@@ -51,6 +51,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Tier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Tier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Version", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

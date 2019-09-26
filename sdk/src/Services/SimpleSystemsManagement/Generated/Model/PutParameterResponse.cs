@@ -32,7 +32,26 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class PutParameterResponse : AmazonWebServiceResponse
     {
+        private ParameterTier _tier;
         private long? _version;
+
+        /// <summary>
+        /// Gets and sets the property Tier. 
+        /// <para>
+        /// The tier assigned to the parameter.
+        /// </para>
+        /// </summary>
+        public ParameterTier Tier
+        {
+            get { return this._tier; }
+            set { this._tier = value; }
+        }
+
+        // Check to see if Tier property is set
+        internal bool IsSetTier()
+        {
+            return this._tier != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Version. 
