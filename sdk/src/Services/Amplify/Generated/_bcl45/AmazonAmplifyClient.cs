@@ -981,6 +981,75 @@ namespace Amazon.Amplify
 
         #endregion
         
+        #region  GenerateAccessLogs
+
+
+        /// <summary>
+        /// Retrieve website access logs for a specific time range via a pre-signed URL. Optionally,
+        /// deliver the logs to a given S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GenerateAccessLogs service method.</param>
+        /// 
+        /// <returns>The response from the GenerateAccessLogs service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GenerateAccessLogs">REST API Reference for GenerateAccessLogs Operation</seealso>
+        public virtual GenerateAccessLogsResponse GenerateAccessLogs(GenerateAccessLogsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GenerateAccessLogsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GenerateAccessLogsResponseUnmarshaller.Instance;
+
+            return Invoke<GenerateAccessLogsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieve website access logs for a specific time range via a pre-signed URL. Optionally,
+        /// deliver the logs to a given S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GenerateAccessLogs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GenerateAccessLogs service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GenerateAccessLogs">REST API Reference for GenerateAccessLogs Operation</seealso>
+        public virtual Task<GenerateAccessLogsResponse> GenerateAccessLogsAsync(GenerateAccessLogsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GenerateAccessLogsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GenerateAccessLogsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GenerateAccessLogsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetApp
 
 
@@ -1044,6 +1113,79 @@ namespace Amazon.Amplify
             options.ResponseUnmarshaller = GetAppResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetAppResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetArtifactUrl
+
+
+        /// <summary>
+        /// Retrieves artifact info that corresponds to a artifactId.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetArtifactUrl service method.</param>
+        /// 
+        /// <returns>The response from the GetArtifactUrl service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
+        /// Exception thrown when a resource could not be created because of service limits.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetArtifactUrl">REST API Reference for GetArtifactUrl Operation</seealso>
+        public virtual GetArtifactUrlResponse GetArtifactUrl(GetArtifactUrlRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetArtifactUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetArtifactUrlResponseUnmarshaller.Instance;
+
+            return Invoke<GetArtifactUrlResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves artifact info that corresponds to a artifactId.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetArtifactUrl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetArtifactUrl service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
+        /// Exception thrown when a resource could not be created because of service limits.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetArtifactUrl">REST API Reference for GetArtifactUrl Operation</seealso>
+        public virtual Task<GetArtifactUrlResponse> GetArtifactUrlAsync(GetArtifactUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetArtifactUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetArtifactUrlResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetArtifactUrlResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1385,6 +1527,73 @@ namespace Amazon.Amplify
             options.ResponseUnmarshaller = ListAppsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListAppsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListArtifacts
+
+
+        /// <summary>
+        /// List artifacts with an app, a branch, a job and an artifact type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListArtifacts service method.</param>
+        /// 
+        /// <returns>The response from the ListArtifacts service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
+        /// Exception thrown when a resource could not be created because of service limits.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListArtifacts">REST API Reference for ListArtifacts Operation</seealso>
+        public virtual ListArtifactsResponse ListArtifacts(ListArtifactsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListArtifactsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListArtifactsResponseUnmarshaller.Instance;
+
+            return Invoke<ListArtifactsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// List artifacts with an app, a branch, a job and an artifact type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListArtifacts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListArtifacts service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
+        /// Exception thrown when a resource could not be created because of service limits.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListArtifacts">REST API Reference for ListArtifacts Operation</seealso>
+        public virtual Task<ListArtifactsResponse> ListArtifactsAsync(ListArtifactsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListArtifactsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListArtifactsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListArtifactsResponse>(request, options, cancellationToken);
         }
 
         #endregion

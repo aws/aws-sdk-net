@@ -151,9 +151,34 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Amplify.Model.GenerateAccessLogsRequest.AppId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.GenerateAccessLogsRequest.DomainName</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.GenerateAccessLogsResponse.LogUrl</property>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Amplify.Model.GetAppRequest.AppId</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.GetArtifactUrlRequest.ArtifactId</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.GetArtifactUrlResponse.ArtifactId</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.GetArtifactUrlResponse.ArtifactUrl</property>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.GetBranchRequest.AppId</property>
@@ -203,6 +228,33 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListAppsResponse.NextToken</property>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.ListArtifactsRequest.AppId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.ListArtifactsRequest.BranchName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.ListArtifactsRequest.JobId</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.ListArtifactsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.ListArtifactsRequest.NextToken</property>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.ListArtifactsResponse.NextToken</property>
     <max>2000</max>
   </property-value-rule>
   <property-value-rule>
@@ -357,6 +409,11 @@
     <pattern>^arn:aws:amplify:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Amplify.Model.UpdateAppRequest.AccessToken</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateAppRequest.AppId</property>
     <min>1</min>
     <max>255</max>
@@ -383,6 +440,14 @@
     <property>Amazon.Amplify.Model.UpdateAppRequest.Name</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.UpdateAppRequest.OauthToken</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.UpdateAppRequest.Repository</property>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateBranchRequest.AppId</property>
@@ -479,6 +544,14 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Amplify.Model.Artifact.ArtifactFileName</property>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.Artifact.ArtifactId</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Amplify.Model.AutoBranchCreationConfig.BasicAuthCredentials</property>
     <max>2000</max>
   </property-value-rule>
@@ -522,11 +595,21 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Amplify.Model.Branch.DestinationBranch</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Amplify.Model.Branch.DisplayName</property>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.Branch.Framework</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.Branch.SourceBranch</property>
+    <min>1</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -551,7 +634,7 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.CustomRule.Status</property>
     <min>3</min>
-    <max>3</max>
+    <max>7</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CustomRule.Target</property>
@@ -618,7 +701,7 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.ProductionBranch.Status</property>
     <min>3</min>
-    <max>3</max>
+    <max>7</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.ProductionBranch.ThumbnailUrl</property>
@@ -644,6 +727,14 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.Step.StepName</property>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.Step.TestArtifactsUrl</property>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.Step.TestConfigUrl</property>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.SubDomain.DnsRecord</property>

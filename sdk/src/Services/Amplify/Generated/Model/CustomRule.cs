@@ -81,7 +81,7 @@ namespace Amazon.Amplify.Model
         ///  The status code for a URL rewrite or redirect rule. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=3)]
+        [AWSProperty(Min=3, Max=7)]
         public string Status
         {
             get { return this._status; }

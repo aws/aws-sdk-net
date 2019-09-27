@@ -118,6 +118,18 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                     unmarshalledObject.StepName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("testArtifactsUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TestArtifactsUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("testConfigUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TestConfigUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

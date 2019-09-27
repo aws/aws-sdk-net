@@ -88,6 +88,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                     unmarshalledObject.EnableBasicAuth = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("enablePullRequestPreview", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EnablePullRequestPreview = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("environmentVariables", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

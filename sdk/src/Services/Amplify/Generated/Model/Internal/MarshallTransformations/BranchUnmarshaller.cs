@@ -118,6 +118,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("destinationBranch", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DestinationBranch = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("displayName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -142,6 +148,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                     unmarshalledObject.EnableNotification = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("enablePullRequestPreview", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EnablePullRequestPreview = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("environmentVariables", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
@@ -152,6 +164,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Framework = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sourceBranch", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceBranch = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("stage", targetDepth))

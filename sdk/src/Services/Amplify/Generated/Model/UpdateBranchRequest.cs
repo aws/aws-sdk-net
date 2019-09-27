@@ -42,6 +42,7 @@ namespace Amazon.Amplify.Model
         private bool? _enableAutoBuild;
         private bool? _enableBasicAuth;
         private bool? _enableNotification;
+        private bool? _enablePullRequestPreview;
         private Dictionary<string, string> _environmentVariables = new Dictionary<string, string>();
         private string _framework;
         private Stage _stage;
@@ -213,6 +214,24 @@ namespace Amazon.Amplify.Model
         internal bool IsSetEnableNotification()
         {
             return this._enableNotification.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnablePullRequestPreview. 
+        /// <para>
+        ///  Enables Pull Request Preview for this branch. 
+        /// </para>
+        /// </summary>
+        public bool EnablePullRequestPreview
+        {
+            get { return this._enablePullRequestPreview.GetValueOrDefault(); }
+            set { this._enablePullRequestPreview = value; }
+        }
+
+        // Check to see if EnablePullRequestPreview property is set
+        internal bool IsSetEnablePullRequestPreview()
+        {
+            return this._enablePullRequestPreview.HasValue; 
         }
 
         /// <summary>

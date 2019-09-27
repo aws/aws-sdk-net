@@ -41,6 +41,8 @@ namespace Amazon.Amplify.Model
         private JobStatus _status;
         private string _statusReason;
         private string _stepName;
+        private string _testArtifactsUrl;
+        private string _testConfigUrl;
 
         /// <summary>
         /// Gets and sets the property ArtifactsUrl. 
@@ -209,6 +211,44 @@ namespace Amazon.Amplify.Model
         internal bool IsSetStepName()
         {
             return this._stepName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TestArtifactsUrl. 
+        /// <para>
+        ///  URL to the test artifact for the execution step. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1000)]
+        public string TestArtifactsUrl
+        {
+            get { return this._testArtifactsUrl; }
+            set { this._testArtifactsUrl = value; }
+        }
+
+        // Check to see if TestArtifactsUrl property is set
+        internal bool IsSetTestArtifactsUrl()
+        {
+            return this._testArtifactsUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TestConfigUrl. 
+        /// <para>
+        ///  URL to the test config for the execution step. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1000)]
+        public string TestConfigUrl
+        {
+            get { return this._testConfigUrl; }
+            set { this._testConfigUrl = value; }
+        }
+
+        // Check to see if TestConfigUrl property is set
+        internal bool IsSetTestConfigUrl()
+        {
+            return this._testConfigUrl != null;
         }
 
     }

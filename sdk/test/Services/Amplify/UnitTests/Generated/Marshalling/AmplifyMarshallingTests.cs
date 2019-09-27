@@ -364,6 +364,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Amplify")]
+        public void GenerateAccessLogsMarshallTest()
+        {
+            var operation = service_model.FindOperation("GenerateAccessLogs");
+
+            var request = InstantiateClassGenerator.Execute<GenerateAccessLogsRequest>();
+            var marshaller = new GenerateAccessLogsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GenerateAccessLogs", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GenerateAccessLogsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GenerateAccessLogsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Amplify")]
         public void GetAppMarshallTest()
         {
             var operation = service_model.FindOperation("GetApp");
@@ -388,6 +420,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = GetAppResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as GetAppResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Amplify")]
+        public void GetArtifactUrlMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetArtifactUrl");
+
+            var request = InstantiateClassGenerator.Execute<GetArtifactUrlRequest>();
+            var marshaller = new GetArtifactUrlRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetArtifactUrl", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetArtifactUrlResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetArtifactUrlResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -548,6 +612,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = ListAppsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as ListAppsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Amplify")]
+        public void ListArtifactsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListArtifacts");
+
+            var request = InstantiateClassGenerator.Execute<ListArtifactsRequest>();
+            var marshaller = new ListArtifactsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListArtifacts", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListArtifactsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListArtifactsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

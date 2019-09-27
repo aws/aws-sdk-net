@@ -602,6 +602,60 @@ namespace Amazon.Amplify
 
         #endregion
         
+        #region  GenerateAccessLogs
+
+
+        /// <summary>
+        /// Retrieve website access logs for a specific time range via a pre-signed URL. Optionally,
+        /// deliver the logs to a given S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GenerateAccessLogs service method.</param>
+        /// 
+        /// <returns>The response from the GenerateAccessLogs service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GenerateAccessLogs">REST API Reference for GenerateAccessLogs Operation</seealso>
+        GenerateAccessLogsResponse GenerateAccessLogs(GenerateAccessLogsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GenerateAccessLogs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GenerateAccessLogs operation on AmazonAmplifyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGenerateAccessLogs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GenerateAccessLogs">REST API Reference for GenerateAccessLogs Operation</seealso>
+        IAsyncResult BeginGenerateAccessLogs(GenerateAccessLogsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GenerateAccessLogs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGenerateAccessLogs.</param>
+        /// 
+        /// <returns>Returns a  GenerateAccessLogsResult from Amplify.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GenerateAccessLogs">REST API Reference for GenerateAccessLogs Operation</seealso>
+        GenerateAccessLogsResponse EndGenerateAccessLogs(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetApp
 
 
@@ -652,6 +706,62 @@ namespace Amazon.Amplify
         /// <returns>Returns a  GetAppResult from Amplify.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetApp">REST API Reference for GetApp Operation</seealso>
         GetAppResponse EndGetApp(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetArtifactUrl
+
+
+        /// <summary>
+        /// Retrieves artifact info that corresponds to a artifactId.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetArtifactUrl service method.</param>
+        /// 
+        /// <returns>The response from the GetArtifactUrl service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
+        /// Exception thrown when a resource could not be created because of service limits.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetArtifactUrl">REST API Reference for GetArtifactUrl Operation</seealso>
+        GetArtifactUrlResponse GetArtifactUrl(GetArtifactUrlRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetArtifactUrl operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetArtifactUrl operation on AmazonAmplifyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetArtifactUrl
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetArtifactUrl">REST API Reference for GetArtifactUrl Operation</seealso>
+        IAsyncResult BeginGetArtifactUrl(GetArtifactUrlRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetArtifactUrl operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetArtifactUrl.</param>
+        /// 
+        /// <returns>Returns a  GetArtifactUrlResult from Amplify.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetArtifactUrl">REST API Reference for GetArtifactUrl Operation</seealso>
+        GetArtifactUrlResponse EndGetArtifactUrl(IAsyncResult asyncResult);
 
         #endregion
         
@@ -920,6 +1030,59 @@ namespace Amazon.Amplify
         /// <returns>Returns a  ListAppsResult from Amplify.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListApps">REST API Reference for ListApps Operation</seealso>
         ListAppsResponse EndListApps(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListArtifacts
+
+
+        /// <summary>
+        /// List artifacts with an app, a branch, a job and an artifact type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListArtifacts service method.</param>
+        /// 
+        /// <returns>The response from the ListArtifacts service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
+        /// Exception thrown when a resource could not be created because of service limits.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListArtifacts">REST API Reference for ListArtifacts Operation</seealso>
+        ListArtifactsResponse ListArtifacts(ListArtifactsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListArtifacts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListArtifacts operation on AmazonAmplifyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListArtifacts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListArtifacts">REST API Reference for ListArtifacts Operation</seealso>
+        IAsyncResult BeginListArtifacts(ListArtifactsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListArtifacts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListArtifacts.</param>
+        /// 
+        /// <returns>Returns a  ListArtifactsResult from Amplify.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListArtifacts">REST API Reference for ListArtifacts Operation</seealso>
+        ListArtifactsResponse EndListArtifacts(IAsyncResult asyncResult);
 
         #endregion
         

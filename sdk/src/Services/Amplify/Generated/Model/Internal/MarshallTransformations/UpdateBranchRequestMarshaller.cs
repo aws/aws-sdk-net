@@ -114,6 +114,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EnableNotification);
                 }
 
+                if(publicRequest.IsSetEnablePullRequestPreview())
+                {
+                    context.Writer.WritePropertyName("enablePullRequestPreview");
+                    context.Writer.Write(publicRequest.EnablePullRequestPreview);
+                }
+
                 if(publicRequest.IsSetEnvironmentVariables())
                 {
                     context.Writer.WritePropertyName("environmentVariables");
