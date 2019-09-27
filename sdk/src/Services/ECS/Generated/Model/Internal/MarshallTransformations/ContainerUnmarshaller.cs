@@ -82,12 +82,6 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExitCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("firelensConfiguration", targetDepth))
-                {
-                    var unmarshaller = FirelensConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.FirelensConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("gpuIds", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

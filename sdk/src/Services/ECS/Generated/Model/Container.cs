@@ -35,7 +35,6 @@ namespace Amazon.ECS.Model
         private string _containerArn;
         private string _cpu;
         private int? _exitCode;
-        private FirelensConfiguration _firelensConfiguration;
         private List<string> _gpuIds = new List<string>();
         private HealthStatus _healthStatus;
         private string _image;
@@ -103,24 +102,6 @@ namespace Amazon.ECS.Model
         internal bool IsSetExitCode()
         {
             return this._exitCode.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property FirelensConfiguration. 
-        /// <para>
-        /// The FireLens configuration for the container.
-        /// </para>
-        /// </summary>
-        public FirelensConfiguration FirelensConfiguration
-        {
-            get { return this._firelensConfiguration; }
-            set { this._firelensConfiguration = value; }
-        }
-
-        // Check to see if FirelensConfiguration property is set
-        internal bool IsSetFirelensConfiguration()
-        {
-            return this._firelensConfiguration != null;
         }
 
         /// <summary>

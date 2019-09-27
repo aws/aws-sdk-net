@@ -51,7 +51,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
         /// <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
-        /// <code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.
+        /// <code>logentries</code>, <code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.
         /// </para>
         ///  
         /// <para>
@@ -118,7 +118,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property SecretOptions. 
         /// <para>
-        /// The secrets to pass to the log configuration.
+        /// The secrets to pass to the log configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+        /// Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public List<Secret> SecretOptions
