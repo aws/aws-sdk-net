@@ -43,10 +43,12 @@ namespace Amazon.S3.Model
         private long? firstByte;
         private long? lastByte;
 
+        [Obsolete("Use ServerSideEncryptionMethod in InitiateMultipartUploadRequest instead.")]
         private ServerSideEncryptionMethod serverSideEncryption;
         private ServerSideEncryptionCustomerMethod serverSideCustomerEncryption;
         private string serverSideEncryptionCustomerProvidedKey;
         private string serverSideEncryptionCustomerProvidedKeyMD5;
+        [Obsolete("Use ServerSideEncryptionKeyManagementServiceKeyId in InitiateMultipartUploadRequest instead.")]
         private string serverSideEncryptionKeyManagementServiceKeyId;
 
         private ServerSideEncryptionCustomerMethod copySourceServerSideCustomerEncryption;
@@ -353,12 +355,13 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// <para>
-        /// Specifies the encryption to be used on the server for the new object.
+        /// This property is obsolete. Use ServerSideEncryptionMethod in InitiateMultipartUploadRequest instead.
         /// </para>
         /// <para>
         /// Default: None
         /// </para>
         /// </summary>
+        [Obsolete("Use ServerSideEncryptionMethod in InitiateMultipartUploadRequest instead.")]
         public ServerSideEncryptionMethod ServerSideEncryptionMethod
         {
             get { return this.serverSideEncryption; }
@@ -369,6 +372,7 @@ namespace Amazon.S3.Model
         /// Checks if ServerSideEncryptionMethod property is set.
         /// </summary>
         /// <returns>true if ServerSideEncryptionMethod property is set.</returns>
+        [Obsolete("Use ServerSideEncryptionMethod in InitiateMultipartUploadRequest instead.")]
         internal bool IsSetServerSideEncryptionMethod()
         {
             return this.serverSideEncryption != null && this.serverSideEncryption != ServerSideEncryptionMethod.None;
@@ -440,9 +444,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The id of the AWS Key Management Service key that Amazon S3 should use to encrypt and decrypt the object.
-        /// If a key id is not specified, the default key will be used for encryption and decryption.
+        /// This property is obsolete. Use ServerSideEncryptionKeyManagementServiceKeyId in InitiateMultipartUploadRequest instead.
         /// </summary>
+        [Obsolete("Use ServerSideEncryptionKeyManagementServiceKeyId in InitiateMultipartUploadRequest instead.")]
         public string ServerSideEncryptionKeyManagementServiceKeyId
         {
             get { return this.serverSideEncryptionKeyManagementServiceKeyId; }
@@ -453,6 +457,7 @@ namespace Amazon.S3.Model
         /// Checks if ServerSideEncryptionKeyManagementServiceKeyId property is set.
         /// </summary>
         /// <returns>true if ServerSideEncryptionKeyManagementServiceKeyId property is set.</returns>
+        [Obsolete("Use ServerSideEncryptionKeyManagementServiceKeyId in InitiateMultipartUploadRequest instead.")]
         internal bool IsSetServerSideEncryptionKeyManagementServiceKeyId()
         {
             return !System.String.IsNullOrEmpty(this.serverSideEncryptionKeyManagementServiceKeyId);
