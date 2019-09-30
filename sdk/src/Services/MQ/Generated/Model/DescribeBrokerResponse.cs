@@ -48,6 +48,7 @@ namespace Amazon.MQ.Model
         private LogsSummary _logs;
         private WeeklyStartTime _maintenanceWindowStartTime;
         private string _pendingEngineVersion;
+        private string _pendingHostInstanceType;
         private List<string> _pendingSecurityGroups = new List<string>();
         private bool? _publiclyAccessible;
         private List<string> _securityGroups = new List<string>();
@@ -307,6 +308,22 @@ namespace Amazon.MQ.Model
         internal bool IsSetPendingEngineVersion()
         {
             return this._pendingEngineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PendingHostInstanceType. The host instance type of the
+        /// broker to upgrade to. For a list of supported instance types, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+        /// </summary>
+        public string PendingHostInstanceType
+        {
+            get { return this._pendingHostInstanceType; }
+            set { this._pendingHostInstanceType = value; }
+        }
+
+        // Check to see if PendingHostInstanceType property is set
+        internal bool IsSetPendingHostInstanceType()
+        {
+            return this._pendingHostInstanceType != null;
         }
 
         /// <summary>

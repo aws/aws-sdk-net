@@ -147,6 +147,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     response.PendingEngineVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("pendingHostInstanceType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PendingHostInstanceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("pendingSecurityGroups", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

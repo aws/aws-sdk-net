@@ -92,6 +92,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EngineVersion);
                 }
 
+                if(publicRequest.IsSetHostInstanceType())
+                {
+                    context.Writer.WritePropertyName("hostInstanceType");
+                    context.Writer.Write(publicRequest.HostInstanceType);
+                }
+
                 if(publicRequest.IsSetLogs())
                 {
                     context.Writer.WritePropertyName("logs");

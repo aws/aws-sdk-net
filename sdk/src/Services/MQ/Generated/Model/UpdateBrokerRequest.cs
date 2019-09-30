@@ -37,6 +37,7 @@ namespace Amazon.MQ.Model
         private string _brokerId;
         private ConfigurationId _configuration;
         private string _engineVersion;
+        private string _hostInstanceType;
         private Logs _logs;
         private List<string> _securityGroups = new List<string>();
 
@@ -105,6 +106,22 @@ namespace Amazon.MQ.Model
         internal bool IsSetEngineVersion()
         {
             return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HostInstanceType. The host instance type of the broker
+        /// to upgrade to. For a list of supported instance types, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+        /// </summary>
+        public string HostInstanceType
+        {
+            get { return this._hostInstanceType; }
+            set { this._hostInstanceType = value; }
+        }
+
+        // Check to see if HostInstanceType property is set
+        internal bool IsSetHostInstanceType()
+        {
+            return this._hostInstanceType != null;
         }
 
         /// <summary>
