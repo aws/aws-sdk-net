@@ -1087,6 +1087,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
+        /// <i>Domain</i> doesn't refer to an existing Active Directory domain.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.GlobalClusterNotFoundException">
         /// 
         /// </exception>
@@ -1177,6 +1180,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
+        /// <i>Domain</i> doesn't refer to an existing Active Directory domain.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.GlobalClusterNotFoundException">
         /// 
@@ -1702,6 +1708,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
+        /// <i>Domain</i> doesn't refer to an existing Active Directory domain.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InstanceQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of DB instances.
         /// </exception>
@@ -1795,6 +1804,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
+        /// <i>Domain</i> doesn't refer to an existing Active Directory domain.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InstanceQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of DB instances.
@@ -5296,6 +5308,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
+        /// <i>Domain</i> doesn't refer to an existing Active Directory domain.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
         /// </exception>
@@ -5355,6 +5370,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
+        /// <i>Domain</i> doesn't refer to an existing Active Directory domain.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
@@ -6981,6 +6999,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
+        /// <i>Domain</i> doesn't refer to an existing Active Directory domain.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientStorageClusterCapacityException">
         /// There is insufficient storage available for the current action. You might be able
         /// to resolve this error by updating your subnet group to use different Availability
@@ -7052,6 +7073,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
+        /// <i>Domain</i> doesn't refer to an existing Active Directory domain.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientStorageClusterCapacityException">
         /// There is insufficient storage available for the current action. You might be able
@@ -7142,6 +7166,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
+        /// <i>Domain</i> doesn't refer to an existing Active Directory domain.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientDBClusterCapacityException">
         /// The DB cluster doesn't have enough capacity for the current operation.
@@ -7241,6 +7268,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
+        /// <i>Domain</i> doesn't refer to an existing Active Directory domain.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientDBClusterCapacityException">
         /// The DB cluster doesn't have enough capacity for the current operation.
         /// </exception>
@@ -7337,6 +7367,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
+        /// <i>Domain</i> doesn't refer to an existing Active Directory domain.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientDBClusterCapacityException">
         /// The DB cluster doesn't have enough capacity for the current operation.
         /// </exception>
@@ -7431,6 +7464,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
+        /// <i>Domain</i> doesn't refer to an existing Active Directory domain.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientDBClusterCapacityException">
         /// The DB cluster doesn't have enough capacity for the current operation.

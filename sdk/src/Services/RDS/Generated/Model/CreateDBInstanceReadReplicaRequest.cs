@@ -61,6 +61,8 @@ namespace Amazon.RDS.Model
         private string _dbParameterGroupName;
         private string _dbSubnetGroupName;
         private bool? _deletionProtection;
+        private string _domain;
+        private string _domainIAMRoleName;
         private List<string> _enableCloudwatchLogsExports = new List<string>();
         private bool? _enableIAMDatabaseAuthentication;
         private bool? _enablePerformanceInsights;
@@ -330,6 +332,50 @@ namespace Amazon.RDS.Model
         internal bool IsSetDeletionProtection()
         {
             return this._deletionProtection.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Domain. 
+        /// <para>
+        /// The Active Directory directory ID to create the DB instance in.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate
+        /// users that connect to the DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
+        /// Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS
+        /// User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string Domain
+        {
+            get { return this._domain; }
+            set { this._domain = value; }
+        }
+
+        // Check to see if Domain property is set
+        internal bool IsSetDomain()
+        {
+            return this._domain != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainIAMRoleName. 
+        /// <para>
+        /// Specify the name of the IAM role to be used when making API calls to the Directory
+        /// Service.
+        /// </para>
+        /// </summary>
+        public string DomainIAMRoleName
+        {
+            get { return this._domainIAMRoleName; }
+            set { this._domainIAMRoleName = value; }
+        }
+
+        // Check to see if DomainIAMRoleName property is set
+        internal bool IsSetDomainIAMRoleName()
+        {
+            return this._domainIAMRoleName != null;
         }
 
         /// <summary>

@@ -57,6 +57,7 @@ namespace Amazon.RDS.Model
         private bool? _supportsEnhancedMonitoring;
         private bool? _supportsIAMDatabaseAuthentication;
         private bool? _supportsIops;
+        private bool? _supportsKerberosAuthentication;
         private bool? _supportsPerformanceInsights;
         private bool? _supportsStorageAutoscaling;
         private bool? _supportsStorageEncryption;
@@ -403,6 +404,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetSupportsIops()
         {
             return this._supportsIops.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsKerberosAuthentication. 
+        /// <para>
+        /// Whether a DB instance supports Kerberos Authentication.
+        /// </para>
+        /// </summary>
+        public bool SupportsKerberosAuthentication
+        {
+            get { return this._supportsKerberosAuthentication.GetValueOrDefault(); }
+            set { this._supportsKerberosAuthentication = value; }
+        }
+
+        // Check to see if SupportsKerberosAuthentication property is set
+        internal bool IsSetSupportsKerberosAuthentication()
+        {
+            return this._supportsKerberosAuthentication.HasValue; 
         }
 
         /// <summary>

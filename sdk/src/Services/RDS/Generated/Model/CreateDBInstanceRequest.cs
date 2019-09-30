@@ -739,12 +739,22 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// For an Amazon RDS DB instance that's running Microsoft SQL Server, this parameter
-        /// specifies the Active Directory directory ID to create the instance in. Amazon RDS
-        /// uses Windows Authentication to authenticate users that connect to the DB instance.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/DeveloperGuide/USER_SQLServerWinAuth.html">Using
-        /// Windows Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a>
-        /// in the <i>Amazon RDS User Guide</i>. 
+        /// The Active Directory directory ID to create the DB instance in. Currently, only Microsoft
+        /// SQL Server and Oracle DB instances can be created in an Active Directory Domain.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to
+        /// authenticate users that connect to the DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
+        /// Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft SQL
+        /// Server</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Oracle DB instance, Amazon RDS can use Kerberos Authentication to authenticate
+        /// users that connect to the DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
+        /// Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         public string Domain
