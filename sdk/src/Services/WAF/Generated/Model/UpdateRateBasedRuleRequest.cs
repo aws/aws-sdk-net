@@ -129,7 +129,7 @@ namespace Amazon.WAF.Model
         /// are also met, AWS WAF triggers the action that is specified for this rule.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2000, Max=2000000000)]
+        [AWSProperty(Required=true, Min=100, Max=2000000000)]
         public long RateLimit
         {
             get { return this._rateLimit.GetValueOrDefault(); }
