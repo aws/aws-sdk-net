@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.597.0",
+    "ProductVersion" : "3.3.598.0",
     "CoreVersion"    : "3.3.103.45",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -1353,7 +1353,7 @@
             "InPreview"               : false
         },
         "DocDB"                           : {
-            "Version" : "3.3.101.39",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.45"

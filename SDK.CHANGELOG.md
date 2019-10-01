@@ -1,3 +1,7 @@
+### 3.3.598.0 (2019-10-01 18:09 UTC)
+* DocDB (3.3.102.0)
+	* This release provides support for describe and modify CA certificates.
+
 ### 3.3.597.0 (2019-09-30 19:19 UTC)
 * MQ (3.3.104.0)
 	* Amazon MQ now includes the ability to scale your brokers by changing the host instance type. See the hostInstanceType property of UpdateBrokerInput (https://docs.aws.amazon.com/amazon-mq/latest/api-reference/brokers-broker-id.html#brokers-broker-id-model-updatebrokerinput), and pendingHostInstanceType property of DescribeBrokerOutput (https://docs.aws.amazon.com/amazon-mq/latest/api-reference/brokers-broker-id.html#brokers-broker-id-model-describebrokeroutput).
