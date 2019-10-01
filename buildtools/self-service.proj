@@ -27,7 +27,7 @@
     <Exec Command="dotnet restore -f  AWSSDKGenerator.sln" WorkingDirectory="..\generator" />
     <Exec Command="dotnet clean -c Release AWSSDKGenerator.sln" WorkingDirectory="..\generator"/>
     <Exec Command="dotnet build -c Release --no-incremental AWSSDKGenerator.sln" WorkingDirectory="..\generator"/>
-    <Exec Command="ServiceClientGenerator.exe $(GeneratorDisablePCLSupport) $(GeneratorPartialBuildArgument)"
+    <Exec Command="ServiceClientGenerator.exe $(GeneratorPartialBuildArgument)"
         WorkingDirectory="..\generator\ServiceClientGenerator\bin\Release"/>
   </Target>
 

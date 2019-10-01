@@ -621,10 +621,6 @@ namespace Amazon.Runtime
         }
 
 #if NETSTANDARD
-        bool cacheHttpClient = true;
-#else
-        bool cacheHttpClient = false;
-#endif
         /// <summary>
         /// <para>
         /// This is a switch used for performance testing and is not intended for production applications 
@@ -639,14 +635,11 @@ namespace Amazon.Runtime
         /// pool.
         /// </para>
         /// </summary>
-        public bool CacheHttpClient
-        {
-            get { return this.cacheHttpClient; }
-            set { this.cacheHttpClient = value; }
-        }
+        public bool CacheHttpClient {get; set;} = true;
 
 
-        int? _httpClientCacheSize;
+
+        private int? _httpClientCacheSize;
         /// <summary>
         /// If CacheHttpClient is set to true then HttpClientCacheSize controls the number of HttpClients cached.
         /// <para>
@@ -659,26 +652,16 @@ namespace Amazon.Runtime
         {
             get
             {
-                if(this._httpClientCacheSize.HasValue)
+                if(_httpClientCacheSize.HasValue)
                 {
-                    return this._httpClientCacheSize.Value;
-                }
-#if NETSTANDARD
-                if(RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-                {
-                    return 1;
+                    return _httpClientCacheSize.Value;
                 }
 
-                return Environment.ProcessorCount;
-#else
-                return 1;
-#endif
+                return RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? 1 : Environment.ProcessorCount;
             }
-            set
-            {
-                this._httpClientCacheSize = value;
-            }
+            set => _httpClientCacheSize = value;
         }
+#endif
         
         /// <summary>
         /// Overrides the default read-write timeout value.
