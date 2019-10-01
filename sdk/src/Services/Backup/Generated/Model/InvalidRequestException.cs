@@ -25,7 +25,7 @@ namespace Amazon.Backup.Model
     ///<summary>
     /// Backup exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class InvalidRequestException : AmazonBackupException 
@@ -79,7 +79,7 @@ namespace Amazon.Backup.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InvalidRequestException class with serialized data.
         /// </summary>

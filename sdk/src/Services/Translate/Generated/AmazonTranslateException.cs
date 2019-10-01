@@ -28,7 +28,7 @@ namespace Amazon.Translate
     ///<summary>
     /// Common exception for the Translate service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonTranslateException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.Translate
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonTranslateException class with serialized data.
         /// </summary>

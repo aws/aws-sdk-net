@@ -11,8 +11,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Chime. The Amazon Chime API (application programming interface) is designed for administrators to use to perform key tasks, such as creating and managing Amazon Chime accounts and users.")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Chime. The Amazon Chime API (application programming interface) is designed for administrators to use to perform key tasks, such as creating and managing Amazon Chime accounts and users.")]
-#elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon Chime. The Amazon Chime API (application programming interface) is designed for administrators to use to perform key tasks, such as creating and managing Amazon Chime accounts and users.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Amazon Chime. The Amazon Chime API (application programming interface) is designed for administrators to use to perform key tasks, such as creating and managing Amazon Chime accounts and users.")]
 #elif NETSTANDARD20

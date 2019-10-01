@@ -21,6 +21,7 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
+using System.Net;
 using System.Text;
 using Amazon.Runtime.Internal.Util;
 
@@ -240,32 +241,32 @@ namespace Amazon.Runtime.EventStreams
                     newOffset += _sizeOfByte;
                     break;
                 case EventStreamHeaderType.Int16:
-                    header.HeaderValue = EndianConversionUtility.NetworkToHostOrder(BitConverter.ToInt16(buffer, newOffset));
+                    header.HeaderValue = IPAddress.NetworkToHostOrder(BitConverter.ToInt16(buffer, newOffset));
                     newOffset += _sizeOfInt16;
                     break;
                 case EventStreamHeaderType.Int32:
-                    header.HeaderValue = EndianConversionUtility.NetworkToHostOrder(BitConverter.ToInt32(buffer, newOffset));
+                    header.HeaderValue = IPAddress.NetworkToHostOrder(BitConverter.ToInt32(buffer, newOffset));
                     newOffset += _sizeOfInt32;
                     break;
                 case EventStreamHeaderType.Int64:
-                    header.HeaderValue = EndianConversionUtility.NetworkToHostOrder(BitConverter.ToInt64(buffer, newOffset));
+                    header.HeaderValue = IPAddress.NetworkToHostOrder(BitConverter.ToInt64(buffer, newOffset));
                     newOffset += _sizeOfInt64;
                     break;
                 case EventStreamHeaderType.ByteBuf:
-                    valueLength = EndianConversionUtility.NetworkToHostOrder(BitConverter.ToInt16(buffer, newOffset));
+                    valueLength = IPAddress.NetworkToHostOrder(BitConverter.ToInt16(buffer, newOffset));
                     newOffset += _sizeOfInt16;
                     header.HeaderValue = new byte[valueLength];
                     Buffer.BlockCopy(buffer, newOffset, header.HeaderValue as byte[], 0, valueLength);
                     newOffset += valueLength;
                     break;
                 case EventStreamHeaderType.String:
-                    valueLength = EndianConversionUtility.NetworkToHostOrder(BitConverter.ToInt16(buffer, newOffset));
+                    valueLength = IPAddress.NetworkToHostOrder(BitConverter.ToInt16(buffer, newOffset));
                     newOffset += _sizeOfInt16;
                     header.HeaderValue = Encoding.UTF8.GetString(buffer, newOffset, valueLength);
                     newOffset += valueLength;
                     break;
                 case EventStreamHeaderType.Timestamp:
-                    Int64 tempValue = EndianConversionUtility.NetworkToHostOrder(BitConverter.ToInt64(buffer, newOffset));
+                    Int64 tempValue = IPAddress.NetworkToHostOrder(BitConverter.ToInt64(buffer, newOffset));
                     newOffset += _sizeOfInt64;
                     //keep in mind on the windows APIs (and hence NetStandard as well) the epoch is 1/1/1900,
                     //and we're using unix epoch. So we compensate here.
@@ -316,24 +317,24 @@ namespace Amazon.Runtime.EventStreams
                     buffer[newOffset++] = (byte)HeaderValue;
                     break;
                 case EventStreamHeaderType.Int16:
-                    serializedBytes = BitConverter.GetBytes(EndianConversionUtility.HostToNetworkOrder((Int16)HeaderValue));
+                    serializedBytes = BitConverter.GetBytes(IPAddress.HostToNetworkOrder((Int16)HeaderValue));
                     Buffer.BlockCopy(serializedBytes, 0, buffer, newOffset, 2);
                     newOffset += _sizeOfInt16;
                     break;
                 case EventStreamHeaderType.Int32:
-                    serializedBytes = BitConverter.GetBytes(EndianConversionUtility.HostToNetworkOrder((Int32)HeaderValue));
+                    serializedBytes = BitConverter.GetBytes(IPAddress.HostToNetworkOrder((Int32)HeaderValue));
                     Buffer.BlockCopy(serializedBytes, 0, buffer, newOffset, 4);
                     newOffset += _sizeOfInt32;
                     break;
                 case EventStreamHeaderType.Int64:
-                    serializedBytes = BitConverter.GetBytes(EndianConversionUtility.HostToNetworkOrder((Int64)HeaderValue));
+                    serializedBytes = BitConverter.GetBytes(IPAddress.HostToNetworkOrder((Int64)HeaderValue));
                     Buffer.BlockCopy(serializedBytes, 0, buffer, newOffset, 8);
                     newOffset += _sizeOfInt64;
                     break;
                 case EventStreamHeaderType.ByteBuf:
                     serializedBytes = HeaderValue as byte[];
                     valueLength = serializedBytes.Length;
-                    Buffer.BlockCopy(BitConverter.GetBytes(EndianConversionUtility.HostToNetworkOrder((Int16)valueLength)), 0,
+                    Buffer.BlockCopy(BitConverter.GetBytes(IPAddress.HostToNetworkOrder((Int16)valueLength)), 0,
                         buffer, newOffset, 2);
                     newOffset += _sizeOfInt16;
                     Buffer.BlockCopy(serializedBytes, 0, buffer, newOffset, valueLength);
@@ -342,7 +343,7 @@ namespace Amazon.Runtime.EventStreams
                 case EventStreamHeaderType.String:
                     serializedBytes = Encoding.UTF8.GetBytes(HeaderValue as string);
                     valueLength = serializedBytes.Length;
-                    Buffer.BlockCopy(BitConverter.GetBytes(EndianConversionUtility.HostToNetworkOrder((Int16)valueLength)), 0,
+                    Buffer.BlockCopy(BitConverter.GetBytes(IPAddress.HostToNetworkOrder((Int16)valueLength)), 0,
                         buffer, newOffset, 2);
                     newOffset += _sizeOfInt16;
                     Buffer.BlockCopy(serializedBytes, 0, buffer, newOffset, valueLength);
@@ -350,7 +351,7 @@ namespace Amazon.Runtime.EventStreams
                     break;
                 case EventStreamHeaderType.Timestamp:
                     var tempValue = (Int64)((DateTime)HeaderValue).Subtract(_unixEpoch).TotalMilliseconds;
-                    serializedBytes = BitConverter.GetBytes(EndianConversionUtility.HostToNetworkOrder(tempValue));
+                    serializedBytes = BitConverter.GetBytes(IPAddress.HostToNetworkOrder(tempValue));
                     Buffer.BlockCopy(serializedBytes, 0, buffer, newOffset, 8);
                     newOffset += _sizeOfInt64;
                     break;

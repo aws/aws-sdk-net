@@ -28,7 +28,7 @@ namespace Amazon.AutoScalingPlans
     ///<summary>
     /// Common exception for the AutoScalingPlans service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonAutoScalingPlansException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.AutoScalingPlans
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonAutoScalingPlansException class with serialized data.
         /// </summary>

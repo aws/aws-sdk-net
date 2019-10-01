@@ -25,7 +25,7 @@ namespace Amazon.AutoScaling.Model
     ///<summary>
     /// AutoScaling exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class ResourceContentionException : AmazonAutoScalingException 
@@ -79,7 +79,7 @@ namespace Amazon.AutoScaling.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ResourceContentionException class with serialized data.
         /// </summary>

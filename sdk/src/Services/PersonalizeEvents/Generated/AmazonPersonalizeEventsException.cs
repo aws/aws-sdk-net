@@ -28,7 +28,7 @@ namespace Amazon.PersonalizeEvents
     ///<summary>
     /// Common exception for the PersonalizeEvents service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonPersonalizeEventsException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.PersonalizeEvents
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonPersonalizeEventsException class with serialized data.
         /// </summary>

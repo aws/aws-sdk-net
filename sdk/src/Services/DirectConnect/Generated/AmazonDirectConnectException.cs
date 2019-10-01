@@ -28,7 +28,7 @@ namespace Amazon.DirectConnect
     ///<summary>
     /// Common exception for the DirectConnect service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonDirectConnectException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.DirectConnect
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonDirectConnectException class with serialized data.
         /// </summary>

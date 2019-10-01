@@ -11,8 +11,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS IoT. AWS IoT allows you to leverage AWS to build your Internet of Things.")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS IoT. AWS IoT allows you to leverage AWS to build your Internet of Things.")]
-#elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  AWS IoT. AWS IoT allows you to leverage AWS to build your Internet of Things.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- AWS IoT. AWS IoT allows you to leverage AWS to build your Internet of Things.")]
 #elif NETSTANDARD20

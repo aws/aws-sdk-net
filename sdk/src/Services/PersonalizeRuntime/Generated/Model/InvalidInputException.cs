@@ -25,7 +25,7 @@ namespace Amazon.PersonalizeRuntime.Model
     ///<summary>
     /// PersonalizeRuntime exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class InvalidInputException : AmazonPersonalizeRuntimeException 
@@ -79,7 +79,7 @@ namespace Amazon.PersonalizeRuntime.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InvalidInputException class with serialized data.
         /// </summary>

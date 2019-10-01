@@ -25,7 +25,7 @@ namespace Amazon.Redshift.Model
     ///<summary>
     /// Redshift exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class HsmClientCertificateQuotaExceededException : AmazonRedshiftException 
@@ -79,7 +79,7 @@ namespace Amazon.Redshift.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the HsmClientCertificateQuotaExceededException class with serialized data.
         /// </summary>

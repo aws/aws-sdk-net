@@ -28,7 +28,7 @@ namespace Amazon.EventBridge
     ///<summary>
     /// Common exception for the EventBridge service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonEventBridgeException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.EventBridge
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonEventBridgeException class with serialized data.
         /// </summary>

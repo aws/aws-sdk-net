@@ -11,8 +11,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon GuardDuty. Enable Amazon GuardDuty to continuously monitor and process AWS data sources to identify threats to your AWS accounts and workloads. You can add customization by uploading additional threat intelligence lists and IP safe lists. You can list security findings, suspend, and disable the service.")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon GuardDuty. Enable Amazon GuardDuty to continuously monitor and process AWS data sources to identify threats to your AWS accounts and workloads. You can add customization by uploading additional threat intelligence lists and IP safe lists. You can list security findings, suspend, and disable the service.")]
-#elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon GuardDuty. Enable Amazon GuardDuty to continuously monitor and process AWS data sources to identify threats to your AWS accounts and workloads. You can add customization by uploading additional threat intelligence lists and IP safe lists. You can list security findings, suspend, and disable the service.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Amazon GuardDuty. Enable Amazon GuardDuty to continuously monitor and process AWS data sources to identify threats to your AWS accounts and workloads. You can add customization by uploading additional threat intelligence lists and IP safe lists. You can list security findings, suspend, and disable the service.")]
 #elif NETSTANDARD20

@@ -11,8 +11,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS RDS DataService. The RDS Data API Beta is available for the MySQL-compatible edition of Amazon Aurora Serverless in the US East (N. Virginia) Region. This API enables you to easily access Aurora Serverless with web services-based applications including AWS Lambda and AWS AppSync.")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS RDS DataService. The RDS Data API Beta is available for the MySQL-compatible edition of Amazon Aurora Serverless in the US East (N. Virginia) Region. This API enables you to easily access Aurora Serverless with web services-based applications including AWS Lambda and AWS AppSync.")]
-#elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  AWS RDS DataService. The RDS Data API Beta is available for the MySQL-compatible edition of Amazon Aurora Serverless in the US East (N. Virginia) Region. This API enables you to easily access Aurora Serverless with web services-based applications including AWS Lambda and AWS AppSync.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- AWS RDS DataService. The RDS Data API Beta is available for the MySQL-compatible edition of Amazon Aurora Serverless in the US East (N. Virginia) Region. This API enables you to easily access Aurora Serverless with web services-based applications including AWS Lambda and AWS AppSync.")]
 #elif NETSTANDARD20

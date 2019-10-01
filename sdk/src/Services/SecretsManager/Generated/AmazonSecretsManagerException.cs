@@ -28,7 +28,7 @@ namespace Amazon.SecretsManager
     ///<summary>
     /// Common exception for the SecretsManager service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonSecretsManagerException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.SecretsManager
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonSecretsManagerException class with serialized data.
         /// </summary>

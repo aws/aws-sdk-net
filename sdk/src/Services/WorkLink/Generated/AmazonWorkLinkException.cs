@@ -28,7 +28,7 @@ namespace Amazon.WorkLink
     ///<summary>
     /// Common exception for the WorkLink service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonWorkLinkException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.WorkLink
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonWorkLinkException class with serialized data.
         /// </summary>

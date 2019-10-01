@@ -28,7 +28,7 @@ namespace Amazon.MediaConnect
     ///<summary>
     /// Common exception for the MediaConnect service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonMediaConnectException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.MediaConnect
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonMediaConnectException class with serialized data.
         /// </summary>

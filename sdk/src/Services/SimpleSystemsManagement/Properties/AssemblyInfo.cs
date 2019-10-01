@@ -11,8 +11,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Simple Systems Manager (SSM). Amazon EC2 Simple Systems Manager (SSM) enables you to manage a number of administrative and configuration tasks on your instances.")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Simple Systems Manager (SSM). Amazon EC2 Simple Systems Manager (SSM) enables you to manage a number of administrative and configuration tasks on your instances.")]
-#elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon Simple Systems Manager (SSM). Amazon EC2 Simple Systems Manager (SSM) enables you to manage a number of administrative and configuration tasks on your instances.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Amazon Simple Systems Manager (SSM). Amazon EC2 Simple Systems Manager (SSM) enables you to manage a number of administrative and configuration tasks on your instances.")]
 #elif NETSTANDARD20

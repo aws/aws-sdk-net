@@ -28,7 +28,7 @@ namespace Amazon.ServerlessApplicationRepository
     ///<summary>
     /// Common exception for the ServerlessApplicationRepository service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonServerlessApplicationRepositoryException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.ServerlessApplicationRepository
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonServerlessApplicationRepositoryException class with serialized data.
         /// </summary>

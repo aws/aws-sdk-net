@@ -1503,9 +1503,7 @@ namespace Amazon.EC2.Import
     /// <summary>
     /// Wraps errors returned from the importer
     /// </summary>
-#if !PCL
     [Serializable]
-#endif
     public class DiskImageImporterException : Exception
     {
         /// <summary>
@@ -1529,7 +1527,6 @@ namespace Amazon.EC2.Import
         {
         }
 
-#if !PCL
         /// <summary>
         /// Constructs a new instance of the DiskImageImporterException class with serialized data.
         /// </summary>
@@ -1570,7 +1567,6 @@ namespace Amazon.EC2.Import
                 info.AddValue("Stage", this.Stage);
             }
         }
-#endif
     }
 
     /// <summary>

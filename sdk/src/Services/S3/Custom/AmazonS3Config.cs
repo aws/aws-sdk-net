@@ -274,15 +274,10 @@ namespace Amazon.S3
         /// <returns>A nullable of S3UsEast1RegionalEndpointValue</returns>
         private static S3UsEast1RegionalEndpointValue? CheckCredentialsFile()
         {
-#if BCL || NETSTANDARD
             CredentialProfile profile;
             var profileName = Environment.GetEnvironmentVariable(AwsProfileEnvironmentVariable) ?? DefaultProfileName;
             credentialProfileChain.TryGetProfile(profileName, out profile);
             return profile?.S3RegionalEndpoint;
-#else
-             return null;
-#endif
-
         }
 
         internal string AccelerateEndpoint

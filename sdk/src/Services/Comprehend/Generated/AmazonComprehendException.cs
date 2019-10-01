@@ -28,7 +28,7 @@ namespace Amazon.Comprehend
     ///<summary>
     /// Common exception for the Comprehend service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonComprehendException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.Comprehend
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonComprehendException class with serialized data.
         /// </summary>

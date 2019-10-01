@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net45</TargetFramework>
-    <DefineConstants>$(DefineConstants);BCL;BCL45;AWS_ASYNC_API;CODE_ANALYSIS;LOCAL_FILE</DefineConstants>
+    <DefineConstants>$(DefineConstants);BCL;BCL45;AWS_ASYNC_API</DefineConstants>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.AWSHealth</AssemblyName>
@@ -31,17 +31,8 @@
   </Choose>
 
   <ItemGroup>
-    <Compile Remove="**/_android/**"/>
     <Compile Remove="**/_bcl35/**"/>
     <Compile Remove="**/_netstandard/**"/>
-    <Compile Remove="**/_ios/**"/>
-    <Compile Remove="**/_mobile/**"/>
-    <Compile Remove="**/_pcl/**"/>
-    <Compile Remove="**/_pcl-sl/**"/>
-    <Compile Remove="**/_pclReference/**"/>
-    <Compile Remove="**/_win8/**"/>
-    <Compile Remove="**/_winPhone81/**"/>
-    <Compile Remove="**/_winPhoneSilverlight8/**"/>
     <Compile Remove="**/obj/**"/>
     <None Remove="**/obj/**" />
   </ItemGroup>

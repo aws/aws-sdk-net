@@ -28,7 +28,7 @@ namespace Amazon.Transfer
     ///<summary>
     /// Common exception for the Transfer service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonTransferException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.Transfer
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonTransferException class with serialized data.
         /// </summary>

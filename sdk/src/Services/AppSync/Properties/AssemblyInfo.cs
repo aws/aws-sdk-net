@@ -11,8 +11,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS AppSync. AWS AppSync is an enterprise-level, fully managed GraphQL service with real-time data synchronization and offline programming features.")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS AppSync. AWS AppSync is an enterprise-level, fully managed GraphQL service with real-time data synchronization and offline programming features.")]
-#elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  AWS AppSync. AWS AppSync is an enterprise-level, fully managed GraphQL service with real-time data synchronization and offline programming features.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- AWS AppSync. AWS AppSync is an enterprise-level, fully managed GraphQL service with real-time data synchronization and offline programming features.")]
 #elif NETSTANDARD20

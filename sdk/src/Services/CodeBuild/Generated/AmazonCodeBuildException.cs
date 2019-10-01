@@ -28,7 +28,7 @@ namespace Amazon.CodeBuild
     ///<summary>
     /// Common exception for the CodeBuild service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonCodeBuildException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.CodeBuild
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonCodeBuildException class with serialized data.
         /// </summary>

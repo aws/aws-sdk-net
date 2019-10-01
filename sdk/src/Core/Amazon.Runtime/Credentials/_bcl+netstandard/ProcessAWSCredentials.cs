@@ -215,7 +215,7 @@ namespace Amazon.Runtime
         {
         }
         
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         protected ProcessAWSCredentialException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {

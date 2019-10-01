@@ -28,7 +28,7 @@ namespace Amazon.DocDB
     ///<summary>
     /// Common exception for the DocDB service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonDocDBException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.DocDB
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonDocDBException class with serialized data.
         /// </summary>

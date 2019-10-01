@@ -28,7 +28,7 @@ namespace Amazon.QuickSight
     ///<summary>
     /// Common exception for the QuickSight service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonQuickSightException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.QuickSight
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonQuickSightException class with serialized data.
         /// </summary>

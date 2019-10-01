@@ -28,7 +28,7 @@ namespace Amazon.ElasticBeanstalk
     ///<summary>
     /// Common exception for the ElasticBeanstalk service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonElasticBeanstalkException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.ElasticBeanstalk
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonElasticBeanstalkException class with serialized data.
         /// </summary>

@@ -25,7 +25,7 @@ namespace Amazon.Comprehend.Model
     ///<summary>
     /// Comprehend exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class KmsKeyValidationException : AmazonComprehendException 
@@ -79,7 +79,7 @@ namespace Amazon.Comprehend.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the KmsKeyValidationException class with serialized data.
         /// </summary>

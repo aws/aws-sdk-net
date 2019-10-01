@@ -1201,7 +1201,7 @@ namespace Amazon.Util
 
         public static string DownloadStringContent(Uri uri, TimeSpan timeout, IWebProxy proxy)
         {
-#if PCL || NETSTANDARD
+#if NETSTANDARD
             using (var client = CreateClient(uri, timeout, proxy, null))
             {
                 return AsyncHelpers.RunSync<string>(() =>
@@ -1235,7 +1235,7 @@ namespace Amazon.Util
         /// <returns>The response as a string.</returns>
         public static string ExecuteHttpRequest(Uri uri, string requestType, string content, TimeSpan timeout, IWebProxy proxy, IDictionary<string, string> headers)
         {
-#if PCL || NETSTANDARD
+#if NETSTANDARD
             using (var client = CreateClient(uri, timeout, proxy, headers))
             {                   
                 var response = AsyncHelpers.RunSync<HttpResponseMessage>(() =>
@@ -1354,7 +1354,7 @@ namespace Amazon.Util
 
         public static Stream OpenStream(Uri uri, IWebProxy proxy)
         {
-#if PCL || NETSTANDARD
+#if NETSTANDARD
             using (var client = new System.Net.Http.HttpClient(new System.Net.Http.HttpClientHandler() { Proxy = proxy }))
             {
                 var task = client.GetStreamAsync(uri);

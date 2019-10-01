@@ -11,8 +11,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Service Quotas. Service Quotas enables you to view and manage your quotas for AWS services from a central location.")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Service Quotas. Service Quotas enables you to view and manage your quotas for AWS services from a central location.")]
-#elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Service Quotas. Service Quotas enables you to view and manage your quotas for AWS services from a central location.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Service Quotas. Service Quotas enables you to view and manage your quotas for AWS services from a central location.")]
 #elif NETSTANDARD20

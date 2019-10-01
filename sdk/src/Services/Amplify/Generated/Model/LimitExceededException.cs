@@ -25,7 +25,7 @@ namespace Amazon.Amplify.Model
     ///<summary>
     /// Amplify exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class LimitExceededException : AmazonAmplifyException 
@@ -79,7 +79,7 @@ namespace Amazon.Amplify.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the LimitExceededException class with serialized data.
         /// </summary>

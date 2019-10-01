@@ -28,7 +28,7 @@ namespace Amazon.AppStream
     ///<summary>
     /// Common exception for the AppStream service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonAppStreamException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.AppStream
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonAppStreamException class with serialized data.
         /// </summary>

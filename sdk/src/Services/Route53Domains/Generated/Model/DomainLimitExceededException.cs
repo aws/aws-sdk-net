@@ -25,7 +25,7 @@ namespace Amazon.Route53Domains.Model
     ///<summary>
     /// Route53Domains exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class DomainLimitExceededException : AmazonRoute53DomainsException 
@@ -79,7 +79,7 @@ namespace Amazon.Route53Domains.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the DomainLimitExceededException class with serialized data.
         /// </summary>

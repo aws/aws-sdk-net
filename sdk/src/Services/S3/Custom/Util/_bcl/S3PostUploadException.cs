@@ -30,9 +30,7 @@ namespace Amazon.S3.Util
     /// <summary>
     /// An exception detailing a failed HTTP POST upload atempt to Amazon S3.
     /// </summary>
-#if !PCL
     [Serializable]
-#endif
     public class S3PostUploadException : Exception
     {
         /// <summary>
@@ -118,7 +116,6 @@ namespace Amazon.S3.Util
             return ex;
         }
 
-#if !PCL
         /// <summary>
         /// Constructs a new instance of the S3PostUploadException class with serialized data.
         /// </summary>
@@ -167,7 +164,6 @@ namespace Amazon.S3.Util
                 info.AddValue("ExtraFields", this.ExtraFields);
             }
         }
-#endif
     }
 
     /// <summary>

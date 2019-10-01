@@ -34,55 +34,7 @@ namespace Amazon.S3
 
     internal static class AmazonS3HttpUtil
     {
-#if AWS_ASYNC_API && PCL
-        internal static async Task<GetHeadResponse> GetHeadAsync(IAmazonS3 s3Client, IClientConfig config, string url, string header)
-        {
-            if (s3Client != null)
-            {
-                using (var httpClient = GetHttpClient(config))
-                {
-                    var response = await httpClient.GetResponseHeadersAsync("Head",url);
-                    foreach (var headerPair in response)
-                    {
-                        if (string.Equals(headerPair.Item1, HeaderKeys.XAmzBucketRegion, StringComparison.OrdinalIgnoreCase))
-                        {
-                            foreach (var value in headerPair.Item2)
-                            {
-                                // If there's more than one there's something really wrong.
-                                // So just use the first one anyway.
-                                return new GetHeadResponse
-                                {
-                                    HeaderValue = value,
-                                    StatusCode = headerPair.Item3
-                                };
-                            }
-                        }
-                    }
-                }
-            }
-            return null;
-        }
-
-        private static AWSHttpClient GetHttpClient(IClientConfig config)
-        {
-#if PCL
-            return new AWSHttpClient();
-#else
-            var proxy = GetProxyIfAvailableAndConfigured(config);
-
-            if (proxy == null)
-            {
-                return new AWSHttpClient();
-            }
-            else
-            {
-                return new AWSHttpClient(proxy, true);
-            }
-#endif
-        }
-#endif
-
-#if AWS_ASYNC_API && !PCL
+#if AWS_ASYNC_API
         internal static async Task<GetHeadResponse> GetHeadAsync(IAmazonS3 s3Client, IClientConfig config, string url, string header)
         {
             HttpWebRequest httpRequest = GetHeadHttpRequest(config, url);
@@ -102,7 +54,7 @@ namespace Amazon.S3
 
         internal static GetHeadResponse GetHead(IAmazonS3 s3Client, IClientConfig config, string url, string header)
         {
-#if PCL || NETSTANDARD
+#if NETSTANDARD
             return GetHeadAsync(s3Client, config, url, header).GetAwaiter().GetResult();
 #else
             HttpWebRequest httpRequest = GetHeadHttpRequest(config, url);
@@ -168,15 +120,9 @@ namespace Amazon.S3
             }
 #endif
         }
-#if !PCL
         private static IWebProxy GetProxyIfAvailableAndConfigured(IClientConfig config)
         {
-#if BCL || NETSTANDARD
             return config.GetWebProxy();
-#else
-            return null;
-#endif
         }
-#endif
     }
 }

@@ -11,8 +11,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Budgets. AWS Budget service will provide create/get/list/update/delete budgets for cost management. ")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Budgets. AWS Budget service will provide create/get/list/update/delete budgets for cost management. ")]
-#elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  AWS Budgets. AWS Budget service will provide create/get/list/update/delete budgets for cost management. ")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- AWS Budgets. AWS Budget service will provide create/get/list/update/delete budgets for cost management. ")]
 #elif NETSTANDARD20

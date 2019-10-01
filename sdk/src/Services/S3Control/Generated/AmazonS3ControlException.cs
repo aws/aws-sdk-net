@@ -28,7 +28,7 @@ namespace Amazon.S3Control
     ///<summary>
     /// Common exception for the S3Control service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonS3ControlException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.S3Control
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonS3ControlException class with serialized data.
         /// </summary>

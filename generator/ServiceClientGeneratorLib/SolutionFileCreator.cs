@@ -27,12 +27,6 @@ namespace ServiceClientGenerator
             public const string Net35 = "Net35";
             public const string Net45 = "Net45";
             public const string NetStandard = "NetStandard";            
-            public const string Win8 = "Win8";
-            public const string WinPhone81 = "WinPhone81";
-            public const string WinPhoneSilverlight8 = "WinPhoneSilverlight8";
-            public const string PCL = "PCL";
-            public const string Android = "Android";
-            public const string IOS = "iOS";
             public const string Partial = "partial";
 
         }
@@ -193,15 +187,6 @@ namespace ServiceClientGenerator
             var net35ProjectConfigs = new List<ProjectFileConfiguration> { GetProjectConfig(ProjectTypes.Net35) };
             var net45ProjectConfigs = new List<ProjectFileConfiguration> { GetProjectConfig(ProjectTypes.Net45) };
 
-            var pclProjectConfigs = new List<ProjectFileConfiguration> {
-                    GetProjectConfig(ProjectTypes.PCL),
-                    GetProjectConfig(ProjectTypes.Android),
-                    GetProjectConfig(ProjectTypes.IOS),
-                    GetProjectConfig(ProjectTypes.Win8),
-                    GetProjectConfig(ProjectTypes.WinPhone81),
-                    GetProjectConfig(ProjectTypes.WinPhoneSilverlight8)
-                };
-
             var netStandardProjectConfigs = new List<ProjectFileConfiguration> {
                     GetProjectConfig(ProjectTypes.NetStandard)
                 };            
@@ -209,7 +194,6 @@ namespace ServiceClientGenerator
             GenerateVS2017ServiceSolution(net35ProjectConfigs);
             GenerateVS2017Solution("AWSSDK.Net35.sln", true, false, net35ProjectConfigs);
             GenerateVS2017Solution("AWSSDK.Net45.sln", true, false, net45ProjectConfigs);
-            GenerateCombinedSolution("AWSSDK.PCL.sln", true, pclProjectConfigs);
 
             GenerateVS2017Solution("AWSSDK.NetStandard.sln", true, false, netStandardProjectConfigs);            
 
@@ -315,17 +299,9 @@ namespace ServiceClientGenerator
         {
             switch (projectType)
             {
-                case ProjectTypes.Win8:
-                case ProjectTypes.WinPhone81:
-                case ProjectTypes.WinPhoneSilverlight8:
-                    return PhoneRtPlatformConfigurations;
-
                 case ProjectTypes.Net35:
                 case ProjectTypes.Net45:
-                case ProjectTypes.NetStandard:                
-                case ProjectTypes.PCL:
-                case ProjectTypes.Android:
-                case ProjectTypes.IOS:
+                case ProjectTypes.NetStandard:
                 case ProjectTypes.Partial:
                     return StandardPlatformConfigurations;
                 default:
@@ -615,12 +591,6 @@ namespace ServiceClientGenerator
 
         private void GeneratePlatformSpecificSolution(ProjectFileConfiguration projectConfig, bool includeTests, bool travisSolution, string solutionFileName = null)
         {
-            // Do not generate solutions for PCL sub profiles.
-            if (projectConfig.IsSubProfile)
-            {
-                return;
-            }
-
             var projectType = projectConfig.Name;
             Console.WriteLine("...generating platform-specific solution file AWSSDK.{0}.sln", projectType);
 

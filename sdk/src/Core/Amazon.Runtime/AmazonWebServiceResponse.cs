@@ -23,7 +23,7 @@ namespace Amazon.Runtime
     /// Abstract class for Response objects, contains only metadata, 
     /// and no result information.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class AmazonWebServiceResponse

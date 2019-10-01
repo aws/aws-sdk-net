@@ -28,7 +28,7 @@ namespace Amazon.FSx
     ///<summary>
     /// Common exception for the FSx service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonFSxException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.FSx
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonFSxException class with serialized data.
         /// </summary>

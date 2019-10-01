@@ -28,7 +28,7 @@ namespace Amazon.CloudHSM
     ///<summary>
     /// Common exception for the CloudHSM service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonCloudHSMException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.CloudHSM
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonCloudHSMException class with serialized data.
         /// </summary>

@@ -11,8 +11,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Data Pipeline. AWS Data Pipeline is a managed extract-transform-load (ETL) service that helps you reliably and cost-effectively move and process data across your on-premise data stores and AWS services.")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Data Pipeline. AWS Data Pipeline is a managed extract-transform-load (ETL) service that helps you reliably and cost-effectively move and process data across your on-premise data stores and AWS services.")]
-#elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  AWS Data Pipeline. AWS Data Pipeline is a managed extract-transform-load (ETL) service that helps you reliably and cost-effectively move and process data across your on-premise data stores and AWS services.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- AWS Data Pipeline. AWS Data Pipeline is a managed extract-transform-load (ETL) service that helps you reliably and cost-effectively move and process data across your on-premise data stores and AWS services.")]
 #elif NETSTANDARD20

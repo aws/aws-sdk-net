@@ -27,7 +27,7 @@ namespace Amazon.Runtime.EventStreams
     /// <summary>
     /// Superclass for Exceptions that come over the event stream, or to wrap other kinds of generic exceptions.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public sealed class EventStreamErrorCodeException : EventStreamException
@@ -59,7 +59,7 @@ namespace Amazon.Runtime.EventStreams
             ErrorCode = errorCode;
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the EventStreamErrorCodeException class with serialized data.
         /// </summary>

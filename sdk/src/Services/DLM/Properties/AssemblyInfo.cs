@@ -11,8 +11,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Data Lifecycle Manager. Amazon Data Lifecycle Manager manages lifecycle of your AWS resources.")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Data Lifecycle Manager. Amazon Data Lifecycle Manager manages lifecycle of your AWS resources.")]
-#elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon Data Lifecycle Manager. Amazon Data Lifecycle Manager manages lifecycle of your AWS resources.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Amazon Data Lifecycle Manager. Amazon Data Lifecycle Manager manages lifecycle of your AWS resources.")]
 #elif NETSTANDARD20

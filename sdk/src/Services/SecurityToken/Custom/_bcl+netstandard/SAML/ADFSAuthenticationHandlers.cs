@@ -164,7 +164,7 @@ namespace Amazon.SecurityToken.SAML
     /// Custom exception thrown when authentication failure is detected against
     /// a configured AD FS endpoint.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class AdfsAuthenticationControllerException : Exception
@@ -197,7 +197,7 @@ namespace Amazon.SecurityToken.SAML
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AdfsAuthenticationControllerException class with serialized data.
         /// </summary>

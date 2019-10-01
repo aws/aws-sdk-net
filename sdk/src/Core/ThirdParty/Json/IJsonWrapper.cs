@@ -15,7 +15,7 @@
 using System.Collections;
 using System.Collections.Specialized;
 
-#if ((PCL || ADD_SUPPORT_IORDERED_DICTIONARY) && !(__ANDROID__ || __IOS__))
+#if ADD_SUPPORT_IORDERED_DICTIONARY
 using Amazon.MissingTypes;
 #endif
 

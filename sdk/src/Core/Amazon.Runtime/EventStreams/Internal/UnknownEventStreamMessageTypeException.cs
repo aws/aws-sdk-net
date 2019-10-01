@@ -27,7 +27,7 @@ namespace Amazon.Runtime.EventStreams
     /// Signals that an an <see cref="EventStreamMessage"/> has an unknown message type. These exceptions whould be
     /// swallowed to allow future expansion of the EventStream specification without breaking existing clients.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public sealed class UnknownEventStreamMessageTypeException : Exception
@@ -39,7 +39,7 @@ namespace Amazon.Runtime.EventStreams
         {
 
         }
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the UnknownEventStreamMessageTypeException class with serialized data.
         /// </summary>

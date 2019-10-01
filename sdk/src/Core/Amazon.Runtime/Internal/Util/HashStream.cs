@@ -192,7 +192,7 @@ namespace Amazon.Runtime.Internal.Util
         }
 #endif
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Closes the underlying stream and finishes calculating the hash.
         /// If an ExpectedHash is specified and is not equal to the calculated hash,

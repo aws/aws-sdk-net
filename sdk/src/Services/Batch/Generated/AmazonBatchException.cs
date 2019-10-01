@@ -28,7 +28,7 @@ namespace Amazon.Batch
     ///<summary>
     /// Common exception for the Batch service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonBatchException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.Batch
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonBatchException class with serialized data.
         /// </summary>

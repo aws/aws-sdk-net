@@ -25,7 +25,7 @@ namespace Amazon.WorkMail.Model
     ///<summary>
     /// WorkMail exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class DirectoryUnavailableException : AmazonWorkMailException 
@@ -79,7 +79,7 @@ namespace Amazon.WorkMail.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the DirectoryUnavailableException class with serialized data.
         /// </summary>

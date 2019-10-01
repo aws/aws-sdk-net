@@ -25,7 +25,7 @@ namespace Amazon.MediaStore.Model
     ///<summary>
     /// MediaStore exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class ContainerNotFoundException : AmazonMediaStoreException 
@@ -79,7 +79,7 @@ namespace Amazon.MediaStore.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ContainerNotFoundException class with serialized data.
         /// </summary>

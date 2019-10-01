@@ -11,8 +11,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon GameLift. Amazon GameLift Service is a managed AWS service for developers who need a scalable, server-based solution for multiplayer games.")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon GameLift. Amazon GameLift Service is a managed AWS service for developers who need a scalable, server-based solution for multiplayer games.")]
-#elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon GameLift. Amazon GameLift Service is a managed AWS service for developers who need a scalable, server-based solution for multiplayer games.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Amazon GameLift. Amazon GameLift Service is a managed AWS service for developers who need a scalable, server-based solution for multiplayer games.")]
 #elif NETSTANDARD20

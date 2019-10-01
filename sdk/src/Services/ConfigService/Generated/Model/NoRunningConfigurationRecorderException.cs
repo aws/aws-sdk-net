@@ -25,7 +25,7 @@ namespace Amazon.ConfigService.Model
     ///<summary>
     /// ConfigService exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class NoRunningConfigurationRecorderException : AmazonConfigServiceException 
@@ -79,7 +79,7 @@ namespace Amazon.ConfigService.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the NoRunningConfigurationRecorderException class with serialized data.
         /// </summary>

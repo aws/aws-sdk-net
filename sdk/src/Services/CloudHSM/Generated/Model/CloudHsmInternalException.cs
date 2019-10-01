@@ -25,7 +25,7 @@ namespace Amazon.CloudHSM.Model
     ///<summary>
     /// CloudHSM exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class CloudHsmInternalException : AmazonCloudHSMException 
@@ -79,7 +79,7 @@ namespace Amazon.CloudHSM.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the CloudHsmInternalException class with serialized data.
         /// </summary>

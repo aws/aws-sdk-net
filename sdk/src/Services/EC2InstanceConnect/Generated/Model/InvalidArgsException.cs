@@ -25,7 +25,7 @@ namespace Amazon.EC2InstanceConnect.Model
     ///<summary>
     /// EC2InstanceConnect exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class InvalidArgsException : AmazonEC2InstanceConnectException 
@@ -79,7 +79,7 @@ namespace Amazon.EC2InstanceConnect.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InvalidArgsException class with serialized data.
         /// </summary>

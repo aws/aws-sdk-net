@@ -25,7 +25,7 @@ namespace Amazon.SecretsManager.Model
     ///<summary>
     /// SecretsManager exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class MalformedPolicyDocumentException : AmazonSecretsManagerException 
@@ -79,7 +79,7 @@ namespace Amazon.SecretsManager.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the MalformedPolicyDocumentException class with serialized data.
         /// </summary>

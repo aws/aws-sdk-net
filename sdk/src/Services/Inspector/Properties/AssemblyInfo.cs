@@ -11,8 +11,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Inspector. Amazon Inspector identifies security issues in your application deployments.")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Inspector. Amazon Inspector identifies security issues in your application deployments.")]
-#elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon Inspector. Amazon Inspector identifies security issues in your application deployments.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Amazon Inspector. Amazon Inspector identifies security issues in your application deployments.")]
 #elif NETSTANDARD20

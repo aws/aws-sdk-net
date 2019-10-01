@@ -11,8 +11,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Kinesis Analytics. Amazon Kinesis Analytics is a fully managed service for continuously querying streaming data using standard SQL.")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Kinesis Analytics. Amazon Kinesis Analytics is a fully managed service for continuously querying streaming data using standard SQL.")]
-#elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon Kinesis Analytics. Amazon Kinesis Analytics is a fully managed service for continuously querying streaming data using standard SQL.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Amazon Kinesis Analytics. Amazon Kinesis Analytics is a fully managed service for continuously querying streaming data using standard SQL.")]
 #elif NETSTANDARD20

@@ -19,7 +19,6 @@ using System.Net;
 
 namespace Amazon.Runtime
 {
-#if !PCL
     /// <summary>
     /// When running in an ECS container and AWS_CONTAINER_CREDENTIALS_RELATIVE_URI is set,
     /// use the given end point to retrieve the credentials.
@@ -80,5 +79,4 @@ namespace Amazon.Runtime
             return new CredentialsRefreshState(new ImmutableCredentials(credentials.AccessKeyId, credentials.SecretAccessKey, credentials.Token), credentials.Expiration);
         }
     }
-#endif
 }

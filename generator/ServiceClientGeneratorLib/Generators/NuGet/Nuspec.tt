@@ -25,55 +25,12 @@
 	}
 #>
     <dependencies>
-
-<#
-	if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
-	{
-		List<string> sharedPCLFrameworks = this.Session["SharedPCLNugetTargetFrameworks"] as List<string>;
-		foreach(var targetFramework in sharedPCLFrameworks)
-		{
-#>
-      <group targetFramework="<#=targetFramework#>">
-<#
-			foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
-			{
-#>
-		<dependency id="<#=awsDependencyKVP.Key#>" version="<#=awsDependencyKVP.Value#>" />
-<#
-			}
-#>
-<#
-			if(this.Session.ContainsKey("NugetDependencies"))
-			{
-				var dependencies = (Dictionary<string,List<Dependency>>)this.Session["NugetDependencies"];
-				if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
-				{
-					if(dependencies.ContainsKey("PCL"))
-					{
-						foreach(var dependency in dependencies["PCL"])
-						{
-#>
-		<dependency id="<#=dependency.Name#>" version="<#=dependency.Version#>" />
-<#		
-						}
-					}
-				}
-			}	
-#>
-      </group>
-<#
-		}
-	}
-#>
 <#
 	if(this.Session.ContainsKey("NugetDependencies"))
     {
 		var dependencies = (Dictionary<string,List<Dependency>>)this.Session["NugetDependencies"];
 		foreach(var dependencyList in dependencies)
 		{
-			if(dependencyList.Key.Equals("PCL"))
-				continue;
-
 			var projectFileConfigurations = (IEnumerable<ProjectFileConfiguration>)this.Session["ProjectFileConfigurations"];
 			var targetFramework = projectFileConfigurations.Single(p=>p.Name.Equals(dependencyList.Key)).NuGetTargetPlatform;
 #>			
@@ -125,30 +82,6 @@
     <file src=".\bin\Release\net45\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\net45" />
 
 <#	
-	if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
-	{
-#>
-    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.dll" target="lib\portable-net45+win8+wpa81+wp8" />
-    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.xml" target="lib\portable-net45+win8+wpa81+wp8" />
-    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\portable-net45+win8+wpa81+wp8" />
-
-    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.dll" target="lib\MonoAndroid10" />
-    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.xml" target="lib\MonoAndroid10" />
-
-    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.dll" target="lib\Xamarin.iOS10" />
-    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.xml" target="lib\Xamarin.iOS10" />
-
-    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.dll" target="lib\MonoTouch10" />
-    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.xml" target="lib\MonoTouch10" />
-    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\MonoTouch10" />
-
-    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.dll" target="lib\uap" />
-    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.xml" target="lib\uap" />
-    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\uap" />
-
-<#
-	}
-
 	if(Convert.ToBoolean(this.Session["NetStandardSupport"]))
 	{
 #>

@@ -28,7 +28,7 @@ namespace Amazon.IoT
     ///<summary>
     /// Common exception for the IoT service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonIoTException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.IoT
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonIoTException class with serialized data.
         /// </summary>

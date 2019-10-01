@@ -123,6 +123,7 @@ namespace Amazon.Runtime.Internal.Util
             throw new NotImplementedException();
         }
 
+
 #if AWS_ASYNC_API
         public override Task FlushAsync(CancellationToken cancellationToken)
         {
@@ -146,7 +147,7 @@ namespace Amazon.Runtime.Internal.Util
         }
 #endif
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         public override IAsyncResult BeginRead(byte[] buffer, int offset, int count, AsyncCallback callback, Object state)
         {
             var result = new AsyncResult()

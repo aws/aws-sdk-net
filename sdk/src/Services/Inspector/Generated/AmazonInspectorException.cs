@@ -28,7 +28,7 @@ namespace Amazon.Inspector
     ///<summary>
     /// Common exception for the Inspector service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonInspectorException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.Inspector
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonInspectorException class with serialized data.
         /// </summary>

@@ -21,7 +21,7 @@ namespace Amazon.Runtime
     /// is configured to use a non-default user identity and the QueryUserCredentialCallback on the
     /// instance has not been set.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class CredentialRequestCallbackRequiredException : Exception
@@ -54,7 +54,7 @@ namespace Amazon.Runtime
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the CredentialRequestCallbackRequiredException class with serialized data.
         /// </summary>

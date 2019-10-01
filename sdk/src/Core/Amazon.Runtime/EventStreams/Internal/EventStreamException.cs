@@ -26,7 +26,7 @@ namespace Amazon.Runtime.EventStreams.Internal
     /// <summary>
     /// Superclass for Exceptions that come over the event stream, or to wrap other kinds of generic exceptions.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public abstract class EventStreamException : Exception
@@ -55,7 +55,7 @@ namespace Amazon.Runtime.EventStreams.Internal
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the EventStreamException class with serialized data.
         /// </summary>

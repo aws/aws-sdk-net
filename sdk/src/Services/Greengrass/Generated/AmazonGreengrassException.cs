@@ -28,7 +28,7 @@ namespace Amazon.Greengrass
     ///<summary>
     /// Common exception for the Greengrass service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonGreengrassException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.Greengrass
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonGreengrassException class with serialized data.
         /// </summary>

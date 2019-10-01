@@ -25,7 +25,7 @@ namespace Amazon.IoT1ClickProjects.Model
     ///<summary>
     /// IoT1ClickProjects exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class InternalFailureException : AmazonIoT1ClickProjectsException 
@@ -79,7 +79,7 @@ namespace Amazon.IoT1ClickProjects.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InternalFailureException class with serialized data.
         /// </summary>

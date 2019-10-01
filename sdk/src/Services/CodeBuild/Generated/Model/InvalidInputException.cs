@@ -25,7 +25,7 @@ namespace Amazon.CodeBuild.Model
     ///<summary>
     /// CodeBuild exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class InvalidInputException : AmazonCodeBuildException 
@@ -79,7 +79,7 @@ namespace Amazon.CodeBuild.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InvalidInputException class with serialized data.
         /// </summary>

@@ -28,7 +28,7 @@ namespace Amazon.MarketplaceEntitlementService
     ///<summary>
     /// Common exception for the MarketplaceEntitlementService service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonMarketplaceEntitlementServiceException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.MarketplaceEntitlementService
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonMarketplaceEntitlementServiceException class with serialized data.
         /// </summary>

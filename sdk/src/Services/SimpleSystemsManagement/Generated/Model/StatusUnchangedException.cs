@@ -25,7 +25,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///<summary>
     /// SimpleSystemsManagement exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class StatusUnchangedException : AmazonSimpleSystemsManagementException 
@@ -79,7 +79,7 @@ namespace Amazon.SimpleSystemsManagement.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the StatusUnchangedException class with serialized data.
         /// </summary>

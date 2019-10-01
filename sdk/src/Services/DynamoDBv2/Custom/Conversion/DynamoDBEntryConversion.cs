@@ -22,7 +22,7 @@ using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.Util.Internal;
 
-#if PCL || NETSTANDARD
+#if NETSTANDARD
 using Amazon.MissingTypes;
 using Amazon.Runtime.Internal.Util;
 #endif

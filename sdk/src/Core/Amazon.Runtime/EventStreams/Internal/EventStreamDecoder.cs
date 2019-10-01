@@ -21,6 +21,7 @@
 
 using System;
 using System.Globalization;
+using System.Net;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Ionic.Zlib;
 
@@ -65,7 +66,7 @@ namespace Amazon.Runtime.EventStreams.Internal
     /// machine is an invalid state. This is usually the result of an interanl exception
     /// being thrown during parsing of the network stream.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class EventStreamDecoderIllegalStateException : Exception
@@ -74,7 +75,7 @@ namespace Amazon.Runtime.EventStreams.Internal
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the EventStreamDecoderIllegalStateException class with serialized data.
         /// </summary>
@@ -196,7 +197,7 @@ namespace Amazon.Runtime.EventStreams.Internal
                    in a potentially huge allocation, we want to fail fast before even attempting to continue
                    if the totalLength field has been corrupted. */
             _runningChecksumStream.Write(_workingBuffer, 0, EventStreamMessage.PreludeLen - EventStreamMessage.SizeOfInt32);
-            var preludeChecksum = EndianConversionUtility.NetworkToHostOrder(BitConverter.ToInt32(_workingBuffer,
+            var preludeChecksum = IPAddress.NetworkToHostOrder(BitConverter.ToInt32(_workingBuffer,
                 EventStreamMessage.PreludeLen - EventStreamMessage.SizeOfInt32));
 
             if (preludeChecksum != _runningChecksumStream.Crc32)
@@ -207,7 +208,7 @@ namespace Amazon.Runtime.EventStreams.Internal
             }
 
             _runningChecksumStream.Write(_workingBuffer, EventStreamMessage.PreludeLen - 4, EventStreamMessage.SizeOfInt32);
-            _currentMessageLength = EndianConversionUtility.NetworkToHostOrder(BitConverter.ToInt32(_workingBuffer, 0));
+            _currentMessageLength = IPAddress.NetworkToHostOrder(BitConverter.ToInt32(_workingBuffer, 0));
 
             /* It's entirely possible to change this to not do this potentially large allocation
                but it complicates the API a bit and is most likely unnecessary. For now, just allocate

@@ -11,8 +11,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon FSx. Amazon FSx provides fully-managed third-party file systems optimized for a variety of enterprise and compute-intensive workloads.")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon FSx. Amazon FSx provides fully-managed third-party file systems optimized for a variety of enterprise and compute-intensive workloads.")]
-#elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon FSx. Amazon FSx provides fully-managed third-party file systems optimized for a variety of enterprise and compute-intensive workloads.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Amazon FSx. Amazon FSx provides fully-managed third-party file systems optimized for a variety of enterprise and compute-intensive workloads.")]
 #elif NETSTANDARD20

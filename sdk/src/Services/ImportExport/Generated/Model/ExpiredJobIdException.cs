@@ -25,7 +25,7 @@ namespace Amazon.ImportExport.Model
     ///<summary>
     /// ImportExport exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class ExpiredJobIdException : AmazonImportExportException 
@@ -79,7 +79,7 @@ namespace Amazon.ImportExport.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ExpiredJobIdException class with serialized data.
         /// </summary>

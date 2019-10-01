@@ -28,7 +28,7 @@ namespace Amazon.SecurityHub
     ///<summary>
     /// Common exception for the SecurityHub service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonSecurityHubException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.SecurityHub
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonSecurityHubException class with serialized data.
         /// </summary>

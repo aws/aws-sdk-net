@@ -11,8 +11,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon AppStream. Amazon AppStream is a fully managed, secure application streaming service that allows you to stream desktop applications from AWS to a web browser.")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon AppStream. Amazon AppStream is a fully managed, secure application streaming service that allows you to stream desktop applications from AWS to a web browser.")]
-#elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon AppStream. Amazon AppStream is a fully managed, secure application streaming service that allows you to stream desktop applications from AWS to a web browser.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Amazon AppStream. Amazon AppStream is a fully managed, secure application streaming service that allows you to stream desktop applications from AWS to a web browser.")]
 #elif NETSTANDARD20

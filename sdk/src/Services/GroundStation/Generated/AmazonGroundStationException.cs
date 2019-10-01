@@ -28,7 +28,7 @@ namespace Amazon.GroundStation
     ///<summary>
     /// Common exception for the GroundStation service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonGroundStationException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.GroundStation
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonGroundStationException class with serialized data.
         /// </summary>

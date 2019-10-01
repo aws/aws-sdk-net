@@ -28,7 +28,7 @@ namespace Amazon.Textract
     ///<summary>
     /// Common exception for the Textract service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonTextractException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.Textract
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonTextractException class with serialized data.
         /// </summary>

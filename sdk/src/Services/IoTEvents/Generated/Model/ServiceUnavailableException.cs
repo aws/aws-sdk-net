@@ -25,7 +25,7 @@ namespace Amazon.IoTEvents.Model
     ///<summary>
     /// IoTEvents exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class ServiceUnavailableException : AmazonIoTEventsException 
@@ -79,7 +79,7 @@ namespace Amazon.IoTEvents.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ServiceUnavailableException class with serialized data.
         /// </summary>

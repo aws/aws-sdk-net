@@ -28,7 +28,7 @@ namespace Amazon.ComprehendMedical
     ///<summary>
     /// Common exception for the ComprehendMedical service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonComprehendMedicalException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.ComprehendMedical
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonComprehendMedicalException class with serialized data.
         /// </summary>

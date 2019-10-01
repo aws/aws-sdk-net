@@ -11,8 +11,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Step Functions. AWS Step Functions is a web service that enables you to coordinate a network of computing resources across distributed components using state machines.")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Step Functions. AWS Step Functions is a web service that enables you to coordinate a network of computing resources across distributed components using state machines.")]
-#elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  AWS Step Functions. AWS Step Functions is a web service that enables you to coordinate a network of computing resources across distributed components using state machines.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- AWS Step Functions. AWS Step Functions is a web service that enables you to coordinate a network of computing resources across distributed components using state machines.")]
 #elif NETSTANDARD20

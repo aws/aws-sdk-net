@@ -28,7 +28,7 @@ namespace Amazon.APIGateway
     ///<summary>
     /// Common exception for the APIGateway service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonAPIGatewayException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.APIGateway
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonAPIGatewayException class with serialized data.
         /// </summary>

@@ -82,7 +82,7 @@ namespace ServiceClientGenerator
 
         private const string Bcl35SubFolder = "_bcl35";
         private const string Bcl45SubFolder = "_bcl45";
-        private const string MobileSubFolder = "_mobile";
+        private const string NetStandardSubFolder = "_netstandard";
         private string MarshallingTestsSubFolder = string.Format("UnitTests{0}Generated{0}Marshalling", Path.DirectorySeparatorChar);
         private string CustomizationTestsSubFolder = string.Format("UnitTests{0}Generated{0}Customizations", Path.DirectorySeparatorChar);
 
@@ -151,9 +151,9 @@ namespace ServiceClientGenerator
             ExecuteGenerator(new ServiceClients45(), "Amazon" + Configuration.ClassName + "Client.cs", Bcl45SubFolder);
             ExecuteGenerator(new ServiceInterface45(), "IAmazon" + Configuration.ClassName + ".cs", Bcl45SubFolder);
 
-            // Phone/Rt/Portable version
-            ExecuteGenerator(new ServiceClientsMobile(), "Amazon" + Configuration.ClassName + "Client.cs", MobileSubFolder);
-            ExecuteGenerator(new ServiceInterfaceMobile(), "IAmazon" + Configuration.ClassName + ".cs", MobileSubFolder);
+            // .NET Standard version
+            ExecuteGenerator(new ServiceClientsNetStandard(), "Amazon" + Configuration.ClassName + "Client.cs", NetStandardSubFolder);
+            ExecuteGenerator(new ServiceInterfaceNetStandard(), "IAmazon" + Configuration.ClassName + ".cs", NetStandardSubFolder);
 
             if (string.IsNullOrEmpty(Options.SelfServiceModel))
             {
@@ -161,7 +161,7 @@ namespace ServiceClientGenerator
                 // Use the one generated for the parent model.
                 if (!this.Configuration.IsChildConfig)
                 {
-                    ExecuteNugetFileGenerators();
+                    GenerateNuspec();
 
                     GenerateCodeAnalysisProject();
                 }
@@ -873,24 +873,6 @@ namespace ServiceClientGenerator
             }
         }
 
-        void ExecuteNugetFileGenerators()
-        {
-            GeneratePackagesConfig();
-            GenerateNuspec();
-        }
-
-        void GeneratePackagesConfig()
-        {
-            var assemblyName = Configuration.Namespace.Replace("Amazon.", "AWSSDK.");
-            var session = new Dictionary<string, object>
-            {
-                { "AssemblyName", assemblyName },
-            };
-            var pcGenerator = new PackagesConfig() { Session = session };
-            var text = pcGenerator.TransformText();
-            WriteFile(ServiceFilesRoot, string.Empty, "packages.config", text);
-        }
-
         string ConvertHtmlToMarkDown(string text)
         {
             var htmlText = text.Replace("<fullname>", "<h1>").Replace("</fullname>", "</h1>");
@@ -953,16 +935,6 @@ namespace ServiceClientGenerator
             var nugetTitle = assemblyTitle;
             if (!string.IsNullOrEmpty(Configuration.NugetPackageTitleSuffix))
                 nugetTitle += " " + Configuration.NugetPackageTitleSuffix;
-            bool iOSPclVariant = false;
-            bool androidPclVariant = false;
-            if (Configuration.PclVariants != null)
-            {
-                iOSPclVariant = Configuration.PclVariants.Contains("iOS");
-                androidPclVariant = Configuration.PclVariants.Contains("Android");
-            }
-
-
-            var pclTargetFrameworks = ProjectFileConfigurations.Where(pc => pc.Name.Equals("PCL")).First().SharedNugetTargetFrameworks;
 
             var session = new Dictionary<string, object>
             {
@@ -979,9 +951,7 @@ namespace ServiceClientGenerator
                 { "ProjectFileConfigurations", this.ProjectFileConfigurations},
                 { "ExtraTags", Configuration.Tags == null || Configuration.Tags.Count == 0 ? string.Empty : " " + string.Join(" ", Configuration.Tags) },
                 { "licenseUrl", Configuration.LicenseUrl },
-                { "requireLicenseAcceptance",Configuration.RequireLicenseAcceptance?"true":"false" },
-                { "DisablePCLSupport", this.Options.DisablePCLSupport},
-                { "SharedPCLNugetTargetFrameworks", pclTargetFrameworks}
+                { "requireLicenseAcceptance",Configuration.RequireLicenseAcceptance?"true":"false" }
             };
 
             if (Configuration.NugetDependencies != null)

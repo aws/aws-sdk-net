@@ -28,7 +28,7 @@ namespace Amazon.MediaPackageVod
     ///<summary>
     /// Common exception for the MediaPackageVod service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonMediaPackageVodException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.MediaPackageVod
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonMediaPackageVodException class with serialized data.
         /// </summary>

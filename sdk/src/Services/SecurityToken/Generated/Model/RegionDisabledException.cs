@@ -25,7 +25,7 @@ namespace Amazon.SecurityToken.Model
     ///<summary>
     /// SecurityTokenService exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class RegionDisabledException : AmazonSecurityTokenServiceException 
@@ -79,7 +79,7 @@ namespace Amazon.SecurityToken.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the RegionDisabledException class with serialized data.
         /// </summary>

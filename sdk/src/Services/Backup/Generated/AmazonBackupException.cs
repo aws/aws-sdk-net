@@ -28,7 +28,7 @@ namespace Amazon.Backup
     ///<summary>
     /// Common exception for the Backup service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonBackupException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.Backup
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonBackupException class with serialized data.
         /// </summary>

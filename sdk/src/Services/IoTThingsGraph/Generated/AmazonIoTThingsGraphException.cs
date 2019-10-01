@@ -28,7 +28,7 @@ namespace Amazon.IoTThingsGraph
     ///<summary>
     /// Common exception for the IoTThingsGraph service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonIoTThingsGraphException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.IoTThingsGraph
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonIoTThingsGraphException class with serialized data.
         /// </summary>

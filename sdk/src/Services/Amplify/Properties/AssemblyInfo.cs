@@ -11,8 +11,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Amplify. Amplify is a fully managed continuous deployment and hosting service for modern web apps.")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Amplify. Amplify is a fully managed continuous deployment and hosting service for modern web apps.")]
-#elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  AWS Amplify. Amplify is a fully managed continuous deployment and hosting service for modern web apps.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- AWS Amplify. Amplify is a fully managed continuous deployment and hosting service for modern web apps.")]
 #elif NETSTANDARD20

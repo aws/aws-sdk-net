@@ -25,7 +25,7 @@ namespace Amazon.QuickSight.Model
     ///<summary>
     /// QuickSight exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class ResourceUnavailableException : AmazonQuickSightException 
@@ -79,7 +79,7 @@ namespace Amazon.QuickSight.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ResourceUnavailableException class with serialized data.
         /// </summary>

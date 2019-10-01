@@ -27,7 +27,7 @@ namespace Amazon.S3.Model
     /// <summary>
     /// The exception that is thrown when the size of a stream does not match it's expected size.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class StreamSizeMismatchException : AmazonS3Exception
@@ -166,7 +166,7 @@ namespace Amazon.S3.Model
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonServiceException class with serialized data.
         /// </summary>

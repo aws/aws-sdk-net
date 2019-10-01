@@ -43,7 +43,7 @@ namespace Amazon.Runtime.Internal.Util
 
         #region Overrides
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         public override IAsyncResult BeginWrite(byte[] buffer, int offset, int count, AsyncCallback callback, object state)
         {
             throw new NotSupportedException();

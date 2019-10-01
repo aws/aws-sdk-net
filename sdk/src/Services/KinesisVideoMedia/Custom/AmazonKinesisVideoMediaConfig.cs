@@ -37,11 +37,6 @@ namespace Amazon.KinesisVideoMedia
             // timeouts are not supported.
             this.Timeout = ClientConfig.MaxTimeout;
             this.ReadWriteTimeout = ClientConfig.MaxTimeout;
-#elif PCL
-            // Only Timeout property is supported for WinRT and Windows Phone.
-            // Set Timeout for KinesisVideoMedia to max timeout as per-request
-            // timeouts are not supported.
-            this.Timeout = ClientConfig.MaxTimeout;
 #endif
         }
     }

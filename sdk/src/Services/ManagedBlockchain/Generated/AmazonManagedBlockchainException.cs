@@ -28,7 +28,7 @@ namespace Amazon.ManagedBlockchain
     ///<summary>
     /// Common exception for the ManagedBlockchain service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonManagedBlockchainException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.ManagedBlockchain
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonManagedBlockchainException class with serialized data.
         /// </summary>

@@ -60,31 +60,9 @@ namespace ServiceClientGenerator
         public IEnumerable<string> PlatformExcludeFolders { get; set; }
 
         /// <summary>
-        /// The parent profile for the current profile. This property is 
-        /// valid only for bait-and-switch PCL sub profiles.
-        /// </summary>
-        public ProjectFileConfiguration ParentProfile { get; set; }
-
-        /// <summary>
-        /// Returns true if this profile has a parent profile.
-        /// </summary>
-        public bool IsSubProfile
-        {
-            get
-            {
-                return this.ParentProfile != null;
-            }
-        }
-
-        /// <summary>
         /// The platform name used by NuGet (e.g. wpa81)
         /// </summary>
         public string NuGetTargetPlatform { get; set; }
-
-        /// <summary>
-        /// Some projects are tied to PCL.  Share dependencies for these target frameworks.
-        /// </summary>
-        public IEnumerable<string> SharedNugetTargetFrameworks { get; set; }
 
         /// <summary>
         /// The set of projects that should be included in the solution test folder.

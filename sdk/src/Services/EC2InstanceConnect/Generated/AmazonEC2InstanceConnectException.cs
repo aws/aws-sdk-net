@@ -28,7 +28,7 @@ namespace Amazon.EC2InstanceConnect
     ///<summary>
     /// Common exception for the EC2InstanceConnect service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonEC2InstanceConnectException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.EC2InstanceConnect
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonEC2InstanceConnectException class with serialized data.
         /// </summary>

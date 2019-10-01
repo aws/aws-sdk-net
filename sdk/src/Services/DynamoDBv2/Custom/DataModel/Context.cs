@@ -53,7 +53,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Constructors
 
-#if !(PCL || NETSTANDARD)
+#if NETSTANDARD
 
         /// <summary>
         /// Constructs a DynamoDBContext object with a default AmazonDynamoDBClient

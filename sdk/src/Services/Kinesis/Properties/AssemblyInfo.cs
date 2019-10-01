@@ -11,8 +11,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Kinesis. Amazon Kinesis is a fully managed, cloud-based service for real-time processing of large, distributed data streams.")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Kinesis. Amazon Kinesis is a fully managed, cloud-based service for real-time processing of large, distributed data streams.")]
-#elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon Kinesis. Amazon Kinesis is a fully managed, cloud-based service for real-time processing of large, distributed data streams.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Amazon Kinesis. Amazon Kinesis is a fully managed, cloud-based service for real-time processing of large, distributed data streams.")]
 #elif NETSTANDARD20

@@ -28,7 +28,7 @@ namespace Amazon.PersonalizeRuntime
     ///<summary>
     /// Common exception for the PersonalizeRuntime service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonPersonalizeRuntimeException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.PersonalizeRuntime
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonPersonalizeRuntimeException class with serialized data.
         /// </summary>

@@ -25,7 +25,7 @@ namespace Amazon.AWSSupport.Model
     ///<summary>
     /// AWSSupport exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class AttachmentSetExpiredException : AmazonAWSSupportException 
@@ -79,7 +79,7 @@ namespace Amazon.AWSSupport.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AttachmentSetExpiredException class with serialized data.
         /// </summary>

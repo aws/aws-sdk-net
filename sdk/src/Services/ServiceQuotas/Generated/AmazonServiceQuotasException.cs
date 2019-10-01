@@ -28,7 +28,7 @@ namespace Amazon.ServiceQuotas
     ///<summary>
     /// Common exception for the ServiceQuotas service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonServiceQuotasException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.ServiceQuotas
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonServiceQuotasException class with serialized data.
         /// </summary>

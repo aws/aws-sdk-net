@@ -28,7 +28,7 @@ namespace Amazon.S3.Model
     /// Modeled Exception that either comes over the stream from the service model, or wraps other exceptions for the purpose of raising events. If it is
     /// modelled, it will be a subclass.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class S3EventStreamException : EventStreamException
@@ -57,7 +57,7 @@ namespace Amazon.S3.Model
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the S3EventStreamException class with serialized data.
         /// </summary>

@@ -28,7 +28,7 @@ namespace Amazon.Snowball
     ///<summary>
     /// Common exception for the Snowball service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonSnowballException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.Snowball
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonSnowballException class with serialized data.
         /// </summary>

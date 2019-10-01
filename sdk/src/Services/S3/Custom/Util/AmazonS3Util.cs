@@ -621,12 +621,7 @@ namespace Amazon.S3.Util
 
             try
             {
-#if PCL
-                var result = httpRequest.BeginGetResponse(null, null);
-                using (var httpResponse = httpRequest.EndGetResponse(result) as HttpWebResponse)
-#else 
-                using (var httpResponse = await httpRequest.GetResponseAsync().ConfigureAwait(false) as HttpWebResponse)
-#endif          
+                using (var httpResponse = await httpRequest.GetResponseAsync().ConfigureAwait(false) as HttpWebResponse)        
                 {
                     // If all went well, the bucket was found!
                     return true;

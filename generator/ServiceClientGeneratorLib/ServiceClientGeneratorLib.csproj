@@ -275,8 +275,8 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Update="Generators\SourceFiles\ServiceClientsMobile.cs">
-      <DependentUpon>ServiceClientsMobile.tt</DependentUpon>
+    <Compile Update="Generators\SourceFiles\ServiceClientsNetStandard.cs">
+      <DependentUpon>ServiceClientsNetStandard.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -300,8 +300,8 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Update="Generators\SourceFiles\ServiceInterfaceMobile.cs">
-      <DependentUpon>ServiceInterfaceMobile.tt</DependentUpon>
+    <Compile Update="Generators\SourceFiles\ServiceInterfaceNetStandard.cs">
+      <DependentUpon>ServiceInterfaceNetStandard.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -325,11 +325,6 @@
     </Compile>
     <Compile Update="Generators\SourceFiles\WrappingResultGenerator.cs">
       <DependentUpon>WrappingResultGenerator.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Update="Generators\ProjectFiles\BclProjectFile.cs">
-      <DependentUpon>BclProjectFile.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -506,9 +501,9 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ServiceClients45.cs</LastGenOutput>
     </None>
-    <None Update="Generators\SourceFiles\ServiceClientsMobile.tt">
+    <None Update="Generators\SourceFiles\ServiceClientsNetStandard.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ServiceClientsMobile.cs</LastGenOutput>
+      <LastGenOutput>ServiceClientsNetStandard.cs</LastGenOutput>
     </None>
     <None Update="Generators\SourceFiles\ServiceConfig.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -526,9 +521,9 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ServiceInterface45.cs</LastGenOutput>
     </None>
-    <None Update="Generators\SourceFiles\ServiceInterfaceMobile.tt">
+    <None Update="Generators\SourceFiles\ServiceInterfaceNetStandard.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ServiceInterfaceMobile.cs</LastGenOutput>
+      <LastGenOutput>ServiceInterfaceNetStandard.cs</LastGenOutput>
     </None>
     <None Update="Generators\TestFiles\SimpleConstructorTests.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -546,10 +541,6 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>WrappingResultGenerator.cs</LastGenOutput>
     </None>
-    <None Update="Generators\ProjectFiles\BclProjectFile.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>BclProjectFile.cs</LastGenOutput>
-    </None>
     <None Update="Generators\ProjectFiles\SolutionFileGenerator.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>SolutionFileGenerator.cs</LastGenOutput>
@@ -562,7 +553,6 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>PackagesConfig.cs</LastGenOutput>
     </None>
-    <None Update="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
