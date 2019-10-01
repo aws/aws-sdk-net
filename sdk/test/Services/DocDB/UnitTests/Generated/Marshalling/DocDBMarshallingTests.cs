@@ -365,6 +365,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("DocDB")]
+        public void DescribeCertificatesMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeCertificates");
+
+            var request = InstantiateClassGenerator.Execute<DescribeCertificatesRequest>();
+            var marshaller = new DescribeCertificatesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeCertificatesResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeCertificatesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("DocDB")]
         public void DescribeDBClusterParameterGroupsMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeDBClusterParameterGroups");

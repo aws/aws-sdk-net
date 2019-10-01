@@ -329,7 +329,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be from 1 to 16 letters or numbers.
+        /// Must be from 1 to 63 letters or numbers.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -362,7 +362,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must contain from 8 to 41 characters.
+        /// Constraints: Must contain from 8 to 100 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

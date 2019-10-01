@@ -72,6 +72,12 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                         unmarshalledObject.BackupRetentionPeriod = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("CACertificateIdentifier", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CACertificateIdentifier = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DBClusterIdentifier", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

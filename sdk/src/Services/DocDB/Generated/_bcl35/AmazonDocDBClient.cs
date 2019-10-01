@@ -1298,6 +1298,64 @@ namespace Amazon.DocDB
 
         #endregion
         
+        #region  DescribeCertificates
+
+        /// <summary>
+        /// Returns a list of certificate authority (CA) certificates provided by Amazon RDS for
+        /// this AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCertificates service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCertificates service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.CertificateNotFoundException">
+        /// <code>CertificateIdentifier</code> doesn't refer to an existing certificate.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeCertificates">REST API Reference for DescribeCertificates Operation</seealso>
+        public virtual DescribeCertificatesResponse DescribeCertificates(DescribeCertificatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCertificatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCertificatesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCertificatesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCertificates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCertificates operation on AmazonDocDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCertificates
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeCertificates">REST API Reference for DescribeCertificates Operation</seealso>
+        public virtual IAsyncResult BeginDescribeCertificates(DescribeCertificatesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCertificatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCertificatesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeCertificates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCertificates.</param>
+        /// 
+        /// <returns>Returns a  DescribeCertificatesResult from DocDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeCertificates">REST API Reference for DescribeCertificates Operation</seealso>
+        public virtual DescribeCertificatesResponse EndDescribeCertificates(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeCertificatesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeDBClusterParameterGroups
 
         /// <summary>

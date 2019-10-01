@@ -1424,6 +1424,55 @@ namespace Amazon.DocDB
 
         #endregion
         
+        #region  DescribeCertificates
+
+
+        /// <summary>
+        /// Returns a list of certificate authority (CA) certificates provided by Amazon RDS for
+        /// this AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCertificates service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCertificates service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.CertificateNotFoundException">
+        /// <code>CertificateIdentifier</code> doesn't refer to an existing certificate.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeCertificates">REST API Reference for DescribeCertificates Operation</seealso>
+        public virtual DescribeCertificatesResponse DescribeCertificates(DescribeCertificatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCertificatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCertificatesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCertificatesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of certificate authority (CA) certificates provided by Amazon RDS for
+        /// this AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCertificates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCertificates service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.CertificateNotFoundException">
+        /// <code>CertificateIdentifier</code> doesn't refer to an existing certificate.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeCertificates">REST API Reference for DescribeCertificates Operation</seealso>
+        public virtual Task<DescribeCertificatesResponse> DescribeCertificatesAsync(DescribeCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCertificatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCertificatesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeCertificatesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeDBClusterParameterGroups
 
 
