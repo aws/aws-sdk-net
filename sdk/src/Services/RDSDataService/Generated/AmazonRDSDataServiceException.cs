@@ -28,7 +28,7 @@ namespace Amazon.RDSDataService
     ///<summary>
     /// Common exception for the RDSDataService service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonRDSDataServiceException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.RDSDataService
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonRDSDataServiceException class with serialized data.
         /// </summary>

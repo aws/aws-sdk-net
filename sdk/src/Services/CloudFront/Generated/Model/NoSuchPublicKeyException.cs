@@ -25,7 +25,7 @@ namespace Amazon.CloudFront.Model
     ///<summary>
     /// CloudFront exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class NoSuchPublicKeyException : AmazonCloudFrontException 
@@ -79,7 +79,7 @@ namespace Amazon.CloudFront.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the NoSuchPublicKeyException class with serialized data.
         /// </summary>

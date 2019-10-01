@@ -25,7 +25,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///<summary>
     /// SimpleSystemsManagement exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class PoliciesLimitExceededException : AmazonSimpleSystemsManagementException 
@@ -79,7 +79,7 @@ namespace Amazon.SimpleSystemsManagement.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the PoliciesLimitExceededException class with serialized data.
         /// </summary>

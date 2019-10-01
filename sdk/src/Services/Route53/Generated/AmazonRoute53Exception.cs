@@ -28,7 +28,7 @@ namespace Amazon.Route53
     ///<summary>
     /// Common exception for the Route53 service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonRoute53Exception : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.Route53
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonRoute53Exception class with serialized data.
         /// </summary>

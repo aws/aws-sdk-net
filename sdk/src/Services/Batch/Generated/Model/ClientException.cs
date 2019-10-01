@@ -25,7 +25,7 @@ namespace Amazon.Batch.Model
     ///<summary>
     /// Batch exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class ClientException : AmazonBatchException 
@@ -79,7 +79,7 @@ namespace Amazon.Batch.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ClientException class with serialized data.
         /// </summary>

@@ -28,7 +28,7 @@ namespace Amazon.WAFRegional
     ///<summary>
     /// Common exception for the WAFRegional service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonWAFRegionalException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.WAFRegional
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonWAFRegionalException class with serialized data.
         /// </summary>

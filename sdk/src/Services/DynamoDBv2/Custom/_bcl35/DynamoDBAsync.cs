@@ -79,11 +79,7 @@ namespace Amazon.DynamoDBv2
             {
                 if (disposing && _waitHandle != null)
                 {
-#if PCL
-                    _waitHandle.Dispose();
-#else
                     _waitHandle.Close();
-#endif
                     _waitHandle = null;
                 }
                 this._disposed = true;
@@ -128,11 +124,7 @@ namespace Amazon.DynamoDBv2
         public static IAsyncResult BeginOperation(AsyncCall call, AsyncCallback callback, object state)
         {
             DynamoDBAsyncResult result = new DynamoDBAsyncResult(callback, state);
-#if PCL
-            System.Threading.Tasks.Task.Run((Action)(() => Execute(call, result)));
-#else
             ThreadPool.QueueUserWorkItem(s => Execute(call, result));
-#endif
             return result;
         }
 

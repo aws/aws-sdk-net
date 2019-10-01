@@ -25,7 +25,7 @@ namespace Amazon.CloudWatchLogs.Model
     ///<summary>
     /// CloudWatchLogs exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class UnrecognizedClientException : AmazonCloudWatchLogsException 
@@ -79,7 +79,7 @@ namespace Amazon.CloudWatchLogs.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the UnrecognizedClientException class with serialized data.
         /// </summary>

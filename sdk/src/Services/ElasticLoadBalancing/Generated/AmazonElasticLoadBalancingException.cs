@@ -28,7 +28,7 @@ namespace Amazon.ElasticLoadBalancing
     ///<summary>
     /// Common exception for the ElasticLoadBalancing service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonElasticLoadBalancingException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.ElasticLoadBalancing
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonElasticLoadBalancingException class with serialized data.
         /// </summary>

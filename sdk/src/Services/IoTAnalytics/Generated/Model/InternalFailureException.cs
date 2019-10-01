@@ -25,7 +25,7 @@ namespace Amazon.IoTAnalytics.Model
     ///<summary>
     /// IoTAnalytics exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class InternalFailureException : AmazonIoTAnalyticsException 
@@ -79,7 +79,7 @@ namespace Amazon.IoTAnalytics.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InternalFailureException class with serialized data.
         /// </summary>

@@ -28,7 +28,7 @@ namespace Amazon.CloudWatchEvents
     ///<summary>
     /// Common exception for the CloudWatchEvents service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonCloudWatchEventsException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.CloudWatchEvents
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonCloudWatchEventsException class with serialized data.
         /// </summary>

@@ -28,7 +28,7 @@ namespace Amazon.IoT1ClickDevicesService
     ///<summary>
     /// Common exception for the IoT1ClickDevicesService service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonIoT1ClickDevicesServiceException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.IoT1ClickDevicesService
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonIoT1ClickDevicesServiceException class with serialized data.
         /// </summary>

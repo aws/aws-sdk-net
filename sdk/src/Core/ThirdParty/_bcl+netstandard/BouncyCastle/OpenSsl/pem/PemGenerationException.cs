@@ -23,7 +23,7 @@ using System;
 
 namespace ThirdParty.BouncyCastle.Utilities.IO.Pem
 {
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class PemGenerationException

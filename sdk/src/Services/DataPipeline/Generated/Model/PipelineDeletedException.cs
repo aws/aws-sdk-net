@@ -25,7 +25,7 @@ namespace Amazon.DataPipeline.Model
     ///<summary>
     /// DataPipeline exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class PipelineDeletedException : AmazonDataPipelineException 
@@ -79,7 +79,7 @@ namespace Amazon.DataPipeline.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the PipelineDeletedException class with serialized data.
         /// </summary>

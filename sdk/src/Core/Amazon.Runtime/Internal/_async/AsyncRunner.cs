@@ -36,10 +36,6 @@ namespace Amazon.Runtime.Internal
 
         public static Task<T> Run<T>(Func<T> action, CancellationToken cancellationToken)
         {
-#if PCL
-            Task<T> task = Task.Run<T>(action);
-            return task;
-#else
             return Task<T>.Run(async () =>
             {
                 Exception exception = null;
@@ -84,7 +80,6 @@ namespace Amazon.Runtime.Internal
                     }
                 }
             }, cancellationToken);
-#endif
         }
     }
 }

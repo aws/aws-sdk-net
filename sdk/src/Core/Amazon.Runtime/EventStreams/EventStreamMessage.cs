@@ -22,6 +22,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
+using System.Net;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Ionic.Zlib;
 
@@ -29,7 +30,7 @@ namespace Amazon.Runtime.EventStreams
 {
     #region exceptions
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class EventStreamParseException : Exception
@@ -38,7 +39,7 @@ namespace Amazon.Runtime.EventStreams
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the EventStreamParseException class with serialized data.
         /// </summary>
@@ -53,7 +54,7 @@ namespace Amazon.Runtime.EventStreams
 #endif
     }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class EventStreamChecksumFailureException : Exception
@@ -62,7 +63,7 @@ namespace Amazon.Runtime.EventStreams
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the EventStreamChecksumFailureException class with serialized data.
         /// </summary>
@@ -166,19 +167,19 @@ namespace Amazon.Runtime.EventStreams
             //get the total length of the message
             var totalLength = BitConverter.ToInt32(buffer, currentOffset);
             //endianness conversion
-            totalLength = EndianConversionUtility.NetworkToHostOrder(totalLength);
+            totalLength = IPAddress.NetworkToHostOrder(totalLength);
             currentOffset += SizeOfInt32;
 
             //get the length of the headers block.
             var headersLength = BitConverter.ToInt32(buffer, currentOffset);
             //endianness conversion
-            headersLength = EndianConversionUtility.NetworkToHostOrder(headersLength);
+            headersLength = IPAddress.NetworkToHostOrder(headersLength);
             currentOffset += SizeOfInt32;
 
             //get the prelude crc
             var preludeCrc = BitConverter.ToInt32(buffer, currentOffset);
             //endianness conversion
-            preludeCrc = EndianConversionUtility.NetworkToHostOrder(preludeCrc);
+            preludeCrc = IPAddress.NetworkToHostOrder(preludeCrc);
 
             var message = new EventStreamMessage();
             message.Headers = new Dictionary<string, IEventStreamHeader>(StringComparer.Ordinal);
@@ -231,7 +232,7 @@ namespace Amazon.Runtime.EventStreams
                 //after reading the payload, get the message crc and make sure it matches.
                 var trailingCrc = BitConverter.ToInt32(buffer, currentOffset);
                 //endianness conversion.
-                trailingCrc = EndianConversionUtility.NetworkToHostOrder(trailingCrc);
+                trailingCrc = IPAddress.NetworkToHostOrder(trailingCrc);
 
                 if (trailingCrc != runningChecksum.Crc32)
                 {
@@ -267,10 +268,10 @@ namespace Amazon.Runtime.EventStreams
 
             //now write the total length and the headers length to the message. make sure to handle endianness conversions
             var offset = 0;
-            Buffer.BlockCopy(BitConverter.GetBytes(EndianConversionUtility.HostToNetworkOrder(totalLength)), 0,
+            Buffer.BlockCopy(BitConverter.GetBytes(IPAddress.HostToNetworkOrder(totalLength)), 0,
                 messageBuffer, offset, SizeOfInt32);
             offset += SizeOfInt32;
-            Buffer.BlockCopy(BitConverter.GetBytes(EndianConversionUtility.HostToNetworkOrder(headersWireLength)), 0,
+            Buffer.BlockCopy(BitConverter.GetBytes(IPAddress.HostToNetworkOrder(headersWireLength)), 0,
                 messageBuffer, offset, SizeOfInt32);
             offset += SizeOfInt32;
 
@@ -280,7 +281,7 @@ namespace Amazon.Runtime.EventStreams
                 //write the total length and headers length to the checksum stream.
                 runningChecksum.Write(messageBuffer, 0, offset);
                 //take the current checksum and write it to the message.
-                Buffer.BlockCopy(BitConverter.GetBytes(EndianConversionUtility.HostToNetworkOrder(runningChecksum.Crc32)), 0,
+                Buffer.BlockCopy(BitConverter.GetBytes(IPAddress.HostToNetworkOrder(runningChecksum.Crc32)), 0,
                     messageBuffer, offset, SizeOfInt32);
                 //now take the current checksum and write it to the checksum stream.
                 runningChecksum.Write(messageBuffer, offset, SizeOfInt32);
@@ -307,7 +308,7 @@ namespace Amazon.Runtime.EventStreams
                 }
 
                 //take the final checksum and add it to the end of the message.
-                Buffer.BlockCopy(BitConverter.GetBytes(EndianConversionUtility.HostToNetworkOrder(runningChecksum.Crc32)), 0,
+                Buffer.BlockCopy(BitConverter.GetBytes(IPAddress.HostToNetworkOrder(runningChecksum.Crc32)), 0,
                     messageBuffer, offset, SizeOfInt32);
             }
 

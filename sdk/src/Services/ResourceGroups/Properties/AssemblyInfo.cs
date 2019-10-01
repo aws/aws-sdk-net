@@ -11,8 +11,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Resource Groups. AWS Resource Groups lets you search and group AWS resources from multiple services based on their tags.")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Resource Groups. AWS Resource Groups lets you search and group AWS resources from multiple services based on their tags.")]
-#elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  AWS Resource Groups. AWS Resource Groups lets you search and group AWS resources from multiple services based on their tags.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- AWS Resource Groups. AWS Resource Groups lets you search and group AWS resources from multiple services based on their tags.")]
 #elif NETSTANDARD20

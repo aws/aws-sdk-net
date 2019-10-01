@@ -28,7 +28,7 @@ namespace Amazon.DLM
     ///<summary>
     /// Common exception for the DLM service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonDLMException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.DLM
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonDLMException class with serialized data.
         /// </summary>

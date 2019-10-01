@@ -28,7 +28,7 @@ namespace Amazon.KinesisFirehose
     ///<summary>
     /// Common exception for the KinesisFirehose service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonKinesisFirehoseException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.KinesisFirehose
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonKinesisFirehoseException class with serialized data.
         /// </summary>

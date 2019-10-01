@@ -25,7 +25,7 @@ namespace Amazon.CloudHSMV2.Model
     ///<summary>
     /// CloudHSMV2 exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class CloudHsmServiceException : AmazonCloudHSMV2Exception 
@@ -79,7 +79,7 @@ namespace Amazon.CloudHSMV2.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the CloudHsmServiceException class with serialized data.
         /// </summary>

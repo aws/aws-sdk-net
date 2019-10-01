@@ -25,7 +25,7 @@ namespace Amazon.RoboMaker.Model
     ///<summary>
     /// RoboMaker exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class ResourceAlreadyExistsException : AmazonRoboMakerException 
@@ -79,7 +79,7 @@ namespace Amazon.RoboMaker.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ResourceAlreadyExistsException class with serialized data.
         /// </summary>

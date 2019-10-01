@@ -28,7 +28,7 @@ namespace Amazon.Runtime.EventStreams
     /// This exception is thrown if an exception is retrieved from the event stream and should be modeled,
     /// but a generator function for the strongly-typed exception is not defined.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public sealed class UnknownEventStreamException : EventStreamException
@@ -51,7 +51,7 @@ namespace Amazon.Runtime.EventStreams
             ExceptionType = exceptionType;
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the UnknownEventStreamException class with serialized data.
         /// </summary>

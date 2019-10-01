@@ -25,7 +25,7 @@ namespace Amazon.CostAndUsageReport.Model
     ///<summary>
     /// CostAndUsageReport exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class ValidationException : AmazonCostAndUsageReportException 
@@ -79,7 +79,7 @@ namespace Amazon.CostAndUsageReport.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ValidationException class with serialized data.
         /// </summary>

@@ -28,7 +28,7 @@ namespace Amazon.PinpointEmail
     ///<summary>
     /// Common exception for the PinpointEmail service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonPinpointEmailException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.PinpointEmail
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonPinpointEmailException class with serialized data.
         /// </summary>

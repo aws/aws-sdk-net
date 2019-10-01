@@ -25,7 +25,7 @@ namespace Amazon.SimpleNotificationService.Model
     ///<summary>
     /// SimpleNotificationService exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class TagPolicyException : AmazonSimpleNotificationServiceException 
@@ -79,7 +79,7 @@ namespace Amazon.SimpleNotificationService.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the TagPolicyException class with serialized data.
         /// </summary>

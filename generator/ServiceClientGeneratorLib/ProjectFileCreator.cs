@@ -131,13 +131,6 @@ namespace ServiceClientGenerator
                     continue;
                 }   
 
-                if (projectFileConfiguration.IsSubProfile &&
-                    !(serviceConfiguration.PclVariants != null && serviceConfiguration.PclVariants.Any(p => p.Equals(projectFileConfiguration.Name))))
-                {
-                    // Skip sub profiles for service projects.
-                    continue;
-                }
-
                 var projectFilename = string.Concat(assemblyName, ".", projectType, ".csproj");
                 bool newProject = false;
                 string projectGuid;
@@ -180,11 +173,7 @@ namespace ServiceClientGenerator
                 {
                     foreach (var dependency in serviceConfiguration.ServiceDependencies)
                     {
-                        var pt = projectType;
-                        if (!pt.StartsWith(@"Net") && serviceConfiguration.UsePclProjectDependencies)
-                            pt = @"PCL";
-
-                        var dependencyProjectName = "AWSSDK." + dependency.Key + "." + pt;
+                        var dependencyProjectName = "AWSSDK." + dependency.Key + "." + projectType;
                         string dependencyProject;
                         if (string.Equals(dependency.Key, "Core", StringComparison.InvariantCultureIgnoreCase))
                         {

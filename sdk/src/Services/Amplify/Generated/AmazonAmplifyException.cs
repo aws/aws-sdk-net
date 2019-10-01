@@ -28,7 +28,7 @@ namespace Amazon.Amplify
     ///<summary>
     /// Common exception for the Amplify service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonAmplifyException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.Amplify
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonAmplifyException class with serialized data.
         /// </summary>

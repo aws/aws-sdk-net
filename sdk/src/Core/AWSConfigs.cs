@@ -588,13 +588,6 @@ namespace Amazon
         /// Log to the console
         /// </summary>
         Console = 16
-#if PCL 
-        ,
-        /// <summary>
-        /// Log to a file
-        /// </summary>
-        File = 4
-#endif
     }
 
     /// <summary>

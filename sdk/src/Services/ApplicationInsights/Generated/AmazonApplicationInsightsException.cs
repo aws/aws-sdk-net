@@ -28,7 +28,7 @@ namespace Amazon.ApplicationInsights
     ///<summary>
     /// Common exception for the ApplicationInsights service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonApplicationInsightsException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.ApplicationInsights
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonApplicationInsightsException class with serialized data.
         /// </summary>

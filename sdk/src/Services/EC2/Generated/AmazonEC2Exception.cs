@@ -28,7 +28,7 @@ namespace Amazon.EC2
     ///<summary>
     /// Common exception for the EC2 service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonEC2Exception : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.EC2
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonEC2Exception class with serialized data.
         /// </summary>

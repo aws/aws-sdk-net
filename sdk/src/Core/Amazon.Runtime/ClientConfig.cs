@@ -601,9 +601,6 @@ namespace Amazon.Runtime
                 : (clientTimeout.HasValue ? clientTimeout : null);
         }
 
-#if NETSTANDARD || PCL
-
-
 #if NETSTANDARD
         bool cacheHttpClient = true;
 #else
@@ -663,7 +660,7 @@ namespace Amazon.Runtime
                 this._httpClientCacheSize = value;
             }
         }
-#endif
+        
         /// <summary>
         /// Overrides the default read-write timeout value.
         /// </summary>

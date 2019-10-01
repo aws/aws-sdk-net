@@ -28,7 +28,7 @@ namespace Amazon.Budgets
     ///<summary>
     /// Common exception for the Budgets service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonBudgetsException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.Budgets
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonBudgetsException class with serialized data.
         /// </summary>

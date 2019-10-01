@@ -143,7 +143,7 @@ namespace Amazon.SQS.Internal
 
             public void Dispose()
             {
-#if PCL || NETSTANDARD
+#if NETSTANDARD
                 writer.Dispose();
 #else
                 writer.Close();

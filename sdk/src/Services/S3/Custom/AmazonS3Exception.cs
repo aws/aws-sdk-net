@@ -24,7 +24,7 @@ namespace Amazon.S3
     /// <summary>
     /// Base exception for S3 errors.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class AmazonS3Exception : AmazonServiceException
@@ -158,7 +158,7 @@ namespace Amazon.S3
         #endregion
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonS3Exception class with serialized data.
         /// </summary>

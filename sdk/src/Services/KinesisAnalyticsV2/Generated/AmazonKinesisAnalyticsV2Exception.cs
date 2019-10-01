@@ -28,7 +28,7 @@ namespace Amazon.KinesisAnalyticsV2
     ///<summary>
     /// Common exception for the KinesisAnalyticsV2 service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonKinesisAnalyticsV2Exception : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.KinesisAnalyticsV2
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonKinesisAnalyticsV2Exception class with serialized data.
         /// </summary>

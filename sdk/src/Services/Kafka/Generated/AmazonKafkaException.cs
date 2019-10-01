@@ -28,7 +28,7 @@ namespace Amazon.Kafka
     ///<summary>
     /// Common exception for the Kafka service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonKafkaException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.Kafka
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonKafkaException class with serialized data.
         /// </summary>

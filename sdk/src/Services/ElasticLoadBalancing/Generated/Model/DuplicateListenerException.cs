@@ -25,7 +25,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     ///<summary>
     /// ElasticLoadBalancing exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class DuplicateListenerException : AmazonElasticLoadBalancingException 
@@ -79,7 +79,7 @@ namespace Amazon.ElasticLoadBalancing.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the DuplicateListenerException class with serialized data.
         /// </summary>

@@ -11,8 +11,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Resource Access Manager. AWS Resource Access Manager (AWS RAM) enables you to share your resources with any AWS account or through AWS Organizations.")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Resource Access Manager. AWS Resource Access Manager (AWS RAM) enables you to share your resources with any AWS account or through AWS Organizations.")]
-#elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  AWS Resource Access Manager. AWS Resource Access Manager (AWS RAM) enables you to share your resources with any AWS account or through AWS Organizations.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- AWS Resource Access Manager. AWS Resource Access Manager (AWS RAM) enables you to share your resources with any AWS account or through AWS Organizations.")]
 #elif NETSTANDARD20

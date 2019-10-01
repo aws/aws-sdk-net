@@ -35,7 +35,7 @@ namespace Amazon.S3Control
             set { this.amazonId2 = value; }
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         //TODO: Because the code generator creates an empty the deserialization constructor
         //  protected AmazonS3ControlException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         //we are currently not implementing deserialization of AmazonId2.

@@ -28,7 +28,7 @@ namespace Amazon.CloudHSMV2
     ///<summary>
     /// Common exception for the CloudHSMV2 service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonCloudHSMV2Exception : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.CloudHSMV2
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonCloudHSMV2Exception class with serialized data.
         /// </summary>

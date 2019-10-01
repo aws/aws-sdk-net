@@ -28,7 +28,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
     ///<summary>
     /// Common exception for the AWSMarketplaceCommerceAnalytics service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonAWSMarketplaceCommerceAnalyticsException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonAWSMarketplaceCommerceAnalyticsException class with serialized data.
         /// </summary>

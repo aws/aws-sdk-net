@@ -101,15 +101,6 @@ namespace Amazon.Util.Internal
                 environmentInfo.PlatformUserAgent,
                 GetExecutionEnvironmentUserAgentString(),
                 _customData).Trim();
-#elif PCL
-            return string.Format(CultureInfo.InvariantCulture, "{0}/{1} aws-sdk-dotnet-core/{2} {3} OS/{4} {5} {6}",
-                _userAgentBaseName,
-                serviceSdkVersion,
-                CoreVersionNumber,
-                environmentInfo.FrameworkUserAgent,
-                environmentInfo.PlatformUserAgent,
-                environmentInfo.PclPlatform,
-                _customData).Trim();
 #elif NETSTANDARD
             return string.Format(CultureInfo.InvariantCulture, "{0}/{1} aws-sdk-dotnet-core/{2} {3} OS/{4} {5} {6}",
                 _userAgentBaseName,

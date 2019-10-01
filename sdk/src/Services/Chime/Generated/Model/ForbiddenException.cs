@@ -25,7 +25,7 @@ namespace Amazon.Chime.Model
     ///<summary>
     /// Chime exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class ForbiddenException : AmazonChimeException 
@@ -79,7 +79,7 @@ namespace Amazon.Chime.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ForbiddenException class with serialized data.
         /// </summary>

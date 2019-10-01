@@ -25,7 +25,7 @@ namespace Amazon.XRay.Model
     ///<summary>
     /// XRay exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class InvalidRequestException : AmazonXRayException 
@@ -79,7 +79,7 @@ namespace Amazon.XRay.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InvalidRequestException class with serialized data.
         /// </summary>

@@ -28,7 +28,7 @@ namespace Amazon.XRay
     ///<summary>
     /// Common exception for the XRay service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonXRayException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.XRay
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonXRayException class with serialized data.
         /// </summary>

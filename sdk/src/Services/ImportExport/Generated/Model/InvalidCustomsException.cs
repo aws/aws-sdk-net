@@ -25,7 +25,7 @@ namespace Amazon.ImportExport.Model
     ///<summary>
     /// ImportExport exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class InvalidCustomsException : AmazonImportExportException 
@@ -79,7 +79,7 @@ namespace Amazon.ImportExport.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InvalidCustomsException class with serialized data.
         /// </summary>

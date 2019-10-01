@@ -28,7 +28,7 @@ namespace Amazon.Organizations
     ///<summary>
     /// Common exception for the Organizations service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonOrganizationsException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.Organizations
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonOrganizationsException class with serialized data.
         /// </summary>

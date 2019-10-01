@@ -11,8 +11,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Transcribe Service. Amazon Transcribe Public Preview Release")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Transcribe Service. Amazon Transcribe Public Preview Release")]
-#elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon Transcribe Service. Amazon Transcribe Public Preview Release")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Amazon Transcribe Service. Amazon Transcribe Public Preview Release")]
 #elif NETSTANDARD20

@@ -28,7 +28,7 @@ namespace Amazon.DataSync
     ///<summary>
     /// Common exception for the DataSync service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonDataSyncException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.DataSync
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonDataSyncException class with serialized data.
         /// </summary>

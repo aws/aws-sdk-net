@@ -28,7 +28,7 @@ namespace Amazon.FMS
     ///<summary>
     /// Common exception for the FMS service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonFMSException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.FMS
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonFMSException class with serialized data.
         /// </summary>

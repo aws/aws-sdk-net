@@ -11,8 +11,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS DataSync. AWS DataSync simplifies, automates, and accelerates moving and replicating data between on-premises storage and AWS services over the network.")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS DataSync. AWS DataSync simplifies, automates, and accelerates moving and replicating data between on-premises storage and AWS services over the network.")]
-#elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  AWS DataSync. AWS DataSync simplifies, automates, and accelerates moving and replicating data between on-premises storage and AWS services over the network.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- AWS DataSync. AWS DataSync simplifies, automates, and accelerates moving and replicating data between on-premises storage and AWS services over the network.")]
 #elif NETSTANDARD20

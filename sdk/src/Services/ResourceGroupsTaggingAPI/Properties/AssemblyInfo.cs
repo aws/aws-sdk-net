@@ -11,8 +11,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Resource Groups Tagging API. Resource Groups Tagging APIs can help you organize your resources and enable you to simplify resource management, access management, and cost allocation.")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Resource Groups Tagging API. Resource Groups Tagging APIs can help you organize your resources and enable you to simplify resource management, access management, and cost allocation.")]
-#elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  AWS Resource Groups Tagging API. Resource Groups Tagging APIs can help you organize your resources and enable you to simplify resource management, access management, and cost allocation.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- AWS Resource Groups Tagging API. Resource Groups Tagging APIs can help you organize your resources and enable you to simplify resource management, access management, and cost allocation.")]
 #elif NETSTANDARD20

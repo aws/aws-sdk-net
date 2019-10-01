@@ -28,7 +28,7 @@ namespace Amazon.EKS
     ///<summary>
     /// Common exception for the EKS service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonEKSException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.EKS
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonEKSException class with serialized data.
         /// </summary>

@@ -94,32 +94,7 @@ namespace Amazon.Runtime.Internal.Util
             else
                 formatted = string.Format(CultureInfo.CurrentCulture, "{0}|{1}|{2}|{3}", sequence, dt, asString, message);
 
-#if __ANDROID__ 
-            switch(logLevel)
-            {
-                case LogLevel.Warn:
-                    Android.Util.Log.Warn(DeclaringType.Name, formatted);
-                    break;
-                case LogLevel.Debug:
-                    Android.Util.Log.Debug(DeclaringType.Name, formatted);
-                    break;
-                case LogLevel.Error:
-                    Android.Util.Log.Error(DeclaringType.Name, formatted);
-                    break;
-                case LogLevel.Verbose:
-                    Android.Util.Log.Verbose(DeclaringType.Name, formatted);
-                    break;
-                case LogLevel.Info:
-                default:
-                    Android.Util.Log.Info(DeclaringType.Name, formatted);
-                    break;
-            }
-#elif PCL
-			System.Diagnostics.Debug.WriteLine(formatted);
-#else
             Console.WriteLine(@"{0} {1}", DeclaringType.Name, formatted);
-#endif
-
         }
 
     }

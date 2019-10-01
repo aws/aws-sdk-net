@@ -64,7 +64,7 @@ namespace Amazon.Runtime.Internal
         
         private IDictionary _clientContext;
         private static object _lock = new object();
-#if PCL || BCL
+#if BCL
         private static string _clientID = null;
 #endif
         private const string APP_ID_KEY = "APP_ID_KEY";
@@ -99,23 +99,7 @@ namespace Amazon.Runtime.Internal
                 _client = new Dictionary<string, string>();
                 _env = new Dictionary<string, string>();
                 _services = new Dictionary<string, IDictionary>();
-
-#if PCL
-                 // client
-                _client.Add(CLIENT_ID_KEY, _clientID);
-                _client.Add(CLIENT_APP_TITLE_KEY, _appInfo.AppTitle);
-                _client.Add(CLIENT_APP_VERSION_NAME_KEY, _appInfo.AppVersionName);
-                _client.Add(CLIENT_APP_VERSION_CODE_KEY, _appInfo.AppVersionCode);
-                _client.Add(CLIENT_APP_PACKAGE_NAME_KEY, _appInfo.PackageName);
-
-                // env
-                _env.Add(ENV_PLATFORM_KEY, _envInfo.Platform);
-                _env.Add(ENV_PLATFORM_VERSION_KEY, _envInfo.PlatformVersion);
-                _env.Add(ENV_LOCALE_KEY, _envInfo.Locale);
-                _env.Add(ENV_MAKE_KEY, _envInfo.Make);
-                _env.Add(ENV_MODEL_KEY, _envInfo.Model);
-
-#elif BCL
+#if BCL
                 // client
                 _client.Add(CLIENT_ID_KEY, _clientID);
 

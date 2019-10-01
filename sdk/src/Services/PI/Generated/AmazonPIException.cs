@@ -28,7 +28,7 @@ namespace Amazon.PI
     ///<summary>
     /// Common exception for the PI service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonPIException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.PI
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonPIException class with serialized data.
         /// </summary>

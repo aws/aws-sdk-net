@@ -25,7 +25,7 @@ namespace Amazon.GroundStation.Model
     ///<summary>
     /// GroundStation exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class InvalidParameterException : AmazonGroundStationException 
@@ -79,7 +79,7 @@ namespace Amazon.GroundStation.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InvalidParameterException class with serialized data.
         /// </summary>

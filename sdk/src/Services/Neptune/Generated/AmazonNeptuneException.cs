@@ -28,7 +28,7 @@ namespace Amazon.Neptune
     ///<summary>
     /// Common exception for the Neptune service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonNeptuneException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.Neptune
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonNeptuneException class with serialized data.
         /// </summary>

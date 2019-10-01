@@ -25,7 +25,7 @@ namespace Amazon.DynamoDBv2.Model
     ///<summary>
     /// DynamoDBStreams exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class ExpiredIteratorException : AmazonDynamoDBException 
@@ -79,7 +79,7 @@ namespace Amazon.DynamoDBv2.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ExpiredIteratorException class with serialized data.
         /// </summary>

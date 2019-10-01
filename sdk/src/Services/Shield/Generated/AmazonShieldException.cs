@@ -28,7 +28,7 @@ namespace Amazon.Shield
     ///<summary>
     /// Common exception for the Shield service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonShieldException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.Shield
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonShieldException class with serialized data.
         /// </summary>

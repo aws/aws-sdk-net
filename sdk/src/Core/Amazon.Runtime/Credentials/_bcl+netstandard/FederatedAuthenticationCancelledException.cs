@@ -22,7 +22,7 @@ namespace Amazon.Runtime
     /// in conjunction with a credential request callback. This exception is thrown
     /// if the callback returns null, indicating the user declined to supply credentials.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class FederatedAuthenticationCancelledException : Exception
@@ -46,7 +46,7 @@ namespace Amazon.Runtime
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the FederatedAuthenticationCancelledException class with serialized data.
         /// </summary>

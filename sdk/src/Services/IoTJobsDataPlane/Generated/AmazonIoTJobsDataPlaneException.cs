@@ -28,7 +28,7 @@ namespace Amazon.IoTJobsDataPlane
     ///<summary>
     /// Common exception for the IoTJobsDataPlane service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonIoTJobsDataPlaneException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.IoTJobsDataPlane
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonIoTJobsDataPlaneException class with serialized data.
         /// </summary>

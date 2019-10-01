@@ -25,7 +25,7 @@ namespace Amazon.IdentityManagement.Model
     ///<summary>
     /// IdentityManagementService exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class PasswordPolicyViolationException : AmazonIdentityManagementServiceException 
@@ -79,7 +79,7 @@ namespace Amazon.IdentityManagement.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the PasswordPolicyViolationException class with serialized data.
         /// </summary>

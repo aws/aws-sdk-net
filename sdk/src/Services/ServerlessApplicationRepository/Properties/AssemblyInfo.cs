@@ -11,8 +11,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWSServerlessApplicationRepository. First release of the AWS Serverless Application Repository SDK.")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWSServerlessApplicationRepository. First release of the AWS Serverless Application Repository SDK.")]
-#elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  AWSServerlessApplicationRepository. First release of the AWS Serverless Application Repository SDK.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- AWSServerlessApplicationRepository. First release of the AWS Serverless Application Repository SDK.")]
 #elif NETSTANDARD20

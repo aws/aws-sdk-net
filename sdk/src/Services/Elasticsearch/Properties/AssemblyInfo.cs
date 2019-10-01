@@ -11,8 +11,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Elasticsearch Service. Use the Amazon Elasticsearch configuration API to create, configure, and manage Elasticsearch domains.")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Elasticsearch Service. Use the Amazon Elasticsearch configuration API to create, configure, and manage Elasticsearch domains.")]
-#elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon Elasticsearch Service. Use the Amazon Elasticsearch configuration API to create, configure, and manage Elasticsearch domains.")]
 #elif NETSTANDARD13
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Amazon Elasticsearch Service. Use the Amazon Elasticsearch configuration API to create, configure, and manage Elasticsearch domains.")]
 #elif NETSTANDARD20

@@ -25,7 +25,7 @@ namespace Amazon.APIGateway.Model
     ///<summary>
     /// APIGateway exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class TooManyRequestsException : AmazonAPIGatewayException 
@@ -79,7 +79,7 @@ namespace Amazon.APIGateway.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the TooManyRequestsException class with serialized data.
         /// </summary>

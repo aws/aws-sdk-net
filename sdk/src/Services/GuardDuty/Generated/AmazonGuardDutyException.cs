@@ -28,7 +28,7 @@ namespace Amazon.GuardDuty
     ///<summary>
     /// Common exception for the GuardDuty service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonGuardDutyException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.GuardDuty
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonGuardDutyException class with serialized data.
         /// </summary>

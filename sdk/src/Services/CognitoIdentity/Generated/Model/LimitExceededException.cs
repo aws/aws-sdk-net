@@ -25,7 +25,7 @@ namespace Amazon.CognitoIdentity.Model
     ///<summary>
     /// CognitoIdentity exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class LimitExceededException : AmazonCognitoIdentityException 
@@ -79,7 +79,7 @@ namespace Amazon.CognitoIdentity.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the LimitExceededException class with serialized data.
         /// </summary>

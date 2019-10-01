@@ -18,7 +18,6 @@ namespace ServiceClientGenerator
     {
         abstract class ModelsSectionKeys
         {
-            public const string ModelsKey = "models";
             public const string ActiveKey = "active";
             public const string NamespaceKey = "namespace";
             public const string BaseNameKey = "base-name";
@@ -30,16 +29,13 @@ namespace ServiceClientGenerator
             public const string SynopsisKey = "synopsis";
             public const string NetStandardSupportKey = "netstandard-support";
             public const string DependenciesKey = "dependencies";
-            public const string PlatformsKey = "platforms";
             public const string ReferenceDependenciesKey = "reference-dependencies";
             public const string NugetDependenciesKey = "nuget-dependencies";
-            public const string PclVariantsKey = "pcl-variants";
             public const string DependencyNameKey = "name";
             public const string DependencyVersionKey = "version";
             public const string DependencyHintPathKey = "hint-path";
             public const string ParentBaseNameKey = "parent-base-name";
             public const string TagsKey = "tags";
-            public const string UsePclProjectDependenciesKey = "use-pcl-project-dependencies";
             public const string LicenseUrlKey = "license-url";
 
         }
@@ -55,13 +51,10 @@ namespace ServiceClientGenerator
             public const string TemplateKey = "template";
             public const string PlatformCodeFoldersKey = "platformCodeFolders";
             public const string ExtraTestProjects = "extraTestProjects";
-            public const string ParentProfile = "parentProfile";
             public const string NuGetTargetFrameworkKey = "nugetTargetPlatform";
-            public const string SharedNugetTargetFrameworksKey = "sharedNugetTargetFrameworks";
             public const string PlatformExcludeFoldersKey = "excludeFolders";
             public const string FrameworkPathOverrideKey = "frameworkPathOverride";
             public const string FrameworkRefernecesKey = "frameworkReferences";
-            public const string VisualStudioServicesKey = "visualStudioServices";
             public const string EmbeddedResourcesKey = "embeddedResources";
             public const string UnitTestProjectsKey = "unittestprojects";
             public const string NoWarn = "noWarn";
@@ -255,12 +248,6 @@ namespace ServiceClientGenerator
                 GenerateConstructors = modelNode[ModelsSectionKeys.GenerateClientConstructorsKey] == null || (bool)modelNode[ModelsSectionKeys.GenerateClientConstructorsKey], // A way to prevent generating basic constructors
             };
 
-            if (modelNode[ModelsSectionKeys.PclVariantsKey] != null)
-            {
-                config.PclVariants = (from object pcf in modelNode[ModelsSectionKeys.PclVariantsKey]
-                    select pcf.ToString()).ToList();
-            }
-
             if (modelNode[ModelsSectionKeys.NugetPackageTitleSuffix] != null)
                 config.NugetPackageTitleSuffix = modelNode[ModelsSectionKeys.NugetPackageTitleSuffix].ToString();
 
@@ -337,11 +324,6 @@ namespace ServiceClientGenerator
                     config.ServiceDependencies.Add(d.ToString(), null);
                 }
             }
-
-            if (modelNode[ModelsSectionKeys.UsePclProjectDependenciesKey] != null && modelNode[ModelsSectionKeys.UsePclProjectDependenciesKey].IsBoolean)
-                config.UsePclProjectDependencies = bool.Parse(modelNode[ModelsSectionKeys.UsePclProjectDependenciesKey].ToString());
-            else
-                config.UsePclProjectDependencies = false;
 
             if (modelNode[ModelsSectionKeys.LicenseUrlKey] != null && modelNode[ModelsSectionKeys.LicenseUrlKey].IsString)
             {
@@ -454,7 +436,6 @@ namespace ServiceClientGenerator
             var projectsNode = document[ProjectsSectionKeys.ProjectsKey];
             foreach (JsonData projectNode in projectsNode)
             {
-                var projectTypeName = projectNode.SafeGetString(ProjectsSectionKeys.NameKey);
                 var config = LoadProjectFileConfiguration(projectNode);
 
                 var extraTestProjects = projectNode.SafeGet(ProjectsSectionKeys.ExtraTestProjects);
@@ -466,27 +447,6 @@ namespace ServiceClientGenerator
                 {
                     config.ExtraTestProjects = (from object etp in extraTestProjects
                                                 select etp.ToString()).ToList();
-                }
-
-                var sharedNugetFrameworks = projectNode.SafeGet(ProjectsSectionKeys.SharedNugetTargetFrameworksKey);
-                config.SharedNugetTargetFrameworks = sharedNugetFrameworks == null ? new List<string>() : (from object bc in sharedNugetFrameworks select bc.ToString()).ToList();
-
-                // This code assumes that the parent profile (project configuration) is defined in the manifest
-                // before it's being referred by a sub profile.
-                if (projectNode.PropertyNames.Contains(ProjectsSectionKeys.ParentProfile))
-                {
-                    var parentProfileName = projectNode[ProjectsSectionKeys.ParentProfile].ToString();
-                    if (!string.IsNullOrEmpty(parentProfileName))
-                    {
-                        var parentProfile = projectConfigurations.SingleOrDefault(
-                            p => p.Name.Equals(parentProfileName, StringComparison.InvariantCulture));
-                        if (parentProfile == null)
-                        {
-                            throw new KeyNotFoundException(string.Format("Parent profile {0} referred by current profile {1} does not exist.",
-                                parentProfile, config.Name));
-                        }
-                        config.ParentProfile = parentProfile;
-                    }
                 }
 
                 projectConfigurations.Add(config);

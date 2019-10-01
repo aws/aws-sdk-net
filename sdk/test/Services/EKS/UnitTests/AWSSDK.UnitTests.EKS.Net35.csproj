@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net45</TargetFramework>
-    <DefineConstants>$(DefineConstants);TRACE;;BCL;BCL35;AWS_APM_API;LOCAL_FILE;DEBUG</DefineConstants>
+    <DefineConstants>$(DefineConstants);TRACE;;BCL;BCL35;AWS_APM_API;DEBUG</DefineConstants>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.UnitTests.EKS.Net35</AssemblyName>

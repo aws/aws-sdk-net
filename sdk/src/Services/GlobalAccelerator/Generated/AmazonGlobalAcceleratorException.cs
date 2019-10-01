@@ -28,7 +28,7 @@ namespace Amazon.GlobalAccelerator
     ///<summary>
     /// Common exception for the GlobalAccelerator service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonGlobalAcceleratorException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.GlobalAccelerator
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonGlobalAcceleratorException class with serialized data.
         /// </summary>

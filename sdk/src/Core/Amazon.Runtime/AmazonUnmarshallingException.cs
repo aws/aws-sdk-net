@@ -22,7 +22,7 @@ namespace Amazon.Runtime
     /// <summary>
     /// This exception is thrown when there is a parse error on the response back from AWS.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class AmazonUnmarshallingException : AmazonServiceException
@@ -120,7 +120,7 @@ namespace Amazon.Runtime
 
         #endregion
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonSimpleDBException class with serialized data.
         /// </summary>

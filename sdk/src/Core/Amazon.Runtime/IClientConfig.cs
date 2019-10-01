@@ -260,11 +260,7 @@ namespace Amazon.Runtime
         /// will be left at its default value of <see cref="int.MaxValue"/>.
         /// </summary>
         int? MaxConnectionsPerServer { get; }
-#endif
-
-#if NETSTANDARD || PCL
-
-
+        
         /// <summary>
         /// <para>
         /// This is a switch used for performance testing and is not intended for production applications 
