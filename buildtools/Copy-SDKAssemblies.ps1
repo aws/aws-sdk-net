@@ -63,7 +63,7 @@ Function Copy-SdkAssemblies
         # The platforms to copy. Defaults to all if not specified.
         [Parameter()]
         [string[]]
-        $Platforms = @("net35","net45","netstandard1.3","netstandard2.0","pcl","monoandroid","Xamarin.iOS10","windows8","wpa81"),
+        $Platforms = @("net35","net45","netstandard1.3","netstandard2.0"),
         
         # The public key token that all assemblies should have. Optional.
         [Parameter()]
@@ -215,7 +215,7 @@ else
     $builtservices = $null
 }
 
-Write-Verbose "Copying $BuildType SDK assemblies to deployment folders for BCL/PCL platforms"
+Write-Verbose "Copying $BuildType SDK assemblies to deployment folders for BCL platforms"
 $args = @{
 	"Destination" = "..\Deployment\assemblies"
 	"PublicKeyToken" = $PublicKeyTokenToCheck

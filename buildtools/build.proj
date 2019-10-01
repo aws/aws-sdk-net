@@ -3,14 +3,11 @@
     xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <InternalBuildTools Condition="'$(InternalBuildTools)'==''">..\..\AWSDotNetBuildTools</InternalBuildTools>
-        <DisablePCLSupport Condition="'$(DisablePCLSupport)'==''">false</DisablePCLSupport>
         <DisableValidateRepo Condition="'$(DisableValidateRepo)'==''">false</DisableValidateRepo>
         <TestBackwardCompatibility Condition="'$(TestBackwardCompatibility)'==''">true</TestBackwardCompatibility>
         <ServiceList Condition="'$(ServiceList)'==''"></ServiceList>
 
-    <VSToolsPath Condition="'$(VSToolsPath)' == ''">C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v14.0</VSToolsPath>
-
-        <GeneratorDisablePCLSupport Condition="'$(DisablePCLSupport)'=='true'">-disable.pcl-support</GeneratorDisablePCLSupport>
+        <VSToolsPath Condition="'$(VSToolsPath)' == ''">C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v14.0</VSToolsPath>
 
         <SmokeBuild></SmokeBuild>
 
@@ -48,7 +45,6 @@
     <PropertyGroup>
       <Net35SolutionsFile>AWSSDK.Net35.sln</Net35SolutionsFile>
       <Net45SolutionsFile>AWSSDK.Net45.sln</Net45SolutionsFile>
-      <PCLSolutionsFile>AWSSDK.PCL.sln</PCLSolutionsFile>
       <NetStandardSolutionFile>AWSSDK.NetStandard.sln</NetStandardSolutionFile>      
       <Net35UnitTestProject>AWSSDK.UnitTests.Net35.csproj</Net35UnitTestProject>
       <Net45UnitTestProject>AWSSDK.UnitTests.Net45.csproj</Net45UnitTestProject>
@@ -134,7 +130,6 @@
 
     <Target Name="restore-nuget">
         <Message Text="Restore nuget packages"/>
-        <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\$(PCLSolutionsFile)"/>
         <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.CodeAnalysis.sln"/>
     </Target>
 
@@ -150,7 +145,7 @@
         <Exec Command="dotnet restore -f  AWSSDKGenerator.sln" WorkingDirectory="..\generator" />
         <Exec Command="dotnet clean -c $(Configuration) AWSSDKGenerator.sln" WorkingDirectory="..\generator"/>
         <Exec Command="dotnet build -c $(Configuration) --no-incremental AWSSDKGenerator.sln" WorkingDirectory="..\generator"/>
-        <Exec Command="ServiceClientGenerator.exe $(GeneratorDisablePCLSupport) $(GeneratorPartialBuildArgument)"
+        <Exec Command="ServiceClientGenerator.exe $(GeneratorPartialBuildArgument)"
             WorkingDirectory="..\generator\ServiceClientGenerator\bin\Release"/>
     </Target>
 
@@ -159,13 +154,13 @@
       RepoPath = "$(MSBuildProjectDirectory)\.."/>  
    </Target>  
 
-    <Target Name="build-sdk" DependsOnTargets="populate-deployment;build-sdk-desktop;build-code-analysis;build-sdk-pcl;build-sdk-netstandard;copy-assemblies">
+    <Target Name="build-sdk" DependsOnTargets="populate-deployment;build-sdk-desktop;build-code-analysis;build-sdk-netstandard;copy-assemblies">
         <Copy
             SourceFiles="..\generator\ServiceModels\_sdk-versions.json"
             DestinationFolder="$(Deployment)" />
     </Target>
 
-    <Target Name="build-sdk-service" DependsOnTargets="populate-deployment;build-sdk-desktop-service;build-code-analysis;build-sdk-pcl;build-sdk-netstandard;copy-assemblies">
+    <Target Name="build-sdk-service" DependsOnTargets="populate-deployment;build-sdk-desktop-service;build-code-analysis;build-sdk-netstandard;copy-assemblies">
         <Copy
             SourceFiles="..\generator\ServiceModels\_sdk-versions.json"
             DestinationFolder="$(Deployment)" />
@@ -196,13 +191,6 @@
           Targets="Clean;Build"
           Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation)" />
   </Target>
-
-    <Target Name="build-sdk-pcl" DependsOnTargets="restore-nuget;run-generator" Condition="!$(DisablePCLSupport)">
-        <Message Text="Compile the Portable Class Library SDK"/>
-        <MSBuild Projects="..\sdk\$(PCLSolutionsFile)"
-            Targets="Clean;Build"
-            Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
-    </Target>
 
     <Target Name="build-sdk-netstandard">
         <Message Text="Restore and compile NetStandard versions of the SDK"/>

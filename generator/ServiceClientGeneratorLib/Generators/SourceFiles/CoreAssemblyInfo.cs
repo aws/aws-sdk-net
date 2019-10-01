@@ -67,6 +67,8 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write(@""")]
 
+[assembly: System.CLSCompliant(true)]
+
 #if BCL
 [assembly: System.Security.AllowPartiallyTrustedCallers]
 #endif
