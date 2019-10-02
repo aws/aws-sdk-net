@@ -37,15 +37,34 @@ namespace Amazon.Lightsail.Model
     ///  
     /// <para>
     /// The <code>tag resource</code> operation supports tag-based access control via request
-    /// tags and resource tags applied to the resource identified by resourceName. For more
-    /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+    /// tags and resource tags applied to the resource identified by <code>resource name</code>.
+    /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
     /// Dev Guide</a>.
     /// </para>
     /// </summary>
     public partial class TagResourceRequest : AmazonLightsailRequest
     {
+        private string _resourceArn;
         private string _resourceName;
         private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the resource to which you want to add a tag.
+        /// </para>
+        /// </summary>
+        public string ResourceArn
+        {
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
+        }
+
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
+        {
+            return this._resourceArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ResourceName. 

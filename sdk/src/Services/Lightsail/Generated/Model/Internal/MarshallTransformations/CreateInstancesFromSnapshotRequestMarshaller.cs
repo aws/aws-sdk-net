@@ -68,6 +68,22 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAddOns())
+                {
+                    context.Writer.WritePropertyName("addOns");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAddOnsListValue in publicRequest.AddOns)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AddOnRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAddOnsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetAttachedDiskMapping())
                 {
                     context.Writer.WritePropertyName("attachedDiskMapping");
@@ -127,6 +143,18 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.KeyPairName);
                 }
 
+                if(publicRequest.IsSetRestoreDate())
+                {
+                    context.Writer.WritePropertyName("restoreDate");
+                    context.Writer.Write(publicRequest.RestoreDate);
+                }
+
+                if(publicRequest.IsSetSourceInstanceName())
+                {
+                    context.Writer.WritePropertyName("sourceInstanceName");
+                    context.Writer.Write(publicRequest.SourceInstanceName);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
@@ -141,6 +169,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetUseLatestRestorableAutoSnapshot())
+                {
+                    context.Writer.WritePropertyName("useLatestRestorableAutoSnapshot");
+                    context.Writer.Write(publicRequest.UseLatestRestorableAutoSnapshot);
                 }
 
                 if(publicRequest.IsSetUserData())

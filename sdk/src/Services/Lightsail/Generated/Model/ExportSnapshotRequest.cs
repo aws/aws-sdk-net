@@ -45,8 +45,8 @@ namespace Amazon.Lightsail.Model
     ///   
     /// <para>
     /// The <code>export snapshot</code> operation supports tag-based access control via resource
-    /// tags applied to the resource identified by sourceSnapshotName. For more information,
-    /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+    /// tags applied to the resource identified by <code>source snapshot name</code>. For
+    /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
     /// Dev Guide</a>.
     /// </para>
     ///  <note> 

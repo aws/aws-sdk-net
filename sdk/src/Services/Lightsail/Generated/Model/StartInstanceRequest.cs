@@ -43,8 +43,8 @@ namespace Amazon.Lightsail.Model
     ///  </note> 
     /// <para>
     /// The <code>start instance</code> operation supports tag-based access control via resource
-    /// tags applied to the resource identified by instanceName. For more information, see
-    /// the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+    /// tags applied to the resource identified by <code>instance name</code>. For more information,
+    /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
     /// Dev Guide</a>.
     /// </para>
     /// </summary>

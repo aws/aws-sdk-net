@@ -346,8 +346,8 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// The <code>attach disk</code> operation supports tag-based access control via resource
-        /// tags applied to the resource identified by diskName. For more information, see the
-        /// <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// tags applied to the resource identified by <code>disk name</code>. For more information,
+        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -424,8 +424,8 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// The <code>attach instances to load balancer</code> operation supports tag-based access
-        /// control via resource tags applied to the resource identified by loadBalancerName.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// control via resource tags applied to the resource identified by <code>load balancer
+        /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -498,15 +498,15 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// Once you create and validate your certificate, you can attach it to your load balancer.
-        /// You can also use this API to rotate the certificates on your account. Use the <code>AttachLoadBalancerTlsCertificate</code>
-        /// operation with the non-attached certificate, and it will replace the existing one
-        /// and become the attached certificate.
+        /// You can also use this API to rotate the certificates on your account. Use the <code>attach
+        /// load balancer tls certificate</code> operation with the non-attached certificate,
+        /// and it will replace the existing one and become the attached certificate.
         /// </para>
         ///  
         /// <para>
         /// The <code>attach load balancer tls certificate</code> operation supports tag-based
-        /// access control via resource tags applied to the resource identified by loadBalancerName.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// access control via resource tags applied to the resource identified by <code>load
+        /// balancer name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -643,8 +643,8 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// The <code>close instance public ports</code> operation supports tag-based access control
-        /// via resource tags applied to the resource identified by instanceName. For more information,
-        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// via resource tags applied to the resource identified by <code>instance name</code>.
+        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -711,7 +711,28 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Copies an instance or disk snapshot from one AWS Region to another in Amazon Lightsail.
+        /// Copies a manual instance or disk snapshot as another manual snapshot, or copies an
+        /// automatic instance or disk snapshot as a manual snapshot. This operation can also
+        /// be used to copy a manual or automatic snapshot of an instance or a disk from one AWS
+        /// Region to another in Amazon Lightsail.
+        /// 
+        ///  
+        /// <para>
+        /// When copying a <i>manual snapshot</i>, be sure to define the <code>source region</code>,
+        /// <code>source snapshot name</code>, and <code>target snapshot name</code> parameters.
+        /// </para>
+        ///  
+        /// <para>
+        /// When copying an <i>automatic snapshot</i>, be sure to define the <code>source region</code>,
+        /// <code>source resource name</code>, <code>target snapshot name</code>, and either the
+        /// <code>restore date</code> or the <code>use latest restorable auto snapshot</code>
+        /// parameters.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Database snapshots cannot be copied at this time.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopySnapshot service method.</param>
         /// <param name="cancellationToken">
@@ -852,10 +873,8 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Creates a block storage disk that can be attached to a Lightsail instance in the same
-        /// Availability Zone (e.g., <code>us-east-2a</code>). The disk is created in the regional
-        /// endpoint that you send the HTTP request to. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail">Regions
-        /// and Availability Zones in Lightsail</a>.
+        /// Creates a block storage disk that can be attached to an Amazon Lightsail instance
+        /// in the same Availability Zone (e.g., <code>us-east-2a</code>).
         /// 
         ///  
         /// <para>
@@ -927,17 +946,15 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Creates a block storage disk from a disk snapshot that can be attached to a Lightsail
-        /// instance in the same Availability Zone (e.g., <code>us-east-2a</code>). The disk is
-        /// created in the regional endpoint that you send the HTTP request to. For more information,
-        /// see <a href="https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail">Regions
-        /// and Availability Zones in Lightsail</a>.
+        /// Creates a block storage disk from a manual or automatic snapshot of a disk. The resulting
+        /// disk can be attached to an Amazon Lightsail instance in the same Availability Zone
+        /// (e.g., <code>us-east-2a</code>).
         /// 
         ///  
         /// <para>
         /// The <code>create disk from snapshot</code> operation supports tag-based access control
-        /// via request tags and resource tags applied to the resource identified by diskSnapshotName.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// via request tags and resource tags applied to the resource identified by <code>disk
+        /// snapshot name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -1179,8 +1196,8 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// The <code>create domain entry</code> operation supports tag-based access control via
-        /// resource tags applied to the resource identified by domainName. For more information,
-        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// resource tags applied to the resource identified by <code>domain name</code>. For
+        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -1247,12 +1264,7 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Creates one or more Amazon Lightsail virtual private servers, or <i>instances</i>.
-        /// Create instances using active blueprints. Inactive blueprints are listed to support
-        /// customers with existing instances but are not necessarily available for launch of
-        /// new instances. Blueprints are marked inactive when they become outdated due to operating
-        /// system updates or new application releases. Use the get blueprints operation to return
-        /// a list of available blueprints.
+        /// Creates one or more Amazon Lightsail instances.
         /// 
         ///  
         /// <para>
@@ -1324,14 +1336,13 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Uses a specific snapshot as a blueprint for creating one or more new instances that
-        /// are based on that identical configuration.
+        /// Creates one or more new instances from a manual or automatic snapshot of an instance.
         /// 
         ///  
         /// <para>
         /// The <code>create instances from snapshot</code> operation supports tag-based access
-        /// control via request tags and resource tags applied to the resource identified by instanceSnapshotName.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// control via request tags and resource tags applied to the resource identified by <code>instance
+        /// snapshot name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -1633,8 +1644,8 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// The <code>create load balancer tls certificate</code> operation supports tag-based
-        /// access control via resource tags applied to the resource identified by loadBalancerName.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// access control via resource tags applied to the resource identified by <code>load
+        /// balancer name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -1911,6 +1922,67 @@ namespace Amazon.Lightsail
 
         #endregion
         
+        #region  DeleteAutoSnapshot
+
+        internal virtual DeleteAutoSnapshotResponse DeleteAutoSnapshot(DeleteAutoSnapshotRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAutoSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAutoSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAutoSnapshotResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an automatic snapshot for an instance or disk.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAutoSnapshot service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAutoSnapshot service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteAutoSnapshot">REST API Reference for DeleteAutoSnapshot Operation</seealso>
+        public virtual Task<DeleteAutoSnapshotResponse> DeleteAutoSnapshotAsync(DeleteAutoSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAutoSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAutoSnapshotResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAutoSnapshotResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteDisk
 
         internal virtual DeleteDiskResponse DeleteDisk(DeleteDiskRequest request)
@@ -1935,8 +2007,8 @@ namespace Amazon.Lightsail
         ///  </note> 
         /// <para>
         /// The <code>delete disk</code> operation supports tag-based access control via resource
-        /// tags applied to the resource identified by diskName. For more information, see the
-        /// <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// tags applied to the resource identified by <code>disk name</code>. For more information,
+        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -2016,8 +2088,8 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// The <code>delete disk snapshot</code> operation supports tag-based access control
-        /// via resource tags applied to the resource identified by diskSnapshotName. For more
-        /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// via resource tags applied to the resource identified by <code>disk snapshot name</code>.
+        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -2089,8 +2161,8 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// The <code>delete domain</code> operation supports tag-based access control via resource
-        /// tags applied to the resource identified by domainName. For more information, see the
-        /// <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// tags applied to the resource identified by <code>domain name</code>. For more information,
+        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -2162,8 +2234,8 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// The <code>delete domain entry</code> operation supports tag-based access control via
-        /// resource tags applied to the resource identified by domainName. For more information,
-        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// resource tags applied to the resource identified by <code>domain name</code>. For
+        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -2230,13 +2302,13 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Deletes a specific Amazon Lightsail virtual private server, or <i>instance</i>.
+        /// Deletes an Amazon Lightsail instance.
         /// 
         ///  
         /// <para>
         /// The <code>delete instance</code> operation supports tag-based access control via resource
-        /// tags applied to the resource identified by instanceName. For more information, see
-        /// the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// tags applied to the resource identified by <code>instance name</code>. For more information,
+        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -2308,8 +2380,8 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// The <code>delete instance snapshot</code> operation supports tag-based access control
-        /// via resource tags applied to the resource identified by instanceSnapshotName. For
-        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// via resource tags applied to the resource identified by <code>instance snapshot name</code>.
+        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -2381,8 +2453,8 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// The <code>delete key pair</code> operation supports tag-based access control via resource
-        /// tags applied to the resource identified by keyPairName. For more information, see
-        /// the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// tags applied to the resource identified by <code>key pair name</code>. For more information,
+        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -2532,8 +2604,8 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// The <code>delete load balancer</code> operation supports tag-based access control
-        /// via resource tags applied to the resource identified by loadBalancerName. For more
-        /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// via resource tags applied to the resource identified by <code>load balancer name</code>.
+        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -2605,8 +2677,8 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// The <code>delete load balancer tls certificate</code> operation supports tag-based
-        /// access control via resource tags applied to the resource identified by loadBalancerName.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// access control via resource tags applied to the resource identified by <code>load
+        /// balancer name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -2826,8 +2898,8 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// The <code>detach disk</code> operation supports tag-based access control via resource
-        /// tags applied to the resource identified by diskName. For more information, see the
-        /// <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// tags applied to the resource identified by <code>disk name</code>. For more information,
+        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -2904,8 +2976,8 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// The <code>detach instances from load balancer</code> operation supports tag-based
-        /// access control via resource tags applied to the resource identified by loadBalancerName.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// access control via resource tags applied to the resource identified by <code>load
+        /// balancer name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -3023,6 +3095,69 @@ namespace Amazon.Lightsail
 
         #endregion
         
+        #region  DisableAddOn
+
+        internal virtual DisableAddOnResponse DisableAddOn(DisableAddOnRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableAddOnRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableAddOnResponseUnmarshaller.Instance;
+
+            return Invoke<DisableAddOnResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disables an add-on for an Amazon Lightsail resource. For more information, see the
+        /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
+        /// Dev Guide</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableAddOn service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableAddOn service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DisableAddOn">REST API Reference for DisableAddOn Operation</seealso>
+        public virtual Task<DisableAddOnResponse> DisableAddOnAsync(DisableAddOnRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableAddOnRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableAddOnResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisableAddOnResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DownloadDefaultKeyPair
 
         internal virtual DownloadDefaultKeyPairResponse DownloadDefaultKeyPair(DownloadDefaultKeyPairRequest request)
@@ -3088,6 +3223,69 @@ namespace Amazon.Lightsail
 
         #endregion
         
+        #region  EnableAddOn
+
+        internal virtual EnableAddOnResponse EnableAddOn(EnableAddOnRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableAddOnRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableAddOnResponseUnmarshaller.Instance;
+
+            return Invoke<EnableAddOnResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Enables or modifies an add-on for an Amazon Lightsail resource. For more information,
+        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
+        /// Dev Guide</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableAddOn service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableAddOn service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/EnableAddOn">REST API Reference for EnableAddOn Operation</seealso>
+        public virtual Task<EnableAddOnResponse> EnableAddOnAsync(EnableAddOnRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableAddOnRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableAddOnResponseUnmarshaller.Instance;
+
+            return InvokeAsync<EnableAddOnResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ExportSnapshot
 
         internal virtual ExportSnapshotResponse ExportSnapshot(ExportSnapshotRequest request)
@@ -3118,8 +3316,8 @@ namespace Amazon.Lightsail
         ///   
         /// <para>
         /// The <code>export snapshot</code> operation supports tag-based access control via resource
-        /// tags applied to the resource identified by sourceSnapshotName. For more information,
-        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// tags applied to the resource identified by <code>source snapshot name</code>. For
+        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         ///  <note> 
@@ -3243,6 +3441,69 @@ namespace Amazon.Lightsail
 
         #endregion
         
+        #region  GetAutoSnapshots
+
+        internal virtual GetAutoSnapshotsResponse GetAutoSnapshots(GetAutoSnapshotsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAutoSnapshotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAutoSnapshotsResponseUnmarshaller.Instance;
+
+            return Invoke<GetAutoSnapshotsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the available automatic snapshots for the specified resource name. For more
+        /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
+        /// Dev Guide</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutoSnapshots service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAutoSnapshots service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetAutoSnapshots">REST API Reference for GetAutoSnapshots Operation</seealso>
+        public virtual Task<GetAutoSnapshotsResponse> GetAutoSnapshotsAsync(GetAutoSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAutoSnapshotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAutoSnapshotsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAutoSnapshotsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetBlueprints
 
         internal virtual GetBlueprintsResponse GetBlueprints(GetBlueprintsRequest request)
@@ -3258,9 +3519,18 @@ namespace Amazon.Lightsail
 
         /// <summary>
         /// Returns the list of available instance images, or <i>blueprints</i>. You can use a
-        /// blueprint to create a new virtual private server already running a specific operating
-        /// system, as well as a preinstalled app or development stack. The software each instance
-        /// is running depends on the blueprint image you choose.
+        /// blueprint to create a new instance already running a specific operating system, as
+        /// well as a preinstalled app or development stack. The software each instance is running
+        /// depends on the blueprint image you choose.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Use active blueprints when creating new instances. Inactive blueprints are listed
+        /// to support customers with existing instances and are not necessarily available to
+        /// create new instances. Blueprints are marked inactive when they become outdated due
+        /// to operating system updates or new application releases.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBlueprints service method.</param>
         /// <param name="cancellationToken">
@@ -4012,8 +4282,8 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// The <code>get instance access details</code> operation supports tag-based access control
-        /// via resource tags applied to the resource identified by instanceName. For more information,
-        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// via resource tags applied to the resource identified by <code>instance name</code>.
+        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -5556,7 +5826,7 @@ namespace Amazon.Lightsail
         /// 
         ///  
         /// <para>
-        /// The <code>asdf</code> operation GetRelationalDatabaseMasterUserPassword supports tag-based
+        /// The <code>GetRelationalDatabaseMasterUserPassword</code> operation supports tag-based
         /// access control via resource tags applied to the resource identified by relationalDatabaseName.
         /// </para>
         /// </summary>
@@ -6221,8 +6491,8 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// The <code>open instance public ports</code> operation supports tag-based access control
-        /// via resource tags applied to the resource identified by instanceName. For more information,
-        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// via resource tags applied to the resource identified by <code>instance name</code>.
+        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -6360,8 +6630,8 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// The <code>put instance public ports</code> operation supports tag-based access control
-        /// via resource tags applied to the resource identified by instanceName. For more information,
-        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// via resource tags applied to the resource identified by <code>instance name</code>.
+        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -6433,8 +6703,8 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// The <code>reboot instance</code> operation supports tag-based access control via resource
-        /// tags applied to the resource identified by instanceName. For more information, see
-        /// the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// tags applied to the resource identified by <code>instance name</code>. For more information,
+        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -6653,8 +6923,8 @@ namespace Amazon.Lightsail
         ///  </note> 
         /// <para>
         /// The <code>start instance</code> operation supports tag-based access control via resource
-        /// tags applied to the resource identified by instanceName. For more information, see
-        /// the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// tags applied to the resource identified by <code>instance name</code>. For more information,
+        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -6808,8 +7078,8 @@ namespace Amazon.Lightsail
         ///  </note> 
         /// <para>
         /// The <code>stop instance</code> operation supports tag-based access control via resource
-        /// tags applied to the resource identified by instanceName. For more information, see
-        /// the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// tags applied to the resource identified by <code>instance name</code>. For more information,
+        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -6957,8 +7227,8 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// The <code>tag resource</code> operation supports tag-based access control via request
-        /// tags and resource tags applied to the resource identified by resourceName. For more
-        /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// tags and resource tags applied to the resource identified by <code>resource name</code>.
+        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -7096,8 +7366,8 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// The <code>untag resource</code> operation supports tag-based access control via request
-        /// tags and resource tags applied to the resource identified by resourceName. For more
-        /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// tags and resource tags applied to the resource identified by <code>resource name</code>.
+        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -7169,8 +7439,8 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// The <code>update domain entry</code> operation supports tag-based access control via
-        /// resource tags applied to the resource identified by domainName. For more information,
-        /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// resource tags applied to the resource identified by <code>domain name</code>. For
+        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>
@@ -7243,8 +7513,8 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// The <code>update load balancer attribute</code> operation supports tag-based access
-        /// control via resource tags applied to the resource identified by loadBalancerName.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// control via resource tags applied to the resource identified by <code>load balancer
+        /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
         /// </para>
         /// </summary>

@@ -201,7 +201,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Specified in Universal Coordinated Time (UTC).
+        /// Specified in Coordinated Universal Time (UTC).
         /// </para>
         ///  </li> <li> 
         /// <para>

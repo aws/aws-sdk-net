@@ -166,6 +166,14 @@
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lightsail.Model.DeleteAutoSnapshotRequest.Date</property>
+    <pattern>^[0-9]{4}-[0-9]{2}-[0-9]{2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.DeleteAutoSnapshotRequest.ResourceName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lightsail.Model.DeleteDiskRequest.DiskName</property>
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
@@ -226,7 +234,23 @@
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lightsail.Model.DisableAddOnRequest.ResourceName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.EnableAddOnRequest.ResourceName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lightsail.Model.ExportSnapshotRequest.SourceSnapshotName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.GetAutoSnapshotsRequest.ResourceName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.GetAutoSnapshotsResponse.ResourceName</property>
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -381,8 +405,16 @@
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lightsail.Model.TagResourceRequest.ResourceArn</property>
+    <pattern>^arn:(aws[^:]*):([a-zA-Z0-9-]+):([a-z0-9-]+):([0-9]+):([a-zA-Z]+)/([a-zA-Z0-9-]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lightsail.Model.TagResourceRequest.ResourceName</property>
     <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.UntagResourceRequest.ResourceArn</property>
+    <pattern>^arn:(aws[^:]*):([a-zA-Z0-9-]+):([a-z0-9-]+):([0-9]+):([a-zA-Z]+)/([a-zA-Z0-9-]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.UntagResourceRequest.ResourceName</property>
@@ -404,6 +436,18 @@
   <property-value-rule>
     <property>Amazon.Lightsail.Model.UpdateRelationalDatabaseParametersRequest.RelationalDatabaseName</property>
     <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.AddOn.NextSnapshotTimeOfDay</property>
+    <pattern>^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.AddOn.SnapshotTimeOfDay</property>
+    <pattern>^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.AutoSnapshotAddOnRequest.SnapshotTimeOfDay</property>
+    <pattern>^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.AvailabilityZone.State</property>

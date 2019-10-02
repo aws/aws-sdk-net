@@ -29,27 +29,47 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDiskFromSnapshot operation.
-    /// Creates a block storage disk from a disk snapshot that can be attached to a Lightsail
-    /// instance in the same Availability Zone (e.g., <code>us-east-2a</code>). The disk is
-    /// created in the regional endpoint that you send the HTTP request to. For more information,
-    /// see <a href="https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail">Regions
-    /// and Availability Zones in Lightsail</a>.
+    /// Creates a block storage disk from a manual or automatic snapshot of a disk. The resulting
+    /// disk can be attached to an Amazon Lightsail instance in the same Availability Zone
+    /// (e.g., <code>us-east-2a</code>).
     /// 
     ///  
     /// <para>
     /// The <code>create disk from snapshot</code> operation supports tag-based access control
-    /// via request tags and resource tags applied to the resource identified by diskSnapshotName.
-    /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+    /// via request tags and resource tags applied to the resource identified by <code>disk
+    /// snapshot name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
     /// Dev Guide</a>.
     /// </para>
     /// </summary>
     public partial class CreateDiskFromSnapshotRequest : AmazonLightsailRequest
     {
+        private List<AddOnRequest> _addOns = new List<AddOnRequest>();
         private string _availabilityZone;
         private string _diskName;
         private string _diskSnapshotName;
+        private string _restoreDate;
         private int? _sizeInGb;
+        private string _sourceDiskName;
         private List<Tag> _tags = new List<Tag>();
+        private bool? _useLatestRestorableAutoSnapshot;
+
+        /// <summary>
+        /// Gets and sets the property AddOns. 
+        /// <para>
+        /// An array of objects that represent the add-ons to enable for the new disk.
+        /// </para>
+        /// </summary>
+        public List<AddOnRequest> AddOns
+        {
+            get { return this._addOns; }
+            set { this._addOns = value; }
+        }
+
+        // Check to see if AddOns property is set
+        internal bool IsSetAddOns()
+        {
+            return this._addOns != null && this._addOns.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
@@ -102,8 +122,13 @@ namespace Amazon.Lightsail.Model
         /// The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create
         /// the new storage disk.
         /// </para>
+        ///  
+        /// <para>
+        /// This parameter cannot be defined together with the <code>source disk name</code> parameter.
+        /// The <code>disk snapshot name</code> and <code>source disk name</code> parameters are
+        /// mutually exclusive.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string DiskSnapshotName
         {
             get { return this._diskSnapshotName; }
@@ -114,6 +139,50 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetDiskSnapshotName()
         {
             return this._diskSnapshotName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RestoreDate. 
+        /// <para>
+        /// The date of the automatic snapshot to use for the new disk.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the <code>get auto snapshots</code> operation to identify the dates of the available
+        /// automatic snapshots.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be specified in <code>YYYY-MM-DD</code> format.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// This parameter cannot be defined together with the <code>use latest restorable auto
+        /// snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable
+        /// auto snapshot</code> parameters are mutually exclusive.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Define this parameter only when creating a new disk from an automatic snapshot. For
+        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
+        /// Dev Guide</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string RestoreDate
+        {
+            get { return this._restoreDate; }
+            set { this._restoreDate = value; }
+        }
+
+        // Check to see if RestoreDate property is set
+        internal bool IsSetRestoreDate()
+        {
+            return this._restoreDate != null;
         }
 
         /// <summary>
@@ -136,6 +205,37 @@ namespace Amazon.Lightsail.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SourceDiskName. 
+        /// <para>
+        /// The name of the source disk from which the source automatic snapshot was created.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter cannot be defined together with the <code>disk snapshot name</code>
+        /// parameter. The <code>source disk name</code> and <code>disk snapshot name</code> parameters
+        /// are mutually exclusive.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Define this parameter only when creating a new disk from an automatic snapshot. For
+        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
+        /// Dev Guide</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string SourceDiskName
+        {
+            get { return this._sourceDiskName; }
+            set { this._sourceDiskName = value; }
+        }
+
+        // Check to see if SourceDiskName property is set
+        internal bool IsSetSourceDiskName()
+        {
+            return this._sourceDiskName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// The tag keys and optional values to add to the resource during create.
@@ -155,6 +255,37 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseLatestRestorableAutoSnapshot. 
+        /// <para>
+        /// A Boolean value to indicate whether to use the latest available automatic snapshot.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter cannot be defined together with the <code>restore date</code> parameter.
+        /// The <code>use latest restorable auto snapshot</code> and <code>restore date</code>
+        /// parameters are mutually exclusive.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Define this parameter only when creating a new disk from an automatic snapshot. For
+        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
+        /// Dev Guide</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool UseLatestRestorableAutoSnapshot
+        {
+            get { return this._useLatestRestorableAutoSnapshot.GetValueOrDefault(); }
+            set { this._useLatestRestorableAutoSnapshot = value; }
+        }
+
+        // Check to see if UseLatestRestorableAutoSnapshot property is set
+        internal bool IsSetUseLatestRestorableAutoSnapshot()
+        {
+            return this._useLatestRestorableAutoSnapshot.HasValue; 
         }
 
     }

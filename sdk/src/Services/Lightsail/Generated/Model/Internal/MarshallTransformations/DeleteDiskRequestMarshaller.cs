@@ -74,6 +74,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DiskName);
                 }
 
+                if(publicRequest.IsSetForceDeleteAddOns())
+                {
+                    context.Writer.WritePropertyName("forceDeleteAddOns");
+                    context.Writer.Write(publicRequest.ForceDeleteAddOns);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

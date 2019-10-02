@@ -68,6 +68,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetResourceArn())
+                {
+                    context.Writer.WritePropertyName("resourceArn");
+                    context.Writer.Write(publicRequest.ResourceArn);
+                }
+
                 if(publicRequest.IsSetResourceName())
                 {
                     context.Writer.WritePropertyName("resourceName");
