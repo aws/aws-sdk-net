@@ -1,3 +1,7 @@
+### 3.3.599.0 (2019-10-02 19:59 UTC)
+* Lightsail (3.3.101.0)
+	* This release adds support for the automatic snapshots add-on for instances and block storage disks.
+
 ### 3.3.598.0 (2019-10-01 18:09 UTC)
 * DocDB (3.3.102.0)
 	* This release provides support for describe and modify CA certificates.
