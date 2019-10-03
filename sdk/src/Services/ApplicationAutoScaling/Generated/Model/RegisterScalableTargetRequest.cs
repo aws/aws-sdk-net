@@ -184,9 +184,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For resources that are not supported using a service-linked role, this parameter is
-        /// required, and it must specify the ARN of an IAM role that allows Application Auto
-        /// Scaling to modify the scalable target on your behalf.
+        /// For Amazon EMR, this parameter is required, and it must specify the ARN of an IAM
+        /// role that allows Application Auto Scaling to modify the scalable target on your behalf.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
@@ -284,7 +283,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// The namespace of the AWS service that provides the resource or <code>custom-resource</code>
         /// for a resource provided by your own application or service. For more information,
         /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-        /// Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+        /// Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

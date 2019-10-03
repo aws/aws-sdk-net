@@ -55,7 +55,7 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// policies, or both. However, there is a chance that multiple policies could conflict,
     /// instructing the scalable target to scale out or in at the same time. Application Auto
     /// Scaling gives precedence to the policy that provides the largest capacity for both
-    /// scale in and scale out. For example, if one policy increases capacity by 3, another
+    /// scale out and scale in. For example, if one policy increases capacity by 3, another
     /// policy increases capacity by 200 percent, and the current capacity is 10, Application
     /// Auto Scaling uses the policy with the highest calculated capacity (200% of 10 = 20)
     /// and scales out to 30. 
@@ -114,10 +114,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-        /// Scaling Policies for Application Auto Scaling</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-        /// Tracking Scaling Policies for Application Auto Scaling</a> in the <i>Application Auto
-        /// Scaling User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
+        /// Tracking Scaling Policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
+        /// Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public PolicyType PolicyType

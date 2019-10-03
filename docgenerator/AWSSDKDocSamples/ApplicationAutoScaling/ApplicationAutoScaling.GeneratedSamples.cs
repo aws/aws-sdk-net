@@ -90,7 +90,97 @@ namespace AWSSDKDocSamples.Amazon.ApplicationAutoScaling.Generated
 
         public void ApplicationAutoScalingPutScalingPolicy()
         {
-            #region to-apply-a-scaling-policy-to-an-amazon-ecs-service-1470864779862
+            #region to-apply-a-target-tracking-scaling-policy-with-a-predefined-metric-specification-1569364247984
+
+            var response = client.PutScalingPolicy(new PutScalingPolicyRequest 
+            {
+                PolicyName = "cpu75-target-tracking-scaling-policy",
+                PolicyType = "TargetTrackingScaling",
+                ResourceId = "service/default/web-app",
+                ScalableDimension = "ecs:service:DesiredCount",
+                ServiceNamespace = "ecs",
+                TargetTrackingScalingPolicyConfiguration = new TargetTrackingScalingPolicyConfiguration {
+                    PredefinedMetricSpecification = new PredefinedMetricSpecification { PredefinedMetricType = "ECSServiceAverageCPUUtilization" },
+                    ScaleInCooldown = 60,
+                    ScaleOutCooldown = 60,
+                    TargetValue = 75
+                }
+            });
+
+            List<Alarm> alarms = response.Alarms;
+            string policyARN = response.PolicyARN;
+
+            #endregion
+        }
+
+        public void ApplicationAutoScalingPutScalingPolicy()
+        {
+            #region to-apply-a-target-tracking-scaling-policy-with-a-customized-metric-specification-1569365036205
+
+            var response = client.PutScalingPolicy(new PutScalingPolicyRequest 
+            {
+                PolicyName = "cms75-target-tracking-scaling-policy",
+                PolicyType = "TargetTrackingScaling",
+                ResourceId = "service/default/web-app",
+                ScalableDimension = "ecs:service:DesiredCount",
+                ServiceNamespace = "ecs",
+                TargetTrackingScalingPolicyConfiguration = new TargetTrackingScalingPolicyConfiguration {
+                    CustomizedMetricSpecification = new CustomizedMetricSpecification {
+                        Dimensions = new List<MetricDimension> {
+                            new MetricDimension {
+                                Name = "MyOptionalMetricDimensionName",
+                                Value = "MyOptionalMetricDimensionValue"
+                            }
+                        },
+                        MetricName = "MyUtilizationMetric",
+                        Namespace = "MyNamespace",
+                        Statistic = "Average",
+                        Unit = "Percent"
+                    },
+                    ScaleInCooldown = 60,
+                    ScaleOutCooldown = 60,
+                    TargetValue = 75
+                }
+            });
+
+            List<Alarm> alarms = response.Alarms;
+            string policyARN = response.PolicyARN;
+
+            #endregion
+        }
+
+        public void ApplicationAutoScalingPutScalingPolicy()
+        {
+            #region to-apply-a-target-tracking-scaling-policy-for-scale-out-only-1569366080118
+
+            var response = client.PutScalingPolicy(new PutScalingPolicyRequest 
+            {
+                PolicyName = "alb-scale-out-target-tracking-scaling-policy",
+                PolicyType = "TargetTrackingScaling",
+                ResourceId = "service/default/web-app",
+                ScalableDimension = "ecs:service:DesiredCount",
+                ServiceNamespace = "ecs",
+                TargetTrackingScalingPolicyConfiguration = new TargetTrackingScalingPolicyConfiguration {
+                    DisableScaleIn = true,
+                    PredefinedMetricSpecification = new PredefinedMetricSpecification {
+                        PredefinedMetricType = "ALBRequestCountPerTarget",
+                        ResourceLabel = "app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d"
+                    },
+                    ScaleInCooldown = 60,
+                    ScaleOutCooldown = 60,
+                    TargetValue = 1000
+                }
+            });
+
+            List<Alarm> alarms = response.Alarms;
+            string policyARN = response.PolicyARN;
+
+            #endregion
+        }
+
+        public void ApplicationAutoScalingPutScalingPolicy()
+        {
+            #region to-apply-a-step-scaling-policy-to-an-amazon-ecs-service-1470864779862
 
             var response = client.PutScalingPolicy(new PutScalingPolicyRequest 
             {
@@ -118,7 +208,7 @@ namespace AWSSDKDocSamples.Amazon.ApplicationAutoScaling.Generated
 
         public void ApplicationAutoScalingPutScalingPolicy()
         {
-            #region to-apply-a-scaling-policy-to-an-amazon-ec2-spot-fleet-1472073278469
+            #region to-apply-a-step-scaling-policy-to-an-amazon-ec2-spot-fleet-1472073278469
 
             var response = client.PutScalingPolicy(new PutScalingPolicyRequest 
             {
@@ -153,7 +243,6 @@ namespace AWSSDKDocSamples.Amazon.ApplicationAutoScaling.Generated
                 MaxCapacity = 10,
                 MinCapacity = 1,
                 ResourceId = "service/default/web-app",
-                RoleARN = "arn:aws:iam::012345678910:role/ApplicationAutoscalingECSRole",
                 ScalableDimension = "ecs:service:DesiredCount",
                 ServiceNamespace = "ecs"
             });
@@ -171,7 +260,6 @@ namespace AWSSDKDocSamples.Amazon.ApplicationAutoScaling.Generated
                 MaxCapacity = 10,
                 MinCapacity = 1,
                 ResourceId = "spot-fleet-request/sfr-45e69d8a-be48-4539-bbf3-3464e99c50c3",
-                RoleARN = "arn:aws:iam::012345678910:role/ApplicationAutoscalingSpotRole",
                 ScalableDimension = "ec2:spot-fleet-request:TargetCapacity",
                 ServiceNamespace = "ec2"
             });

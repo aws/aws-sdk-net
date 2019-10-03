@@ -105,12 +105,12 @@
         <value>
             <example>
                 <para>
-                    This example applies a scaling policy to an Amazon ECS service called web-app in the default cluster. The policy increases the desired count of the service by 200%, with a cool down period of 60 seconds.
+                    The following example applies a target tracking scaling policy with a predefined metric specification to an Amazon ECS service called web-app in the default cluster. The policy keeps the average CPU utilization of the service at 75 percent, with scale-out and scale-in cooldown periods of 60 seconds.
                 </para>
                 <code
-                    title="To apply a scaling policy to an Amazon ECS service"
+                    title="To apply a target tracking scaling policy with a predefined metric specification"
                     source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs"
-                    region="to-apply-a-scaling-policy-to-an-amazon-ecs-service-1470864779862" />
+                    region="to-apply-a-target-tracking-scaling-policy-with-a-predefined-metric-specification-1569364247984" />
             </example>
         </value>
     </doc>
@@ -124,13 +124,70 @@
         <value>
             <example>
                 <para>
-                    This example applies a scaling policy to an Amazon EC2 Spot fleet. The policy increases the target capacity of the spot fleet by 200%, with a cool down period of 180 seconds.",
+                    The following example applies a target tracking scaling policy with a customized metric specification to an Amazon ECS service called web-app in the default cluster. The policy keeps the average utilization of the service at 75 percent, with scale-out and scale-in cooldown periods of 60 seconds. 
+                </para>
+                <code
+                    title="To apply a target tracking scaling policy with a customized metric specification"
+                    source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs"
+                    region="to-apply-a-target-tracking-scaling-policy-with-a-customized-metric-specification-1569365036205" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.PutScalingPolicy(Amazon.ApplicationAutoScaling.Model.PutScalingPolicyRequest)" />
+            <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.PutScalingPolicy(Amazon.ApplicationAutoScaling.Model.PutScalingPolicyRequest)" />
+            <member name="T:Amazon.ApplicationAutoScaling.Model.PutScalingPolicyRequest" />
+            <member name="T:Amazon.ApplicationAutoScaling.Model.PutScalingPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example applies a target tracking scaling policy to an Amazon ECS service called web-app in the default cluster. The policy is used to scale out the ECS service when the RequestCountPerTarget metric from the Application Load Balancer exceeds the threshold.
+                </para>
+                <code
+                    title="To apply a target tracking scaling policy for scale out only"
+                    source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs"
+                    region="to-apply-a-target-tracking-scaling-policy-for-scale-out-only-1569366080118" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.PutScalingPolicy(Amazon.ApplicationAutoScaling.Model.PutScalingPolicyRequest)" />
+            <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.PutScalingPolicy(Amazon.ApplicationAutoScaling.Model.PutScalingPolicyRequest)" />
+            <member name="T:Amazon.ApplicationAutoScaling.Model.PutScalingPolicyRequest" />
+            <member name="T:Amazon.ApplicationAutoScaling.Model.PutScalingPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example applies a step scaling policy to an Amazon ECS service called web-app in the default cluster. The policy increases the desired count of the service by 200%, with a cool down period of 60 seconds.
+                </para>
+                <code
+                    title="To apply a step scaling policy to an Amazon ECS service"
+                    source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs"
+                    region="to-apply-a-step-scaling-policy-to-an-amazon-ecs-service-1470864779862" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.PutScalingPolicy(Amazon.ApplicationAutoScaling.Model.PutScalingPolicyRequest)" />
+            <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.PutScalingPolicy(Amazon.ApplicationAutoScaling.Model.PutScalingPolicyRequest)" />
+            <member name="T:Amazon.ApplicationAutoScaling.Model.PutScalingPolicyRequest" />
+            <member name="T:Amazon.ApplicationAutoScaling.Model.PutScalingPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example applies a step scaling policy to an Amazon EC2 Spot fleet. The policy increases the target capacity of the spot fleet by 200%, with a cool down period of 180 seconds.",
    
                 </para>
                 <code
-                    title="To apply a scaling policy to an Amazon EC2 Spot fleet"
+                    title="To apply a step scaling policy to an Amazon EC2 Spot fleet"
                     source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs"
-                    region="to-apply-a-scaling-policy-to-an-amazon-ec2-spot-fleet-1472073278469" />
+                    region="to-apply-a-step-scaling-policy-to-an-amazon-ec2-spot-fleet-1472073278469" />
             </example>
         </value>
     </doc>
