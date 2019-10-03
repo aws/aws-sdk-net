@@ -38,6 +38,7 @@ namespace Amazon.Elasticsearch.Model
         private string _accessPolicies;
         private Dictionary<string, string> _advancedOptions = new Dictionary<string, string>();
         private CognitoOptions _cognitoOptions;
+        private DomainEndpointOptions _domainEndpointOptions;
         private string _domainName;
         private EBSOptions _ebsOptions;
         private ElasticsearchClusterConfig _elasticsearchClusterConfig;
@@ -108,11 +109,29 @@ namespace Amazon.Elasticsearch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DomainEndpointOptions. 
+        /// <para>
+        /// Options to specify configuration that will be applied to the domain endpoint.
+        /// </para>
+        /// </summary>
+        public DomainEndpointOptions DomainEndpointOptions
+        {
+            get { return this._domainEndpointOptions; }
+            set { this._domainEndpointOptions = value; }
+        }
+
+        // Check to see if DomainEndpointOptions property is set
+        internal bool IsSetDomainEndpointOptions()
+        {
+            return this._domainEndpointOptions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
         /// The name of the Elasticsearch domain that you are creating. Domain names are unique
         /// across the domains owned by an account within an AWS region. Domain names must start
-        /// with a letter or number and can contain the following characters: a-z (lowercase),
+        /// with a lowercase letter and can contain the following characters: a-z (lowercase),
         /// 0-9, and - (hyphen).
         /// </para>
         /// </summary>

@@ -37,8 +37,14 @@ namespace Amazon.Elasticsearch
     ///
     /// Amazon Elasticsearch Configuration Service 
     /// <para>
-    /// Use the Amazon Elasticsearch configuration API to create, configure, and manage Elasticsearch
+    /// Use the Amazon Elasticsearch Configuration API to create, configure, and manage Elasticsearch
     /// domains.
+    /// </para>
+    ///  
+    /// <para>
+    /// For sample code that uses the Configuration API, see the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-samples.html">Amazon
+    /// Elasticsearch Service Developer Guide</a>. The guide also contains <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-request-signing.html">sample
+    /// code for sending signed HTTP requests to the Elasticsearch APIs</a>.
     /// </para>
     ///  
     /// <para>

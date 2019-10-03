@@ -97,6 +97,17 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetDomainEndpointOptions())
+                {
+                    context.Writer.WritePropertyName("DomainEndpointOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DomainEndpointOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DomainEndpointOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDomainName())
                 {
                     context.Writer.WritePropertyName("DomainName");
