@@ -53,6 +53,11 @@ namespace Amazon.DeviceFarm.Model
         /// client, you should pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>.
         /// This is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.
         /// </para>
+        ///  
+        /// <para>
+        ///  <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+        /// longer supported</a>.</i> 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=64)]
         public string ClientId
@@ -206,6 +211,11 @@ namespace Amazon.DeviceFarm.Model
         /// Set to <code>true</code> if you want to access devices remotely for debugging in your
         /// remote access session.
         /// </para>
+        ///  
+        /// <para>
+        ///  <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+        /// longer supported</a>.</i> 
+        /// </para>
         /// </summary>
         public bool RemoteDebugEnabled
         {
@@ -284,9 +294,14 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property SshPublicKey. 
         /// <para>
-        /// The public key of the <code>ssh</code> key pair you want to use for connecting to
-        /// remote devices in your remote debugging session. This is only required if <code>remoteDebugEnabled</code>
-        /// is set to <code>true</code>.
+        ///  <i>Ignored.</i> The public key of the <code>ssh</code> key pair you want to use for
+        /// connecting to remote devices in your remote debugging session. This is only required
+        /// if <code>remoteDebugEnabled</code> is set to <code>true</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+        /// longer supported</a>.</i> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=8192)]

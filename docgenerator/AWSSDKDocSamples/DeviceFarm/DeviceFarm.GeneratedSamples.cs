@@ -478,7 +478,7 @@ namespace AWSSDKDocSamples.Amazon.DeviceFarm.Generated
 
             var response = client.ListSuites(new ListSuitesRequest 
             {
-                Arn = "arn:aws:devicefarm:us-west-2:123456789101:project:EXAMPLE-GUID-123-456", // You can get the Amazon Resource Name (ARN) of the project by using the list-projects CLI command.
+                Arn = "arn:aws:devicefarm:us-west-2:123456789101:job:EXAMPLE-GUID-123-456", // You can get the Amazon Resource Name (ARN) of the job by using the list-jobs CLI command.
                 NextToken = "RW5DdDJkMWYwZjM2MzM2VHVpOHJIUXlDUXlhc2QzRGViYnc9SEXAMPLE" // A dynamically generated value, used for paginating results.
             });
 

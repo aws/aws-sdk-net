@@ -46,7 +46,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property AuxiliaryApps. 
         /// <para>
-        /// A list of auxiliary apps for the run.
+        /// A list of Upload ARNs for app packages that will be installed alongside your app.
         /// </para>
         /// </summary>
         public List<string> AuxiliaryApps

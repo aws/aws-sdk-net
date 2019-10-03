@@ -618,7 +618,7 @@
         <value>
             <example>
                 <para>
-                    The following example returns information about suites, given a specific Device Farm project.
+                    The following example returns information about suites, given a specific Device Farm job.
                 </para>
                 <code
                     title="To get information about suites"

@@ -99,6 +99,11 @@ namespace Amazon.DeviceFarm.Model
         /// Unique identifier of your client for the remote access session. Only returned if remote
         /// debugging is enabled for the remote access session.
         /// </para>
+        ///  
+        /// <para>
+        ///  <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+        /// longer supported</a>.</i> 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=64)]
         public string ClientId
@@ -174,6 +179,11 @@ namespace Amazon.DeviceFarm.Model
         /// Unique device identifier for the remote device. Only returned if remote debugging
         /// is enabled for the remote access session.
         /// </para>
+        ///  
+        /// <para>
+        ///  <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+        /// longer supported</a>.</i> 
+        /// </para>
         /// </summary>
         public string DeviceUdid
         {
@@ -210,6 +220,11 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// IP address of the EC2 host where you need to connect to remotely debug devices. Only
         /// returned if remote debugging is enabled for the remote access session.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+        /// longer supported</a>.</i> 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -323,6 +338,11 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// This flag is set to <code>true</code> if remote debugging is enabled for the remote
         /// access session.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+        /// longer supported</a>.</i> 
         /// </para>
         /// </summary>
         public bool RemoteDebugEnabled
