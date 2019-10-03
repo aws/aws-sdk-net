@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.599.0",
+    "ProductVersion" : "3.3.600.0",
     "CoreVersion"    : "3.3.103.45",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -127,7 +127,7 @@
             "InPreview"               : false
         },
         "DeviceFarm"        : {
-            "Version" : "3.3.101.59",
+            "Version" : "3.3.101.60",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.45"
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.131.3",
+            "Version" : "3.3.132.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.45"
@@ -425,7 +425,7 @@
             "InPreview"               : false
         },
         "Elasticsearch"             : {
-            "Version" : "3.3.101.34",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.45"
@@ -553,7 +553,7 @@
             "InPreview"               : false
         },
         "ApplicationAutoScaling"          : {
-            "Version" : "3.3.101.13",
+            "Version" : "3.3.101.14",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.45"

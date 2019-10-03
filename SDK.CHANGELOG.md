@@ -1,3 +1,13 @@
+### 3.3.600.0 (2019-10-03 19:11 UTC)
+* ApplicationAutoScaling (3.3.101.14)
+	* Documentation updates for Application Auto Scaling
+* DeviceFarm (3.3.101.60)
+	* Documentation updates for devicefarm
+* EC2 (3.3.132.0)
+	* This release allows customers to purchase regional EC2 RIs on a future date.
+* Elasticsearch (3.3.102.0)
+	* Amazon Elasticsearch Service now supports configuring additional options for domain endpoint, such as whether to require HTTPS for all traffic.
+
 ### 3.3.599.0 (2019-10-02 19:59 UTC)
 * Lightsail (3.3.101.0)
 	* This release adds support for the automatic snapshots add-on for instances and block storage disks.
