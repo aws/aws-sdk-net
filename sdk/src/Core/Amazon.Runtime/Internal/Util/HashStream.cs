@@ -22,6 +22,10 @@
 
 using System;
 using System.IO;
+#if AWS_ASYNC_API
+using System.Threading;
+using System.Threading.Tasks;
+#endif
 
 namespace Amazon.Runtime.Internal.Util
 {
@@ -146,6 +150,20 @@ namespace Amazon.Runtime.Internal.Util
             }
             return result;
         }
+
+#if AWS_ASYNC_API
+        public override async Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
+        {
+            int result = await base.ReadAsync(buffer, offset, count, cancellationToken);
+
+            CurrentPosition += result;
+            if (!FinishedHashing)
+            {
+                Algorithm.AppendBlock(buffer, offset, result);
+            }
+            return result;
+        }
+#endif
 
 #if !PCL && !NETSTANDARD
         /// <summary>

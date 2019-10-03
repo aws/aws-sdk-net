@@ -22,6 +22,10 @@
 
 using System;
 using System.IO;
+#if AWS_ASYNC_API
+using System.Threading;
+using System.Threading.Tasks;
+#endif
 
 namespace Amazon.Runtime.Internal.Util
 {
@@ -259,6 +263,13 @@ namespace Amazon.Runtime.Internal.Util
         {
             return BaseStream.Read(buffer, offset, count);
         }
+
+#if AWS_ASYNC_API
+        public override Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
+        {
+            return BaseStream.ReadAsync(buffer, offset, count, cancellationToken);
+        }
+#endif
 
         /// <summary>
         /// Sets the position within the current stream.

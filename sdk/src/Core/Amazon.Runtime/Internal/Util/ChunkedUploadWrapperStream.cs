@@ -28,6 +28,11 @@ using Amazon.Util;
 using Amazon.Runtime.Internal.Auth;
 using System.Globalization;
 
+#if AWS_ASYNC_API
+using System.Threading;
+using System.Threading.Tasks;
+#endif
+
 namespace Amazon.Runtime.Internal.Util
 {
     /// <summary>
@@ -133,6 +138,78 @@ namespace Amazon.Runtime.Internal.Util
 
             return count;
         }
+
+#if AWS_ASYNC_API
+        public override async Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
+        {
+            // if we've no output and it was the special termination chunk,
+            // we're done otherwise fill the input buffer with enough data
+            // for the next chunk (or with whatever is left) and construct
+            // the chunk in the output buffer ready for streaming
+            if (_outputBufferPos == -1)
+            {
+                if (_wrappedStreamConsumed && _outputBufferIsTerminatingChunk)
+                    return 0;
+
+                var bytesRead = await FillInputBufferAsync(cancellationToken);
+                ConstructOutputBufferChunk(bytesRead);
+                _outputBufferIsTerminatingChunk = (_wrappedStreamConsumed && bytesRead == 0);
+            }
+
+            var outputRemaining = _outputBufferDataLen - _outputBufferPos;
+            if (outputRemaining < count)
+                count = outputRemaining;
+
+            Buffer.BlockCopy(_outputBuffer, _outputBufferPos, buffer, offset, count);
+            _outputBufferPos += count;
+            if (_outputBufferPos >= _outputBufferDataLen)
+                _outputBufferPos = -1;
+
+            return count;
+        }
+
+        private async Task<int> FillInputBufferAsync(CancellationToken cancellationToken)
+        {
+            if (_wrappedStreamConsumed)
+                return 0;
+
+            var inputBufferPos = 0;
+
+            if (_readStrategy == ReadStrategy.ReadDirect)
+            {
+                while (inputBufferPos < _inputBuffer.Length && !_wrappedStreamConsumed)
+                {
+                    // chunk buffer size may not align exactly with underlying buffer size
+                    var chunkBufferRemaining = _inputBuffer.Length - inputBufferPos;
+                    if (chunkBufferRemaining > _wrappedStreamBufferSize)
+                        chunkBufferRemaining = _wrappedStreamBufferSize;
+
+                    var bytesRead = await BaseStream.ReadAsync(_inputBuffer, inputBufferPos, chunkBufferRemaining, cancellationToken);
+                    if (bytesRead == 0)
+                        _wrappedStreamConsumed = true;
+                    else
+                        inputBufferPos += bytesRead;
+                }
+            }
+            else
+            {
+                var readBuffer = new byte[_wrappedStreamBufferSize];
+                while (inputBufferPos < _inputBuffer.Length && !_wrappedStreamConsumed)
+                {
+                    var bytesRead = await BaseStream.ReadAsync(readBuffer, 0, _wrappedStreamBufferSize, cancellationToken);
+                    if (bytesRead == 0)
+                        _wrappedStreamConsumed = true;
+                    else
+                    {
+                        Buffer.BlockCopy(readBuffer, 0, _inputBuffer, inputBufferPos, bytesRead);
+                        inputBufferPos += bytesRead;
+                    }
+                }
+            }
+
+            return inputBufferPos;
+        }
+#endif
 
         /// <summary>
         /// Results of the header-signing portion of the request

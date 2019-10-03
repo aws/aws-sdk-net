@@ -9,8 +9,10 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyTitle("AWSSDK.Core")]
 #if BCL35
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Core Runtime")]
+[assembly: InternalsVisibleTo("AWSSDK.UnitTests.Net35")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Core Runtime")]
+[assembly: InternalsVisibleTo("AWSSDK.UnitTests.Net45")]
 #elif PCL
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- Core Runtime")]
 #elif UNITY
@@ -63,7 +65,6 @@ using System.Runtime.CompilerServices;
 // Amazon.Util.Settings.UserCrypto methods to work in .NET 4.5
 [assembly: System.Security.SecurityRules(System.Security.SecurityRuleSet.Level1)]
 #endif
-
 
 //declare the permission we use in the manifest
 #if __ANDROID__
