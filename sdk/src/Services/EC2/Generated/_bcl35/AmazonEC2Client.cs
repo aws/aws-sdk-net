@@ -7223,6 +7223,60 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteQueuedReservedInstances
+
+        /// <summary>
+        /// Deletes the queued purchases for the specified Reserved Instances.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQueuedReservedInstances service method.</param>
+        /// 
+        /// <returns>The response from the DeleteQueuedReservedInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteQueuedReservedInstances">REST API Reference for DeleteQueuedReservedInstances Operation</seealso>
+        public virtual DeleteQueuedReservedInstancesResponse DeleteQueuedReservedInstances(DeleteQueuedReservedInstancesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteQueuedReservedInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteQueuedReservedInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteQueuedReservedInstancesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteQueuedReservedInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQueuedReservedInstances operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteQueuedReservedInstances
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteQueuedReservedInstances">REST API Reference for DeleteQueuedReservedInstances Operation</seealso>
+        public virtual IAsyncResult BeginDeleteQueuedReservedInstances(DeleteQueuedReservedInstancesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteQueuedReservedInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteQueuedReservedInstancesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteQueuedReservedInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteQueuedReservedInstances.</param>
+        /// 
+        /// <returns>Returns a  DeleteQueuedReservedInstancesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteQueuedReservedInstances">REST API Reference for DeleteQueuedReservedInstances Operation</seealso>
+        public virtual DeleteQueuedReservedInstancesResponse EndDeleteQueuedReservedInstances(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteQueuedReservedInstancesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteRoute
 
         /// <summary>
@@ -20963,6 +21017,11 @@ namespace Amazon.EC2
         /// Use <a>DescribeReservedInstancesOfferings</a> to get a list of Reserved Instance offerings
         /// that match your specifications. After you've purchased a Reserved Instance, you can
         /// check for your new Reserved Instance with <a>DescribeReservedInstances</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To queue a purchase for a future date and time, specify a purchase time. If you do
+        /// not specify a purchase time, the default is the current time.
         /// </para>
         ///  
         /// <para>

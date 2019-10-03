@@ -3199,6 +3199,24 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DeleteQueuedReservedInstances
+
+
+
+        /// <summary>
+        /// Deletes the queued purchases for the specified Reserved Instances.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQueuedReservedInstances service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteQueuedReservedInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteQueuedReservedInstances">REST API Reference for DeleteQueuedReservedInstances Operation</seealso>
+        Task<DeleteQueuedReservedInstancesResponse> DeleteQueuedReservedInstancesAsync(DeleteQueuedReservedInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteRoute
 
 
@@ -9417,6 +9435,11 @@ namespace Amazon.EC2
         /// Use <a>DescribeReservedInstancesOfferings</a> to get a list of Reserved Instance offerings
         /// that match your specifications. After you've purchased a Reserved Instance, you can
         /// check for your new Reserved Instance with <a>DescribeReservedInstances</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To queue a purchase for a future date and time, specify a purchase time. If you do
+        /// not specify a purchase time, the default is the current time.
         /// </para>
         ///  
         /// <para>

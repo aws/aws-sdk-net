@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PurchaseReservedInstancesOffering Request Marshaller
+    /// DeleteQueuedReservedInstances Request Marshaller
     /// </summary>       
-    public class PurchaseReservedInstancesOfferingRequestMarshaller : IMarshaller<IRequest, PurchaseReservedInstancesOfferingRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteQueuedReservedInstancesRequestMarshaller : IMarshaller<IRequest, DeleteQueuedReservedInstancesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((PurchaseReservedInstancesOfferingRequest)input);
+            return this.Marshall((DeleteQueuedReservedInstancesRequest)input);
         }
     
         /// <summary>
@@ -50,43 +50,29 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(PurchaseReservedInstancesOfferingRequest publicRequest)
+        public IRequest Marshall(DeleteQueuedReservedInstancesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
-            request.Parameters.Add("Action", "PurchaseReservedInstancesOffering");
+            request.Parameters.Add("Action", "DeleteQueuedReservedInstances");
             request.Parameters.Add("Version", "2016-11-15");
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetInstanceCount())
+                if(publicRequest.IsSetReservedInstancesIds())
                 {
-                    request.Parameters.Add("InstanceCount", StringUtils.FromInt(publicRequest.InstanceCount));
-                }
-                if(publicRequest.IsSetLimitPrice())
-                {
-                    if(publicRequest.LimitPrice.IsSetAmount())
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.ReservedInstancesIds)
                     {
-                        request.Parameters.Add("LimitPrice" + "." + "Amount", StringUtils.FromDouble(publicRequest.LimitPrice.Amount));
+                        request.Parameters.Add("ReservedInstancesId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
                     }
-                    if(publicRequest.LimitPrice.IsSetCurrencyCode())
-                    {
-                        request.Parameters.Add("LimitPrice" + "." + "CurrencyCode", StringUtils.FromString(publicRequest.LimitPrice.CurrencyCode));
-                    }
-                }
-                if(publicRequest.IsSetPurchaseTime())
-                {
-                    request.Parameters.Add("PurchaseTime", StringUtils.FromDateTimeToISO8601(publicRequest.PurchaseTime));
-                }
-                if(publicRequest.IsSetReservedInstancesOfferingId())
-                {
-                    request.Parameters.Add("ReservedInstancesOfferingId", StringUtils.FromString(publicRequest.ReservedInstancesOfferingId));
                 }
             }
             return request;
         }
-                    private static PurchaseReservedInstancesOfferingRequestMarshaller _instance = new PurchaseReservedInstancesOfferingRequestMarshaller();        
+                    private static DeleteQueuedReservedInstancesRequestMarshaller _instance = new DeleteQueuedReservedInstancesRequestMarshaller();        
 
-        internal static PurchaseReservedInstancesOfferingRequestMarshaller GetInstance()
+        internal static DeleteQueuedReservedInstancesRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -94,7 +80,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PurchaseReservedInstancesOfferingRequestMarshaller Instance
+        public static DeleteQueuedReservedInstancesRequestMarshaller Instance
         {
             get
             {

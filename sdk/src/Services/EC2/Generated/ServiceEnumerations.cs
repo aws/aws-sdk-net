@@ -2141,6 +2141,60 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type DeleteQueuedReservedInstancesErrorCode.
+    /// </summary>
+    public class DeleteQueuedReservedInstancesErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ReservedInstancesIdInvalid for DeleteQueuedReservedInstancesErrorCode
+        /// </summary>
+        public static readonly DeleteQueuedReservedInstancesErrorCode ReservedInstancesIdInvalid = new DeleteQueuedReservedInstancesErrorCode("reserved-instances-id-invalid");
+        /// <summary>
+        /// Constant ReservedInstancesNotInQueuedState for DeleteQueuedReservedInstancesErrorCode
+        /// </summary>
+        public static readonly DeleteQueuedReservedInstancesErrorCode ReservedInstancesNotInQueuedState = new DeleteQueuedReservedInstancesErrorCode("reserved-instances-not-in-queued-state");
+        /// <summary>
+        /// Constant UnexpectedError for DeleteQueuedReservedInstancesErrorCode
+        /// </summary>
+        public static readonly DeleteQueuedReservedInstancesErrorCode UnexpectedError = new DeleteQueuedReservedInstancesErrorCode("unexpected-error");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeleteQueuedReservedInstancesErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeleteQueuedReservedInstancesErrorCode FindValue(string value)
+        {
+            return FindValue<DeleteQueuedReservedInstancesErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeleteQueuedReservedInstancesErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeviceType.
     /// </summary>
     public class DeviceType : ConstantClass
@@ -6768,6 +6822,14 @@ namespace Amazon.EC2
         /// Constant PaymentPending for ReservedInstanceState
         /// </summary>
         public static readonly ReservedInstanceState PaymentPending = new ReservedInstanceState("payment-pending");
+        /// <summary>
+        /// Constant Queued for ReservedInstanceState
+        /// </summary>
+        public static readonly ReservedInstanceState Queued = new ReservedInstanceState("queued");
+        /// <summary>
+        /// Constant QueuedDeleted for ReservedInstanceState
+        /// </summary>
+        public static readonly ReservedInstanceState QueuedDeleted = new ReservedInstanceState("queued-deleted");
         /// <summary>
         /// Constant Retired for ReservedInstanceState
         /// </summary>

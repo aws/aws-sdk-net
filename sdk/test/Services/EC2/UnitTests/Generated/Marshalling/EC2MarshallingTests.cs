@@ -2499,6 +2499,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DeleteQueuedReservedInstancesMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteQueuedReservedInstances");
+
+            var request = InstantiateClassGenerator.Execute<DeleteQueuedReservedInstancesRequest>();
+            var marshaller = new DeleteQueuedReservedInstancesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DeleteQueuedReservedInstancesResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteQueuedReservedInstancesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DeleteRouteMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteRoute");

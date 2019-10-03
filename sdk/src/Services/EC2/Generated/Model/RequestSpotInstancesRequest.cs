@@ -286,6 +286,11 @@ namespace Amazon.EC2.Model
         /// expires, or the request is canceled. If the request is persistent, the request becomes
         /// active at this date and time and remains active until it expires or is canceled.
         /// </para>
+        ///  
+        /// <para>
+        /// The specified start date and time cannot be equal to the current date and time. You
+        /// must specify a start date and time that occurs after the current date and time.
+        /// </para>
         /// </summary>
         public DateTime ValidFromUtc
         {
@@ -340,6 +345,11 @@ namespace Amazon.EC2.Model
         /// active at this date and time and remains active until all instances launch, the request
         /// expires, or the request is canceled. If the request is persistent, the request becomes
         /// active at this date and time and remains active until it expires or is canceled.
+        /// </para>
+        ///  
+        /// <para>
+        /// The specified start date and time cannot be equal to the current date and time. You
+        /// must specify a start date and time that occurs after the current date and time.
         /// </para>
         /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
