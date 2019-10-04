@@ -1117,6 +1117,17 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Creates a new maintenance window.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The value you specify for <code>Duration</code> determines the specific end time for
+        /// the maintenance window based on the time it begins. No maintenance window tasks are
+        /// permitted to start after the resulting endtime minus the number of hours you specify
+        /// for <code>Cutoff</code>. For example, if the maintenance window starts at 3 PM, the
+        /// duration is three hours, and the value you specify for <code>Cutoff</code> is one
+        /// hour, no maintenance window tasks can start after 5 PM.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMaintenanceWindow service method.</param>
         /// 
@@ -8872,6 +8883,11 @@ namespace Amazon.SimpleSystemsManagement
         /// Install the Session Manager Plugin for the AWS CLI</a> in the <i>AWS Systems Manager
         /// User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// AWS Tools for PowerShell usage: Start-SSMSession is not currently supported by AWS
+        /// Tools for PowerShell on Windows local machines.
+        /// </para>
         ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartSession service method.</param>
@@ -9425,6 +9441,17 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Updates an existing maintenance window. Only specified parameters are modified.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The value you specify for <code>Duration</code> determines the specific end time for
+        /// the maintenance window based on the time it begins. No maintenance window tasks are
+        /// permitted to start after the resulting endtime minus the number of hours you specify
+        /// for <code>Cutoff</code>. For example, if the maintenance window starts at 3 PM, the
+        /// duration is three hours, and the value you specify for <code>Cutoff</code> is one
+        /// hour, no maintenance window tasks can start after 5 PM.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMaintenanceWindow service method.</param>
         /// 

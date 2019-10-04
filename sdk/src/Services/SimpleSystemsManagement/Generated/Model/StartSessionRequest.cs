@@ -41,6 +41,11 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// Install the Session Manager Plugin for the AWS CLI</a> in the <i>AWS Systems Manager
     /// User Guide</i>.
     /// </para>
+    ///  
+    /// <para>
+    /// AWS Tools for PowerShell usage: Start-SSMSession is not currently supported by AWS
+    /// Tools for PowerShell on Windows local machines.
+    /// </para>
     ///  </note>
     /// </summary>
     public partial class StartSessionRequest : AmazonSimpleSystemsManagementRequest
