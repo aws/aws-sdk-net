@@ -125,6 +125,12 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetOrigination())
+                {
+                    context.Writer.WritePropertyName("origination");
+                    context.Writer.Write(publicRequest.Origination);
+                }
+
                 if(publicRequest.IsSetStartoverWindowSeconds())
                 {
                     context.Writer.WritePropertyName("startoverWindowSeconds");

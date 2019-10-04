@@ -6,6 +6,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaPackage.Model.ListHarvestJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaPackage.Model.ListOriginEndpointsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>

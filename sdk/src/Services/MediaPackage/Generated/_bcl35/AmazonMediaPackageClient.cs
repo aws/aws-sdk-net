@@ -308,6 +308,78 @@ namespace Amazon.MediaPackage
 
         #endregion
         
+        #region  CreateHarvestJob
+
+        /// <summary>
+        /// Creates a new HarvestJob record.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHarvestJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateHarvestJob service method, as returned by MediaPackage.</returns>
+        /// <exception cref="Amazon.MediaPackage.Model.ForbiddenException">
+        /// The client is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackage.Model.InternalServerErrorException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackage.Model.NotFoundException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackage.Model.ServiceUnavailableException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackage.Model.TooManyRequestsException">
+        /// The client has exceeded their resource or throttling limits.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackage.Model.UnprocessableEntityException">
+        /// The parameters sent in the request are not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/CreateHarvestJob">REST API Reference for CreateHarvestJob Operation</seealso>
+        public virtual CreateHarvestJobResponse CreateHarvestJob(CreateHarvestJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHarvestJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHarvestJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateHarvestJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateHarvestJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateHarvestJob operation on AmazonMediaPackageClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateHarvestJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/CreateHarvestJob">REST API Reference for CreateHarvestJob Operation</seealso>
+        public virtual IAsyncResult BeginCreateHarvestJob(CreateHarvestJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHarvestJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHarvestJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateHarvestJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateHarvestJob.</param>
+        /// 
+        /// <returns>Returns a  CreateHarvestJobResult from MediaPackage.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/CreateHarvestJob">REST API Reference for CreateHarvestJob Operation</seealso>
+        public virtual CreateHarvestJobResponse EndCreateHarvestJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateHarvestJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateOriginEndpoint
 
         /// <summary>
@@ -596,6 +668,78 @@ namespace Amazon.MediaPackage
 
         #endregion
         
+        #region  DescribeHarvestJob
+
+        /// <summary>
+        /// Gets details about an existing HarvestJob.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHarvestJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeHarvestJob service method, as returned by MediaPackage.</returns>
+        /// <exception cref="Amazon.MediaPackage.Model.ForbiddenException">
+        /// The client is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackage.Model.InternalServerErrorException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackage.Model.NotFoundException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackage.Model.ServiceUnavailableException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackage.Model.TooManyRequestsException">
+        /// The client has exceeded their resource or throttling limits.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackage.Model.UnprocessableEntityException">
+        /// The parameters sent in the request are not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/DescribeHarvestJob">REST API Reference for DescribeHarvestJob Operation</seealso>
+        public virtual DescribeHarvestJobResponse DescribeHarvestJob(DescribeHarvestJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeHarvestJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeHarvestJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeHarvestJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeHarvestJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHarvestJob operation on AmazonMediaPackageClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeHarvestJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/DescribeHarvestJob">REST API Reference for DescribeHarvestJob Operation</seealso>
+        public virtual IAsyncResult BeginDescribeHarvestJob(DescribeHarvestJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeHarvestJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeHarvestJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeHarvestJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeHarvestJob.</param>
+        /// 
+        /// <returns>Returns a  DescribeHarvestJobResult from MediaPackage.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/DescribeHarvestJob">REST API Reference for DescribeHarvestJob Operation</seealso>
+        public virtual DescribeHarvestJobResponse EndDescribeHarvestJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeHarvestJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeOriginEndpoint
 
         /// <summary>
@@ -736,6 +880,78 @@ namespace Amazon.MediaPackage
         public virtual ListChannelsResponse EndListChannels(IAsyncResult asyncResult)
         {
             return EndInvoke<ListChannelsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListHarvestJobs
+
+        /// <summary>
+        /// Returns a collection of HarvestJob records.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHarvestJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListHarvestJobs service method, as returned by MediaPackage.</returns>
+        /// <exception cref="Amazon.MediaPackage.Model.ForbiddenException">
+        /// The client is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackage.Model.InternalServerErrorException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackage.Model.NotFoundException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackage.Model.ServiceUnavailableException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackage.Model.TooManyRequestsException">
+        /// The client has exceeded their resource or throttling limits.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackage.Model.UnprocessableEntityException">
+        /// The parameters sent in the request are not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/ListHarvestJobs">REST API Reference for ListHarvestJobs Operation</seealso>
+        public virtual ListHarvestJobsResponse ListHarvestJobs(ListHarvestJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListHarvestJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHarvestJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListHarvestJobsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListHarvestJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListHarvestJobs operation on AmazonMediaPackageClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListHarvestJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/ListHarvestJobs">REST API Reference for ListHarvestJobs Operation</seealso>
+        public virtual IAsyncResult BeginListHarvestJobs(ListHarvestJobsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListHarvestJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHarvestJobsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListHarvestJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListHarvestJobs.</param>
+        /// 
+        /// <returns>Returns a  ListHarvestJobsResult from MediaPackage.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/ListHarvestJobs">REST API Reference for ListHarvestJobs Operation</seealso>
+        public virtual ListHarvestJobsResponse EndListHarvestJobs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListHarvestJobsResponse>(asyncResult);
         }
 
         #endregion

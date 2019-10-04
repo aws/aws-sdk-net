@@ -41,6 +41,7 @@ namespace Amazon.MediaPackage.Model
         private string _id;
         private string _manifestName;
         private MssPackage _mssPackage;
+        private Origination _origination;
         private int? _startoverWindowSeconds;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private int? _timeDelaySeconds;
@@ -169,6 +170,24 @@ namespace Amazon.MediaPackage.Model
         internal bool IsSetMssPackage()
         {
             return this._mssPackage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Origination. Control whether origination of video is allowed
+        /// for this OriginEndpoint. If set to ALLOW, the OriginEndpointmay by requested, pursuant
+        /// to any other form of access control. If set to DENY, the OriginEndpoint may not berequested.
+        /// This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+        /// </summary>
+        public Origination Origination
+        {
+            get { return this._origination; }
+            set { this._origination = value; }
+        }
+
+        // Check to see if Origination property is set
+        internal bool IsSetOrigination()
+        {
+            return this._origination != null;
         }
 
         /// <summary>
