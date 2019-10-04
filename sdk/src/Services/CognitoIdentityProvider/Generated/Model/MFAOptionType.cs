@@ -28,7 +28,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// Specifies the different settings for multi-factor authentication (MFA).
+    /// <i>This data type is no longer supported.</i> You can use it only for SMS MFA configurations.
+    /// You can't use it for TOTP software token MFA configurations.
+    /// 
+    ///  
+    /// <para>
+    /// To set either type of MFA configuration, use the <a>AdminSetUserMFAPreference</a>
+    /// or <a>SetUserMFAPreference</a> actions.
+    /// </para>
+    ///  
+    /// <para>
+    /// To look up information about either type of MFA configuration, use the <a>AdminGetUserResponse$UserMFASettingList</a>
+    /// or <a>GetUserResponse$UserMFASettingList</a> responses.
+    /// </para>
     /// </summary>
     public partial class MFAOptionType
     {
@@ -38,7 +50,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AttributeName. 
         /// <para>
-        /// The attribute name of the MFA option type.
+        /// The attribute name of the MFA option type. The only valid value is <code>phone_number</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
@@ -57,7 +69,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property DeliveryMedium. 
         /// <para>
-        /// The delivery medium (email message or SMS message) to send the MFA code.
+        /// The delivery medium to send the MFA code. You can use this parameter to set only the
+        /// <code>SMS</code> delivery medium value.
         /// </para>
         /// </summary>
         public DeliveryMediumType DeliveryMedium

@@ -28,7 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The SMS configuration type.
+    /// The SMS configuration type that includes the settings the Cognito User Pool needs
+    /// to call for the Amazon SNS service to send an SMS message from your AWS account. The
+    /// Cognito User Pool makes the request to the Amazon SNS Service by using an AWS IAM
+    /// role that you provide for your AWS account.
     /// </summary>
     public partial class SmsConfigurationType
     {
@@ -38,7 +41,13 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ExternalId. 
         /// <para>
-        /// The external ID.
+        /// The external ID is a value that we recommend you use to add security to your IAM role
+        /// which is used to call Amazon SNS to send SMS messages for your user pool. If you provide
+        /// an <code>ExternalId</code>, the Cognito User Pool will include it when attempting
+        /// to assume your IAM role, so that you can set your roles trust policy to require the
+        /// <code>ExternalID</code>. If you use the Cognito Management Console to create a role
+        /// for SMS MFA, Cognito will create a role with the required permissions and a trust
+        /// policy that demonstrates use of the <code>ExternalId</code>.
         /// </para>
         /// </summary>
         public string ExternalId
@@ -57,6 +66,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property SnsCallerArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller.
+        /// This is the ARN of the IAM role in your AWS account which Cognito will use to send
+        /// SMS messages.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

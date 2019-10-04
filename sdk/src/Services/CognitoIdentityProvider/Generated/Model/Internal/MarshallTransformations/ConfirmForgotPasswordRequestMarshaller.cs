@@ -85,6 +85,20 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ClientId);
                 }
 
+                if(publicRequest.IsSetClientMetadata())
+                {
+                    context.Writer.WritePropertyName("ClientMetadata");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestClientMetadataKvp in publicRequest.ClientMetadata)
+                    {
+                        context.Writer.WritePropertyName(publicRequestClientMetadataKvp.Key);
+                        var publicRequestClientMetadataValue = publicRequestClientMetadataKvp.Value;
+
+                            context.Writer.Write(publicRequestClientMetadataValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetConfirmationCode())
                 {
                     context.Writer.WritePropertyName("ConfirmationCode");

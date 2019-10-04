@@ -83,7 +83,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// A list of scopes. Each scope is map, where the keys are <code>name</code> and <code>description</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=25)]
+        [AWSProperty(Max=100)]
         public List<ResourceServerScopeType> Scopes
         {
             get { return this._scopes; }

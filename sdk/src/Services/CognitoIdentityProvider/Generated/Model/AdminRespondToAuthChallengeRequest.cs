@@ -33,7 +33,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// 
     ///  
     /// <para>
-    /// Requires developer credentials.
+    /// Calling this action requires developer credentials.
     /// </para>
     /// </summary>
     public partial class AdminRespondToAuthChallengeRequest : AmazonCognitoIdentityProviderRequest
@@ -42,6 +42,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private ChallengeNameType _challengeName;
         private Dictionary<string, string> _challengeResponses = new Dictionary<string, string>();
         private string _clientId;
+        private Dictionary<string, string> _clientMetadata = new Dictionary<string, string>();
         private ContextDataType _contextData;
         private string _session;
         private string _userPoolId;
@@ -149,6 +150,66 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetClientId()
         {
             return this._clientId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientMetadata. 
+        /// <para>
+        /// A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You create custom workflows by assigning AWS Lambda functions to user pool triggers.
+        /// When you use the AdminRespondToAuthChallenge API action, Amazon Cognito invokes any
+        /// functions that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom
+        /// message</i>, <i>post authentication</i>, <i>user migration</i>, <i>pre token generation</i>,
+        /// <i>define auth challenge</i>, <i>create auth challenge</i>, and <i>verify auth challenge
+        /// response</i>. When Amazon Cognito invokes any of these functions, it passes a JSON
+        /// payload, which the function receives as input. This payload contains a <code>clientMetadata</code>
+        /// attribute, which provides the data that you assigned to the ClientMetadata parameter
+        /// in your AdminRespondToAuthChallenge request. In your function code in AWS Lambda,
+        /// you can process the <code>clientMetadata</code> value to enhance your workflow for
+        /// your specific needs.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
+        /// User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon Cognito does not store the ClientMetadata value. This data is available only
+        /// to AWS Lambda triggers that are assigned to a user pool to support custom workflows.
+        /// If your user pool configuration does not include triggers, the ClientMetadata parameter
+        /// serves no purpose.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Cognito does not validate the ClientMetadata value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide
+        /// sensitive information.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        public Dictionary<string, string> ClientMetadata
+        {
+            get { return this._clientMetadata; }
+            set { this._clientMetadata = value; }
+        }
+
+        // Check to see if ClientMetadata property is set
+        internal bool IsSetClientMetadata()
+        {
+            return this._clientMetadata != null && this._clientMetadata.Count > 0; 
         }
 
         /// <summary>

@@ -29,11 +29,11 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the AdminDisableUser operation.
-    /// Disables the specified user as an administrator. Works on any user.
+    /// Disables the specified user.
     /// 
     ///  
     /// <para>
-    /// Requires developer credentials.
+    /// Calling this action requires developer credentials.
     /// </para>
     /// </summary>
     public partial class AdminDisableUserRequest : AmazonCognitoIdentityProviderRequest
