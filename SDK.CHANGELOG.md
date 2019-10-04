@@ -1,3 +1,11 @@
+### 3.3.601.0 (2019-10-04 19:22 UTC)
+* CognitoIdentityProvider (3.3.103.0)
+	* This release adds ClientMetadata input parameter to multiple Cognito User Pools operations, making this parameter available to the customer configured lambda triggers as applicable. 
+* MediaPackage (3.3.103.0)
+	* New Harvest Job APIs to export segment-accurate content windows from MediaPackage Origin Endpoints to S3. See https://docs.aws.amazon.com/mediapackage/latest/ug/harvest-jobs.html for more info
+* SimpleSystemsManagement (3.3.107.2)
+	* Documentation updates for Systems Manager / StartSession.
+
 ### 3.3.600.0 (2019-10-03 19:11 UTC)
 * ApplicationAutoScaling (3.3.101.14)
 	* Documentation updates for Application Auto Scaling
