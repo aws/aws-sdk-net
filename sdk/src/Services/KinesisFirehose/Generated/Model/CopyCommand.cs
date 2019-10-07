@@ -40,7 +40,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property CopyOptions. 
         /// <para>
         /// Optional parameters to use with the Amazon Redshift <code>COPY</code> command. For
-        /// more information, see the "Optional Parameters" section of <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
+        /// more information, see the "Optional Parameters" section of <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
         /// Redshift COPY command</a>. Some possible examples that would apply to Kinesis Data
         /// Firehose are as follows:
         /// </para>
@@ -70,7 +70,7 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         ///  
         /// <para>
-        /// For more examples, see <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY_command_examples.html">Amazon
+        /// For more examples, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY_command_examples.html">Amazon
         /// Redshift COPY command examples</a>.
         /// </para>
         /// </summary>

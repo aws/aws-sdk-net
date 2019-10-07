@@ -144,7 +144,9 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property ErrorOutputPrefix. 
         /// <para>
         /// A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing
-        /// them to S3. This prefix appears immediately following the bucket name.
+        /// them to S3. This prefix appears immediately following the bucket name. For information
+        /// about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
+        /// Prefixes for Amazon S3 Objects</a>.
         /// </para>
         /// </summary>
         public string ErrorOutputPrefix
@@ -163,10 +165,8 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property Prefix. 
         /// <para>
         /// The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon
-        /// S3 files. You can specify an extra prefix to be added in front of the time format
-        /// prefix. If the prefix ends with a slash, it appears as a folder in the S3 bucket.
-        /// For more information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon
-        /// S3 Object Name Format</a> in the <i>Amazon Kinesis Data Firehose Developer Guide</i>.
+        /// S3 files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
+        /// Prefixes for Amazon S3 Objects</a>.
         /// </para>
         /// </summary>
         public string Prefix

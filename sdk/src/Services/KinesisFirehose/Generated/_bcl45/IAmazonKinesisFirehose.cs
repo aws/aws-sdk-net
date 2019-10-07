@@ -118,7 +118,7 @@ namespace Amazon.KinesisFirehose
         /// Kinesis Data Firehose assumes the IAM role that is configured as part of the destination.
         /// The role should allow the Kinesis Data Firehose principal to assume the role, and
         /// the role should have permissions that allow the service to deliver the data. For more
-        /// information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
+        /// information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
         /// Kinesis Data Firehose Access to an Amazon S3 Destination</a> in the <i>Amazon Kinesis
         /// Data Firehose Developer Guide</i>.
         /// </para>
@@ -213,7 +213,7 @@ namespace Amazon.KinesisFirehose
         /// Kinesis Data Firehose assumes the IAM role that is configured as part of the destination.
         /// The role should allow the Kinesis Data Firehose principal to assume the role, and
         /// the role should have permissions that allow the service to deliver the data. For more
-        /// information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
+        /// information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
         /// Kinesis Data Firehose Access to an Amazon S3 Destination</a> in the <i>Amazon Kinesis
         /// Data Firehose Developer Guide</i>.
         /// </para>
@@ -577,7 +577,7 @@ namespace Amazon.KinesisFirehose
         /// By default, each delivery stream can take in up to 2,000 transactions per second,
         /// 5,000 records per second, or 5 MB per second. If you use <a>PutRecord</a> and <a>PutRecordBatch</a>,
         /// the limits are an aggregate across these two operations for each delivery stream.
-        /// For more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
+        /// For more information about limits and how to request an increase, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Data Firehose Limits</a>. 
         /// </para>
         ///  
@@ -633,7 +633,7 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ServiceUnavailableException">
         /// The service is unavailable. Back off and retry the operation. If you continue to see
         /// the exception, throughput limits for the delivery stream may have been exceeded. For
-        /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
+        /// more information about limits and how to request an increase, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Data Firehose Limits</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">REST API Reference for PutRecord Operation</seealso>
@@ -649,7 +649,7 @@ namespace Amazon.KinesisFirehose
         /// By default, each delivery stream can take in up to 2,000 transactions per second,
         /// 5,000 records per second, or 5 MB per second. If you use <a>PutRecord</a> and <a>PutRecordBatch</a>,
         /// the limits are an aggregate across these two operations for each delivery stream.
-        /// For more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
+        /// For more information about limits and how to request an increase, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Data Firehose Limits</a>. 
         /// </para>
         ///  
@@ -704,7 +704,7 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ServiceUnavailableException">
         /// The service is unavailable. Back off and retry the operation. If you continue to see
         /// the exception, throughput limits for the delivery stream may have been exceeded. For
-        /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
+        /// more information about limits and how to request an increase, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Data Firehose Limits</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">REST API Reference for PutRecord Operation</seealso>
@@ -721,7 +721,7 @@ namespace Amazon.KinesisFirehose
         /// By default, each delivery stream can take in up to 2,000 transactions per second,
         /// 5,000 records per second, or 5 MB per second. If you use <a>PutRecord</a> and <a>PutRecordBatch</a>,
         /// the limits are an aggregate across these two operations for each delivery stream.
-        /// For more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
+        /// For more information about limits and how to request an increase, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Data Firehose Limits</a>. 
         /// </para>
         ///  
@@ -780,7 +780,7 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ServiceUnavailableException">
         /// The service is unavailable. Back off and retry the operation. If you continue to see
         /// the exception, throughput limits for the delivery stream may have been exceeded. For
-        /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
+        /// more information about limits and how to request an increase, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Data Firehose Limits</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">REST API Reference for PutRecord Operation</seealso>
@@ -797,7 +797,7 @@ namespace Amazon.KinesisFirehose
         /// By default, each delivery stream can take in up to 2,000 transactions per second,
         /// 5,000 records per second, or 5 MB per second. If you use <a>PutRecord</a> and <a>PutRecordBatch</a>,
         /// the limits are an aggregate across these two operations for each delivery stream.
-        /// For more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
+        /// For more information about limits and how to request an increase, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Data Firehose Limits</a>. 
         /// </para>
         ///  
@@ -855,7 +855,7 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ServiceUnavailableException">
         /// The service is unavailable. Back off and retry the operation. If you continue to see
         /// the exception, throughput limits for the delivery stream may have been exceeded. For
-        /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
+        /// more information about limits and how to request an increase, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Data Firehose Limits</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">REST API Reference for PutRecord Operation</seealso>
@@ -877,7 +877,7 @@ namespace Amazon.KinesisFirehose
         /// By default, each delivery stream can take in up to 2,000 transactions per second,
         /// 5,000 records per second, or 5 MB per second. If you use <a>PutRecord</a> and <a>PutRecordBatch</a>,
         /// the limits are an aggregate across these two operations for each delivery stream.
-        /// For more information about limits, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
+        /// For more information about limits, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Data Firehose Limits</a>.
         /// </para>
         ///  
@@ -964,7 +964,7 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ServiceUnavailableException">
         /// The service is unavailable. Back off and retry the operation. If you continue to see
         /// the exception, throughput limits for the delivery stream may have been exceeded. For
-        /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
+        /// more information about limits and how to request an increase, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Data Firehose Limits</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">REST API Reference for PutRecordBatch Operation</seealso>
@@ -981,7 +981,7 @@ namespace Amazon.KinesisFirehose
         /// By default, each delivery stream can take in up to 2,000 transactions per second,
         /// 5,000 records per second, or 5 MB per second. If you use <a>PutRecord</a> and <a>PutRecordBatch</a>,
         /// the limits are an aggregate across these two operations for each delivery stream.
-        /// For more information about limits, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
+        /// For more information about limits, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Data Firehose Limits</a>.
         /// </para>
         ///  
@@ -1067,7 +1067,7 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ServiceUnavailableException">
         /// The service is unavailable. Back off and retry the operation. If you continue to see
         /// the exception, throughput limits for the delivery stream may have been exceeded. For
-        /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
+        /// more information about limits and how to request an increase, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Data Firehose Limits</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">REST API Reference for PutRecordBatch Operation</seealso>
@@ -1085,7 +1085,7 @@ namespace Amazon.KinesisFirehose
         /// By default, each delivery stream can take in up to 2,000 transactions per second,
         /// 5,000 records per second, or 5 MB per second. If you use <a>PutRecord</a> and <a>PutRecordBatch</a>,
         /// the limits are an aggregate across these two operations for each delivery stream.
-        /// For more information about limits, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
+        /// For more information about limits, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Data Firehose Limits</a>.
         /// </para>
         ///  
@@ -1175,7 +1175,7 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ServiceUnavailableException">
         /// The service is unavailable. Back off and retry the operation. If you continue to see
         /// the exception, throughput limits for the delivery stream may have been exceeded. For
-        /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
+        /// more information about limits and how to request an increase, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Data Firehose Limits</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">REST API Reference for PutRecordBatch Operation</seealso>
@@ -1193,7 +1193,7 @@ namespace Amazon.KinesisFirehose
         /// By default, each delivery stream can take in up to 2,000 transactions per second,
         /// 5,000 records per second, or 5 MB per second. If you use <a>PutRecord</a> and <a>PutRecordBatch</a>,
         /// the limits are an aggregate across these two operations for each delivery stream.
-        /// For more information about limits, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
+        /// For more information about limits, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Data Firehose Limits</a>.
         /// </para>
         ///  
@@ -1282,7 +1282,7 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ServiceUnavailableException">
         /// The service is unavailable. Back off and retry the operation. If you continue to see
         /// the exception, throughput limits for the delivery stream may have been exceeded. For
-        /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
+        /// more information about limits and how to request an increase, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Data Firehose Limits</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">REST API Reference for PutRecordBatch Operation</seealso>

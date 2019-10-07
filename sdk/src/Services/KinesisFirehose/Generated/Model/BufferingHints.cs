@@ -30,7 +30,9 @@ namespace Amazon.KinesisFirehose.Model
     /// <summary>
     /// Describes hints for the buffering to perform before delivering data to the destination.
     /// These options are treated as hints, and therefore Kinesis Data Firehose might choose
-    /// to use different values when it is optimal.
+    /// to use different values when it is optimal. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code>
+    /// parameters are optional. However, if specify a value for one of them, you must also
+    /// provide a value for the other.
     /// </summary>
     public partial class BufferingHints
     {
@@ -41,7 +43,9 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property IntervalInSeconds. 
         /// <para>
         /// Buffer incoming data for the specified period of time, in seconds, before delivering
-        /// it to the destination. The default value is 300.
+        /// it to the destination. The default value is 300. This parameter is optional but if
+        /// you specify a value for it, you must also specify a value for <code>SizeInMBs</code>,
+        /// and vice versa.
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=900)]
@@ -60,14 +64,15 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property SizeInMBs. 
         /// <para>
-        /// Buffer incoming data to the specified size, in MBs, before delivering it to the destination.
-        /// The default value is 5.
+        /// Buffer incoming data to the specified size, in MiBs, before delivering it to the destination.
+        /// The default value is 5. This parameter is optional but if you specify a value for
+        /// it, you must also specify a value for <code>IntervalInSeconds</code>, and vice versa.
         /// </para>
         ///  
         /// <para>
         /// We recommend setting this parameter to a value greater than the amount of data you
         /// typically ingest into the delivery stream in 10 seconds. For example, if you typically
-        /// ingest data at 1 MB/sec, the value should be 10 MB or higher.
+        /// ingest data at 1 MiB/sec, the value should be 10 MiB or higher.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
