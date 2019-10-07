@@ -128,7 +128,7 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property KmsKeyARN. 
         /// <para>
         /// The <code>KmsKeyARN</code> value that you want to associate with this cluster. <code>KmsKeyARN</code>
-        /// values are created by using the <a href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
+        /// values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
         /// API action in AWS Key Management Service (AWS KMS). 
         /// </para>
         /// </summary>
@@ -188,7 +188,7 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property RoleARN. 
         /// <para>
         /// The <code>RoleARN</code> that you want to associate with this cluster. <code>RoleArn</code>
-        /// values are created by using the <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+        /// values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
         /// API action in AWS Identity and Access Management (IAM).
         /// </para>
         /// </summary>
@@ -226,7 +226,7 @@ namespace Amazon.Snowball.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In India, devices are delivered in one to seven days.
+        /// In India, Snowball Edges are delivered in one to seven days.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -250,8 +250,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property SnowballType. 
         /// <para>
-        /// The type of AWS Snowball device to use for this cluster. The only supported device
-        /// types for cluster jobs are <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
+        /// The type of AWS Snowball device to use for this cluster. Currently, the only supported
+        /// device type for cluster jobs is <code>EDGE</code>.
         /// </para>
         /// </summary>
         public SnowballType SnowballType

@@ -33,11 +33,12 @@ namespace Amazon.Snowball
     ///
     /// AWS Snowball is a petabyte-scale data transport solution that uses secure devices
     /// to transfer large amounts of data between your on-premises data centers and Amazon
-    /// Simple Storage Service (Amazon S3). The commands described here provide access to
-    /// the same functionality that is available in the AWS Snowball Management Console, which
-    /// enables you to create and manage jobs for Snowball and Snowball Edge devices. To transfer
-    /// data locally with a device, you'll need to use the Snowball client or the Amazon S3
-    /// API adapter for Snowball.
+    /// Simple Storage Service (Amazon S3). The Snowball commands described here provide access
+    /// to the same functionality that is available in the AWS Snowball Management Console,
+    /// which enables you to create and manage jobs for Snowball. To transfer data locally
+    /// with a Snowball device, you'll need to use the Snowball client or the Amazon S3 API
+    /// adapter for Snowball. For more information, see the <a href="https://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User
+    /// Guide</a>.
     /// </summary>
     public partial interface IAmazonSnowball : IAmazonService, IDisposable
     {
@@ -433,6 +434,33 @@ namespace Amazon.Snowball
 
         #endregion
                 
+        #region  GetSoftwareUpdates
+
+
+
+        /// <summary>
+        /// Returns an Amazon S3 presigned URL for an update file associated with a specified
+        /// <code>JobId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSoftwareUpdates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSoftwareUpdates service method, as returned by Snowball.</returns>
+        /// <exception cref="Amazon.Snowball.Model.InvalidJobStateException">
+        /// The action can't be performed because the job's current state doesn't allow that action
+        /// to be performed.
+        /// </exception>
+        /// <exception cref="Amazon.Snowball.Model.InvalidResourceException">
+        /// The specified resource can't be found. Check the information you provided in your
+        /// last request, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetSoftwareUpdates">REST API Reference for GetSoftwareUpdates Operation</seealso>
+        Task<GetSoftwareUpdatesResponse> GetSoftwareUpdatesAsync(GetSoftwareUpdatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListClusterJobs
 
 
@@ -493,10 +521,10 @@ namespace Amazon.Snowball
 
         /// <summary>
         /// This action returns a list of the different Amazon EC2 Amazon Machine Images (AMIs)
-        /// that are owned by your AWS account that would be supported for use on <code>EDGE</code>,
-        /// <code>EDGE_C</code>, and <code>EDGE_CG</code> devices. For more information on compatible
-        /// AMIs, see <a href="http://docs.aws.amazon.com/snowball/latest/developer-guide/using-ec2.html">Using
-        /// Amazon EC2 Compute Instances</a> in the <i>AWS Snowball Developer Guide</i>.
+        /// that are owned by your AWS account that would be supported for use on a Snowball Edge
+        /// device. Currently, supported AMIs are based on the CentOS 7 (x86_64) - with Updates
+        /// HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS - Xenial (HVM) images, available
+        /// on the AWS Marketplace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCompatibleImages service method.</param>
         /// <param name="cancellationToken">

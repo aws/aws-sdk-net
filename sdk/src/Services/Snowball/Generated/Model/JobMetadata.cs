@@ -247,7 +247,7 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property KmsKeyARN. 
         /// <para>
         /// The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS) key associated
-        /// with this job. This ARN was created using the <a href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
+        /// with this job. This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
         /// API action in AWS KMS.
         /// </para>
         /// </summary>
@@ -307,7 +307,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The role ARN associated with this job. This ARN was created using the <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+        /// The role ARN associated with this job. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
         /// API action in AWS Identity and Access Management (IAM).
         /// </para>
         /// </summary>
