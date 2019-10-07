@@ -56,6 +56,7 @@ namespace Amazon.DirectConnect.Model
         private string _connectionName;
         private string _lagId;
         private string _location;
+        private string _providerName;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -134,9 +135,27 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProviderName. 
+        /// <para>
+        /// The name of the service provider associated with the requested connection.
+        /// </para>
+        /// </summary>
+        public string ProviderName
+        {
+            get { return this._providerName; }
+            set { this._providerName = value; }
+        }
+
+        // Check to see if ProviderName property is set
+        internal bool IsSetProviderName()
+        {
+            return this._providerName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to assign to the connection.
+        /// The tags to associate with the lag.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

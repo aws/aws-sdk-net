@@ -46,6 +46,7 @@ namespace Amazon.DirectConnect.Model
         private int? _minimumLinks;
         private int? _numberOfConnections;
         private string _ownerAccount;
+        private string _providerName;
         private string _region;
         private List<Tag> _tags = new List<Tag>();
 
@@ -336,6 +337,24 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProviderName. 
+        /// <para>
+        /// The name of the service provider associated with the LAG.
+        /// </para>
+        /// </summary>
+        public string ProviderName
+        {
+            get { return this._providerName; }
+            set { this._providerName = value; }
+        }
+
+        // Check to see if ProviderName property is set
+        internal bool IsSetProviderName()
+        {
+            return this._providerName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
         /// The AWS Region where the connection is located.
@@ -356,7 +375,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Any tags assigned to link aggregation group (LAG).
+        /// The tags associated with the LAG.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

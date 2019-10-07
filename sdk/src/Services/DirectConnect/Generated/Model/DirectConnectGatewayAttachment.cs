@@ -82,7 +82,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property AttachmentType. 
         /// <para>
-        /// The interface type.
+        /// The type of attachment.
         /// </para>
         /// </summary>
         public DirectConnectGatewayAttachmentType AttachmentType

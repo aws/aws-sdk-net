@@ -47,6 +47,10 @@ namespace Amazon.DirectConnect.Model
         /// </para>
         ///  
         /// <para>
+        /// This parameter is required when you create an association to a transit gateway.
+        /// </para>
+        ///  
+        /// <para>
         /// For information about how to set the prefixes, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
         /// Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
         /// </para>

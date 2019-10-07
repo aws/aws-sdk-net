@@ -129,6 +129,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     response.PartnerName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("providerName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ProviderName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("region", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

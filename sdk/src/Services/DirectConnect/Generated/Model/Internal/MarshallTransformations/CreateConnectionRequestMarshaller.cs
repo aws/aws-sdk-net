@@ -92,6 +92,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Location);
                 }
 
+                if(publicRequest.IsSetProviderName())
+                {
+                    context.Writer.WritePropertyName("providerName");
+                    context.Writer.Write(publicRequest.ProviderName);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
