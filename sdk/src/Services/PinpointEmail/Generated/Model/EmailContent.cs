@@ -38,6 +38,7 @@ namespace Amazon.PinpointEmail.Model
     {
         private RawMessage _raw;
         private Message _simple;
+        private Template _template;
 
         /// <summary>
         /// Gets and sets the property Raw. 
@@ -106,6 +107,24 @@ namespace Amazon.PinpointEmail.Model
         internal bool IsSetSimple()
         {
             return this._simple != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Template. 
+        /// <para>
+        /// The template to use for the email message.
+        /// </para>
+        /// </summary>
+        public Template Template
+        {
+            get { return this._template; }
+            set { this._template = value; }
+        }
+
+        // Check to see if Template property is set
+        internal bool IsSetTemplate()
+        {
+            return this._template != null;
         }
 
     }

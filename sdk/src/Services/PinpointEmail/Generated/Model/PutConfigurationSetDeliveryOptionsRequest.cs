@@ -79,8 +79,10 @@ namespace Amazon.PinpointEmail.Model
         /// <summary>
         /// Gets and sets the property TlsPolicy. 
         /// <para>
-        /// Whether Amazon Pinpoint should require that incoming email is delivered over a connection
-        /// encrypted with Transport Layer Security (TLS).
+        /// Specifies whether messages that use the configuration set are required to use Transport
+        /// Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered
+        /// if a TLS connection can be established. If the value is <code>Optional</code>, messages
+        /// can be delivered in plain text if a TLS connection can't be established.
         /// </para>
         /// </summary>
         public TlsPolicy TlsPolicy

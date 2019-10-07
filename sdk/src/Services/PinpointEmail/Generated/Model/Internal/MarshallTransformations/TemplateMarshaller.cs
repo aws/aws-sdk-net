@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EmailContent Marshaller
+    /// Template Marshaller
     /// </summary>       
-    public class EmailContentMarshaller : IRequestMarshaller<EmailContent, JsonMarshallerContext> 
+    public class TemplateMarshaller : IRequestMarshaller<Template, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,39 +43,18 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EmailContent requestObject, JsonMarshallerContext context)
+        public void Marshall(Template requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetRaw())
+            if(requestObject.IsSetTemplateArn())
             {
-                context.Writer.WritePropertyName("Raw");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = RawMessageMarshaller.Instance;
-                marshaller.Marshall(requestObject.Raw, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("TemplateArn");
+                context.Writer.Write(requestObject.TemplateArn);
             }
 
-            if(requestObject.IsSetSimple())
+            if(requestObject.IsSetTemplateData())
             {
-                context.Writer.WritePropertyName("Simple");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = MessageMarshaller.Instance;
-                marshaller.Marshall(requestObject.Simple, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetTemplate())
-            {
-                context.Writer.WritePropertyName("Template");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = TemplateMarshaller.Instance;
-                marshaller.Marshall(requestObject.Template, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("TemplateData");
+                context.Writer.Write(requestObject.TemplateData);
             }
 
         }
@@ -83,7 +62,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static EmailContentMarshaller Instance = new EmailContentMarshaller();
+        public readonly static TemplateMarshaller Instance = new TemplateMarshaller();
 
     }
 }
