@@ -79,9 +79,10 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property OriginationNumber. 
         /// <para>
-        /// The phone number from the pool or messaging service to send the message from. Although
-        /// it isn't required, we recommend that you specify the phone number in E.164 format
-        /// to ensure prompt and accurate delivery.
+        /// The long code to send the voice message from. This value should be one of the dedicated
+        /// long codes that's assigned to your AWS account. Although it isn't required, we recommend
+        /// that you specify the long code in E.164 format, for example +12065550100, to ensure
+        /// prompt and accurate delivery of the message.
         /// </para>
         /// </summary>
         public string OriginationNumber

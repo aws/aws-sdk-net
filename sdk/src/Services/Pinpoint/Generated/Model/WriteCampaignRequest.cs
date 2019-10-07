@@ -44,6 +44,7 @@ namespace Amazon.Pinpoint.Model
         private string _segmentId;
         private int? _segmentVersion;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private TemplateConfiguration _templateConfiguration;
         private string _treatmentDescription;
         private string _treatmentName;
 
@@ -265,6 +266,21 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateConfiguration.
+        /// </summary>
+        public TemplateConfiguration TemplateConfiguration
+        {
+            get { return this._templateConfiguration; }
+            set { this._templateConfiguration = value; }
+        }
+
+        // Check to see if TemplateConfiguration property is set
+        internal bool IsSetTemplateConfiguration()
+        {
+            return this._templateConfiguration != null;
         }
 
         /// <summary>

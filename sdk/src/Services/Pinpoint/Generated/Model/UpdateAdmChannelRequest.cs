@@ -29,7 +29,8 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAdmChannel operation.
-    /// Updates the ADM channel settings for an application.
+    /// Enables the ADM channel for an application or updates the status and settings of the
+    /// ADM channel for an application.
     /// </summary>
     public partial class UpdateAdmChannelRequest : AmazonPinpointRequest
     {

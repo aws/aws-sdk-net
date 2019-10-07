@@ -29,7 +29,8 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateGcmChannel operation.
-    /// Updates the status and settings of the GCM channel for an application.
+    /// Enables the GCM channel for an application or updates the status and settings of the
+    /// GCM channel for an application.
     /// </summary>
     public partial class UpdateGcmChannelRequest : AmazonPinpointRequest
     {

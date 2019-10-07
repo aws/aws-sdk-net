@@ -73,6 +73,17 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SizePercent);
             }
 
+            if(requestObject.IsSetTemplateConfiguration())
+            {
+                context.Writer.WritePropertyName("TemplateConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TemplateConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.TemplateConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTreatmentDescription())
             {
                 context.Writer.WritePropertyName("TreatmentDescription");

@@ -29,7 +29,8 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSmsChannel operation.
-    /// Updates the status and settings of the SMS channel for an application.
+    /// Enables the SMS channel for an application or updates the status and settings of the
+    /// SMS channel for an application.
     /// </summary>
     public partial class UpdateSmsChannelRequest : AmazonPinpointRequest
     {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Specifies the content of an email message, composed of a subject, a text part, and
+    /// Specifies the contents of an email message, composed of a subject, a text part, and
     /// an HTML part.
     /// </summary>
     public partial class SimpleEmail

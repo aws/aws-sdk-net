@@ -82,8 +82,8 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The last date or date and time of the date range that was used to filter the query
-        /// results, in ISO 8601 format. The date range is inclusive.
+        /// The last date and time of the date range that was used to filter the query results,
+        /// in extended ISO 8601 format. The date range is inclusive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -105,7 +105,7 @@ namespace Amazon.Pinpoint.Model
         /// The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>,
         /// that the data was retrieved for. This value describes the associated metric and consists
         /// of two or more terms, which are comprised of lowercase alphanumeric characters, separated
-        /// by a hyphen. For a list of valid values, see the <a href="developerguide.html">Amazon
+        /// by a hyphen. For a list of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
         /// Pinpoint Developer Guide</a>.
         /// </para>
         /// </summary>
@@ -165,8 +165,8 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The first date or date and time of the date range that was used to filter the query
-        /// results, in ISO 8601 format. The date range is inclusive.
+        /// The first date and time of the date range that was used to filter the query results,
+        /// in extended ISO 8601 format. The date range is inclusive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

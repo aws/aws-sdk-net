@@ -38,7 +38,7 @@ namespace Amazon.Pinpoint.Model
         private string _value;
 
         /// <summary>
-        /// Gets and sets the property Key.  
+        /// Gets and sets the property Key. 
         /// <para>
         /// The name of the field that Amazon Pinpoint uses to store the value specified by the
         /// Value property.
@@ -77,7 +77,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Value.  
+        /// Gets and sets the property Value. 
         /// <para>
         /// In a Values object, the value for the metric that the query retrieved data for. In
         /// a GroupedBys object, the value for the field that was used to group data in a result

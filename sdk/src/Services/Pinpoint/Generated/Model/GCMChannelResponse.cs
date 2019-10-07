@@ -85,8 +85,8 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property Credential. 
         /// <para>
-        /// The API key, also referred to as a <i>server key</i>, that you received from Google
-        /// to communicate with Google services.
+        /// The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>, that
+        /// you received from Google to communicate with Google services.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

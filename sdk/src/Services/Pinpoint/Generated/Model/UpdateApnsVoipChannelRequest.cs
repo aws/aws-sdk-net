@@ -29,7 +29,8 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateApnsVoipChannel operation.
-    /// Updates the APNs VoIP channel settings for an application.
+    /// Enables the APNs VoIP channel for an application or updates the status and settings
+    /// of the APNs VoIP channel for an application.
     /// </summary>
     public partial class UpdateApnsVoipChannelRequest : AmazonPinpointRequest
     {

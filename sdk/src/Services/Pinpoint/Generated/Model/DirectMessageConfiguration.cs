@@ -121,7 +121,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property DefaultPushNotificationMessage. 
         /// <para>
-        /// The default push notification message for all push channels.
+        /// The default push notification message for all push notification channels.
         /// </para>
         /// </summary>
         public DefaultPushNotificationMessage DefaultPushNotificationMessage

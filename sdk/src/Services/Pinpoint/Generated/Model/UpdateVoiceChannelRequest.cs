@@ -29,7 +29,8 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateVoiceChannel operation.
-    /// Updates the status and settings of the voice channel for an application.
+    /// Enables the voice channel for an application or updates the status and settings of
+    /// the voice channel for an application.
     /// </summary>
     public partial class UpdateVoiceChannelRequest : AmazonPinpointRequest
     {

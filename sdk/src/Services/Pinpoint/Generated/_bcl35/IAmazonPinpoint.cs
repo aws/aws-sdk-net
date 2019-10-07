@@ -146,11 +146,64 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  CreateEmailTemplate
+
+
+        /// <summary>
+        /// Creates a message template that you can use in messages that are sent through the
+        /// email channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEmailTemplate service method.</param>
+        /// 
+        /// <returns>The response from the CreateEmailTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        CreateEmailTemplateResponse CreateEmailTemplate(CreateEmailTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateEmailTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateEmailTemplate operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEmailTemplate
+        ///         operation.</returns>
+        IAsyncResult BeginCreateEmailTemplate(CreateEmailTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateEmailTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateEmailTemplate.</param>
+        /// 
+        /// <returns>Returns a  CreateEmailTemplateResult from Pinpoint.</returns>
+        CreateEmailTemplateResponse EndCreateEmailTemplate(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateExportJob
 
 
         /// <summary>
-        /// Creates a new export job for an application.
+        /// Creates an export job for an application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateExportJob service method.</param>
         /// 
@@ -205,7 +258,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Creates a new import job for an application.
+        /// Creates an import job for an application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateImportJob service method.</param>
         /// 
@@ -253,6 +306,59 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>Returns a  CreateImportJobResult from Pinpoint.</returns>
         CreateImportJobResponse EndCreateImportJob(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreatePushTemplate
+
+
+        /// <summary>
+        /// Creates a message template that you can use in messages that are sent through a push
+        /// notification channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePushTemplate service method.</param>
+        /// 
+        /// <returns>The response from the CreatePushTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        CreatePushTemplateResponse CreatePushTemplate(CreatePushTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePushTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePushTemplate operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePushTemplate
+        ///         operation.</returns>
+        IAsyncResult BeginCreatePushTemplate(CreatePushTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePushTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePushTemplate.</param>
+        /// 
+        /// <returns>Returns a  CreatePushTemplateResult from Pinpoint.</returns>
+        CreatePushTemplateResponse EndCreatePushTemplate(IAsyncResult asyncResult);
 
         #endregion
         
@@ -309,6 +415,59 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>Returns a  CreateSegmentResult from Pinpoint.</returns>
         CreateSegmentResponse EndCreateSegment(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateSmsTemplate
+
+
+        /// <summary>
+        /// Creates a message template that you can use in messages that are sent through the
+        /// SMS channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSmsTemplate service method.</param>
+        /// 
+        /// <returns>The response from the CreateSmsTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        CreateSmsTemplateResponse CreateSmsTemplate(CreateSmsTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSmsTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSmsTemplate operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSmsTemplate
+        ///         operation.</returns>
+        IAsyncResult BeginCreateSmsTemplate(CreateSmsTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateSmsTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSmsTemplate.</param>
+        /// 
+        /// <returns>Returns a  CreateSmsTemplateResult from Pinpoint.</returns>
+        CreateSmsTemplateResponse EndCreateSmsTemplate(IAsyncResult asyncResult);
 
         #endregion
         
@@ -814,6 +973,62 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  DeleteEmailTemplate
+
+
+        /// <summary>
+        /// Deletes a message template that was designed for use in messages that were sent through
+        /// the email channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEmailTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEmailTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        DeleteEmailTemplateResponse DeleteEmailTemplate(DeleteEmailTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEmailTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEmailTemplate operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEmailTemplate
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteEmailTemplate(DeleteEmailTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteEmailTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEmailTemplate.</param>
+        /// 
+        /// <returns>Returns a  DeleteEmailTemplateResult from Pinpoint.</returns>
+        DeleteEmailTemplateResponse EndDeleteEmailTemplate(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteEndpoint
 
 
@@ -980,6 +1195,62 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  DeletePushTemplate
+
+
+        /// <summary>
+        /// Deletes a message template that was designed for use in messages that were sent through
+        /// a push notification channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePushTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DeletePushTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        DeletePushTemplateResponse DeletePushTemplate(DeletePushTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePushTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePushTemplate operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePushTemplate
+        ///         operation.</returns>
+        IAsyncResult BeginDeletePushTemplate(DeletePushTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePushTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePushTemplate.</param>
+        /// 
+        /// <returns>Returns a  DeletePushTemplateResult from Pinpoint.</returns>
+        DeletePushTemplateResponse EndDeletePushTemplate(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteSegment
 
 
@@ -1088,6 +1359,62 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>Returns a  DeleteSmsChannelResult from Pinpoint.</returns>
         DeleteSmsChannelResponse EndDeleteSmsChannel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteSmsTemplate
+
+
+        /// <summary>
+        /// Deletes a message template that was designed for use in messages that were sent through
+        /// the SMS channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSmsTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSmsTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        DeleteSmsTemplateResponse DeleteSmsTemplate(DeleteSmsTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSmsTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSmsTemplate operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSmsTemplate
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteSmsTemplate(DeleteSmsTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteSmsTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSmsTemplate.</param>
+        /// 
+        /// <returns>Returns a  DeleteSmsTemplateResult from Pinpoint.</returns>
+        DeleteSmsTemplateResponse EndDeleteSmsTemplate(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1704,8 +2031,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Retrieves information about the status and settings of the Baidu Cloud Push channel
-        /// for an application.
+        /// Retrieves information about the status and settings of the Baidu channel for an application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBaiduChannel service method.</param>
         /// 
@@ -2199,6 +2525,62 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  GetEmailTemplate
+
+
+        /// <summary>
+        /// Retrieves the content and settings for a message template that you can use in messages
+        /// that are sent through the email channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEmailTemplate service method.</param>
+        /// 
+        /// <returns>The response from the GetEmailTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        GetEmailTemplateResponse GetEmailTemplate(GetEmailTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEmailTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEmailTemplate operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEmailTemplate
+        ///         operation.</returns>
+        IAsyncResult BeginGetEmailTemplate(GetEmailTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetEmailTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEmailTemplate.</param>
+        /// 
+        /// <returns>Returns a  GetEmailTemplateResult from Pinpoint.</returns>
+        GetEmailTemplateResponse EndGetEmailTemplate(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetEndpoint
 
 
@@ -2586,6 +2968,62 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>Returns a  GetImportJobsResult from Pinpoint.</returns>
         GetImportJobsResponse EndGetImportJobs(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetPushTemplate
+
+
+        /// <summary>
+        /// Retrieves the content and settings for a message template that you can use in messages
+        /// that are sent through a push notification channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPushTemplate service method.</param>
+        /// 
+        /// <returns>The response from the GetPushTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        GetPushTemplateResponse GetPushTemplate(GetPushTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPushTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPushTemplate operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPushTemplate
+        ///         operation.</returns>
+        IAsyncResult BeginGetPushTemplate(GetPushTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPushTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPushTemplate.</param>
+        /// 
+        /// <returns>Returns a  GetPushTemplateResult from Pinpoint.</returns>
+        GetPushTemplateResponse EndGetPushTemplate(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2978,6 +3416,62 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  GetSmsTemplate
+
+
+        /// <summary>
+        /// Retrieves the content and settings for a message template that you can use in messages
+        /// that are sent through the SMS channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSmsTemplate service method.</param>
+        /// 
+        /// <returns>The response from the GetSmsTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        GetSmsTemplateResponse GetSmsTemplate(GetSmsTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSmsTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSmsTemplate operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSmsTemplate
+        ///         operation.</returns>
+        IAsyncResult BeginGetSmsTemplate(GetSmsTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSmsTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSmsTemplate.</param>
+        /// 
+        /// <returns>Returns a  GetSmsTemplateResult from Pinpoint.</returns>
+        GetSmsTemplateResponse EndGetSmsTemplate(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetUserEndpoints
 
 
@@ -3094,7 +3588,7 @@ namespace Amazon.Pinpoint
 
         /// <summary>
         /// Retrieves all the tags (keys and values) that are associated with an application,
-        /// campaign, or segment.
+        /// campaign, message template, or segment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -3124,6 +3618,62 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>Returns a  ListTagsForResourceResult from Pinpoint.</returns>
         ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListTemplates
+
+
+        /// <summary>
+        /// Retrieves information about all the message templates that are associated with your
+        /// Amazon Pinpoint account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTemplates service method.</param>
+        /// 
+        /// <returns>The response from the ListTemplates service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        ListTemplatesResponse ListTemplates(ListTemplatesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTemplates operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTemplates
+        ///         operation.</returns>
+        IAsyncResult BeginListTemplates(ListTemplatesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTemplates.</param>
+        /// 
+        /// <returns>Returns a  ListTemplatesResult from Pinpoint.</returns>
+        ListTemplatesResponse EndListTemplates(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3464,7 +4014,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Adds one or more tags (keys and values) to an application, campaign, or segment.
+        /// Adds one or more tags (keys and values) to an application, campaign, message template,
+        /// or segment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -3501,7 +4052,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Removes one or more tags (keys and values) from an application, campaign, or segment.
+        /// Removes one or more tags (keys and values) from an application, campaign, message
+        /// template, or segment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -3538,7 +4090,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Updates the ADM channel settings for an application.
+        /// Enables the ADM channel for an application or updates the status and settings of the
+        /// ADM channel for an application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAdmChannel service method.</param>
         /// 
@@ -3593,7 +4146,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Updates the APNs channel settings for an application.
+        /// Enables the APNs channel for an application or updates the status and settings of
+        /// the APNs channel for an application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApnsChannel service method.</param>
         /// 
@@ -3648,7 +4202,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Updates the APNs sandbox channel settings for an application.
+        /// Enables the APNs sandbox channel for an application or updates the status and settings
+        /// of the APNs sandbox channel for an application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApnsSandboxChannel service method.</param>
         /// 
@@ -3703,7 +4258,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Updates the APNs VoIP channel settings for an application.
+        /// Enables the APNs VoIP channel for an application or updates the status and settings
+        /// of the APNs VoIP channel for an application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApnsVoipChannel service method.</param>
         /// 
@@ -3758,7 +4314,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Updates the settings for the APNs VoIP sandbox channel for an application.
+        /// Enables the APNs VoIP sandbox channel for an application or updates the status and
+        /// settings of the APNs VoIP sandbox channel for an application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApnsVoipSandboxChannel service method.</param>
         /// 
@@ -3868,7 +4425,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Updates the settings of the Baidu channel for an application.
+        /// Enables the Baidu channel for an application or updates the status and settings of
+        /// the Baidu channel for an application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateBaiduChannel service method.</param>
         /// 
@@ -3978,7 +4536,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Updates the status and settings of the email channel for an application.
+        /// Enables the email channel for an application or updates the status and settings of
+        /// the email channel for an application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEmailChannel service method.</param>
         /// 
@@ -4026,6 +4585,62 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>Returns a  UpdateEmailChannelResult from Pinpoint.</returns>
         UpdateEmailChannelResponse EndUpdateEmailChannel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateEmailTemplate
+
+
+        /// <summary>
+        /// Updates an existing message template that you can use in messages that are sent through
+        /// the email channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEmailTemplate service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEmailTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        UpdateEmailTemplateResponse UpdateEmailTemplate(UpdateEmailTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateEmailTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEmailTemplate operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEmailTemplate
+        ///         operation.</returns>
+        IAsyncResult BeginUpdateEmailTemplate(UpdateEmailTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateEmailTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateEmailTemplate.</param>
+        /// 
+        /// <returns>Returns a  UpdateEmailTemplateResult from Pinpoint.</returns>
+        UpdateEmailTemplateResponse EndUpdateEmailTemplate(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4148,7 +4763,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Updates the status and settings of the GCM channel for an application.
+        /// Enables the GCM channel for an application or updates the status and settings of the
+        /// GCM channel for an application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGcmChannel service method.</param>
         /// 
@@ -4196,6 +4812,62 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>Returns a  UpdateGcmChannelResult from Pinpoint.</returns>
         UpdateGcmChannelResponse EndUpdateGcmChannel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdatePushTemplate
+
+
+        /// <summary>
+        /// Updates an existing message template that you can use in messages that are sent through
+        /// a push notification channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePushTemplate service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePushTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        UpdatePushTemplateResponse UpdatePushTemplate(UpdatePushTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePushTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePushTemplate operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePushTemplate
+        ///         operation.</returns>
+        IAsyncResult BeginUpdatePushTemplate(UpdatePushTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdatePushTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePushTemplate.</param>
+        /// 
+        /// <returns>Returns a  UpdatePushTemplateResult from Pinpoint.</returns>
+        UpdatePushTemplateResponse EndUpdatePushTemplate(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4259,7 +4931,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Updates the status and settings of the SMS channel for an application.
+        /// Enables the SMS channel for an application or updates the status and settings of the
+        /// SMS channel for an application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSmsChannel service method.</param>
         /// 
@@ -4310,11 +4983,68 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  UpdateSmsTemplate
+
+
+        /// <summary>
+        /// Updates an existing message template that you can use in messages that are sent through
+        /// the SMS channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSmsTemplate service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSmsTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        UpdateSmsTemplateResponse UpdateSmsTemplate(UpdateSmsTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSmsTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSmsTemplate operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSmsTemplate
+        ///         operation.</returns>
+        IAsyncResult BeginUpdateSmsTemplate(UpdateSmsTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSmsTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSmsTemplate.</param>
+        /// 
+        /// <returns>Returns a  UpdateSmsTemplateResult from Pinpoint.</returns>
+        UpdateSmsTemplateResponse EndUpdateSmsTemplate(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateVoiceChannel
 
 
         /// <summary>
-        /// Updates the status and settings of the voice channel for an application.
+        /// Enables the voice channel for an application or updates the status and settings of
+        /// the voice channel for an application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateVoiceChannel service method.</param>
         /// 

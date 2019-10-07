@@ -94,6 +94,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.State = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TemplateConfiguration", targetDepth))
+                {
+                    var unmarshaller = TemplateConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.TemplateConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TreatmentDescription", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

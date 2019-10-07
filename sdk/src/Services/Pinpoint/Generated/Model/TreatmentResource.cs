@@ -38,6 +38,7 @@ namespace Amazon.Pinpoint.Model
         private Schedule _schedule;
         private int? _sizePercent;
         private CampaignState _state;
+        private TemplateConfiguration _templateConfiguration;
         private string _treatmentDescription;
         private string _treatmentName;
 
@@ -131,6 +132,21 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateConfiguration.
+        /// </summary>
+        public TemplateConfiguration TemplateConfiguration
+        {
+            get { return this._templateConfiguration; }
+            set { this._templateConfiguration = value; }
+        }
+
+        // Check to see if TemplateConfiguration property is set
+        internal bool IsSetTemplateConfiguration()
+        {
+            return this._templateConfiguration != null;
         }
 
         /// <summary>
