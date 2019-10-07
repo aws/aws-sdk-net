@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// 
+    /// Specifies a field to sort by and a sort order.
     /// </summary>
     public partial class SortCriterion
     {
@@ -36,7 +36,10 @@ namespace Amazon.Glue.Model
         private Sort _sort;
 
         /// <summary>
-        /// Gets and sets the property FieldName.
+        /// Gets and sets the property FieldName. 
+        /// <para>
+        /// The name of the field on which to sort.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
         public string FieldName
@@ -52,7 +55,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Sort.
+        /// Gets and sets the property Sort. 
+        /// <para>
+        /// An ascending or descending sort.
+        /// </para>
         /// </summary>
         public Sort Sort
         {

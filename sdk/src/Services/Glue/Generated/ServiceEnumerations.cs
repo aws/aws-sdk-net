@@ -197,6 +197,14 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly ConnectionPropertyKey CONFIG_FILES = new ConnectionPropertyKey("CONFIG_FILES");
         /// <summary>
+        /// Constant CUSTOM_JDBC_CERT for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey CUSTOM_JDBC_CERT = new ConnectionPropertyKey("CUSTOM_JDBC_CERT");
+        /// <summary>
+        /// Constant CUSTOM_JDBC_CERT_STRING for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey CUSTOM_JDBC_CERT_STRING = new ConnectionPropertyKey("CUSTOM_JDBC_CERT_STRING");
+        /// <summary>
         /// Constant ENCRYPTED_PASSWORD for ConnectionPropertyKey
         /// </summary>
         public static readonly ConnectionPropertyKey ENCRYPTED_PASSWORD = new ConnectionPropertyKey("ENCRYPTED_PASSWORD");
@@ -240,6 +248,10 @@ namespace Amazon.Glue
         /// Constant PORT for ConnectionPropertyKey
         /// </summary>
         public static readonly ConnectionPropertyKey PORT = new ConnectionPropertyKey("PORT");
+        /// <summary>
+        /// Constant SKIP_CUSTOM_JDBC_CERT_VALIDATION for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey SKIP_CUSTOM_JDBC_CERT_VALIDATION = new ConnectionPropertyKey("SKIP_CUSTOM_JDBC_CERT_VALIDATION");
         /// <summary>
         /// Constant USERNAME for ConnectionPropertyKey
         /// </summary>
