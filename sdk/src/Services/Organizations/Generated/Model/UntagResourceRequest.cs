@@ -35,6 +35,10 @@ namespace Amazon.Organizations.Model
     /// <para>
     /// Currently, you can tag and untag accounts in AWS Organizations.
     /// </para>
+    ///  
+    /// <para>
+    /// This operation can be called only from the organization's master account.
+    /// </para>
     /// </summary>
     public partial class UntagResourceRequest : AmazonOrganizationsRequest
     {
