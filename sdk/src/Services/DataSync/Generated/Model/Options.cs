@@ -51,6 +51,7 @@ namespace Amazon.DataSync.Model
         private PosixPermissions _posixPermissions;
         private PreserveDeletedFiles _preserveDeletedFiles;
         private PreserveDevices _preserveDevices;
+        private TaskQueueing _taskQueueing;
         private Uid _uid;
         private VerifyMode _verifyMode;
 
@@ -324,6 +325,30 @@ namespace Amazon.DataSync.Model
         internal bool IsSetPreserveDevices()
         {
             return this._preserveDevices != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskQueueing. 
+        /// <para>
+        /// A value that determines whether tasks should be queued before executing the tasks.
+        /// If set to <code>Enabled</code>, the tasks will queued. The default is <code>Enabled</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you use the same agent to run multiple tasks you can enable the tasks to run in
+        /// series. For more information see <a>task-queue</a>.
+        /// </para>
+        /// </summary>
+        public TaskQueueing TaskQueueing
+        {
+            get { return this._taskQueueing; }
+            set { this._taskQueueing = value; }
+        }
+
+        // Check to see if TaskQueueing property is set
+        internal bool IsSetTaskQueueing()
+        {
+            return this._taskQueueing != null;
         }
 
         /// <summary>

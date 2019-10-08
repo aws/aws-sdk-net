@@ -93,6 +93,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.PreserveDevices);
             }
 
+            if(requestObject.IsSetTaskQueueing())
+            {
+                context.Writer.WritePropertyName("TaskQueueing");
+                context.Writer.Write(requestObject.TaskQueueing);
+            }
+
             if(requestObject.IsSetUid())
             {
                 context.Writer.WritePropertyName("Uid");

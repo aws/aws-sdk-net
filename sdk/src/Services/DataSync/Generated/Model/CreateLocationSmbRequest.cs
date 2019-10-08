@@ -29,7 +29,8 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLocationSmb operation.
-    /// Creates an endpoint for a Server Message Block (SMB) file system.
+    /// Defines a file system on an Server Message Block (SMB) server that can be read from
+    /// or written to
     /// </summary>
     public partial class CreateLocationSmbRequest : AmazonDataSyncRequest
     {

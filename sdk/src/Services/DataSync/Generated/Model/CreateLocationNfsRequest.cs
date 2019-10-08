@@ -29,7 +29,8 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLocationNfs operation.
-    /// Creates an endpoint for a Network File System (NFS) file system.
+    /// Defines a file system on a Network File System (NFS) server that can be read from
+    /// or written to
     /// </summary>
     public partial class CreateLocationNfsRequest : AmazonDataSyncRequest
     {
