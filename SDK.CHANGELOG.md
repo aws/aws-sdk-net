@@ -1,3 +1,18 @@
+### 3.3.603.0 (2019-10-08 19:34 UTC)
+* DataSync (3.3.106.0)
+	* Add Sync options to enable/disable TaskQueueing
+* EventBridge (3.3.100.36)
+	* Documentation updates for Amazon EventBridge.
+* KinesisFirehose (3.3.102.0)
+	* With this release, you can use Amazon Kinesis Firehose delivery streams to deliver streaming data to Amazon Elasticsearch Service version 7.x clusters. For technical documentation, look for CreateDeliveryStream operation in Amazon Kinesis Firehose API reference.
+* Organizations (3.3.103.40)
+	* Documentation updates for organizations
+* Core 3.3.103.46
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.602.0 (2019-10-07 19:39 UTC)
 * DirectConnect (3.3.104.0)
 	* This release adds a service provider field for physical connection creation and provides a list of available partner providers for each Direct Connect location.
