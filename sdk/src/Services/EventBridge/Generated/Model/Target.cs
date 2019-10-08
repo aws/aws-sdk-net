@@ -116,7 +116,8 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the target.
+        /// A name for the target. Use a string that will help you identify the target. Each target
+        /// associated with a rule must have an <code>Id</code> unique for that rule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
