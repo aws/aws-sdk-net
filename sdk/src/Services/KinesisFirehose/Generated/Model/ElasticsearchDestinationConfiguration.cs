@@ -278,8 +278,12 @@ namespace Amazon.KinesisFirehose.Model
         /// index. If you try to specify a new type for an existing index that already has another
         /// type, Kinesis Data Firehose returns an error during run time.
         /// </para>
+        ///  
+        /// <para>
+        /// For Elasticsearch 7.x, don't specify a <code>TypeName</code>.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public string TypeName
         {
             get { return this._typeName; }

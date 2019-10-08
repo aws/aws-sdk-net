@@ -260,10 +260,11 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property TypeName. 
         /// <para>
-        /// The Elasticsearch type name.
+        /// The Elasticsearch type name. This applies to Elasticsearch 6.x and lower versions.
+        /// For Elasticsearch 7.x, there's no value for <code>TypeName</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public string TypeName
         {
             get { return this._typeName; }

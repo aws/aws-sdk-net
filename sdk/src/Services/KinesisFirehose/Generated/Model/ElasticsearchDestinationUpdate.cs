@@ -252,8 +252,15 @@ namespace Amazon.KinesisFirehose.Model
         /// index. If you try to specify a new type for an existing index that already has another
         /// type, Kinesis Data Firehose returns an error during runtime.
         /// </para>
+        ///  
+        /// <para>
+        /// If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream,
+        /// Kinesis Data Firehose still delivers data to Elasticsearch with the old index name
+        /// and type name. If you want to update your delivery stream with a new index name, provide
+        /// an empty string for <code>TypeName</code>. 
+        /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public string TypeName
         {
             get { return this._typeName; }

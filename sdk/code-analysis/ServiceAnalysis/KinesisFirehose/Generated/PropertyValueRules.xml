@@ -194,7 +194,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.ElasticsearchDestinationConfiguration.TypeName</property>
-    <min>1</min>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -222,7 +222,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.ElasticsearchDestinationDescription.TypeName</property>
-    <min>1</min>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -250,7 +250,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.ElasticsearchDestinationUpdate.TypeName</property>
-    <min>1</min>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
