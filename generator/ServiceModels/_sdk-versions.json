@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.603.0",
+    "ProductVersion" : "3.3.604.0",
     "CoreVersion"    : "3.3.103.46",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -167,7 +167,7 @@
             "InPreview"               : false
         },
         "ElastiCache"       : {
-            "Version" : "3.3.104.14",
+            "Version" : "3.3.105.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.46"
@@ -897,7 +897,7 @@
             "InPreview"               : false
         },
         "MediaConvert"                    : {
-            "Version" : "3.3.108.8",
+            "Version" : "3.3.109.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.46"
@@ -1329,7 +1329,7 @@
             "InPreview"               : false
         },
         "Kafka"                           : {
-            "Version" : "3.3.103.55",
+            "Version" : "3.3.103.56",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.46"
