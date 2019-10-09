@@ -32,6 +32,9 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class UpdateAction
     {
+        private string _cacheClusterId;
+        private List<CacheNodeUpdateStatus> _cacheNodeUpdateStatus = new List<CacheNodeUpdateStatus>();
+        private string _engine;
         private string _estimatedUpdateTime;
         private List<NodeGroupUpdateStatus> _nodeGroupUpdateStatus = new List<NodeGroupUpdateStatus>();
         private string _nodesUpdated;
@@ -46,6 +49,60 @@ namespace Amazon.ElastiCache.Model
         private DateTime? _updateActionAvailableDate;
         private UpdateActionStatus _updateActionStatus;
         private DateTime? _updateActionStatusModifiedDate;
+
+        /// <summary>
+        /// Gets and sets the property CacheClusterId. 
+        /// <para>
+        /// The ID of the cache cluster
+        /// </para>
+        /// </summary>
+        public string CacheClusterId
+        {
+            get { return this._cacheClusterId; }
+            set { this._cacheClusterId = value; }
+        }
+
+        // Check to see if CacheClusterId property is set
+        internal bool IsSetCacheClusterId()
+        {
+            return this._cacheClusterId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CacheNodeUpdateStatus. 
+        /// <para>
+        /// The status of the service update on the cache node
+        /// </para>
+        /// </summary>
+        public List<CacheNodeUpdateStatus> CacheNodeUpdateStatus
+        {
+            get { return this._cacheNodeUpdateStatus; }
+            set { this._cacheNodeUpdateStatus = value; }
+        }
+
+        // Check to see if CacheNodeUpdateStatus property is set
+        internal bool IsSetCacheNodeUpdateStatus()
+        {
+            return this._cacheNodeUpdateStatus != null && this._cacheNodeUpdateStatus.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Engine. 
+        /// <para>
+        /// The Elasticache engine to which the update applies. Either Redis or Memcached
+        /// </para>
+        /// </summary>
+        public string Engine
+        {
+            get { return this._engine; }
+            set { this._engine = value; }
+        }
+
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
+        {
+            return this._engine != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EstimatedUpdateTime. 

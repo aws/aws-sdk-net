@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ProcessedUpdateAction Object
+    /// Response Unmarshaller for CacheNodeUpdateStatus Object
     /// </summary>  
-    public class ProcessedUpdateActionUnmarshaller : IUnmarshaller<ProcessedUpdateAction, XmlUnmarshallerContext>, IUnmarshaller<ProcessedUpdateAction, JsonUnmarshallerContext>
+    public class CacheNodeUpdateStatusUnmarshaller : IUnmarshaller<CacheNodeUpdateStatus, XmlUnmarshallerContext>, IUnmarshaller<CacheNodeUpdateStatus, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ProcessedUpdateAction Unmarshall(XmlUnmarshallerContext context)
+        public CacheNodeUpdateStatus Unmarshall(XmlUnmarshallerContext context)
         {
-            ProcessedUpdateAction unmarshalledObject = new ProcessedUpdateAction();
+            CacheNodeUpdateStatus unmarshalledObject = new CacheNodeUpdateStatus();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,28 +54,52 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("CacheClusterId", targetDepth))
+                    if (context.TestExpression("CacheNodeId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.CacheClusterId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.CacheNodeId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ReplicationGroupId", targetDepth))
+                    if (context.TestExpression("NodeDeletionDate", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ReplicationGroupId = unmarshaller.Unmarshall(context);
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.NodeDeletionDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ServiceUpdateName", targetDepth))
+                    if (context.TestExpression("NodeUpdateEndDate", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ServiceUpdateName = unmarshaller.Unmarshall(context);
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.NodeUpdateEndDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("UpdateActionStatus", targetDepth))
+                    if (context.TestExpression("NodeUpdateInitiatedBy", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.UpdateActionStatus = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.NodeUpdateInitiatedBy = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("NodeUpdateInitiatedDate", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.NodeUpdateInitiatedDate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("NodeUpdateStartDate", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.NodeUpdateStartDate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("NodeUpdateStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.NodeUpdateStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("NodeUpdateStatusModifiedDate", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.NodeUpdateStatusModifiedDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -93,18 +117,18 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ProcessedUpdateAction Unmarshall(JsonUnmarshallerContext context)
+        public CacheNodeUpdateStatus Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static ProcessedUpdateActionUnmarshaller _instance = new ProcessedUpdateActionUnmarshaller();        
+        private static CacheNodeUpdateStatusUnmarshaller _instance = new CacheNodeUpdateStatusUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ProcessedUpdateActionUnmarshaller Instance
+        public static CacheNodeUpdateStatusUnmarshaller Instance
         {
             get
             {

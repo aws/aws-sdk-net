@@ -54,6 +54,25 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("CacheClusterId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CacheClusterId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("CacheNodeUpdateStatus/CacheNodeUpdateStatus", targetDepth))
+                    {
+                        var unmarshaller = CacheNodeUpdateStatusUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.CacheNodeUpdateStatus.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("Engine", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Engine = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("EstimatedUpdateTime", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

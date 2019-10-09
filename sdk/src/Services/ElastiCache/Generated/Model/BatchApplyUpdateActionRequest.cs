@@ -35,8 +35,28 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class BatchApplyUpdateActionRequest : AmazonElastiCacheRequest
     {
+        private List<string> _cacheClusterIds = new List<string>();
         private List<string> _replicationGroupIds = new List<string>();
         private string _serviceUpdateName;
+
+        /// <summary>
+        /// Gets and sets the property CacheClusterIds. 
+        /// <para>
+        /// The cache cluster IDs
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=20)]
+        public List<string> CacheClusterIds
+        {
+            get { return this._cacheClusterIds; }
+            set { this._cacheClusterIds = value; }
+        }
+
+        // Check to see if CacheClusterIds property is set
+        internal bool IsSetCacheClusterIds()
+        {
+            return this._cacheClusterIds != null && this._cacheClusterIds.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ReplicationGroupIds. 
@@ -44,7 +64,7 @@ namespace Amazon.ElastiCache.Model
         /// The replication group IDs
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=20)]
+        [AWSProperty(Max=20)]
         public List<string> ReplicationGroupIds
         {
             get { return this._replicationGroupIds; }
