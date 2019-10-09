@@ -37,7 +37,8 @@ namespace Amazon.MediaConvert.Model
         private AccelerationMode _mode;
 
         /// <summary>
-        /// Gets and sets the property Mode. Acceleration configuration for the job.
+        /// Gets and sets the property Mode. Specify the conditions when the service will run
+        /// your job with accelerated transcoding.
         /// </summary>
         [AWSProperty(Required=true)]
         public AccelerationMode Mode

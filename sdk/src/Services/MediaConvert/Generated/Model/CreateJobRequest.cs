@@ -44,6 +44,7 @@ namespace Amazon.MediaConvert.Model
         private JobSettings _settings;
         private SimulateReservedQueue _simulateReservedQueue;
         private StatusUpdateInterval _statusUpdateInterval;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private Dictionary<string, string> _userMetadata = new Dictionary<string, string>();
 
         /// <summary>
@@ -222,6 +223,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetStatusUpdateInterval()
         {
             return this._statusUpdateInterval != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. The tags that you want to add to the resource. You
+        /// can tag resources with a key-value pair or with only a key.
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

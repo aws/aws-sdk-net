@@ -97,6 +97,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MinBufferTime);
             }
 
+            if(requestObject.IsSetMpdProfile())
+            {
+                context.Writer.WritePropertyName("mpdProfile");
+                context.Writer.Write(requestObject.MpdProfile);
+            }
+
             if(requestObject.IsSetSegmentControl())
             {
                 context.Writer.WritePropertyName("segmentControl");

@@ -106,6 +106,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.MinBufferTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("mpdProfile", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MpdProfile = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("segmentControl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -694,6 +694,10 @@ namespace Amazon.MediaConvert
         /// Constant ENABLED for AccelerationMode
         /// </summary>
         public static readonly AccelerationMode ENABLED = new AccelerationMode("ENABLED");
+        /// <summary>
+        /// Constant PREFERRED for AccelerationMode
+        /// </summary>
+        public static readonly AccelerationMode PREFERRED = new AccelerationMode("PREFERRED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -724,6 +728,64 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AccelerationMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AccelerationStatus.
+    /// </summary>
+    public class AccelerationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCELERATED for AccelerationStatus
+        /// </summary>
+        public static readonly AccelerationStatus ACCELERATED = new AccelerationStatus("ACCELERATED");
+        /// <summary>
+        /// Constant IN_PROGRESS for AccelerationStatus
+        /// </summary>
+        public static readonly AccelerationStatus IN_PROGRESS = new AccelerationStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant NOT_ACCELERATED for AccelerationStatus
+        /// </summary>
+        public static readonly AccelerationStatus NOT_ACCELERATED = new AccelerationStatus("NOT_ACCELERATED");
+        /// <summary>
+        /// Constant NOT_APPLICABLE for AccelerationStatus
+        /// </summary>
+        public static readonly AccelerationStatus NOT_APPLICABLE = new AccelerationStatus("NOT_APPLICABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccelerationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccelerationStatus FindValue(string value)
+        {
+            return FindValue<AccelerationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccelerationStatus(string value)
         {
             return FindValue(value);
         }
@@ -1426,6 +1488,10 @@ namespace Amazon.MediaConvert
     public class BillingTagsSource : ConstantClass
     {
 
+        /// <summary>
+        /// Constant JOB for BillingTagsSource
+        /// </summary>
+        public static readonly BillingTagsSource JOB = new BillingTagsSource("JOB");
         /// <summary>
         /// Constant JOB_TEMPLATE for BillingTagsSource
         /// </summary>
@@ -2345,6 +2411,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type CmafMpdProfile.
+    /// </summary>
+    public class CmafMpdProfile : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MAIN_PROFILE for CmafMpdProfile
+        /// </summary>
+        public static readonly CmafMpdProfile MAIN_PROFILE = new CmafMpdProfile("MAIN_PROFILE");
+        /// <summary>
+        /// Constant ON_DEMAND_PROFILE for CmafMpdProfile
+        /// </summary>
+        public static readonly CmafMpdProfile ON_DEMAND_PROFILE = new CmafMpdProfile("ON_DEMAND_PROFILE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmafMpdProfile(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmafMpdProfile FindValue(string value)
+        {
+            return FindValue<CmafMpdProfile>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmafMpdProfile(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CmafSegmentControl.
     /// </summary>
     public class CmafSegmentControl : ConstantClass
@@ -2940,6 +3056,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DashIsoHbbtvCompliance(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DashIsoMpdProfile.
+    /// </summary>
+    public class DashIsoMpdProfile : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MAIN_PROFILE for DashIsoMpdProfile
+        /// </summary>
+        public static readonly DashIsoMpdProfile MAIN_PROFILE = new DashIsoMpdProfile("MAIN_PROFILE");
+        /// <summary>
+        /// Constant ON_DEMAND_PROFILE for DashIsoMpdProfile
+        /// </summary>
+        public static readonly DashIsoMpdProfile ON_DEMAND_PROFILE = new DashIsoMpdProfile("ON_DEMAND_PROFILE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DashIsoMpdProfile(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DashIsoMpdProfile FindValue(string value)
+        {
+            return FindValue<DashIsoMpdProfile>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DashIsoMpdProfile(string value)
         {
             return FindValue(value);
         }

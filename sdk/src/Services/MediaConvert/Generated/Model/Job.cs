@@ -34,6 +34,7 @@ namespace Amazon.MediaConvert.Model
     public partial class Job
     {
         private AccelerationSettings _accelerationSettings;
+        private AccelerationStatus _accelerationStatus;
         private string _arn;
         private BillingTagsSource _billingTagsSource;
         private DateTime? _createdAt;
@@ -43,6 +44,7 @@ namespace Amazon.MediaConvert.Model
         private string _id;
         private int? _jobPercentComplete;
         private string _jobTemplate;
+        private JobMessages _messages;
         private List<OutputGroupDetail> _outputGroupDetails = new List<OutputGroupDetail>();
         private int? _priority;
         private string _queue;
@@ -69,6 +71,31 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetAccelerationSettings()
         {
             return this._accelerationSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AccelerationStatus. Describes whether the current job is
+        /// running with accelerated transcoding. For jobs that have Acceleration (AccelerationMode)
+        /// set to DISABLED, AccelerationStatus is always NOT_APPLICABLE. For jobs that have Acceleration
+        /// (AccelerationMode) set to ENABLED or PREFERRED, AccelerationStatus is one of the other
+        /// states. AccelerationStatus is IN_PROGRESS initially, while the service determines
+        /// whether the input files and job settings are compatible with accelerated transcoding.
+        /// If they are, AcclerationStatus is ACCELERATED. If your input files and job settings
+        /// aren't compatible with accelerated transcoding, the service either fails your job
+        /// or runs it without accelerated transcoding, depending on how you set Acceleration
+        /// (AccelerationMode). When the service runs your job without accelerated transcoding,
+        /// AccelerationStatus is NOT_ACCELERATED.
+        /// </summary>
+        public AccelerationStatus AccelerationStatus
+        {
+            get { return this._accelerationStatus; }
+            set { this._accelerationStatus = value; }
+        }
+
+        // Check to see if AccelerationStatus property is set
+        internal bool IsSetAccelerationStatus()
+        {
+            return this._accelerationStatus != null;
         }
 
         /// <summary>
@@ -220,6 +247,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetJobTemplate()
         {
             return this._jobTemplate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Messages. Provides messages from the service about jobs
+        /// that you have already successfully submitted.
+        /// </summary>
+        public JobMessages Messages
+        {
+            get { return this._messages; }
+            set { this._messages = value; }
+        }
+
+        // Check to see if Messages property is set
+        internal bool IsSetMessages()
+        {
+            return this._messages != null;
         }
 
         /// <summary>
