@@ -1,3 +1,18 @@
+### 3.3.605.0 (2019-10-10 19:23 UTC)
+* EC2 (3.3.133.0)
+	* New EC2 M5n, M5dn, R5n, R5dn instances with 100 Gbps network performance and Elastic Fabric Adapter (EFA) for ultra low latency; New A1.metal bare metal instance powered by AWS Graviton Processors
+* FMS (3.3.102.0)
+	* Firewall Manager now supports Amazon VPC security groups, making it easier to configure and manage security groups across multiple accounts from a single place.
+* IoTAnalytics (3.3.104.0)
+	* Add `completionTime` to API call ListDatasetContents.
+* Lex (3.3.102.0)
+	* Amazon Lex now supports Session API checkpoints
+* Core 3.3.103.47
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.604.0 (2019-10-09 18:14 UTC)
 * ElastiCache (3.3.105.0)
 	* Amazon ElastiCache now allows you to apply available service updates on demand to your Memcached and Redis Cache Clusters. Features included: (1) Access to the list of applicable service updates and their priorities. (2) Service update monitoring and regular status updates. (3) Recommended apply-by-dates for scheduling the service updates. (4) Ability to stop and later re-apply updates. For more information, see https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/Self-Service-Updates.html and https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Self-Service-Updates.html
