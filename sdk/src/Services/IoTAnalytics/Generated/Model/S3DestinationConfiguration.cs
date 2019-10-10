@@ -80,7 +80,9 @@ namespace Amazon.IoTAnalytics.Model
         /// <para>
         /// The key of the data set contents object. Each object in an Amazon S3 bucket has a
         /// key that is its unique identifier within the bucket (each object in a bucket has exactly
-        /// one key).
+        /// one key). To produce a unique key, you can use "!{iotanalytics:scheduledTime}" to
+        /// insert the time of the scheduled SQL query run, or "!{iotanalytics:versioned} to insert
+        /// a unique hash identifying the data set, for example: "/DataSet/!{iotanalytics:scheduledTime}/!{iotanalytics:versioned}.csv".
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

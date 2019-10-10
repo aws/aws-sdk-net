@@ -29,7 +29,8 @@ namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
     /// Use this to store data store data in an S3 bucket managed by the AWS IoT Analytics
-    /// service.
+    /// service. The choice of service-managed or customer-managed S3 storage cannot be changed
+    /// after creation of the data store.
     /// </summary>
     public partial class ServiceManagedDatastoreS3Storage
     {

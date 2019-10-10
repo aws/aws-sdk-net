@@ -58,9 +58,9 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property KeyPrefix. 
         /// <para>
-        /// The prefix used to create the keys of the data store data objects. Each object in
-        /// an Amazon S3 bucket has a key that is its unique identifier within the bucket (each
-        /// object in a bucket has exactly one key).
+        /// [Optional] The prefix used to create the keys of the data store data objects. Each
+        /// object in an Amazon S3 bucket has a key that is its unique identifier within the bucket
+        /// (each object in a bucket has exactly one key). The prefix must end with a '/'.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
