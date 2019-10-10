@@ -31,7 +31,10 @@ namespace Amazon.FMS.Model
     /// Container for the parameters to the GetComplianceDetail operation.
     /// Returns detailed compliance information about the specified member account. Details
     /// include resources that are in and out of compliance with the specified policy. Resources
-    /// are considered non-compliant if the specified policy has not been applied to them.
+    /// are considered noncompliant for AWS WAF and Shield Advanced policies if the specified
+    /// policy has not been applied to them. Resources are considered noncompliant for security
+    /// group policies if they are in scope of the policy, they violate one or more of the
+    /// policy rules, and remediation is disabled or not possible.
     /// </summary>
     public partial class GetComplianceDetailRequest : AmazonFMSRequest
     {

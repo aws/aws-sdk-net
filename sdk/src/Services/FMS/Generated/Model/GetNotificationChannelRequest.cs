@@ -29,8 +29,8 @@ namespace Amazon.FMS.Model
 {
     /// <summary>
     /// Container for the parameters to the GetNotificationChannel operation.
-    /// Returns information about the Amazon Simple Notification Service (SNS) topic that
-    /// is used to record AWS Firewall Manager SNS logs.
+    /// Information about the Amazon Simple Notification Service (SNS) topic that is used
+    /// to record AWS Firewall Manager SNS logs.
     /// </summary>
     public partial class GetNotificationChannelRequest : AmazonFMSRequest
     {

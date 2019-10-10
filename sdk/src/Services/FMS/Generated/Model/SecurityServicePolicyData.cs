@@ -38,8 +38,12 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ManagedServiceData. 
         /// <para>
-        /// Details about the service. This contains <code>WAF</code> data in JSON format, as
-        /// shown in the following example:
+        /// Details about the service that are specific to the service type, in JSON format. For
+        /// service type <code>SHIELD_ADVANCED</code>, this is an empty string.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Example: <code>WAF</code> 
         /// </para>
         ///  
         /// <para>
@@ -47,10 +51,44 @@ namespace Amazon.FMS.Model
         /// \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
         /// 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Example: <code>SECURITY_GROUPS_COMMON</code> 
+        /// </para>
         ///  
         /// <para>
-        /// If this is a Shield Advanced policy, this string will be empty.
+        ///  <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_COMMON","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,\"securityGroups\":[{\"id\":\"
+        /// sg-000e55995d61a06bd\"}]}"},"RemediationEnabled":false,"ResourceType":"AWS::EC2::NetworkInterface"}</code>
+        /// 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Example: <code>SECURITY_GROUPS_CONTENT_AUDIT</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_CONTENT_AUDIT","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"securityGroups\":[{\"id\":\"
+        /// sg-000e55995d61a06bd \"}],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"},"RemediationEnabled":false,"ResourceType":"AWS::EC2::NetworkInterface"}</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The security group action for content audit can be <code>ALLOW</code> or <code>DENY</code>.
+        /// For <code>ALLOW</code>, all in-scope security group rules must be within the allowed
+        /// range of the policy's security group rules. For <code>DENY</code>, all in-scope security
+        /// group rules must not contain a value or a range that matches a rule value or range
+        /// in the policy security group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Example: <code>SECURITY_GROUPS_USAGE_AUDIT</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_USAGE_AUDIT","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_USAGE_AUDIT\",\"deleteUnusedSecurityGroups\":true,\"coalesceRedundantSecurityGroups\":true}"},"RemediationEnabled":false,"Resou
+        /// rceType":"AWS::EC2::SecurityGroup"}</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
         public string ManagedServiceData
@@ -69,7 +107,10 @@ namespace Amazon.FMS.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The service that the policy is using to protect the resources. This specifies the
-        /// type of policy that is created, either a WAF policy or Shield Advanced policy.
+        /// type of policy that is created, either an AWS WAF policy, a Shield Advanced policy,
+        /// or a security group policy. For security group policies, Firewall Manager supports
+        /// one security group for each common policy and for each content audit policy. This
+        /// is an adjustable limit that you can increase by contacting AWS Support.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

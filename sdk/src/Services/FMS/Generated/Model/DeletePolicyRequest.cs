@@ -39,28 +39,47 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property DeleteAllPolicyResources. 
         /// <para>
-        /// If <code>True</code>, the request will also perform a clean-up process that will:
+        /// If <code>True</code>, the request performs cleanup according to the policy type. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For AWS WAF and Shield Advanced policies, the cleanup does the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Delete rule groups created by AWS Firewall Manager
+        /// Deletes rule groups created by AWS Firewall Manager
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Remove web ACLs from in-scope resources
+        /// Removes web ACLs from in-scope resources
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Delete web ACLs that contain no rules or rule groups
+        /// Deletes web ACLs that contain no rules or rule groups
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// After the cleanup, in-scope resources will no longer be protected by web ACLs in this
-        /// policy. Protection of out-of-scope resources will remain unchanged. Scope is determined
-        /// by tags and accounts associated with the policy. When creating the policy, if you
-        /// specified that only resources in specific accounts or with specific tags be protected
-        /// by the policy, those resources are in-scope. All others are out of scope. If you did
-        /// not specify tags or accounts, all resources are in-scope. 
+        /// For security group policies, the cleanup does the following for each security group
+        /// in the policy:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Disassociates the security group from in-scope resources 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Deletes the security group if it was created through Firewall Manager and if it's
+        /// no longer associated with any resources through another policy
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// After the cleanup, in-scope resources are no longer protected by web ACLs in this
+        /// policy. Protection of out-of-scope resources remains unchanged. Scope is determined
+        /// by tags that you create and accounts that you associate with the policy. When creating
+        /// the policy, if you specify that only resources in specific accounts or with specific
+        /// tags are in scope of the policy, those accounts and resources are handled by the policy.
+        /// All others are out of scope. If you don't specify tags or accounts, all resources
+        /// are in scope. 
         /// </para>
         /// </summary>
         public bool DeleteAllPolicyResources

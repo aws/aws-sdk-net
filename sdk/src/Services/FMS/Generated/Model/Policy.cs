@@ -74,9 +74,8 @@ namespace Amazon.FMS.Model
         /// Gets and sets the property ExcludeResourceTags. 
         /// <para>
         /// If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code>
-        /// array are not protected by the policy. If set to <code>False</code>, and the <code>ResourceTag</code>
-        /// array is not null, only resources with the specified tags are associated with the
-        /// policy.
+        /// array are not in scope of the policy. If set to <code>False</code>, and the <code>ResourceTag</code>
+        /// array is not null, only resources with the specified tags are in scope of the policy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -219,10 +218,15 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource to protect with the policy. This is in the format shown in <a
-        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-        /// Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>
-        /// or <code>AWS::CloudFront::Distribution</code>.
+        /// The type of resource protected by or in scope of the policy. This is in the format
+        /// shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+        /// Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>
+        /// and <code>AWS::CloudFront::Distribution</code>. For a security group common policy,
+        /// valid values are <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>.
+        /// For a security group content audit policy, valid values are <code>AWS::EC2::SecurityGroup</code>,
+        /// <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>. For
+        /// a security group usage audit policy, the value is <code>AWS::EC2::SecurityGroup</code>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

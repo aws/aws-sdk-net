@@ -28,8 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FMS.Model
 {
     /// <summary>
-    /// Describes the compliance status for the account. An account is considered non-compliant
-    /// if it includes resources that are not protected by the specified policy.
+    /// Describes the compliance status for the account. An account is considered noncompliant
+    /// if it includes resources that are not protected by the specified policy or that don't
+    /// comply with the policy.
     /// </summary>
     public partial class EvaluationResult
     {
@@ -58,8 +59,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property EvaluationLimitExceeded. 
         /// <para>
-        /// Indicates that over 100 resources are non-compliant with the AWS Firewall Manager
-        /// policy.
+        /// Indicates that over 100 resources are noncompliant with the AWS Firewall Manager policy.
         /// </para>
         /// </summary>
         public bool EvaluationLimitExceeded
@@ -77,8 +77,11 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ViolatorCount. 
         /// <para>
-        /// Number of resources that are non-compliant with the specified policy. A resource is
-        /// considered non-compliant if it is not associated with the specified policy.
+        /// The number of resources that are noncompliant with the specified policy. For AWS WAF
+        /// and Shield Advanced policies, a resource is considered noncompliant if it is not associated
+        /// with the policy. For security group policies, a resource is considered noncompliant
+        /// if it doesn't comply with the rules of the policy and remediation is disabled or not
+        /// possible.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

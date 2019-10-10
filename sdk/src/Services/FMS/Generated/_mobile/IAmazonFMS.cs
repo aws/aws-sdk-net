@@ -49,7 +49,7 @@ namespace Amazon.FMS
 
         /// <summary>
         /// Sets the AWS Firewall Manager administrator account. AWS Firewall Manager must be
-        /// associated with the master account your AWS organization or associated with a member
+        /// associated with the master account of your AWS organization or associated with a member
         /// account that has the appropriate permissions. If the account ID that you submit is
         /// not an AWS Organizations master account, AWS Firewall Manager will set the appropriate
         /// permissions for the given member account.
@@ -154,7 +154,7 @@ namespace Amazon.FMS
         /// <summary>
         /// Disassociates the account that has been set as the AWS Firewall Manager administrator
         /// account. To set a different account as the administrator account, you must submit
-        /// an <code>AssociateAdminAccount</code> request .
+        /// an <code>AssociateAdminAccount</code> request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateAdminAccount service method.</param>
         /// <param name="cancellationToken">
@@ -217,7 +217,10 @@ namespace Amazon.FMS
         /// <summary>
         /// Returns detailed compliance information about the specified member account. Details
         /// include resources that are in and out of compliance with the specified policy. Resources
-        /// are considered non-compliant if the specified policy has not been applied to them.
+        /// are considered noncompliant for AWS WAF and Shield Advanced policies if the specified
+        /// policy has not been applied to them. Resources are considered noncompliant for security
+        /// group policies if they are in scope of the policy, they violate one or more of the
+        /// policy rules, and remediation is disabled or not possible.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetComplianceDetail service method.</param>
         /// <param name="cancellationToken">
@@ -242,8 +245,8 @@ namespace Amazon.FMS
 
 
         /// <summary>
-        /// Returns information about the Amazon Simple Notification Service (SNS) topic that
-        /// is used to record AWS Firewall Manager SNS logs.
+        /// Information about the Amazon Simple Notification Service (SNS) topic that is used
+        /// to record AWS Firewall Manager SNS logs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetNotificationChannel service method.</param>
         /// <param name="cancellationToken">
@@ -307,7 +310,7 @@ namespace Amazon.FMS
 
         /// <summary>
         /// If you created a Shield Advanced policy, returns policy-level attack summary information
-        /// in the event of a potential DDoS attack.
+        /// in the event of a potential DDoS attack. Other policy types are currently unsupported.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetProtectionStatus service method.</param>
         /// <param name="cancellationToken">
@@ -464,18 +467,33 @@ namespace Amazon.FMS
         /// 
         ///  
         /// <para>
-        /// Firewall Manager provides two types of policies: A Shield Advanced policy, which applies
-        /// Shield Advanced protection to specified accounts and resources, or a WAF policy, which
-        /// contains a rule group and defines which resources are to be protected by that rule
-        /// group. A policy is specific to either WAF or Shield Advanced. If you want to enforce
-        /// both WAF rules and Shield Advanced protection across accounts, you can create multiple
-        /// policies. You can create one or more policies for WAF rules, and one or more policies
-        /// for Shield Advanced.
+        /// Firewall Manager provides the following types of policies: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A Shield Advanced policy, which applies Shield Advanced protection to specified accounts
+        /// and resources
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An AWS WAF policy, which contains a rule group and defines which resources are to
+        /// be protected by that rule group
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A security group policy, which manages VPC security groups across your AWS organization.
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Each policy is specific to one of the three types. If you want to enforce more than
+        /// one policy type across accounts, you can create multiple policies. You can create
+        /// multiple policies for each type.
         /// </para>
         ///  
         /// <para>
         /// You must be subscribed to Shield Advanced to create a Shield Advanced policy. For
-        /// more information on subscribing to Shield Advanced, see <a href="https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateSubscription.html">CreateSubscription</a>.
+        /// more information about subscribing to Shield Advanced, see <a href="https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateSubscription.html">CreateSubscription</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPolicy service method.</param>

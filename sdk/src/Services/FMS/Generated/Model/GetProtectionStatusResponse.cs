@@ -83,7 +83,7 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The details are in JSON format. An example is shown in the Examples section below.
+        /// The details are in JSON format. 
         /// </para>
         /// </summary>
         public string Data

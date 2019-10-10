@@ -30,7 +30,7 @@ namespace Amazon.FMS.Model
     /// <summary>
     /// Container for the parameters to the GetProtectionStatus operation.
     /// If you created a Shield Advanced policy, returns policy-level attack summary information
-    /// in the event of a potential DDoS attack.
+    /// in the event of a potential DDoS attack. Other policy types are currently unsupported.
     /// </summary>
     public partial class GetProtectionStatusRequest : AmazonFMSRequest
     {
@@ -45,8 +45,8 @@ namespace Amazon.FMS.Model
         /// Gets and sets the property EndTime. 
         /// <para>
         /// The end of the time period to query for the attacks. This is a <code>timestamp</code>
-        /// type. The sample request above indicates a number type because the default used by
-        /// AWS Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code>
+        /// type. The request syntax listing indicates a <code>number</code> type because the
+        /// default used by AWS Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code>
         /// format is allowed.
         /// </para>
         /// </summary>
@@ -108,8 +108,8 @@ namespace Amazon.FMS.Model
         /// <para>
         /// If you specify a value for <code>MaxResults</code> and you have more objects than
         /// the number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns
-        /// a <code>NextToken</code> value in the response that allows you to list another group
-        /// of objects. For the second and subsequent <code>GetProtectionStatus</code> requests,
+        /// a <code>NextToken</code> value in the response, which you can use to retrieve another
+        /// group of objects. For the second and subsequent <code>GetProtectionStatus</code> requests,
         /// specify the value of <code>NextToken</code> from the previous response to get information
         /// about another batch of objects.
         /// </para>
@@ -150,8 +150,8 @@ namespace Amazon.FMS.Model
         /// Gets and sets the property StartTime. 
         /// <para>
         /// The start of the time period to query for the attacks. This is a <code>timestamp</code>
-        /// type. The sample request above indicates a number type because the default used by
-        /// AWS Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code>
+        /// type. The request syntax listing indicates a <code>number</code> type because the
+        /// default used by AWS Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code>
         /// format is allowed.
         /// </para>
         /// </summary>

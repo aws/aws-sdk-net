@@ -29,7 +29,9 @@ namespace Amazon.FMS.Model
 {
     /// <summary>
     /// Indicates whether the account is compliant with the specified policy. An account is
-    /// considered non-compliant if it includes resources that are not protected by the policy.
+    /// considered noncompliant if it includes resources that are not protected by the policy,
+    /// for AWS WAF and Shield Advanced policies, or that are noncompliant with the policy,
+    /// for security group policies.
     /// </summary>
     public partial class PolicyComplianceStatus
     {
@@ -63,7 +65,7 @@ namespace Amazon.FMS.Model
         /// Gets and sets the property IssueInfoMap. 
         /// <para>
         /// Details about problems with dependent services, such as AWS WAF or AWS Config, that
-        /// are causing a resource to be non-compliant. The details include the name of the dependent
+        /// are causing a resource to be noncompliant. The details include the name of the dependent
         /// service and the error message received that indicates the problem with the service.
         /// </para>
         /// </summary>
@@ -82,7 +84,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property LastUpdated. 
         /// <para>
-        /// Time stamp of the last update to the <code>EvaluationResult</code> objects.
+        /// Timestamp of the last update to the <code>EvaluationResult</code> objects.
         /// </para>
         /// </summary>
         public DateTime LastUpdated
