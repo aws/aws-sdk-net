@@ -64,6 +64,12 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("checkpointLabel", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CheckpointLabel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("confirmationStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

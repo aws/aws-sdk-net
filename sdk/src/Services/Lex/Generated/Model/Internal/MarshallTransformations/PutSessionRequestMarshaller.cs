@@ -86,6 +86,22 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetRecentIntentSummaryView())
+                {
+                    context.Writer.WritePropertyName("recentIntentSummaryView");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestRecentIntentSummaryViewListValue in publicRequest.RecentIntentSummaryView)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = IntentSummaryMarshaller.Instance;
+                        marshaller.Marshall(publicRequestRecentIntentSummaryViewListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetSessionAttributes())
                 {
                     context.Writer.WritePropertyName("sessionAttributes");

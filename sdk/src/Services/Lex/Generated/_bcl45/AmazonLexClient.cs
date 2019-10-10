@@ -696,9 +696,9 @@ namespace Amazon.Lex
 
 
         /// <summary>
-        /// Sends user input (text or SSML) to Amazon Lex. Client applications can use this API
-        /// to send requests to Amazon Lex at runtime. Amazon Lex then interprets the user input
-        /// using the machine learning model it built for the bot. 
+        /// Sends user input to Amazon Lex. Client applications can use this API to send requests
+        /// to Amazon Lex at runtime. Amazon Lex then interprets the user input using the machine
+        /// learning model it built for the bot. 
         /// 
         ///  
         /// <para>
@@ -830,9 +830,9 @@ namespace Amazon.Lex
 
 
         /// <summary>
-        /// Sends user input (text or SSML) to Amazon Lex. Client applications can use this API
-        /// to send requests to Amazon Lex at runtime. Amazon Lex then interprets the user input
-        /// using the machine learning model it built for the bot. 
+        /// Sends user input to Amazon Lex. Client applications can use this API to send requests
+        /// to Amazon Lex at runtime. Amazon Lex then interprets the user input using the machine
+        /// learning model it built for the bot. 
         /// 
         ///  
         /// <para>

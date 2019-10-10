@@ -35,6 +35,7 @@ namespace Amazon.Lex.Model
     {
         private string _botAlias;
         private string _botName;
+        private string _checkpointLabelFilter;
         private string _userId;
 
         /// <summary>
@@ -73,6 +74,31 @@ namespace Amazon.Lex.Model
         internal bool IsSetBotName()
         {
             return this._botName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CheckpointLabelFilter. 
+        /// <para>
+        /// A string used to filter the intents returned in the <code>recentIntentSummaryView</code>
+        /// structure. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When you specify a filter, only intents with their <code>checkpointLabel</code> field
+        /// set to that string are returned.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string CheckpointLabelFilter
+        {
+            get { return this._checkpointLabelFilter; }
+            set { this._checkpointLabelFilter = value; }
+        }
+
+        // Check to see if CheckpointLabelFilter property is set
+        internal bool IsSetCheckpointLabelFilter()
+        {
+            return this._checkpointLabelFilter != null;
         }
 
         /// <summary>

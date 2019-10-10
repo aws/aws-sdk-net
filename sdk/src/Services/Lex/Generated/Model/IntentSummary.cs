@@ -34,12 +34,39 @@ namespace Amazon.Lex.Model
     /// </summary>
     public partial class IntentSummary
     {
+        private string _checkpointLabel;
         private ConfirmationStatus _confirmationStatus;
         private DialogActionType _dialogActionType;
         private FulfillmentState _fulfillmentState;
         private string _intentName;
         private Dictionary<string, string> _slots = new Dictionary<string, string>();
         private string _slotToElicit;
+
+        /// <summary>
+        /// Gets and sets the property CheckpointLabel. 
+        /// <para>
+        /// A user-defined label that identifies a particular intent. You can use this label to
+        /// return to a previous intent. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the <code>checkpointLabelFilter</code> parameter of the <code>GetSessionRequest</code>
+        /// operation to filter the intents returned by the operation to those with only the specified
+        /// label.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string CheckpointLabel
+        {
+            get { return this._checkpointLabel; }
+            set { this._checkpointLabel = value; }
+        }
+
+        // Check to see if CheckpointLabel property is set
+        internal bool IsSetCheckpointLabel()
+        {
+            return this._checkpointLabel != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ConfirmationStatus. 

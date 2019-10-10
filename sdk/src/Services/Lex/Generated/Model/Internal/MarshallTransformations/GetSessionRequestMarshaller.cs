@@ -67,8 +67,12 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetUserId())
                 throw new AmazonLexException("Request object does not have required field UserId set");
             request.AddPathResource("{userId}", StringUtils.FromString(publicRequest.UserId));
-            request.ResourcePath = "/bot/{botName}/alias/{botAlias}/user/{userId}/session";
+            
+            if (publicRequest.IsSetCheckpointLabelFilter())
+                request.Parameters.Add("checkpointLabelFilter", StringUtils.FromString(publicRequest.CheckpointLabelFilter));
+            request.ResourcePath = "/bot/{botName}/alias/{botAlias}/user/{userId}/session/";
             request.MarshallerVersion = 2;
+            request.UseQueryString = true;
 
             return request;
         }

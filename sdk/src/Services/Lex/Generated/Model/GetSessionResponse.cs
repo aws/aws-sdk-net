@@ -63,6 +63,11 @@ namespace Amazon.Lex.Model
         /// the <code>recentIntentSummaryView</code> operation contains information about the
         /// last three intents used.
         /// </para>
+        ///  
+        /// <para>
+        /// If you set the <code>checkpointLabelFilter</code> parameter in the request, the array
+        /// contains only the intents with the specified label.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=3)]
         public List<IntentSummary> RecentIntentSummaryView

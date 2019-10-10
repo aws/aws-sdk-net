@@ -44,6 +44,7 @@ namespace Amazon.Lex.Model
         private string _botAlias;
         private string _botName;
         private DialogAction _dialogAction;
+        private List<IntentSummary> _recentIntentSummaryView = new List<IntentSummary>();
         private Dictionary<string, string> _sessionAttributes = new Dictionary<string, string>();
         private string _userId;
 
@@ -162,6 +163,52 @@ namespace Amazon.Lex.Model
         internal bool IsSetDialogAction()
         {
             return this._dialogAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecentIntentSummaryView. 
+        /// <para>
+        /// A summary of the recent intents for the bot. You can use the intent summary view to
+        /// set a checkpoint label on an intent and modify attributes of intents. You can also
+        /// use it to remove or add intent summary objects to the list.
+        /// </para>
+        ///  
+        /// <para>
+        /// An intent that you modify or add to the list must make sense for the bot. For example,
+        /// the intent name must be valid for the bot. You must provide valid values for:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>intentName</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// slot names
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>slotToElict</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you send the <code>recentIntentSummaryView</code> parameter in a <code>PutSession</code>
+        /// request, the contents of the new summary view replaces the old summary view. For example,
+        /// if a <code>GetSession</code> request returns three intents in the summary view and
+        /// you call <code>PutSession</code> with one intent in the summary view, the next call
+        /// to <code>GetSession</code> will only return one intent.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=3)]
+        public List<IntentSummary> RecentIntentSummaryView
+        {
+            get { return this._recentIntentSummaryView; }
+            set { this._recentIntentSummaryView = value; }
+        }
+
+        // Check to see if RecentIntentSummaryView property is set
+        internal bool IsSetRecentIntentSummaryView()
+        {
+            return this._recentIntentSummaryView != null && this._recentIntentSummaryView.Count > 0; 
         }
 
         /// <summary>
