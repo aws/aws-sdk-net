@@ -4221,6 +4221,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType A1Medium = new InstanceType("a1.medium");
         /// <summary>
+        /// Constant A1Metal for InstanceType
+        /// </summary>
+        public static readonly InstanceType A1Metal = new InstanceType("a1.metal");
+        /// <summary>
         /// Constant A1Xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType A1Xlarge = new InstanceType("a1.xlarge");
@@ -4737,6 +4741,38 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType M5dMetal = new InstanceType("m5d.metal");
         /// <summary>
+        /// Constant M5dn12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5dn12xlarge = new InstanceType("m5dn.12xlarge");
+        /// <summary>
+        /// Constant M5dn16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5dn16xlarge = new InstanceType("m5dn.16xlarge");
+        /// <summary>
+        /// Constant M5dn24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5dn24xlarge = new InstanceType("m5dn.24xlarge");
+        /// <summary>
+        /// Constant M5dn2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5dn2xlarge = new InstanceType("m5dn.2xlarge");
+        /// <summary>
+        /// Constant M5dn4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5dn4xlarge = new InstanceType("m5dn.4xlarge");
+        /// <summary>
+        /// Constant M5dn8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5dn8xlarge = new InstanceType("m5dn.8xlarge");
+        /// <summary>
+        /// Constant M5dnLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5dnLarge = new InstanceType("m5dn.large");
+        /// <summary>
+        /// Constant M5dnXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5dnXlarge = new InstanceType("m5dn.xlarge");
+        /// <summary>
         /// Constant M5dXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType M5dXlarge = new InstanceType("m5d.xlarge");
@@ -4748,6 +4784,38 @@ namespace Amazon.EC2
         /// Constant M5Metal for InstanceType
         /// </summary>
         public static readonly InstanceType M5Metal = new InstanceType("m5.metal");
+        /// <summary>
+        /// Constant M5n12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5n12xlarge = new InstanceType("m5n.12xlarge");
+        /// <summary>
+        /// Constant M5n16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5n16xlarge = new InstanceType("m5n.16xlarge");
+        /// <summary>
+        /// Constant M5n24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5n24xlarge = new InstanceType("m5n.24xlarge");
+        /// <summary>
+        /// Constant M5n2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5n2xlarge = new InstanceType("m5n.2xlarge");
+        /// <summary>
+        /// Constant M5n4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5n4xlarge = new InstanceType("m5n.4xlarge");
+        /// <summary>
+        /// Constant M5n8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5n8xlarge = new InstanceType("m5n.8xlarge");
+        /// <summary>
+        /// Constant M5nLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5nLarge = new InstanceType("m5n.large");
+        /// <summary>
+        /// Constant M5nXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5nXlarge = new InstanceType("m5n.xlarge");
         /// <summary>
         /// Constant M5Xlarge for InstanceType
         /// </summary>
@@ -4945,6 +5013,38 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType R5dMetal = new InstanceType("r5d.metal");
         /// <summary>
+        /// Constant R5dn12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5dn12xlarge = new InstanceType("r5dn.12xlarge");
+        /// <summary>
+        /// Constant R5dn16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5dn16xlarge = new InstanceType("r5dn.16xlarge");
+        /// <summary>
+        /// Constant R5dn24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5dn24xlarge = new InstanceType("r5dn.24xlarge");
+        /// <summary>
+        /// Constant R5dn2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5dn2xlarge = new InstanceType("r5dn.2xlarge");
+        /// <summary>
+        /// Constant R5dn4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5dn4xlarge = new InstanceType("r5dn.4xlarge");
+        /// <summary>
+        /// Constant R5dn8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5dn8xlarge = new InstanceType("r5dn.8xlarge");
+        /// <summary>
+        /// Constant R5dnLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5dnLarge = new InstanceType("r5dn.large");
+        /// <summary>
+        /// Constant R5dnXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5dnXlarge = new InstanceType("r5dn.xlarge");
+        /// <summary>
         /// Constant R5dXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R5dXlarge = new InstanceType("r5d.xlarge");
@@ -4956,6 +5056,38 @@ namespace Amazon.EC2
         /// Constant R5Metal for InstanceType
         /// </summary>
         public static readonly InstanceType R5Metal = new InstanceType("r5.metal");
+        /// <summary>
+        /// Constant R5n12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5n12xlarge = new InstanceType("r5n.12xlarge");
+        /// <summary>
+        /// Constant R5n16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5n16xlarge = new InstanceType("r5n.16xlarge");
+        /// <summary>
+        /// Constant R5n24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5n24xlarge = new InstanceType("r5n.24xlarge");
+        /// <summary>
+        /// Constant R5n2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5n2xlarge = new InstanceType("r5n.2xlarge");
+        /// <summary>
+        /// Constant R5n4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5n4xlarge = new InstanceType("r5n.4xlarge");
+        /// <summary>
+        /// Constant R5n8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5n8xlarge = new InstanceType("r5n.8xlarge");
+        /// <summary>
+        /// Constant R5nLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5nLarge = new InstanceType("r5n.large");
+        /// <summary>
+        /// Constant R5nXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5nXlarge = new InstanceType("r5n.xlarge");
         /// <summary>
         /// Constant R5Xlarge for InstanceType
         /// </summary>
