@@ -1,3 +1,12 @@
+### 3.3.606.0 (2019-10-11 19:26 UTC)
+* Greengrass (3.3.104.0)
+	* Greengrass OTA service supports Raspbian/Armv6l platforms.
+* Core 3.3.103.48
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.605.0 (2019-10-10 19:23 UTC)
 * EC2 (3.3.133.0)
 	* New EC2 M5n, M5dn, R5n, R5dn instances with 100 Gbps network performance and Elastic Fabric Adapter (EFA) for ultra low latency; New A1.metal bare metal instance powered by AWS Graviton Processors
