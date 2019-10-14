@@ -39,7 +39,7 @@ namespace Amazon.WorkSpaces.Model
         /// Gets and sets the property RebuildSnapshots. 
         /// <para>
         /// Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots
-        /// include the root volume.
+        /// include the user volume.
         /// </para>
         /// </summary>
         public List<Snapshot> RebuildSnapshots

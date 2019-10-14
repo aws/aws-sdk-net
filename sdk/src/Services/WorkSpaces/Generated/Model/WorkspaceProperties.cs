@@ -98,7 +98,7 @@ namespace Amazon.WorkSpaces.Model
         /// Gets and sets the property RunningModeAutoStopTimeoutInMinutes. 
         /// <para>
         /// The time after a user logs off when WorkSpaces are automatically stopped. Configured
-        /// in 60 minute intervals.
+        /// in 60-minute intervals.
         /// </para>
         /// </summary>
         public int RunningModeAutoStopTimeoutInMinutes
