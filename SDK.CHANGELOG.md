@@ -1,3 +1,9 @@
+### 3.3.607.0 (2019-10-14 18:10 UTC)
+* Personalize (3.3.102.0)
+	* AWS Personalize: Adds ability to create a solution version using FULL or UPDATE training mode
+* WorkSpaces (3.3.105.7)
+	* Documentation updates for WorkSpaces
+
 ### 3.3.606.0 (2019-10-11 19:26 UTC)
 * Greengrass (3.3.104.0)
 	* Greengrass OTA service supports Raspbian/Armv6l platforms.
