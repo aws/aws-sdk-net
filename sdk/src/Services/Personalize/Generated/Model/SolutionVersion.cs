@@ -45,6 +45,7 @@ namespace Amazon.Personalize.Model
         private string _solutionVersionArn;
         private string _status;
         private double? _trainingHours;
+        private TrainingMode _trainingMode;
 
         /// <summary>
         /// Gets and sets the property CreationDateTime. 
@@ -105,7 +106,7 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// If training a solution version fails, the reason behind the failure.
+        /// If training a solution version fails, the reason for the failure.
         /// </para>
         /// </summary>
         public string FailureReason
@@ -141,8 +142,8 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property PerformAutoML. 
         /// <para>
-        /// When true, Amazon Personalize performs a search for the most optimal recipe according
-        /// to the solution configuration. When false (the default), Amazon Personalize uses <code>recipeArn</code>.
+        /// When true, Amazon Personalize searches for the most optimal recipe according to the
+        /// solution configuration. When false (the default), Amazon Personalize uses <code>recipeArn</code>.
         /// </para>
         /// </summary>
         public bool PerformAutoML
@@ -262,7 +263,19 @@ namespace Amazon.Personalize.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+        /// CREATE PENDING
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CREATE IN_PROGRESS
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACTIVE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CREATE FAILED
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -282,7 +295,8 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property TrainingHours. 
         /// <para>
-        /// The time used to train the model. 
+        /// The time used to train the model. You are billed for the time it takes to train a
+        /// model. This field is visible only after Amazon Personalize successfully trains a model.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -296,6 +310,35 @@ namespace Amazon.Personalize.Model
         internal bool IsSetTrainingHours()
         {
             return this._trainingHours.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingMode. 
+        /// <para>
+        /// The scope of training used to create the solution version. The <code>FULL</code> option
+        /// trains the solution version based on the entirety of the input solution's training
+        /// data, while the <code>UPDATE</code> option processes only the training data that has
+        /// changed since the creation of the last solution version. Choose <code>UPDATE</code>
+        /// when you want to start recommending items added to the dataset without retraining
+        /// the model.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// The <code>UPDATE</code> option can only be used after you've created a solution version
+        /// with the <code>FULL</code> option and the training solution uses the <a>native-recipe-hrnn-coldstart</a>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public TrainingMode TrainingMode
+        {
+            get { return this._trainingMode; }
+            set { this._trainingMode = value; }
+        }
+
+        // Check to see if TrainingMode property is set
+        internal bool IsSetTrainingMode()
+        {
+            return this._trainingMode != null;
         }
 
     }

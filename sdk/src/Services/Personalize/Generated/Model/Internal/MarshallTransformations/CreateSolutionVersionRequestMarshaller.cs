@@ -74,6 +74,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SolutionArn);
                 }
 
+                if(publicRequest.IsSetTrainingMode())
+                {
+                    context.Writer.WritePropertyName("trainingMode");
+                    context.Writer.Write(publicRequest.TrainingMode);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

@@ -86,6 +86,7 @@ namespace Amazon.Personalize.Model
     public partial class CreateSolutionVersionRequest : AmazonPersonalizeRequest
     {
         private string _solutionArn;
+        private TrainingMode _trainingMode;
 
         /// <summary>
         /// Gets and sets the property SolutionArn. 
@@ -105,6 +106,35 @@ namespace Amazon.Personalize.Model
         internal bool IsSetSolutionArn()
         {
             return this._solutionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingMode. 
+        /// <para>
+        /// The scope of training to be performed when creating the solution version. The <code>FULL</code>
+        /// option trains the solution version based on the entirety of the input solution's training
+        /// data, while the <code>UPDATE</code> option processes only the data that has changed
+        /// in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally
+        /// update your solution version instead of creating an entirely new one.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// The <code>UPDATE</code> option can only be used when you already have an active solution
+        /// version created from the input solution using the <code>FULL</code> option and the
+        /// input solution was trained with the <a>native-recipe-hrnn-coldstart</a> recipe.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public TrainingMode TrainingMode
+        {
+            get { return this._trainingMode; }
+            set { this._trainingMode = value; }
+        }
+
+        // Check to see if TrainingMode property is set
+        internal bool IsSetTrainingMode()
+        {
+            return this._trainingMode != null;
         }
 
     }

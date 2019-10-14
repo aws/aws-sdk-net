@@ -142,6 +142,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     unmarshalledObject.TrainingHours = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("trainingMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TrainingMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
