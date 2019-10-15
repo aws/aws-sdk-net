@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.607.0",
+    "ProductVersion" : "3.3.608.0",
     "CoreVersion"    : "3.3.103.48",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -985,7 +985,7 @@
             "InPreview"               : false
         },
         "KinesisVideoArchivedMedia"       : {
-            "Version" : "3.3.101.39",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.48"

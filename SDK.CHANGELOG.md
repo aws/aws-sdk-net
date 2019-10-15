@@ -1,3 +1,7 @@
+### 3.3.608.0 (2019-10-15 19:46 UTC)
+* KinesisVideoArchivedMedia (3.3.102.0)
+	* Add ON_DISCONTINUITY mode to the GetHLSStreamingSessionURL API
+
 ### 3.3.607.0 (2019-10-14 18:10 UTC)
 * Personalize (3.3.102.0)
 	* AWS Personalize: Adds ability to create a solution version using FULL or UPDATE training mode
