@@ -75,10 +75,22 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     response.EngineVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("hostInstanceType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.HostInstanceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("logs", targetDepth))
                 {
                     var unmarshaller = LogsUnmarshaller.Instance;
                     response.Logs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("securityGroups", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.SecurityGroups = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

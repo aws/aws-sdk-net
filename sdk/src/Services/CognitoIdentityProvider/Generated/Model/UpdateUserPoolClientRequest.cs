@@ -95,10 +95,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property AllowedOAuthScopes. 
         /// <para>
         /// A list of allowed <code>OAuth</code> scopes. Currently supported values are <code>"phone"</code>,
-        /// <code>"email"</code>, <code>"openid"</code>, and <code>"Cognito"</code>.
+        /// <code>"email"</code>, <code>"openid"</code>, and <code>"Cognito"</code>. In addition
+        /// to these values, custom scopes created in Resource Servers are also supported.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=25)]
+        [AWSProperty(Max=50)]
         public List<string> AllowedOAuthScopes
         {
             get { return this._allowedOAuthScopes; }

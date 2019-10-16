@@ -37,7 +37,9 @@ namespace Amazon.MQ.Model
         private string _brokerId;
         private ConfigurationId _configuration;
         private string _engineVersion;
+        private string _hostInstanceType;
         private Logs _logs;
+        private List<string> _securityGroups = new List<string>();
 
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. Enables automatic upgrades to
@@ -107,6 +109,22 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HostInstanceType. The host instance type of the broker
+        /// to upgrade to. For a list of supported instance types, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+        /// </summary>
+        public string HostInstanceType
+        {
+            get { return this._hostInstanceType; }
+            set { this._hostInstanceType = value; }
+        }
+
+        // Check to see if HostInstanceType property is set
+        internal bool IsSetHostInstanceType()
+        {
+            return this._hostInstanceType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Logs. Enables Amazon CloudWatch logging for brokers.
         /// </summary>
         public Logs Logs
@@ -119,6 +137,22 @@ namespace Amazon.MQ.Model
         internal bool IsSetLogs()
         {
             return this._logs != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityGroups. The list of security groups (1 minimum,
+        /// 5 maximum) that authorize connections to brokers.
+        /// </summary>
+        public List<string> SecurityGroups
+        {
+            get { return this._securityGroups; }
+            set { this._securityGroups = value; }
+        }
+
+        // Check to see if SecurityGroups property is set
+        internal bool IsSetSecurityGroups()
+        {
+            return this._securityGroups != null && this._securityGroups.Count > 0; 
         }
 
     }

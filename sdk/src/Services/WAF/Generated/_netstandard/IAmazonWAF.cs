@@ -5057,7 +5057,7 @@ namespace Amazon.WAF
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Create an Amazon Kinesis Data Firehose . 
+        /// Create an Amazon Kinesis Data Firehose. 
         /// </para>
         ///  
         /// <para>

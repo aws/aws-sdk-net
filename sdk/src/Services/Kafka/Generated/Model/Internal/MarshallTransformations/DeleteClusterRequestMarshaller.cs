@@ -58,14 +58,14 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-14";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/v1/clusters/{clusterArn}";
             if (!publicRequest.IsSetClusterArn())
                 throw new AmazonKafkaException("Request object does not have required field ClusterArn set");
-            uriResourcePath = uriResourcePath.Replace("{clusterArn}", StringUtils.FromStringWithSlashEncoding(publicRequest.ClusterArn));
+            request.AddPathResource("{clusterArn}", StringUtils.FromString(publicRequest.ClusterArn));
             
             if (publicRequest.IsSetCurrentVersion())
                 request.Parameters.Add("currentVersion", StringUtils.FromString(publicRequest.CurrentVersion));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/v1/clusters/{clusterArn}";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

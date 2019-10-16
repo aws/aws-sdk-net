@@ -56,17 +56,17 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
             request.HttpMethod = "GET";
-            string uriResourcePath = "/2013-04-01/hostedzone/{Id}/authorizevpcassociation";
             if (!publicRequest.IsSetHostedZoneId())
                 throw new AmazonRoute53Exception("Request object does not have required field HostedZoneId set");
-            uriResourcePath = uriResourcePath.Replace("{Id}", StringUtils.FromStringWithSlashEncoding(publicRequest.HostedZoneId));
+            request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.HostedZoneId));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nexttoken", StringUtils.FromString(publicRequest.NextToken));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxresults", StringUtils.FromString(publicRequest.MaxResults));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2013-04-01/hostedzone/{Id}/authorizevpcassociation";
+            request.MarshallerVersion = 2;
 
 
             request.UseQueryString = true;

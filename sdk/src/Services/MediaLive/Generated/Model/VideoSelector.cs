@@ -38,9 +38,9 @@ namespace Amazon.MediaLive.Model
         private VideoSelectorSettings _selectorSettings;
 
         /// <summary>
-        /// Gets and sets the property ColorSpace. Specifies the colorspace of an input. This
-        /// setting works in tandem with colorSpaceConversion to determine if any conversion will
-        /// be performed.
+        /// Gets and sets the property ColorSpace. Specifies the color space of an input. This
+        /// setting works in tandem with colorSpaceUsage and a video description's colorSpaceSettingsChoice
+        /// to determine if any conversion will be performed.
         /// </summary>
         public VideoSelectorColorSpace ColorSpace
         {

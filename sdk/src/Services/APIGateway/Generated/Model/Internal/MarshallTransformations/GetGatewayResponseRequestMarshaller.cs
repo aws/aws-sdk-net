@@ -58,14 +58,14 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/restapis/{restapi_id}/gatewayresponses/{response_type}";
             if (!publicRequest.IsSetResponseType())
                 throw new AmazonAPIGatewayException("Request object does not have required field ResponseType set");
-            uriResourcePath = uriResourcePath.Replace("{response_type}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResponseType));
+            request.AddPathResource("{response_type}", StringUtils.FromString(publicRequest.ResponseType));
             if (!publicRequest.IsSetRestApiId())
                 throw new AmazonAPIGatewayException("Request object does not have required field RestApiId set");
-            uriResourcePath = uriResourcePath.Replace("{restapi_id}", StringUtils.FromStringWithSlashEncoding(publicRequest.RestApiId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{restapi_id}", StringUtils.FromString(publicRequest.RestApiId));
+            request.ResourcePath = "/restapis/{restapi_id}/gatewayresponses/{response_type}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

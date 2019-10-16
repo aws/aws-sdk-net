@@ -37,6 +37,7 @@ namespace Amazon.RDS.Model
         private string _dbInstanceClass;
         private string _duration;
         private List<Filter> _filters = new List<Filter>();
+        private string _leaseId;
         private string _marker;
         private int? _maxRecords;
         private bool? _multiAZ;
@@ -108,6 +109,30 @@ namespace Amazon.RDS.Model
         internal bool IsSetFilters()
         {
             return this._filters != null && this._filters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LeaseId. 
+        /// <para>
+        /// The lease identifier filter value. Specify this parameter to show only the reservation
+        /// that matches the specified lease ID.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// AWS Support might request the lease ID for an issue related to a reserved DB instance.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string LeaseId
+        {
+            get { return this._leaseId; }
+            set { this._leaseId = value; }
+        }
+
+        // Check to see if LeaseId property is set
+        internal bool IsSetLeaseId()
+        {
+            return this._leaseId != null;
         }
 
         /// <summary>

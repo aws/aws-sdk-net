@@ -33,28 +33,14 @@ namespace Amazon.RAM
     ///
     /// Use AWS Resource Access Manager to share AWS resources between AWS accounts. To share
     /// a resource, you create a resource share, associate the resource with the resource
-    /// share, and specify the principals that can access the resource. The following principals
-    /// are supported:
+    /// share, and specify the principals that can access the resources associated with the
+    /// resource share. The following principals are supported: AWS accounts, organizational
+    /// units (OU) from AWS Organizations, and organizations from AWS Organizations.
     /// 
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    /// The ID of an AWS account
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// The Amazon Resource Name (ARN) of an OU from AWS Organizations
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// The Amazon Resource Name (ARN) of an organization from AWS Organizations
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// If you specify an AWS account that doesn't exist in the same organization as the account
-    /// that owns the resource share, the owner of the specified account receives an invitation
-    /// to accept the resource share. After the owner accepts the invitation, they can access
-    /// the resources in the resource share. An administrator of the specified account can
-    /// use IAM policies to restrict access resources in the resource share.
+    /// For more information, see the <a href="https://docs.aws.amazon.com/ram/latest/userguide/">AWS
+    /// Resource Access Manager User Guide</a>.
     /// </para>
     /// </summary>
     public partial interface IAmazonRAM : IAmazonService, IDisposable
@@ -73,6 +59,13 @@ namespace Amazon.RAM
         /// </param>
         /// 
         /// <returns>The response from the AcceptResourceShareInvitation service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.IdempotentParameterMismatchException">
+        /// A client token input parameter was reused with an operation, but at least one of the
+        /// other input parameters is different from the previous call to the operation.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
+        /// A client token is not valid.
+        /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
         /// The format of an Amazon Resource Name (ARN) is not valid.
         /// </exception>
@@ -198,6 +191,9 @@ namespace Amazon.RAM
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
         /// The service is not available.
         /// </exception>
+        /// <exception cref="Amazon.RAM.Model.TagPolicyViolationException">
+        /// The specified tag is a reserved word and cannot be used.
+        /// </exception>
         /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
         /// A specified resource was not found.
         /// </exception>
@@ -306,7 +302,12 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Enables resource sharing within your organization.
+        /// Enables resource sharing within your AWS Organization.
+        /// 
+        ///  
+        /// <para>
+        /// The caller must be the master account for the AWS Organization.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableSharingWithAwsOrganization service method.</param>
         /// <param name="cancellationToken">
@@ -333,7 +334,7 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Gets the policies for the specifies resources.
+        /// Gets the policies for the specified resources that you own and have shared.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicies service method.</param>
         /// <param name="cancellationToken">
@@ -366,7 +367,7 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Gets the associations for the specified resource share.
+        /// Gets the resources or principals for the resource shares that you own.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceShareAssociations service method.</param>
         /// <param name="cancellationToken">
@@ -405,7 +406,7 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Gets the specified invitations for resource sharing.
+        /// Gets the invitations for resource sharing that you've received.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceShareInvitations service method.</param>
         /// <param name="cancellationToken">
@@ -444,7 +445,8 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Gets the specified resource shares or all of your resource shares.
+        /// Gets the resource shares that you own or the resource shares that are shared with
+        /// you.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceShares service method.</param>
         /// <param name="cancellationToken">
@@ -475,12 +477,59 @@ namespace Amazon.RAM
 
         #endregion
                 
+        #region  ListPendingInvitationResources
+
+
+
+        /// <summary>
+        /// Lists the resources in a resource share that is shared with you but that the invitation
+        /// is still pending for.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPendingInvitationResources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPendingInvitationResources service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
+        /// The specified value for NextToken is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MissingRequiredParameterException">
+        /// A required input parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationAlreadyRejectedException">
+        /// The invitation was already rejected.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationArnNotFoundException">
+        /// The Amazon Resource Name (ARN) for an invitation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationExpiredException">
+        /// The invitation is expired.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPendingInvitationResources">REST API Reference for ListPendingInvitationResources Operation</seealso>
+        Task<ListPendingInvitationResourcesResponse> ListPendingInvitationResourcesAsync(ListPendingInvitationResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListPrincipals
 
 
 
         /// <summary>
-        /// Lists the principals with access to the specified resource.
+        /// Lists the principals that you have shared resources with or the principals that have
+        /// shared resources with you.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPrincipals service method.</param>
         /// <param name="cancellationToken">
@@ -516,7 +565,8 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Lists the resources that the specified principal can access.
+        /// Lists the resources that you added to a resource shares or the resources that are
+        /// shared with you.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResources service method.</param>
         /// <param name="cancellationToken">
@@ -563,6 +613,13 @@ namespace Amazon.RAM
         /// </param>
         /// 
         /// <returns>The response from the RejectResourceShareInvitation service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.IdempotentParameterMismatchException">
+        /// A client token input parameter was reused with an operation, but at least one of the
+        /// other input parameters is different from the previous call to the operation.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
+        /// A client token is not valid.
+        /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
         /// The format of an Amazon Resource Name (ARN) is not valid.
         /// </exception>
@@ -597,7 +654,7 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Adds the specified tags to the specified resource share.
+        /// Adds the specified tags to the specified resource share that you own.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -623,6 +680,9 @@ namespace Amazon.RAM
         /// <exception cref="Amazon.RAM.Model.TagLimitExceededException">
         /// The requested tags exceed the limit for your account.
         /// </exception>
+        /// <exception cref="Amazon.RAM.Model.TagPolicyViolationException">
+        /// The specified tag is a reserved word and cannot be used.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/TagResource">REST API Reference for TagResource Operation</seealso>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -633,7 +693,7 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Removes the specified tags from the specified resource share.
+        /// Removes the specified tags from the specified resource share that you own.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -660,7 +720,7 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Updates the specified resource share.
+        /// Updates the specified resource share that you own.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateResourceShare service method.</param>
         /// <param name="cancellationToken">

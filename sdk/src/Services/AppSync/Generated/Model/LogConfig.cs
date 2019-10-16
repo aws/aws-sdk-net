@@ -33,6 +33,7 @@ namespace Amazon.AppSync.Model
     public partial class LogConfig
     {
         private string _cloudWatchLogsRoleArn;
+        private bool? _excludeVerboseContent;
         private FieldLogLevel _fieldLogLevel;
 
         /// <summary>
@@ -53,6 +54,25 @@ namespace Amazon.AppSync.Model
         internal bool IsSetCloudWatchLogsRoleArn()
         {
             return this._cloudWatchLogsRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExcludeVerboseContent. 
+        /// <para>
+        /// Set to TRUE to exclude sections that contain information such as headers, context,
+        /// and evaluated mapping templates, regardless of logging level.
+        /// </para>
+        /// </summary>
+        public bool ExcludeVerboseContent
+        {
+            get { return this._excludeVerboseContent.GetValueOrDefault(); }
+            set { this._excludeVerboseContent = value; }
+        }
+
+        // Check to see if ExcludeVerboseContent property is set
+        internal bool IsSetExcludeVerboseContent()
+        {
+            return this._excludeVerboseContent.HasValue; 
         }
 
         /// <summary>

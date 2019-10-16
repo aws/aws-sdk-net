@@ -58,14 +58,14 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-03-31";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/2018-10-31/layers/{LayerName}/versions/{VersionNumber}";
             if (!publicRequest.IsSetLayerName())
                 throw new AmazonLambdaException("Request object does not have required field LayerName set");
-            uriResourcePath = uriResourcePath.Replace("{LayerName}", StringUtils.FromStringWithSlashEncoding(publicRequest.LayerName));
+            request.AddPathResource("{LayerName}", StringUtils.FromString(publicRequest.LayerName));
             if (!publicRequest.IsSetVersionNumber())
                 throw new AmazonLambdaException("Request object does not have required field VersionNumber set");
-            uriResourcePath = uriResourcePath.Replace("{VersionNumber}", StringUtils.FromLong(publicRequest.VersionNumber));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{VersionNumber}", StringUtils.FromLong(publicRequest.VersionNumber));
+            request.ResourcePath = "/2018-10-31/layers/{LayerName}/versions/{VersionNumber}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -58,11 +58,11 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-06-30";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/identitypools/{IdentityPoolId}/configuration";
             if (!publicRequest.IsSetIdentityPoolId())
                 throw new AmazonCognitoSyncException("Request object does not have required field IdentityPoolId set");
-            uriResourcePath = uriResourcePath.Replace("{IdentityPoolId}", StringUtils.FromStringWithSlashEncoding(publicRequest.IdentityPoolId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{IdentityPoolId}", StringUtils.FromString(publicRequest.IdentityPoolId));
+            request.ResourcePath = "/identitypools/{IdentityPoolId}/configuration";
+            request.MarshallerVersion = 2;
 
             return request;
         }

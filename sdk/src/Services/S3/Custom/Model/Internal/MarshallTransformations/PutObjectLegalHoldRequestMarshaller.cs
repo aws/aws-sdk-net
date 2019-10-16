@@ -74,7 +74,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetVersionId())
                 request.Parameters.Add("versionId", StringUtils.FromString(publicRequest.VersionId));
-            request.ResourcePath = uriResourcePath;
+			request.MarshallerVersion = 2;
+			request.ResourcePath = uriResourcePath;
 
             var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))

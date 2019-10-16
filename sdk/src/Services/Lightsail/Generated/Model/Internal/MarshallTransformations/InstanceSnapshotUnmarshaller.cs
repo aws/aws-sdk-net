@@ -106,6 +106,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     unmarshalledObject.FromInstanceName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("isFromAutoSnapshot", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsFromAutoSnapshot = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("location", targetDepth))
                 {
                     var unmarshaller = ResourceLocationUnmarshaller.Instance;

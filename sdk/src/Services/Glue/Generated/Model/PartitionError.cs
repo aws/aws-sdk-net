@@ -38,7 +38,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ErrorDetail. 
         /// <para>
-        /// Details about the partition error.
+        /// The details about the partition error.
         /// </para>
         /// </summary>
         public ErrorDetail ErrorDetail

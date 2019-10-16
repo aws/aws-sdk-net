@@ -58,10 +58,9 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-23";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/detectors/{detectorModelName}";
             if (!publicRequest.IsSetDetectorModelName())
                 throw new AmazonIoTEventsDataException("Request object does not have required field DetectorModelName set");
-            uriResourcePath = uriResourcePath.Replace("{detectorModelName}", StringUtils.FromStringWithSlashEncoding(publicRequest.DetectorModelName));
+            request.AddPathResource("{detectorModelName}", StringUtils.FromString(publicRequest.DetectorModelName));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
@@ -71,7 +70,8 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetStateName())
                 request.Parameters.Add("stateName", StringUtils.FromString(publicRequest.StateName));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/detectors/{detectorModelName}";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

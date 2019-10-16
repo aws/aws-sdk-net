@@ -185,6 +185,7 @@ namespace Amazon.GameLift.Model
     public partial class CreateFleetRequest : AmazonGameLiftRequest
     {
         private string _buildId;
+        private CertificateConfiguration _certificateConfiguration;
         private string _description;
         private List<IpPermission> _ec2InboundPermissions = new List<IpPermission>();
         private EC2InstanceType _ec2InstanceType;
@@ -220,6 +221,21 @@ namespace Amazon.GameLift.Model
         internal bool IsSetBuildId()
         {
             return this._buildId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CertificateConfiguration.
+        /// </summary>
+        public CertificateConfiguration CertificateConfiguration
+        {
+            get { return this._certificateConfiguration; }
+            set { this._certificateConfiguration = value; }
+        }
+
+        // Check to see if CertificateConfiguration property is set
+        internal bool IsSetCertificateConfiguration()
+        {
+            return this._certificateConfiguration != null;
         }
 
         /// <summary>

@@ -77,7 +77,15 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property EnableInternetAccess. 
         /// <para>
-        /// The public IP address to attach to all WorkSpaces that are created or rebuilt.
+        /// Specifies whether to automatically assign a public IP address to WorkSpaces in this
+        /// directory by default. If enabled, the public IP address allows outbound internet access
+        /// from your WorkSpaces when you’re using an internet gateway in the Amazon VPC in which
+        /// your WorkSpaces are located. If you're using a Network Address Translation (NAT) gateway
+        /// for outbound internet access from your VPC, or if your WorkSpaces are in public subnets
+        /// and you manually assign them Elastic IP addresses, you should disable this setting.
+        /// This setting applies to new WorkSpaces that you launch or to existing WorkSpaces that
+        /// you rebuild. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-vpc.html">
+        /// Configure a VPC for Amazon WorkSpaces</a>.
         /// </para>
         /// </summary>
         public bool EnableInternetAccess

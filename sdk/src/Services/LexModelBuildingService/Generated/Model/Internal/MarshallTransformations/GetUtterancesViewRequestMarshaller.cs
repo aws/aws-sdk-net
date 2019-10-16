@@ -58,18 +58,18 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-04-19";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/bots/{botname}/utterances";
             request.AddSubResource("view", "aggregation");
             if (!publicRequest.IsSetBotName())
                 throw new AmazonLexModelBuildingServiceException("Request object does not have required field BotName set");
-            uriResourcePath = uriResourcePath.Replace("{botname}", StringUtils.FromStringWithSlashEncoding(publicRequest.BotName));
+            request.AddPathResource("{botname}", StringUtils.FromString(publicRequest.BotName));
             
             if (publicRequest.IsSetBotVersions())
                 request.ParameterCollection.Add("bot_versions", publicRequest.BotVersions);
             
             if (publicRequest.IsSetStatusType())
                 request.Parameters.Add("status_type", StringUtils.FromString(publicRequest.StatusType));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/bots/{botname}/utterances";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

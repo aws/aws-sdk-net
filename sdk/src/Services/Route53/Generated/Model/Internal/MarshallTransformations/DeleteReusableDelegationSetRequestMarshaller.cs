@@ -56,11 +56,11 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
             request.HttpMethod = "DELETE";
-            string uriResourcePath = "/2013-04-01/delegationset/{Id}";
             if (!publicRequest.IsSetId())
                 throw new AmazonRoute53Exception("Request object does not have required field Id set");
-            uriResourcePath = uriResourcePath.Replace("{Id}", StringUtils.FromStringWithSlashEncoding(publicRequest.Id));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.Id));
+            request.ResourcePath = "/2013-04-01/delegationset/{Id}";
+            request.MarshallerVersion = 2;
 
 
             return request;

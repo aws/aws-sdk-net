@@ -29,7 +29,14 @@ namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAccelerator operation.
-    /// Update an accelerator.
+    /// Update an accelerator. To see an AWS CLI example of updating an accelerator, scroll
+    /// down to <b>Example</b>.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// You must specify the US-West-2 (Oregon) Region to create or update accelerators.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class UpdateAcceleratorRequest : AmazonGlobalAcceleratorRequest
     {

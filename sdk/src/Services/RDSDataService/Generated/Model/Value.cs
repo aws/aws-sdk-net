@@ -29,6 +29,9 @@ namespace Amazon.RDSDataService.Model
 {
     /// <summary>
     /// Contains the value of a column.
+    /// 
+    ///  <pre><code> &lt;important&gt; &lt;p&gt;This data type is deprecated.&lt;/p&gt; &lt;/important&gt;
+    /// </code></pre>
     /// </summary>
     public partial class Value
     {

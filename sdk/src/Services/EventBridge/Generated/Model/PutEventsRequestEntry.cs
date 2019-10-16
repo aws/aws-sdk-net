@@ -42,8 +42,12 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property Detail. 
         /// <para>
-        /// A valid JSON string. There is no other schema imposed. The JSON string can contain
+        /// A valid JSON object. There is no other schema imposed. The JSON object can contain
         /// fields and nested subobjects.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field is required.
         /// </para>
         /// </summary>
         public string Detail
@@ -61,7 +65,8 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property DetailType. 
         /// <para>
-        /// Free-form string used to decide which fields to expect in the event detail.
+        /// Free-form string used to decide which fields to expect in the event detail. This field
+        /// is required.
         /// </para>
         /// </summary>
         public string DetailType

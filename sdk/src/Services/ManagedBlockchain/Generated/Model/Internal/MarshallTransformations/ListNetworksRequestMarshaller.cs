@@ -58,7 +58,6 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-24";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/networks";
             
             if (publicRequest.IsSetFramework())
                 request.Parameters.Add("framework", StringUtils.FromString(publicRequest.Framework));
@@ -74,7 +73,8 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetStatus())
                 request.Parameters.Add("status", StringUtils.FromString(publicRequest.Status));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/networks";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

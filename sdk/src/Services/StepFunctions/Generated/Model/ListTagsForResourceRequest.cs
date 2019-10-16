@@ -30,6 +30,12 @@ namespace Amazon.StepFunctions.Model
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
     /// List tags for a given resource.
+    /// 
+    ///  
+    /// <para>
+    /// Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_
+    /// . : / = + - @</code>.
+    /// </para>
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonStepFunctionsRequest
     {

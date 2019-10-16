@@ -249,7 +249,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The idempotency token that uniquely identifies the provisioning update request.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=128)]
         public string UpdateToken
         {
             get { return this._updateToken; }

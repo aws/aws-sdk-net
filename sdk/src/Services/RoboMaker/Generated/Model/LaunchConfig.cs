@@ -35,6 +35,7 @@ namespace Amazon.RoboMaker.Model
         private Dictionary<string, string> _environmentVariables = new Dictionary<string, string>();
         private string _launchFile;
         private string _packageName;
+        private PortForwardingConfig _portForwardingConfig;
 
         /// <summary>
         /// Gets and sets the property EnvironmentVariables. 
@@ -91,6 +92,24 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetPackageName()
         {
             return this._packageName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PortForwardingConfig. 
+        /// <para>
+        /// The port forwarding configuration.
+        /// </para>
+        /// </summary>
+        public PortForwardingConfig PortForwardingConfig
+        {
+            get { return this._portForwardingConfig; }
+            set { this._portForwardingConfig = value; }
+        }
+
+        // Check to see if PortForwardingConfig property is set
+        internal bool IsSetPortForwardingConfig()
+        {
+            return this._portForwardingConfig != null;
         }
 
     }

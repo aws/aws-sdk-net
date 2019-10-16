@@ -30,7 +30,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// <summary>
     /// Container for the parameters to the DescribeListenerCertificates operation.
     /// Describes the default certificate and the certificate list for the specified HTTPS
-    /// listener.
+    /// or TLS listener.
     /// 
     ///  
     /// <para>

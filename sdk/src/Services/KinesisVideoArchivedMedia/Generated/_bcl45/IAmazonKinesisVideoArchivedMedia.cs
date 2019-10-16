@@ -58,8 +58,8 @@ namespace Amazon.KinesisVideoArchivedMedia
         ///  <ul> <li> 
         /// <para>
         /// The media must contain h.264 or h.265 encoded video and, optionally, AAC or G.711
-        /// encoded audio. Specifically, the codec id of track 1 should be <code>V_MPEG/ISO/AVC</code>
-        /// (for h.264) or V_MPEGH/ISO/HEVC (for H.265). Optionally, the codec id of track 2 should
+        /// encoded audio. Specifically, the codec ID of track 1 should be <code>V_MPEG/ISO/AVC</code>
+        /// (for h.264) or V_MPEGH/ISO/HEVC (for H.265). Optionally, the codec ID of track 2 should
         /// be <code>A_AAC</code> (for AAC) or A_MS/ACM (for G.711).
         /// </para>
         ///  </li> <li> 
@@ -115,7 +115,7 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// <para>
         /// Provide the URL (containing the encrypted session token) for the MPEG-DASH manifest
         /// to a media player that supports the MPEG-DASH protocol. Kinesis Video Streams makes
-        /// the initialization fragment, and media fragments available through the manifest URL.
+        /// the initialization fragment and media fragments available through the manifest URL.
         /// The initialization fragment contains the codec private data for the stream, and other
         /// data needed to set up the video or audio decoder and renderer. The media fragments
         /// contain encoded video frames or encoded audio samples.
@@ -300,8 +300,8 @@ namespace Amazon.KinesisVideoArchivedMedia
         ///  <ul> <li> 
         /// <para>
         /// The media must contain h.264 or h.265 encoded video and, optionally, AAC or G.711
-        /// encoded audio. Specifically, the codec id of track 1 should be <code>V_MPEG/ISO/AVC</code>
-        /// (for h.264) or V_MPEGH/ISO/HEVC (for H.265). Optionally, the codec id of track 2 should
+        /// encoded audio. Specifically, the codec ID of track 1 should be <code>V_MPEG/ISO/AVC</code>
+        /// (for h.264) or V_MPEGH/ISO/HEVC (for H.265). Optionally, the codec ID of track 2 should
         /// be <code>A_AAC</code> (for AAC) or A_MS/ACM (for G.711).
         /// </para>
         ///  </li> <li> 
@@ -357,7 +357,7 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// <para>
         /// Provide the URL (containing the encrypted session token) for the MPEG-DASH manifest
         /// to a media player that supports the MPEG-DASH protocol. Kinesis Video Streams makes
-        /// the initialization fragment, and media fragments available through the manifest URL.
+        /// the initialization fragment and media fragments available through the manifest URL.
         /// The initialization fragment contains the codec private data for the stream, and other
         /// data needed to set up the video or audio decoder and renderer. The media fragments
         /// contain encoded video frames or encoded audio samples.
@@ -548,8 +548,8 @@ namespace Amazon.KinesisVideoArchivedMedia
         ///  <ul> <li> 
         /// <para>
         /// The media must contain h.264 or h.265 encoded video and, optionally, AAC encoded audio.
-        /// Specifically, the codec id of track 1 should be <code>V_MPEG/ISO/AVC</code> (for h.264)
-        /// or <code>V_MPEG/ISO/HEVC</code> (for h.265). Optionally, the codec id of track 2 should
+        /// Specifically, the codec ID of track 1 should be <code>V_MPEG/ISO/AVC</code> (for h.264)
+        /// or <code>V_MPEG/ISO/HEVC</code> (for h.265). Optionally, the codec ID of track 2 should
         /// be <code>A_AAC</code>.
         /// </para>
         ///  </li> <li> 
@@ -827,8 +827,8 @@ namespace Amazon.KinesisVideoArchivedMedia
         ///  <ul> <li> 
         /// <para>
         /// The media must contain h.264 or h.265 encoded video and, optionally, AAC encoded audio.
-        /// Specifically, the codec id of track 1 should be <code>V_MPEG/ISO/AVC</code> (for h.264)
-        /// or <code>V_MPEG/ISO/HEVC</code> (for h.265). Optionally, the codec id of track 2 should
+        /// Specifically, the codec ID of track 1 should be <code>V_MPEG/ISO/AVC</code> (for h.264)
+        /// or <code>V_MPEG/ISO/HEVC</code> (for h.265). Optionally, the codec ID of track 2 should
         /// be <code>A_AAC</code>.
         /// </para>
         ///  </li> <li> 

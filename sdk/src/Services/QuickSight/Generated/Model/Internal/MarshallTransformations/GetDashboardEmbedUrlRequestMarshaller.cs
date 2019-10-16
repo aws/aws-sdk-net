@@ -58,13 +58,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-01";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/accounts/{AwsAccountId}/dashboards/{DashboardId}/embed-url";
             if (!publicRequest.IsSetAwsAccountId())
                 throw new AmazonQuickSightException("Request object does not have required field AwsAccountId set");
-            uriResourcePath = uriResourcePath.Replace("{AwsAccountId}", StringUtils.FromStringWithSlashEncoding(publicRequest.AwsAccountId));
+            request.AddPathResource("{AwsAccountId}", StringUtils.FromString(publicRequest.AwsAccountId));
             if (!publicRequest.IsSetDashboardId())
                 throw new AmazonQuickSightException("Request object does not have required field DashboardId set");
-            uriResourcePath = uriResourcePath.Replace("{DashboardId}", StringUtils.FromStringWithSlashEncoding(publicRequest.DashboardId));
+            request.AddPathResource("{DashboardId}", StringUtils.FromString(publicRequest.DashboardId));
             
             if (publicRequest.IsSetIdentityType())
                 request.Parameters.Add("creds-type", StringUtils.FromString(publicRequest.IdentityType));
@@ -80,7 +79,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetUserArn())
                 request.Parameters.Add("user-arn", StringUtils.FromString(publicRequest.UserArn));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/accounts/{AwsAccountId}/dashboards/{DashboardId}/embed-url";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

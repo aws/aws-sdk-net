@@ -47,11 +47,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             request.UserName = "role/name";
             var internalRequest = marshaller.Marshall(request);
-
-            //The following / is encoded in "UserName" to %2F so that the Validate method properly 
-            //compares request uriResourcePath built up from the request labels against 
-            //internalRequest uriResource path that has been encoded by the marshaller.
-            request.UserName = "role%2Fname";
+                        
             TestTools.RequestValidator.Validate("DeleteUser", request, internalRequest, service_model);
         }
 
@@ -68,11 +64,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             request.UserName = "role/name";
             var internalRequest = marshaller.Marshall(request);
-
-            //The following / is encoded in "UserName" to %2F so that the Validate method properly 
-            //compares request uriResourcePath built up from the request labels against 
-            //internalRequest uriResource path that has been encoded by the marshaller.
-            request.UserName = "role%2Fname";
+                        
             TestTools.RequestValidator.Validate("DescribeUser", request, internalRequest, service_model);            
         }
     }

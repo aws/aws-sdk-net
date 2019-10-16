@@ -40,8 +40,8 @@ namespace Amazon.CodePipeline.Model
         /// <para>
         /// If the amount of returned information is significantly large, an identifier is also
         /// returned and can be used in a subsequent API call to return the next page of the list.
-        /// However, the ListTagsforResource call lists all available tags in one call and does
-        /// not use pagination.
+        /// The ListTagsforResource call lists all available tags in one call and does not use
+        /// pagination.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

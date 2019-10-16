@@ -58,17 +58,17 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-29";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/v2/domainnames/{domainName}/apimappings";
             if (!publicRequest.IsSetDomainName())
                 throw new AmazonApiGatewayV2Exception("Request object does not have required field DomainName set");
-            uriResourcePath = uriResourcePath.Replace("{domainName}", StringUtils.FromStringWithSlashEncoding(publicRequest.DomainName));
+            request.AddPathResource("{domainName}", StringUtils.FromString(publicRequest.DomainName));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromString(publicRequest.MaxResults));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/v2/domainnames/{domainName}/apimappings";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -101,7 +101,7 @@ namespace Amazon.KinesisFirehose.Model
     /// Kinesis Data Firehose assumes the IAM role that is configured as part of the destination.
     /// The role should allow the Kinesis Data Firehose principal to assume the role, and
     /// the role should have permissions that allow the service to deliver the data. For more
-    /// information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
+    /// information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
     /// Kinesis Data Firehose Access to an Amazon S3 Destination</a> in the <i>Amazon Kinesis
     /// Data Firehose Developer Guide</i>.
     /// </para>

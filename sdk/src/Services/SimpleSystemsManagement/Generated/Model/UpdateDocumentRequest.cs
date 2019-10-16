@@ -101,7 +101,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentVersion. 
         /// <para>
-        /// The version of the document that you want to update.
+        /// (Required) The version of the document that you want to update. 
         /// </para>
         /// </summary>
         public string DocumentVersion

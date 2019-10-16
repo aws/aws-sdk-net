@@ -78,6 +78,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>opt-in-status</code> - The opt-in status of the Region (<code>opt-in-not-required</code>
+        /// | <code>opted-in</code> | <code>not-opted-in</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>region-name</code> - The name of the Region (for example, <code>us-east-1</code>).
         /// </para>
         ///  </li> </ul>

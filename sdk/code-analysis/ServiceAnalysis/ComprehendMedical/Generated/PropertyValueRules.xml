@@ -1,12 +1,41 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.DescribeEntitiesDetectionV2JobRequest.JobId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.DescribePHIDetectionJobRequest.JobId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ComprehendMedical.Model.DetectEntitiesRequest.Text</property>
     <min>1</min>
     <max>20000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.DetectEntitiesResponse.ModelVersion</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ComprehendMedical.Model.DetectEntitiesResponse.PaginationToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.DetectEntitiesV2Request.Text</property>
+    <min>1</min>
+    <max>20000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.DetectEntitiesV2Response.ModelVersion</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.DetectEntitiesV2Response.PaginationToken</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -15,16 +44,176 @@
     <max>20000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.DetectPHIResponse.ModelVersion</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ComprehendMedical.Model.DetectPHIResponse.PaginationToken</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.ListEntitiesDetectionV2JobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.ListEntitiesDetectionV2JobsRequest.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.ListEntitiesDetectionV2JobsResponse.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.ListPHIDetectionJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.ListPHIDetectionJobsRequest.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.ListPHIDetectionJobsResponse.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.StartEntitiesDetectionV2JobRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.StartEntitiesDetectionV2JobRequest.DataAccessRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.StartEntitiesDetectionV2JobRequest.JobName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.StartEntitiesDetectionV2JobRequest.KMSKey</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.StartEntitiesDetectionV2JobResponse.JobId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.StartPHIDetectionJobRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.StartPHIDetectionJobRequest.DataAccessRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.StartPHIDetectionJobRequest.JobName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.StartPHIDetectionJobRequest.KMSKey</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.StartPHIDetectionJobResponse.JobId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.StopEntitiesDetectionV2JobRequest.JobId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.StopEntitiesDetectionV2JobResponse.JobId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.StopPHIDetectionJobRequest.JobId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.StopPHIDetectionJobResponse.JobId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ComprehendMedical.Model.Attribute.Text</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.ComprehendMedicalAsyncJobFilter.JobName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.ComprehendMedicalAsyncJobProperties.DataAccessRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.ComprehendMedicalAsyncJobProperties.JobId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.ComprehendMedicalAsyncJobProperties.JobName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.ComprehendMedicalAsyncJobProperties.KMSKey</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.ComprehendMedicalAsyncJobProperties.ManifestFilePath</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ComprehendMedical.Model.Entity.Text</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.InputDataConfig.S3Bucket</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>^[0-9a-z\.\-_]*(?!\.)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.InputDataConfig.S3Key</property>
+    <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ComprehendMedical.Model.InternalServerException.Message</property>
@@ -39,6 +228,21 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.OutputDataConfig.S3Bucket</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>^[0-9a-z\.\-_]*(?!\.)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.OutputDataConfig.S3Key</property>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.ResourceNotFoundException.Message</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ComprehendMedical.Model.ServiceUnavailableException.Message</property>
     <min>1</min>
   </property-value-rule>
@@ -48,6 +252,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ComprehendMedical.Model.TooManyRequestsException.Message</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComprehendMedical.Model.ValidationException.Message</property>
     <min>1</min>
   </property-value-rule>
 </property-value-rules>

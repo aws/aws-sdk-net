@@ -58,11 +58,11 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-09-25";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/2012-09-25/pipelines/{Id}";
             if (!publicRequest.IsSetId())
                 throw new AmazonElasticTranscoderException("Request object does not have required field Id set");
-            uriResourcePath = uriResourcePath.Replace("{Id}", StringUtils.FromStringWithSlashEncoding(publicRequest.Id));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.Id));
+            request.ResourcePath = "/2012-09-25/pipelines/{Id}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

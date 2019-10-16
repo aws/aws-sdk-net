@@ -41,8 +41,10 @@ namespace Amazon.RoboMaker.Model
     public partial class CreateSimulationJobRequest : AmazonRoboMakerRequest
     {
         private string _clientRequestToken;
+        private List<DataSourceConfig> _dataSources = new List<DataSourceConfig>();
         private FailureBehavior _failureBehavior;
         private string _iamRole;
+        private LoggingConfig _loggingConfig;
         private long? _maxJobDurationInSeconds;
         private OutputLocation _outputLocation;
         private List<RobotApplicationConfig> _robotApplications = new List<RobotApplicationConfig>();
@@ -68,6 +70,31 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataSources. 
+        /// <para>
+        /// The data sources for the simulation job.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code>
+        /// objects. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<DataSourceConfig> DataSources
+        {
+            get { return this._dataSources; }
+            set { this._dataSources = value; }
+        }
+
+        // Check to see if DataSources property is set
+        internal bool IsSetDataSources()
+        {
+            return this._dataSources != null && this._dataSources.Count > 0; 
         }
 
         /// <summary>
@@ -116,6 +143,24 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetIamRole()
         {
             return this._iamRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoggingConfig. 
+        /// <para>
+        /// The logging configuration.
+        /// </para>
+        /// </summary>
+        public LoggingConfig LoggingConfig
+        {
+            get { return this._loggingConfig; }
+            set { this._loggingConfig = value; }
+        }
+
+        // Check to see if LoggingConfig property is set
+        internal bool IsSetLoggingConfig()
+        {
+            return this._loggingConfig != null;
         }
 
         /// <summary>

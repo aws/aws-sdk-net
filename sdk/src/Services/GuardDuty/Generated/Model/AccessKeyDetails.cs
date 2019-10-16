@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// 
+    /// Contains information about the access keys.
     /// </summary>
     public partial class AccessKeyDetails
     {

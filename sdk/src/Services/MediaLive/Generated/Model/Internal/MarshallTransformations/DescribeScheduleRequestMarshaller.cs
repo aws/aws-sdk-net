@@ -58,17 +58,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-14";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/prod/channels/{channelId}/schedule";
             if (!publicRequest.IsSetChannelId())
                 throw new AmazonMediaLiveException("Request object does not have required field ChannelId set");
-            uriResourcePath = uriResourcePath.Replace("{channelId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ChannelId));
+            request.AddPathResource("{channelId}", StringUtils.FromString(publicRequest.ChannelId));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/prod/channels/{channelId}/schedule";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

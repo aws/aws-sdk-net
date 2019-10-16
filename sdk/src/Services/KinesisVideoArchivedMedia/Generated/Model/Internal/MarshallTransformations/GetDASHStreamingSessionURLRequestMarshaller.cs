@@ -59,8 +59,8 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-30";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/getDASHStreamingSessionURL";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/getDASHStreamingSessionURL";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

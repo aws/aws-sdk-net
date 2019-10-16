@@ -58,15 +58,15 @@ namespace Amazon.SageMaker.Model
     /// You can also use <i>automated data labeling</i> to reduce the number of data objects
     /// that need to be labeled by a human. Automated data labeling uses <i>active learning</i>
     /// to determine if a data object can be labeled by machine or if it needs to be sent
-    /// to a human worker. For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-automated-labeling.html">Using
+    /// to a human worker. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-automated-labeling.html">Using
     /// Automated Data Labeling</a>.
     /// </para>
     ///  
     /// <para>
     /// The data objects to be labeled are contained in an Amazon S3 bucket. You create a
     /// <i>manifest file</i> that describes the location of each object. For more information,
-    /// see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-data.html">Using Input
-    /// and Output Data</a>.
+    /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data.html">Using
+    /// Input and Output Data</a>.
     /// </para>
     ///  
     /// <para>
@@ -334,7 +334,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// An array of key/value pairs. For more information, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+        /// An array of key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
         /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
         /// </para>
         /// </summary>

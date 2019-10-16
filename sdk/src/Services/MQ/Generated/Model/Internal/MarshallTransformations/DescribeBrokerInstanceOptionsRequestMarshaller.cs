@@ -58,7 +58,6 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/v1/broker-instance-options";
             
             if (publicRequest.IsSetEngineType())
                 request.Parameters.Add("engineType", StringUtils.FromString(publicRequest.EngineType));
@@ -71,7 +70,8 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/v1/broker-instance-options";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

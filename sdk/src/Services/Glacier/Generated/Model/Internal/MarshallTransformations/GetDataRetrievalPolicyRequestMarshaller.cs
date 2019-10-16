@@ -58,9 +58,9 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-06-01";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/{accountId}/policies/data-retrieval";
-            uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromStringWithSlashEncoding(publicRequest.AccountId) : string.Empty);
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
+            request.ResourcePath = "/{accountId}/policies/data-retrieval";
+            request.MarshallerVersion = 2;
 
             return request;
         }

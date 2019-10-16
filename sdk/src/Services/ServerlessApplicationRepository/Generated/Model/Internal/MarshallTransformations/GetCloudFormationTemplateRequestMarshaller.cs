@@ -58,14 +58,14 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-08";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/applications/{applicationId}/templates/{templateId}";
             if (!publicRequest.IsSetApplicationId())
                 throw new AmazonServerlessApplicationRepositoryException("Request object does not have required field ApplicationId set");
-            uriResourcePath = uriResourcePath.Replace("{applicationId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ApplicationId));
+            request.AddPathResource("{applicationId}", StringUtils.FromString(publicRequest.ApplicationId));
             if (!publicRequest.IsSetTemplateId())
                 throw new AmazonServerlessApplicationRepositoryException("Request object does not have required field TemplateId set");
-            uriResourcePath = uriResourcePath.Replace("{templateId}", StringUtils.FromStringWithSlashEncoding(publicRequest.TemplateId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{templateId}", StringUtils.FromString(publicRequest.TemplateId));
+            request.ResourcePath = "/applications/{applicationId}/templates/{templateId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

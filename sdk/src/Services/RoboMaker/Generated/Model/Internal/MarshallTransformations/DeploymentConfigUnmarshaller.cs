@@ -76,6 +76,12 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.FailureThresholdPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("robotDeploymentTimeoutInSeconds", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.RobotDeploymentTimeoutInSeconds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

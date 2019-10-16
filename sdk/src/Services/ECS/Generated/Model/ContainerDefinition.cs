@@ -45,6 +45,7 @@ namespace Amazon.ECS.Model
         private List<KeyValuePair> _environment = new List<KeyValuePair>();
         private bool? _essential;
         private List<HostEntry> _extraHosts = new List<HostEntry>();
+        private FirelensConfiguration _firelensConfiguration;
         private HealthCheck _healthCheck;
         private string _hostname;
         private string _image;
@@ -479,6 +480,26 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FirelensConfiguration. 
+        /// <para>
+        /// The FireLens configuration for the container. This is used to specify and configure
+        /// a log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom
+        /// Log Routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public FirelensConfiguration FirelensConfiguration
+        {
+            get { return this._firelensConfiguration; }
+            set { this._firelensConfiguration = value; }
+        }
+
+        // Check to see if FirelensConfiguration property is set
+        internal bool IsSetFirelensConfiguration()
+        {
+            return this._firelensConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property HealthCheck. 
         /// <para>
         /// The health check command and associated configuration parameters for the container.
@@ -677,17 +698,6 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code>
-        /// and <code>splunk</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
-        /// <code>syslog</code>, <code>gelf</code>, <code>fluentd</code>, <code>splunk</code>,
-        /// <code>journald</code>, and <code>json-file</code>.
-        /// </para>
-        ///  
-        /// <para>
         /// This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
         /// Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
@@ -748,18 +758,16 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If your containers are part of a task using the Fargate launch type, this field is
-        /// optional.
+        /// If using the Fargate launch type, this parameter is optional.
         /// </para>
         ///  
         /// <para>
-        /// For containers that are part of a task using the EC2 launch type, you must specify
-        /// a non-zero integer for one or both of <code>memory</code> or <code>memoryReservation</code>
-        /// in container definitions. If you specify both, <code>memory</code> must be greater
-        /// than <code>memoryReservation</code>. If you specify <code>memoryReservation</code>,
-        /// then that value is subtracted from the available memory resources for the container
-        /// instance on which the container is placed. Otherwise, the value of <code>memory</code>
-        /// is used.
+        /// If using the EC2 launch type, you must specify either a task-level memory value or
+        /// a container-level memory value. If you specify both a container-level <code>memory</code>
+        /// and <code>memoryReservation</code> value, <code>memory</code> must be greater than
+        /// <code>memoryReservation</code>. If you specify <code>memoryReservation</code>, then
+        /// that value is subtracted from the available memory resources for the container instance
+        /// on which the container is placed. Otherwise, the value of <code>memory</code> is used.
         /// </para>
         ///  
         /// <para>
@@ -794,12 +802,12 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// You must specify a non-zero integer for one or both of <code>memory</code> or <code>memoryReservation</code>
-        /// in container definitions. If you specify both, <code>memory</code> must be greater
-        /// than <code>memoryReservation</code>. If you specify <code>memoryReservation</code>,
-        /// then that value is subtracted from the available memory resources for the container
-        /// instance on which the container is placed. Otherwise, the value of <code>memory</code>
-        /// is used.
+        /// If a task-level memory value is not specified, you must specify a non-zero integer
+        /// for one or both of <code>memory</code> or <code>memoryReservation</code> in a container
+        /// definition. If you specify both, <code>memory</code> must be greater than <code>memoryReservation</code>.
+        /// If you specify <code>memoryReservation</code>, then that value is subtracted from
+        /// the available memory resources for the container instance on which the container is
+        /// placed. Otherwise, the value of <code>memory</code> is used.
         /// </para>
         ///  
         /// <para>
@@ -1071,9 +1079,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property StartTimeout. 
         /// <para>
-        /// Time duration to wait before giving up on resolving dependencies for a container.
-        /// For example, you specify two containers in a task definition with containerA having
-        /// a dependency on containerB reaching a <code>COMPLETE</code>, <code>SUCCESS</code>,
+        /// Time duration (in seconds) to wait before giving up on resolving dependencies for
+        /// a container. For example, you specify two containers in a task definition with containerA
+        /// having a dependency on containerB reaching a <code>COMPLETE</code>, <code>SUCCESS</code>,
         /// or <code>HEALTHY</code> status. If a <code>startTimeout</code> value is specified
         /// for containerB and it does not reach the desired status within that time then containerA
         /// will give up and not start. This results in the task transitioning to a <code>STOPPED</code>
@@ -1114,11 +1122,11 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property StopTimeout. 
         /// <para>
-        /// Time duration to wait before the container is forcefully killed if it doesn't exit
-        /// normally on its own. For tasks using the Fargate launch type, the max <code>stopTimeout</code>
-        /// value is 2 minutes. This parameter is available for tasks using the Fargate launch
-        /// type in the Ohio (us-east-2) region only and the task or service requires platform
-        /// version 1.3.0 or later.
+        /// Time duration (in seconds) to wait before the container is forcefully killed if it
+        /// doesn't exit normally on its own. For tasks using the Fargate launch type, the max
+        /// <code>stopTimeout</code> value is 2 minutes. This parameter is available for tasks
+        /// using the Fargate launch type in the Ohio (us-east-2) region only and the task or
+        /// service requires platform version 1.3.0 or later.
         /// </para>
         ///  
         /// <para>

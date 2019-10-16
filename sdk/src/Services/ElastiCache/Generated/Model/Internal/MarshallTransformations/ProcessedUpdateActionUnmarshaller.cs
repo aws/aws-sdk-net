@@ -54,6 +54,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("CacheClusterId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CacheClusterId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ReplicationGroupId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

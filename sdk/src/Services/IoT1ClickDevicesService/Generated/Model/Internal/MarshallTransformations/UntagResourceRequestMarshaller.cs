@@ -58,14 +58,14 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-14";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/tags/{resource-arn}";
             if (!publicRequest.IsSetResourceArn())
                 throw new AmazonIoT1ClickDevicesServiceException("Request object does not have required field ResourceArn set");
-            uriResourcePath = uriResourcePath.Replace("{resource-arn}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceArn));
+            request.AddPathResource("{resource-arn}", StringUtils.FromString(publicRequest.ResourceArn));
             
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/tags/{resource-arn}";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

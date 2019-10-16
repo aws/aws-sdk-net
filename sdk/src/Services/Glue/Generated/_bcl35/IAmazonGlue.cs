@@ -205,13 +205,13 @@ namespace Amazon.Glue
         /// 
         ///  <note> 
         /// <para>
-        /// After completing this operation, you will no longer have access to the table versions
-        /// and partitions that belong to the deleted table. AWS Glue deletes these "orphaned"
-        /// resources asynchronously in a timely manner, at the discretion of the service.
+        /// After completing this operation, you no longer have access to the table versions and
+        /// partitions that belong to the deleted table. AWS Glue deletes these "orphaned" resources
+        /// asynchronously in a timely manner, at the discretion of the service.
         /// </para>
         ///  
         /// <para>
-        /// To ensure immediate deletion of all related resources, before calling <code>BatchDeleteTable</code>,
+        /// To ensure the immediate deletion of all related resources, before calling <code>BatchDeleteTable</code>,
         /// use <code>DeleteTableVersion</code> or <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code>
         /// or <code>BatchDeletePartition</code>, to delete any resources that belong to the table.
         /// </para>
@@ -679,6 +679,61 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  CancelMLTaskRun
+
+
+        /// <summary>
+        /// Cancels (stops) a task run. Machine learning task runs are asynchronous tasks that
+        /// AWS Glue runs on your behalf as part of various machine learning workflows. You can
+        /// cancel a machine learning task run at any time by calling <code>CancelMLTaskRun</code>
+        /// with a task run's parent transform's <code>TransformID</code> and the task run's <code>TaskRunId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelMLTaskRun service method.</param>
+        /// 
+        /// <returns>The response from the CancelMLTaskRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CancelMLTaskRun">REST API Reference for CancelMLTaskRun Operation</seealso>
+        CancelMLTaskRunResponse CancelMLTaskRun(CancelMLTaskRunRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelMLTaskRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelMLTaskRun operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelMLTaskRun
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CancelMLTaskRun">REST API Reference for CancelMLTaskRun Operation</seealso>
+        IAsyncResult BeginCancelMLTaskRun(CancelMLTaskRunRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelMLTaskRun operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelMLTaskRun.</param>
+        /// 
+        /// <returns>Returns a  CancelMLTaskRunResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CancelMLTaskRun">REST API Reference for CancelMLTaskRun Operation</seealso>
+        CancelMLTaskRunResponse EndCancelMLTaskRun(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateClassifier
 
 
@@ -1019,6 +1074,83 @@ namespace Amazon.Glue
         /// <returns>Returns a  CreateJobResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateJob">REST API Reference for CreateJob Operation</seealso>
         CreateJobResponse EndCreateJob(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateMLTransform
+
+
+        /// <summary>
+        /// Creates an AWS Glue machine learning transform. This operation creates the transform
+        /// and all the necessary parameters to train it.
+        /// 
+        ///  
+        /// <para>
+        /// Call this operation as the first step in the process of using a machine learning transform
+        /// (such as the <code>FindMatches</code> transform) for deduplicating data. You can provide
+        /// an optional <code>Description</code>, in addition to the parameters that you want
+        /// to use for your algorithm.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must also specify certain parameters for the tasks that AWS Glue runs on your
+        /// behalf as part of learning from your data and creating a high-quality machine learning
+        /// transform. These parameters include <code>Role</code>, and optionally, <code>AllocatedCapacity</code>,
+        /// <code>Timeout</code>, and <code>MaxRetries</code>. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html">Jobs</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMLTransform service method.</param>
+        /// 
+        /// <returns>The response from the CreateMLTransform service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IdempotentParameterMismatchException">
+        /// The same unique identifier was associated with two different records.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateMLTransform">REST API Reference for CreateMLTransform Operation</seealso>
+        CreateMLTransformResponse CreateMLTransform(CreateMLTransformRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMLTransform operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMLTransform operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMLTransform
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateMLTransform">REST API Reference for CreateMLTransform Operation</seealso>
+        IAsyncResult BeginCreateMLTransform(CreateMLTransformRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateMLTransform operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMLTransform.</param>
+        /// 
+        /// <returns>Returns a  CreateMLTransformResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateMLTransform">REST API Reference for CreateMLTransform Operation</seealso>
+        CreateMLTransformResponse EndCreateMLTransform(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1584,18 +1716,18 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Removes a specified Database from a Data Catalog.
+        /// Removes a specified database from a Data Catalog.
         /// 
         ///  <note> 
         /// <para>
-        /// After completing this operation, you will no longer have access to the tables (and
-        /// all table versions and partitions that might belong to the tables) and the user-defined
+        /// After completing this operation, you no longer have access to the tables (and all
+        /// table versions and partitions that might belong to the tables) and the user-defined
         /// functions in the deleted database. AWS Glue deletes these "orphaned" resources asynchronously
         /// in a timely manner, at the discretion of the service.
         /// </para>
         ///  
         /// <para>
-        /// To ensure immediate deletion of all related resources, before calling <code>DeleteDatabase</code>,
+        /// To ensure the immediate deletion of all related resources, before calling <code>DeleteDatabase</code>,
         /// use <code>DeleteTableVersion</code> or <code>BatchDeleteTableVersion</code>, <code>DeletePartition</code>
         /// or <code>BatchDeletePartition</code>, <code>DeleteUserDefinedFunction</code>, and
         /// <code>DeleteTable</code> or <code>BatchDeleteTable</code>, to delete any resources
@@ -1748,6 +1880,63 @@ namespace Amazon.Glue
         /// <returns>Returns a  DeleteJobResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteJob">REST API Reference for DeleteJob Operation</seealso>
         DeleteJobResponse EndDeleteJob(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteMLTransform
+
+
+        /// <summary>
+        /// Deletes an AWS Glue machine learning transform. Machine learning transforms are a
+        /// special type of transform that use machine learning to learn the details of the transformation
+        /// to be performed by learning from examples provided by humans. These transformations
+        /// are then saved by AWS Glue. If you no longer need a transform, you can delete it by
+        /// calling <code>DeleteMLTransforms</code>. However, any AWS Glue jobs that still reference
+        /// the deleted transform will no longer succeed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMLTransform service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMLTransform service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteMLTransform">REST API Reference for DeleteMLTransform Operation</seealso>
+        DeleteMLTransformResponse DeleteMLTransform(DeleteMLTransformRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMLTransform operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMLTransform operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMLTransform
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteMLTransform">REST API Reference for DeleteMLTransform Operation</seealso>
+        IAsyncResult BeginDeleteMLTransform(DeleteMLTransformRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteMLTransform operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMLTransform.</param>
+        /// 
+        /// <returns>Returns a  DeleteMLTransformResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteMLTransform">REST API Reference for DeleteMLTransform Operation</seealso>
+        DeleteMLTransformResponse EndDeleteMLTransform(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1918,13 +2107,13 @@ namespace Amazon.Glue
         /// 
         ///  <note> 
         /// <para>
-        /// After completing this operation, you will no longer have access to the table versions
-        /// and partitions that belong to the deleted table. AWS Glue deletes these "orphaned"
-        /// resources asynchronously in a timely manner, at the discretion of the service.
+        /// After completing this operation, you no longer have access to the table versions and
+        /// partitions that belong to the deleted table. AWS Glue deletes these "orphaned" resources
+        /// asynchronously in a timely manner, at the discretion of the service.
         /// </para>
         ///  
         /// <para>
-        /// To ensure immediate deletion of all related resources, before calling <code>DeleteTable</code>,
+        /// To ensure the immediate deletion of all related resources, before calling <code>DeleteTable</code>,
         /// use <code>DeleteTableVersion</code> or <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code>
         /// or <code>BatchDeletePartition</code>, to delete any resources that belong to the table.
         /// </para>
@@ -2614,7 +2803,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieves all Databases defined in a given Data Catalog.
+        /// Retrieves all databases defined in a given Data Catalog.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDatabases service method.</param>
         /// 
@@ -2989,59 +3178,6 @@ namespace Amazon.Glue
 
         #endregion
         
-        #region  GetJobBookmarks
-
-
-        /// <summary>
-        /// Returns information on the job bookmark entries. The list is ordered on decreasing
-        /// version numbers.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetJobBookmarks service method.</param>
-        /// 
-        /// <returns>The response from the GetJobBookmarks service method, as returned by Glue.</returns>
-        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
-        /// A specified entity does not exist
-        /// </exception>
-        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
-        /// An internal service error occurred.
-        /// </exception>
-        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
-        /// The input provided was not valid.
-        /// </exception>
-        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
-        /// The operation timed out.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobBookmarks">REST API Reference for GetJobBookmarks Operation</seealso>
-        GetJobBookmarksResponse GetJobBookmarks(GetJobBookmarksRequest request);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the GetJobBookmarks operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetJobBookmarks operation on AmazonGlueClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetJobBookmarks
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobBookmarks">REST API Reference for GetJobBookmarks Operation</seealso>
-        IAsyncResult BeginGetJobBookmarks(GetJobBookmarksRequest request, AsyncCallback callback, object state);
-
-
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  GetJobBookmarks operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetJobBookmarks.</param>
-        /// 
-        /// <returns>Returns a  GetJobBookmarksResult from Glue.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobBookmarks">REST API Reference for GetJobBookmarks Operation</seealso>
-        GetJobBookmarksResponse EndGetJobBookmarks(IAsyncResult asyncResult);
-
-        #endregion
-        
         #region  GetJobRun
 
 
@@ -3247,6 +3383,234 @@ namespace Amazon.Glue
         /// <returns>Returns a  GetMappingResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMapping">REST API Reference for GetMapping Operation</seealso>
         GetMappingResponse EndGetMapping(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetMLTaskRun
+
+
+        /// <summary>
+        /// Gets details for a specific task run on a machine learning transform. Machine learning
+        /// task runs are asynchronous tasks that AWS Glue runs on your behalf as part of various
+        /// machine learning workflows. You can check the stats of any task run by calling <code>GetMLTaskRun</code>
+        /// with the <code>TaskRunID</code> and its parent transform's <code>TransformID</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMLTaskRun service method.</param>
+        /// 
+        /// <returns>The response from the GetMLTaskRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTaskRun">REST API Reference for GetMLTaskRun Operation</seealso>
+        GetMLTaskRunResponse GetMLTaskRun(GetMLTaskRunRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMLTaskRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMLTaskRun operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMLTaskRun
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTaskRun">REST API Reference for GetMLTaskRun Operation</seealso>
+        IAsyncResult BeginGetMLTaskRun(GetMLTaskRunRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMLTaskRun operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMLTaskRun.</param>
+        /// 
+        /// <returns>Returns a  GetMLTaskRunResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTaskRun">REST API Reference for GetMLTaskRun Operation</seealso>
+        GetMLTaskRunResponse EndGetMLTaskRun(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetMLTaskRuns
+
+
+        /// <summary>
+        /// Gets a list of runs for a machine learning transform. Machine learning task runs are
+        /// asynchronous tasks that AWS Glue runs on your behalf as part of various machine learning
+        /// workflows. You can get a sortable, filterable list of machine learning task runs by
+        /// calling <code>GetMLTaskRuns</code> with their parent transform's <code>TransformID</code>
+        /// and other optional parameters as documented in this section.
+        /// 
+        ///  
+        /// <para>
+        /// This operation returns a list of historic runs and must be paginated.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMLTaskRuns service method.</param>
+        /// 
+        /// <returns>The response from the GetMLTaskRuns service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTaskRuns">REST API Reference for GetMLTaskRuns Operation</seealso>
+        GetMLTaskRunsResponse GetMLTaskRuns(GetMLTaskRunsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMLTaskRuns operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMLTaskRuns operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMLTaskRuns
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTaskRuns">REST API Reference for GetMLTaskRuns Operation</seealso>
+        IAsyncResult BeginGetMLTaskRuns(GetMLTaskRunsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMLTaskRuns operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMLTaskRuns.</param>
+        /// 
+        /// <returns>Returns a  GetMLTaskRunsResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTaskRuns">REST API Reference for GetMLTaskRuns Operation</seealso>
+        GetMLTaskRunsResponse EndGetMLTaskRuns(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetMLTransform
+
+
+        /// <summary>
+        /// Gets an AWS Glue machine learning transform artifact and all its corresponding metadata.
+        /// Machine learning transforms are a special type of transform that use machine learning
+        /// to learn the details of the transformation to be performed by learning from examples
+        /// provided by humans. These transformations are then saved by AWS Glue. You can retrieve
+        /// their metadata by calling <code>GetMLTransform</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMLTransform service method.</param>
+        /// 
+        /// <returns>The response from the GetMLTransform service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTransform">REST API Reference for GetMLTransform Operation</seealso>
+        GetMLTransformResponse GetMLTransform(GetMLTransformRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMLTransform operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMLTransform operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMLTransform
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTransform">REST API Reference for GetMLTransform Operation</seealso>
+        IAsyncResult BeginGetMLTransform(GetMLTransformRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMLTransform operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMLTransform.</param>
+        /// 
+        /// <returns>Returns a  GetMLTransformResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTransform">REST API Reference for GetMLTransform Operation</seealso>
+        GetMLTransformResponse EndGetMLTransform(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetMLTransforms
+
+
+        /// <summary>
+        /// Gets a sortable, filterable list of existing AWS Glue machine learning transforms.
+        /// Machine learning transforms are a special type of transform that use machine learning
+        /// to learn the details of the transformation to be performed by learning from examples
+        /// provided by humans. These transformations are then saved by AWS Glue, and you can
+        /// retrieve their metadata by calling <code>GetMLTransforms</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMLTransforms service method.</param>
+        /// 
+        /// <returns>The response from the GetMLTransforms service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTransforms">REST API Reference for GetMLTransforms Operation</seealso>
+        GetMLTransformsResponse GetMLTransforms(GetMLTransformsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMLTransforms operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMLTransforms operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMLTransforms
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTransforms">REST API Reference for GetMLTransforms Operation</seealso>
+        IAsyncResult BeginGetMLTransforms(GetMLTransformsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMLTransforms operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMLTransforms.</param>
+        /// 
+        /// <returns>Returns a  GetMLTransformsResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTransforms">REST API Reference for GetMLTransforms Operation</seealso>
+        GetMLTransformsResponse EndGetMLTransforms(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4000,7 +4364,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieves a multiple function definitions from the Data Catalog.
+        /// Retrieves multiple function definitions from the Data Catalog.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetUserDefinedFunctions service method.</param>
         /// 
@@ -4263,7 +4627,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Imports an existing Athena Data Catalog to AWS Glue
+        /// Imports an existing Amazon Athena Data Catalog to AWS Glue
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportCatalogToGlue service method.</param>
         /// 
@@ -4809,6 +5173,66 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  SearchTables
+
+
+        /// <summary>
+        /// Searches a set of tables based on properties in the table metadata as well as on the
+        /// parent database. You can search against text or filter conditions. 
+        /// 
+        ///  
+        /// <para>
+        /// You can only get tables that you have access to based on the security policies defined
+        /// in Lake Formation. You need at least a read-only access to the table for it to be
+        /// returned. If you do not have access to all the columns in the table, these columns
+        /// will not be searched against when returning the list of tables back to you. If you
+        /// have access to the columns but not the data in the columns, those columns and the
+        /// associated metadata for those columns will be included in the search. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchTables service method.</param>
+        /// 
+        /// <returns>The response from the SearchTables service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SearchTables">REST API Reference for SearchTables Operation</seealso>
+        SearchTablesResponse SearchTables(SearchTablesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchTables operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchTables operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchTables
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SearchTables">REST API Reference for SearchTables Operation</seealso>
+        IAsyncResult BeginSearchTables(SearchTablesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchTables operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchTables.</param>
+        /// 
+        /// <returns>Returns a  SearchTablesResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SearchTables">REST API Reference for SearchTables Operation</seealso>
+        SearchTablesResponse EndSearchTables(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  StartCrawler
 
 
@@ -4915,6 +5339,153 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  StartExportLabelsTaskRun
+
+
+        /// <summary>
+        /// Begins an asynchronous task to export all labeled data for a particular transform.
+        /// This task is the only label-related API call that is not part of the typical active
+        /// learning workflow. You typically use <code>StartExportLabelsTaskRun</code> when you
+        /// want to work with all of your existing labels at the same time, such as when you want
+        /// to remove or change labels that were previously submitted as truth. This API operation
+        /// accepts the <code>TransformId</code> whose labels you want to export and an Amazon
+        /// Simple Storage Service (Amazon S3) path to export the labels to. The operation returns
+        /// a <code>TaskRunId</code>. You can check on the status of your task run by calling
+        /// the <code>GetMLTaskRun</code> API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartExportLabelsTaskRun service method.</param>
+        /// 
+        /// <returns>The response from the StartExportLabelsTaskRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartExportLabelsTaskRun">REST API Reference for StartExportLabelsTaskRun Operation</seealso>
+        StartExportLabelsTaskRunResponse StartExportLabelsTaskRun(StartExportLabelsTaskRunRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartExportLabelsTaskRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartExportLabelsTaskRun operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartExportLabelsTaskRun
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartExportLabelsTaskRun">REST API Reference for StartExportLabelsTaskRun Operation</seealso>
+        IAsyncResult BeginStartExportLabelsTaskRun(StartExportLabelsTaskRunRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartExportLabelsTaskRun operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartExportLabelsTaskRun.</param>
+        /// 
+        /// <returns>Returns a  StartExportLabelsTaskRunResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartExportLabelsTaskRun">REST API Reference for StartExportLabelsTaskRun Operation</seealso>
+        StartExportLabelsTaskRunResponse EndStartExportLabelsTaskRun(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartImportLabelsTaskRun
+
+
+        /// <summary>
+        /// Enables you to provide additional labels (examples of truth) to be used to teach the
+        /// machine learning transform and improve its quality. This API operation is generally
+        /// used as part of the active learning workflow that starts with the <code>StartMLLabelingSetGenerationTaskRun</code>
+        /// call and that ultimately results in improving the quality of your machine learning
+        /// transform. 
+        /// 
+        ///  
+        /// <para>
+        /// After the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, AWS Glue machine
+        /// learning will have generated a series of questions for humans to answer. (Answering
+        /// these questions is often called 'labeling' in the machine learning workflows). In
+        /// the case of the <code>FindMatches</code> transform, these questions are of the form,
+        /// “What is the correct way to group these rows together into groups composed entirely
+        /// of matching records?” After the labeling process is finished, users upload their answers/labels
+        /// with a call to <code>StartImportLabelsTaskRun</code>. After <code>StartImportLabelsTaskRun</code>
+        /// finishes, all future runs of the machine learning transform use the new and improved
+        /// labels and perform a higher-quality transformation.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, <code>StartMLLabelingSetGenerationTaskRun</code> continually learns from
+        /// and combines all labels that you upload unless you set <code>Replace</code> to true.
+        /// If you set <code>Replace</code> to true, <code>StartImportLabelsTaskRun</code> deletes
+        /// and forgets all previously uploaded labels and learns only from the exact set that
+        /// you upload. Replacing labels can be helpful if you realize that you previously uploaded
+        /// incorrect labels, and you believe that they are having a negative effect on your transform
+        /// quality.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can check on the status of your task run by calling the <code>GetMLTaskRun</code>
+        /// operation. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartImportLabelsTaskRun service method.</param>
+        /// 
+        /// <returns>The response from the StartImportLabelsTaskRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartImportLabelsTaskRun">REST API Reference for StartImportLabelsTaskRun Operation</seealso>
+        StartImportLabelsTaskRunResponse StartImportLabelsTaskRun(StartImportLabelsTaskRunRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartImportLabelsTaskRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartImportLabelsTaskRun operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartImportLabelsTaskRun
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartImportLabelsTaskRun">REST API Reference for StartImportLabelsTaskRun Operation</seealso>
+        IAsyncResult BeginStartImportLabelsTaskRun(StartImportLabelsTaskRunRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartImportLabelsTaskRun operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartImportLabelsTaskRun.</param>
+        /// 
+        /// <returns>Returns a  StartImportLabelsTaskRunResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartImportLabelsTaskRun">REST API Reference for StartImportLabelsTaskRun Operation</seealso>
+        StartImportLabelsTaskRunResponse EndStartImportLabelsTaskRun(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  StartJobRun
 
 
@@ -4970,6 +5541,151 @@ namespace Amazon.Glue
         /// <returns>Returns a  StartJobRunResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartJobRun">REST API Reference for StartJobRun Operation</seealso>
         StartJobRunResponse EndStartJobRun(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartMLEvaluationTaskRun
+
+
+        /// <summary>
+        /// Starts a task to estimate the quality of the transform. 
+        /// 
+        ///  
+        /// <para>
+        /// When you provide label sets as examples of truth, AWS Glue machine learning uses some
+        /// of those examples to learn from them. The rest of the labels are used as a test to
+        /// estimate quality.
+        /// </para>
+        ///  
+        /// <para>
+        /// Returns a unique identifier for the run. You can call <code>GetMLTaskRun</code> to
+        /// get more information about the stats of the <code>EvaluationTaskRun</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMLEvaluationTaskRun service method.</param>
+        /// 
+        /// <returns>The response from the StartMLEvaluationTaskRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentRunsExceededException">
+        /// Too many jobs are being run concurrently.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.MLTransformNotReadyException">
+        /// The machine learning transform is not ready to run.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartMLEvaluationTaskRun">REST API Reference for StartMLEvaluationTaskRun Operation</seealso>
+        StartMLEvaluationTaskRunResponse StartMLEvaluationTaskRun(StartMLEvaluationTaskRunRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartMLEvaluationTaskRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartMLEvaluationTaskRun operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartMLEvaluationTaskRun
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartMLEvaluationTaskRun">REST API Reference for StartMLEvaluationTaskRun Operation</seealso>
+        IAsyncResult BeginStartMLEvaluationTaskRun(StartMLEvaluationTaskRunRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartMLEvaluationTaskRun operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartMLEvaluationTaskRun.</param>
+        /// 
+        /// <returns>Returns a  StartMLEvaluationTaskRunResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartMLEvaluationTaskRun">REST API Reference for StartMLEvaluationTaskRun Operation</seealso>
+        StartMLEvaluationTaskRunResponse EndStartMLEvaluationTaskRun(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartMLLabelingSetGenerationTaskRun
+
+
+        /// <summary>
+        /// Starts the active learning workflow for your machine learning transform to improve
+        /// the transform's quality by generating label sets and adding labels.
+        /// 
+        ///  
+        /// <para>
+        /// When the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, AWS Glue will
+        /// have generated a "labeling set" or a set of questions for humans to answer.
+        /// </para>
+        ///  
+        /// <para>
+        /// In the case of the <code>FindMatches</code> transform, these questions are of the
+        /// form, “What is the correct way to group these rows together into groups composed entirely
+        /// of matching records?” 
+        /// </para>
+        ///  
+        /// <para>
+        /// After the labeling process is finished, you can upload your labels with a call to
+        /// <code>StartImportLabelsTaskRun</code>. After <code>StartImportLabelsTaskRun</code>
+        /// finishes, all future runs of the machine learning transform will use the new and improved
+        /// labels and perform a higher-quality transformation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMLLabelingSetGenerationTaskRun service method.</param>
+        /// 
+        /// <returns>The response from the StartMLLabelingSetGenerationTaskRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentRunsExceededException">
+        /// Too many jobs are being run concurrently.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartMLLabelingSetGenerationTaskRun">REST API Reference for StartMLLabelingSetGenerationTaskRun Operation</seealso>
+        StartMLLabelingSetGenerationTaskRunResponse StartMLLabelingSetGenerationTaskRun(StartMLLabelingSetGenerationTaskRunRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartMLLabelingSetGenerationTaskRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartMLLabelingSetGenerationTaskRun operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartMLLabelingSetGenerationTaskRun
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartMLLabelingSetGenerationTaskRun">REST API Reference for StartMLLabelingSetGenerationTaskRun Operation</seealso>
+        IAsyncResult BeginStartMLLabelingSetGenerationTaskRun(StartMLLabelingSetGenerationTaskRunRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartMLLabelingSetGenerationTaskRun operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartMLLabelingSetGenerationTaskRun.</param>
+        /// 
+        /// <returns>Returns a  StartMLLabelingSetGenerationTaskRunResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartMLLabelingSetGenerationTaskRun">REST API Reference for StartMLLabelingSetGenerationTaskRun Operation</seealso>
+        StartMLLabelingSetGenerationTaskRunResponse EndStartMLLabelingSetGenerationTaskRun(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5739,6 +6455,69 @@ namespace Amazon.Glue
         /// <returns>Returns a  UpdateJobResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
         UpdateJobResponse EndUpdateJob(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateMLTransform
+
+
+        /// <summary>
+        /// Updates an existing machine learning transform. Call this operation to tune the algorithm
+        /// parameters to achieve better results.
+        /// 
+        ///  
+        /// <para>
+        /// After calling this operation, you can call the <code>StartMLEvaluationTaskRun</code>
+        /// operation to assess how well your new parameters achieved your goals (such as improving
+        /// the quality of your machine learning transform, or making it more cost-effective).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMLTransform service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMLTransform service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateMLTransform">REST API Reference for UpdateMLTransform Operation</seealso>
+        UpdateMLTransformResponse UpdateMLTransform(UpdateMLTransformRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMLTransform operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMLTransform operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMLTransform
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateMLTransform">REST API Reference for UpdateMLTransform Operation</seealso>
+        IAsyncResult BeginUpdateMLTransform(UpdateMLTransformRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateMLTransform operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMLTransform.</param>
+        /// 
+        /// <returns>Returns a  UpdateMLTransformResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateMLTransform">REST API Reference for UpdateMLTransform Operation</seealso>
+        UpdateMLTransformResponse EndUpdateMLTransform(IAsyncResult asyncResult);
 
         #endregion
         

@@ -59,11 +59,11 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-06-07";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/greengrass/definition/subscriptions/{SubscriptionDefinitionId}";
             if (!publicRequest.IsSetSubscriptionDefinitionId())
                 throw new AmazonGreengrassException("Request object does not have required field SubscriptionDefinitionId set");
-            uriResourcePath = uriResourcePath.Replace("{SubscriptionDefinitionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.SubscriptionDefinitionId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{SubscriptionDefinitionId}", StringUtils.FromString(publicRequest.SubscriptionDefinitionId));
+            request.ResourcePath = "/greengrass/definition/subscriptions/{SubscriptionDefinitionId}";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

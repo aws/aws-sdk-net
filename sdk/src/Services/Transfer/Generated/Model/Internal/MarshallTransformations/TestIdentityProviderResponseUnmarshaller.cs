@@ -57,6 +57,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     response.Message = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Response", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Response = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StatusCode", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

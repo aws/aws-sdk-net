@@ -59,11 +59,11 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "PATCH";
 
-            string uriResourcePath = "/rules/{ruleName}";
             if (!publicRequest.IsSetRuleName())
                 throw new AmazonIoTException("Request object does not have required field RuleName set");
-            uriResourcePath = uriResourcePath.Replace("{ruleName}", StringUtils.FromStringWithSlashEncoding(publicRequest.RuleName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{ruleName}", StringUtils.FromString(publicRequest.RuleName));
+            request.ResourcePath = "/rules/{ruleName}";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

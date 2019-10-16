@@ -61,7 +61,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetBucketName())
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "publicRequest.BucketName");
             uriResourcePath = uriResourcePath.Replace("{Bucket}", StringUtils.FromString(publicRequest.BucketName));
-            request.ResourcePath = uriResourcePath;
+			request.MarshallerVersion = 2;
+			request.ResourcePath = uriResourcePath;
 
 
             return request;

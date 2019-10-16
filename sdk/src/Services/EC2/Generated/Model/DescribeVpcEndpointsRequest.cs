@@ -57,8 +57,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vpc-endpoint-state</code>: The state of the endpoint. (<code>pending</code>
-        /// | <code>available</code> | <code>deleting</code> | <code>deleted</code>)
+        ///  <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code>
+        /// | <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>
+        /// | <code>rejected</code> | <code>failed</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>

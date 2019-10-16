@@ -25,6 +25,52 @@ namespace Amazon.AppStream
 {
 
     /// <summary>
+    /// Constants used for properties of type AccessEndpointType.
+    /// </summary>
+    public class AccessEndpointType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant STREAMING for AccessEndpointType
+        /// </summary>
+        public static readonly AccessEndpointType STREAMING = new AccessEndpointType("STREAMING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccessEndpointType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccessEndpointType FindValue(string value)
+        {
+            return FindValue<AccessEndpointType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccessEndpointType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Action.
     /// </summary>
     public class Action : ConstantClass
@@ -150,6 +196,10 @@ namespace Amazon.AppStream
         /// Constant DOMAIN_JOIN_INFO for FleetAttribute
         /// </summary>
         public static readonly FleetAttribute DOMAIN_JOIN_INFO = new FleetAttribute("DOMAIN_JOIN_INFO");
+        /// <summary>
+        /// Constant IAM_ROLE_ARN for FleetAttribute
+        /// </summary>
+        public static readonly FleetAttribute IAM_ROLE_ARN = new FleetAttribute("IAM_ROLE_ARN");
         /// <summary>
         /// Constant VPC_CONFIGURATION for FleetAttribute
         /// </summary>
@@ -289,6 +339,10 @@ namespace Amazon.AppStream
         /// </summary>
         public static readonly FleetErrorCode INVALID_SUBNET_CONFIGURATION = new FleetErrorCode("INVALID_SUBNET_CONFIGURATION");
         /// <summary>
+        /// Constant MACHINE_ROLE_IS_MISSING for FleetErrorCode
+        /// </summary>
+        public static readonly FleetErrorCode MACHINE_ROLE_IS_MISSING = new FleetErrorCode("MACHINE_ROLE_IS_MISSING");
+        /// <summary>
         /// Constant NETWORK_INTERFACE_LIMIT_EXCEEDED for FleetErrorCode
         /// </summary>
         public static readonly FleetErrorCode NETWORK_INTERFACE_LIMIT_EXCEEDED = new FleetErrorCode("NETWORK_INTERFACE_LIMIT_EXCEEDED");
@@ -296,6 +350,10 @@ namespace Amazon.AppStream
         /// Constant SECURITY_GROUPS_NOT_FOUND for FleetErrorCode
         /// </summary>
         public static readonly FleetErrorCode SECURITY_GROUPS_NOT_FOUND = new FleetErrorCode("SECURITY_GROUPS_NOT_FOUND");
+        /// <summary>
+        /// Constant STS_DISABLED_IN_REGION for FleetErrorCode
+        /// </summary>
+        public static readonly FleetErrorCode STS_DISABLED_IN_REGION = new FleetErrorCode("STS_DISABLED_IN_REGION");
         /// <summary>
         /// Constant SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES for FleetErrorCode
         /// </summary>
@@ -903,9 +961,17 @@ namespace Amazon.AppStream
     {
 
         /// <summary>
+        /// Constant ACCESS_ENDPOINTS for StackAttribute
+        /// </summary>
+        public static readonly StackAttribute ACCESS_ENDPOINTS = new StackAttribute("ACCESS_ENDPOINTS");
+        /// <summary>
         /// Constant FEEDBACK_URL for StackAttribute
         /// </summary>
         public static readonly StackAttribute FEEDBACK_URL = new StackAttribute("FEEDBACK_URL");
+        /// <summary>
+        /// Constant IAM_ROLE_ARN for StackAttribute
+        /// </summary>
+        public static readonly StackAttribute IAM_ROLE_ARN = new StackAttribute("IAM_ROLE_ARN");
         /// <summary>
         /// Constant REDIRECT_URL for StackAttribute
         /// </summary>

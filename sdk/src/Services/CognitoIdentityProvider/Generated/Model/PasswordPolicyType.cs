@@ -135,7 +135,19 @@ namespace Amazon.CognitoIdentityProvider.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TemporaryPasswordValidityDays.
+        /// Gets and sets the property TemporaryPasswordValidityDays. 
+        /// <para>
+        /// In the password policy you have set, refers to the number of days a temporary password
+        /// is valid. If the user does not sign-in during this time, their password will need
+        /// to be reset by an administrator.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you will
+        /// no longer be able to set the deprecated <code>UnusedAccountValidityDays</code> value
+        /// for that user pool.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=365)]
         public int TemporaryPasswordValidityDays

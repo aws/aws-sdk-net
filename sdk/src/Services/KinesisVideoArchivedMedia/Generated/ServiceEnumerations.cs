@@ -342,6 +342,10 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// Constant NEVER for HLSDiscontinuityMode
         /// </summary>
         public static readonly HLSDiscontinuityMode NEVER = new HLSDiscontinuityMode("NEVER");
+        /// <summary>
+        /// Constant ON_DISCONTINUITY for HLSDiscontinuityMode
+        /// </summary>
+        public static readonly HLSDiscontinuityMode ON_DISCONTINUITY = new HLSDiscontinuityMode("ON_DISCONTINUITY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

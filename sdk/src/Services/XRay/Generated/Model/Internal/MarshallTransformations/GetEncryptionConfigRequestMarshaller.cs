@@ -59,8 +59,8 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-04-12";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/EncryptionConfig";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/EncryptionConfig";
+            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -99,8 +99,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property StartTimeUtc. 
         /// <para>
-        /// The beginning of the time period. Note that audit information is retained for a limited
-        /// time (180 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".
+        /// The beginning of the time period. Audit information is retained for a limited time
+        /// (180 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -120,7 +120,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property TaskStatus. 
         /// <para>
         /// A filter to limit the output to audits with the specified completion status: can be
-        /// one of "IN_PROGRESS", "COMPLETED", "FAILED" or "CANCELED".
+        /// one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".
         /// </para>
         /// </summary>
         public AuditTaskStatus TaskStatus
@@ -199,8 +199,8 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  
         /// <para>
-        /// The beginning of the time period. Note that audit information is retained for a limited
-        /// time (180 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".
+        /// The beginning of the time period. Audit information is retained for a limited time
+        /// (180 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".
         /// </para>
         /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +

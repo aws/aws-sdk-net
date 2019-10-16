@@ -58,20 +58,20 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-03-31";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/2015-03-31/functions/{FunctionName}/policy/{StatementId}";
             if (!publicRequest.IsSetFunctionName())
                 throw new AmazonLambdaException("Request object does not have required field FunctionName set");
-            uriResourcePath = uriResourcePath.Replace("{FunctionName}", StringUtils.FromStringWithSlashEncoding(publicRequest.FunctionName));
+            request.AddPathResource("{FunctionName}", StringUtils.FromString(publicRequest.FunctionName));
             if (!publicRequest.IsSetStatementId())
                 throw new AmazonLambdaException("Request object does not have required field StatementId set");
-            uriResourcePath = uriResourcePath.Replace("{StatementId}", StringUtils.FromStringWithSlashEncoding(publicRequest.StatementId));
+            request.AddPathResource("{StatementId}", StringUtils.FromString(publicRequest.StatementId));
             
             if (publicRequest.IsSetQualifier())
                 request.Parameters.Add("Qualifier", StringUtils.FromString(publicRequest.Qualifier));
             
             if (publicRequest.IsSetRevisionId())
                 request.Parameters.Add("RevisionId", StringUtils.FromString(publicRequest.RevisionId));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2015-03-31/functions/{FunctionName}/policy/{StatementId}";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

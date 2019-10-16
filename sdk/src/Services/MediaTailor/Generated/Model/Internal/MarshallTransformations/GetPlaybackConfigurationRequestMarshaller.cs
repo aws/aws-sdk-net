@@ -58,11 +58,11 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-23";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/playbackConfiguration/{Name}";
             if (!publicRequest.IsSetName())
                 throw new AmazonMediaTailorException("Request object does not have required field Name set");
-            uriResourcePath = uriResourcePath.Replace("{Name}", StringUtils.FromStringWithSlashEncoding(publicRequest.Name));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{Name}", StringUtils.FromString(publicRequest.Name));
+            request.ResourcePath = "/playbackConfiguration/{Name}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

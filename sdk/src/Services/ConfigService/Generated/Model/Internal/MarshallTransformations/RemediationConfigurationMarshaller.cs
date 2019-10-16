@@ -45,10 +45,45 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RemediationConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetArn())
+            {
+                context.Writer.WritePropertyName("Arn");
+                context.Writer.Write(requestObject.Arn);
+            }
+
+            if(requestObject.IsSetAutomatic())
+            {
+                context.Writer.WritePropertyName("Automatic");
+                context.Writer.Write(requestObject.Automatic);
+            }
+
             if(requestObject.IsSetConfigRuleName())
             {
                 context.Writer.WritePropertyName("ConfigRuleName");
                 context.Writer.Write(requestObject.ConfigRuleName);
+            }
+
+            if(requestObject.IsSetCreatedByService())
+            {
+                context.Writer.WritePropertyName("CreatedByService");
+                context.Writer.Write(requestObject.CreatedByService);
+            }
+
+            if(requestObject.IsSetExecutionControls())
+            {
+                context.Writer.WritePropertyName("ExecutionControls");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ExecutionControlsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ExecutionControls, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetMaximumAutomaticAttempts())
+            {
+                context.Writer.WritePropertyName("MaximumAutomaticAttempts");
+                context.Writer.Write(requestObject.MaximumAutomaticAttempts);
             }
 
             if(requestObject.IsSetParameters())
@@ -74,6 +109,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ResourceType");
                 context.Writer.Write(requestObject.ResourceType);
+            }
+
+            if(requestObject.IsSetRetryAttemptSeconds())
+            {
+                context.Writer.WritePropertyName("RetryAttemptSeconds");
+                context.Writer.Write(requestObject.RetryAttemptSeconds);
             }
 
             if(requestObject.IsSetTargetId())

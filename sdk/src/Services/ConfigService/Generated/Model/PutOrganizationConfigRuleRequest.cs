@@ -29,7 +29,37 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the PutOrganizationConfigRule operation.
+    /// Adds or updates organization config rule for your entire organization evaluating whether
+    /// your AWS resources comply with your desired configurations. Only a master account
+    /// can create or update an organization config rule.
     /// 
+    ///  
+    /// <para>
+    /// This API enables organization service access through the <code>EnableAWSServiceAccess</code>
+    /// action and creates a service linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code>
+    /// in the master account of your organization. The service linked role is created only
+    /// when the role does not exist in the master account. AWS Config verifies the existence
+    /// of role with <code>GetRole</code> action.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use this action to create both custom AWS Config rules and AWS managed Config
+    /// rules. If you are adding a new custom AWS Config rule, you must first create AWS Lambda
+    /// function in the master account that the rule invokes to evaluate your resources. When
+    /// you use the <code>PutOrganizationConfigRule</code> action to add the rule to AWS Config,
+    /// you must specify the Amazon Resource Name (ARN) that AWS Lambda assigns to the function.
+    /// If you are adding an AWS managed Config rule, specify the rule's identifier for the
+    /// <code>RuleIdentifier</code> key.
+    /// </para>
+    ///  
+    /// <para>
+    /// The maximum number of organization config rules that AWS Config supports is 150.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// Specify either <code>OrganizationCustomRuleMetadata</code> or <code>OrganizationManagedRuleMetadata</code>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class PutOrganizationConfigRuleRequest : AmazonConfigServiceRequest
     {
@@ -39,7 +69,11 @@ namespace Amazon.ConfigService.Model
         private OrganizationManagedRuleMetadata _organizationManagedRuleMetadata;
 
         /// <summary>
-        /// Gets and sets the property ExcludedAccounts.
+        /// Gets and sets the property ExcludedAccounts. 
+        /// <para>
+        /// A comma-separated list of accounts that you want to exclude from an organization config
+        /// rule.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
         public List<string> ExcludedAccounts
@@ -55,7 +89,10 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OrganizationConfigRuleName.
+        /// Gets and sets the property OrganizationConfigRuleName. 
+        /// <para>
+        /// The name that you assign to an organization config rule.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
         public string OrganizationConfigRuleName
@@ -71,7 +108,10 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OrganizationCustomRuleMetadata.
+        /// Gets and sets the property OrganizationCustomRuleMetadata. 
+        /// <para>
+        /// An <code>OrganizationCustomRuleMetadata</code> object.
+        /// </para>
         /// </summary>
         public OrganizationCustomRuleMetadata OrganizationCustomRuleMetadata
         {
@@ -86,7 +126,10 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OrganizationManagedRuleMetadata.
+        /// Gets and sets the property OrganizationManagedRuleMetadata. 
+        /// <para>
+        /// An <code>OrganizationManagedRuleMetadata</code> object. 
+        /// </para>
         /// </summary>
         public OrganizationManagedRuleMetadata OrganizationManagedRuleMetadata
         {

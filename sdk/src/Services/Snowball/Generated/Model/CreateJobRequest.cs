@@ -151,7 +151,7 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property KmsKeyARN. 
         /// <para>
         /// The <code>KmsKeyARN</code> that you want to associate with this job. <code>KmsKeyARN</code>s
-        /// are created using the <a href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
+        /// are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
         /// AWS Key Management Service (KMS) API action.
         /// </para>
         /// </summary>
@@ -222,7 +222,7 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property RoleARN. 
         /// <para>
         /// The <code>RoleARN</code> that you want to associate with this job. <code>RoleArn</code>s
-        /// are created using the <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+        /// are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
         /// AWS Identity and Access Management (IAM) API action.
         /// </para>
         /// </summary>
@@ -302,8 +302,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property SnowballType. 
         /// <para>
-        /// The type of AWS Snowball device to use for this job. The only supported device types
-        /// for cluster jobs are <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
+        /// The type of AWS Snowball device to use for this job. Currently, the only supported
+        /// device type for cluster jobs is <code>EDGE</code>.
         /// </para>
         /// </summary>
         public SnowballType SnowballType

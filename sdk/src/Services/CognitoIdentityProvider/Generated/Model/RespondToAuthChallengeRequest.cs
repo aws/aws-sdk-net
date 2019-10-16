@@ -37,6 +37,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private ChallengeNameType _challengeName;
         private Dictionary<string, string> _challengeResponses = new Dictionary<string, string>();
         private string _clientId;
+        private Dictionary<string, string> _clientMetadata = new Dictionary<string, string>();
         private string _session;
         private UserContextDataType _userContextData;
 
@@ -88,22 +89,39 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The challenge responses. These are inputs corresponding to the value of <code>ChallengeName</code>,
         /// for example:
         /// </para>
-        ///  <ul> <li> 
+        ///  <note> 
         /// <para>
-        ///  <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code>
-        /// (if app client is configured with client secret).
+        ///  <code>SECRET_HASH</code> (if app client is configured with client secret) applies
+        /// to all inputs below (including <code>SOFTWARE_TOKEN_MFA</code>).
+        /// </para>
+        ///  </note> <ul> <li> 
+        /// <para>
+        ///  <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
-        /// <code>TIMESTAMP</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client
-        /// is configured with client secret).
+        /// <code>TIMESTAMP</code>, <code>USERNAME</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required
-        /// attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
-        /// with client secret). 
+        /// attributes, <code>USERNAME</code>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and <code>SOFTWARE_TOKEN_MFA_CODE</code>
+        /// are required attributes.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DEVICE_SRP_AUTH</code> requires <code>USERNAME</code>, <code>DEVICE_KEY</code>,
+        /// <code>SRP_A</code> (and <code>SECRET_HASH</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code>
+        /// requires plus <code>DEVICE_KEY</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -136,6 +154,65 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetClientId()
         {
             return this._clientId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientMetadata. 
+        /// <para>
+        /// A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You create custom workflows by assigning AWS Lambda functions to user pool triggers.
+        /// When you use the RespondToAuthChallenge API action, Amazon Cognito invokes any functions
+        /// that are assigned to the following triggers: <i>post authentication</i>, <i>pre token
+        /// generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and <i>verify
+        /// auth challenge</i>. When Amazon Cognito invokes any of these functions, it passes
+        /// a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code>
+        /// attribute, which provides the data that you assigned to the ClientMetadata parameter
+        /// in your RespondToAuthChallenge request. In your function code in AWS Lambda, you can
+        /// process the <code>clientMetadata</code> value to enhance your workflow for your specific
+        /// needs.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
+        /// User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon Cognito does not store the ClientMetadata value. This data is available only
+        /// to AWS Lambda triggers that are assigned to a user pool to support custom workflows.
+        /// If your user pool configuration does not include triggers, the ClientMetadata parameter
+        /// serves no purpose.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Cognito does not validate the ClientMetadata value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide
+        /// sensitive information.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        public Dictionary<string, string> ClientMetadata
+        {
+            get { return this._clientMetadata; }
+            set { this._clientMetadata = value; }
+        }
+
+        // Check to see if ClientMetadata property is set
+        internal bool IsSetClientMetadata()
+        {
+            return this._clientMetadata != null && this._clientMetadata.Count > 0; 
         }
 
         /// <summary>

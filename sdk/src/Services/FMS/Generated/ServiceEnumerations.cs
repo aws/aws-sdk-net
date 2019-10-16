@@ -147,6 +147,10 @@ namespace Amazon.FMS
         /// </summary>
         public static readonly DependentServiceName AWSSHIELD_ADVANCED = new DependentServiceName("AWSSHIELD_ADVANCED");
         /// <summary>
+        /// Constant AWSVPC for DependentServiceName
+        /// </summary>
+        public static readonly DependentServiceName AWSVPC = new DependentServiceName("AWSVPC");
+        /// <summary>
         /// Constant AWSWAF for DependentServiceName
         /// </summary>
         public static readonly DependentServiceName AWSWAF = new DependentServiceName("AWSWAF");
@@ -243,6 +247,18 @@ namespace Amazon.FMS
     {
 
         /// <summary>
+        /// Constant SECURITY_GROUPS_COMMON for SecurityServiceType
+        /// </summary>
+        public static readonly SecurityServiceType SECURITY_GROUPS_COMMON = new SecurityServiceType("SECURITY_GROUPS_COMMON");
+        /// <summary>
+        /// Constant SECURITY_GROUPS_CONTENT_AUDIT for SecurityServiceType
+        /// </summary>
+        public static readonly SecurityServiceType SECURITY_GROUPS_CONTENT_AUDIT = new SecurityServiceType("SECURITY_GROUPS_CONTENT_AUDIT");
+        /// <summary>
+        /// Constant SECURITY_GROUPS_USAGE_AUDIT for SecurityServiceType
+        /// </summary>
+        public static readonly SecurityServiceType SECURITY_GROUPS_USAGE_AUDIT = new SecurityServiceType("SECURITY_GROUPS_USAGE_AUDIT");
+        /// <summary>
         /// Constant SHIELD_ADVANCED for SecurityServiceType
         /// </summary>
         public static readonly SecurityServiceType SHIELD_ADVANCED = new SecurityServiceType("SHIELD_ADVANCED");
@@ -297,6 +313,10 @@ namespace Amazon.FMS
         /// </summary>
         public static readonly ViolationReason RESOURCE_INCORRECT_WEB_ACL = new ViolationReason("RESOURCE_INCORRECT_WEB_ACL");
         /// <summary>
+        /// Constant RESOURCE_MISSING_SECURITY_GROUP for ViolationReason
+        /// </summary>
+        public static readonly ViolationReason RESOURCE_MISSING_SECURITY_GROUP = new ViolationReason("RESOURCE_MISSING_SECURITY_GROUP");
+        /// <summary>
         /// Constant RESOURCE_MISSING_SHIELD_PROTECTION for ViolationReason
         /// </summary>
         public static readonly ViolationReason RESOURCE_MISSING_SHIELD_PROTECTION = new ViolationReason("RESOURCE_MISSING_SHIELD_PROTECTION");
@@ -304,6 +324,22 @@ namespace Amazon.FMS
         /// Constant RESOURCE_MISSING_WEB_ACL for ViolationReason
         /// </summary>
         public static readonly ViolationReason RESOURCE_MISSING_WEB_ACL = new ViolationReason("RESOURCE_MISSING_WEB_ACL");
+        /// <summary>
+        /// Constant RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION for ViolationReason
+        /// </summary>
+        public static readonly ViolationReason RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION = new ViolationReason("RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION");
+        /// <summary>
+        /// Constant RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP for ViolationReason
+        /// </summary>
+        public static readonly ViolationReason RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP = new ViolationReason("RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP");
+        /// <summary>
+        /// Constant SECURITY_GROUP_REDUNDANT for ViolationReason
+        /// </summary>
+        public static readonly ViolationReason SECURITY_GROUP_REDUNDANT = new ViolationReason("SECURITY_GROUP_REDUNDANT");
+        /// <summary>
+        /// Constant SECURITY_GROUP_UNUSED for ViolationReason
+        /// </summary>
+        public static readonly ViolationReason SECURITY_GROUP_UNUSED = new ViolationReason("SECURITY_GROUP_UNUSED");
         /// <summary>
         /// Constant WEB_ACL_MISSING_RULE_GROUP for ViolationReason
         /// </summary>

@@ -136,6 +136,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExtraHosts = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("firelensConfiguration", targetDepth))
+                {
+                    var unmarshaller = FirelensConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.FirelensConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("healthCheck", targetDepth))
                 {
                     var unmarshaller = HealthCheckUnmarshaller.Instance;

@@ -157,6 +157,11 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         ///  <i>Supported operators</i>: <code>EQUALS</code> 
         /// </para>
+        ///  
+        /// <para>
+        ///  <i>This filter will be ignored, as remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+        /// longer supported</a>.</i> 
+        /// </para>
         ///  </dd> </dl>
         /// </summary>
         public DeviceAttribute Attribute

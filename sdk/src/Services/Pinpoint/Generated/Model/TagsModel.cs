@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Specifies the tags (keys and values) for an application, campaign, or segment.
+    /// Specifies the tags (keys and values) for an application, campaign, message template,
+    /// or segment.
     /// </summary>
     public partial class TagsModel
     {
@@ -38,7 +39,8 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// A string-to-string map of key-value pairs that defines the tags for an application,
-        /// campaign, or segment. A project, campaign, or segment can have a maximum of 50 tags.
+        /// campaign, message template, or segment. Each project, campaign, message template,
+        /// or segment can have a maximum of 50 tags.
         /// </para>
         ///  
         /// <para>

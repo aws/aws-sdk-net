@@ -45,6 +45,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetFileSystemDataSource())
+            {
+                context.Writer.WritePropertyName("FileSystemDataSource");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FileSystemDataSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.FileSystemDataSource, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetS3DataSource())
             {
                 context.Writer.WritePropertyName("S3DataSource");

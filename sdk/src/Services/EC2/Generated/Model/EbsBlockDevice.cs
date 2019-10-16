@@ -43,7 +43,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DeleteOnTermination. 
         /// <para>
-        /// Indicates whether the EBS volume is deleted on instance termination.
+        /// Indicates whether the EBS volume is deleted on instance termination. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination">Preserving
+        /// Amazon EBS Volumes on Instance Termination</a> in the Amazon Elastic Compute Cloud
+        /// User Guide.
         /// </para>
         /// </summary>
         public bool DeleteOnTermination
@@ -207,12 +210,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VolumeType. 
         /// <para>
-        /// The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b>
-        /// property.
+        /// The volume type. If you set the type to <code>io1</code>, you must also specify the
+        /// IOPS that the volume supports.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>standard</code> 
+        /// Default: <code>gp2</code> 
         /// </para>
         /// </summary>
         public VolumeType VolumeType

@@ -4085,6 +4085,10 @@ namespace Amazon.MediaLive
         /// </summary>
         public static readonly H264RateControlMode CBR = new H264RateControlMode("CBR");
         /// <summary>
+        /// Constant MULTIPLEX for H264RateControlMode
+        /// </summary>
+        public static readonly H264RateControlMode MULTIPLEX = new H264RateControlMode("MULTIPLEX");
+        /// <summary>
         /// Constant QVBR for H264RateControlMode
         /// </summary>
         public static readonly H264RateControlMode QVBR = new H264RateControlMode("QVBR");
@@ -4472,6 +4476,720 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator H264TimecodeInsertionBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type H265AdaptiveQuantization.
+    /// </summary>
+    public class H265AdaptiveQuantization : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIGH for H265AdaptiveQuantization
+        /// </summary>
+        public static readonly H265AdaptiveQuantization HIGH = new H265AdaptiveQuantization("HIGH");
+        /// <summary>
+        /// Constant HIGHER for H265AdaptiveQuantization
+        /// </summary>
+        public static readonly H265AdaptiveQuantization HIGHER = new H265AdaptiveQuantization("HIGHER");
+        /// <summary>
+        /// Constant LOW for H265AdaptiveQuantization
+        /// </summary>
+        public static readonly H265AdaptiveQuantization LOW = new H265AdaptiveQuantization("LOW");
+        /// <summary>
+        /// Constant MAX for H265AdaptiveQuantization
+        /// </summary>
+        public static readonly H265AdaptiveQuantization MAX = new H265AdaptiveQuantization("MAX");
+        /// <summary>
+        /// Constant MEDIUM for H265AdaptiveQuantization
+        /// </summary>
+        public static readonly H265AdaptiveQuantization MEDIUM = new H265AdaptiveQuantization("MEDIUM");
+        /// <summary>
+        /// Constant OFF for H265AdaptiveQuantization
+        /// </summary>
+        public static readonly H265AdaptiveQuantization OFF = new H265AdaptiveQuantization("OFF");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H265AdaptiveQuantization(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H265AdaptiveQuantization FindValue(string value)
+        {
+            return FindValue<H265AdaptiveQuantization>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H265AdaptiveQuantization(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type H265AlternativeTransferFunction.
+    /// </summary>
+    public class H265AlternativeTransferFunction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INSERT for H265AlternativeTransferFunction
+        /// </summary>
+        public static readonly H265AlternativeTransferFunction INSERT = new H265AlternativeTransferFunction("INSERT");
+        /// <summary>
+        /// Constant OMIT for H265AlternativeTransferFunction
+        /// </summary>
+        public static readonly H265AlternativeTransferFunction OMIT = new H265AlternativeTransferFunction("OMIT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H265AlternativeTransferFunction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H265AlternativeTransferFunction FindValue(string value)
+        {
+            return FindValue<H265AlternativeTransferFunction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H265AlternativeTransferFunction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type H265ColorMetadata.
+    /// </summary>
+    public class H265ColorMetadata : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IGNORE for H265ColorMetadata
+        /// </summary>
+        public static readonly H265ColorMetadata IGNORE = new H265ColorMetadata("IGNORE");
+        /// <summary>
+        /// Constant INSERT for H265ColorMetadata
+        /// </summary>
+        public static readonly H265ColorMetadata INSERT = new H265ColorMetadata("INSERT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H265ColorMetadata(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H265ColorMetadata FindValue(string value)
+        {
+            return FindValue<H265ColorMetadata>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H265ColorMetadata(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type H265FlickerAq.
+    /// </summary>
+    public class H265FlickerAq : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for H265FlickerAq
+        /// </summary>
+        public static readonly H265FlickerAq DISABLED = new H265FlickerAq("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for H265FlickerAq
+        /// </summary>
+        public static readonly H265FlickerAq ENABLED = new H265FlickerAq("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H265FlickerAq(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H265FlickerAq FindValue(string value)
+        {
+            return FindValue<H265FlickerAq>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H265FlickerAq(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type H265GopSizeUnits.
+    /// </summary>
+    public class H265GopSizeUnits : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FRAMES for H265GopSizeUnits
+        /// </summary>
+        public static readonly H265GopSizeUnits FRAMES = new H265GopSizeUnits("FRAMES");
+        /// <summary>
+        /// Constant SECONDS for H265GopSizeUnits
+        /// </summary>
+        public static readonly H265GopSizeUnits SECONDS = new H265GopSizeUnits("SECONDS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H265GopSizeUnits(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H265GopSizeUnits FindValue(string value)
+        {
+            return FindValue<H265GopSizeUnits>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H265GopSizeUnits(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type H265Level.
+    /// </summary>
+    public class H265Level : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant H265_LEVEL_1 for H265Level
+        /// </summary>
+        public static readonly H265Level H265_LEVEL_1 = new H265Level("H265_LEVEL_1");
+        /// <summary>
+        /// Constant H265_LEVEL_2 for H265Level
+        /// </summary>
+        public static readonly H265Level H265_LEVEL_2 = new H265Level("H265_LEVEL_2");
+        /// <summary>
+        /// Constant H265_LEVEL_2_1 for H265Level
+        /// </summary>
+        public static readonly H265Level H265_LEVEL_2_1 = new H265Level("H265_LEVEL_2_1");
+        /// <summary>
+        /// Constant H265_LEVEL_3 for H265Level
+        /// </summary>
+        public static readonly H265Level H265_LEVEL_3 = new H265Level("H265_LEVEL_3");
+        /// <summary>
+        /// Constant H265_LEVEL_3_1 for H265Level
+        /// </summary>
+        public static readonly H265Level H265_LEVEL_3_1 = new H265Level("H265_LEVEL_3_1");
+        /// <summary>
+        /// Constant H265_LEVEL_4 for H265Level
+        /// </summary>
+        public static readonly H265Level H265_LEVEL_4 = new H265Level("H265_LEVEL_4");
+        /// <summary>
+        /// Constant H265_LEVEL_4_1 for H265Level
+        /// </summary>
+        public static readonly H265Level H265_LEVEL_4_1 = new H265Level("H265_LEVEL_4_1");
+        /// <summary>
+        /// Constant H265_LEVEL_5 for H265Level
+        /// </summary>
+        public static readonly H265Level H265_LEVEL_5 = new H265Level("H265_LEVEL_5");
+        /// <summary>
+        /// Constant H265_LEVEL_5_1 for H265Level
+        /// </summary>
+        public static readonly H265Level H265_LEVEL_5_1 = new H265Level("H265_LEVEL_5_1");
+        /// <summary>
+        /// Constant H265_LEVEL_5_2 for H265Level
+        /// </summary>
+        public static readonly H265Level H265_LEVEL_5_2 = new H265Level("H265_LEVEL_5_2");
+        /// <summary>
+        /// Constant H265_LEVEL_6 for H265Level
+        /// </summary>
+        public static readonly H265Level H265_LEVEL_6 = new H265Level("H265_LEVEL_6");
+        /// <summary>
+        /// Constant H265_LEVEL_6_1 for H265Level
+        /// </summary>
+        public static readonly H265Level H265_LEVEL_6_1 = new H265Level("H265_LEVEL_6_1");
+        /// <summary>
+        /// Constant H265_LEVEL_6_2 for H265Level
+        /// </summary>
+        public static readonly H265Level H265_LEVEL_6_2 = new H265Level("H265_LEVEL_6_2");
+        /// <summary>
+        /// Constant H265_LEVEL_AUTO for H265Level
+        /// </summary>
+        public static readonly H265Level H265_LEVEL_AUTO = new H265Level("H265_LEVEL_AUTO");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H265Level(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H265Level FindValue(string value)
+        {
+            return FindValue<H265Level>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H265Level(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type H265LookAheadRateControl.
+    /// </summary>
+    public class H265LookAheadRateControl : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIGH for H265LookAheadRateControl
+        /// </summary>
+        public static readonly H265LookAheadRateControl HIGH = new H265LookAheadRateControl("HIGH");
+        /// <summary>
+        /// Constant LOW for H265LookAheadRateControl
+        /// </summary>
+        public static readonly H265LookAheadRateControl LOW = new H265LookAheadRateControl("LOW");
+        /// <summary>
+        /// Constant MEDIUM for H265LookAheadRateControl
+        /// </summary>
+        public static readonly H265LookAheadRateControl MEDIUM = new H265LookAheadRateControl("MEDIUM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H265LookAheadRateControl(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H265LookAheadRateControl FindValue(string value)
+        {
+            return FindValue<H265LookAheadRateControl>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H265LookAheadRateControl(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type H265Profile.
+    /// </summary>
+    public class H265Profile : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MAIN for H265Profile
+        /// </summary>
+        public static readonly H265Profile MAIN = new H265Profile("MAIN");
+        /// <summary>
+        /// Constant MAIN_10BIT for H265Profile
+        /// </summary>
+        public static readonly H265Profile MAIN_10BIT = new H265Profile("MAIN_10BIT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H265Profile(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H265Profile FindValue(string value)
+        {
+            return FindValue<H265Profile>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H265Profile(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type H265RateControlMode.
+    /// </summary>
+    public class H265RateControlMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CBR for H265RateControlMode
+        /// </summary>
+        public static readonly H265RateControlMode CBR = new H265RateControlMode("CBR");
+        /// <summary>
+        /// Constant QVBR for H265RateControlMode
+        /// </summary>
+        public static readonly H265RateControlMode QVBR = new H265RateControlMode("QVBR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H265RateControlMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H265RateControlMode FindValue(string value)
+        {
+            return FindValue<H265RateControlMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H265RateControlMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type H265ScanType.
+    /// </summary>
+    public class H265ScanType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PROGRESSIVE for H265ScanType
+        /// </summary>
+        public static readonly H265ScanType PROGRESSIVE = new H265ScanType("PROGRESSIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H265ScanType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H265ScanType FindValue(string value)
+        {
+            return FindValue<H265ScanType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H265ScanType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type H265SceneChangeDetect.
+    /// </summary>
+    public class H265SceneChangeDetect : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for H265SceneChangeDetect
+        /// </summary>
+        public static readonly H265SceneChangeDetect DISABLED = new H265SceneChangeDetect("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for H265SceneChangeDetect
+        /// </summary>
+        public static readonly H265SceneChangeDetect ENABLED = new H265SceneChangeDetect("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H265SceneChangeDetect(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H265SceneChangeDetect FindValue(string value)
+        {
+            return FindValue<H265SceneChangeDetect>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H265SceneChangeDetect(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type H265Tier.
+    /// </summary>
+    public class H265Tier : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIGH for H265Tier
+        /// </summary>
+        public static readonly H265Tier HIGH = new H265Tier("HIGH");
+        /// <summary>
+        /// Constant MAIN for H265Tier
+        /// </summary>
+        public static readonly H265Tier MAIN = new H265Tier("MAIN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H265Tier(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H265Tier FindValue(string value)
+        {
+            return FindValue<H265Tier>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H265Tier(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type H265TimecodeInsertionBehavior.
+    /// </summary>
+    public class H265TimecodeInsertionBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for H265TimecodeInsertionBehavior
+        /// </summary>
+        public static readonly H265TimecodeInsertionBehavior DISABLED = new H265TimecodeInsertionBehavior("DISABLED");
+        /// <summary>
+        /// Constant PIC_TIMING_SEI for H265TimecodeInsertionBehavior
+        /// </summary>
+        public static readonly H265TimecodeInsertionBehavior PIC_TIMING_SEI = new H265TimecodeInsertionBehavior("PIC_TIMING_SEI");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H265TimecodeInsertionBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H265TimecodeInsertionBehavior FindValue(string value)
+        {
+            return FindValue<H265TimecodeInsertionBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H265TimecodeInsertionBehavior(string value)
         {
             return FindValue(value);
         }
@@ -7768,6 +8486,56 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Mp2CodingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MsSmoothH265PackagingType.
+    /// </summary>
+    public class MsSmoothH265PackagingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HEV1 for MsSmoothH265PackagingType
+        /// </summary>
+        public static readonly MsSmoothH265PackagingType HEV1 = new MsSmoothH265PackagingType("HEV1");
+        /// <summary>
+        /// Constant HVC1 for MsSmoothH265PackagingType
+        /// </summary>
+        public static readonly MsSmoothH265PackagingType HVC1 = new MsSmoothH265PackagingType("HVC1");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MsSmoothH265PackagingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MsSmoothH265PackagingType FindValue(string value)
+        {
+            return FindValue<MsSmoothH265PackagingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MsSmoothH265PackagingType(string value)
         {
             return FindValue(value);
         }

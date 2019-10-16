@@ -28,10 +28,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
-    /// Describes a system disk or an block storage disk.
+    /// Describes a system disk or a block storage disk.
     /// </summary>
     public partial class Disk
     {
+        private List<AddOn> _addOns = new List<AddOn>();
         private string _arn;
         private string _attachedTo;
         private string _attachmentState;
@@ -48,6 +49,24 @@ namespace Amazon.Lightsail.Model
         private DiskState _state;
         private string _supportCode;
         private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property AddOns. 
+        /// <para>
+        /// An array of objects representing the add-ons enabled on the disk.
+        /// </para>
+        /// </summary>
+        public List<AddOn> AddOns
+        {
+            get { return this._addOns; }
+            set { this._addOns = value; }
+        }
+
+        // Check to see if AddOns property is set
+        internal bool IsSetAddOns()
+        {
+            return this._addOns != null && this._addOns.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 

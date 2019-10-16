@@ -50,7 +50,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the Lambda function used to consolidate the annotations
         /// from individual workers into a label for a data object. For more information, see
-        /// <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
         /// Consolidation</a>.
         /// </para>
         /// </summary>

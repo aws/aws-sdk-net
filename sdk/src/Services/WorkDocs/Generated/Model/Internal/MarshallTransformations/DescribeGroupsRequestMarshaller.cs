@@ -58,7 +58,6 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-05-01";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/api/v1/groups";
             
             if (publicRequest.IsSetLimit())
                 request.Parameters.Add("limit", StringUtils.FromInt(publicRequest.Limit));
@@ -71,7 +70,8 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetSearchQuery())
                 request.Parameters.Add("searchQuery", StringUtils.FromString(publicRequest.SearchQuery));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/api/v1/groups";
+            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetAuthenticationToken())
                 request.Headers["Authentication"] = publicRequest.AuthenticationToken;

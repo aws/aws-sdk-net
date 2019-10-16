@@ -29,7 +29,8 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateApnsChannel operation.
-    /// Updates the APNs channel settings for an application.
+    /// Enables the APNs channel for an application or updates the status and settings of
+    /// the APNs channel for an application.
     /// </summary>
     public partial class UpdateApnsChannelRequest : AmazonPinpointRequest
     {

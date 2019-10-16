@@ -58,11 +58,11 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-15";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/restore-jobs/{restoreJobId}";
             if (!publicRequest.IsSetRestoreJobId())
                 throw new AmazonBackupException("Request object does not have required field RestoreJobId set");
-            uriResourcePath = uriResourcePath.Replace("{restoreJobId}", StringUtils.FromStringWithSlashEncoding(publicRequest.RestoreJobId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{restoreJobId}", StringUtils.FromString(publicRequest.RestoreJobId));
+            request.ResourcePath = "/restore-jobs/{restoreJobId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

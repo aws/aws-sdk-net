@@ -59,11 +59,11 @@ namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-05-13";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/endpoints/{EndpointName}/invocations";
             if (!publicRequest.IsSetEndpointName())
                 throw new AmazonSageMakerRuntimeException("Request object does not have required field EndpointName set");
-            uriResourcePath = uriResourcePath.Replace("{EndpointName}", StringUtils.FromStringWithSlashEncoding(publicRequest.EndpointName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{EndpointName}", StringUtils.FromString(publicRequest.EndpointName));
+            request.ResourcePath = "/endpoints/{EndpointName}/invocations";
+            request.MarshallerVersion = 2;
             request.ContentStream =  publicRequest.Body ?? new MemoryStream();
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);

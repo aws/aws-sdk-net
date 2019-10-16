@@ -46,9 +46,8 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The size of the Elastic Inference (EI) instance to use for the production variant.
         /// EI instances provide on-demand GPU computing for inference. For more information,
-        /// see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
-        /// Inference in Amazon SageMaker</a>. For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using
-        /// Elastic Inference in Amazon SageMaker</a>.
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+        /// Inference in Amazon SageMaker</a>.
         /// </para>
         /// </summary>
         public ProductionVariantAcceleratorType AcceleratorType

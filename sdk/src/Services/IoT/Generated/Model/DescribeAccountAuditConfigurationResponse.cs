@@ -76,13 +76,13 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The ARN of the role that grants permission to AWS IoT to access information about
-        /// your devices, policies, certificates and other items as necessary when performing
+        /// your devices, policies, certificates, and other items as required when performing
         /// an audit.
         /// </para>
         ///  
         /// <para>
-        /// On the first call to <code>UpdateAccountAuditConfiguration</code> this parameter is
-        /// required.
+        /// On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter
+        /// is required.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

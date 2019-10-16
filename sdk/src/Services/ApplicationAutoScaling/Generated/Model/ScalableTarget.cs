@@ -39,6 +39,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         private string _roleARN;
         private ScalableDimension _scalableDimension;
         private ServiceNamespace _serviceNamespace;
+        private SuspendedState _suspendedState;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -110,8 +111,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Spot fleet request - The resource type is <code>spot-fleet-request</code> and the
-        /// unique identifier is the Spot fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+        /// Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the
+        /// unique identifier is the Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -199,7 +200,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot
-        /// fleet request.
+        /// Fleet request.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -267,7 +268,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         /// The namespace of the AWS service that provides the resource or <code>custom-resource</code>
         /// for a resource provided by your own application or service. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
         /// Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
@@ -282,6 +283,21 @@ namespace Amazon.ApplicationAutoScaling.Model
         internal bool IsSetServiceNamespace()
         {
             return this._serviceNamespace != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SuspendedState.
+        /// </summary>
+        public SuspendedState SuspendedState
+        {
+            get { return this._suspendedState; }
+            set { this._suspendedState = value; }
+        }
+
+        // Check to see if SuspendedState property is set
+        internal bool IsSetSuspendedState()
+        {
+            return this._suspendedState != null;
         }
 
     }

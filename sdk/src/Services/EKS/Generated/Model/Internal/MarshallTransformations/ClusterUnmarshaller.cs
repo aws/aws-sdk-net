@@ -94,6 +94,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("identity", targetDepth))
+                {
+                    var unmarshaller = IdentityUnmarshaller.Instance;
+                    unmarshalledObject.Identity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("logging", targetDepth))
                 {
                     var unmarshaller = LoggingUnmarshaller.Instance;
@@ -128,6 +134,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("tags", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("version", targetDepth))

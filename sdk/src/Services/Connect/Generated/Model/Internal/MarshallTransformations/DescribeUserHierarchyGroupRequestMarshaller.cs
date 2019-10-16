@@ -58,14 +58,14 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-08";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/user-hierarchy-groups/{InstanceId}/{HierarchyGroupId}";
             if (!publicRequest.IsSetHierarchyGroupId())
                 throw new AmazonConnectException("Request object does not have required field HierarchyGroupId set");
-            uriResourcePath = uriResourcePath.Replace("{HierarchyGroupId}", StringUtils.FromStringWithSlashEncoding(publicRequest.HierarchyGroupId));
+            request.AddPathResource("{HierarchyGroupId}", StringUtils.FromString(publicRequest.HierarchyGroupId));
             if (!publicRequest.IsSetInstanceId())
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
-            uriResourcePath = uriResourcePath.Replace("{InstanceId}", StringUtils.FromStringWithSlashEncoding(publicRequest.InstanceId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
+            request.ResourcePath = "/user-hierarchy-groups/{InstanceId}/{HierarchyGroupId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

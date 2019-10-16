@@ -58,11 +58,11 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-27";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/detector-models/{detectorModelName}";
             if (!publicRequest.IsSetDetectorModelName())
                 throw new AmazonIoTEventsException("Request object does not have required field DetectorModelName set");
-            uriResourcePath = uriResourcePath.Replace("{detectorModelName}", StringUtils.FromStringWithSlashEncoding(publicRequest.DetectorModelName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{detectorModelName}", StringUtils.FromString(publicRequest.DetectorModelName));
+            request.ResourcePath = "/detector-models/{detectorModelName}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -183,7 +183,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  
         /// <para>
         /// [Network Load Balancers] You can specify subnets from one or more Availability Zones.
-        /// You can specify one Elastic IP address per subnet.
+        /// You can specify one Elastic IP address per subnet if you need static IP addresses
+        /// for your load balancer.
         /// </para>
         /// </summary>
         public List<SubnetMapping> SubnetMappings

@@ -63,6 +63,12 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                     response.ClientRequestToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dataSources", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DataSource, DataSourceUnmarshaller>(DataSourceUnmarshaller.Instance);
+                    response.DataSources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("failureBehavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -99,6 +105,12 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                     response.LastUpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("loggingConfig", targetDepth))
+                {
+                    var unmarshaller = LoggingConfigUnmarshaller.Instance;
+                    response.LoggingConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("maxJobDurationInSeconds", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
@@ -109,6 +121,12 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("networkInterface", targetDepth))
+                {
+                    var unmarshaller = NetworkInterfaceUnmarshaller.Instance;
+                    response.NetworkInterface = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("outputLocation", targetDepth))

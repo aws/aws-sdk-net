@@ -29,7 +29,7 @@ namespace Amazon.RAM.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Adds the specified tags to the specified resource share.
+    /// Adds the specified tags to the specified resource share that you own.
     /// </summary>
     public partial class TagResourceRequest : AmazonRAMRequest
     {

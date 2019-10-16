@@ -59,11 +59,11 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/streams/{streamId}";
             if (!publicRequest.IsSetStreamId())
                 throw new AmazonIoTException("Request object does not have required field StreamId set");
-            uriResourcePath = uriResourcePath.Replace("{streamId}", StringUtils.FromStringWithSlashEncoding(publicRequest.StreamId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{streamId}", StringUtils.FromString(publicRequest.StreamId));
+            request.ResourcePath = "/streams/{streamId}";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

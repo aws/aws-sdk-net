@@ -695,6 +695,54 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  GetBlockPublicAccessConfiguration
+
+
+        /// <summary>
+        /// Returns the Amazon EMR block public access configuration for your AWS account in the
+        /// current Region. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure
+        /// Block Public Access for Amazon EMR</a> in the <i>Amazon EMR Management Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBlockPublicAccessConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetBlockPublicAccessConfiguration service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetBlockPublicAccessConfiguration">REST API Reference for GetBlockPublicAccessConfiguration Operation</seealso>
+        GetBlockPublicAccessConfigurationResponse GetBlockPublicAccessConfiguration(GetBlockPublicAccessConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBlockPublicAccessConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBlockPublicAccessConfiguration operation on AmazonElasticMapReduceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBlockPublicAccessConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetBlockPublicAccessConfiguration">REST API Reference for GetBlockPublicAccessConfiguration Operation</seealso>
+        IAsyncResult BeginGetBlockPublicAccessConfiguration(GetBlockPublicAccessConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBlockPublicAccessConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBlockPublicAccessConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetBlockPublicAccessConfigurationResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetBlockPublicAccessConfiguration">REST API Reference for GetBlockPublicAccessConfiguration Operation</seealso>
+        GetBlockPublicAccessConfigurationResponse EndGetBlockPublicAccessConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListBootstrapActions
 
 
@@ -1255,6 +1303,54 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  PutBlockPublicAccessConfiguration
+
+
+        /// <summary>
+        /// Creates or updates an Amazon EMR block public access configuration for your AWS account
+        /// in the current Region. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure
+        /// Block Public Access for Amazon EMR</a> in the <i>Amazon EMR Management Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBlockPublicAccessConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutBlockPublicAccessConfiguration service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutBlockPublicAccessConfiguration">REST API Reference for PutBlockPublicAccessConfiguration Operation</seealso>
+        PutBlockPublicAccessConfigurationResponse PutBlockPublicAccessConfiguration(PutBlockPublicAccessConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBlockPublicAccessConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBlockPublicAccessConfiguration operation on AmazonElasticMapReduceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBlockPublicAccessConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutBlockPublicAccessConfiguration">REST API Reference for PutBlockPublicAccessConfiguration Operation</seealso>
+        IAsyncResult BeginPutBlockPublicAccessConfiguration(PutBlockPublicAccessConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutBlockPublicAccessConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBlockPublicAccessConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutBlockPublicAccessConfigurationResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutBlockPublicAccessConfiguration">REST API Reference for PutBlockPublicAccessConfiguration Operation</seealso>
+        PutBlockPublicAccessConfigurationResponse EndPutBlockPublicAccessConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  RemoveAutoScalingPolicy
 
 
@@ -1500,11 +1596,16 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
+        /// <i>This member will be deprecated.</i> 
+        /// 
+        ///  
+        /// <para>
         /// Sets whether all AWS Identity and Access Management (IAM) users under your account
         /// can access the specified clusters (job flows). This action works on running clusters.
         /// You can also set the visibility of a cluster when you launch it using the <code>VisibleToAllUsers</code>
         /// parameter of <a>RunJobFlow</a>. The SetVisibleToAllUsers action can be called only
         /// by an IAM user who created the cluster or the AWS account that owns the cluster.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetVisibleToAllUsers service method.</param>
         /// 

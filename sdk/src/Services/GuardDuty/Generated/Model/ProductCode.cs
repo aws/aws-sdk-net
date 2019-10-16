@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// 
+    /// Contains information about the product code.
     /// </summary>
     public partial class ProductCode
     {

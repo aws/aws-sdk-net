@@ -70,15 +70,13 @@ namespace Amazon.DirectConnect.Model
         private string _lagName;
         private string _location;
         private int? _numberOfConnections;
+        private string _providerName;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property ChildConnectionTags. 
         /// <para>
-        /// The tags to assign to the child connections of the LAG. Only newly created child connections
-        /// as the result of creating a LAG connection are assigned the provided tags. The tags
-        /// are not assigned to an existing connection that is provided via the “connectionId”
-        /// parameter that will be migrated to the LAG.
+        /// The tags to associate with the automtically created LAGs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -191,9 +189,27 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProviderName. 
+        /// <para>
+        /// The name of the service provider associated with the LAG.
+        /// </para>
+        /// </summary>
+        public string ProviderName
+        {
+            get { return this._providerName; }
+            set { this._providerName = value; }
+        }
+
+        // Check to see if ProviderName property is set
+        internal bool IsSetProviderName()
+        {
+            return this._providerName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to assign to the link aggregation group (LAG).
+        /// The tags to associate with the LAG.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

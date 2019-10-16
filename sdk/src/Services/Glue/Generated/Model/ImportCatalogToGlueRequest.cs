@@ -29,7 +29,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportCatalogToGlue operation.
-    /// Imports an existing Athena Data Catalog to AWS Glue
+    /// Imports an existing Amazon Athena Data Catalog to AWS Glue
     /// </summary>
     public partial class ImportCatalogToGlueRequest : AmazonGlueRequest
     {

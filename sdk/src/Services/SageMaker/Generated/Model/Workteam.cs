@@ -117,7 +117,10 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NotificationConfiguration.
+        /// Gets and sets the property NotificationConfiguration. 
+        /// <para>
+        /// Configures SNS notifications of available or expiring work items for work teams.
+        /// </para>
         /// </summary>
         public NotificationConfiguration NotificationConfiguration
         {

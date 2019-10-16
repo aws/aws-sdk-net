@@ -81,7 +81,8 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property PageSize. 
         /// <para>
         /// The maximum number of items to include in each page of a paginated response. This
-        /// parameter is currently not supported by the App Metrics and Campaign Metrics resources.
+        /// parameter is currently not supported by the Application Metrics and Campaign Metrics
+        /// resources.
         /// </para>
         /// </summary>
         public string PageSize

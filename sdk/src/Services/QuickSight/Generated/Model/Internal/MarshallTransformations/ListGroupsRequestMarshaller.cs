@@ -58,20 +58,20 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-01";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/accounts/{AwsAccountId}/namespaces/{Namespace}/groups";
             if (!publicRequest.IsSetAwsAccountId())
                 throw new AmazonQuickSightException("Request object does not have required field AwsAccountId set");
-            uriResourcePath = uriResourcePath.Replace("{AwsAccountId}", StringUtils.FromStringWithSlashEncoding(publicRequest.AwsAccountId));
+            request.AddPathResource("{AwsAccountId}", StringUtils.FromString(publicRequest.AwsAccountId));
             if (!publicRequest.IsSetNamespace())
                 throw new AmazonQuickSightException("Request object does not have required field Namespace set");
-            uriResourcePath = uriResourcePath.Replace("{Namespace}", StringUtils.FromStringWithSlashEncoding(publicRequest.Namespace));
+            request.AddPathResource("{Namespace}", StringUtils.FromString(publicRequest.Namespace));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("max-results", StringUtils.FromInt(publicRequest.MaxResults));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("next-token", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/accounts/{AwsAccountId}/namespaces/{Namespace}/groups";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

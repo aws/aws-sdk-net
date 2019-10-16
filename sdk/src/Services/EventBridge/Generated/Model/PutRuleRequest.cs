@@ -178,6 +178,11 @@ namespace Amazon.EventBridge.Model
         /// <para>
         /// The name of the rule that you're creating or updating.
         /// </para>
+        ///  
+        /// <para>
+        /// A rule can't have the same name as another rule in the same Region or on the same
+        /// event bus.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
         public string Name

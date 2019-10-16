@@ -58,7 +58,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/rules";
             
             if (publicRequest.IsSetMarker())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.Marker));
@@ -71,7 +70,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetTopic())
                 request.Parameters.Add("topic", StringUtils.FromString(publicRequest.Topic));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/rules";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -58,11 +58,11 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-26";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/v1/email/dedicated-ip-pools/{PoolName}";
             if (!publicRequest.IsSetPoolName())
                 throw new AmazonPinpointEmailException("Request object does not have required field PoolName set");
-            uriResourcePath = uriResourcePath.Replace("{PoolName}", StringUtils.FromStringWithSlashEncoding(publicRequest.PoolName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{PoolName}", StringUtils.FromString(publicRequest.PoolName));
+            request.ResourcePath = "/v1/email/dedicated-ip-pools/{PoolName}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

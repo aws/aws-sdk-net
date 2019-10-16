@@ -51,7 +51,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Specified in Universal Coordinated Time (UTC).
+        /// Specified in Coordinated Universal Time (UTC).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -145,10 +145,11 @@ namespace Amazon.Lightsail.Model
         /// is specified, the log event starts from the head of the log. If <code>false</code>
         /// is specified, the log event starts from the tail of the log.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// Default: <code>false</code> 
+        /// For PostgreSQL, the default value of <code>false</code> is the only option available.
         /// </para>
+        ///  </note>
         /// </summary>
         public bool StartFromHead
         {
@@ -173,7 +174,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Specified in Universal Coordinated Time (UTC).
+        /// Specified in Coordinated Universal Time (UTC).
         /// </para>
         ///  </li> <li> 
         /// <para>

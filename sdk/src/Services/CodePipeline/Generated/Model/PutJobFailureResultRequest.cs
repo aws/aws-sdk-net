@@ -29,8 +29,8 @@ namespace Amazon.CodePipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the PutJobFailureResult operation.
-    /// Represents the failure of a job as returned to the pipeline by a job worker. Only
-    /// used for custom actions.
+    /// Represents the failure of a job as returned to the pipeline by a job worker. Used
+    /// for custom actions only.
     /// </summary>
     public partial class PutJobFailureResultRequest : AmazonCodePipelineRequest
     {

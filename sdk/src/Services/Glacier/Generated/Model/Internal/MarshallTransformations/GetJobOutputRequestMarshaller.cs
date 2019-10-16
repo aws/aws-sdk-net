@@ -58,15 +58,15 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-06-01";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/{accountId}/vaults/{vaultName}/jobs/{jobId}/output";
-            uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromStringWithSlashEncoding(publicRequest.AccountId) : string.Empty);
+            request.AddPathResource("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
             if (!publicRequest.IsSetJobId())
                 throw new AmazonGlacierException("Request object does not have required field JobId set");
-            uriResourcePath = uriResourcePath.Replace("{jobId}", StringUtils.FromStringWithSlashEncoding(publicRequest.JobId));
+            request.AddPathResource("{jobId}", StringUtils.FromString(publicRequest.JobId));
             if (!publicRequest.IsSetVaultName())
                 throw new AmazonGlacierException("Request object does not have required field VaultName set");
-            uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromStringWithSlashEncoding(publicRequest.VaultName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{vaultName}", StringUtils.FromString(publicRequest.VaultName));
+            request.ResourcePath = "/{accountId}/vaults/{vaultName}/jobs/{jobId}/output";
+            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetRange())
                 request.Headers["Range"] = publicRequest.Range;

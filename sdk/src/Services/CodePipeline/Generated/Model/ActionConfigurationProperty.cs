@@ -43,7 +43,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the action configuration property that will be displayed to users.
+        /// The description of the action configuration property that is displayed to users.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=160)]
@@ -100,14 +100,14 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Queryable. 
         /// <para>
-        /// Indicates that the property will be used in conjunction with <code>PollForJobs</code>.
-        /// When creating a custom action, an action can have up to one queryable property. If
-        /// it has one, that property must be both required and not secret.
+        /// Indicates that the property is used with <code>PollForJobs</code>. When creating a
+        /// custom action, an action can have up to one queryable property. If it has one, that
+        /// property must be both required and not secret.
         /// </para>
         ///  
         /// <para>
         /// If you create a pipeline with a custom action type, and that custom action contains
-        /// a queryable property, the value for that configuration property is subject to additional
+        /// a queryable property, the value for that configuration property is subject to other
         /// restrictions. The value must be less than or equal to twenty (20) characters. The
         /// value can contain only alphanumeric characters, underscores, and hyphens.
         /// </para>
@@ -153,7 +153,7 @@ namespace Amazon.CodePipeline.Model
         ///  
         /// <para>
         /// When updating a pipeline, passing * * * * * without changing any other values of the
-        /// action will preserve the prior value of the secret.
+        /// action preserves the previous value of the secret.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

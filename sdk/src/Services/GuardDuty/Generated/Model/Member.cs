@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// 
+    /// Continas information about the member account
     /// </summary>
     public partial class Member
     {

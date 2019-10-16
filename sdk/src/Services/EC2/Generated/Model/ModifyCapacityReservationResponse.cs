@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Return. 
         /// <para>
-        /// Information about the Capacity Reservation.
+        /// Returns <code>true</code> if the request succeeds; otherwise, it returns an error.
         /// </para>
         /// </summary>
         public bool Return

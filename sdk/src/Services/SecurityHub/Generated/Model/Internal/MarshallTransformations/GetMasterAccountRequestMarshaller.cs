@@ -58,8 +58,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-26";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/master";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/master";
+            request.MarshallerVersion = 2;
 
             return request;
         }

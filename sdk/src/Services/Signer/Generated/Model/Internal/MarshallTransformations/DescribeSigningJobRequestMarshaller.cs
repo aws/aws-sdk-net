@@ -58,11 +58,11 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-25";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/signing-jobs/{jobId}";
             if (!publicRequest.IsSetJobId())
                 throw new AmazonSignerException("Request object does not have required field JobId set");
-            uriResourcePath = uriResourcePath.Replace("{jobId}", StringUtils.FromStringWithSlashEncoding(publicRequest.JobId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{jobId}", StringUtils.FromString(publicRequest.JobId));
+            request.ResourcePath = "/signing-jobs/{jobId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -38,7 +38,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SmsAuthenticationMessage. 
         /// <para>
-        /// The SMS authentication message.
+        /// The SMS authentication message that will be sent to users with the code they need
+        /// to sign in. The message must contain the ‘{####}’ placeholder, which will be replaced
+        /// with the code. If the message is not included, and default message will be used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=140)]

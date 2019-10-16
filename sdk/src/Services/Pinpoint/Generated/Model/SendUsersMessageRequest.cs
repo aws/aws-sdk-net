@@ -35,6 +35,7 @@ namespace Amazon.Pinpoint.Model
     {
         private Dictionary<string, string> _context = new Dictionary<string, string>();
         private DirectMessageConfiguration _messageConfiguration;
+        private TemplateConfiguration _templateConfiguration;
         private string _traceId;
         private Dictionary<string, EndpointSendConfiguration> _users = new Dictionary<string, EndpointSendConfiguration>();
 
@@ -77,6 +78,24 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetMessageConfiguration()
         {
             return this._messageConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateConfiguration. 
+        /// <para>
+        /// The message template to use for the message.
+        /// </para>
+        /// </summary>
+        public TemplateConfiguration TemplateConfiguration
+        {
+            get { return this._templateConfiguration; }
+            set { this._templateConfiguration = value; }
+        }
+
+        // Check to see if TemplateConfiguration property is set
+        internal bool IsSetTemplateConfiguration()
+        {
+            return this._templateConfiguration != null;
         }
 
         /// <summary>

@@ -35,6 +35,7 @@ namespace Amazon.AlexaForBusiness.Model
         private string _address;
         private DistanceUnit _distanceUnit;
         private bool? _isDefault;
+        private string _locale;
         private string _profileArn;
         private string _profileName;
         private TemperatureUnit _temperatureUnit;
@@ -94,6 +95,25 @@ namespace Amazon.AlexaForBusiness.Model
         internal bool IsSetIsDefault()
         {
             return this._isDefault.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Locale. 
+        /// <para>
+        /// The locale of a room profile.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Locale
+        {
+            get { return this._locale; }
+            set { this._locale = value; }
+        }
+
+        // Check to see if Locale property is set
+        internal bool IsSetLocale()
+        {
+            return this._locale != null;
         }
 
         /// <summary>

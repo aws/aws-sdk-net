@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// 
+    /// Contains information about the service.
     /// </summary>
     public partial class Service
     {
@@ -38,6 +38,7 @@ namespace Amazon.GuardDuty.Model
         private string _detectorId;
         private string _eventFirstSeen;
         private string _eventLastSeen;
+        private Evidence _evidence;
         private string _resourceRole;
         private string _serviceName;
         private string _userFeedback;
@@ -149,6 +150,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetEventLastSeen()
         {
             return this._eventLastSeen != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Evidence. 
+        /// <para>
+        /// An evidence object associated with the service.
+        /// </para>
+        /// </summary>
+        public Evidence Evidence
+        {
+            get { return this._evidence; }
+            set { this._evidence = value; }
+        }
+
+        // Check to see if Evidence property is set
+        internal bool IsSetEvidence()
+        {
+            return this._evidence != null;
         }
 
         /// <summary>

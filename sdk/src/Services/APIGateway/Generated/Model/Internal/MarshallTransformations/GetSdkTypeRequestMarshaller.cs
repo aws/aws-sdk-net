@@ -58,11 +58,11 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/sdktypes/{sdktype_id}";
             if (!publicRequest.IsSetId())
                 throw new AmazonAPIGatewayException("Request object does not have required field Id set");
-            uriResourcePath = uriResourcePath.Replace("{sdktype_id}", StringUtils.FromStringWithSlashEncoding(publicRequest.Id));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{sdktype_id}", StringUtils.FromString(publicRequest.Id));
+            request.ResourcePath = "/sdktypes/{sdktype_id}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -97,6 +97,8 @@
       <Directory>$(ProjectDir)/src/Services/elastictranscoder/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/eventbridge/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/fms/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/forecastqueryservice/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/forecastservice/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/fsx/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/gamelift/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/glacier/bin/Release/net45/</Directory>
@@ -126,6 +128,7 @@
       <Directory>$(ProjectDir)/src/Services/kinesisvideo/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/kinesisvideoarchivedmedia/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/kinesisvideomedia/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/lakeformation/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/lambda/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/lex/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/lexmodelbuildingservice/bin/Release/net45/</Directory>
@@ -161,6 +164,8 @@
       <Directory>$(ProjectDir)/src/Services/pinpointsmsvoice/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/polly/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/pricing/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/qldb/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/qldbsession/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/quicksight/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/ram/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/rds/bin/Release/net45/</Directory>
@@ -205,6 +210,7 @@
       <Directory>$(ProjectDir)/src/Services/workdocs/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/worklink/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/workmail/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/workmailmessageflow/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/workspaces/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/xray/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Core/bin/Release/net45/</Directory>
@@ -284,6 +290,8 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ElasticTranscoder.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.EventBridge.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.FMS.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ForecastQueryService.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ForecastService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.FSx.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.GameLift.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Glacier.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -313,6 +321,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.KinesisVideo.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.KinesisVideoArchivedMedia.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.KinesisVideoMedia.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.LakeFormation.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Lambda.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Lex.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.LexModelBuildingService.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -348,6 +357,8 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.PinpointSMSVoice.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Polly.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Pricing.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.QLDB.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.QLDBSession.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.QuickSight.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.RAM.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.RDS.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -392,6 +403,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.WorkDocs.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.WorkLink.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.WorkMail.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.WorkMailMessageFlow.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.WorkSpaces.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.XRay.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Core.dll" Analyze="True" AnalyzeAllChildren="False">

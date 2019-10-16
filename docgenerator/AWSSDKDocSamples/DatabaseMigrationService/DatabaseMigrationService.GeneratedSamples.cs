@@ -161,6 +161,21 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
             #endregion
         }
 
+        public void DatabaseMigrationServiceDeleteConnection()
+        {
+            #region delete-connection-1481751957981
+
+            var response = client.DeleteConnection(new DeleteConnectionRequest 
+            {
+                EndpointArn = "arn:aws:dms:us-east-1:123456789012:endpoint:RAAR3R22XSH46S3PWLC3NJAWKM",
+                ReplicationInstanceArn = "arn:aws:dms:us-east-1:123456789012:rep:6UTDJGBOUS3VI3SUWA66XFJCJQ"
+            });
+
+            Connection connection = response.Connection;
+
+            #endregion
+        }
+
         public void DatabaseMigrationServiceDeleteEndpoint()
         {
             #region delete-endpoint-1481752425530

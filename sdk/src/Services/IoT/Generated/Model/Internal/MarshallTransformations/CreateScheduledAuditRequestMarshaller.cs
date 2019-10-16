@@ -59,11 +59,11 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/audit/scheduledaudits/{scheduledAuditName}";
             if (!publicRequest.IsSetScheduledAuditName())
                 throw new AmazonIoTException("Request object does not have required field ScheduledAuditName set");
-            uriResourcePath = uriResourcePath.Replace("{scheduledAuditName}", StringUtils.FromStringWithSlashEncoding(publicRequest.ScheduledAuditName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{scheduledAuditName}", StringUtils.FromString(publicRequest.ScheduledAuditName));
+            request.ResourcePath = "/audit/scheduledaudits/{scheduledAuditName}";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

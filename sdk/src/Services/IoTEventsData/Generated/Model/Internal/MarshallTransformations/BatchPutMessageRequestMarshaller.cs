@@ -59,8 +59,8 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-23";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/inputs/messages";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/inputs/messages";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

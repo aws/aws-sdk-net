@@ -135,6 +135,10 @@ namespace Amazon.MediaConnect
     {
 
         /// <summary>
+        /// Constant Rist for Protocol
+        /// </summary>
+        public static readonly Protocol Rist = new Protocol("rist");
+        /// <summary>
         /// Constant Rtp for Protocol
         /// </summary>
         public static readonly Protocol Rtp = new Protocol("rtp");

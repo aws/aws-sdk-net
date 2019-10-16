@@ -58,14 +58,14 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/principals/things";
             
             if (publicRequest.IsSetMarker())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.Marker));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/principals/things";
+            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetPrincipal())
                 request.Headers["x-amzn-principal"] = publicRequest.Principal;

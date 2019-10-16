@@ -67,6 +67,7 @@ namespace Amazon.DirectConnect.Model
         private string _interconnectName;
         private string _lagId;
         private string _location;
+        private string _providerName;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -145,9 +146,27 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProviderName. 
+        /// <para>
+        /// The name of the service provider associated with the interconnect.
+        /// </para>
+        /// </summary>
+        public string ProviderName
+        {
+            get { return this._providerName; }
+            set { this._providerName = value; }
+        }
+
+        // Check to see if ProviderName property is set
+        internal bool IsSetProviderName()
+        {
+            return this._providerName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to assign to the interconnect,
+        /// The tags to associate with the interconnect.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

@@ -61,8 +61,8 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// The reason given to the user why a stage is disabled, such as waiting for manual approval
-        /// or manual tests. This message is displayed in the pipeline console UI.
+        /// The reason given to the user that a stage is disabled, such as waiting for manual
+        /// approval or manual tests. This message is displayed in the pipeline console UI.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]
@@ -101,8 +101,8 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property TransitionType. 
         /// <para>
-        /// Specifies whether artifacts will be prevented from transitioning into the stage and
-        /// being processed by the actions in that stage (inbound), or prevented from transitioning
+        /// Specifies whether artifacts are prevented from transitioning into the stage and being
+        /// processed by the actions in that stage (inbound), or prevented from transitioning
         /// from the stage after they have been processed by the actions in that stage (outbound).
         /// </para>
         /// </summary>

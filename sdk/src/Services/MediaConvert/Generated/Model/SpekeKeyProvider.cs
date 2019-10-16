@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Settings for use with a SPEKE key provider
+    /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when
+    /// doing DRM encryption with a SPEKE-compliant key provider.  If your output group type
+    /// is CMAF, use the SpekeKeyProviderCmaf settings instead.
     /// </summary>
     public partial class SpekeKeyProvider
     {
@@ -38,9 +40,10 @@ namespace Amazon.MediaConvert.Model
         private string _url;
 
         /// <summary>
-        /// Gets and sets the property CertificateArn. Optional AWS Certificate Manager ARN for
-        /// a certificate to send to the keyprovider. The certificate holds a key used by the
-        /// keyprovider to encrypt the keys in its response.
+        /// Gets and sets the property CertificateArn. If you want your key provider to encrypt
+        /// the content keys that it provides to MediaConvert, set up a certificate with a master
+        /// key using AWS Certificate Manager. Specify the certificate's Amazon Resource Name
+        /// (ARN) here.
         /// </summary>
         public string CertificateArn
         {
@@ -55,8 +58,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceId. The SPEKE-compliant server uses Resource ID
-        /// (ResourceId) to identify content.
+        /// Gets and sets the property ResourceId. Specify the resource ID that your SPEKE-compliant
+        /// key provider uses to identify this content.
         /// </summary>
         public string ResourceId
         {
@@ -73,7 +76,8 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property SystemIds. Relates to SPEKE implementation. DRM system
         /// identifiers. DASH output groups support a max of two system ids. Other group types
-        /// support one system id.
+        /// support one system id. See https://dashif.org/identifiers/content_protection/ for
+        /// more details.
         /// </summary>
         public List<string> SystemIds
         {
@@ -88,8 +92,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Url. Use URL (Url) to specify the SPEKE-compliant server
-        /// that will provide keys for content.
+        /// Gets and sets the property Url. Specify the URL to the key server that your SPEKE-compliant
+        /// DRM key provider uses to provide keys for encrypting your content.
         /// </summary>
         public string Url
         {

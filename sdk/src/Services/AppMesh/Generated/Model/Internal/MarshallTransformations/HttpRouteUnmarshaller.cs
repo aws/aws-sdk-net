@@ -76,6 +76,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                     unmarshalledObject.Match = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("retryPolicy", targetDepth))
+                {
+                    var unmarshaller = HttpRetryPolicyUnmarshaller.Instance;
+                    unmarshalledObject.RetryPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

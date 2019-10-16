@@ -57,9 +57,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ThreadsPerCore. 
         /// <para>
-        /// The number of threads per CPU core. To disable Intel Hyper-Threading Technology for
-        /// the instance, specify a value of <code>1</code>. Otherwise, specify the default value
-        /// of <code>2</code>.
+        /// The number of threads per CPU core. To disable multithreading for the instance, specify
+        /// a value of <code>1</code>. Otherwise, specify the default value of <code>2</code>.
         /// </para>
         /// </summary>
         public int ThreadsPerCore

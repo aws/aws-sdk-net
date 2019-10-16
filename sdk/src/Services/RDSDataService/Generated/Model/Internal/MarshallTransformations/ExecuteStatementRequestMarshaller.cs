@@ -59,8 +59,8 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-08-01";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/Execute";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/Execute";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -104,6 +104,17 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("resourceArn");
                     context.Writer.Write(publicRequest.ResourceArn);
+                }
+
+                if(publicRequest.IsSetResultSetOptions())
+                {
+                    context.Writer.WritePropertyName("resultSetOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ResultSetOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ResultSetOptions, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetSchema())

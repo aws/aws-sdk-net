@@ -58,14 +58,14 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-01";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/clusters/{name}/updates/{updateId}";
             if (!publicRequest.IsSetName())
                 throw new AmazonEKSException("Request object does not have required field Name set");
-            uriResourcePath = uriResourcePath.Replace("{name}", StringUtils.FromStringWithSlashEncoding(publicRequest.Name));
+            request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             if (!publicRequest.IsSetUpdateId())
                 throw new AmazonEKSException("Request object does not have required field UpdateId set");
-            uriResourcePath = uriResourcePath.Replace("{updateId}", StringUtils.FromStringWithSlashEncoding(publicRequest.UpdateId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{updateId}", StringUtils.FromString(publicRequest.UpdateId));
+            request.ResourcePath = "/clusters/{name}/updates/{updateId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -71,7 +71,7 @@ namespace Amazon.PersonalizeRuntime.Model
         /// the item is appended to the end of the reranked list.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=100)]
+        [AWSProperty(Required=true)]
         public List<string> InputList
         {
             get { return this._inputList; }

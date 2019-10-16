@@ -99,7 +99,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property ScalingType. 
         /// <para>
         /// The scale that hyperparameter tuning uses to search the hyperparameter range. For
-        /// information about choosing a hyperparameter scale, see <a href="http://docs.aws.amazon.com//sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter
+        /// information about choosing a hyperparameter scale, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter
         /// Scaling</a>. One of the following values:
         /// </para>
         ///  <dl> <dt>Auto</dt> <dd> 

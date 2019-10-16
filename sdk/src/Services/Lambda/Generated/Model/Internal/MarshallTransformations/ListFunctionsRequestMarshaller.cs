@@ -58,7 +58,6 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-03-31";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/2015-03-31/functions/";
             
             if (publicRequest.IsSetFunctionVersion())
                 request.Parameters.Add("FunctionVersion", StringUtils.FromString(publicRequest.FunctionVersion));
@@ -71,7 +70,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetMaxItems())
                 request.Parameters.Add("MaxItems", StringUtils.FromInt(publicRequest.MaxItems));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2015-03-31/functions/";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

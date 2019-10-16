@@ -80,7 +80,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Frequency. 
         /// <para>
-        /// How often the scheduled audit takes place.
+        /// How often the scheduled audit occurs.
         /// </para>
         /// </summary>
         public AuditFrequency Frequency

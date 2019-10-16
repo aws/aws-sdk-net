@@ -179,6 +179,56 @@ namespace Amazon.GameLift
 
 
     /// <summary>
+    /// Constants used for properties of type CertificateType.
+    /// </summary>
+    public class CertificateType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for CertificateType
+        /// </summary>
+        public static readonly CertificateType DISABLED = new CertificateType("DISABLED");
+        /// <summary>
+        /// Constant GENERATED for CertificateType
+        /// </summary>
+        public static readonly CertificateType GENERATED = new CertificateType("GENERATED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CertificateType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CertificateType FindValue(string value)
+        {
+            return FindValue<CertificateType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CertificateType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ComparisonOperatorType.
     /// </summary>
     public class ComparisonOperatorType : ConstantClass
@@ -772,6 +822,10 @@ namespace Amazon.GameLift
         /// Constant CANCELLED for GameSessionPlacementState
         /// </summary>
         public static readonly GameSessionPlacementState CANCELLED = new GameSessionPlacementState("CANCELLED");
+        /// <summary>
+        /// Constant FAILED for GameSessionPlacementState
+        /// </summary>
+        public static readonly GameSessionPlacementState FAILED = new GameSessionPlacementState("FAILED");
         /// <summary>
         /// Constant FULFILLED for GameSessionPlacementState
         /// </summary>

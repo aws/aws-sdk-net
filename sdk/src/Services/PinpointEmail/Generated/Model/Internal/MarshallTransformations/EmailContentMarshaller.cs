@@ -67,6 +67,17 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetTemplate())
+            {
+                context.Writer.WritePropertyName("Template");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TemplateMarshaller.Instance;
+                marshaller.Marshall(requestObject.Template, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

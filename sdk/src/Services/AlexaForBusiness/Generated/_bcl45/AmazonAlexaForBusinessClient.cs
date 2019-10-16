@@ -1470,13 +1470,6 @@ namespace Amazon.AlexaForBusiness
         /// to delete the device's entire previous history of voice input data and associated
         /// response data. This action can be called once every 24 hours for a specific shared
         /// device.
-        /// 
-        ///  
-        /// <para>
-        /// When this action is called for a specified shared device, it allows authorized users
-        /// to delete the device's entire previous history of voice input data. This action can
-        /// be called once every 24 hours for a specific shared device. 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDeviceUsageData service method.</param>
         /// 
@@ -1507,13 +1500,6 @@ namespace Amazon.AlexaForBusiness
         /// to delete the device's entire previous history of voice input data and associated
         /// response data. This action can be called once every 24 hours for a specific shared
         /// device.
-        /// 
-        ///  
-        /// <para>
-        /// When this action is called for a specified shared device, it allows authorized users
-        /// to delete the device's entire previous history of voice input data. This action can
-        /// be called once every 24 hours for a specific shared device. 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDeviceUsageData service method.</param>
         /// <param name="cancellationToken">

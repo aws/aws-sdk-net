@@ -37,7 +37,7 @@ namespace Amazon.Pinpoint.Model
         private List<ResultRowValue> _values = new List<ResultRowValue>();
 
         /// <summary>
-        /// Gets and sets the property GroupedBys.  
+        /// Gets and sets the property GroupedBys. 
         /// <para>
         /// An array of objects that defines the field and field values that were used to group
         /// data in a result set that contains multiple results. This value is null if the data
@@ -58,7 +58,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Values.  
+        /// Gets and sets the property Values. 
         /// <para>
         /// An array of objects that provides pre-aggregated values for a standard metric that
         /// applies to an application or campaign.

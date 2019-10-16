@@ -125,6 +125,56 @@ namespace Amazon.DataSync
 
 
     /// <summary>
+    /// Constants used for properties of type EndpointType.
+    /// </summary>
+    public class EndpointType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PRIVATE_LINK for EndpointType
+        /// </summary>
+        public static readonly EndpointType PRIVATE_LINK = new EndpointType("PRIVATE_LINK");
+        /// <summary>
+        /// Constant PUBLIC for EndpointType
+        /// </summary>
+        public static readonly EndpointType PUBLIC = new EndpointType("PUBLIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EndpointType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EndpointType FindValue(string value)
+        {
+            return FindValue<EndpointType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EndpointType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FilterType.
     /// </summary>
     public class FilterType : ConstantClass
@@ -330,6 +380,56 @@ namespace Amazon.DataSync
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NfsVersion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OverwriteMode.
+    /// </summary>
+    public class OverwriteMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALWAYS for OverwriteMode
+        /// </summary>
+        public static readonly OverwriteMode ALWAYS = new OverwriteMode("ALWAYS");
+        /// <summary>
+        /// Constant NEVER for OverwriteMode
+        /// </summary>
+        public static readonly OverwriteMode NEVER = new OverwriteMode("NEVER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OverwriteMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OverwriteMode FindValue(string value)
+        {
+            return FindValue<OverwriteMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OverwriteMode(string value)
         {
             return FindValue(value);
         }
@@ -545,6 +645,126 @@ namespace Amazon.DataSync
 
 
     /// <summary>
+    /// Constants used for properties of type S3StorageClass.
+    /// </summary>
+    public class S3StorageClass : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEEP_ARCHIVE for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass DEEP_ARCHIVE = new S3StorageClass("DEEP_ARCHIVE");
+        /// <summary>
+        /// Constant GLACIER for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass GLACIER = new S3StorageClass("GLACIER");
+        /// <summary>
+        /// Constant INTELLIGENT_TIERING for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass INTELLIGENT_TIERING = new S3StorageClass("INTELLIGENT_TIERING");
+        /// <summary>
+        /// Constant ONEZONE_IA for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass ONEZONE_IA = new S3StorageClass("ONEZONE_IA");
+        /// <summary>
+        /// Constant STANDARD for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass STANDARD = new S3StorageClass("STANDARD");
+        /// <summary>
+        /// Constant STANDARD_IA for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass STANDARD_IA = new S3StorageClass("STANDARD_IA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3StorageClass(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3StorageClass FindValue(string value)
+        {
+            return FindValue<S3StorageClass>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3StorageClass(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SmbVersion.
+    /// </summary>
+    public class SmbVersion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTOMATIC for SmbVersion
+        /// </summary>
+        public static readonly SmbVersion AUTOMATIC = new SmbVersion("AUTOMATIC");
+        /// <summary>
+        /// Constant SMB2 for SmbVersion
+        /// </summary>
+        public static readonly SmbVersion SMB2 = new SmbVersion("SMB2");
+        /// <summary>
+        /// Constant SMB3 for SmbVersion
+        /// </summary>
+        public static readonly SmbVersion SMB3 = new SmbVersion("SMB3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SmbVersion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SmbVersion FindValue(string value)
+        {
+            return FindValue<SmbVersion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SmbVersion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TaskExecutionStatus.
     /// </summary>
     public class TaskExecutionStatus : ConstantClass
@@ -562,6 +782,10 @@ namespace Amazon.DataSync
         /// Constant PREPARING for TaskExecutionStatus
         /// </summary>
         public static readonly TaskExecutionStatus PREPARING = new TaskExecutionStatus("PREPARING");
+        /// <summary>
+        /// Constant QUEUED for TaskExecutionStatus
+        /// </summary>
+        public static readonly TaskExecutionStatus QUEUED = new TaskExecutionStatus("QUEUED");
         /// <summary>
         /// Constant SUCCESS for TaskExecutionStatus
         /// </summary>
@@ -611,6 +835,56 @@ namespace Amazon.DataSync
 
 
     /// <summary>
+    /// Constants used for properties of type TaskQueueing.
+    /// </summary>
+    public class TaskQueueing : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for TaskQueueing
+        /// </summary>
+        public static readonly TaskQueueing DISABLED = new TaskQueueing("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for TaskQueueing
+        /// </summary>
+        public static readonly TaskQueueing ENABLED = new TaskQueueing("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TaskQueueing(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TaskQueueing FindValue(string value)
+        {
+            return FindValue<TaskQueueing>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TaskQueueing(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TaskStatus.
     /// </summary>
     public class TaskStatus : ConstantClass
@@ -624,6 +898,10 @@ namespace Amazon.DataSync
         /// Constant CREATING for TaskStatus
         /// </summary>
         public static readonly TaskStatus CREATING = new TaskStatus("CREATING");
+        /// <summary>
+        /// Constant QUEUED for TaskStatus
+        /// </summary>
+        public static readonly TaskStatus QUEUED = new TaskStatus("QUEUED");
         /// <summary>
         /// Constant RUNNING for TaskStatus
         /// </summary>
@@ -736,6 +1014,10 @@ namespace Amazon.DataSync
         /// Constant NONE for VerifyMode
         /// </summary>
         public static readonly VerifyMode NONE = new VerifyMode("NONE");
+        /// <summary>
+        /// Constant ONLY_FILES_TRANSFERRED for VerifyMode
+        /// </summary>
+        public static readonly VerifyMode ONLY_FILES_TRANSFERRED = new VerifyMode("ONLY_FILES_TRANSFERRED");
         /// <summary>
         /// Constant POINT_IN_TIME_CONSISTENT for VerifyMode
         /// </summary>

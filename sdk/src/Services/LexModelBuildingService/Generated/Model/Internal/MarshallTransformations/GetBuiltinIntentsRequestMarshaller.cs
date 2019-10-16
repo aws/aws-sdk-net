@@ -58,7 +58,6 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-04-19";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/builtins/intents/";
             
             if (publicRequest.IsSetLocale())
                 request.Parameters.Add("locale", StringUtils.FromString(publicRequest.Locale));
@@ -71,7 +70,8 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetSignatureContains())
                 request.Parameters.Add("signatureContains", StringUtils.FromString(publicRequest.SignatureContains));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/builtins/intents/";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -1768,7 +1768,7 @@ namespace Amazon.DirectConnect
         /// <summary>
         /// Deletes the specified Direct Connect gateway. You must first delete all virtual interfaces
         /// that are attached to the Direct Connect gateway and disassociate all virtual private
-        /// gateways that are associated with the Direct Connect gateway.
+        /// gateways associated with the Direct Connect gateway.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDirectConnectGateway service method.</param>
         /// 
@@ -1787,7 +1787,7 @@ namespace Amazon.DirectConnect
         /// <summary>
         /// Deletes the specified Direct Connect gateway. You must first delete all virtual interfaces
         /// that are attached to the Direct Connect gateway and disassociate all virtual private
-        /// gateways that are associated with the Direct Connect gateway.
+        /// gateways associated with the Direct Connect gateway.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDirectConnectGateway service method.</param>
         /// <param name="cancellationToken">
@@ -1812,6 +1812,14 @@ namespace Amazon.DirectConnect
         /// <summary>
         /// Deletes the association between the specified Direct Connect gateway and virtual private
         /// gateway.
+        /// 
+        ///  
+        /// <para>
+        /// We recommend that you specify the <code>associationID</code> to delete the association.
+        /// Alternatively, if you own virtual gateway and a Direct Connect gateway association,
+        /// you can specify the <code>virtualGatewayId</code> and <code>directConnectGatewayId</code>
+        /// to delete an association.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDirectConnectGatewayAssociation service method.</param>
         /// 
@@ -1830,6 +1838,14 @@ namespace Amazon.DirectConnect
         /// <summary>
         /// Deletes the association between the specified Direct Connect gateway and virtual private
         /// gateway.
+        /// 
+        ///  
+        /// <para>
+        /// We recommend that you specify the <code>associationID</code> to delete the association.
+        /// Alternatively, if you own virtual gateway and a Direct Connect gateway association,
+        /// you can specify the <code>virtualGatewayId</code> and <code>directConnectGatewayId</code>
+        /// to delete an association.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDirectConnectGatewayAssociation service method.</param>
         /// <param name="cancellationToken">

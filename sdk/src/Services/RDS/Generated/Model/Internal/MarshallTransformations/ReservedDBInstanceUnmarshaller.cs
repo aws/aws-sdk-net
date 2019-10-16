@@ -84,6 +84,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.FixedPrice = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("LeaseId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.LeaseId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("MultiAZ", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

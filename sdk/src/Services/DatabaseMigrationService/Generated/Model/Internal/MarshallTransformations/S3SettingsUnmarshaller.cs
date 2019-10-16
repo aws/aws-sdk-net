@@ -148,6 +148,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.IncludeOpForFullLoad = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ParquetTimestampInMillisecond", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ParquetTimestampInMillisecond = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ParquetVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -33,7 +33,9 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
-    /// Use one of the following prices for bounding box tasks. Prices are in US dollars.
+    /// Use one of the following prices for bounding box tasks. Prices are in US dollars and
+    /// should be based on the complexity of the task; the longer it takes in your initial
+    /// testing, the more you should offer.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -190,7 +192,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AmountInUsd. 
         /// <para>
-        /// Defines the amount of money paid to a worker in United States dollars.
+        /// Defines the amount of money paid to an Amazon Mechanical Turk worker in United States
+        /// dollars.
         /// </para>
         /// </summary>
         public USD AmountInUsd

@@ -29,9 +29,15 @@ namespace Amazon.ComprehendMedical.Model
 {
     /// <summary>
     /// Container for the parameters to the DetectEntities operation.
-    /// Inspects the clinical text for a variety of medical entities and returns specific
+    /// The <code>DetectEntities</code> operation is deprecated. You should use the <a>DetectEntitiesV2</a>
+    /// operation instead.
+    /// 
+    ///  
+    /// <para>
+    ///  Inspects the clinical text for a variety of medical entities and returns specific
     /// information about them such as entity category, location, and confidence score on
     /// that information .
+    /// </para>
     /// </summary>
     public partial class DetectEntitiesRequest : AmazonComprehendMedicalRequest
     {

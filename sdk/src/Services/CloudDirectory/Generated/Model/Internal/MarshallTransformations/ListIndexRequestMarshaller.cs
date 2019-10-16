@@ -59,8 +59,8 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-01-11";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/amazonclouddirectory/2017-01-11/index/targets";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/amazonclouddirectory/2017-01-11/index/targets";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

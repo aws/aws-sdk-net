@@ -40,7 +40,6 @@ namespace Amazon.PersonalizeRuntime.Model
         /// A list of recommendations.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
         public List<PredictedItem> ItemList
         {
             get { return this._itemList; }

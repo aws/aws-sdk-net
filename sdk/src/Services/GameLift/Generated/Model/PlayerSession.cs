@@ -74,6 +74,7 @@ namespace Amazon.GameLift.Model
     public partial class PlayerSession
     {
         private DateTime? _creationTime;
+        private string _dnsName;
         private string _fleetId;
         private string _gameSessionId;
         private string _ipAddress;
@@ -101,6 +102,21 @@ namespace Amazon.GameLift.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DnsName.
+        /// </summary>
+        public string DnsName
+        {
+            get { return this._dnsName; }
+            set { this._dnsName = value; }
+        }
+
+        // Check to see if DnsName property is set
+        internal bool IsSetDnsName()
+        {
+            return this._dnsName != null;
         }
 
         /// <summary>

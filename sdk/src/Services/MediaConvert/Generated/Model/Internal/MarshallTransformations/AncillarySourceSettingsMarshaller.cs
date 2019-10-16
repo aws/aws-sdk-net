@@ -45,10 +45,22 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AncillarySourceSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetConvert608To708())
+            {
+                context.Writer.WritePropertyName("convert608To708");
+                context.Writer.Write(requestObject.Convert608To708);
+            }
+
             if(requestObject.IsSetSourceAncillaryChannelNumber())
             {
                 context.Writer.WritePropertyName("sourceAncillaryChannelNumber");
                 context.Writer.Write(requestObject.SourceAncillaryChannelNumber);
+            }
+
+            if(requestObject.IsSetTerminateCaptions())
+            {
+                context.Writer.WritePropertyName("terminateCaptions");
+                context.Writer.Write(requestObject.TerminateCaptions);
             }
 
         }

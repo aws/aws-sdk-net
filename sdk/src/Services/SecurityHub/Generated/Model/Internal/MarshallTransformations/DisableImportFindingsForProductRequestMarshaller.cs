@@ -58,11 +58,11 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-26";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/productSubscriptions/{ProductSubscriptionArn+}";
             if (!publicRequest.IsSetProductSubscriptionArn())
                 throw new AmazonSecurityHubException("Request object does not have required field ProductSubscriptionArn set");
-            uriResourcePath = uriResourcePath.Replace("{ProductSubscriptionArn+}", StringUtils.FromString(publicRequest.ProductSubscriptionArn.TrimStart('/')));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{ProductSubscriptionArn+}", StringUtils.FromString(publicRequest.ProductSubscriptionArn.TrimStart('/')));
+            request.ResourcePath = "/productSubscriptions/{ProductSubscriptionArn+}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

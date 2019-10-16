@@ -31,6 +31,12 @@ namespace Amazon.ECS.Model
     /// An object representing a constraint on task placement. For more information, see <a
     /// href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task
     /// Placement Constraints</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// If you are using the Fargate launch type, task placement constraints are not supported.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class PlacementConstraint
     {
@@ -63,8 +69,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The type of constraint. Use <code>distinctInstance</code> to ensure that each task
         /// in a particular group is running on a different container instance. Use <code>memberOf</code>
-        /// to restrict the selection to a group of valid candidates. The value <code>distinctInstance</code>
-        /// is not supported in task definitions.
+        /// to restrict the selection to a group of valid candidates.
         /// </para>
         /// </summary>
         public PlacementConstraintType Type

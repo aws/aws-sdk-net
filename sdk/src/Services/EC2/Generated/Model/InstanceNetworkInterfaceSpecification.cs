@@ -304,7 +304,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// The ID of the subnet associated with the network string. Applies only if creating
+        /// The ID of the subnet associated with the network interface. Applies only if creating
         /// a network interface when launching an instance.
         /// </para>
         /// </summary>

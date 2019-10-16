@@ -147,6 +147,52 @@ namespace Amazon.CostAndUsageReport
 
         #endregion
         
+        #region  ModifyReportDefinition
+
+
+        /// <summary>
+        /// Allows you to programatically update your report preferences.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyReportDefinition service method.</param>
+        /// 
+        /// <returns>The response from the ModifyReportDefinition service method, as returned by CostAndUsageReport.</returns>
+        /// <exception cref="Amazon.CostAndUsageReport.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostAndUsageReport.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/ModifyReportDefinition">REST API Reference for ModifyReportDefinition Operation</seealso>
+        ModifyReportDefinitionResponse ModifyReportDefinition(ModifyReportDefinitionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyReportDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyReportDefinition operation on AmazonCostAndUsageReportClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyReportDefinition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/ModifyReportDefinition">REST API Reference for ModifyReportDefinition Operation</seealso>
+        IAsyncResult BeginModifyReportDefinition(ModifyReportDefinitionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyReportDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyReportDefinition.</param>
+        /// 
+        /// <returns>Returns a  ModifyReportDefinitionResult from CostAndUsageReport.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/ModifyReportDefinition">REST API Reference for ModifyReportDefinition Operation</seealso>
+        ModifyReportDefinitionResponse EndModifyReportDefinition(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  PutReportDefinition
 
 

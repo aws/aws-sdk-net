@@ -59,16 +59,22 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/apps/{appId}";
             if (!publicRequest.IsSetAppId())
                 throw new AmazonAmplifyException("Request object does not have required field AppId set");
-            uriResourcePath = uriResourcePath.Replace("{appId}", StringUtils.FromStringWithSlashEncoding(publicRequest.AppId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{appId}", StringUtils.FromString(publicRequest.AppId));
+            request.ResourcePath = "/apps/{appId}";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAccessToken())
+                {
+                    context.Writer.WritePropertyName("accessToken");
+                    context.Writer.Write(publicRequest.AccessToken);
+                }
+
                 if(publicRequest.IsSetAutoBranchCreationConfig())
                 {
                     context.Writer.WritePropertyName("autoBranchCreationConfig");
@@ -169,10 +175,22 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetOauthToken())
+                {
+                    context.Writer.WritePropertyName("oauthToken");
+                    context.Writer.Write(publicRequest.OauthToken);
+                }
+
                 if(publicRequest.IsSetPlatform())
                 {
                     context.Writer.WritePropertyName("platform");
                     context.Writer.Write(publicRequest.Platform);
+                }
+
+                if(publicRequest.IsSetRepository())
+                {
+                    context.Writer.WritePropertyName("repository");
+                    context.Writer.Write(publicRequest.Repository);
                 }
 
         

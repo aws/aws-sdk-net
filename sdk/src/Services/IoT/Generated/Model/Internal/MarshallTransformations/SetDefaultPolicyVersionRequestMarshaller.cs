@@ -59,14 +59,14 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "PATCH";
 
-            string uriResourcePath = "/policies/{policyName}/version/{policyVersionId}";
             if (!publicRequest.IsSetPolicyName())
                 throw new AmazonIoTException("Request object does not have required field PolicyName set");
-            uriResourcePath = uriResourcePath.Replace("{policyName}", StringUtils.FromStringWithSlashEncoding(publicRequest.PolicyName));
+            request.AddPathResource("{policyName}", StringUtils.FromString(publicRequest.PolicyName));
             if (!publicRequest.IsSetPolicyVersionId())
                 throw new AmazonIoTException("Request object does not have required field PolicyVersionId set");
-            uriResourcePath = uriResourcePath.Replace("{policyVersionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.PolicyVersionId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{policyVersionId}", StringUtils.FromString(publicRequest.PolicyVersionId));
+            request.ResourcePath = "/policies/{policyName}/version/{policyVersionId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -58,11 +58,11 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/audit/configuration";
             
             if (publicRequest.IsSetDeleteScheduledAudits())
                 request.Parameters.Add("deleteScheduledAudits", StringUtils.FromBool(publicRequest.DeleteScheduledAudits));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/audit/configuration";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

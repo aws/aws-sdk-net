@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// URIs for function resources.
+    /// The URIs for function resources.
     /// </summary>
     public partial class ResourceUri
     {

@@ -42,7 +42,9 @@ namespace Amazon.MediaConvert.Model
         private string _queue;
         private string _role;
         private JobSettings _settings;
+        private SimulateReservedQueue _simulateReservedQueue;
         private StatusUpdateInterval _statusUpdateInterval;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private Dictionary<string, string> _userMetadata = new Dictionary<string, string>();
 
         /// <summary>
@@ -186,6 +188,25 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SimulateReservedQueue. Enable this setting when you run
+        /// a test job to estimate how many reserved transcoding slots (RTS) you need. When this
+        /// is enabled, MediaConvert runs your job from an on-demand queue with similar performance
+        /// to what you will see with one RTS in a reserved queue. This setting is disabled by
+        /// default.
+        /// </summary>
+        public SimulateReservedQueue SimulateReservedQueue
+        {
+            get { return this._simulateReservedQueue; }
+            set { this._simulateReservedQueue = value; }
+        }
+
+        // Check to see if SimulateReservedQueue property is set
+        internal bool IsSetSimulateReservedQueue()
+        {
+            return this._simulateReservedQueue != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StatusUpdateInterval. Specify how often MediaConvert sends
         /// STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between
         /// status updates. MediaConvert sends an update at this interval from the time the service
@@ -202,6 +223,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetStatusUpdateInterval()
         {
             return this._statusUpdateInterval != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. The tags that you want to add to the resource. You
+        /// can tag resources with a key-value pair or with only a key.
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

@@ -59,15 +59,15 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-01";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/accounts/{accountId}/users/{userId}";
             request.AddSubResource("operation", "disassociate-phone-number");
             if (!publicRequest.IsSetAccountId())
                 throw new AmazonChimeException("Request object does not have required field AccountId set");
-            uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromStringWithSlashEncoding(publicRequest.AccountId));
+            request.AddPathResource("{accountId}", StringUtils.FromString(publicRequest.AccountId));
             if (!publicRequest.IsSetUserId())
                 throw new AmazonChimeException("Request object does not have required field UserId set");
-            uriResourcePath = uriResourcePath.Replace("{userId}", StringUtils.FromStringWithSlashEncoding(publicRequest.UserId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{userId}", StringUtils.FromString(publicRequest.UserId));
+            request.ResourcePath = "/accounts/{accountId}/users/{userId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

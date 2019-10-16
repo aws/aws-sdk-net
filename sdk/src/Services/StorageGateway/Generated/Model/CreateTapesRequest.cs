@@ -81,7 +81,7 @@ namespace Amazon.StorageGateway.Model
         /// <para>
         /// The unique Amazon Resource Name (ARN) that represents the gateway to associate the
         /// virtual tapes with. Use the <a>ListGateways</a> operation to return a list of gateways
-        /// for your account and region.
+        /// for your account and AWS Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=50, Max=500)]

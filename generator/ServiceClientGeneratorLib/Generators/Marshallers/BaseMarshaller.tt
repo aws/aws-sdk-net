@@ -27,6 +27,14 @@ using Amazon.Runtime.Internal.Util;
 #>
 
 <#+
+    protected int MarshallerVersion
+    {
+        get
+        {
+            return 2;
+        }
+    }
+
 	// Only applicable for rest-json and rest-xml
     // Generates code to add members to the header of the request
     // If it's a custom marshaller then it calls the custom marshaller first
@@ -73,7 +81,7 @@ using Amazon.Runtime.Internal.Util;
 	}
 
 	// Only applicable for rest-json and rest-xml
-    // Generates code to add the operation's requestURIMembers to the uriResourcePath
+    // Generates code to add the operation's requestURIMembers to the PathResources request dictionary
 	protected void ProcessUriMembers(string variableName, Operation operation)
 	{
 		foreach(var member in operation.RequestUriMembers)
@@ -86,13 +94,13 @@ using Amazon.Runtime.Internal.Util;
 				if(isGreedy)
 				{
 #>
-			uriResourcePath = uriResourcePath.Replace("<#=marshallLocationName#>", <#=variableName#>.IsSet<#=member.PropertyName#>() ? <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>.TrimStart('/')) : string.Empty);
+			request.AddPathResource("<#=marshallLocationName#>", <#=variableName#>.IsSet<#=member.PropertyName#>() ? <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>.TrimStart('/')) : string.Empty);
 <#+
 				}
 				else
 				{
 #>
-			uriResourcePath = uriResourcePath.Replace("<#=marshallLocationName#>", <#=variableName#>.IsSet<#=member.PropertyName#>() ? <#=member.PrimitiveMarshallerWithSlashEncoder#>(<#=variableName#>.<#=member.PropertyName#>) : string.Empty);
+			request.AddPathResource("<#=marshallLocationName#>", <#=variableName#>.IsSet<#=member.PropertyName#>() ? <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>) : string.Empty);
 <#+
 				}
 
@@ -106,13 +114,13 @@ using Amazon.Runtime.Internal.Util;
 			if(isGreedy)
 				{
 #>
-			uriResourcePath = uriResourcePath.Replace("<#=marshallLocationName#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>.TrimStart('/')));
+			request.AddPathResource("<#=marshallLocationName#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>.TrimStart('/')));
 <#+
 				}
 				else
 				{
 #>
-			uriResourcePath = uriResourcePath.Replace("<#=marshallLocationName#>", <#=member.PrimitiveMarshallerWithSlashEncoder#>(<#=variableName#>.<#=member.PropertyName#>));
+			request.AddPathResource("<#=marshallLocationName#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>));
 <#+
 				}
             }
@@ -121,9 +129,6 @@ using Amazon.Runtime.Internal.Util;
 
 	protected void ProcessRequestUri(Operation operation)
 	{
-#>
-			string uriResourcePath = "<#=operation.RequestUri #>";
-<#+
 		foreach(var staticQueryParam in operation.StaticQueryParameters)
 		{
 			if(staticQueryParam.Value != null)

@@ -1,0 +1,127 @@
+/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the lakeformation-2017-03-31.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.LakeFormation.Model
+{
+    /// <summary>
+    /// A structure for a table with columns object. This object is only used when granting
+    /// a SELECT permission.
+    /// 
+    ///  
+    /// <para>
+    /// This object must take a value for at least one of <code>ColumnsNames</code>, <code>ColumnsIndexes</code>,
+    /// or <code>ColumnsWildcard</code>.
+    /// </para>
+    /// </summary>
+    public partial class TableWithColumnsResource
+    {
+        private List<string> _columnNames = new List<string>();
+        private ColumnWildcard _columnWildcard;
+        private string _databaseName;
+        private string _name;
+
+        /// <summary>
+        /// Gets and sets the property ColumnNames. 
+        /// <para>
+        /// The list of column names for the table. At least one of <code>ColumnNames</code> or
+        /// <code>ColumnWildcard</code> is required.
+        /// </para>
+        /// </summary>
+        public List<string> ColumnNames
+        {
+            get { return this._columnNames; }
+            set { this._columnNames = value; }
+        }
+
+        // Check to see if ColumnNames property is set
+        internal bool IsSetColumnNames()
+        {
+            return this._columnNames != null && this._columnNames.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ColumnWildcard. 
+        /// <para>
+        /// A wildcard specified by a <code>ColumnWildcard</code> object. At least one of <code>ColumnNames</code>
+        /// or <code>ColumnWildcard</code> is required.
+        /// </para>
+        /// </summary>
+        public ColumnWildcard ColumnWildcard
+        {
+            get { return this._columnWildcard; }
+            set { this._columnWildcard = value; }
+        }
+
+        // Check to see if ColumnWildcard property is set
+        internal bool IsSetColumnWildcard()
+        {
+            return this._columnWildcard != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatabaseName. 
+        /// <para>
+        /// The name of the database for the table with columns resource. Unique to the Data Catalog.
+        /// A database is a set of associated table definitions organized into a logical group.
+        /// You can Grant and Revoke database privileges to a principal. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string DatabaseName
+        {
+            get { return this._databaseName; }
+            set { this._databaseName = value; }
+        }
+
+        // Check to see if DatabaseName property is set
+        internal bool IsSetDatabaseName()
+        {
+            return this._databaseName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the table resource. A table is a metadata definition that represents your
+        /// data. You can Grant and Revoke table privileges to a principal. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+    }
+}

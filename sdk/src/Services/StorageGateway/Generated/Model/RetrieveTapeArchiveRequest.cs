@@ -52,7 +52,7 @@ namespace Amazon.StorageGateway.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the gateway you want to retrieve the virtual tape
         /// to. Use the <a>ListGateways</a> operation to return a list of gateways for your account
-        /// and region.
+        /// and AWS Region.
         /// </para>
         ///  
         /// <para>

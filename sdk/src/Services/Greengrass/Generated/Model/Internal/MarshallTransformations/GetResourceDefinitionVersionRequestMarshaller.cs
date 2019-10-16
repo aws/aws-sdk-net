@@ -58,14 +58,14 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-06-07";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/greengrass/definition/resources/{ResourceDefinitionId}/versions/{ResourceDefinitionVersionId}";
             if (!publicRequest.IsSetResourceDefinitionId())
                 throw new AmazonGreengrassException("Request object does not have required field ResourceDefinitionId set");
-            uriResourcePath = uriResourcePath.Replace("{ResourceDefinitionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceDefinitionId));
+            request.AddPathResource("{ResourceDefinitionId}", StringUtils.FromString(publicRequest.ResourceDefinitionId));
             if (!publicRequest.IsSetResourceDefinitionVersionId())
                 throw new AmazonGreengrassException("Request object does not have required field ResourceDefinitionVersionId set");
-            uriResourcePath = uriResourcePath.Replace("{ResourceDefinitionVersionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceDefinitionVersionId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{ResourceDefinitionVersionId}", StringUtils.FromString(publicRequest.ResourceDefinitionVersionId));
+            request.ResourcePath = "/greengrass/definition/resources/{ResourceDefinitionId}/versions/{ResourceDefinitionVersionId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

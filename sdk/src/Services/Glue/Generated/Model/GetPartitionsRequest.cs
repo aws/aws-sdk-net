@@ -44,7 +44,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CatalogId. 
         /// <para>
-        /// The ID of the Data Catalog where the partitions in question reside. If none is supplied,
+        /// The ID of the Data Catalog where the partitions in question reside. If none is provided,
         /// the AWS account ID is used by default.
         /// </para>
         /// </summary>
@@ -83,7 +83,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Expression. 
         /// <para>
-        /// An expression filtering the partitions to be returned.
+        /// An expression that filters the partitions to be returned.
         /// </para>
         ///  
         /// <para>
@@ -98,7 +98,7 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  <dl> <dt>=</dt> <dd> 
         /// <para>
-        /// Checks if the values of the two operands are equal or not; if yes, then the condition
+        /// Checks whether the values of the two operands are equal; if yes, then the condition
         /// becomes true.
         /// </para>
         ///  
@@ -111,7 +111,7 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </dd> <dt>&lt; &gt;</dt> <dd> 
         /// <para>
-        /// Checks if the values of two operands are equal or not; if the values are not equal,
+        /// Checks whether the values of two operands are equal; if the values are not equal,
         /// then the condition becomes true.
         /// </para>
         ///  
@@ -120,8 +120,8 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </dd> <dt>&gt;</dt> <dd> 
         /// <para>
-        /// Checks if the value of the left operand is greater than the value of the right operand;
-        /// if yes, then the condition becomes true.
+        /// Checks whether the value of the left operand is greater than the value of the right
+        /// operand; if yes, then the condition becomes true.
         /// </para>
         ///  
         /// <para>
@@ -129,7 +129,7 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </dd> <dt>&lt;</dt> <dd> 
         /// <para>
-        /// Checks if the value of the left operand is less than the value of the right operand;
+        /// Checks whether the value of the left operand is less than the value of the right operand;
         /// if yes, then the condition becomes true.
         /// </para>
         ///  
@@ -138,8 +138,8 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </dd> <dt>&gt;=</dt> <dd> 
         /// <para>
-        /// Checks if the value of the left operand is greater than or equal to the value of the
-        /// right operand; if yes, then the condition becomes true.
+        /// Checks whether the value of the left operand is greater than or equal to the value
+        /// of the right operand; if yes, then the condition becomes true.
         /// </para>
         ///  
         /// <para>
@@ -147,8 +147,8 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </dd> <dt>&lt;=</dt> <dd> 
         /// <para>
-        /// Checks if the value of the left operand is less than or equal to the value of the
-        /// right operand; if yes, then the condition becomes true.
+        /// Checks whether the value of the left operand is less than or equal to the value of
+        /// the right operand; if yes, then the condition becomes true.
         /// </para>
         ///  
         /// <para>
@@ -160,8 +160,7 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </dd> </dl> 
         /// <para>
-        ///  <i>Supported Partition Key Types</i>: The following are the the supported partition
-        /// keys.
+        ///  <i>Supported Partition Key Types</i>: The following are the supported partition keys.
         /// </para>
         ///  <ul> <li> 
         /// <para>

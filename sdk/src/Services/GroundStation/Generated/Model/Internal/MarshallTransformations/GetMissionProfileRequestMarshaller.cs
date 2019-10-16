@@ -58,11 +58,11 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-05-23";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/missionprofile/{missionProfileId}";
             if (!publicRequest.IsSetMissionProfileId())
                 throw new AmazonGroundStationException("Request object does not have required field MissionProfileId set");
-            uriResourcePath = uriResourcePath.Replace("{missionProfileId}", StringUtils.FromStringWithSlashEncoding(publicRequest.MissionProfileId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{missionProfileId}", StringUtils.FromString(publicRequest.MissionProfileId));
+            request.ResourcePath = "/missionprofile/{missionProfileId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

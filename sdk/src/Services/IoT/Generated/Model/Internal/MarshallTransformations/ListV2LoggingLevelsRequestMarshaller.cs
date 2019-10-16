@@ -58,7 +58,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/v2LoggingLevel";
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
@@ -68,7 +67,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetTargetType())
                 request.Parameters.Add("targetType", StringUtils.FromString(publicRequest.TargetType));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/v2LoggingLevel";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

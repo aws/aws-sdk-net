@@ -58,11 +58,11 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/thing-types/{thingTypeName}";
             if (!publicRequest.IsSetThingTypeName())
                 throw new AmazonIoTException("Request object does not have required field ThingTypeName set");
-            uriResourcePath = uriResourcePath.Replace("{thingTypeName}", StringUtils.FromStringWithSlashEncoding(publicRequest.ThingTypeName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{thingTypeName}", StringUtils.FromString(publicRequest.ThingTypeName));
+            request.ResourcePath = "/thing-types/{thingTypeName}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

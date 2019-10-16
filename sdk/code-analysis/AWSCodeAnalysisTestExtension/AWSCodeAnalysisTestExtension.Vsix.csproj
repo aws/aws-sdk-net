@@ -352,6 +352,14 @@
       <Project>{7814E166-D2B9-432C-B5D7-49E0B665B400}</Project>
       <Name>AWSSDK.FMS.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ForecastQueryService/AWSSDK.ForecastQueryService.CodeAnalysis.csproj">
+      <Project>{99006693-45E0-431E-B024-C5D81307EFA1}</Project>
+      <Name>AWSSDK.ForecastQueryService.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ForecastService/AWSSDK.ForecastService.CodeAnalysis.csproj">
+      <Project>{F69573A3-075C-498B-84E6-9FE7BDF4F0E7}</Project>
+      <Name>AWSSDK.ForecastService.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/FSx/AWSSDK.FSx.CodeAnalysis.csproj">
       <Project>{8D1894F4-BA02-4B2D-AA39-C570D365B5A0}</Project>
       <Name>AWSSDK.FSx.CodeAnalysis</Name>
@@ -467,6 +475,10 @@
     <ProjectReference Include="../ServiceAnalysis/KinesisVideoMedia/AWSSDK.KinesisVideoMedia.CodeAnalysis.csproj">
       <Project>{A0EA3790-C2AB-4E1C-818F-AE0E138035EE}</Project>
       <Name>AWSSDK.KinesisVideoMedia.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/LakeFormation/AWSSDK.LakeFormation.CodeAnalysis.csproj">
+      <Project>{BE474B80-0BBF-4387-895F-30998E8838C8}</Project>
+      <Name>AWSSDK.LakeFormation.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Lambda/AWSSDK.Lambda.CodeAnalysis.csproj">
       <Project>{942679C5-C064-4B55-B264-97A00B6F9CD6}</Project>
@@ -607,6 +619,14 @@
     <ProjectReference Include="../ServiceAnalysis/Pricing/AWSSDK.Pricing.CodeAnalysis.csproj">
       <Project>{9329CB2C-3AFF-4AFC-BDE5-638A24A81952}</Project>
       <Name>AWSSDK.Pricing.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/QLDB/AWSSDK.QLDB.CodeAnalysis.csproj">
+      <Project>{7B4CD7CD-B44B-480D-AE98-1B20E21676FD}</Project>
+      <Name>AWSSDK.QLDB.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/QLDBSession/AWSSDK.QLDBSession.CodeAnalysis.csproj">
+      <Project>{E14ECCA1-E77C-4691-A8D8-95C2A0478748}</Project>
+      <Name>AWSSDK.QLDBSession.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/QuickSight/AWSSDK.QuickSight.CodeAnalysis.csproj">
       <Project>{E715F370-3832-4FB7-B508-283A87F7F36F}</Project>
@@ -783,6 +803,10 @@
     <ProjectReference Include="../ServiceAnalysis/WorkMail/AWSSDK.WorkMail.CodeAnalysis.csproj">
       <Project>{6E634EA7-4131-4B58-B2C6-E52669D9AE2A}</Project>
       <Name>AWSSDK.WorkMail.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/WorkMailMessageFlow/AWSSDK.WorkMailMessageFlow.CodeAnalysis.csproj">
+      <Project>{B6B097C9-DC46-4FF3-BDF8-8A10474A7D6E}</Project>
+      <Name>AWSSDK.WorkMailMessageFlow.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/WorkSpaces/AWSSDK.WorkSpaces.CodeAnalysis.csproj">
       <Project>{D7B54129-A9F3-47F0-BA76-8FE371315827}</Project>

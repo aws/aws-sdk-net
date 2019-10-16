@@ -59,11 +59,11 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-01-25";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/v20190125/meshes/{meshName}/virtualRouters";
             if (!publicRequest.IsSetMeshName())
                 throw new AmazonAppMeshException("Request object does not have required field MeshName set");
-            uriResourcePath = uriResourcePath.Replace("{meshName}", StringUtils.FromStringWithSlashEncoding(publicRequest.MeshName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{meshName}", StringUtils.FromString(publicRequest.MeshName));
+            request.ResourcePath = "/v20190125/meshes/{meshName}/virtualRouters";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

@@ -29,7 +29,7 @@ namespace Amazon.RAM.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes the specified tags from the specified resource share.
+    /// Removes the specified tags from the specified resource share that you own.
     /// </summary>
     public partial class UntagResourceRequest : AmazonRAMRequest
     {

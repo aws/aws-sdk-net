@@ -87,13 +87,13 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property SnsTopicARN. 
         /// <para>
         /// The new SNS <code>TopicArn</code> that you want to associate with this job. You can
-        /// create Amazon Resource Names (ARNs) for topics by using the <a href="http://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a>
+        /// create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a>
         /// Amazon SNS API action.
         /// </para>
         ///  
         /// <para>
         /// You can subscribe email addresses to an Amazon SNS topic through the AWS Management
-        /// Console, or by using the <a href="http://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
+        /// Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
         /// AWS Simple Notification Service (SNS) API action.
         /// </para>
         /// </summary>

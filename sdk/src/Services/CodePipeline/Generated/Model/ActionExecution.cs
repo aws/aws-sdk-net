@@ -82,8 +82,8 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property ExternalExecutionUrl. 
         /// <para>
-        /// The URL of a resource external to AWS that will be used when running the action, for
-        /// example an external repository URL.
+        /// The URL of a resource external to AWS that is used when running the action (for example,
+        /// an external repository URL).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -196,7 +196,7 @@ namespace Amazon.CodePipeline.Model
         /// <para>
         /// The system-generated token used to identify a unique approval request. The token for
         /// each open approval request can be obtained using the <code>GetPipelineState</code>
-        /// command and is used to validate that the approval request corresponding to this token
+        /// command. It is used to validate that the approval request corresponding to this token
         /// is still valid.
         /// </para>
         /// </summary>

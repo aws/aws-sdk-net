@@ -73,9 +73,117 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         int publicRequestOptionslistValueIndex = 1;
                         foreach(var publicRequestOptionslistValue in publicRequest.Options.TunnelOptions)
                         {
+                            if(publicRequestOptionslistValue.IsSetDPDTimeoutSeconds())
+                            {
+                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "DPDTimeoutSeconds", StringUtils.FromInt(publicRequestOptionslistValue.DPDTimeoutSeconds));
+                            }
+                            if(publicRequestOptionslistValue.IsSetIKEVersions())
+                            {
+                                int publicRequestOptionslistValuelistValueIndex = 1;
+                                foreach(var publicRequestOptionslistValuelistValue in publicRequestOptionslistValue.IKEVersions)
+                                {
+                                    if(publicRequestOptionslistValuelistValue.IsSetValue())
+                                    {
+                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "IKEVersion" + "." + publicRequestOptionslistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestOptionslistValuelistValue.Value));
+                                    }
+                                    publicRequestOptionslistValuelistValueIndex++;
+                                }
+                            }
+                            if(publicRequestOptionslistValue.IsSetPhase1DHGroupNumbers())
+                            {
+                                int publicRequestOptionslistValuelistValueIndex = 1;
+                                foreach(var publicRequestOptionslistValuelistValue in publicRequestOptionslistValue.Phase1DHGroupNumbers)
+                                {
+                                    if(publicRequestOptionslistValuelistValue.IsSetValue())
+                                    {
+                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase1DHGroupNumber" + "." + publicRequestOptionslistValuelistValueIndex + "." + "Value", StringUtils.FromInt(publicRequestOptionslistValuelistValue.Value));
+                                    }
+                                    publicRequestOptionslistValuelistValueIndex++;
+                                }
+                            }
+                            if(publicRequestOptionslistValue.IsSetPhase1EncryptionAlgorithms())
+                            {
+                                int publicRequestOptionslistValuelistValueIndex = 1;
+                                foreach(var publicRequestOptionslistValuelistValue in publicRequestOptionslistValue.Phase1EncryptionAlgorithms)
+                                {
+                                    if(publicRequestOptionslistValuelistValue.IsSetValue())
+                                    {
+                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase1EncryptionAlgorithm" + "." + publicRequestOptionslistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestOptionslistValuelistValue.Value));
+                                    }
+                                    publicRequestOptionslistValuelistValueIndex++;
+                                }
+                            }
+                            if(publicRequestOptionslistValue.IsSetPhase1IntegrityAlgorithms())
+                            {
+                                int publicRequestOptionslistValuelistValueIndex = 1;
+                                foreach(var publicRequestOptionslistValuelistValue in publicRequestOptionslistValue.Phase1IntegrityAlgorithms)
+                                {
+                                    if(publicRequestOptionslistValuelistValue.IsSetValue())
+                                    {
+                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase1IntegrityAlgorithm" + "." + publicRequestOptionslistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestOptionslistValuelistValue.Value));
+                                    }
+                                    publicRequestOptionslistValuelistValueIndex++;
+                                }
+                            }
+                            if(publicRequestOptionslistValue.IsSetPhase1LifetimeSeconds())
+                            {
+                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase1LifetimeSeconds", StringUtils.FromInt(publicRequestOptionslistValue.Phase1LifetimeSeconds));
+                            }
+                            if(publicRequestOptionslistValue.IsSetPhase2DHGroupNumbers())
+                            {
+                                int publicRequestOptionslistValuelistValueIndex = 1;
+                                foreach(var publicRequestOptionslistValuelistValue in publicRequestOptionslistValue.Phase2DHGroupNumbers)
+                                {
+                                    if(publicRequestOptionslistValuelistValue.IsSetValue())
+                                    {
+                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase2DHGroupNumber" + "." + publicRequestOptionslistValuelistValueIndex + "." + "Value", StringUtils.FromInt(publicRequestOptionslistValuelistValue.Value));
+                                    }
+                                    publicRequestOptionslistValuelistValueIndex++;
+                                }
+                            }
+                            if(publicRequestOptionslistValue.IsSetPhase2EncryptionAlgorithms())
+                            {
+                                int publicRequestOptionslistValuelistValueIndex = 1;
+                                foreach(var publicRequestOptionslistValuelistValue in publicRequestOptionslistValue.Phase2EncryptionAlgorithms)
+                                {
+                                    if(publicRequestOptionslistValuelistValue.IsSetValue())
+                                    {
+                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase2EncryptionAlgorithm" + "." + publicRequestOptionslistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestOptionslistValuelistValue.Value));
+                                    }
+                                    publicRequestOptionslistValuelistValueIndex++;
+                                }
+                            }
+                            if(publicRequestOptionslistValue.IsSetPhase2IntegrityAlgorithms())
+                            {
+                                int publicRequestOptionslistValuelistValueIndex = 1;
+                                foreach(var publicRequestOptionslistValuelistValue in publicRequestOptionslistValue.Phase2IntegrityAlgorithms)
+                                {
+                                    if(publicRequestOptionslistValuelistValue.IsSetValue())
+                                    {
+                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase2IntegrityAlgorithm" + "." + publicRequestOptionslistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestOptionslistValuelistValue.Value));
+                                    }
+                                    publicRequestOptionslistValuelistValueIndex++;
+                                }
+                            }
+                            if(publicRequestOptionslistValue.IsSetPhase2LifetimeSeconds())
+                            {
+                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase2LifetimeSeconds", StringUtils.FromInt(publicRequestOptionslistValue.Phase2LifetimeSeconds));
+                            }
                             if(publicRequestOptionslistValue.IsSetPreSharedKey())
                             {
                                 request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "PreSharedKey", StringUtils.FromString(publicRequestOptionslistValue.PreSharedKey));
+                            }
+                            if(publicRequestOptionslistValue.IsSetRekeyFuzzPercentage())
+                            {
+                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "RekeyFuzzPercentage", StringUtils.FromInt(publicRequestOptionslistValue.RekeyFuzzPercentage));
+                            }
+                            if(publicRequestOptionslistValue.IsSetRekeyMarginTimeSeconds())
+                            {
+                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "RekeyMarginTimeSeconds", StringUtils.FromInt(publicRequestOptionslistValue.RekeyMarginTimeSeconds));
+                            }
+                            if(publicRequestOptionslistValue.IsSetReplayWindowSize())
+                            {
+                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "ReplayWindowSize", StringUtils.FromInt(publicRequestOptionslistValue.ReplayWindowSize));
                             }
                             if(publicRequestOptionslistValue.IsSetTunnelInsideCidr())
                             {

@@ -38,6 +38,7 @@ namespace Amazon.MediaLive.Model
         private int? _bufFillPct;
         private int? _bufSize;
         private H264ColorMetadata _colorMetadata;
+        private H264ColorSpaceSettings _colorSpaceSettings;
         private H264EntropyEncoding _entropyEncoding;
         private FixedAfd _fixedAfd;
         private H264FlickerAq _flickerAq;
@@ -141,7 +142,7 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BufSize. Size of buffer (HRD buffer model) in bits/second.
+        /// Gets and sets the property BufSize. Size of buffer (HRD buffer model) in bits.
         /// </summary>
         [AWSProperty(Min=0)]
         public int BufSize
@@ -169,6 +170,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetColorMetadata()
         {
             return this._colorMetadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ColorSpaceSettings. Color Space settings
+        /// </summary>
+        public H264ColorSpaceSettings ColorSpaceSettings
+        {
+            get { return this._colorSpaceSettings; }
+            set { this._colorSpaceSettings = value; }
+        }
+
+        // Check to see if ColorSpaceSettings property is set
+        internal bool IsSetColorSpaceSettings()
+        {
+            return this._colorSpaceSettings != null;
         }
 
         /// <summary>
@@ -387,8 +403,8 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxBitrate. For QVBR: See the tooltip for Quality level
-        /// For VBR: Set the maximum bitrate in order to accommodate expected spikes in the complexity
+        /// Gets and sets the property MaxBitrate. For QVBR: See the tooltip for Quality levelFor
+        /// VBR: Set the maximum bitrate in order to accommodate expected spikes in the complexity
         /// of the video.
         /// </summary>
         [AWSProperty(Min=1000)]
@@ -530,9 +546,9 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RateControlMode. Rate control mode. QVBR: Quality will
-        /// match the specified quality level except when it is constrained by themaximum bitrate.
-        ///  Recommended if you or your viewers pay for bandwidth.VBR: Quality and bitrate vary,
+        /// Gets and sets the property RateControlMode. Rate control mode.QVBR: Quality will match
+        /// the specified quality level except when it is constrained by themaximum bitrate. 
+        /// Recommended if you or your viewers pay for bandwidth.VBR: Quality and bitrate vary,
         /// depending on the video complexity. Recommended instead of QVBRif you want to maintain
         /// a specific average bitrate over the duration of the channel.CBR: Quality varies, depending
         /// on the video complexity. Recommended only if you distributeyour assets to devices

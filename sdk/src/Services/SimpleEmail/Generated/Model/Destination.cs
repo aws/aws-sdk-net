@@ -55,7 +55,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Instantiates Destination with the parameterized properties
         /// </summary>
-        /// <param name="toAddresses">The To: field(s) of the message.</param>
+        /// <param name="toAddresses">The recipients to place on the To: line of the message.</param>
         public Destination(List<string> toAddresses)
         {
             _toAddresses = toAddresses;
@@ -64,7 +64,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property BccAddresses. 
         /// <para>
-        /// The BCC: field(s) of the message.
+        /// The recipients to place on the BCC: line of the message.
         /// </para>
         /// </summary>
         public List<string> BccAddresses
@@ -82,7 +82,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property CcAddresses. 
         /// <para>
-        /// The CC: field(s) of the message.
+        /// The recipients to place on the CC: line of the message.
         /// </para>
         /// </summary>
         public List<string> CcAddresses
@@ -100,7 +100,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property ToAddresses. 
         /// <para>
-        /// The To: field(s) of the message.
+        /// The recipients to place on the To: line of the message.
         /// </para>
         /// </summary>
         public List<string> ToAddresses

@@ -59,11 +59,11 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-01-01";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/2015-01-01/es/domain/{DomainName}/config";
             if (!publicRequest.IsSetDomainName())
                 throw new AmazonElasticsearchException("Request object does not have required field DomainName set");
-            uriResourcePath = uriResourcePath.Replace("{DomainName}", StringUtils.FromStringWithSlashEncoding(publicRequest.DomainName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{DomainName}", StringUtils.FromString(publicRequest.DomainName));
+            request.ResourcePath = "/2015-01-01/es/domain/{DomainName}/config";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -96,6 +96,17 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 
                     var marshaller = CognitoOptionsMarshaller.Instance;
                     marshaller.Marshall(publicRequest.CognitoOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetDomainEndpointOptions())
+                {
+                    context.Writer.WritePropertyName("DomainEndpointOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DomainEndpointOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DomainEndpointOptions, context);
 
                     context.Writer.WriteObjectEnd();
                 }

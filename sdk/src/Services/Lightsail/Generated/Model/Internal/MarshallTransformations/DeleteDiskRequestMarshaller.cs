@@ -61,8 +61,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-11-28";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -72,6 +72,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("diskName");
                     context.Writer.Write(publicRequest.DiskName);
+                }
+
+                if(publicRequest.IsSetForceDeleteAddOns())
+                {
+                    context.Writer.WritePropertyName("forceDeleteAddOns");
+                    context.Writer.Write(publicRequest.ForceDeleteAddOns);
                 }
 
         

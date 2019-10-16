@@ -59,7 +59,9 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property ChannelStorage. 
         /// <para>
-        /// Where channel data is stored.
+        /// Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3"
+        /// storage. If not specified, the default is "serviceManagedS3". This cannot be changed
+        /// after creation of the channel.
         /// </para>
         /// </summary>
         public ChannelStorage ChannelStorage
@@ -77,7 +79,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property RetentionPeriod. 
         /// <para>
-        /// How long, in days, message data is kept for the channel.
+        /// How long, in days, message data is kept for the channel. The retention period cannot
+        /// be updated if the channel's S3 storage is customer-managed.
         /// </para>
         /// </summary>
         public RetentionPeriod RetentionPeriod

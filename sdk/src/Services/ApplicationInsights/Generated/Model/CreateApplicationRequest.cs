@@ -33,7 +33,47 @@ namespace Amazon.ApplicationInsights.Model
     /// </summary>
     public partial class CreateApplicationRequest : AmazonApplicationInsightsRequest
     {
+        private bool? _opsCenterEnabled;
+        private string _opsItemSNSTopicArn;
         private string _resourceGroupName;
+
+        /// <summary>
+        /// Gets and sets the property OpsCenterEnabled. 
+        /// <para>
+        ///  When set to <code>true</code>, creates opsItems for any problems detected on an application.
+        /// 
+        /// </para>
+        /// </summary>
+        public bool OpsCenterEnabled
+        {
+            get { return this._opsCenterEnabled.GetValueOrDefault(); }
+            set { this._opsCenterEnabled = value; }
+        }
+
+        // Check to see if OpsCenterEnabled property is set
+        internal bool IsSetOpsCenterEnabled()
+        {
+            return this._opsCenterEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OpsItemSNSTopicArn. 
+        /// <para>
+        ///  The SNS topic provided to Application Insights that is associated to the created
+        /// opsItem. Allows you to receive notifications for updates to the opsItem. 
+        /// </para>
+        /// </summary>
+        public string OpsItemSNSTopicArn
+        {
+            get { return this._opsItemSNSTopicArn; }
+            set { this._opsItemSNSTopicArn = value; }
+        }
+
+        // Check to see if OpsItemSNSTopicArn property is set
+        internal bool IsSetOpsItemSNSTopicArn()
+        {
+            return this._opsItemSNSTopicArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ResourceGroupName. 

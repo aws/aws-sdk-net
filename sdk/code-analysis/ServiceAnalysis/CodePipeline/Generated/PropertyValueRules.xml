@@ -651,6 +651,11 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ExecutionTrigger.TriggerDetail</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodePipeline.Model.FailureDetails.ExternalExecutionId</property>
     <min>1</min>
     <max>1500</max>

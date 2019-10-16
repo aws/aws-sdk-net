@@ -187,8 +187,35 @@ namespace Amazon.ConfigService
         /// are correct and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
-        /// The rule is currently being deleted or the rule is deleting your evaluation results.
+        /// You see this exception in the following cases: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// For DeleteConfigRule API, AWS Config is deleting this rule. Try your request again
+        /// later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteConfigRule API, the rule is deleting your evaluation results. Try your request
+        /// again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteConfigRule API, a remediation action is associated with the rule and AWS
+        /// Config cannot delete this rule. Delete the remediation action associated with the
+        /// rule before deleting the rule and try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutConfigOrganizationRule, organization config rule deletion is in progress. Try
+        /// your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
         /// Try your request again later.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigRule">REST API Reference for DeleteConfigRule Operation</seealso>
         Task<DeleteConfigRuleResponse> DeleteConfigRuleAsync(DeleteConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -328,8 +355,35 @@ namespace Amazon.ConfigService
         /// are correct and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
-        /// The rule is currently being deleted or the rule is deleting your evaluation results.
+        /// You see this exception in the following cases: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// For DeleteConfigRule API, AWS Config is deleting this rule. Try your request again
+        /// later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteConfigRule API, the rule is deleting your evaluation results. Try your request
+        /// again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteConfigRule API, a remediation action is associated with the rule and AWS
+        /// Config cannot delete this rule. Delete the remediation action associated with the
+        /// rule before deleting the rule and try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutConfigOrganizationRule, organization config rule deletion is in progress. Try
+        /// your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
         /// Try your request again later.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteEvaluationResults">REST API Reference for DeleteEvaluationResults Operation</seealso>
         Task<DeleteEvaluationResultsResponse> DeleteEvaluationResultsAsync(DeleteEvaluationResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -341,7 +395,15 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
+        /// Deletes the specified organization config rule and all of its evaluation results from
+        /// all member accounts in that organization. Only a master account can delete an organization
+        /// config rule.
         /// 
+        ///  
+        /// <para>
+        /// AWS Config sets the state of a rule to DELETE_IN_PROGRESS until the deletion is complete.
+        /// You cannot update a rule while it is in this state.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteOrganizationConfigRule service method.</param>
         /// <param name="cancellationToken">
@@ -350,14 +412,47 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the DeleteOrganizationConfigRule service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConfigRuleException">
-        /// 
+        /// You specified one or more organization config rules that do not exist.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
-        /// No permission to call the EnableAWSServiceAccess API.
+        /// For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+        /// 
+        ///  
+        /// <para>
+        /// For all OrganizationConfigRule APIs, AWS Config throws an exception if APIs are called
+        /// from member accounts. All APIs must be called from organization master account.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
-        /// The rule is currently being deleted or the rule is deleting your evaluation results.
+        /// You see this exception in the following cases: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// For DeleteConfigRule API, AWS Config is deleting this rule. Try your request again
+        /// later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteConfigRule API, the rule is deleting your evaluation results. Try your request
+        /// again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteConfigRule API, a remediation action is associated with the rule and AWS
+        /// Config cannot delete this rule. Delete the remediation action associated with the
+        /// rule before deleting the rule and try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutConfigOrganizationRule, organization config rule deletion is in progress. Try
+        /// your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
         /// Try your request again later.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteOrganizationConfigRule">REST API Reference for DeleteOrganizationConfigRule Operation</seealso>
         Task<DeleteOrganizationConfigRuleResponse> DeleteOrganizationConfigRuleAsync(DeleteOrganizationConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -404,10 +499,32 @@ namespace Amazon.ConfigService
         /// You specified an AWS Config rule without a remediation configuration.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.RemediationInProgressException">
-        /// 
+        /// Remediation action is in progress. You can either cancel execution in AWS Systems
+        /// Manager or wait and try again later.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRemediationConfiguration">REST API Reference for DeleteRemediationConfiguration Operation</seealso>
         Task<DeleteRemediationConfigurationResponse> DeleteRemediationConfigurationAsync(DeleteRemediationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteRemediationExceptions
+
+
+
+        /// <summary>
+        /// Deletes one or more remediation exceptions mentioned in the resource keys.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRemediationExceptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRemediationExceptions service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchRemediationExceptionException">
+        /// You tried to delete a remediation exception that does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRemediationExceptions">REST API Reference for DeleteRemediationExceptions Operation</seealso>
+        Task<DeleteRemediationExceptionsResponse> DeleteRemediationExceptionsAsync(DeleteRemediationExceptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -528,8 +645,8 @@ namespace Amazon.ConfigService
         /// 
         ///  <note> 
         /// <para>
-        /// The results can return an empty result page, but if you have a nextToken, the results
-        /// are displayed on the next page.
+        /// The results can return an empty result page, but if you have a <code>nextToken</code>,
+        /// the results are displayed on the next page.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1047,7 +1164,19 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
+        /// Returns a list of organization config rules.
         /// 
+        ///  <note> 
+        /// <para>
+        /// When you specify the limit and the next token, you receive a paginated response. Limit
+        /// and next token are not applicable if you specify organization config rule names. It
+        /// is only applicable, when you request all the organization config rules.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only a master account can call this API.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationConfigRules service method.</param>
         /// <param name="cancellationToken">
@@ -1063,10 +1192,16 @@ namespace Amazon.ConfigService
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConfigRuleException">
-        /// 
+        /// You specified one or more organization config rules that do not exist.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
-        /// No permission to call the EnableAWSServiceAccess API.
+        /// For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+        /// 
+        ///  
+        /// <para>
+        /// For all OrganizationConfigRule APIs, AWS Config throws an exception if APIs are called
+        /// from member accounts. All APIs must be called from organization master account.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules">REST API Reference for DescribeOrganizationConfigRules Operation</seealso>
         Task<DescribeOrganizationConfigRulesResponse> DescribeOrganizationConfigRulesAsync(DescribeOrganizationConfigRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1078,7 +1213,24 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
+        /// Provides organization config rule deployment status for an organization.
         /// 
+        ///  <note> 
+        /// <para>
+        /// The status is not considered successful until organization config rule is successfully
+        /// deployed in all the member accounts with an exception of excluded accounts.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you specify the limit and the next token, you receive a paginated response. Limit
+        /// and next token are not applicable if you specify organization config rule names. It
+        /// is only applicable, when you request all the organization config rules.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only a master account can call this API.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationConfigRuleStatuses service method.</param>
         /// <param name="cancellationToken">
@@ -1094,10 +1246,16 @@ namespace Amazon.ConfigService
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConfigRuleException">
-        /// 
+        /// You specified one or more organization config rules that do not exist.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
-        /// No permission to call the EnableAWSServiceAccess API.
+        /// For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+        /// 
+        ///  
+        /// <para>
+        /// For all OrganizationConfigRule APIs, AWS Config throws an exception if APIs are called
+        /// from member accounts. All APIs must be called from organization master account.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRuleStatuses">REST API Reference for DescribeOrganizationConfigRuleStatuses Operation</seealso>
         Task<DescribeOrganizationConfigRuleStatusesResponse> DescribeOrganizationConfigRuleStatusesAsync(DescribeOrganizationConfigRuleStatusesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1151,6 +1309,46 @@ namespace Amazon.ConfigService
 
         #endregion
                 
+        #region  DescribeRemediationExceptions
+
+
+
+        /// <summary>
+        /// Returns the details of one or more remediation exceptions. A detailed view of a remediation
+        /// exception for a set of resources that includes an explanation of an exception and
+        /// the time when the exception will be deleted. When you specify the limit and the next
+        /// token, you receive a paginated response. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When you specify the limit and the next token, you receive a paginated response. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Limit and next token are not applicable if you request resources in batch. It is only
+        /// applicable, when you request all resources.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRemediationExceptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeRemediationExceptions service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRemediationExceptions">REST API Reference for DescribeRemediationExceptions Operation</seealso>
+        Task<DescribeRemediationExceptionsResponse> DescribeRemediationExceptionsAsync(DescribeRemediationExceptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeRemediationExecutionStatus
 
 
@@ -1167,6 +1365,10 @@ namespace Amazon.ConfigService
         /// </param>
         /// 
         /// <returns>The response from the DescribeRemediationExecutionStatus service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchRemediationConfigurationException">
         /// You specified an AWS Config rule without a remediation configuration.
         /// </exception>
@@ -1225,8 +1427,8 @@ namespace Amazon.ConfigService
         /// 
         ///  <note> 
         /// <para>
-        /// The results can return an empty result page. But if you have a nextToken, the results
-        /// are displayed on the next page.
+        /// The results can return an empty result page. But if you have a <code>nextToken</code>,
+        /// the results are displayed on the next page.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1552,7 +1754,14 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
+        /// Returns detailed status for each member account within an organization for a given
+        /// organization config rule.
         /// 
+        ///  <note> 
+        /// <para>
+        /// Only a master account can call this API.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOrganizationConfigRuleDetailedStatus service method.</param>
         /// <param name="cancellationToken">
@@ -1568,10 +1777,16 @@ namespace Amazon.ConfigService
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConfigRuleException">
-        /// 
+        /// You specified one or more organization config rules that do not exist.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
-        /// No permission to call the EnableAWSServiceAccess API.
+        /// For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+        /// 
+        ///  
+        /// <para>
+        /// For all OrganizationConfigRule APIs, AWS Config throws an exception if APIs are called
+        /// from member accounts. All APIs must be called from organization master account.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus">REST API Reference for GetOrganizationConfigRuleDetailedStatus Operation</seealso>
         Task<GetOrganizationConfigRuleDetailedStatusResponse> GetOrganizationConfigRuleDetailedStatusAsync(GetOrganizationConfigRuleDetailedStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1849,13 +2064,19 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// The rule cannot be created because the IAM role assigned to AWS Config lacks permissions
-        /// to perform the config:Put* action.
+        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS
+        /// Config lacks permissions to perform the config:Put* action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The AWS Lambda function cannot be invoked. Check the function ARN, and check the function's
-        /// permissions.
+        /// For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN,
+        /// and check the function's permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For OrganizationConfigRule, organization config rule cannot be created because you
+        /// do not have permissions to call IAM <code>GetRole</code> action or create service
+        /// linked role.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -1872,8 +2093,35 @@ namespace Amazon.ConfigService
         /// your resources. Create a configuration recorder.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
-        /// The rule is currently being deleted or the rule is deleting your evaluation results.
+        /// You see this exception in the following cases: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// For DeleteConfigRule API, AWS Config is deleting this rule. Try your request again
+        /// later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteConfigRule API, the rule is deleting your evaluation results. Try your request
+        /// again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteConfigRule API, a remediation action is associated with the rule and AWS
+        /// Config cannot delete this rule. Delete the remediation action associated with the
+        /// rule before deleting the rule and try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutConfigOrganizationRule, organization config rule deletion is in progress. Try
+        /// your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
         /// Try your request again later.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigRule">REST API Reference for PutConfigRule Operation</seealso>
         Task<PutConfigRuleResponse> PutConfigRuleAsync(PutConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1925,14 +2173,20 @@ namespace Amazon.ConfigService
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoAvailableOrganizationException">
-        /// Organization does is no longer available.
+        /// Organization is no longer available.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
-        /// No permission to call the EnableAWSServiceAccess API.
+        /// For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+        /// 
+        ///  
+        /// <para>
+        /// For all OrganizationConfigRule APIs, AWS Config throws an exception if APIs are called
+        /// from member accounts. All APIs must be called from organization master account.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAllFeaturesNotEnabledException">
-        /// The configuration aggregator cannot be created because organization does not have
-        /// all features enabled.
+        /// AWS Config resource cannot be created because your organization does not have all
+        /// features enabled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationAggregator">REST API Reference for PutConfigurationAggregator Operation</seealso>
         Task<PutConfigurationAggregatorResponse> PutConfigurationAggregatorAsync(PutConfigurationAggregatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -2081,7 +2335,37 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
+        /// Adds or updates organization config rule for your entire organization evaluating whether
+        /// your AWS resources comply with your desired configurations. Only a master account
+        /// can create or update an organization config rule.
         /// 
+        ///  
+        /// <para>
+        /// This API enables organization service access through the <code>EnableAWSServiceAccess</code>
+        /// action and creates a service linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code>
+        /// in the master account of your organization. The service linked role is created only
+        /// when the role does not exist in the master account. AWS Config verifies the existence
+        /// of role with <code>GetRole</code> action.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use this action to create both custom AWS Config rules and AWS managed Config
+        /// rules. If you are adding a new custom AWS Config rule, you must first create AWS Lambda
+        /// function in the master account that the rule invokes to evaluate your resources. When
+        /// you use the <code>PutOrganizationConfigRule</code> action to add the rule to AWS Config,
+        /// you must specify the Amazon Resource Name (ARN) that AWS Lambda assigns to the function.
+        /// If you are adding an AWS managed Config rule, specify the rule's identifier for the
+        /// <code>RuleIdentifier</code> key.
+        /// </para>
+        ///  
+        /// <para>
+        /// The maximum number of organization config rules that AWS Config supports is 150.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Specify either <code>OrganizationCustomRuleMetadata</code> or <code>OrganizationManagedRuleMetadata</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutOrganizationConfigRule service method.</param>
         /// <param name="cancellationToken">
@@ -2094,13 +2378,19 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// The rule cannot be created because the IAM role assigned to AWS Config lacks permissions
-        /// to perform the config:Put* action.
+        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS
+        /// Config lacks permissions to perform the config:Put* action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The AWS Lambda function cannot be invoked. Check the function ARN, and check the function's
-        /// permissions.
+        /// For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN,
+        /// and check the function's permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For OrganizationConfigRule, organization config rule cannot be created because you
+        /// do not have permissions to call IAM <code>GetRole</code> action or create service
+        /// linked role.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -2109,21 +2399,54 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfOrganizationConfigRulesExceededException">
-        /// 
+        /// You have reached the limit of the number of organization config rules you can create.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoAvailableOrganizationException">
-        /// Organization does is no longer available.
+        /// Organization is no longer available.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
-        /// No permission to call the EnableAWSServiceAccess API.
+        /// For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+        /// 
+        ///  
+        /// <para>
+        /// For all OrganizationConfigRule APIs, AWS Config throws an exception if APIs are called
+        /// from member accounts. All APIs must be called from organization master account.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAllFeaturesNotEnabledException">
-        /// The configuration aggregator cannot be created because organization does not have
-        /// all features enabled.
+        /// AWS Config resource cannot be created because your organization does not have all
+        /// features enabled.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
-        /// The rule is currently being deleted or the rule is deleting your evaluation results.
+        /// You see this exception in the following cases: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// For DeleteConfigRule API, AWS Config is deleting this rule. Try your request again
+        /// later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteConfigRule API, the rule is deleting your evaluation results. Try your request
+        /// again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteConfigRule API, a remediation action is associated with the rule and AWS
+        /// Config cannot delete this rule. Delete the remediation action associated with the
+        /// rule before deleting the rule and try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutConfigOrganizationRule, organization config rule deletion is in progress. Try
+        /// your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
         /// Try your request again later.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.
@@ -2155,13 +2478,19 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// The rule cannot be created because the IAM role assigned to AWS Config lacks permissions
-        /// to perform the config:Put* action.
+        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS
+        /// Config lacks permissions to perform the config:Put* action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The AWS Lambda function cannot be invoked. Check the function ARN, and check the function's
-        /// permissions.
+        /// For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN,
+        /// and check the function's permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For OrganizationConfigRule, organization config rule cannot be created because you
+        /// do not have permissions to call IAM <code>GetRole</code> action or create service
+        /// linked role.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -2171,6 +2500,30 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationConfigurations">REST API Reference for PutRemediationConfigurations Operation</seealso>
         Task<PutRemediationConfigurationsResponse> PutRemediationConfigurationsAsync(PutRemediationConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutRemediationExceptions
+
+
+
+        /// <summary>
+        /// A remediation exception is when a specific resource is no longer considered for auto-remediation.
+        /// This API adds a new exception or updates an exisiting exception for a specific resource
+        /// with a specific AWS Config rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutRemediationExceptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutRemediationExceptions service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationExceptions">REST API Reference for PutRemediationExceptions Operation</seealso>
+        Task<PutRemediationExceptionsResponse> PutRemediationExceptionsAsync(PutRemediationExceptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2328,8 +2681,35 @@ namespace Amazon.ConfigService
         /// are correct and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
-        /// The rule is currently being deleted or the rule is deleting your evaluation results.
+        /// You see this exception in the following cases: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// For DeleteConfigRule API, AWS Config is deleting this rule. Try your request again
+        /// later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteConfigRule API, the rule is deleting your evaluation results. Try your request
+        /// again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteConfigRule API, a remediation action is associated with the rule and AWS
+        /// Config cannot delete this rule. Delete the remediation action associated with the
+        /// rule before deleting the rule and try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutConfigOrganizationRule, organization config rule deletion is in progress. Try
+        /// your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
         /// Try your request again later.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigRulesEvaluation">REST API Reference for StartConfigRulesEvaluation Operation</seealso>
         Task<StartConfigRulesEvaluationResponse> StartConfigRulesEvaluationAsync(StartConfigRulesEvaluationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -2418,15 +2798,25 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// The rule cannot be created because the IAM role assigned to AWS Config lacks permissions
-        /// to perform the config:Put* action.
+        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS
+        /// Config lacks permissions to perform the config:Put* action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The AWS Lambda function cannot be invoked. Check the function ARN, and check the function's
-        /// permissions.
+        /// For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN,
+        /// and check the function's permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For OrganizationConfigRule, organization config rule cannot be created because you
+        /// do not have permissions to call IAM <code>GetRole</code> action or create service
+        /// linked role.
         /// </para>
         ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchRemediationConfigurationException">
         /// You specified an AWS Config rule without a remediation configuration.

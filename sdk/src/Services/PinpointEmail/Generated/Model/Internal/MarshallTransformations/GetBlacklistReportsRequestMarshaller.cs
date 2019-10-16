@@ -58,11 +58,11 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-26";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/v1/email/deliverability-dashboard/blacklist-report";
             
             if (publicRequest.IsSetBlacklistItemNames())
                 request.ParameterCollection.Add("BlacklistItemNames", publicRequest.BlacklistItemNames);
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/v1/email/deliverability-dashboard/blacklist-report";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

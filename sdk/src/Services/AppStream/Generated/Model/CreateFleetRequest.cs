@@ -40,6 +40,7 @@ namespace Amazon.AppStream.Model
         private DomainJoinInfo _domainJoinInfo;
         private bool? _enableDefaultInternetAccess;
         private FleetType _fleetType;
+        private string _iamRoleArn;
         private int? _idleDisconnectTimeoutInSeconds;
         private string _imageArn;
         private string _imageName;
@@ -196,6 +197,27 @@ namespace Amazon.AppStream.Model
         internal bool IsSetFleetType()
         {
             return this._fleetType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IamRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a
+        /// role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code>
+        /// API operation and passes the ARN of the role to use. The operation creates a new session
+        /// with temporary credentials.
+        /// </para>
+        /// </summary>
+        public string IamRoleArn
+        {
+            get { return this._iamRoleArn; }
+            set { this._iamRoleArn = value; }
+        }
+
+        // Check to see if IamRoleArn property is set
+        internal bool IsSetIamRoleArn()
+        {
+            return this._iamRoleArn != null;
         }
 
         /// <summary>
@@ -446,7 +468,7 @@ namespace Amazon.AppStream.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// A tag is a key/value pair that is used to manage the resource.
+    /// A tag is a key-value pair that is used to manage the resource.
     /// </summary>
     public partial class Tag
     {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Provides a summary of information about a transcription job. .
+    /// Provides a summary of information about a transcription job.
     /// </summary>
     public partial class TranscriptionJobSummary
     {

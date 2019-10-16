@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// The structure used to create and update a partion.
+    /// The structure used to create and update a partition.
     /// </summary>
     public partial class PartitionInput
     {
@@ -115,6 +115,12 @@ namespace Amazon.Glue.Model
         /// <para>
         /// The values of the partition. Although this parameter is not required by the SDK, you
         /// must specify this parameter for a valid input.
+        /// </para>
+        ///  
+        /// <para>
+        /// The values for the keys for the new partition must be passed as an array of String
+        /// objects that must be ordered in the same order as the partition keys appearing in
+        /// the Amazon S3 prefix. Otherwise AWS Glue will add the values to the wrong keys.
         /// </para>
         /// </summary>
         public List<string> Values

@@ -58,14 +58,14 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-04-19";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/bots/{name}/versions/{versionoralias}";
             if (!publicRequest.IsSetName())
                 throw new AmazonLexModelBuildingServiceException("Request object does not have required field Name set");
-            uriResourcePath = uriResourcePath.Replace("{name}", StringUtils.FromStringWithSlashEncoding(publicRequest.Name));
+            request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             if (!publicRequest.IsSetVersionOrAlias())
                 throw new AmazonLexModelBuildingServiceException("Request object does not have required field VersionOrAlias set");
-            uriResourcePath = uriResourcePath.Replace("{versionoralias}", StringUtils.FromStringWithSlashEncoding(publicRequest.VersionOrAlias));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{versionoralias}", StringUtils.FromString(publicRequest.VersionOrAlias));
+            request.ResourcePath = "/bots/{name}/versions/{versionoralias}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

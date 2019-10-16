@@ -137,7 +137,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property DeploymentController. 
         /// <para>
-        /// The deployment controller type the service is using.
+        /// The deployment controller type the service is using. When using the DescribeServices
+        /// API, this field is omitted if the service is using the <code>ECS</code> deployment
+        /// controller type.
         /// </para>
         /// </summary>
         public DeploymentController DeploymentController
@@ -275,15 +277,6 @@ namespace Amazon.ECS.Model
         /// A list of Elastic Load Balancing load balancer objects, containing the load balancer
         /// name, the container name (as it appears in a container definition), and the container
         /// port to access from the load balancer.
-        /// </para>
-        ///  
-        /// <para>
-        /// Services with tasks that use the <code>awsvpc</code> network mode (for example, those
-        /// with the Fargate launch type) only support Application Load Balancers and Network
-        /// Load Balancers. Classic Load Balancers are not supported. Also, when you create any
-        /// target groups for these services, you must choose <code>ip</code> as the target type,
-        /// not <code>instance</code>. Tasks that use the <code>awsvpc</code> network mode are
-        /// associated with an elastic network interface, not an Amazon EC2 instance.
         /// </para>
         /// </summary>
         public List<LoadBalancer> LoadBalancers
@@ -573,10 +566,48 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The metadata that you apply to the service to help you categorize and organize them.
-        /// Each tag consists of a key and an optional value, both of which you define. Tag keys
-        /// can have a maximum character length of 128 characters, and tag values can have a maximum
-        /// length of 256 characters.
+        /// Each tag consists of a key and an optional value, both of which you define.
         /// </para>
+        ///  
+        /// <para>
+        /// The following basic restrictions apply to tags:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Maximum number of tags per resource - 50
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For each resource, each tag key must be unique, and each tag key can have only one
+        /// value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Maximum key length - 128 Unicode characters in UTF-8
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Maximum value length - 256 Unicode characters in UTF-8
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If your tagging schema is used across multiple services and resources, remember that
+        /// other services may have restrictions on allowed characters. Generally allowed characters
+        /// are: letters, numbers, and spaces representable in UTF-8, and the following characters:
+        /// + - = . _ : / @.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tag keys and values are case-sensitive.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination
+        /// of such as a prefix for either keys or values as it is reserved for AWS use. You cannot
+        /// edit or delete tag keys or values with this prefix. Tags with this prefix do not count
+        /// against your tags per resource limit.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags

@@ -59,8 +59,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-01-01";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/2015-01-01/tags";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2015-01-01/tags";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

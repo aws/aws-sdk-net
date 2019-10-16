@@ -61,17 +61,29 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-11-28";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetRestoreDate())
+                {
+                    context.Writer.WritePropertyName("restoreDate");
+                    context.Writer.Write(publicRequest.RestoreDate);
+                }
+
                 if(publicRequest.IsSetSourceRegion())
                 {
                     context.Writer.WritePropertyName("sourceRegion");
                     context.Writer.Write(publicRequest.SourceRegion);
+                }
+
+                if(publicRequest.IsSetSourceResourceName())
+                {
+                    context.Writer.WritePropertyName("sourceResourceName");
+                    context.Writer.Write(publicRequest.SourceResourceName);
                 }
 
                 if(publicRequest.IsSetSourceSnapshotName())
@@ -84,6 +96,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("targetSnapshotName");
                     context.Writer.Write(publicRequest.TargetSnapshotName);
+                }
+
+                if(publicRequest.IsSetUseLatestRestorableAutoSnapshot())
+                {
+                    context.Writer.WritePropertyName("useLatestRestorableAutoSnapshot");
+                    context.Writer.Write(publicRequest.UseLatestRestorableAutoSnapshot);
                 }
 
         

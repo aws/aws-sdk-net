@@ -220,6 +220,8 @@ namespace S3UnitTest
                 AssertRulesAreEqual(rule, s3Rule);
             }
 
+            Thread.Sleep(10000);
+
             var expectedMinAbortDate = DateTime.Now.Date.AddDays(7);
             var initResponse = Client.InitiateMultipartUpload(new InitiateMultipartUploadRequest
             {

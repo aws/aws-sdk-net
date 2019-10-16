@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Filters. 
         /// <para>
         /// Filter tasks using the <code>task-state</code> filter and one of the following values:
-        /// active, completed, deleting, deleted.
+        /// <code>active</code>, <code>completed</code>, <code>deleting</code>, or <code>deleted</code>.
         /// </para>
         /// </summary>
         public List<Filter> Filters
@@ -61,7 +61,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImportTaskIds. 
         /// <para>
-        /// A list of import image task IDs.
+        /// The IDs of the import image tasks.
         /// </para>
         /// </summary>
         public List<string> ImportTaskIds
@@ -79,8 +79,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.
+        /// The maximum number of results to return in a single call.
         /// </para>
         /// </summary>
         public int MaxResults

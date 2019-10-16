@@ -58,10 +58,9 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-05-01";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/api/v1/resources/{ResourceId}/permissions";
             if (!publicRequest.IsSetResourceId())
                 throw new AmazonWorkDocsException("Request object does not have required field ResourceId set");
-            uriResourcePath = uriResourcePath.Replace("{ResourceId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceId));
+            request.AddPathResource("{ResourceId}", StringUtils.FromString(publicRequest.ResourceId));
             
             if (publicRequest.IsSetLimit())
                 request.Parameters.Add("limit", StringUtils.FromInt(publicRequest.Limit));
@@ -71,7 +70,8 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetPrincipalId())
                 request.Parameters.Add("principalId", StringUtils.FromString(publicRequest.PrincipalId));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/api/v1/resources/{ResourceId}/permissions";
+            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetAuthenticationToken())
                 request.Headers["Authentication"] = publicRequest.AuthenticationToken;

@@ -85,7 +85,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. The ID of the group version.
+        /// Gets and sets the property Id. The ID of the group that the version is associated
+        /// with.
         /// </summary>
         public string Id
         {
@@ -100,7 +101,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Version. The unique ID for the version of the group.
+        /// Gets and sets the property Version. The ID of the group version.
         /// </summary>
         public string Version
         {

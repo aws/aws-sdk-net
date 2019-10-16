@@ -29,12 +29,9 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the AdminSetUserSettings operation.
-    /// Sets all the user settings for a specified user name. Works on any user.
-    /// 
-    ///  
-    /// <para>
-    /// Requires developer credentials.
-    /// </para>
+    /// <i>This action is no longer supported.</i> You can use it to configure only SMS MFA.
+    /// You can't use it to configure TOTP software token MFA. To configure either type of
+    /// MFA, use the <a>AdminSetUserMFAPreference</a> action instead.
     /// </summary>
     public partial class AdminSetUserSettingsRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -45,7 +42,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property MFAOptions. 
         /// <para>
-        /// Specifies the options for MFA (e.g., email or phone number).
+        /// You can use this parameter only to set an SMS configuration that uses SMS for delivery.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -64,7 +61,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The user name of the user for whom you wish to set user settings.
+        /// The user name of the user that you are setting options for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -83,8 +80,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID for the user pool where you want to set the user's settings, such
-        /// as MFA options.
+        /// The ID of the user pool that contains the user that you are setting options for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

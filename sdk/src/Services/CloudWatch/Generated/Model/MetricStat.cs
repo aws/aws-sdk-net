@@ -99,8 +99,16 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property Unit. 
         /// <para>
         /// When you are using a <code>Put</code> operation, this defines what unit you want to
-        /// use when storing the metric. In a <code>Get</code> operation, this displays the unit
-        /// that is used for the metric.
+        /// use when storing the metric.
+        /// </para>
+        ///  
+        /// <para>
+        /// In a <code>Get</code> operation, if you omit <code>Unit</code> then all data that
+        /// was collected with any unit is returned, along with the corresponding units that were
+        /// specified when the data was reported to CloudWatch. If you specify a unit, the operation
+        /// returns only data data that was collected with that unit specified. If you specify
+        /// a unit that does not match the data collected, the results of the operation are null.
+        /// CloudWatch does not perform unit conversions.
         /// </para>
         /// </summary>
         public StandardUnit Unit

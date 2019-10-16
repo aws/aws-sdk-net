@@ -59,11 +59,11 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/rules/{ruleName}/disable";
             if (!publicRequest.IsSetRuleName())
                 throw new AmazonIoTException("Request object does not have required field RuleName set");
-            uriResourcePath = uriResourcePath.Replace("{ruleName}", StringUtils.FromStringWithSlashEncoding(publicRequest.RuleName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{ruleName}", StringUtils.FromString(publicRequest.RuleName));
+            request.ResourcePath = "/rules/{ruleName}/disable";
+            request.MarshallerVersion = 2;
 
             return request;
         }

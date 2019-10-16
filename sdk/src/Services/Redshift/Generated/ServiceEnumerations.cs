@@ -25,6 +25,176 @@ namespace Amazon.Redshift
 {
 
     /// <summary>
+    /// Constants used for properties of type ActionType.
+    /// </summary>
+    public class ActionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RestoreCluster for ActionType
+        /// </summary>
+        public static readonly ActionType RestoreCluster = new ActionType("restore-cluster");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ActionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActionType FindValue(string value)
+        {
+            return FindValue<ActionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NodeConfigurationOptionsFilterName.
+    /// </summary>
+    public class NodeConfigurationOptionsFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EstimatedDiskUtilizationPercent for NodeConfigurationOptionsFilterName
+        /// </summary>
+        public static readonly NodeConfigurationOptionsFilterName EstimatedDiskUtilizationPercent = new NodeConfigurationOptionsFilterName("EstimatedDiskUtilizationPercent");
+        /// <summary>
+        /// Constant NodeType for NodeConfigurationOptionsFilterName
+        /// </summary>
+        public static readonly NodeConfigurationOptionsFilterName NodeType = new NodeConfigurationOptionsFilterName("NodeType");
+        /// <summary>
+        /// Constant NumberOfNodes for NodeConfigurationOptionsFilterName
+        /// </summary>
+        public static readonly NodeConfigurationOptionsFilterName NumberOfNodes = new NodeConfigurationOptionsFilterName("NumberOfNodes");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NodeConfigurationOptionsFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NodeConfigurationOptionsFilterName FindValue(string value)
+        {
+            return FindValue<NodeConfigurationOptionsFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NodeConfigurationOptionsFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OperatorType.
+    /// </summary>
+    public class OperatorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Between for OperatorType
+        /// </summary>
+        public static readonly OperatorType Between = new OperatorType("between");
+        /// <summary>
+        /// Constant Eq for OperatorType
+        /// </summary>
+        public static readonly OperatorType Eq = new OperatorType("eq");
+        /// <summary>
+        /// Constant Ge for OperatorType
+        /// </summary>
+        public static readonly OperatorType Ge = new OperatorType("ge");
+        /// <summary>
+        /// Constant Gt for OperatorType
+        /// </summary>
+        public static readonly OperatorType Gt = new OperatorType("gt");
+        /// <summary>
+        /// Constant In for OperatorType
+        /// </summary>
+        public static readonly OperatorType In = new OperatorType("in");
+        /// <summary>
+        /// Constant Le for OperatorType
+        /// </summary>
+        public static readonly OperatorType Le = new OperatorType("le");
+        /// <summary>
+        /// Constant Lt for OperatorType
+        /// </summary>
+        public static readonly OperatorType Lt = new OperatorType("lt");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OperatorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OperatorType FindValue(string value)
+        {
+            return FindValue<OperatorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OperatorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ParameterApplyType.
     /// </summary>
     public class ParameterApplyType : ConstantClass

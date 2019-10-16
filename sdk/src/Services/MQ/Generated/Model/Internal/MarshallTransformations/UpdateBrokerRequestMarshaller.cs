@@ -59,11 +59,11 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/v1/brokers/{broker-id}";
             if (!publicRequest.IsSetBrokerId())
                 throw new AmazonMQException("Request object does not have required field BrokerId set");
-            uriResourcePath = uriResourcePath.Replace("{broker-id}", StringUtils.FromStringWithSlashEncoding(publicRequest.BrokerId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{broker-id}", StringUtils.FromString(publicRequest.BrokerId));
+            request.ResourcePath = "/v1/brokers/{broker-id}";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -92,6 +92,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EngineVersion);
                 }
 
+                if(publicRequest.IsSetHostInstanceType())
+                {
+                    context.Writer.WritePropertyName("hostInstanceType");
+                    context.Writer.Write(publicRequest.HostInstanceType);
+                }
+
                 if(publicRequest.IsSetLogs())
                 {
                     context.Writer.WritePropertyName("logs");
@@ -101,6 +107,17 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.Logs, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSecurityGroups())
+                {
+                    context.Writer.WritePropertyName("securityGroups");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSecurityGroupsListValue in publicRequest.SecurityGroups)
+                    {
+                            context.Writer.Write(publicRequestSecurityGroupsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
         

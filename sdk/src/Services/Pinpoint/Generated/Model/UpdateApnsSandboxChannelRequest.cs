@@ -29,7 +29,8 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateApnsSandboxChannel operation.
-    /// Updates the APNs sandbox channel settings for an application.
+    /// Enables the APNs sandbox channel for an application or updates the status and settings
+    /// of the APNs sandbox channel for an application.
     /// </summary>
     public partial class UpdateApnsSandboxChannelRequest : AmazonPinpointRequest
     {

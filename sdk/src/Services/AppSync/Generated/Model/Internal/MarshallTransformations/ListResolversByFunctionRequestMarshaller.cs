@@ -58,20 +58,20 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/v1/apis/{apiId}/functions/{functionId}/resolvers";
             if (!publicRequest.IsSetApiId())
                 throw new AmazonAppSyncException("Request object does not have required field ApiId set");
-            uriResourcePath = uriResourcePath.Replace("{apiId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ApiId));
+            request.AddPathResource("{apiId}", StringUtils.FromString(publicRequest.ApiId));
             if (!publicRequest.IsSetFunctionId())
                 throw new AmazonAppSyncException("Request object does not have required field FunctionId set");
-            uriResourcePath = uriResourcePath.Replace("{functionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.FunctionId));
+            request.AddPathResource("{functionId}", StringUtils.FromString(publicRequest.FunctionId));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/v1/apis/{apiId}/functions/{functionId}/resolvers";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

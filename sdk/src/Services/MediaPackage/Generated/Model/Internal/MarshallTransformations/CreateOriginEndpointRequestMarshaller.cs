@@ -59,8 +59,8 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-12";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/origin_endpoints";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/origin_endpoints";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -132,6 +132,12 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.MssPackage, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetOrigination())
+                {
+                    context.Writer.WritePropertyName("origination");
+                    context.Writer.Write(publicRequest.Origination);
                 }
 
                 if(publicRequest.IsSetStartoverWindowSeconds())

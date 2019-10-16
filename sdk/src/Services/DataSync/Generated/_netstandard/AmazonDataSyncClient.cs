@@ -319,19 +319,19 @@ namespace Amazon.DataSync
         /// process associates your agent with your account. In the activation process, you specify
         /// information such as the AWS Region that you want to activate the agent in. You activate
         /// the agent in the AWS Region where your target locations (in Amazon S3 or Amazon EFS)
-        /// reside. Your tasks are created in this AWS Region. 
+        /// reside. Your tasks are created in this AWS Region.
         /// 
+        ///  
+        /// <para>
+        /// You can activate the agent in a VPC (Virtual private Cloud) or provide the agent access
+        /// to a VPC endpoint so you can run tasks without going over the public Internet.
+        /// </para>
         ///  
         /// <para>
         /// You can use an agent for more than one location. If a task uses multiple agents, all
         /// of them need to have status AVAILABLE for the task to run. If you use multiple agents
         /// for a source location, the status of all the agents must be AVAILABLE for the task
         /// to run. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-agents.html#activating-agent"
-        /// (Activating an Agent) in the <i>AWS DataSync User Guide.</i> 
         /// </para>
         ///  
         /// <para>
@@ -417,7 +417,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Creates an endpoint for a Network File System (NFS) file system.
+        /// Defines a file system on a Network File System (NFS) server that can be read from
+        /// or written to
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationNfs service method.</param>
         /// <param name="cancellationToken">
@@ -468,8 +469,8 @@ namespace Amazon.DataSync
         /// </para>
         ///  
         /// <para>
-        /// For more information, see "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html#create-s3-location"
-        /// (Configuring Amazon S3 Location Settings) in the <i>AWS DataSync User Guide</i>.
+        /// For more information, see https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html#create-s3-location
+        /// in the <i>AWS DataSync User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationS3 service method.</param>
@@ -492,6 +493,47 @@ namespace Amazon.DataSync
             options.ResponseUnmarshaller = CreateLocationS3ResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateLocationS3Response>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateLocationSmb
+
+        internal virtual CreateLocationSmbResponse CreateLocationSmb(CreateLocationSmbRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocationSmbRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocationSmbResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLocationSmbResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Defines a file system on an Server Message Block (SMB) server that can be read from
+        /// or written to
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocationSmb service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLocationSmb service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationSmb">REST API Reference for CreateLocationSmb Operation</seealso>
+        public virtual Task<CreateLocationSmbResponse> CreateLocationSmbAsync(CreateLocationSmbRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocationSmbRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocationSmbResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateLocationSmbResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -840,6 +882,46 @@ namespace Amazon.DataSync
 
         #endregion
         
+        #region  DescribeLocationSmb
+
+        internal virtual DescribeLocationSmbResponse DescribeLocationSmb(DescribeLocationSmbRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocationSmbRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocationSmbResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLocationSmbResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns metadata, such as the path and user information about a SMB location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocationSmb service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLocationSmb service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationSmb">REST API Reference for DescribeLocationSmb Operation</seealso>
+        public virtual Task<DescribeLocationSmbResponse> DescribeLocationSmbAsync(DescribeLocationSmbRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocationSmbRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocationSmbResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeLocationSmbResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeTask
 
         internal virtual DescribeTaskResponse DescribeTask(DescribeTaskRequest request)
@@ -1166,8 +1248,8 @@ namespace Amazon.DataSync
         /// </para>
         ///  
         /// <para>
-        /// For detailed information, see <i>Task Execution</i> in "https://docs.aws.amazon.com/datasync/latest/userguide/how-datasync-works.html#terminology"
-        /// (Components and Terminology) in the <i>AWS DataSync User Guide</i>.
+        /// For detailed information, see the Task Execution section in the Components and Terminology
+        /// topic in the <i>AWS DataSync User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTaskExecution service method.</param>

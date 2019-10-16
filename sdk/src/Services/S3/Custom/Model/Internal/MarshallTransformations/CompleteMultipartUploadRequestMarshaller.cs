@@ -51,7 +51,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(completeMultipartUploadRequest.Key))
                 throw new System.ArgumentException("Key is a required property and must be set before making this call.", "CompleteMultipartUploadRequest.Key");
 
-            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
+			request.MarshallerVersion = 2;
+			request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
                                                  S3Transforms.ToStringValue(completeMultipartUploadRequest.BucketName),
                                                  S3Transforms.ToStringValue(completeMultipartUploadRequest.Key));
 

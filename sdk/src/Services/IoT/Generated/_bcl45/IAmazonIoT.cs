@@ -562,7 +562,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Associates a Device Defender security profile with a thing group or with this account.
+        /// Associates a Device Defender security profile with a thing group or this account.
         /// Each thing group or account can have up to five security profiles associated with
         /// it.
         /// </summary>
@@ -594,7 +594,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Associates a Device Defender security profile with a thing group or with this account.
+        /// Associates a Device Defender security profile with a thing group or this account.
         /// Each thing group or account can have up to five security profiles associated with
         /// it.
         /// </summary>
@@ -756,6 +756,60 @@ namespace Amazon.IoT
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachThingPrincipal">REST API Reference for AttachThingPrincipal Operation</seealso>
         Task<AttachThingPrincipalResponse> AttachThingPrincipalAsync(AttachThingPrincipalRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CancelAuditMitigationActionsTask
+
+
+        /// <summary>
+        /// Cancels a mitigation action task that is in progress. If the task is not in progress,
+        /// an InvalidRequestException occurs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelAuditMitigationActionsTask service method.</param>
+        /// 
+        /// <returns>The response from the CancelAuditMitigationActionsTask service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelAuditMitigationActionsTask">REST API Reference for CancelAuditMitigationActionsTask Operation</seealso>
+        CancelAuditMitigationActionsTaskResponse CancelAuditMitigationActionsTask(CancelAuditMitigationActionsTaskRequest request);
+
+
+
+        /// <summary>
+        /// Cancels a mitigation action task that is in progress. If the task is not in progress,
+        /// an InvalidRequestException occurs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelAuditMitigationActionsTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelAuditMitigationActionsTask service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelAuditMitigationActionsTask">REST API Reference for CancelAuditMitigationActionsTask Operation</seealso>
+        Task<CancelAuditMitigationActionsTaskResponse> CancelAuditMitigationActionsTaskAsync(CancelAuditMitigationActionsTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2202,6 +2256,66 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  CreateMitigationAction
+
+
+        /// <summary>
+        /// Defines an action that can be applied to audit findings by using StartAuditMitigationActionsTask.
+        /// Each mitigation action can apply only one type of change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMitigationAction service method.</param>
+        /// 
+        /// <returns>The response from the CreateMitigationAction service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateMitigationAction">REST API Reference for CreateMitigationAction Operation</seealso>
+        CreateMitigationActionResponse CreateMitigationAction(CreateMitigationActionRequest request);
+
+
+
+        /// <summary>
+        /// Defines an action that can be applied to audit findings by using StartAuditMitigationActionsTask.
+        /// Each mitigation action can apply only one type of change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMitigationAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateMitigationAction service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateMitigationAction">REST API Reference for CreateMitigationAction Operation</seealso>
+        Task<CreateMitigationActionResponse> CreateMitigationActionAsync(CreateMitigationActionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateOTAUpdate
 
 
@@ -2809,6 +2923,9 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
         /// A limit has been exceeded.
         /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.ThrottlingException">
         /// The rate exceeds the limit.
         /// </exception>
@@ -2834,6 +2951,9 @@ namespace Amazon.IoT
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
         /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ThrottlingException">
         /// The rate exceeds the limit.
@@ -3527,8 +3647,8 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// A certificate cannot be deleted if it has a policy attached to it or if its status
-        /// is set to ACTIVE. To delete a certificate, first use the <a>DetachPrincipalPolicy</a>
+        /// A certificate cannot be deleted if it has a policy or IoT thing attached to it or
+        /// if its status is set to ACTIVE. To delete a certificate, first use the <a>DetachPrincipalPolicy</a>
         /// API to detach all policies. Next, use the <a>UpdateCertificate</a> API to set the
         /// certificate to the INACTIVE status.
         /// </para>
@@ -3568,8 +3688,8 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// A certificate cannot be deleted if it has a policy attached to it or if its status
-        /// is set to ACTIVE. To delete a certificate, first use the <a>DetachPrincipalPolicy</a>
+        /// A certificate cannot be deleted if it has a policy or IoT thing attached to it or
+        /// if its status is set to ACTIVE. To delete a certificate, first use the <a>DetachPrincipalPolicy</a>
         /// API to detach all policies. Next, use the <a>UpdateCertificate</a> API to set the
         /// certificate to the INACTIVE status.
         /// </para>
@@ -3610,8 +3730,8 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// A certificate cannot be deleted if it has a policy attached to it or if its status
-        /// is set to ACTIVE. To delete a certificate, first use the <a>DetachPrincipalPolicy</a>
+        /// A certificate cannot be deleted if it has a policy or IoT thing attached to it or
+        /// if its status is set to ACTIVE. To delete a certificate, first use the <a>DetachPrincipalPolicy</a>
         /// API to detach all policies. Next, use the <a>UpdateCertificate</a> API to set the
         /// certificate to the INACTIVE status.
         /// </para>
@@ -3655,8 +3775,8 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// A certificate cannot be deleted if it has a policy attached to it or if its status
-        /// is set to ACTIVE. To delete a certificate, first use the <a>DetachPrincipalPolicy</a>
+        /// A certificate cannot be deleted if it has a policy or IoT thing attached to it or
+        /// if its status is set to ACTIVE. To delete a certificate, first use the <a>DetachPrincipalPolicy</a>
         /// API to detach all policies. Next, use the <a>UpdateCertificate</a> API to set the
         /// certificate to the INACTIVE status.
         /// </para>
@@ -3899,6 +4019,52 @@ namespace Amazon.IoT
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJobExecution">REST API Reference for DeleteJobExecution Operation</seealso>
         Task<DeleteJobExecutionResponse> DeleteJobExecutionAsync(DeleteJobExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteMitigationAction
+
+
+        /// <summary>
+        /// Deletes a defined mitigation action from your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMitigationAction service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMitigationAction service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteMitigationAction">REST API Reference for DeleteMitigationAction Operation</seealso>
+        DeleteMitigationActionResponse DeleteMitigationAction(DeleteMitigationActionRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a defined mitigation action from your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMitigationAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteMitigationAction service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteMitigationAction">REST API Reference for DeleteMitigationAction Operation</seealso>
+        Task<DeleteMitigationActionResponse> DeleteMitigationActionAsync(DeleteMitigationActionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5154,6 +5320,116 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DescribeAuditFinding
+
+
+        /// <summary>
+        /// Gets information about a single audit finding. Properties include the reason for noncompliance,
+        /// the severity of the issue, and when the audit that returned the finding was started.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAuditFinding service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAuditFinding service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAuditFinding">REST API Reference for DescribeAuditFinding Operation</seealso>
+        DescribeAuditFindingResponse DescribeAuditFinding(DescribeAuditFindingRequest request);
+
+
+
+        /// <summary>
+        /// Gets information about a single audit finding. Properties include the reason for noncompliance,
+        /// the severity of the issue, and when the audit that returned the finding was started.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAuditFinding service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAuditFinding service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAuditFinding">REST API Reference for DescribeAuditFinding Operation</seealso>
+        Task<DescribeAuditFindingResponse> DescribeAuditFindingAsync(DescribeAuditFindingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeAuditMitigationActionsTask
+
+
+        /// <summary>
+        /// Gets information about an audit mitigation task that is used to apply mitigation actions
+        /// to a set of audit findings. Properties include the actions being applied, the audit
+        /// checks to which they're being applied, the task status, and aggregated task statistics.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAuditMitigationActionsTask service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAuditMitigationActionsTask service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAuditMitigationActionsTask">REST API Reference for DescribeAuditMitigationActionsTask Operation</seealso>
+        DescribeAuditMitigationActionsTaskResponse DescribeAuditMitigationActionsTask(DescribeAuditMitigationActionsTaskRequest request);
+
+
+
+        /// <summary>
+        /// Gets information about an audit mitigation task that is used to apply mitigation actions
+        /// to a set of audit findings. Properties include the actions being applied, the audit
+        /// checks to which they're being applied, the task status, and aggregated task statistics.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAuditMitigationActionsTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAuditMitigationActionsTask service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAuditMitigationActionsTask">REST API Reference for DescribeAuditMitigationActionsTask Operation</seealso>
+        Task<DescribeAuditMitigationActionsTaskResponse> DescribeAuditMitigationActionsTaskAsync(DescribeAuditMitigationActionsTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeAuditTask
 
 
@@ -5871,6 +6147,58 @@ namespace Amazon.IoT
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeJobExecution">REST API Reference for DescribeJobExecution Operation</seealso>
         Task<DescribeJobExecutionResponse> DescribeJobExecutionAsync(DescribeJobExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeMitigationAction
+
+
+        /// <summary>
+        /// Gets information about a mitigation action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMitigationAction service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMitigationAction service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeMitigationAction">REST API Reference for DescribeMitigationAction Operation</seealso>
+        DescribeMitigationActionResponse DescribeMitigationAction(DescribeMitigationActionRequest request);
+
+
+
+        /// <summary>
+        /// Gets information about a mitigation action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMitigationAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeMitigationAction service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeMitigationAction">REST API Reference for DescribeMitigationAction Operation</seealso>
+        Task<DescribeMitigationActionResponse> DescribeMitigationActionAsync(DescribeMitigationActionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -7944,6 +8272,98 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  ListAuditMitigationActionsExecutions
+
+
+        /// <summary>
+        /// Gets the status of audit mitigation action tasks that were executed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAuditMitigationActionsExecutions service method.</param>
+        /// 
+        /// <returns>The response from the ListAuditMitigationActionsExecutions service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditMitigationActionsExecutions">REST API Reference for ListAuditMitigationActionsExecutions Operation</seealso>
+        ListAuditMitigationActionsExecutionsResponse ListAuditMitigationActionsExecutions(ListAuditMitigationActionsExecutionsRequest request);
+
+
+
+        /// <summary>
+        /// Gets the status of audit mitigation action tasks that were executed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAuditMitigationActionsExecutions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAuditMitigationActionsExecutions service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditMitigationActionsExecutions">REST API Reference for ListAuditMitigationActionsExecutions Operation</seealso>
+        Task<ListAuditMitigationActionsExecutionsResponse> ListAuditMitigationActionsExecutionsAsync(ListAuditMitigationActionsExecutionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAuditMitigationActionsTasks
+
+
+        /// <summary>
+        /// Gets a list of audit mitigation action tasks that match the specified filters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAuditMitigationActionsTasks service method.</param>
+        /// 
+        /// <returns>The response from the ListAuditMitigationActionsTasks service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditMitigationActionsTasks">REST API Reference for ListAuditMitigationActionsTasks Operation</seealso>
+        ListAuditMitigationActionsTasksResponse ListAuditMitigationActionsTasks(ListAuditMitigationActionsTasksRequest request);
+
+
+
+        /// <summary>
+        /// Gets a list of audit mitigation action tasks that match the specified filters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAuditMitigationActionsTasks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAuditMitigationActionsTasks service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditMitigationActionsTasks">REST API Reference for ListAuditMitigationActionsTasks Operation</seealso>
+        Task<ListAuditMitigationActionsTasksResponse> ListAuditMitigationActionsTasksAsync(ListAuditMitigationActionsTasksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListAuditTasks
 
 
@@ -8570,6 +8990,52 @@ namespace Amazon.IoT
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListJobs">REST API Reference for ListJobs Operation</seealso>
         Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListMitigationActions
+
+
+        /// <summary>
+        /// Gets a list of all mitigation actions that match the specified filter criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMitigationActions service method.</param>
+        /// 
+        /// <returns>The response from the ListMitigationActions service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListMitigationActions">REST API Reference for ListMitigationActions Operation</seealso>
+        ListMitigationActionsResponse ListMitigationActions(ListMitigationActionsRequest request);
+
+
+
+        /// <summary>
+        /// Gets a list of all mitigation actions that match the specified filter criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMitigationActions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMitigationActions service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListMitigationActions">REST API Reference for ListMitigationActions Operation</seealso>
+        Task<ListMitigationActionsResponse> ListMitigationActionsAsync(ListMitigationActionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -10458,7 +10924,7 @@ namespace Amazon.IoT
         /// <summary>
         /// Lists the Device Defender security profile violations discovered during the given
         /// time period. You can use filters to limit the results to those alerts issued for a
-        /// particular security profile, behavior or thing (device).
+        /// particular security profile, behavior, or thing (device).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListViolationEvents service method.</param>
         /// 
@@ -10480,7 +10946,7 @@ namespace Amazon.IoT
         /// <summary>
         /// Lists the Device Defender security profile violations discovered during the given
         /// time period. You can use filters to limit the results to those alerts issued for a
-        /// particular security profile, behavior or thing (device).
+        /// particular security profile, behavior, or thing (device).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListViolationEvents service method.</param>
         /// <param name="cancellationToken">
@@ -11543,6 +12009,66 @@ namespace Amazon.IoT
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetV2LoggingOptions">REST API Reference for SetV2LoggingOptions Operation</seealso>
         Task<SetV2LoggingOptionsResponse> SetV2LoggingOptionsAsync(SetV2LoggingOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StartAuditMitigationActionsTask
+
+
+        /// <summary>
+        /// Starts a task that applies a set of mitigation actions to the specified target.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAuditMitigationActionsTask service method.</param>
+        /// 
+        /// <returns>The response from the StartAuditMitigationActionsTask service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.TaskAlreadyExistsException">
+        /// This exception occurs if you attempt to start a task with the same task-id as an existing
+        /// task but with a different clientRequestToken.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StartAuditMitigationActionsTask">REST API Reference for StartAuditMitigationActionsTask Operation</seealso>
+        StartAuditMitigationActionsTaskResponse StartAuditMitigationActionsTask(StartAuditMitigationActionsTaskRequest request);
+
+
+
+        /// <summary>
+        /// Starts a task that applies a set of mitigation actions to the specified target.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAuditMitigationActionsTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartAuditMitigationActionsTask service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.TaskAlreadyExistsException">
+        /// This exception occurs if you attempt to start a task with the same task-id as an existing
+        /// task but with a different clientRequestToken.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StartAuditMitigationActionsTask">REST API Reference for StartAuditMitigationActionsTask Operation</seealso>
+        Task<StartAuditMitigationActionsTaskResponse> StartAuditMitigationActionsTaskAsync(StartAuditMitigationActionsTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -12838,6 +13364,58 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  UpdateMitigationAction
+
+
+        /// <summary>
+        /// Updates the definition for the specified mitigation action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMitigationAction service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMitigationAction service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateMitigationAction">REST API Reference for UpdateMitigationAction Operation</seealso>
+        UpdateMitigationActionResponse UpdateMitigationAction(UpdateMitigationActionRequest request);
+
+
+
+        /// <summary>
+        /// Updates the definition for the specified mitigation action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMitigationAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateMitigationAction service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateMitigationAction">REST API Reference for UpdateMitigationAction Operation</seealso>
+        Task<UpdateMitigationActionResponse> UpdateMitigationActionAsync(UpdateMitigationActionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateRoleAlias
 
 
@@ -12906,8 +13484,8 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Updates a scheduled audit, including what checks are performed and how often the audit
-        /// takes place.
+        /// Updates a scheduled audit, including which checks are performed and how often the
+        /// audit takes place.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateScheduledAudit service method.</param>
         /// 
@@ -12930,8 +13508,8 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Updates a scheduled audit, including what checks are performed and how often the audit
-        /// takes place.
+        /// Updates a scheduled audit, including which checks are performed and how often the
+        /// audit takes place.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateScheduledAudit service method.</param>
         /// <param name="cancellationToken">

@@ -58,7 +58,6 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-14";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/prod/offerings";
             
             if (publicRequest.IsSetChannelClass())
                 request.Parameters.Add("channelClass", StringUtils.FromString(publicRequest.ChannelClass));
@@ -92,7 +91,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetVideoQuality())
                 request.Parameters.Add("videoQuality", StringUtils.FromString(publicRequest.VideoQuality));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/prod/offerings";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -59,8 +59,8 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-05-23";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/dataflowEndpointGroup";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/dataflowEndpointGroup";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

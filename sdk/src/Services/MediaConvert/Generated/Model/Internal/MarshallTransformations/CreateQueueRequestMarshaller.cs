@@ -59,8 +59,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-29";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/2017-08-29/queues";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2017-08-29/queues";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -93,6 +93,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.ReservationPlanSettings, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetStatus())
+                {
+                    context.Writer.WritePropertyName("status");
+                    context.Writer.Write(publicRequest.Status);
                 }
 
                 if(publicRequest.IsSetTags())

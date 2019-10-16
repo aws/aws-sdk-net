@@ -59,8 +59,8 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-01-04";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/enablesharingwithawsorganization";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/enablesharingwithawsorganization";
+            request.MarshallerVersion = 2;
 
             return request;
         }

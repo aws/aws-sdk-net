@@ -58,11 +58,11 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/indices/{indexName}";
             if (!publicRequest.IsSetIndexName())
                 throw new AmazonIoTException("Request object does not have required field IndexName set");
-            uriResourcePath = uriResourcePath.Replace("{indexName}", StringUtils.FromStringWithSlashEncoding(publicRequest.IndexName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{indexName}", StringUtils.FromString(publicRequest.IndexName));
+            request.ResourcePath = "/indices/{indexName}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -25,6 +25,56 @@ namespace Amazon.AppMesh
 {
 
     /// <summary>
+    /// Constants used for properties of type DurationUnit.
+    /// </summary>
+    public class DurationUnit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Ms for DurationUnit
+        /// </summary>
+        public static readonly DurationUnit Ms = new DurationUnit("ms");
+        /// <summary>
+        /// Constant S for DurationUnit
+        /// </summary>
+        public static readonly DurationUnit S = new DurationUnit("s");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DurationUnit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DurationUnit FindValue(string value)
+        {
+            return FindValue<DurationUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DurationUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EgressFilterType.
     /// </summary>
     public class EgressFilterType : ConstantClass
@@ -68,6 +118,134 @@ namespace Amazon.AppMesh
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EgressFilterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HttpMethod.
+    /// </summary>
+    public class HttpMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONNECT for HttpMethod
+        /// </summary>
+        public static readonly HttpMethod CONNECT = new HttpMethod("CONNECT");
+        /// <summary>
+        /// Constant DELETE for HttpMethod
+        /// </summary>
+        public static readonly HttpMethod DELETE = new HttpMethod("DELETE");
+        /// <summary>
+        /// Constant GET for HttpMethod
+        /// </summary>
+        public static readonly HttpMethod GET = new HttpMethod("GET");
+        /// <summary>
+        /// Constant HEAD for HttpMethod
+        /// </summary>
+        public static readonly HttpMethod HEAD = new HttpMethod("HEAD");
+        /// <summary>
+        /// Constant OPTIONS for HttpMethod
+        /// </summary>
+        public static readonly HttpMethod OPTIONS = new HttpMethod("OPTIONS");
+        /// <summary>
+        /// Constant PATCH for HttpMethod
+        /// </summary>
+        public static readonly HttpMethod PATCH = new HttpMethod("PATCH");
+        /// <summary>
+        /// Constant POST for HttpMethod
+        /// </summary>
+        public static readonly HttpMethod POST = new HttpMethod("POST");
+        /// <summary>
+        /// Constant PUT for HttpMethod
+        /// </summary>
+        public static readonly HttpMethod PUT = new HttpMethod("PUT");
+        /// <summary>
+        /// Constant TRACE for HttpMethod
+        /// </summary>
+        public static readonly HttpMethod TRACE = new HttpMethod("TRACE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HttpMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HttpMethod FindValue(string value)
+        {
+            return FindValue<HttpMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HttpMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HttpScheme.
+    /// </summary>
+    public class HttpScheme : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Http for HttpScheme
+        /// </summary>
+        public static readonly HttpScheme Http = new HttpScheme("http");
+        /// <summary>
+        /// Constant Https for HttpScheme
+        /// </summary>
+        public static readonly HttpScheme Https = new HttpScheme("https");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HttpScheme(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HttpScheme FindValue(string value)
+        {
+            return FindValue<HttpScheme>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HttpScheme(string value)
         {
             return FindValue(value);
         }
@@ -226,6 +404,52 @@ namespace Amazon.AppMesh
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RouteStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TcpRetryPolicyEvent.
+    /// </summary>
+    public class TcpRetryPolicyEvent : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ConnectionError for TcpRetryPolicyEvent
+        /// </summary>
+        public static readonly TcpRetryPolicyEvent ConnectionError = new TcpRetryPolicyEvent("connection-error");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TcpRetryPolicyEvent(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TcpRetryPolicyEvent FindValue(string value)
+        {
+            return FindValue<TcpRetryPolicyEvent>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TcpRetryPolicyEvent(string value)
         {
             return FindValue(value);
         }

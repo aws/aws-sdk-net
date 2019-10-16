@@ -46,6 +46,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private EncryptionModeValue _encryptionMode;
         private string _externalTableDefinition;
         private bool? _includeOpForFullLoad;
+        private bool? _parquetTimestampInMillisecond;
         private ParquetVersionValue _parquetVersion;
         private int? _rowGroupLength;
         private string _serverSideEncryptionKmsKeyId;
@@ -102,7 +103,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// If <code>cdcInsertsOnly</code> is set to <code>true</code> or <code>y</code>, only
+        /// If <code>CdcInsertsOnly</code> is set to <code>true</code> or <code>y</code>, only
         /// INSERTs from the source database are migrated to the .csv or .parquet file. For .csv
         /// format only, how these INSERTs are recorded depends on the value of <code>IncludeOpForFullLoad</code>.
         /// If <code>IncludeOpForFullLoad</code> is set to <code>true</code>, the first field
@@ -115,8 +116,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// AWS DMS supports this interaction between <code>CdcInsertsOnly</code> and <code>IncludeOpForFullLoad</code>
-        /// in versions 3.1.4 and later. 
+        /// AWS DMS supports this interaction between the <code>CdcInsertsOnly</code> and <code>IncludeOpForFullLoad</code>
+        /// parameters in versions 3.1.4 and later. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -408,7 +409,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// AWS DMS supports <code>IncludeOpForFullLoad</code> in versions 3.1.4 and later.
+        /// AWS DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4
+        /// and later.
         /// </para>
         ///  </note> 
         /// <para>
@@ -421,8 +423,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This setting works together with <code>CdcInsertsOnly</code> for output to .csv files
-        /// only. For more information about how these settings work together, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating
+        /// This setting works together with the <code>CdcInsertsOnly</code> parameter for output
+        /// to .csv files only. For more information about how these settings work together, see
+        /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating
         /// Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service
         /// User Guide.</i>.
         /// </para>
@@ -438,6 +441,55 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetIncludeOpForFullLoad()
         {
             return this._includeOpForFullLoad.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParquetTimestampInMillisecond. 
+        /// <para>
+        /// A value that specifies the precision of any <code>TIMESTAMP</code> column values that
+        /// are written to an Amazon S3 object file in .parquet format.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// AWS DMS supports the <code>ParquetTimestampInMillisecond</code> parameter in versions
+        /// 3.1.4 and later.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// When <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or <code>y</code>,
+        /// AWS DMS writes all <code>TIMESTAMP</code> columns in a .parquet formatted file with
+        /// millisecond precision. Otherwise, DMS writes them with microsecond precision.
+        /// </para>
+        ///  
+        /// <para>
+        /// Currently, Amazon Athena and AWS Glue can handle only millisecond precision for <code>TIMESTAMP</code>
+        /// values. Set this parameter to <code>true</code> for S3 endpoint object files that
+        /// are .parquet formatted only if you plan to query or process the data with Athena or
+        /// AWS Glue.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// AWS DMS writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv
+        /// format with microsecond precision.
+        /// </para>
+        ///  
+        /// <para>
+        /// Setting <code>ParquetTimestampInMillisecond</code> has no effect on the string format
+        /// of the timestamp column value that is inserted by setting the <code>TimestampColumnName</code>
+        /// parameter.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool ParquetTimestampInMillisecond
+        {
+            get { return this._parquetTimestampInMillisecond.GetValueOrDefault(); }
+            set { this._parquetTimestampInMillisecond = value; }
+        }
+
+        // Check to see if ParquetTimestampInMillisecond property is set
+        internal bool IsSetParquetTimestampInMillisecond()
+        {
+            return this._parquetTimestampInMillisecond.HasValue; 
         }
 
         /// <summary>
@@ -531,24 +583,40 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property TimestampColumnName. 
         /// <para>
-        /// A value that includes a timestamp column in the Amazon S3 target endpoint data. AWS
-        /// DMS includes an additional column in the migrated data when you set <code>timestampColumnName</code>
-        /// to a non-blank value. 
+        /// A value that when nonblank causes AWS DMS to add a column with timestamp information
+        /// to the endpoint data for an Amazon S3 target.
         /// </para>
         ///  <note> 
         /// <para>
-        /// AWS DMS supports <code>TimestampColumnName</code> in versions 3.1.4 and later.
+        /// AWS DMS supports the <code>TimestampColumnName</code> parameter in versions 3.1.4
+        /// and later.
         /// </para>
         ///  </note> 
         /// <para>
-        /// For a full load, each row of the timestamp column contains a timestamp for when the
-        /// data was transferred from the source to the target by DMS. For a CDC load, each row
-        /// of the timestamp column contains the timestamp for the commit of that row in the source
-        /// database. The format for the timestamp column value is <code>yyyy-MM-dd HH:mm:ss.SSSSSS</code>.
-        /// For CDC, the microsecond precision depends on the commit timestamp supported by DMS
-        /// for the source database. When the <code>AddColumnName</code> setting is set to <code>true</code>,
-        /// DMS also includes the name for the timestamp column that you set as the nonblank value
-        /// of <code>timestampColumnName</code>.
+        /// DMS includes an additional <code>STRING</code> column in the .csv or .parquet object
+        /// files of your migrated data when you set <code>TimestampColumnName</code> to a nonblank
+        /// value.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a full load, each row of this timestamp column contains a timestamp for when the
+        /// data was transferred from the source to the target by DMS. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For a change data capture (CDC) load, each row of the timestamp column contains the
+        /// timestamp for the commit of that row in the source database.
+        /// </para>
+        ///  
+        /// <para>
+        /// The string format for this timestamp column value is <code>yyyy-MM-dd HH:mm:ss.SSSSSS</code>.
+        /// By default, the precision of this value is in microseconds. For a CDC load, the rounding
+        /// of the precision depends on the commit timestamp supported by DMS for the source database.
+        /// </para>
+        ///  
+        /// <para>
+        /// When the <code>AddColumnName</code> parameter is set to <code>true</code>, DMS also
+        /// includes a name for the timestamp column that you set with <code>TimestampColumnName</code>.
         /// </para>
         /// </summary>
         public string TimestampColumnName

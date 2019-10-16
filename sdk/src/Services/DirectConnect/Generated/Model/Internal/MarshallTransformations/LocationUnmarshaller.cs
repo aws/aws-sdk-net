@@ -70,6 +70,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.AvailablePortSpeeds = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("availableProviders", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AvailableProviders = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("locationCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -57,6 +57,12 @@ namespace Amazon.ComprehendMedical.Model.Internal.MarshallTransformations
                     response.Entities = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ModelVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ModelVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PaginationToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

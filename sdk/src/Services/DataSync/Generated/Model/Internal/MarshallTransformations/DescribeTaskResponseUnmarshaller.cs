@@ -75,6 +75,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     response.DestinationLocationArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DestinationNetworkInterfaceArns", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.DestinationNetworkInterfaceArns = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ErrorCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -109,6 +115,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SourceLocationArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SourceNetworkInterfaceArns", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.SourceNetworkInterfaceArns = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))

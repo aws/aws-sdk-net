@@ -82,6 +82,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                     unmarshalledObject.PublishCloudWatchMetricsEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RequesterPaysEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.RequesterPaysEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResultConfiguration", targetDepth))
                 {
                     var unmarshaller = ResultConfigurationUnmarshaller.Instance;

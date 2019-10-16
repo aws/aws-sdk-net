@@ -35,7 +35,10 @@ namespace Amazon.GuardDuty.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags associated with the resource.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public Dictionary<string, string> Tags

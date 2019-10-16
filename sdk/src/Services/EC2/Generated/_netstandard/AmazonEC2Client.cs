@@ -50,7 +50,7 @@ namespace Amazon.EC2
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Amazon EC2: <a href="http://aws.amazon.com/ec2">Amazon EC2 product page</a>, <a href="http://aws.amazon.com/documentation/ec2">Amazon
+    /// Amazon EC2: <a href="http://aws.amazon.com/ec2">AmazonEC2 product page</a>, <a href="http://aws.amazon.com/documentation/ec2">Amazon
     /// EC2 documentation</a> 
     /// </para>
     ///  </li> <li> 
@@ -2194,7 +2194,7 @@ namespace Amazon.EC2
         /// is the appliance at your end of the VPN connection. (The device on the AWS side of
         /// the VPN connection is the virtual private gateway.) You must provide the Internet-routable
         /// IP address of the customer gateway's external interface. The IP address must be static
-        /// and may be behind a device performing network address translation (NAT).
+        /// and can be behind a device performing network address translation (NAT).
         /// 
         ///  
         /// <para>
@@ -4352,7 +4352,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Creates a VPN connection between an existing virtual private gateway and a VPN customer
-        /// gateway. The supported connection types is <code>ipsec.1</code>.
+        /// gateway. The supported connection type is <code>ipsec.1</code>.
         /// 
         ///  
         /// <para>
@@ -5119,6 +5119,40 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DeletePlacementGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeletePlacementGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteQueuedReservedInstances
+
+        internal virtual DeleteQueuedReservedInstancesResponse DeleteQueuedReservedInstances(DeleteQueuedReservedInstancesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteQueuedReservedInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteQueuedReservedInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteQueuedReservedInstancesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the queued purchases for the specified Reserved Instances.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQueuedReservedInstances service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteQueuedReservedInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteQueuedReservedInstances">REST API Reference for DeleteQueuedReservedInstances Operation</seealso>
+        public virtual Task<DeleteQueuedReservedInstancesResponse> DeleteQueuedReservedInstancesAsync(DeleteQueuedReservedInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteQueuedReservedInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteQueuedReservedInstancesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteQueuedReservedInstancesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7063,6 +7097,40 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeExportImageTasks
+
+        internal virtual DescribeExportImageTasksResponse DescribeExportImageTasks(DescribeExportImageTasksRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeExportImageTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeExportImageTasksResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeExportImageTasksResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the specified export image tasks or all your export image tasks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExportImageTasks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeExportImageTasks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportImageTasks">REST API Reference for DescribeExportImageTasks Operation</seealso>
+        public virtual Task<DescribeExportImageTasksResponse> DescribeExportImageTasksAsync(DescribeExportImageTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeExportImageTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeExportImageTasksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeExportImageTasksResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeExportTasks
 
         internal virtual DescribeExportTasksResponse DescribeExportTasks()
@@ -7080,7 +7148,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the specified export tasks or all your export tasks.
+        /// Describes the specified export instance tasks or all your export instance tasks.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -7096,7 +7164,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the specified export tasks or all your export tasks.
+        /// Describes the specified export instance tasks or all your export instance tasks.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeExportTasks service method.</param>
         /// <param name="cancellationToken">
@@ -12234,6 +12302,42 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ExportImage
+
+        internal virtual ExportImageResponse ExportImage(ExportImageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportImageResponseUnmarshaller.Instance;
+
+            return Invoke<ExportImageResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Exports an Amazon Machine Image (AMI) to a VM file. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport_image.html">Exporting
+        /// a VM Directory from an Amazon Machine Image (AMI)</a> in the <i>VM Import/Export User
+        /// Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportImage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExportImage service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportImage">REST API Reference for ExportImage Operation</seealso>
+        public virtual Task<ExportImageResponse> ExportImageAsync(ExportImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportImageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ExportImageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ExportTransitGatewayRoutes
 
         internal virtual ExportTransitGatewayRoutesResponse ExportTransitGatewayRoutes(ExportTransitGatewayRoutesRequest request)
@@ -12284,7 +12388,10 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// 
+        /// Gets usage information about a Capacity Reservation. If the Capacity Reservation is
+        /// shared, it shows usage information for the Capacity Reservation owner and each AWS
+        /// account that is currently using the shared capacity. If the Capacity Reservation is
+        /// not shared, it shows only the Capacity Reservation owner's usage.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCapacityReservationUsage service method.</param>
         /// <param name="cancellationToken">
@@ -13142,7 +13249,41 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
+        /// You can only modify an EC2 Fleet request of type <code>maintain</code>.
+        /// </para>
+        ///  
+        /// <para>
         /// While the EC2 Fleet is being modified, it is in the <code>modifying</code> state.
+        /// </para>
+        ///  
+        /// <para>
+        /// To scale up your EC2 Fleet, increase its target capacity. The EC2 Fleet launches the
+        /// additional Spot Instances according to the allocation strategy for the EC2 Fleet request.
+        /// If the allocation strategy is <code>lowestPrice</code>, the EC2 Fleet launches instances
+        /// using the Spot Instance pool with the lowest price. If the allocation strategy is
+        /// <code>diversified</code>, the EC2 Fleet distributes the instances across the Spot
+        /// Instance pools. If the allocation strategy is <code>capacityOptimized</code>, EC2
+        /// Fleet launches instances from Spot Instance pools with optimal capacity for the number
+        /// of instances that are launching.
+        /// </para>
+        ///  
+        /// <para>
+        /// To scale down your EC2 Fleet, decrease its target capacity. First, the EC2 Fleet cancels
+        /// any open requests that exceed the new target capacity. You can request that the EC2
+        /// Fleet terminate Spot Instances until the size of the fleet no longer exceeds the new
+        /// target capacity. If the allocation strategy is <code>lowestPrice</code>, the EC2 Fleet
+        /// terminates the instances with the highest price per unit. If the allocation strategy
+        /// is <code>capacityOptimized</code>, the EC2 Fleet terminates the instances in the Spot
+        /// Instance pools that have the least available Spot Instance capacity. If the allocation
+        /// strategy is <code>diversified</code>, the EC2 Fleet terminates instances across the
+        /// Spot Instance pools. Alternatively, you can request that the EC2 Fleet keep the fleet
+        /// at its current size, but not replace any Spot Instances that are interrupted or that
+        /// you terminate manually.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are finished with your EC2 Fleet for now, but will use it again later, you
+        /// can set the target capacity to 0.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyFleet service method.</param>
@@ -13777,7 +13918,8 @@ namespace Amazon.EC2
         /// Adds or removes permission settings for the specified snapshot. You may add or remove
         /// specified AWS account IDs from a snapshot's list of create volume permissions, but
         /// you cannot do both in a single operation. If you need to both add and remove account
-        /// IDs for a snapshot, you must use multiple operations.
+        /// IDs for a snapshot, you must use multiple operations. You can make up to 500 modifications
+        /// to a snapshot in a single operation.
         /// 
         ///  
         /// <para>
@@ -13838,9 +13980,11 @@ namespace Amazon.EC2
         /// To scale up your Spot Fleet, increase its target capacity. The Spot Fleet launches
         /// the additional Spot Instances according to the allocation strategy for the Spot Fleet
         /// request. If the allocation strategy is <code>lowestPrice</code>, the Spot Fleet launches
-        /// instances using the Spot pool with the lowest price. If the allocation strategy is
-        /// <code>diversified</code>, the Spot Fleet distributes the instances across the Spot
-        /// pools.
+        /// instances using the Spot Instance pool with the lowest price. If the allocation strategy
+        /// is <code>diversified</code>, the Spot Fleet distributes the instances across the Spot
+        /// Instance pools. If the allocation strategy is <code>capacityOptimized</code>, Spot
+        /// Fleet launches instances from Spot Instance pools with optimal capacity for the number
+        /// of instances that are launching.
         /// </para>
         ///  
         /// <para>
@@ -13849,10 +13993,12 @@ namespace Amazon.EC2
         /// the Spot Fleet terminate Spot Instances until the size of the fleet no longer exceeds
         /// the new target capacity. If the allocation strategy is <code>lowestPrice</code>, the
         /// Spot Fleet terminates the instances with the highest price per unit. If the allocation
-        /// strategy is <code>diversified</code>, the Spot Fleet terminates instances across the
-        /// Spot pools. Alternatively, you can request that the Spot Fleet keep the fleet at its
-        /// current size, but not replace any Spot Instances that are interrupted or that you
-        /// terminate manually.
+        /// strategy is <code>capacityOptimized</code>, the Spot Fleet terminates the instances
+        /// in the Spot Instance pools that have the least available Spot Instance capacity. If
+        /// the allocation strategy is <code>diversified</code>, the Spot Fleet terminates instances
+        /// across the Spot Instance pools. Alternatively, you can request that the Spot Fleet
+        /// keep the fleet at its current size, but not replace any Spot Instances that are interrupted
+        /// or that you terminate manually.
         /// </para>
         ///  
         /// <para>
@@ -14502,7 +14648,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the target gateway of a AWS Site-to-Site VPN connection. The following migration
+        /// Modifies the target gateway of an AWS Site-to-Site VPN connection. The following migration
         /// options are available:
         /// 
         ///  <ul> <li> 
@@ -14581,6 +14727,78 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = ModifyVpnConnectionResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyVpnConnectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyVpnTunnelCertificate
+
+        internal virtual ModifyVpnTunnelCertificateResponse ModifyVpnTunnelCertificate(ModifyVpnTunnelCertificateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVpnTunnelCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVpnTunnelCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVpnTunnelCertificateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modifies the VPN tunnel endpoint certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpnTunnelCertificate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyVpnTunnelCertificate service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnTunnelCertificate">REST API Reference for ModifyVpnTunnelCertificate Operation</seealso>
+        public virtual Task<ModifyVpnTunnelCertificateResponse> ModifyVpnTunnelCertificateAsync(ModifyVpnTunnelCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVpnTunnelCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVpnTunnelCertificateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyVpnTunnelCertificateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyVpnTunnelOptions
+
+        internal virtual ModifyVpnTunnelOptionsResponse ModifyVpnTunnelOptions(ModifyVpnTunnelOptionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVpnTunnelOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVpnTunnelOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVpnTunnelOptionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modifies the options for a VPN tunnel in an AWS Site-to-Site VPN connection. You can
+        /// modify multiple options for a tunnel in a single request, but you can only modify
+        /// one tunnel at a time. For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNTunnels.html">Site-to-Site
+        /// VPN Tunnel Options for Your Site-to-Site VPN Connection</a> in the <i>AWS Site-to-Site
+        /// VPN User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpnTunnelOptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyVpnTunnelOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnTunnelOptions">REST API Reference for ModifyVpnTunnelOptions Operation</seealso>
+        public virtual Task<ModifyVpnTunnelOptionsResponse> ModifyVpnTunnelOptionsAsync(ModifyVpnTunnelOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVpnTunnelOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVpnTunnelOptionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyVpnTunnelOptionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -14778,6 +14996,11 @@ namespace Amazon.EC2
         /// Use <a>DescribeReservedInstancesOfferings</a> to get a list of Reserved Instance offerings
         /// that match your specifications. After you've purchased a Reserved Instance, you can
         /// check for your new Reserved Instance with <a>DescribeReservedInstances</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To queue a purchase for a future date and time, specify a purchase time. If you do
+        /// not specify a purchase time, the default is the current time.
         /// </para>
         ///  
         /// <para>
@@ -15508,9 +15731,9 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// By default, the Spot Fleet requests Spot Instances in the Spot pool where the price
-        /// per unit is the lowest. Each launch specification can include its own instance weighting
-        /// that reflects the value of the instance type to your application workload.
+        /// By default, the Spot Fleet requests Spot Instances in the Spot Instance pool where
+        /// the price per unit is the lowest. Each launch specification can include its own instance
+        /// weighting that reflects the value of the instance type to your application workload.
         /// </para>
         ///  
         /// <para>
@@ -16193,6 +16416,63 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = SearchTransitGatewayRoutesResponseUnmarshaller.Instance;
 
             return InvokeAsync<SearchTransitGatewayRoutesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SendDiagnosticInterrupt
+
+        internal virtual SendDiagnosticInterruptResponse SendDiagnosticInterrupt(SendDiagnosticInterruptRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendDiagnosticInterruptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendDiagnosticInterruptResponseUnmarshaller.Instance;
+
+            return Invoke<SendDiagnosticInterruptResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Sends a diagnostic interrupt to the specified Amazon EC2 instance to trigger a <i>kernel
+        /// panic</i> (on Linux instances), or a <i>blue screen</i>/<i>stop error</i> (on Windows
+        /// instances). For instances based on Intel and AMD processors, the interrupt is received
+        /// as a <i>non-maskable interrupt</i> (NMI).
+        /// 
+        ///  
+        /// <para>
+        /// In general, the operating system crashes and reboots when a kernel panic or stop error
+        /// is triggered. The operating system can also be configured to perform diagnostic tasks,
+        /// such as generating a memory dump file, loading a secondary kernel, or obtaining a
+        /// call trace.
+        /// </para>
+        ///  
+        /// <para>
+        /// Before sending a diagnostic interrupt to your instance, ensure that its operating
+        /// system is configured to perform the required diagnostic tasks.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about configuring your operating system to generate a crash dump
+        /// when a kernel panic or stop error occurs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/diagnostic-interrupt.html">Send
+        /// a Diagnostic Interrupt</a> (Linux instances) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/diagnostic-interrupt.html">Send
+        /// a Diagnostic Interrupt</a> (Windows instances).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendDiagnosticInterrupt service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendDiagnosticInterrupt service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SendDiagnosticInterrupt">REST API Reference for SendDiagnosticInterrupt Operation</seealso>
+        public virtual Task<SendDiagnosticInterruptResponse> SendDiagnosticInterruptAsync(SendDiagnosticInterruptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendDiagnosticInterruptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendDiagnosticInterruptResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SendDiagnosticInterruptResponse>(request, options, cancellationToken);
         }
 
         #endregion

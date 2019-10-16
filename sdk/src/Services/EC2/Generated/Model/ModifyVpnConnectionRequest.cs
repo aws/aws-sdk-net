@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyVpnConnection operation.
-    /// Modifies the target gateway of a AWS Site-to-Site VPN connection. The following migration
+    /// Modifies the target gateway of an AWS Site-to-Site VPN connection. The following migration
     /// options are available:
     /// 
     ///  <ul> <li> 
@@ -96,9 +96,28 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ModifyVpnConnectionRequest : AmazonEC2Request
     {
+        private string _customerGatewayId;
         private string _transitGatewayId;
         private string _vpnConnectionId;
         private string _vpnGatewayId;
+
+        /// <summary>
+        /// Gets and sets the property CustomerGatewayId. 
+        /// <para>
+        /// The ID of the customer gateway at your end of the VPN connection.
+        /// </para>
+        /// </summary>
+        public string CustomerGatewayId
+        {
+            get { return this._customerGatewayId; }
+            set { this._customerGatewayId = value; }
+        }
+
+        // Check to see if CustomerGatewayId property is set
+        internal bool IsSetCustomerGatewayId()
+        {
+            return this._customerGatewayId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property TransitGatewayId. 

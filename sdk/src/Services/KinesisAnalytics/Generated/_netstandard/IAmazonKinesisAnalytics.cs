@@ -780,7 +780,7 @@ namespace Amazon.KinesisAnalytics
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceProvisionedThroughputExceededException">
         /// Discovery failed to get a record from the streaming source because of the Amazon Kinesis
-        /// Streams ProvisionedThroughputExceededException. For more information, see <a href="kinesis/latest/APIReference/API_GetRecords.html">GetRecords</a>
+        /// Streams ProvisionedThroughputExceededException. For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html">GetRecords</a>
         /// in the Amazon Kinesis Streams API Reference.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalytics.Model.ServiceUnavailableException">
@@ -842,7 +842,9 @@ namespace Amazon.KinesisAnalytics
 
 
         /// <summary>
-        /// Retrieves the list of key-value tags assigned to the application.
+        /// Retrieves the list of key-value tags assigned to the application. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using
+        /// Tagging</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -986,7 +988,8 @@ namespace Amazon.KinesisAnalytics
         /// <summary>
         /// Adds one or more key-value tags to a Kinesis Analytics application. Note that the
         /// maximum number of application tags includes system tags. The maximum number of user-defined
-        /// application tags is 50.
+        /// application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using
+        /// Tagging</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1022,7 +1025,9 @@ namespace Amazon.KinesisAnalytics
 
 
         /// <summary>
-        /// Removes one or more tags from a Kinesis Analytics application.
+        /// Removes one or more tags from a Kinesis Analytics application. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using
+        /// Tagging</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">

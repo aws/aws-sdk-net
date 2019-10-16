@@ -32,6 +32,7 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class ImageBuilder
     {
+        private List<AccessEndpoint> _accessEndpoints = new List<AccessEndpoint>();
         private string _appstreamAgentVersion;
         private string _arn;
         private DateTime? _createdTime;
@@ -39,6 +40,7 @@ namespace Amazon.AppStream.Model
         private string _displayName;
         private DomainJoinInfo _domainJoinInfo;
         private bool? _enableDefaultInternetAccess;
+        private string _iamRoleArn;
         private string _imageArn;
         private List<ResourceError> _imageBuilderErrors = new List<ResourceError>();
         private string _instanceType;
@@ -48,6 +50,26 @@ namespace Amazon.AppStream.Model
         private ImageBuilderState _state;
         private ImageBuilderStateChangeReason _stateChangeReason;
         private VpcConfig _vpcConfig;
+
+        /// <summary>
+        /// Gets and sets the property AccessEndpoints. 
+        /// <para>
+        /// The list of virtual private cloud (VPC) interface endpoint objects. Administrators
+        /// can connect to the image builder only through the specified endpoints.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=4)]
+        public List<AccessEndpoint> AccessEndpoints
+        {
+            get { return this._accessEndpoints; }
+            set { this._accessEndpoints = value; }
+        }
+
+        // Check to see if AccessEndpoints property is set
+        internal bool IsSetAccessEndpoints()
+        {
+            return this._accessEndpoints != null && this._accessEndpoints.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AppstreamAgentVersion. 
@@ -178,6 +200,27 @@ namespace Amazon.AppStream.Model
         internal bool IsSetEnableDefaultInternetAccess()
         {
             return this._enableDefaultInternetAccess.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IamRoleArn. 
+        /// <para>
+        /// The ARN of the IAM role that is applied to the image builder. To assume a role, the
+        /// image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API
+        /// operation and passes the ARN of the role to use. The operation creates a new session
+        /// with temporary credentials. 
+        /// </para>
+        /// </summary>
+        public string IamRoleArn
+        {
+            get { return this._iamRoleArn; }
+            set { this._iamRoleArn = value; }
+        }
+
+        // Check to see if IamRoleArn property is set
+        internal bool IsSetIamRoleArn()
+        {
+            return this._iamRoleArn != null;
         }
 
         /// <summary>

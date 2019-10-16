@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Settings for File-based Captions in Source
+    /// If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file, specify
+    /// the URI of the input caption source file. If your caption source is IMSC in an IMF
+    /// package, use TrackSourceSettings instead of FileSoureSettings.
     /// </summary>
     public partial class FileSourceSettings
     {
@@ -37,9 +39,11 @@ namespace Amazon.MediaConvert.Model
         private int? _timeDelta;
 
         /// <summary>
-        /// Gets and sets the property Convert608To708. If set to UPCONVERT, 608 caption data
-        /// is both passed through via the "608 compatibility bytes" fields of the 708 wrapper
-        /// as well as translated into 708. 708 data present in the source content will be discarded.
+        /// Gets and sets the property Convert608To708. Specify whether this set of input captions
+        /// appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT),
+        /// MediaConvert includes the captions data in two ways: it passes the 608 data through
+        /// using the 608 compatibility bytes fields of the 708 wrapper, and it also translates
+        /// the 608 data into 708.
         /// </summary>
         public FileSourceConvert608To708 Convert608To708
         {
@@ -55,7 +59,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property SourceFile. External caption file used for loading captions.
-        /// Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl', 'srt', and 'smi'.
+        /// Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl', 'srt', 'xml', and 'smi'.
         /// </summary>
         [AWSProperty(Min=14)]
         public string SourceFile

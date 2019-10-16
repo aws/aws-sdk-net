@@ -65,7 +65,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// AWS DMS supports <code>UniqueAccountIdentifier</code> in versions 3.1.4 and later.
+        /// AWS DMS supports the <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4
+        /// and later.
         /// </para>
         ///  </note>
         /// </summary>

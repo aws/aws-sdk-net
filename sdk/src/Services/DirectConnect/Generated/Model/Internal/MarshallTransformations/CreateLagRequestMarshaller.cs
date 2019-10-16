@@ -61,8 +61,8 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-10-25";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -112,6 +112,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("numberOfConnections");
                     context.Writer.Write(publicRequest.NumberOfConnections);
+                }
+
+                if(publicRequest.IsSetProviderName())
+                {
+                    context.Writer.WritePropertyName("providerName");
+                    context.Writer.Write(publicRequest.ProviderName);
                 }
 
                 if(publicRequest.IsSetTags())

@@ -56,7 +56,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
             request.HttpMethod = "GET";
-            string uriResourcePath = "/2013-04-01/testdnsanswer";
             
             if (publicRequest.IsSetHostedZoneId())
                 request.Parameters.Add("hostedzoneid", StringUtils.FromString(publicRequest.HostedZoneId));
@@ -75,7 +74,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetEDNS0ClientSubnetMask())
                 request.Parameters.Add("edns0clientsubnetmask", StringUtils.FromString(publicRequest.EDNS0ClientSubnetMask));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2013-04-01/testdnsanswer";
+            request.MarshallerVersion = 2;
 
 
             request.UseQueryString = true;

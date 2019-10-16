@@ -32,10 +32,29 @@ namespace Amazon.IoTAnalytics.Model
     /// </summary>
     public partial class DatasetContentSummary
     {
+        private DateTime? _completionTime;
         private DateTime? _creationTime;
         private DateTime? _scheduleTime;
         private DatasetContentStatus _status;
         private string _version;
+
+        /// <summary>
+        /// Gets and sets the property CompletionTime. 
+        /// <para>
+        /// The time the dataset content status was updated to SUCCEEDED or FAILED.
+        /// </para>
+        /// </summary>
+        public DateTime CompletionTime
+        {
+            get { return this._completionTime.GetValueOrDefault(); }
+            set { this._completionTime = value; }
+        }
+
+        // Check to see if CompletionTime property is set
+        internal bool IsSetCompletionTime()
+        {
+            return this._completionTime.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property CreationTime. 

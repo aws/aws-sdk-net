@@ -88,6 +88,12 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                     unmarshalledObject.IsDefault = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Locale", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Locale = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MaxVolumeLimit", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

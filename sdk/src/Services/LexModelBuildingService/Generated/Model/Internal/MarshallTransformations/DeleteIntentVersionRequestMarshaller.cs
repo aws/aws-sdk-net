@@ -58,14 +58,14 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-04-19";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/intents/{name}/versions/{version}";
             if (!publicRequest.IsSetName())
                 throw new AmazonLexModelBuildingServiceException("Request object does not have required field Name set");
-            uriResourcePath = uriResourcePath.Replace("{name}", StringUtils.FromStringWithSlashEncoding(publicRequest.Name));
+            request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             if (!publicRequest.IsSetVersion())
                 throw new AmazonLexModelBuildingServiceException("Request object does not have required field Version set");
-            uriResourcePath = uriResourcePath.Replace("{version}", StringUtils.FromStringWithSlashEncoding(publicRequest.Version));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{version}", StringUtils.FromString(publicRequest.Version));
+            request.ResourcePath = "/intents/{name}/versions/{version}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

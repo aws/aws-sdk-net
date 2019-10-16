@@ -58,17 +58,17 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-05-01";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/api/v1/organizations/{OrganizationId}/subscriptions";
             if (!publicRequest.IsSetOrganizationId())
                 throw new AmazonWorkDocsException("Request object does not have required field OrganizationId set");
-            uriResourcePath = uriResourcePath.Replace("{OrganizationId}", StringUtils.FromStringWithSlashEncoding(publicRequest.OrganizationId));
+            request.AddPathResource("{OrganizationId}", StringUtils.FromString(publicRequest.OrganizationId));
             
             if (publicRequest.IsSetLimit())
                 request.Parameters.Add("limit", StringUtils.FromInt(publicRequest.Limit));
             
             if (publicRequest.IsSetMarker())
                 request.Parameters.Add("marker", StringUtils.FromString(publicRequest.Marker));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/api/v1/organizations/{OrganizationId}/subscriptions";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

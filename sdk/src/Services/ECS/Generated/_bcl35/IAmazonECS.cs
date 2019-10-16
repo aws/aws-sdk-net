@@ -129,14 +129,15 @@ namespace Amazon.ECS
         /// <summary>
         /// Runs and maintains a desired number of tasks from a specified task definition. If
         /// the number of tasks running in a service drops below the <code>desiredCount</code>,
-        /// Amazon ECS spawns another copy of the task in the specified cluster. To update an
-        /// existing service, see <a>UpdateService</a>.
+        /// Amazon ECS runs another copy of the task in the specified cluster. To update an existing
+        /// service, see <a>UpdateService</a>.
         /// 
         ///  
         /// <para>
         /// In addition to maintaining the desired count of tasks in your service, you can optionally
-        /// run your service behind a load balancer. The load balancer distributes traffic across
-        /// the tasks that are associated with the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
+        /// run your service behind one or more load balancers. The load balancers distribute
+        /// traffic across the tasks that are associated with the service. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
         /// Load Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
@@ -583,12 +584,12 @@ namespace Amazon.ECS
         /// When you delete a service, if there are still running tasks that require cleanup,
         /// the service status moves from <code>ACTIVE</code> to <code>DRAINING</code>, and the
         /// service is no longer visible in the console or in the <a>ListServices</a> API operation.
-        /// After the tasks have stopped, then the service status moves from <code>DRAINING</code>
-        /// to <code>INACTIVE</code>. Services in the <code>DRAINING</code> or <code>INACTIVE</code>
-        /// status can still be viewed with the <a>DescribeServices</a> API operation. However,
-        /// in the future, <code>INACTIVE</code> services may be cleaned up and purged from Amazon
-        /// ECS record keeping, and <a>DescribeServices</a> calls on those services return a <code>ServiceNotFoundException</code>
-        /// error.
+        /// After all tasks have transitioned to either <code>STOPPING</code> or <code>STOPPED</code>
+        /// status, the service status moves from <code>DRAINING</code> to <code>INACTIVE</code>.
+        /// Services in the <code>DRAINING</code> or <code>INACTIVE</code> status can still be
+        /// viewed with the <a>DescribeServices</a> API operation. However, in the future, <code>INACTIVE</code>
+        /// services may be cleaned up and purged from Amazon ECS record keeping, and <a>DescribeServices</a>
+        /// calls on those services return a <code>ServiceNotFoundException</code> error.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -1729,11 +1730,15 @@ namespace Amazon.ECS
 
 
         /// <summary>
-        /// Modifies an account setting. If you change the account setting for the root user,
-        /// the default settings for all of the IAM users and roles for which no individual account
-        /// setting has been specified are reset. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
-        /// Settings</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// Modifies an account setting. Account settings are set on a per-Region basis.
         /// 
+        ///  
+        /// <para>
+        /// If you change the account setting for the root user, the default settings for all
+        /// of the IAM users and roles for which no individual account setting has been specified
+        /// are reset. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
+        /// Settings</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
         ///  
         /// <para>
         /// When <code>serviceLongArnFormat</code>, <code>taskLongArnFormat</code>, or <code>containerInstanceLongArnFormat</code>
@@ -1812,7 +1817,7 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Modifies an account setting for all IAM users on an account for whom no individual
-        /// account setting has been specified.
+        /// account setting has been specified. Account settings are set on a per-Region basis.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccountSettingDefault service method.</param>
         /// 
@@ -2421,6 +2426,61 @@ namespace Amazon.ECS
         /// <returns>Returns a  UntagResourceResult from ECS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateClusterSettings
+
+
+        /// <summary>
+        /// Modifies the settings to use for a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClusterSettings service method.</param>
+        /// 
+        /// <returns>The response from the UpdateClusterSettings service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateClusterSettings">REST API Reference for UpdateClusterSettings Operation</seealso>
+        UpdateClusterSettingsResponse UpdateClusterSettings(UpdateClusterSettingsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateClusterSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClusterSettings operation on AmazonECSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateClusterSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateClusterSettings">REST API Reference for UpdateClusterSettings Operation</seealso>
+        IAsyncResult BeginUpdateClusterSettings(UpdateClusterSettingsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateClusterSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateClusterSettings.</param>
+        /// 
+        /// <returns>Returns a  UpdateClusterSettingsResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateClusterSettings">REST API Reference for UpdateClusterSettings Operation</seealso>
+        UpdateClusterSettingsResponse EndUpdateClusterSettings(IAsyncResult asyncResult);
 
         #endregion
         

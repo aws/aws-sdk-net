@@ -51,6 +51,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.PageNumber);
             }
 
+            if(requestObject.IsSetPageTypes())
+            {
+                context.Writer.WritePropertyName("pageTypes");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectPageTypesListValue in requestObject.PageTypes)
+                {
+                        context.Writer.Write(requestObjectPageTypesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

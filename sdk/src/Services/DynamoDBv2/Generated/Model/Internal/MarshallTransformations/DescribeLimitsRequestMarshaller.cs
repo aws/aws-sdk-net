@@ -61,8 +61,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-08-10";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/";
+            request.MarshallerVersion = 2;
             request.Content = System.Text.Encoding.UTF8.GetBytes("{}");
 
             return request;

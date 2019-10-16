@@ -56,11 +56,11 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
             request.HttpMethod = "DELETE";
-            string uriResourcePath = "/2013-04-01/healthcheck/{HealthCheckId}";
             if (!publicRequest.IsSetHealthCheckId())
                 throw new AmazonRoute53Exception("Request object does not have required field HealthCheckId set");
-            uriResourcePath = uriResourcePath.Replace("{HealthCheckId}", StringUtils.FromStringWithSlashEncoding(publicRequest.HealthCheckId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{HealthCheckId}", StringUtils.FromString(publicRequest.HealthCheckId));
+            request.ResourcePath = "/2013-04-01/healthcheck/{HealthCheckId}";
+            request.MarshallerVersion = 2;
 
 
             return request;

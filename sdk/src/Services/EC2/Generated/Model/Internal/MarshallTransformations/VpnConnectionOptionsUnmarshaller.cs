@@ -60,6 +60,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.StaticRoutesOnly = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("tunnelOptionSet/item", targetDepth))
+                    {
+                        var unmarshaller = TunnelOptionUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.TunnelOptions.Add(item);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

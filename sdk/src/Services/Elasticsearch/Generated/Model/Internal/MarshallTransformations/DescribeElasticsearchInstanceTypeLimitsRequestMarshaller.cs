@@ -58,17 +58,17 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-01-01";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/2015-01-01/es/instanceTypeLimits/{ElasticsearchVersion}/{InstanceType}";
             if (!publicRequest.IsSetElasticsearchVersion())
                 throw new AmazonElasticsearchException("Request object does not have required field ElasticsearchVersion set");
-            uriResourcePath = uriResourcePath.Replace("{ElasticsearchVersion}", StringUtils.FromStringWithSlashEncoding(publicRequest.ElasticsearchVersion));
+            request.AddPathResource("{ElasticsearchVersion}", StringUtils.FromString(publicRequest.ElasticsearchVersion));
             if (!publicRequest.IsSetInstanceType())
                 throw new AmazonElasticsearchException("Request object does not have required field InstanceType set");
-            uriResourcePath = uriResourcePath.Replace("{InstanceType}", StringUtils.FromStringWithSlashEncoding(publicRequest.InstanceType));
+            request.AddPathResource("{InstanceType}", StringUtils.FromString(publicRequest.InstanceType));
             
             if (publicRequest.IsSetDomainName())
                 request.Parameters.Add("domainName", StringUtils.FromString(publicRequest.DomainName));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2015-01-01/es/instanceTypeLimits/{ElasticsearchVersion}/{InstanceType}";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

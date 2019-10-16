@@ -26,6 +26,7 @@ namespace Amazon.Runtime.Internal.Auth
     {
         private const string HTTP_SCHEME = "AWS3";
         private const string HTTPS_SCHEME = "AWS3-HTTPS";
+        private const string Slash = "/";
 
         private bool UseAws3Https { get; set; }
 
@@ -128,13 +129,9 @@ namespace Amazon.Runtime.Internal.Auth
                 bytesToSign = Encoding.UTF8.GetBytes(stringToSign);
             }
             else
-            {
-                Uri url = request.Endpoint;
-                if (!string.IsNullOrEmpty(request.ResourcePath))
-                    url = new Uri(request.Endpoint, request.ResourcePath);
-
+            {                
                 stringToSign = request.HttpMethod + "\n"
-                    + GetCanonicalizedResourcePath(url) + "\n"
+                    + GetCanonicalizedResourcePath(request) + "\n"
                     + GetCanonicalizedQueryString(request.Parameters) + "\n"
                     + GetCanonicalizedHeadersForStringToSign(request) + "\n"
                     + GetRequestPayload(request);
@@ -163,17 +160,41 @@ namespace Amazon.Runtime.Internal.Auth
 
         #region Http signing helpers
 
-        private static string GetCanonicalizedResourcePath(Uri endpoint)
-        {
-            string uri = endpoint.AbsolutePath;
-            if (string.IsNullOrEmpty(uri))
+        private static string GetCanonicalizedResourcePath(IRequest request)
+        {            
+            var resourcePath = request.ResourcePath;            
+            if (request.Endpoint != null)
             {
-                return "/";
+                var path = request.Endpoint.AbsolutePath;
+                if (string.IsNullOrEmpty(path) || string.Equals(path, Slash, StringComparison.Ordinal))
+                {
+                    path = string.Empty;
+                }
+
+                if (resourcePath?.StartsWith(Slash, StringComparison.Ordinal) == true)
+                {
+                    resourcePath = resourcePath.Substring(1);
+                }
+
+                if (!string.IsNullOrEmpty(resourcePath))
+                {
+                    path = path + Slash + resourcePath;
+                }
+
+                resourcePath = path;
             }
-            else
+
+            if (string.IsNullOrEmpty(resourcePath))
             {
-                return AWSSDKUtils.UrlEncode(uri, true);
+                return Slash;
             }
+            
+            if(request.MarshallerVersion >= 2)
+            {
+                return AWSSDKUtils.ResolveResourcePath(resourcePath, request.PathResources);
+            }                
+               
+            return AWSSDKUtils.UrlEncode(resourcePath, true);            
         }
 
         private static bool IsHttpsRequest(IRequest request)

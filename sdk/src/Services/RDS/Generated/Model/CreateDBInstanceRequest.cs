@@ -637,8 +637,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBParameterGroupName. 
         /// <para>
-        /// The name of the DB parameter group to associate with this DB instance. If this argument
-        /// is omitted, the default DBParameterGroup for the specified engine is used.
+        /// The name of the DB parameter group to associate with this DB instance. If you do not
+        /// specify a value for <code>DBParameterGroupName</code>, then the default <code>DBParameterGroup</code>
+        /// for the specified DB engine is used.
         /// </para>
         ///  
         /// <para>
@@ -738,12 +739,22 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// For an Amazon RDS DB instance that's running Microsoft SQL Server, this parameter
-        /// specifies the Active Directory directory ID to create the instance in. Amazon RDS
-        /// uses Windows Authentication to authenticate users that connect to the DB instance.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/DeveloperGuide/USER_SQLServerWinAuth.html">Using
-        /// Windows Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a>
-        /// in the <i>Amazon RDS User Guide</i>. 
+        /// The Active Directory directory ID to create the DB instance in. Currently, only Microsoft
+        /// SQL Server and Oracle DB instances can be created in an Active Directory Domain.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to
+        /// authenticate users that connect to the DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
+        /// Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft SQL
+        /// Server</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Oracle DB instance, Amazon RDS can use Kerberos Authentication to authenticate
+        /// users that connect to the DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
+        /// Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         public string Domain
@@ -830,7 +841,32 @@ namespace Amazon.RDS.Model
         /// <para>
         /// For MySQL 5.7, minor version 5.7.16 or higher
         /// </para>
-        ///  </li> </ul>
+        ///  </li> <li> 
+        /// <para>
+        /// For MySQL 8.0, minor version 8.0.16 or higher
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>PostgreSQL</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For PostgreSQL 9.5, minor version 9.5.15 or higher
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PostgreSQL 9.6, minor version 9.6.11 or higher
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PostgreSQL 10.6, 10.7, and 10.9
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
+        /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User
+        /// Guide.</i> 
+        /// </para>
         /// </summary>
         public bool EnableIAMDatabaseAuthentication
         {
@@ -1040,8 +1076,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property Iops. 
         /// <para>
         /// The amount of Provisioned IOPS (input/output operations per second) to be initially
-        /// allocated for the DB instance. For information about valid Iops values, see see <a
-        /// href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
+        /// allocated for the DB instance. For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
         /// RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User
         /// Guide</i>. 
         /// </para>

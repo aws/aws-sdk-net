@@ -93,6 +93,12 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                         response.MD5OfMessageBody = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("MD5OfMessageSystemAttributes", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.MD5OfMessageSystemAttributes = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("MessageId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

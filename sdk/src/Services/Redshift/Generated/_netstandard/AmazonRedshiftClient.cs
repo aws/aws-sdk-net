@@ -3168,6 +3168,48 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  DescribeNodeConfigurationOptions
+
+        internal virtual DescribeNodeConfigurationOptionsResponse DescribeNodeConfigurationOptions(DescribeNodeConfigurationOptionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNodeConfigurationOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNodeConfigurationOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeNodeConfigurationOptionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns properties of possible node configurations such as node type, number of nodes,
+        /// and disk usage for the specified action type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNodeConfigurationOptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeNodeConfigurationOptions service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotNotFoundException">
+        /// The snapshot identifier does not refer to an existing cluster snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterSnapshotStateException">
+        /// The specified cluster snapshot is not in the <code>available</code> state, or other
+        /// accounts are authorized to access the snapshot.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeNodeConfigurationOptions">REST API Reference for DescribeNodeConfigurationOptions Operation</seealso>
+        public virtual Task<DescribeNodeConfigurationOptionsResponse> DescribeNodeConfigurationOptionsAsync(DescribeNodeConfigurationOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNodeConfigurationOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNodeConfigurationOptionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeNodeConfigurationOptionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeOrderableClusterOptions
 
         internal virtual DescribeOrderableClusterOptionsResponse DescribeOrderableClusterOptions()
@@ -3543,7 +3585,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Returns the total amount of snapshot usage and provisioned storage for a user in megabytes.
+        /// Returns the total amount of snapshot usage and provisioned storage in megabytes.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStorage service method.</param>
         /// <param name="cancellationToken">

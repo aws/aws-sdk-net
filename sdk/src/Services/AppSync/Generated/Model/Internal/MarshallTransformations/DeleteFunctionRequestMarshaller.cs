@@ -58,14 +58,14 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/v1/apis/{apiId}/functions/{functionId}";
             if (!publicRequest.IsSetApiId())
                 throw new AmazonAppSyncException("Request object does not have required field ApiId set");
-            uriResourcePath = uriResourcePath.Replace("{apiId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ApiId));
+            request.AddPathResource("{apiId}", StringUtils.FromString(publicRequest.ApiId));
             if (!publicRequest.IsSetFunctionId())
                 throw new AmazonAppSyncException("Request object does not have required field FunctionId set");
-            uriResourcePath = uriResourcePath.Replace("{functionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.FunctionId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{functionId}", StringUtils.FromString(publicRequest.FunctionId));
+            request.ResourcePath = "/v1/apis/{apiId}/functions/{functionId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

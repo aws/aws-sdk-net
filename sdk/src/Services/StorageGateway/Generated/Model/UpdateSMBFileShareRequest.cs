@@ -69,8 +69,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property AdminUserList. 
         /// <para>
-        /// A list of users or groups in the Active Directory that have administrator rights to
-        /// the file share. A group must be prefixed with the @ character. For example <code>@group1</code>.
+        /// A list of users in the Active Directory that have administrator rights to the file
+        /// share. A group must be prefixed with the @ character. For example <code>@group1</code>.
         /// Can only be set if Authentication is set to <code>ActiveDirectory</code>.
         /// </para>
         /// </summary>

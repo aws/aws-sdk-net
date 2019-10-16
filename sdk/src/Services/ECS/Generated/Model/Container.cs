@@ -37,6 +37,8 @@ namespace Amazon.ECS.Model
         private int? _exitCode;
         private List<string> _gpuIds = new List<string>();
         private HealthStatus _healthStatus;
+        private string _image;
+        private string _imageDigest;
         private string _lastStatus;
         private string _memory;
         private string _memoryReservation;
@@ -44,6 +46,7 @@ namespace Amazon.ECS.Model
         private List<NetworkBinding> _networkBindings = new List<NetworkBinding>();
         private List<NetworkInterface> _networkInterfaces = new List<NetworkInterface>();
         private string _reason;
+        private string _runtimeId;
         private string _taskArn;
 
         /// <summary>
@@ -136,6 +139,48 @@ namespace Amazon.ECS.Model
         internal bool IsSetHealthStatus()
         {
             return this._healthStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Image. 
+        /// <para>
+        /// The image used for the container.
+        /// </para>
+        /// </summary>
+        public string Image
+        {
+            get { return this._image; }
+            set { this._image = value; }
+        }
+
+        // Check to see if Image property is set
+        internal bool IsSetImage()
+        {
+            return this._image != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageDigest. 
+        /// <para>
+        /// The container image manifest digest.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>imageDigest</code> is only returned if the container is using an image hosted
+        /// in Amazon ECR, otherwise it is omitted.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string ImageDigest
+        {
+            get { return this._imageDigest; }
+            set { this._imageDigest = value; }
+        }
+
+        // Check to see if ImageDigest property is set
+        internal bool IsSetImageDigest()
+        {
+            return this._imageDigest != null;
         }
 
         /// <summary>
@@ -263,6 +308,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetReason()
         {
             return this._reason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuntimeId. 
+        /// <para>
+        /// The ID of the Docker container.
+        /// </para>
+        /// </summary>
+        public string RuntimeId
+        {
+            get { return this._runtimeId; }
+            set { this._runtimeId = value; }
+        }
+
+        // Check to see if RuntimeId property is set
+        internal bool IsSetRuntimeId()
+        {
+            return this._runtimeId != null;
         }
 
         /// <summary>

@@ -33,6 +33,7 @@ namespace Amazon.DirectConnect.Model
     public partial class Location
     {
         private List<string> _availablePortSpeeds = new List<string>();
+        private List<string> _availableProviders = new List<string>();
         private string _locationCode;
         private string _locationName;
         private string _region;
@@ -53,6 +54,24 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetAvailablePortSpeeds()
         {
             return this._availablePortSpeeds != null && this._availablePortSpeeds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailableProviders. 
+        /// <para>
+        /// The name of the service provider for the location.
+        /// </para>
+        /// </summary>
+        public List<string> AvailableProviders
+        {
+            get { return this._availableProviders; }
+            set { this._availableProviders = value; }
+        }
+
+        // Check to see if AvailableProviders property is set
+        internal bool IsSetAvailableProviders()
+        {
+            return this._availableProviders != null && this._availableProviders.Count > 0; 
         }
 
         /// <summary>

@@ -62,6 +62,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("BgpAsn", StringUtils.FromInt(publicRequest.BgpAsn));
                 }
+                if(publicRequest.IsSetCertificateArn())
+                {
+                    request.Parameters.Add("CertificateArn", StringUtils.FromString(publicRequest.CertificateArn));
+                }
                 if(publicRequest.IsSetPublicIp())
                 {
                     request.Parameters.Add("IpAddress", StringUtils.FromString(publicRequest.PublicIp));

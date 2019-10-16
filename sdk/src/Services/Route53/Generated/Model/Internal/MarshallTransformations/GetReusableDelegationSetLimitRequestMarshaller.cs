@@ -56,14 +56,14 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
             request.HttpMethod = "GET";
-            string uriResourcePath = "/2013-04-01/reusabledelegationsetlimit/{Id}/{Type}";
             if (!publicRequest.IsSetType())
                 throw new AmazonRoute53Exception("Request object does not have required field Type set");
-            uriResourcePath = uriResourcePath.Replace("{Type}", StringUtils.FromStringWithSlashEncoding(publicRequest.Type));
+            request.AddPathResource("{Type}", StringUtils.FromString(publicRequest.Type));
             if (!publicRequest.IsSetDelegationSetId())
                 throw new AmazonRoute53Exception("Request object does not have required field DelegationSetId set");
-            uriResourcePath = uriResourcePath.Replace("{Id}", StringUtils.FromStringWithSlashEncoding(publicRequest.DelegationSetId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.DelegationSetId));
+            request.ResourcePath = "/2013-04-01/reusabledelegationsetlimit/{Id}/{Type}";
+            request.MarshallerVersion = 2;
 
 
             return request;

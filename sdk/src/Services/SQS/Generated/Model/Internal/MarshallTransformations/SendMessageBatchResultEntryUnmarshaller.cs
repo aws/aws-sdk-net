@@ -72,6 +72,12 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                         unmarshalledObject.MD5OfMessageBody = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("MD5OfMessageSystemAttributes", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.MD5OfMessageSystemAttributes = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("MessageId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

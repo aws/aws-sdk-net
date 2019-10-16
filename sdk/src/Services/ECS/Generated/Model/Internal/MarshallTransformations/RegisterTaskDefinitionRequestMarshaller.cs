@@ -61,8 +61,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-11-13";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -100,6 +100,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("family");
                     context.Writer.Write(publicRequest.Family);
+                }
+
+                if(publicRequest.IsSetInferenceAccelerators())
+                {
+                    context.Writer.WritePropertyName("inferenceAccelerators");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestInferenceAcceleratorsListValue in publicRequest.InferenceAccelerators)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = InferenceAcceleratorMarshaller.Instance;
+                        marshaller.Marshall(publicRequestInferenceAcceleratorsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetIpcMode())

@@ -59,7 +59,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  <code>debuglevel=2</code> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=512)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string Configuration
         {
             get { return this._configuration; }

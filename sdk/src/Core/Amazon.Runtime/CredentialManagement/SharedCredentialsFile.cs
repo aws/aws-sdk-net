@@ -402,6 +402,7 @@ namespace Amazon.Runtime.CredentialManagement
             var hasConfigProperties = false;
             if (_configFile != null)
             {
+                _configFile.ProfileMarkerRequired = sectionName != DefaultProfileName;
                 hasConfigProperties = _configFile.TryGetSection(sectionName, out configProperties);
             }
 

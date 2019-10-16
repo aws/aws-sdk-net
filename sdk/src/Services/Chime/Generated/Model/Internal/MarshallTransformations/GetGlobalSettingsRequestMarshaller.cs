@@ -58,8 +58,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-01";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/settings";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/settings";
+            request.MarshallerVersion = 2;
 
             return request;
         }

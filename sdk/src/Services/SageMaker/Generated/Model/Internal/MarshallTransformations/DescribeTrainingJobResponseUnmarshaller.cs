@@ -57,6 +57,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.AlgorithmSpecification = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("BillableTimeInSeconds", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.BillableTimeInSeconds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CheckpointConfig", targetDepth))
+                {
+                    var unmarshaller = CheckpointConfigUnmarshaller.Instance;
+                    response.CheckpointConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -67,6 +79,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     response.EnableInterContainerTrafficEncryption = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EnableManagedSpotTraining", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.EnableManagedSpotTraining = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EnableNetworkIsolation", targetDepth))
@@ -181,6 +199,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     response.TrainingStartTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TrainingTimeInSeconds", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.TrainingTimeInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TuningJobArn", targetDepth))

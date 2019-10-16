@@ -88,6 +88,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IsRegisteredWithLakeFormation", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsRegisteredWithLakeFormation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastAccessTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

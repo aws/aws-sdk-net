@@ -58,14 +58,14 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-14";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/prod/tags/{resource-arn}";
             if (!publicRequest.IsSetResourceArn())
                 throw new AmazonMediaLiveException("Request object does not have required field ResourceArn set");
-            uriResourcePath = uriResourcePath.Replace("{resource-arn}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceArn));
+            request.AddPathResource("{resource-arn}", StringUtils.FromString(publicRequest.ResourceArn));
             
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/prod/tags/{resource-arn}";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

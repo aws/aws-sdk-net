@@ -49,7 +49,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The context of an action to a job worker within the stage of a pipeline.
+        /// The context of an action to a job worker in the stage of a pipeline.
         /// </para>
         /// </summary>
         public ActionContext Action

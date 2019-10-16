@@ -64,10 +64,22 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("convert608To708", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Convert608To708 = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sourceAncillaryChannelNumber", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.SourceAncillaryChannelNumber = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("terminateCaptions", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TerminateCaptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

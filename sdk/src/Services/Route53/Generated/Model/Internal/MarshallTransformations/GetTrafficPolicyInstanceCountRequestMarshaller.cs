@@ -56,8 +56,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
             request.HttpMethod = "GET";
-            string uriResourcePath = "/2013-04-01/trafficpolicyinstancecount";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2013-04-01/trafficpolicyinstancecount";
+            request.MarshallerVersion = 2;
 
 
             return request;

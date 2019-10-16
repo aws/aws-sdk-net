@@ -98,7 +98,14 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Archives Amazon GuardDuty findings specified by the list of finding IDs.
+        /// Archives GuardDuty findings specified by the list of finding IDs.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Only the master account can archive findings. Member accounts do not have permission
+        /// to archive findings from their accounts.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ArchiveFindings service method.</param>
         /// 
@@ -144,9 +151,10 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Creates a single Amazon GuardDuty detector. A detector is an object that represents
-        /// the GuardDuty service. A detector must be created in order for GuardDuty to become
-        /// operational.
+        /// Creates a single Amazon GuardDuty detector. A detector is a resource that represents
+        /// the GuardDuty service. To start using GuardDuty, you must create a detector in each
+        /// region that you enable the service. You can have only one detector per account per
+        /// region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDetector service method.</param>
         /// 
@@ -1123,8 +1131,8 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Provides the details for the GuardDuty master account to the current GuardDuty member
-        /// account.
+        /// Provides the details for the GuardDuty master account associated with the current
+        /// GuardDuty member account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMasterAccount service method.</param>
         /// 

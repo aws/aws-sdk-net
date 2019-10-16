@@ -61,8 +61,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-10-06";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -78,6 +78,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("serverType");
                     context.Writer.Write(publicRequest.ServerType);
+                }
+
+                if(publicRequest.IsSetShouldOverwrite())
+                {
+                    context.Writer.WritePropertyName("shouldOverwrite");
+                    context.Writer.Write(publicRequest.ShouldOverwrite);
                 }
 
                 if(publicRequest.IsSetToken())

@@ -38,7 +38,7 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    /// Create an Amazon Kinesis Data Firehose . 
+    /// Create an Amazon Kinesis Data Firehose. 
     /// </para>
     ///  
     /// <para>
@@ -74,6 +74,13 @@ namespace Amazon.WAFRegional.Model
         /// the redacted fields details, and the Amazon Resource Name (ARN) of the web ACL to
         /// monitor.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When specifying <code>Type</code> in <code>RedactedFields</code>, you must use one
+        /// of the following values: <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>,
+        /// or <code>METHOD</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public LoggingConfiguration LoggingConfiguration

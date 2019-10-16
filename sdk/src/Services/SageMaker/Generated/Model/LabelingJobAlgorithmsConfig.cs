@@ -92,6 +92,15 @@ namespace Amazon.SageMaker.Model
         ///  <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/object-detection</code>
         /// 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Semantic Segmentation</i> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/semantic-segmentation</code>
+        /// 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Max=2048)]

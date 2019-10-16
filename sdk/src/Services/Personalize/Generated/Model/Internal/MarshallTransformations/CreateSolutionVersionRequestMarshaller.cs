@@ -61,8 +61,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-22";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -72,6 +72,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("solutionArn");
                     context.Writer.Write(publicRequest.SolutionArn);
+                }
+
+                if(publicRequest.IsSetTrainingMode())
+                {
+                    context.Writer.WritePropertyName("trainingMode");
+                    context.Writer.Write(publicRequest.TrainingMode);
                 }
 
         

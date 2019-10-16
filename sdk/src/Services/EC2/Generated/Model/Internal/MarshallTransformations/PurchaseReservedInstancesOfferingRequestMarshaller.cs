@@ -73,6 +73,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         request.Parameters.Add("LimitPrice" + "." + "CurrencyCode", StringUtils.FromString(publicRequest.LimitPrice.CurrencyCode));
                     }
                 }
+                if(publicRequest.IsSetPurchaseTime())
+                {
+                    request.Parameters.Add("PurchaseTime", StringUtils.FromDateTimeToISO8601(publicRequest.PurchaseTime));
+                }
                 if(publicRequest.IsSetReservedInstancesOfferingId())
                 {
                     request.Parameters.Add("ReservedInstancesOfferingId", StringUtils.FromString(publicRequest.ReservedInstancesOfferingId));

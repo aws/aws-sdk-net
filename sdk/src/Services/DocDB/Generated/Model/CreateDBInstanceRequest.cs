@@ -265,7 +265,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to be assigned to the DB instance.
+        /// The tags to be assigned to the DB instance. You can assign up to 10 tags to an instance.
         /// </para>
         /// </summary>
         public List<Tag> Tags

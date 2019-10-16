@@ -1003,6 +1003,60 @@ namespace Amazon.Pinpoint
 
 
     /// <summary>
+    /// Constants used for properties of type TemplateType.
+    /// </summary>
+    public class TemplateType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EMAIL for TemplateType
+        /// </summary>
+        public static readonly TemplateType EMAIL = new TemplateType("EMAIL");
+        /// <summary>
+        /// Constant PUSH for TemplateType
+        /// </summary>
+        public static readonly TemplateType PUSH = new TemplateType("PUSH");
+        /// <summary>
+        /// Constant SMS for TemplateType
+        /// </summary>
+        public static readonly TemplateType SMS = new TemplateType("SMS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TemplateType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TemplateType FindValue(string value)
+        {
+            return FindValue<TemplateType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TemplateType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Type.
     /// </summary>
     public class Type : ConstantClass

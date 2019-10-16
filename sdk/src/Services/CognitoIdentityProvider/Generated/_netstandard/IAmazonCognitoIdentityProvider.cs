@@ -94,7 +94,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  
         /// <para>
-        /// Requires developer credentials.
+        /// Calling this action requires developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminAddUserToGroup service method.</param>
@@ -137,7 +137,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  
         /// <para>
-        /// Requires developer credentials.
+        /// Calling this action requires developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminConfirmSignUp service method.</param>
@@ -299,7 +299,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  
         /// <para>
-        /// Requires developer credentials.
+        /// Calling this action requires developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminDeleteUser service method.</param>
@@ -341,7 +341,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  
         /// <para>
-        /// Requires developer credentials.
+        /// Calling this action requires developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminDeleteUserAttributes service method.</param>
@@ -460,11 +460,11 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Disables the specified user as an administrator. Works on any user.
+        /// Disables the specified user.
         /// 
         ///  
         /// <para>
-        /// Requires developer credentials.
+        /// Calling this action requires developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminDisableUser service method.</param>
@@ -506,7 +506,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  
         /// <para>
-        /// Requires developer credentials.
+        /// Calling this action requires developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminEnableUser service method.</param>
@@ -548,7 +548,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  
         /// <para>
-        /// Requires developer credentials.
+        /// Calling this action requires developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminForgetDevice service method.</param>
@@ -593,7 +593,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  
         /// <para>
-        /// Requires developer credentials.
+        /// Calling this action requires developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminGetDevice service method.</param>
@@ -636,7 +636,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  
         /// <para>
-        /// Requires developer credentials.
+        /// Calling this action requires developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminGetUser service method.</param>
@@ -678,7 +678,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  
         /// <para>
-        /// Requires developer credentials.
+        /// Calling this action requires developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminInitiateAuth service method.</param>
@@ -824,7 +824,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  
         /// <para>
-        /// Requires developer credentials.
+        /// Calling this action requires developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminListDevices service method.</param>
@@ -866,7 +866,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  
         /// <para>
-        /// Requires developer credentials.
+        /// Calling this action requires developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminListGroupsForUser service method.</param>
@@ -949,7 +949,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  
         /// <para>
-        /// Requires developer credentials.
+        /// Calling this action requires developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminRemoveUserFromGroup service method.</param>
@@ -1002,7 +1002,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// Requires developer credentials.
+        /// Calling this action requires developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminResetUserPassword service method.</param>
@@ -1073,7 +1073,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  
         /// <para>
-        /// Requires developer credentials.
+        /// Calling this action requires developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminRespondToAuthChallenge service method.</param>
@@ -1164,7 +1164,11 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Sets the user's multi-factor authentication (MFA) preference.
+        /// Sets the user's multi-factor authentication (MFA) preference, including which MFA
+        /// options are enabled and if any are preferred. Only one factor can be set as preferred.
+        /// The preferred MFA factor will be used to authenticate a user if multiple factors are
+        /// enabled. If multiple options are enabled and no preference is set, a challenge to
+        /// choose an MFA option will be returned during sign in.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminSetUserMFAPreference service method.</param>
         /// <param name="cancellationToken">
@@ -1204,7 +1208,22 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
+        /// Sets the specified user's password in a user pool as an administrator. Works on any
+        /// user. 
         /// 
+        ///  
+        /// <para>
+        /// The password can be temporary or permanent. If it is temporary, the user status will
+        /// be placed into the <code>FORCE_CHANGE_PASSWORD</code> state. When the user next tries
+        /// to sign in, the InitiateAuth/AdminInitiateAuth response will contain the <code>NEW_PASSWORD_REQUIRED</code>
+        /// challenge. If the user does not sign in before it expires, the user will not be able
+        /// to sign in and their password will need to be reset by an administrator. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Once the user has set a new password, or the password is permanent, the user status
+        /// will be set to <code>Confirmed</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminSetUserPassword service method.</param>
         /// <param name="cancellationToken">
@@ -1244,12 +1263,9 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Sets all the user settings for a specified user name. Works on any user.
-        /// 
-        ///  
-        /// <para>
-        /// Requires developer credentials.
-        /// </para>
+        /// <i>This action is no longer supported.</i> You can use it to configure only SMS MFA.
+        /// You can't use it to configure TOTP software token MFA. To configure either type of
+        /// MFA, use the <a>AdminSetUserMFAPreference</a> action instead.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminSetUserSettings service method.</param>
         /// <param name="cancellationToken">
@@ -1329,7 +1345,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  
         /// <para>
-        /// Requires developer credentials.
+        /// Calling this action requires developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminUpdateDeviceStatus service method.</param>
@@ -1385,7 +1401,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// Requires developer credentials.
+        /// Calling this action requires developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminUpdateUserAttributes service method.</param>
@@ -1458,7 +1474,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  
         /// <para>
-        /// Requires developer credentials.
+        /// Calling this action requires developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminUserGlobalSignOut service method.</param>
@@ -1777,7 +1793,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  
         /// <para>
-        /// Requires developer credentials.
+        /// Calling this action requires developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGroup service method.</param>
@@ -2067,7 +2083,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  
         /// <para>
-        /// Requires developer credentials.
+        /// Calling this action requires developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGroup service method.</param>
@@ -2813,7 +2829,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  
         /// <para>
-        /// Requires developer credentials.
+        /// Calling this action requires developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetGroup service method.</param>
@@ -2892,6 +2908,9 @@ namespace Amazon.CognitoIdentityProvider
         /// <returns>The response from the GetSigningCertificate service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
@@ -3154,6 +3173,16 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleAccessPolicyException">
+        /// This exception is returned when the role provided for SMS configuration does not have
+        /// permission to publish using Amazon SNS.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
+        /// This exception is thrown when the trust relationship is invalid for the role provided
+        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// or the external ID provided in the role does not match what is provided in the SMS
+        /// configuration for the user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidUserPoolConfigurationException">
         /// This exception is thrown when the user pool configuration is invalid.
         /// </exception>
@@ -3244,7 +3273,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  
         /// <para>
-        /// Requires developer credentials.
+        /// Calling this action requires developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGroups service method.</param>
@@ -3527,7 +3556,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  
         /// <para>
-        /// Requires developer credentials.
+        /// Calling this action requires developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUsersInGroup service method.</param>
@@ -3827,7 +3856,11 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Set the user's multi-factor authentication (MFA) method preference.
+        /// Set the user's multi-factor authentication (MFA) method preference, including which
+        /// MFA factors are enabled and if any are preferred. Only one factor can be set as preferred.
+        /// The preferred MFA factor will be used to authenticate a user if multiple factors are
+        /// enabled. If multiple options are enabled and no preference is set, a challenge to
+        /// choose an MFA option will be returned during sign in.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetUserMFAPreference service method.</param>
         /// <param name="cancellationToken">
@@ -3867,7 +3900,7 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Set the user pool MFA configuration.
+        /// Set the user pool multi-factor authentication (MFA) configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetUserPoolMfaConfig service method.</param>
         /// <param name="cancellationToken">
@@ -3911,9 +3944,9 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Sets the user settings like multi-factor authentication (MFA). If MFA is to be removed
-        /// for a particular attribute pass the attribute with code delivery as null. If null
-        /// list is passed, all MFA options are removed.
+        /// <i>This action is no longer supported.</i> You can use it to configure only SMS MFA.
+        /// You can't use it to configure TOTP software token MFA. To configure either type of
+        /// MFA, use the <a>SetUserMFAPreference</a> action instead.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetUserSettings service method.</param>
         /// <param name="cancellationToken">
@@ -4282,7 +4315,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  
         /// <para>
-        /// Requires developer credentials.
+        /// Calling this action requires developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGroup service method.</param>

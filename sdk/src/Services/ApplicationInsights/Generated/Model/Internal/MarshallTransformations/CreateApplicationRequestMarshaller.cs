@@ -61,13 +61,25 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-25";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetOpsCenterEnabled())
+                {
+                    context.Writer.WritePropertyName("OpsCenterEnabled");
+                    context.Writer.Write(publicRequest.OpsCenterEnabled);
+                }
+
+                if(publicRequest.IsSetOpsItemSNSTopicArn())
+                {
+                    context.Writer.WritePropertyName("OpsItemSNSTopicArn");
+                    context.Writer.Write(publicRequest.OpsItemSNSTopicArn);
+                }
+
                 if(publicRequest.IsSetResourceGroupName())
                 {
                     context.Writer.WritePropertyName("ResourceGroupName");

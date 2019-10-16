@@ -196,6 +196,18 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.EnhancedVpcRouting = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ExpectedNextSnapshotScheduleTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.ExpectedNextSnapshotScheduleTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ExpectedNextSnapshotScheduleTimeStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ExpectedNextSnapshotScheduleTimeStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("HsmStatus", targetDepth))
                     {
                         var unmarshaller = HsmStatusUnmarshaller.Instance;
@@ -237,6 +249,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ModifyStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("NextMaintenanceWindowStartTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.NextMaintenanceWindowStartTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("NodeType", targetDepth))

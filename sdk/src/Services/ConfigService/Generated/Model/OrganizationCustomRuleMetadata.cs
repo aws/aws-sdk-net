@@ -28,7 +28,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// 
+    /// An object that specifies organization custom rule metadata such as resource type,
+    /// resource ID of AWS resource, Lamdba function ARN, and organization trigger types that
+    /// trigger AWS Config to evaluate your AWS resources against a rule. It also provides
+    /// the frequency with which you want AWS Config to run evaluations for the rule if the
+    /// trigger type is periodic.
     /// </summary>
     public partial class OrganizationCustomRuleMetadata
     {
@@ -43,7 +47,10 @@ namespace Amazon.ConfigService.Model
         private string _tagValueScope;
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description that you provide for organization config rule.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
         public string Description
@@ -59,7 +66,10 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InputParameters.
+        /// Gets and sets the property InputParameters. 
+        /// <para>
+        /// A string, in JSON format, that is passed to organization config rule Lambda function.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string InputParameters
@@ -75,7 +85,10 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LambdaFunctionArn.
+        /// Gets and sets the property LambdaFunctionArn. 
+        /// <para>
+        /// The lambda function ARN.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string LambdaFunctionArn
@@ -91,7 +104,19 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaximumExecutionFrequency.
+        /// Gets and sets the property MaximumExecutionFrequency. 
+        /// <para>
+        /// The maximum frequency with which AWS Config runs evaluations for a rule. Your custom
+        /// rule is triggered when AWS Config delivers the configuration snapshot. For more information,
+        /// see <a>ConfigSnapshotDeliveryProperties</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// By default, rules with a periodic trigger are evaluated every 24 hours. To change
+        /// the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code>
+        /// parameter.
+        /// </para>
+        ///  </note>
         /// </summary>
         public MaximumExecutionFrequency MaximumExecutionFrequency
         {
@@ -106,7 +131,29 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OrganizationConfigRuleTriggerTypes.
+        /// Gets and sets the property OrganizationConfigRuleTriggerTypes. 
+        /// <para>
+        /// The type of notification that triggers AWS Config to run an evaluation for a rule.
+        /// You can specify the following notification types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when AWS
+        /// Config delivers a configuration item as a result of a resource change.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation
+        /// when AWS Config delivers an oversized configuration item. AWS Config may generate
+        /// this notification type when a resource changes and the notification exceeds the maximum
+        /// size allowed by Amazon SNS.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ScheduledNotification</code> - Triggers a periodic evaluation at the frequency
+        /// specified for <code>MaximumExecutionFrequency</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> OrganizationConfigRuleTriggerTypes
@@ -122,7 +169,10 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceIdScope.
+        /// Gets and sets the property ResourceIdScope. 
+        /// <para>
+        /// The ID of the AWS resource that was evaluated.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=768)]
         public string ResourceIdScope
@@ -138,7 +188,10 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceTypesScope.
+        /// Gets and sets the property ResourceTypesScope. 
+        /// <para>
+        /// The type of the AWS resource that was evaluated.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public List<string> ResourceTypesScope
@@ -154,7 +207,11 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagKeyScope.
+        /// Gets and sets the property TagKeyScope. 
+        /// <para>
+        /// One part of a key-value pair that make up a tag. A key is a general label that acts
+        /// like a category for more specific tag values. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
         public string TagKeyScope
@@ -170,7 +227,11 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagValueScope.
+        /// Gets and sets the property TagValueScope. 
+        /// <para>
+        /// The optional part of a key-value pair that make up a tag. A value acts as a descriptor
+        /// within a tag category (key). 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string TagValueScope

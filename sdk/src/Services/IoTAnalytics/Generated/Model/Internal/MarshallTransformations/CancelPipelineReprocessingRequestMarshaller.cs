@@ -58,14 +58,14 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/pipelines/{pipelineName}/reprocessing/{reprocessingId}";
             if (!publicRequest.IsSetPipelineName())
                 throw new AmazonIoTAnalyticsException("Request object does not have required field PipelineName set");
-            uriResourcePath = uriResourcePath.Replace("{pipelineName}", StringUtils.FromStringWithSlashEncoding(publicRequest.PipelineName));
+            request.AddPathResource("{pipelineName}", StringUtils.FromString(publicRequest.PipelineName));
             if (!publicRequest.IsSetReprocessingId())
                 throw new AmazonIoTAnalyticsException("Request object does not have required field ReprocessingId set");
-            uriResourcePath = uriResourcePath.Replace("{reprocessingId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ReprocessingId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{reprocessingId}", StringUtils.FromString(publicRequest.ReprocessingId));
+            request.ResourcePath = "/pipelines/{pipelineName}/reprocessing/{reprocessingId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

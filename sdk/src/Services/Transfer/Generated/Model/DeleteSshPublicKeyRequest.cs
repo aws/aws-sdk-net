@@ -33,7 +33,7 @@ namespace Amazon.Transfer.Model
     /// 
     ///  
     /// <para>
-    /// No response is returned from this call.
+    /// No response is returned from this operation.
     /// </para>
     /// </summary>
     public partial class DeleteSshPublicKeyRequest : AmazonTransferRequest

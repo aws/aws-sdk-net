@@ -69,7 +69,8 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>.
+        /// The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>
+        /// or <code>UpdateThingGroup</code>.
         /// </para>
         ///  </note>
         /// </summary>

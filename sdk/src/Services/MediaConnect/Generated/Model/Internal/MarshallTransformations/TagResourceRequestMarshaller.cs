@@ -59,11 +59,11 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-14";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/tags/{resourceArn}";
             if (!publicRequest.IsSetResourceArn())
                 throw new AmazonMediaConnectException("Request object does not have required field ResourceArn set");
-            uriResourcePath = uriResourcePath.Replace("{resourceArn}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceArn));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{resourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
+            request.ResourcePath = "/tags/{resourceArn}";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

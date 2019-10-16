@@ -116,6 +116,10 @@ namespace Amazon.DirectConnect.Model
         /// <para>
         /// The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
         /// </para>
+        ///  
+        /// <para>
+        /// The valid values are 1-2147483647.
+        /// </para>
         /// </summary>
         public int Asn
         {
@@ -369,7 +373,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Any tags assigned to the virtual interface.
+        /// The tags associated with the virtual interface.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

@@ -58,11 +58,11 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-26";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/v1/email/deliverability-dashboard/campaigns/{CampaignId}";
             if (!publicRequest.IsSetCampaignId())
                 throw new AmazonPinpointEmailException("Request object does not have required field CampaignId set");
-            uriResourcePath = uriResourcePath.Replace("{CampaignId}", StringUtils.FromStringWithSlashEncoding(publicRequest.CampaignId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{CampaignId}", StringUtils.FromString(publicRequest.CampaignId));
+            request.ResourcePath = "/v1/email/deliverability-dashboard/campaigns/{CampaignId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

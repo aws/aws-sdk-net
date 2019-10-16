@@ -29,8 +29,7 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the GetBaiduChannel operation.
-    /// Retrieves information about the status and settings of the Baidu Cloud Push channel
-    /// for an application.
+    /// Retrieves information about the status and settings of the Baidu channel for an application.
     /// </summary>
     public partial class GetBaiduChannelRequest : AmazonPinpointRequest
     {

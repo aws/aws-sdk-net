@@ -59,8 +59,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-29";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/2017-08-29/jobs";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2017-08-29/jobs";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -129,10 +129,30 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetSimulateReservedQueue())
+                {
+                    context.Writer.WritePropertyName("simulateReservedQueue");
+                    context.Writer.Write(publicRequest.SimulateReservedQueue);
+                }
+
                 if(publicRequest.IsSetStatusUpdateInterval())
                 {
                     context.Writer.WritePropertyName("statusUpdateInterval");
                     context.Writer.Write(publicRequest.StatusUpdateInterval);
+                }
+
+                if(publicRequest.IsSetTags())
+                {
+                    context.Writer.WritePropertyName("tags");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    {
+                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                            context.Writer.Write(publicRequestTagsValue);
+                    }
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetUserMetadata())

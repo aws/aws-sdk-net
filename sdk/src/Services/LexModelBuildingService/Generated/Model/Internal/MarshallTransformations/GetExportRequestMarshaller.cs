@@ -58,7 +58,6 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-04-19";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/exports/";
             
             if (publicRequest.IsSetExportType())
                 request.Parameters.Add("exportType", StringUtils.FromString(publicRequest.ExportType));
@@ -71,7 +70,8 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetVersion())
                 request.Parameters.Add("version", StringUtils.FromString(publicRequest.Version));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/exports/";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

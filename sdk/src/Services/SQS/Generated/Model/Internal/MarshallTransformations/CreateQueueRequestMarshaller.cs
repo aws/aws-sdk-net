@@ -77,6 +77,21 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("QueueName", StringUtils.FromString(publicRequest.QueueName));
                 }
+                if(publicRequest.IsSetTags())
+                {
+                    int mapIndex = 1;
+                    foreach(var key in publicRequest.Tags.Keys)
+                    {
+                        String value;
+                        bool hasValue = publicRequest.Tags.TryGetValue(key, out value);
+                        request.Parameters.Add("Tag" + "." + mapIndex + "." + "Key", StringUtils.FromString(key));
+                        if (hasValue)
+                        {
+                            request.Parameters.Add("Tag" + "." + mapIndex + "." + "Value", StringUtils.FromString(value));
+                        }
+                        mapIndex++;
+                    }
+                }
             }
             return request;
         }

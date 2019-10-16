@@ -136,7 +136,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to assign to the hosted connection.
+        /// The tags associated with the connection.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

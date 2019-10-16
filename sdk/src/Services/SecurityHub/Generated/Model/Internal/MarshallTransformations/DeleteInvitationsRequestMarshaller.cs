@@ -59,8 +59,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-26";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/invitations/delete";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/invitations/delete";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

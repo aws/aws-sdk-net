@@ -47,7 +47,7 @@ namespace Amazon.ConfigService.Model
         /// A list of AWS Config rule names.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ConfigRuleName
         {
             get { return this._configRuleName; }
@@ -87,7 +87,6 @@ namespace Amazon.ConfigService.Model
         /// the next page of results in a paginated response.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
         public string NextToken
         {
             get { return this._nextToken; }

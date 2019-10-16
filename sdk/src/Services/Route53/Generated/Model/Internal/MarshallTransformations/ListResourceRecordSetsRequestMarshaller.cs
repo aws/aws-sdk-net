@@ -56,10 +56,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
             request.HttpMethod = "GET";
-            string uriResourcePath = "/2013-04-01/hostedzone/{Id}/rrset";
             if (!publicRequest.IsSetHostedZoneId())
                 throw new AmazonRoute53Exception("Request object does not have required field HostedZoneId set");
-            uriResourcePath = uriResourcePath.Replace("{Id}", StringUtils.FromStringWithSlashEncoding(publicRequest.HostedZoneId));
+            request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.HostedZoneId));
             
             if (publicRequest.IsSetStartRecordName())
                 request.Parameters.Add("name", StringUtils.FromString(publicRequest.StartRecordName));
@@ -72,7 +71,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetMaxItems())
                 request.Parameters.Add("maxitems", StringUtils.FromString(publicRequest.MaxItems));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2013-04-01/hostedzone/{Id}/rrset";
+            request.MarshallerVersion = 2;
 
 
             request.UseQueryString = true;

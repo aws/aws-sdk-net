@@ -70,6 +70,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.CheckName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("findingId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FindingId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("findingTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

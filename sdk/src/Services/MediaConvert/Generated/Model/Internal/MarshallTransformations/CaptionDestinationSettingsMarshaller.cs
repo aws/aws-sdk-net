@@ -84,6 +84,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetImscDestinationSettings())
+            {
+                context.Writer.WritePropertyName("imscDestinationSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ImscDestinationSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ImscDestinationSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSccDestinationSettings())
             {
                 context.Writer.WritePropertyName("sccDestinationSettings");

@@ -59,8 +59,8 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-15";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/backup-jobs";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/backup-jobs";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

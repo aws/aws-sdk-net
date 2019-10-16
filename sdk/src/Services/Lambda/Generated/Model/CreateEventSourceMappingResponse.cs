@@ -38,6 +38,7 @@ namespace Amazon.Lambda.Model
         private string _functionArn;
         private DateTime? _lastModified;
         private string _lastProcessingResult;
+        private int? _maximumBatchingWindowInSeconds;
         private string _state;
         private string _stateTransitionReason;
         private string _uuid;
@@ -131,6 +132,22 @@ namespace Amazon.Lambda.Model
         internal bool IsSetLastProcessingResult()
         {
             return this._lastProcessingResult != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaximumBatchingWindowInSeconds.
+        /// </summary>
+        [AWSProperty(Min=0, Max=300)]
+        public int MaximumBatchingWindowInSeconds
+        {
+            get { return this._maximumBatchingWindowInSeconds.GetValueOrDefault(); }
+            set { this._maximumBatchingWindowInSeconds = value; }
+        }
+
+        // Check to see if MaximumBatchingWindowInSeconds property is set
+        internal bool IsSetMaximumBatchingWindowInSeconds()
+        {
+            return this._maximumBatchingWindowInSeconds.HasValue; 
         }
 
         /// <summary>

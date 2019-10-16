@@ -59,7 +59,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property SnowballAmiId. 
         /// <para>
-        /// The ID of the AMI on the supported device.
+        /// The ID of the AMI on the Snowball Edge device.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

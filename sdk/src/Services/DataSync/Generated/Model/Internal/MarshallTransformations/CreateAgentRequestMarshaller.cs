@@ -61,8 +61,8 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-09";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -80,6 +80,28 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AgentName);
                 }
 
+                if(publicRequest.IsSetSecurityGroupArns())
+                {
+                    context.Writer.WritePropertyName("SecurityGroupArns");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSecurityGroupArnsListValue in publicRequest.SecurityGroupArns)
+                    {
+                            context.Writer.Write(publicRequestSecurityGroupArnsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetSubnetArns())
+                {
+                    context.Writer.WritePropertyName("SubnetArns");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSubnetArnsListValue in publicRequest.SubnetArns)
+                    {
+                            context.Writer.Write(publicRequestSubnetArnsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");
@@ -94,6 +116,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetVpcEndpointId())
+                {
+                    context.Writer.WritePropertyName("VpcEndpointId");
+                    context.Writer.Write(publicRequest.VpcEndpointId);
                 }
 
         

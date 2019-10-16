@@ -102,7 +102,7 @@ namespace Amazon.PersonalizeRuntime.Model
         /// The number of results to return. The default is 25. The maximum is 100.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Min=0)]
         public int NumResults
         {
             get { return this._numResults.GetValueOrDefault(); }

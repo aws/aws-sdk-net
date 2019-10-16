@@ -58,11 +58,11 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-14";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/prod/channels/{channelId}";
             if (!publicRequest.IsSetChannelId())
                 throw new AmazonMediaLiveException("Request object does not have required field ChannelId set");
-            uriResourcePath = uriResourcePath.Replace("{channelId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ChannelId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{channelId}", StringUtils.FromString(publicRequest.ChannelId));
+            request.ResourcePath = "/prod/channels/{channelId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

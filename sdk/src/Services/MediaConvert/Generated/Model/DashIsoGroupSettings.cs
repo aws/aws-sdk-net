@@ -39,6 +39,7 @@ namespace Amazon.MediaConvert.Model
         private int? _fragmentLength;
         private DashIsoHbbtvCompliance _hbbtvCompliance;
         private int? _minBufferTime;
+        private DashIsoMpdProfile _mpdProfile;
         private DashIsoSegmentControl _segmentControl;
         private int? _segmentLength;
         private DashIsoWriteSegmentTimelineInRepresentation _writeSegmentTimelineInRepresentation;
@@ -164,6 +165,26 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MpdProfile. Specify whether your DASH profile is on-demand
+        /// or main. When you choose Main profile (MAIN_PROFILE), the service signals  urn:mpeg:dash:profile:isoff-main:2011
+        /// in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service
+        /// signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand,
+        /// you must also set the output group setting Segment control (SegmentControl) to Single
+        /// file (SINGLE_FILE).
+        /// </summary>
+        public DashIsoMpdProfile MpdProfile
+        {
+            get { return this._mpdProfile; }
+            set { this._mpdProfile = value; }
+        }
+
+        // Check to see if MpdProfile property is set
+        internal bool IsSetMpdProfile()
+        {
+            return this._mpdProfile != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SegmentControl. When set to SINGLE_FILE, a single output
         /// file is generated, which is internally segmented using the Fragment Length and Segment
         /// Length. When set to SEGMENTED_FILES, separate segment files will be created.
@@ -201,13 +222,13 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WriteSegmentTimelineInRepresentation. When you enable Precise
-        /// segment duration in manifests (writeSegmentTimelineInRepresentation), your DASH manifest
-        /// shows precise segment durations. The segment duration information appears inside the
-        /// SegmentTimeline element, inside SegmentTemplate at the Representation level. When
-        /// this feature isn't enabled, the segment durations in your DASH manifest are approximate.
-        /// The segment duration information appears in the duration attribute of the SegmentTemplate
-        /// element.
+        /// Gets and sets the property WriteSegmentTimelineInRepresentation. If you get an HTTP
+        /// error in the 400 range when you play back your DASH output, enable this setting and
+        /// run your transcoding job again. When you enable this setting, the service writes precise
+        /// segment durations in the DASH manifest. The segment duration information appears inside
+        /// the SegmentTimeline element, inside SegmentTemplate at the Representation level. When
+        /// you don't enable this setting, the service writes approximate segment durations in
+        /// your DASH manifest.
         /// </summary>
         public DashIsoWriteSegmentTimelineInRepresentation WriteSegmentTimelineInRepresentation
         {

@@ -66,7 +66,7 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property UserName. 
         /// <para>
         /// The name of the user assigned to one or more servers. User names are part of the sign-in
-        /// credentials to use the AWS Transfer service and perform file transfer tasks.
+        /// credentials to use the AWS Transfer for SFTP service and perform file transfer tasks.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

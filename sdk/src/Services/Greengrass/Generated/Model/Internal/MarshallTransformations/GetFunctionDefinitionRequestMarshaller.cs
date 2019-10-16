@@ -58,11 +58,11 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-06-07";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/greengrass/definition/functions/{FunctionDefinitionId}";
             if (!publicRequest.IsSetFunctionDefinitionId())
                 throw new AmazonGreengrassException("Request object does not have required field FunctionDefinitionId set");
-            uriResourcePath = uriResourcePath.Replace("{FunctionDefinitionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.FunctionDefinitionId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{FunctionDefinitionId}", StringUtils.FromString(publicRequest.FunctionDefinitionId));
+            request.ResourcePath = "/greengrass/definition/functions/{FunctionDefinitionId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

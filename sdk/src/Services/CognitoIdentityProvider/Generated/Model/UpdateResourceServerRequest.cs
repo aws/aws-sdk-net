@@ -82,7 +82,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The scope values to be set for the resource server.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=25)]
+        [AWSProperty(Max=100)]
         public List<ResourceServerScopeType> Scopes
         {
             get { return this._scopes; }

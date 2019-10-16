@@ -59,14 +59,14 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-08";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/applications/{applicationId}/versions/{semanticVersion}";
             if (!publicRequest.IsSetApplicationId())
                 throw new AmazonServerlessApplicationRepositoryException("Request object does not have required field ApplicationId set");
-            uriResourcePath = uriResourcePath.Replace("{applicationId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ApplicationId));
+            request.AddPathResource("{applicationId}", StringUtils.FromString(publicRequest.ApplicationId));
             if (!publicRequest.IsSetSemanticVersion())
                 throw new AmazonServerlessApplicationRepositoryException("Request object does not have required field SemanticVersion set");
-            uriResourcePath = uriResourcePath.Replace("{semanticVersion}", StringUtils.FromStringWithSlashEncoding(publicRequest.SemanticVersion));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{semanticVersion}", StringUtils.FromString(publicRequest.SemanticVersion));
+            request.ResourcePath = "/applications/{applicationId}/versions/{semanticVersion}";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

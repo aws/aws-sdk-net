@@ -58,11 +58,11 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-10";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/v1/lexicons";
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/v1/lexicons";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -32,6 +32,7 @@ namespace Amazon.MediaConnect.Model
     /// </summary>
     public partial class Source
     {
+        private int? _dataTransferSubscriberFeePercent;
         private Encryption _decryption;
         private string _description;
         private string _entitlementArn;
@@ -41,6 +42,22 @@ namespace Amazon.MediaConnect.Model
         private string _sourceArn;
         private Transport _transport;
         private string _whitelistCidr;
+
+        /// <summary>
+        /// Gets and sets the property DataTransferSubscriberFeePercent. Percentage from 0-100
+        /// of the data transfer cost to be billed to the subscriber.
+        /// </summary>
+        public int DataTransferSubscriberFeePercent
+        {
+            get { return this._dataTransferSubscriberFeePercent.GetValueOrDefault(); }
+            set { this._dataTransferSubscriberFeePercent = value; }
+        }
+
+        // Check to see if DataTransferSubscriberFeePercent property is set
+        internal bool IsSetDataTransferSubscriberFeePercent()
+        {
+            return this._dataTransferSubscriberFeePercent.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Decryption. The type of encryption that is used on the

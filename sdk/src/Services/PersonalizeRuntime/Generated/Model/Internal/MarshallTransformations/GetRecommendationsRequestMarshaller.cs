@@ -59,8 +59,8 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-22";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/recommendations";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/recommendations";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

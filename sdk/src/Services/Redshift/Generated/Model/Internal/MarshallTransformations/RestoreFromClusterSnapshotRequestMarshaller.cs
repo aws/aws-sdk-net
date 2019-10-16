@@ -136,6 +136,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("NodeType", StringUtils.FromString(publicRequest.NodeType));
                 }
+                if(publicRequest.IsSetNumberOfNodes())
+                {
+                    request.Parameters.Add("NumberOfNodes", StringUtils.FromInt(publicRequest.NumberOfNodes));
+                }
                 if(publicRequest.IsSetOwnerAccount())
                 {
                     request.Parameters.Add("OwnerAccount", StringUtils.FromString(publicRequest.OwnerAccount));

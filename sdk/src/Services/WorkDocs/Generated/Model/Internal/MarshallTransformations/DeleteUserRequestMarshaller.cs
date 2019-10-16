@@ -58,11 +58,11 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-05-01";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/api/v1/users/{UserId}";
             if (!publicRequest.IsSetUserId())
                 throw new AmazonWorkDocsException("Request object does not have required field UserId set");
-            uriResourcePath = uriResourcePath.Replace("{UserId}", StringUtils.FromStringWithSlashEncoding(publicRequest.UserId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{UserId}", StringUtils.FromString(publicRequest.UserId));
+            request.ResourcePath = "/api/v1/users/{UserId}";
+            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetAuthenticationToken())
                 request.Headers["Authentication"] = publicRequest.AuthenticationToken;

@@ -59,14 +59,14 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-05-01";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/api/v1/resources/{ResourceId}/customMetadata";
             if (!publicRequest.IsSetResourceId())
                 throw new AmazonWorkDocsException("Request object does not have required field ResourceId set");
-            uriResourcePath = uriResourcePath.Replace("{ResourceId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceId));
+            request.AddPathResource("{ResourceId}", StringUtils.FromString(publicRequest.ResourceId));
             
             if (publicRequest.IsSetVersionId())
                 request.Parameters.Add("versionid", StringUtils.FromString(publicRequest.VersionId));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/api/v1/resources/{ResourceId}/customMetadata";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

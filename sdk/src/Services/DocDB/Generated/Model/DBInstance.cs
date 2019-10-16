@@ -35,6 +35,7 @@ namespace Amazon.DocDB.Model
         private bool? _autoMinorVersionUpgrade;
         private string _availabilityZone;
         private int? _backupRetentionPeriod;
+        private string _caCertificateIdentifier;
         private string _dbClusterIdentifier;
         private string _dbInstanceArn;
         private string _dbInstanceClass;
@@ -110,6 +111,24 @@ namespace Amazon.DocDB.Model
         internal bool IsSetBackupRetentionPeriod()
         {
             return this._backupRetentionPeriod.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CACertificateIdentifier. 
+        /// <para>
+        /// The identifier of the CA certificate for this DB instance.
+        /// </para>
+        /// </summary>
+        public string CACertificateIdentifier
+        {
+            get { return this._caCertificateIdentifier; }
+            set { this._caCertificateIdentifier = value; }
+        }
+
+        // Check to see if CACertificateIdentifier property is set
+        internal bool IsSetCACertificateIdentifier()
+        {
+            return this._caCertificateIdentifier != null;
         }
 
         /// <summary>
@@ -450,10 +469,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        /// Specifies the availability options for the DB instance. A value of <code>true</code>
-        /// specifies an internet-facing instance with a publicly resolvable DNS name, which resolves
-        /// to a public IP address. A value of <code>false</code> specifies an internal instance
-        /// with a DNS name that resolves to a private IP address.
+        /// Not supported. Amazon DocumentDB does not currently support public endpoints. The
+        /// value of <code>PubliclyAccessible</code> is always <code>false</code>.
         /// </para>
         /// </summary>
         public bool PubliclyAccessible
@@ -489,7 +506,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property StorageEncrypted. 
         /// <para>
-        /// Specifies whether the DB instance is encrypted.
+        /// Specifies whether or not the DB instance is encrypted.
         /// </para>
         /// </summary>
         public bool StorageEncrypted

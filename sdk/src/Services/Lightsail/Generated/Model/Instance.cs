@@ -32,6 +32,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class Instance
     {
+        private List<AddOn> _addOns = new List<AddOn>();
         private string _arn;
         private string _blueprintId;
         private string _blueprintName;
@@ -51,6 +52,24 @@ namespace Amazon.Lightsail.Model
         private string _supportCode;
         private List<Tag> _tags = new List<Tag>();
         private string _username;
+
+        /// <summary>
+        /// Gets and sets the property AddOns. 
+        /// <para>
+        /// An array of objects representing the add-ons enabled on the instance.
+        /// </para>
+        /// </summary>
+        public List<AddOn> AddOns
+        {
+            get { return this._addOns; }
+            set { this._addOns = value; }
+        }
+
+        // Check to see if AddOns property is set
+        internal bool IsSetAddOns()
+        {
+            return this._addOns != null && this._addOns.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 

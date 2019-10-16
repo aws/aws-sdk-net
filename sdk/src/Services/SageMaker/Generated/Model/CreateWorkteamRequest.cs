@@ -70,7 +70,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// A list of <code>MemberDefinition</code> objects that contains objects that identify
         /// the Amazon Cognito user pool that makes up the work team. For more information, see
-        /// <a href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
+        /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
         /// Cognito User Pools</a>.
         /// </para>
         ///  
@@ -111,7 +111,16 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// An array of key-value pairs.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource
+        /// Tag</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+        /// Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User Guide</i>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags

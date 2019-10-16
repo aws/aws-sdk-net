@@ -56,17 +56,17 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
             request.HttpMethod = "GET";
-            string uriResourcePath = "/2013-04-01/trafficpolicies/{Id}/versions";
             if (!publicRequest.IsSetId())
                 throw new AmazonRoute53Exception("Request object does not have required field Id set");
-            uriResourcePath = uriResourcePath.Replace("{Id}", StringUtils.FromStringWithSlashEncoding(publicRequest.Id));
+            request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.Id));
             
             if (publicRequest.IsSetTrafficPolicyVersionMarker())
                 request.Parameters.Add("trafficpolicyversion", StringUtils.FromString(publicRequest.TrafficPolicyVersionMarker));
             
             if (publicRequest.IsSetMaxItems())
                 request.Parameters.Add("maxitems", StringUtils.FromString(publicRequest.MaxItems));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2013-04-01/trafficpolicies/{Id}/versions";
+            request.MarshallerVersion = 2;
 
 
             request.UseQueryString = true;

@@ -58,7 +58,6 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-25";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/signing-platforms";
             
             if (publicRequest.IsSetCategory())
                 request.Parameters.Add("category", StringUtils.FromString(publicRequest.Category));
@@ -74,7 +73,8 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetTarget())
                 request.Parameters.Add("target", StringUtils.FromString(publicRequest.Target));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/signing-platforms";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -41,12 +41,15 @@ namespace Amazon.Amplify.Model
         private DateTime? _createTime;
         private List<string> _customDomains = new List<string>();
         private string _description;
+        private string _destinationBranch;
         private string _displayName;
         private bool? _enableAutoBuild;
         private bool? _enableBasicAuth;
         private bool? _enableNotification;
+        private bool? _enablePullRequestPreview;
         private Dictionary<string, string> _environmentVariables = new Dictionary<string, string>();
         private string _framework;
+        private string _sourceBranch;
         private Stage _stage;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _thumbnailUrl;
@@ -225,6 +228,25 @@ namespace Amazon.Amplify.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DestinationBranch. 
+        /// <para>
+        ///  The destination branch if the branch is a pull request branch. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string DestinationBranch
+        {
+            get { return this._destinationBranch; }
+            set { this._destinationBranch = value; }
+        }
+
+        // Check to see if DestinationBranch property is set
+        internal bool IsSetDestinationBranch()
+        {
+            return this._destinationBranch != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
         ///  Display name for a branch, will use as the default domain prefix. 
@@ -301,6 +323,25 @@ namespace Amazon.Amplify.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnablePullRequestPreview. 
+        /// <para>
+        ///  Enables Pull Request Preview for this branch. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public bool EnablePullRequestPreview
+        {
+            get { return this._enablePullRequestPreview.GetValueOrDefault(); }
+            set { this._enablePullRequestPreview = value; }
+        }
+
+        // Check to see if EnablePullRequestPreview property is set
+        internal bool IsSetEnablePullRequestPreview()
+        {
+            return this._enablePullRequestPreview.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EnvironmentVariables. 
         /// <para>
         ///  Environment Variables specific to a branch, part of an Amplify App. 
@@ -336,6 +377,25 @@ namespace Amazon.Amplify.Model
         internal bool IsSetFramework()
         {
             return this._framework != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceBranch. 
+        /// <para>
+        ///  The source branch if the branch is a pull request branch. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string SourceBranch
+        {
+            get { return this._sourceBranch; }
+            set { this._sourceBranch = value; }
+        }
+
+        // Check to see if SourceBranch property is set
+        internal bool IsSetSourceBranch()
+        {
+            return this._sourceBranch != null;
         }
 
         /// <summary>

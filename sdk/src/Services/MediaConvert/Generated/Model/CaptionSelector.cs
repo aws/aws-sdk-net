@@ -79,8 +79,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceSettings. Source settings (SourceSettings) contains
-        /// the group of settings for captions in the input.
+        /// Gets and sets the property SourceSettings. If your input captions are SCC, TTML, STL,
+        /// SMI, SRT, or IMSC in an xml file, specify the URI of the input captions source file.
+        /// If your input captions are IMSC in an IMF package, use TrackSourceSettings instead
+        /// of FileSoureSettings.
         /// </summary>
         public CaptionSourceSettings SourceSettings
         {

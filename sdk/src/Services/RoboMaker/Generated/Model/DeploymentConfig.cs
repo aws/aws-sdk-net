@@ -34,6 +34,7 @@ namespace Amazon.RoboMaker.Model
     {
         private int? _concurrentDeploymentPercentage;
         private int? _failureThresholdPercentage;
+        private long? _robotDeploymentTimeoutInSeconds;
 
         /// <summary>
         /// Gets and sets the property ConcurrentDeploymentPercentage. 
@@ -71,6 +72,25 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetFailureThresholdPercentage()
         {
             return this._failureThresholdPercentage.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RobotDeploymentTimeoutInSeconds. 
+        /// <para>
+        /// The amount of time, in seconds, to wait for deployment to a single robot to complete.
+        /// Choose a time between 1 minute and 7 days. The default is 5 hours.
+        /// </para>
+        /// </summary>
+        public long RobotDeploymentTimeoutInSeconds
+        {
+            get { return this._robotDeploymentTimeoutInSeconds.GetValueOrDefault(); }
+            set { this._robotDeploymentTimeoutInSeconds = value; }
+        }
+
+        // Check to see if RobotDeploymentTimeoutInSeconds property is set
+        internal bool IsSetRobotDeploymentTimeoutInSeconds()
+        {
+            return this._robotDeploymentTimeoutInSeconds.HasValue; 
         }
 
     }

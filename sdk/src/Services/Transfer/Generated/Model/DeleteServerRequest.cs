@@ -29,13 +29,11 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteServer operation.
-    /// Deletes the Secure File Transfer Protocol (SFTP) server that you specify. If you used
-    /// <code>SERVICE_MANAGED</code> as your <code>IdentityProviderType</code>, you need to
-    /// delete all users associated with this server before deleting the server itself
+    /// Deletes the Secure File Transfer Protocol (SFTP) server that you specify.
     /// 
     ///  
     /// <para>
-    /// No response returns from this call.
+    /// No response returns from this operation.
     /// </para>
     /// </summary>
     public partial class DeleteServerRequest : AmazonTransferRequest

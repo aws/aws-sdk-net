@@ -35,7 +35,10 @@ namespace Amazon.ConfigService.Model
         private string _organizationConfigRuleArn;
 
         /// <summary>
-        /// Gets and sets the property OrganizationConfigRuleArn.
+        /// Gets and sets the property OrganizationConfigRuleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of an organization config rule.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string OrganizationConfigRuleArn

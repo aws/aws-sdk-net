@@ -45,6 +45,7 @@ namespace Amazon.MediaConvert.Model
         private CmafManifestDurationFormat _manifestDurationFormat;
         private int? _minBufferTime;
         private double? _minFinalSegmentLength;
+        private CmafMpdProfile _mpdProfile;
         private CmafSegmentControl _segmentControl;
         private int? _segmentLength;
         private CmafStreamInfResolution _streamInfResolution;
@@ -242,6 +243,26 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetMinFinalSegmentLength()
         {
             return this._minFinalSegmentLength.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MpdProfile. Specify whether your DASH profile is on-demand
+        /// or main. When you choose Main profile (MAIN_PROFILE), the service signals  urn:mpeg:dash:profile:isoff-main:2011
+        /// in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service
+        /// signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand,
+        /// you must also set the output group setting Segment control (SegmentControl) to Single
+        /// file (SINGLE_FILE).
+        /// </summary>
+        public CmafMpdProfile MpdProfile
+        {
+            get { return this._mpdProfile; }
+            set { this._mpdProfile = value; }
+        }
+
+        // Check to see if MpdProfile property is set
+        internal bool IsSetMpdProfile()
+        {
+            return this._mpdProfile != null;
         }
 
         /// <summary>

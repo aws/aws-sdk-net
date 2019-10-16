@@ -42,9 +42,16 @@ namespace Amazon.AppStream
     /// 2.0 is a fully managed, secure application streaming service that lets you stream
     /// desktop applications to users without rewriting applications. AppStream 2.0 manages
     /// the AWS resources that are required to host and run your applications, scales automatically,
-    /// and provides access to your users on demand.
+    /// and provides access to your users on demand. 
     /// </para>
-    ///  
+    ///  <note> 
+    /// <para>
+    /// You can call the AppStream 2.0 API operations by using an interface VPC endpoint (interface
+    /// endpoint). For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/access-api-cli-through-interface-vpc-endpoint.html">Access
+    /// AppStream 2.0 API Operations and CLI Commands Through an Interface VPC Endpoint</a>
+    /// in the <i>Amazon AppStream 2.0 Administration Guide</i>.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// To learn more about AppStream 2.0, see the following resources:
     /// </para>
@@ -979,6 +986,9 @@ namespace Amazon.AppStream
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.InvalidRoleException">
         /// The specified role is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateUsageReportSubscription">REST API Reference for CreateUsageReportSubscription Operation</seealso>
         public virtual CreateUsageReportSubscriptionResponse CreateUsageReportSubscription(CreateUsageReportSubscriptionRequest request)
@@ -2559,7 +2569,7 @@ namespace Amazon.AppStream
         ///  
         /// <para>
         /// For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -2629,11 +2639,17 @@ namespace Amazon.AppStream
         /// The resource cannot be created because your AWS account is suspended. For assistance,
         /// contact AWS Support.
         /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidRoleException">
+        /// The specified role is invalid.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
         /// The requested limit exceeds the permitted limit for an account.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
         /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotAvailableException">
+        /// The specified resource exists and is not in use, but isn't available.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -2896,7 +2912,7 @@ namespace Amazon.AppStream
         ///  
         /// <para>
         /// For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
@@ -2970,7 +2986,7 @@ namespace Amazon.AppStream
         ///  
         /// <para>
         /// For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
@@ -3100,9 +3116,9 @@ namespace Amazon.AppStream
         /// If the fleet is in the <code>STOPPED</code> state, you can update any attribute except
         /// the fleet name. If the fleet is in the <code>RUNNING</code> state, you can update
         /// the <code>DisplayName</code>, <code>ComputeCapacity</code>, <code>ImageARN</code>,
-        /// <code>ImageName</code>, and <code>DisconnectTimeoutInSeconds</code> attributes. If
-        /// the fleet is in the <code>STARTING</code> or <code>STOPPING</code> state, you can't
-        /// update it.
+        /// <code>ImageName</code>, <code>IdleDisconnectTimeoutInSeconds</code>, and <code>DisconnectTimeoutInSeconds</code>
+        /// attributes. If the fleet is in the <code>STARTING</code> or <code>STOPPING</code>
+        /// state, you can't update it.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFleet service method.</param>

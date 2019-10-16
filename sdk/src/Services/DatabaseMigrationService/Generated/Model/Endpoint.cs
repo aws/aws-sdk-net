@@ -100,31 +100,31 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Possible attributes include the following:
+        /// Possible settings include the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>serviceAccessRoleArn</code> - The IAM role that has permission to access the
+        ///  <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access the
         /// Amazon S3 bucket.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>bucketName</code> - The name of the S3 bucket to use.
+        ///  <code>BucketName</code> - The name of the S3 bucket to use.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>compressionType</code> - An optional parameter to use GZIP to compress the
+        ///  <code>CompressionType</code> - An optional parameter to use GZIP to compress the
         /// target files. To use GZIP, set this value to <code>NONE</code> (the default). To keep
         /// the files uncompressed, don't use this value.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Shorthand syntax for these attributes is as follows: <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
+        /// Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
         /// 
         /// </para>
         ///  
         /// <para>
-        /// JSON syntax for these attributes is as follows: <code>{ "ServiceAccessRoleArn": "string",
+        /// JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string",
         /// "BucketName": "string", "CompressionType": "none"|"gzip" } </code> 
         /// </para>
         /// </summary>

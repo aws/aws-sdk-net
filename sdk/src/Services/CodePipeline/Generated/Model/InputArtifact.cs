@@ -38,7 +38,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the artifact to be worked on, for example, "My App".
+        /// The name of the artifact to be worked on (for example, "My App").
         /// </para>
         ///  
         /// <para>

@@ -59,11 +59,16 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Excludes.  
+        /// Gets and sets the property Excludes. 
         /// <para>
-        /// A filter that determines which files to exclude from a task based on the specified
-        /// pattern in the filter. Transfers all files in the task’s subdirectory, except files
-        /// that match the filter that is set. 
+        /// A list of filter rules that determines which files to exclude from a task. The list
+        /// should contain a single filter string that consists of the patterns to exclude. The
+        /// patterns are delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]

@@ -58,17 +58,17 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-04-19";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/bots/{botName}/aliases/{aliasName}/channels/{name}";
             if (!publicRequest.IsSetBotAlias())
                 throw new AmazonLexModelBuildingServiceException("Request object does not have required field BotAlias set");
-            uriResourcePath = uriResourcePath.Replace("{aliasName}", StringUtils.FromStringWithSlashEncoding(publicRequest.BotAlias));
+            request.AddPathResource("{aliasName}", StringUtils.FromString(publicRequest.BotAlias));
             if (!publicRequest.IsSetBotName())
                 throw new AmazonLexModelBuildingServiceException("Request object does not have required field BotName set");
-            uriResourcePath = uriResourcePath.Replace("{botName}", StringUtils.FromStringWithSlashEncoding(publicRequest.BotName));
+            request.AddPathResource("{botName}", StringUtils.FromString(publicRequest.BotName));
             if (!publicRequest.IsSetName())
                 throw new AmazonLexModelBuildingServiceException("Request object does not have required field Name set");
-            uriResourcePath = uriResourcePath.Replace("{name}", StringUtils.FromStringWithSlashEncoding(publicRequest.Name));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
+            request.ResourcePath = "/bots/{botName}/aliases/{aliasName}/channels/{name}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -59,17 +59,17 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-11-28";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/bot/{botName}/alias/{botAlias}/user/{userId}/content";
             if (!publicRequest.IsSetBotAlias())
                 throw new AmazonLexException("Request object does not have required field BotAlias set");
-            uriResourcePath = uriResourcePath.Replace("{botAlias}", StringUtils.FromStringWithSlashEncoding(publicRequest.BotAlias));
+            request.AddPathResource("{botAlias}", StringUtils.FromString(publicRequest.BotAlias));
             if (!publicRequest.IsSetBotName())
                 throw new AmazonLexException("Request object does not have required field BotName set");
-            uriResourcePath = uriResourcePath.Replace("{botName}", StringUtils.FromStringWithSlashEncoding(publicRequest.BotName));
+            request.AddPathResource("{botName}", StringUtils.FromString(publicRequest.BotName));
             if (!publicRequest.IsSetUserId())
                 throw new AmazonLexException("Request object does not have required field UserId set");
-            uriResourcePath = uriResourcePath.Replace("{userId}", StringUtils.FromStringWithSlashEncoding(publicRequest.UserId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{userId}", StringUtils.FromString(publicRequest.UserId));
+            request.ResourcePath = "/bot/{botName}/alias/{botAlias}/user/{userId}/content";
+            request.MarshallerVersion = 2;
             request.ContentStream =  publicRequest.InputStream ?? new MemoryStream();
             if(request.ContentStream.CanSeek)
             {

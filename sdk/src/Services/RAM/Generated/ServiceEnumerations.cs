@@ -321,6 +321,10 @@ namespace Amazon.RAM
         /// </summary>
         public static readonly ResourceStatus LIMIT_EXCEEDED = new ResourceStatus("LIMIT_EXCEEDED");
         /// <summary>
+        /// Constant PENDING for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus PENDING = new ResourceStatus("PENDING");
+        /// <summary>
         /// Constant UNAVAILABLE for ResourceStatus
         /// </summary>
         public static readonly ResourceStatus UNAVAILABLE = new ResourceStatus("UNAVAILABLE");

@@ -58,10 +58,9 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-28";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/detector/{detectorId}/member";
             if (!publicRequest.IsSetDetectorId())
                 throw new AmazonGuardDutyException("Request object does not have required field DetectorId set");
-            uriResourcePath = uriResourcePath.Replace("{detectorId}", StringUtils.FromStringWithSlashEncoding(publicRequest.DetectorId));
+            request.AddPathResource("{detectorId}", StringUtils.FromString(publicRequest.DetectorId));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
@@ -71,7 +70,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetOnlyAssociated())
                 request.Parameters.Add("onlyAssociated", StringUtils.FromString(publicRequest.OnlyAssociated));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/detector/{detectorId}/member";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

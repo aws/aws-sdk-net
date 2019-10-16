@@ -44,19 +44,24 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code>
-        /// and <code>splunk</code>.
+        /// For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code>,
+        /// <code>splunk</code>, and <code>awsfirelens</code>.
         /// </para>
         ///  
         /// <para>
         /// For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
-        /// <code>syslog</code>, <code>gelf</code>, <code>fluentd</code>, <code>splunk</code>,
-        /// <code>journald</code>, and <code>json-file</code>.
+        /// <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
+        /// <code>logentries</code>, <code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.
         /// </para>
         ///  
         /// <para>
         /// For more information about using the <code>awslogs</code> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
         /// the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about using the <code>awsfirelens</code> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom
+        /// Log Routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -113,7 +118,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property SecretOptions. 
         /// <para>
-        /// The secrets to pass to the log configuration.
+        /// The secrets to pass to the log configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+        /// Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public List<Secret> SecretOptions

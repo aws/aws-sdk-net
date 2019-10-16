@@ -42,8 +42,8 @@ namespace Amazon.Organizations.Model
     /// If you instead attach a second SCP and leave the <code>FullAWSAccess</code> SCP still
     /// attached, and specify <code>"Effect": "Deny"</code> in the second SCP to override
     /// the <code>"Effect": "Allow"</code> in the <code>FullAWSAccess</code> policy (or any
-    /// other attached SCP), you're using the authorization strategy of <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_blacklist">blacklisting</a>.
-    /// 
+    /// other attached SCP), you're using the authorization strategy of <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_blacklist">blacklisting</a>
+    /// . 
     /// </para>
     ///  
     /// <para>
@@ -94,18 +94,18 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Root: a string that begins with "r-" followed by from 4 to 32 lower-case letters or
-        /// digits.
+        ///  <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lower-case
+        /// letters or digits.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Account: a string that consists of exactly 12 digits.
+        ///  <b>Account</b> - A string that consists of exactly 12 digits.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Organizational unit (OU): a string that begins with "ou-" followed by from 4 to 32
-        /// lower-case letters or digits (the ID of the root that the OU is in) followed by a
-        /// second "-" dash and from 8 to 32 additional lower-case letters or digits.
+        ///  <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from
+        /// 4 to 32 lower-case letters or digits (the ID of the root that the OU is in) followed
+        /// by a second "-" dash and from 8 to 32 additional lower-case letters or digits.
         /// </para>
         ///  </li> </ul>
         /// </summary>

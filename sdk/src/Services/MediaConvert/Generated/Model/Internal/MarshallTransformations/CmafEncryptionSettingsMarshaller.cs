@@ -63,6 +63,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.InitializationVectorInManifest);
             }
 
+            if(requestObject.IsSetSpekeKeyProvider())
+            {
+                context.Writer.WritePropertyName("spekeKeyProvider");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SpekeKeyProviderCmafMarshaller.Instance;
+                marshaller.Marshall(requestObject.SpekeKeyProvider, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetStaticKeyProvider())
             {
                 context.Writer.WritePropertyName("staticKeyProvider");

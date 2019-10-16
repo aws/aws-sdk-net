@@ -59,7 +59,9 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property DatastoreStorage. 
         /// <para>
-        /// Where data store data is stored.
+        /// Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3"
+        /// storage. If not specified, the default is "serviceManagedS3". This cannot be changed
+        /// after the data store is created.
         /// </para>
         /// </summary>
         public DatastoreStorage DatastoreStorage
@@ -77,7 +79,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property RetentionPeriod. 
         /// <para>
-        /// How long, in days, message data is kept for the data store.
+        /// How long, in days, message data is kept for the data store. The retention period cannot
+        /// be updated if the data store's S3 storage is customer-managed.
         /// </para>
         /// </summary>
         public RetentionPeriod RetentionPeriod

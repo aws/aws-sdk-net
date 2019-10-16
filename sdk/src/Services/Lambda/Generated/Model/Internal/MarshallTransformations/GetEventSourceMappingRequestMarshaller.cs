@@ -58,11 +58,11 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-03-31";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/2015-03-31/event-source-mappings/{UUID}";
             if (!publicRequest.IsSetUUID())
                 throw new AmazonLambdaException("Request object does not have required field UUID set");
-            uriResourcePath = uriResourcePath.Replace("{UUID}", StringUtils.FromStringWithSlashEncoding(publicRequest.UUID));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{UUID}", StringUtils.FromString(publicRequest.UUID));
+            request.ResourcePath = "/2015-03-31/event-source-mappings/{UUID}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

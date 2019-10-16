@@ -138,6 +138,16 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Snowball.Model.GetSoftwareUpdatesRequest.JobId</property>
+    <min>39</min>
+    <max>39</max>
+    <pattern>(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Snowball.Model.GetSoftwareUpdatesResponse.UpdatesURI</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Snowball.Model.ListClusterJobsRequest.ClusterId</property>
     <min>39</min>
     <max>39</max>

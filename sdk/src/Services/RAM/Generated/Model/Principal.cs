@@ -59,7 +59,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property External. 
         /// <para>
-        /// Indicates whether the principal belongs to the same organization as the AWS account
+        /// Indicates whether the principal belongs to the same AWS organization as the AWS account
         /// that owns the resource share.
         /// </para>
         /// </summary>

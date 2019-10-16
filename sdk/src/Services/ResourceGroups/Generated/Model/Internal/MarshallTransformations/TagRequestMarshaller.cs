@@ -59,11 +59,11 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/resources/{Arn}/tags";
             if (!publicRequest.IsSetArn())
                 throw new AmazonResourceGroupsException("Request object does not have required field Arn set");
-            uriResourcePath = uriResourcePath.Replace("{Arn}", StringUtils.FromStringWithSlashEncoding(publicRequest.Arn));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{Arn}", StringUtils.FromString(publicRequest.Arn));
+            request.ResourcePath = "/resources/{Arn}/tags";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

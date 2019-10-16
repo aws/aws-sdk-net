@@ -83,11 +83,10 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The last date to retrieve data for, as part of an inclusive date range that filters
-        /// the query results. This value should be in ISO 8601 format, for example: 2019-07-19
-        /// for July 19, 2019. To define a date range that ends at a specific time, specify the
-        /// date and time in ISO 8601 format, for example: 2019-07-19T20:00Z for 8:00 PM July
-        /// 19, 2019.
+        /// The last date and time to retrieve data for, as part of an inclusive date range that
+        /// filters the query results. This value should be in extended ISO 8601 format, for example:
+        /// 2019-07-19T00:00:00Z for July 19, 2019 and 2019-07-19T20:00:00Z for 8:00 PM July 19,
+        /// 2019.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -108,7 +107,7 @@ namespace Amazon.Pinpoint.Model
         /// The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>,
         /// to retrieve data for. This value describes the associated metric and consists of two
         /// or more terms, which are comprised of lowercase alphanumeric characters, separated
-        /// by a hyphen. Examples are attempted-deliveries and successful-deliveries. For a list
+        /// by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list
         /// of valid values, see the <a href="developerguide.html">Amazon Pinpoint Developer Guide</a>.
         /// </para>
         /// </summary>
@@ -129,8 +128,8 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The NextToken string that specifies which page of results to return in a paginated
-        /// response. This parameter is currently not supported by the App Metrics and Campaign
-        /// Metrics resources.
+        /// response. This parameter is currently not supported by the Application Metrics and
+        /// Campaign Metrics resources.
         /// </para>
         /// </summary>
         public string NextToken
@@ -149,7 +148,8 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property PageSize. 
         /// <para>
         /// The maximum number of items to include in each page of a paginated response. This
-        /// parameter is currently not supported by the App Metrics and Campaign Metrics resources.
+        /// parameter is currently not supported by the Application Metrics and Campaign Metrics
+        /// resources.
         /// </para>
         /// </summary>
         public string PageSize
@@ -167,11 +167,10 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The first date to retrieve data for, as part of an inclusive date range that filters
-        /// the query results. This value should be in ISO 8601 format, for example: 2019-07-15
-        /// for July 15, 2019. To define a date range that begins at a specific time, specify
-        /// the date and time in ISO 8601 format, for example: 2019-07-15T16:00Z for 4:00 PM July
-        /// 15, 2019.
+        /// The first date and time to retrieve data for, as part of an inclusive date range that
+        /// filters the query results. This value should be in extended ISO 8601 format, for example:
+        /// 2019-07-15T00:00:00Z for July 15, 2019 and 2019-07-15T16:00:00Z for 4:00 PM July 15,
+        /// 2019.
         /// </para>
         /// </summary>
         public DateTime StartTime

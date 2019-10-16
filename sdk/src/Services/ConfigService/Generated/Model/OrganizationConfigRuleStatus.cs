@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// 
+    /// Returns the status for an organization config rule in an organization.
     /// </summary>
     public partial class OrganizationConfigRuleStatus
     {
@@ -39,7 +39,11 @@ namespace Amazon.ConfigService.Model
         private OrganizationRuleStatus _organizationRuleStatus;
 
         /// <summary>
-        /// Gets and sets the property ErrorCode.
+        /// Gets and sets the property ErrorCode. 
+        /// <para>
+        /// An error code that is returned when organization config rule creation or deletion
+        /// has failed.
+        /// </para>
         /// </summary>
         public string ErrorCode
         {
@@ -54,7 +58,11 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ErrorMessage.
+        /// Gets and sets the property ErrorMessage. 
+        /// <para>
+        /// An error message indicating that organization config rule creation or deletion failed
+        /// due to an error.
+        /// </para>
         /// </summary>
         public string ErrorMessage
         {
@@ -69,7 +77,10 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastUpdateTime.
+        /// Gets and sets the property LastUpdateTime. 
+        /// <para>
+        /// The timestamp of the last update.
+        /// </para>
         /// </summary>
         public DateTime LastUpdateTime
         {
@@ -84,7 +95,10 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OrganizationConfigRuleName.
+        /// Gets and sets the property OrganizationConfigRuleName. 
+        /// <para>
+        /// The name that you assign to organization config rule.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
         public string OrganizationConfigRuleName
@@ -100,7 +114,63 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OrganizationRuleStatus.
+        /// Gets and sets the property OrganizationRuleStatus. 
+        /// <para>
+        /// Indicates deployment status of an organization config rule. When master account calls
+        /// PutOrganizationConfigRule action for the first time, config rule status is created
+        /// in all the member accounts. When master account calls PutOrganizationConfigRule action
+        /// for the second time, config rule status is updated in all the member accounts. Additionally,
+        /// config rule status is updated when one or more member accounts join or leave an organization.
+        /// Config rule status is deleted when the master account deletes OrganizationConfigRule
+        /// in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// AWS Config sets the state of the rule to:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CREATE_SUCCESSFUL</code> when an organization config rule has been successfully
+        /// created in all the member accounts. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CREATE_IN_PROGRESS</code> when an organization config rule creation is in progress.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CREATE_FAILED</code> when an organization config rule creation failed in one
+        /// or more member accounts within that organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETE_FAILED</code> when an organization config rule deletion failed in one
+        /// or more member accounts within that organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETE_IN_PROGRESS</code> when an organization config rule deletion is in progress.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETE_SUCCESSFUL</code> when an organization config rule has been successfully
+        /// deleted from all the member accounts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UPDATE_SUCCESSFUL</code> when an organization config rule has been successfully
+        /// updated in all the member accounts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UPDATE_IN_PROGRESS</code> when an organization config rule update is in progress.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UPDATE_FAILED</code> when an organization config rule update failed in one
+        /// or more member accounts within that organization.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public OrganizationRuleStatus OrganizationRuleStatus

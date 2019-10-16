@@ -74,6 +74,15 @@ namespace Amazon.StepFunctions
         /// This operation is eventually consistent. The results are best effort and may not reflect
         /// very recent updates and changes.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        ///  <code>CreateActivity</code> is an idempotent API. Subsequent requests won’t create
+        /// a duplicate resource if it was already created. <code>CreateActivity</code>'s idempotency
+        /// check is based on the activity <code>name</code>. If a following request has different
+        /// <code>tags</code> values, Step Functions will ignore these differences and treat it
+        /// as an idempotent request of the previous. In this case, <code>tags</code> will not
+        /// be updated, even if they are different.
+        /// </para>
         ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateActivity service method.</param>
@@ -134,6 +143,16 @@ namespace Amazon.StepFunctions
         /// <para>
         /// This operation is eventually consistent. The results are best effort and may not reflect
         /// very recent updates and changes.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        ///  <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create
+        /// a duplicate resource if it was already created. <code>CreateStateMachine</code>'s
+        /// idempotency check is based on the state machine <code>name</code> and <code>definition</code>.
+        /// If a following request has a different <code>roleArn</code> or <code>tags</code>,
+        /// Step Functions will ignore these differences and treat it as an idempotent request
+        /// of the previous. In this case, <code>roleArn</code> and <code>tags</code> will not
+        /// be updated, even if they are different.
         /// </para>
         ///  </note>
         /// </summary>
@@ -814,6 +833,12 @@ namespace Amazon.StepFunctions
 
         /// <summary>
         /// List tags for a given resource.
+        /// 
+        ///  
+        /// <para>
+        /// Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_
+        /// . : / = + - @</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -822,7 +847,7 @@ namespace Amazon.StepFunctions
         /// The provided Amazon Resource Name (ARN) is invalid.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.ResourceNotFoundException">
-        /// Could not fine the referenced resource. Only state machine and activity ARNs are supported.
+        /// Could not find the referenced resource. Only state machine and activity ARNs are supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
@@ -859,7 +884,8 @@ namespace Amazon.StepFunctions
 
 
         /// <summary>
-        /// Used by workers to report that the task identified by the <code>taskToken</code> failed.
+        /// Used by activity workers and task states using the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
+        /// pattern to report that the task identified by the <code>taskToken</code> failed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendTaskFailure service method.</param>
         /// 
@@ -908,23 +934,23 @@ namespace Amazon.StepFunctions
 
 
         /// <summary>
-        /// Used by workers to report to the service that the task represented by the specified
-        /// <code>taskToken</code> is still making progress. This action resets the <code>Heartbeat</code>
-        /// clock. The <code>Heartbeat</code> threshold is specified in the state machine's Amazon
-        /// States Language definition. This action does not in itself create an event in the
-        /// execution history. However, if the task times out, the execution history contains
-        /// an <code>ActivityTimedOut</code> event.
+        /// Used by activity workers and task states using the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
+        /// pattern to report to Step Functions that the task represented by the specified <code>taskToken</code>
+        /// is still making progress. This action resets the <code>Heartbeat</code> clock. The
+        /// <code>Heartbeat</code> threshold is specified in the state machine's Amazon States
+        /// Language definition (<code>HeartbeatSeconds</code>). This action does not in itself
+        /// create an event in the execution history. However, if the task times out, the execution
+        /// history contains an <code>ActivityTimedOut</code> entry for activities, or a <code>TaskTimedOut</code>
+        /// entry for for tasks using the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-sync">job
+        /// run</a> or <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
+        /// pattern.
         /// 
         ///  <note> 
         /// <para>
         /// The <code>Timeout</code> of a task, defined in the state machine's Amazon States Language
         /// definition, is its maximum allowed duration, regardless of the number of <a>SendTaskHeartbeat</a>
-        /// requests received.
-        /// </para>
-        ///  </note> <note> 
-        /// <para>
-        /// This operation is only useful for long-lived tasks to report the liveliness of the
-        /// task.
+        /// requests received. Use <code>HeartbeatSeconds</code> to configure the timeout interval
+        /// for heartbeats.
         /// </para>
         ///  </note>
         /// </summary>
@@ -975,7 +1001,8 @@ namespace Amazon.StepFunctions
 
 
         /// <summary>
-        /// Used by workers to report that the task identified by the <code>taskToken</code> completed
+        /// Used by activity workers and task states using the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
+        /// pattern to report that the task identified by the <code>taskToken</code> completed
         /// successfully.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendTaskSuccess service method.</param>
@@ -1154,6 +1181,19 @@ namespace Amazon.StepFunctions
 
         /// <summary>
         /// Add a tag to a Step Functions resource.
+        /// 
+        ///  
+        /// <para>
+        /// An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>,
+        /// and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
+        /// Access Using IAM Tags</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_
+        /// . : / = + - @</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -1162,7 +1202,7 @@ namespace Amazon.StepFunctions
         /// The provided Amazon Resource Name (ARN) is invalid.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.ResourceNotFoundException">
-        /// Could not fine the referenced resource. Only state machine and activity ARNs are supported.
+        /// Could not find the referenced resource. Only state machine and activity ARNs are supported.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.TooManyTagsException">
         /// You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html">
@@ -1212,7 +1252,7 @@ namespace Amazon.StepFunctions
         /// The provided Amazon Resource Name (ARN) is invalid.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.ResourceNotFoundException">
-        /// Could not fine the referenced resource. Only state machine and activity ARNs are supported.
+        /// Could not find the referenced resource. Only state machine and activity ARNs are supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);

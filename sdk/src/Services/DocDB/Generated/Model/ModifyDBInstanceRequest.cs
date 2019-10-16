@@ -36,6 +36,7 @@ namespace Amazon.DocDB.Model
     {
         private bool? _applyImmediately;
         private bool? _autoMinorVersionUpgrade;
+        private string _caCertificateIdentifier;
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
         private string _newDBInstanceIdentifier;
@@ -93,6 +94,24 @@ namespace Amazon.DocDB.Model
         internal bool IsSetAutoMinorVersionUpgrade()
         {
             return this._autoMinorVersionUpgrade.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CACertificateIdentifier. 
+        /// <para>
+        /// Indicates the certificate that needs to be associated with the instance.
+        /// </para>
+        /// </summary>
+        public string CACertificateIdentifier
+        {
+            get { return this._caCertificateIdentifier; }
+            set { this._caCertificateIdentifier = value; }
+        }
+
+        // Check to see if CACertificateIdentifier property is set
+        internal bool IsSetCACertificateIdentifier()
+        {
+            return this._caCertificateIdentifier != null;
         }
 
         /// <summary>

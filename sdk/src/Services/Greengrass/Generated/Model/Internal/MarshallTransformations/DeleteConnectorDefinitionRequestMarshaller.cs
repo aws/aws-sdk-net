@@ -58,11 +58,11 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-06-07";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/greengrass/definition/connectors/{ConnectorDefinitionId}";
             if (!publicRequest.IsSetConnectorDefinitionId())
                 throw new AmazonGreengrassException("Request object does not have required field ConnectorDefinitionId set");
-            uriResourcePath = uriResourcePath.Replace("{ConnectorDefinitionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ConnectorDefinitionId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{ConnectorDefinitionId}", StringUtils.FromString(publicRequest.ConnectorDefinitionId));
+            request.ResourcePath = "/greengrass/definition/connectors/{ConnectorDefinitionId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

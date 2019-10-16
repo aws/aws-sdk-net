@@ -64,6 +64,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("DnsName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DnsName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("GameSessionArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

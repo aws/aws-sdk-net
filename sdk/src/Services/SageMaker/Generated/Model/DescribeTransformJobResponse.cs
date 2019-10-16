@@ -134,7 +134,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// If the transform job failed, <code>FailureReason</code> describes why it failed. A
         /// transform job creates a log file, which includes error messages, and stores it as
-        /// an Amazon S3 object. For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
+        /// an Amazon S3 object. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
         /// Amazon SageMaker Events with Amazon CloudWatch</a>.
         /// </para>
         /// </summary>

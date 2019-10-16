@@ -58,17 +58,17 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/apps/{appId}/branches/{branchName}/jobs/{jobId}/stop";
             if (!publicRequest.IsSetAppId())
                 throw new AmazonAmplifyException("Request object does not have required field AppId set");
-            uriResourcePath = uriResourcePath.Replace("{appId}", StringUtils.FromStringWithSlashEncoding(publicRequest.AppId));
+            request.AddPathResource("{appId}", StringUtils.FromString(publicRequest.AppId));
             if (!publicRequest.IsSetBranchName())
                 throw new AmazonAmplifyException("Request object does not have required field BranchName set");
-            uriResourcePath = uriResourcePath.Replace("{branchName}", StringUtils.FromStringWithSlashEncoding(publicRequest.BranchName));
+            request.AddPathResource("{branchName}", StringUtils.FromString(publicRequest.BranchName));
             if (!publicRequest.IsSetJobId())
                 throw new AmazonAmplifyException("Request object does not have required field JobId set");
-            uriResourcePath = uriResourcePath.Replace("{jobId}", StringUtils.FromStringWithSlashEncoding(publicRequest.JobId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{jobId}", StringUtils.FromString(publicRequest.JobId));
+            request.ResourcePath = "/apps/{appId}/branches/{branchName}/jobs/{jobId}/stop";
+            request.MarshallerVersion = 2;
 
             return request;
         }

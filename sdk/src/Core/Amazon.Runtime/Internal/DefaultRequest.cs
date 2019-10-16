@@ -38,6 +38,7 @@ namespace Amazon.Runtime.Internal
         readonly IDictionary<string,string> parametersFacade;
         readonly IDictionary<string, string> headers = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
         readonly IDictionary<string, string> subResources = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        readonly IDictionary<string, string> pathResources = new Dictionary<string, string>(StringComparer.Ordinal);
 
         Uri endpoint;
         string resourcePath;
@@ -52,6 +53,7 @@ namespace Amazon.Runtime.Internal
         string canonicalResource;
         RegionEndpoint alternateRegion;        
         long originalStreamLength;
+        int marshallerVersion = 1; //1 is the default version and must be used whenever a version is not specified in the marshaller.
 
         /// <summary>
         /// Constructs a new DefaultRequest with the specified service name and the
@@ -222,6 +224,50 @@ namespace Amazon.Runtime.Internal
             set
             {
                 this.resourcePath = value;
+            }
+        }
+
+        /// <summary>
+        /// Returns the path resources that should be used within the resource path.
+        /// This is used for services where path keys can contain '/'
+        /// characters, making string-splitting of a resource path potentially 
+        /// hazardous.
+        /// </summary>
+        public IDictionary<string, string> PathResources
+        {
+            get
+            {
+                return this.pathResources;
+            }
+        }
+
+        /// <summary>
+        /// Adds a new entry to the PathResources collection for the request
+        /// </summary>
+        /// <param name="key">The name of the pathresource with potential greedy syntax: {key+}</param>
+        /// <param name="value">Value of the entry</param>
+        public void AddPathResource(string key, string value)
+        {
+            PathResources.Add(key, value);
+        }
+
+        /// <summary>
+        /// Gets and Sets the version number for the marshaller used to create this request. The version number
+        /// is used to support backward compatible changes that would otherwise be breaking changes when a 
+        /// newer core is used with an older service assembly.
+        /// Versions:
+        ///     1 - Default version
+        ///     2 - Support for path segments
+        /// </summary>
+        public int MarshallerVersion
+        {
+            get
+            {
+                return this.marshallerVersion;
+            }            
+            set
+            {
+                this.marshallerVersion = value;
             }
         }
 

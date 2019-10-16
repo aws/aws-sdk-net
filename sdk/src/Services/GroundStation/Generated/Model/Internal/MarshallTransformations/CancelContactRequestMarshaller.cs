@@ -58,11 +58,11 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-05-23";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/contact/{contactId}";
             if (!publicRequest.IsSetContactId())
                 throw new AmazonGroundStationException("Request object does not have required field ContactId set");
-            uriResourcePath = uriResourcePath.Replace("{contactId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ContactId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{contactId}", StringUtils.FromString(publicRequest.ContactId));
+            request.ResourcePath = "/contact/{contactId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

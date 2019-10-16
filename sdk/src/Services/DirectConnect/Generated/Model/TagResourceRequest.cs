@@ -65,7 +65,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to assign.
+        /// The tags to add.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

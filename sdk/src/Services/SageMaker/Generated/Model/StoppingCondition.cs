@@ -28,9 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Specifies a limit to how long a model training or compilation job can run. When the
-    /// job reaches the time limit, Amazon SageMaker ends the training or compilation job.
-    /// Use this API to cap model training costs.
+    /// Specifies a limit to how long a model training or compilation job can run. It also
+    /// specifies how long you are willing to wait for a managed spot training job to complete.
+    /// When the job reaches the time limit, Amazon SageMaker ends the training or compilation
+    /// job. Use this API to cap model training costs.
     /// 
     ///  
     /// <para>
@@ -58,6 +59,7 @@ namespace Amazon.SageMaker.Model
     public partial class StoppingCondition
     {
         private int? _maxRuntimeInSeconds;
+        private int? _maxWaitTimeInSeconds;
 
         /// <summary>
         /// Gets and sets the property MaxRuntimeInSeconds. 
@@ -78,6 +80,28 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetMaxRuntimeInSeconds()
         {
             return this._maxRuntimeInSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxWaitTimeInSeconds. 
+        /// <para>
+        /// The maximum length of time, in seconds, how long you are willing to wait for a managed
+        /// spot training job to complete. It is the amount of time spent waiting for Spot capacity
+        /// plus the amount of time the training job runs. It must be equal to or greater than
+        /// <code>MaxRuntimeInSeconds</code>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int MaxWaitTimeInSeconds
+        {
+            get { return this._maxWaitTimeInSeconds.GetValueOrDefault(); }
+            set { this._maxWaitTimeInSeconds = value; }
+        }
+
+        // Check to see if MaxWaitTimeInSeconds property is set
+        internal bool IsSetMaxWaitTimeInSeconds()
+        {
+            return this._maxWaitTimeInSeconds.HasValue; 
         }
 
     }

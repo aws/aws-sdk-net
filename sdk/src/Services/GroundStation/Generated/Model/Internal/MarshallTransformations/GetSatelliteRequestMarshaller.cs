@@ -58,11 +58,11 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-05-23";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/satellite/{satelliteId}";
             if (!publicRequest.IsSetSatelliteId())
                 throw new AmazonGroundStationException("Request object does not have required field SatelliteId set");
-            uriResourcePath = uriResourcePath.Replace("{satelliteId}", StringUtils.FromStringWithSlashEncoding(publicRequest.SatelliteId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{satelliteId}", StringUtils.FromString(publicRequest.SatelliteId));
+            request.ResourcePath = "/satellite/{satelliteId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

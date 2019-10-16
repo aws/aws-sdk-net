@@ -119,7 +119,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property RemoveAutoRegistration. 
         /// <para>
-        /// If true, remove auto registration.
+        /// If true, removes auto registration.
         /// </para>
         /// </summary>
         public bool RemoveAutoRegistration

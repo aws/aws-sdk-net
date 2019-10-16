@@ -59,9 +59,9 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-01";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/phone-numbers";
             request.AddSubResource("operation", "batch-delete");
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/phone-numbers";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

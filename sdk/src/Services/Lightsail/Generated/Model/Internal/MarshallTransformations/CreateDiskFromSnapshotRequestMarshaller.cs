@@ -61,13 +61,29 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-11-28";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAddOns())
+                {
+                    context.Writer.WritePropertyName("addOns");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAddOnsListValue in publicRequest.AddOns)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AddOnRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAddOnsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetAvailabilityZone())
                 {
                     context.Writer.WritePropertyName("availabilityZone");
@@ -86,10 +102,22 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DiskSnapshotName);
                 }
 
+                if(publicRequest.IsSetRestoreDate())
+                {
+                    context.Writer.WritePropertyName("restoreDate");
+                    context.Writer.Write(publicRequest.RestoreDate);
+                }
+
                 if(publicRequest.IsSetSizeInGb())
                 {
                     context.Writer.WritePropertyName("sizeInGb");
                     context.Writer.Write(publicRequest.SizeInGb);
+                }
+
+                if(publicRequest.IsSetSourceDiskName())
+                {
+                    context.Writer.WritePropertyName("sourceDiskName");
+                    context.Writer.Write(publicRequest.SourceDiskName);
                 }
 
                 if(publicRequest.IsSetTags())
@@ -106,6 +134,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetUseLatestRestorableAutoSnapshot())
+                {
+                    context.Writer.WritePropertyName("useLatestRestorableAutoSnapshot");
+                    context.Writer.Write(publicRequest.UseLatestRestorableAutoSnapshot);
                 }
 
         

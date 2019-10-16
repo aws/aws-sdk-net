@@ -84,6 +84,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The tags to assign to the user pool.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

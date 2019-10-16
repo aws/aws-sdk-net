@@ -58,8 +58,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-26";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/accounts";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/accounts";
+            request.MarshallerVersion = 2;
 
             return request;
         }

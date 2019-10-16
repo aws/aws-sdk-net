@@ -30,19 +30,32 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// <summary>
     /// Container for the parameters to the RegisterScalableTarget operation.
     /// Registers or updates a scalable target. A scalable target is a resource that Application
-    /// Auto Scaling can scale out and scale in. Each scalable target has a resource ID, scalable
-    /// dimension, and namespace, as well as values for minimum and maximum capacity. 
+    /// Auto Scaling can scale out and scale in. Scalable targets are uniquely identified
+    /// by the combination of resource ID, scalable dimension, and namespace. 
     /// 
+    ///  
+    /// <para>
+    /// When you register a new scalable target, you must specify values for minimum and maximum
+    /// capacity. Application Auto Scaling will not scale capacity to values that are outside
+    /// of this range. 
+    /// </para>
+    ///  
+    /// <para>
+    /// To update a scalable target, specify the parameter that you want to change as well
+    /// as the following parameters that identify the scalable target: resource ID, scalable
+    /// dimension, and namespace. Any parameters that you don't specify are not changed by
+    /// this update request. 
+    /// </para>
     ///  
     /// <para>
     /// After you register a scalable target, you do not need to register it again to use
     /// other Application Auto Scaling operations. To see which resources have been registered,
     /// use <a>DescribeScalableTargets</a>. You can also view the scaling policies for a service
-    /// namespace using <a>DescribeScalableTargets</a>. 
+    /// namespace by using <a>DescribeScalableTargets</a>. 
     /// </para>
     ///  
     /// <para>
-    /// If you no longer need a scalable target, you can deregister it using <a>DeregisterScalableTarget</a>.
+    /// If you no longer need a scalable target, you can deregister it by using <a>DeregisterScalableTarget</a>.
     /// </para>
     /// </summary>
     public partial class RegisterScalableTargetRequest : AmazonApplicationAutoScalingRequest
@@ -53,12 +66,13 @@ namespace Amazon.ApplicationAutoScaling.Model
         private string _roleARN;
         private ScalableDimension _scalableDimension;
         private ServiceNamespace _serviceNamespace;
+        private SuspendedState _suspendedState;
 
         /// <summary>
         /// Gets and sets the property MaxCapacity. 
         /// <para>
-        /// The maximum value to scale to in response to a scale-out event. This parameter is
-        /// required to register a scalable target.
+        /// The maximum value to scale to in response to a scale-out event. <code>MaxCapacity</code>
+        /// is required to register a scalable target.
         /// </para>
         /// </summary>
         public int MaxCapacity
@@ -76,8 +90,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property MinCapacity. 
         /// <para>
-        /// The minimum value to scale to in response to a scale-in event. This parameter is required
-        /// to register a scalable target.
+        /// The minimum value to scale to in response to a scale-in event. <code>MinCapacity</code>
+        /// is required to register a scalable target.
         /// </para>
         /// </summary>
         public int MinCapacity
@@ -95,8 +109,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The identifier of the resource associated with the scalable target. This string consists
-        /// of the resource type and unique identifier.
+        /// The identifier of the resource that is associated with the scalable target. This string
+        /// consists of the resource type and unique identifier.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -105,8 +119,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Spot fleet request - The resource type is <code>spot-fleet-request</code> and the
-        /// unique identifier is the Spot fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+        /// Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the
+        /// unique identifier is the Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -170,9 +184,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For resources that are not supported using a service-linked role, this parameter is
-        /// required and must specify the ARN of an IAM role that allows Application Auto Scaling
-        /// to modify the scalable target on your behalf.
+        /// For Amazon EMR, this parameter is required, and it must specify the ARN of an IAM
+        /// role that allows Application Auto Scaling to modify the scalable target on your behalf.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
@@ -201,7 +214,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot
-        /// fleet request.
+        /// Fleet request.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -269,8 +282,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         /// The namespace of the AWS service that provides the resource or <code>custom-resource</code>
         /// for a resource provided by your own application or service. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-        /// Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+        /// Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -284,6 +297,51 @@ namespace Amazon.ApplicationAutoScaling.Model
         internal bool IsSetServiceNamespace()
         {
             return this._serviceNamespace != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SuspendedState. 
+        /// <para>
+        /// An embedded object that contains attributes and attribute values that are used to
+        /// suspend and resume automatic scaling. Setting the value of an attribute to <code>true</code>
+        /// suspends the specified scaling activities. Setting it to <code>false</code> (default)
+        /// resumes the specified scaling activities. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Suspension Outcomes</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For <code>DynamicScalingInSuspended</code>, while a suspension is in effect, all scale-in
+        /// activities that are triggered by a scaling policy are suspended.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <code>DynamicScalingOutSuspended</code>, while a suspension is in effect, all
+        /// scale-out activities that are triggered by a scaling policy are suspended.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <code>ScheduledScalingSuspended</code>, while a suspension is in effect, all scaling
+        /// activities that involve scheduled actions are suspended. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspend
+        /// and Resume Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+        /// </para>
+        /// </summary>
+        public SuspendedState SuspendedState
+        {
+            get { return this._suspendedState; }
+            set { this._suspendedState = value; }
+        }
+
+        // Check to see if SuspendedState property is set
+        internal bool IsSetSuspendedState()
+        {
+            return this._suspendedState != null;
         }
 
     }

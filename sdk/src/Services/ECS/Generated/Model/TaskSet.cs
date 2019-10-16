@@ -360,13 +360,7 @@ namespace Amazon.ECS.Model
         /// All tasks are reporting a healthy status from the load balancers, service discovery,
         /// and container health checks.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// If a <code>healthCheckGracePeriodSeconds</code> value was set when the service was
-        /// created, you may see a <code>STEADY_STATE</code> reached since unhealthy Elastic Load
-        /// Balancing target health checks will be ignored until it expires.
-        /// </para>
-        ///  </note> </li> </ul> 
+        ///  </li> </ul> 
         /// <para>
         /// If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
         /// </para>

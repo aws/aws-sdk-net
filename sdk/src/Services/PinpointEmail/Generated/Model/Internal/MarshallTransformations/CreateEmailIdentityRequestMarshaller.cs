@@ -59,8 +59,8 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-26";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/v1/email/identities";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/v1/email/identities";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

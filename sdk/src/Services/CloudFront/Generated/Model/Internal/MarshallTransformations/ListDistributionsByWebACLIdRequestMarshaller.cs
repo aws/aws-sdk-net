@@ -56,17 +56,17 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "GET";
-            string uriResourcePath = "/2019-03-26/distributionsByWebACLId/{WebACLId}";
             if (!publicRequest.IsSetWebACLId())
                 throw new AmazonCloudFrontException("Request object does not have required field WebACLId set");
-            uriResourcePath = uriResourcePath.Replace("{WebACLId}", StringUtils.FromStringWithSlashEncoding(publicRequest.WebACLId));
+            request.AddPathResource("{WebACLId}", StringUtils.FromString(publicRequest.WebACLId));
             
             if (publicRequest.IsSetMarker())
                 request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
             
             if (publicRequest.IsSetMaxItems())
                 request.Parameters.Add("MaxItems", StringUtils.FromString(publicRequest.MaxItems));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2019-03-26/distributionsByWebACLId/{WebACLId}";
+            request.MarshallerVersion = 2;
 
 
             request.UseQueryString = true;

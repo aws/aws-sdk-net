@@ -1560,6 +1560,65 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  DescribeWorkspaceSnapshots
+
+
+        /// <summary>
+        /// Describes the snapshots for the specified WorkSpace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspaceSnapshots service method.</param>
+        /// 
+        /// <returns>The response from the DescribeWorkspaceSnapshots service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceSnapshots">REST API Reference for DescribeWorkspaceSnapshots Operation</seealso>
+        public virtual DescribeWorkspaceSnapshotsResponse DescribeWorkspaceSnapshots(DescribeWorkspaceSnapshotsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkspaceSnapshotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkspaceSnapshotsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeWorkspaceSnapshotsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the snapshots for the specified WorkSpace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspaceSnapshots service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeWorkspaceSnapshots service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceSnapshots">REST API Reference for DescribeWorkspaceSnapshots Operation</seealso>
+        public virtual Task<DescribeWorkspaceSnapshotsResponse> DescribeWorkspaceSnapshotsAsync(DescribeWorkspaceSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkspaceSnapshotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkspaceSnapshotsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeWorkspaceSnapshotsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateIpGroups
 
 
@@ -2199,6 +2258,97 @@ namespace Amazon.WorkSpaces
             options.ResponseUnmarshaller = RebuildWorkspacesResponseUnmarshaller.Instance;
             
             return InvokeAsync<RebuildWorkspacesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RestoreWorkspace
+
+
+        /// <summary>
+        /// Restores the specified WorkSpace to its last known healthy state.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot restore a WorkSpace unless its state is <code> AVAILABLE</code>, <code>ERROR</code>,
+        /// or <code>UNHEALTHY</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Restoring a WorkSpace is a potentially destructive action that can result in the loss
+        /// of data. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/restore-workspace.html">Restore
+        /// a WorkSpace</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is asynchronous and returns before the WorkSpace is completely restored.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreWorkspace service method.</param>
+        /// 
+        /// <returns>The response from the RestoreWorkspace service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RestoreWorkspace">REST API Reference for RestoreWorkspace Operation</seealso>
+        public virtual RestoreWorkspaceResponse RestoreWorkspace(RestoreWorkspaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreWorkspaceResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreWorkspaceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Restores the specified WorkSpace to its last known healthy state.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot restore a WorkSpace unless its state is <code> AVAILABLE</code>, <code>ERROR</code>,
+        /// or <code>UNHEALTHY</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Restoring a WorkSpace is a potentially destructive action that can result in the loss
+        /// of data. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/restore-workspace.html">Restore
+        /// a WorkSpace</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is asynchronous and returns before the WorkSpace is completely restored.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreWorkspace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RestoreWorkspace service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RestoreWorkspace">REST API Reference for RestoreWorkspace Operation</seealso>
+        public virtual Task<RestoreWorkspaceResponse> RestoreWorkspaceAsync(RestoreWorkspaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreWorkspaceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RestoreWorkspaceResponse>(request, options, cancellationToken);
         }
 
         #endregion

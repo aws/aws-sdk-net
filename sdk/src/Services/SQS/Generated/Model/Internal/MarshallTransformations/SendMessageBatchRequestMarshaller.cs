@@ -127,6 +127,50 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("SendMessageBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "MessageGroupId", StringUtils.FromString(publicRequestlistValue.MessageGroupId));
                         }
+                        if(publicRequestlistValue.IsSetMessageSystemAttributes())
+                        {
+                            int mapIndex = 1;
+                            foreach(var key in publicRequestlistValue.MessageSystemAttributes.Keys)
+                            {
+                                MessageSystemAttributeValue value;
+                                bool hasValue = publicRequestlistValue.MessageSystemAttributes.TryGetValue(key, out value);
+                                request.Parameters.Add("SendMessageBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "MessageSystemAttribute" + "." + mapIndex + "." + "Name", StringUtils.FromString(key));
+                                if (hasValue)
+                                {
+                                    if(value.IsSetBinaryListValues())
+                                    {
+                                        int valuelistValueIndex = 1;
+                                        foreach(var valuelistValue in value.BinaryListValues)
+                                        {
+                                            request.Parameters.Add("SendMessageBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "MessageSystemAttribute" + "." + mapIndex + "." + "Value" + "." + "BinaryListValue" + "." + "member" + "." + valuelistValueIndex, StringUtils.FromMemoryStream(valuelistValue));
+                                            valuelistValueIndex++;
+                                        }
+                                    }
+                                    if(value.IsSetBinaryValue())
+                                    {
+                                        request.Parameters.Add("SendMessageBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "MessageSystemAttribute" + "." + mapIndex + "." + "Value" + "." + "BinaryValue", StringUtils.FromMemoryStream(value.BinaryValue));
+                                    }
+                                    if(value.IsSetDataType())
+                                    {
+                                        request.Parameters.Add("SendMessageBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "MessageSystemAttribute" + "." + mapIndex + "." + "Value" + "." + "DataType", StringUtils.FromString(value.DataType));
+                                    }
+                                    if(value.IsSetStringListValues())
+                                    {
+                                        int valuelistValueIndex = 1;
+                                        foreach(var valuelistValue in value.StringListValues)
+                                        {
+                                            request.Parameters.Add("SendMessageBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "MessageSystemAttribute" + "." + mapIndex + "." + "Value" + "." + "StringListValue" + "." + "member" + "." + valuelistValueIndex, StringUtils.FromString(valuelistValue));
+                                            valuelistValueIndex++;
+                                        }
+                                    }
+                                    if(value.IsSetStringValue())
+                                    {
+                                        request.Parameters.Add("SendMessageBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "MessageSystemAttribute" + "." + mapIndex + "." + "Value" + "." + "StringValue", StringUtils.FromString(value.StringValue));
+                                    }
+                                }
+                                mapIndex++;
+                            }
+                        }
                         publicRequestlistValueIndex++;
                     }
                 }

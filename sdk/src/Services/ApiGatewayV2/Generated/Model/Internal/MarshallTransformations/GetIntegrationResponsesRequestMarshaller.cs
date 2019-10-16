@@ -58,20 +58,20 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-29";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/v2/apis/{apiId}/integrations/{integrationId}/integrationresponses";
             if (!publicRequest.IsSetApiId())
                 throw new AmazonApiGatewayV2Exception("Request object does not have required field ApiId set");
-            uriResourcePath = uriResourcePath.Replace("{apiId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ApiId));
+            request.AddPathResource("{apiId}", StringUtils.FromString(publicRequest.ApiId));
             if (!publicRequest.IsSetIntegrationId())
                 throw new AmazonApiGatewayV2Exception("Request object does not have required field IntegrationId set");
-            uriResourcePath = uriResourcePath.Replace("{integrationId}", StringUtils.FromStringWithSlashEncoding(publicRequest.IntegrationId));
+            request.AddPathResource("{integrationId}", StringUtils.FromString(publicRequest.IntegrationId));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromString(publicRequest.MaxResults));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/v2/apis/{apiId}/integrations/{integrationId}/integrationresponses";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

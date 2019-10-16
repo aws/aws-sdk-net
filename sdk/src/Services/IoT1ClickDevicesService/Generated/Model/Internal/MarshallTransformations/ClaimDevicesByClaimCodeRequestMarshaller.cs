@@ -59,11 +59,11 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-14";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/claims/{claimCode}";
             if (!publicRequest.IsSetClaimCode())
                 throw new AmazonIoT1ClickDevicesServiceException("Request object does not have required field ClaimCode set");
-            uriResourcePath = uriResourcePath.Replace("{claimCode}", StringUtils.FromStringWithSlashEncoding(publicRequest.ClaimCode));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{claimCode}", StringUtils.FromString(publicRequest.ClaimCode));
+            request.ResourcePath = "/claims/{claimCode}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

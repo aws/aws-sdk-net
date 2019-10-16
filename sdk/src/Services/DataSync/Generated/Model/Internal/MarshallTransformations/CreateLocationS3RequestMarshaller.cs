@@ -61,8 +61,8 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-09";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -83,6 +83,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.S3Config, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetS3StorageClass())
+                {
+                    context.Writer.WritePropertyName("S3StorageClass");
+                    context.Writer.Write(publicRequest.S3StorageClass);
                 }
 
                 if(publicRequest.IsSetSubdirectory())

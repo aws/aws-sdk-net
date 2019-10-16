@@ -36,6 +36,7 @@ namespace Amazon.Glue.Model
         private DateTime? _createTime;
         private string _databaseName;
         private string _description;
+        private bool? _isRegisteredWithLakeFormation;
         private DateTime? _lastAccessTime;
         private DateTime? _lastAnalyzedTime;
         private string _name;
@@ -52,7 +53,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CreatedBy. 
         /// <para>
-        /// Person or entity who created the table.
+        /// The person or entity who created the table.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -71,7 +72,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CreateTime. 
         /// <para>
-        /// Time when the table definition was created in the Data Catalog.
+        /// The time when the table definition was created in the Data Catalog.
         /// </para>
         /// </summary>
         public DateTime CreateTime
@@ -89,7 +90,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
-        /// Name of the metadata database where the table metadata resides. For Hive compatibility,
+        /// The name of the database where the table metadata resides. For Hive compatibility,
         /// this must be all lowercase.
         /// </para>
         /// </summary>
@@ -109,7 +110,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Description of the table.
+        /// A description of the table.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -126,10 +127,28 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IsRegisteredWithLakeFormation. 
+        /// <para>
+        /// Indicates whether the table has been registered with AWS Lake Formation.
+        /// </para>
+        /// </summary>
+        public bool IsRegisteredWithLakeFormation
+        {
+            get { return this._isRegisteredWithLakeFormation.GetValueOrDefault(); }
+            set { this._isRegisteredWithLakeFormation = value; }
+        }
+
+        // Check to see if IsRegisteredWithLakeFormation property is set
+        internal bool IsSetIsRegisteredWithLakeFormation()
+        {
+            return this._isRegisteredWithLakeFormation.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LastAccessTime. 
         /// <para>
-        /// Last time the table was accessed. This is usually taken from HDFS, and may not be
-        /// reliable.
+        /// The last time that the table was accessed. This is usually taken from HDFS, and might
+        /// not be reliable.
         /// </para>
         /// </summary>
         public DateTime LastAccessTime
@@ -147,7 +166,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property LastAnalyzedTime. 
         /// <para>
-        /// Last time column statistics were computed for this table.
+        /// The last time that column statistics were computed for this table.
         /// </para>
         /// </summary>
         public DateTime LastAnalyzedTime
@@ -165,7 +184,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the table. For Hive compatibility, this must be entirely lowercase.
+        /// The table name. For Hive compatibility, this must be entirely lowercase.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -184,7 +203,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// Owner of the table.
+        /// The owner of the table.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -226,7 +245,7 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
-        /// When creating a table used by Athena, and you do not specify any <code>partitionKeys</code>,
+        /// When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>,
         /// you must at least set the value of <code>partitionKeys</code> to an empty list. For
         /// example:
         /// </para>
@@ -250,7 +269,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Retention. 
         /// <para>
-        /// Retention time for this table.
+        /// The retention time for this table.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -306,7 +325,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property UpdateTime. 
         /// <para>
-        /// Last time the table was updated.
+        /// The last time that the table was updated.
         /// </para>
         /// </summary>
         public DateTime UpdateTime

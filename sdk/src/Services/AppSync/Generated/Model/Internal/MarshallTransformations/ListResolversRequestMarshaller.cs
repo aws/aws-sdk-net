@@ -58,20 +58,20 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/v1/apis/{apiId}/types/{typeName}/resolvers";
             if (!publicRequest.IsSetApiId())
                 throw new AmazonAppSyncException("Request object does not have required field ApiId set");
-            uriResourcePath = uriResourcePath.Replace("{apiId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ApiId));
+            request.AddPathResource("{apiId}", StringUtils.FromString(publicRequest.ApiId));
             if (!publicRequest.IsSetTypeName())
                 throw new AmazonAppSyncException("Request object does not have required field TypeName set");
-            uriResourcePath = uriResourcePath.Replace("{typeName}", StringUtils.FromStringWithSlashEncoding(publicRequest.TypeName));
+            request.AddPathResource("{typeName}", StringUtils.FromString(publicRequest.TypeName));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/v1/apis/{apiId}/types/{typeName}/resolvers";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

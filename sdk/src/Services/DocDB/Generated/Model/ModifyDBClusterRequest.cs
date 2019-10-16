@@ -231,7 +231,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must contain from 8 to 41 characters.
+        /// Constraints: Must contain from 8 to 100 characters.
         /// </para>
         /// </summary>
         public string MasterUserPassword

@@ -67,6 +67,17 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetRetryPolicy())
+            {
+                context.Writer.WritePropertyName("retryPolicy");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = HttpRetryPolicyMarshaller.Instance;
+                marshaller.Marshall(requestObject.RetryPolicy, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

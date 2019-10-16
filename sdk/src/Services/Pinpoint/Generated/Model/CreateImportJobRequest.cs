@@ -29,7 +29,7 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateImportJob operation.
-    /// Creates a new import job for an application.
+    /// Creates an import job for an application.
     /// </summary>
     public partial class CreateImportJobRequest : AmazonPinpointRequest
     {

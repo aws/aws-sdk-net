@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
     public partial class VgwTelemetry
     {
         private int? _acceptedRouteCount;
+        private string _certificateArn;
         private DateTime? _lastStatusChange;
         private string _outsideIpAddress;
         private TelemetryStatus _status;
@@ -54,6 +55,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetAcceptedRouteCount()
         {
             return this._acceptedRouteCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CertificateArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the VPN tunnel endpoint certificate.
+        /// </para>
+        /// </summary>
+        public string CertificateArn
+        {
+            get { return this._certificateArn; }
+            set { this._certificateArn = value; }
+        }
+
+        // Check to see if CertificateArn property is set
+        internal bool IsSetCertificateArn()
+        {
+            return this._certificateArn != null;
         }
 
         /// <summary>

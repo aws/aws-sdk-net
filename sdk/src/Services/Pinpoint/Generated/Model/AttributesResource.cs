@@ -82,16 +82,16 @@ namespace Amazon.Pinpoint.Model
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// endpoint-custom-attributes - Custom attributes that describe endpoints
+        /// endpoint-custom-attributes - Custom attributes that describe endpoints.
         /// </para>
         /// </li> <li>
         /// <para>
         /// endpoint-custom-metrics - Custom metrics that your app reports to Amazon Pinpoint
-        /// for endpoints
+        /// for endpoints.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// endpoint-user-attributes - Custom attributes that describe users
+        /// endpoint-user-attributes - Custom attributes that describe users.
         /// </para>
         /// </li></ul>
         /// </summary>

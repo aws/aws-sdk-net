@@ -38,11 +38,10 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property JsonPath. 
         /// <para>
-        /// A JsonPath expression that will be applied to the body/payload of the webhook. The
-        /// value selected by the JsonPath expression must match the value specified in the <code>MatchEquals</code>
-        /// field, otherwise the request will be ignored. For more information about JsonPath
-        /// expressions, see <a href="https://github.com/json-path/JsonPath">Java JsonPath implementation</a>
-        /// in GitHub.
+        /// A JsonPath expression that is applied to the body/payload of the webhook. The value
+        /// selected by the JsonPath expression must match the value specified in the <code>MatchEquals</code>
+        /// field. Otherwise, the request is ignored. For more information, see <a href="https://github.com/json-path/JsonPath">Java
+        /// JsonPath implementation</a> in GitHub.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=150)]
@@ -62,12 +61,12 @@ namespace Amazon.CodePipeline.Model
         /// Gets and sets the property MatchEquals. 
         /// <para>
         /// The value selected by the <code>JsonPath</code> expression must match what is supplied
-        /// in the <code>MatchEquals</code> field, otherwise the request will be ignored. Properties
+        /// in the <code>MatchEquals</code> field. Otherwise, the request is ignored. Properties
         /// from the target action configuration can be included as placeholders in this value
-        /// by surrounding the action configuration key with curly braces. For example, if the
+        /// by surrounding the action configuration key with curly brackets. For example, if the
         /// value supplied here is "refs/heads/{Branch}" and the target action has an action configuration
         /// property called "Branch" with a value of "master", the <code>MatchEquals</code> value
-        /// will be evaluated as "refs/heads/master". For a list of action configuration properties
+        /// is evaluated as "refs/heads/master". For a list of action configuration properties
         /// for built-in action types, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline
         /// Structure Reference Action Requirements</a>.
         /// </para>

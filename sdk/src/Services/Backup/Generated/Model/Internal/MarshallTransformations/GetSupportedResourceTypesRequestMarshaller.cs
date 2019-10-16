@@ -58,8 +58,8 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-15";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/supported-resource-types";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/supported-resource-types";
+            request.MarshallerVersion = 2;
 
             return request;
         }

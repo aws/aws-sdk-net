@@ -85,6 +85,10 @@ namespace Amazon.CostAndUsageReport
     {
 
         /// <summary>
+        /// Constant ApEast1 for AWSRegion
+        /// </summary>
+        public static readonly AWSRegion ApEast1 = new AWSRegion("ap-east-1");
+        /// <summary>
         /// Constant ApNortheast1 for AWSRegion
         /// </summary>
         public static readonly AWSRegion ApNortheast1 = new AWSRegion("ap-northeast-1");

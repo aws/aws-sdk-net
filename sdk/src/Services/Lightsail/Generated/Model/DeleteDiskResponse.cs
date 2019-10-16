@@ -37,7 +37,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Operations. 
         /// <para>
-        /// An object describing the API operations.
+        /// An array of objects that describe the result of your request.
         /// </para>
         /// </summary>
         public List<Operation> Operations

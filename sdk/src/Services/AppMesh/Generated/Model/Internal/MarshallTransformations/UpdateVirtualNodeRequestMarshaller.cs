@@ -59,14 +59,14 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-01-25";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/v20190125/meshes/{meshName}/virtualNodes/{virtualNodeName}";
             if (!publicRequest.IsSetMeshName())
                 throw new AmazonAppMeshException("Request object does not have required field MeshName set");
-            uriResourcePath = uriResourcePath.Replace("{meshName}", StringUtils.FromStringWithSlashEncoding(publicRequest.MeshName));
+            request.AddPathResource("{meshName}", StringUtils.FromString(publicRequest.MeshName));
             if (!publicRequest.IsSetVirtualNodeName())
                 throw new AmazonAppMeshException("Request object does not have required field VirtualNodeName set");
-            uriResourcePath = uriResourcePath.Replace("{virtualNodeName}", StringUtils.FromStringWithSlashEncoding(publicRequest.VirtualNodeName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{virtualNodeName}", StringUtils.FromString(publicRequest.VirtualNodeName));
+            request.ResourcePath = "/v20190125/meshes/{meshName}/virtualNodes/{virtualNodeName}";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

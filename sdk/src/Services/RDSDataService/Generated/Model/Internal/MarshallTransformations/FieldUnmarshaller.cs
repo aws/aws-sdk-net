@@ -64,6 +64,12 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("arrayValue", targetDepth))
+                {
+                    var unmarshaller = ArrayValueUnmarshaller.Instance;
+                    unmarshalledObject.ArrayValue = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("blobValue", targetDepth))
                 {
                     var unmarshaller = MemoryStreamUnmarshaller.Instance;

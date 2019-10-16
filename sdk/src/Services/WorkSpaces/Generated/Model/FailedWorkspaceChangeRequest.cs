@@ -29,8 +29,8 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Describes a WorkSpace that could not be rebooted. (<a>RebootWorkspaces</a>), rebuilt
-    /// (<a>RebuildWorkspaces</a>), terminated (<a>TerminateWorkspaces</a>), started (<a>StartWorkspaces</a>),
-    /// or stopped (<a>StopWorkspaces</a>).
+    /// (<a>RebuildWorkspaces</a>), restored (<a>RestoreWorkspace</a>), terminated (<a>TerminateWorkspaces</a>),
+    /// started (<a>StartWorkspaces</a>), or stopped (<a>StopWorkspaces</a>).
     /// </summary>
     public partial class FailedWorkspaceChangeRequest
     {

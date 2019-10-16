@@ -40,6 +40,7 @@ namespace Amazon.ConfigService.Model
         /// The value is a resource ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceValueType Value
         {
             get { return this._value; }

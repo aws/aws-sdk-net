@@ -88,6 +88,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     unmarshalledObject.Mtime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OverwriteMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OverwriteMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PosixPermissions", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -104,6 +110,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PreserveDevices = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TaskQueueing", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TaskQueueing = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Uid", targetDepth))

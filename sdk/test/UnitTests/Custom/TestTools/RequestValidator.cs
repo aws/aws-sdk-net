@@ -328,9 +328,14 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         protected void ValidateUriParameters(IEnumerable<PropertyInfo> properties)
         {
             if (this.Operation.RequestUriMembers.Count() > 0)
-            {
-                var uri = this.MarshalledRequest.ResourcePath.Split('?')[0];
-                var uriSegments = uri.Split('/');
+            {   
+                var splitSegments = this.MarshalledRequest.ResourcePath.Split('?')[0].Split('/');
+                var uriSegments = new List<string>(splitSegments.Select(
+                    segment => this.MarshalledRequest?.PathResources.ContainsKey(segment) == true 
+                        ? this.MarshalledRequest.PathResources[segment] 
+                        : segment
+                ));
+
                 var operationUri = this.Operation.RequestUri.Split('?')[0];
                 var operationUriSegments = operationUri.Split('/');
 

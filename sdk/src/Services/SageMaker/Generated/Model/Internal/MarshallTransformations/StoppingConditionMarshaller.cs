@@ -51,6 +51,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MaxRuntimeInSeconds);
             }
 
+            if(requestObject.IsSetMaxWaitTimeInSeconds())
+            {
+                context.Writer.WritePropertyName("MaxWaitTimeInSeconds");
+                context.Writer.Write(requestObject.MaxWaitTimeInSeconds);
+            }
+
         }
 
         /// <summary>

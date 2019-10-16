@@ -34,6 +34,7 @@ namespace Amazon.KinesisFirehose.Model
     {
         private ElasticsearchBufferingHints _bufferingHints;
         private CloudWatchLoggingOptions _cloudWatchLoggingOptions;
+        private string _clusterEndpoint;
         private string _domainARN;
         private string _indexName;
         private ElasticsearchIndexRotationPeriod _indexRotationPeriod;
@@ -82,6 +83,26 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ClusterEndpoint. 
+        /// <para>
+        /// The endpoint to use when communicating with the cluster. Specify either this <code>ClusterEndpoint</code>
+        /// or the <code>DomainARN</code> field.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=512)]
+        public string ClusterEndpoint
+        {
+            get { return this._clusterEndpoint; }
+            set { this._clusterEndpoint = value; }
+        }
+
+        // Check to see if ClusterEndpoint property is set
+        internal bool IsSetClusterEndpoint()
+        {
+            return this._clusterEndpoint != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DomainARN. 
         /// <para>
         /// The ARN of the Amazon ES domain. The IAM role must have permissions for <code>DescribeElasticsearchDomain</code>,
@@ -89,8 +110,12 @@ namespace Amazon.KinesisFirehose.Model
         /// assuming the role specified in <b>RoleARN</b>. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// Specify either <code>ClusterEndpoint</code> or <code>DomainARN</code>.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=512)]
+        [AWSProperty(Min=1, Max=512)]
         public string DomainARN
         {
             get { return this._domainARN; }
@@ -127,7 +152,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <para>
         /// The Elasticsearch index rotation period. Index rotation appends a timestamp to the
         /// <code>IndexName</code> to facilitate the expiration of old data. For more information,
-        /// see <a href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
+        /// see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
         /// Rotation for the Amazon ES Destination</a>. The default value is <code>OneDay</code>.
         /// </para>
         /// </summary>
@@ -185,7 +210,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose
         /// for calling the Amazon ES Configuration API and for indexing documents. For more information,
-        /// see <a href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
+        /// see <a href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
         /// Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
@@ -211,7 +236,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Amazon S3 destination, with <code>elasticsearch-failed/</code> appended to the key
         /// prefix. When set to <code>AllDocuments</code>, Kinesis Data Firehose delivers all
         /// incoming records to Amazon S3, and also writes failed documents with <code>elasticsearch-failed/</code>
-        /// appended to the prefix. For more information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon
+        /// appended to the prefix. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon
         /// S3 Backup for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.
         /// </para>
         /// </summary>
@@ -253,8 +278,12 @@ namespace Amazon.KinesisFirehose.Model
         /// index. If you try to specify a new type for an existing index that already has another
         /// type, Kinesis Data Firehose returns an error during run time.
         /// </para>
+        ///  
+        /// <para>
+        /// For Elasticsearch 7.x, don't specify a <code>TypeName</code>.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public string TypeName
         {
             get { return this._typeName; }

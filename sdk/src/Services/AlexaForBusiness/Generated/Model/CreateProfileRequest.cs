@@ -36,6 +36,7 @@ namespace Amazon.AlexaForBusiness.Model
         private string _address;
         private string _clientRequestToken;
         private DistanceUnit _distanceUnit;
+        private string _locale;
         private int? _maxVolumeLimit;
         private string _profileName;
         private bool? _pstnEnabled;
@@ -99,6 +100,25 @@ namespace Amazon.AlexaForBusiness.Model
         internal bool IsSetDistanceUnit()
         {
             return this._distanceUnit != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Locale. 
+        /// <para>
+        /// The locale of the room profile.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Locale
+        {
+            get { return this._locale; }
+            set { this._locale = value; }
+        }
+
+        // Check to see if Locale property is set
+        internal bool IsSetLocale()
+        {
+            return this._locale != null;
         }
 
         /// <summary>

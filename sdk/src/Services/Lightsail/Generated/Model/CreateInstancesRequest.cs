@@ -29,12 +29,7 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateInstances operation.
-    /// Creates one or more Amazon Lightsail virtual private servers, or <i>instances</i>.
-    /// Create instances using active blueprints. Inactive blueprints are listed to support
-    /// customers with existing instances but are not necessarily available for launch of
-    /// new instances. Blueprints are marked inactive when they become outdated due to operating
-    /// system updates or new application releases. Use the get blueprints operation to return
-    /// a list of available blueprints.
+    /// Creates one or more Amazon Lightsail instances.
     /// 
     ///  
     /// <para>
@@ -45,6 +40,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class CreateInstancesRequest : AmazonLightsailRequest
     {
+        private List<AddOnRequest> _addOns = new List<AddOnRequest>();
         private string _availabilityZone;
         private string _blueprintId;
         private string _bundleId;
@@ -53,6 +49,24 @@ namespace Amazon.Lightsail.Model
         private string _keyPairName;
         private List<Tag> _tags = new List<Tag>();
         private string _userData;
+
+        /// <summary>
+        /// Gets and sets the property AddOns. 
+        /// <para>
+        /// An array of objects representing the add-ons to enable for the new instance.
+        /// </para>
+        /// </summary>
+        public List<AddOnRequest> AddOns
+        {
+            get { return this._addOns; }
+            set { this._addOns = value; }
+        }
+
+        // Check to see if AddOns property is set
+        internal bool IsSetAddOns()
+        {
+            return this._addOns != null && this._addOns.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
@@ -81,9 +95,17 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property BlueprintId. 
         /// <para>
         /// The ID for a virtual private server image (e.g., <code>app_wordpress_4_4</code> or
-        /// <code>app_lamp_7_0</code>). Use the get blueprints operation to return a list of available
-        /// images (or <i>blueprints</i>).
+        /// <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to return
+        /// a list of available images (or <i>blueprints</i>).
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Use active blueprints when creating new instances. Inactive blueprints are listed
+        /// to support customers with existing instances and are not necessarily available to
+        /// create new instances. Blueprints are marked inactive when they become outdated due
+        /// to operating system updates or new application releases.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public string BlueprintId

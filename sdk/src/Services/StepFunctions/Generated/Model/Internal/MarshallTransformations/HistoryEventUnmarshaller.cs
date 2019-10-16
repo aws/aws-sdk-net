@@ -172,6 +172,36 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     unmarshalledObject.LambdaFunctionTimedOutEventDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("mapIterationAbortedEventDetails", targetDepth))
+                {
+                    var unmarshaller = MapIterationEventDetailsUnmarshaller.Instance;
+                    unmarshalledObject.MapIterationAbortedEventDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("mapIterationFailedEventDetails", targetDepth))
+                {
+                    var unmarshaller = MapIterationEventDetailsUnmarshaller.Instance;
+                    unmarshalledObject.MapIterationFailedEventDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("mapIterationStartedEventDetails", targetDepth))
+                {
+                    var unmarshaller = MapIterationEventDetailsUnmarshaller.Instance;
+                    unmarshalledObject.MapIterationStartedEventDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("mapIterationSucceededEventDetails", targetDepth))
+                {
+                    var unmarshaller = MapIterationEventDetailsUnmarshaller.Instance;
+                    unmarshalledObject.MapIterationSucceededEventDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("mapStateStartedEventDetails", targetDepth))
+                {
+                    var unmarshaller = MapStateStartedEventDetailsUnmarshaller.Instance;
+                    unmarshalledObject.MapStateStartedEventDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("previousEventId", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

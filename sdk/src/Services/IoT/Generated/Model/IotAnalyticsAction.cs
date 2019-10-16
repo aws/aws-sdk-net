@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Sends messge data to an AWS IoT Analytics channel.
+    /// Sends message data to an AWS IoT Analytics channel.
     /// </summary>
     public partial class IotAnalyticsAction
     {

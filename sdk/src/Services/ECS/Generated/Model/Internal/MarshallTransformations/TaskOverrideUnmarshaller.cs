@@ -76,6 +76,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExecutionRoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("inferenceAcceleratorOverrides", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<InferenceAcceleratorOverride, InferenceAcceleratorOverrideUnmarshaller>(InferenceAcceleratorOverrideUnmarshaller.Instance);
+                    unmarshalledObject.InferenceAcceleratorOverrides = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("taskRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

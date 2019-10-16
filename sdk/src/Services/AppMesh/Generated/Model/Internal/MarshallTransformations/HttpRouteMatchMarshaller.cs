@@ -45,10 +45,38 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HttpRouteMatch requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetHeaders())
+            {
+                context.Writer.WritePropertyName("headers");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectHeadersListValue in requestObject.Headers)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = HttpRouteHeaderMarshaller.Instance;
+                    marshaller.Marshall(requestObjectHeadersListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetMethod())
+            {
+                context.Writer.WritePropertyName("method");
+                context.Writer.Write(requestObject.Method);
+            }
+
             if(requestObject.IsSetPrefix())
             {
                 context.Writer.WritePropertyName("prefix");
                 context.Writer.Write(requestObject.Prefix);
+            }
+
+            if(requestObject.IsSetScheme())
+            {
+                context.Writer.WritePropertyName("scheme");
+                context.Writer.Write(requestObject.Scheme);
             }
 
         }

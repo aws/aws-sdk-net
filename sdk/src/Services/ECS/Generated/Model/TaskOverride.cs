@@ -34,6 +34,7 @@ namespace Amazon.ECS.Model
     {
         private List<ContainerOverride> _containerOverrides = new List<ContainerOverride>();
         private string _executionRoleArn;
+        private List<InferenceAcceleratorOverride> _inferenceAcceleratorOverrides = new List<InferenceAcceleratorOverride>();
         private string _taskRoleArn;
 
         /// <summary>
@@ -71,6 +72,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetExecutionRoleArn()
         {
             return this._executionRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InferenceAcceleratorOverrides. 
+        /// <para>
+        /// The Elastic Inference accelerator override for the task.
+        /// </para>
+        /// </summary>
+        public List<InferenceAcceleratorOverride> InferenceAcceleratorOverrides
+        {
+            get { return this._inferenceAcceleratorOverrides; }
+            set { this._inferenceAcceleratorOverrides = value; }
+        }
+
+        // Check to see if InferenceAcceleratorOverrides property is set
+        internal bool IsSetInferenceAcceleratorOverrides()
+        {
+            return this._inferenceAcceleratorOverrides != null && this._inferenceAcceleratorOverrides.Count > 0; 
         }
 
         /// <summary>

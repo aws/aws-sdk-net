@@ -29,7 +29,8 @@ namespace Amazon.RAM.Model
 {
     /// <summary>
     /// Container for the parameters to the GetResourceShares operation.
-    /// Gets the specified resource shares or all of your resource shares.
+    /// Gets the resource shares that you own or the resource shares that are shared with
+    /// you.
     /// </summary>
     public partial class GetResourceSharesRequest : AmazonRAMRequest
     {

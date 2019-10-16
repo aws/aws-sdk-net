@@ -36,9 +36,9 @@ namespace Amazon.AppStream.Model
     /// If the fleet is in the <code>STOPPED</code> state, you can update any attribute except
     /// the fleet name. If the fleet is in the <code>RUNNING</code> state, you can update
     /// the <code>DisplayName</code>, <code>ComputeCapacity</code>, <code>ImageARN</code>,
-    /// <code>ImageName</code>, and <code>DisconnectTimeoutInSeconds</code> attributes. If
-    /// the fleet is in the <code>STARTING</code> or <code>STOPPING</code> state, you can't
-    /// update it.
+    /// <code>ImageName</code>, <code>IdleDisconnectTimeoutInSeconds</code>, and <code>DisconnectTimeoutInSeconds</code>
+    /// attributes. If the fleet is in the <code>STARTING</code> or <code>STOPPING</code>
+    /// state, you can't update it.
     /// </para>
     /// </summary>
     public partial class UpdateFleetRequest : AmazonAppStreamRequest
@@ -51,6 +51,7 @@ namespace Amazon.AppStream.Model
         private string _displayName;
         private DomainJoinInfo _domainJoinInfo;
         private bool? _enableDefaultInternetAccess;
+        private string _iamRoleArn;
         private int? _idleDisconnectTimeoutInSeconds;
         private string _imageArn;
         private string _imageName;
@@ -212,6 +213,27 @@ namespace Amazon.AppStream.Model
         internal bool IsSetEnableDefaultInternetAccess()
         {
             return this._enableDefaultInternetAccess.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IamRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a
+        /// role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code>
+        /// API operation and passes the ARN of the role to use. The operation creates a new session
+        /// with temporary credentials.
+        /// </para>
+        /// </summary>
+        public string IamRoleArn
+        {
+            get { return this._iamRoleArn; }
+            set { this._iamRoleArn = value; }
+        }
+
+        // Check to see if IamRoleArn property is set
+        internal bool IsSetIamRoleArn()
+        {
+            return this._iamRoleArn != null;
         }
 
         /// <summary>

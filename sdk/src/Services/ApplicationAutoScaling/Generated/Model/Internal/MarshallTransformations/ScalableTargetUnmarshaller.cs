@@ -106,6 +106,12 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                     unmarshalledObject.ServiceNamespace = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SuspendedState", targetDepth))
+                {
+                    var unmarshaller = SuspendedStateUnmarshaller.Instance;
+                    unmarshalledObject.SuspendedState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -47,7 +47,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property AdditionalMetricsToRetain. 
         /// <para>
         /// A list of metrics whose data is retained (stored). By default, data is retained for
-        /// any metric used in the profile's <code>behaviors</code> but it is also retained for
+        /// any metric used in the profile's <code>behaviors</code>, but it is also retained for
         /// any metric specified here.
         /// </para>
         /// </summary>
@@ -105,7 +105,7 @@ namespace Amazon.IoT.Model
         /// <para>
         /// If true, delete all <code>additionalMetricsToRetain</code> defined for this security
         /// profile. If any <code>additionalMetricsToRetain</code> are defined in the current
-        /// invocation an exception occurs.
+        /// invocation, an exception occurs.
         /// </para>
         /// </summary>
         public bool DeleteAdditionalMetricsToRetain
@@ -124,7 +124,8 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property DeleteAlertTargets. 
         /// <para>
         /// If true, delete all <code>alertTargets</code> defined for this security profile. If
-        /// any <code>alertTargets</code> are defined in the current invocation an exception occurs.
+        /// any <code>alertTargets</code> are defined in the current invocation, an exception
+        /// occurs.
         /// </para>
         /// </summary>
         public bool DeleteAlertTargets
@@ -143,7 +144,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property DeleteBehaviors. 
         /// <para>
         /// If true, delete all <code>behaviors</code> defined for this security profile. If any
-        /// <code>behaviors</code> are defined in the current invocation an exception occurs.
+        /// <code>behaviors</code> are defined in the current invocation, an exception occurs.
         /// </para>
         /// </summary>
         public bool DeleteBehaviors
@@ -162,7 +163,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property ExpectedVersion. 
         /// <para>
         /// The expected version of the security profile. A new version is generated whenever
-        /// the security profile is updated. If you specify a value that is different than the
+        /// the security profile is updated. If you specify a value that is different from the
         /// actual version, a <code>VersionConflictException</code> is thrown.
         /// </para>
         /// </summary>

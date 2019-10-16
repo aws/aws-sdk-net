@@ -58,17 +58,17 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-06-07";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/greengrass/definition/loggers/{LoggerDefinitionId}/versions/{LoggerDefinitionVersionId}";
             if (!publicRequest.IsSetLoggerDefinitionId())
                 throw new AmazonGreengrassException("Request object does not have required field LoggerDefinitionId set");
-            uriResourcePath = uriResourcePath.Replace("{LoggerDefinitionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.LoggerDefinitionId));
+            request.AddPathResource("{LoggerDefinitionId}", StringUtils.FromString(publicRequest.LoggerDefinitionId));
             if (!publicRequest.IsSetLoggerDefinitionVersionId())
                 throw new AmazonGreengrassException("Request object does not have required field LoggerDefinitionVersionId set");
-            uriResourcePath = uriResourcePath.Replace("{LoggerDefinitionVersionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.LoggerDefinitionVersionId));
+            request.AddPathResource("{LoggerDefinitionVersionId}", StringUtils.FromString(publicRequest.LoggerDefinitionVersionId));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/greengrass/definition/loggers/{LoggerDefinitionId}/versions/{LoggerDefinitionVersionId}";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

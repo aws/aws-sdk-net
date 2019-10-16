@@ -37,7 +37,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Database. 
         /// <para>
-        /// The definition of the specified database in the catalog.
+        /// The definition of the specified database in the Data Catalog.
         /// </para>
         /// </summary>
         public Database Database

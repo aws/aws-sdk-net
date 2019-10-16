@@ -28,8 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Settings specific to caption sources that are specfied by track number. Sources include
-    /// IMSC in IMF.
+    /// Settings specific to caption sources that are specified by track number. Currently,
+    /// this is only IMSC captions in an IMF package. If your caption source is IMSC 1.1 in
+    /// a separate xml file, use FileSourceSettings instead of TrackSourceSettings.
     /// </summary>
     public partial class TrackSourceSettings
     {

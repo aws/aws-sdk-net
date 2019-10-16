@@ -51,6 +51,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CloudWatchLogsRoleArn);
             }
 
+            if(requestObject.IsSetExcludeVerboseContent())
+            {
+                context.Writer.WritePropertyName("excludeVerboseContent");
+                context.Writer.Write(requestObject.ExcludeVerboseContent);
+            }
+
             if(requestObject.IsSetFieldLogLevel())
             {
                 context.Writer.WritePropertyName("fieldLogLevel");

@@ -59,8 +59,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-01-01";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/2015-01-01/es/domain";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2015-01-01/es/domain";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -93,6 +93,17 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 
                     var marshaller = CognitoOptionsMarshaller.Instance;
                     marshaller.Marshall(publicRequest.CognitoOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetDomainEndpointOptions())
+                {
+                    context.Writer.WritePropertyName("DomainEndpointOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DomainEndpointOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DomainEndpointOptions, context);
 
                     context.Writer.WriteObjectEnd();
                 }

@@ -57,6 +57,12 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.FailureThresholdPercentage);
             }
 
+            if(requestObject.IsSetRobotDeploymentTimeoutInSeconds())
+            {
+                context.Writer.WritePropertyName("robotDeploymentTimeoutInSeconds");
+                context.Writer.Write(requestObject.RobotDeploymentTimeoutInSeconds);
+            }
+
         }
 
         /// <summary>

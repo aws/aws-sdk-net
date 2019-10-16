@@ -45,6 +45,7 @@
     <property>Amazon.ConfigService.Model.DeleteOrganizationConfigRuleRequest.OrganizationConfigRuleName</property>
     <min>1</min>
     <max>64</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.DeletePendingAggregationRequestRequest.RequesterAccountId</property>
@@ -58,7 +59,14 @@
   <property-value-rule>
     <property>Amazon.ConfigService.Model.DeleteRemediationConfigurationRequest.ConfigRuleName</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.DeleteRemediationExceptionsRequest.ConfigRuleName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.DeleteRetentionConfigurationRequest.RetentionConfigurationName</property>
@@ -139,24 +147,26 @@
     <max>20</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.DescribeRemediationExceptionsRequest.ConfigRuleName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.DescribeRemediationExceptionsRequest.Limit</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.DescribeRemediationExecutionStatusRequest.ConfigRuleName</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.DescribeRemediationExecutionStatusRequest.Limit</property>
     <min>0</min>
     <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ConfigService.Model.DescribeRemediationExecutionStatusRequest.NextToken</property>
-    <min>1</min>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ConfigService.Model.DescribeRemediationExecutionStatusResponse.NextToken</property>
-    <min>1</min>
-    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.GetAggregateComplianceDetailsByConfigRuleRequest.AccountId</property>
@@ -170,7 +180,8 @@
   <property-value-rule>
     <property>Amazon.ConfigService.Model.GetAggregateComplianceDetailsByConfigRuleRequest.ConfigRuleName</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.GetAggregateComplianceDetailsByConfigRuleRequest.ConfigurationAggregatorName</property>
@@ -255,6 +266,7 @@
     <property>Amazon.ConfigService.Model.GetOrganizationConfigRuleDetailedStatusRequest.OrganizationConfigRuleName</property>
     <min>1</min>
     <max>64</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.GetResourceConfigHistoryRequest.Limit</property>
@@ -311,11 +323,23 @@
     <property>Amazon.ConfigService.Model.PutOrganizationConfigRuleRequest.OrganizationConfigRuleName</property>
     <min>1</min>
     <max>64</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.PutOrganizationConfigRuleResponse.OrganizationConfigRuleArn</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.PutRemediationExceptionsRequest.ConfigRuleName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.PutRemediationExceptionsRequest.Message</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.PutRetentionConfigurationRequest.RetentionPeriodInDays</property>
@@ -340,7 +364,8 @@
   <property-value-rule>
     <property>Amazon.ConfigService.Model.StartRemediationExecutionRequest.ConfigRuleName</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.StopConfigurationRecorderRequest.ConfigurationRecorderName</property>
@@ -369,7 +394,8 @@
   <property-value-rule>
     <property>Amazon.ConfigService.Model.AggregateComplianceByConfigRule.ConfigRuleName</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.AggregateComplianceCount.GroupName</property>
@@ -484,7 +510,8 @@
   <property-value-rule>
     <property>Amazon.ConfigService.Model.ConfigRuleComplianceFilters.ConfigRuleName</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.ConfigRuleComplianceSummaryFilters.AccountId</property>
@@ -592,11 +619,13 @@
     <property>Amazon.ConfigService.Model.OrganizationConfigRule.OrganizationConfigRuleName</property>
     <min>1</min>
     <max>64</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.OrganizationConfigRuleStatus.OrganizationConfigRuleName</property>
     <min>1</min>
     <max>64</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.OrganizationCustomRuleMetadata.Description</property>
@@ -673,12 +702,64 @@
     <max>768</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.RemediationConfiguration.Arn</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.RemediationConfiguration.ConfigRuleName</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.RemediationConfiguration.CreatedByService</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.RemediationConfiguration.MaximumAutomaticAttempts</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.RemediationConfiguration.RetryAttemptSeconds</property>
+    <min>1</min>
+    <max>2678000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.RemediationConfiguration.TargetId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.RemediationException.ConfigRuleName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.RemediationException.Message</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.RemediationException.ResourceId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.RemediationException.ResourceType</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.RemediationExceptionResourceKey.ResourceId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.RemediationExceptionResourceKey.ResourceType</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>
@@ -745,6 +826,16 @@
     <property>Amazon.ConfigService.Model.Source.SourceIdentifier</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.SsmControls.ConcurrentExecutionRatePercentage</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.SsmControls.ErrorPercentage</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.StatusDetailFilters.AccountId</property>

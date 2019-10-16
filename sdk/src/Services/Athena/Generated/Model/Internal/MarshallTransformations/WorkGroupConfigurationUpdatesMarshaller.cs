@@ -69,6 +69,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RemoveBytesScannedCutoffPerQuery);
             }
 
+            if(requestObject.IsSetRequesterPaysEnabled())
+            {
+                context.Writer.WritePropertyName("RequesterPaysEnabled");
+                context.Writer.Write(requestObject.RequesterPaysEnabled);
+            }
+
             if(requestObject.IsSetResultConfigurationUpdates())
             {
                 context.Writer.WritePropertyName("ResultConfigurationUpdates");

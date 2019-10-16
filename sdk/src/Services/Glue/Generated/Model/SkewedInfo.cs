@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies skewed values in a table. Skewed are ones that occur with very high frequency.
+    /// Specifies skewed values in a table. Skewed values are those that occur with very high
+    /// frequency.
     /// </summary>
     public partial class SkewedInfo
     {

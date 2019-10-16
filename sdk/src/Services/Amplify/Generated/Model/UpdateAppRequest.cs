@@ -33,6 +33,7 @@ namespace Amazon.Amplify.Model
     /// </summary>
     public partial class UpdateAppRequest : AmazonAmplifyRequest
     {
+        private string _accessToken;
         private string _appId;
         private AutoBranchCreationConfig _autoBranchCreationConfig;
         private List<string> _autoBranchCreationPatterns = new List<string>();
@@ -46,7 +47,29 @@ namespace Amazon.Amplify.Model
         private Dictionary<string, string> _environmentVariables = new Dictionary<string, string>();
         private string _iamServiceRoleArn;
         private string _name;
+        private string _oauthToken;
         private Platform _platform;
+        private string _repository;
+
+        /// <summary>
+        /// Gets and sets the property AccessToken. 
+        /// <para>
+        ///  Personal Access token for 3rd party source control system for an Amplify App, used
+        /// to create webhook and read-only deploy key. Token is not stored. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string AccessToken
+        {
+            get { return this._accessToken; }
+            set { this._accessToken = value; }
+        }
+
+        // Check to see if AccessToken property is set
+        internal bool IsSetAccessToken()
+        {
+            return this._accessToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AppId. 
@@ -70,7 +93,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property AutoBranchCreationConfig. 
         /// <para>
-        ///  Automated branch creation config for the Amplify App. 
+        ///  Automated branch creation branchConfig for the Amplify App. 
         /// </para>
         /// </summary>
         public AutoBranchCreationConfig AutoBranchCreationConfig
@@ -289,6 +312,26 @@ namespace Amazon.Amplify.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OauthToken. 
+        /// <para>
+        ///  OAuth token for 3rd party source control system for an Amplify App, used to create
+        /// webhook and read-only deploy key. OAuth token is not stored. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=100)]
+        public string OauthToken
+        {
+            get { return this._oauthToken; }
+            set { this._oauthToken = value; }
+        }
+
+        // Check to see if OauthToken property is set
+        internal bool IsSetOauthToken()
+        {
+            return this._oauthToken != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
         ///  Platform for an Amplify App. 
@@ -304,6 +347,25 @@ namespace Amazon.Amplify.Model
         internal bool IsSetPlatform()
         {
             return this._platform != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Repository. 
+        /// <para>
+        ///  Repository for an Amplify App 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1000)]
+        public string Repository
+        {
+            get { return this._repository; }
+            set { this._repository = value; }
+        }
+
+        // Check to see if Repository property is set
+        internal bool IsSetRepository()
+        {
+            return this._repository != null;
         }
 
     }

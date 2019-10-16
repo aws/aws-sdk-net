@@ -38,7 +38,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property ModerationLabels. 
         /// <para>
-        /// Array of detected Moderation labels and the time, in millseconds from the start of
+        /// Array of detected Moderation labels and the time, in milliseconds from the start of
         /// the video, they were detected.
         /// </para>
         /// </summary>

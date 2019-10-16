@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// Information about a transit virtual interface.
+    /// Information about a transit virtual interface to be provisioned on a connection.
     /// </summary>
     public partial class NewTransitVirtualInterfaceAllocation
     {
@@ -83,6 +83,10 @@ namespace Amazon.DirectConnect.Model
         /// <para>
         /// The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
         /// </para>
+        ///  
+        /// <para>
+        /// The valid values are 1-2147483647.
+        /// </para>
         /// </summary>
         public int Asn
         {
@@ -99,7 +103,8 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property AuthKey. 
         /// <para>
-        /// The authentication key for BGP configuration.
+        /// The authentication key for BGP configuration. This string has a minimum length of
+        /// 6 characters and and a maximun lenth of 80 characters.
         /// </para>
         /// </summary>
         public string AuthKey
@@ -135,7 +140,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Mtu. 
         /// <para>
-        /// The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500.
+        /// The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001.
         /// The default value is 1500. 
         /// </para>
         /// </summary>
@@ -154,7 +159,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Any tags assigned to the transit virtual interface.
+        /// The tags associated with the transitive virtual interface.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

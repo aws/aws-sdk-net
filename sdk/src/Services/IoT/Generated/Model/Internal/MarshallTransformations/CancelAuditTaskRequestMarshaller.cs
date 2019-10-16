@@ -59,11 +59,11 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/audit/tasks/{taskId}/cancel";
             if (!publicRequest.IsSetTaskId())
                 throw new AmazonIoTException("Request object does not have required field TaskId set");
-            uriResourcePath = uriResourcePath.Replace("{taskId}", StringUtils.FromStringWithSlashEncoding(publicRequest.TaskId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{taskId}", StringUtils.FromString(publicRequest.TaskId));
+            request.ResourcePath = "/audit/tasks/{taskId}/cancel";
+            request.MarshallerVersion = 2;
 
             return request;
         }

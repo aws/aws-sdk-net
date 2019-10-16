@@ -58,11 +58,11 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-29";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/2017-08-29/tags/{arn}";
             if (!publicRequest.IsSetArn())
                 throw new AmazonMediaConvertException("Request object does not have required field Arn set");
-            uriResourcePath = uriResourcePath.Replace("{arn}", StringUtils.FromStringWithSlashEncoding(publicRequest.Arn));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{arn}", StringUtils.FromString(publicRequest.Arn));
+            request.ResourcePath = "/2017-08-29/tags/{arn}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

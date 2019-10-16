@@ -137,6 +137,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClass</code> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-NamedEntityRecognition</code>
+        /// 
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         ///  <b>US East (Ohio) (us-east-2):</b> 
@@ -157,6 +162,11 @@ namespace Amazon.SageMaker.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClass</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-NamedEntityRecognition</code>
+        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -179,6 +189,39 @@ namespace Amazon.SageMaker.Model
         /// <para>
         ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClass</code> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-NamedEntityRecognition</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Canada (Central) (ca-central-1):</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ca-central-1:918755190332:function:PRE-BoundingBox</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ca-central-1:918755190332:function:PRE-ImageMultiClass</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ca-central-1:918755190332:function:PRE-SemanticSegmentation</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ca-central-1:918755190332:function:PRE-TextMultiClass</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ca-central-1:918755190332:function:PRE-NamedEntityRecognition</code>
+        /// 
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         ///  <b>EU (Ireland) (eu-west-1):</b> 
@@ -199,6 +242,65 @@ namespace Amazon.SageMaker.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-NamedEntityRecognition</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>EU (London) (eu-west-2):</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:eu-west-2:487402164563:function:PRE-BoundingBox</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:eu-west-2:487402164563:function:PRE-ImageMultiClass</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:eu-west-2:487402164563:function:PRE-SemanticSegmentation</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:eu-west-2:487402164563:function:PRE-TextMultiClass</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:eu-west-2:487402164563:function:PRE-NamedEntityRecognition</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>EU Frankfurt (eu-central-1):</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:eu-central-1:203001061592:function:PRE-BoundingBox</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:eu-central-1:203001061592:function:PRE-ImageMultiClass</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:eu-central-1:203001061592:function:PRE-SemanticSegmentation</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:eu-central-1:203001061592:function:PRE-TextMultiClass</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:eu-central-1:203001061592:function:PRE-NamedEntityRecognition</code>
+        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -224,9 +326,96 @@ namespace Amazon.SageMaker.Model
         ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
         /// 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-NamedEntityRecognition</code>
+        /// 
+        /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Asia Pacific (Sydney) (ap-southeast-1):</b> 
+        ///  <b>Asia Pacific (Seoul) (ap-northeast-2):</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ap-northeast-2:845288260483:function:PRE-BoundingBox</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ap-northeast-2:845288260483:function:PRE-ImageMultiClass</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ap-northeast-2:845288260483:function:PRE-SemanticSegmentation</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ap-northeast-2:845288260483:function:PRE-TextMultiClass</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ap-northeast-2:845288260483:function:PRE-NamedEntityRecognition</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Asia Pacific (Mumbai) (ap-south-1):</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ap-south-1:565803892007:function:PRE-BoundingBox</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ap-south-1:565803892007:function:PRE-ImageMultiClass</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ap-south-1:565803892007:function:PRE-SemanticSegmentation</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ap-south-1:565803892007:function:PRE-TextMultiClass</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ap-south-1:565803892007:function:PRE-NamedEntityRecognition</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Asia Pacific (Singapore) (ap-southeast-1):</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ap-southeast-1:377565633583:function:PRE-BoundingBox</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ap-southeast-1:377565633583:function:PRE-ImageMultiClass</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ap-southeast-1:377565633583:function:PRE-SemanticSegmentation</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ap-southeast-1:377565633583:function:PRE-TextMultiClass</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:awslambda:ap-southeast-1:377565633583:function:PRE-NamedEntityRecognition</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Asia Pacific (Sydney) (ap-southeast-2):</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -248,6 +437,11 @@ namespace Amazon.SageMaker.Model
         ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClass</code>
         /// 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-NamedEntityRecognition</code>
+        /// 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Max=2048)]
@@ -266,7 +460,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property PublicWorkforceTaskPrice. 
         /// <para>
-        /// The price that you pay for each task performed by a public worker.
+        /// The price that you pay for each task performed by an Amazon Mechanical Turk worker.
         /// </para>
         /// </summary>
         public PublicWorkforceTaskPrice PublicWorkforceTaskPrice
@@ -284,7 +478,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TaskAvailabilityLifetimeInSeconds. 
         /// <para>
-        /// The length of time that a task remains available for labelling by human workers.
+        /// The length of time that a task remains available for labeling by human workers. <b>If
+        /// you choose the Amazon Mechanical Turk workforce, the maximum is 12 hours (43200)</b>.
+        /// For private and vendor workforces, the maximum is as listed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=864000)]
@@ -345,7 +541,7 @@ namespace Amazon.SageMaker.Model
         /// The amount of time that a worker has to complete a task.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=28800)]
+        [AWSProperty(Required=true, Min=30, Max=28800)]
         public int TaskTimeLimitInSeconds
         {
             get { return this._taskTimeLimitInSeconds.GetValueOrDefault(); }

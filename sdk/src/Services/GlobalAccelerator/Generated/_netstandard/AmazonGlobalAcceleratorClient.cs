@@ -51,7 +51,11 @@ namespace Amazon.GlobalAccelerator
     /// to improve availability and performance for internet applications used by a global
     /// audience. 
     /// </para>
-    ///  
+    ///  <important> 
+    /// <para>
+    /// You must specify the US-West-2 (Oregon) Region to create or update accelerators.
+    /// </para>
+    ///  </important> 
     /// <para>
     /// Global Accelerator provides you with static IP addresses that you associate with your
     /// accelerator. These IP addresses are anycast from the AWS edge network and distribute
@@ -343,6 +347,12 @@ namespace Amazon.GlobalAccelerator
         /// inbound connections and direct traffic to one or more endpoint groups, each of which
         /// includes endpoints, such as Network Load Balancers. To see an AWS CLI example of creating
         /// an accelerator, scroll down to <b>Example</b>.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// You must specify the US-West-2 (Oregon) Region to create or update accelerators.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccelerator service method.</param>
         /// <param name="cancellationToken">
@@ -397,6 +407,9 @@ namespace Amazon.GlobalAccelerator
         /// <returns>The response from the CreateEndpointGroup service method, as returned by GlobalAccelerator.</returns>
         /// <exception cref="Amazon.GlobalAccelerator.Model.AcceleratorNotFoundException">
         /// The accelerator that you specified doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AccessDeniedException">
+        /// You don't have access permission.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.EndpointGroupAlreadyExistsException">
         /// The endpoint group that you specified already exists.
@@ -557,6 +570,9 @@ namespace Amazon.GlobalAccelerator
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
         /// There was an internal error for AWS Global Accelerator.
         /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
+        /// An argument that you specified is invalid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteEndpointGroup">REST API Reference for DeleteEndpointGroup Operation</seealso>
         public virtual Task<DeleteEndpointGroupResponse> DeleteEndpointGroupAsync(DeleteEndpointGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -597,6 +613,9 @@ namespace Amazon.GlobalAccelerator
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
         /// There was an internal error for AWS Global Accelerator.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
+        /// An argument that you specified is invalid.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.ListenerNotFoundException">
         /// The listener that you specified doesn't exist.
@@ -728,6 +747,9 @@ namespace Amazon.GlobalAccelerator
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
         /// There was an internal error for AWS Global Accelerator.
         /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
+        /// An argument that you specified is invalid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeEndpointGroup">REST API Reference for DescribeEndpointGroup Operation</seealso>
         public virtual Task<DescribeEndpointGroupResponse> DescribeEndpointGroupAsync(DescribeEndpointGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -807,6 +829,9 @@ namespace Amazon.GlobalAccelerator
         /// <returns>The response from the ListAccelerators service method, as returned by GlobalAccelerator.</returns>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
         /// There was an internal error for AWS Global Accelerator.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
+        /// An argument that you specified is invalid.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidNextTokenException">
         /// There isn't another item to return.
@@ -897,6 +922,9 @@ namespace Amazon.GlobalAccelerator
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
         /// There was an internal error for AWS Global Accelerator.
         /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
+        /// An argument that you specified is invalid.
+        /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidNextTokenException">
         /// There isn't another item to return.
         /// </exception>
@@ -926,7 +954,14 @@ namespace Amazon.GlobalAccelerator
 
 
         /// <summary>
-        /// Update an accelerator.
+        /// Update an accelerator. To see an AWS CLI example of updating an accelerator, scroll
+        /// down to <b>Example</b>.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// You must specify the US-West-2 (Oregon) Region to create or update accelerators.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccelerator service method.</param>
         /// <param name="cancellationToken">
@@ -981,6 +1016,9 @@ namespace Amazon.GlobalAccelerator
         /// <exception cref="Amazon.GlobalAccelerator.Model.AcceleratorNotFoundException">
         /// The accelerator that you specified doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AccessDeniedException">
+        /// You don't have access permission.
+        /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
         /// There was an internal error for AWS Global Accelerator.
         /// </exception>
@@ -1022,6 +1060,9 @@ namespace Amazon.GlobalAccelerator
         /// </param>
         /// 
         /// <returns>The response from the UpdateEndpointGroup service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AccessDeniedException">
+        /// You don't have access permission.
+        /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.EndpointGroupNotFoundException">
         /// The endpoint group that you specified doesn't exist.
         /// </exception>

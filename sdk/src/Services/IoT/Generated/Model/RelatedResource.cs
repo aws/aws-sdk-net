@@ -39,7 +39,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property AdditionalInfo. 
         /// <para>
-        /// Additional information about the resource.
+        /// Other information about the resource.
         /// </para>
         /// </summary>
         public Dictionary<string, string> AdditionalInfo
@@ -57,7 +57,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property ResourceIdentifier. 
         /// <para>
-        /// Information identifying the resource.
+        /// Information that identifies the resource.
         /// </para>
         /// </summary>
         public ResourceIdentifier ResourceIdentifier

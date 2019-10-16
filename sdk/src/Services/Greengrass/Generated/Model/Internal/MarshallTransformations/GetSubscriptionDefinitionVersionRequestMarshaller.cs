@@ -58,17 +58,17 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-06-07";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/greengrass/definition/subscriptions/{SubscriptionDefinitionId}/versions/{SubscriptionDefinitionVersionId}";
             if (!publicRequest.IsSetSubscriptionDefinitionId())
                 throw new AmazonGreengrassException("Request object does not have required field SubscriptionDefinitionId set");
-            uriResourcePath = uriResourcePath.Replace("{SubscriptionDefinitionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.SubscriptionDefinitionId));
+            request.AddPathResource("{SubscriptionDefinitionId}", StringUtils.FromString(publicRequest.SubscriptionDefinitionId));
             if (!publicRequest.IsSetSubscriptionDefinitionVersionId())
                 throw new AmazonGreengrassException("Request object does not have required field SubscriptionDefinitionVersionId set");
-            uriResourcePath = uriResourcePath.Replace("{SubscriptionDefinitionVersionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.SubscriptionDefinitionVersionId));
+            request.AddPathResource("{SubscriptionDefinitionVersionId}", StringUtils.FromString(publicRequest.SubscriptionDefinitionVersionId));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/greengrass/definition/subscriptions/{SubscriptionDefinitionId}/versions/{SubscriptionDefinitionVersionId}";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

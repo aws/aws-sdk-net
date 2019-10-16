@@ -70,6 +70,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccelerationSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("accelerationStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AccelerationStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -124,6 +130,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.JobTemplate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("messages", targetDepth))
+                {
+                    var unmarshaller = JobMessagesUnmarshaller.Instance;
+                    unmarshalledObject.Messages = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("outputGroupDetails", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<OutputGroupDetail, OutputGroupDetailUnmarshaller>(OutputGroupDetailUnmarshaller.Instance);
@@ -158,6 +170,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = JobSettingsUnmarshaller.Instance;
                     unmarshalledObject.Settings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("simulateReservedQueue", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SimulateReservedQueue = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))

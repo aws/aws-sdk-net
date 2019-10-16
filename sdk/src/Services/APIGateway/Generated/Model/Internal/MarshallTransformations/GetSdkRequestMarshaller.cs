@@ -58,16 +58,15 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/restapis/{restapi_id}/stages/{stage_name}/sdks/{sdk_type}";
             if (!publicRequest.IsSetRestApiId())
                 throw new AmazonAPIGatewayException("Request object does not have required field RestApiId set");
-            uriResourcePath = uriResourcePath.Replace("{restapi_id}", StringUtils.FromStringWithSlashEncoding(publicRequest.RestApiId));
+            request.AddPathResource("{restapi_id}", StringUtils.FromString(publicRequest.RestApiId));
             if (!publicRequest.IsSetSdkType())
                 throw new AmazonAPIGatewayException("Request object does not have required field SdkType set");
-            uriResourcePath = uriResourcePath.Replace("{sdk_type}", StringUtils.FromStringWithSlashEncoding(publicRequest.SdkType));
+            request.AddPathResource("{sdk_type}", StringUtils.FromString(publicRequest.SdkType));
             if (!publicRequest.IsSetStageName())
                 throw new AmazonAPIGatewayException("Request object does not have required field StageName set");
-            uriResourcePath = uriResourcePath.Replace("{stage_name}", StringUtils.FromStringWithSlashEncoding(publicRequest.StageName));
+            request.AddPathResource("{stage_name}", StringUtils.FromString(publicRequest.StageName));
             
             if (publicRequest.IsSetParameters())
             {
@@ -76,7 +75,8 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     request.Parameters.Add(kvp.Key, kvp.Value);
                 }
             }
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/restapis/{restapi_id}/stages/{stage_name}/sdks/{sdk_type}";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

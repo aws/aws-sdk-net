@@ -33,6 +33,7 @@ namespace Amazon.IoT.Model
     public partial class AuditFinding
     {
         private string _checkName;
+        private string _findingId;
         private DateTime? _findingTime;
         private NonCompliantResource _nonCompliantResource;
         private string _reasonForNonCompliance;
@@ -61,6 +62,26 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FindingId. 
+        /// <para>
+        /// A unique identifier for this set of audit findings. This identifier is used to apply
+        /// mitigation tasks to one or more sets of findings.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string FindingId
+        {
+            get { return this._findingId; }
+            set { this._findingId = value; }
+        }
+
+        // Check to see if FindingId property is set
+        internal bool IsSetFindingId()
+        {
+            return this._findingId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FindingTime. 
         /// <para>
         /// The time the result (finding) was discovered.
@@ -81,7 +102,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property NonCompliantResource. 
         /// <para>
-        /// The resource that was found to be non-compliant with the audit check.
+        /// The resource that was found to be noncompliant with the audit check.
         /// </para>
         /// </summary>
         public NonCompliantResource NonCompliantResource
@@ -99,7 +120,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property ReasonForNonCompliance. 
         /// <para>
-        /// The reason the resource was non-compliant.
+        /// The reason the resource was noncompliant.
         /// </para>
         /// </summary>
         public string ReasonForNonCompliance
@@ -117,7 +138,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property ReasonForNonComplianceCode. 
         /// <para>
-        /// A code which indicates the reason that the resource was non-compliant.
+        /// A code that indicates the reason that the resource was noncompliant.
         /// </para>
         /// </summary>
         public string ReasonForNonComplianceCode
@@ -171,7 +192,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property TaskId. 
         /// <para>
-        /// The ID of the audit that generated this result (finding)
+        /// The ID of the audit that generated this result (finding).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=40)]

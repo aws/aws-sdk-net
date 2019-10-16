@@ -193,6 +193,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.TimecodeSource);
             }
 
+            if(requestObject.IsSetTimecodeStart())
+            {
+                context.Writer.WritePropertyName("timecodeStart");
+                context.Writer.Write(requestObject.TimecodeStart);
+            }
+
             if(requestObject.IsSetVideoSelector())
             {
                 context.Writer.WritePropertyName("videoSelector");

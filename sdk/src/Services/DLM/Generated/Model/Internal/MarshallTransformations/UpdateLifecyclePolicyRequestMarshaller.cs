@@ -59,11 +59,11 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-01-12";            
             request.HttpMethod = "PATCH";
 
-            string uriResourcePath = "/policies/{policyId}";
             if (!publicRequest.IsSetPolicyId())
                 throw new AmazonDLMException("Request object does not have required field PolicyId set");
-            uriResourcePath = uriResourcePath.Replace("{policyId}", StringUtils.FromStringWithSlashEncoding(publicRequest.PolicyId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{policyId}", StringUtils.FromString(publicRequest.PolicyId));
+            request.ResourcePath = "/policies/{policyId}";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

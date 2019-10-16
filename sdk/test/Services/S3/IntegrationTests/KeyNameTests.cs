@@ -30,6 +30,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             @"ObjectWith\InKeynÄme",
             @"ObjectWith/InKeynÄme",
             @"ObjectWith$InKeynÄme",
+            @"ObjectWith%2FInKeyname.Ext"
         };
 
         static string bucketName;
@@ -61,7 +62,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 foreach (var k in AwkwardKeyNameBases)
                 {
                     var keyName = k + ".SigV2.AWS2.CLRv" + Environment.Version;
-                    PutObjectWithQuestionableKey(s3Client, bucketName, keyName);
+                    PutAndGetObjectWithQuestionableKey(s3Client, bucketName, keyName);
                 }
             }
             finally
@@ -83,7 +84,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 foreach (var k in AwkwardKeyNameBases)
                 {
                     var keyName = k + ".SigV4.AWS2.CLRv" + Environment.Version;
-                    PutObjectWithQuestionableKey(s3Client, bucketName, keyName);
+                    PutAndGetObjectWithQuestionableKey(s3Client, bucketName, keyName);
                 }
             }
             finally
@@ -92,7 +93,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
-        static void PutObjectWithQuestionableKey(IAmazonS3 s3Client, string bucketName, string keyName)
+        static void PutAndGetObjectWithQuestionableKey(IAmazonS3 s3Client, string bucketName, string keyName)
         {
             const string testContent = "Some stuff to write as content";
 

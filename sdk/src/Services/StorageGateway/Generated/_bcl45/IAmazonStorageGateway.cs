@@ -71,7 +71,7 @@ namespace Amazon.StorageGateway
     ///  </li> <li> 
     /// <para>
     ///  <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS Storage
-    /// Gateway Regions and Endpoints:</a> Provides a list of each AWS region and endpoints
+    /// Gateway Regions and Endpoints:</a> Provides a list of each AWS Region and the endpoints
     /// available for use with AWS Storage Gateway. 
     /// </para>
     ///  </li> </ul> <note> 
@@ -121,8 +121,8 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Activates the gateway you previously deployed on your host. In the activation process,
-        /// you specify information such as the region you want to use for storing snapshots or
-        /// tapes, the time zone for scheduled snapshots the gateway snapshot schedule window,
+        /// you specify information such as the AWS Region that you want to use for storing snapshots
+        /// or tapes, the time zone for scheduled snapshots the gateway snapshot schedule window,
         /// an activation key, and a name for your gateway. The activation process also associates
         /// your gateway with your account; for more information, see <a>UpdateGatewayInformation</a>.
         /// 
@@ -150,8 +150,8 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Activates the gateway you previously deployed on your host. In the activation process,
-        /// you specify information such as the region you want to use for storing snapshots or
-        /// tapes, the time zone for scheduled snapshots the gateway snapshot schedule window,
+        /// you specify information such as the AWS Region that you want to use for storing snapshots
+        /// or tapes, the time zone for scheduled snapshots the gateway snapshot schedule window,
         /// an activation key, and a name for your gateway. The activation process also associates
         /// your gateway with your account; for more information, see <a>UpdateGatewayInformation</a>.
         /// 
@@ -774,10 +774,10 @@ namespace Amazon.StorageGateway
         ///  <important> 
         /// <para>
         /// File gateway requires AWS Security Token Service (AWS STS) to be activated to enable
-        /// you create a file share. Make sure AWS STS is activated in the region you are creating
-        /// your file gateway in. If AWS STS is not activated in the region, activate it. For
-        /// information about how to activate AWS STS, see Activating and Deactivating AWS STS
-        /// in an AWS Region in the AWS Identity and Access Management User Guide. 
+        /// you create a file share. Make sure AWS STS is activated in the AWS Region you are
+        /// creating your file gateway in. If AWS STS is not activated in the AWS Region, activate
+        /// it. For information about how to activate AWS STS, see Activating and Deactivating
+        /// AWS STS in an AWS Region in the AWS Identity and Access Management User Guide. 
         /// </para>
         ///  
         /// <para>
@@ -810,10 +810,10 @@ namespace Amazon.StorageGateway
         ///  <important> 
         /// <para>
         /// File gateway requires AWS Security Token Service (AWS STS) to be activated to enable
-        /// you create a file share. Make sure AWS STS is activated in the region you are creating
-        /// your file gateway in. If AWS STS is not activated in the region, activate it. For
-        /// information about how to activate AWS STS, see Activating and Deactivating AWS STS
-        /// in an AWS Region in the AWS Identity and Access Management User Guide. 
+        /// you create a file share. Make sure AWS STS is activated in the AWS Region you are
+        /// creating your file gateway in. If AWS STS is not activated in the AWS Region, activate
+        /// it. For information about how to activate AWS STS, see Activating and Deactivating
+        /// AWS STS in an AWS Region in the AWS Identity and Access Management User Guide. 
         /// </para>
         ///  
         /// <para>
@@ -2993,8 +2993,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Lists gateways owned by an AWS account in a region specified in the request. The returned
-        /// list is ordered by gateway Amazon Resource Name (ARN).
+        /// Lists gateways owned by an AWS account in an AWS Region specified in the request.
+        /// The returned list is ordered by gateway Amazon Resource Name (ARN).
         /// 
         ///  
         /// <para>
@@ -3024,8 +3024,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Lists gateways owned by an AWS account in a region specified in the request. The returned
-        /// list is ordered by gateway Amazon Resource Name (ARN).
+        /// Lists gateways owned by an AWS account in an AWS Region specified in the request.
+        /// The returned list is ordered by gateway Amazon Resource Name (ARN).
         /// 
         ///  
         /// <para>
@@ -3056,8 +3056,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Lists gateways owned by an AWS account in a region specified in the request. The returned
-        /// list is ordered by gateway Amazon Resource Name (ARN).
+        /// Lists gateways owned by an AWS account in an AWS Region specified in the request.
+        /// The returned list is ordered by gateway Amazon Resource Name (ARN).
         /// 
         ///  
         /// <para>
@@ -3091,8 +3091,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Lists gateways owned by an AWS account in a region specified in the request. The returned
-        /// list is ordered by gateway Amazon Resource Name (ARN).
+        /// Lists gateways owned by an AWS account in an AWS Region specified in the request.
+        /// The returned list is ordered by gateway Amazon Resource Name (ARN).
         /// 
         ///  
         /// <para>
@@ -3492,16 +3492,16 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Sends you notification through CloudWatch Events when all files written to your NFS
-        /// file share have been uploaded to Amazon S3.
+        /// Sends you notification through CloudWatch Events when all files written to your file
+        /// share have been uploaded to Amazon S3.
         /// 
         ///  
         /// <para>
         /// AWS Storage Gateway can send a notification through Amazon CloudWatch Events when
         /// all files written to your file share up to that point in time have been uploaded to
-        /// Amazon S3. These files include files written to the NFS file share up to the time
-        /// that you make a request for notification. When the upload is done, Storage Gateway
-        /// sends you notification through an Amazon CloudWatch Event. You can configure CloudWatch
+        /// Amazon S3. These files include files written to the file share up to the time that
+        /// you make a request for notification. When the upload is done, Storage Gateway sends
+        /// you notification through an Amazon CloudWatch Event. You can configure CloudWatch
         /// Events to send the notification through event targets such as Amazon SNS or AWS Lambda
         /// function. This operation is only supported for file gateways.
         /// </para>
@@ -3529,16 +3529,16 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Sends you notification through CloudWatch Events when all files written to your NFS
-        /// file share have been uploaded to Amazon S3.
+        /// Sends you notification through CloudWatch Events when all files written to your file
+        /// share have been uploaded to Amazon S3.
         /// 
         ///  
         /// <para>
         /// AWS Storage Gateway can send a notification through Amazon CloudWatch Events when
         /// all files written to your file share up to that point in time have been uploaded to
-        /// Amazon S3. These files include files written to the NFS file share up to the time
-        /// that you make a request for notification. When the upload is done, Storage Gateway
-        /// sends you notification through an Amazon CloudWatch Event. You can configure CloudWatch
+        /// Amazon S3. These files include files written to the file share up to the time that
+        /// you make a request for notification. When the upload is done, Storage Gateway sends
+        /// you notification through an Amazon CloudWatch Event. You can configure CloudWatch
         /// Events to send the notification through event targets such as Amazon SNS or AWS Lambda
         /// function. This operation is only supported for file gateways.
         /// </para>
@@ -4777,6 +4777,16 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// Updates the SMB security strategy on a file gateway. This action is only supported
         /// in file gateways.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API is called Security level in the User Guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// A higher security level can affect performance of the gateway.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSMBSecurityStrategy service method.</param>
         /// 
@@ -4797,6 +4807,16 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// Updates the SMB security strategy on a file gateway. This action is only supported
         /// in file gateways.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API is called Security level in the User Guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// A higher security level can affect performance of the gateway.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSMBSecurityStrategy service method.</param>
         /// <param name="cancellationToken">

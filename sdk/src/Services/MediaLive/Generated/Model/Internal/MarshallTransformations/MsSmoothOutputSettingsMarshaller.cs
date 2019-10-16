@@ -45,6 +45,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MsSmoothOutputSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetH265PackagingType())
+            {
+                context.Writer.WritePropertyName("h265PackagingType");
+                context.Writer.Write(requestObject.H265PackagingType);
+            }
+
             if(requestObject.IsSetNameModifier())
             {
                 context.Writer.WritePropertyName("nameModifier");

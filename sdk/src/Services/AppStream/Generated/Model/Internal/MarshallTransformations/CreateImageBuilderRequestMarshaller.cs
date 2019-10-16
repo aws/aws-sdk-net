@@ -61,13 +61,29 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-12-01";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAccessEndpoints())
+                {
+                    context.Writer.WritePropertyName("AccessEndpoints");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAccessEndpointsListValue in publicRequest.AccessEndpoints)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AccessEndpointMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAccessEndpointsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetAppstreamAgentVersion())
                 {
                     context.Writer.WritePropertyName("AppstreamAgentVersion");
@@ -101,6 +117,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("EnableDefaultInternetAccess");
                     context.Writer.Write(publicRequest.EnableDefaultInternetAccess);
+                }
+
+                if(publicRequest.IsSetIamRoleArn())
+                {
+                    context.Writer.WritePropertyName("IamRoleArn");
+                    context.Writer.Write(publicRequest.IamRoleArn);
                 }
 
                 if(publicRequest.IsSetImageArn())

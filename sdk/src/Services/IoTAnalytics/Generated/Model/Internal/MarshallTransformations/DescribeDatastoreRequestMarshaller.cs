@@ -58,14 +58,14 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/datastores/{datastoreName}";
             if (!publicRequest.IsSetDatastoreName())
                 throw new AmazonIoTAnalyticsException("Request object does not have required field DatastoreName set");
-            uriResourcePath = uriResourcePath.Replace("{datastoreName}", StringUtils.FromStringWithSlashEncoding(publicRequest.DatastoreName));
+            request.AddPathResource("{datastoreName}", StringUtils.FromString(publicRequest.DatastoreName));
             
             if (publicRequest.IsSetIncludeStatistics())
                 request.Parameters.Add("includeStatistics", StringUtils.FromBool(publicRequest.IncludeStatistics));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/datastores/{datastoreName}";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

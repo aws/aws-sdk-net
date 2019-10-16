@@ -58,11 +58,11 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/cacertificate/{caCertificateId}";
             if (!publicRequest.IsSetCertificateId())
                 throw new AmazonIoTException("Request object does not have required field CertificateId set");
-            uriResourcePath = uriResourcePath.Replace("{caCertificateId}", StringUtils.FromStringWithSlashEncoding(publicRequest.CertificateId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{caCertificateId}", StringUtils.FromString(publicRequest.CertificateId));
+            request.ResourcePath = "/cacertificate/{caCertificateId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

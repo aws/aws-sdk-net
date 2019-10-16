@@ -58,10 +58,9 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/usageplans/{usageplanId}/keys";
             if (!publicRequest.IsSetUsagePlanId())
                 throw new AmazonAPIGatewayException("Request object does not have required field UsagePlanId set");
-            uriResourcePath = uriResourcePath.Replace("{usageplanId}", StringUtils.FromStringWithSlashEncoding(publicRequest.UsagePlanId));
+            request.AddPathResource("{usageplanId}", StringUtils.FromString(publicRequest.UsagePlanId));
             
             if (publicRequest.IsSetLimit())
                 request.Parameters.Add("limit", StringUtils.FromInt(publicRequest.Limit));
@@ -71,7 +70,8 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetPosition())
                 request.Parameters.Add("position", StringUtils.FromString(publicRequest.Position));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/usageplans/{usageplanId}/keys";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

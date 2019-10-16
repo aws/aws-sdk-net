@@ -44,7 +44,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property AdditionalMetricsToRetain. 
         /// <para>
         /// A list of metrics whose data is retained (stored). By default, data is retained for
-        /// any metric used in the profile's <code>behaviors</code> but it is also retained for
+        /// any metric used in the profile's <code>behaviors</code>, but it is also retained for
         /// any metric specified here.
         /// </para>
         /// </summary>
@@ -139,7 +139,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Metadata which can be used to manage the security profile.
+        /// Metadata that can be used to manage the security profile.
         /// </para>
         /// </summary>
         public List<Tag> Tags

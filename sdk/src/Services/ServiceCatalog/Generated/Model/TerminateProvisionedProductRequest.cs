@@ -147,7 +147,7 @@ namespace Amazon.ServiceCatalog.Model
         /// subsequent requests to terminate the same provisioned product always return <b>ResourceNotFound</b>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=128)]
         public string TerminateToken
         {
             get { return this._terminateToken; }

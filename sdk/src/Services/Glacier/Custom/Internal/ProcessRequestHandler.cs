@@ -63,10 +63,12 @@ namespace Amazon.Glacier.Internal
             var request = executionContext.RequestContext.Request;
             if (request.ResourcePath != null)
             {
-                if (request.ResourcePath.StartsWith("//", StringComparison.Ordinal))
+                var segments = request.ResourcePath.Split(new char[] { '/' }, 3, StringSplitOptions.None);
+                if(segments.Length >= 2 && segments[0].Length == 0 && request.PathResources[segments[1]]?.Length == 0)
                 {
-                    request.ResourcePath = "/-" + request.ResourcePath.Substring(1);
-                }
+                    //Example: /{accountid}/stuff when {accountid} is blank changes to //stuff when it must be /-/stuff
+                    request.PathResources[segments[1]] = "-";
+                }                                
             }
             request.Headers["x-amz-glacier-version"] = "2012-06-01";
         }

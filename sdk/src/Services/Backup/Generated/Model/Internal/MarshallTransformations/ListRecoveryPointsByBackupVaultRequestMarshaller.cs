@@ -58,10 +58,9 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-15";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/backup-vaults/{backupVaultName}/recovery-points/";
             if (!publicRequest.IsSetBackupVaultName())
                 throw new AmazonBackupException("Request object does not have required field BackupVaultName set");
-            uriResourcePath = uriResourcePath.Replace("{backupVaultName}", StringUtils.FromStringWithSlashEncoding(publicRequest.BackupVaultName));
+            request.AddPathResource("{backupVaultName}", StringUtils.FromString(publicRequest.BackupVaultName));
             
             if (publicRequest.IsSetByBackupPlanId())
                 request.Parameters.Add("backupPlanId", StringUtils.FromString(publicRequest.ByBackupPlanId));
@@ -83,7 +82,8 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/backup-vaults/{backupVaultName}/recovery-points/";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -36,12 +36,14 @@ namespace Amazon.DataSync.Model
         private DateTime? _creationTime;
         private string _currentTaskExecutionArn;
         private string _destinationLocationArn;
+        private List<string> _destinationNetworkInterfaceArns = new List<string>();
         private string _errorCode;
         private string _errorDetail;
         private List<FilterRule> _excludes = new List<FilterRule>();
         private string _name;
         private Options _options;
         private string _sourceLocationArn;
+        private List<string> _sourceNetworkInterfaceArns = new List<string>();
         private TaskStatus _status;
         private string _taskArn;
 
@@ -53,8 +55,8 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information on these groups, see "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
-        /// (Working with Log Groups and Log Streams) in the <i>Amazon CloudWatch UserGuide</i>.
+        /// For more information on these groups, see Working with Log Groups and Log Streams
+        /// in the <i>Amazon CloudWatch User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=562)]
@@ -127,6 +129,25 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DestinationNetworkInterfaceArns. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the destination ENIs (Elastic Network Interface)
+        /// that was created for your subnet.
+        /// </para>
+        /// </summary>
+        public List<string> DestinationNetworkInterfaceArns
+        {
+            get { return this._destinationNetworkInterfaceArns; }
+            set { this._destinationNetworkInterfaceArns = value; }
+        }
+
+        // Check to see if DestinationNetworkInterfaceArns property is set
+        internal bool IsSetDestinationNetworkInterfaceArns()
+        {
+            return this._destinationNetworkInterfaceArns != null && this._destinationNetworkInterfaceArns.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
         /// Errors that AWS DataSync encountered during execution of the task. You can use this
@@ -165,11 +186,16 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Excludes.  
+        /// Gets and sets the property Excludes. 
         /// <para>
-        /// Specifies that the task excludes files in the transfer based on the specified pattern
-        /// in the filter. Transfers all files in the task’s subdirectory, except files that match
-        /// the filter that is set. 
+        /// A list of filter rules that determines which files to exclude from a task. The list
+        /// should contain a single filter string that consists of the patterns to exclude. The
+        /// patterns are delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -250,14 +276,33 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SourceNetworkInterfaceArns. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the source ENIs (Elastic Network Interface) that
+        /// was created for your subnet.
+        /// </para>
+        /// </summary>
+        public List<string> SourceNetworkInterfaceArns
+        {
+            get { return this._sourceNetworkInterfaceArns; }
+            set { this._sourceNetworkInterfaceArns = value; }
+        }
+
+        // Check to see if SourceNetworkInterfaceArns property is set
+        internal bool IsSetSourceNetworkInterfaceArns()
+        {
+            return this._sourceNetworkInterfaceArns != null && this._sourceNetworkInterfaceArns.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the task that was described.
         /// </para>
         ///  
         /// <para>
-        /// For detailed information about task execution statuses, see "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html#understand-task-creation-statuses"
-        /// (Understanding Task Statuses).
+        /// For detailed information about task execution statuses, see Understanding Task Statuses
+        /// in the <i>AWS DataSync User Guide.</i> 
         /// </para>
         /// </summary>
         public TaskStatus Status

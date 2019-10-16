@@ -58,14 +58,14 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/apikeys/{api_Key}";
             if (!publicRequest.IsSetApiKey())
                 throw new AmazonAPIGatewayException("Request object does not have required field ApiKey set");
-            uriResourcePath = uriResourcePath.Replace("{api_Key}", StringUtils.FromStringWithSlashEncoding(publicRequest.ApiKey));
+            request.AddPathResource("{api_Key}", StringUtils.FromString(publicRequest.ApiKey));
             
             if (publicRequest.IsSetIncludeValue())
                 request.Parameters.Add("includeValue", StringUtils.FromBool(publicRequest.IncludeValue));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/apikeys/{api_Key}";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

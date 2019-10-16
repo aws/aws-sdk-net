@@ -30,8 +30,8 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the ActivateGateway operation.
     /// Activates the gateway you previously deployed on your host. In the activation process,
-    /// you specify information such as the region you want to use for storing snapshots or
-    /// tapes, the time zone for scheduled snapshots the gateway snapshot schedule window,
+    /// you specify information such as the AWS Region that you want to use for storing snapshots
+    /// or tapes, the time zone for scheduled snapshots the gateway snapshot schedule window,
     /// an activation key, and a name for your gateway. The activation process also associates
     /// your gateway with your account; for more information, see <a>UpdateGatewayInformation</a>.
     /// 
@@ -103,10 +103,10 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GatewayRegion. 
         /// <para>
-        /// A value that indicates the region where you want to store your data. The gateway region
-        /// specified must be the same region as the region in your <code>Host</code> header in
-        /// the request. For more information about available regions and endpoints for AWS Storage
-        /// Gateway, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
+        /// A value that indicates the AWS Region where you want to store your data. The gateway
+        /// AWS Region specified must be the same AWS Region as the AWS Region in your <code>Host</code>
+        /// header in the request. For more information about available AWS Regions and endpoints
+        /// for AWS Storage Gateway, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
         /// and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.
         /// </para>
         ///  
@@ -203,15 +203,15 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of up to 50 tags that can be assigned to the gateway. Each tag is a key-value
+        /// A list of up to 50 tags that you can assign to the gateway. Each tag is a key-value
         /// pair.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Valid characters for key and value are letters, spaces, and numbers representable
+        /// Valid characters for key and value are letters, spaces, and numbers that can be represented
         /// in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum
         /// length of a tag's key is 128 characters, and the maximum length for a tag's value
-        /// is 256.
+        /// is 256 characters.
         /// </para>
         ///  </note>
         /// </summary>

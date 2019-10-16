@@ -431,6 +431,11 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// This flag is set to <code>true</code> if remote debugging is enabled for the device.
         /// </para>
+        ///  
+        /// <para>
+        ///  <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+        /// longer supported</a>.</i> 
+        /// </para>
         /// </summary>
         public bool RemoteDebugEnabled
         {

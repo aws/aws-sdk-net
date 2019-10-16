@@ -58,14 +58,14 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-14";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/v1/tags/{resourceArn}";
             if (!publicRequest.IsSetResourceArn())
                 throw new AmazonKafkaException("Request object does not have required field ResourceArn set");
-            uriResourcePath = uriResourcePath.Replace("{resourceArn}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceArn));
+            request.AddPathResource("{resourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
             
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/v1/tags/{resourceArn}";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

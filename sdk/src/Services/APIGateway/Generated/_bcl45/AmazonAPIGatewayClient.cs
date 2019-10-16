@@ -1859,6 +1859,10 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the DeleteDomainName service method.</param>
         /// 
         /// <returns>The response from the DeleteDomainName service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
@@ -1887,6 +1891,10 @@ namespace Amazon.APIGateway
         /// </param>
         /// 
         /// <returns>The response from the DeleteDomainName service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>

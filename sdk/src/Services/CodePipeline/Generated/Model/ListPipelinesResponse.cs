@@ -39,8 +39,8 @@ namespace Amazon.CodePipeline.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the amount of returned information is significantly large, an identifier is also
-        /// returned which can be used in a subsequent list pipelines call to return the next
-        /// set of pipelines in the list.
+        /// returned. It can be used in a subsequent list pipelines call to return the next set
+        /// of pipelines in the list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

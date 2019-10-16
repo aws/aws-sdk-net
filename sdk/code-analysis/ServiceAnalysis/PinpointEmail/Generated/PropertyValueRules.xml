@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="utf-16"?>
-<property-value-rules />
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.PinpointEmail.Model.Template.TemplateData</property>
+    <max>262144</max>
+  </property-value-rule>
+</property-value-rules>

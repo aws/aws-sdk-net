@@ -38,8 +38,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CatalogId. 
         /// <para>
-        /// The ID of the Data Catalog for which to retrieve the security configuration. If none
-        /// is provided, the AWS account ID is used by default.
+        /// The ID of the Data Catalog to retrieve the security configuration for. If none is
+        /// provided, the AWS account ID is used by default.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

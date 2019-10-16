@@ -29,7 +29,8 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAlarms operation.
-    /// Deletes the specified alarms. In the event of an error, no alarms are deleted.
+    /// Deletes the specified alarms. You can delete up to 50 alarms in one operation. In
+    /// the event of an error, no alarms are deleted.
     /// </summary>
     public partial class DeleteAlarmsRequest : AmazonCloudWatchRequest
     {

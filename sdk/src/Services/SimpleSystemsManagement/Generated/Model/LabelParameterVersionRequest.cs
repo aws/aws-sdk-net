@@ -127,7 +127,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ParameterVersion. 
         /// <para>
         /// The specific version of the parameter on which you want to attach one or more labels.
-        /// If no version is specified, the system attaches the label to the latest version.)
+        /// If no version is specified, the system attaches the label to the latest version.
         /// </para>
         /// </summary>
         public long ParameterVersion

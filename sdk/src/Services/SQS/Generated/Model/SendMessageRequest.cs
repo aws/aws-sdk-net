@@ -56,6 +56,7 @@ namespace Amazon.SQS.Model
         private string _messageBody;
         private string _messageDeduplicationId;
         private string _messageGroupId;
+        private Dictionary<string, MessageSystemAttributeValue> _messageSystemAttributes = new Dictionary<string, MessageSystemAttributeValue>();
         private string _queueUrl;
 
         /// <summary>
@@ -301,6 +302,36 @@ namespace Amazon.SQS.Model
         internal bool IsSetMessageGroupId()
         {
             return this._messageGroupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MessageSystemAttributes. 
+        /// <para>
+        /// The message system attribute to send. Each message system attribute consists of a
+        /// <code>Name</code>, <code>Type</code>, and <code>Value</code>.
+        /// </para>
+        ///  <important> <ul> <li> 
+        /// <para>
+        /// Currently, the only supported message system attribute is <code>AWSTraceHeader</code>.
+        /// Its type must be <code>String</code> and its value must be a correctly formatted AWS
+        /// X-Ray trace string.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The size of a message system attribute doesn't count towards the total size of a message.
+        /// </para>
+        ///  </li> </ul> </important>
+        /// </summary>
+        public Dictionary<string, MessageSystemAttributeValue> MessageSystemAttributes
+        {
+            get { return this._messageSystemAttributes; }
+            set { this._messageSystemAttributes = value; }
+        }
+
+        // Check to see if MessageSystemAttributes property is set
+        internal bool IsSetMessageSystemAttributes()
+        {
+            return this._messageSystemAttributes != null && this._messageSystemAttributes.Count > 0; 
         }
 
         /// <summary>

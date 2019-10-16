@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The SMS multi-factor authentication (MFA) settings type.
+    /// The type used for enabling SMS MFA at the user level.
     /// </summary>
     public partial class SMSMfaSettingsType
     {
@@ -56,7 +56,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property PreferredMfa. 
         /// <para>
-        /// The preferred MFA method.
+        /// Specifies whether SMS is the preferred MFA method.
         /// </para>
         /// </summary>
         public bool PreferredMfa

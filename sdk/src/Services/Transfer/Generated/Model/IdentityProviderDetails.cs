@@ -29,7 +29,7 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Returns information related to the type of user authentication that is in use for
-    /// a server's users. A server can only have one method of authentication.
+    /// a server's users. A server can have only one method of authentication.
     /// </summary>
     public partial class IdentityProviderDetails
     {
@@ -39,8 +39,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property InvocationRole. 
         /// <para>
-        /// The <code>Role</code> parameter provides the type of <code>InvocationRole</code> used
-        /// to authenticate the user account.
+        /// The <code>InvocationRole</code> parameter provides the type of <code>InvocationRole</code>
+        /// used to authenticate the user account.
         /// </para>
         /// </summary>
         public string InvocationRole
@@ -58,8 +58,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// The <code>IdentityProviderDetail</code> parameter contains the location of the service
-        /// endpoint used to authenticate users.
+        /// The <code>Url</code> parameter provides contains the location of the service endpoint
+        /// used to authenticate users.
         /// </para>
         /// </summary>
         public string Url

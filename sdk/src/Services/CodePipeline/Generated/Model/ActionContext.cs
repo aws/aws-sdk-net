@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents the context of an action within the stage of a pipeline to a job worker.
+    /// Represents the context of an action in the stage of a pipeline to a job worker.
     /// </summary>
     public partial class ActionContext
     {
@@ -56,7 +56,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the action within the context of a job.
+        /// The name of the action in the context of a job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

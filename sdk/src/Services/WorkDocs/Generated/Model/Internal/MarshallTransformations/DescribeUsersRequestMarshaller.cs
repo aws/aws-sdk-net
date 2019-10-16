@@ -58,7 +58,6 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-05-01";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/api/v1/users";
             
             if (publicRequest.IsSetFields())
                 request.Parameters.Add("fields", StringUtils.FromString(publicRequest.Fields));
@@ -86,7 +85,8 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetUserIds())
                 request.Parameters.Add("userIds", StringUtils.FromString(publicRequest.UserIds));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/api/v1/users";
+            request.MarshallerVersion = 2;
         
             if(publicRequest.IsSetAuthenticationToken())
                 request.Headers["Authentication"] = publicRequest.AuthenticationToken;

@@ -41,7 +41,11 @@ namespace Amazon.EC2.Model
         private int? _totalInstanceCount;
 
         /// <summary>
-        /// Gets and sets the property AvailableInstanceCount.
+        /// Gets and sets the property AvailableInstanceCount. 
+        /// <para>
+        /// The remaining capacity. Indicates the number of instances that can be launched in
+        /// the Capacity Reservation.
+        /// </para>
         /// </summary>
         public int AvailableInstanceCount
         {
@@ -56,7 +60,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CapacityReservationId.
+        /// Gets and sets the property CapacityReservationId. 
+        /// <para>
+        /// The ID of the Capacity Reservation.
+        /// </para>
         /// </summary>
         public string CapacityReservationId
         {
@@ -71,7 +78,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceType.
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        /// The type of instance for which the Capacity Reservation reserves capacity.
+        /// </para>
         /// </summary>
         public string InstanceType
         {
@@ -86,7 +96,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceUsages.
+        /// Gets and sets the property InstanceUsages. 
+        /// <para>
+        /// Information about the Capacity Reservation usage.
+        /// </para>
         /// </summary>
         public List<InstanceUsage> InstanceUsages
         {
@@ -101,7 +114,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token to use to retrieve the next page of results. This value is <code>null</code>
+        /// when there are no more results to return.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -116,7 +133,39 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property State.
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The current state of the Capacity Reservation. A Capacity Reservation can be in one
+        /// of the following states:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>active</code> - The Capacity Reservation is active and the capacity is available
+        /// for your use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>expired</code> - The Capacity Reservation expired automatically at the date
+        /// and time specified in your request. The reserved capacity is no longer available for
+        /// your use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved
+        /// capacity is no longer available for your use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>pending</code> - The Capacity Reservation request was successful but the capacity
+        /// provisioning is still pending.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>failed</code> - The Capacity Reservation request has failed. A request might
+        /// fail due to invalid request parameters, capacity constraints, or instance limit constraints.
+        /// Failed requests are retained for 60 minutes.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public CapacityReservationState State
         {
@@ -131,7 +180,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TotalInstanceCount.
+        /// Gets and sets the property TotalInstanceCount. 
+        /// <para>
+        /// The number of instances for which the Capacity Reservation reserves capacity.
+        /// </para>
         /// </summary>
         public int TotalInstanceCount
         {

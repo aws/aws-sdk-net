@@ -39,6 +39,7 @@ namespace Amazon.Glue.Model
         private string _extraJarsS3Path;
         private string _extraPythonLibsS3Path;
         private string _failureReason;
+        private string _glueVersion;
         private int? _numberOfNodes;
         private int? _numberOfWorkers;
         private string _roleArn;
@@ -55,6 +56,28 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property Arguments. 
         /// <para>
         /// The map of arguments used to configure this <code>DevEndpoint</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid arguments are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>"--enable-glue-datacatalog": ""</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"GLUE_PYTHON_VERSION": "3"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"GLUE_PYTHON_VERSION": "2"</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can specify a version of Python support for development endpoints by using the
+        /// <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code>
+        /// APIs. If no arguments are provided, the version defaults to Python 2.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -178,6 +201,27 @@ namespace Amazon.Glue.Model
         internal bool IsSetFailureReason()
         {
             return this._failureReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GlueVersion. 
+        /// <para>
+        /// Glue version determines the versions of Apache Spark and Python that AWS Glue supports.
+        /// The Python version indicates the version supported for running your ETL scripts on
+        /// development endpoints. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string GlueVersion
+        {
+            get { return this._glueVersion; }
+            set { this._glueVersion = value; }
+        }
+
+        // Check to see if GlueVersion property is set
+        internal bool IsSetGlueVersion()
+        {
+            return this._glueVersion != null;
         }
 
         /// <summary>

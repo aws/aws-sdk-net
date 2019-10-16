@@ -25,6 +25,52 @@ namespace Amazon.Amplify
 {
 
     /// <summary>
+    /// Constants used for properties of type ArtifactType.
+    /// </summary>
+    public class ArtifactType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TEST for ArtifactType
+        /// </summary>
+        public static readonly ArtifactType TEST = new ArtifactType("TEST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ArtifactType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ArtifactType FindValue(string value)
+        {
+            return FindValue<ArtifactType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ArtifactType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DomainStatus.
     /// </summary>
     public class DomainStatus : ConstantClass
@@ -294,6 +340,10 @@ namespace Amazon.Amplify
         /// Constant PRODUCTION for Stage
         /// </summary>
         public static readonly Stage PRODUCTION = new Stage("PRODUCTION");
+        /// <summary>
+        /// Constant PULL_REQUEST for Stage
+        /// </summary>
+        public static readonly Stage PULL_REQUEST = new Stage("PULL_REQUEST");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

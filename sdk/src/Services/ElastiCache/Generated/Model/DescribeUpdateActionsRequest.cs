@@ -33,6 +33,8 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class DescribeUpdateActionsRequest : AmazonElastiCacheRequest
     {
+        private List<string> _cacheClusterIds = new List<string>();
+        private string _engine;
         private string _marker;
         private int? _maxRecords;
         private List<string> _replicationGroupIds = new List<string>();
@@ -41,6 +43,43 @@ namespace Amazon.ElastiCache.Model
         private TimeRangeFilter _serviceUpdateTimeRange;
         private bool? _showNodeLevelUpdateStatus;
         private List<string> _updateActionStatus = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property CacheClusterIds. 
+        /// <para>
+        /// The cache cluster IDs
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=20)]
+        public List<string> CacheClusterIds
+        {
+            get { return this._cacheClusterIds; }
+            set { this._cacheClusterIds = value; }
+        }
+
+        // Check to see if CacheClusterIds property is set
+        internal bool IsSetCacheClusterIds()
+        {
+            return this._cacheClusterIds != null && this._cacheClusterIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Engine. 
+        /// <para>
+        /// The Elasticache engine to which the update applies. Either Redis or Memcached 
+        /// </para>
+        /// </summary>
+        public string Engine
+        {
+            get { return this._engine; }
+            set { this._engine = value; }
+        }
+
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
+        {
+            return this._engine != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Marker. 

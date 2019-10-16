@@ -58,14 +58,14 @@ namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-14";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/projects/{projectName}/placements/{placementName}/devices";
             if (!publicRequest.IsSetPlacementName())
                 throw new AmazonIoT1ClickProjectsException("Request object does not have required field PlacementName set");
-            uriResourcePath = uriResourcePath.Replace("{placementName}", StringUtils.FromStringWithSlashEncoding(publicRequest.PlacementName));
+            request.AddPathResource("{placementName}", StringUtils.FromString(publicRequest.PlacementName));
             if (!publicRequest.IsSetProjectName())
                 throw new AmazonIoT1ClickProjectsException("Request object does not have required field ProjectName set");
-            uriResourcePath = uriResourcePath.Replace("{projectName}", StringUtils.FromStringWithSlashEncoding(publicRequest.ProjectName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{projectName}", StringUtils.FromString(publicRequest.ProjectName));
+            request.ResourcePath = "/projects/{projectName}/placements/{placementName}/devices";
+            request.MarshallerVersion = 2;
 
             return request;
         }

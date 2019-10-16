@@ -58,17 +58,17 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-15";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/tags/{resourceArn}/";
             if (!publicRequest.IsSetResourceArn())
                 throw new AmazonBackupException("Request object does not have required field ResourceArn set");
-            uriResourcePath = uriResourcePath.Replace("{resourceArn}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceArn));
+            request.AddPathResource("{resourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/tags/{resourceArn}/";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

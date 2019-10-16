@@ -60,6 +60,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.BgpAsn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("certificateArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CertificateArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("customerGatewayId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

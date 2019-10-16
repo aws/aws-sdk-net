@@ -3552,12 +3552,6 @@ namespace Amazon.SQS
         /// A new tag with a key identical to that of an existing tag overwrites the existing
         /// tag.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Tagging actions are limited to 5 TPS per AWS account. If your application requires
-        /// a higher throughput, file a <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical
-        /// support request</a>.
-        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For a full list of tag restrictions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Limits
@@ -3605,12 +3599,6 @@ namespace Amazon.SQS
         /// <para>
         /// A new tag with a key identical to that of an existing tag overwrites the existing
         /// tag.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Tagging actions are limited to 5 TPS per AWS account. If your application requires
-        /// a higher throughput, file a <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical
-        /// support request</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>

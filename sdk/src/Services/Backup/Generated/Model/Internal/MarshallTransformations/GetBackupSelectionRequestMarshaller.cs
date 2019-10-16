@@ -58,14 +58,14 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-15";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/backup/plans/{backupPlanId}/selections/{selectionId}";
             if (!publicRequest.IsSetBackupPlanId())
                 throw new AmazonBackupException("Request object does not have required field BackupPlanId set");
-            uriResourcePath = uriResourcePath.Replace("{backupPlanId}", StringUtils.FromStringWithSlashEncoding(publicRequest.BackupPlanId));
+            request.AddPathResource("{backupPlanId}", StringUtils.FromString(publicRequest.BackupPlanId));
             if (!publicRequest.IsSetSelectionId())
                 throw new AmazonBackupException("Request object does not have required field SelectionId set");
-            uriResourcePath = uriResourcePath.Replace("{selectionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.SelectionId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{selectionId}", StringUtils.FromString(publicRequest.SelectionId));
+            request.ResourcePath = "/backup/plans/{backupPlanId}/selections/{selectionId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

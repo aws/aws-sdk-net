@@ -139,6 +139,11 @@ namespace Amazon.CodeCommit
     /// </para>
     ///  <ul> <li> 
     /// <para>
+    ///  <a>BatchGetCommits</a>, which returns information about one or more commits in a
+    /// repository
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>CreateCommit</a>, which creates a commit for changes to a repository.
     /// </para>
     ///  </li> <li> 
@@ -661,6 +666,99 @@ namespace Amazon.CodeCommit
         public virtual BatchDescribeMergeConflictsResponse EndBatchDescribeMergeConflicts(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchDescribeMergeConflictsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchGetCommits
+
+        /// <summary>
+        /// Returns information about the contents of one or more commits in a repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCommits service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetCommits service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitIdsLimitExceededException">
+        /// The maximum number of allowed commit IDs in a batch request is 100. Verify that your
+        /// batch requests contains no more than 100 commit IDs, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitIdsListRequiredException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required but was not specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetCommits">REST API Reference for BatchGetCommits Operation</seealso>
+        public virtual BatchGetCommitsResponse BatchGetCommits(BatchGetCommitsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetCommitsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCommitsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetCommitsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetCommits operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCommits operation on AmazonCodeCommitClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetCommits
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetCommits">REST API Reference for BatchGetCommits Operation</seealso>
+        public virtual IAsyncResult BeginBatchGetCommits(BatchGetCommitsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetCommitsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCommitsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetCommits operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetCommits.</param>
+        /// 
+        /// <returns>Returns a  BatchGetCommitsResult from CodeCommit.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetCommits">REST API Reference for BatchGetCommits Operation</seealso>
+        public virtual BatchGetCommitsResponse EndBatchGetCommits(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchGetCommitsResponse>(asyncResult);
         }
 
         #endregion

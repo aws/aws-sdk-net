@@ -29,7 +29,7 @@ namespace Amazon.RAM.Model
 {
     /// <summary>
     /// Container for the parameters to the GetResourcePolicies operation.
-    /// Gets the policies for the specifies resources.
+    /// Gets the policies for the specified resources that you own and have shared.
     /// </summary>
     public partial class GetResourcePoliciesRequest : AmazonRAMRequest
     {

@@ -182,7 +182,7 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property KmsKeyARN. 
         /// <para>
         /// The <code>KmsKeyARN</code> Amazon Resource Name (ARN) associated with this cluster.
-        /// This ARN was created using the <a href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
+        /// This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
         /// API action in AWS Key Management Service (AWS KMS).
         /// </para>
         /// </summary>
@@ -240,7 +240,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The role ARN associated with this cluster. This ARN was created using the <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+        /// The role ARN associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
         /// API action in AWS Identity and Access Management (IAM).
         /// </para>
         /// </summary>
@@ -261,8 +261,8 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property ShippingOption. 
         /// <para>
         /// The shipping speed for each node in this cluster. This speed doesn't dictate how soon
-        /// you'll get each device, rather it represents how quickly each device moves to its
-        /// destination while in transit. Regional shipping speeds are as follows:
+        /// you'll get each Snowball Edge device, rather it represents how quickly each device
+        /// moves to its destination while in transit. Regional shipping speeds are as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -271,13 +271,14 @@ namespace Amazon.Snowball.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In the European Union (EU), you have access to express shipping. Typically, devices
-        /// shipped express are delivered in about a day. In addition, most countries in the EU
-        /// have access to standard shipping, which typically takes less than a week, one way.
+        /// In the European Union (EU), you have access to express shipping. Typically, Snowball
+        /// Edges shipped express are delivered in about a day. In addition, most countries in
+        /// the EU have access to standard shipping, which typically takes less than a week, one
+        /// way.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In India, devices are delivered in one to seven days.
+        /// In India, Snowball Edges are delivered in one to seven days.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -300,8 +301,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property SnowballType. 
         /// <para>
-        /// The type of AWS Snowball device to use for this cluster. The only supported device
-        /// types for cluster jobs are <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
+        /// The type of AWS Snowball device to use for this cluster. Currently, the only supported
+        /// device type for cluster jobs is <code>EDGE</code>.
         /// </para>
         /// </summary>
         public SnowballType SnowballType

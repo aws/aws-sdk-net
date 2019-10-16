@@ -40,6 +40,11 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
+    /// To queue a purchase for a future date and time, specify a purchase time. If you do
+    /// not specify a purchase time, the default is the current time.
+    /// </para>
+    ///  
+    /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
     /// Instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
     /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -49,6 +54,7 @@ namespace Amazon.EC2.Model
     {
         private int? _instanceCount;
         private ReservedInstanceLimitPrice _limitPrice;
+        private DateTime? _purchaseTime;
         private string _reservedInstancesOfferingId;
 
         /// <summary>
@@ -103,6 +109,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetLimitPrice()
         {
             return this._limitPrice != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PurchaseTime. 
+        /// <para>
+        /// The time at which to purchase the Reserved Instance.
+        /// </para>
+        /// </summary>
+        public DateTime PurchaseTime
+        {
+            get { return this._purchaseTime.GetValueOrDefault(); }
+            set { this._purchaseTime = value; }
+        }
+
+        // Check to see if PurchaseTime property is set
+        internal bool IsSetPurchaseTime()
+        {
+            return this._purchaseTime.HasValue; 
         }
 
         /// <summary>

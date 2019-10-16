@@ -82,6 +82,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.SpatialFilterSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("temporalFilterSettings", targetDepth))
+                {
+                    var unmarshaller = NoiseReducerTemporalFilterSettingsUnmarshaller.Instance;
+                    unmarshalledObject.TemporalFilterSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

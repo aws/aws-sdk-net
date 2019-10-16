@@ -67,7 +67,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The Redis engine to which the service update applies
+        /// The Elasticache engine to which the update applies. Either Redis or Memcached
         /// </para>
         /// </summary>
         public string Engine
@@ -85,7 +85,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The Redis engine version to which the service update applies
+        /// The Elasticache engine version to which the update applies. Either Redis or Memcached
+        /// engine version
         /// </para>
         /// </summary>
         public string EngineVersion

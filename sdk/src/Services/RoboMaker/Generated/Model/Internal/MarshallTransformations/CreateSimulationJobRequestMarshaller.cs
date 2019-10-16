@@ -59,8 +59,8 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-06-29";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/createSimulationJob";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/createSimulationJob";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -77,6 +77,22 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientRequestToken");
                     context.Writer.Write(Guid.NewGuid().ToString());                                                
                 }
+                if(publicRequest.IsSetDataSources())
+                {
+                    context.Writer.WritePropertyName("dataSources");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestDataSourcesListValue in publicRequest.DataSources)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DataSourceConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequestDataSourcesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetFailureBehavior())
                 {
                     context.Writer.WritePropertyName("failureBehavior");
@@ -87,6 +103,17 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("iamRole");
                     context.Writer.Write(publicRequest.IamRole);
+                }
+
+                if(publicRequest.IsSetLoggingConfig())
+                {
+                    context.Writer.WritePropertyName("loggingConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LoggingConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LoggingConfig, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetMaxJobDurationInSeconds())

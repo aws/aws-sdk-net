@@ -34,7 +34,7 @@ namespace Amazon.Lightsail.Model
     /// 
     ///  
     /// <para>
-    /// The <code>asdf</code> operation GetRelationalDatabaseMasterUserPassword supports tag-based
+    /// The <code>GetRelationalDatabaseMasterUserPassword</code> operation supports tag-based
     /// access control via resource tags applied to the resource identified by relationalDatabaseName.
     /// </para>
     /// </summary>

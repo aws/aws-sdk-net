@@ -129,6 +129,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.IncludeOpForFullLoad);
             }
 
+            if(requestObject.IsSetParquetTimestampInMillisecond())
+            {
+                context.Writer.WritePropertyName("ParquetTimestampInMillisecond");
+                context.Writer.Write(requestObject.ParquetTimestampInMillisecond);
+            }
+
             if(requestObject.IsSetParquetVersion())
             {
                 context.Writer.WritePropertyName("ParquetVersion");

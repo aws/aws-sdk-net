@@ -33,6 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class LabelParameterVersionResponse : AmazonWebServiceResponse
     {
         private List<string> _invalidLabels = new List<string>();
+        private long? _parameterVersion;
 
         /// <summary>
         /// Gets and sets the property InvalidLabels. 
@@ -53,6 +54,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetInvalidLabels()
         {
             return this._invalidLabels != null && this._invalidLabels.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParameterVersion. 
+        /// <para>
+        /// The version of the parameter that has been labeled.
+        /// </para>
+        /// </summary>
+        public long ParameterVersion
+        {
+            get { return this._parameterVersion.GetValueOrDefault(); }
+            set { this._parameterVersion = value; }
+        }
+
+        // Check to see if ParameterVersion property is set
+        internal bool IsSetParameterVersion()
+        {
+            return this._parameterVersion.HasValue; 
         }
 
     }

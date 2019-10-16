@@ -59,11 +59,11 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/billing-groups/{billingGroupName}";
             if (!publicRequest.IsSetBillingGroupName())
                 throw new AmazonIoTException("Request object does not have required field BillingGroupName set");
-            uriResourcePath = uriResourcePath.Replace("{billingGroupName}", StringUtils.FromStringWithSlashEncoding(publicRequest.BillingGroupName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{billingGroupName}", StringUtils.FromString(publicRequest.BillingGroupName));
+            request.ResourcePath = "/billing-groups/{billingGroupName}";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

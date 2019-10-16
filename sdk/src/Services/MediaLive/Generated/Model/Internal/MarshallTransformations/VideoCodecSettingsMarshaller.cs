@@ -67,6 +67,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetH265Settings())
+            {
+                context.Writer.WritePropertyName("h265Settings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = H265SettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.H265Settings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

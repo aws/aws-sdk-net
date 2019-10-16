@@ -58,11 +58,11 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-26";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/v1/email/identities/{EmailIdentity}";
             if (!publicRequest.IsSetEmailIdentity())
                 throw new AmazonPinpointEmailException("Request object does not have required field EmailIdentity set");
-            uriResourcePath = uriResourcePath.Replace("{EmailIdentity}", StringUtils.FromStringWithSlashEncoding(publicRequest.EmailIdentity));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{EmailIdentity}", StringUtils.FromString(publicRequest.EmailIdentity));
+            request.ResourcePath = "/v1/email/identities/{EmailIdentity}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -29,7 +29,8 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateBaiduChannel operation.
-    /// Updates the settings of the Baidu channel for an application.
+    /// Enables the Baidu channel for an application or updates the status and settings of
+    /// the Baidu channel for an application.
     /// </summary>
     public partial class UpdateBaiduChannelRequest : AmazonPinpointRequest
     {

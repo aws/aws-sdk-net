@@ -58,17 +58,17 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-06-07";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/greengrass/definition/connectors/{ConnectorDefinitionId}/versions/{ConnectorDefinitionVersionId}";
             if (!publicRequest.IsSetConnectorDefinitionId())
                 throw new AmazonGreengrassException("Request object does not have required field ConnectorDefinitionId set");
-            uriResourcePath = uriResourcePath.Replace("{ConnectorDefinitionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ConnectorDefinitionId));
+            request.AddPathResource("{ConnectorDefinitionId}", StringUtils.FromString(publicRequest.ConnectorDefinitionId));
             if (!publicRequest.IsSetConnectorDefinitionVersionId())
                 throw new AmazonGreengrassException("Request object does not have required field ConnectorDefinitionVersionId set");
-            uriResourcePath = uriResourcePath.Replace("{ConnectorDefinitionVersionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ConnectorDefinitionVersionId));
+            request.AddPathResource("{ConnectorDefinitionVersionId}", StringUtils.FromString(publicRequest.ConnectorDefinitionVersionId));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/greengrass/definition/connectors/{ConnectorDefinitionId}/versions/{ConnectorDefinitionVersionId}";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

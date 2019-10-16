@@ -42,6 +42,7 @@ namespace Amazon.AppStream.Model
         private bool? _enableDefaultInternetAccess;
         private List<FleetError> _fleetErrors = new List<FleetError>();
         private FleetType _fleetType;
+        private string _iamRoleArn;
         private int? _idleDisconnectTimeoutInSeconds;
         private string _imageArn;
         private string _imageName;
@@ -54,7 +55,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN for the fleet.
+        /// The Amazon Resource Name (ARN) for the fleet.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -253,6 +254,27 @@ namespace Amazon.AppStream.Model
         internal bool IsSetFleetType()
         {
             return this._fleetType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IamRoleArn. 
+        /// <para>
+        /// The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet
+        /// instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation
+        /// and passes the ARN of the role to use. The operation creates a new session with temporary
+        /// credentials.
+        /// </para>
+        /// </summary>
+        public string IamRoleArn
+        {
+            get { return this._iamRoleArn; }
+            set { this._iamRoleArn = value; }
+        }
+
+        // Check to see if IamRoleArn property is set
+        internal bool IsSetIamRoleArn()
+        {
+            return this._iamRoleArn != null;
         }
 
         /// <summary>

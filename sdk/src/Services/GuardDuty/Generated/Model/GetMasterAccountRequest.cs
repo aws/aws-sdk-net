@@ -29,8 +29,8 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMasterAccount operation.
-    /// Provides the details for the GuardDuty master account to the current GuardDuty member
-    /// account.
+    /// Provides the details for the GuardDuty master account associated with the current
+    /// GuardDuty member account.
     /// </summary>
     public partial class GetMasterAccountRequest : AmazonGuardDutyRequest
     {

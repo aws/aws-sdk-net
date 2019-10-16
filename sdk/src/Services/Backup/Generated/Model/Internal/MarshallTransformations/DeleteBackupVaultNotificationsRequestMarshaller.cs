@@ -58,11 +58,11 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-15";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/backup-vaults/{backupVaultName}/notification-configuration";
             if (!publicRequest.IsSetBackupVaultName())
                 throw new AmazonBackupException("Request object does not have required field BackupVaultName set");
-            uriResourcePath = uriResourcePath.Replace("{backupVaultName}", StringUtils.FromStringWithSlashEncoding(publicRequest.BackupVaultName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{backupVaultName}", StringUtils.FromString(publicRequest.BackupVaultName));
+            request.ResourcePath = "/backup-vaults/{backupVaultName}/notification-configuration";
+            request.MarshallerVersion = 2;
 
             return request;
         }

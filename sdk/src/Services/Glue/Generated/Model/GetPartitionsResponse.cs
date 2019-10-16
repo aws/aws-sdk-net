@@ -38,8 +38,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A continuation token, if the returned list of partitions does not does not include
-        /// the last one.
+        /// A continuation token, if the returned list of partitions does not include the last
+        /// one.
         /// </para>
         /// </summary>
         public string NextToken

@@ -94,10 +94,13 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// If you aren't planning to migrate existing users from an existing SFTP server to a
         /// new AWS SFTP server, don't update the host key. Accidentally changing a server's host
-        /// key can be disruptive. For more information, see <a>change-host-key</a> in the <i>AWS
-        /// SFTP User Guide.</i> 
+        /// key can be disruptive.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        ///  For more information, see "https://docs.aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key"
+        /// in the <i>AWS SFTP User Guide.</i> 
+        /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]
         public string HostKey

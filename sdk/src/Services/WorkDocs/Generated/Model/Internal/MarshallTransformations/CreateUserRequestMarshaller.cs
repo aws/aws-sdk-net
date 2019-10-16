@@ -59,8 +59,8 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-05-01";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/api/v1/users";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/api/v1/users";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

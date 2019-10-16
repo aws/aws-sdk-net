@@ -632,6 +632,10 @@
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeTrainingJobResponse.BillableTimeInSeconds</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeTrainingJobResponse.FailureReason</property>
     <max>1024</max>
   </property-value-rule>
@@ -656,6 +660,10 @@
     <min>1</min>
     <max>63</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeTrainingJobResponse.TrainingTimeInSeconds</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeTrainingJobResponse.TuningJobArn</property>
@@ -1320,6 +1328,16 @@
     <pattern>[A-Za-z0-9\.\-_]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.CheckpointConfig.LocalPath</property>
+    <max>4096</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CheckpointConfig.S3Uri</property>
+    <max>1024</max>
+    <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.CodeRepositorySummary.CodeRepositoryArn</property>
     <min>1</min>
     <max>2048</max>
@@ -1462,6 +1480,16 @@
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.FileSystemDataSource.DirectoryPath</property>
+    <max>4096</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.FileSystemDataSource.FileSystemId</property>
+    <min>11</min>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.Filter.Name</property>
     <min>1</min>
     <max>255</max>
@@ -1529,7 +1557,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.HumanTaskConfig.TaskTimeLimitInSeconds</property>
-    <min>1</min>
+    <min>30</min>
     <max>28800</max>
   </property-value-rule>
   <property-value-rule>
@@ -2062,6 +2090,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.StoppingCondition.MaxRuntimeInSeconds</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.StoppingCondition.MaxWaitTimeInSeconds</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>

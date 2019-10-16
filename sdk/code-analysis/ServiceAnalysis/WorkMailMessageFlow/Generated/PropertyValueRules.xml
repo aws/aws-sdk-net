@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.WorkMailMessageFlow.Model.GetRawMessageContentRequest.MessageId</property>
+    <min>1</min>
+    <max>120</max>
+    <pattern>[a-z0-9\-]*</pattern>
+  </property-value-rule>
+</property-value-rules>

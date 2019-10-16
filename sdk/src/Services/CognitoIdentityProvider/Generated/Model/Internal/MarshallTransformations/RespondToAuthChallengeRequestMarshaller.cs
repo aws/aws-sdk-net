@@ -61,8 +61,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-04-18";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -103,6 +103,20 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("ClientId");
                     context.Writer.Write(publicRequest.ClientId);
+                }
+
+                if(publicRequest.IsSetClientMetadata())
+                {
+                    context.Writer.WritePropertyName("ClientMetadata");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestClientMetadataKvp in publicRequest.ClientMetadata)
+                    {
+                        context.Writer.WritePropertyName(publicRequestClientMetadataKvp.Key);
+                        var publicRequestClientMetadataValue = publicRequestClientMetadataKvp.Value;
+
+                            context.Writer.Write(publicRequestClientMetadataValue);
+                    }
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetSession())

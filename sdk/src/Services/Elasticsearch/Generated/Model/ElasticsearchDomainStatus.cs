@@ -38,6 +38,7 @@ namespace Amazon.Elasticsearch.Model
         private CognitoOptions _cognitoOptions;
         private bool? _created;
         private bool? _deleted;
+        private DomainEndpointOptions _domainEndpointOptions;
         private string _domainId;
         private string _domainName;
         private EBSOptions _ebsOptions;
@@ -169,6 +170,24 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetDeleted()
         {
             return this._deleted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainEndpointOptions. 
+        /// <para>
+        /// The current status of the Elasticsearch domain's endpoint options.
+        /// </para>
+        /// </summary>
+        public DomainEndpointOptions DomainEndpointOptions
+        {
+            get { return this._domainEndpointOptions; }
+            set { this._domainEndpointOptions = value; }
+        }
+
+        // Check to see if DomainEndpointOptions property is set
+        internal bool IsSetDomainEndpointOptions()
+        {
+            return this._domainEndpointOptions != null;
         }
 
         /// <summary>

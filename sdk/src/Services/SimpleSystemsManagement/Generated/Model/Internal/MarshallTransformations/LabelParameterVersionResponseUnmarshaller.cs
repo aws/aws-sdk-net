@@ -57,6 +57,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     response.InvalidLabels = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ParameterVersion", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.ParameterVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

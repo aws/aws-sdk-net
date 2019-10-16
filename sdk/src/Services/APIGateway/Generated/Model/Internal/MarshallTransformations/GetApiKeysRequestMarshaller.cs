@@ -58,7 +58,6 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/apikeys";
             
             if (publicRequest.IsSetCustomerId())
                 request.Parameters.Add("customerId", StringUtils.FromString(publicRequest.CustomerId));
@@ -74,7 +73,8 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetPosition())
                 request.Parameters.Add("position", StringUtils.FromString(publicRequest.Position));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/apikeys";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

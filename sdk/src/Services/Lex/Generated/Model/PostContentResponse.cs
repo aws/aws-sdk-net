@@ -214,7 +214,7 @@ namespace Amazon.Lex.Model
         ///  
         /// <para>
         /// If the intent is not configured with a Lambda function, or if the Lambda function
-        /// returned <code>Delegate</code> as the <code>dialogAction.type</code> its response,
+        /// returned <code>Delegate</code> as the <code>dialogAction.type</code> in its response,
         /// Amazon Lex decides on the next course of action and selects an appropriate message
         /// from the bot's configuration based on the current interaction context. For example,
         /// if Amazon Lex isn't able to understand user input, it uses a clarification prompt
@@ -305,7 +305,7 @@ namespace Amazon.Lex.Model
         /// Gets and sets the property Slots. 
         /// <para>
         /// Map of zero or more intent slots (name/value pairs) Amazon Lex detected from the user
-        /// input during the conversation.
+        /// input during the conversation. The field is base-64 encoded.
         /// </para>
         ///  
         /// <para>

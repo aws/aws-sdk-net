@@ -61,8 +61,8 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-26";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -101,6 +101,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("OutputBucketName");
                     context.Writer.Write(publicRequest.OutputBucketName);
+                }
+
+                if(publicRequest.IsSetOutputEncryptionKMSKeyId())
+                {
+                    context.Writer.WritePropertyName("OutputEncryptionKMSKeyId");
+                    context.Writer.Write(publicRequest.OutputEncryptionKMSKeyId);
                 }
 
                 if(publicRequest.IsSetSettings())

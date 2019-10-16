@@ -57,19 +57,26 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>InputDataConfig</code> - Describes the training dataset and the Amazon S3 location
-    /// where it is stored.
+    ///  <code>InputDataConfig</code> - Describes the training dataset and the Amazon S3,
+    /// EFS, or FSx location where it is stored.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>OutputDataConfig</code> - Identifies the Amazon S3 location where you want
-    /// Amazon SageMaker to save the results of model training. 
+    ///  <code>OutputDataConfig</code> - Identifies the Amazon S3 bucket where you want Amazon
+    /// SageMaker to save the results of model training. 
     /// </para>
     ///   </li> <li> 
     /// <para>
     ///  <code>ResourceConfig</code> - Identifies the resources, ML compute instances, and
     /// ML storage volumes to deploy for model training. In distributed training, you specify
     /// more than one instance. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>EnableManagedSpotTraining</code> - Optimize the cost of training machine learning
+    /// models by up to 80% by using Amazon EC2 Spot instances. For more information, see
+    /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html">Managed
+    /// Spot Training</a>. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -80,8 +87,9 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>StoppingCondition</code> - Sets a time limit for training. Use this parameter
-    /// to cap model training costs. 
+    ///  <code>StoppingCondition</code> - To help cap training costs, use <code>MaxRuntimeInSeconds</code>
+    /// to set a time limit for training. Use <code>MaxWaitTimeInSeconds</code> to specify
+    /// how long you are willing to to wait for a managed spot training job to complete. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -92,7 +100,9 @@ namespace Amazon.SageMaker.Model
     public partial class CreateTrainingJobRequest : AmazonSageMakerRequest
     {
         private AlgorithmSpecification _algorithmSpecification;
+        private CheckpointConfig _checkpointConfig;
         private bool? _enableInterContainerTrafficEncryption;
+        private bool? _enableManagedSpotTraining;
         private bool? _enableNetworkIsolation;
         private Dictionary<string, string> _hyperParameters = new Dictionary<string, string>();
         private List<Channel> _inputDataConfig = new List<Channel>();
@@ -128,6 +138,25 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CheckpointConfig. 
+        /// <para>
+        /// Contains information about the output location for managed spot training checkpoint
+        /// data.
+        /// </para>
+        /// </summary>
+        public CheckpointConfig CheckpointConfig
+        {
+            get { return this._checkpointConfig; }
+            set { this._checkpointConfig = value; }
+        }
+
+        // Check to see if CheckpointConfig property is set
+        internal bool IsSetCheckpointConfig()
+        {
+            return this._checkpointConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EnableInterContainerTrafficEncryption. 
         /// <para>
         /// To encrypt all communications between ML compute instances in distributed training,
@@ -148,6 +177,34 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEnableInterContainerTrafficEncryption()
         {
             return this._enableInterContainerTrafficEncryption.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableManagedSpotTraining. 
+        /// <para>
+        /// To train models using managed spot training, choose <code>True</code>. Managed spot
+        /// training provides a fully managed and scalable infrastructure for training machine
+        /// learning models. this option is useful when training jobs can be interrupted and when
+        /// there is flexibility when the training job is run. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The complete and intermediate results of jobs are stored in an Amazon S3 bucket, and
+        /// can be used as a starting point to train models incrementally. Amazon SageMaker provides
+        /// metrics and logs in CloudWatch. They can be used to see when managed spot training
+        /// jobs are running, interrupted, resumed, or completed. 
+        /// </para>
+        /// </summary>
+        public bool EnableManagedSpotTraining
+        {
+            get { return this._enableManagedSpotTraining.GetValueOrDefault(); }
+            set { this._enableManagedSpotTraining = value; }
+        }
+
+        // Check to see if EnableManagedSpotTraining property is set
+        internal bool IsSetEnableManagedSpotTraining()
+        {
+            return this._enableManagedSpotTraining.HasValue; 
         }
 
         /// <summary>
@@ -215,15 +272,16 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Algorithms can accept input data from one or more channels. For example, an algorithm
         /// might have two channels of input data, <code>training_data</code> and <code>validation_data</code>.
-        /// The configuration for each channel provides the S3 location where the input data is
-        /// stored. It also provides information about the stored data: the MIME type, compression
-        /// method, and whether the data is wrapped in RecordIO format. 
+        /// The configuration for each channel provides the S3, EFS, or FSx location where the
+        /// input data is stored. It also provides information about the stored data: the MIME
+        /// type, compression method, and whether the data is wrapped in RecordIO format. 
         /// </para>
         ///  
         /// <para>
         /// Depending on the input mode that the algorithm supports, Amazon SageMaker either copies
         /// input data files from an S3 bucket to a local directory in the Docker container, or
-        /// makes it available as input streams. 
+        /// makes it available as input streams. For example, if you specify an EFS location,
+        /// input data files will be made available as input streams. They do not need to be downloaded.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
@@ -242,7 +300,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property OutputDataConfig. 
         /// <para>
-        /// Specifies the path to the S3 bucket where you want to store model artifacts. Amazon
+        /// Specifies the path to the S3 location where you want to store model artifacts. Amazon
         /// SageMaker creates subfolders for the artifacts. 
         /// </para>
         /// </summary>

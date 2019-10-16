@@ -59,11 +59,11 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-03-31";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/2018-10-31/layers/{LayerName}/versions";
             if (!publicRequest.IsSetLayerName())
                 throw new AmazonLambdaException("Request object does not have required field LayerName set");
-            uriResourcePath = uriResourcePath.Replace("{LayerName}", StringUtils.FromStringWithSlashEncoding(publicRequest.LayerName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{LayerName}", StringUtils.FromString(publicRequest.LayerName));
+            request.ResourcePath = "/2018-10-31/layers/{LayerName}/versions";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

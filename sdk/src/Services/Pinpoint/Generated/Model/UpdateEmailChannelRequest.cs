@@ -29,7 +29,8 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateEmailChannel operation.
-    /// Updates the status and settings of the email channel for an application.
+    /// Enables the email channel for an application or updates the status and settings of
+    /// the email channel for an application.
     /// </summary>
     public partial class UpdateEmailChannelRequest : AmazonPinpointRequest
     {

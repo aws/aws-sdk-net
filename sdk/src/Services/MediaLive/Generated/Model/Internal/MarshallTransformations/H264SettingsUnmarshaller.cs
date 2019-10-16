@@ -100,6 +100,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.ColorMetadata = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("colorSpaceSettings", targetDepth))
+                {
+                    var unmarshaller = H264ColorSpaceSettingsUnmarshaller.Instance;
+                    unmarshalledObject.ColorSpaceSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("entropyEncoding", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -63,6 +63,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.PublishCloudWatchMetricsEnabled);
             }
 
+            if(requestObject.IsSetRequesterPaysEnabled())
+            {
+                context.Writer.WritePropertyName("RequesterPaysEnabled");
+                context.Writer.Write(requestObject.RequesterPaysEnabled);
+            }
+
             if(requestObject.IsSetResultConfiguration())
             {
                 context.Writer.WritePropertyName("ResultConfiguration");

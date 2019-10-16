@@ -29,7 +29,7 @@ namespace Amazon.CodePipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the AcknowledgeThirdPartyJob operation.
-    /// Confirms a job worker has received the specified job. Only used for partner actions.
+    /// Confirms a job worker has received the specified job. Used for partner actions only.
     /// </summary>
     public partial class AcknowledgeThirdPartyJobRequest : AmazonCodePipelineRequest
     {

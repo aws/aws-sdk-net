@@ -58,14 +58,14 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/domainnames/{domain_name}/basepathmappings/{base_path}";
             if (!publicRequest.IsSetBasePath())
                 throw new AmazonAPIGatewayException("Request object does not have required field BasePath set");
-            uriResourcePath = uriResourcePath.Replace("{base_path}", StringUtils.FromStringWithSlashEncoding(publicRequest.BasePath));
+            request.AddPathResource("{base_path}", StringUtils.FromString(publicRequest.BasePath));
             if (!publicRequest.IsSetDomainName())
                 throw new AmazonAPIGatewayException("Request object does not have required field DomainName set");
-            uriResourcePath = uriResourcePath.Replace("{domain_name}", StringUtils.FromStringWithSlashEncoding(publicRequest.DomainName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{domain_name}", StringUtils.FromString(publicRequest.DomainName));
+            request.ResourcePath = "/domainnames/{domain_name}/basepathmappings/{base_path}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

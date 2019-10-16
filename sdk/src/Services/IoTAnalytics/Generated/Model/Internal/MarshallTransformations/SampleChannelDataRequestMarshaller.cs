@@ -58,10 +58,9 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/channels/{channelName}/sample";
             if (!publicRequest.IsSetChannelName())
                 throw new AmazonIoTAnalyticsException("Request object does not have required field ChannelName set");
-            uriResourcePath = uriResourcePath.Replace("{channelName}", StringUtils.FromStringWithSlashEncoding(publicRequest.ChannelName));
+            request.AddPathResource("{channelName}", StringUtils.FromString(publicRequest.ChannelName));
             
             if (publicRequest.IsSetEndTimeUtc())
                 request.Parameters.Add("endTime", StringUtils.FromDateTimeToISO8601(publicRequest.EndTimeUtc));
@@ -71,7 +70,8 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetStartTimeUtc())
                 request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601(publicRequest.StartTimeUtc));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/channels/{channelName}/sample";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

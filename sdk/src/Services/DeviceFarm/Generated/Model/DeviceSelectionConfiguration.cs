@@ -93,7 +93,8 @@ namespace Amazon.DeviceFarm.Model
         ///  </li> <li> 
         /// <para>
         /// REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values
-        /// are "TRUE" or "FALSE".
+        /// are "TRUE" or "FALSE". <i>This filter will be ignored, as remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+        /// longer supported</a>.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>

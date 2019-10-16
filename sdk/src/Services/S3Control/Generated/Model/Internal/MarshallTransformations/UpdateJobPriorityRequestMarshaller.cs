@@ -56,17 +56,17 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3Control");
             request.HttpMethod = "POST";
-            string uriResourcePath = "/v20180820/jobs/{id}/priority";
         
             if(publicRequest.IsSetAccountId())
                 request.Headers["x-amz-account-id"] = publicRequest.AccountId;
             if (!publicRequest.IsSetJobId())
                 throw new AmazonS3ControlException("Request object does not have required field JobId set");
-            uriResourcePath = uriResourcePath.Replace("{id}", StringUtils.FromStringWithSlashEncoding(publicRequest.JobId));
+            request.AddPathResource("{id}", StringUtils.FromString(publicRequest.JobId));
             
             if (publicRequest.IsSetPriority())
                 request.Parameters.Add("priority", StringUtils.FromInt(publicRequest.Priority));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/v20180820/jobs/{id}/priority";
+            request.MarshallerVersion = 2;
 
 
             request.UseQueryString = true;

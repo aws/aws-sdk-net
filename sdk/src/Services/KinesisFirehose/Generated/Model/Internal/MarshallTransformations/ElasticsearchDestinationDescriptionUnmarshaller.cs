@@ -76,6 +76,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     unmarshalledObject.CloudWatchLoggingOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ClusterEndpoint", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ClusterEndpoint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DomainARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -59,11 +59,11 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";            
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/datasets/{datasetName}";
             if (!publicRequest.IsSetDatasetName())
                 throw new AmazonIoTAnalyticsException("Request object does not have required field DatasetName set");
-            uriResourcePath = uriResourcePath.Replace("{datasetName}", StringUtils.FromStringWithSlashEncoding(publicRequest.DatasetName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{datasetName}", StringUtils.FromString(publicRequest.DatasetName));
+            request.ResourcePath = "/datasets/{datasetName}";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

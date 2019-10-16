@@ -100,6 +100,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     unmarshalledObject.Deleted = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DomainEndpointOptions", targetDepth))
+                {
+                    var unmarshaller = DomainEndpointOptionsUnmarshaller.Instance;
+                    unmarshalledObject.DomainEndpointOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DomainId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

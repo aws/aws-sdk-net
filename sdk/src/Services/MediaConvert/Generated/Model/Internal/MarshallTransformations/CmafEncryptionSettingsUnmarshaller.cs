@@ -82,6 +82,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.InitializationVectorInManifest = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("spekeKeyProvider", targetDepth))
+                {
+                    var unmarshaller = SpekeKeyProviderCmafUnmarshaller.Instance;
+                    unmarshalledObject.SpekeKeyProvider = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("staticKeyProvider", targetDepth))
                 {
                     var unmarshaller = StaticKeyProviderUnmarshaller.Instance;

@@ -58,14 +58,14 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/v1/configurations/{configuration-id}/revisions/{configuration-revision}";
             if (!publicRequest.IsSetConfigurationId())
                 throw new AmazonMQException("Request object does not have required field ConfigurationId set");
-            uriResourcePath = uriResourcePath.Replace("{configuration-id}", StringUtils.FromStringWithSlashEncoding(publicRequest.ConfigurationId));
+            request.AddPathResource("{configuration-id}", StringUtils.FromString(publicRequest.ConfigurationId));
             if (!publicRequest.IsSetConfigurationRevision())
                 throw new AmazonMQException("Request object does not have required field ConfigurationRevision set");
-            uriResourcePath = uriResourcePath.Replace("{configuration-revision}", StringUtils.FromStringWithSlashEncoding(publicRequest.ConfigurationRevision));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{configuration-revision}", StringUtils.FromString(publicRequest.ConfigurationRevision));
+            request.ResourcePath = "/v1/configurations/{configuration-id}/revisions/{configuration-revision}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

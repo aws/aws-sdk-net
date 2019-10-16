@@ -39,7 +39,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(deletePublicAccessBlockRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "deletePublicAccessBlockRequest.BucketName");
 
-            request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(deletePublicAccessBlockRequest.BucketName));
+			request.MarshallerVersion = 2;
+			request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(deletePublicAccessBlockRequest.BucketName));
             request.AddSubResource("publicAccessBlock");
             request.UseQueryString = true;
             return request;

@@ -1552,6 +1552,9 @@ namespace Amazon.AppMesh
         /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
         /// The request syntax was malformed. Check your request syntax and try again.
         /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
         /// The request processing has failed because of an unknown error, exception, or     
         ///    failure.
@@ -1561,6 +1564,11 @@ namespace Amazon.AppMesh
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
         /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        ///         requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
@@ -1579,6 +1587,9 @@ namespace Amazon.AppMesh
         /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
         /// The request syntax was malformed. Check your request syntax and try again.
         /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
         /// The request processing has failed because of an unknown error, exception, or     
         ///    failure.
@@ -1588,6 +1599,11 @@ namespace Amazon.AppMesh
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
         /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        ///         requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1819,6 +1835,9 @@ namespace Amazon.AppMesh
         /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
         /// The request syntax was malformed. Check your request syntax and try again.
         /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
         /// The request processing has failed because of an unknown error, exception, or     
         ///    failure.
@@ -1828,6 +1847,11 @@ namespace Amazon.AppMesh
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
         /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        ///         requests.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.TooManyTagsException">
         /// The request exceeds the maximum allowed number of tags allowed per resource. The current
@@ -1854,6 +1878,9 @@ namespace Amazon.AppMesh
         /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
         /// The request syntax was malformed. Check your request syntax and try again.
         /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
         /// The request processing has failed because of an unknown error, exception, or     
         ///    failure.
@@ -1863,6 +1890,11 @@ namespace Amazon.AppMesh
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
         /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        ///         requests.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.TooManyTagsException">
         /// The request exceeds the maximum allowed number of tags allowed per resource. The current
@@ -1886,6 +1918,9 @@ namespace Amazon.AppMesh
         /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
         /// The request syntax was malformed. Check your request syntax and try again.
         /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
         /// The request processing has failed because of an unknown error, exception, or     
         ///    failure.
@@ -1895,6 +1930,11 @@ namespace Amazon.AppMesh
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
         /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        ///         requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);
@@ -1913,6 +1953,9 @@ namespace Amazon.AppMesh
         /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
         /// The request syntax was malformed. Check your request syntax and try again.
         /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
         /// The request processing has failed because of an unknown error, exception, or     
         ///    failure.
@@ -1922,6 +1965,11 @@ namespace Amazon.AppMesh
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
         /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        ///         requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));

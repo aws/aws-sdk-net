@@ -148,7 +148,7 @@ namespace Amazon.SageMaker
         /// 
         ///  
         /// <para>
-        /// The repository can be hosted either in <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+        /// The repository can be hosted either in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
         /// CodeCommit</a> or in any other Git repository.
         /// </para>
         /// </summary>
@@ -324,7 +324,7 @@ namespace Amazon.SageMaker
         /// Amazon SageMaker uses AWS Security Token Service to download model artifacts from
         /// the S3 path you provided. AWS STS is activated in your IAM user account by default.
         /// If you previously deactivated AWS STS for a region, you need to reactivate AWS STS
-        /// for that region. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// for that region. For more information, see <a href="IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
         /// and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access Management
         /// User Guide</i>.
         /// </para>
@@ -520,15 +520,15 @@ namespace Amazon.SageMaker
         /// You can also use <i>automated data labeling</i> to reduce the number of data objects
         /// that need to be labeled by a human. Automated data labeling uses <i>active learning</i>
         /// to determine if a data object can be labeled by machine or if it needs to be sent
-        /// to a human worker. For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-automated-labeling.html">Using
+        /// to a human worker. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-automated-labeling.html">Using
         /// Automated Data Labeling</a>.
         /// </para>
         ///  
         /// <para>
         /// The data objects to be labeled are contained in an Amazon S3 bucket. You create a
         /// <i>manifest file</i> that describes the location of each object. For more information,
-        /// see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-data.html">Using Input
-        /// and Output Data</a>.
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data.html">Using
+        /// Input and Output Data</a>.
         /// </para>
         ///  
         /// <para>
@@ -753,7 +753,7 @@ namespace Amazon.SageMaker
         ///  </li> </ol> 
         /// <para>
         /// After creating the notebook instance, Amazon SageMaker returns its Amazon Resource
-        /// Name (ARN).
+        /// Name (ARN). You can't change the name of a notebook instance after you create it.
         /// </para>
         ///  
         /// <para>
@@ -971,19 +971,26 @@ namespace Amazon.SageMaker
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>InputDataConfig</code> - Describes the training dataset and the Amazon S3 location
-        /// where it is stored.
+        ///  <code>InputDataConfig</code> - Describes the training dataset and the Amazon S3,
+        /// EFS, or FSx location where it is stored.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OutputDataConfig</code> - Identifies the Amazon S3 location where you want
-        /// Amazon SageMaker to save the results of model training. 
+        ///  <code>OutputDataConfig</code> - Identifies the Amazon S3 bucket where you want Amazon
+        /// SageMaker to save the results of model training. 
         /// </para>
         ///   </li> <li> 
         /// <para>
         ///  <code>ResourceConfig</code> - Identifies the resources, ML compute instances, and
         /// ML storage volumes to deploy for model training. In distributed training, you specify
         /// more than one instance. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>EnableManagedSpotTraining</code> - Optimize the cost of training machine learning
+        /// models by up to 80% by using Amazon EC2 Spot instances. For more information, see
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html">Managed
+        /// Spot Training</a>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -994,8 +1001,9 @@ namespace Amazon.SageMaker
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>StoppingCondition</code> - Sets a time limit for training. Use this parameter
-        /// to cap model training costs. 
+        ///  <code>StoppingCondition</code> - To help cap training costs, use <code>MaxRuntimeInSeconds</code>
+        /// to set a time limit for training. Use <code>MaxWaitTimeInSeconds</code> to specify
+        /// how long you are willing to to wait for a managed spot training job to complete. 
         /// </para>
         ///  </li> </ul> 
         /// <para>

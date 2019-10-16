@@ -30,7 +30,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// <summary>
     /// Container for the parameters to the AddListenerCertificates operation.
     /// Adds the specified SSL server certificate to the certificate list for the specified
-    /// HTTPS listener.
+    /// HTTPS or TLS listener.
     /// 
     ///  
     /// <para>

@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// 
+    /// Status filter object to filter results based on specific member account ID or status
+    /// type for an organization config rule.
     /// </summary>
     public partial class StatusDetailFilters
     {
@@ -36,7 +37,10 @@ namespace Amazon.ConfigService.Model
         private MemberAccountRuleStatus _memberAccountRuleStatus;
 
         /// <summary>
-        /// Gets and sets the property AccountId.
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The 12-digit account ID of the member account within an organization.
+        /// </para>
         /// </summary>
         public string AccountId
         {
@@ -51,7 +55,57 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MemberAccountRuleStatus.
+        /// Gets and sets the property MemberAccountRuleStatus. 
+        /// <para>
+        /// Indicates deployment status for config rule in the member account. When master account
+        /// calls <code>PutOrganizationConfigRule</code> action for the first time, config rule
+        /// status is created in the member account. When master account calls <code>PutOrganizationConfigRule</code>
+        /// action for the second time, config rule status is updated in the member account. Config
+        /// rule status is deleted when the master account deletes <code>OrganizationConfigRule</code>
+        /// and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// AWS Config sets the state of the rule to:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CREATE_SUCCESSFUL</code> when config rule has been created in the member account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CREATE_IN_PROGRESS</code> when config rule is being created in the member account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CREATE_FAILED</code> when config rule creation has failed in the member account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETE_FAILED</code> when config rule deletion has failed in the member account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETE_IN_PROGRESS</code> when config rule is being deleted in the member account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETE_SUCCESSFUL</code> when config rule has been deleted in the member account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UPDATE_SUCCESSFUL</code> when config rule has been updated in the member account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UPDATE_IN_PROGRESS</code> when config rule is being updated in the member account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UPDATE_FAILED</code> when config rule deletion has failed in the member account.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public MemberAccountRuleStatus MemberAccountRuleStatus
         {

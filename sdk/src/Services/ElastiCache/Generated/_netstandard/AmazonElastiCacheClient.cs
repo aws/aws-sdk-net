@@ -2560,6 +2560,9 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
         /// The requested cluster is not in the <code>available</code> state.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidKMSKeyException">
+        /// The KMS key supplied is not valid.
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
@@ -2613,12 +2616,12 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Lists all available node types that you can scale your Redis cluster's or replication
-        /// group's current node type up to.
+        /// group's current node type.
         /// 
         ///  
         /// <para>
         /// When you use the <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code>
-        /// operations to scale up your cluster or replication group, the value of the <code>CacheNodeType</code>
+        /// operations to scale your cluster or replication group, the value of the <code>CacheNodeType</code>
         /// parameter must be one of the node types returned by this operation.
         /// </para>
         /// </summary>
@@ -2945,6 +2948,9 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheSecurityGroupStateException">
         /// The current state of the cache security group does not allow deletion.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidKMSKeyException">
+        /// The KMS key supplied is not valid.
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
@@ -3010,6 +3016,9 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
         /// The requested cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidKMSKeyException">
+        /// The KMS key supplied is not valid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -3409,6 +3418,9 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
         /// The requested cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidKMSKeyException">
+        /// The KMS key supplied is not valid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.

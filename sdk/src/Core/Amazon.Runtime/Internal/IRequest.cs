@@ -124,6 +124,35 @@ namespace Amazon.Runtime.Internal
         }
 
         /// <summary>
+        /// Returns the path resources that should be used within the resource path.
+        /// This is used for services where path keys can contain '/'
+        /// characters, making string-splitting of a resource path potentially 
+        /// hazardous.
+        /// </summary>
+        IDictionary<string, string> PathResources
+        {
+            get;
+        }
+
+        /// <summary>
+        /// Adds a new entry to the PathResources collection for the request
+        /// </summary>
+        /// <param name="key">The name of the pathresource with potential greedy syntax: {key+}</param>
+        /// <param name="value">Value of the entry</param>
+        void AddPathResource(string key, string value);
+
+        /// <summary>
+        /// Gets and Sets the version number for the marshaller used to create this request. The version number
+        /// is used to support backward compatible changes that would otherwise be breaking changes when a 
+        /// newer core is used with an older service assembly.
+        /// </summary>
+        int MarshallerVersion
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// Gets and Sets the content for this request.
         /// </summary>
         byte[] Content

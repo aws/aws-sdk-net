@@ -63,6 +63,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Source608TrackNumber);
             }
 
+            if(requestObject.IsSetTerminateCaptions())
+            {
+                context.Writer.WritePropertyName("terminateCaptions");
+                context.Writer.Write(requestObject.TerminateCaptions);
+            }
+
         }
 
         /// <summary>

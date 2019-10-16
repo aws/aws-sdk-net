@@ -67,6 +67,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetClusterEndpoint())
+            {
+                context.Writer.WritePropertyName("ClusterEndpoint");
+                context.Writer.Write(requestObject.ClusterEndpoint);
+            }
+
             if(requestObject.IsSetDomainARN())
             {
                 context.Writer.WritePropertyName("DomainARN");

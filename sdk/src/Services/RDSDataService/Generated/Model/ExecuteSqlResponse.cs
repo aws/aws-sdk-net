@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDSDataService.Model
 {
     /// <summary>
-    /// The response elements represent the output of a request to run one or more SQL   
-    ///         statements.
+    /// The response elements represent the output of a request to run one or more SQL statements.
     /// </summary>
     public partial class ExecuteSqlResponse : AmazonWebServiceResponse
     {

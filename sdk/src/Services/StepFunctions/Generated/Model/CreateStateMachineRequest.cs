@@ -39,6 +39,16 @@ namespace Amazon.StepFunctions.Model
     /// This operation is eventually consistent. The results are best effort and may not reflect
     /// very recent updates and changes.
     /// </para>
+    ///  </note> <note> 
+    /// <para>
+    ///  <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create
+    /// a duplicate resource if it was already created. <code>CreateStateMachine</code>'s
+    /// idempotency check is based on the state machine <code>name</code> and <code>definition</code>.
+    /// If a following request has a different <code>roleArn</code> or <code>tags</code>,
+    /// Step Functions will ignore these differences and treat it as an idempotent request
+    /// of the previous. In this case, <code>roleArn</code> and <code>tags</code> will not
+    /// be updated, even if they are different.
+    /// </para>
     ///  </note>
     /// </summary>
     public partial class CreateStateMachineRequest : AmazonStepFunctionsRequest
@@ -79,7 +89,7 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// whitespace
+        /// white space
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -135,6 +145,18 @@ namespace Amazon.StepFunctions.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// Tags to be added when creating a state machine.
+        /// </para>
+        ///  
+        /// <para>
+        /// An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>,
+        /// and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
+        /// Access Using IAM Tags</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_
+        /// . : / = + - @</code>.
         /// </para>
         /// </summary>
         public List<Tag> Tags

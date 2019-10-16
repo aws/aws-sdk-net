@@ -82,7 +82,7 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// A newly-created pipeline is always assigned a version number of <code>1</code>.
+        /// A newly created pipeline is always assigned a version number of <code>1</code>.
         /// </para>
         ///  </note>
         /// </summary>

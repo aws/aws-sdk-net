@@ -58,7 +58,6 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-14";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/v1/clusters";
             
             if (publicRequest.IsSetClusterNameFilter())
                 request.Parameters.Add("clusterNameFilter", StringUtils.FromString(publicRequest.ClusterNameFilter));
@@ -68,7 +67,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/v1/clusters";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

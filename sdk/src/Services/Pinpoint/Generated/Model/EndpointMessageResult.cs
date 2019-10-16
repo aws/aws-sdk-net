@@ -173,7 +173,7 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property UpdatedToken. 
         /// <para>
         /// For push notifications that are sent through the GCM channel, specifies whether the
-        /// token was updated as part of delivering the message.
+        /// endpoint's device registration token was updated as part of delivering the message.
         /// </para>
         /// </summary>
         public string UpdatedToken

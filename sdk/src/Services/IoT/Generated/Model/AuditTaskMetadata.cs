@@ -58,7 +58,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property TaskStatus. 
         /// <para>
-        /// The status of this audit: one of "IN_PROGRESS", "COMPLETED", "FAILED" or "CANCELED".
+        /// The status of this audit. One of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".
         /// </para>
         /// </summary>
         public AuditTaskStatus TaskStatus
@@ -76,7 +76,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property TaskType. 
         /// <para>
-        /// The type of this audit: one of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".
+        /// The type of this audit. One of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".
         /// </para>
         /// </summary>
         public AuditTaskType TaskType

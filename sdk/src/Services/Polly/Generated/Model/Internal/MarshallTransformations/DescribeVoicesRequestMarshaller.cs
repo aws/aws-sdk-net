@@ -58,7 +58,6 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-10";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/v1/voices";
             
             if (publicRequest.IsSetEngine())
                 request.Parameters.Add("Engine", StringUtils.FromString(publicRequest.Engine));
@@ -71,7 +70,8 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/v1/voices";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

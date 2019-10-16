@@ -661,6 +661,9 @@ namespace Amazon.Personalize
         /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
         /// The specified resource already exists.
         /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
         /// Could not find the specified resource.
         /// </exception>
@@ -729,6 +732,9 @@ namespace Amazon.Personalize
         /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
         /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
         /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
         /// Could not find the specified resource.
@@ -2617,6 +2623,9 @@ namespace Amazon.Personalize
         /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
         /// Provide a valid value for the field or parameter.
         /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.InvalidNextTokenException">
+        /// The token is not valid.
+        /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
         /// Could not find the specified resource.
         /// </exception>
@@ -2639,6 +2648,9 @@ namespace Amazon.Personalize
         /// <returns>The response from the ListSolutionVersions service method, as returned by Personalize.</returns>
         /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
         /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.InvalidNextTokenException">
+        /// The token is not valid.
         /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
         /// Could not find the specified resource.

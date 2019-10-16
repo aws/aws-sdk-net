@@ -39,6 +39,7 @@ namespace Amazon.ElastiCache.Model
         private bool? _clusterEnabled;
         private Endpoint _configurationEndpoint;
         private string _description;
+        private string _kmsKeyId;
         private List<string> _memberClusters = new List<string>();
         private List<NodeGroup> _nodeGroups = new List<NodeGroup>();
         private ReplicationGroupPendingModifiedValues _pendingModifiedValues;
@@ -218,6 +219,24 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The ID of the KMS key used to encrypt the disk in the cluster.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>

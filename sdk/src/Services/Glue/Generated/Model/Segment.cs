@@ -39,8 +39,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SegmentNumber. 
         /// <para>
-        /// The zero-based index number of the this segment. For example, if the total number
-        /// of segments is 4, SegmentNumber values will range from zero through three.
+        /// The zero-based index number of the segment. For example, if the total number of segments
+        /// is 4, <code>SegmentNumber</code> values range from 0 through 3.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -59,7 +59,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property TotalSegments. 
         /// <para>
-        /// The total numer of segments.
+        /// The total number of segments.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]

@@ -83,7 +83,7 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property GatewayARN. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation
-        /// to return a list of gateways for your account and region.
+        /// to return a list of gateways for your account and AWS Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=50, Max=500)]
@@ -102,9 +102,9 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property OrganizationalUnit. 
         /// <para>
-        /// The organizational unit (OU) is a container with an Active Directory that can hold
-        /// users, groups, computers, and other OUs and this parameter specifies the OU that the
-        /// gateway will join within the AD domain.
+        /// The organizational unit (OU) is a container in an Active Directory that can hold users,
+        /// groups, computers, and other OUs and this parameter specifies the OU that the gateway
+        /// will join within the AD domain.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

@@ -58,14 +58,14 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-29";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/v2/apis/{apiId}/authorizers/{authorizerId}";
             if (!publicRequest.IsSetApiId())
                 throw new AmazonApiGatewayV2Exception("Request object does not have required field ApiId set");
-            uriResourcePath = uriResourcePath.Replace("{apiId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ApiId));
+            request.AddPathResource("{apiId}", StringUtils.FromString(publicRequest.ApiId));
             if (!publicRequest.IsSetAuthorizerId())
                 throw new AmazonApiGatewayV2Exception("Request object does not have required field AuthorizerId set");
-            uriResourcePath = uriResourcePath.Replace("{authorizerId}", StringUtils.FromStringWithSlashEncoding(publicRequest.AuthorizerId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{authorizerId}", StringUtils.FromString(publicRequest.AuthorizerId));
+            request.ResourcePath = "/v2/apis/{apiId}/authorizers/{authorizerId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

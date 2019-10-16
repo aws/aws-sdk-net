@@ -197,6 +197,10 @@ namespace Amazon.Rekognition
         /// </summary>
         public static readonly EmotionName DISGUSTED = new EmotionName("DISGUSTED");
         /// <summary>
+        /// Constant FEAR for EmotionName
+        /// </summary>
+        public static readonly EmotionName FEAR = new EmotionName("FEAR");
+        /// <summary>
         /// Constant HAPPY for EmotionName
         /// </summary>
         public static readonly EmotionName HAPPY = new EmotionName("HAPPY");

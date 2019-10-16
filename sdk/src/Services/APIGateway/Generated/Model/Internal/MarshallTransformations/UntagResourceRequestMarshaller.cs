@@ -58,14 +58,14 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/tags/{resource_arn}";
             if (!publicRequest.IsSetResourceArn())
                 throw new AmazonAPIGatewayException("Request object does not have required field ResourceArn set");
-            uriResourcePath = uriResourcePath.Replace("{resource_arn}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceArn));
+            request.AddPathResource("{resource_arn}", StringUtils.FromString(publicRequest.ResourceArn));
             
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/tags/{resource_arn}";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

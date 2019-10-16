@@ -59,10 +59,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/attached-policies/{target}";
             if (!publicRequest.IsSetTarget())
                 throw new AmazonIoTException("Request object does not have required field Target set");
-            uriResourcePath = uriResourcePath.Replace("{target}", StringUtils.FromStringWithSlashEncoding(publicRequest.Target));
+            request.AddPathResource("{target}", StringUtils.FromString(publicRequest.Target));
             
             if (publicRequest.IsSetMarker())
                 request.Parameters.Add("marker", StringUtils.FromString(publicRequest.Marker));
@@ -72,7 +71,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetRecursive())
                 request.Parameters.Add("recursive", StringUtils.FromBool(publicRequest.Recursive));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/attached-policies/{target}";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

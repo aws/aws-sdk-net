@@ -67,6 +67,7 @@ namespace Amazon.Redshift.Model
         private string _maintenanceTrackName;
         private int? _manualSnapshotRetentionPeriod;
         private string _nodeType;
+        private int? _numberOfNodes;
         private string _ownerAccount;
         private int? _port;
         private string _preferredMaintenanceWindow;
@@ -510,6 +511,24 @@ namespace Amazon.Redshift.Model
         internal bool IsSetNodeType()
         {
             return this._nodeType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumberOfNodes. 
+        /// <para>
+        /// The number of nodes specified when provisioning the restored cluster.
+        /// </para>
+        /// </summary>
+        public int NumberOfNodes
+        {
+            get { return this._numberOfNodes.GetValueOrDefault(); }
+            set { this._numberOfNodes = value; }
+        }
+
+        // Check to see if NumberOfNodes property is set
+        internal bool IsSetNumberOfNodes()
+        {
+            return this._numberOfNodes.HasValue; 
         }
 
         /// <summary>

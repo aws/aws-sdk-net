@@ -58,10 +58,9 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-14";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/devices/{deviceId}/events";
             if (!publicRequest.IsSetDeviceId())
                 throw new AmazonIoT1ClickDevicesServiceException("Request object does not have required field DeviceId set");
-            uriResourcePath = uriResourcePath.Replace("{deviceId}", StringUtils.FromStringWithSlashEncoding(publicRequest.DeviceId));
+            request.AddPathResource("{deviceId}", StringUtils.FromString(publicRequest.DeviceId));
             
             if (publicRequest.IsSetFromTimeStampUtc())
                 request.Parameters.Add("fromTimeStamp", StringUtils.FromDateTimeToISO8601(publicRequest.FromTimeStampUtc));
@@ -74,7 +73,8 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetToTimeStampUtc())
                 request.Parameters.Add("toTimeStamp", StringUtils.FromDateTimeToISO8601(publicRequest.ToTimeStampUtc));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/devices/{deviceId}/events";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

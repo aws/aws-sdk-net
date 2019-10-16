@@ -59,11 +59,11 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "PATCH";
 
-            string uriResourcePath = "/cancel-certificate-transfer/{certificateId}";
             if (!publicRequest.IsSetCertificateId())
                 throw new AmazonIoTException("Request object does not have required field CertificateId set");
-            uriResourcePath = uriResourcePath.Replace("{certificateId}", StringUtils.FromStringWithSlashEncoding(publicRequest.CertificateId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{certificateId}", StringUtils.FromString(publicRequest.CertificateId));
+            request.ResourcePath = "/cancel-certificate-transfer/{certificateId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

@@ -32,6 +32,7 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class Stack
     {
+        private List<AccessEndpoint> _accessEndpoints = new List<AccessEndpoint>();
         private ApplicationSettingsResponse _applicationSettings;
         private string _arn;
         private DateTime? _createdTime;
@@ -43,6 +44,26 @@ namespace Amazon.AppStream.Model
         private List<StackError> _stackErrors = new List<StackError>();
         private List<StorageConnector> _storageConnectors = new List<StorageConnector>();
         private List<UserSetting> _userSettings = new List<UserSetting>();
+
+        /// <summary>
+        /// Gets and sets the property AccessEndpoints. 
+        /// <para>
+        /// The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack
+        /// can connect to AppStream 2.0 only through the specified endpoints. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=4)]
+        public List<AccessEndpoint> AccessEndpoints
+        {
+            get { return this._accessEndpoints; }
+            set { this._accessEndpoints = value; }
+        }
+
+        // Check to see if AccessEndpoints property is set
+        internal bool IsSetAccessEndpoints()
+        {
+            return this._accessEndpoints != null && this._accessEndpoints.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ApplicationSettings. 

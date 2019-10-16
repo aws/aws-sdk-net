@@ -41,6 +41,7 @@ namespace Amazon.SecurityHub.Model
         /// A list of the account IDs that sent the invitations to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> AccountIds
         {
             get { return this._accountIds; }

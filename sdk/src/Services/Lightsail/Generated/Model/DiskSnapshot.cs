@@ -38,6 +38,7 @@ namespace Amazon.Lightsail.Model
         private string _fromDiskName;
         private string _fromInstanceArn;
         private string _fromInstanceName;
+        private bool? _isFromAutoSnapshot;
         private ResourceLocation _location;
         private string _name;
         private string _progress;
@@ -156,6 +157,24 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetFromInstanceName()
         {
             return this._fromInstanceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsFromAutoSnapshot. 
+        /// <para>
+        /// A Boolean value indicating whether the snapshot was created from an automatic snapshot.
+        /// </para>
+        /// </summary>
+        public bool IsFromAutoSnapshot
+        {
+            get { return this._isFromAutoSnapshot.GetValueOrDefault(); }
+            set { this._isFromAutoSnapshot = value; }
+        }
+
+        // Check to see if IsFromAutoSnapshot property is set
+        internal bool IsSetIsFromAutoSnapshot()
+        {
+            return this._isFromAutoSnapshot.HasValue; 
         }
 
         /// <summary>

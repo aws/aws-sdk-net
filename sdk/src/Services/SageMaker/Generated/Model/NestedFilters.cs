@@ -88,7 +88,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property NestedPropertyName. 
         /// <para>
         /// The name of the property to use in the nested filters. The value must match a listed
-        /// property name, such as <code>InputDataConfig</code>.
+        /// property name, such as <code>InputDataConfig</code> .
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

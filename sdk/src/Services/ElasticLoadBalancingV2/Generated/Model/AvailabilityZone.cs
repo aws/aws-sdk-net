@@ -39,7 +39,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerAddresses. 
         /// <para>
-        /// [Network Load Balancers] The static IP address.
+        /// [Network Load Balancers] If you need static IP addresses for your load balancer, you
+        /// can specify one Elastic IP address per Availability Zone when you create the load
+        /// balancer.
         /// </para>
         /// </summary>
         public List<LoadBalancerAddress> LoadBalancerAddresses
@@ -57,7 +59,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// The ID of the subnet.
+        /// The ID of the subnet. You can specify one subnet per Availability Zone.
         /// </para>
         /// </summary>
         public string SubnetId

@@ -58,17 +58,17 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-26";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/v1/email/deliverability-dashboard/statistics-report/{Domain}";
             if (!publicRequest.IsSetDomain())
                 throw new AmazonPinpointEmailException("Request object does not have required field Domain set");
-            uriResourcePath = uriResourcePath.Replace("{Domain}", StringUtils.FromStringWithSlashEncoding(publicRequest.Domain));
+            request.AddPathResource("{Domain}", StringUtils.FromString(publicRequest.Domain));
             
             if (publicRequest.IsSetEndDate())
                 request.Parameters.Add("EndDate", StringUtils.FromDateTimeToISO8601(publicRequest.EndDate));
             
             if (publicRequest.IsSetStartDate())
                 request.Parameters.Add("StartDate", StringUtils.FromDateTimeToISO8601(publicRequest.StartDate));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/v1/email/deliverability-dashboard/statistics-report/{Domain}";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

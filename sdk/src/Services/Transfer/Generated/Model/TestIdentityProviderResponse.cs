@@ -33,13 +33,14 @@ namespace Amazon.Transfer.Model
     public partial class TestIdentityProviderResponse : AmazonWebServiceResponse
     {
         private string _message;
+        private string _response;
         private int? _statusCode;
         private string _url;
 
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// The result of the authorization test as a message. 
+        /// A message that indicates whether the test was successful or not. 
         /// </para>
         /// </summary>
         public string Message
@@ -52,6 +53,24 @@ namespace Amazon.Transfer.Model
         internal bool IsSetMessage()
         {
             return this._message != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Response. 
+        /// <para>
+        /// The response that is returned from your API Gateway.
+        /// </para>
+        /// </summary>
+        public string Response
+        {
+            get { return this._response; }
+            set { this._response = value; }
+        }
+
+        // Check to see if Response property is set
+        internal bool IsSetResponse()
+        {
+            return this._response != null;
         }
 
         /// <summary>

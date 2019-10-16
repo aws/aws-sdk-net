@@ -58,7 +58,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property ViolationEvents. 
         /// <para>
         /// The security profile violation alerts issued for this account during the given time
-        /// frame, potentially filtered by security profile, behavior violated, or thing (device)
+        /// period, potentially filtered by security profile, behavior violated, or thing (device)
         /// violating.
         /// </para>
         /// </summary>

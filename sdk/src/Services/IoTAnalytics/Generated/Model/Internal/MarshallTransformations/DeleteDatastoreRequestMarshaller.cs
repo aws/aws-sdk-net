@@ -58,11 +58,11 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/datastores/{datastoreName}";
             if (!publicRequest.IsSetDatastoreName())
                 throw new AmazonIoTAnalyticsException("Request object does not have required field DatastoreName set");
-            uriResourcePath = uriResourcePath.Replace("{datastoreName}", StringUtils.FromStringWithSlashEncoding(publicRequest.DatastoreName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{datastoreName}", StringUtils.FromString(publicRequest.DatastoreName));
+            request.ResourcePath = "/datastores/{datastoreName}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

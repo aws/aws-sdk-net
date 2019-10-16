@@ -329,6 +329,10 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property VisibleToAllUsers. 
         /// <para>
+        ///  <i>This member will be deprecated.</i> 
+        /// </para>
+        ///  
+        /// <para>
         /// Specifies whether the cluster is visible to all IAM users of the AWS account associated
         /// with the cluster. If this value is set to <code>true</code>, all IAM users of that
         /// AWS account can view and (if they have the proper policy permissions set) manage the

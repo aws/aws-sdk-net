@@ -60,7 +60,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFRegional.Model.CreateRateBasedRuleRequest.RateLimit</property>
-    <min>2000</min>
+    <min>100</min>
     <max>2000000000</max>
   </property-value-rule>
   <property-value-rule>
@@ -744,7 +744,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFRegional.Model.UpdateRateBasedRuleRequest.RateLimit</property>
-    <min>2000</min>
+    <min>100</min>
     <max>2000000000</max>
   </property-value-rule>
   <property-value-rule>
@@ -947,7 +947,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFRegional.Model.RateBasedRule.RateLimit</property>
-    <min>2000</min>
+    <min>100</min>
     <max>2000000000</max>
   </property-value-rule>
   <property-value-rule>

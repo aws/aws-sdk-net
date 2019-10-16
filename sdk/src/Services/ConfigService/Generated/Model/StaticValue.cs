@@ -40,7 +40,7 @@ namespace Amazon.ConfigService.Model
         /// A list of values. For example, the ARN of the assumed role. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=25)]
+        [AWSProperty(Required=true, Min=0, Max=25)]
         public List<string> Values
         {
             get { return this._values; }

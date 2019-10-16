@@ -29,6 +29,7 @@ namespace Amazon.S3.Model
     {
         private string deleteMarker;
         private string acceptRanges;
+        private string contentRange;
         private Expiration expiration;
         private DateTime? restoreExpiration;
         private bool restoreInProgress;
@@ -114,6 +115,21 @@ namespace Amazon.S3.Model
         internal bool IsSetAcceptRanges()
         {
             return this.acceptRanges != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the ContentRange.
+        /// </summary>
+        public string ContentRange
+        {
+            get { return this.contentRange; }
+            set { this.contentRange = value; }
+        }
+
+        // Check to see if ContentRange property is set
+        internal bool IsSetContentRange()
+        {
+            return this.contentRange != null;
         }
 
         /// <summary>

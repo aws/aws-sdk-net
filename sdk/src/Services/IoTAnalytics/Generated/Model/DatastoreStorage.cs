@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Where data store data is stored.
+    /// Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3"
+    /// storage. If not specified, the default is "serviceManagedS3". This cannot be changed
+    /// after the data store is created.
     /// </summary>
     public partial class DatastoreStorage
     {
@@ -38,7 +40,9 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property CustomerManagedS3. 
         /// <para>
-        /// Use this to store data store data in an S3 bucket that you manage.
+        /// Use this to store data store data in an S3 bucket that you manage. When customer managed
+        /// storage is selected, the "retentionPeriod" parameter is ignored. The choice of service-managed
+        /// or customer-managed S3 storage cannot be changed after creation of the data store.
         /// </para>
         /// </summary>
         public CustomerManagedDatastoreS3Storage CustomerManagedS3
@@ -57,7 +61,8 @@ namespace Amazon.IoTAnalytics.Model
         /// Gets and sets the property ServiceManagedS3. 
         /// <para>
         /// Use this to store data store data in an S3 bucket managed by the AWS IoT Analytics
-        /// service.
+        /// service. The choice of service-managed or customer-managed S3 storage cannot be changed
+        /// after creation of the data store.
         /// </para>
         /// </summary>
         public ServiceManagedDatastoreS3Storage ServiceManagedS3

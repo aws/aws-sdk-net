@@ -70,10 +70,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.AlgorithmSpecification = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CheckpointConfig", targetDepth))
+                {
+                    var unmarshaller = CheckpointConfigUnmarshaller.Instance;
+                    unmarshalledObject.CheckpointConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EnableInterContainerTrafficEncryption", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.EnableInterContainerTrafficEncryption = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EnableManagedSpotTraining", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableManagedSpotTraining = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EnableNetworkIsolation", targetDepth))

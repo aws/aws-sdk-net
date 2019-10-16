@@ -40,7 +40,7 @@ namespace Amazon.RDSDataService.Model
         /// The status of the commit operation.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=128)]
+        [AWSProperty(Min=0, Max=128)]
         public string TransactionStatus
         {
             get { return this._transactionStatus; }

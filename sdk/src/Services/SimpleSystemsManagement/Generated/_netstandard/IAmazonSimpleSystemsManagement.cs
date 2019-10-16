@@ -336,7 +336,7 @@ namespace Amazon.SimpleSystemsManagement
         /// the system returns the AssociationAlreadyExists exception.
         /// </para>
         /// </summary>
-        /// <param name="instanceId">The instance ID.</param>
+        /// <param name="instanceId">The instance ID. <note>  <code>InstanceId</code> has been deprecated. To specify an instance ID for an association, use the <code>Targets</code> parameter. If you use the parameter <code>InstanceId</code>, you cannot use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter. </note></param>
         /// <param name="name">The name of the SSM document that contains the configuration information for the instance. You can specify Command or Automation documents. You can specify AWS-predefined documents, documents you created, or a document that is shared with you from another account. For SSM documents that are shared with you from other AWS accounts, you must specify the complete SSM document ARN, in the following format:  <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>  For example:  <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>  For AWS-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -652,6 +652,17 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Creates a new maintenance window.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The value you specify for <code>Duration</code> determines the specific end time for
+        /// the maintenance window based on the time it begins. No maintenance window tasks are
+        /// permitted to start after the resulting endtime minus the number of hours you specify
+        /// for <code>Cutoff</code>. For example, if the maintenance window starts at 3 PM, the
+        /// duration is three hours, and the value you specify for <code>Cutoff</code> is one
+        /// hour, no maintenance window tasks can start after 5 PM.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMaintenanceWindow service method.</param>
         /// <param name="cancellationToken">
@@ -4820,6 +4831,11 @@ namespace Amazon.SimpleSystemsManagement
         /// Install the Session Manager Plugin for the AWS CLI</a> in the <i>AWS Systems Manager
         /// User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// AWS Tools for PowerShell usage: Start-SSMSession is not currently supported by AWS
+        /// Tools for PowerShell on Windows local machines.
+        /// </para>
         ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartSession service method.</param>
@@ -4910,8 +4926,17 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Updates an association. You can update the association name and version, the document
-        /// version, schedule, parameters, and Amazon S3 output.
+        /// version, schedule, parameters, and Amazon S3 output. 
         /// 
+        ///  
+        /// <para>
+        /// In order to call this API action, your IAM user account, group, or role must be configured
+        /// with permission to call the <a>DescribeAssociation</a> API action. If you don't have
+        /// permission to call DescribeAssociation, then you receive the following error: <code>An
+        /// error occurred (AccessDeniedException) when calling the UpdateAssociation operation:
+        /// User: &lt;user_arn&gt; is not authorized to perform: ssm:DescribeAssociation on resource:
+        /// &lt;resource_arn&gt;</code> 
+        /// </para>
         ///  <important> 
         /// <para>
         /// When you update an association, the association immediately runs against the specified
@@ -5112,6 +5137,17 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Updates an existing maintenance window. Only specified parameters are modified.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The value you specify for <code>Duration</code> determines the specific end time for
+        /// the maintenance window based on the time it begins. No maintenance window tasks are
+        /// permitted to start after the resulting endtime minus the number of hours you specify
+        /// for <code>Cutoff</code>. For example, if the maintenance window starts at 3 PM, the
+        /// duration is three hours, and the value you specify for <code>Cutoff</code> is one
+        /// hour, no maintenance window tasks can start after 5 PM.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMaintenanceWindow service method.</param>
         /// <param name="cancellationToken">

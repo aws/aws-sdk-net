@@ -901,6 +901,106 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type FileSystemAccessMode.
+    /// </summary>
+    public class FileSystemAccessMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Ro for FileSystemAccessMode
+        /// </summary>
+        public static readonly FileSystemAccessMode Ro = new FileSystemAccessMode("ro");
+        /// <summary>
+        /// Constant Rw for FileSystemAccessMode
+        /// </summary>
+        public static readonly FileSystemAccessMode Rw = new FileSystemAccessMode("rw");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FileSystemAccessMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FileSystemAccessMode FindValue(string value)
+        {
+            return FindValue<FileSystemAccessMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FileSystemAccessMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FileSystemType.
+    /// </summary>
+    public class FileSystemType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EFS for FileSystemType
+        /// </summary>
+        public static readonly FileSystemType EFS = new FileSystemType("EFS");
+        /// <summary>
+        /// Constant FSxLustre for FileSystemType
+        /// </summary>
+        public static readonly FileSystemType FSxLustre = new FileSystemType("FSxLustre");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FileSystemType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FileSystemType FindValue(string value)
+        {
+            return FindValue<FileSystemType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FileSystemType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Framework.
     /// </summary>
     public class Framework : ConstantClass
@@ -2573,6 +2673,30 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly ProductionVariantInstanceType MlC5Xlarge = new ProductionVariantInstanceType("ml.c5.xlarge");
         /// <summary>
+        /// Constant MlG4dn12xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG4dn12xlarge = new ProductionVariantInstanceType("ml.g4dn.12xlarge");
+        /// <summary>
+        /// Constant MlG4dn16xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG4dn16xlarge = new ProductionVariantInstanceType("ml.g4dn.16xlarge");
+        /// <summary>
+        /// Constant MlG4dn2xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG4dn2xlarge = new ProductionVariantInstanceType("ml.g4dn.2xlarge");
+        /// <summary>
+        /// Constant MlG4dn4xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG4dn4xlarge = new ProductionVariantInstanceType("ml.g4dn.4xlarge");
+        /// <summary>
+        /// Constant MlG4dn8xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG4dn8xlarge = new ProductionVariantInstanceType("ml.g4dn.8xlarge");
+        /// <summary>
+        /// Constant MlG4dnXlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG4dnXlarge = new ProductionVariantInstanceType("ml.g4dn.xlarge");
+        /// <summary>
         /// Constant MlM410xlarge for ProductionVariantInstanceType
         /// </summary>
         public static readonly ProductionVariantInstanceType MlM410xlarge = new ProductionVariantInstanceType("ml.m4.10xlarge");
@@ -2640,6 +2764,30 @@ namespace Amazon.SageMaker
         /// Constant MlP38xlarge for ProductionVariantInstanceType
         /// </summary>
         public static readonly ProductionVariantInstanceType MlP38xlarge = new ProductionVariantInstanceType("ml.p3.8xlarge");
+        /// <summary>
+        /// Constant MlR512xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlR512xlarge = new ProductionVariantInstanceType("ml.r5.12xlarge");
+        /// <summary>
+        /// Constant MlR524xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlR524xlarge = new ProductionVariantInstanceType("ml.r5.24xlarge");
+        /// <summary>
+        /// Constant MlR52xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlR52xlarge = new ProductionVariantInstanceType("ml.r5.2xlarge");
+        /// <summary>
+        /// Constant MlR54xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlR54xlarge = new ProductionVariantInstanceType("ml.r5.4xlarge");
+        /// <summary>
+        /// Constant MlR5Large for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlR5Large = new ProductionVariantInstanceType("ml.r5.large");
+        /// <summary>
+        /// Constant MlR5Xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlR5Xlarge = new ProductionVariantInstanceType("ml.r5.xlarge");
         /// <summary>
         /// Constant MlT22xlarge for ProductionVariantInstanceType
         /// </summary>
@@ -3015,6 +3163,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly SecondaryStatus Failed = new SecondaryStatus("Failed");
         /// <summary>
+        /// Constant Interrupted for SecondaryStatus
+        /// </summary>
+        public static readonly SecondaryStatus Interrupted = new SecondaryStatus("Interrupted");
+        /// <summary>
         /// Constant LaunchingMLInstances for SecondaryStatus
         /// </summary>
         public static readonly SecondaryStatus LaunchingMLInstances = new SecondaryStatus("LaunchingMLInstances");
@@ -3022,6 +3174,10 @@ namespace Amazon.SageMaker
         /// Constant MaxRuntimeExceeded for SecondaryStatus
         /// </summary>
         public static readonly SecondaryStatus MaxRuntimeExceeded = new SecondaryStatus("MaxRuntimeExceeded");
+        /// <summary>
+        /// Constant MaxWaitTimeExceeded for SecondaryStatus
+        /// </summary>
+        public static readonly SecondaryStatus MaxWaitTimeExceeded = new SecondaryStatus("MaxWaitTimeExceeded");
         /// <summary>
         /// Constant PreparingTrainingStack for SecondaryStatus
         /// </summary>
@@ -3251,6 +3407,10 @@ namespace Amazon.SageMaker
     {
 
         /// <summary>
+        /// Constant Aisage for TargetDevice
+        /// </summary>
+        public static readonly TargetDevice Aisage = new TargetDevice("aisage");
+        /// <summary>
         /// Constant Deeplens for TargetDevice
         /// </summary>
         public static readonly TargetDevice Deeplens = new TargetDevice("deeplens");
@@ -3294,6 +3454,14 @@ namespace Amazon.SageMaker
         /// Constant Ml_p3 for TargetDevice
         /// </summary>
         public static readonly TargetDevice Ml_p3 = new TargetDevice("ml_p3");
+        /// <summary>
+        /// Constant Qcs603 for TargetDevice
+        /// </summary>
+        public static readonly TargetDevice Qcs603 = new TargetDevice("qcs603");
+        /// <summary>
+        /// Constant Qcs605 for TargetDevice
+        /// </summary>
+        public static readonly TargetDevice Qcs605 = new TargetDevice("qcs605");
         /// <summary>
         /// Constant Rasp3b for TargetDevice
         /// </summary>
@@ -3506,6 +3674,10 @@ namespace Amazon.SageMaker
         /// Constant MlP38xlarge for TrainingInstanceType
         /// </summary>
         public static readonly TrainingInstanceType MlP38xlarge = new TrainingInstanceType("ml.p3.8xlarge");
+        /// <summary>
+        /// Constant MlP3dn24xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlP3dn24xlarge = new TrainingInstanceType("ml.p3dn.24xlarge");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

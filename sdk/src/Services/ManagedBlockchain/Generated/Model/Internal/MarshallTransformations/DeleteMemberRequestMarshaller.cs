@@ -58,14 +58,14 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-24";            
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/networks/{networkId}/members/{memberId}";
             if (!publicRequest.IsSetMemberId())
                 throw new AmazonManagedBlockchainException("Request object does not have required field MemberId set");
-            uriResourcePath = uriResourcePath.Replace("{memberId}", StringUtils.FromStringWithSlashEncoding(publicRequest.MemberId));
+            request.AddPathResource("{memberId}", StringUtils.FromString(publicRequest.MemberId));
             if (!publicRequest.IsSetNetworkId())
                 throw new AmazonManagedBlockchainException("Request object does not have required field NetworkId set");
-            uriResourcePath = uriResourcePath.Replace("{networkId}", StringUtils.FromStringWithSlashEncoding(publicRequest.NetworkId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{networkId}", StringUtils.FromString(publicRequest.NetworkId));
+            request.ResourcePath = "/networks/{networkId}/members/{memberId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

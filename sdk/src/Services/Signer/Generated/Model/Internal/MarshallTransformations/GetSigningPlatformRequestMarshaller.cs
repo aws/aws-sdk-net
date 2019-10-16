@@ -58,11 +58,11 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-25";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/signing-platforms/{platformId}";
             if (!publicRequest.IsSetPlatformId())
                 throw new AmazonSignerException("Request object does not have required field PlatformId set");
-            uriResourcePath = uriResourcePath.Replace("{platformId}", StringUtils.FromStringWithSlashEncoding(publicRequest.PlatformId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{platformId}", StringUtils.FromString(publicRequest.PlatformId));
+            request.ResourcePath = "/signing-platforms/{platformId}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

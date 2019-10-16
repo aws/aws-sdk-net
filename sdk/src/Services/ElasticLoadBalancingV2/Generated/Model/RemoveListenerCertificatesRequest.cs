@@ -30,7 +30,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// <summary>
     /// Container for the parameters to the RemoveListenerCertificates operation.
     /// Removes the specified certificate from the certificate list for the specified HTTPS
-    /// listener.
+    /// or TLS listener.
     /// 
     ///  
     /// <para>

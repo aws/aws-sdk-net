@@ -43,8 +43,15 @@ namespace Amazon.CodePipeline.Model
         /// Gets and sets the property ArtifactStore. 
         /// <para>
         /// Represents information about the Amazon S3 bucket where artifacts are stored for the
-        /// pipeline. 
+        /// pipeline.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You must include either <code>artifactStore</code> or <code>artifactStores</code>
+        /// in your pipeline, but you cannot use both. If you create a cross-region action in
+        /// your pipeline, you must use <code>artifactStores</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public ArtifactStore ArtifactStore
         {
@@ -61,15 +68,17 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property ArtifactStores. 
         /// <para>
-        /// A mapping of <code>artifactStore</code> objects and their corresponding regions. There
-        /// must be an artifact store for the pipeline region and for each cross-region action
-        /// within the pipeline. You can only use either <code>artifactStore</code> or <code>artifactStores</code>,
-        /// not both.
+        /// A mapping of <code>artifactStore</code> objects and their corresponding AWS Regions.
+        /// There must be an artifact store for the pipeline Region and for each cross-region
+        /// action in the pipeline.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
+        /// You must include either <code>artifactStore</code> or <code>artifactStores</code>
+        /// in your pipeline, but you cannot use both. If you create a cross-region action in
+        /// your pipeline, you must use <code>artifactStores</code>.
         /// </para>
+        ///  </note>
         /// </summary>
         public Dictionary<string, ArtifactStore> ArtifactStores
         {
@@ -146,7 +155,7 @@ namespace Amazon.CodePipeline.Model
         /// Gets and sets the property Version. 
         /// <para>
         /// The version number of the pipeline. A new pipeline always has a version number of
-        /// 1. This number is automatically incremented when a pipeline is updated.
+        /// 1. This number is incremented when a pipeline is updated.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

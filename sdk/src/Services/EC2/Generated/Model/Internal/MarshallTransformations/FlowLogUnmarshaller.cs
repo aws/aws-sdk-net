@@ -102,6 +102,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.LogDestinationType = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("logFormat", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.LogFormat = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("logGroupName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

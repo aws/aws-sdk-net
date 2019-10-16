@@ -68,13 +68,13 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information on these groups, see "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
-        /// (Working with Log Groups and Log Streams) in the <i>Amazon CloudWatch User Guide</i>.
+        /// For more information on these groups, see Working with Log Groups and Log Streams
+        /// in the <i>Amazon CloudWatch User Guide.</i> 
         /// </para>
         ///  
         /// <para>
-        /// For more information about how to useCloudWatchLogs with DataSync, see "https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html"
-        /// (Monitoring Your Task)
+        /// For more information about how to use CloudWatch Logs with DataSync, see Monitoring
+        /// Your Task in the <i>AWS DataSync User Guide.</i> 
         /// </para>
         /// </summary>
         [AWSProperty(Max=562)]
@@ -110,11 +110,16 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Excludes.  
+        /// Gets and sets the property Excludes. 
         /// <para>
-        /// A filter that determines which files to exclude from a task based on the specified
-        /// pattern. Transfers all files in the task’s subdirectory, except files that match the
-        /// filter that is set. 
+        /// A list of filter rules that determines which files to exclude from a task. The list
+        /// should contain a single filter string that consists of the patterns to exclude. The
+        /// patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]

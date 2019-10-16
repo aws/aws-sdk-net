@@ -29,14 +29,25 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteOrganizationConfigRule operation.
+    /// Deletes the specified organization config rule and all of its evaluation results from
+    /// all member accounts in that organization. Only a master account can delete an organization
+    /// config rule.
     /// 
+    ///  
+    /// <para>
+    /// AWS Config sets the state of a rule to DELETE_IN_PROGRESS until the deletion is complete.
+    /// You cannot update a rule while it is in this state.
+    /// </para>
     /// </summary>
     public partial class DeleteOrganizationConfigRuleRequest : AmazonConfigServiceRequest
     {
         private string _organizationConfigRuleName;
 
         /// <summary>
-        /// Gets and sets the property OrganizationConfigRuleName.
+        /// Gets and sets the property OrganizationConfigRuleName. 
+        /// <para>
+        /// The name of organization config rule that you want to delete.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
         public string OrganizationConfigRuleName

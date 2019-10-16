@@ -41,8 +41,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CatalogId. 
         /// <para>
-        /// The ID of the catalog in which the partion is to be created. Currently, this should
-        /// be the AWS account ID.
+        /// The AWS account ID of the catalog in which the partition is to be created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

@@ -58,14 +58,14 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-28";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/detector/{detectorId}/filter/{filterName}";
             if (!publicRequest.IsSetDetectorId())
                 throw new AmazonGuardDutyException("Request object does not have required field DetectorId set");
-            uriResourcePath = uriResourcePath.Replace("{detectorId}", StringUtils.FromStringWithSlashEncoding(publicRequest.DetectorId));
+            request.AddPathResource("{detectorId}", StringUtils.FromString(publicRequest.DetectorId));
             if (!publicRequest.IsSetFilterName())
                 throw new AmazonGuardDutyException("Request object does not have required field FilterName set");
-            uriResourcePath = uriResourcePath.Replace("{filterName}", StringUtils.FromStringWithSlashEncoding(publicRequest.FilterName));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{filterName}", StringUtils.FromString(publicRequest.FilterName));
+            request.ResourcePath = "/detector/{detectorId}/filter/{filterName}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

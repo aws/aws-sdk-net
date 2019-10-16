@@ -44,9 +44,9 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// By default, the Spot Fleet requests Spot Instances in the Spot pool where the price
-    /// per unit is the lowest. Each launch specification can include its own instance weighting
-    /// that reflects the value of the instance type to your application workload.
+    /// By default, the Spot Fleet requests Spot Instances in the Spot Instance pool where
+    /// the price per unit is the lowest. Each launch specification can include its own instance
+    /// weighting that reflects the value of the instance type to your application workload.
     /// </para>
     ///  
     /// <para>

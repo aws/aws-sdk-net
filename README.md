@@ -225,6 +225,10 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon EventBridge is a serverless event bus service that makes it easy to connect your applications with data from a variety of sources, including AWS services, partner applications, and your own applications.
 * [AWSSDK.FMS](https://www.nuget.org/packages/AWSSDK.FMS/)
 	* This release is the initial release version for AWS Firewall Manager, a new AWS service that makes it easy for customers to centrally configure WAF rules across all their resources (ALBs and CloudFront distributions) and across accounts.
+* [AWSSDK.ForecastQueryService](https://www.nuget.org/packages/AWSSDK.ForecastQueryService/)
+	* Amazon Forecast is a fully managed machine learning service that makes it easy for customers to generate accurate forecasts using their historical time-series data
+* [AWSSDK.ForecastService](https://www.nuget.org/packages/AWSSDK.ForecastService/)
+	* Amazon Forecast is a fully managed machine learning service that makes it easy for customers to generate accurate forecasts using their historical time-series data
 * [AWSSDK.FSx](https://www.nuget.org/packages/AWSSDK.FSx/)
 	* Amazon FSx provides fully-managed third-party file systems optimized for a variety of enterprise and compute-intensive workloads.
 * [AWSSDK.GameLift](https://www.nuget.org/packages/AWSSDK.GameLift/)
@@ -283,6 +287,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Announcing Amazon Kinesis Video Streams, a fully managed video ingestion and storage service. Kinesis Video Streams makes it easy to securely stream video from connected devices to AWS for machine learning, analytics, and processing. You can also stream other time-encoded data like RADAR and LIDAR signals using Kinesis Video Streams.
 * [AWSSDK.KinesisVideoMedia](https://www.nuget.org/packages/AWSSDK.KinesisVideoMedia/)
 	* Announcing Amazon Kinesis Video Streams, a fully managed video ingestion and storage service. Kinesis Video Streams makes it easy to securely stream video from connected devices to AWS for machine learning, analytics, and processing. You can also stream other time-encoded data like RADAR and LIDAR signals using Kinesis Video Streams.
+* [AWSSDK.LakeFormation](https://www.nuget.org/packages/AWSSDK.LakeFormation/)
+	* Lake Formation: (New Service) AWS Lake Formation is a fully managed service that makes it easier for customers to build, secure and manage data lakes.  AWS Lake Formation simplifies and automates many of the complex manual steps usually required to create data lakes including collecting, cleaning and cataloging data and securely making that data available for analytics and machine learning.
 * [AWSSDK.Lambda](https://www.nuget.org/packages/AWSSDK.Lambda/)
 	* AWS Lambda is a compute service that runs your code in response to events and automatically manages the compute resources for you, making it easy to build applications that respond quickly to new information.
 * [AWSSDK.Lex](https://www.nuget.org/packages/AWSSDK.Lex/)
@@ -353,6 +359,10 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Polly is a service that turns text into lifelike speech, making it easy to develop applications that use high-quality speech to increase engagement and accessibility.
 * [AWSSDK.Pricing](https://www.nuget.org/packages/AWSSDK.Pricing/)
 	* We launched new service, Price List Service.
+* [AWSSDK.QLDB](https://www.nuget.org/packages/AWSSDK.QLDB/)
+	* Introduces operations needed for managing Amazon QLDB ledgers. This includes the ability to create, delete, modify, and describe Amazon QLDB ledgers. This also includes the ability to cryptographically verify documents and export the journal in a ledger.
+* [AWSSDK.QLDBSession](https://www.nuget.org/packages/AWSSDK.QLDBSession/)
+	* Amazon QLDB introduces the SendCommand API to interact with data in Amazon QLDB ledgers.
 * [AWSSDK.QuickSight](https://www.nuget.org/packages/AWSSDK.QuickSight/)
 	* Amazon QuickSight is a fully managed, serverless, cloud business intelligence system that allows you to extend data and insights to every user in your organization. The first release of APIs for Amazon QuickSight introduces embedding and user/group management capabilities. The get-dashboard-embed-url API allows you to obtain an authenticated dashboard URL that can be embedded in application domains whitelisted for QuickSight dashboard embedding. User APIs allow you to programmatically expand and manage your QuickSight deployments while group APIs allow easier permissions management for resources within QuickSight.
 * [AWSSDK.RAM](https://www.nuget.org/packages/AWSSDK.RAM/)
@@ -441,6 +451,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* This is the initial SDK release for Amazon WorkLink. Amazon WorkLink is a fully managed, cloud-based service that enables secure, one-click access to internal websites and web apps from mobile phones. With Amazon WorkLink, employees can access internal websites as seamlessly as they access any other website. IT administrators can manage users, devices, and domains by enforcing their own security and access policies via the AWS Console or the AWS SDK.
 * [AWSSDK.WorkMail](https://www.nuget.org/packages/AWSSDK.WorkMail/)
 	* Today, Amazon WorkMail released an administrative SDK and enabled AWS CloudTrail integration. With the administrative SDK, you can natively integrate WorkMail with your existing services. The SDK enables programmatic user, resource, and group management through API calls. This means your existing IT tools and workflows can now automate WorkMail management, and third party applications can streamline WorkMail migrations and account actions.
+* [AWSSDK.WorkMailMessageFlow](https://www.nuget.org/packages/AWSSDK.WorkMailMessageFlow/)
+	* This release allows customers to access email messages as they flow to and from Amazon WorkMail.
 * [AWSSDK.WorkSpaces](https://www.nuget.org/packages/AWSSDK.WorkSpaces/)
 	* Amazon WorkSpaces is a managed desktop computing service in the cloud.
 * [AWSSDK.XRay](https://www.nuget.org/packages/AWSSDK.XRay/)

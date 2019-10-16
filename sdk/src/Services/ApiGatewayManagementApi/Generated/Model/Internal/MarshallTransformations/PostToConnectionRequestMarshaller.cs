@@ -59,11 +59,11 @@ namespace Amazon.ApiGatewayManagementApi.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-29";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/@connections/{connectionId}";
             if (!publicRequest.IsSetConnectionId())
                 throw new AmazonApiGatewayManagementApiException("Request object does not have required field ConnectionId set");
-            uriResourcePath = uriResourcePath.Replace("{connectionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ConnectionId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{connectionId}", StringUtils.FromString(publicRequest.ConnectionId));
+            request.ResourcePath = "/@connections/{connectionId}";
+            request.MarshallerVersion = 2;
             request.ContentStream =  publicRequest.Data ?? new MemoryStream();
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);

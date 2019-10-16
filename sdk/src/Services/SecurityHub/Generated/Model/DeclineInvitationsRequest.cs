@@ -42,6 +42,7 @@ namespace Amazon.SecurityHub.Model
         /// declined from.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> AccountIds
         {
             get { return this._accountIds; }

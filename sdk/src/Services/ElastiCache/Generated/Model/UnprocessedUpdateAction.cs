@@ -32,10 +32,29 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class UnprocessedUpdateAction
     {
+        private string _cacheClusterId;
         private string _errorMessage;
         private string _errorType;
         private string _replicationGroupId;
         private string _serviceUpdateName;
+
+        /// <summary>
+        /// Gets and sets the property CacheClusterId. 
+        /// <para>
+        /// The ID of the cache cluster
+        /// </para>
+        /// </summary>
+        public string CacheClusterId
+        {
+            get { return this._cacheClusterId; }
+            set { this._cacheClusterId = value; }
+        }
+
+        // Check to see if CacheClusterId property is set
+        internal bool IsSetCacheClusterId()
+        {
+            return this._cacheClusterId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ErrorMessage. 

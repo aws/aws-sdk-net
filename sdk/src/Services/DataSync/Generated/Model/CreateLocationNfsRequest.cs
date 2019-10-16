@@ -29,7 +29,8 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLocationNfs operation.
-    /// Creates an endpoint for a Network File System (NFS) file system.
+    /// Defines a file system on a Network File System (NFS) server that can be read from
+    /// or written to
     /// </summary>
     public partial class CreateLocationNfsRequest : AmazonDataSyncRequest
     {
@@ -128,8 +129,8 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  
         /// <para>
-        /// For information about NFS export configuration, see "http://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-nfs-server-config-exports.html"
-        /// (18.7. The /etc/exports Configuration File).
+        /// For information about NFS export configuration, see 18.7. The /etc/exports Configuration
+        /// File in the Red Hat Enterprise Linux documentation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=4096)]

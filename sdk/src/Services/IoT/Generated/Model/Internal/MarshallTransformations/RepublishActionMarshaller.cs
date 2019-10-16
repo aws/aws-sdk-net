@@ -45,6 +45,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RepublishAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetQos())
+            {
+                context.Writer.WritePropertyName("qos");
+                context.Writer.Write(requestObject.Qos);
+            }
+
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");

@@ -242,10 +242,18 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Memory. 
         /// <para>
-        /// The amount (in MiB) of memory used by the task. If using the EC2 launch type, this
-        /// field is optional and any value can be used. If using the Fargate launch type, this
-        /// field is required and you must use one of the following values, which determines your
-        /// range of valid values for the <code>cpu</code> parameter:
+        /// The amount (in MiB) of memory used by the task.
+        /// </para>
+        ///  
+        /// <para>
+        /// If using the EC2 launch type, this field is optional and any value can be used. If
+        /// a task-level memory value is specified then the container-level memory value is optional.
+        /// </para>
+        ///  
+        /// <para>
+        /// If using the Fargate launch type, this field is required and you must use one of the
+        /// following values, which determines your range of valid values for the <code>cpu</code>
+        /// parameter:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -356,7 +364,7 @@ namespace Amazon.ECS.Model
         /// The process namespace to use for the containers in the task. The valid values are
         /// <code>host</code> or <code>task</code>. If <code>host</code> is specified, then all
         /// containers within the tasks that specified the <code>host</code> PID mode on the same
-        /// container instance share the same IPC resources with the host Amazon EC2 instance.
+        /// container instance share the same process namespace with the host Amazon EC2 instance.
         /// If <code>task</code> is specified, all containers within the specified task share
         /// the same process namespace. If no value is specified, the default is a private namespace.
         /// For more information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID
@@ -532,9 +540,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property TaskRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
-        /// that grants containers in the task permission to call AWS APIs on your behalf. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon
+        /// The short name or full Amazon Resource Name (ARN) of the AWS Identity and Access Management
+        /// (IAM) role that grants containers in the task permission to call AWS APIs on your
+        /// behalf. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon
         /// ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  

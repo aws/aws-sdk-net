@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Information about the resource that was non-compliant with the audit check.
+    /// Information about the resource that was noncompliant with the audit check.
     /// </summary>
     public partial class NonCompliantResource
     {
@@ -39,7 +39,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property AdditionalInfo. 
         /// <para>
-        /// Additional information about the non-compliant resource.
+        /// Other information about the noncompliant resource.
         /// </para>
         /// </summary>
         public Dictionary<string, string> AdditionalInfo
@@ -57,7 +57,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property ResourceIdentifier. 
         /// <para>
-        /// Information identifying the non-compliant resource.
+        /// Information that identifies the noncompliant resource.
         /// </para>
         /// </summary>
         public ResourceIdentifier ResourceIdentifier
@@ -75,7 +75,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of the non-compliant resource.
+        /// The type of the noncompliant resource.
         /// </para>
         /// </summary>
         public ResourceType ResourceType

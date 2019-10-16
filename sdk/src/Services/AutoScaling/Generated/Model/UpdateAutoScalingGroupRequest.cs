@@ -41,7 +41,7 @@ namespace Amazon.AutoScaling.Model
     ///  
     /// <para>
     /// If you associate a new launch configuration or template with an Auto Scaling group,
-    /// all new instances will get the updated configuration, but existing instances continue
+    /// all new instances will get the updated configuration. Existing instances continue
     /// to run with the configuration that they were originally launched with. When you update
     /// a group to specify a mixed instances policy instead of a launch configuration or template,
     /// existing instances may be replaced to match the new purchasing options that you specified
@@ -196,8 +196,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
-        /// Checks for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
+        /// Check Grace Period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -245,14 +245,14 @@ namespace Amazon.AutoScaling.Model
         /// The name of the launch configuration. If you specify <code>LaunchConfigurationName</code>
         /// in your update request, you can't specify <code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>.
         /// </para>
-        ///  <note> 
+        ///  <important> 
         /// <para>
         /// To update an Auto Scaling group with a launch configuration with <code>InstanceMonitoring</code>
         /// set to <code>false</code>, you must first disable the collection of group metrics.
         /// Otherwise, you get an error. If you have previously enabled the collection of group
         /// metrics, you can disable it using <a>DisableMetricsCollection</a>.
         /// </para>
-        ///  </note>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
         public string LaunchConfigurationName
@@ -273,6 +273,11 @@ namespace Amazon.AutoScaling.Model
         /// The launch template and version to use to specify the updates. If you specify <code>LaunchTemplate</code>
         /// in your update request, you can't specify <code>LaunchConfigurationName</code> or
         /// <code>MixedInstancesPolicy</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_LaunchTemplateSpecification.html">LaunchTemplateSpecification</a>
+        /// in the <i>Amazon EC2 Auto Scaling API Reference</i>.
         /// </para>
         /// </summary>
         public LaunchTemplateSpecification LaunchTemplate
@@ -335,7 +340,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_MixedInstancesPolicy.html">MixedInstancesPolicy</a>
+        /// in the <i>Amazon EC2 Auto Scaling API Reference</i> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
         /// Scaling Groups with Multiple Instance Types and Purchase Options</a> in the <i>Amazon
         /// EC2 Auto Scaling User Guide</i>.
         /// </para>

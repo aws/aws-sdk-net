@@ -56,7 +56,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property PreferredMfa. 
         /// <para>
-        /// The preferred MFA method.
+        /// Specifies whether software token MFA is the preferred MFA method.
         /// </para>
         /// </summary>
         public bool PreferredMfa

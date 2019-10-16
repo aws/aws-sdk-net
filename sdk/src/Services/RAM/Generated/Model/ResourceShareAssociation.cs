@@ -38,6 +38,7 @@ namespace Amazon.RAM.Model
         private bool? _external;
         private DateTime? _lastUpdatedTime;
         private string _resourceShareArn;
+        private string _resourceShareName;
         private ResourceShareAssociationStatus _status;
         private string _statusMessage;
 
@@ -100,7 +101,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property External. 
         /// <para>
-        /// Indicates whether the principal belongs to the same organization as the AWS account
+        /// Indicates whether the principal belongs to the same AWS organization as the AWS account
         /// that owns the resource share.
         /// </para>
         /// </summary>
@@ -150,6 +151,24 @@ namespace Amazon.RAM.Model
         internal bool IsSetResourceShareArn()
         {
             return this._resourceShareArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceShareName. 
+        /// <para>
+        /// The name of the resource share.
+        /// </para>
+        /// </summary>
+        public string ResourceShareName
+        {
+            get { return this._resourceShareName; }
+            set { this._resourceShareName = value; }
+        }
+
+        // Check to see if ResourceShareName property is set
+        internal bool IsSetResourceShareName()
+        {
+            return this._resourceShareName != null;
         }
 
         /// <summary>

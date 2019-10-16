@@ -58,11 +58,11 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-14";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/devices/{deviceId}/methods";
             if (!publicRequest.IsSetDeviceId())
                 throw new AmazonIoT1ClickDevicesServiceException("Request object does not have required field DeviceId set");
-            uriResourcePath = uriResourcePath.Replace("{deviceId}", StringUtils.FromStringWithSlashEncoding(publicRequest.DeviceId));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{deviceId}", StringUtils.FromString(publicRequest.DeviceId));
+            request.ResourcePath = "/devices/{deviceId}/methods";
+            request.MarshallerVersion = 2;
 
             return request;
         }

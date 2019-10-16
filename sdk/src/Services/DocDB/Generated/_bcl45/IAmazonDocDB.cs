@@ -1041,6 +1041,42 @@ namespace Amazon.DocDB
 
         #endregion
         
+        #region  DescribeCertificates
+
+
+        /// <summary>
+        /// Returns a list of certificate authority (CA) certificates provided by Amazon RDS for
+        /// this AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCertificates service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCertificates service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.CertificateNotFoundException">
+        /// <code>CertificateIdentifier</code> doesn't refer to an existing certificate.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeCertificates">REST API Reference for DescribeCertificates Operation</seealso>
+        DescribeCertificatesResponse DescribeCertificates(DescribeCertificatesRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of certificate authority (CA) certificates provided by Amazon RDS for
+        /// this AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCertificates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCertificates service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.CertificateNotFoundException">
+        /// <code>CertificateIdentifier</code> doesn't refer to an existing certificate.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeCertificates">REST API Reference for DescribeCertificates Operation</seealso>
+        Task<DescribeCertificatesResponse> DescribeCertificatesAsync(DescribeCertificatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeDBClusterParameterGroups
 
 

@@ -59,6 +59,7 @@ namespace Amazon.IoTAnalytics.Model
         /// Gets and sets the property IncludeStatistics. 
         /// <para>
         /// If true, additional statistical information about the channel is included in the response.
+        /// This feature cannot be used with a channel whose S3 storage is customer-managed.
         /// </para>
         /// </summary>
         public bool IncludeStatistics

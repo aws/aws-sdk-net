@@ -58,7 +58,6 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-29";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/2017-08-29/queues";
             
             if (publicRequest.IsSetListBy())
                 request.Parameters.Add("listBy", StringUtils.FromString(publicRequest.ListBy));
@@ -71,7 +70,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetOrder())
                 request.Parameters.Add("order", StringUtils.FromString(publicRequest.Order));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2017-08-29/queues";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

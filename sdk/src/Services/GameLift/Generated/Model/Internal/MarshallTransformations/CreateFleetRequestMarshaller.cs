@@ -61,8 +61,8 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-10-01";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/";
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/";
+            request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -72,6 +72,17 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("BuildId");
                     context.Writer.Write(publicRequest.BuildId);
+                }
+
+                if(publicRequest.IsSetCertificateConfiguration())
+                {
+                    context.Writer.WritePropertyName("CertificateConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CertificateConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CertificateConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetDescription())

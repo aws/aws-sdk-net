@@ -42,6 +42,7 @@ namespace Amazon.ElastiCache.Model
         private string _cacheSubnetGroupName;
         private string _engine;
         private string _engineVersion;
+        private string _kmsKeyId;
         private List<NodeSnapshot> _nodeSnapshots = new List<NodeSnapshot>();
         private int? _numCacheNodes;
         private int? _numNodeGroups;
@@ -355,6 +356,24 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetEngineVersion()
         {
             return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The ID of the KMS key used to encrypt the snapshot.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>

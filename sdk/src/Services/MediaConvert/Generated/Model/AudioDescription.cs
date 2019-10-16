@@ -214,9 +214,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StreamName. Used for MS Smooth and Apple HLS outputs. Indicates
-        /// the name displayed by the player (eg. English, or Director Commentary). Alphanumeric
-        /// characters, spaces, and underscore are legal.
+        /// Gets and sets the property StreamName. Specify a label for this output audio stream.
+        /// For example, "English", "Director commentary", or "track_2". For streaming outputs,
+        /// MediaConvert passes this information into destination manifests for display on the
+        /// end-viewer's player device. For outputs in other output groups, the service ignores
+        /// this setting.
         /// </summary>
         public string StreamName
         {

@@ -31,14 +31,15 @@ namespace Amazon.ECS.Model
     /// Container for the parameters to the CreateService operation.
     /// Runs and maintains a desired number of tasks from a specified task definition. If
     /// the number of tasks running in a service drops below the <code>desiredCount</code>,
-    /// Amazon ECS spawns another copy of the task in the specified cluster. To update an
-    /// existing service, see <a>UpdateService</a>.
+    /// Amazon ECS runs another copy of the task in the specified cluster. To update an existing
+    /// service, see <a>UpdateService</a>.
     /// 
     ///  
     /// <para>
     /// In addition to maintaining the desired count of tasks in your service, you can optionally
-    /// run your service behind a load balancer. The load balancer distributes traffic across
-    /// the tasks that are associated with the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
+    /// run your service behind one or more load balancers. The load balancers distribute
+    /// traffic across the tasks that are associated with the service. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
     /// Load Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     ///  
@@ -262,6 +263,12 @@ namespace Amazon.ECS.Model
         /// The number of instantiations of the specified task definition to place and keep running
         /// on your cluster.
         /// </para>
+        ///  
+        /// <para>
+        /// This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or is
+        /// not specified. If <code>schedulingStrategy</code> is <code>DAEMON</code> then this
+        /// is not required.
+        /// </para>
         /// </summary>
         public int DesiredCount
         {
@@ -343,12 +350,19 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LoadBalancers. 
         /// <para>
-        /// A load balancer object representing the load balancer to use with your service.
+        /// A load balancer object representing the load balancers to use with your service. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
+        /// Load Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// If the service is using the <code>ECS</code> deployment controller, you are limited
-        /// to one load balancer or target group.
+        /// If the service is using the rolling update (<code>ECS</code>) deployment controller
+        /// and using either an Application Load Balancer or Network Load Balancer, you can specify
+        /// multiple target groups to attach to the service. The service-linked role is required
+        /// for services that make use of multiple target groups. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+        /// Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
+        /// Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -371,18 +385,18 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// For Classic Load Balancers, this object must contain the load balancer name, the container
-        /// name (as it appears in a container definition), and the container port to access from
-        /// the load balancer. When a task from this service is placed on a container instance,
-        /// the container instance is registered with the load balancer specified here.
-        /// </para>
-        ///  
-        /// <para>
         /// For Application Load Balancers and Network Load Balancers, this object must contain
         /// the load balancer target group ARN, the container name (as it appears in a container
         /// definition), and the container port to access from the load balancer. When a task
         /// from this service is placed on a container instance, the container instance and port
         /// combination is registered as a target in the target group specified here.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Classic Load Balancers, this object must contain the load balancer name, the container
+        /// name (as it appears in a container definition), and the container port to access from
+        /// the load balancer. When a task from this service is placed on a container instance,
+        /// the container instance is registered with the load balancer specified here.
         /// </para>
         ///  
         /// <para>
@@ -524,8 +538,10 @@ namespace Amazon.ECS.Model
         /// <para>
         /// If your account has already created the Amazon ECS service-linked role, that role
         /// is used by default for your service unless you specify a role here. The service-linked
-        /// role is required if your task definition uses the <code>awsvpc</code> network mode,
-        /// in which case you should not specify a role here. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+        /// role is required if your task definition uses the <code>awsvpc</code> network mode
+        /// or if the service is configured to use service discovery, an external deployment controller,
+        /// or multiple target groups in which case you should not specify a role here. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
         /// Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
         /// Developer Guide</i>.
         /// </para>
@@ -649,9 +665,48 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The metadata that you apply to the service to help you categorize and organize them.
         /// Each tag consists of a key and an optional value, both of which you define. When a
-        /// service is deleted, the tags are deleted as well. Tag keys can have a maximum character
-        /// length of 128 characters, and tag values can have a maximum length of 256 characters.
+        /// service is deleted, the tags are deleted as well.
         /// </para>
+        ///  
+        /// <para>
+        /// The following basic restrictions apply to tags:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Maximum number of tags per resource - 50
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For each resource, each tag key must be unique, and each tag key can have only one
+        /// value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Maximum key length - 128 Unicode characters in UTF-8
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Maximum value length - 256 Unicode characters in UTF-8
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If your tagging schema is used across multiple services and resources, remember that
+        /// other services may have restrictions on allowed characters. Generally allowed characters
+        /// are: letters, numbers, and spaces representable in UTF-8, and the following characters:
+        /// + - = . _ : / @.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tag keys and values are case-sensitive.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination
+        /// of such as a prefix for either keys or values as it is reserved for AWS use. You cannot
+        /// edit or delete tag keys or values with this prefix. Tags with this prefix do not count
+        /// against your tags per resource limit.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags

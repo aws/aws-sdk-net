@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// 
+    /// An organization config rule that has information about config rules that AWS Config
+    /// creates in member accounts.
     /// </summary>
     public partial class OrganizationConfigRule
     {
@@ -40,7 +41,10 @@ namespace Amazon.ConfigService.Model
         private OrganizationManagedRuleMetadata _organizationManagedRuleMetadata;
 
         /// <summary>
-        /// Gets and sets the property ExcludedAccounts.
+        /// Gets and sets the property ExcludedAccounts. 
+        /// <para>
+        /// A comma-separated list of accounts excluded from organization config rule.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
         public List<string> ExcludedAccounts
@@ -56,7 +60,10 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastUpdateTime.
+        /// Gets and sets the property LastUpdateTime. 
+        /// <para>
+        /// The timestamp of the last update.
+        /// </para>
         /// </summary>
         public DateTime LastUpdateTime
         {
@@ -71,7 +78,10 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OrganizationConfigRuleArn.
+        /// Gets and sets the property OrganizationConfigRuleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of organization config rule.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string OrganizationConfigRuleArn
@@ -87,7 +97,10 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OrganizationConfigRuleName.
+        /// Gets and sets the property OrganizationConfigRuleName. 
+        /// <para>
+        /// The name that you assign to organization config rule.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
         public string OrganizationConfigRuleName
@@ -103,7 +116,10 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OrganizationCustomRuleMetadata.
+        /// Gets and sets the property OrganizationCustomRuleMetadata. 
+        /// <para>
+        /// An <code>OrganizationCustomRuleMetadata</code> object.
+        /// </para>
         /// </summary>
         public OrganizationCustomRuleMetadata OrganizationCustomRuleMetadata
         {
@@ -118,7 +134,10 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OrganizationManagedRuleMetadata.
+        /// Gets and sets the property OrganizationManagedRuleMetadata. 
+        /// <para>
+        /// An <code>OrganizationManagedRuleMetadata</code> object.
+        /// </para>
         /// </summary>
         public OrganizationManagedRuleMetadata OrganizationManagedRuleMetadata
         {

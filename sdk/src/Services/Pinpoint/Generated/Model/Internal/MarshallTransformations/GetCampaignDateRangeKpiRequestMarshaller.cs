@@ -58,16 +58,15 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-12-01";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/v1/apps/{application-id}/campaigns/{campaign-id}/kpis/daterange/{kpi-name}";
             if (!publicRequest.IsSetApplicationId())
                 throw new AmazonPinpointException("Request object does not have required field ApplicationId set");
-            uriResourcePath = uriResourcePath.Replace("{application-id}", StringUtils.FromStringWithSlashEncoding(publicRequest.ApplicationId));
+            request.AddPathResource("{application-id}", StringUtils.FromString(publicRequest.ApplicationId));
             if (!publicRequest.IsSetCampaignId())
                 throw new AmazonPinpointException("Request object does not have required field CampaignId set");
-            uriResourcePath = uriResourcePath.Replace("{campaign-id}", StringUtils.FromStringWithSlashEncoding(publicRequest.CampaignId));
+            request.AddPathResource("{campaign-id}", StringUtils.FromString(publicRequest.CampaignId));
             if (!publicRequest.IsSetKpiName())
                 throw new AmazonPinpointException("Request object does not have required field KpiName set");
-            uriResourcePath = uriResourcePath.Replace("{kpi-name}", StringUtils.FromStringWithSlashEncoding(publicRequest.KpiName));
+            request.AddPathResource("{kpi-name}", StringUtils.FromString(publicRequest.KpiName));
             
             if (publicRequest.IsSetEndTime())
                 request.Parameters.Add("end-time", StringUtils.FromDateTimeToISO8601(publicRequest.EndTime));
@@ -80,7 +79,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetStartTime())
                 request.Parameters.Add("start-time", StringUtils.FromDateTimeToISO8601(publicRequest.StartTime));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/v1/apps/{application-id}/campaigns/{campaign-id}/kpis/daterange/{kpi-name}";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

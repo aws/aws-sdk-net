@@ -244,8 +244,8 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SecurityGroups. The list of rules (1 minimum, 125 maximum)
-        /// that authorize connections to brokers.
+        /// Gets and sets the property SecurityGroups. The list of security groups (1 minimum,
+        /// 5 maximum) that authorize connections to brokers.
         /// </summary>
         public List<string> SecurityGroups
         {

@@ -61,6 +61,7 @@ namespace Amazon.ECS.Model
         private string _cpu;
         private string _executionRoleArn;
         private string _family;
+        private List<InferenceAccelerator> _inferenceAccelerators = new List<InferenceAccelerator>();
         private IpcMode _ipcMode;
         private string _memory;
         private NetworkMode _networkMode;
@@ -195,6 +196,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetFamily()
         {
             return this._family != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InferenceAccelerators. 
+        /// <para>
+        /// The Elastic Inference accelerators to use for the containers in the task.
+        /// </para>
+        /// </summary>
+        public List<InferenceAccelerator> InferenceAccelerators
+        {
+            get { return this._inferenceAccelerators; }
+            set { this._inferenceAccelerators = value; }
+        }
+
+        // Check to see if InferenceAccelerators property is set
+        internal bool IsSetInferenceAccelerators()
+        {
+            return this._inferenceAccelerators != null && this._inferenceAccelerators.Count > 0; 
         }
 
         /// <summary>
@@ -386,7 +405,7 @@ namespace Amazon.ECS.Model
         /// The process namespace to use for the containers in the task. The valid values are
         /// <code>host</code> or <code>task</code>. If <code>host</code> is specified, then all
         /// containers within the tasks that specified the <code>host</code> PID mode on the same
-        /// container instance share the same IPC resources with the host Amazon EC2 instance.
+        /// container instance share the same process namespace with the host Amazon EC2 instance.
         /// If <code>task</code> is specified, all containers within the specified task share
         /// the same process namespace. If no value is specified, the default is a private namespace.
         /// For more information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID
@@ -475,9 +494,47 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The metadata that you apply to the task definition to help you categorize and organize
         /// them. Each tag consists of a key and an optional value, both of which you define.
-        /// Tag keys can have a maximum character length of 128 characters, and tag values can
-        /// have a maximum length of 256 characters.
         /// </para>
+        ///  
+        /// <para>
+        /// The following basic restrictions apply to tags:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Maximum number of tags per resource - 50
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For each resource, each tag key must be unique, and each tag key can have only one
+        /// value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Maximum key length - 128 Unicode characters in UTF-8
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Maximum value length - 256 Unicode characters in UTF-8
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If your tagging schema is used across multiple services and resources, remember that
+        /// other services may have restrictions on allowed characters. Generally allowed characters
+        /// are: letters, numbers, and spaces representable in UTF-8, and the following characters:
+        /// + - = . _ : / @.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tag keys and values are case-sensitive.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination
+        /// of such as a prefix for either keys or values as it is reserved for AWS use. You cannot
+        /// edit or delete tag keys or values with this prefix. Tags with this prefix do not count
+        /// against your tags per resource limit.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags

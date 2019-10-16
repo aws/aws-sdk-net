@@ -43,6 +43,7 @@ namespace Amazon.DirectConnect.Model
         private string _lagId;
         private DateTime? _loaIssueTime;
         private string _location;
+        private string _providerName;
         private string _region;
         private List<Tag> _tags = new List<Tag>();
 
@@ -277,6 +278,24 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProviderName. 
+        /// <para>
+        /// The name of the service provider associated with the interconnect.
+        /// </para>
+        /// </summary>
+        public string ProviderName
+        {
+            get { return this._providerName; }
+            set { this._providerName = value; }
+        }
+
+        // Check to see if ProviderName property is set
+        internal bool IsSetProviderName()
+        {
+            return this._providerName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
         /// The AWS Region where the connection is located.
@@ -297,7 +316,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Any tags assigned to the interconnect.
+        /// The tags associated with the interconnect.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

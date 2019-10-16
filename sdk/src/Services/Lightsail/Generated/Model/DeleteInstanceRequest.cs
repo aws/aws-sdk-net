@@ -29,19 +29,38 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteInstance operation.
-    /// Deletes a specific Amazon Lightsail virtual private server, or <i>instance</i>.
+    /// Deletes an Amazon Lightsail instance.
     /// 
     ///  
     /// <para>
     /// The <code>delete instance</code> operation supports tag-based access control via resource
-    /// tags applied to the resource identified by instanceName. For more information, see
-    /// the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+    /// tags applied to the resource identified by <code>instance name</code>. For more information,
+    /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
     /// Dev Guide</a>.
     /// </para>
     /// </summary>
     public partial class DeleteInstanceRequest : AmazonLightsailRequest
     {
+        private bool? _forceDeleteAddOns;
         private string _instanceName;
+
+        /// <summary>
+        /// Gets and sets the property ForceDeleteAddOns. 
+        /// <para>
+        /// A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+        /// </para>
+        /// </summary>
+        public bool ForceDeleteAddOns
+        {
+            get { return this._forceDeleteAddOns.GetValueOrDefault(); }
+            set { this._forceDeleteAddOns = value; }
+        }
+
+        // Check to see if ForceDeleteAddOns property is set
+        internal bool IsSetForceDeleteAddOns()
+        {
+            return this._forceDeleteAddOns.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property InstanceName. 

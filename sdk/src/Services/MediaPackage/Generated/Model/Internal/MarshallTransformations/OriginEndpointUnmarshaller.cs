@@ -118,6 +118,12 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                     unmarshalledObject.MssPackage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("origination", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Origination = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("startoverWindowSeconds", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

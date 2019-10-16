@@ -81,6 +81,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ColorMetadata);
             }
 
+            if(requestObject.IsSetColorSpaceSettings())
+            {
+                context.Writer.WritePropertyName("colorSpaceSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = H264ColorSpaceSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ColorSpaceSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEntropyEncoding())
             {
                 context.Writer.WritePropertyName("entropyEncoding");

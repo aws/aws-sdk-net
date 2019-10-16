@@ -59,7 +59,6 @@ namespace Amazon.Mobile.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-01";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/projects";
             
             if (publicRequest.IsSetName())
                 request.Parameters.Add("name", StringUtils.FromString(publicRequest.Name));
@@ -69,7 +68,8 @@ namespace Amazon.Mobile.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetSnapshotId())
                 request.Parameters.Add("snapshotId", StringUtils.FromString(publicRequest.SnapshotId));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/projects";
+            request.MarshallerVersion = 2;
             request.ContentStream =  publicRequest.Contents ?? new MemoryStream();
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);

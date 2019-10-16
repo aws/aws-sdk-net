@@ -43,7 +43,7 @@ namespace Amazon.RDSDataService.Model
         /// The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=100)]
+        [AWSProperty(Required=true, Min=11, Max=100)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -62,7 +62,7 @@ namespace Amazon.RDSDataService.Model
         /// The name or ARN of the secret that enables access to the DB cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=100)]
+        [AWSProperty(Required=true, Min=11, Max=100)]
         public string SecretArn
         {
             get { return this._secretArn; }
@@ -81,7 +81,7 @@ namespace Amazon.RDSDataService.Model
         /// The identifier of the transaction to roll back.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=192)]
+        [AWSProperty(Required=true, Min=0, Max=192)]
         public string TransactionId
         {
             get { return this._transactionId; }

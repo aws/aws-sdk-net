@@ -58,11 +58,11 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-14";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/prod/tags/{resource-arn}";
             if (!publicRequest.IsSetResourceArn())
                 throw new AmazonMediaLiveException("Request object does not have required field ResourceArn set");
-            uriResourcePath = uriResourcePath.Replace("{resource-arn}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceArn));
-            request.ResourcePath = uriResourcePath;
+            request.AddPathResource("{resource-arn}", StringUtils.FromString(publicRequest.ResourceArn));
+            request.ResourcePath = "/prod/tags/{resource-arn}";
+            request.MarshallerVersion = 2;
 
             return request;
         }

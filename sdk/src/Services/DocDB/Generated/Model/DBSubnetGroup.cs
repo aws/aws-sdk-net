@@ -42,7 +42,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroupArn. 
         /// <para>
-        /// The Amazon Resource Identifier (ARN) for the DB subnet group.
+        /// The Amazon Resource Name (ARN) for the DB subnet group.
         /// </para>
         /// </summary>
         public string DBSubnetGroupArn

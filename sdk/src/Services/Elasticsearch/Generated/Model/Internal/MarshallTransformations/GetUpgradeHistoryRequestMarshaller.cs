@@ -58,17 +58,17 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-01-01";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/2015-01-01/es/upgradeDomain/{DomainName}/history";
             if (!publicRequest.IsSetDomainName())
                 throw new AmazonElasticsearchException("Request object does not have required field DomainName set");
-            uriResourcePath = uriResourcePath.Replace("{DomainName}", StringUtils.FromStringWithSlashEncoding(publicRequest.DomainName));
+            request.AddPathResource("{DomainName}", StringUtils.FromString(publicRequest.DomainName));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/2015-01-01/es/upgradeDomain/{DomainName}/history";
+            request.MarshallerVersion = 2;
             request.UseQueryString = true;
 
             return request;

@@ -106,7 +106,7 @@ namespace Amazon.ConfigService.Model
         /// The name of the AWS Config rule.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=128)]
         public string ConfigRuleName
         {
             get { return this._configRuleName; }
