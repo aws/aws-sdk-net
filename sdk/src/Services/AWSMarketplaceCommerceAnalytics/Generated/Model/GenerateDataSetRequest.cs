@@ -186,6 +186,14 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         /// <para>
         /// From 2015-01-26 to present: Available every 30 days by 24:00 UTC.
         /// </para>
+        ///  </li> <li> <strong>disbursed_amount_by_age_of_past_due_funds</strong> 
+        /// <para>
+        /// From 2018-04-07 to present: Available every 30 days by 24:00 UTC.
+        /// </para>
+        ///  </li> <li> <strong>disbursed_amount_by_uncollected_funds_breakdown</strong> 
+        /// <para>
+        /// From 2019-10-04 to present: Available every 30 days by 24:00 UTC.
+        /// </para>
         ///  </li> <li> <strong>customer_profile_by_industry</strong> 
         /// <para>
         /// From 2015-10-01 to 2017-06-29: Available daily by 24:00 UTC.

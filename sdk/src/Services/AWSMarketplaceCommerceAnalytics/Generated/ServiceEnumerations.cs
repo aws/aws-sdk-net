@@ -75,6 +75,10 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// </summary>
         public static readonly DataSetType DailyBusinessUsageByInstanceType = new DataSetType("daily_business_usage_by_instance_type");
         /// <summary>
+        /// Constant Disbursed_amount_by_age_of_past_due_funds for DataSetType
+        /// </summary>
+        public static readonly DataSetType Disbursed_amount_by_age_of_past_due_funds = new DataSetType("disbursed_amount_by_age_of_past_due_funds");
+        /// <summary>
         /// Constant Disbursed_amount_by_instance_hours for DataSetType
         /// </summary>
         public static readonly DataSetType Disbursed_amount_by_instance_hours = new DataSetType("disbursed_amount_by_instance_hours");
@@ -82,6 +86,10 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// Constant Disbursed_amount_by_product_with_uncollected_funds for DataSetType
         /// </summary>
         public static readonly DataSetType Disbursed_amount_by_product_with_uncollected_funds = new DataSetType("disbursed_amount_by_product_with_uncollected_funds");
+        /// <summary>
+        /// Constant Disbursed_amount_by_uncollected_funds_breakdown for DataSetType
+        /// </summary>
+        public static readonly DataSetType Disbursed_amount_by_uncollected_funds_breakdown = new DataSetType("disbursed_amount_by_uncollected_funds_breakdown");
         /// <summary>
         /// Constant DisbursedAmountByAgeOfDisbursedFunds for DataSetType
         /// </summary>
