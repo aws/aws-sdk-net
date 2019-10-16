@@ -28,12 +28,12 @@ namespace AWSSDK.UnitTests
 
         private static readonly List<string> SourceFiles = new List<string>
             {
-                 "Services\\S3\\Custom\\_bcl+netstandard\\Encryption\\AmazonS3EncryptionClient.cs",
-                 "Services\\S3\\Custom\\_bcl+netstandard\\Encryption\\EncryptionMaterials.cs",
-                 "Services\\S3\\Custom\\_bcl+netstandard\\Encryption\\EncryptionUtils.cs",
-                 "Services\\S3\\Custom\\_bcl+netstandard\\Encryption\\Internal\\SetupDecryptionHandler.cs",
-                 "Services\\S3\\Custom\\_bcl+netstandard\\Encryption\\Internal\\SetupEncryptionHandler.cs",
-                 "Services\\S3\\Custom\\_bcl+netstandard\\Encryption\\UploadPartContextForEncryption.cs",
+                 "Services\\S3\\Custom\\Encryption\\AmazonS3EncryptionClient.cs",
+                 "Services\\S3\\Custom\\Encryption\\EncryptionMaterials.cs",
+                 "Services\\S3\\Custom\\Encryption\\EncryptionUtils.cs",
+                 "Services\\S3\\Custom\\Encryption\\Internal\\SetupDecryptionHandler.cs",
+                 "Services\\S3\\Custom\\Encryption\\Internal\\SetupEncryptionHandler.cs",
+                 "Services\\S3\\Custom\\Encryption\\UploadPartContextForEncryption.cs",
             };
 
         [TestMethod]
