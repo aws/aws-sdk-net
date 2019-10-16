@@ -1,3 +1,16 @@
+### 3.3.609.0 (2019-10-16 18:14 UTC)
+* AWSMarketplaceCommerceAnalytics (3.3.102.0)
+	* add 2 more values for the supporting sections - age of past due funds + uncollected funds breakdown
+* Kafka (3.3.104.0)
+	* AWS MSK has added support for adding brokers to a cluster.
+* RoboMaker (3.3.107.0)
+	* This release adds support for ROS2 Dashing as a beta feature
+* Core 3.3.103.49
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.608.0 (2019-10-15 19:46 UTC)
 * KinesisVideoArchivedMedia (3.3.102.0)
 	* Add ON_DISCONTINUITY mode to the GetHLSStreamingSessionURL API
