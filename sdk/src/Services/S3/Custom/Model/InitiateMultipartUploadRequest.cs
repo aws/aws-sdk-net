@@ -66,12 +66,10 @@ namespace Amazon.S3.Model
         /// </summary>
         internal byte[] IV { get; set; }
 
-#if BCL || NETSTANDARD
         /// <summary>
         /// Storage mode for encryption information.
         /// </summary>
         internal Amazon.S3.Encryption.CryptoStorageMode StorageMode { get; set; }
-#endif
 
         /// <summary>
         /// A canned access control list (ACL) to apply to the object.

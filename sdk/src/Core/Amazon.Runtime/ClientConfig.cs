@@ -137,13 +137,11 @@ namespace Amazon.Runtime
         {
             get
             {
-#if BCL || NETSTANDARD
                 if (probeForRegionEndpoint)
                 {
                     RegionEndpoint = GetDefaultRegionEndpoint();
                     this.probeForRegionEndpoint = false;
                 }
-#endif
                 return this.regionEndpoint;
             }
             set

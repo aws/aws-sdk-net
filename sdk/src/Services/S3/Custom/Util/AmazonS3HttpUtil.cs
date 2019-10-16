@@ -112,13 +112,11 @@ namespace Amazon.S3
 
         private static void SetProxyIfAvailableAndConfigured(IClientConfig config, HttpWebRequest httpWebRequest)
         {
-#if BCL || NETSTANDARD
             var proxy = GetProxyIfAvailableAndConfigured(config);
             if (proxy != null)
             {
                 httpWebRequest.Proxy = proxy;
             }
-#endif
         }
         private static IWebProxy GetProxyIfAvailableAndConfigured(IClientConfig config)
         {

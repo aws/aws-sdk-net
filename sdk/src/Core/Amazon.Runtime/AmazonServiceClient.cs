@@ -454,13 +454,11 @@ namespace Amazon.Runtime
                 _logger
             );
 
-#if BCL || NETSTANDARD
             if (DeterminedCSMConfiguration.Instance.CSMConfiguration.Enabled && !string.IsNullOrEmpty(ServiceMetadata.ServiceId))
             {
                 this.RuntimePipeline.AddHandlerBefore<ErrorHandler>(new CSMCallAttemptHandler());
                 this.RuntimePipeline.AddHandlerBefore<MetricsHandler>(new CSMCallEventHandler());
             }
-#endif
 
             CustomizeRuntimePipeline(this.RuntimePipeline);
 
@@ -622,20 +620,16 @@ namespace Amazon.Runtime
 
 
             newConfig.ProxyCredentials = this.Config.ProxyCredentials;
-#if BCL || NETSTANDARD
             newConfig.ProxyHost = this.Config.ProxyHost;
             newConfig.ProxyPort = this.Config.ProxyPort;
-#endif
         }
 
         private static void SetupCSMHandler(IRequestContext requestContext)
         {
-#if BCL || NETSTANDARD
             if (requestContext.CSMEnabled)
             {
                 requestContext.CSMCallEvent = new MonitoringAPICallEvent(requestContext);
             }
-#endif
         }        
     }
 }

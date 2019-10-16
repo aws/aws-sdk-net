@@ -329,11 +329,7 @@ namespace Amazon.S3.Internal
             return bucketName;
         }
 
-#if BCL || NETSTANDARD
         private static Regex bucketValidationRegex = new Regex(@"^[A-Za-z0-9._\-]+$", RegexOptions.Compiled);
-#else
-        private static Regex bucketValidationRegex = new Regex(@"^[A-Za-z0-9._\-]+$");
-#endif
         // Returns true if the bucket name is valid
         public static bool IsValidBucketName(string bucketName)
         {
@@ -358,13 +354,8 @@ namespace Amazon.S3.Internal
             return true;
         }
 
-#if BCL || NETSTANDARD
         private static Regex dnsValidationRegex1 = new Regex(@"^[a-z0-9][a-z0-9.-]+[a-z0-9]$", RegexOptions.Compiled);
         private static Regex dnsValidationRegex2 = new Regex("(\\d+\\.){3}\\d+", RegexOptions.Compiled);
-#else
-        private static Regex dnsValidationRegex1 = new Regex(@"^[a-z0-9][a-z0-9.-]+[a-z0-9]$");
-        private static Regex dnsValidationRegex2 = new Regex("(\\d+\\.){3}\\d+");
-#endif
         private static string[] invalidPatterns = new string[] { "..", "-.", ".-" };
         // Returns true if the given bucket name is DNS compatible
         // DNS compatible bucket names may be accessed like:

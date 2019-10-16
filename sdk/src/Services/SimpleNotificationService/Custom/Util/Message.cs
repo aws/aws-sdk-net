@@ -12,12 +12,10 @@ using Amazon.Util;
 
 using ThirdParty.Json.LitJson;
 
-#if BCL || NETSTANDARD
 using Amazon.Runtime.Internal.Util;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using ThirdParty.BouncyCastle.OpenSsl;
-#endif
 
 
 namespace Amazon.SimpleNotificationService.Util
@@ -257,8 +255,6 @@ namespace Amazon.SimpleNotificationService.Util
             throw new AmazonClientException("Signing certificate url is not from a recognised source.");
         }
 
-#if BCL || NETSTANDARD
-
         #region Message Verification
         /// <summary>
         /// Verifies the authenticity of a message sent by Amazon SNS. This is done by computing a signature from the fields in the message and then comparing 
@@ -421,7 +417,6 @@ namespace Amazon.SimpleNotificationService.Util
             }
         }
         #endregion
-#endif
 
 #if BCL
         #region Subscribe/Unsubscribe Actions

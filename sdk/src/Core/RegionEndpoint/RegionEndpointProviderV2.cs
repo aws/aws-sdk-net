@@ -255,12 +255,11 @@ namespace Amazon.Internal
                     {
                         LoadEndpointDefinitionFromWeb(endpointsPath);
                     }
-#if BCL || NETSTANDARD
                     else
                     {
                         LoadEndpointDefinitionFromFilePath(endpointsPath);
                     }
-#endif
+
                     RegionEndpoint.loaded = true;
                 }
             }
@@ -325,7 +324,6 @@ namespace Amazon.Internal
                 return true;
             }
 #endif
-#if BCL || NETSTANDARD
             static void LoadEndpointDefinitionFromFilePath(string path)
             {
                 if (!System.IO.File.Exists(path))
@@ -336,7 +334,6 @@ namespace Amazon.Internal
                     ReadEndpointFile(stream);
                 }
             }
-#endif
             static void LoadEndpointDefinitionFromWeb(string url)
             {
                 int retries = 0;

@@ -57,9 +57,7 @@ namespace Amazon.Util.Internal
 
             var environmentInfo = ServiceFactory.Instance.GetService<IEnvironmentInfo>();
             string executionEnvironmentString = "";
-#if BCL || NETSTANDARD
             executionEnvironmentString = GetExecutionEnvironmentUserAgentString();
-#endif 
 
             if (string.IsNullOrEmpty(executionEnvironmentString))
             {
@@ -202,7 +200,6 @@ namespace Amazon.Util.Internal
             return false;
         }
 
-#if BCL || NETSTANDARD
         internal static string EXECUTION_ENVIRONMENT_ENVVAR = "AWS_EXECUTION_ENV";
         internal static string GetExecutionEnvironment()
         {
@@ -221,7 +218,6 @@ namespace Amazon.Util.Internal
 
             return userAgentString;
         }
-#endif
 
         #region IsSet methods
 

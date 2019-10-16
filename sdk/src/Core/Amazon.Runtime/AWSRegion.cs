@@ -18,9 +18,7 @@ using System.Globalization;
 using Amazon.Runtime.Internal.Util;
 using System.Collections.Generic;
 using Amazon.Util;
-#if BCL || NETSTANDARD
 using Amazon.Runtime.CredentialManagement;
-#endif
 
 namespace Amazon.Runtime
 {
@@ -67,7 +65,6 @@ namespace Amazon.Runtime
         }
     }
 
-#if BCL || NETSTANDARD
     /// <summary>
     /// Determines region based on an environment variable. If the environment does not contain
     /// the region setting key an InvalidOperationException is thrown.
@@ -176,16 +173,13 @@ namespace Amazon.Runtime
             }
         }
     }
-#endif
 
     /// <summary>
     /// Probing mechanism to determine region from various sources.
     /// </summary>
     public static class FallbackRegionFactory
     {
-#if BCL || NETSTANDARD
         private static CredentialProfileStoreChain credentialProfileChain = new CredentialProfileStoreChain();
-#endif
 
         private static object _lock = new object();
 
@@ -205,20 +199,16 @@ namespace Amazon.Runtime
             AllGenerators = new List<RegionGenerator>
             {
                 () => new AppConfigAWSRegion(),
-#if BCL || NETSTANDARD
                 () => new EnvironmentVariableAWSRegion(),
                 () => new ProfileAWSRegion(credentialProfileChain),
                 () => new InstanceProfileAWSRegion()
-#endif
             };
 
             NonMetadataGenerators = new List<RegionGenerator>
             {
                 () => new AppConfigAWSRegion(),
-#if BCL || NETSTANDARD
                 () => new EnvironmentVariableAWSRegion(),
                 () => new ProfileAWSRegion(credentialProfileChain),
-#endif
             };
         }
 

@@ -409,9 +409,7 @@ namespace Amazon.S3.Transfer
             if (request.IsSetFilePath())
             {
                 bool fileExists;
-#if BCL || NETSTANDARD
                 fileExists = File.Exists(request.FilePath);
-#endif
                 if (!fileExists)
                 {
                     throw new ArgumentException("The file indicated by the FilePath property does not exist!");

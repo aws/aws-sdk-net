@@ -55,7 +55,6 @@ namespace Amazon.CloudSearchDomain.Model
     public partial class UploadDocumentsRequest
     {
 
-#if BCL || NETSTANDARD
         private string filePath;
 
         /// <summary>
@@ -78,6 +77,5 @@ namespace Amazon.CloudSearchDomain.Model
         {
             this.Documents = new FileStream(this.FilePath, FileMode.Open, FileAccess.Read, FileShare.Read);
         }
-#endif
     }
 }
