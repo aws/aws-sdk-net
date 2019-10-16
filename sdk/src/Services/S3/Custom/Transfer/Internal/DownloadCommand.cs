@@ -151,7 +151,6 @@ namespace Amazon.S3.Transfer.Internal
             AWSSDKUtils.Sleep(delay);
         }
 
-#if BCL || NETSTANDARD
         /// <summary>
         /// Returns the amount of bytes remaining that need to be pulled down from S3.
         /// </summary>
@@ -175,8 +174,6 @@ namespace Amazon.S3.Transfer.Internal
 
             return byteRange;
         }
-#endif
-
     }
 }
 

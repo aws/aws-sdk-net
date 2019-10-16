@@ -12,9 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-#if BCL || NETSTANDARD
 using Amazon.Runtime.CredentialManagement;
-#endif
 using Amazon.Runtime.Internal.Util;
 using System;
 using System.Collections.Generic;
@@ -28,13 +26,10 @@ namespace Amazon.Runtime
     // Credentials fallback mechanism
     public static class FallbackCredentialsFactory
     {
-#if BCL || NETSTANDARD
         internal const string AWS_PROFILE_ENVIRONMENT_VARIABLE = "AWS_PROFILE";
         internal const string DefaultProfileName = "default";
 
         private static readonly CredentialProfileStoreChain credentialProfileChain = new CredentialProfileStoreChain();
-#endif
-
         static FallbackCredentialsFactory()
         {
             Reset();
@@ -56,16 +51,13 @@ namespace Amazon.Runtime
 #if BCL
                 () => new AppConfigAWSCredentials(),            // Test explicit keys/profile name first.
 #endif
-#if BCL || NETSTANDARD
                 // Attempt to load the default profile.  It could be Basic, Session, AssumeRole, or SAML.
                 () => GetAWSCredentials(credentialProfileChain),
                 () => new EnvironmentVariablesAWSCredentials(), // Look for credentials set in environment vars.
                 () => ECSEC2CredentialsWrapper(proxy),      // either get ECS credentials or instance profile credentials
-#endif
             };
         }
 
-#if BCL || NETSTANDARD
         private static AWSCredentials GetAWSCredentials(ICredentialProfileSource source)
         {
             var profileName = Environment.GetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE) ?? DefaultProfileName;
@@ -101,7 +93,6 @@ namespace Amazon.Runtime
             }
             return DefaultInstanceProfileAWSCredentials.Instance;
         }
-#endif
 
         private static AWSCredentials cachedCredentials;
         public static AWSCredentials GetCredentials()
@@ -122,7 +113,6 @@ namespace Amazon.Runtime
                 {
                     cachedCredentials = generator();
                 }
-#if BCL || NETSTANDARD
                 // Breaking the FallbackCredentialFactory chain in case a ProcessAWSCredentialException exception 
                 // is encountered. ProcessAWSCredentialException is thrown by the ProcessAWSCredential provider
                 // when an exception is encountered when running a user provided process to obtain Basic/Session 
@@ -133,7 +123,6 @@ namespace Amazon.Runtime
                 {
                     throw;
                 }
-#endif
                 catch (Exception e)
                 {
                     cachedCredentials = null;

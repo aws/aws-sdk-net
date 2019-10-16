@@ -28,11 +28,7 @@ namespace Amazon.Runtime.Internal.Util
     /// </summary>
     public static class HostPrefixUtils
     {
-#if BCL || NETSTANDARD
         private static Regex labelValidationRegex = new Regex(@"^[A-Za-z0-9\-]+$", RegexOptions.Compiled | RegexOptions.Singleline);
-#else
-        private static Regex labelValidationRegex = new Regex(@"^[A-Za-z0-9\-]+$", RegexOptions.Singleline);
-#endif
 
         /// <summary>
         /// Validates a label value

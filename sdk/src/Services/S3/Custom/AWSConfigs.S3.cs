@@ -52,11 +52,7 @@ namespace Amazon
 
         static AWSConfigsS3()
         {
-#if BCL || NETSTANDARD
             _useSignatureVersion4 = true;
-#else
-            _useSignatureVersion4 = false;
-#endif
             UseSigV4SetExplicitly = false;
 
 #if BCL

@@ -80,7 +80,6 @@ namespace Amazon.Runtime.Internal.Util
             _inputBuffer = new byte[DefaultChunkSize];
             _outputBuffer = new byte[CalculateChunkHeaderLength(DefaultChunkSize)]; // header+data
 
-#if BCL || NETSTANDARD
             // if the wrapped stream implements encryption, switch to a read-and-copy
             // strategy for filling the chunk buffer
             var encryptionStream = SearchWrappedStream(s =>
@@ -95,7 +94,6 @@ namespace Amazon.Runtime.Internal.Util
 
             if (encryptionStream != null)
                 _readStrategy = ReadStrategy.ReadAndCopy;
-#endif
         }
 
         /// <summary>
