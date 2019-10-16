@@ -81,7 +81,7 @@ namespace AWSSDK.UnitTests.RDS
         [TestCategory("RDS")]
         public void GenerateAuthTokenNoRegion()
         {
-            AssertAuthToken(RDSAuthTokenGenerator.GenerateAuthToken(BasicCredentials, DBHost, DBPort, DBUser), AccessKey, AWSRegion);
+            AssertAuthToken(RDSAuthTokenGenerator.GenerateAuthToken(BasicCredentials, DBHost, DBPort, DBUser), AccessKey, FallbackRegionFactory.GetRegionEndpoint());
         }
 
         [TestMethod]
@@ -95,7 +95,7 @@ namespace AWSSDK.UnitTests.RDS
         [TestCategory("RDS")]
         public void GenerateAuthTokenNoRegionNoCredentials()
         {
-            AssertAuthToken(RDSAuthTokenGenerator.GenerateAuthToken(DBHost, DBPort, DBUser), AccessKey, AWSRegion);
+            AssertAuthToken(RDSAuthTokenGenerator.GenerateAuthToken(DBHost, DBPort, DBUser), AccessKey, FallbackRegionFactory.GetRegionEndpoint());
         }
 
         [TestMethod]
