@@ -58,6 +58,7 @@
     <property>Amazon.RoboMaker.Model.CreateRobotRequest.GreengrassGroupId</property>
     <min>1</min>
     <max>1224</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.CreateRobotRequest.Name</property>
@@ -75,6 +76,7 @@
     <property>Amazon.RoboMaker.Model.CreateRobotResponse.GreengrassGroupId</property>
     <min>1</min>
     <max>1224</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.CreateRobotResponse.Name</property>
@@ -368,6 +370,7 @@
     <property>Amazon.RoboMaker.Model.DescribeRobotResponse.GreengrassGroupId</property>
     <min>1</min>
     <max>1224</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.DescribeRobotResponse.LastDeploymentJob</property>
@@ -781,11 +784,13 @@
     <property>Amazon.RoboMaker.Model.DeploymentLaunchConfig.PostLaunchFile</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.DeploymentLaunchConfig.PreLaunchFile</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.Filter.Name</property>
@@ -870,6 +875,7 @@
     <property>Amazon.RoboMaker.Model.Robot.GreenGrassGroupId</property>
     <min>1</min>
     <max>1224</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.Robot.LastDeploymentJob</property>
@@ -993,7 +999,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.SimulationSoftwareSuite.Version</property>
-    <pattern>7|9|Kinetic|Melodic</pattern>
+    <pattern>7|9|Kinetic|Melodic|Dashing</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.Source.S3Bucket</property>

@@ -426,6 +426,10 @@ namespace Amazon.RoboMaker
         /// Constant ROS for RobotSoftwareSuiteType
         /// </summary>
         public static readonly RobotSoftwareSuiteType ROS = new RobotSoftwareSuiteType("ROS");
+        /// <summary>
+        /// Constant ROS2 for RobotSoftwareSuiteType
+        /// </summary>
+        public static readonly RobotSoftwareSuiteType ROS2 = new RobotSoftwareSuiteType("ROS2");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -468,6 +472,10 @@ namespace Amazon.RoboMaker
     public class RobotSoftwareSuiteVersionType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant Dashing for RobotSoftwareSuiteVersionType
+        /// </summary>
+        public static readonly RobotSoftwareSuiteVersionType Dashing = new RobotSoftwareSuiteVersionType("Dashing");
         /// <summary>
         /// Constant Kinetic for RobotSoftwareSuiteVersionType
         /// </summary>
