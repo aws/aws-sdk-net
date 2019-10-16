@@ -41,6 +41,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kafka.Model.UpdateBrokerCountRequest.TargetNumberOfBrokerNodes</property>
+    <min>1</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kafka.Model.BrokerNodeGroupInfo.InstanceType</property>
     <min>5</min>
     <max>32</max>
