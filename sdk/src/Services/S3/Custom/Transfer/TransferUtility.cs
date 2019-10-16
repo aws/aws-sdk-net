@@ -201,6 +201,54 @@ namespace Amazon.S3.Transfer
             this._config = config;
         }
 
+        /// <summary>
+        /// 	Constructs a new <see cref="TransferUtility"/> class.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// If a Timeout needs to be specified, use the constructor which takes an <see cref="Amazon.S3.AmazonS3Client"/> as a paramater.
+        /// Use an instance of <see cref="Amazon.S3.AmazonS3Client"/> constructed with an <see cref="Amazon.S3.AmazonS3Config"/> object with the Timeout specified. 
+        /// </para>        
+        /// </remarks>
+        public TransferUtility()
+            : this(new AmazonS3Client())
+        {
+            this._shouldDispose = true;
+        }
+
+        /// <summary>
+        /// 	Constructs a new <see cref="TransferUtility"/> class.
+        /// </summary>
+        /// <param name="region">
+        ///     The region to configure the transfer utility for.
+        /// </param>
+        /// <remarks>
+        /// <para>
+        /// If a Timeout needs to be specified, use the constructor which takes an <see cref="Amazon.S3.AmazonS3Client"/> as a paramater.
+        /// Use an instance of <see cref="Amazon.S3.AmazonS3Client"/> constructed with an <see cref="Amazon.S3.AmazonS3Config"/> object with the Timeout specified. 
+        /// </para>        
+        /// </remarks>
+        public TransferUtility(RegionEndpoint region)
+            : this(new AmazonS3Client(region))
+        {
+            this._shouldDispose = true;
+        }
+
+        /// <summary>
+        /// 	Constructs a new <see cref="TransferUtility"/> class.
+        /// </summary>
+        /// <param name="config">
+        /// 	Specifies advanced configuration settings for <see cref="TransferUtility"/>.
+        /// </param>
+        /// <remarks>
+        /// </remarks>
+        public TransferUtility(TransferUtilityConfig config)
+            : this(new AmazonS3Client(), config)
+        {
+            this._shouldDispose = true;
+            this._config = config;
+        }
+
         #endregion
 
         #region Properties
@@ -369,6 +417,63 @@ namespace Amazon.S3.Transfer
                     throw new ArgumentException("The file indicated by the FilePath property does not exist!");
                 }
             }
+        }
+
+        private static TransferUtilityDownloadRequest ConstructDownloadRequest(string filePath, string bucketName, string key)
+        {
+            return new TransferUtilityDownloadRequest()
+            {
+                BucketName = bucketName,
+                Key = key,
+                FilePath = filePath
+            };
+        }
+
+        private static TransferUtilityDownloadDirectoryRequest ConstructDownloadDirectoryRequest(string bucketName, string s3Directory, string localDirectory)
+        {
+            return new TransferUtilityDownloadDirectoryRequest()
+            {
+                BucketName = bucketName,
+                S3Directory = s3Directory,
+                LocalDirectory = localDirectory
+            };
+        }
+
+        static void validate(TransferUtilityUploadDirectoryRequest request)
+        {
+            if (!request.IsSetDirectory())
+            {
+                throw new InvalidOperationException("Directory not specified");
+            }
+            if (!request.IsSetBucketName())
+            {
+                throw new InvalidOperationException("BucketName not specified");
+            }
+            if (!Directory.Exists(request.Directory))
+            {
+                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, "The directory {0} does not exists!",
+                    request.Directory));
+            }
+        }
+
+        private static TransferUtilityUploadDirectoryRequest ConstructUploadDirectoryRequest(string directory, string bucketName)
+        {
+            return new TransferUtilityUploadDirectoryRequest()
+            {
+                BucketName = bucketName,
+                Directory = directory
+            };
+        }
+
+        private static TransferUtilityUploadDirectoryRequest ConstructUploadDirectoryRequest(string directory, string bucketName, string searchPattern, SearchOption searchOption)
+        {
+            return new TransferUtilityUploadDirectoryRequest()
+            {
+                BucketName = bucketName,
+                Directory = directory,
+                SearchPattern = searchPattern,
+                SearchOption = searchOption
+            };
         }
 
     }
