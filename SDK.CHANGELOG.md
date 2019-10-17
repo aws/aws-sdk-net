@@ -1,3 +1,14 @@
+### 3.3.610.0 (2019-10-17 19:17 UTC)
+* Batch (3.3.103.0)
+	* Adding support for Compute Environment Allocation Strategies 
+* RDS (3.3.112.0)
+	* Amazon RDS now supports Amazon RDS on VMware with the introduction of APIs related to Custom Availability Zones and Media installation.
+* Core 3.3.103.50
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.609.0 (2019-10-16 18:14 UTC)
 * AWSMarketplaceCommerceAnalytics (3.3.102.0)
 	* add 2 more values for the supporting sections - age of past due funds + uncollected funds breakdown
