@@ -39,7 +39,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property JobDefinition. 
         /// <para>
         /// The name and revision (<code>name:revision</code>) or full Amazon Resource Name (ARN)
-        /// of the job definition to deregister. 
+        /// of the job definition to deregister.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

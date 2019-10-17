@@ -261,7 +261,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Parameters. 
         /// <para>
         /// Additional parameters passed to the job that replace parameter substitution placeholders
-        /// or override any corresponding parameter defaults from the job definition. 
+        /// or override any corresponding parameter defaults from the job definition.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Parameters
@@ -318,7 +318,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status for the job. 
+        /// The current status for the job.
         /// </para>
         ///  <note> 
         /// <para>
@@ -345,7 +345,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property StatusReason. 
         /// <para>
         /// A short, human-readable string to provide additional details about the current status
-        /// of the job. 
+        /// of the job.
         /// </para>
         /// </summary>
         public string StatusReason
@@ -383,7 +383,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Timeout. 
         /// <para>
-        /// The timeout configuration for the job. 
+        /// The timeout configuration for the job.
         /// </para>
         /// </summary>
         public JobTimeout Timeout

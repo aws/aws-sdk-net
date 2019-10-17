@@ -57,7 +57,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Command. 
         /// <para>
-        /// The command that is passed to the container. 
+        /// The command that is passed to the container.
         /// </para>
         /// </summary>
         public List<string> Command
@@ -172,7 +172,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) associated with the job upon execution. 
+        /// The Amazon Resource Name (ARN) associated with the job upon execution.
         /// </para>
         /// </summary>
         public string JobRoleArn
@@ -415,7 +415,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Vcpus. 
         /// <para>
-        /// The number of VCPUs allocated for the job. 
+        /// The number of VCPUs allocated for the job.
         /// </para>
         /// </summary>
         public int Vcpus

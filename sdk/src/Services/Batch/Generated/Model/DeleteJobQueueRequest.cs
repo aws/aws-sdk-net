@@ -36,7 +36,7 @@ namespace Amazon.Batch.Model
     ///  
     /// <para>
     /// It is not necessary to disassociate compute environments from a queue before submitting
-    /// a <code>DeleteJobQueue</code> request. 
+    /// a <code>DeleteJobQueue</code> request.
     /// </para>
     /// </summary>
     public partial class DeleteJobQueueRequest : AmazonBatchRequest
@@ -46,7 +46,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobQueue. 
         /// <para>
-        /// The short name or full Amazon Resource Name (ARN) of the queue to delete. 
+        /// The short name or full Amazon Resource Name (ARN) of the queue to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

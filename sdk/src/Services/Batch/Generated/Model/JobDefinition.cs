@@ -46,7 +46,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ContainerProperties. 
         /// <para>
-        /// An object with various properties specific to container-based jobs. 
+        /// An object with various properties specific to container-based jobs.
         /// </para>
         /// </summary>
         public ContainerProperties ContainerProperties
@@ -64,7 +64,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobDefinitionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the job definition. 
+        /// The Amazon Resource Name (ARN) for the job definition.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -83,7 +83,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobDefinitionName. 
         /// <para>
-        /// The name of the job definition. 
+        /// The name of the job definition.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

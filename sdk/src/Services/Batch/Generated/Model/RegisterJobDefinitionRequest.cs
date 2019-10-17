@@ -130,7 +130,7 @@ namespace Amazon.Batch.Model
         /// The retry strategy to use for failed jobs that are submitted with this job definition.
         /// Any retry strategy that is specified during a <a>SubmitJob</a> operation overrides
         /// the retry strategy defined here. If a job is terminated due to a timeout, it is not
-        /// retried. 
+        /// retried.
         /// </para>
         /// </summary>
         public RetryStrategy RetryStrategy

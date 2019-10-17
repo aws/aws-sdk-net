@@ -57,7 +57,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The name of the job. 
+        /// The name of the job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -102,7 +102,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Priority. 
         /// <para>
-        /// The priority of the job queue. 
+        /// The priority of the job queue.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

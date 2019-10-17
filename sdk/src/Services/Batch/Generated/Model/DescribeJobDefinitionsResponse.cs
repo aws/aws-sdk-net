@@ -38,7 +38,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobDefinitions. 
         /// <para>
-        /// The list of job definitions. 
+        /// The list of job definitions.
         /// </para>
         /// </summary>
         public List<JobDefinition> JobDefinitions
