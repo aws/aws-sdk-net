@@ -302,6 +302,17 @@ namespace Amazon.RDS.Model
         /// DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the
         /// same AWS Region as the current endpoint. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you're creating a DB instance in an RDS on VMware environment, specify the identifier
+        /// of the custom Availability Zone to create the DB instance in.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
+        /// <i>RDS on VMware User Guide.</i> </a> 
+        /// </para>
+        ///  </note>
         /// </summary>
         public string AvailabilityZone
         {

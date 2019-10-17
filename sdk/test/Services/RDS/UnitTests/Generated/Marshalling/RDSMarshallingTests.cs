@@ -317,6 +317,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void CreateCustomAvailabilityZoneMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateCustomAvailabilityZone");
+
+            var request = InstantiateClassGenerator.Execute<CreateCustomAvailabilityZoneRequest>();
+            var marshaller = new CreateCustomAvailabilityZoneRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CreateCustomAvailabilityZoneResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateCustomAvailabilityZoneResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void CreateDBClusterMarshallTest()
         {
             var operation = service_model.FindOperation("CreateDBCluster");
@@ -629,6 +653,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void DeleteCustomAvailabilityZoneMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteCustomAvailabilityZone");
+
+            var request = InstantiateClassGenerator.Execute<DeleteCustomAvailabilityZoneRequest>();
+            var marshaller = new DeleteCustomAvailabilityZoneRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DeleteCustomAvailabilityZoneResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteCustomAvailabilityZoneResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void DeleteDBClusterMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteDBCluster");
@@ -897,6 +945,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void DeleteInstallationMediaMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteInstallationMedia");
+
+            var request = InstantiateClassGenerator.Execute<DeleteInstallationMediaRequest>();
+            var marshaller = new DeleteInstallationMediaRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DeleteInstallationMediaResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteInstallationMediaResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void DeleteOptionGroupMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteOptionGroup");
@@ -955,6 +1027,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = DescribeCertificatesResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeCertificatesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void DescribeCustomAvailabilityZonesMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeCustomAvailabilityZones");
+
+            var request = InstantiateClassGenerator.Execute<DescribeCustomAvailabilityZonesRequest>();
+            var marshaller = new DescribeCustomAvailabilityZonesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeCustomAvailabilityZonesResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeCustomAvailabilityZonesResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -1516,6 +1612,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void DescribeInstallationMediaMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeInstallationMedia");
+
+            var request = InstantiateClassGenerator.Execute<DescribeInstallationMediaRequest>();
+            var marshaller = new DescribeInstallationMediaRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeInstallationMediaResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeInstallationMediaResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void DescribeOptionGroupOptionsMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeOptionGroupOptions");
@@ -1747,6 +1867,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = FailoverDBClusterResponseUnmarshaller.Instance.Unmarshall(context)
                 as FailoverDBClusterResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void ImportInstallationMediaMarshallTest()
+        {
+            var operation = service_model.FindOperation("ImportInstallationMedia");
+
+            var request = InstantiateClassGenerator.Execute<ImportInstallationMediaRequest>();
+            var marshaller = new ImportInstallationMediaRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ImportInstallationMediaResponseUnmarshaller.Instance.Unmarshall(context)
+                as ImportInstallationMediaResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
