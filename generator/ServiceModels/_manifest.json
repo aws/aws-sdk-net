@@ -3,7 +3,7 @@
         {
             "name": "Net35",
             "targetFrameworks": [ "net35" ],
-            "defineConstants": [ "BCL", "BCL35", "AWS_APM_API"],
+            "defineConstants": [ "BCL", "BCL35", "AWS_APM_API", "CODE_ANALYSIS"],
             "template": "VS2017ProjectFile",
             "excludeFolders": [ "_async", "_bcl45", "_bcl45+netstandard", "_netstandard", "obj"],
             "nugetTargetPlatform": "net35",
@@ -16,7 +16,7 @@
         {
             "name": "Net45",
             "targetFrameworks": [ "net45" ],
-            "defineConstants": [ "BCL", "BCL45", "AWS_ASYNC_API" ],
+            "defineConstants": [ "BCL", "BCL45", "AWS_ASYNC_API", "CODE_ANALYSIS" ],
             "template": "VS2017ProjectFile",
             "excludeFolders": [ "_bcl35", "_netstandard", "obj"],
             "nugetTargetPlatform": "net45",
