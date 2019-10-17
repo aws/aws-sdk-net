@@ -49,12 +49,15 @@ namespace Amazon.Runtime.CredentialManagement
 
         private const string EndpointDiscoveryEnabledField = "EndpointDiscoveryEnabled";
 
+        private const string StsRegionalEndpointsField = "StsRegionalEndpoints";
+
         private static readonly HashSet<string> ReservedPropertyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
             SettingsConstants.DisplayNameField,
             SettingsConstants.ProfileTypeField,
             RegionField,
-            EndpointDiscoveryEnabledField
+            EndpointDiscoveryEnabledField,
+            StsRegionalEndpointsField
         };
 
         private static readonly CredentialProfilePropertyMapping PropertyMapping =
@@ -154,13 +157,37 @@ namespace Amazon.Runtime.CredentialManagement
                         endpointDiscoveryEnabled = endpointDiscoveryEnabledOut;
                     }
 
+                    StsRegionalEndpointsValue? stsRegionalEndpoints = null;
+                    if (reservedProperties.TryGetValue(StsRegionalEndpointsField, out var stsRegionalEndpointsString))
+                    {
+#if BCL35
+                        try
+                        {
+                            stsRegionalEndpoints = (StsRegionalEndpointsValue)Enum.Parse(typeof(StsRegionalEndpointsValue), stsRegionalEndpointsString, true);
+                        }
+                        catch (Exception)
+                        {
+                            profile = null;
+                            return false;
+                        }
+#else
+                        if (!Enum.TryParse<StsRegionalEndpointsValue>(stsRegionalEndpointsString, true, out var tempStsRegionalEndpoints))
+                        {
+                            profile = null;
+                            return false;
+                        }
+                        stsRegionalEndpoints = tempStsRegionalEndpoints;
+#endif
+                    }
+
                     profile = new CredentialProfile(profileName, profileOptions)
                     {
                         UniqueKey = uniqueKey,
                         Properties = userProperties,
                         Region = region,
                         CredentialProfileStore = this,
-                        EndpointDiscoveryEnabled = endpointDiscoveryEnabled
+                        EndpointDiscoveryEnabled = endpointDiscoveryEnabled,
+                        StsRegionalEndpoints = stsRegionalEndpoints
                     };
                     return true;
                 }
@@ -198,6 +225,9 @@ namespace Amazon.Runtime.CredentialManagement
 
                 if (profile.EndpointDiscoveryEnabled != null)
                     reservedProperties[EndpointDiscoveryEnabledField] = profile.EndpointDiscoveryEnabled.Value.ToString().ToLowerInvariant();
+
+                if (profile.StsRegionalEndpoints != null)
+                    reservedProperties[StsRegionalEndpointsField] = profile.StsRegionalEndpoints.ToString().ToLowerInvariant();
 
                 var profileDictionary = PropertyMapping.CombineProfileParts(
                     profile.Options, ReservedPropertyNames, reservedProperties, profile.Properties);

@@ -27,6 +27,7 @@ namespace Amazon.Runtime.CredentialManagement
     /// </summary>
     public class CredentialProfile
     {
+
         private Dictionary<string, string> _properties;
 
         /// <summary>
@@ -54,7 +55,12 @@ namespace Amazon.Runtime.CredentialManagement
         /// The endpoint discovery enabled value for this CredentialProfile
         /// </summary>
         public bool? EndpointDiscoveryEnabled { get; set; }
-        
+
+        /// <summary>
+        /// The Sts Regional Endpoints Value as either legacy or regional
+        /// </summary>
+        public StsRegionalEndpointsValue? StsRegionalEndpoints { get; set; }
+
         /// <summary>
         /// An optional dictionary of name-value pairs stored with the CredentialProfile
         /// </summary>
