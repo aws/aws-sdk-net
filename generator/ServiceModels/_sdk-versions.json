@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.3.610.0",
-    "CoreVersion"    : "3.3.103.50",
+    "ProductVersion" : "3.3.611.0",
+    "CoreVersion"    : "3.3.103.51",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
         "CloudHSM" : {
@@ -313,7 +313,7 @@
             "InPreview"               : false
         },
         "S3"                   : {
-            "Version" : "3.3.104.38",
+            "Version" : "3.3.104.39",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.50"
@@ -321,10 +321,10 @@
             "InPreview"               : false
         },
         "SecurityToken"        : {
-            "Version" : "3.3.102.35",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
-                "Core" : "3.3.103.50"
+                "Core" : "3.3.103.51"
             },
             "InPreview"               : false
         },

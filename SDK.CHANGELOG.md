@@ -1,3 +1,14 @@
+### 3.3.611.0 (2019-10-17 22:55 UTC)
+* S3 (3.3.104.39)
+	* Fixed headers for SelectObjectContentRequest; Enabling UploadFilesConcurrently for TransferUtilityUploadDirectoryRequest in NetStandard. Removing unnecessary fields from CopyPartRequest.
+
+
+* SecurityToken (3.3.103.0)
+	* Updated to use new Core, version 3.3.103.51
+	* Check for STS Regional Flag within environment variable, shared credentials file, and client config for all STS customers
+* Core 3.3.103.51
+	* Adding me-south-1 region constant.
+
 ### 3.3.610.0 (2019-10-17 19:17 UTC)
 * Batch (3.3.103.0)
 	* Adding support for Compute Environment Allocation Strategies 
