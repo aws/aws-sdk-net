@@ -1,3 +1,12 @@
+### 3.3.612.0 (2019-10-18 19:14 UTC)
+* CloudWatch (3.3.103.0)
+	* New Period parameter added to MetricDataQuery structure.
+* Core 3.3.103.52
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.611.0 (2019-10-17 22:55 UTC)
 * S3 (3.3.104.39)
 	* Fixed headers for SelectObjectContentRequest; Enabling UploadFilesConcurrently for TransferUtilityUploadDirectoryRequest in NetStandard. Removing unnecessary fields from CopyPartRequest.
