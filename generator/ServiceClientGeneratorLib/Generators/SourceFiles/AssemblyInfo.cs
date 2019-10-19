@@ -152,9 +152,8 @@ using System.Runtime.CompilerServices;
             
             #line default
             #line hidden
-            this.Write("\")]\r\n\r\n#if WINDOWS_PHONE\r\n[assembly: System.CLSCompliant(false)]\r\n# else\r\n[assemb" +
-                    "ly: System.CLSCompliant(true)]\r\n#endif\r\n\r\n#if BCL\r\n[assembly: System.Security.Al" +
-                    "lowPartiallyTrustedCallers]\r\n#endif");
+            this.Write("\")]\r\n\r\n[assembly: System.CLSCompliant(true)]\r\n\r\n#if BCL\r\n[assembly: System.Securi" +
+                    "ty.AllowPartiallyTrustedCallers]\r\n#endif");
             return this.GenerationEnvironment.ToString();
         }
     }
