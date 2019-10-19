@@ -82,14 +82,9 @@ namespace ServiceClientGenerator
 
         public IEnumerable<ProjectFileConfiguration> UnitTestProjectFileConfigurations { get; private set; }
 
-        public string CoreVersion
-        {
-            get
-            {
-                return Utils.GetVersion(CoreFileVersion);
-            }
-        }
         public string CoreFileVersion { get; private set; }
+
+        public string CoreVersion { get; private set; }
 
         public bool DefaultToPreview
         {
@@ -121,6 +116,8 @@ namespace ServiceClientGenerator
             var versionsManifest = LoadJsonFromFile(versionsPath);
 
             generationManifest.CoreFileVersion = versionsManifest["CoreVersion"].ToString();
+            generationManifest.CoreVersion = Utils.GetVersion(versionsManifest["OverrideCoreVersion"]?.ToString() ?? generationManifest.CoreFileVersion);
+
             generationManifest.DefaultToPreview = (bool)versionsManifest["DefaultToPreview"];
             if (generationManifest.DefaultToPreview)
             {
