@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0DE2217F-CCB8-4ADA-8B6A-561E5DB270F1}</ProjectGuid>
+    <ProjectGuid>{30C980A1-7313-47B7-82FB-BB1DDFAD0307}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.Greengrass.CodeAnalysis</RootNamespace>

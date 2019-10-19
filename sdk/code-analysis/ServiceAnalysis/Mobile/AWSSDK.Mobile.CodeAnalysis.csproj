@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{606F39C9-3C02-4D51-A409-BB6400DA266B}</ProjectGuid>
+    <ProjectGuid>{C3190A64-6C58-4A8C-A0D5-49E539A5627C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.Mobile.CodeAnalysis</RootNamespace>

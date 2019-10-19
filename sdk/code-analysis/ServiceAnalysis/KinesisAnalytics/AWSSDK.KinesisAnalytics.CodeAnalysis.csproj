@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C8CA4E5A-31A2-4932-990C-25C84DAFFA8C}</ProjectGuid>
+    <ProjectGuid>{C74C49D6-1F1A-40FD-BD42-D19A97E04CD2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.KinesisAnalytics.CodeAnalysis</RootNamespace>

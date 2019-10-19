@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DCF9E751-7543-4E27-9F24-BCC3C0C9F5C2}</ProjectGuid>
+    <ProjectGuid>{04DE067E-5C75-43C0-88EF-7618FA712B80}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.Kendra.CodeAnalysis</RootNamespace>

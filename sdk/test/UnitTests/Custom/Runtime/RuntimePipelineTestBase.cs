@@ -121,48 +121,7 @@ namespace AWSSDK.UnitTests
         {
             Tester = new MockActionHandler();
             RuntimePipeline = new RuntimePipeline(Tester);
-        }
-
-        //        [TestMethod][TestCategory("UnitTest")]
-        //        [TestCategory("Runtime")]
-        //        public virtual void TestSuccessfulRequest()
-        //        {
-        //            Tester.Reset();
-        //            var request = CreateTestContext();
-        //            RuntimePipeline.InvokeSync(request);
-
-        //            Assert.AreEqual(1, Tester.CallCount);
-        //        }
-
-        //#if BCL45
-
-        //        [TestMethod][TestCategory("UnitTest")]
-        //        [TestCategory("Runtime")]
-        //        [TestCategory(@"Runtime\Async45")]
-        //        public virtual async Task TestSuccessfulRequestAsync()
-        //        {
-        //            Tester.Reset();
-        //            var request = CreateTestContext();
-        //            await RuntimePipeline.InvokeAsync<AmazonWebServiceResponse>(request);
-
-        //            Assert.AreEqual(1, Tester.CallCount);
-        //        }
-
-        //#elif !BCL45 && BCL
-
-        //        [TestMethod][TestCategory("UnitTest")]
-        //        [TestCategory("Runtime")]
-        //        [TestCategory(@"Runtime\Async35")]
-        //        public virtual void TestSuccessfulRequestAsync()
-        //        {
-        //            Tester.Reset();
-        //            var request = CreateAsyncTestContext();
-        //            var asyncResult = RuntimePipeline.InvokeAsync(request);
-        //            asyncResult.AsyncWaitHandle.WaitOne();
-
-        //            Assert.AreEqual(1, Tester.CallCount);
-        //        }
-        //#endif               
+        }          
     }
 
     public class MockSigner : AbstractAWSSigner

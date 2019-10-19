@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{543F687B-6F9B-472A-8AA9-F7AC54F7BAAD}</ProjectGuid>
+    <ProjectGuid>{1D5634B9-7F53-48CC-BC00-4CE57AE8457E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.SSO.CodeAnalysis</RootNamespace>

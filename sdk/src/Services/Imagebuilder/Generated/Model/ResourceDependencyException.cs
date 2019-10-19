@@ -25,7 +25,7 @@ namespace Amazon.Imagebuilder.Model
     ///<summary>
     /// Imagebuilder exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class ResourceDependencyException : AmazonImagebuilderException 
@@ -79,7 +79,7 @@ namespace Amazon.Imagebuilder.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ResourceDependencyException class with serialized data.
         /// </summary>

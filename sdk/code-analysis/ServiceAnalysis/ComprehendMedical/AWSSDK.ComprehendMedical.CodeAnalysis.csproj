@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F1768DB0-5D1B-4009-9A43-28E61B7AD54D}</ProjectGuid>
+    <ProjectGuid>{A82ACE64-D7E1-4E32-AC0C-104A31C08A63}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.ComprehendMedical.CodeAnalysis</RootNamespace>

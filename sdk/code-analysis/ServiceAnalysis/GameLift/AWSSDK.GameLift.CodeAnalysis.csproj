@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4AD60585-F9A0-41FD-BDBB-A2F8659CB2A5}</ProjectGuid>
+    <ProjectGuid>{45470356-7DDA-4651-8080-A500E6F59934}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.GameLift.CodeAnalysis</RootNamespace>

@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5D23F36C-79A1-4F2A-BDCE-E43E1AAF4C88}</ProjectGuid>
+    <ProjectGuid>{4A9F55E5-9F5B-4CA3-BCBE-1BD152F6BCEA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.MTurk.CodeAnalysis</RootNamespace>

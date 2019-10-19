@@ -28,7 +28,7 @@ namespace Amazon.ConnectParticipant
     ///<summary>
     /// Common exception for the ConnectParticipant service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonConnectParticipantException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.ConnectParticipant
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonConnectParticipantException class with serialized data.
         /// </summary>

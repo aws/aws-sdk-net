@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B3C3F105-ECCC-43C7-BD16-11E15487264C}</ProjectGuid>
+    <ProjectGuid>{DDBAAD72-1716-43CD-843C-B406CA341F12}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.RDS.CodeAnalysis</RootNamespace>

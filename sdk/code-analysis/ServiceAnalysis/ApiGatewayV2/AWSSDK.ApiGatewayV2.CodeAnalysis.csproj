@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7F096B9C-34B8-4B86-ADF2-06276D4E8FC2}</ProjectGuid>
+    <ProjectGuid>{28108A37-A81C-46DB-8F49-304B616BB301}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.ApiGatewayV2.CodeAnalysis</RootNamespace>

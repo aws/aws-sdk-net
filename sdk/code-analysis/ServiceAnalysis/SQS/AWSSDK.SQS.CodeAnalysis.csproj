@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2C8CA822-7F6A-4797-ADF3-3B35EC09734C}</ProjectGuid>
+    <ProjectGuid>{DC3A5D55-1333-440D-9A0F-CE4841E19E9A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.SQS.CodeAnalysis</RootNamespace>

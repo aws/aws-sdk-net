@@ -28,7 +28,7 @@ namespace Amazon.SSOOIDC
     ///<summary>
     /// Common exception for the SSOOIDC service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonSSOOIDCException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.SSOOIDC
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonSSOOIDCException class with serialized data.
         /// </summary>

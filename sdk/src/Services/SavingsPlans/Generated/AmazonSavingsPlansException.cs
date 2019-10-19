@@ -28,7 +28,7 @@ namespace Amazon.SavingsPlans
     ///<summary>
     /// Common exception for the SavingsPlans service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonSavingsPlansException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.SavingsPlans
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonSavingsPlansException class with serialized data.
         /// </summary>

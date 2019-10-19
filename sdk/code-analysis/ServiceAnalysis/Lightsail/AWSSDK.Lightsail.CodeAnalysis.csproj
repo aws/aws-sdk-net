@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{ABBB2FF8-E155-49A8-8EAB-44CF91B36B0E}</ProjectGuid>
+    <ProjectGuid>{33C9A310-95F4-4A30-B411-6E6679034FF3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.Lightsail.CodeAnalysis</RootNamespace>

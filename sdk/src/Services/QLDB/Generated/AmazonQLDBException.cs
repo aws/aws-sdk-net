@@ -28,7 +28,7 @@ namespace Amazon.QLDB
     ///<summary>
     /// Common exception for the QLDB service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonQLDBException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.QLDB
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonQLDBException class with serialized data.
         /// </summary>

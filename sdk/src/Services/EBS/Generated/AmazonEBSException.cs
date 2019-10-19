@@ -28,7 +28,7 @@ namespace Amazon.EBS
     ///<summary>
     /// Common exception for the EBS service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonEBSException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.EBS
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonEBSException class with serialized data.
         /// </summary>

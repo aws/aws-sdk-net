@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3CDA8299-5AC6-4DA8-A32E-52791DD71C0B}</ProjectGuid>
+    <ProjectGuid>{64A21B1D-D698-453A-86EA-B03946763868}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.RAM.CodeAnalysis</RootNamespace>

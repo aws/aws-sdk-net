@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9F2D250A-19D3-47AA-BA60-2F733921D445}</ProjectGuid>
+    <ProjectGuid>{63C00B07-E927-4B15-801B-6E1DBEEEA279}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.ElasticMapReduce.CodeAnalysis</RootNamespace>

@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{116ABBCE-516A-445E-A1A8-5D86AFD6E0CB}</ProjectGuid>
+    <ProjectGuid>{3F191E2E-6AF3-4B8A-8DDD-42748D885E5C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.GlobalAccelerator.CodeAnalysis</RootNamespace>

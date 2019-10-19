@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{15035CAA-5072-4251-9C59-C58A9CBD2D8F}</ProjectGuid>
+    <ProjectGuid>{6C5E5214-C4CF-4B95-9795-414A8805B74C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.ResourceGroupsTaggingAPI.CodeAnalysis</RootNamespace>

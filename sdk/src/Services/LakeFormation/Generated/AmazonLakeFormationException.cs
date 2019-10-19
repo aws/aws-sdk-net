@@ -28,7 +28,7 @@ namespace Amazon.LakeFormation
     ///<summary>
     /// Common exception for the LakeFormation service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonLakeFormationException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.LakeFormation
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonLakeFormationException class with serialized data.
         /// </summary>

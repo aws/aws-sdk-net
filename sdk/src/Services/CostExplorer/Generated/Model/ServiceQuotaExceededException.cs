@@ -25,7 +25,7 @@ namespace Amazon.CostExplorer.Model
     ///<summary>
     /// CostExplorer exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class ServiceQuotaExceededException : AmazonCostExplorerException 
@@ -79,7 +79,7 @@ namespace Amazon.CostExplorer.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ServiceQuotaExceededException class with serialized data.
         /// </summary>

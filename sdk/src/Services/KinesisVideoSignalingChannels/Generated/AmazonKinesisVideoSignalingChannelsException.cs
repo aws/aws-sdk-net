@@ -28,7 +28,7 @@ namespace Amazon.KinesisVideoSignalingChannels
     ///<summary>
     /// Common exception for the KinesisVideoSignalingChannels service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonKinesisVideoSignalingChannelsException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.KinesisVideoSignalingChannels
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonKinesisVideoSignalingChannelsException class with serialized data.
         /// </summary>

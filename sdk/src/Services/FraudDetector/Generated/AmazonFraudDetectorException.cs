@@ -28,7 +28,7 @@ namespace Amazon.FraudDetector
     ///<summary>
     /// Common exception for the FraudDetector service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonFraudDetectorException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.FraudDetector
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonFraudDetectorException class with serialized data.
         /// </summary>

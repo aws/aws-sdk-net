@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2B2BECB3-01AC-4DCC-A5B1-AA1B00A4F601}</ProjectGuid>
+    <ProjectGuid>{56A7FFCA-113E-4D89-AA75-84718D256F18}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.AugmentedAIRuntime.CodeAnalysis</RootNamespace>

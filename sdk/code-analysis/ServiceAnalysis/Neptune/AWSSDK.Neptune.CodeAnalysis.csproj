@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{30310D66-687A-4E88-B671-0AE37059A1EA}</ProjectGuid>
+    <ProjectGuid>{58F7BFE2-830C-489D-BEE8-58C02C1CFF8A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.Neptune.CodeAnalysis</RootNamespace>

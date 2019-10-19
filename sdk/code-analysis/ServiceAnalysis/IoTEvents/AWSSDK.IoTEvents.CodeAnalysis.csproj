@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{45D20FED-F8EE-4253-BD0A-C189D18CDAA2}</ProjectGuid>
+    <ProjectGuid>{3980C0CC-5E69-4E87-80BA-F9CAEBD4DB81}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.IoTEvents.CodeAnalysis</RootNamespace>

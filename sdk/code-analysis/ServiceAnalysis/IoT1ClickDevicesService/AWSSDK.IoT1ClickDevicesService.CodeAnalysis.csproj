@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0D91C9ED-BAAA-4AB6-A540-4B374A5A5A6D}</ProjectGuid>
+    <ProjectGuid>{43D69BD9-4E04-46BD-915B-9FCEDE6F48FA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.IoT1ClickDevicesService.CodeAnalysis</RootNamespace>

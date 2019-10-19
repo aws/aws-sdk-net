@@ -28,7 +28,7 @@ namespace Amazon.ElasticInference
     ///<summary>
     /// Common exception for the ElasticInference service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonElasticInferenceException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.ElasticInference
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonElasticInferenceException class with serialized data.
         /// </summary>

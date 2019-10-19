@@ -28,7 +28,7 @@ namespace Amazon.Imagebuilder
     ///<summary>
     /// Common exception for the Imagebuilder service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonImagebuilderException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.Imagebuilder
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonImagebuilderException class with serialized data.
         /// </summary>

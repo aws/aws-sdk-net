@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A63E13E8-72CD-4FD4-B775-FA44467B1E12}</ProjectGuid>
+    <ProjectGuid>{99488826-6CBA-4B65-8AA6-2010CC820D84}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.ServerlessApplicationRepository.CodeAnalysis</RootNamespace>

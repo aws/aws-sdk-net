@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{41D90FAB-922C-4939-9511-D569CE14881B}</ProjectGuid>
+    <ProjectGuid>{ABF052A8-117B-4F76-85A6-F23925645A81}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.EKS.CodeAnalysis</RootNamespace>

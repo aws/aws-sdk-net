@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{951ED9A4-88BD-43A6-BA7F-BCD77FD9D4DA}</ProjectGuid>
+    <ProjectGuid>{9E695E0B-766A-40BB-8BBB-0376B3C88E3C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.GuardDuty.CodeAnalysis</RootNamespace>

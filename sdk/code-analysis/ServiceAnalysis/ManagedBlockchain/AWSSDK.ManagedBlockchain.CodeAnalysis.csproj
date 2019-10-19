@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E465FDEB-E1C8-4942-AD6B-7B91C4D5186A}</ProjectGuid>
+    <ProjectGuid>{26BEB3CC-1EB9-472C-91F4-F99B549826D9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.ManagedBlockchain.CodeAnalysis</RootNamespace>

@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{067069AF-F6E1-4485-8571-D5A6E796ACF6}</ProjectGuid>
+    <ProjectGuid>{6CE27252-48CA-4251-93D7-9F967936B97F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.ComputeOptimizer.CodeAnalysis</RootNamespace>

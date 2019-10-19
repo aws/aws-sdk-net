@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B6B097C9-DC46-4FF3-BDF8-8A10474A7D6E}</ProjectGuid>
+    <ProjectGuid>{96AA8820-0649-4AE3-92C2-C01F7B30E874}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.WorkMailMessageFlow.CodeAnalysis</RootNamespace>

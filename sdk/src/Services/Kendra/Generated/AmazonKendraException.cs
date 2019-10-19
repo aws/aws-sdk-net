@@ -28,7 +28,7 @@ namespace Amazon.Kendra
     ///<summary>
     /// Common exception for the Kendra service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonKendraException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.Kendra
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonKendraException class with serialized data.
         /// </summary>

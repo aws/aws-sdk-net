@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DC68B85C-4DCD-461D-A976-2632B781A57E}</ProjectGuid>
+    <ProjectGuid>{26C99213-2765-410C-ACEC-7B85B8D8554A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.SimpleEmailV2.CodeAnalysis</RootNamespace>

@@ -28,7 +28,7 @@ namespace Amazon.AppConfig
     ///<summary>
     /// Common exception for the AppConfig service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonAppConfigException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.AppConfig
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonAppConfigException class with serialized data.
         /// </summary>

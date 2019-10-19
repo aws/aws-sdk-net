@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0FDE26C8-DEB7-4466-8A1F-6072943EFEB6}</ProjectGuid>
+    <ProjectGuid>{6F64993C-B6A3-4AE2-AAB9-DF32B146CDF0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.MarketplaceEntitlementService.CodeAnalysis</RootNamespace>

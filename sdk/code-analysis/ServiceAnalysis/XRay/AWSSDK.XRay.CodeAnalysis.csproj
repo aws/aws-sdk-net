@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{239E13EA-FAE8-460C-907A-C50AC36DDD74}</ProjectGuid>
+    <ProjectGuid>{5D84DBCB-DBE7-41C6-8DC2-D4BC1ABE0BE7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.XRay.CodeAnalysis</RootNamespace>

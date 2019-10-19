@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7D8E02BE-FF84-421A-8275-CA89BD7D1EC1}</ProjectGuid>
+    <ProjectGuid>{AB8BE066-398E-4860-9800-540AD8D5FBF9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.Imagebuilder.CodeAnalysis</RootNamespace>

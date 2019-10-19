@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7F0433C6-FE15-4580-A334-B9B9F5A19F04}</ProjectGuid>
+    <ProjectGuid>{1873078F-48B5-4954-AD70-4A17CAF0F869}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.AWSHealth.CodeAnalysis</RootNamespace>

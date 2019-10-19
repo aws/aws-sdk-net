@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{24E912CD-1CEE-4CA3-9E36-3AA0EBB3BF5B}</ProjectGuid>
+    <ProjectGuid>{CE4DF031-5ED7-4F80-9324-93FB2CC5B663}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.CodeStarNotifications.CodeAnalysis</RootNamespace>

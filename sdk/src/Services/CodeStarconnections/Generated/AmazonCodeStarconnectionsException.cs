@@ -28,7 +28,7 @@ namespace Amazon.CodeStarconnections
     ///<summary>
     /// Common exception for the CodeStarconnections service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonCodeStarconnectionsException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.CodeStarconnections
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonCodeStarconnectionsException class with serialized data.
         /// </summary>

@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{992EEE13-3F84-4BEC-9AD8-D08CB8B4E4AF}</ProjectGuid>
+    <ProjectGuid>{27740509-BBD9-4E6F-A880-73ADC6B5CEB4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.Glue.CodeAnalysis</RootNamespace>

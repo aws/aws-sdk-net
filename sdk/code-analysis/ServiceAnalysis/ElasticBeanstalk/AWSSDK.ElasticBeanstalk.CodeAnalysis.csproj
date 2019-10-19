@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{ED00B869-BAF8-42C0-8ACF-D03E84ABD456}</ProjectGuid>
+    <ProjectGuid>{8A24620A-5FDF-48E5-8A1C-4CF356B95562}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.ElasticBeanstalk.CodeAnalysis</RootNamespace>

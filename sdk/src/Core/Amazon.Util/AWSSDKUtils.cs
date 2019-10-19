@@ -1308,7 +1308,7 @@ namespace Amazon.Util
         }
 
 
-#if PCL || NETSTANDARD
+#if NETSTANDARD
         private static HttpClient CreateClient(Uri uri, TimeSpan timeout, IWebProxy proxy, IDictionary<string, string> headers)
         {
             var client = new HttpClient(new System.Net.Http.HttpClientHandler() { Proxy = proxy });

@@ -28,7 +28,7 @@ namespace Amazon.DataExchange
     ///<summary>
     /// Common exception for the DataExchange service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonDataExchangeException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.DataExchange
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonDataExchangeException class with serialized data.
         /// </summary>

@@ -28,7 +28,7 @@ namespace Amazon.SSO
     ///<summary>
     /// Common exception for the SSO service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonSSOException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.SSO
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonSSOException class with serialized data.
         /// </summary>

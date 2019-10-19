@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F5D912DD-225A-4E52-A6C6-5F631A90E51C}</ProjectGuid>
+    <ProjectGuid>{806022E5-5F4C-49FC-A902-AE2AC19298E9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.ElasticTranscoder.CodeAnalysis</RootNamespace>

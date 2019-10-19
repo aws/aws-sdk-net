@@ -25,7 +25,7 @@ namespace Amazon.Schemas.Model
     ///<summary>
     /// Schemas exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class BadRequestException : AmazonSchemasException 
@@ -79,7 +79,7 @@ namespace Amazon.Schemas.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the BadRequestException class with serialized data.
         /// </summary>

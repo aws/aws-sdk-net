@@ -28,7 +28,7 @@ namespace Amazon.ForecastQueryService
     ///<summary>
     /// Common exception for the ForecastQueryService service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonForecastQueryServiceException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.ForecastQueryService
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonForecastQueryServiceException class with serialized data.
         /// </summary>

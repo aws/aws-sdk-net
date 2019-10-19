@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{72BA2A85-2F3C-4248-8FFD-C216DF769B6D}</ProjectGuid>
+    <ProjectGuid>{4D6BCF8D-4375-4102-A0A8-EC27DCD94059}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.ElasticLoadBalancing.CodeAnalysis</RootNamespace>

@@ -28,7 +28,7 @@ namespace Amazon.NetworkManager
     ///<summary>
     /// Common exception for the NetworkManager service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonNetworkManagerException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.NetworkManager
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonNetworkManagerException class with serialized data.
         /// </summary>

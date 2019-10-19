@@ -33,20 +33,10 @@
   </Choose>
 
   <ItemGroup>
-    <Compile Remove="**/_android/**"/>
     <Compile Remove="**/_async/**"/>
     <Compile Remove="**/_bcl45/**"/>
     <Compile Remove="**/_bcl45+netstandard/**"/>
     <Compile Remove="**/_netstandard/**"/>
-    <Compile Remove="**/_ios/**"/>
-    <Compile Remove="**/_mobile/**"/>
-    <Compile Remove="**/_pcl/**"/>
-    <Compile Remove="**/_pcl-sl/**"/>
-    <Compile Remove="**/_pclReference/**"/>
-    <Compile Remove="**/_unity/**"/>
-    <Compile Remove="**/_win8/**"/>
-    <Compile Remove="**/_winPhone81/**"/>
-    <Compile Remove="**/_winPhoneSilverlight8/**"/>
     <Compile Remove="**/obj/**"/>
     <None Remove="**/obj/**" />
   </ItemGroup>

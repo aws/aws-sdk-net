@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{06A44D48-2065-4180-AA49-B1D27071D930}</ProjectGuid>
+    <ProjectGuid>{C6D853D7-8136-4AC6-8BD1-E43089EB0458}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.CloudTrail.CodeAnalysis</RootNamespace>

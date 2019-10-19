@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{185C5678-DA64-4941-AA03-AE7E781BA180}</ProjectGuid>
+    <ProjectGuid>{54A63ED2-11F0-4F76-8F5B-B7016E94AF86}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.Snowball.CodeAnalysis</RootNamespace>

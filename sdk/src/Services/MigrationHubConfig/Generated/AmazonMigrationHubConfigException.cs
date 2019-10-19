@@ -28,7 +28,7 @@ namespace Amazon.MigrationHubConfig
     ///<summary>
     /// Common exception for the MigrationHubConfig service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonMigrationHubConfigException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.MigrationHubConfig
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonMigrationHubConfigException class with serialized data.
         /// </summary>

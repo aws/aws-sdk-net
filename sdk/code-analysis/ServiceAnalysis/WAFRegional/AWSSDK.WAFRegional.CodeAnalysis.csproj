@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{12DBC502-3D1B-41A6-82D4-9E60DD32FC41}</ProjectGuid>
+    <ProjectGuid>{C9140063-D998-4865-A85E-9B67D570678B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.WAFRegional.CodeAnalysis</RootNamespace>

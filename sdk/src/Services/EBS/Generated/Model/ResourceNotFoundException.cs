@@ -25,7 +25,7 @@ namespace Amazon.EBS.Model
     ///<summary>
     /// EBS exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class ResourceNotFoundException : AmazonEBSException 
@@ -79,7 +79,7 @@ namespace Amazon.EBS.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ResourceNotFoundException class with serialized data.
         /// </summary>

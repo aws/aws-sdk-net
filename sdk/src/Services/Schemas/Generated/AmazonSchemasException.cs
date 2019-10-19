@@ -28,7 +28,7 @@ namespace Amazon.Schemas
     ///<summary>
     /// Common exception for the Schemas service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonSchemasException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.Schemas
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonSchemasException class with serialized data.
         /// </summary>

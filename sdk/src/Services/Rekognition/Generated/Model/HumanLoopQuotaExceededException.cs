@@ -25,7 +25,7 @@ namespace Amazon.Rekognition.Model
     ///<summary>
     /// Rekognition exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class HumanLoopQuotaExceededException : AmazonRekognitionException 
@@ -79,7 +79,7 @@ namespace Amazon.Rekognition.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the HumanLoopQuotaExceededException class with serialized data.
         /// </summary>

@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6E0E0F31-E6D3-468C-B345-6A75A0498FF3}</ProjectGuid>
+    <ProjectGuid>{5405F769-965D-45CE-B651-B0D2ED6C8496}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.PersonalizeEvents.CodeAnalysis</RootNamespace>

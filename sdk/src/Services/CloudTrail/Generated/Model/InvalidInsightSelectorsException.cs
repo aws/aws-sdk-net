@@ -25,7 +25,7 @@ namespace Amazon.CloudTrail.Model
     ///<summary>
     /// CloudTrail exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class InvalidInsightSelectorsException : AmazonCloudTrailException 
@@ -79,7 +79,7 @@ namespace Amazon.CloudTrail.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InvalidInsightSelectorsException class with serialized data.
         /// </summary>

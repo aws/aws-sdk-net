@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7EE289B8-FE3B-4BB9-B670-8B131271EF36}</ProjectGuid>
+    <ProjectGuid>{19BEAEA3-E3CE-4346-B51E-D22E7A319DE5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.AlexaForBusiness.CodeAnalysis</RootNamespace>

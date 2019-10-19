@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D8080C7A-FD95-49F0-BF1C-4599F7CDBC9C}</ProjectGuid>
+    <ProjectGuid>{630E69FB-6499-4111-A0BF-1B7CCF739D94}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.StepFunctions.CodeAnalysis</RootNamespace>

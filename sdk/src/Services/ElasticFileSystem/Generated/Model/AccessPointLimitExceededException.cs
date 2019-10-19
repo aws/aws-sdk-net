@@ -25,7 +25,7 @@ namespace Amazon.ElasticFileSystem.Model
     ///<summary>
     /// ElasticFileSystem exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class AccessPointLimitExceededException : AmazonElasticFileSystemException 
@@ -79,7 +79,7 @@ namespace Amazon.ElasticFileSystem.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AccessPointLimitExceededException class with serialized data.
         /// </summary>

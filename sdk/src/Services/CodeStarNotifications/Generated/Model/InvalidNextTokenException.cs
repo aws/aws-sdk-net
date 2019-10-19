@@ -25,7 +25,7 @@ namespace Amazon.CodeStarNotifications.Model
     ///<summary>
     /// CodeStarNotifications exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class InvalidNextTokenException : AmazonCodeStarNotificationsException 
@@ -79,7 +79,7 @@ namespace Amazon.CodeStarNotifications.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InvalidNextTokenException class with serialized data.
         /// </summary>

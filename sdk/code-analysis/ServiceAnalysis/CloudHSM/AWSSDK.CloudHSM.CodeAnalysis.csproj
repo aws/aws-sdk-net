@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{46BE7F7C-01A6-4254-A59E-BD557C575FDD}</ProjectGuid>
+    <ProjectGuid>{00F47DE9-4572-4B06-A109-6090C5C60347}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.CloudHSM.CodeAnalysis</RootNamespace>

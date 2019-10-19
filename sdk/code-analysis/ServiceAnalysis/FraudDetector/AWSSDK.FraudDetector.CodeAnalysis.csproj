@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5FE820DE-C5FA-4A9E-A252-BE87AFCEBE3A}</ProjectGuid>
+    <ProjectGuid>{C8FBFFD5-AFA5-498B-B512-9C39CD87761F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.FraudDetector.CodeAnalysis</RootNamespace>

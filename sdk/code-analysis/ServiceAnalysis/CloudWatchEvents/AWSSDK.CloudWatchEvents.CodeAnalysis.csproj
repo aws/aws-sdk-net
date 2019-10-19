@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F037AE5A-E823-428E-9958-559FEDC00267}</ProjectGuid>
+    <ProjectGuid>{EFFAB166-349C-47BD-9CDC-FD86A0A3E693}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.CloudWatchEvents.CodeAnalysis</RootNamespace>

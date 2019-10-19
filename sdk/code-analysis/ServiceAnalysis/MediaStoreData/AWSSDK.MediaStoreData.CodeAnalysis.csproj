@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D5C026FC-D0A7-49D4-B820-F104DBE4369B}</ProjectGuid>
+    <ProjectGuid>{60901D1B-39D4-4272-9855-71296F4F204F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.MediaStoreData.CodeAnalysis</RootNamespace>

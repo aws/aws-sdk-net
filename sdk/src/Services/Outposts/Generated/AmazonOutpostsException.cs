@@ -28,7 +28,7 @@ namespace Amazon.Outposts
     ///<summary>
     /// Common exception for the Outposts service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonOutpostsException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.Outposts
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonOutpostsException class with serialized data.
         /// </summary>

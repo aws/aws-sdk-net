@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0A4E48B4-3876-4C68-BF4E-A01FDB1E284F}</ProjectGuid>
+    <ProjectGuid>{A91AAA7A-2E05-4F9A-BCDA-0EBDF580147D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.IoTSecureTunneling.CodeAnalysis</RootNamespace>

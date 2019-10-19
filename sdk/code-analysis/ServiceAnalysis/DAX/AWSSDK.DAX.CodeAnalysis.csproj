@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{058AC9AA-575E-41B0-BB07-ACB97F16D056}</ProjectGuid>
+    <ProjectGuid>{E98BB360-1A3E-438A-8C9C-21A0D31D80DE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.DAX.CodeAnalysis</RootNamespace>

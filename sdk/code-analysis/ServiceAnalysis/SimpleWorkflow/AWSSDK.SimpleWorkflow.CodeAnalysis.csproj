@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A4F15C44-98AE-4FB1-B3EE-EC2104671752}</ProjectGuid>
+    <ProjectGuid>{A4E059F3-7571-4CF5-9724-89DD23D7FA5A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.SimpleWorkflow.CodeAnalysis</RootNamespace>

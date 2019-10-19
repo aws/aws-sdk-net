@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{19E89A31-27A2-47AB-B854-925F3BA7364B}</ProjectGuid>
+    <ProjectGuid>{C46E60A0-4BF6-4E80-85B8-58AA5F95F96C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.DataSync.CodeAnalysis</RootNamespace>

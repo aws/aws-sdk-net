@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3FCF5CCC-B064-4D69-91E8-423298417E7E}</ProjectGuid>
+    <ProjectGuid>{939272C0-C5BD-4D23-8590-9D0B2D8B4188}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.EventBridge.CodeAnalysis</RootNamespace>

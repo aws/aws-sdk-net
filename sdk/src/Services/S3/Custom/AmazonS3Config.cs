@@ -138,17 +138,10 @@ namespace Amazon.S3
         protected override void Initialize()
         {
             this.AllowAutoRedirect = false;
-#if BCL45 || NETSTANDARD
             // Set Timeout and ReadWriteTimeout for S3 to max timeout as per-request
             // timeouts are not supported.
             this.Timeout = ClientConfig.MaxTimeout;
             this.ReadWriteTimeout = ClientConfig.MaxTimeout;
-#elif PCL
-            // Only Timeout property is supported for WinRT and Windows Phone.
-            // Set Timeout for S3 to max timeout as per-request
-            // timeouts are not supported.
-            this.Timeout = ClientConfig.MaxTimeout;
-#endif
         }
 
         /// <summary>

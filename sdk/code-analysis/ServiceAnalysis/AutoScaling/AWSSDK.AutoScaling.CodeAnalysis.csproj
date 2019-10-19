@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DE877AEA-BBDF-43E5-90C5-765D0B02BFC3}</ProjectGuid>
+    <ProjectGuid>{5335A609-8A42-4855-94BD-92552BA75D09}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.AutoScaling.CodeAnalysis</RootNamespace>

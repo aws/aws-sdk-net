@@ -25,7 +25,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     ///<summary>
     /// ResourceGroupsTaggingAPI exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class ConcurrentModificationException : AmazonResourceGroupsTaggingAPIException 
@@ -79,7 +79,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ConcurrentModificationException class with serialized data.
         /// </summary>

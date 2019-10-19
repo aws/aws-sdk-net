@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{89D04592-47DB-4292-8BEA-78BA2F33954F}</ProjectGuid>
+    <ProjectGuid>{6E01838B-1011-4819-88AF-853B11E43F20}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.SecurityToken.CodeAnalysis</RootNamespace>

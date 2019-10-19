@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{881A7C3A-497D-46FF-845C-2CB7D11436C8}</ProjectGuid>
+    <ProjectGuid>{F5371954-6310-4702-A8C2-EBAE8D4D9556}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.ECR.CodeAnalysis</RootNamespace>

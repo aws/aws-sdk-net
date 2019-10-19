@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{51779681-17D6-43BF-B4E3-C57D3C22283E}</ProjectGuid>
+    <ProjectGuid>{FAC77777-B66C-4D36-B883-A37A41C40A2D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.AppMesh.CodeAnalysis</RootNamespace>

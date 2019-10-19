@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6CDCBCCA-4708-4B85-8638-3D84DDAA369A}</ProjectGuid>
+    <ProjectGuid>{8085D36E-F3EF-431E-A88D-28E1F5ACC2C3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.KinesisVideoSignalingChannels.CodeAnalysis</RootNamespace>

@@ -75,11 +75,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>NuGetPackageReadmeSection.tt</DependentUpon>
     </Compile>
-    <Compile Update="Generators\ProjectFiles\AndroidProjectFile.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AndroidProjectFile.tt</DependentUpon>
-    </Compile>
     <Compile Update="Generators\CodeAnalysis\CodeAnalysisProjectFile.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -90,11 +85,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>SolutionFileBclAndNetStandard.tt</DependentUpon>
     </Compile>
-    <Compile Update="Generators\ProjectFiles\IOSProjectFile.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>IOSProjectFile.tt</DependentUpon>
-    </Compile>
     <Compile Update="Generators\ProjectFiles\UnitTestProjectFile.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -104,26 +94,6 @@
       <DependentUpon>VS2017ProjectFile.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Update="Generators\ProjectFiles\PCLProjectFile.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PCLProjectFile.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Generators\ProjectFiles\Win8ProjectFile.cs">
-      <DependentUpon>Win8ProjectFile.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="Generators\ProjectFiles\WinPhone81ProjectFile.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>WinPhone81ProjectFile.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Generators\ProjectFiles\WinPhoneSilverlight8ProjectFile.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>WinPhoneSilverlight8ProjectFile.tt</DependentUpon>
     </Compile>
     <Compile Update="Generators\SourceFiles\CoreAssemblyInfo.cs">
       <AutoGen>True</AutoGen>
@@ -338,11 +308,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Nuspec.tt</DependentUpon>
     </Compile>
-    <Compile Update="Generators\NuGet\PackagesConfig.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PackagesConfig.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Update="Generators\Marshallers\EndpointDiscoveryMarshaller.tt">
@@ -353,33 +318,9 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>CoreNuspec.cs</LastGenOutput>
     </None>
-    <None Update="Generators\ProjectFiles\AndroidProjectFile.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>AndroidProjectFile.cs</LastGenOutput>
-    </None>
-    <None Update="Generators\ProjectFiles\IOSProjectFile.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>IOSProjectFile.cs</LastGenOutput>
-    </None>
-    <None Update="Generators\ProjectFiles\PCLProjectFile.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>PCLProjectFile.cs</LastGenOutput>
-    </None>
     <None Update="Generators\ProjectFiles\UnitTestProjectFile.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>UnitTestProjectFile.cs</LastGenOutput>
-    </None>
-    <None Update="Generators\ProjectFiles\Win8ProjectFile.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>Win8ProjectFile.cs</LastGenOutput>
-    </None>
-    <None Update="Generators\ProjectFiles\WinPhone81ProjectFile.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>WinPhone81ProjectFile.cs</LastGenOutput>
-    </None>
-    <None Update="Generators\ProjectFiles\WinPhoneSilverlight8ProjectFile.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>WinPhoneSilverlight8ProjectFile.cs</LastGenOutput>
     </None>
     <None Update="Generators\SourceFiles\CoreAssemblyInfo.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -548,10 +489,6 @@
     <None Update="Generators\NuGet\Nuspec.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>Nuspec.cs</LastGenOutput>
-    </None>
-    <None Update="Generators\NuGet\PackagesConfig.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>PackagesConfig.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D9D10ED3-F14F-4133-ABF9-60BC06101CA6}</ProjectGuid>
+    <ProjectGuid>{413B40F1-01B7-4290-A8BE-54CBA529A5FE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.Rekognition.CodeAnalysis</RootNamespace>

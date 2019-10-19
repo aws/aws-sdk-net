@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E715F370-3832-4FB7-B508-283A87F7F36F}</ProjectGuid>
+    <ProjectGuid>{6A71544A-7001-415B-AC66-D8E043280D46}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.QuickSight.CodeAnalysis</RootNamespace>

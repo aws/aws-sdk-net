@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CF64C0A4-25F7-42E9-9B3D-632CB520B666}</ProjectGuid>
+    <ProjectGuid>{5C0DD501-A99A-4AE0-80F3-07FD91BB4827}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.AWSSupport.CodeAnalysis</RootNamespace>

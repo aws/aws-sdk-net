@@ -60,10 +60,9 @@ namespace Amazon.SecurityToken
 
         private const string StsDefaultHostname = "https://sts.amazonaws.com";
         
-#if BCL || NETSTANDARD
         private static CredentialProfileStoreChain credentialProfileChain = new CredentialProfileStoreChain();
-#endif
-#if BCL35 || UNITY
+        
+#if BCL35
         private readonly HashSet<RegionEndpoint> legacyGlobalRegions = new HashSet<RegionEndpoint>
          {
              RegionEndpoint.USEast1,

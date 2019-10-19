@@ -28,7 +28,7 @@ namespace Amazon.MarketplaceCatalog
     ///<summary>
     /// Common exception for the MarketplaceCatalog service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonMarketplaceCatalogException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.MarketplaceCatalog
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonMarketplaceCatalogException class with serialized data.
         /// </summary>

@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C759B78F-82AA-4460-9E39-2C8A695A76B6}</ProjectGuid>
+    <ProjectGuid>{3F35B8E9-41B1-4D5A-8CFA-47B00E4030E3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.Athena.CodeAnalysis</RootNamespace>

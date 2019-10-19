@@ -28,7 +28,7 @@ namespace Amazon.IoTSecureTunneling
     ///<summary>
     /// Common exception for the IoTSecureTunneling service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonIoTSecureTunnelingException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.IoTSecureTunneling
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonIoTSecureTunnelingException class with serialized data.
         /// </summary>

@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{11F51087-7FB3-410B-9971-E832200C46B2}</ProjectGuid>
+    <ProjectGuid>{7405B582-7CF7-4142-A230-3E9AA662244F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.Textract.CodeAnalysis</RootNamespace>

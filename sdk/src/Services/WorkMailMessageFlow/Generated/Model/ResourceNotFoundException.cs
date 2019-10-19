@@ -25,7 +25,7 @@ namespace Amazon.WorkMailMessageFlow.Model
     ///<summary>
     /// WorkMailMessageFlow exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class ResourceNotFoundException : AmazonWorkMailMessageFlowException 
@@ -79,7 +79,7 @@ namespace Amazon.WorkMailMessageFlow.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ResourceNotFoundException class with serialized data.
         /// </summary>

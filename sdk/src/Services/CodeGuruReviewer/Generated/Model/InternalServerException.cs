@@ -25,7 +25,7 @@ namespace Amazon.CodeGuruReviewer.Model
     ///<summary>
     /// CodeGuruReviewer exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class InternalServerException : AmazonCodeGuruReviewerException 
@@ -79,7 +79,7 @@ namespace Amazon.CodeGuruReviewer.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InternalServerException class with serialized data.
         /// </summary>

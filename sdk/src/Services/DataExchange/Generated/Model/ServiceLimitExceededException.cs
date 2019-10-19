@@ -25,7 +25,7 @@ namespace Amazon.DataExchange.Model
     ///<summary>
     /// DataExchange exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class ServiceLimitExceededException : AmazonDataExchangeException 
@@ -79,7 +79,7 @@ namespace Amazon.DataExchange.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ServiceLimitExceededException class with serialized data.
         /// </summary>

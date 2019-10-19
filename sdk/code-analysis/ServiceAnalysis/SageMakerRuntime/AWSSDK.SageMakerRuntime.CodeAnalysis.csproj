@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7ECDC6EC-0C8C-4484-A75A-3D048D267B3C}</ProjectGuid>
+    <ProjectGuid>{D706F3A1-9553-4B25-8BEC-7B68DE5360FD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.SageMakerRuntime.CodeAnalysis</RootNamespace>

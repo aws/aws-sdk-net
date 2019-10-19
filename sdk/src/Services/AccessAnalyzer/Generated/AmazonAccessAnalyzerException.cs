@@ -28,7 +28,7 @@ namespace Amazon.AccessAnalyzer
     ///<summary>
     /// Common exception for the AccessAnalyzer service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonAccessAnalyzerException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.AccessAnalyzer
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonAccessAnalyzerException class with serialized data.
         /// </summary>

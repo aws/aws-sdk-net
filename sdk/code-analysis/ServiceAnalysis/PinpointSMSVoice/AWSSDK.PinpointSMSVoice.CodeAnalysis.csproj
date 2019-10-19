@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{49A8AC15-DB88-4F07-A0D8-2899EA9FC63D}</ProjectGuid>
+    <ProjectGuid>{9FC0FD04-8531-4ED4-B05D-33604EDDCA2C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.PinpointSMSVoice.CodeAnalysis</RootNamespace>

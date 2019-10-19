@@ -28,7 +28,7 @@ namespace Amazon.CodeStarNotifications
     ///<summary>
     /// Common exception for the CodeStarNotifications service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonCodeStarNotificationsException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.CodeStarNotifications
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonCodeStarNotificationsException class with serialized data.
         /// </summary>

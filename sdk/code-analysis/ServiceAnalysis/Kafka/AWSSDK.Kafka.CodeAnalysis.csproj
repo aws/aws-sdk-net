@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DCF594AB-B311-4FFD-B089-CD4DCCD5E236}</ProjectGuid>
+    <ProjectGuid>{EAAA00EB-81EC-4E9B-9246-D6801277824E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.Kafka.CodeAnalysis</RootNamespace>

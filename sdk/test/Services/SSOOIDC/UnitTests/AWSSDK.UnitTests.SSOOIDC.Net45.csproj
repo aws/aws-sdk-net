@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net45</TargetFramework>
-    <DefineConstants>$(DefineConstants);TRACE;BCL;BCL45;ASYNC_AWAIT;LOCAL_FILE;DEBUG</DefineConstants>
+    <DefineConstants>$(DefineConstants);TRACE;BCL;BCL45;ASYNC_AWAIT;DEBUG</DefineConstants>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.UnitTests.SSOOIDC.Net45</AssemblyName>

@@ -28,7 +28,7 @@ namespace Amazon.CodeGuruReviewer
     ///<summary>
     /// Common exception for the CodeGuruReviewer service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonCodeGuruReviewerException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.CodeGuruReviewer
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonCodeGuruReviewerException class with serialized data.
         /// </summary>

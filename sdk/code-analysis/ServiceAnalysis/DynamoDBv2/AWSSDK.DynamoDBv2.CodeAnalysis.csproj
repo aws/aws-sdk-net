@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B0E4C8D2-B504-4B0E-8789-47F2B9CBDA02}</ProjectGuid>
+    <ProjectGuid>{885B2D3E-B214-4F9F-B0F9-D146D9594FE3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.DynamoDBv2.CodeAnalysis</RootNamespace>

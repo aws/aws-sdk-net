@@ -28,7 +28,7 @@ namespace Amazon.WorkMailMessageFlow
     ///<summary>
     /// Common exception for the WorkMailMessageFlow service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonWorkMailMessageFlowException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.WorkMailMessageFlow
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonWorkMailMessageFlowException class with serialized data.
         /// </summary>

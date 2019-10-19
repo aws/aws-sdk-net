@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4846B39F-6A15-4FC7-B7D5-6A4FA76D09DC}</ProjectGuid>
+    <ProjectGuid>{3D893BFD-952F-490E-A950-7F59E6609344}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.Polly.CodeAnalysis</RootNamespace>

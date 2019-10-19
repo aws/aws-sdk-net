@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B0032676-356E-4ABA-A252-890237EAF9C3}</ProjectGuid>
+    <ProjectGuid>{60511AFD-1450-43E9-BD01-D658223C12E0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.DatabaseMigrationService.CodeAnalysis</RootNamespace>

@@ -72,10 +72,6 @@ namespace Amazon.Runtime.Internal.Util
                 if (il is InternalSystemDiagnosticsLogger)
                     il.IsEnabled = (logging & LoggingOptions.SystemDiagnostics) == LoggingOptions.SystemDiagnostics;
 #endif
-#if __ANDROID__ || __IOS__
-                if (il is InternalConsoleLogger)
-                    il.IsEnabled = (logging & LoggingOptions.SystemDiagnostics) == LoggingOptions.SystemDiagnostics;
-#endif
             }
         }
 

@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7B81A6D8-C532-4A91-8EA5-D0F19CCF0BFD}</ProjectGuid>
+    <ProjectGuid>{8484906F-DCA2-4C37-B5A1-D91EADB881D3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.WorkLink.CodeAnalysis</RootNamespace>

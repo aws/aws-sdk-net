@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CE92E696-6109-4623-9C98-F353D3B85527}</ProjectGuid>
+    <ProjectGuid>{056F5CEA-BC90-4271-BD54-94C9575384B9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.AWSMarketplaceCommerceAnalytics.CodeAnalysis</RootNamespace>

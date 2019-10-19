@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F756095D-4D76-41D2-B852-B73913FDAFFC}</ProjectGuid>
+    <ProjectGuid>{B6A09F41-9D24-45C8-9B66-B22470CD0794}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.Budgets.CodeAnalysis</RootNamespace>

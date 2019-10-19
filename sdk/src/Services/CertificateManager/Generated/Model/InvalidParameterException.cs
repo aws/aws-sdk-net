@@ -25,7 +25,7 @@ namespace Amazon.CertificateManager.Model
     ///<summary>
     /// CertificateManager exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class InvalidParameterException : AmazonCertificateManagerException 
@@ -79,7 +79,7 @@ namespace Amazon.CertificateManager.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InvalidParameterException class with serialized data.
         /// </summary>

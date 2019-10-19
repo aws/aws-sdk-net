@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5D839AEF-54F6-431D-BC37-681F7DF77C01}</ProjectGuid>
+    <ProjectGuid>{CCB1A157-6336-4465-8BAC-6812A705B76E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.Redshift.CodeAnalysis</RootNamespace>

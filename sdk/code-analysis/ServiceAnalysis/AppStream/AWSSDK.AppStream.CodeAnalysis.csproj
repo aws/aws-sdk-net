@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C8E84B00-7398-4F52-A7CA-B64E5EF6339F}</ProjectGuid>
+    <ProjectGuid>{D26A9B8A-A715-4131-A1C8-9882EA414C4B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.AppStream.CodeAnalysis</RootNamespace>

@@ -25,7 +25,7 @@ namespace Amazon.LakeFormation.Model
     ///<summary>
     /// LakeFormation exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class OperationTimeoutException : AmazonLakeFormationException 
@@ -79,7 +79,7 @@ namespace Amazon.LakeFormation.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the OperationTimeoutException class with serialized data.
         /// </summary>

@@ -25,7 +25,7 @@ namespace Amazon.SSOOIDC.Model
     ///<summary>
     /// SSOOIDC exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class ExpiredTokenException : AmazonSSOOIDCException 
@@ -79,7 +79,7 @@ namespace Amazon.SSOOIDC.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ExpiredTokenException class with serialized data.
         /// </summary>

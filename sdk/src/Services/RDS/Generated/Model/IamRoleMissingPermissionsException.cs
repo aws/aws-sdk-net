@@ -25,7 +25,7 @@ namespace Amazon.RDS.Model
     ///<summary>
     /// RDS exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class IamRoleMissingPermissionsException : AmazonRDSException 
@@ -79,7 +79,7 @@ namespace Amazon.RDS.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the IamRoleMissingPermissionsException class with serialized data.
         /// </summary>

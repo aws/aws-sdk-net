@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F69573A3-075C-498B-84E6-9FE7BDF4F0E7}</ProjectGuid>
+    <ProjectGuid>{8CC17039-1F45-4D27-A275-DCA1220537AE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.ForecastService.CodeAnalysis</RootNamespace>

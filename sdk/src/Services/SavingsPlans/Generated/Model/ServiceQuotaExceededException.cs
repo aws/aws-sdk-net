@@ -25,7 +25,7 @@ namespace Amazon.SavingsPlans.Model
     ///<summary>
     /// SavingsPlans exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class ServiceQuotaExceededException : AmazonSavingsPlansException 
@@ -79,7 +79,7 @@ namespace Amazon.SavingsPlans.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ServiceQuotaExceededException class with serialized data.
         /// </summary>

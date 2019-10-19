@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5AA93273-ADD6-471B-8FBC-0C2FD3E641AE}</ProjectGuid>
+    <ProjectGuid>{39908929-B076-44FC-91D2-DFE0A21B5A07}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.RoboMaker.CodeAnalysis</RootNamespace>

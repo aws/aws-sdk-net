@@ -25,7 +25,7 @@ namespace Amazon.MigrationHub.Model
     ///<summary>
     /// MigrationHub exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class HomeRegionNotSetException : AmazonMigrationHubException 
@@ -79,7 +79,7 @@ namespace Amazon.MigrationHub.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the HomeRegionNotSetException class with serialized data.
         /// </summary>

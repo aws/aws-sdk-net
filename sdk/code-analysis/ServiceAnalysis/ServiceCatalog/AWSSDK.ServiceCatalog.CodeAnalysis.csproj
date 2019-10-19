@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{89E9593C-1969-4C92-8722-989E3AE1E3B4}</ProjectGuid>
+    <ProjectGuid>{AB07D44F-564C-4626-A665-592885634016}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.ServiceCatalog.CodeAnalysis</RootNamespace>

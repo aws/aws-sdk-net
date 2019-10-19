@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B5EB8F72-CE54-4E1C-8C79-B97394BA2FEE}</ProjectGuid>
+    <ProjectGuid>{10FC5F28-B6FC-4DA8-8408-18139B2C4E7B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.DirectConnect.CodeAnalysis</RootNamespace>

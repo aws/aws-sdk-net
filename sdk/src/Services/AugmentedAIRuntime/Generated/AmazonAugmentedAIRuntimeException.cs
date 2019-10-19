@@ -28,7 +28,7 @@ namespace Amazon.AugmentedAIRuntime
     ///<summary>
     /// Common exception for the AugmentedAIRuntime service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonAugmentedAIRuntimeException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.AugmentedAIRuntime
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonAugmentedAIRuntimeException class with serialized data.
         /// </summary>

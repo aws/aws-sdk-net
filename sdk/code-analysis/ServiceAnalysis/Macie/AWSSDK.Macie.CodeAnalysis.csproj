@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{73D8D7FB-FDE9-40C0-9D78-8A973EC0A763}</ProjectGuid>
+    <ProjectGuid>{D0FFC9AF-C480-4E92-BD03-2DCBD4BABA72}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.Macie.CodeAnalysis</RootNamespace>

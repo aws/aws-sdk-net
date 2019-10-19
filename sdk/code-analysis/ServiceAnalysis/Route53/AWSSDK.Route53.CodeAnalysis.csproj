@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3CE0119E-8964-4015-AA92-9A0017A5B423}</ProjectGuid>
+    <ProjectGuid>{24A64869-D041-41F6-837D-4D8937BA7253}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.Route53.CodeAnalysis</RootNamespace>

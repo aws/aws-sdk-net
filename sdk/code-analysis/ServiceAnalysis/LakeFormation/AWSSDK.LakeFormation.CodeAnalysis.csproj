@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BE474B80-0BBF-4387-895F-30998E8838C8}</ProjectGuid>
+    <ProjectGuid>{4A33B035-7554-4E19-8765-575FCCD27339}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.LakeFormation.CodeAnalysis</RootNamespace>

@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E93CCC75-9B50-4E0B-883E-B02B0AB89B59}</ProjectGuid>
+    <ProjectGuid>{921448C5-FDB1-4CF4-BAE7-E2D439CCDEE8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.ElasticInference.CodeAnalysis</RootNamespace>

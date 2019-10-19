@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4FEB7172-B2D5-4EFA-9B71-A45BFC90F93D}</ProjectGuid>
+    <ProjectGuid>{429269B7-DCF6-4AF7-9049-B5F992E0268E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.SimpleNotificationService.CodeAnalysis</RootNamespace>

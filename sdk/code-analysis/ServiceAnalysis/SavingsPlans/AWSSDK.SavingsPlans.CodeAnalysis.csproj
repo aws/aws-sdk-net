@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{040BDFF2-6AF6-4B6D-B792-85C8A50C8F30}</ProjectGuid>
+    <ProjectGuid>{33B3CEB0-7C8F-442C-BC89-CDCEF81341B3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.SavingsPlans.CodeAnalysis</RootNamespace>

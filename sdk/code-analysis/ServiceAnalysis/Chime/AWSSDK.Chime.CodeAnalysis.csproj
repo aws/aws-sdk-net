@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D63EC4C1-03F0-4CAD-BA1F-5629F26C92B7}</ProjectGuid>
+    <ProjectGuid>{AD325CC4-2ED2-4440-93AC-BD0DE2D866C7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.Chime.CodeAnalysis</RootNamespace>

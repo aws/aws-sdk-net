@@ -28,7 +28,7 @@ namespace Amazon.Detective
     ///<summary>
     /// Common exception for the Detective service.
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonDetectiveException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.Detective
         {
         }
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonDetectiveException class with serialized data.
         /// </summary>

@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7B4CD7CD-B44B-480D-AE98-1B20E21676FD}</ProjectGuid>
+    <ProjectGuid>{41DAC2D4-C9AE-4BFE-9F36-14E9F46D036C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.QLDB.CodeAnalysis</RootNamespace>

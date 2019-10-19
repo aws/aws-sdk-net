@@ -25,7 +25,7 @@ namespace Amazon.ConnectParticipant.Model
     ///<summary>
     /// ConnectParticipant exception
     /// </summary>
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
 #endif
     public class ThrottlingException : AmazonConnectParticipantException 
@@ -79,7 +79,7 @@ namespace Amazon.ConnectParticipant.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !NETSTANDARD
+#if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ThrottlingException class with serialized data.
         /// </summary>

@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5B2166FF-6411-4F90-95D9-D6C839CE604D}</ProjectGuid>
+    <ProjectGuid>{1735104C-5F6D-46D6-879E-A99896E9E5D7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.PinpointEmail.CodeAnalysis</RootNamespace>

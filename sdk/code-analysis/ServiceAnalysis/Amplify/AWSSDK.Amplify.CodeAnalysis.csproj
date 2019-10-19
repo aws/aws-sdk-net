@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C90C7A29-1B9D-4451-9F58-0B9E75896517}</ProjectGuid>
+    <ProjectGuid>{FE28FA91-1F9C-417B-844C-AF73189EFA3A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.Amplify.CodeAnalysis</RootNamespace>

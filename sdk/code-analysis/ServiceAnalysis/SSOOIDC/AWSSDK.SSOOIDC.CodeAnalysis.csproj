@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FA197C58-BE77-4BDC-A4B1-07026F5C0DF2}</ProjectGuid>
+    <ProjectGuid>{45750F34-213E-4AFD-B98C-20069902DBA3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.SSOOIDC.CodeAnalysis</RootNamespace>
