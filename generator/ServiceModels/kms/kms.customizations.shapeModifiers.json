@@ -1,0 +1,14 @@
+{
+  "shapeModifiers": {
+    "Tag": {
+      "modify": [
+        {
+          "TagKey": { "emitPropertyName": "Key" }
+        },
+        {
+          "TagValue": { "emitPropertyName": "Value" }
+        }
+      ]
+    }
+  }
+}

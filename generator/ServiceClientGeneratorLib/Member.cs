@@ -15,6 +15,7 @@ namespace ServiceClientGenerator
     public class Member : BaseModel
     {
         public const string Locationkey = "location";
+        public const string OverrideKey = "override";
         public const string MemberKey = "member";
         public const string FlattenedKey = "flattened";
         public const string JsonValueKey = "jsonvalue";
@@ -58,6 +59,11 @@ namespace ServiceClientGenerator
         public bool IsInjected
         {
             get { return PropertyInjector != null; }
+        }
+
+        public bool IsOverride
+        {
+            get { return (bool) (this.data[OverrideKey] ?? false); }
         }
 
         public bool HasModifier

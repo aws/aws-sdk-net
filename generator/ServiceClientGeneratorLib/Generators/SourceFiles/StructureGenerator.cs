@@ -43,7 +43,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line 17 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
 if(this.StructureType == StructureType.Request && this.Operation.AuthType.HasValue)
-{
+{ 
 
             
             #line default
@@ -310,6 +310,12 @@ if(this.StructureType == StructureType.Request && this.Operation.AuthType.HasVal
             #line default
             #line hidden
             this.Write(" ");
+            
+            #line 121 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.IsOverride ? "override " : ""));
+            
+            #line default
+            #line hidden
             
             #line 121 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineType()));

@@ -45,16 +45,16 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Tag requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetTagKey())
+            if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("TagKey");
-                context.Writer.Write(requestObject.TagKey);
+                context.Writer.Write(requestObject.Key);
             }
 
-            if(requestObject.IsSetTagValue())
+            if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("TagValue");
-                context.Writer.Write(requestObject.TagValue);
+                context.Writer.Write(requestObject.Value);
             }
 
         }

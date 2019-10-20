@@ -690,12 +690,12 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.KeyManagementService.Model.Tag.TagKey</property>
+    <property>Amazon.KeyManagementService.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.KeyManagementService.Model.Tag.TagValue</property>
+    <property>Amazon.KeyManagementService.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
   </property-value-rule>

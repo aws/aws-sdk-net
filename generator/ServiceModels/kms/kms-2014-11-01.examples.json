@@ -74,8 +74,8 @@
         "input": {
           "Tags": [
             {
-              "TagKey": "CreatedBy",
-              "TagValue": "ExampleUser"
+              "Key": "CreatedBy",
+              "Value": "ExampleUser"
             }
           ]
         },
@@ -657,16 +657,16 @@
         "output": {
           "Tags": [
             {
-              "TagKey": "CostCenter",
-              "TagValue": "87654"
+              "Key": "CostCenter",
+              "Value": "87654"
             },
             {
-              "TagKey": "CreatedBy",
-              "TagValue": "ExampleUser"
+              "Key": "CreatedBy",
+              "Value": "ExampleUser"
             },
             {
-              "TagKey": "Purpose",
-              "TagValue": "Test"
+              "Key": "Purpose",
+              "Value": "Test"
             }
           ],
           "Truncated": false
@@ -832,8 +832,8 @@
           "KeyId": "1234abcd-12ab-34cd-56ef-1234567890ab",
           "Tags": [
             {
-              "TagKey": "Purpose",
-              "TagValue": "Test"
+              "Key": "Purpose",
+              "Value": "Test"
             }
           ]
         },

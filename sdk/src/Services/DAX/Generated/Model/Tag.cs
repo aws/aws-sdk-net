@@ -42,7 +42,7 @@ namespace Amazon.DAX.Model
     /// You cannot backdate the application of a tag.
     /// </para>
     /// </summary>
-    public partial class Tag
+    public partial class Tag : AWSTag
     {
         private string _key;
         private string _value;
@@ -55,7 +55,7 @@ namespace Amazon.DAX.Model
         /// tag value will be updated to the new value.
         /// </para>
         /// </summary>
-        public string Key
+        public override string Key
         {
             get { return this._key; }
             set { this._key = value; }
@@ -73,7 +73,7 @@ namespace Amazon.DAX.Model
         /// The value of the tag. Tag values are case-sensitive and can be null. 
         /// </para>
         /// </summary>
-        public string Value
+        public override string Value
         {
             get { return this._value; }
             set { this._value = value; }

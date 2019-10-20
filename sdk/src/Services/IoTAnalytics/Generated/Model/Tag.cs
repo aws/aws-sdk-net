@@ -30,7 +30,7 @@ namespace Amazon.IoTAnalytics.Model
     /// <summary>
     /// A set of key/value pairs which are used to manage the resource.
     /// </summary>
-    public partial class Tag
+    public partial class Tag : AWSTag
     {
         private string _key;
         private string _value;
@@ -42,7 +42,7 @@ namespace Amazon.IoTAnalytics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
-        public string Key
+        public override string Key
         {
             get { return this._key; }
             set { this._key = value; }
@@ -61,7 +61,7 @@ namespace Amazon.IoTAnalytics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
-        public string Value
+        public override string Value
         {
             get { return this._value; }
             set { this._value = value; }

@@ -31,7 +31,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
     /// This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a>
     /// </i> Data Type.
     /// </summary>
-    public partial class Tag
+    public partial class Tag : AWSTag
     {
         private string _key;
         private string _value;
@@ -45,7 +45,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string Key
+        public override string Key
         {
             get { return this._key; }
             set { this._key = value; }
@@ -66,7 +66,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string Value
+        public override string Value
         {
             get { return this._value; }
             set { this._value = value; }

@@ -37,47 +37,47 @@ namespace Amazon.KeyManagementService.Model
     /// Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
     /// </para>
     /// </summary>
-    public partial class Tag
+    public partial class Tag : AWSTag
     {
-        private string _tagKey;
-        private string _tagValue;
+        private string _key;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property TagKey. 
+        /// Gets and sets the property Key. 
         /// <para>
         /// The key of the tag.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
-        public string TagKey
+        [AWSProperty(Min=1, Max=128)]
+        public override string Key
         {
-            get { return this._tagKey; }
-            set { this._tagKey = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
-        // Check to see if TagKey property is set
-        internal bool IsSetTagKey()
+        // Check to see if Key property is set
+        internal bool IsSetKey()
         {
-            return this._tagKey != null;
+            return this._key != null;
         }
 
         /// <summary>
-        /// Gets and sets the property TagValue. 
+        /// Gets and sets the property Value. 
         /// <para>
         /// The value of the tag.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=256)]
-        public string TagValue
+        [AWSProperty(Min=0, Max=256)]
+        public override string Value
         {
-            get { return this._tagValue; }
-            set { this._tagValue = value; }
+            get { return this._value; }
+            set { this._value = value; }
         }
 
-        // Check to see if TagValue property is set
-        internal bool IsSetTagValue()
+        // Check to see if Value property is set
+        internal bool IsSetValue()
         {
-            return this._tagValue != null;
+            return this._value != null;
         }
 
     }

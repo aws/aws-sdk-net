@@ -30,7 +30,7 @@ namespace Amazon.GuardDuty.Model
     /// <summary>
     /// Contains information about the tag associated with the resource.
     /// </summary>
-    public partial class Tag
+    public partial class Tag : AWSTag
     {
         private string _key;
         private string _value;
@@ -41,7 +41,7 @@ namespace Amazon.GuardDuty.Model
         /// EC2 instance tag key.
         /// </para>
         /// </summary>
-        public string Key
+        public override string Key
         {
             get { return this._key; }
             set { this._key = value; }
@@ -59,7 +59,7 @@ namespace Amazon.GuardDuty.Model
         /// EC2 instance tag value.
         /// </para>
         /// </summary>
-        public string Value
+        public override string Value
         {
             get { return this._value; }
             set { this._value = value; }

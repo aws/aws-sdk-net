@@ -35,7 +35,7 @@ namespace Amazon.KinesisAnalytics.Model
     /// more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using
     /// Tagging</a>.
     /// </summary>
-    public partial class Tag
+    public partial class Tag : AWSTag
     {
         private string _key;
         private string _value;
@@ -47,7 +47,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
-        public string Key
+        public override string Key
         {
             get { return this._key; }
             set { this._key = value; }
@@ -66,7 +66,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
-        public string Value
+        public override string Value
         {
             get { return this._value; }
             set { this._value = value; }

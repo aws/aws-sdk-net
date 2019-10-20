@@ -33,7 +33,7 @@ namespace Amazon.DataPipeline.Model
     /// information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
     /// User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.
     /// </summary>
-    public partial class Tag
+    public partial class Tag : AWSTag
     {
         private string _key;
         private string _value;
@@ -46,7 +46,7 @@ namespace Amazon.DataPipeline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
-        public string Key
+        public override string Key
         {
             get { return this._key; }
             set { this._key = value; }
@@ -67,7 +67,7 @@ namespace Amazon.DataPipeline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]
-        public string Value
+        public override string Value
         {
             get { return this._value; }
             set { this._value = value; }

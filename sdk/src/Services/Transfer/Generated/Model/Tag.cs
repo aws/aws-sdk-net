@@ -34,7 +34,7 @@ namespace Amazon.Transfer.Model
     /// for accounting purposes, you might create a tag called <code>Group</code> and assign
     /// the values <code>Research</code> and <code>Accounting</code> to that group.
     /// </summary>
-    public partial class Tag
+    public partial class Tag : AWSTag
     {
         private string _key;
         private string _value;
@@ -46,7 +46,7 @@ namespace Amazon.Transfer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string Key
+        public override string Key
         {
             get { return this._key; }
             set { this._key = value; }
@@ -65,7 +65,7 @@ namespace Amazon.Transfer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string Value
+        public override string Value
         {
             get { return this._value; }
             set { this._value = value; }

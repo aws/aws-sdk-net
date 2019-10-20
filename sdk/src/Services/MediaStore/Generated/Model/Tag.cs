@@ -36,7 +36,7 @@ namespace Amazon.MediaStore.Model
     /// conventions, see <a href="https://aws.amazon.com/documentation/mediastore/tagging">Tagging
     /// Resources in MediaStore</a>.
     /// </summary>
-    public partial class Tag
+    public partial class Tag : AWSTag
     {
         private string _key;
         private string _value;
@@ -49,7 +49,7 @@ namespace Amazon.MediaStore.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
-        public string Key
+        public override string Key
         {
             get { return this._key; }
             set { this._key = value; }
@@ -70,7 +70,7 @@ namespace Amazon.MediaStore.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
-        public string Value
+        public override string Value
         {
             get { return this._value; }
             set { this._value = value; }

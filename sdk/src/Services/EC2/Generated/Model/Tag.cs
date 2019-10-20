@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Describes a tag.
     /// </summary>
-    public partial class Tag
+    public partial class Tag : AWSTag
     {
         private string _key;
         private string _value;
@@ -71,7 +71,7 @@ namespace Amazon.EC2.Model
         /// May not begin with <code>aws:</code>.
         /// </para>
         /// </summary>
-        public string Key
+        public override string Key
         {
             get { return this._key; }
             set { this._key = value; }
@@ -93,7 +93,7 @@ namespace Amazon.EC2.Model
         /// Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.
         /// </para>
         /// </summary>
-        public string Value
+        public override string Value
         {
             get { return this._value; }
             set { this._value = value; }

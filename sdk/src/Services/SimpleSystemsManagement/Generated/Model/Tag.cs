@@ -33,7 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// Manager, you can apply tags to documents, managed instances, maintenance windows,
     /// Parameter Store parameters, and patch baselines.
     /// </summary>
-    public partial class Tag
+    public partial class Tag : AWSTag
     {
         private string _key;
         private string _value;
@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
-        public string Key
+        public override string Key
         {
             get { return this._key; }
             set { this._key = value; }
@@ -64,7 +64,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
-        public string Value
+        public override string Value
         {
             get { return this._value; }
             set { this._value = value; }

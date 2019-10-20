@@ -31,7 +31,7 @@ namespace Amazon.Route53.Model
     /// A complex type that contains information about a tag that you want to add or edit
     /// for the specified health check or hosted zone.
     /// </summary>
-    public partial class Tag
+    public partial class Tag : AWSTag
     {
         private string _key;
         private string _value;
@@ -64,7 +64,7 @@ namespace Amazon.Route53.Model
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Max=128)]
-        public string Key
+        public override string Key
         {
             get { return this._key; }
             set { this._key = value; }
@@ -94,7 +94,7 @@ namespace Amazon.Route53.Model
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Max=256)]
-        public string Value
+        public override string Value
         {
             get { return this._value; }
             set { this._value = value; }

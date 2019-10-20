@@ -31,7 +31,7 @@ namespace Amazon.ElastiCache.Model
     /// A cost allocation Tag that can be added to an ElastiCache cluster or replication group.
     /// Tags are composed of a Key/Value pair. A tag with a null Value is permitted.
     /// </summary>
-    public partial class Tag
+    public partial class Tag : AWSTag
     {
         private string _key;
         private string _value;
@@ -42,7 +42,7 @@ namespace Amazon.ElastiCache.Model
         /// The key for the tag. May not be null.
         /// </para>
         /// </summary>
-        public string Key
+        public override string Key
         {
             get { return this._key; }
             set { this._key = value; }
@@ -60,7 +60,7 @@ namespace Amazon.ElastiCache.Model
         /// The tag's value. May be null.
         /// </para>
         /// </summary>
-        public string Value
+        public override string Value
         {
             get { return this._value; }
             set { this._value = value; }

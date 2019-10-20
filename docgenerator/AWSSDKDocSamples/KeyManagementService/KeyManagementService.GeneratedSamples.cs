@@ -68,8 +68,8 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             {
                 Tags = new List<Tag> {
                     new Tag {
-                        TagKey = "CreatedBy",
-                        TagValue = "ExampleUser"
+                        Key = "CreatedBy",
+                        Value = "ExampleUser"
                     }
                 } // One or more tags. Each tag consists of a tag key and a tag value.
             });
@@ -559,8 +559,8 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
                 KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the CMK you are tagging. You can use the key ID or the Amazon Resource Name (ARN) of the CMK.
                 Tags = new List<Tag> {
                     new Tag {
-                        TagKey = "Purpose",
-                        TagValue = "Test"
+                        Key = "Purpose",
+                        Value = "Test"
                     }
                 } // A list of tags.
             });

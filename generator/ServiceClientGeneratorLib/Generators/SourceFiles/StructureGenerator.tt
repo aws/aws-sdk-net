@@ -118,7 +118,7 @@ namespace <#=this.Config.Namespace#>.Model
 <#
 					}
 #>
-        <#=member.AccessModifier#> <#=member.DetermineType()#><#=member.UseNullable ? "?" : ""#> <#=member.PropertyName#>
+        <#=member.AccessModifier#> <#=member.IsOverride ? "override " : ""#><#=member.DetermineType()#><#=member.UseNullable ? "?" : ""#> <#=member.PropertyName#>
         {
 <#
                     if(member.IsNullable && !member.UseNullable)

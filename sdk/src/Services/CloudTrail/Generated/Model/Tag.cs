@@ -30,7 +30,7 @@ namespace Amazon.CloudTrail.Model
     /// <summary>
     /// A custom key-value pair associated with a resource such as a CloudTrail trail.
     /// </summary>
-    public partial class Tag
+    public partial class Tag : AWSTag
     {
         private string _key;
         private string _value;
@@ -43,7 +43,7 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string Key
+        public override string Key
         {
             get { return this._key; }
             set { this._key = value; }
@@ -62,7 +62,7 @@ namespace Amazon.CloudTrail.Model
         /// characters.
         /// </para>
         /// </summary>
-        public string Value
+        public override string Value
         {
             get { return this._value; }
             set { this._value = value; }

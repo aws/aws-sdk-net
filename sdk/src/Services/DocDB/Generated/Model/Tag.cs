@@ -30,7 +30,7 @@ namespace Amazon.DocDB.Model
     /// <summary>
     /// Metadata assigned to an Amazon DocumentDB resource consisting of a key-value pair.
     /// </summary>
-    public partial class Tag
+    public partial class Tag : AWSTag
     {
         private string _key;
         private string _value;
@@ -44,7 +44,7 @@ namespace Amazon.DocDB.Model
         /// regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
         /// </para>
         /// </summary>
-        public string Key
+        public override string Key
         {
             get { return this._key; }
             set { this._key = value; }
@@ -65,7 +65,7 @@ namespace Amazon.DocDB.Model
         /// regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
         /// </para>
         /// </summary>
-        public string Value
+        public override string Value
         {
             get { return this._value; }
             set { this._value = value; }

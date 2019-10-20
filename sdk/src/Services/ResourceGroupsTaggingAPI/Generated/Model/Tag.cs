@@ -33,7 +33,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-basics">Tag
     /// Basics</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
     /// </summary>
-    public partial class Tag
+    public partial class Tag : AWSTag
     {
         private string _key;
         private string _value;
@@ -46,7 +46,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
-        public string Key
+        public override string Key
         {
             get { return this._key; }
             set { this._key = value; }
@@ -66,7 +66,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]
-        public string Value
+        public override string Value
         {
             get { return this._value; }
             set { this._value = value; }

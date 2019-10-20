@@ -31,7 +31,7 @@ namespace Amazon.Inspector.Model
     /// A key and value pair. This data type is used as a request parameter in the <a>SetTagsForResource</a>
     /// action and a response element in the <a>ListTagsForResource</a> action.
     /// </summary>
-    public partial class Tag
+    public partial class Tag : AWSTag
     {
         private string _key;
         private string _value;
@@ -43,7 +43,7 @@ namespace Amazon.Inspector.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
-        public string Key
+        public override string Key
         {
             get { return this._key; }
             set { this._key = value; }
@@ -62,7 +62,7 @@ namespace Amazon.Inspector.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
-        public string Value
+        public override string Value
         {
             get { return this._value; }
             set { this._value = value; }

@@ -844,6 +844,16 @@ namespace ServiceClientGenerator
                         ClassName = definition.Name,
                         Structure = definition
                     };
+
+                    if (definition.Name.Equals ("Tag")) 
+                    {
+                        generator.BaseClass = "AWSTag";
+                        definition.Members
+                            .Where (member => member.BasePropertyName == "Key" || member.BasePropertyName == "Value")
+                            .ToList ()
+                            .ForEach (member => member.data["override"] = true);
+                    }
+
                     this.ExecuteGenerator(generator, definition.Name + ".cs", "Model");
                     this._processedStructures.Add(definition.Name);
                 }

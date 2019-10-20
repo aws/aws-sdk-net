@@ -31,7 +31,7 @@ namespace Amazon.Route53Resolver.Model
     /// One tag that you want to add to the specified resource. A tag consists of a <code>Key</code>
     /// (a name for the tag) and a <code>Value</code>.
     /// </summary>
-    public partial class Tag
+    public partial class Tag : AWSTag
     {
         private string _key;
         private string _value;
@@ -44,7 +44,7 @@ namespace Amazon.Route53Resolver.Model
         /// might be <code>account-id</code>.
         /// </para>
         /// </summary>
-        public string Key
+        public override string Key
         {
             get { return this._key; }
             set { this._key = value; }
@@ -64,7 +64,7 @@ namespace Amazon.Route53Resolver.Model
         /// the resource for.
         /// </para>
         /// </summary>
-        public string Value
+        public override string Value
         {
             get { return this._value; }
             set { this._value = value; }

@@ -33,7 +33,7 @@ namespace Amazon.ECR.Model
     /// can have a maximum character length of 128 characters, and tag values can have a maximum
     /// length of 256 characters.
     /// </summary>
-    public partial class Tag
+    public partial class Tag : AWSTag
     {
         private string _key;
         private string _value;
@@ -45,7 +45,7 @@ namespace Amazon.ECR.Model
         /// that acts like a category for more specific tag values.
         /// </para>
         /// </summary>
-        public string Key
+        public override string Key
         {
             get { return this._key; }
             set { this._key = value; }
@@ -64,7 +64,7 @@ namespace Amazon.ECR.Model
         /// as a descriptor within a tag category (key).
         /// </para>
         /// </summary>
-        public string Value
+        public override string Value
         {
             get { return this._value; }
             set { this._value = value; }

@@ -30,7 +30,7 @@ namespace Amazon.WAFRegional.Model
     /// <summary>
     /// 
     /// </summary>
-    public partial class Tag
+    public partial class Tag : AWSTag
     {
         private string _key;
         private string _value;
@@ -39,7 +39,7 @@ namespace Amazon.WAFRegional.Model
         /// Gets and sets the property Key.
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
-        public string Key
+        public override string Key
         {
             get { return this._key; }
             set { this._key = value; }
@@ -55,7 +55,7 @@ namespace Amazon.WAFRegional.Model
         /// Gets and sets the property Value.
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
-        public string Value
+        public override string Value
         {
             get { return this._value; }
             set { this._value = value; }

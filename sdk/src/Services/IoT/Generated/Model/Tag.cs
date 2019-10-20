@@ -30,7 +30,7 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// A set of key/value pairs that are used to manage the resource.
     /// </summary>
-    public partial class Tag
+    public partial class Tag : AWSTag
     {
         private string _key;
         private string _value;
@@ -41,7 +41,7 @@ namespace Amazon.IoT.Model
         /// The tag's key.
         /// </para>
         /// </summary>
-        public string Key
+        public override string Key
         {
             get { return this._key; }
             set { this._key = value; }
@@ -59,7 +59,7 @@ namespace Amazon.IoT.Model
         /// The tag's value.
         /// </para>
         /// </summary>
-        public string Value
+        public override string Value
         {
             get { return this._value; }
             set { this._value = value; }
