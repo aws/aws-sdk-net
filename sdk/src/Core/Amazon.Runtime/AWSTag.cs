@@ -76,7 +76,7 @@ namespace Amazon.Runtime
         /// <returns>A hash code based on the Key and Value properties of this Tag.</returns>
         public override int GetHashCode()
         {
-            return new { Key, Value }.GetHashCode ();
+            return new { Key, Value }.GetHashCode();
         }
 
         /// <summary>
