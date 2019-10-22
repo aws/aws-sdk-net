@@ -41,6 +41,7 @@ namespace Amazon.OpsWorksCM.Model
         /// The name of the engine attribute. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string Name
         {
             get { return this._name; }
@@ -59,6 +60,7 @@ namespace Amazon.OpsWorksCM.Model
         /// The value of the engine attribute. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string Value
         {
             get { return this._value; }

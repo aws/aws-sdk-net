@@ -61,6 +61,7 @@ namespace Amazon.OpsWorksCM.Model
         /// The Amazon S3 URL of the event's log file.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string LogUrl
         {
             get { return this._logUrl; }
@@ -79,6 +80,7 @@ namespace Amazon.OpsWorksCM.Model
         /// A human-readable informational or status message.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string Message
         {
             get { return this._message; }
@@ -97,6 +99,7 @@ namespace Amazon.OpsWorksCM.Model
         /// The name of the server on or for which the event occurred. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string ServerName
         {
             get { return this._serverName; }

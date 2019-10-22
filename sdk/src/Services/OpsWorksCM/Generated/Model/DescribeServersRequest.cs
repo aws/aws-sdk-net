@@ -75,6 +75,7 @@ namespace Amazon.OpsWorksCM.Model
         /// This is not currently implemented for <code>DescribeServers</code> requests. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string NextToken
         {
             get { return this._nextToken; }

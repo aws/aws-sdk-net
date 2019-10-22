@@ -59,7 +59,7 @@ namespace Amazon.OpsWorksCM.Model
         /// <code>InputAttributes</code> list.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=10000)]
         public string ExportAttributeName
         {
             get { return this._exportAttributeName; }

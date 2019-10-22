@@ -82,7 +82,7 @@ namespace Amazon.OpsWorksCM.Model
         /// The name of the client node. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=10000)]
         public string NodeName
         {
             get { return this._nodeName; }

@@ -86,6 +86,24 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.BackupRetentionCount);
                 }
 
+                if(publicRequest.IsSetCustomCertificate())
+                {
+                    context.Writer.WritePropertyName("CustomCertificate");
+                    context.Writer.Write(publicRequest.CustomCertificate);
+                }
+
+                if(publicRequest.IsSetCustomDomain())
+                {
+                    context.Writer.WritePropertyName("CustomDomain");
+                    context.Writer.Write(publicRequest.CustomDomain);
+                }
+
+                if(publicRequest.IsSetCustomPrivateKey())
+                {
+                    context.Writer.WritePropertyName("CustomPrivateKey");
+                    context.Writer.Write(publicRequest.CustomPrivateKey);
+                }
+
                 if(publicRequest.IsSetDisableAutomatedBackup())
                 {
                     context.Writer.WritePropertyName("DisableAutomatedBackup");

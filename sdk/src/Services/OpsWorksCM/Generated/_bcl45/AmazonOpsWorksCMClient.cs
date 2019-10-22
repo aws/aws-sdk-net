@@ -610,6 +610,12 @@ namespace Amazon.OpsWorksCM
         /// only. To edit security group rules, open Security Groups in the navigation pane of
         /// the EC2 management console. 
         /// </para>
+        ///  
+        /// <para>
+        /// To specify your own domain for a server, and provide your own self-signed or CA-signed
+        /// certificate and private key, specify values for <code>CustomDomain</code>, <code>CustomCertificate</code>,
+        /// and <code>CustomPrivateKey</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateServer service method.</param>
         /// 
@@ -678,6 +684,12 @@ namespace Amazon.OpsWorksCM
         /// your security group rules to allow access from known IP addresses and address ranges
         /// only. To edit security group rules, open Security Groups in the navigation pane of
         /// the EC2 management console. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To specify your own domain for a server, and provide your own self-signed or CA-signed
+        /// certificate and private key, specify values for <code>CustomDomain</code>, <code>CustomCertificate</code>,
+        /// and <code>CustomPrivateKey</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateServer service method.</param>

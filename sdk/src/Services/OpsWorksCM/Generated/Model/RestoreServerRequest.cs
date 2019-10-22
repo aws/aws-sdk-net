@@ -83,6 +83,7 @@ namespace Amazon.OpsWorksCM.Model
         /// backup. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string InstanceType
         {
             get { return this._instanceType; }
@@ -102,6 +103,7 @@ namespace Amazon.OpsWorksCM.Model
         /// administrator no longer has the SSH key. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string KeyPair
         {
             get { return this._keyPair; }

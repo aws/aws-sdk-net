@@ -94,6 +94,7 @@ namespace Amazon.OpsWorksCM.Model
         /// This is not currently implemented for <code>DescribeBackups</code> requests.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string NextToken
         {
             get { return this._nextToken; }

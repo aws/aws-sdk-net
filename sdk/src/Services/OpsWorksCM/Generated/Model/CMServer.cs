@@ -36,6 +36,7 @@ namespace Amazon.OpsWorksCM.Model
         private int? _backupRetentionCount;
         private string _cloudFormationStackArn;
         private DateTime? _createdAt;
+        private string _customDomain;
         private bool? _disableAutomatedBackup;
         private string _endpoint;
         private string _engine;
@@ -98,6 +99,7 @@ namespace Amazon.OpsWorksCM.Model
         /// The ARN of the CloudFormation stack that was used to create the server. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string CloudFormationStackArn
         {
             get { return this._cloudFormationStackArn; }
@@ -129,6 +131,27 @@ namespace Amazon.OpsWorksCM.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CustomDomain. 
+        /// <para>
+        /// An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>.
+        /// You cannot access the server by using the <code>Endpoint</code> value if the server
+        /// has a <code>CustomDomain</code> specified.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=253)]
+        public string CustomDomain
+        {
+            get { return this._customDomain; }
+            set { this._customDomain = value; }
+        }
+
+        // Check to see if CustomDomain property is set
+        internal bool IsSetCustomDomain()
+        {
+            return this._customDomain != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DisableAutomatedBackup. 
         /// <para>
         /// Disables automated backups. The number of stored backups is dependent on the value
@@ -150,10 +173,12 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property Endpoint. 
         /// <para>
-        ///  A DNS name that can be used to access the engine. Example: <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>
-        /// 
+        ///  A DNS name that can be used to access the engine. Example: <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>.
+        /// You cannot access the server by using the <code>Endpoint</code> value if the server
+        /// has a <code>CustomDomain</code> specified. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string Endpoint
         {
             get { return this._endpoint; }
@@ -173,6 +198,7 @@ namespace Amazon.OpsWorksCM.Model
         /// and <code>Puppet</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string Engine
         {
             get { return this._engine; }
@@ -243,6 +269,7 @@ namespace Amazon.OpsWorksCM.Model
         /// for Puppet and <code>Single</code> for Chef. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string EngineModel
         {
             get { return this._engineModel; }
@@ -263,6 +290,7 @@ namespace Amazon.OpsWorksCM.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string EngineVersion
         {
             get { return this._engineVersion; }
@@ -281,6 +309,7 @@ namespace Amazon.OpsWorksCM.Model
         /// The instance profile ARN of the server. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string InstanceProfileArn
         {
             get { return this._instanceProfileArn; }
@@ -300,6 +329,7 @@ namespace Amazon.OpsWorksCM.Model
         /// might not be the same instance type that is shown in the EC2 console. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string InstanceType
         {
             get { return this._instanceType; }
@@ -318,6 +348,7 @@ namespace Amazon.OpsWorksCM.Model
         /// The key pair associated with the server. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string KeyPair
         {
             get { return this._keyPair; }
@@ -355,6 +386,7 @@ namespace Amazon.OpsWorksCM.Model
         /// The preferred backup period specified for the server. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string PreferredBackupWindow
         {
             get { return this._preferredBackupWindow; }
@@ -373,6 +405,7 @@ namespace Amazon.OpsWorksCM.Model
         /// The preferred maintenance period specified for the server. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string PreferredMaintenanceWindow
         {
             get { return this._preferredMaintenanceWindow; }
@@ -410,6 +443,7 @@ namespace Amazon.OpsWorksCM.Model
         /// The ARN of the server. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string ServerArn
         {
             get { return this._serverArn; }
@@ -428,6 +462,7 @@ namespace Amazon.OpsWorksCM.Model
         /// The name of the server. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string ServerName
         {
             get { return this._serverName; }
@@ -446,6 +481,7 @@ namespace Amazon.OpsWorksCM.Model
         /// The service role ARN used to create the server. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string ServiceRoleArn
         {
             get { return this._serviceRoleArn; }
@@ -486,6 +522,7 @@ namespace Amazon.OpsWorksCM.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string StatusReason
         {
             get { return this._statusReason; }

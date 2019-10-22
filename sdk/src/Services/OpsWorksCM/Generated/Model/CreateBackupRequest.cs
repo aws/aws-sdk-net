@@ -62,6 +62,7 @@ namespace Amazon.OpsWorksCM.Model
         ///  A user-defined description of the backup. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string Description
         {
             get { return this._description; }
