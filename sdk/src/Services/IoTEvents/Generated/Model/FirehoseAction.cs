@@ -29,7 +29,7 @@ namespace Amazon.IoTEvents.Model
 {
     /// <summary>
     /// Sends information about the detector model instance and the event which triggered
-    /// the action to a Kinesis Data Firehose stream.
+    /// the action to a Kinesis Data Firehose delivery stream.
     /// </summary>
     public partial class FirehoseAction
     {
@@ -39,7 +39,7 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property DeliveryStreamName. 
         /// <para>
-        /// The name of the Kinesis Data Firehose stream where the data is written.
+        /// The name of the Kinesis Data Firehose delivery stream where the data is written.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,8 +59,8 @@ namespace Amazon.IoTEvents.Model
         /// Gets and sets the property Separator. 
         /// <para>
         /// A character separator that is used to separate records written to the Kinesis Data
-        /// Firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline),
-        /// ',' (comma).
+        /// Firehose delivery stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows
+        /// newline), ',' (comma).
         /// </para>
         /// </summary>
         public string Separator

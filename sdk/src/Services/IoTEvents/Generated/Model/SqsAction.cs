@@ -29,7 +29,7 @@ namespace Amazon.IoTEvents.Model
 {
     /// <summary>
     /// Sends information about the detector model instance and the event which triggered
-    /// the action to an AWS SQS queue.
+    /// the action to an Amazon SQS queue.
     /// </summary>
     public partial class SqsAction
     {
@@ -39,7 +39,7 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property QueueUrl. 
         /// <para>
-        /// The URL of the SQS queue where the data is written.
+        /// The URL of the Amazon SQS queue where the data is written.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

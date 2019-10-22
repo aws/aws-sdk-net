@@ -86,6 +86,12 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DetectorModelDescription);
                 }
 
+                if(publicRequest.IsSetEvaluationMethod())
+                {
+                    context.Writer.WritePropertyName("evaluationMethod");
+                    context.Writer.Write(publicRequest.EvaluationMethod);
+                }
+
                 if(publicRequest.IsSetRoleArn())
                 {
                     context.Writer.WritePropertyName("roleArn");

@@ -37,6 +37,7 @@ namespace Amazon.IoTEvents.Model
         private string _detectorModelDescription;
         private string _detectorModelName;
         private string _detectorModelVersion;
+        private EvaluationMethod _evaluationMethod;
         private string _key;
         private DateTime? _lastUpdateTime;
         private string _roleArn;
@@ -136,10 +137,30 @@ namespace Amazon.IoTEvents.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EvaluationMethod. 
+        /// <para>
+        /// When set to <code>SERIAL</code>, variables are updated and event conditions evaluated
+        /// in the order that the events are defined. When set to <code>BATCH</code>, variables
+        /// are updated and events performed only after all event conditions are evaluated.
+        /// </para>
+        /// </summary>
+        public EvaluationMethod EvaluationMethod
+        {
+            get { return this._evaluationMethod; }
+            set { this._evaluationMethod = value; }
+        }
+
+        // Check to see if EvaluationMethod property is set
+        internal bool IsSetEvaluationMethod()
+        {
+            return this._evaluationMethod != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The input attribute key used to identify a device or system in order to create a detector
-        /// (an instance of the detector model) and then to route each input received to the appropriate
+        /// The input attribute key used to identify a device or system to create a detector (an
+        /// instance of the detector model) and then to route each input received to the appropriate
         /// detector (instance). This parameter uses a JSON-path expression to specify the attribute-value
         /// pair in the message payload of each input that is used to identify the device associated
         /// with the input.
