@@ -1,3 +1,14 @@
+### 3.3.613.0 (2019-10-22 19:23 UTC)
+* IoTEvents (3.3.102.0)
+	* Add support for new serial evaluation method for events in a detector model.
+* OpsWorksCM (3.3.102.0)
+	* AWS OpsWorks for Chef Automate (OWCA) now allows customers to use a custom domain and respective certificate, for their AWS OpsWorks For Chef Automate servers. Customers can now provide a CustomDomain, CustomCertificate and CustomPrivateKey in CreateServer API to configure their Chef Automate servers with a custom domain and certificate.
+* Core 3.3.103.53
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.612.0 (2019-10-18 19:14 UTC)
 * CloudWatch (3.3.103.0)
 	* New Period parameter added to MetricDataQuery structure.
