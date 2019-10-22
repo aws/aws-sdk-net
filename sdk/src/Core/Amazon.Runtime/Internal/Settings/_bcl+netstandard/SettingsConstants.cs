@@ -46,12 +46,14 @@ namespace Amazon.Runtime.Internal.Settings
         public const string MfaSerialField = "MfaSerial";
         public const string EndpointNameField = "EndpointName";
         public const string RoleArnField = "RoleArn";
+        public const string RoleSessionName = "RoleSessionName";
         public const string UserIdentityField = "UserIdentity";
         public const string Region = "Region";
         public const string AuthenticationTypeField = "AuthenticationType";
         public const string SourceProfileField = "SourceProfile";
         public const string CredentialSourceField = "CredentialSource";
         public const string CredentialProcess = "credential_process";
+        public const string WebIdentityTokenFile = "WebIdentityTokenFile";
 
         // present in endpoint definitions in SAMLEndpoints.json file
         public const string EndpointField = "Endpoint";

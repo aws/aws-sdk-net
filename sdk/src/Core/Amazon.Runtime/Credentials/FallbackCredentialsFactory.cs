@@ -57,6 +57,7 @@ namespace Amazon.Runtime
                 () => new AppConfigAWSCredentials(),            // Test explicit keys/profile name first.
 #endif
 #if BCL || NETSTANDARD
+                () => AssumeRoleWithWebIdentityCredentials.FromEnvironmentVariables(),
                 // Attempt to load the default profile.  It could be Basic, Session, AssumeRole, or SAML.
                 () => GetAWSCredentials(credentialProfileChain),
                 () => new EnvironmentVariablesAWSCredentials(), // Look for credentials set in environment vars.

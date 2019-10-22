@@ -244,6 +244,9 @@ namespace Amazon.Runtime.CredentialManagement
 #pragma warning restore CS0612 // Type or member is obsolete
                         assumeRoleOptions = new AssumeRoleAWSCredentialsOptions();
                         return new AssumeRoleAWSCredentials(sourceCredentials, options.RoleArn, roleSessionName, assumeRoleOptions);
+                    case CredentialProfileType.AssumeRoleWithWebIdentity:
+                    case CredentialProfileType.AssumeRoleWithWebIdentitySessionName:
+                        return new AssumeRoleWithWebIdentityCredentials(options.WebIdentityTokenFile, options.RoleArn, options.RoleSessionName);
 #if !NETSTANDARD13
                     case CredentialProfileType.SAMLRole:
                     case CredentialProfileType.SAMLRoleUserIdentity:

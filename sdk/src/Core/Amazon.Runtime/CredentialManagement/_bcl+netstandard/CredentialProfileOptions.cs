@@ -74,6 +74,12 @@ namespace Amazon.Runtime.CredentialManagement
         /// <summary>The role ARN to use when creating assume role AWSCredentials.</summary>
 #endif
         public string RoleArn { get; set; }
+
+        /// <summary>
+        /// An identifier for the assumed role session.
+        /// </summary>
+        public string RoleSessionName { get; set; }
+
         /// <summary>
         /// The secret key to use when creating AWSCredentials.
         /// </summary>
@@ -101,6 +107,11 @@ namespace Amazon.Runtime.CredentialManagement
         public string CredentialProcess { get; set; }
 
         /// <summary>
+        /// Absolute path to the file on disk containing an OIDC token.
+        /// </summary>
+        public string WebIdentityTokenFile { get; set; }
+
+        /// <summary>
         /// Return true the properties are all null or empty, false otherwise.
         /// </summary>
         internal bool IsEmpty
@@ -116,10 +127,12 @@ namespace Amazon.Runtime.CredentialManagement
                     string.IsNullOrEmpty(ExternalID) &&
                     string.IsNullOrEmpty(MfaSerial) &&
                     string.IsNullOrEmpty(RoleArn) &&
+                    string.IsNullOrEmpty(RoleSessionName) &&
                     string.IsNullOrEmpty(SecretKey) &&
                     string.IsNullOrEmpty(SourceProfile) &&
                     string.IsNullOrEmpty(Token) &&
-                    string.IsNullOrEmpty(CredentialProcess);
+                    string.IsNullOrEmpty(CredentialProcess) &&
+                    string.IsNullOrEmpty(WebIdentityTokenFile);
             }
         }
         public override string ToString()
@@ -132,6 +145,7 @@ namespace Amazon.Runtime.CredentialManagement
                 "ExternalID=" + ExternalID + ", " +
                 "MfaSerial=" + MfaSerial + ", " +
                 "RoleArn=" + RoleArn + ", " +
+                "RoleSessionName=" + RoleSessionName + ", " +
                 "SecretKey=XXXXX, " +
                 "SourceProfile=" + SourceProfile + ", " +
                 "Token=" + Token +
@@ -139,6 +153,7 @@ namespace Amazon.Runtime.CredentialManagement
                 ", " + "UserIdentity=" + UserIdentity +
 #endif
                 ", " + "CredentialProcess=" + CredentialProcess +
+                ", " + "WebIdentityTokenFile=" + WebIdentityTokenFile +
                 "]";
         }
 
@@ -153,21 +168,21 @@ namespace Amazon.Runtime.CredentialManagement
 
 #if !NETSTANDARD13
             return AWSSDKUtils.AreEqual(
-                new object[] { AccessKey, EndpointName, ExternalID, MfaSerial, RoleArn, SecretKey, SourceProfile, Token, UserIdentity },
-                new object[] { po.AccessKey, po.EndpointName, po.ExternalID, po.MfaSerial, po.RoleArn, po.SecretKey, po.SourceProfile, po.Token, po.UserIdentity });
+                new object[] { AccessKey, EndpointName, ExternalID, MfaSerial, RoleArn, RoleSessionName, SecretKey, SourceProfile, Token, UserIdentity, CredentialProcess, WebIdentityTokenFile },
+                new object[] { po.AccessKey, po.EndpointName, po.ExternalID, po.MfaSerial, po.RoleArn, po.RoleSessionName, po.SecretKey, po.SourceProfile, po.Token, po.UserIdentity, po.CredentialProcess, po.WebIdentityTokenFile });
 #else
             return AWSSDKUtils.AreEqual(
-                new object[] { AccessKey, ExternalID, MfaSerial, RoleArn, SecretKey, SourceProfile, Token},
-                new object[] { po.AccessKey, po.ExternalID, po.MfaSerial, po.RoleArn, po.SecretKey, po.SourceProfile, po.Token });
+                new object[] { AccessKey, ExternalID, MfaSerial, RoleArn, RoleSessionName, SecretKey, SourceProfile, Token, CredentialProcess, WebIdentityTokenFile},
+                new object[] { po.AccessKey, po.ExternalID, po.MfaSerial, po.RoleArn, po.RoleSessionName, po.SecretKey, po.SourceProfile, po.Token, po.CredentialProcess, po.WebIdentityTokenFile });
 #endif
         }
 
         public override int GetHashCode()
         {
 #if !NETSTANDARD13
-            return Hashing.Hash(AccessKey, EndpointName, ExternalID, MfaSerial, RoleArn, SecretKey, SourceProfile, Token, UserIdentity);
+            return Hashing.Hash(AccessKey, EndpointName, ExternalID, MfaSerial, RoleArn, RoleSessionName, SecretKey, SourceProfile, Token, UserIdentity, CredentialProcess, WebIdentityTokenFile);
 #else
-            return Hashing.Hash(AccessKey, ExternalID, MfaSerial, RoleArn, SecretKey, SourceProfile, Token);
+            return Hashing.Hash(AccessKey, ExternalID, MfaSerial, RoleArn, RoleSessionName, SecretKey, SourceProfile, Token, CredentialProcess, WebIdentityTokenFile);
 #endif
         }
     }

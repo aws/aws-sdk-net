@@ -77,6 +77,7 @@ namespace Amazon.Runtime.CredentialManagement
                     { "ExternalID", SettingsConstants.ExternalIDField},
                     { "MfaSerial", SettingsConstants.MfaSerialField},
                     { "RoleArn", SettingsConstants.RoleArnField },
+                    { "RoleSessionName", SettingsConstants.RoleSessionName},
                     { "SecretKey", SettingsConstants.SecretKeyField },
                     { "SourceProfile", SettingsConstants.SourceProfileField },
                     { "Token", SettingsConstants.SessionTokenField },
@@ -85,7 +86,8 @@ namespace Amazon.Runtime.CredentialManagement
 #endif
                     // Not implemented for NetSDKCredentials. Applicable only
                     // for SharedCredentials
-                    { "CredentialProcess" , SettingsConstants.CredentialProcess }
+                    { "CredentialProcess" , SettingsConstants.CredentialProcess },
+                    { "WebIdentityTokenFile", SettingsConstants.WebIdentityTokenFile }
                 }
             );
 

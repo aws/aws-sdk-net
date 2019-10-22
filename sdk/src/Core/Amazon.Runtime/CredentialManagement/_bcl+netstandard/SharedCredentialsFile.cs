@@ -71,6 +71,8 @@ namespace Amazon.Runtime.CredentialManagement
                 CredentialProfileType.AssumeRoleExternal,
                 CredentialProfileType.AssumeRoleExternalMFA,
                 CredentialProfileType.AssumeRoleMFA,
+                CredentialProfileType.AssumeRoleWithWebIdentity,
+                CredentialProfileType.AssumeRoleWithWebIdentitySessionName,
                 CredentialProfileType.Basic,
                 CredentialProfileType.Session,
                 CredentialProfileType.CredentialProcess
@@ -88,13 +90,15 @@ namespace Amazon.Runtime.CredentialManagement
                     { "ExternalID", "external_id" },
                     { "MfaSerial", "mfa_serial" },
                     { "RoleArn", "role_arn" },
+                    { "RoleSessionName", "role_session_name" },
                     { "SecretKey", "aws_secret_access_key" },
                     { "SourceProfile", "source_profile" },
                     { "Token", "aws_session_token" },
 #if !NETSTANDARD13
                     { "UserIdentity", null },
 #endif
-                    { "CredentialProcess" , "credential_process" }
+                    { "CredentialProcess" , "credential_process" },
+                    { "WebIdentityTokenFile", "web_identity_token_file" }
                 }
             );
 

@@ -31,7 +31,9 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         SAMLRoleUserIdentity,
 #endif
         Session,
-        CredentialProcess
+        CredentialProcess,
+        AssumeRoleWithWebIdentity,
+        AssumeRoleWithWebIdentitySessionName
     }
 
     public enum CredentialSourceType
@@ -46,6 +48,7 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         private const string BasicCredentials = "Basic";
         private const string SessionCredentials = "Session";
         private const string AssumeRoleCredentials = "Assume Role";
+        private const string AssumeRoleWithWebIdentityCredentials = "Assume Role with OIDC Web Identity";
         private const string SAMLCredentials = "SAML";
 
         private const string AccessKey = "AccessKey";
@@ -54,9 +57,11 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         private const string ExternalID = "ExternalID";
         private const string MfaSerial = "MfaSerial";
         private const string RoleArn = "RoleArn";
+        private const string RoleSessionName = "RoleSessionName";
         private const string SecretKey = "SecretKey";
         private const string SourceProfile = "SourceProfile";        
         private const string Token = "Token";
+        private const string WebIdentityTokenFile = "WebIdentityTokenFile";
         private const string UserIdentity = "UserIdentity";
         private const string CredentialProcess = "CredentialProcess";
 
@@ -98,6 +103,21 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                         MfaSerial,
                         RoleArn,
                         SourceProfile,
+                    }
+                },
+                {
+                    CredentialProfileType.AssumeRoleWithWebIdentity, new HashSet<string>()
+                    {
+                        RoleArn,
+                        WebIdentityTokenFile,
+                    }
+                },
+                {
+                    CredentialProfileType.AssumeRoleWithWebIdentitySessionName, new HashSet<string>()
+                    {
+                        RoleArn,
+                        WebIdentityTokenFile,
+                        RoleSessionName
                     }
                 },
                 {
@@ -149,6 +169,8 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                 { CredentialProfileType.AssumeRoleExternal, AssumeRoleCredentials },
                 { CredentialProfileType.AssumeRoleExternalMFA, AssumeRoleCredentials },
                 { CredentialProfileType.AssumeRoleMFA, AssumeRoleCredentials },
+                { CredentialProfileType.AssumeRoleWithWebIdentity, AssumeRoleWithWebIdentityCredentials },
+                { CredentialProfileType.AssumeRoleWithWebIdentitySessionName, AssumeRoleWithWebIdentityCredentials },
                 { CredentialProfileType.Basic, BasicCredentials },
 #if !NETSTANDARD13
                 { CredentialProfileType.SAMLRole, SAMLCredentials },
