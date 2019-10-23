@@ -44,7 +44,7 @@ namespace AWSSDK.UnitTests
         private const string AwsProfileEnvironmentVariable = "AWS_PROFILE";
         private const string AwsStsRegionalEndpointsEnvironmentVariable = "AWS_STS_REGIONAL_ENDPOINTS";
 
-        [DataTestMethod]
+        /*[DataTestMethod]
         [DataRow("default", StsRegionalEndpointsValue.Legacy)]
         [DataRow("other", StsRegionalEndpointsValue.Regional)]
         [TestCategory("SecurityToken")]
@@ -72,7 +72,7 @@ namespace AWSSDK.UnitTests
                 }
 
             }
-        }
+        }*/
 
         [DataTestMethod]
         [DataRow("legacy", StsRegionalEndpointsValue.Legacy)]

@@ -112,6 +112,7 @@ namespace Amazon.SecurityToken
             // also check if the region is within the list of legacy global regions
             else if (this.StsRegionalEndpoints == StsRegionalEndpointsValue.Legacy && legacyGlobalRegions.Contains(this.RegionEndpoint))
             {
+                this.AuthenticationRegion = "us-east-1";
                 return StsDefaultHostname;
             }
             else
