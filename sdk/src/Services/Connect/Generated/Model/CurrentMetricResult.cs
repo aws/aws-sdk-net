@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A <code>CurrentMetricResult</code> object.
+    /// Contains information about a set of real-time metrics.
     /// </summary>
     public partial class CurrentMetricResult
     {
@@ -38,7 +38,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Collections. 
         /// <para>
-        /// The <code>Collections</code> for the <code>CurrentMetricResult</code> object.
+        /// The set of metrics.
         /// </para>
         /// </summary>
         public List<CurrentMetricData> Collections
@@ -56,7 +56,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Dimensions. 
         /// <para>
-        /// The <code>Dimensions</code> for the <code>CurrentMetricResult</code> object.
+        /// The dimensions for the metrics.
         /// </para>
         /// </summary>
         public Dimensions Dimensions

@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A <code>Threshold</code> object that includes a comparison and <code>ThresholdValue</code>
-    /// to compare to. Used with service level metrics.
+    /// Contains information about the threshold for service level metrics.
     /// </summary>
     public partial class Threshold
     {
@@ -39,8 +38,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Comparison. 
         /// <para>
-        /// The Threshold to use to compare service level metrics to. Only "Less than" (LT) comparisons
-        /// are supported.
+        /// The type of comparison. Only "less than" (LT) comparisons are supported.
         /// </para>
         /// </summary>
         public Comparison Comparison
@@ -58,8 +56,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ThresholdValue. 
         /// <para>
-        /// The value of the threshold to compare the metric to. Only "Less than" (LT) comparisons
-        /// are supported.
+        /// The threshold value to compare.
         /// </para>
         /// </summary>
         public double ThresholdValue

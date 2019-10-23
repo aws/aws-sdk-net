@@ -37,7 +37,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property HierarchyStructure. 
         /// <para>
-        /// A <code>HierarchyStructure</code> object.
+        /// Information about the hierarchy structure.
         /// </para>
         /// </summary>
         public HierarchyStructure HierarchyStructure

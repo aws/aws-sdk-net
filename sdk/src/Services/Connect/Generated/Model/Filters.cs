@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The filter, either channel or queues, to apply to the metric results retrieved.
+    /// Contains the filter to apply when retrieving metrics.
     /// </summary>
     public partial class Filters
     {
@@ -38,7 +38,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Channels. 
         /// <para>
-        /// The Channel to use as a filter for the metrics returned. Only VOICE is supported.
+        /// The channel to use to filter the metrics.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1)]
@@ -57,8 +57,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Queues. 
         /// <para>
-        /// A list of up to 100 queue IDs or queue ARNs to use to filter the metrics retrieved.
-        /// You can include both IDs and ARNs in a request.
+        /// The queues to use to filter the metrics. You can specify up to 100 queues per request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

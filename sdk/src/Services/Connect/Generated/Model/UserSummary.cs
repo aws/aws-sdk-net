@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A <code>UserSummary</code> object that contains Information about a user, including
-    /// ARN, Id, and user name.
+    /// Contains summary information about a user.
     /// </summary>
     public partial class UserSummary
     {
@@ -40,7 +39,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN for the user account.
+        /// The Amazon Resource Name (ARN) of the user account.
         /// </para>
         /// </summary>
         public string Arn
@@ -58,7 +57,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier for the user account.
+        /// The identifier of the user account.
         /// </para>
         /// </summary>
         public string Id
@@ -76,7 +75,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The Amazon Connect user name for the user account.
+        /// The Amazon Connect user name of the user account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

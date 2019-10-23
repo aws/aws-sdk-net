@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A <code>HistoricalMetric</code> object that contains the Name, Unit, Statistic, and
-    /// Threshold for the metric.
+    /// Contains information about a historical metric.
     /// </summary>
     public partial class HistoricalMetric
     {
@@ -41,7 +40,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the historical metric.
+        /// The name of the metric.
         /// </para>
         /// </summary>
         public HistoricalMetricName Name

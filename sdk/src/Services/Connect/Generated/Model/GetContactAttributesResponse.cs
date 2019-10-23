@@ -37,7 +37,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// The attributes to update.
+        /// Information about the attributes.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes

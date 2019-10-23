@@ -29,7 +29,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateUserHierarchy operation.
-    /// Assigns the specified hierarchy group to the user.
+    /// Assigns the specified hierarchy group to the specified user.
     /// </summary>
     public partial class UpdateUserHierarchyRequest : AmazonConnectRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property HierarchyGroupId. 
         /// <para>
-        /// The identifier for the hierarchy group to assign to the user.
+        /// The identifier of the hierarchy group.
         /// </para>
         /// </summary>
         public string HierarchyGroupId
@@ -58,11 +58,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier for your Amazon Connect instance. To find the ID of your instance,
-        /// open the AWS console and select Amazon Connect. Select the alias of the instance in
-        /// the Instance alias column. The instance ID is displayed in the Overview section of
-        /// your instance settings. For example, the instance ID is the set of characters at the
-        /// end of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+        /// The identifier of the Amazon Connect instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -81,7 +77,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The identifier of the user account to assign the hierarchy group to.
+        /// The identifier of the user account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A <code>HierarchyGroupSummary</code> object that contains information about the hierarchy
-    /// group, including ARN, Id, and Name.
+    /// Contains summary information about a hierarchy group.
     /// </summary>
     public partial class HierarchyGroupSummary
     {
@@ -40,7 +39,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN for the hierarchy group.
+        /// The Amazon Resource Name (ARN) of the hierarchy group.
         /// </para>
         /// </summary>
         public string Arn

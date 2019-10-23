@@ -39,7 +39,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property DataSnapshotTime. 
         /// <para>
-        /// The time at which <code>CurrentMetricData</code> was retrieved and cached for pagination.
+        /// The time at which the metrics were retrieved and cached for pagination.
         /// </para>
         /// </summary>
         public DateTime DataSnapshotTime
@@ -57,23 +57,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property MetricResults. 
         /// <para>
-        /// A list of <code>CurrentMetricResult</code> objects organized by <code>Dimensions</code>
-        /// combining with <code>CurrentMetricDataCollections</code>.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>Dimensions</code> is the resourceId specified in the <code>Filters</code> of
-        /// the request. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>Collections</code> is a list of <code>CurrentMetricData</code> objects with
-        /// corresponding values to the <code>CurrentMetrics</code> specified in the request.
-        /// </para>
-        ///  
-        /// <para>
-        /// If no <code>Grouping</code> is specified in the request, <code>Collections</code>
-        /// is a summary for the <code>CurrentMetric</code> returned.
+        /// Information about the real-time metrics.
         /// </para>
         /// </summary>
         public List<CurrentMetricResult> MetricResults
@@ -91,14 +75,13 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A string returned in the response. Use the value returned in the response as the value
-        /// of the NextToken in a subsequent request to retrieve the next set of results.
+        /// If there are additional results, this is the token for the next set of results.
         /// </para>
         ///  
         /// <para>
         /// The token expires after 5 minutes from the time it is created. Subsequent requests
-        /// that use the NextToken must use the same request parameters as the request that generated
-        /// the token. 
+        /// that use the token must use the same request parameters as the request that generated
+        /// the token.
         /// </para>
         /// </summary>
         public string NextToken

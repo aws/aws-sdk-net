@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The metrics data returned from a <code>GetMetricData</code> operation.
+    /// Contains information about the historical metrics retrieved.
     /// </summary>
     public partial class HistoricalMetricResult
     {
@@ -38,7 +38,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Collections. 
         /// <para>
-        /// A list of <code>HistoricalMetricData</code> objects.
+        /// The set of metrics.
         /// </para>
         /// </summary>
         public List<HistoricalMetricData> Collections
@@ -56,7 +56,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Dimensions. 
         /// <para>
-        /// The <code>Dimensions</code> for the metrics.
+        /// The dimension for the metrics.
         /// </para>
         /// </summary>
         public Dimensions Dimensions

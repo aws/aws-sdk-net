@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A <code>UserIdentityInfo</code> object that contains information about the user's
-    /// identity, including email address, first name, and last name.
+    /// Contains information about the identity of a user.
     /// </summary>
     public partial class UserIdentityInfo
     {
@@ -40,8 +39,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Email. 
         /// <para>
-        /// The email address added to the user account. If you are using SAML for identity management
-        /// and include this parameter, an <code>InvalidRequestException</code> is returned.
+        /// The email address. If you are using SAML for identity management and include this
+        /// parameter, an error is returned.
         /// </para>
         /// </summary>
         public string Email
@@ -59,8 +58,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property FirstName. 
         /// <para>
-        /// The first name used in the user account. This is required if you are using Amazon
-        /// Connect or SAML for identity management.
+        /// The first name. This is required if you are using Amazon Connect or SAML for identity
+        /// management.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -79,8 +78,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property LastName. 
         /// <para>
-        /// The last name used in the user account. This is required if you are using Amazon Connect
-        /// or SAML for identity management.
+        /// The last name. This is required if you are using Amazon Connect or SAML for identity
+        /// management.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A QueueReference object that contains the the QueueId and ARN for the queue resource
-    /// for which metrics are returned.
+    /// Contains information about a queue resource for which metrics are returned.
     /// </summary>
     public partial class QueueReference
     {
@@ -39,7 +38,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of queue.
+        /// The Amazon Resource Name (ARN) of the queue.
         /// </para>
         /// </summary>
         public string Arn
@@ -57,7 +56,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the queue associated with the metrics returned.
+        /// The identifier of the queue.
         /// </para>
         /// </summary>
         public string Id

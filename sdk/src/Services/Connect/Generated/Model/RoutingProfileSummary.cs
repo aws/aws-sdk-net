@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A <code>RoutingProfileSummary</code> object that contains information about a routing
-    /// profile, including ARN, Id, and Name.
+    /// Contains summary information about a routing profile.
     /// </summary>
     public partial class RoutingProfileSummary
     {
@@ -40,7 +39,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the routing profile.
+        /// The Amazon Resource Name (ARN) of the routing profile.
         /// </para>
         /// </summary>
         public string Arn

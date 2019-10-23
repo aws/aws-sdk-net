@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A <code>HierarchyPath</code> object that contains information about the levels of
-    /// the hierarchy group.
+    /// Contains information about the levels of a hierarchy group.
     /// </summary>
     public partial class HierarchyPath
     {
@@ -42,8 +41,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property LevelFive. 
         /// <para>
-        /// A <code>HierarchyGroupSummary</code> object that contains information about the level
-        /// of the hierarchy group, including ARN, Id, and Name.
+        /// Information about level five.
         /// </para>
         /// </summary>
         public HierarchyGroupSummary LevelFive
@@ -61,8 +59,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property LevelFour. 
         /// <para>
-        /// A <code>HierarchyGroupSummary</code> object that contains information about the level
-        /// of the hierarchy group, including ARN, Id, and Name.
+        /// Information about level four.
         /// </para>
         /// </summary>
         public HierarchyGroupSummary LevelFour
@@ -80,8 +77,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property LevelOne. 
         /// <para>
-        /// A <code>HierarchyGroupSummary</code> object that contains information about the level
-        /// of the hierarchy group, including ARN, Id, and Name.
+        /// Information about level one.
         /// </para>
         /// </summary>
         public HierarchyGroupSummary LevelOne
@@ -99,8 +95,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property LevelThree. 
         /// <para>
-        /// A <code>HierarchyGroupSummary</code> object that contains information about the level
-        /// of the hierarchy group, including ARN, Id, and Name.
+        /// Information about level three.
         /// </para>
         /// </summary>
         public HierarchyGroupSummary LevelThree
@@ -118,8 +113,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property LevelTwo. 
         /// <para>
-        /// A <code>HierarchyGroupSummary</code> object that contains information about the level
-        /// of the hierarchy group, including ARN, Id, and Name.
+        /// Information about level two.
         /// </para>
         /// </summary>
         public HierarchyGroupSummary LevelTwo

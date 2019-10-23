@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A <code>HierarchyGroup</code> object that contains information about a hierarchy group
-    /// in your Amazon Connect instance.
+    /// Contains information about a hierarchy group.
     /// </summary>
     public partial class HierarchyGroup
     {
@@ -42,7 +41,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the hierarchy group.
+        /// The Amazon Resource Name (ARN) of the hierarchy group.
         /// </para>
         /// </summary>
         public string Arn
@@ -60,8 +59,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property HierarchyPath. 
         /// <para>
-        /// A <code>HierarchyPath</code> object that contains information about the levels in
-        /// the hierarchy group.
+        /// Information about the levels in the hierarchy group.
         /// </para>
         /// </summary>
         public HierarchyPath HierarchyPath
@@ -79,7 +77,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier for the hierarchy group.
+        /// The identifier of the hierarchy group.
         /// </para>
         /// </summary>
         public string Id
@@ -97,7 +95,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property LevelId. 
         /// <para>
-        /// The identifier for the level in the hierarchy group.
+        /// The identifier of the level in the hierarchy group.
         /// </para>
         /// </summary>
         public string LevelId
@@ -115,7 +113,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the hierarchy group in your instance.
+        /// The name of the hierarchy group.
         /// </para>
         /// </summary>
         public string Name

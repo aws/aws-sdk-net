@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The credentials to use for federation.
+    /// Contains credentials to use for federation.
     /// </summary>
     public partial class Credentials
     {
@@ -40,7 +40,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// An access token generated for a federated user to access Amazon Connect
+        /// An access token generated for a federated user to access Amazon Connect.
         /// </para>
         /// </summary>
         public string AccessToken
@@ -59,7 +59,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property AccessTokenExpiration. 
         /// <para>
         /// A token generated with an expiration time for the session a user is logged in to Amazon
-        /// Connect
+        /// Connect.
         /// </para>
         /// </summary>
         public DateTime AccessTokenExpiration

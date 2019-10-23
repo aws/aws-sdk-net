@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A <code>SecurityProfileSummary</code> object that contains information about a security
-    /// profile, including ARN, Id, Name.
+    /// Contains information about a security profile.
     /// </summary>
     public partial class SecurityProfileSummary
     {
@@ -40,7 +39,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the security profile.
+        /// The Amazon Resource Name (ARN) of the security profile.
         /// </para>
         /// </summary>
         public string Arn
