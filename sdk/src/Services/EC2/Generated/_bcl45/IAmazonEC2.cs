@@ -16337,18 +16337,31 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// Some Linux distributions, such as Red Hat Enterprise Linux (RHEL) and SUSE Linux Enterprise
-        /// Server (SLES), use the EC2 billing product code associated with an AMI to verify the
-        /// subscription status for package updates. Creating an AMI from an EBS snapshot does
-        /// not maintain this billing code, and instances launched from such an AMI are not able
-        /// to connect to package update infrastructure. If you purchase a Reserved Instance offering
-        /// for one of these Linux distributions and launch instances using an AMI that does not
-        /// contain the required billing code, your Reserved Instance is not applied to these
-        /// instances.
+        /// Windows and some Linux distributions, such as Red Hat Enterprise Linux (RHEL) and
+        /// SUSE Linux Enterprise Server (SLES), use the EC2 billing product code associated with
+        /// an AMI to verify the subscription status for package updates. To create a new AMI
+        /// for operating systems that require a billing product code, do the following:
         /// </para>
-        ///  
+        ///  <ol> <li> 
         /// <para>
-        /// To create an AMI for operating systems that require a billing code, see <a>CreateImage</a>.
+        /// Launch an instance from an existing AMI with that billing product code.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Customize the instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create a new AMI from the instance using <a>CreateImage</a> to preserve the billing
+        /// product code association.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// If you purchase a Reserved Instance to apply to an On-Demand Instance that was launched
+        /// from an AMI with a billing product code, make sure that the Reserved Instance has
+        /// the matching billing product code. If you purchase a Reserved Instance without the
+        /// matching billing product code, the Reserved Instance will not be applied to the On-Demand
+        /// Instance. 
         /// </para>
         ///  
         /// <para>
@@ -16390,18 +16403,31 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// Some Linux distributions, such as Red Hat Enterprise Linux (RHEL) and SUSE Linux Enterprise
-        /// Server (SLES), use the EC2 billing product code associated with an AMI to verify the
-        /// subscription status for package updates. Creating an AMI from an EBS snapshot does
-        /// not maintain this billing code, and instances launched from such an AMI are not able
-        /// to connect to package update infrastructure. If you purchase a Reserved Instance offering
-        /// for one of these Linux distributions and launch instances using an AMI that does not
-        /// contain the required billing code, your Reserved Instance is not applied to these
-        /// instances.
+        /// Windows and some Linux distributions, such as Red Hat Enterprise Linux (RHEL) and
+        /// SUSE Linux Enterprise Server (SLES), use the EC2 billing product code associated with
+        /// an AMI to verify the subscription status for package updates. To create a new AMI
+        /// for operating systems that require a billing product code, do the following:
         /// </para>
-        ///  
+        ///  <ol> <li> 
         /// <para>
-        /// To create an AMI for operating systems that require a billing code, see <a>CreateImage</a>.
+        /// Launch an instance from an existing AMI with that billing product code.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Customize the instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create a new AMI from the instance using <a>CreateImage</a> to preserve the billing
+        /// product code association.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// If you purchase a Reserved Instance to apply to an On-Demand Instance that was launched
+        /// from an AMI with a billing product code, make sure that the Reserved Instance has
+        /// the matching billing product code. If you purchase a Reserved Instance without the
+        /// matching billing product code, the Reserved Instance will not be applied to the On-Demand
+        /// Instance. 
         /// </para>
         ///  
         /// <para>
