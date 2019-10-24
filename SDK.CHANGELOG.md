@@ -1,3 +1,16 @@
+### 3.3.614.0 (2019-10-23 23:18 UTC)
+* Connect (3.3.101.0)
+	* This release adds 4 new APIs ListQueues, ListPhoneNumbers, ListContactFlows, and ListHoursOfOperations, which can be used to programmatically list Queues, PhoneNumbers, ContactFlows, and HoursOfOperations configured for an Amazon Connect instance respectively. You can learn more about the new APIs here: https://docs.aws.amazon.com/connect/latest/APIReference/Welcome.html.
+* Polly (3.3.103.0)
+	* Amazon Polly adds new female voices: US Spanish - Lupe and Brazilian Portuguese - Camila; both voices are available in Standard and Neural engine.
+* SecurityToken (3.3.103.3)
+	* AWS Security Token Service (STS) now supports a regional configuration flag to make the client respect the region without the need for the endpoint parameter. 
+* Core 3.3.103.54
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.613.0 (2019-10-22 19:23 UTC)
 * IoTEvents (3.3.102.0)
 	* Add support for new serial evaluation method for events in a detector model.
