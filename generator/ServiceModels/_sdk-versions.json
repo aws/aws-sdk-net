@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.614.0",
+    "ProductVersion" : "3.3.615.0",
     "CoreVersion"    : "3.3.103.54",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.133.6",
+            "Version" : "3.3.134.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.54"
@@ -513,7 +513,7 @@
             "InPreview"               : false
         },
         "GameLift"                        : {
-            "Version" : "3.3.103.21",
+            "Version" : "3.3.104.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.54"
@@ -945,7 +945,7 @@
             "InPreview"               : false
         },
         "SageMaker"                       : {
-            "Version" : "3.3.105.10",
+            "Version" : "3.3.106.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.54"
@@ -1169,7 +1169,7 @@
             "InPreview"               : false
         },
         "Chime"                           : {
-            "Version" : "3.3.102.64",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.54"
@@ -1321,7 +1321,7 @@
             "InPreview"               : false
         },
         "AppMesh"                         : {
-            "Version" : "3.3.105.17",
+            "Version" : "3.3.106.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.54"
