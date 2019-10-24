@@ -37,7 +37,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property VoiceConnector. 
         /// <para>
-        /// The Amazon Chime Voice Connector details.
+        /// The updated Amazon Chime Voice Connector details.
         /// </para>
         /// </summary>
         public VoiceConnector VoiceConnector

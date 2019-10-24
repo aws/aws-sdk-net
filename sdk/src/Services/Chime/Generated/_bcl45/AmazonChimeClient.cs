@@ -286,11 +286,14 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Associates a phone number with the specified Amazon Chime Voice Connector.
+        /// Associates phone numbers with the specified Amazon Chime Voice Connector.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociatePhoneNumbersWithVoiceConnector service method.</param>
         /// 
         /// <returns>The response from the AssociatePhoneNumbersWithVoiceConnector service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation.
+        /// </exception>
         /// <exception cref="Amazon.Chime.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
         /// </exception>
@@ -325,7 +328,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Associates a phone number with the specified Amazon Chime Voice Connector.
+        /// Associates phone numbers with the specified Amazon Chime Voice Connector.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociatePhoneNumbersWithVoiceConnector service method.</param>
         /// <param name="cancellationToken">
@@ -333,6 +336,9 @@ namespace Amazon.Chime
         /// </param>
         /// 
         /// <returns>The response from the AssociatePhoneNumbersWithVoiceConnector service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation.
+        /// </exception>
         /// <exception cref="Amazon.Chime.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
         /// </exception>
@@ -367,6 +373,97 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  AssociatePhoneNumbersWithVoiceConnectorGroup
+
+
+        /// <summary>
+        /// Associates phone numbers with the specified Amazon Chime Voice Connector group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociatePhoneNumbersWithVoiceConnectorGroup service method.</param>
+        /// 
+        /// <returns>The response from the AssociatePhoneNumbersWithVoiceConnectorGroup service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AssociatePhoneNumbersWithVoiceConnectorGroup">REST API Reference for AssociatePhoneNumbersWithVoiceConnectorGroup Operation</seealso>
+        public virtual AssociatePhoneNumbersWithVoiceConnectorGroupResponse AssociatePhoneNumbersWithVoiceConnectorGroup(AssociatePhoneNumbersWithVoiceConnectorGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociatePhoneNumbersWithVoiceConnectorGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociatePhoneNumbersWithVoiceConnectorGroupResponseUnmarshaller.Instance;
+
+            return Invoke<AssociatePhoneNumbersWithVoiceConnectorGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associates phone numbers with the specified Amazon Chime Voice Connector group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociatePhoneNumbersWithVoiceConnectorGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociatePhoneNumbersWithVoiceConnectorGroup service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AssociatePhoneNumbersWithVoiceConnectorGroup">REST API Reference for AssociatePhoneNumbersWithVoiceConnectorGroup Operation</seealso>
+        public virtual Task<AssociatePhoneNumbersWithVoiceConnectorGroupResponse> AssociatePhoneNumbersWithVoiceConnectorGroupAsync(AssociatePhoneNumbersWithVoiceConnectorGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociatePhoneNumbersWithVoiceConnectorGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociatePhoneNumbersWithVoiceConnectorGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociatePhoneNumbersWithVoiceConnectorGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssociatePhoneNumberWithUser
 
 
@@ -376,6 +473,9 @@ namespace Amazon.Chime
         /// <param name="request">Container for the necessary parameters to execute the AssociatePhoneNumberWithUser service method.</param>
         /// 
         /// <returns>The response from the AssociatePhoneNumberWithUser service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation.
+        /// </exception>
         /// <exception cref="Amazon.Chime.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
         /// </exception>
@@ -418,6 +518,9 @@ namespace Amazon.Chime
         /// </param>
         /// 
         /// <returns>The response from the AssociatePhoneNumberWithUser service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation.
+        /// </exception>
         /// <exception cref="Amazon.Chime.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
         /// </exception>
@@ -787,9 +890,21 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Updates phone number product types. Choose from Amazon Chime Business Calling and
-        /// Amazon Chime Voice Connector product types. For toll-free numbers, you can use only
-        /// the Amazon Chime Voice Connector product type.
+        /// Updates phone number product types or calling names. You can update one attribute
+        /// at a time for each <code>UpdatePhoneNumberRequestItem</code>. For example, you can
+        /// update either the product type or the calling name.
+        /// 
+        ///  
+        /// <para>
+        /// For product types, choose from Amazon Chime Business Calling and Amazon Chime Voice
+        /// Connector. For toll-free numbers, you must use the Amazon Chime Voice Connector product
+        /// type.
+        /// </para>
+        ///  
+        /// <para>
+        /// Updates to outbound calling names can take up to 72 hours to complete. Pending updates
+        /// to outbound calling names must be complete before you can request another update.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdatePhoneNumber service method.</param>
         /// 
@@ -828,9 +943,21 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Updates phone number product types. Choose from Amazon Chime Business Calling and
-        /// Amazon Chime Voice Connector product types. For toll-free numbers, you can use only
-        /// the Amazon Chime Voice Connector product type.
+        /// Updates phone number product types or calling names. You can update one attribute
+        /// at a time for each <code>UpdatePhoneNumberRequestItem</code>. For example, you can
+        /// update either the product type or the calling name.
+        /// 
+        ///  
+        /// <para>
+        /// For product types, choose from Amazon Chime Business Calling and Amazon Chime Voice
+        /// Connector. For toll-free numbers, you must use the Amazon Chime Voice Connector product
+        /// type.
+        /// </para>
+        ///  
+        /// <para>
+        /// Updates to outbound calling names can take up to 72 hours to complete. Pending updates
+        /// to outbound calling names must be complete before you can request another update.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdatePhoneNumber service method.</param>
         /// <param name="cancellationToken">
@@ -1143,17 +1270,23 @@ namespace Amazon.Chime
         /// <summary>
         /// Creates an order for phone numbers to be provisioned. Choose from Amazon Chime Business
         /// Calling and Amazon Chime Voice Connector product types. For toll-free numbers, you
-        /// can use only the Amazon Chime Voice Connector product type.
+        /// must use the Amazon Chime Voice Connector product type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePhoneNumberOrder service method.</param>
         /// 
         /// <returns>The response from the CreatePhoneNumberOrder service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation.
+        /// </exception>
         /// <exception cref="Amazon.Chime.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
         /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
         /// The service encountered an unexpected error.
@@ -1181,7 +1314,7 @@ namespace Amazon.Chime
         /// <summary>
         /// Creates an order for phone numbers to be provisioned. Choose from Amazon Chime Business
         /// Calling and Amazon Chime Voice Connector product types. For toll-free numbers, you
-        /// can use only the Amazon Chime Voice Connector product type.
+        /// must use the Amazon Chime Voice Connector product type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePhoneNumberOrder service method.</param>
         /// <param name="cancellationToken">
@@ -1189,12 +1322,18 @@ namespace Amazon.Chime
         /// </param>
         /// 
         /// <returns>The response from the CreatePhoneNumberOrder service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation.
+        /// </exception>
         /// <exception cref="Amazon.Chime.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
         /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
         /// The service encountered an unexpected error.
@@ -1224,20 +1363,31 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Creates an Amazon Chime Voice Connector under the administrator's AWS account. Enabling
-        /// <a>CreateVoiceConnectorRequest$RequireEncryption</a> configures your Amazon Chime
-        /// Voice Connector to use TLS transport for SIP signaling and Secure RTP (SRTP) for media.
-        /// Inbound calls use TLS transport, and unencrypted outbound calls are blocked.
+        /// Creates an Amazon Chime Voice Connector under the administrator's AWS account. You
+        /// can choose to create an Amazon Chime Voice Connector in a specific AWS Region.
+        /// 
+        ///  
+        /// <para>
+        /// Enabling <a>CreateVoiceConnectorRequest$RequireEncryption</a> configures your Amazon
+        /// Chime Voice Connector to use TLS transport for SIP signaling and Secure RTP (SRTP)
+        /// for media. Inbound calls use TLS transport, and unencrypted outbound calls are blocked.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVoiceConnector service method.</param>
         /// 
         /// <returns>The response from the CreateVoiceConnector service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation.
+        /// </exception>
         /// <exception cref="Amazon.Chime.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
         /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
         /// The service encountered an unexpected error.
@@ -1263,10 +1413,15 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Creates an Amazon Chime Voice Connector under the administrator's AWS account. Enabling
-        /// <a>CreateVoiceConnectorRequest$RequireEncryption</a> configures your Amazon Chime
-        /// Voice Connector to use TLS transport for SIP signaling and Secure RTP (SRTP) for media.
-        /// Inbound calls use TLS transport, and unencrypted outbound calls are blocked.
+        /// Creates an Amazon Chime Voice Connector under the administrator's AWS account. You
+        /// can choose to create an Amazon Chime Voice Connector in a specific AWS Region.
+        /// 
+        ///  
+        /// <para>
+        /// Enabling <a>CreateVoiceConnectorRequest$RequireEncryption</a> configures your Amazon
+        /// Chime Voice Connector to use TLS transport for SIP signaling and Secure RTP (SRTP)
+        /// for media. Inbound calls use TLS transport, and unencrypted outbound calls are blocked.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVoiceConnector service method.</param>
         /// <param name="cancellationToken">
@@ -1274,12 +1429,18 @@ namespace Amazon.Chime
         /// </param>
         /// 
         /// <returns>The response from the CreateVoiceConnector service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation.
+        /// </exception>
         /// <exception cref="Amazon.Chime.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
         /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
         /// The service encountered an unexpected error.
@@ -1301,6 +1462,113 @@ namespace Amazon.Chime
             options.ResponseUnmarshaller = CreateVoiceConnectorResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateVoiceConnectorResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateVoiceConnectorGroup
+
+
+        /// <summary>
+        /// Creates an Amazon Chime Voice Connector group under the administrator's AWS account.
+        /// You can associate up to three existing Amazon Chime Voice Connectors with the Amazon
+        /// Chime Voice Connector group by including <code>VoiceConnectorItems</code> in the request.
+        /// 
+        ///  
+        /// <para>
+        /// You can include Amazon Chime Voice Connectors from different AWS Regions in your group.
+        /// This creates a fault tolerant mechanism for fallback in case of availability events.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVoiceConnectorGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateVoiceConnectorGroup service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateVoiceConnectorGroup">REST API Reference for CreateVoiceConnectorGroup Operation</seealso>
+        public virtual CreateVoiceConnectorGroupResponse CreateVoiceConnectorGroup(CreateVoiceConnectorGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVoiceConnectorGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVoiceConnectorGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVoiceConnectorGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an Amazon Chime Voice Connector group under the administrator's AWS account.
+        /// You can associate up to three existing Amazon Chime Voice Connectors with the Amazon
+        /// Chime Voice Connector group by including <code>VoiceConnectorItems</code> in the request.
+        /// 
+        ///  
+        /// <para>
+        /// You can include Amazon Chime Voice Connectors from different AWS Regions in your group.
+        /// This creates a fault tolerant mechanism for fallback in case of availability events.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVoiceConnectorGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateVoiceConnectorGroup service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateVoiceConnectorGroup">REST API Reference for CreateVoiceConnectorGroup Operation</seealso>
+        public virtual Task<CreateVoiceConnectorGroupResponse> CreateVoiceConnectorGroupAsync(CreateVoiceConnectorGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVoiceConnectorGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVoiceConnectorGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateVoiceConnectorGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1620,14 +1888,18 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Deletes the specified Amazon Chime Voice Connector. Any phone numbers assigned to
-        /// the Amazon Chime Voice Connector must be unassigned from it before it can be deleted.
+        /// Deletes the specified Amazon Chime Voice Connector. Any phone numbers associated with
+        /// the Amazon Chime Voice Connector must be disassociated from it before it can be deleted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceConnector service method.</param>
         /// 
         /// <returns>The response from the DeleteVoiceConnector service method, as returned by Chime.</returns>
         /// <exception cref="Amazon.Chime.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
@@ -1660,8 +1932,8 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Deletes the specified Amazon Chime Voice Connector. Any phone numbers assigned to
-        /// the Amazon Chime Voice Connector must be unassigned from it before it can be deleted.
+        /// Deletes the specified Amazon Chime Voice Connector. Any phone numbers associated with
+        /// the Amazon Chime Voice Connector must be disassociated from it before it can be deleted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceConnector service method.</param>
         /// <param name="cancellationToken">
@@ -1671,6 +1943,10 @@ namespace Amazon.Chime
         /// <returns>The response from the DeleteVoiceConnector service method, as returned by Chime.</returns>
         /// <exception cref="Amazon.Chime.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
@@ -1699,6 +1975,101 @@ namespace Amazon.Chime
             options.ResponseUnmarshaller = DeleteVoiceConnectorResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteVoiceConnectorResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteVoiceConnectorGroup
+
+
+        /// <summary>
+        /// Deletes the specified Amazon Chime Voice Connector group. Any <code>VoiceConnectorItems</code>
+        /// and phone numbers associated with the group must be removed before it can be deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceConnectorGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVoiceConnectorGroup service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorGroup">REST API Reference for DeleteVoiceConnectorGroup Operation</seealso>
+        public virtual DeleteVoiceConnectorGroupResponse DeleteVoiceConnectorGroup(DeleteVoiceConnectorGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVoiceConnectorGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVoiceConnectorGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVoiceConnectorGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the specified Amazon Chime Voice Connector group. Any <code>VoiceConnectorItems</code>
+        /// and phone numbers associated with the group must be removed before it can be deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceConnectorGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVoiceConnectorGroup service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorGroup">REST API Reference for DeleteVoiceConnectorGroup Operation</seealso>
+        public virtual Task<DeleteVoiceConnectorGroupResponse> DeleteVoiceConnectorGroupAsync(DeleteVoiceConnectorGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVoiceConnectorGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVoiceConnectorGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteVoiceConnectorGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1784,6 +2155,91 @@ namespace Amazon.Chime
             options.ResponseUnmarshaller = DeleteVoiceConnectorOriginationResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteVoiceConnectorOriginationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteVoiceConnectorStreamingConfiguration
+
+
+        /// <summary>
+        /// Deletes the streaming configuration for the specified Amazon Chime Voice Connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceConnectorStreamingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVoiceConnectorStreamingConfiguration service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorStreamingConfiguration">REST API Reference for DeleteVoiceConnectorStreamingConfiguration Operation</seealso>
+        public virtual DeleteVoiceConnectorStreamingConfigurationResponse DeleteVoiceConnectorStreamingConfiguration(DeleteVoiceConnectorStreamingConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVoiceConnectorStreamingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVoiceConnectorStreamingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVoiceConnectorStreamingConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the streaming configuration for the specified Amazon Chime Voice Connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceConnectorStreamingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVoiceConnectorStreamingConfiguration service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorStreamingConfiguration">REST API Reference for DeleteVoiceConnectorStreamingConfiguration Operation</seealso>
+        public virtual Task<DeleteVoiceConnectorStreamingConfigurationResponse> DeleteVoiceConnectorStreamingConfigurationAsync(DeleteVoiceConnectorStreamingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVoiceConnectorStreamingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVoiceConnectorStreamingConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteVoiceConnectorStreamingConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2051,7 +2507,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Disassociates the specified phone number from the specified Amazon Chime Voice Connector.
+        /// Disassociates the specified phone numbers from the specified Amazon Chime Voice Connector.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociatePhoneNumbersFromVoiceConnector service method.</param>
         /// 
@@ -2090,7 +2546,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Disassociates the specified phone number from the specified Amazon Chime Voice Connector.
+        /// Disassociates the specified phone numbers from the specified Amazon Chime Voice Connector.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociatePhoneNumbersFromVoiceConnector service method.</param>
         /// <param name="cancellationToken">
@@ -2128,6 +2584,93 @@ namespace Amazon.Chime
             options.ResponseUnmarshaller = DisassociatePhoneNumbersFromVoiceConnectorResponseUnmarshaller.Instance;
             
             return InvokeAsync<DisassociatePhoneNumbersFromVoiceConnectorResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociatePhoneNumbersFromVoiceConnectorGroup
+
+
+        /// <summary>
+        /// Disassociates the specified phone numbers from the specified Amazon Chime Voice Connector
+        /// group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociatePhoneNumbersFromVoiceConnectorGroup service method.</param>
+        /// 
+        /// <returns>The response from the DisassociatePhoneNumbersFromVoiceConnectorGroup service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DisassociatePhoneNumbersFromVoiceConnectorGroup">REST API Reference for DisassociatePhoneNumbersFromVoiceConnectorGroup Operation</seealso>
+        public virtual DisassociatePhoneNumbersFromVoiceConnectorGroupResponse DisassociatePhoneNumbersFromVoiceConnectorGroup(DisassociatePhoneNumbersFromVoiceConnectorGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociatePhoneNumbersFromVoiceConnectorGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociatePhoneNumbersFromVoiceConnectorGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociatePhoneNumbersFromVoiceConnectorGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Disassociates the specified phone numbers from the specified Amazon Chime Voice Connector
+        /// group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociatePhoneNumbersFromVoiceConnectorGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociatePhoneNumbersFromVoiceConnectorGroup service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DisassociatePhoneNumbersFromVoiceConnectorGroup">REST API Reference for DisassociatePhoneNumbersFromVoiceConnectorGroup Operation</seealso>
+        public virtual Task<DisassociatePhoneNumbersFromVoiceConnectorGroupResponse> DisassociatePhoneNumbersFromVoiceConnectorGroupAsync(DisassociatePhoneNumbersFromVoiceConnectorGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociatePhoneNumbersFromVoiceConnectorGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociatePhoneNumbersFromVoiceConnectorGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociatePhoneNumbersFromVoiceConnectorGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2731,6 +3274,87 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  GetPhoneNumberSettings
+
+
+        /// <summary>
+        /// Retrieves the phone number settings for the administrator's AWS account, such as the
+        /// default outbound calling name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPhoneNumberSettings service method.</param>
+        /// 
+        /// <returns>The response from the GetPhoneNumberSettings service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetPhoneNumberSettings">REST API Reference for GetPhoneNumberSettings Operation</seealso>
+        public virtual GetPhoneNumberSettingsResponse GetPhoneNumberSettings(GetPhoneNumberSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPhoneNumberSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPhoneNumberSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<GetPhoneNumberSettingsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the phone number settings for the administrator's AWS account, such as the
+        /// default outbound calling name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPhoneNumberSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPhoneNumberSettings service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetPhoneNumberSettings">REST API Reference for GetPhoneNumberSettings Operation</seealso>
+        public virtual Task<GetPhoneNumberSettingsResponse> GetPhoneNumberSettingsAsync(GetPhoneNumberSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPhoneNumberSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPhoneNumberSettingsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetPhoneNumberSettingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetUser
 
 
@@ -3004,6 +3628,180 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  GetVoiceConnectorGroup
+
+
+        /// <summary>
+        /// Retrieves details for the specified Amazon Chime Voice Connector group, such as timestamps,
+        /// name, and associated <code>VoiceConnectorItems</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceConnectorGroup service method.</param>
+        /// 
+        /// <returns>The response from the GetVoiceConnectorGroup service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorGroup">REST API Reference for GetVoiceConnectorGroup Operation</seealso>
+        public virtual GetVoiceConnectorGroupResponse GetVoiceConnectorGroup(GetVoiceConnectorGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVoiceConnectorGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVoiceConnectorGroupResponseUnmarshaller.Instance;
+
+            return Invoke<GetVoiceConnectorGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves details for the specified Amazon Chime Voice Connector group, such as timestamps,
+        /// name, and associated <code>VoiceConnectorItems</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceConnectorGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVoiceConnectorGroup service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorGroup">REST API Reference for GetVoiceConnectorGroup Operation</seealso>
+        public virtual Task<GetVoiceConnectorGroupResponse> GetVoiceConnectorGroupAsync(GetVoiceConnectorGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVoiceConnectorGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVoiceConnectorGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetVoiceConnectorGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetVoiceConnectorLoggingConfiguration
+
+
+        /// <summary>
+        /// Retrieves the logging configuration details for the specified Amazon Chime Voice Connector.
+        /// Shows whether SIP message logs are enabled for sending to Amazon CloudWatch Logs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceConnectorLoggingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetVoiceConnectorLoggingConfiguration service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorLoggingConfiguration">REST API Reference for GetVoiceConnectorLoggingConfiguration Operation</seealso>
+        public virtual GetVoiceConnectorLoggingConfigurationResponse GetVoiceConnectorLoggingConfiguration(GetVoiceConnectorLoggingConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVoiceConnectorLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVoiceConnectorLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetVoiceConnectorLoggingConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the logging configuration details for the specified Amazon Chime Voice Connector.
+        /// Shows whether SIP message logs are enabled for sending to Amazon CloudWatch Logs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceConnectorLoggingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVoiceConnectorLoggingConfiguration service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorLoggingConfiguration">REST API Reference for GetVoiceConnectorLoggingConfiguration Operation</seealso>
+        public virtual Task<GetVoiceConnectorLoggingConfigurationResponse> GetVoiceConnectorLoggingConfigurationAsync(GetVoiceConnectorLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVoiceConnectorLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVoiceConnectorLoggingConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetVoiceConnectorLoggingConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetVoiceConnectorOrigination
 
 
@@ -3085,6 +3883,95 @@ namespace Amazon.Chime
             options.ResponseUnmarshaller = GetVoiceConnectorOriginationResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetVoiceConnectorOriginationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetVoiceConnectorStreamingConfiguration
+
+
+        /// <summary>
+        /// Retrieves the streaming configuration details for the specified Amazon Chime Voice
+        /// Connector. Shows whether media streaming is enabled for sending to Amazon Kinesis,
+        /// and shows the retention period for the Amazon Kinesis data, in hours.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceConnectorStreamingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetVoiceConnectorStreamingConfiguration service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorStreamingConfiguration">REST API Reference for GetVoiceConnectorStreamingConfiguration Operation</seealso>
+        public virtual GetVoiceConnectorStreamingConfigurationResponse GetVoiceConnectorStreamingConfiguration(GetVoiceConnectorStreamingConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVoiceConnectorStreamingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVoiceConnectorStreamingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetVoiceConnectorStreamingConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the streaming configuration details for the specified Amazon Chime Voice
+        /// Connector. Shows whether media streaming is enabled for sending to Amazon Kinesis,
+        /// and shows the retention period for the Amazon Kinesis data, in hours.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceConnectorStreamingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVoiceConnectorStreamingConfiguration service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorStreamingConfiguration">REST API Reference for GetVoiceConnectorStreamingConfiguration Operation</seealso>
+        public virtual Task<GetVoiceConnectorStreamingConfigurationResponse> GetVoiceConnectorStreamingConfigurationAsync(GetVoiceConnectorStreamingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVoiceConnectorStreamingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVoiceConnectorStreamingConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetVoiceConnectorStreamingConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3604,7 +4491,7 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Lists the phone numbers for the specified Amazon Chime account, Amazon Chime user,
-        /// or Amazon Chime Voice Connector.
+        /// Amazon Chime Voice Connector, or Amazon Chime Voice Connector group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPhoneNumbers service method.</param>
         /// 
@@ -3641,7 +4528,7 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Lists the phone numbers for the specified Amazon Chime account, Amazon Chime user,
-        /// or Amazon Chime Voice Connector.
+        /// Amazon Chime Voice Connector, or Amazon Chime Voice Connector group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPhoneNumbers service method.</param>
         /// <param name="cancellationToken">
@@ -3763,6 +4650,85 @@ namespace Amazon.Chime
             options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListUsersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListVoiceConnectorGroups
+
+
+        /// <summary>
+        /// Lists the Amazon Chime Voice Connector groups for the administrator's AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVoiceConnectorGroups service method.</param>
+        /// 
+        /// <returns>The response from the ListVoiceConnectorGroups service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListVoiceConnectorGroups">REST API Reference for ListVoiceConnectorGroups Operation</seealso>
+        public virtual ListVoiceConnectorGroupsResponse ListVoiceConnectorGroups(ListVoiceConnectorGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVoiceConnectorGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVoiceConnectorGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListVoiceConnectorGroupsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the Amazon Chime Voice Connector groups for the administrator's AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVoiceConnectorGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVoiceConnectorGroups service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListVoiceConnectorGroups">REST API Reference for ListVoiceConnectorGroups Operation</seealso>
+        public virtual Task<ListVoiceConnectorGroupsResponse> ListVoiceConnectorGroupsAsync(ListVoiceConnectorGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVoiceConnectorGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVoiceConnectorGroupsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListVoiceConnectorGroupsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4105,6 +5071,95 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  PutVoiceConnectorLoggingConfiguration
+
+
+        /// <summary>
+        /// Adds a logging configuration for the specified Amazon Chime Voice Connector. The logging
+        /// configuration specifies whether SIP message logs are enabled for sending to Amazon
+        /// CloudWatch Logs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutVoiceConnectorLoggingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutVoiceConnectorLoggingConfiguration service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorLoggingConfiguration">REST API Reference for PutVoiceConnectorLoggingConfiguration Operation</seealso>
+        public virtual PutVoiceConnectorLoggingConfigurationResponse PutVoiceConnectorLoggingConfiguration(PutVoiceConnectorLoggingConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutVoiceConnectorLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutVoiceConnectorLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutVoiceConnectorLoggingConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Adds a logging configuration for the specified Amazon Chime Voice Connector. The logging
+        /// configuration specifies whether SIP message logs are enabled for sending to Amazon
+        /// CloudWatch Logs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutVoiceConnectorLoggingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutVoiceConnectorLoggingConfiguration service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorLoggingConfiguration">REST API Reference for PutVoiceConnectorLoggingConfiguration Operation</seealso>
+        public virtual Task<PutVoiceConnectorLoggingConfigurationResponse> PutVoiceConnectorLoggingConfigurationAsync(PutVoiceConnectorLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutVoiceConnectorLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutVoiceConnectorLoggingConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutVoiceConnectorLoggingConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutVoiceConnectorOrigination
 
 
@@ -4190,6 +5245,95 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  PutVoiceConnectorStreamingConfiguration
+
+
+        /// <summary>
+        /// Adds a streaming configuration for the specified Amazon Chime Voice Connector. The
+        /// streaming configuration specifies whether media streaming is enabled for sending to
+        /// Amazon Kinesis, and sets the retention period for the Amazon Kinesis data, in hours.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutVoiceConnectorStreamingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutVoiceConnectorStreamingConfiguration service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorStreamingConfiguration">REST API Reference for PutVoiceConnectorStreamingConfiguration Operation</seealso>
+        public virtual PutVoiceConnectorStreamingConfigurationResponse PutVoiceConnectorStreamingConfiguration(PutVoiceConnectorStreamingConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutVoiceConnectorStreamingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutVoiceConnectorStreamingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutVoiceConnectorStreamingConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Adds a streaming configuration for the specified Amazon Chime Voice Connector. The
+        /// streaming configuration specifies whether media streaming is enabled for sending to
+        /// Amazon Kinesis, and sets the retention period for the Amazon Kinesis data, in hours.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutVoiceConnectorStreamingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutVoiceConnectorStreamingConfiguration service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorStreamingConfiguration">REST API Reference for PutVoiceConnectorStreamingConfiguration Operation</seealso>
+        public virtual Task<PutVoiceConnectorStreamingConfigurationResponse> PutVoiceConnectorStreamingConfigurationAsync(PutVoiceConnectorStreamingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutVoiceConnectorStreamingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutVoiceConnectorStreamingConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutVoiceConnectorStreamingConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutVoiceConnectorTermination
 
 
@@ -4199,6 +5343,9 @@ namespace Amazon.Chime
         /// <param name="request">Container for the necessary parameters to execute the PutVoiceConnectorTermination service method.</param>
         /// 
         /// <returns>The response from the PutVoiceConnectorTermination service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation.
+        /// </exception>
         /// <exception cref="Amazon.Chime.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
         /// </exception>
@@ -4241,6 +5388,9 @@ namespace Amazon.Chime
         /// </param>
         /// 
         /// <returns>The response from the PutVoiceConnectorTermination service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation.
+        /// </exception>
         /// <exception cref="Amazon.Chime.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
         /// </exception>
@@ -4545,6 +5695,9 @@ namespace Amazon.Chime
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
         /// The service encountered an unexpected error.
         /// </exception>
@@ -4587,6 +5740,9 @@ namespace Amazon.Chime
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
         /// The service encountered an unexpected error.
         /// </exception>
@@ -4620,6 +5776,9 @@ namespace Amazon.Chime
         /// <param name="request">Container for the necessary parameters to execute the SearchAvailablePhoneNumbers service method.</param>
         /// 
         /// <returns>The response from the SearchAvailablePhoneNumbers service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation.
+        /// </exception>
         /// <exception cref="Amazon.Chime.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
         /// </exception>
@@ -4659,6 +5818,9 @@ namespace Amazon.Chime
         /// </param>
         /// 
         /// <returns>The response from the SearchAvailablePhoneNumbers service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation.
+        /// </exception>
         /// <exception cref="Amazon.Chime.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
         /// </exception>
@@ -5042,9 +6204,19 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Updates phone number details, such as product type, for the specified phone number
-        /// ID. For toll-free numbers, you can use only the Amazon Chime Voice Connector product
-        /// type.
+        /// Updates phone number details, such as product type or calling name, for the specified
+        /// phone number ID. You can update one phone number detail at a time. For example, you
+        /// can update either the product type or the calling name in one action.
+        /// 
+        ///  
+        /// <para>
+        /// For toll-free numbers, you must use the Amazon Chime Voice Connector product type.
+        /// </para>
+        ///  
+        /// <para>
+        /// Updates to outbound calling names can take up to 72 hours to complete. Pending updates
+        /// to outbound calling names must be complete before you can request another update.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePhoneNumber service method.</param>
         /// 
@@ -5083,9 +6255,19 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Updates phone number details, such as product type, for the specified phone number
-        /// ID. For toll-free numbers, you can use only the Amazon Chime Voice Connector product
-        /// type.
+        /// Updates phone number details, such as product type or calling name, for the specified
+        /// phone number ID. You can update one phone number detail at a time. For example, you
+        /// can update either the product type or the calling name in one action.
+        /// 
+        ///  
+        /// <para>
+        /// For toll-free numbers, you must use the Amazon Chime Voice Connector product type.
+        /// </para>
+        ///  
+        /// <para>
+        /// Updates to outbound calling names can take up to 72 hours to complete. Pending updates
+        /// to outbound calling names must be complete before you can request another update.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePhoneNumber service method.</param>
         /// <param name="cancellationToken">
@@ -5123,6 +6305,89 @@ namespace Amazon.Chime
             options.ResponseUnmarshaller = UpdatePhoneNumberResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdatePhoneNumberResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdatePhoneNumberSettings
+
+
+        /// <summary>
+        /// Updates the phone number settings for the administrator's AWS account, such as the
+        /// default outbound calling name. You can update the default outbound calling name once
+        /// every seven days. Outbound calling names can take up to 72 hours to be updated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePhoneNumberSettings service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePhoneNumberSettings service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdatePhoneNumberSettings">REST API Reference for UpdatePhoneNumberSettings Operation</seealso>
+        public virtual UpdatePhoneNumberSettingsResponse UpdatePhoneNumberSettings(UpdatePhoneNumberSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePhoneNumberSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePhoneNumberSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePhoneNumberSettingsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the phone number settings for the administrator's AWS account, such as the
+        /// default outbound calling name. You can update the default outbound calling name once
+        /// every seven days. Outbound calling names can take up to 72 hours to be updated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePhoneNumberSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePhoneNumberSettings service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdatePhoneNumberSettings">REST API Reference for UpdatePhoneNumberSettings Operation</seealso>
+        public virtual Task<UpdatePhoneNumberSettingsResponse> UpdatePhoneNumberSettingsAsync(UpdatePhoneNumberSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePhoneNumberSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePhoneNumberSettingsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdatePhoneNumberSettingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5380,6 +6645,101 @@ namespace Amazon.Chime
             options.ResponseUnmarshaller = UpdateVoiceConnectorResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateVoiceConnectorResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateVoiceConnectorGroup
+
+
+        /// <summary>
+        /// Updates details for the specified Amazon Chime Voice Connector group, such as the
+        /// name and Amazon Chime Voice Connector priority ranking.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVoiceConnectorGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateVoiceConnectorGroup service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateVoiceConnectorGroup">REST API Reference for UpdateVoiceConnectorGroup Operation</seealso>
+        public virtual UpdateVoiceConnectorGroupResponse UpdateVoiceConnectorGroup(UpdateVoiceConnectorGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVoiceConnectorGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVoiceConnectorGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateVoiceConnectorGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates details for the specified Amazon Chime Voice Connector group, such as the
+        /// name and Amazon Chime Voice Connector priority ranking.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVoiceConnectorGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateVoiceConnectorGroup service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateVoiceConnectorGroup">REST API Reference for UpdateVoiceConnectorGroup Operation</seealso>
+        public virtual Task<UpdateVoiceConnectorGroupResponse> UpdateVoiceConnectorGroupAsync(UpdateVoiceConnectorGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVoiceConnectorGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVoiceConnectorGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateVoiceConnectorGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion

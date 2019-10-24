@@ -33,6 +33,8 @@ namespace Amazon.Chime.Model
     public partial class PhoneNumber
     {
         private List<PhoneNumberAssociation> _associations = new List<PhoneNumberAssociation>();
+        private string _callingName;
+        private CallingNameStatus _callingNameStatus;
         private PhoneNumberCapabilities _capabilities;
         private DateTime? _createdTimestamp;
         private DateTime? _deletionTimestamp;
@@ -59,6 +61,42 @@ namespace Amazon.Chime.Model
         internal bool IsSetAssociations()
         {
             return this._associations != null && this._associations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CallingName. 
+        /// <para>
+        /// The outbound calling name associated with the phone number.
+        /// </para>
+        /// </summary>
+        public string CallingName
+        {
+            get { return this._callingName; }
+            set { this._callingName = value; }
+        }
+
+        // Check to see if CallingName property is set
+        internal bool IsSetCallingName()
+        {
+            return this._callingName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CallingNameStatus. 
+        /// <para>
+        /// The outbound calling name status.
+        /// </para>
+        /// </summary>
+        public CallingNameStatus CallingNameStatus
+        {
+            get { return this._callingNameStatus; }
+            set { this._callingNameStatus = value; }
+        }
+
+        // Check to see if CallingNameStatus property is set
+        internal bool IsSetCallingNameStatus()
+        {
+            return this._callingNameStatus != null;
         }
 
         /// <summary>

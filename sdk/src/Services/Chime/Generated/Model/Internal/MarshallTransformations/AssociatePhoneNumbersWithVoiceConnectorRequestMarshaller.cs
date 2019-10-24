@@ -81,6 +81,12 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetForceAssociate())
+                {
+                    context.Writer.WritePropertyName("ForceAssociate");
+                    context.Writer.Write(publicRequest.ForceAssociate);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

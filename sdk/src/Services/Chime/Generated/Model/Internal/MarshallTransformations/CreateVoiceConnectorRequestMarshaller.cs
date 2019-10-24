@@ -66,6 +66,12 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAwsRegion())
+                {
+                    context.Writer.WritePropertyName("AwsRegion");
+                    context.Writer.Write(publicRequest.AwsRegion);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("Name");

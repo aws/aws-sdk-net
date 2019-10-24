@@ -29,14 +29,43 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdatePhoneNumber operation.
-    /// Updates phone number details, such as product type, for the specified phone number
-    /// ID. For toll-free numbers, you can use only the Amazon Chime Voice Connector product
-    /// type.
+    /// Updates phone number details, such as product type or calling name, for the specified
+    /// phone number ID. You can update one phone number detail at a time. For example, you
+    /// can update either the product type or the calling name in one action.
+    /// 
+    ///  
+    /// <para>
+    /// For toll-free numbers, you must use the Amazon Chime Voice Connector product type.
+    /// </para>
+    ///  
+    /// <para>
+    /// Updates to outbound calling names can take up to 72 hours to complete. Pending updates
+    /// to outbound calling names must be complete before you can request another update.
+    /// </para>
     /// </summary>
     public partial class UpdatePhoneNumberRequest : AmazonChimeRequest
     {
+        private string _callingName;
         private string _phoneNumberId;
         private PhoneNumberProductType _productType;
+
+        /// <summary>
+        /// Gets and sets the property CallingName. 
+        /// <para>
+        /// The outbound calling name associated with the phone number.
+        /// </para>
+        /// </summary>
+        public string CallingName
+        {
+            get { return this._callingName; }
+            set { this._callingName = value; }
+        }
+
+        // Check to see if CallingName property is set
+        internal bool IsSetCallingName()
+        {
+            return this._callingName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PhoneNumberId. 

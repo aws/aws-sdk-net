@@ -70,6 +70,18 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                     unmarshalledObject.Associations = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CallingName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CallingName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CallingNameStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CallingNameStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Capabilities", targetDepth))
                 {
                     var unmarshaller = PhoneNumberCapabilitiesUnmarshaller.Instance;

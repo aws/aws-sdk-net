@@ -28,13 +28,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// The phone number ID and product type fields to update, used with the <a>BatchUpdatePhoneNumber</a>
-    /// and <a>UpdatePhoneNumber</a> actions.
+    /// The phone number ID, product type, or calling name fields to update, used with the
+    /// <a>BatchUpdatePhoneNumber</a> and <a>UpdatePhoneNumber</a> actions.
     /// </summary>
     public partial class UpdatePhoneNumberRequestItem
     {
+        private string _callingName;
         private string _phoneNumberId;
         private PhoneNumberProductType _productType;
+
+        /// <summary>
+        /// Gets and sets the property CallingName. 
+        /// <para>
+        /// The outbound calling name to update.
+        /// </para>
+        /// </summary>
+        public string CallingName
+        {
+            get { return this._callingName; }
+            set { this._callingName = value; }
+        }
+
+        // Check to see if CallingName property is set
+        internal bool IsSetCallingName()
+        {
+            return this._callingName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PhoneNumberId. 

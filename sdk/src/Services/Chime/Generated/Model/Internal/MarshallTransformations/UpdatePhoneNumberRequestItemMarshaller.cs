@@ -45,6 +45,12 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdatePhoneNumberRequestItem requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCallingName())
+            {
+                context.Writer.WritePropertyName("CallingName");
+                context.Writer.Write(requestObject.CallingName);
+            }
+
             if(requestObject.IsSetPhoneNumberId())
             {
                 context.Writer.WritePropertyName("PhoneNumberId");

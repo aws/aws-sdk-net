@@ -29,9 +29,21 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchUpdatePhoneNumber operation.
-    /// Updates phone number product types. Choose from Amazon Chime Business Calling and
-    /// Amazon Chime Voice Connector product types. For toll-free numbers, you can use only
-    /// the Amazon Chime Voice Connector product type.
+    /// Updates phone number product types or calling names. You can update one attribute
+    /// at a time for each <code>UpdatePhoneNumberRequestItem</code>. For example, you can
+    /// update either the product type or the calling name.
+    /// 
+    ///  
+    /// <para>
+    /// For product types, choose from Amazon Chime Business Calling and Amazon Chime Voice
+    /// Connector. For toll-free numbers, you must use the Amazon Chime Voice Connector product
+    /// type.
+    /// </para>
+    ///  
+    /// <para>
+    /// Updates to outbound calling names can take up to 72 hours to complete. Pending updates
+    /// to outbound calling names must be complete before you can request another update.
+    /// </para>
     /// </summary>
     public partial class BatchUpdatePhoneNumberRequest : AmazonChimeRequest
     {
@@ -40,7 +52,8 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property UpdatePhoneNumberRequestItems. 
         /// <para>
-        /// The request containing the phone number IDs and product types to update.
+        /// The request containing the phone number IDs and product types or calling names to
+        /// update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

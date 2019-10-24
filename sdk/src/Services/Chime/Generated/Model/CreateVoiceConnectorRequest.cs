@@ -29,15 +29,40 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateVoiceConnector operation.
-    /// Creates an Amazon Chime Voice Connector under the administrator's AWS account. Enabling
-    /// <a>CreateVoiceConnectorRequest$RequireEncryption</a> configures your Amazon Chime
-    /// Voice Connector to use TLS transport for SIP signaling and Secure RTP (SRTP) for media.
-    /// Inbound calls use TLS transport, and unencrypted outbound calls are blocked.
+    /// Creates an Amazon Chime Voice Connector under the administrator's AWS account. You
+    /// can choose to create an Amazon Chime Voice Connector in a specific AWS Region.
+    /// 
+    ///  
+    /// <para>
+    /// Enabling <a>CreateVoiceConnectorRequest$RequireEncryption</a> configures your Amazon
+    /// Chime Voice Connector to use TLS transport for SIP signaling and Secure RTP (SRTP)
+    /// for media. Inbound calls use TLS transport, and unencrypted outbound calls are blocked.
+    /// </para>
     /// </summary>
     public partial class CreateVoiceConnectorRequest : AmazonChimeRequest
     {
+        private VoiceConnectorAwsRegion _awsRegion;
         private string _name;
         private bool? _requireEncryption;
+
+        /// <summary>
+        /// Gets and sets the property AwsRegion. 
+        /// <para>
+        /// The AWS Region in which the Amazon Chime Voice Connector is created. Default value:
+        /// <code>us-east-1</code>.
+        /// </para>
+        /// </summary>
+        public VoiceConnectorAwsRegion AwsRegion
+        {
+            get { return this._awsRegion; }
+            set { this._awsRegion = value; }
+        }
+
+        // Check to see if AwsRegion property is set
+        internal bool IsSetAwsRegion()
+        {
+            return this._awsRegion != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 
