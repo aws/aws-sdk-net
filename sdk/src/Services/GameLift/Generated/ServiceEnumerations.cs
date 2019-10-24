@@ -333,6 +333,38 @@ namespace Amazon.GameLift
         /// </summary>
         public static readonly EC2InstanceType C4Xlarge = new EC2InstanceType("c4.xlarge");
         /// <summary>
+        /// Constant C512xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C512xlarge = new EC2InstanceType("c5.12xlarge");
+        /// <summary>
+        /// Constant C518xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C518xlarge = new EC2InstanceType("c5.18xlarge");
+        /// <summary>
+        /// Constant C524xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C524xlarge = new EC2InstanceType("c5.24xlarge");
+        /// <summary>
+        /// Constant C52xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C52xlarge = new EC2InstanceType("c5.2xlarge");
+        /// <summary>
+        /// Constant C54xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C54xlarge = new EC2InstanceType("c5.4xlarge");
+        /// <summary>
+        /// Constant C59xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C59xlarge = new EC2InstanceType("c5.9xlarge");
+        /// <summary>
+        /// Constant C5Large for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C5Large = new EC2InstanceType("c5.large");
+        /// <summary>
+        /// Constant C5Xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C5Xlarge = new EC2InstanceType("c5.xlarge");
+        /// <summary>
         /// Constant M32xlarge for EC2InstanceType
         /// </summary>
         public static readonly EC2InstanceType M32xlarge = new EC2InstanceType("m3.2xlarge");
@@ -368,6 +400,38 @@ namespace Amazon.GameLift
         /// Constant M4Xlarge for EC2InstanceType
         /// </summary>
         public static readonly EC2InstanceType M4Xlarge = new EC2InstanceType("m4.xlarge");
+        /// <summary>
+        /// Constant M512xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M512xlarge = new EC2InstanceType("m5.12xlarge");
+        /// <summary>
+        /// Constant M516xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M516xlarge = new EC2InstanceType("m5.16xlarge");
+        /// <summary>
+        /// Constant M524xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M524xlarge = new EC2InstanceType("m5.24xlarge");
+        /// <summary>
+        /// Constant M52xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M52xlarge = new EC2InstanceType("m5.2xlarge");
+        /// <summary>
+        /// Constant M54xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M54xlarge = new EC2InstanceType("m5.4xlarge");
+        /// <summary>
+        /// Constant M58xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M58xlarge = new EC2InstanceType("m5.8xlarge");
+        /// <summary>
+        /// Constant M5Large for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M5Large = new EC2InstanceType("m5.large");
+        /// <summary>
+        /// Constant M5Xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M5Xlarge = new EC2InstanceType("m5.xlarge");
         /// <summary>
         /// Constant R32xlarge for EC2InstanceType
         /// </summary>
@@ -412,6 +476,38 @@ namespace Amazon.GameLift
         /// Constant R4Xlarge for EC2InstanceType
         /// </summary>
         public static readonly EC2InstanceType R4Xlarge = new EC2InstanceType("r4.xlarge");
+        /// <summary>
+        /// Constant R512xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R512xlarge = new EC2InstanceType("r5.12xlarge");
+        /// <summary>
+        /// Constant R516xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R516xlarge = new EC2InstanceType("r5.16xlarge");
+        /// <summary>
+        /// Constant R524xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R524xlarge = new EC2InstanceType("r5.24xlarge");
+        /// <summary>
+        /// Constant R52xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R52xlarge = new EC2InstanceType("r5.2xlarge");
+        /// <summary>
+        /// Constant R54xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R54xlarge = new EC2InstanceType("r5.4xlarge");
+        /// <summary>
+        /// Constant R58xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R58xlarge = new EC2InstanceType("r5.8xlarge");
+        /// <summary>
+        /// Constant R5Large for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R5Large = new EC2InstanceType("r5.large");
+        /// <summary>
+        /// Constant R5Xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R5Xlarge = new EC2InstanceType("r5.xlarge");
         /// <summary>
         /// Constant T2Large for EC2InstanceType
         /// </summary>
@@ -1256,6 +1352,10 @@ namespace Amazon.GameLift
         /// Constant AMAZON_LINUX for OperatingSystem
         /// </summary>
         public static readonly OperatingSystem AMAZON_LINUX = new OperatingSystem("AMAZON_LINUX");
+        /// <summary>
+        /// Constant AMAZON_LINUX_2 for OperatingSystem
+        /// </summary>
+        public static readonly OperatingSystem AMAZON_LINUX_2 = new OperatingSystem("AMAZON_LINUX_2");
         /// <summary>
         /// Constant WINDOWS_2012 for OperatingSystem
         /// </summary>
