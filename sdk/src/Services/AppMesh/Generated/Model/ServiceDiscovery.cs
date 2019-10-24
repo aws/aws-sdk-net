@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing the service discovery information for a virtual node.
+    /// An object that represents the service discovery information for a virtual node.
     /// </summary>
     public partial class ServiceDiscovery
     {

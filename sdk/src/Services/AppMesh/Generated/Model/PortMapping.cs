@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing a virtual node or virtual router listener port mapping.
+    /// An object that represents a port mapping.
     /// </summary>
     public partial class PortMapping
     {
@@ -57,7 +57,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
-        /// The protocol used for the port mapping.
+        /// The protocol used for the port mapping. Specify one protocol.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

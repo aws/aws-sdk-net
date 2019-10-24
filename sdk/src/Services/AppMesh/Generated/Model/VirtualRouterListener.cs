@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing a virtual router listener.
+    /// An object that represents a virtual router listener.
     /// </summary>
     public partial class VirtualRouterListener
     {

@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing the AWS Cloud Map service discovery information for your virtual
-    ///         node.
+    /// An object that represents the AWS Cloud Map service discovery information for your
+    /// virtual         node.
     /// </summary>
     public partial class AwsCloudMapServiceDiscovery
     {

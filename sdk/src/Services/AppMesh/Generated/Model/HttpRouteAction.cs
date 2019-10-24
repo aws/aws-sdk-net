@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing the traffic distribution requirements for matched HTTP    
-    ///     requests.
+    /// An object that represents the action to take if a match is determined.
     /// </summary>
     public partial class HttpRouteAction
     {
@@ -38,8 +37,8 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property WeightedTargets. 
         /// <para>
-        /// The targets that traffic is routed to when a request matches the route. You can specify
-        ///         one or more targets and their relative weights to distribute traffic with.
+        /// An object that represents the targets that traffic is routed to when a request matches
+        /// the route.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]

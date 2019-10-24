@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing a virtual service backend for a virtual node.
+    /// An object that represents a virtual service backend for a virtual node.
     /// </summary>
     public partial class VirtualServiceBackend
     {

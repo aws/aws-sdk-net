@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing the HTTP header in the request.
+    /// An object that represents the HTTP header in the request.
     /// </summary>
     public partial class HttpRouteHeader
     {
@@ -39,8 +39,8 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Invert. 
         /// <para>
-        /// Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code>
-        /// method and value. The default value is <code>False</code>.
+        /// Specify <code>True</code> to match anything except the match criteria. The default
+        /// value is <code>False</code>.
         /// </para>
         /// </summary>
         public bool Invert

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing an access log file.
+    /// An object that represents an access log file.
     /// </summary>
     public partial class FileAccessLog
     {

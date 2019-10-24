@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing the specification of a virtual node.
+    /// An object that represents the specification of a virtual node.
     /// </summary>
     public partial class VirtualNodeSpec
     {
@@ -60,7 +60,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property Listeners. 
         /// <para>
         /// The listeners that the virtual node is expected to receive inbound traffic from. 
-        ///        Currently only one listener is supported per virtual node.
+        ///        You can specify one listener.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]

@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing the AWS Cloud Map attribute information for your virtual node.
+    /// An object that represents the AWS Cloud Map attribute information for your virtual
+    ///         node.
     /// </summary>
     public partial class AwsCloudMapInstanceAttribute
     {
@@ -39,7 +40,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property Key. 
         /// <para>
         /// The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service
-        /// instance         that contains the specified key and value is returned.
+        ///         instance that contains the specified key and value is returned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

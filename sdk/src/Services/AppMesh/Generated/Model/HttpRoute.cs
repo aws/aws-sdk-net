@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing the HTTP routing specification for a route.
+    /// An object that represents an HTTP or HTTP2 route type.
     /// </summary>
     public partial class HttpRoute
     {
@@ -39,7 +39,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The action to take if a match is determined.
+        /// An object that represents the action to take if a match is determined.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +58,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Match. 
         /// <para>
-        /// The criteria for determining an HTTP request match.
+        /// An object that represents the criteria for determining a request match.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

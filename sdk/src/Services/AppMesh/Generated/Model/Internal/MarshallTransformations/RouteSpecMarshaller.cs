@@ -45,6 +45,28 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RouteSpec requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetGrpcRoute())
+            {
+                context.Writer.WritePropertyName("grpcRoute");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = GrpcRouteMarshaller.Instance;
+                marshaller.Marshall(requestObject.GrpcRoute, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetHttp2Route())
+            {
+                context.Writer.WritePropertyName("http2Route");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = HttpRouteMarshaller.Instance;
+                marshaller.Marshall(requestObject.Http2Route, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetHttpRoute())
             {
                 context.Writer.WritePropertyName("httpRoute");

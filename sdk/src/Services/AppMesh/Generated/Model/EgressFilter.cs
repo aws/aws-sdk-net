@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing the egress filter rules for a service mesh.
+    /// An object that represents the egress filter rules for a service mesh.
     /// </summary>
     public partial class EgressFilter
     {

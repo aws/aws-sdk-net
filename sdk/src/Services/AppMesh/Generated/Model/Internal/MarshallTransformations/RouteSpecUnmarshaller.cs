@@ -64,6 +64,18 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("grpcRoute", targetDepth))
+                {
+                    var unmarshaller = GrpcRouteUnmarshaller.Instance;
+                    unmarshalledObject.GrpcRoute = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("http2Route", targetDepth))
+                {
+                    var unmarshaller = HttpRouteUnmarshaller.Instance;
+                    unmarshalledObject.Http2Route = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("httpRoute", targetDepth))
                 {
                     var unmarshaller = HttpRouteUnmarshaller.Instance;

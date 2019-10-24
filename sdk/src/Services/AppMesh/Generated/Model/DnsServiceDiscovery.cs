@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing the DNS service discovery information for your virtual    
-    ///     node.
+    /// An object that represents the DNS service discovery information for your virtual 
+    ///        node.
     /// </summary>
     public partial class DnsServiceDiscovery
     {
