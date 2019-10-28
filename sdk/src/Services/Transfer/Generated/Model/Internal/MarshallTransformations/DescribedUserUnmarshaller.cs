@@ -76,6 +76,18 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     unmarshalledObject.HomeDirectory = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HomeDirectoryMappings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<HomeDirectoryMapEntry, HomeDirectoryMapEntryUnmarshaller>(HomeDirectoryMapEntryUnmarshaller.Instance);
+                    unmarshalledObject.HomeDirectoryMappings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HomeDirectoryType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HomeDirectoryType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Policy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

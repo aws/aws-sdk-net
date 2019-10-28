@@ -34,6 +34,7 @@ namespace Amazon.Transfer.Model
     {
         private string _arn;
         private string _homeDirectory;
+        private HomeDirectoryType _homeDirectoryType;
         private string _role;
         private int? _sshPublicKeyCount;
         private string _userName;
@@ -79,6 +80,28 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HomeDirectoryType. 
+        /// <para>
+        /// The type of landing directory (folder) you mapped for your users' home directory.
+        /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket
+        /// paths as is in their SFTP clients. If you set it <code>LOGICAL</code>, you will need
+        /// to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to
+        /// make S3 paths visible to your user.
+        /// </para>
+        /// </summary>
+        public HomeDirectoryType HomeDirectoryType
+        {
+            get { return this._homeDirectoryType; }
+            set { this._homeDirectoryType = value; }
+        }
+
+        // Check to see if HomeDirectoryType property is set
+        internal bool IsSetHomeDirectoryType()
+        {
+            return this._homeDirectoryType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
         /// The role in use by this user. A <i>role</i> is an AWS Identity and Access Management
@@ -87,6 +110,7 @@ namespace Amazon.Transfer.Model
         /// file operations to their Amazon S3 bucket.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string Role
         {
             get { return this._role; }
@@ -124,6 +148,7 @@ namespace Amazon.Transfer.Model
         /// purposes.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=32)]
         public string UserName
         {
             get { return this._userName; }

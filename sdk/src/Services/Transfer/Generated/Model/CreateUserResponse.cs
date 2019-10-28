@@ -41,7 +41,7 @@ namespace Amazon.Transfer.Model
         /// The ID of the SFTP server that the user is attached to.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=19, Max=19)]
         public string ServerId
         {
             get { return this._serverId; }
@@ -60,7 +60,7 @@ namespace Amazon.Transfer.Model
         /// A unique string that identifies a user account associated with an SFTP server.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=3, Max=32)]
         public string UserName
         {
             get { return this._userName; }

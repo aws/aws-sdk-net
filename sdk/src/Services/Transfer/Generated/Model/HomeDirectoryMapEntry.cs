@@ -28,50 +28,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeUser operation.
+    /// Represents an object that contains entries and a targets for <code>HomeDirectoryMappings</code>.
     /// </summary>
-    public partial class DescribeUserResponse : AmazonWebServiceResponse
+    public partial class HomeDirectoryMapEntry
     {
-        private string _serverId;
-        private DescribedUser _user;
+        private string _entry;
+        private string _target;
 
         /// <summary>
-        /// Gets and sets the property ServerId. 
+        /// Gets and sets the property Entry. 
         /// <para>
-        /// A system-assigned unique identifier for an SFTP server that has this user assigned.
+        /// Represents an entry and a target for <code>HomeDirectoryMappings</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=19, Max=19)]
-        public string ServerId
+        [AWSProperty(Required=true, Max=1024)]
+        public string Entry
         {
-            get { return this._serverId; }
-            set { this._serverId = value; }
+            get { return this._entry; }
+            set { this._entry = value; }
         }
 
-        // Check to see if ServerId property is set
-        internal bool IsSetServerId()
+        // Check to see if Entry property is set
+        internal bool IsSetEntry()
         {
-            return this._serverId != null;
+            return this._entry != null;
         }
 
         /// <summary>
-        /// Gets and sets the property User. 
+        /// Gets and sets the property Target. 
         /// <para>
-        /// An array containing the properties of the user account for the <code>ServerID</code>
-        /// value that you specified.
+        /// Represents the map target that is used in a <code>HomeDirectorymapEntry</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public DescribedUser User
+        [AWSProperty(Required=true, Max=1024)]
+        public string Target
         {
-            get { return this._user; }
-            set { this._user = value; }
+            get { return this._target; }
+            set { this._target = value; }
         }
 
-        // Check to see if User property is set
-        internal bool IsSetUser()
+        // Check to see if Target property is set
+        internal bool IsSetTarget()
         {
-            return this._user != null;
+            return this._target != null;
         }
 
     }

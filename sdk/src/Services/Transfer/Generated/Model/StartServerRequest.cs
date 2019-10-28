@@ -54,7 +54,7 @@ namespace Amazon.Transfer.Model
         /// A system-assigned unique identifier for an SFTP server that you start.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=19, Max=19)]
         public string ServerId
         {
             get { return this._serverId; }

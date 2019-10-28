@@ -49,7 +49,7 @@ namespace Amazon.Transfer.Model
         /// instance that has the user assigned to it.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=19, Max=19)]
         public string ServerId
         {
             get { return this._serverId; }
@@ -68,7 +68,7 @@ namespace Amazon.Transfer.Model
         /// A unique identifier used to reference your user's specific SSH key.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=21, Max=21)]
         public string SshPublicKeyId
         {
             get { return this._sshPublicKeyId; }
@@ -87,7 +87,7 @@ namespace Amazon.Transfer.Model
         /// A unique string that identifies a user whose public key is being deleted.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=3, Max=32)]
         public string UserName
         {
             get { return this._userName; }

@@ -74,6 +74,28 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.HomeDirectory);
                 }
 
+                if(publicRequest.IsSetHomeDirectoryMappings())
+                {
+                    context.Writer.WritePropertyName("HomeDirectoryMappings");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestHomeDirectoryMappingsListValue in publicRequest.HomeDirectoryMappings)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = HomeDirectoryMapEntryMarshaller.Instance;
+                        marshaller.Marshall(publicRequestHomeDirectoryMappingsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetHomeDirectoryType())
+                {
+                    context.Writer.WritePropertyName("HomeDirectoryType");
+                    context.Writer.Write(publicRequest.HomeDirectoryType);
+                }
+
                 if(publicRequest.IsSetPolicy())
                 {
                     context.Writer.WritePropertyName("Policy");

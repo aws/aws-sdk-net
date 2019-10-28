@@ -98,7 +98,7 @@ namespace Amazon.Transfer.Model
         /// The endpoint of the service used to authenticate a user.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=255)]
         public string Url
         {
             get { return this._url; }

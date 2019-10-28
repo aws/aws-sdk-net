@@ -86,7 +86,7 @@ namespace Amazon.Transfer.Model
         /// that has users assigned to it.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=19, Max=19)]
         public string ServerId
         {
             get { return this._serverId; }

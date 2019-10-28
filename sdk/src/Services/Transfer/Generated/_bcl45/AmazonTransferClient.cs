@@ -506,6 +506,14 @@ namespace Amazon.Transfer
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
         /// The request has failed because the AWS Transfer for SFTP service is not available.
         /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        ///  HTTP Status Code: 400
+        /// </para>
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteSshPublicKey">REST API Reference for DeleteSshPublicKey Operation</seealso>
         public virtual DeleteSshPublicKeyResponse DeleteSshPublicKey(DeleteSshPublicKeyRequest request)
         {
@@ -543,6 +551,14 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
         /// The request has failed because the AWS Transfer for SFTP service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        ///  HTTP Status Code: 400
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteSshPublicKey">REST API Reference for DeleteSshPublicKey Operation</seealso>
         public virtual Task<DeleteSshPublicKeyResponse> DeleteSshPublicKeyAsync(DeleteSshPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -833,6 +849,14 @@ namespace Amazon.Transfer
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
         /// The request has failed because the AWS Transfer for SFTP service is not available.
         /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        ///  HTTP Status Code: 400
+        /// </para>
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportSshPublicKey">REST API Reference for ImportSshPublicKey Operation</seealso>
         public virtual ImportSshPublicKeyResponse ImportSshPublicKey(ImportSshPublicKeyRequest request)
         {
@@ -875,6 +899,14 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
         /// The request has failed because the AWS Transfer for SFTP service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        ///  HTTP Status Code: 400
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportSshPublicKey">REST API Reference for ImportSshPublicKey Operation</seealso>
         public virtual Task<ImportSshPublicKeyResponse> ImportSshPublicKeyAsync(ImportSshPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1132,6 +1164,14 @@ namespace Amazon.Transfer
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
         /// The request has failed because the AWS Transfer for SFTP service is not available.
         /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        ///  HTTP Status Code: 400
+        /// </para>
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartServer">REST API Reference for StartServer Operation</seealso>
         public virtual StartServerResponse StartServer(StartServerRequest request)
         {
@@ -1177,6 +1217,14 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
         /// The request has failed because the AWS Transfer for SFTP service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        ///  HTTP Status Code: 400
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartServer">REST API Reference for StartServer Operation</seealso>
         public virtual Task<StartServerResponse> StartServerAsync(StartServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1227,6 +1275,14 @@ namespace Amazon.Transfer
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
         /// The request has failed because the AWS Transfer for SFTP service is not available.
         /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        ///  HTTP Status Code: 400
+        /// </para>
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StopServer">REST API Reference for StopServer Operation</seealso>
         public virtual StopServerResponse StopServer(StopServerRequest request)
         {
@@ -1275,6 +1331,14 @@ namespace Amazon.Transfer
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
         /// The request has failed because the AWS Transfer for SFTP service is not available.
         /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        ///  HTTP Status Code: 400
+        /// </para>
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StopServer">REST API Reference for StopServer Operation</seealso>
         public virtual Task<StopServerResponse> StopServerAsync(StopServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1307,6 +1371,10 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the AWS Transfer for SFTP
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
         /// The request has failed because the AWS Transfer for SFTP service is not available.
@@ -1342,6 +1410,10 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the AWS Transfer for SFTP
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
         /// The request has failed because the AWS Transfer for SFTP service is not available.
@@ -1454,6 +1526,10 @@ namespace Amazon.Transfer
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the AWS Transfer for SFTP
+        /// service.
+        /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
         /// The request has failed because the AWS Transfer for SFTP service is not available.
         /// </exception>
@@ -1488,6 +1564,10 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the AWS Transfer for SFTP
+        /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
         /// The request has failed because the AWS Transfer for SFTP service is not available.
@@ -1525,12 +1605,23 @@ namespace Amazon.Transfer
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
+        /// The requested resource does not exist.
+        /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
         /// This exception is thrown when a resource is not found by the AWS Transfer for SFTP
         /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
         /// The request has failed because the AWS Transfer for SFTP service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        ///  HTTP Status Code: 400
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateServer">REST API Reference for UpdateServer Operation</seealso>
         public virtual UpdateServerResponse UpdateServer(UpdateServerRequest request)
@@ -1564,12 +1655,23 @@ namespace Amazon.Transfer
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
+        /// The requested resource does not exist.
+        /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
         /// This exception is thrown when a resource is not found by the AWS Transfer for SFTP
         /// service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
         /// The request has failed because the AWS Transfer for SFTP service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        ///  HTTP Status Code: 400
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateServer">REST API Reference for UpdateServer Operation</seealso>
         public virtual Task<UpdateServerResponse> UpdateServerAsync(UpdateServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1613,6 +1715,14 @@ namespace Amazon.Transfer
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
         /// The request has failed because the AWS Transfer for SFTP service is not available.
         /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        ///  HTTP Status Code: 400
+        /// </para>
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         public virtual UpdateUserResponse UpdateUser(UpdateUserRequest request)
         {
@@ -1653,6 +1763,14 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
         /// The request has failed because the AWS Transfer for SFTP service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        ///  HTTP Status Code: 400
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         public virtual Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

@@ -45,7 +45,7 @@ namespace Amazon.Transfer.Model
         /// The name assigned to the tag that you create.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -64,7 +64,7 @@ namespace Amazon.Transfer.Model
         /// This property contains one or more values that you assigned to the key name you create.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=256)]
         public string Value
         {
             get { return this._value; }

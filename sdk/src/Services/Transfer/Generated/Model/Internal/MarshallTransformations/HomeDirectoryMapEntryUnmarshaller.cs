@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListedUser Object
+    /// Response Unmarshaller for HomeDirectoryMapEntry Object
     /// </summary>  
-    public class ListedUserUnmarshaller : IUnmarshaller<ListedUser, XmlUnmarshallerContext>, IUnmarshaller<ListedUser, JsonUnmarshallerContext>
+    public class HomeDirectoryMapEntryUnmarshaller : IUnmarshaller<HomeDirectoryMapEntry, XmlUnmarshallerContext>, IUnmarshaller<HomeDirectoryMapEntry, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ListedUser IUnmarshaller<ListedUser, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        HomeDirectoryMapEntry IUnmarshaller<HomeDirectoryMapEntry, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,27 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ListedUser Unmarshall(JsonUnmarshallerContext context)
+        public HomeDirectoryMapEntry Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ListedUser unmarshalledObject = new ListedUser();
+            HomeDirectoryMapEntry unmarshalledObject = new HomeDirectoryMapEntry();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Entry", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Entry = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("HomeDirectory", targetDepth))
+                if (context.TestExpression("Target", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HomeDirectory = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("HomeDirectoryType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HomeDirectoryType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Role", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Role = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SshPublicKeyCount", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.SshPublicKeyCount = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("UserName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UserName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Target = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +82,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         }
 
 
-        private static ListedUserUnmarshaller _instance = new ListedUserUnmarshaller();        
+        private static HomeDirectoryMapEntryUnmarshaller _instance = new HomeDirectoryMapEntryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListedUserUnmarshaller Instance
+        public static HomeDirectoryMapEntryUnmarshaller Instance
         {
             get
             {

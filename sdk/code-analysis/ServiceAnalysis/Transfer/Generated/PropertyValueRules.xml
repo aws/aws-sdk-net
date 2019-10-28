@@ -6,10 +6,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.CreateServerRequest.LoggingRole</property>
+    <min>20</min>
+    <max>2048</max>
     <pattern>arn:.*role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.CreateServerResponse.ServerId</property>
+    <min>19</min>
+    <max>19</max>
     <pattern>^s-([0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -18,11 +22,19 @@
     <pattern>^$|/.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.CreateUserRequest.Policy</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.CreateUserRequest.Role</property>
+    <min>20</min>
+    <max>2048</max>
     <pattern>arn:.*role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.CreateUserRequest.ServerId</property>
+    <min>19</min>
+    <max>19</max>
     <pattern>^s-([0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -32,58 +44,86 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.CreateUserRequest.UserName</property>
+    <min>3</min>
+    <max>32</max>
     <pattern>^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.CreateUserResponse.ServerId</property>
+    <min>19</min>
+    <max>19</max>
     <pattern>^s-([0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.CreateUserResponse.UserName</property>
+    <min>3</min>
+    <max>32</max>
     <pattern>^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DeleteServerRequest.ServerId</property>
+    <min>19</min>
+    <max>19</max>
     <pattern>^s-([0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DeleteSshPublicKeyRequest.ServerId</property>
+    <min>19</min>
+    <max>19</max>
     <pattern>^s-([0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DeleteSshPublicKeyRequest.SshPublicKeyId</property>
+    <min>21</min>
+    <max>21</max>
     <pattern>^key-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DeleteSshPublicKeyRequest.UserName</property>
+    <min>3</min>
+    <max>32</max>
     <pattern>^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DeleteUserRequest.ServerId</property>
+    <min>19</min>
+    <max>19</max>
     <pattern>^s-([0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DeleteUserRequest.UserName</property>
+    <min>3</min>
+    <max>32</max>
     <pattern>^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribeServerRequest.ServerId</property>
+    <min>19</min>
+    <max>19</max>
     <pattern>^s-([0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribeUserRequest.ServerId</property>
+    <min>19</min>
+    <max>19</max>
     <pattern>^s-([0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribeUserRequest.UserName</property>
+    <min>3</min>
+    <max>32</max>
     <pattern>^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribeUserResponse.ServerId</property>
+    <min>19</min>
+    <max>19</max>
     <pattern>^s-([0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ImportSshPublicKeyRequest.ServerId</property>
+    <min>19</min>
+    <max>19</max>
     <pattern>^s-([0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -93,18 +133,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ImportSshPublicKeyRequest.UserName</property>
+    <min>3</min>
+    <max>32</max>
     <pattern>^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ImportSshPublicKeyResponse.ServerId</property>
+    <min>19</min>
+    <max>19</max>
     <pattern>^s-([0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ImportSshPublicKeyResponse.SshPublicKeyId</property>
+    <min>21</min>
+    <max>21</max>
     <pattern>^key-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ImportSshPublicKeyResponse.UserName</property>
+    <min>3</min>
+    <max>32</max>
     <pattern>^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -126,6 +174,7 @@
     <property>Amazon.Transfer.Model.ListTagsForResourceRequest.Arn</property>
     <min>20</min>
     <max>1600</max>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListTagsForResourceRequest.MaxResults</property>
@@ -141,6 +190,7 @@
     <property>Amazon.Transfer.Model.ListTagsForResourceResponse.Arn</property>
     <min>20</min>
     <max>1600</max>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListTagsForResourceResponse.NextToken</property>
@@ -159,6 +209,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListUsersRequest.ServerId</property>
+    <min>19</min>
+    <max>19</max>
     <pattern>^s-([0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -168,33 +220,53 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListUsersResponse.ServerId</property>
+    <min>19</min>
+    <max>19</max>
     <pattern>^s-([0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.StartServerRequest.ServerId</property>
+    <min>19</min>
+    <max>19</max>
     <pattern>^s-([0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.StopServerRequest.ServerId</property>
+    <min>19</min>
+    <max>19</max>
     <pattern>^s-([0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.TagResourceRequest.Arn</property>
     <min>20</min>
     <max>1600</max>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.TestIdentityProviderRequest.ServerId</property>
+    <min>19</min>
+    <max>19</max>
     <pattern>^s-([0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.TestIdentityProviderRequest.UserName</property>
+    <min>3</min>
+    <max>32</max>
     <pattern>^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.TestIdentityProviderRequest.UserPassword</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.TestIdentityProviderResponse.Url</property>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.UntagResourceRequest.Arn</property>
     <min>20</min>
     <max>1600</max>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.UpdateServerRequest.HostKey</property>
@@ -202,14 +274,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.UpdateServerRequest.LoggingRole</property>
+    <max>2048</max>
     <pattern>^$|arn:.*role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.UpdateServerRequest.ServerId</property>
+    <min>19</min>
+    <max>19</max>
     <pattern>^s-([0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.UpdateServerResponse.ServerId</property>
+    <min>19</min>
+    <max>19</max>
     <pattern>^s-([0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -218,42 +295,62 @@
     <pattern>^$|/.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.UpdateUserRequest.Policy</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.UpdateUserRequest.Role</property>
+    <min>20</min>
+    <max>2048</max>
     <pattern>arn:.*role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.UpdateUserRequest.ServerId</property>
+    <min>19</min>
+    <max>19</max>
     <pattern>^s-([0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.UpdateUserRequest.UserName</property>
+    <min>3</min>
+    <max>32</max>
     <pattern>^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.UpdateUserResponse.ServerId</property>
+    <min>19</min>
+    <max>19</max>
     <pattern>^s-([0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.UpdateUserResponse.UserName</property>
+    <min>3</min>
+    <max>32</max>
     <pattern>^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedServer.Arn</property>
     <min>20</min>
     <max>1600</max>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedServer.LoggingRole</property>
+    <min>20</min>
+    <max>2048</max>
     <pattern>arn:.*role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedServer.ServerId</property>
+    <min>19</min>
+    <max>19</max>
     <pattern>^s-([0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedUser.Arn</property>
     <min>20</min>
     <max>1600</max>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedUser.HomeDirectory</property>
@@ -261,38 +358,70 @@
     <pattern>^$|/.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.DescribedUser.Policy</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedUser.Role</property>
+    <min>20</min>
+    <max>2048</max>
     <pattern>arn:.*role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedUser.UserName</property>
+    <min>3</min>
+    <max>32</max>
     <pattern>^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.EndpointDetails.VpcEndpointId</property>
+    <min>22</min>
+    <max>22</max>
     <pattern>^vpce-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.HomeDirectoryMapEntry.Entry</property>
+    <max>1024</max>
+    <pattern>^/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.HomeDirectoryMapEntry.Target</property>
+    <max>1024</max>
+    <pattern>^/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.IdentityProviderDetails.InvocationRole</property>
+    <min>20</min>
+    <max>2048</max>
     <pattern>arn:.*role/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.IdentityProviderDetails.Url</property>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListedServer.Arn</property>
     <min>20</min>
     <max>1600</max>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListedServer.LoggingRole</property>
+    <min>20</min>
+    <max>2048</max>
     <pattern>arn:.*role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListedServer.ServerId</property>
+    <min>19</min>
+    <max>19</max>
     <pattern>^s-([0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListedUser.Arn</property>
     <min>20</min>
     <max>1600</max>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListedUser.HomeDirectory</property>
@@ -301,10 +430,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListedUser.Role</property>
+    <min>20</min>
+    <max>2048</max>
     <pattern>arn:.*role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListedUser.UserName</property>
+    <min>3</min>
+    <max>32</max>
     <pattern>^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -314,6 +447,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.SshPublicKey.SshPublicKeyId</property>
+    <min>21</min>
+    <max>21</max>
     <pattern>^key-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.Tag.Key</property>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.Tag.Value</property>
+    <max>256</max>
   </property-value-rule>
 </property-value-rules>

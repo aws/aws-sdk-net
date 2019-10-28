@@ -97,7 +97,7 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  </important> 
         /// <para>
-        ///  For more information, see "https://docs.aws.amazon.com/transfer/latest/userguide/change-host-key"
+        ///  For more information, see "https://alpha-docs-aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key"
         /// in the <i>AWS SFTP User Guide.</i> 
         /// </para>
         /// </summary>
@@ -165,6 +165,7 @@ namespace Amazon.Transfer.Model
         /// CloudWatch logs for monitoring and auditing purposes.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string LoggingRole
         {
             get { return this._loggingRole; }

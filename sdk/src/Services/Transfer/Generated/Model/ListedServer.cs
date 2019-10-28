@@ -106,6 +106,7 @@ namespace Amazon.Transfer.Model
         /// CloudWatch logging.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string LoggingRole
         {
             get { return this._loggingRole; }
@@ -125,6 +126,7 @@ namespace Amazon.Transfer.Model
         /// listed.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=19, Max=19)]
         public string ServerId
         {
             get { return this._serverId; }
