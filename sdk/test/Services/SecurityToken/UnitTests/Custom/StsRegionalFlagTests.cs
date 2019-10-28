@@ -44,7 +44,8 @@ namespace AWSSDK.UnitTests
         private const string AwsProfileEnvironmentVariable = "AWS_PROFILE";
         private const string AwsStsRegionalEndpointsEnvironmentVariable = "AWS_STS_REGIONAL_ENDPOINTS";
 
-        /*[DataTestMethod]
+        [Ignore]
+        [DataTestMethod]
         [DataRow("default", StsRegionalEndpointsValue.Legacy)]
         [DataRow("other", StsRegionalEndpointsValue.Regional)]
         [TestCategory("SecurityToken")]
@@ -52,7 +53,10 @@ namespace AWSSDK.UnitTests
         /// in the Shared Credentials File
         public void TestCredentialsFileStsFlag(string profile, StsRegionalEndpointsValue expectedValue)
         {
-            using (var testFixture = new SharedCredentialsFileTestFixture(ProfileText))
+            /* // This test can not currently be run because SharedCredentialsFileTestFixture
+               // is not referenced within the SecurityToken project. It causes errors when
+               // building the project individually.
+             using (var testFixture = new SharedCredentialsFileTestFixture(ProfileText))
             {
                 var oldProfile = Environment.GetEnvironmentVariable(AwsProfileEnvironmentVariable);
                 var oldSts = Environment.GetEnvironmentVariable(AwsStsRegionalEndpointsEnvironmentVariable);
@@ -71,8 +75,8 @@ namespace AWSSDK.UnitTests
                     Environment.SetEnvironmentVariable(AwsStsRegionalEndpointsEnvironmentVariable, oldSts);
                 }
 
-            }
-        }*/
+            }*/
+        }
 
         [DataTestMethod]
         [DataRow("legacy", StsRegionalEndpointsValue.Legacy)]
