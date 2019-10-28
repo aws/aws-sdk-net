@@ -1,3 +1,12 @@
+### 3.3.617.0 (2019-10-28 21:24 UTC)
+* S3 (3.3.105.0)
+	* Adding support in SelectObjectContent for scanning a portion of an object specified by a scan range.
+* Core 3.3.103.56
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.616.0 (2019-10-28 19:23 UTC)
 * ECR (3.3.102.0)
 	* This release of Amazon Elastic Container Registry Service (Amazon ECR) introduces support for image scanning. This identifies the software vulnerabilities in the container image based on the Common Vulnerabilities and Exposures (CVE) database.
