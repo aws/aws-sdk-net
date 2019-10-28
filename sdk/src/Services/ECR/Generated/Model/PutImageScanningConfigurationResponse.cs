@@ -28,56 +28,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECR.Model
 {
     /// <summary>
-    /// An object representing an Amazon ECR image.
+    /// This is the response object from the PutImageScanningConfiguration operation.
     /// </summary>
-    public partial class Image
+    public partial class PutImageScanningConfigurationResponse : AmazonWebServiceResponse
     {
-        private ImageIdentifier _imageId;
-        private string _imageManifest;
+        private ImageScanningConfiguration _imageScanningConfiguration;
         private string _registryId;
         private string _repositoryName;
 
         /// <summary>
-        /// Gets and sets the property ImageId. 
+        /// Gets and sets the property ImageScanningConfiguration. 
         /// <para>
-        /// An object containing the image tag and image digest associated with an image.
+        /// The image scanning configuration setting for the repository.
         /// </para>
         /// </summary>
-        public ImageIdentifier ImageId
+        public ImageScanningConfiguration ImageScanningConfiguration
         {
-            get { return this._imageId; }
-            set { this._imageId = value; }
+            get { return this._imageScanningConfiguration; }
+            set { this._imageScanningConfiguration = value; }
         }
 
-        // Check to see if ImageId property is set
-        internal bool IsSetImageId()
+        // Check to see if ImageScanningConfiguration property is set
+        internal bool IsSetImageScanningConfiguration()
         {
-            return this._imageId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ImageManifest. 
-        /// <para>
-        /// The image manifest associated with the image.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=4194304)]
-        public string ImageManifest
-        {
-            get { return this._imageManifest; }
-            set { this._imageManifest = value; }
-        }
-
-        // Check to see if ImageManifest property is set
-        internal bool IsSetImageManifest()
-        {
-            return this._imageManifest != null;
+            return this._imageScanningConfiguration != null;
         }
 
         /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The AWS account ID associated with the registry containing the image.
+        /// The registry ID associated with the request.
         /// </para>
         /// </summary>
         public string RegistryId
@@ -95,7 +75,7 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The name of the repository associated with the image.
+        /// The repository name associated with the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=256)]

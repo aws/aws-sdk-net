@@ -52,7 +52,7 @@ namespace Amazon.ECR.Model
         /// The image manifest corresponding to the image to be uploaded.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=4194304)]
         public string ImageManifest
         {
             get { return this._imageManifest; }

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECR.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateRepository Request Marshaller
+    /// PutImageScanningConfiguration Request Marshaller
     /// </summary>       
-    public class CreateRepositoryRequestMarshaller : IMarshaller<IRequest, CreateRepositoryRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class PutImageScanningConfigurationRequestMarshaller : IMarshaller<IRequest, PutImageScanningConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateRepositoryRequest)input);
+            return this.Marshall((PutImageScanningConfigurationRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateRepositoryRequest publicRequest)
+        public IRequest Marshall(PutImageScanningConfigurationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ECR");
-            string target = "AmazonEC2ContainerRegistry_V20150921.CreateRepository";
+            string target = "AmazonEC2ContainerRegistry_V20150921.PutImageScanningConfiguration";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-09-21";            
@@ -79,32 +79,16 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetImageTagMutability())
+                if(publicRequest.IsSetRegistryId())
                 {
-                    context.Writer.WritePropertyName("imageTagMutability");
-                    context.Writer.Write(publicRequest.ImageTagMutability);
+                    context.Writer.WritePropertyName("registryId");
+                    context.Writer.Write(publicRequest.RegistryId);
                 }
 
                 if(publicRequest.IsSetRepositoryName())
                 {
                     context.Writer.WritePropertyName("repositoryName");
                     context.Writer.Write(publicRequest.RepositoryName);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
                 }
 
         
@@ -116,9 +100,9 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateRepositoryRequestMarshaller _instance = new CreateRepositoryRequestMarshaller();        
+        private static PutImageScanningConfigurationRequestMarshaller _instance = new PutImageScanningConfigurationRequestMarshaller();        
 
-        internal static CreateRepositoryRequestMarshaller GetInstance()
+        internal static PutImageScanningConfigurationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -126,7 +110,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateRepositoryRequestMarshaller Instance
+        public static PutImageScanningConfigurationRequestMarshaller Instance
         {
             get
             {

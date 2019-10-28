@@ -29,13 +29,35 @@ namespace Amazon.ECR.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRepository operation.
-    /// Creates an image repository.
+    /// Creates an Amazon Elastic Container Registry (Amazon ECR) repository, where users
+    /// can push and pull Docker images. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html">Amazon
+    /// ECR Repositories</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
     /// </summary>
     public partial class CreateRepositoryRequest : AmazonECRRequest
     {
+        private ImageScanningConfiguration _imageScanningConfiguration;
         private ImageTagMutability _imageTagMutability;
         private string _repositoryName;
         private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property ImageScanningConfiguration. 
+        /// <para>
+        /// The image scanning configuration for the repository. This setting determines whether
+        /// images are scanned for known vulnerabilities after being pushed to the repository.
+        /// </para>
+        /// </summary>
+        public ImageScanningConfiguration ImageScanningConfiguration
+        {
+            get { return this._imageScanningConfiguration; }
+            set { this._imageScanningConfiguration = value; }
+        }
+
+        // Check to see if ImageScanningConfiguration property is set
+        internal bool IsSetImageScanningConfiguration()
+        {
+            return this._imageScanningConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ImageTagMutability. 

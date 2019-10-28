@@ -28,21 +28,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECR.Model
 {
     /// <summary>
-    /// An object representing an Amazon ECR image.
+    /// Container for the parameters to the StartImageScan operation.
+    /// Starts an image vulnerability scan.
     /// </summary>
-    public partial class Image
+    public partial class StartImageScanRequest : AmazonECRRequest
     {
         private ImageIdentifier _imageId;
-        private string _imageManifest;
         private string _registryId;
         private string _repositoryName;
 
         /// <summary>
-        /// Gets and sets the property ImageId. 
-        /// <para>
-        /// An object containing the image tag and image digest associated with an image.
-        /// </para>
+        /// Gets and sets the property ImageId.
         /// </summary>
+        [AWSProperty(Required=true)]
         public ImageIdentifier ImageId
         {
             get { return this._imageId; }
@@ -56,28 +54,11 @@ namespace Amazon.ECR.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ImageManifest. 
-        /// <para>
-        /// The image manifest associated with the image.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=4194304)]
-        public string ImageManifest
-        {
-            get { return this._imageManifest; }
-            set { this._imageManifest = value; }
-        }
-
-        // Check to see if ImageManifest property is set
-        internal bool IsSetImageManifest()
-        {
-            return this._imageManifest != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The AWS account ID associated with the registry containing the image.
+        /// The AWS account ID associated with the registry that contains the repository in which
+        /// to start an image scan request. If you do not specify a registry, the default registry
+        /// is assumed.
         /// </para>
         /// </summary>
         public string RegistryId
@@ -95,10 +76,10 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The name of the repository associated with the image.
+        /// The name of the repository that contains the images to scan.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=256)]
+        [AWSProperty(Required=true, Min=2, Max=256)]
         public string RepositoryName
         {
             get { return this._repositoryName; }
