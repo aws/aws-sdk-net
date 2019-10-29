@@ -175,7 +175,14 @@ namespace Amazon.AppStream.Model
         /// The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume
         /// a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code>
         /// API operation and passes the ARN of the role to use. The operation creates a new session
-        /// with temporary credentials.
+        /// with temporary credentials. AppStream 2.0 retrieves the temporary credentials and
+        /// creates the <b>AppStream_Machine_Role</b> credential profile on the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
+        /// an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream
+        /// 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
         /// </para>
         /// </summary>
         public string IamRoleArn
@@ -230,8 +237,90 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type to use when launching the image builder.
+        /// The instance type to use when launching the image builder. The following instance
+        /// types are available:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// stream.standard.medium
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.standard.large
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.compute.large
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.compute.xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.compute.2xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.compute.4xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.compute.8xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.memory.large
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.memory.xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.memory.2xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.memory.4xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.memory.8xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics-design.large
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics-design.xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics-design.2xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics-design.4xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics-desktop.2xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics-pro.4xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics-pro.8xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics-pro.16xlarge
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
         public string InstanceType
