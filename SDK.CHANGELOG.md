@@ -1,3 +1,9 @@
+### 3.3.618.0 (2019-10-29 19:13 UTC)
+* AppStream (3.3.105.0)
+	* Adds support for providing domain names that can embed streaming sessions
+* Cloud9 (3.3.101.0)
+	* Added CREATING and CREATE_FAILED environment lifecycle statuses.  
+
 ### 3.3.617.0 (2019-10-28 21:24 UTC)
 * S3 (3.3.105.0)
 	* Adding support in SelectObjectContent for scanning a portion of an object specified by a scan range.
