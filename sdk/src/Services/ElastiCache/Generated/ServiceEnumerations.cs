@@ -25,6 +25,106 @@ namespace Amazon.ElastiCache
 {
 
     /// <summary>
+    /// Constants used for properties of type AuthTokenUpdateStatus.
+    /// </summary>
+    public class AuthTokenUpdateStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ROTATING for AuthTokenUpdateStatus
+        /// </summary>
+        public static readonly AuthTokenUpdateStatus ROTATING = new AuthTokenUpdateStatus("ROTATING");
+        /// <summary>
+        /// Constant SETTING for AuthTokenUpdateStatus
+        /// </summary>
+        public static readonly AuthTokenUpdateStatus SETTING = new AuthTokenUpdateStatus("SETTING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuthTokenUpdateStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthTokenUpdateStatus FindValue(string value)
+        {
+            return FindValue<AuthTokenUpdateStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthTokenUpdateStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AuthTokenUpdateStrategyType.
+    /// </summary>
+    public class AuthTokenUpdateStrategyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ROTATE for AuthTokenUpdateStrategyType
+        /// </summary>
+        public static readonly AuthTokenUpdateStrategyType ROTATE = new AuthTokenUpdateStrategyType("ROTATE");
+        /// <summary>
+        /// Constant SET for AuthTokenUpdateStrategyType
+        /// </summary>
+        public static readonly AuthTokenUpdateStrategyType SET = new AuthTokenUpdateStrategyType("SET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuthTokenUpdateStrategyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthTokenUpdateStrategyType FindValue(string value)
+        {
+            return FindValue<AuthTokenUpdateStrategyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthTokenUpdateStrategyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AutomaticFailoverStatus.
     /// </summary>
     public class AutomaticFailoverStatus : ConstantClass

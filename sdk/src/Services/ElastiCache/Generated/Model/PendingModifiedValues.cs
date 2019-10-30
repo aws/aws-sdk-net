@@ -33,6 +33,7 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class PendingModifiedValues
     {
+        private AuthTokenUpdateStatus _authTokenStatus;
         private List<string> _cacheNodeIdsToRemove = new List<string>();
         private string _cacheNodeType;
         private string _engineVersion;
@@ -42,6 +43,24 @@ namespace Amazon.ElastiCache.Model
         /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
         public PendingModifiedValues() { }
+
+        /// <summary>
+        /// Gets and sets the property AuthTokenStatus. 
+        /// <para>
+        /// The auth token status
+        /// </para>
+        /// </summary>
+        public AuthTokenUpdateStatus AuthTokenStatus
+        {
+            get { return this._authTokenStatus; }
+            set { this._authTokenStatus = value; }
+        }
+
+        // Check to see if AuthTokenStatus property is set
+        internal bool IsSetAuthTokenStatus()
+        {
+            return this._authTokenStatus != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CacheNodeIdsToRemove. 
