@@ -1,3 +1,12 @@
+### 3.3.619.0 (2019-10-30 18:38 UTC)
+* ElastiCache (3.3.107.0)
+	* Amazon ElastiCache for Redis 5.0.5 now allows you to modify authentication tokens by setting and rotating new tokens. You can now modify active tokens while in use, or add brand-new tokens to existing encryption-in-transit enabled clusters that were previously setup without authentication tokens. This is a two-step process that allows you to set and rotate the token without interrupting client requests.
+* Core 3.3.103.57
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.618.0 (2019-10-29 19:13 UTC)
 * AppStream (3.3.105.0)
 	* Adds support for providing domain names that can embed streaming sessions
