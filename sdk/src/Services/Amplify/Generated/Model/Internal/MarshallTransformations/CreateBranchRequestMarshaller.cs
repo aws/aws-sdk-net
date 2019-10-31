@@ -69,6 +69,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBackendEnvironmentArn())
+                {
+                    context.Writer.WritePropertyName("backendEnvironmentArn");
+                    context.Writer.Write(publicRequest.BackendEnvironmentArn);
+                }
+
                 if(publicRequest.IsSetBasicAuthCredentials())
                 {
                     context.Writer.WritePropertyName("basicAuthCredentials");
@@ -141,6 +147,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("framework");
                     context.Writer.Write(publicRequest.Framework);
+                }
+
+                if(publicRequest.IsSetPullRequestEnvironmentName())
+                {
+                    context.Writer.WritePropertyName("pullRequestEnvironmentName");
+                    context.Writer.Write(publicRequest.PullRequestEnvironmentName);
                 }
 
                 if(publicRequest.IsSetStage())

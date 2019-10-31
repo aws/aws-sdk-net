@@ -39,6 +39,7 @@ namespace Amazon.Amplify.Model
         private bool? _enablePullRequestPreview;
         private Dictionary<string, string> _environmentVariables = new Dictionary<string, string>();
         private string _framework;
+        private string _pullRequestEnvironmentName;
         private Stage _stage;
 
         /// <summary>
@@ -168,6 +169,25 @@ namespace Amazon.Amplify.Model
         internal bool IsSetFramework()
         {
             return this._framework != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PullRequestEnvironmentName. 
+        /// <para>
+        ///  The Amplify Environment name for the pull request. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=20)]
+        public string PullRequestEnvironmentName
+        {
+            get { return this._pullRequestEnvironmentName; }
+            set { this._pullRequestEnvironmentName = value; }
+        }
+
+        // Check to see if PullRequestEnvironmentName property is set
+        internal bool IsSetPullRequestEnvironmentName()
+        {
+            return this._pullRequestEnvironmentName != null;
         }
 
         /// <summary>

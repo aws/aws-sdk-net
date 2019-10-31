@@ -946,8 +946,7 @@ namespace Amazon.Amplify
         #region  GenerateAccessLogs
 
         /// <summary>
-        /// Retrieve website access logs for a specific time range via a pre-signed URL. Optionally,
-        /// deliver the logs to a given S3 bucket.
+        /// Retrieve website access logs for a specific time range via a pre-signed URL.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateAccessLogs service method.</param>
         /// 

@@ -34,6 +34,7 @@ namespace Amazon.Amplify.Model
     {
         private string _activeJobId;
         private List<string> _associatedResources = new List<string>();
+        private string _backendEnvironmentArn;
         private string _basicAuthCredentials;
         private string _branchArn;
         private string _branchName;
@@ -49,6 +50,7 @@ namespace Amazon.Amplify.Model
         private bool? _enablePullRequestPreview;
         private Dictionary<string, string> _environmentVariables = new Dictionary<string, string>();
         private string _framework;
+        private string _pullRequestEnvironmentName;
         private string _sourceBranch;
         private Stage _stage;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -92,6 +94,25 @@ namespace Amazon.Amplify.Model
         internal bool IsSetAssociatedResources()
         {
             return this._associatedResources != null && this._associatedResources.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BackendEnvironmentArn. 
+        /// <para>
+        ///  ARN for a Backend Environment, part of an Amplify App. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
+        public string BackendEnvironmentArn
+        {
+            get { return this._backendEnvironmentArn; }
+            set { this._backendEnvironmentArn = value; }
+        }
+
+        // Check to see if BackendEnvironmentArn property is set
+        internal bool IsSetBackendEnvironmentArn()
+        {
+            return this._backendEnvironmentArn != null;
         }
 
         /// <summary>
@@ -377,6 +398,25 @@ namespace Amazon.Amplify.Model
         internal bool IsSetFramework()
         {
             return this._framework != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PullRequestEnvironmentName. 
+        /// <para>
+        ///  The Amplify Environment name for the pull request. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=20)]
+        public string PullRequestEnvironmentName
+        {
+            get { return this._pullRequestEnvironmentName; }
+            set { this._pullRequestEnvironmentName = value; }
+        }
+
+        // Check to see if PullRequestEnvironmentName property is set
+        internal bool IsSetPullRequestEnvironmentName()
+        {
+            return this._pullRequestEnvironmentName != null;
         }
 
         /// <summary>

@@ -76,6 +76,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                     unmarshalledObject.AssociatedResources = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("backendEnvironmentArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BackendEnvironmentArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("basicAuthCredentials", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -164,6 +170,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Framework = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("pullRequestEnvironmentName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PullRequestEnvironmentName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("sourceBranch", targetDepth))

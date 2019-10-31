@@ -95,6 +95,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Framework);
             }
 
+            if(requestObject.IsSetPullRequestEnvironmentName())
+            {
+                context.Writer.WritePropertyName("pullRequestEnvironmentName");
+                context.Writer.Write(requestObject.PullRequestEnvironmentName);
+            }
+
             if(requestObject.IsSetStage())
             {
                 context.Writer.WritePropertyName("stage");
