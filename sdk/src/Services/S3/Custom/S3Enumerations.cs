@@ -1271,6 +1271,11 @@ namespace Amazon.S3
         public static readonly InventoryOptionalField ObjectLockLegalHoldStatus = new InventoryOptionalField("ObjectLockLegalHoldStatus");
 
         /// <summary>
+        /// InventoryOptionalField for IntelligentTieringAccessTier
+        /// </summary>
+        public static readonly InventoryOptionalField IntelligentTieringAccessTier = new InventoryOptionalField("IntelligentTieringAccessTier");
+
+        /// <summary>
         /// Construct instance of InventoryOptionalField.
         /// </summary>
         /// <param name="value"></param>
