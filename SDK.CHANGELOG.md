@@ -1,3 +1,16 @@
+### 3.3.620.0 (2019-10-31 18:12 UTC)
+* Amplify (3.3.103.0)
+	* This release of AWS Amplify Console introduces support for Web Previews. This feature allows user to create ephemeral branch deployments from pull request submissions made to a connected repository.  A pull-request preview deploys every pull request made to your Git repository to a unique preview URL.
+* AWSSupport (3.3.100.93)
+	* The status descriptions for TrustedAdvisorCheckRefreshStatus have been updated
+* S3 (3.3.106.0)
+	* S3 Inventory now supports a new field 'IntelligentTieringAccessTier' that reports the access tier (frequent or infrequent) of objects stored in Intelligent-Tiering storage class.
+* Core 3.3.103.58
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.619.0 (2019-10-30 18:38 UTC)
 * ElastiCache (3.3.107.0)
 	* Amazon ElastiCache for Redis 5.0.5 now allows you to modify authentication tokens by setting and rotating new tokens. You can now modify active tokens while in use, or add brand-new tokens to existing encryption-in-transit enabled clusters that were previously setup without authentication tokens. This is a two-step process that allows you to set and rotate the token without interrupting client requests.
