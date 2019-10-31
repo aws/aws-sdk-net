@@ -31,29 +31,43 @@ namespace Amazon.AWSSupport.Model
     /// Container for the parameters to the CreateCase operation.
     /// Creates a new case in the AWS Support Center. This operation is modeled on the behavior
     /// of the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create
-    /// Case</a> page. Its parameters require you to specify the following information: 
+    /// Case</a> page. Its parameters require you to specify the following information:
     /// 
     ///  <ul> <li> 
     /// <para>
     ///  <b>issueType.</b> The type of issue for the case. You can specify either "customer-service"
-    /// or "technical." If you do not indicate a value, the default is "technical." 
+    /// or "technical." If you do not indicate a value, the default is "technical."
     /// </para>
-    ///  </li> <li> 
+    ///  <note> 
     /// <para>
-    ///  <b>serviceCode.</b> The code for an AWS service. You obtain the <code>serviceCode</code>
-    /// by calling <a>DescribeServices</a>. 
+    /// Service limit increases are not supported by the Support API; you must submit service
+    /// limit increase requests in <a href="https://console.aws.amazon.com/support">Support
+    /// Center</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// The <code>caseId</code> is not the <code>displayId</code> that appears in <a href="https://console.aws.amazon.com/support">Support
+    /// Center</a>. You can use the <a>DescribeCases</a> API to get the <code>displayId</code>.
+    /// </para>
+    ///  </note> </li> <li> 
+    /// <para>
+    ///  <b>serviceCode.</b> The code for an AWS service. You can get the possible <code>serviceCode</code>
+    /// values by calling <a>DescribeServices</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <b>categoryCode.</b> The category for the service defined for the <code>serviceCode</code>
-    /// value. You also obtain the category code for a service by calling <a>DescribeServices</a>.
-    /// Each AWS service defines its own set of category codes. 
+    /// value. You also get the category code for a service by calling <a>DescribeServices</a>.
+    /// Each AWS service defines its own set of category codes.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <b>severityCode.</b> A value that indicates the urgency of the case, which in turn
     /// determines the response time according to your service level agreement with AWS Support.
-    /// You obtain the SeverityCode by calling <a>DescribeSeverityLevels</a>.
+    /// You can get the possible <code>severityCode</code> values by calling <a>DescribeSeverityLevels</a>.
+    /// For more information about the meaning of the codes, see <a>SeverityLevel</a> and
+    /// <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
+    /// a Severity</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -93,7 +107,6 @@ namespace Amazon.AWSSupport.Model
     /// <para>
     /// A successful <a>CreateCase</a> request returns an AWS Support case number. Case numbers
     /// are used by the <a>DescribeCases</a> operation to retrieve existing AWS Support cases.
-    /// 
     /// </para>
     /// </summary>
     public partial class CreateCaseRequest : AmazonAWSSupportRequest
@@ -188,6 +201,13 @@ namespace Amazon.AWSSupport.Model
         /// The type of issue for the case. You can specify either "customer-service" or "technical."
         /// If you do not indicate a value, the default is "technical."
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Service limit increases are not supported by the Support API; you must submit service
+        /// limit increase requests in <a href="https://console.aws.amazon.com/support">Support
+        /// Center</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string IssueType
         {
@@ -246,9 +266,7 @@ namespace Amazon.AWSSupport.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The availability of severity levels depends on each customer's support subscription.
-        /// In other words, your subscription may not necessarily require the urgent level of
-        /// response time.
+        /// The availability of severity levels depends on the support plan for the account.
         /// </para>
         ///  </note>
         /// </summary>

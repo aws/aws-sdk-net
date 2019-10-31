@@ -69,12 +69,16 @@ namespace Amazon.AWSSupport.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>severityCode. </b>The severity code assigned to the case. Contains one of the
-    /// values returned by the call to <a>DescribeSeverityLevels</a>.
+    ///  <b>severityCode.</b> The severity code assigned to the case. Contains one of the
+    /// values returned by the call to <a>DescribeSeverityLevels</a>. The possible values
+    /// are: <code>low</code>, <code>normal</code>, <code>high</code>, <code>urgent</code>,
+    /// and <code>critical</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>status.</b> The status of the case in the AWS Support Center.
+    ///  <b>status.</b> The status of the case in the AWS Support Center. The possible values
+    /// are: <code>resolved</code>, <code>pending-customer-action</code>, <code>opened</code>,
+    /// <code>unassigned</code>, and <code>work-in-progress</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -223,7 +227,8 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
-        /// The code for the AWS service returned by the call to <a>DescribeServices</a>.
+        /// The code for the AWS service. You can get a list of codes and the corresponding service
+        /// names by calling <a>DescribeServices</a>.
         /// </para>
         /// </summary>
         public string ServiceCode
@@ -259,7 +264,8 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the case.
+        /// The status of the case. Valid values: <code>resolved</code> | <code>pending-customer-action</code>
+        /// | <code>opened</code> | <code>unassigned</code> | <code>work-in-progress</code>.
         /// </para>
         /// </summary>
         public string Status

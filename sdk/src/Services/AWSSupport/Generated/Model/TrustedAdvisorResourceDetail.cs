@@ -64,7 +64,7 @@ namespace Amazon.AWSSupport.Model
         /// can be obtained by inspecting the <a>TrustedAdvisorCheckDescription</a> object returned
         /// by the call to <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the
         /// data that is shown in the Excel download, even in those cases where the UI shows just
-        /// summary data. 
+        /// summary data.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

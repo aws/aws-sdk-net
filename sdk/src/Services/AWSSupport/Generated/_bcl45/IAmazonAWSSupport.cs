@@ -42,7 +42,7 @@ namespace Amazon.AWSSupport
     /// <para>
     /// The AWS Support service also exposes a set of <a href="http://aws.amazon.com/premiumsupport/trustedadvisor/">Trusted
     /// Advisor</a> features. You can retrieve a list of checks and their descriptions, get
-    /// check results, specify checks to refresh, and get the refresh status of checks. 
+    /// check results, specify checks to refresh, and get the refresh status of checks.
     /// </para>
     ///  
     /// <para>
@@ -53,7 +53,7 @@ namespace Amazon.AWSSupport
     ///  <b>Service names, issue categories, and available severity levels. </b>The <a>DescribeServices</a>
     /// and <a>DescribeSeverityLevels</a> operations return AWS service names, service codes,
     /// service categories, and problem severity levels. You use these values when you call
-    /// the <a>CreateCase</a> operation. 
+    /// the <a>CreateCase</a> operation.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -65,7 +65,7 @@ namespace Amazon.AWSSupport
     /// <para>
     ///  <b>Case communication.</b> The <a>DescribeCommunications</a>, <a>AddCommunicationToCase</a>,
     /// and <a>AddAttachmentsToSet</a> operations retrieve and add communications and attachments
-    /// to AWS Support cases. 
+    /// to AWS Support cases.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -91,24 +91,24 @@ namespace Amazon.AWSSupport
     ///  </li> <li> 
     /// <para>
     ///  <a>RefreshTrustedAdvisorCheck</a> requests that Trusted Advisor rerun a specified
-    /// check. 
+    /// check.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a>DescribeTrustedAdvisorCheckRefreshStatuses</a> reports the refresh status of one
-    /// or more checks. 
+    /// or more checks.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For authentication of requests, AWS Support uses <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    /// For authentication of requests, AWS Support uses <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
     /// Version 4 Signing Process</a>.
     /// </para>
     ///  
     /// <para>
-    /// See <a href="http://docs.aws.amazon.com/awssupport/latest/user/Welcome.html">About
+    /// See <a href="https://docs.aws.amazon.com/awssupport/latest/user/Welcome.html">About
     /// the AWS Support API</a> in the <i>AWS Support User Guide</i> for information about
     /// how to use this service to create and manage your support cases, and how to call Trusted
-    /// Advisor for results of checks on your resources. 
+    /// Advisor for results of checks on your resources.
     /// </para>
     /// </summary>
     public partial interface IAmazonAWSSupport : IAmazonService, IDisposable
@@ -287,29 +287,43 @@ namespace Amazon.AWSSupport
         /// <summary>
         /// Creates a new case in the AWS Support Center. This operation is modeled on the behavior
         /// of the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create
-        /// Case</a> page. Its parameters require you to specify the following information: 
+        /// Case</a> page. Its parameters require you to specify the following information:
         /// 
         ///  <ul> <li> 
         /// <para>
         ///  <b>issueType.</b> The type of issue for the case. You can specify either "customer-service"
-        /// or "technical." If you do not indicate a value, the default is "technical." 
+        /// or "technical." If you do not indicate a value, the default is "technical."
         /// </para>
-        ///  </li> <li> 
+        ///  <note> 
         /// <para>
-        ///  <b>serviceCode.</b> The code for an AWS service. You obtain the <code>serviceCode</code>
-        /// by calling <a>DescribeServices</a>. 
+        /// Service limit increases are not supported by the Support API; you must submit service
+        /// limit increase requests in <a href="https://console.aws.amazon.com/support">Support
+        /// Center</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>caseId</code> is not the <code>displayId</code> that appears in <a href="https://console.aws.amazon.com/support">Support
+        /// Center</a>. You can use the <a>DescribeCases</a> API to get the <code>displayId</code>.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        ///  <b>serviceCode.</b> The code for an AWS service. You can get the possible <code>serviceCode</code>
+        /// values by calling <a>DescribeServices</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>categoryCode.</b> The category for the service defined for the <code>serviceCode</code>
-        /// value. You also obtain the category code for a service by calling <a>DescribeServices</a>.
-        /// Each AWS service defines its own set of category codes. 
+        /// value. You also get the category code for a service by calling <a>DescribeServices</a>.
+        /// Each AWS service defines its own set of category codes.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>severityCode.</b> A value that indicates the urgency of the case, which in turn
         /// determines the response time according to your service level agreement with AWS Support.
-        /// You obtain the SeverityCode by calling <a>DescribeSeverityLevels</a>.
+        /// You can get the possible <code>severityCode</code> values by calling <a>DescribeSeverityLevels</a>.
+        /// For more information about the meaning of the codes, see <a>SeverityLevel</a> and
+        /// <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
+        /// a Severity</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -349,7 +363,6 @@ namespace Amazon.AWSSupport
         /// <para>
         /// A successful <a>CreateCase</a> request returns an AWS Support case number. Case numbers
         /// are used by the <a>DescribeCases</a> operation to retrieve existing AWS Support cases.
-        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCase service method.</param>
@@ -376,29 +389,43 @@ namespace Amazon.AWSSupport
         /// <summary>
         /// Creates a new case in the AWS Support Center. This operation is modeled on the behavior
         /// of the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create
-        /// Case</a> page. Its parameters require you to specify the following information: 
+        /// Case</a> page. Its parameters require you to specify the following information:
         /// 
         ///  <ul> <li> 
         /// <para>
         ///  <b>issueType.</b> The type of issue for the case. You can specify either "customer-service"
-        /// or "technical." If you do not indicate a value, the default is "technical." 
+        /// or "technical." If you do not indicate a value, the default is "technical."
         /// </para>
-        ///  </li> <li> 
+        ///  <note> 
         /// <para>
-        ///  <b>serviceCode.</b> The code for an AWS service. You obtain the <code>serviceCode</code>
-        /// by calling <a>DescribeServices</a>. 
+        /// Service limit increases are not supported by the Support API; you must submit service
+        /// limit increase requests in <a href="https://console.aws.amazon.com/support">Support
+        /// Center</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>caseId</code> is not the <code>displayId</code> that appears in <a href="https://console.aws.amazon.com/support">Support
+        /// Center</a>. You can use the <a>DescribeCases</a> API to get the <code>displayId</code>.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        ///  <b>serviceCode.</b> The code for an AWS service. You can get the possible <code>serviceCode</code>
+        /// values by calling <a>DescribeServices</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>categoryCode.</b> The category for the service defined for the <code>serviceCode</code>
-        /// value. You also obtain the category code for a service by calling <a>DescribeServices</a>.
-        /// Each AWS service defines its own set of category codes. 
+        /// value. You also get the category code for a service by calling <a>DescribeServices</a>.
+        /// Each AWS service defines its own set of category codes.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>severityCode.</b> A value that indicates the urgency of the case, which in turn
         /// determines the response time according to your service level agreement with AWS Support.
-        /// You obtain the SeverityCode by calling <a>DescribeSeverityLevels</a>.
+        /// You can get the possible <code>severityCode</code> values by calling <a>DescribeSeverityLevels</a>.
+        /// For more information about the meaning of the codes, see <a>SeverityLevel</a> and
+        /// <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
+        /// a Severity</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -438,7 +465,6 @@ namespace Amazon.AWSSupport
         /// <para>
         /// A successful <a>CreateCase</a> request returns an AWS Support case number. Case numbers
         /// are used by the <a>DescribeCases</a> operation to retrieve existing AWS Support cases.
-        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCase service method.</param>
@@ -527,7 +553,7 @@ namespace Amazon.AWSSupport
         /// you can filter the cases by date by setting values for the <code>afterTime</code>
         /// and <code>beforeTime</code> request parameters. You can set values for the <code>includeResolvedCases</code>
         /// and <code>includeCommunications</code> request parameters to control how much information
-        /// is returned. 
+        /// is returned.
         /// 
         ///  
         /// <para>
@@ -540,7 +566,7 @@ namespace Amazon.AWSSupport
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// One or more <a>CaseDetails</a> data types. 
+        /// One or more <a>CaseDetails</a> data types.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -568,7 +594,7 @@ namespace Amazon.AWSSupport
         /// you can filter the cases by date by setting values for the <code>afterTime</code>
         /// and <code>beforeTime</code> request parameters. You can set values for the <code>includeResolvedCases</code>
         /// and <code>includeCommunications</code> request parameters to control how much information
-        /// is returned. 
+        /// is returned.
         /// 
         ///  
         /// <para>
@@ -581,7 +607,7 @@ namespace Amazon.AWSSupport
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// One or more <a>CaseDetails</a> data types. 
+        /// One or more <a>CaseDetails</a> data types.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1028,7 +1054,7 @@ namespace Amazon.AWSSupport
         /// Returns information about all available Trusted Advisor checks, including name, ID,
         /// category, description, and metadata. You must specify a language code; English ("en")
         /// and Japanese ("ja") are currently supported. The response contains a <a>TrustedAdvisorCheckDescription</a>
-        /// for each check.
+        /// for each check. The region must be set to us-east-1.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTrustedAdvisorChecks service method.</param>
         /// 
@@ -1045,7 +1071,7 @@ namespace Amazon.AWSSupport
         /// Returns information about all available Trusted Advisor checks, including name, ID,
         /// category, description, and metadata. You must specify a language code; English ("en")
         /// and Japanese ("ja") are currently supported. The response contains a <a>TrustedAdvisorCheckDescription</a>
-        /// for each check.
+        /// for each check. The region must be set to us-east-1.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTrustedAdvisorChecks service method.</param>
         /// <param name="cancellationToken">
@@ -1127,10 +1153,31 @@ namespace Amazon.AWSSupport
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>status.</b> The refresh status of the check: "none", "enqueued", "processing",
-        /// "success", or "abandoned".
+        ///  <b>status.</b> The refresh status of the check: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>none:</code> The check is not refreshed or the non-success status exceeds the
+        /// timeout
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        ///  <code>enqueued:</code> The check refresh requests has entered the refresh queue
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>processing:</code> The check refresh request is picked up by the rule processing
+        /// engine
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>success:</code> The check is successfully refreshed
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>abandoned:</code> The check refresh has failed
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b>millisUntilNextRefreshable.</b> The amount of time, in milliseconds, until the
         /// check is eligible for refresh.
@@ -1169,10 +1216,31 @@ namespace Amazon.AWSSupport
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>status.</b> The refresh status of the check: "none", "enqueued", "processing",
-        /// "success", or "abandoned".
+        ///  <b>status.</b> The refresh status of the check: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>none:</code> The check is not refreshed or the non-success status exceeds the
+        /// timeout
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        ///  <code>enqueued:</code> The check refresh requests has entered the refresh queue
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>processing:</code> The check refresh request is picked up by the rule processing
+        /// engine
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>success:</code> The check is successfully refreshed
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>abandoned:</code> The check refresh has failed
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b>millisUntilNextRefreshable.</b> The amount of time, in milliseconds, until the
         /// check is eligible for refresh.

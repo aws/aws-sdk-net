@@ -78,9 +78,31 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the Trusted Advisor check for which a refresh has been requested: "none",
-        /// "enqueued", "processing", "success", or "abandoned".
+        /// The status of the Trusted Advisor check for which a refresh has been requested: 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>none:</code> The check is not refreshed or the non-success status exceeds the
+        /// timeout
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>enqueued:</code> The check refresh requests has entered the refresh queue
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>processing:</code> The check refresh request is picked up by the rule processing
+        /// engine
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>success:</code> The check is successfully refreshed
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>abandoned:</code> The check refresh has failed
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Status

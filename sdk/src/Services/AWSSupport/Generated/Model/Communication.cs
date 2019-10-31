@@ -29,7 +29,7 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// A communication associated with an AWS Support case. The communication consists of
-    /// the case ID, the message body, attachment information, the account email address,
+    /// the case ID, the message body, attachment information, the submitter of the communication,
     /// and the date and time of the communication.
     /// </summary>
     public partial class Communication
@@ -100,7 +100,10 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property SubmittedBy. 
         /// <para>
-        /// The email address of the account that submitted the AWS Support case.
+        /// The identity of the account that submitted, or responded to, the support case. Customer
+        /// entries include the role or IAM user as well as the email address. For example, "AdminRole
+        /// (Role) &lt;someone@example.com&gt;. Entries from the AWS Support team display "Amazon
+        /// Web Services," and do not show an email address. 
         /// </para>
         /// </summary>
         public string SubmittedBy
