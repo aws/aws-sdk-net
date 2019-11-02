@@ -33,6 +33,8 @@ using Amazon.Runtime.Internal;
 using Amazon.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using AWSSDK_DotNet35.UnitTests.TestTools;
+using Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations;
+using Amazon.ElasticMapReduce.Model;
 
 namespace AWSSDK.UnitTests
 {
@@ -153,6 +155,60 @@ namespace AWSSDK.UnitTests
             var listBucketsResponse = context.ResponseContext.Response as ListBucketsResponse;
             Assert.AreEqual(4, listBucketsResponse.Buckets.Count);
             Assert.AreEqual("-UUNhfhfx0J622sdKihbDfqEvIa94CkVQvcb4AGlNmRbpbInOTYXSA==", listBucketsResponse.ResponseMetadata.Metadata[HeaderKeys.XAmzCloudFrontIdHeader]);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void UnmarshallJsonWithForwardSlashes()
+        {
+            string jsonResponse = @"
+            {
+                ""Cluster"": {        
+                    ""Configurations"": [                    
+                        {
+                            ""Classification"": ""value1"",
+                            ""Properties"": {
+                                ""/"": ""xyz""
+                            }
+                        },
+                        {
+                            ""Classification"": ""value2"",
+                            ""Properties"": {
+                                ""the/name"": ""true""
+                            }
+                        },
+                        {
+                            ""Classification"": ""value3"",
+                            ""Properties"": {
+                                ""name"": ""true""
+                            }
+                        },            
+                    ]        
+                }
+            }";
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var unmarshaller = DescribeClusterResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as DescribeClusterResponse;
+            Assert.IsNotNull(response);
+            Assert.IsNotNull(response.Cluster);
+
+            var configurations = response.Cluster.Configurations;
+            Assert.IsNotNull(configurations);
+            Assert.AreEqual(3, configurations.Count);
+            Assert.IsTrue(configurations[0].Properties.ContainsKey("/"));
+            Assert.IsTrue(configurations[1].Properties.ContainsKey("the/name"));
+            Assert.IsTrue(configurations[2].Properties.ContainsKey("name"));
         }
 
 #if BCL45

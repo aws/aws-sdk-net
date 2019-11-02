@@ -45,7 +45,7 @@ namespace Amazon.Runtime.Internal.Transform
     /// </summary>
     public class JsonUnmarshallerContext : UnmarshallerContext
     {
-        private const string DELIMITER = "/";
+        private const string DELIMITER = "/";        
         #region Private members
 
         private StreamReader streamReader = null;
@@ -331,15 +331,19 @@ namespace Amazon.Runtime.Internal.Transform
             if (currentToken.Value == JsonToken.ObjectStart || currentToken.Value == JsonToken.ArrayStart)
             {
                 // Push '/' for object start and array start.
-                stack.Push(DELIMITER);
+                stack.Push(new PathSegment
+                {
+                    SegmentType = PathSegmentType.Delimiter,
+                    Value = DELIMITER
+                });
             }
             else if (currentToken.Value == JsonToken.ObjectEnd || currentToken.Value == JsonToken.ArrayEnd)
             {
-                if (object.ReferenceEquals(stack.Peek(),DELIMITER))
+                if (stack.Peek().SegmentType == PathSegmentType.Delimiter)
                 {
                     // Pop '/' associated with corresponding object start and array start.
                     stack.Pop();
-                    if (stack.Count > 0 && ! object.ReferenceEquals(stack.Peek(),DELIMITER))
+                    if (stack.Count > 0 && stack.Peek().SegmentType != PathSegmentType.Delimiter)
                     {
                         // Pop the property name associated with the
                         // object or array if present.
@@ -352,12 +356,16 @@ namespace Amazon.Runtime.Internal.Transform
             else if (currentToken.Value == JsonToken.PropertyName)
             {
                 string t = ReadText();
-                currentField = t;
+
                 // Push property name, it's appended to the stack's CurrentPath,
                 // it this does not affect the depth.
-                stack.Push(currentField);
+                stack.Push(new PathSegment
+                {
+                    SegmentType = PathSegmentType.Value,
+                    Value = t
+                });
             }
-            else if (currentToken.Value != JsonToken.None && !stack.CurrentPath.EndsWith(DELIMITER, StringComparison.OrdinalIgnoreCase))
+            else if (currentToken.Value != JsonToken.None && stack.Peek().SegmentType != PathSegmentType.Delimiter)
             {
                 // Pop if you encounter a simple data type or null
                 // This will pop the property name associated with it in cases like  {"a":"b"}.
@@ -388,9 +396,21 @@ namespace Amazon.Runtime.Internal.Transform
             base.Dispose(disposing);
         }
 
-        class JsonPathStack
+        private enum PathSegmentType
         {
-            private Stack<string> stack = new Stack<string>();
+            Value,
+            Delimiter
+        }
+
+        private struct PathSegment
+        {
+            internal PathSegmentType SegmentType { get; set; }
+            internal string Value { get; set; }
+        }
+
+        private class JsonPathStack
+        {
+            private Stack<PathSegment> stack = new Stack<PathSegment>();
             int currentDepth = 0;
             private StringBuilder stackStringBuilder = new StringBuilder(128);
             private string stackString;
@@ -404,37 +424,39 @@ namespace Amazon.Runtime.Internal.Transform
             {
                 get
                 {
-                    if (this.stackString == null)
+                    if (this.stackString == null)                    
                         this.stackString = this.stackStringBuilder.ToString();
-
+                    
                     return this.stackString;
                 }
-            }
+            }                        
 
-            public void Push(string value)
+            internal void Push(PathSegment segment)
             {
-                if (value == "/")
+                if (segment.SegmentType == PathSegmentType.Delimiter)
+                {
                     currentDepth++;
+                }
 
-                stackStringBuilder.Append(value);
+                stackStringBuilder.Append(segment.Value);
                 stackString = null;
-
-                stack.Push(value);
+                stack.Push(segment);
             }
-
-            public string Pop()
+                        
+            internal PathSegment Pop()
             {
-                var value = this.stack.Pop();
-                if (value == "/")
+                var segment = this.stack.Pop();
+                if (segment.SegmentType == PathSegmentType.Delimiter)
+                {
                     currentDepth--;
+                }
 
-                stackStringBuilder.Remove(stackStringBuilder.Length - value.Length, value.Length);
+                stackStringBuilder.Remove(stackStringBuilder.Length - segment.Value.Length, segment.Value.Length);
                 stackString = null;
-
-                return value;
+                return segment;
             }
-
-            public string Peek()
+            
+            internal PathSegment Peek()
             {
                 return this.stack.Peek();
             }
