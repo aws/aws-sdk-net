@@ -33,7 +33,12 @@ namespace Amazon.DatabaseMigrationService.Model
     public partial class ReplicationTaskStats
     {
         private long? _elapsedTimeMillis;
+        private DateTime? _freshStartDate;
+        private DateTime? _fullLoadFinishDate;
         private int? _fullLoadProgressPercent;
+        private DateTime? _fullLoadStartDate;
+        private DateTime? _startDate;
+        private DateTime? _stopDate;
         private int? _tablesErrored;
         private int? _tablesLoaded;
         private int? _tablesLoading;
@@ -58,6 +63,42 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FreshStartDate. 
+        /// <para>
+        /// The date the replication task was started either with a fresh start or a target reload.
+        /// </para>
+        /// </summary>
+        public DateTime FreshStartDate
+        {
+            get { return this._freshStartDate.GetValueOrDefault(); }
+            set { this._freshStartDate = value; }
+        }
+
+        // Check to see if FreshStartDate property is set
+        internal bool IsSetFreshStartDate()
+        {
+            return this._freshStartDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FullLoadFinishDate. 
+        /// <para>
+        /// The date the replication task full load was completed.
+        /// </para>
+        /// </summary>
+        public DateTime FullLoadFinishDate
+        {
+            get { return this._fullLoadFinishDate.GetValueOrDefault(); }
+            set { this._fullLoadFinishDate = value; }
+        }
+
+        // Check to see if FullLoadFinishDate property is set
+        internal bool IsSetFullLoadFinishDate()
+        {
+            return this._fullLoadFinishDate.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property FullLoadProgressPercent. 
         /// <para>
         /// The percent complete for the full load migration task.
@@ -73,6 +114,61 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetFullLoadProgressPercent()
         {
             return this._fullLoadProgressPercent.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FullLoadStartDate. 
+        /// <para>
+        /// The date the the replication task full load was started.
+        /// </para>
+        /// </summary>
+        public DateTime FullLoadStartDate
+        {
+            get { return this._fullLoadStartDate.GetValueOrDefault(); }
+            set { this._fullLoadStartDate = value; }
+        }
+
+        // Check to see if FullLoadStartDate property is set
+        internal bool IsSetFullLoadStartDate()
+        {
+            return this._fullLoadStartDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartDate. 
+        /// <para>
+        /// The date the replication task was started either with a fresh start or a resume. For
+        /// more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html#DMS-StartReplicationTask-request-StartReplicationTaskType">StartReplicationTaskType</a>.
+        /// </para>
+        /// </summary>
+        public DateTime StartDate
+        {
+            get { return this._startDate.GetValueOrDefault(); }
+            set { this._startDate = value; }
+        }
+
+        // Check to see if StartDate property is set
+        internal bool IsSetStartDate()
+        {
+            return this._startDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StopDate. 
+        /// <para>
+        /// The date the replication task was stopped.
+        /// </para>
+        /// </summary>
+        public DateTime StopDate
+        {
+            get { return this._stopDate.GetValueOrDefault(); }
+            set { this._stopDate = value; }
+        }
+
+        // Check to see if StopDate property is set
+        internal bool IsSetStopDate()
+        {
+            return this._stopDate.HasValue; 
         }
 
         /// <summary>

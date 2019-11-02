@@ -70,10 +70,40 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.ElapsedTimeMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FreshStartDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.FreshStartDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FullLoadFinishDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.FullLoadFinishDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FullLoadProgressPercent", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.FullLoadProgressPercent = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FullLoadStartDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.FullLoadStartDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StartDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.StartDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StopDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.StopDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TablesErrored", targetDepth))
