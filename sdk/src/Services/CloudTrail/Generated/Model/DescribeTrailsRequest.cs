@@ -29,7 +29,8 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTrails operation.
-    /// Retrieves settings for the trail associated with the current region for your account.
+    /// Retrieves settings for one or more trails associated with the current region for your
+    /// account.
     /// </summary>
     public partial class DescribeTrailsRequest : AmazonCloudTrailRequest
     {

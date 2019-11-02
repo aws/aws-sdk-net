@@ -145,7 +145,8 @@ namespace Amazon.CloudTrail.Model
         /// is set to true, shadow trails (replications of the trail) will be created in the other
         /// regions. If the trail exists in all regions and this value is set to false, the trail
         /// will remain in the region where it was created, and its shadow trails in other regions
-        /// will be deleted.
+        /// will be deleted. As a best practice, consider using trails that log events in all
+        /// regions.
         /// </para>
         /// </summary>
         public bool IsMultiRegionTrail
@@ -279,7 +280,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property S3BucketName. 
         /// <para>
         /// Specifies the name of the Amazon S3 bucket designated for publishing log files. See
-        /// <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon
+        /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon
         /// S3 Bucket Naming Requirements</a>.
         /// </para>
         /// </summary>
@@ -299,7 +300,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property S3KeyPrefix. 
         /// <para>
         /// Specifies the Amazon S3 key prefix that comes after the name of the bucket you have
-        /// designated for log file delivery. For more information, see <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
+        /// designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
         /// Your CloudTrail Log Files</a>. The maximum length is 200 characters.
         /// </para>
         /// </summary>

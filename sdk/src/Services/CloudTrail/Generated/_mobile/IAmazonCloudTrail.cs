@@ -55,7 +55,7 @@ namespace Amazon.CloudTrail
     /// </para>
     ///  </note> 
     /// <para>
-    /// See the <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html">AWS
+    /// See the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html">AWS
     /// CloudTrail User Guide</a> for information about the data that is included with each
     /// AWS API call listed in the log files.
     /// </para>
@@ -68,11 +68,12 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Adds one or more tags to a trail, up to a limit of 50. Tags must be unique per trail.
-        /// Overwrites an existing tag's value when a new value is specified for an existing tag
-        /// key. If you specify a key without a value, the tag will be created with the specified
-        /// key and a value of null. You can tag a trail that applies to all regions only from
-        /// the region in which the trail was created (that is, from its home region).
+        /// Adds one or more tags to a trail, up to a limit of 50. Overwrites an existing tag's
+        /// value when a new value is specified for an existing tag key. Tag key names must be
+        /// unique for a trail; you cannot have two keys with the same name but different values.
+        /// If you specify a key without a value, the tag will be created with the specified key
+        /// and a value of null. You can tag a trail that applies to all AWS Regions only from
+        /// the Region in which the trail was created (also known as its home region).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTags service method.</param>
         /// <param name="cancellationToken">
@@ -90,8 +91,8 @@ namespace Amazon.CloudTrail
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTagParameterException">
-        /// This exception is thrown when the key or value specified for the tag does not match
-        /// the regular expression <code>^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$</code>.
+        /// This exception is thrown when the specified tag key or values are not valid. It can
+        /// also occur if there are duplicate tags or too many tags on the resource.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
         /// This exception is thrown when the provided trail name is not valid. Trail names must
@@ -154,8 +155,7 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Creates a trail that specifies the settings for delivery of log data to an Amazon
-        /// S3 bucket. A maximum of five trails can exist in a region, irrespective of the region
-        /// in which they were created.
+        /// S3 bucket.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTrail service method.</param>
         /// <param name="cancellationToken">
@@ -208,6 +208,10 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.InvalidSnsTopicNameException">
         /// This exception is thrown when the provided SNS topic name is not valid.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidTagParameterException">
+        /// This exception is thrown when the specified tag key or values are not valid. It can
+        /// also occur if there are duplicate tags or too many tags on the resource.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
         /// This exception is thrown when the provided trail name is not valid. Trail names must
         /// meet the following requirements:
@@ -241,7 +245,7 @@ namespace Amazon.CloudTrail
         /// trail can’t be updated.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyDisabledException">
-        /// This exception is deprecated.
+        /// This exception is no longer in use.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyNotFoundException">
         /// This exception is thrown when the KMS key does not exist, or when the S3 bucket and
@@ -277,7 +281,7 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the specified trail already exists.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.TrailNotProvidedException">
-        /// This exception is deprecated.
+        /// This exception is no longer in use.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
@@ -364,7 +368,8 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Retrieves settings for the trail associated with the current region for your account.
+        /// Retrieves settings for one or more trails associated with the current region for your
+        /// account.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -383,7 +388,8 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Retrieves settings for the trail associated with the current region for your account.
+        /// Retrieves settings for one or more trails associated with the current region for your
+        /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTrails service method.</param>
         /// <param name="cancellationToken">
@@ -426,7 +432,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
+        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
         /// Data and Management Events for Trails </a> in the <i>AWS CloudTrail User Guide</i>.
         /// </para>
         /// </summary>
@@ -475,6 +481,61 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventSelectors">REST API Reference for GetEventSelectors Operation</seealso>
         Task<GetEventSelectorsResponse> GetEventSelectorsAsync(GetEventSelectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetTrail
+
+
+
+        /// <summary>
+        /// Returns settings information for a specified trail.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrail service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTrail service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
+        /// This exception is thrown when the provided trail name is not valid. Trail names must
+        /// meet the following requirements:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_),
+        /// or dashes (-)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start with a letter or number, and end with a letter or number
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Be between 3 and 128 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
+        /// and <code>my--namespace</code> are invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Not be in IP address format (for example, 192.168.5.4)
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
+        /// This exception is thrown when the trail with the given name is not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrail">REST API Reference for GetTrail Operation</seealso>
+        Task<GetTrailResponse> GetTrailAsync(GetTrailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -642,14 +703,38 @@ namespace Amazon.CloudTrail
 
         #endregion
                 
+        #region  ListTrails
+
+
+
+        /// <summary>
+        /// Lists trails that are in the current account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrails service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTrails service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTrails">REST API Reference for ListTrails Operation</seealso>
+        Task<ListTrailsResponse> ListTrailsAsync(ListTrailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  LookupEvents
 
 
 
         /// <summary>
         /// Looks up <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events">management
-        /// events</a> captured by CloudTrail. Events for a region can be looked up in that region
-        /// during the last 90 days. Lookup supports the following attributes:
+        /// events</a> captured by CloudTrail. You can look up events that occurred in a region
+        /// within the last 90 days. Lookup supports the following attributes:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -694,7 +779,7 @@ namespace Amazon.CloudTrail
         /// The rate of lookup requests is limited to one per second per account. If this limit
         /// is exceeded, a throttling error occurs.
         /// </para>
-        ///  </important> <important> 
+        ///  
         /// <para>
         /// Events that occurred during the selected time range will not be available for lookup
         /// if CloudTrail logging was not enabled when the events occurred.
@@ -778,7 +863,7 @@ namespace Amazon.CloudTrail
         ///  
         /// <para>
         /// You can configure up to five event selectors for each trail. For more information,
-        /// see <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
+        /// see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
         /// Data and Management Events for Trails </a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits
         /// in AWS CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.
         /// </para>
@@ -899,8 +984,8 @@ namespace Amazon.CloudTrail
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTagParameterException">
-        /// This exception is thrown when the key or value specified for the tag does not match
-        /// the regular expression <code>^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$</code>.
+        /// This exception is thrown when the specified tag key or values are not valid. It can
+        /// also occur if there are duplicate tags or too many tags on the resource.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
         /// This exception is thrown when the provided trail name is not valid. Trail names must
@@ -1204,7 +1289,7 @@ namespace Amazon.CloudTrail
         /// trail can’t be updated.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyDisabledException">
-        /// This exception is deprecated.
+        /// This exception is no longer in use.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyNotFoundException">
         /// This exception is thrown when the KMS key does not exist, or when the S3 bucket and
@@ -1237,7 +1322,7 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the trail with the given name is not found.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.TrailNotProvidedException">
-        /// This exception is deprecated.
+        /// This exception is no longer in use.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.

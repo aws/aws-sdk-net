@@ -144,7 +144,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property IsMultiRegionTrail. 
         /// <para>
-        /// Specifies whether the trail belongs only to one region or exists in all regions.
+        /// Specifies whether the trail exists only in one region or exists in all regions.
         /// </para>
         /// </summary>
         public bool IsMultiRegionTrail
@@ -241,7 +241,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property S3BucketName. 
         /// <para>
         /// Name of the Amazon S3 bucket into which CloudTrail delivers your trail files. See
-        /// <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon
+        /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon
         /// S3 Bucket Naming Requirements</a>.
         /// </para>
         /// </summary>
@@ -261,7 +261,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property S3KeyPrefix. 
         /// <para>
         /// Specifies the Amazon S3 key prefix that comes after the name of the bucket you have
-        /// designated for log file delivery. For more information, see <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
+        /// designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
         /// Your CloudTrail Log Files</a>.The maximum length is 200 characters.
         /// </para>
         /// </summary>
@@ -303,7 +303,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property SnsTopicName. 
         /// <para>
-        /// This field is deprecated. Use SnsTopicARN.
+        /// This field is no longer in use. Use SnsTopicARN.
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated. Use SnsTopicARN.")]

@@ -42,7 +42,7 @@ namespace Amazon.CloudTrail.Model
     /// <para>
     /// The following example demonstrates how logging works when you configure logging of
     /// all data events for an S3 bucket named <code>bucket-1</code>. In this example, the
-    /// CloudTrail user spcified an empty prefix, and the option to log both <code>Read</code>
+    /// CloudTrail user specified an empty prefix, and the option to log both <code>Read</code>
     /// and <code>Write</code> data events.
     /// </para>
     ///  <ol> <li> 
@@ -135,13 +135,6 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        /// To log data events for all objects in all S3 buckets that include <i>my-bucket</i>
-        /// in their names, specify the prefix as <code>aws:s3:::my-bucket</code>. The trail logs
-        /// data events for all objects in all buckets whose name contains a match for <i>my-bucket</i>.
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// To log data events for all objects in an S3 bucket, specify the bucket and an empty
         /// object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events
         /// for all objects in this S3 bucket.
@@ -164,12 +157,11 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        /// To log data eents for a specific Lambda function, specify the function ARN.
+        /// To log data events for a specific Lambda function, specify the function ARN.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Lambda function ARNs are exact. Unlike S3, you cannot use matching. For example, if
-        /// you specify a function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>,
+        /// Lambda function ARNs are exact. For example, if you specify a function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>,
         /// data events will only be logged for <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>.
         /// They will not be logged for <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.
         /// </para>
