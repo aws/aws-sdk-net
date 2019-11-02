@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.620.0",
+    "ProductVersion" : "3.3.621.0",
     "CoreVersion"    : "3.3.103.58",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -61,7 +61,7 @@
             "InPreview"               : false
         },
         "CloudTrail"        : {
-            "Version" : "3.3.100.93",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.58"
@@ -521,7 +521,7 @@
             "InPreview"               : false
         },
         "DatabaseMigrationService"        : {
-            "Version" : "3.3.102.14",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.58"
@@ -665,7 +665,7 @@
             "InPreview"               : false
         },
         "Pinpoint"                        : {
-            "Version" : "3.3.102.12",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.58"
