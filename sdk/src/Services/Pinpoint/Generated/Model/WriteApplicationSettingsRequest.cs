@@ -99,9 +99,9 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property QuietTime. 
         /// <para>
-        /// The default quiet time for campaigns in the application. Quiet time is a specific
-        /// time range when campaigns don't send messages to endpoints, if all the following conditions
-        /// are met:
+        /// The default quiet time for campaigns and journeys in the application. Quiet time is
+        /// a specific time range when messages aren't sent to endpoints, if all the following
+        /// conditions are met:
         /// </para>
         ///  <ul><li>
         /// <para>
@@ -110,25 +110,26 @@ namespace Amazon.Pinpoint.Model
         /// </li> <li>
         /// <para>
         /// The current time in the endpoint's time zone is later than or equal to the time specified
-        /// by the QuietTime.Start property for the application (or a campaign that has custom
-        /// quiet time settings).
+        /// by the QuietTime.Start property for the application (or a campaign or journey that
+        /// has custom quiet time settings).
         /// </para>
         /// </li> <li>
         /// <para>
         /// The current time in the endpoint's time zone is earlier than or equal to the time
-        /// specified by the QuietTime.End property for the application (or a campaign that has
-        /// custom quiet time settings).
+        /// specified by the QuietTime.End property for the application (or a campaign or journey
+        /// that has custom quiet time settings).
         /// </para>
         /// </li></ul> 
         /// <para>
         /// If any of the preceding conditions isn't met, the endpoint will receive messages from
-        /// a campaign, even if quiet time is enabled.
+        /// a campaign or journey, even if quiet time is enabled.
         /// </para>
         ///  
         /// <para>
-        /// To override the default quiet time settings for a specific campaign, use the <link
-        ///  linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to define
-        /// a custom quiet time for the campaign.
+        /// To override the default quiet time settings for a specific campaign or journey, use
+        /// the <link  linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource
+        /// or the <link  linkend="apps-application-id-journeys-journey-id">Journey</link> resource
+        /// to define a custom quiet time for the campaign or journey.
         /// </para>
         /// </summary>
         public QuietTime QuietTime

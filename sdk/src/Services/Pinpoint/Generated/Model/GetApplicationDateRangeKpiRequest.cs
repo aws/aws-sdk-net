@@ -88,7 +88,8 @@ namespace Amazon.Pinpoint.Model
         /// to retrieve data for. This value describes the associated metric and consists of two
         /// or more terms, which are comprised of lowercase alphanumeric characters, separated
         /// by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list
-        /// of valid values, see the <a href="developerguide.html">Amazon Pinpoint Developer Guide</a>.
+        /// of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+        /// Pinpoint Developer Guide</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -107,9 +108,8 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The NextToken string that specifies which page of results to return in a paginated
-        /// response. This parameter is currently not supported by the Application Metrics and
-        /// Campaign Metrics resources.
+        /// The  string that specifies which page of results to return in a paginated response.
+        /// This parameter is currently not supported for application, campaign, and journey metrics.
         /// </para>
         /// </summary>
         public string NextToken
@@ -128,8 +128,7 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property PageSize. 
         /// <para>
         /// The maximum number of items to include in each page of a paginated response. This
-        /// parameter is currently not supported by the Application Metrics and Campaign Metrics
-        /// resources.
+        /// parameter is currently not supported for application, campaign, and journey metrics.
         /// </para>
         /// </summary>
         public string PageSize

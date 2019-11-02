@@ -1,0 +1,98 @@
+/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the pinpoint-2016-12-01.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.Pinpoint.Model
+{
+    /// <summary>
+    /// Specifies the settings for a multivariate split activity in a journey. This type of
+    /// activity sends participants down one of as many as five paths in a journey, based
+    /// on conditions that you specify.
+    /// </summary>
+    public partial class MultiConditionalSplitActivity
+    {
+        private List<MultiConditionalBranch> _branches = new List<MultiConditionalBranch>();
+        private string _defaultActivity;
+        private WaitTime _evaluationWaitTime;
+
+        /// <summary>
+        /// Gets and sets the property Branches. 
+        /// <para>
+        /// The paths for the activity, including the conditions for entering each path and the
+        /// activity to perform for each path.
+        /// </para>
+        /// </summary>
+        public List<MultiConditionalBranch> Branches
+        {
+            get { return this._branches; }
+            set { this._branches = value; }
+        }
+
+        // Check to see if Branches property is set
+        internal bool IsSetBranches()
+        {
+            return this._branches != null && this._branches.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultActivity. 
+        /// <para>
+        /// The activity to perform by default for any path in the activity.
+        /// </para>
+        /// </summary>
+        public string DefaultActivity
+        {
+            get { return this._defaultActivity; }
+            set { this._defaultActivity = value; }
+        }
+
+        // Check to see if DefaultActivity property is set
+        internal bool IsSetDefaultActivity()
+        {
+            return this._defaultActivity != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvaluationWaitTime. 
+        /// <para>
+        /// The amount of time to wait or the date and time when Amazon Pinpoint determines whether
+        /// the conditions are met.
+        /// </para>
+        /// </summary>
+        public WaitTime EvaluationWaitTime
+        {
+            get { return this._evaluationWaitTime; }
+            set { this._evaluationWaitTime = value; }
+        }
+
+        // Check to see if EvaluationWaitTime property is set
+        internal bool IsSetEvaluationWaitTime()
+        {
+            return this._evaluationWaitTime != null;
+        }
+
+    }
+}

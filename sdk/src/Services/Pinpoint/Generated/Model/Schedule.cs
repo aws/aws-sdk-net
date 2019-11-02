@@ -43,7 +43,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The scheduled time, in ISO 8601 format, for the campaign to end.
+        /// The scheduled time, in ISO 8601 format, when the campaign ended or will end.
         /// </para>
         /// </summary>
         public string EndTime
@@ -158,7 +158,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The scheduled time, in ISO 8601 format, for the campaign to begin.
+        /// The scheduled time, in ISO 8601 format, when the campaign began or will begin.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

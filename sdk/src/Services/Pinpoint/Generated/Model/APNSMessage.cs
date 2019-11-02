@@ -34,6 +34,7 @@ namespace Amazon.Pinpoint.Model
     public partial class APNSMessage
     {
         private Action _action;
+        private string _apnsPushType;
         private int? _badge;
         private string _body;
         private string _category;
@@ -83,6 +84,63 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetAction()
         {
             return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property APNSPushType. 
+        /// <para>
+        /// The type of push notification to send. Valid values are:
+        /// </para>
+        ///  <ul><li>
+        /// <para>
+        /// alert - For a standard notification that's displayed on recipients' devices and prompts
+        /// a recipient to interact with the notification.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// background - For a silent notification that delivers content in the background and
+        /// isn't displayed on recipients' devices.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// complication - For a notification that contains update information for an app’s complication
+        /// timeline.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// fileprovider - For a notification that signals changes to a File Provider extension.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// mdm - For a notification that tells managed devices to contact the MDM server.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// voip - For a notification that provides information about an incoming VoIP call.
+        /// </para>
+        /// </li></ul> 
+        /// <para>
+        /// Amazon Pinpoint specifies this value in the apns-push-type request header when it
+        /// sends the notification message to APNs. If you don't specify a value for this property,
+        /// Amazon Pinpoint sets the value to alert or background automatically, based on the
+        /// value that you specify for the SilentPush or RawContent property of the message.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about the apns-push-type request header, see <a href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/sending_notification_requests_to_apns">Sending
+        /// Notification Requests to APNs</a> on the Apple Developer website.
+        /// </para>
+        /// </summary>
+        public string APNSPushType
+        {
+            get { return this._apnsPushType; }
+            set { this._apnsPushType = value; }
+        }
+
+        // Check to see if APNSPushType property is set
+        internal bool IsSetAPNSPushType()
+        {
+            return this._apnsPushType != null;
         }
 
         /// <summary>
@@ -209,7 +267,7 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property PreferredAuthenticationMethod. 
         /// <para>
         /// The authentication method that you want Amazon Pinpoint to use when authenticating
-        /// with Apple Push Notification service (APNs), CERTIFICATE or TOKEN.
+        /// with APNs, CERTIFICATE or TOKEN.
         /// </para>
         /// </summary>
         public string PreferredAuthenticationMethod
@@ -264,7 +322,7 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property RawContent. 
         /// <para>
         /// The raw, JSON-formatted string to use as the payload for the notification message.
-        /// This value overrides the message.
+        /// This value overrides all other content for the message.
         /// </para>
         ///  <note>
         /// <para>

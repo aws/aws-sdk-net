@@ -309,6 +309,61 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  CreateJourney
+
+
+        /// <summary>
+        /// Creates a journey for an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateJourney service method.</param>
+        /// 
+        /// <returns>The response from the CreateJourney service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        CreateJourneyResponse CreateJourney(CreateJourneyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateJourney operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateJourney operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateJourney
+        ///         operation.</returns>
+        IAsyncResult BeginCreateJourney(CreateJourneyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateJourney operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateJourney.</param>
+        /// 
+        /// <returns>Returns a  CreateJourneyResult from Pinpoint.</returns>
+        CreateJourneyResponse EndCreateJourney(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreatePushTemplate
 
 
@@ -1192,6 +1247,61 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>Returns a  DeleteGcmChannelResult from Pinpoint.</returns>
         DeleteGcmChannelResponse EndDeleteGcmChannel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteJourney
+
+
+        /// <summary>
+        /// Deletes a journey from an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJourney service method.</param>
+        /// 
+        /// <returns>The response from the DeleteJourney service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        DeleteJourneyResponse DeleteJourney(DeleteJourneyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteJourney operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJourney operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteJourney
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteJourney(DeleteJourneyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteJourney operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteJourney.</param>
+        /// 
+        /// <returns>Returns a  DeleteJourneyResult from Pinpoint.</returns>
+        DeleteJourneyResponse EndDeleteJourney(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2141,7 +2251,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Retrieves information about the activity performed by a campaign.
+        /// Retrieves information about all the activities for a campaign.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCampaignActivities service method.</param>
         /// 
@@ -2364,7 +2474,7 @@ namespace Amazon.Pinpoint
 
         /// <summary>
         /// Retrieves information about the status, configuration, and other settings for all
-        /// versions of a specific campaign.
+        /// versions of a campaign.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCampaignVersions service method.</param>
         /// 
@@ -2968,6 +3078,229 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>Returns a  GetImportJobsResult from Pinpoint.</returns>
         GetImportJobsResponse EndGetImportJobs(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetJourney
+
+
+        /// <summary>
+        /// Retrieves information about the status, configuration, and other settings for a journey.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJourney service method.</param>
+        /// 
+        /// <returns>The response from the GetJourney service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        GetJourneyResponse GetJourney(GetJourneyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetJourney operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetJourney operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetJourney
+        ///         operation.</returns>
+        IAsyncResult BeginGetJourney(GetJourneyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetJourney operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetJourney.</param>
+        /// 
+        /// <returns>Returns a  GetJourneyResult from Pinpoint.</returns>
+        GetJourneyResponse EndGetJourney(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetJourneyDateRangeKpi
+
+
+        /// <summary>
+        /// Retrieves (queries) pre-aggregated data for a standard engagement metric that applies
+        /// to a journey.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJourneyDateRangeKpi service method.</param>
+        /// 
+        /// <returns>The response from the GetJourneyDateRangeKpi service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        GetJourneyDateRangeKpiResponse GetJourneyDateRangeKpi(GetJourneyDateRangeKpiRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetJourneyDateRangeKpi operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetJourneyDateRangeKpi operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetJourneyDateRangeKpi
+        ///         operation.</returns>
+        IAsyncResult BeginGetJourneyDateRangeKpi(GetJourneyDateRangeKpiRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetJourneyDateRangeKpi operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetJourneyDateRangeKpi.</param>
+        /// 
+        /// <returns>Returns a  GetJourneyDateRangeKpiResult from Pinpoint.</returns>
+        GetJourneyDateRangeKpiResponse EndGetJourneyDateRangeKpi(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetJourneyExecutionActivityMetrics
+
+
+        /// <summary>
+        /// Retrieves (queries) pre-aggregated data for a standard execution metric that applies
+        /// to a journey activity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJourneyExecutionActivityMetrics service method.</param>
+        /// 
+        /// <returns>The response from the GetJourneyExecutionActivityMetrics service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        GetJourneyExecutionActivityMetricsResponse GetJourneyExecutionActivityMetrics(GetJourneyExecutionActivityMetricsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetJourneyExecutionActivityMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetJourneyExecutionActivityMetrics operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetJourneyExecutionActivityMetrics
+        ///         operation.</returns>
+        IAsyncResult BeginGetJourneyExecutionActivityMetrics(GetJourneyExecutionActivityMetricsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetJourneyExecutionActivityMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetJourneyExecutionActivityMetrics.</param>
+        /// 
+        /// <returns>Returns a  GetJourneyExecutionActivityMetricsResult from Pinpoint.</returns>
+        GetJourneyExecutionActivityMetricsResponse EndGetJourneyExecutionActivityMetrics(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetJourneyExecutionMetrics
+
+
+        /// <summary>
+        /// Retrieves (queries) pre-aggregated data for a standard execution metric that applies
+        /// to a journey.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJourneyExecutionMetrics service method.</param>
+        /// 
+        /// <returns>The response from the GetJourneyExecutionMetrics service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        GetJourneyExecutionMetricsResponse GetJourneyExecutionMetrics(GetJourneyExecutionMetricsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetJourneyExecutionMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetJourneyExecutionMetrics operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetJourneyExecutionMetrics
+        ///         operation.</returns>
+        IAsyncResult BeginGetJourneyExecutionMetrics(GetJourneyExecutionMetricsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetJourneyExecutionMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetJourneyExecutionMetrics.</param>
+        /// 
+        /// <returns>Returns a  GetJourneyExecutionMetricsResult from Pinpoint.</returns>
+        GetJourneyExecutionMetricsResponse EndGetJourneyExecutionMetrics(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3583,12 +3916,68 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  ListJourneys
+
+
+        /// <summary>
+        /// Retrieves information about the status, configuration, and other settings for all
+        /// the journeys that are associated with an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJourneys service method.</param>
+        /// 
+        /// <returns>The response from the ListJourneys service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        ListJourneysResponse ListJourneys(ListJourneysRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListJourneys operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListJourneys operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListJourneys
+        ///         operation.</returns>
+        IAsyncResult BeginListJourneys(ListJourneysRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListJourneys operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListJourneys.</param>
+        /// 
+        /// <returns>Returns a  ListJourneysResult from Pinpoint.</returns>
+        ListJourneysResponse EndListJourneys(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
         /// <summary>
         /// Retrieves all the tags (keys and values) that are associated with an application,
-        /// campaign, message template, or segment.
+        /// campaign, journey, message template, or segment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -3641,9 +4030,6 @@ namespace Amazon.Pinpoint
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// Provides information about an API request or response.
-        /// </exception>
-        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
         /// Provides information about an API request or response.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
@@ -4014,8 +4400,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Adds one or more tags (keys and values) to an application, campaign, message template,
-        /// or segment.
+        /// Adds one or more tags (keys and values) to an application, campaign, journey, message
+        /// template, or segment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -4052,8 +4438,8 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Removes one or more tags (keys and values) from an application, campaign, message
-        /// template, or segment.
+        /// Removes one or more tags (keys and values) from an application, campaign, journey,
+        /// message template, or segment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -4481,7 +4867,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Updates the settings for a campaign.
+        /// Updates the configuration and other settings for a campaign.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCampaign service method.</param>
         /// 
@@ -4812,6 +5198,116 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>Returns a  UpdateGcmChannelResult from Pinpoint.</returns>
         UpdateGcmChannelResponse EndUpdateGcmChannel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateJourney
+
+
+        /// <summary>
+        /// Updates the configuration and other settings for a journey.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateJourney service method.</param>
+        /// 
+        /// <returns>The response from the UpdateJourney service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        UpdateJourneyResponse UpdateJourney(UpdateJourneyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateJourney operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateJourney operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateJourney
+        ///         operation.</returns>
+        IAsyncResult BeginUpdateJourney(UpdateJourneyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateJourney operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateJourney.</param>
+        /// 
+        /// <returns>Returns a  UpdateJourneyResult from Pinpoint.</returns>
+        UpdateJourneyResponse EndUpdateJourney(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateJourneyState
+
+
+        /// <summary>
+        /// Cancels an active journey.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateJourneyState service method.</param>
+        /// 
+        /// <returns>The response from the UpdateJourneyState service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        UpdateJourneyStateResponse UpdateJourneyState(UpdateJourneyStateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateJourneyState operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateJourneyState operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateJourneyState
+        ///         operation.</returns>
+        IAsyncResult BeginUpdateJourneyState(UpdateJourneyStateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateJourneyState operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateJourneyState.</param>
+        /// 
+        /// <returns>Returns a  UpdateJourneyStateResult from Pinpoint.</returns>
+        UpdateJourneyStateResponse EndUpdateJourneyState(IAsyncResult asyncResult);
 
         #endregion
         

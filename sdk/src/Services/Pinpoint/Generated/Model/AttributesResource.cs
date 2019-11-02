@@ -86,7 +86,7 @@ namespace Amazon.Pinpoint.Model
         /// </para>
         /// </li> <li>
         /// <para>
-        /// endpoint-custom-metrics - Custom metrics that your app reports to Amazon Pinpoint
+        /// endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint
         /// for endpoints.
         /// </para>
         /// </li> <li>

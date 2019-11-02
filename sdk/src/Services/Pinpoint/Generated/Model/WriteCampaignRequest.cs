@@ -269,7 +269,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TemplateConfiguration.
+        /// Gets and sets the property TemplateConfiguration. 
+        /// <para>
+        /// The message template to use for the campaign.
+        /// </para>
         /// </summary>
         public TemplateConfiguration TemplateConfiguration
         {

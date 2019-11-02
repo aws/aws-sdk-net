@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Specifies the message template to use for the message, for each type of channel.
+    /// Specifies the message template for each type of channel.
     /// </summary>
     public partial class TemplateConfiguration
     {

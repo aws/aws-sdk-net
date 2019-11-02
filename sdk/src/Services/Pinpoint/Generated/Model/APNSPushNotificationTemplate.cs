@@ -28,8 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Specifies the content and settings for a message template that can be used in push
-    /// notifications that are sent through the APNs (Apple Push Notification service) channel.
+    /// Specifies channel-specific content and settings for a message template that can be
+    /// used in push notifications that are sent through the APNs (Apple Push Notification
+    /// service) channel.
     /// </summary>
     public partial class APNSPushNotificationTemplate
     {
