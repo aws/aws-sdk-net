@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Indicates whether the instance is configured for hibernation. This parameter is valid
     /// only if the instance meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
-    /// prerequisites</a>. Hibernation is currently supported only for Amazon Linux.
+    /// prerequisites</a>.
     /// </summary>
     public partial class LaunchTemplateHibernationOptionsRequest
     {

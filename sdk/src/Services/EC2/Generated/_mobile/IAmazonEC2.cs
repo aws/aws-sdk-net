@@ -2174,7 +2174,7 @@ namespace Amazon.EC2
         /// Creates crash-consistent snapshots of multiple EBS volumes and stores the data in
         /// S3. Volumes are chosen by specifying an instance. Any attached volumes will produce
         /// one snapshot each that is crash-consistent across the instance. Boot volumes can be
-        /// excluded by changing the paramaters.
+        /// excluded by changing the parameters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSnapshots service method.</param>
         /// <param name="cancellationToken">
@@ -2306,10 +2306,10 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// By default, no traffic is mirrored. To mirror traffic, use <a>CreateTrafficMirrorFilterRule</a>
+        /// By default, no traffic is mirrored. To mirror traffic, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorFilterRule.htm">CreateTrafficMirrorFilterRule</a>
         /// to add Traffic Mirror rules to the filter. The rules you add define what traffic gets
-        /// mirrored. You can also use <a>ModifyTrafficMirrorFilterNetworkServices</a> to mirror
-        /// supported network services.
+        /// mirrored. You can also use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTrafficMirrorFilterNetworkServices.html">ModifyTrafficMirrorFilterNetworkServices</a>
+        /// to mirror supported network services.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTrafficMirrorFilter service method.</param>
@@ -2328,7 +2328,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a Traffic Mirror rule. 
+        /// Creates a Traffic Mirror filter rule. 
         /// 
         ///  
         /// <para>
@@ -2371,8 +2371,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// By default, no traffic is mirrored. Use <a>CreateTrafficMirrorFilter</a> to create
-        /// filter rules that specify the traffic to mirror.
+        /// By default, no traffic is mirrored. Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorFilter.htm">CreateTrafficMirrorFilter</a>
+        /// to create filter rules that specify the traffic to mirror.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTrafficMirrorSession service method.</param>
@@ -2405,7 +2405,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// To use the target in a Traffic Mirror session, use <a>CreateTrafficMirrorSession</a>.
+        /// To use the target in a Traffic Mirror session, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorSession.htm">CreateTrafficMirrorSession</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTrafficMirrorTarget service method.</param>
@@ -8290,10 +8290,10 @@ namespace Amazon.EC2
         /// <para>
         /// To scale up your EC2 Fleet, increase its target capacity. The EC2 Fleet launches the
         /// additional Spot Instances according to the allocation strategy for the EC2 Fleet request.
-        /// If the allocation strategy is <code>lowestPrice</code>, the EC2 Fleet launches instances
+        /// If the allocation strategy is <code>lowest-price</code>, the EC2 Fleet launches instances
         /// using the Spot Instance pool with the lowest price. If the allocation strategy is
         /// <code>diversified</code>, the EC2 Fleet distributes the instances across the Spot
-        /// Instance pools. If the allocation strategy is <code>capacityOptimized</code>, EC2
+        /// Instance pools. If the allocation strategy is <code>capacity-optimized</code>, EC2
         /// Fleet launches instances from Spot Instance pools with optimal capacity for the number
         /// of instances that are launching.
         /// </para>
@@ -8302,14 +8302,14 @@ namespace Amazon.EC2
         /// To scale down your EC2 Fleet, decrease its target capacity. First, the EC2 Fleet cancels
         /// any open requests that exceed the new target capacity. You can request that the EC2
         /// Fleet terminate Spot Instances until the size of the fleet no longer exceeds the new
-        /// target capacity. If the allocation strategy is <code>lowestPrice</code>, the EC2 Fleet
-        /// terminates the instances with the highest price per unit. If the allocation strategy
-        /// is <code>capacityOptimized</code>, the EC2 Fleet terminates the instances in the Spot
-        /// Instance pools that have the least available Spot Instance capacity. If the allocation
-        /// strategy is <code>diversified</code>, the EC2 Fleet terminates instances across the
-        /// Spot Instance pools. Alternatively, you can request that the EC2 Fleet keep the fleet
-        /// at its current size, but not replace any Spot Instances that are interrupted or that
-        /// you terminate manually.
+        /// target capacity. If the allocation strategy is <code>lowest-price</code>, the EC2
+        /// Fleet terminates the instances with the highest price per unit. If the allocation
+        /// strategy is <code>capacity-optimized</code>, the EC2 Fleet terminates the instances
+        /// in the Spot Instance pools that have the least available Spot Instance capacity. If
+        /// the allocation strategy is <code>diversified</code>, the EC2 Fleet terminates instances
+        /// across the Spot Instance pools. Alternatively, you can request that the EC2 Fleet
+        /// keep the fleet at its current size, but not replace any Spot Instances that are interrupted
+        /// or that you terminate manually.
         /// </para>
         ///  
         /// <para>
@@ -8844,7 +8844,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// FFor information about filter rule properties, see <a href="https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-considerations.html#traffic-mirroring-network-services">Network
+        /// For information about filter rule properties, see <a href="https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-considerations.html">Network
         /// Services</a> in the <i>Traffic Mirroring User Guide </i>.
         /// </para>
         /// </summary>

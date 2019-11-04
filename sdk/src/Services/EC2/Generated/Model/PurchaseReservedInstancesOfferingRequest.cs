@@ -114,7 +114,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PurchaseTime. 
         /// <para>
-        /// The time at which to purchase the Reserved Instance.
+        /// The time at which to purchase the Reserved Instance, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
         /// </para>
         /// </summary>
         public DateTime PurchaseTime
