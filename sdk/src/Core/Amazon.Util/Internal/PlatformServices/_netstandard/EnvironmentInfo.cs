@@ -1,6 +1,5 @@
 ﻿
 using System.Globalization;
-using System.Runtime.InteropServices;
 
 namespace Amazon.Util.Internal.PlatformServices
 {
@@ -9,32 +8,14 @@ namespace Amazon.Util.Internal.PlatformServices
         public EnvironmentInfo()
         {
             this.Platform = InternalSDKUtils.DetermineOS();
-            this.PlatformVersion = InternalSDKUtils.DetermineOSVersion();
             this.PlatformUserAgent = InternalSDKUtils.PlatformUserAgent();
-            this.Model = "Unknown";
-            this.Make = "Unknown";
-            this.Locale = CultureInfo.CurrentCulture.DisplayName;
-            this.FrameworkUserAgent =
-                string.Format(CultureInfo.InvariantCulture,
-                ".NET_Core/{0}",
-                InternalSDKUtils.DetermineFramework());
-            this.PclPlatform = string.Empty;
+            this.FrameworkUserAgent = InternalSDKUtils.DetermineFramework();
         }
 
-        public string Platform { get; private set; }
+        public string Platform { get; }
 
-        public string Model { get; private set; }
+        public string PlatformUserAgent { get; }
 
-        public string Make { get; private set; }
-
-        public string PlatformVersion { get; private set; }
-
-        public string Locale { get; private set; }
-
-        public string PclPlatform { get; private set; }
-
-        public string PlatformUserAgent { get; private set; }
-
-        public string FrameworkUserAgent { get; private set; }
+        public string FrameworkUserAgent { get; }
     }
 }
