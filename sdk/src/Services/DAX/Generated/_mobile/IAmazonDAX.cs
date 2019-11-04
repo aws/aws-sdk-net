@@ -89,7 +89,7 @@ namespace Amazon.DAX
         /// The specified parameter group does not exist.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.SubnetGroupNotFoundException">
         /// The requested subnet group name does not refer to an existing subnet group.
@@ -132,7 +132,7 @@ namespace Amazon.DAX
         /// You have attempted to exceed the maximum number of parameter groups.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/CreateParameterGroup">REST API Reference for CreateParameterGroup Operation</seealso>
         Task<CreateParameterGroupResponse> CreateParameterGroupAsync(CreateParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -156,7 +156,7 @@ namespace Amazon.DAX
         /// An invalid subnet identifier was specified.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.SubnetGroupAlreadyExistsException">
         /// The specified subnet group already exists.
@@ -210,7 +210,7 @@ namespace Amazon.DAX
         /// None of the nodes in the cluster have the given node ID.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DecreaseReplicationFactor">REST API Reference for DecreaseReplicationFactor Operation</seealso>
         Task<DecreaseReplicationFactorResponse> DecreaseReplicationFactorAsync(DecreaseReplicationFactorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -246,7 +246,7 @@ namespace Amazon.DAX
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         Task<DeleteClusterResponse> DeleteClusterAsync(DeleteClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -280,7 +280,7 @@ namespace Amazon.DAX
         /// The specified parameter group does not exist.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteParameterGroup">REST API Reference for DeleteParameterGroup Operation</seealso>
         Task<DeleteParameterGroupResponse> DeleteParameterGroupAsync(DeleteParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -307,7 +307,7 @@ namespace Amazon.DAX
         /// 
         /// <returns>The response from the DeleteSubnetGroup service method, as returned by DAX.</returns>
         /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.SubnetGroupInUseException">
         /// The specified subnet group is currently in use.
@@ -366,7 +366,7 @@ namespace Amazon.DAX
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
         Task<DescribeClustersResponse> DescribeClustersAsync(DescribeClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -393,7 +393,7 @@ namespace Amazon.DAX
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeDefaultParameters">REST API Reference for DescribeDefaultParameters Operation</seealso>
         Task<DescribeDefaultParametersResponse> DescribeDefaultParametersAsync(DescribeDefaultParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -411,7 +411,7 @@ namespace Amazon.DAX
         /// 
         ///  
         /// <para>
-        /// By default, only the events occurring within the last hour are returned; however,
+        /// By default, only the events occurring within the last 24 hours are returned; however,
         /// you can retrieve up to 14 days' worth of events if necessary.
         /// </para>
         /// </summary>
@@ -428,7 +428,7 @@ namespace Amazon.DAX
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -459,7 +459,7 @@ namespace Amazon.DAX
         /// The specified parameter group does not exist.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeParameterGroups">REST API Reference for DescribeParameterGroups Operation</seealso>
         Task<DescribeParameterGroupsResponse> DescribeParameterGroupsAsync(DescribeParameterGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -489,7 +489,7 @@ namespace Amazon.DAX
         /// The specified parameter group does not exist.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeParameters">REST API Reference for DescribeParameters Operation</seealso>
         Task<DescribeParametersResponse> DescribeParametersAsync(DescribeParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -511,7 +511,7 @@ namespace Amazon.DAX
         /// 
         /// <returns>The response from the DescribeSubnetGroups service method, as returned by DAX.</returns>
         /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.SubnetGroupNotFoundException">
         /// The requested subnet group name does not refer to an existing subnet group.
@@ -560,7 +560,7 @@ namespace Amazon.DAX
         /// You have attempted to exceed the maximum number of nodes for your AWS account.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/IncreaseReplicationFactor">REST API Reference for IncreaseReplicationFactor Operation</seealso>
         Task<IncreaseReplicationFactorResponse> IncreaseReplicationFactorAsync(IncreaseReplicationFactorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -597,7 +597,7 @@ namespace Amazon.DAX
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/ListTags">REST API Reference for ListTags Operation</seealso>
         Task<ListTagsResponse> ListTagsAsync(ListTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -611,6 +611,13 @@ namespace Amazon.DAX
         /// <summary>
         /// Reboots a single node of a DAX cluster. The reboot action takes place as soon as possible.
         /// During the reboot, the node status is set to REBOOTING.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <code>RebootNode</code> restarts the DAX engine process and does not remove the contents
+        /// of the cache. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RebootNode service method.</param>
         /// <param name="cancellationToken">
@@ -634,7 +641,7 @@ namespace Amazon.DAX
         /// None of the nodes in the cluster have the given node ID.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/RebootNode">REST API Reference for RebootNode Operation</seealso>
         Task<RebootNodeResponse> RebootNodeAsync(RebootNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -671,7 +678,7 @@ namespace Amazon.DAX
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.TagQuotaPerResourceExceededException">
         /// You have exceeded the maximum number of tags for this DAX cluster.
@@ -711,7 +718,7 @@ namespace Amazon.DAX
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.TagNotFoundException">
         /// The tag does not exist.
@@ -754,7 +761,7 @@ namespace Amazon.DAX
         /// The specified parameter group does not exist.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
         Task<UpdateClusterResponse> UpdateClusterAsync(UpdateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -788,7 +795,7 @@ namespace Amazon.DAX
         /// The specified parameter group does not exist.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UpdateParameterGroup">REST API Reference for UpdateParameterGroup Operation</seealso>
         Task<UpdateParameterGroupResponse> UpdateParameterGroupAsync(UpdateParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -812,7 +819,7 @@ namespace Amazon.DAX
         /// An invalid subnet identifier was specified.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
-        /// 
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.SubnetGroupNotFoundException">
         /// The requested subnet group name does not refer to an existing subnet group.

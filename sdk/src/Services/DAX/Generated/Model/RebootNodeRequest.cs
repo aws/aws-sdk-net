@@ -31,6 +31,13 @@ namespace Amazon.DAX.Model
     /// Container for the parameters to the RebootNode operation.
     /// Reboots a single node of a DAX cluster. The reboot action takes place as soon as possible.
     /// During the reboot, the node status is set to REBOOTING.
+    /// 
+    ///  <note> 
+    /// <para>
+    ///  <code>RebootNode</code> restarts the DAX engine process and does not remove the contents
+    /// of the cache. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class RebootNodeRequest : AmazonDAXRequest
     {

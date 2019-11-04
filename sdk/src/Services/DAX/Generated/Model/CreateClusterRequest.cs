@@ -50,9 +50,10 @@ namespace Amazon.DAX.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// The Availability Zones (AZs) in which the cluster nodes will be created. All nodes
-        /// belonging to the cluster are placed in these Availability Zones. Use this parameter
-        /// if you want to distribute the nodes across multiple AZs.
+        /// The Availability Zones (AZs) in which the cluster nodes will reside after the cluster
+        /// has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code>
+        /// parameter. If you omit this parameter, DAX will spread the nodes across Availability
+        /// Zones for the highest availability.
         /// </para>
         /// </summary>
         public List<string> AvailabilityZones
@@ -267,8 +268,10 @@ namespace Amazon.DAX.Model
         /// <para>
         /// The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node
         /// cluster, without any read replicas. For additional fault tolerance, you can create
-        /// a multiple node cluster with one or more read replicas. To do this, set <i>ReplicationFactor</i>
-        /// to 2 or more.
+        /// a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code>
+        /// to a number between 3 (one primary and two read replicas) and 10 (one primary and
+        /// nine read replicas). <code>If the AvailabilityZones</code> parameter is provided,
+        /// its length must equal the <code>ReplicationFactor</code>.
         /// </para>
         ///  <note> 
         /// <para>

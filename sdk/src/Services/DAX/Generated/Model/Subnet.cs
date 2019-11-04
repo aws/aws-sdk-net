@@ -39,7 +39,7 @@ namespace Amazon.DAX.Model
         /// <summary>
         /// Gets and sets the property SubnetAvailabilityZone. 
         /// <para>
-        /// The Availability Zone (AZ) for subnet subnet.
+        /// The Availability Zone (AZ) for the subnet.
         /// </para>
         /// </summary>
         public string SubnetAvailabilityZone
