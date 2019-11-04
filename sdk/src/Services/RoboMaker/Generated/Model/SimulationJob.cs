@@ -286,7 +286,10 @@ namespace Amazon.RoboMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NetworkInterface.
+        /// Gets and sets the property NetworkInterface. 
+        /// <para>
+        /// Information about a network interface.
+        /// </para>
         /// </summary>
         public NetworkInterface NetworkInterface
         {

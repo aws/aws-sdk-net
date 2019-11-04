@@ -932,6 +932,18 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RoboMaker.Model.S3Object.Bucket</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[a-z0-9][a-z0-9.\-]*[a-z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.S3Object.Key</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RoboMaker.Model.SimulationApplicationConfig.Application</property>
     <min>1</min>
     <max>1224</max>

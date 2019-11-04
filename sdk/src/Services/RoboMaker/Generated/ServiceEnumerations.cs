@@ -89,6 +89,10 @@ namespace Amazon.RoboMaker
         /// </summary>
         public static readonly DeploymentJobErrorCode BadPermissionError = new DeploymentJobErrorCode("BadPermissionError");
         /// <summary>
+        /// Constant DownloadConditionFailed for DeploymentJobErrorCode
+        /// </summary>
+        public static readonly DeploymentJobErrorCode DownloadConditionFailed = new DeploymentJobErrorCode("DownloadConditionFailed");
+        /// <summary>
         /// Constant EnvironmentSetupError for DeploymentJobErrorCode
         /// </summary>
         public static readonly DeploymentJobErrorCode EnvironmentSetupError = new DeploymentJobErrorCode("EnvironmentSetupError");
@@ -360,6 +364,10 @@ namespace Amazon.RoboMaker
         /// Constant DownloadingExtracting for RobotDeploymentStep
         /// </summary>
         public static readonly RobotDeploymentStep DownloadingExtracting = new RobotDeploymentStep("DownloadingExtracting");
+        /// <summary>
+        /// Constant ExecutingDownloadCondition for RobotDeploymentStep
+        /// </summary>
+        public static readonly RobotDeploymentStep ExecutingDownloadCondition = new RobotDeploymentStep("ExecutingDownloadCondition");
         /// <summary>
         /// Constant ExecutingPostLaunch for RobotDeploymentStep
         /// </summary>

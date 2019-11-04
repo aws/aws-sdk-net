@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeploymentConfig Object
+    /// Response Unmarshaller for S3Object Object
     /// </summary>  
-    public class DeploymentConfigUnmarshaller : IUnmarshaller<DeploymentConfig, XmlUnmarshallerContext>, IUnmarshaller<DeploymentConfig, JsonUnmarshallerContext>
+    public class S3ObjectUnmarshaller : IUnmarshaller<S3Object, XmlUnmarshallerContext>, IUnmarshaller<S3Object, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DeploymentConfig IUnmarshaller<DeploymentConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        S3Object IUnmarshaller<S3Object, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,33 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DeploymentConfig Unmarshall(JsonUnmarshallerContext context)
+        public S3Object Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DeploymentConfig unmarshalledObject = new DeploymentConfig();
+            S3Object unmarshalledObject = new S3Object();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("concurrentDeploymentPercentage", targetDepth))
+                if (context.TestExpression("bucket", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.ConcurrentDeploymentPercentage = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Bucket = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("downloadConditionFile", targetDepth))
+                if (context.TestExpression("etag", targetDepth))
                 {
-                    var unmarshaller = S3ObjectUnmarshaller.Instance;
-                    unmarshalledObject.DownloadConditionFile = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Etag = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("failureThresholdPercentage", targetDepth))
+                if (context.TestExpression("key", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.FailureThresholdPercentage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("robotDeploymentTimeoutInSeconds", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.RobotDeploymentTimeoutInSeconds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Key = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +88,12 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static DeploymentConfigUnmarshaller _instance = new DeploymentConfigUnmarshaller();        
+        private static S3ObjectUnmarshaller _instance = new S3ObjectUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeploymentConfigUnmarshaller Instance
+        public static S3ObjectUnmarshaller Instance
         {
             get
             {

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DeploymentConfig Marshaller
+    /// S3Object Marshaller
     /// </summary>       
-    public class DeploymentConfigMarshaller : IRequestMarshaller<DeploymentConfig, JsonMarshallerContext> 
+    public class S3ObjectMarshaller : IRequestMarshaller<S3Object, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,35 +43,24 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DeploymentConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(S3Object requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetConcurrentDeploymentPercentage())
+            if(requestObject.IsSetBucket())
             {
-                context.Writer.WritePropertyName("concurrentDeploymentPercentage");
-                context.Writer.Write(requestObject.ConcurrentDeploymentPercentage);
+                context.Writer.WritePropertyName("bucket");
+                context.Writer.Write(requestObject.Bucket);
             }
 
-            if(requestObject.IsSetDownloadConditionFile())
+            if(requestObject.IsSetEtag())
             {
-                context.Writer.WritePropertyName("downloadConditionFile");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = S3ObjectMarshaller.Instance;
-                marshaller.Marshall(requestObject.DownloadConditionFile, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("etag");
+                context.Writer.Write(requestObject.Etag);
             }
 
-            if(requestObject.IsSetFailureThresholdPercentage())
+            if(requestObject.IsSetKey())
             {
-                context.Writer.WritePropertyName("failureThresholdPercentage");
-                context.Writer.Write(requestObject.FailureThresholdPercentage);
-            }
-
-            if(requestObject.IsSetRobotDeploymentTimeoutInSeconds())
-            {
-                context.Writer.WritePropertyName("robotDeploymentTimeoutInSeconds");
-                context.Writer.Write(requestObject.RobotDeploymentTimeoutInSeconds);
+                context.Writer.WritePropertyName("key");
+                context.Writer.Write(requestObject.Key);
             }
 
         }
@@ -79,7 +68,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static DeploymentConfigMarshaller Instance = new DeploymentConfigMarshaller();
+        public readonly static S3ObjectMarshaller Instance = new S3ObjectMarshaller();
 
     }
 }
