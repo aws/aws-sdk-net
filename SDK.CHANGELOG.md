@@ -1,3 +1,11 @@
+### 3.3.622.0 (2019-11-04 20:38 UTC)
+* DAX (3.3.100.94)
+	* Documentation updates for dax
+* EC2 (3.3.134.5)
+	* Documentation updates for ec2
+* RoboMaker (3.3.108.0)
+	* RoboMaker Fleet Management launch a feature to verify your robot is ready to download and install the new robot application using a download condition file, which is a script run on the robot prior to downloading the new deployment. 
+
 ### 3.3.621.0 (2019-11-02 00:12 UTC)
 * CloudTrail (3.3.101.0)
 	* This release adds two new APIs, GetTrail and ListTrails, and support for adding tags when you create a trail by using a new TagsList parameter on CreateTrail operations.
