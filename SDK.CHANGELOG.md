@@ -1,3 +1,14 @@
+### 3.3.623.0 (2019-11-05 19:14 UTC)
+* CodeStarNotifications (3.3.100.0)
+	* This release adds a notification manager for events in repositories, build projects, deployments, and pipelines. You can now configure rules and receive notifications about events that occur for resources. Each notification includes a status message as well as a link to the resource (repository, build project, deployment application, or pipeline) whose event generated the notification.
+* RDS (3.3.112.8)
+	* Documentation updates for Amazon RDS
+* Core 3.3.103.59
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.622.0 (2019-11-04 20:38 UTC)
 * DAX (3.3.100.94)
 	* Documentation updates for dax
