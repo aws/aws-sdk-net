@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the installation media for on-premises, bring your own media (BYOM) DB engines,
-    /// such as Microsoft SQL Server.
+    /// Contains the installation media for a DB engine that requires an on-premises customer
+    /// provided license, such as Microsoft SQL Server.
     /// </summary>
     public partial class InstallationMedia
     {
@@ -81,7 +81,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineInstallationMediaPath. 
         /// <para>
-        /// The path to the installation media for the DB engine.
+        /// The path to the installation medium for the DB engine.
         /// </para>
         /// </summary>
         public string EngineInstallationMediaPath
@@ -135,7 +135,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property InstallationMediaId. 
         /// <para>
-        /// The installation media ID.
+        /// The installation medium ID.
         /// </para>
         /// </summary>
         public string InstallationMediaId
@@ -153,7 +153,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OSInstallationMediaPath. 
         /// <para>
-        /// The path to the installation media for the operating system associated with the DB
+        /// The path to the installation medium for the operating system associated with the DB
         /// engine.
         /// </para>
         /// </summary>
@@ -172,7 +172,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the installation media.
+        /// The status of the installation medium.
         /// </para>
         /// </summary>
         public string Status

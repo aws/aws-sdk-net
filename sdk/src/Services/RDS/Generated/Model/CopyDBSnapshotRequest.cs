@@ -152,9 +152,8 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// You must specify this parameter when you copy an encrypted DB snapshot from another
-        /// AWS Region by using the Amazon RDS API. You can specify the <code>--source-region</code>
-        /// option instead of this parameter when you copy an encrypted DB snapshot from another
-        /// AWS Region by using the AWS CLI. 
+        /// AWS Region by using the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when
+        /// you are copying an encrypted DB snapshot in the same AWS Region.
         /// </para>
         ///  
         /// <para>
@@ -199,6 +198,14 @@ namespace Amazon.RDS.Model
         /// Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
         /// Version 4 Signing Process</a>. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code>
+        /// (or <code>--source-region</code> for the AWS CLI) instead of specifying <code>PreSignedUrl</code>
+        /// manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that
+        /// is a valid request for the operation that can be executed in the source AWS Region.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string PreSignedUrl
         {

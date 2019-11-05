@@ -265,7 +265,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBClusterParameterGroupName. 
         /// <para>
         ///  The name of the DB cluster parameter group to associate with this DB cluster. If
-        /// this argument is omitted, <code>default.aurora5.6</code> is used. 
+        /// you do not specify a value, then the default DB cluster parameter group for the specified
+        /// DB engine and version is used. 
         /// </para>
         ///  
         /// <para>
@@ -551,7 +552,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If an encryption key is not specified in <code>KmsKeyId</code>:
+        /// If an encryption key isn't specified in <code>KmsKeyId</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -562,7 +563,7 @@ namespace Amazon.RDS.Model
         ///  </li> <li> 
         /// <para>
         /// If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code>
-        /// is not specified, then Amazon RDS will use your default encryption key.
+        /// isn't specified, then Amazon RDS will use your default encryption key.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -824,6 +825,14 @@ namespace Amazon.RDS.Model
         /// <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
         /// Signature Version 4 Signing Process</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code>
+        /// (or <code>--source-region</code> for the AWS CLI) instead of specifying <code>PreSignedUrl</code>
+        /// manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that
+        /// is a valid request for the operation that can be executed in the source AWS Region.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string PreSignedUrl
         {

@@ -101,8 +101,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraint: You can't enable force failover if the instance is not configured for
-        /// Multi-AZ.
+        /// Constraint: You can't enable force failover if the instance isn't configured for Multi-AZ.
         /// </para>
         /// </summary>
         public bool ForceFailover

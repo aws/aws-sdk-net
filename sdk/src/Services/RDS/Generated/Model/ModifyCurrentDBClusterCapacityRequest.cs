@@ -105,7 +105,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
-        /// The DB cluster identifier for the cluster being modified. This parameter is not case-sensitive.
+        /// The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.
         /// </para>
         ///  
         /// <para>
@@ -168,7 +168,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         ///  <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point
-        /// is not found in the timeout period.
+        /// isn't found in the timeout period.
         /// </para>
         /// </summary>
         public string TimeoutAction

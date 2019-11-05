@@ -198,7 +198,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The maximum number of records to include in the response. If more records exist than
         /// the specified <code>MaxRecords</code> value, a pagination token called a marker is
-        /// included in the response so that you can retrieve the remaining results. 
+        /// included in the response so you can retrieve the remaining results. 
         /// </para>
         ///  
         /// <para>

@@ -1134,7 +1134,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StatusInfos. 
         /// <para>
-        /// The status of a Read Replica. If the instance is not a Read Replica, this is blank.
+        /// The status of a Read Replica. If the instance isn't a Read Replica, this is blank.
         /// </para>
         /// </summary>
         public List<DBInstanceStatusInfo> StatusInfos

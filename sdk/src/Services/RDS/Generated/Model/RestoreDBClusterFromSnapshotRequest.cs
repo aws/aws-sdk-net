@@ -39,8 +39,9 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// If a DB cluster snapshot is specified, the target DB cluster is created from the source
-    /// DB cluster restore point with the same configuration as the original source DB cluster,
-    /// except that the new DB cluster is created with the default security group.
+    /// DB cluster restore point with the same configuration as the original source DB cluster.
+    /// If you don't specify a security group, the new DB cluster is associated with the default
+    /// security group.
     /// </para>
     ///  
     /// <para>
@@ -417,7 +418,11 @@ namespace Amazon.RDS.Model
         ///  <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
         /// 
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// If you aren't using the default engine version, then you must specify the engine version.
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  <b>Aurora MySQL</b> 
         /// </para>
@@ -473,8 +478,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not
-        /// encrypted, then the restored DB cluster is not encrypted.
+        /// If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> isn't
+        /// encrypted, then the restored DB cluster isn't encrypted.
         /// </para>
         ///  </li> </ul>
         /// </summary>

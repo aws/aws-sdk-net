@@ -189,8 +189,8 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A value that indicates whether to skip the creation of a final DB snapshot before
         /// the DB instance is deleted. If skip is specified, no DB snapshot is created. If skip
-        /// is not specified, a DB snapshot is created before the DB instance is deleted. By default,
-        /// skip is not specified, and the DB snapshot is created.
+        /// isn't specified, a DB snapshot is created before the DB instance is deleted. By default,
+        /// skip isn't specified, and the DB snapshot is created.
         /// </para>
         ///  
         /// <para>
@@ -203,7 +203,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The FinalDBSnapshotIdentifier parameter must be specified if skip is not specified.
+        /// The FinalDBSnapshotIdentifier parameter must be specified if skip isn't specified.
         /// </para>
         ///  </note>
         /// </summary>

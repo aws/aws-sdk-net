@@ -29,8 +29,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteInstallationMedia operation.
-    /// Deletes the installation media for an on-premises, bring your own media (BYOM) DB
-    /// engine, such as Microsoft SQL Server.
+    /// Deletes the installation medium for a DB engine that requires an on-premises customer
+    /// provided license, such as Microsoft SQL Server.
     /// </summary>
     public partial class DeleteInstallationMediaRequest : AmazonRDSRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property InstallationMediaId. 
         /// <para>
-        /// The installation media ID.
+        /// The installation medium ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,7 +29,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Contains the cause of an installation media failure. Installation media is used for
-    /// on-premises, bring your own media (BYOM) DB engines, such as Microsoft SQL Server.
+    /// a DB engine that requires an on-premises customer provided license, such as Microsoft
+    /// SQL Server.
     /// </summary>
     public partial class InstallationMediaFailureCause
     {

@@ -519,7 +519,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The name of the database to create when the DB instance is created. If this parameter
-        /// is not specified, no database is created in the DB instance.
+        /// isn't specified, no database is created in the DB instance.
         /// </para>
         ///  
         /// <para>
@@ -540,7 +540,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The name of the database to create when the DB instance is created. If this parameter
-        /// is not specified, no database is created in the DB instance.
+        /// isn't specified, no database is created in the DB instance.
         /// </para>
         ///  
         /// <para>
@@ -561,7 +561,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The name of the database to create when the DB instance is created. If this parameter
-        /// is not specified, the default "postgres" database is created in the DB instance.
+        /// isn't specified, the default "postgres" database is created in the DB instance.
         /// </para>
         ///  
         /// <para>
@@ -617,7 +617,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The name of the database to create when the primary instance of the DB cluster is
-        /// created. If this parameter is not specified, no database is created in the DB instance.
+        /// created. If this parameter isn't specified, no database is created in the DB instance.
         /// </para>
         ///  
         /// <para>
@@ -649,8 +649,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBParameterGroupName. 
         /// <para>
         /// The name of the DB parameter group to associate with this DB instance. If you do not
-        /// specify a value for <code>DBParameterGroupName</code>, then the default <code>DBParameterGroup</code>
-        /// for the specified DB engine is used.
+        /// specify a value, then the default DB parameter group for the specified DB engine and
+        /// version is used.
         /// </para>
         ///  
         /// <para>
@@ -1803,9 +1803,9 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A value that indicates whether the DB instance is publicly accessible. When the DB
         /// instance is publicly accessible, it is an Internet-facing instance with a publicly
-        /// resolvable DNS name, which resolves to a public IP address. When the DB instance is
-        /// not publicly accessible, it is an internal instance with a DNS name that resolves
-        /// to a private IP address.
+        /// resolvable DNS name, which resolves to a public IP address. When the DB instance isn't
+        /// publicly accessible, it is an internal instance with a DNS name that resolves to a
+        /// private IP address.
         /// </para>
         ///  
         /// <para>
@@ -1814,8 +1814,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If <code>DBSubnetGroupName</code> is not specified, and <code>PubliclyAccessible</code>
-        /// is not specified, the following applies:
+        /// If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code>
+        /// isn't specified, the following applies:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1830,7 +1830,7 @@ namespace Amazon.RDS.Model
         ///  </li> </ul> 
         /// <para>
         /// If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code>
-        /// is not specified, the following applies:
+        /// isn't specified, the following applies:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1859,7 +1859,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageEncrypted. 
         /// <para>
-        /// A value that indicates whether the DB instance is encrypted. By default, it is not
+        /// A value that indicates whether the DB instance is encrypted. By default, it isn't
         /// encrypted.
         /// </para>
         ///  

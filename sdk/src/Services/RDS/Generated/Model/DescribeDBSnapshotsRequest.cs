@@ -53,7 +53,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The ID of the DB instance to retrieve the list of DB snapshots for. This parameter
         /// can't be used in conjunction with <code>DBSnapshotIdentifier</code>. This parameter
-        /// is not case-sensitive. 
+        /// isn't case-sensitive. 
         /// </para>
         ///  
         /// <para>

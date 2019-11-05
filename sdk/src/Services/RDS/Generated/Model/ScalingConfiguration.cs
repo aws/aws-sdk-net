@@ -160,7 +160,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         ///  <code>RollbackCapacityChange</code>, the default, ignores the capacity change if
-        /// a scaling point is not found in the timeout period.
+        /// a scaling point isn't found in the timeout period.
         /// </para>
         ///  <important> 
         /// <para>

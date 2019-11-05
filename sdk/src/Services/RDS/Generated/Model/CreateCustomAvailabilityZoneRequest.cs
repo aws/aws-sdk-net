@@ -94,7 +94,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify this parameter only if <code>ExistingVpnId</code> is not specified.
+        /// Specify this parameter only if <code>ExistingVpnId</code> isn't specified.
         /// </para>
         /// </summary>
         public string NewVpnTunnelName
@@ -117,7 +117,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify this parameter only if <code>ExistingVpnId</code> is not specified.
+        /// Specify this parameter only if <code>ExistingVpnId</code> isn't specified.
         /// </para>
         /// </summary>
         public string VpnTunnelOriginatorIP

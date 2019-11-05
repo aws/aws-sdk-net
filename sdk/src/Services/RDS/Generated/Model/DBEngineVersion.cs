@@ -111,7 +111,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DefaultCharacterSet. 
         /// <para>
         ///  The default character set for new instances of this engine version, if the <code>CharacterSetName</code>
-        /// parameter of the CreateDBInstance API is not specified. 
+        /// parameter of the CreateDBInstance API isn't specified. 
         /// </para>
         /// </summary>
         public CharacterSet DefaultCharacterSet

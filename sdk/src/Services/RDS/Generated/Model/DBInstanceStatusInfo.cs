@@ -40,7 +40,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// Details of the error if there is an error for the instance. If the instance is not
+        /// Details of the error if there is an error for the instance. If the instance isn't
         /// in an error state, this value is blank.
         /// </para>
         /// </summary>

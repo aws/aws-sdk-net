@@ -125,7 +125,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If NumberOfLines is specified and Marker is not specified, then the most recent lines
+        /// If NumberOfLines is specified and Marker isn't specified, then the most recent lines
         /// from the end of the log file are returned.
         /// </para>
         ///  </li> <li> 

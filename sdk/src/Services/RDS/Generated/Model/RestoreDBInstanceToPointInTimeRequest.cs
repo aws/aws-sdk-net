@@ -201,7 +201,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter is not used for the MySQL or MariaDB engines.
+        /// This parameter isn't used for the MySQL or MariaDB engines.
         /// </para>
         ///  </note>
         /// </summary>
@@ -499,7 +499,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Setting the IOPS value for the SQL Server database engine is not supported.
+        /// Setting the IOPS value for the SQL Server database engine isn't supported.
         /// </para>
         /// </summary>
         public int Iops
@@ -638,9 +638,9 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A value that indicates whether the DB instance is publicly accessible. When the DB
         /// instance is publicly accessible, it is an Internet-facing instance with a publicly
-        /// resolvable DNS name, which resolves to a public IP address. When the DB instance is
-        /// not publicly accessible, it is an internal instance with a DNS name that resolves
-        /// to a private IP address. For more information, see <a>CreateDBInstance</a>.
+        /// resolvable DNS name, which resolves to a public IP address. When the DB instance isn't
+        /// publicly accessible, it is an internal instance with a DNS name that resolves to a
+        /// private IP address. For more information, see <a>CreateDBInstance</a>.
         /// </para>
         /// </summary>
         public bool PubliclyAccessible
@@ -880,7 +880,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property UseLatestRestorableTime. 
         /// <para>
         ///  A value that indicates whether the DB instance is restored from the latest backup
-        /// time. By default, the DB instance is not restored from the latest backup time. 
+        /// time. By default, the DB instance isn't restored from the latest backup time. 
         /// </para>
         ///  
         /// <para>

@@ -29,8 +29,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportInstallationMedia operation.
-    /// Imports the installation media for an on-premises, bring your own media (BYOM) DB
-    /// engine, such as SQL Server.
+    /// Imports the installation media for a DB engine that requires an on-premises customer
+    /// provided license, such as SQL Server.
     /// </summary>
     public partial class ImportInstallationMediaRequest : AmazonRDSRequest
     {
@@ -67,8 +67,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// The list only includes supported on-premises, bring your own media (BYOM) DB engines.
-        /// 
+        /// The list only includes supported DB engines that require an on-premises customer provided
+        /// license. 
         /// </para>
         ///  
         /// <para>
@@ -108,7 +108,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineInstallationMediaPath. 
         /// <para>
-        /// The path to the installation media for the specified DB engine.
+        /// The path to the installation medium for the specified DB engine.
         /// </para>
         ///  
         /// <para>
@@ -141,8 +141,8 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The following are the database engines and links to information about the major and
-        /// minor versions. The list only includes supported on-premises, bring your own media
-        /// (BYOM) DB engines.
+        /// minor versions. The list only includes DB engines that require an on-premises customer
+        /// provided license.
         /// </para>
         ///  
         /// <para>
@@ -170,7 +170,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OSInstallationMediaPath. 
         /// <para>
-        /// The path to the installation media for the operating system associated with the specified
+        /// The path to the installation medium for the operating system associated with the specified
         /// DB engine.
         /// </para>
         ///  

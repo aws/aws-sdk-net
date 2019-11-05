@@ -29,8 +29,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInstallationMedia operation.
-    /// Describes the available installation media for on-premises, bring your own media (BYOM)
-    /// DB engines, such as Microsoft SQL Server.
+    /// Describes the available installation media for a DB engine that requires an on-premises
+    /// customer provided license, such as Microsoft SQL Server.
     /// </summary>
     public partial class DescribeInstallationMediaRequest : AmazonRDSRequest
     {
@@ -77,7 +77,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property InstallationMediaId. 
         /// <para>
-        /// The installation media ID.
+        /// The installation medium ID.
         /// </para>
         /// </summary>
         public string InstallationMediaId
