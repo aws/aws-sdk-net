@@ -177,6 +177,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.ExportedEnvironmentVariable.Name</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.NetworkInterface.NetworkInterfaceId</property>
     <min>1</min>
   </property-value-rule>

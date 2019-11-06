@@ -430,6 +430,12 @@ namespace Amazon.CodeBuild.Model
         /// If you use this option with a source provider other than GitHub, GitHub Enterprise,
         /// or Bitbucket, an invalidInputException is thrown. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  The status of a build triggered by a webhook is always reported to your source provider.
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool ReportBuildStatusOverride
         {

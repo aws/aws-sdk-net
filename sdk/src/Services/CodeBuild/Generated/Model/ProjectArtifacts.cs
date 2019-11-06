@@ -337,9 +337,13 @@ namespace Amazon.CodeBuild.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>CODEPIPELINE</code>: The build project has build output generated through AWS
-        /// CodePipeline.
+        /// CodePipeline. 
         /// </para>
-        ///  </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// The <code>CODEPIPELINE</code> type is not supported for <code>secondaryArtifacts</code>.
+        /// </para>
+        ///  </note> </li> <li> 
         /// <para>
         ///  <code>NO_ARTIFACTS</code>: The build project does not produce any build output.
         /// </para>

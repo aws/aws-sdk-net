@@ -224,6 +224,12 @@ namespace Amazon.CodeBuild.Model
         /// or Bitbucket. If this is set and you use a different source provider, an invalidInputException
         /// is thrown. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  The status of a build triggered by a webhook is always reported to your source provider.
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool ReportBuildStatus
         {
@@ -276,6 +282,10 @@ namespace Amazon.CodeBuild.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>GITHUB</code>: The source code is in a GitHub repository.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
         /// </para>
         ///  </li> <li> 
         /// <para>

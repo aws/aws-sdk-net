@@ -28,21 +28,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
-    /// Information about an environment variable for a build project or a build.
+    /// Information about an exported environment variable.
     /// </summary>
-    public partial class EnvironmentVariable
+    public partial class ExportedEnvironmentVariable
     {
         private string _name;
-        private EnvironmentVariableType _type;
         private string _value;
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name or key of the environment variable.
+        ///  The name of this exported environment variable. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Min=1)]
         public string Name
         {
             get { return this._name; }
@@ -56,52 +55,19 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// The type of environment variable. Valid values include:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems
-        /// Manager Parameter Store.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>PLAINTEXT</code>: An environment variable in plaintext format.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets Manager.
-        /// </para>
-        ///  </li> </ul>
-        /// </summary>
-        public EnvironmentVariableType Type
-        {
-            get { return this._type; }
-            set { this._type = value; }
-        }
-
-        // Check to see if Type property is set
-        internal bool IsSetType()
-        {
-            return this._type != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of the environment variable.
+        ///  The value assigned to this exported environment variable. 
         /// </para>
-        ///  <important> 
+        ///  <note> 
         /// <para>
-        /// We strongly discourage the use of environment variables to store sensitive values,
-        /// especially AWS secret key IDs and secret access keys. Environment variables can be
-        /// displayed in plain text using the AWS CodeBuild console and the AWS Command Line Interface
-        /// (AWS CLI).
+        ///  During a build, the value of a variable is available starting with the <code>install</code>
+        /// phase. It can be updated between the start of the <code>install</code> phase and the
+        /// end of the <code>post_build</code> phase. After the <code>post_build</code> phase
+        /// ends, the value of exported variables cannot change.
         /// </para>
-        ///  </important>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string Value
         {
             get { return this._value; }

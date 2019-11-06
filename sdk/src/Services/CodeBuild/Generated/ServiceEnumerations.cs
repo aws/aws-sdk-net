@@ -590,6 +590,10 @@ namespace Amazon.CodeBuild
         /// Constant PLAINTEXT for EnvironmentVariableType
         /// </summary>
         public static readonly EnvironmentVariableType PLAINTEXT = new EnvironmentVariableType("PLAINTEXT");
+        /// <summary>
+        /// Constant SECRETS_MANAGER for EnvironmentVariableType
+        /// </summary>
+        public static readonly EnvironmentVariableType SECRETS_MANAGER = new EnvironmentVariableType("SECRETS_MANAGER");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

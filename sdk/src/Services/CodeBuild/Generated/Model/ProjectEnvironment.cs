@@ -76,7 +76,11 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         ///  <code>BUILD_GENERAL1_LARGE</code>: Use up to 15 GB memory and 8 vCPUs for builds.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
+        /// Environment Compute Types</a> in the <i>AWS CodeBuild User Guide.</i> 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public ComputeType ComputeType
@@ -182,7 +186,7 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         /// Enables running the Docker daemon inside a Docker container. Set to true only if the
         /// build project is used to build Docker images. Otherwise, a build that attempts to
-        /// interact with the Docker daemon fails.
+        /// interact with the Docker daemon fails. The default setting is <code>false</code>.
         /// </para>
         ///  
         /// <para>
