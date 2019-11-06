@@ -28,49 +28,51 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Signer.Model
 {
     /// <summary>
-    /// The hash algorithms that are available to a code signing job.
+    /// Container for the parameters to the UntagResource operation.
+    /// Remove one or more tags from a signing profile. Specify a list of tag keys to remove
+    /// the tags.
     /// </summary>
-    public partial class HashAlgorithmOptions
+    public partial class UntagResourceRequest : AmazonSignerRequest
     {
-        private List<string> _allowedValues = new List<string>();
-        private HashAlgorithm _defaultValue;
+        private string _resourceArn;
+        private List<string> _tagKeys = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property AllowedValues. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The set of accepted hash algorithms allowed in a code signing job.
+        /// Amazon Resource Name (ARN) for the signing profile .
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public List<string> AllowedValues
+        public string ResourceArn
         {
-            get { return this._allowedValues; }
-            set { this._allowedValues = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if AllowedValues property is set
-        internal bool IsSetAllowedValues()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._allowedValues != null && this._allowedValues.Count > 0; 
+            return this._resourceArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property DefaultValue. 
+        /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The default hash algorithm that is used in a code signing job.
+        /// A list of tag keys to be removed from the signing profile .
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public HashAlgorithm DefaultValue
+        [AWSProperty(Required=true, Min=1, Max=200)]
+        public List<string> TagKeys
         {
-            get { return this._defaultValue; }
-            set { this._defaultValue = value; }
+            get { return this._tagKeys; }
+            set { this._tagKeys = value; }
         }
 
-        // Check to see if DefaultValue property is set
-        internal bool IsSetDefaultValue()
+        // Check to see if TagKeys property is set
+        internal bool IsSetTagKeys()
         {
-            return this._defaultValue != null;
+            return this._tagKeys != null && this._tagKeys.Count > 0; 
         }
 
     }

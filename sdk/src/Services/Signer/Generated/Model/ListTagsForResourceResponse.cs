@@ -28,47 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Signer.Model
 {
     /// <summary>
-    /// The S3 bucket name and key where code signing saved your signed code image.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class S3SignedObject
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private string _bucketName;
-        private string _key;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property BucketName. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// Name of the S3 bucket.
+        /// A list of tags associated with the signing profile.
         /// </para>
         /// </summary>
-        public string BucketName
+        [AWSProperty(Min=1, Max=200)]
+        public Dictionary<string, string> Tags
         {
-            get { return this._bucketName; }
-            set { this._bucketName = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if BucketName property is set
-        internal bool IsSetBucketName()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._bucketName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Key. 
-        /// <para>
-        /// Key name that uniquely identifies a signed code image in your bucket.
-        /// </para>
-        /// </summary>
-        public string Key
-        {
-            get { return this._key; }
-            set { this._key = value; }
-        }
-
-        // Check to see if Key property is set
-        internal bool IsSetKey()
-        {
-            return this._key != null;
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

@@ -31,13 +31,15 @@ namespace Amazon.Signer
     /// <summary>
     /// Interface for accessing Signer
     ///
-    /// You can use Code Signing for Amazon FreeRTOS (AWS Signer) to sign code that you created
-    /// for any of the IoT devices that Amazon Web Services supports. AWS Signer is integrated
-    /// with Amazon FreeRTOS, AWS Certificate Manager, and AWS CloudTrail. Amazon FreeRTOS
-    /// customers can use AWS Signer to sign code images before making them available for
-    /// microcontrollers. You can use ACM to import third-party certificates to be used by
-    /// AWS Signer. For general information about using AWS Signer, see the <a href="http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">Code
-    /// Signing for Amazon FreeRTOS Developer Guide</a>.
+    /// With code signing for IoT, you can sign code that you create for any IoT device that
+    /// is supported by Amazon Web Services (AWS). Code signing is available through <a href="http://docs.aws.amazon.com/freertos/latest/userguide/">Amazon
+    /// FreeRTOS</a> and <a href="http://docs.aws.amazon.com/iot/latest/developerguide/">AWS
+    /// IoT Device Management</a>, and integrated with <a href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS
+    /// Certificate Manager (ACM)</a>. In order to sign code, you import a third-party code
+    /// signing certificate with ACM that is used to sign updates in Amazon FreeRTOS and AWS
+    /// IoT Device Management. For general information about using code signing, see the <a
+    /// href="http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">Code Signing
+    /// for IoT Developer Guide</a>.
     /// </summary>
     public partial interface IAmazonSigner : IAmazonService, IDisposable
     {
@@ -251,10 +253,10 @@ namespace Amazon.Signer
         /// <summary>
         /// Lists all your signing jobs. You can use the <code>maxResults</code> parameter to
         /// limit the number of signing jobs that are returned in the response. If additional
-        /// jobs remain to be listed, AWS Signer returns a <code>nextToken</code> value. Use this
-        /// value in subsequent calls to <code>ListSigningJobs</code> to fetch the remaining values.
-        /// You can continue calling <code>ListSigningJobs</code> with your <code>maxResults</code>
-        /// parameter and with new values that AWS Signer returns in the <code>nextToken</code>
+        /// jobs remain to be listed, code signing returns a <code>nextToken</code> value. Use
+        /// this value in subsequent calls to <code>ListSigningJobs</code> to fetch the remaining
+        /// values. You can continue calling <code>ListSigningJobs</code> with your <code>maxResults</code>
+        /// parameter and with new values that code signing returns in the <code>nextToken</code>
         /// parameter until all of your signing jobs have been returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSigningJobs service method.</param>
@@ -280,10 +282,10 @@ namespace Amazon.Signer
         /// <summary>
         /// Lists all your signing jobs. You can use the <code>maxResults</code> parameter to
         /// limit the number of signing jobs that are returned in the response. If additional
-        /// jobs remain to be listed, AWS Signer returns a <code>nextToken</code> value. Use this
-        /// value in subsequent calls to <code>ListSigningJobs</code> to fetch the remaining values.
-        /// You can continue calling <code>ListSigningJobs</code> with your <code>maxResults</code>
-        /// parameter and with new values that AWS Signer returns in the <code>nextToken</code>
+        /// jobs remain to be listed, code signing returns a <code>nextToken</code> value. Use
+        /// this value in subsequent calls to <code>ListSigningJobs</code> to fetch the remaining
+        /// values. You can continue calling <code>ListSigningJobs</code> with your <code>maxResults</code>
+        /// parameter and with new values that code signing returns in the <code>nextToken</code>
         /// parameter until all of your signing jobs have been returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSigningJobs service method.</param>
@@ -313,12 +315,12 @@ namespace Amazon.Signer
 
 
         /// <summary>
-        /// Lists all signing platforms available in AWS Signer that match the request parameters.
-        /// If additional jobs remain to be listed, AWS Signer returns a <code>nextToken</code>
+        /// Lists all signing platforms available in code signing that match the request parameters.
+        /// If additional jobs remain to be listed, code signing returns a <code>nextToken</code>
         /// value. Use this value in subsequent calls to <code>ListSigningJobs</code> to fetch
         /// the remaining values. You can continue calling <code>ListSigningJobs</code> with your
-        /// <code>maxResults</code> parameter and with new values that AWS Signer returns in the
-        /// <code>nextToken</code> parameter until all of your signing jobs have been returned.
+        /// <code>maxResults</code> parameter and with new values that code signing returns in
+        /// the <code>nextToken</code> parameter until all of your signing jobs have been returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSigningPlatforms service method.</param>
         /// 
@@ -341,12 +343,12 @@ namespace Amazon.Signer
 
 
         /// <summary>
-        /// Lists all signing platforms available in AWS Signer that match the request parameters.
-        /// If additional jobs remain to be listed, AWS Signer returns a <code>nextToken</code>
+        /// Lists all signing platforms available in code signing that match the request parameters.
+        /// If additional jobs remain to be listed, code signing returns a <code>nextToken</code>
         /// value. Use this value in subsequent calls to <code>ListSigningJobs</code> to fetch
         /// the remaining values. You can continue calling <code>ListSigningJobs</code> with your
-        /// <code>maxResults</code> parameter and with new values that AWS Signer returns in the
-        /// <code>nextToken</code> parameter until all of your signing jobs have been returned.
+        /// <code>maxResults</code> parameter and with new values that code signing returns in
+        /// the <code>nextToken</code> parameter until all of your signing jobs have been returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSigningPlatforms service method.</param>
         /// <param name="cancellationToken">
@@ -377,11 +379,12 @@ namespace Amazon.Signer
         /// <summary>
         /// Lists all available signing profiles in your AWS account. Returns only profiles with
         /// an <code>ACTIVE</code> status unless the <code>includeCanceled</code> request field
-        /// is set to <code>true</code>. If additional jobs remain to be listed, AWS Signer returns
-        /// a <code>nextToken</code> value. Use this value in subsequent calls to <code>ListSigningJobs</code>
+        /// is set to <code>true</code>. If additional jobs remain to be listed, code signing
+        /// returns a <code>nextToken</code> value. Use this value in subsequent calls to <code>ListSigningJobs</code>
         /// to fetch the remaining values. You can continue calling <code>ListSigningJobs</code>
-        /// with your <code>maxResults</code> parameter and with new values that AWS Signer returns
-        /// in the <code>nextToken</code> parameter until all of your signing jobs have been returned.
+        /// with your <code>maxResults</code> parameter and with new values that code signing
+        /// returns in the <code>nextToken</code> parameter until all of your signing jobs have
+        /// been returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSigningProfiles service method.</param>
         /// 
@@ -403,11 +406,12 @@ namespace Amazon.Signer
         /// <summary>
         /// Lists all available signing profiles in your AWS account. Returns only profiles with
         /// an <code>ACTIVE</code> status unless the <code>includeCanceled</code> request field
-        /// is set to <code>true</code>. If additional jobs remain to be listed, AWS Signer returns
-        /// a <code>nextToken</code> value. Use this value in subsequent calls to <code>ListSigningJobs</code>
+        /// is set to <code>true</code>. If additional jobs remain to be listed, code signing
+        /// returns a <code>nextToken</code> value. Use this value in subsequent calls to <code>ListSigningJobs</code>
         /// to fetch the remaining values. You can continue calling <code>ListSigningJobs</code>
-        /// with your <code>maxResults</code> parameter and with new values that AWS Signer returns
-        /// in the <code>nextToken</code> parameter until all of your signing jobs have been returned.
+        /// with your <code>maxResults</code> parameter and with new values that code signing
+        /// returns in the <code>nextToken</code> parameter until all of your signing jobs have
+        /// been returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSigningProfiles service method.</param>
         /// <param name="cancellationToken">
@@ -429,11 +433,59 @@ namespace Amazon.Signer
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Returns a list of the tags associated with a signing profile resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by Signer.</returns>
+        /// <exception cref="Amazon.Signer.Model.BadRequestException">
+        /// The request contains invalid parameters for the ARN or tags. This exception also occurs
+        /// when you call a tagging API on a cancelled signing profile.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.InternalServiceErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.NotFoundException">
+        /// The signing profile was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of the tags associated with a signing profile resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by Signer.</returns>
+        /// <exception cref="Amazon.Signer.Model.BadRequestException">
+        /// The request contains invalid parameters for the ARN or tags. This exception also occurs
+        /// when you call a tagging API on a cancelled signing profile.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.InternalServiceErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.NotFoundException">
+        /// The signing profile was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  PutSigningProfile
 
 
         /// <summary>
-        /// Creates a signing profile. A signing profile is an AWS Signer template that can be
+        /// Creates a signing profile. A signing profile is a code signing template that can be
         /// used to carry out a pre-defined signing job. For more information, see <a href="http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html">http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html</a>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutSigningProfile service method.</param>
@@ -460,7 +512,7 @@ namespace Amazon.Signer
 
 
         /// <summary>
-        /// Creates a signing profile. A signing profile is an AWS Signer template that can be
+        /// Creates a signing profile. A signing profile is a code signing template that can be
         /// used to carry out a pre-defined signing job. For more information, see <a href="http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html">http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html</a>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutSigningProfile service method.</param>
@@ -508,7 +560,7 @@ namespace Amazon.Signer
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You must create an S3 destination bucket. AWS Signer uses your S3 destination bucket
+        /// You must create an S3 destination bucket. Code signing uses your S3 destination bucket
         /// to write your signed code.
         /// </para>
         ///  </li> <li> 
@@ -518,8 +570,7 @@ namespace Amazon.Signer
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You must also specify a request token that identifies your request to AWS Signer.
-        /// 
+        /// You must also specify a request token that identifies your request to code signing.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -571,7 +622,7 @@ namespace Amazon.Signer
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You must create an S3 destination bucket. AWS Signer uses your S3 destination bucket
+        /// You must create an S3 destination bucket. Code signing uses your S3 destination bucket
         /// to write your signed code.
         /// </para>
         ///  </li> <li> 
@@ -581,8 +632,7 @@ namespace Amazon.Signer
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You must also specify a request token that identifies your request to AWS Signer.
-        /// 
+        /// You must also specify a request token that identifies your request to code signing.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -618,6 +668,110 @@ namespace Amazon.Signer
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/StartSigningJob">REST API Reference for StartSigningJob Operation</seealso>
         Task<StartSigningJobResponse> StartSigningJobAsync(StartSigningJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Adds one or more tags to a signing profile. Tags are labels that you can use to identify
+        /// and organize your AWS resources. Each tag consists of a key and an optional value.
+        /// You specify the signing profile using its Amazon Resource Name (ARN). You specify
+        /// the tag by using a key-value pair.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by Signer.</returns>
+        /// <exception cref="Amazon.Signer.Model.BadRequestException">
+        /// The request contains invalid parameters for the ARN or tags. This exception also occurs
+        /// when you call a tagging API on a cancelled signing profile.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.InternalServiceErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.NotFoundException">
+        /// The signing profile was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+
+
+        /// <summary>
+        /// Adds one or more tags to a signing profile. Tags are labels that you can use to identify
+        /// and organize your AWS resources. Each tag consists of a key and an optional value.
+        /// You specify the signing profile using its Amazon Resource Name (ARN). You specify
+        /// the tag by using a key-value pair.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by Signer.</returns>
+        /// <exception cref="Amazon.Signer.Model.BadRequestException">
+        /// The request contains invalid parameters for the ARN or tags. This exception also occurs
+        /// when you call a tagging API on a cancelled signing profile.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.InternalServiceErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.NotFoundException">
+        /// The signing profile was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Remove one or more tags from a signing profile. Specify a list of tag keys to remove
+        /// the tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by Signer.</returns>
+        /// <exception cref="Amazon.Signer.Model.BadRequestException">
+        /// The request contains invalid parameters for the ARN or tags. This exception also occurs
+        /// when you call a tagging API on a cancelled signing profile.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.InternalServiceErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.NotFoundException">
+        /// The signing profile was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+
+
+        /// <summary>
+        /// Remove one or more tags from a signing profile. Specify a list of tag keys to remove
+        /// the tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by Signer.</returns>
+        /// <exception cref="Amazon.Signer.Model.BadRequestException">
+        /// The request contains invalid parameters for the ARN or tags. This exception also occurs
+        /// when you call a tagging API on a cancelled signing profile.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.InternalServiceErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.NotFoundException">
+        /// The signing profile was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

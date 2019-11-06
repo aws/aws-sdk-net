@@ -28,30 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Signer.Model
 {
     /// <summary>
-    /// Any overrides that are applied to the signing configuration of a code signing platform.
+    /// This is the response object from the UntagResource operation.
     /// </summary>
-    public partial class SigningPlatformOverrides
+    public partial class UntagResourceResponse : AmazonWebServiceResponse
     {
-        private SigningConfigurationOverrides _signingConfiguration;
-
-        /// <summary>
-        /// Gets and sets the property SigningConfiguration. 
-        /// <para>
-        /// A signing configuration that overrides the default encryption or hash algorithm of
-        /// a signing job.
-        /// </para>
-        /// </summary>
-        public SigningConfigurationOverrides SigningConfiguration
-        {
-            get { return this._signingConfiguration; }
-            set { this._signingConfiguration = value; }
-        }
-
-        // Check to see if SigningConfiguration property is set
-        internal bool IsSetSigningConfiguration()
-        {
-            return this._signingConfiguration != null;
-        }
 
     }
 }

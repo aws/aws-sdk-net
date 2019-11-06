@@ -39,7 +39,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property EncryptionAlgorithm. 
         /// <para>
-        /// A specified override of the default encryption algorithm that is used in an AWS Signer
+        /// A specified override of the default encryption algorithm that is used in a code signing
         /// job.
         /// </para>
         /// </summary>
@@ -58,7 +58,8 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property HashAlgorithm. 
         /// <para>
-        /// A specified override of the default hash algorithm that is used in an AWS Signer job.
+        /// A specified override of the default hash algorithm that is used in a code signing
+        /// job.
         /// </para>
         /// </summary>
         public HashAlgorithm HashAlgorithm

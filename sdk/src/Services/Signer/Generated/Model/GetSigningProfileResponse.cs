@@ -32,12 +32,32 @@ namespace Amazon.Signer.Model
     /// </summary>
     public partial class GetSigningProfileResponse : AmazonWebServiceResponse
     {
+        private string _arn;
         private SigningPlatformOverrides _overrides;
         private string _platformId;
         private string _profileName;
         private SigningMaterial _signingMaterial;
         private Dictionary<string, string> _signingParameters = new Dictionary<string, string>();
         private SigningProfileStatus _status;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the signing profile.
+        /// </para>
+        /// </summary>
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Overrides. 
@@ -147,6 +167,25 @@ namespace Amazon.Signer.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags associated with the signing profile.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

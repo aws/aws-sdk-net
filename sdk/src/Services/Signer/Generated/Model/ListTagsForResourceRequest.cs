@@ -28,47 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Signer.Model
 {
     /// <summary>
-    /// The S3 bucket name and key where code signing saved your signed code image.
+    /// Container for the parameters to the ListTagsForResource operation.
+    /// Returns a list of the tags associated with a signing profile resource.
     /// </summary>
-    public partial class S3SignedObject
+    public partial class ListTagsForResourceRequest : AmazonSignerRequest
     {
-        private string _bucketName;
-        private string _key;
+        private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property BucketName. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// Name of the S3 bucket.
+        /// The Amazon Resource Name (ARN) for the signing profile.
         /// </para>
         /// </summary>
-        public string BucketName
+        [AWSProperty(Required=true)]
+        public string ResourceArn
         {
-            get { return this._bucketName; }
-            set { this._bucketName = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if BucketName property is set
-        internal bool IsSetBucketName()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._bucketName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Key. 
-        /// <para>
-        /// Key name that uniquely identifies a signed code image in your bucket.
-        /// </para>
-        /// </summary>
-        public string Key
-        {
-            get { return this._key; }
-            set { this._key = value; }
-        }
-
-        // Check to see if Key property is set
-        internal bool IsSetKey()
-        {
-            return this._key != null;
+            return this._resourceArn != null;
         }
 
     }

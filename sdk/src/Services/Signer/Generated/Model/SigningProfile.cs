@@ -28,16 +28,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Signer.Model
 {
     /// <summary>
-    /// Contains information about the ACM certificates and AWS Signer configuration parameters
-    /// that can be used by a given AWS Signer user.
+    /// Contains information about the ACM certificates and code signing configuration parameters
+    /// that can be used by a given code signing user.
     /// </summary>
     public partial class SigningProfile
     {
+        private string _arn;
         private string _platformId;
         private string _profileName;
         private SigningMaterial _signingMaterial;
         private Dictionary<string, string> _signingParameters = new Dictionary<string, string>();
         private SigningProfileStatus _status;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// Amazon Resource Name (ARN) for the signing profile.
+        /// </para>
+        /// </summary>
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PlatformId. 
@@ -60,7 +80,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property ProfileName. 
         /// <para>
-        /// The name of the AWS Signer profile.
+        /// The name of the signing profile.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=20)]
@@ -97,7 +117,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property SigningParameters. 
         /// <para>
-        /// The parameters that are available for use by an AWS Signer user.
+        /// The parameters that are available for use by a code signing user.
         /// </para>
         /// </summary>
         public Dictionary<string, string> SigningParameters
@@ -115,7 +135,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of an AWS Signer profile.
+        /// The status of a code signing profile.
         /// </para>
         /// </summary>
         public SigningProfileStatus Status
@@ -128,6 +148,25 @@ namespace Amazon.Signer.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags associated with the signing profile.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }
