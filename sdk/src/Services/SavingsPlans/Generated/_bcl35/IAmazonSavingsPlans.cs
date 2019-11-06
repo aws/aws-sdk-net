@@ -32,8 +32,8 @@ namespace Amazon.SavingsPlans
     /// Savings Plans are a pricing model that offer significant savings on AWS usage (for
     /// example, on Amazon EC2 instances). You commit to a consistent amount of usage, in
     /// USD per hour, for a term of 1 or 3 years, and receive a lower price for that usage.
-    /// For more information, see the <a href="https://docs.aws.amazon.com/savingsplans/latest/userguide/">Savings
-    /// Plans User Guide</a>.
+    /// For more information, see the <a href="https://docs.aws.amazon.com/savingsplans/latest/userguide/">AWS
+    /// Savings Plans User Guide</a>.
     /// </summary>
     public partial interface IAmazonSavingsPlans : IAmazonService, IDisposable
     {
