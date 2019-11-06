@@ -57,16 +57,17 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property BudgetLimit. 
         /// <para>
-        /// The total amount of cost, usage, RI utilization, or RI coverage that you want to track
-        /// with your budget.
+        /// The total amount of cost, usage, RI utilization, RI coverage, Savings Plans utilization,
+        /// or Savings Plans coverage that you want to track with your budget.
         /// </para>
         ///  
         /// <para>
         ///  <code>BudgetLimit</code> is required for cost or usage budgets, but optional for
-        /// RI utilization or coverage budgets. RI utilization or coverage budgets default to
-        /// <code>100</code>, which is the only valid value for RI utilization or coverage budgets.
-        /// You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for <code>CreateBudget</code>
-        /// and <code>UpdateBudget</code> actions. 
+        /// RI or Savings Plans utilization or coverage budgets. RI and Savings Plans utilization
+        /// or coverage budgets default to <code>100</code>, which is the only valid value for
+        /// RI or Savings Plans utilization or coverage budgets. You can't use <code>BudgetLimit</code>
+        /// with <code>PlannedBudgetLimits</code> for <code>CreateBudget</code> and <code>UpdateBudget</code>
+        /// actions. 
         /// </para>
         /// </summary>
         public Spend BudgetLimit
@@ -104,7 +105,8 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property BudgetType. 
         /// <para>
-        /// Whether this budget tracks costs, usage, RI utilization, or RI coverage.
+        /// Whether this budget tracks costs, usage, RI utilization, RI coverage, Savings Plans
+        /// utilization, or Savings Plans coverage.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -188,8 +190,8 @@ namespace Amazon.Budgets.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>USAGE</code>, <code>RI_UTILIZATION</code>, and <code>RI_COVERAGE</code> budgets
-        /// do not have <code>CostTypes</code>.
+        ///  <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>,
+        /// and <code>Savings_Plans_Coverage</code> budgets do not have <code>CostTypes</code>.
         /// </para>
         /// </summary>
         public CostTypes CostTypes
@@ -327,7 +329,8 @@ namespace Amazon.Budgets.Model
         /// Gets and sets the property TimeUnit. 
         /// <para>
         /// The length of time until a budget resets the actual and forecasted spend. <code>DAILY</code>
-        /// is available only for <code>RI_UTILIZATION</code> and <code>RI_COVERAGE</code> budgets.
+        /// is available only for <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>,
+        /// and <code>Savings_Plans_Coverage</code> budgets.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

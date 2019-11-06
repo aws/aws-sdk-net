@@ -43,6 +43,14 @@ namespace Amazon.Budgets
         /// </summary>
         public static readonly BudgetType RI_UTILIZATION = new BudgetType("RI_UTILIZATION");
         /// <summary>
+        /// Constant SAVINGS_PLANS_COVERAGE for BudgetType
+        /// </summary>
+        public static readonly BudgetType SAVINGS_PLANS_COVERAGE = new BudgetType("SAVINGS_PLANS_COVERAGE");
+        /// <summary>
+        /// Constant SAVINGS_PLANS_UTILIZATION for BudgetType
+        /// </summary>
+        public static readonly BudgetType SAVINGS_PLANS_UTILIZATION = new BudgetType("SAVINGS_PLANS_UTILIZATION");
+        /// <summary>
         /// Constant USAGE for BudgetType
         /// </summary>
         public static readonly BudgetType USAGE = new BudgetType("USAGE");
