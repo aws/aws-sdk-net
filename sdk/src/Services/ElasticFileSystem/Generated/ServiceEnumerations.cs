@@ -205,6 +205,10 @@ namespace Amazon.ElasticFileSystem
         /// </summary>
         public static readonly TransitionToIARules AFTER_60_DAYS = new TransitionToIARules("AFTER_60_DAYS");
         /// <summary>
+        /// Constant AFTER_7_DAYS for TransitionToIARules
+        /// </summary>
+        public static readonly TransitionToIARules AFTER_7_DAYS = new TransitionToIARules("AFTER_7_DAYS");
+        /// <summary>
         /// Constant AFTER_90_DAYS for TransitionToIARules
         /// </summary>
         public static readonly TransitionToIARules AFTER_90_DAYS = new TransitionToIARules("AFTER_90_DAYS");
