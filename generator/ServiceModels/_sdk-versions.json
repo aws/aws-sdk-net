@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.623.0",
+    "ProductVersion" : "3.3.624.0",
     "CoreVersion"    : "3.3.103.59",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -401,7 +401,7 @@
             "InPreview"               : false
         },
         "ElasticFileSystem"         : {
-            "Version" : "3.3.102.49",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.59"
@@ -593,7 +593,7 @@
             "InPreview"               : false
         },
         "Budgets"                         : {
-            "Version" : "3.3.101.71",
+            "Version" : "3.3.101.72",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.59"
@@ -657,7 +657,7 @@
             "InPreview"               : false
         },
         "CodeBuild"                       : {
-            "Version" : "3.3.102.35",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.59"
@@ -857,7 +857,7 @@
             "InPreview"               : false
         },
         "CostExplorer"                    : {
-            "Version" : "3.3.102.42",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.59"
@@ -1161,7 +1161,7 @@
             "InPreview"               : false
         },
         "Signer"                          : {
-            "Version" : "3.3.100.94",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.59"
@@ -1537,6 +1537,14 @@
             "InPreview"               : false
         },
         "CodeStarNotifications"           : {
+            "Version" : "3.3.100.0",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.103.59"
+            },
+            "InPreview"               : false
+        },
+        "SavingsPlans"                    : {
             "Version" : "3.3.100.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {

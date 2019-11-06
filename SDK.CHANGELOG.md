@@ -1,3 +1,17 @@
+### 3.3.624.0 (2019-11-06 19:59 UTC)
+* Budgets (3.3.101.72)
+	* Documentation updates for budgets to track Savings Plans utilization and coverage
+* CodeBuild (3.3.103.0)
+	* Add support for Build Number, Secrets Manager and Exported Environment Variables.
+* CostExplorer (3.3.103.0)
+	* This launch provides customers with access to Savings Plans management APIs.
+* ElasticFileSystem (3.3.103.0)
+	* EFS customers can select a lifecycle policy that automatically moves files that have not been accessed for 7 days into the EFS Infrequent Access (EFS IA) storage class. EFS IA provides price/performance that is cost-optimized for files that are not accessed every day.
+* SavingsPlans (3.3.100.0)
+	* This is the first release of Savings Plans, a new flexible pricing model that offers low prices on Amazon EC2 and AWS Fargate usage.
+* Signer (3.3.101.0)
+	* This release adds support for tagging code-signing profiles in AWS Signer.
+
 ### 3.3.623.0 (2019-11-05 19:14 UTC)
 * CodeStarNotifications (3.3.100.0)
 	* This release adds a notification manager for events in repositories, build projects, deployments, and pipelines. You can now configure rules and receive notifications about events that occur for resources. Each notification includes a status message as well as a link to the resource (repository, build project, deployment application, or pipeline) whose event generated the notification.
