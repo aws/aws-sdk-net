@@ -39,6 +39,7 @@ namespace Amazon.CostExplorer.Model
         private ResourceDetails _resourceDetails;
         private string _resourceId;
         private ResourceUtilization _resourceUtilization;
+        private string _savingsPlansCoveredHoursInLookbackPeriod;
         private List<TagValues> _tags = new List<TagValues>();
         private string _totalRunningHoursInLookbackPeriod;
 
@@ -166,6 +167,24 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetResourceUtilization()
         {
             return this._resourceUtilization != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SavingsPlansCoveredHoursInLookbackPeriod. 
+        /// <para>
+        /// Number of hours during the lookback period covered by Savings Plans.
+        /// </para>
+        /// </summary>
+        public string SavingsPlansCoveredHoursInLookbackPeriod
+        {
+            get { return this._savingsPlansCoveredHoursInLookbackPeriod; }
+            set { this._savingsPlansCoveredHoursInLookbackPeriod = value; }
+        }
+
+        // Check to see if SavingsPlansCoveredHoursInLookbackPeriod property is set
+        internal bool IsSetSavingsPlansCoveredHoursInLookbackPeriod()
+        {
+            return this._savingsPlansCoveredHoursInLookbackPeriod != null;
         }
 
         /// <summary>

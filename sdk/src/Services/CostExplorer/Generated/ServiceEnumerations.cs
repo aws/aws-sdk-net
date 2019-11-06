@@ -88,6 +88,10 @@ namespace Amazon.CostExplorer
         /// Constant RESERVATIONS for Context
         /// </summary>
         public static readonly Context RESERVATIONS = new Context("RESERVATIONS");
+        /// <summary>
+        /// Constant SAVINGS_PLANS for Context
+        /// </summary>
+        public static readonly Context SAVINGS_PLANS = new Context("SAVINGS_PLANS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -175,6 +179,10 @@ namespace Amazon.CostExplorer
         /// </summary>
         public static readonly Dimension OPERATION = new Dimension("OPERATION");
         /// <summary>
+        /// Constant PAYMENT_OPTION for Dimension
+        /// </summary>
+        public static readonly Dimension PAYMENT_OPTION = new Dimension("PAYMENT_OPTION");
+        /// <summary>
         /// Constant PLATFORM for Dimension
         /// </summary>
         public static readonly Dimension PLATFORM = new Dimension("PLATFORM");
@@ -198,6 +206,14 @@ namespace Amazon.CostExplorer
         /// Constant RIGHTSIZING_TYPE for Dimension
         /// </summary>
         public static readonly Dimension RIGHTSIZING_TYPE = new Dimension("RIGHTSIZING_TYPE");
+        /// <summary>
+        /// Constant SAVINGS_PLAN_ARN for Dimension
+        /// </summary>
+        public static readonly Dimension SAVINGS_PLAN_ARN = new Dimension("SAVINGS_PLAN_ARN");
+        /// <summary>
+        /// Constant SAVINGS_PLANS_TYPE for Dimension
+        /// </summary>
+        public static readonly Dimension SAVINGS_PLANS_TYPE = new Dimension("SAVINGS_PLANS_TYPE");
         /// <summary>
         /// Constant SCOPE for Dimension
         /// </summary>
@@ -646,6 +662,56 @@ namespace Amazon.CostExplorer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RightsizingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SupportedSavingsPlansType.
+    /// </summary>
+    public class SupportedSavingsPlansType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPUTE_SP for SupportedSavingsPlansType
+        /// </summary>
+        public static readonly SupportedSavingsPlansType COMPUTE_SP = new SupportedSavingsPlansType("COMPUTE_SP");
+        /// <summary>
+        /// Constant EC2_INSTANCE_SP for SupportedSavingsPlansType
+        /// </summary>
+        public static readonly SupportedSavingsPlansType EC2_INSTANCE_SP = new SupportedSavingsPlansType("EC2_INSTANCE_SP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SupportedSavingsPlansType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SupportedSavingsPlansType FindValue(string value)
+        {
+            return FindValue<SupportedSavingsPlansType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SupportedSavingsPlansType(string value)
         {
             return FindValue(value);
         }

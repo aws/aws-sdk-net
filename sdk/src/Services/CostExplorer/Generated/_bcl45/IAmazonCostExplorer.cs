@@ -596,6 +596,260 @@ namespace Amazon.CostExplorer
 
         #endregion
         
+        #region  GetSavingsPlansCoverage
+
+
+        /// <summary>
+        /// Retrieves the Savings Plans covered for your account. This enables you to see how
+        /// much of your cost is covered by a Savings Plan. An organization’s master account can
+        /// see the coverage of the associated member accounts. For any time period, you can filter
+        /// data for Savings Plans usage with the following dimensions:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>LINKED_ACCOUNT</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>REGION</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SERVICE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>INSTANCE_FAMILY</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To determine valid values for a dimension, use the <code>GetDimensionValues</code>
+        /// operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlansCoverage service method.</param>
+        /// 
+        /// <returns>The response from the GetSavingsPlansCoverage service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansCoverage">REST API Reference for GetSavingsPlansCoverage Operation</seealso>
+        GetSavingsPlansCoverageResponse GetSavingsPlansCoverage(GetSavingsPlansCoverageRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the Savings Plans covered for your account. This enables you to see how
+        /// much of your cost is covered by a Savings Plan. An organization’s master account can
+        /// see the coverage of the associated member accounts. For any time period, you can filter
+        /// data for Savings Plans usage with the following dimensions:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>LINKED_ACCOUNT</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>REGION</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SERVICE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>INSTANCE_FAMILY</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To determine valid values for a dimension, use the <code>GetDimensionValues</code>
+        /// operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlansCoverage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSavingsPlansCoverage service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansCoverage">REST API Reference for GetSavingsPlansCoverage Operation</seealso>
+        Task<GetSavingsPlansCoverageResponse> GetSavingsPlansCoverageAsync(GetSavingsPlansCoverageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetSavingsPlansPurchaseRecommendation
+
+
+        /// <summary>
+        /// Retrieves your request parameters, Savings Plan Recommendations Summary and Details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlansPurchaseRecommendation service method.</param>
+        /// 
+        /// <returns>The response from the GetSavingsPlansPurchaseRecommendation service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansPurchaseRecommendation">REST API Reference for GetSavingsPlansPurchaseRecommendation Operation</seealso>
+        GetSavingsPlansPurchaseRecommendationResponse GetSavingsPlansPurchaseRecommendation(GetSavingsPlansPurchaseRecommendationRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves your request parameters, Savings Plan Recommendations Summary and Details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlansPurchaseRecommendation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSavingsPlansPurchaseRecommendation service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansPurchaseRecommendation">REST API Reference for GetSavingsPlansPurchaseRecommendation Operation</seealso>
+        Task<GetSavingsPlansPurchaseRecommendationResponse> GetSavingsPlansPurchaseRecommendationAsync(GetSavingsPlansPurchaseRecommendationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetSavingsPlansUtilization
+
+
+        /// <summary>
+        /// Retrieves the Savings Plans utilization for your account across date ranges with daily
+        /// or monthly granularity. Master accounts in an organization have access to member accounts.
+        /// You can use <code>GetDimensionValues</code> to determine the possible dimension values.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot group by any dimension values for <code>GetSavingsPlansUtilization</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlansUtilization service method.</param>
+        /// 
+        /// <returns>The response from the GetSavingsPlansUtilization service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilization">REST API Reference for GetSavingsPlansUtilization Operation</seealso>
+        GetSavingsPlansUtilizationResponse GetSavingsPlansUtilization(GetSavingsPlansUtilizationRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the Savings Plans utilization for your account across date ranges with daily
+        /// or monthly granularity. Master accounts in an organization have access to member accounts.
+        /// You can use <code>GetDimensionValues</code> to determine the possible dimension values.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot group by any dimension values for <code>GetSavingsPlansUtilization</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlansUtilization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSavingsPlansUtilization service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilization">REST API Reference for GetSavingsPlansUtilization Operation</seealso>
+        Task<GetSavingsPlansUtilizationResponse> GetSavingsPlansUtilizationAsync(GetSavingsPlansUtilizationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetSavingsPlansUtilizationDetails
+
+
+        /// <summary>
+        /// Retrieves a single daily or monthly Savings Plans utilization rate and details for
+        /// your account. Master accounts in an organization have access to member accounts. You
+        /// can use <code>GetDimensionValues</code> to determine the possible dimension values.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You can't group by any dimension values for <code>GetSavingsPlansUtilizationDetails</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlansUtilizationDetails service method.</param>
+        /// 
+        /// <returns>The response from the GetSavingsPlansUtilizationDetails service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilizationDetails">REST API Reference for GetSavingsPlansUtilizationDetails Operation</seealso>
+        GetSavingsPlansUtilizationDetailsResponse GetSavingsPlansUtilizationDetails(GetSavingsPlansUtilizationDetailsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a single daily or monthly Savings Plans utilization rate and details for
+        /// your account. Master accounts in an organization have access to member accounts. You
+        /// can use <code>GetDimensionValues</code> to determine the possible dimension values.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You can't group by any dimension values for <code>GetSavingsPlansUtilizationDetails</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlansUtilizationDetails service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSavingsPlansUtilizationDetails service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilizationDetails">REST API Reference for GetSavingsPlansUtilizationDetails Operation</seealso>
+        Task<GetSavingsPlansUtilizationDetailsResponse> GetSavingsPlansUtilizationDetailsAsync(GetSavingsPlansUtilizationDetailsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetTags
 
 

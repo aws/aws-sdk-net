@@ -806,6 +806,293 @@ namespace Amazon.CostExplorer
 
         #endregion
         
+        #region  GetSavingsPlansCoverage
+
+        /// <summary>
+        /// Retrieves the Savings Plans covered for your account. This enables you to see how
+        /// much of your cost is covered by a Savings Plan. An organization’s master account can
+        /// see the coverage of the associated member accounts. For any time period, you can filter
+        /// data for Savings Plans usage with the following dimensions:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>LINKED_ACCOUNT</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>REGION</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SERVICE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>INSTANCE_FAMILY</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To determine valid values for a dimension, use the <code>GetDimensionValues</code>
+        /// operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlansCoverage service method.</param>
+        /// 
+        /// <returns>The response from the GetSavingsPlansCoverage service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansCoverage">REST API Reference for GetSavingsPlansCoverage Operation</seealso>
+        public virtual GetSavingsPlansCoverageResponse GetSavingsPlansCoverage(GetSavingsPlansCoverageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSavingsPlansCoverageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSavingsPlansCoverageResponseUnmarshaller.Instance;
+
+            return Invoke<GetSavingsPlansCoverageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSavingsPlansCoverage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlansCoverage operation on AmazonCostExplorerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSavingsPlansCoverage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansCoverage">REST API Reference for GetSavingsPlansCoverage Operation</seealso>
+        public virtual IAsyncResult BeginGetSavingsPlansCoverage(GetSavingsPlansCoverageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSavingsPlansCoverageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSavingsPlansCoverageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSavingsPlansCoverage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSavingsPlansCoverage.</param>
+        /// 
+        /// <returns>Returns a  GetSavingsPlansCoverageResult from CostExplorer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansCoverage">REST API Reference for GetSavingsPlansCoverage Operation</seealso>
+        public virtual GetSavingsPlansCoverageResponse EndGetSavingsPlansCoverage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSavingsPlansCoverageResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetSavingsPlansPurchaseRecommendation
+
+        /// <summary>
+        /// Retrieves your request parameters, Savings Plan Recommendations Summary and Details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlansPurchaseRecommendation service method.</param>
+        /// 
+        /// <returns>The response from the GetSavingsPlansPurchaseRecommendation service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansPurchaseRecommendation">REST API Reference for GetSavingsPlansPurchaseRecommendation Operation</seealso>
+        public virtual GetSavingsPlansPurchaseRecommendationResponse GetSavingsPlansPurchaseRecommendation(GetSavingsPlansPurchaseRecommendationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSavingsPlansPurchaseRecommendationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSavingsPlansPurchaseRecommendationResponseUnmarshaller.Instance;
+
+            return Invoke<GetSavingsPlansPurchaseRecommendationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSavingsPlansPurchaseRecommendation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlansPurchaseRecommendation operation on AmazonCostExplorerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSavingsPlansPurchaseRecommendation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansPurchaseRecommendation">REST API Reference for GetSavingsPlansPurchaseRecommendation Operation</seealso>
+        public virtual IAsyncResult BeginGetSavingsPlansPurchaseRecommendation(GetSavingsPlansPurchaseRecommendationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSavingsPlansPurchaseRecommendationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSavingsPlansPurchaseRecommendationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSavingsPlansPurchaseRecommendation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSavingsPlansPurchaseRecommendation.</param>
+        /// 
+        /// <returns>Returns a  GetSavingsPlansPurchaseRecommendationResult from CostExplorer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansPurchaseRecommendation">REST API Reference for GetSavingsPlansPurchaseRecommendation Operation</seealso>
+        public virtual GetSavingsPlansPurchaseRecommendationResponse EndGetSavingsPlansPurchaseRecommendation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSavingsPlansPurchaseRecommendationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetSavingsPlansUtilization
+
+        /// <summary>
+        /// Retrieves the Savings Plans utilization for your account across date ranges with daily
+        /// or monthly granularity. Master accounts in an organization have access to member accounts.
+        /// You can use <code>GetDimensionValues</code> to determine the possible dimension values.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot group by any dimension values for <code>GetSavingsPlansUtilization</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlansUtilization service method.</param>
+        /// 
+        /// <returns>The response from the GetSavingsPlansUtilization service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilization">REST API Reference for GetSavingsPlansUtilization Operation</seealso>
+        public virtual GetSavingsPlansUtilizationResponse GetSavingsPlansUtilization(GetSavingsPlansUtilizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSavingsPlansUtilizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSavingsPlansUtilizationResponseUnmarshaller.Instance;
+
+            return Invoke<GetSavingsPlansUtilizationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSavingsPlansUtilization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlansUtilization operation on AmazonCostExplorerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSavingsPlansUtilization
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilization">REST API Reference for GetSavingsPlansUtilization Operation</seealso>
+        public virtual IAsyncResult BeginGetSavingsPlansUtilization(GetSavingsPlansUtilizationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSavingsPlansUtilizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSavingsPlansUtilizationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSavingsPlansUtilization operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSavingsPlansUtilization.</param>
+        /// 
+        /// <returns>Returns a  GetSavingsPlansUtilizationResult from CostExplorer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilization">REST API Reference for GetSavingsPlansUtilization Operation</seealso>
+        public virtual GetSavingsPlansUtilizationResponse EndGetSavingsPlansUtilization(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSavingsPlansUtilizationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetSavingsPlansUtilizationDetails
+
+        /// <summary>
+        /// Retrieves a single daily or monthly Savings Plans utilization rate and details for
+        /// your account. Master accounts in an organization have access to member accounts. You
+        /// can use <code>GetDimensionValues</code> to determine the possible dimension values.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You can't group by any dimension values for <code>GetSavingsPlansUtilizationDetails</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlansUtilizationDetails service method.</param>
+        /// 
+        /// <returns>The response from the GetSavingsPlansUtilizationDetails service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilizationDetails">REST API Reference for GetSavingsPlansUtilizationDetails Operation</seealso>
+        public virtual GetSavingsPlansUtilizationDetailsResponse GetSavingsPlansUtilizationDetails(GetSavingsPlansUtilizationDetailsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSavingsPlansUtilizationDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSavingsPlansUtilizationDetailsResponseUnmarshaller.Instance;
+
+            return Invoke<GetSavingsPlansUtilizationDetailsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSavingsPlansUtilizationDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlansUtilizationDetails operation on AmazonCostExplorerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSavingsPlansUtilizationDetails
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilizationDetails">REST API Reference for GetSavingsPlansUtilizationDetails Operation</seealso>
+        public virtual IAsyncResult BeginGetSavingsPlansUtilizationDetails(GetSavingsPlansUtilizationDetailsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSavingsPlansUtilizationDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSavingsPlansUtilizationDetailsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSavingsPlansUtilizationDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSavingsPlansUtilizationDetails.</param>
+        /// 
+        /// <returns>Returns a  GetSavingsPlansUtilizationDetailsResult from CostExplorer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilizationDetails">REST API Reference for GetSavingsPlansUtilizationDetails Operation</seealso>
+        public virtual GetSavingsPlansUtilizationDetailsResponse EndGetSavingsPlansUtilizationDetails(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSavingsPlansUtilizationDetailsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetTags
 
         /// <summary>

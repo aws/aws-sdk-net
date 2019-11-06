@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CurrentInstance Object
+    /// Response Unmarshaller for SavingsPlansPurchaseRecommendationSummary Object
     /// </summary>  
-    public class CurrentInstanceUnmarshaller : IUnmarshaller<CurrentInstance, XmlUnmarshallerContext>, IUnmarshaller<CurrentInstance, JsonUnmarshallerContext>
+    public class SavingsPlansPurchaseRecommendationSummaryUnmarshaller : IUnmarshaller<SavingsPlansPurchaseRecommendationSummary, XmlUnmarshallerContext>, IUnmarshaller<SavingsPlansPurchaseRecommendationSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CurrentInstance IUnmarshaller<CurrentInstance, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SavingsPlansPurchaseRecommendationSummary IUnmarshaller<SavingsPlansPurchaseRecommendationSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,13 +53,13 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CurrentInstance Unmarshall(JsonUnmarshallerContext context)
+        public SavingsPlansPurchaseRecommendationSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CurrentInstance unmarshalledObject = new CurrentInstance();
+            SavingsPlansPurchaseRecommendationSummary unmarshalledObject = new SavingsPlansPurchaseRecommendationSummary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -70,58 +70,58 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     unmarshalledObject.CurrencyCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("MonthlyCost", targetDepth))
+                if (context.TestExpression("CurrentOnDemandSpend", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MonthlyCost = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CurrentOnDemandSpend = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("OnDemandHoursInLookbackPeriod", targetDepth))
+                if (context.TestExpression("DailyCommitmentToPurchase", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OnDemandHoursInLookbackPeriod = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DailyCommitmentToPurchase = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ReservationCoveredHoursInLookbackPeriod", targetDepth))
+                if (context.TestExpression("EstimatedMonthlySavingsAmount", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReservationCoveredHoursInLookbackPeriod = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EstimatedMonthlySavingsAmount = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ResourceDetails", targetDepth))
-                {
-                    var unmarshaller = ResourceDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ResourceDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ResourceId", targetDepth))
+                if (context.TestExpression("EstimatedROI", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EstimatedROI = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ResourceUtilization", targetDepth))
-                {
-                    var unmarshaller = ResourceUtilizationUnmarshaller.Instance;
-                    unmarshalledObject.ResourceUtilization = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SavingsPlansCoveredHoursInLookbackPeriod", targetDepth))
+                if (context.TestExpression("EstimatedSavingsAmount", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SavingsPlansCoveredHoursInLookbackPeriod = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EstimatedSavingsAmount = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Tags", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<TagValues, TagValuesUnmarshaller>(TagValuesUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TotalRunningHoursInLookbackPeriod", targetDepth))
+                if (context.TestExpression("EstimatedSavingsPercentage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TotalRunningHoursInLookbackPeriod = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EstimatedSavingsPercentage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EstimatedTotalCost", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EstimatedTotalCost = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HourlyCommitmentToPurchase", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HourlyCommitmentToPurchase = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TotalRecommendationCount", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TotalRecommendationCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -130,12 +130,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         }
 
 
-        private static CurrentInstanceUnmarshaller _instance = new CurrentInstanceUnmarshaller();        
+        private static SavingsPlansPurchaseRecommendationSummaryUnmarshaller _instance = new SavingsPlansPurchaseRecommendationSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CurrentInstanceUnmarshaller Instance
+        public static SavingsPlansPurchaseRecommendationSummaryUnmarshaller Instance
         {
             get
             {
