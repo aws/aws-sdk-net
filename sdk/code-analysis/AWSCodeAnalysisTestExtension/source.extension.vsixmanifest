@@ -337,6 +337,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.SageMaker.CodeAnalysis" Path="|AWSSDK.SageMaker.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.SageMakerRuntime.CodeAnalysis" Path="|AWSSDK.SageMakerRuntime.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.SageMakerRuntime.CodeAnalysis" Path="|AWSSDK.SageMakerRuntime.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.SavingsPlans.CodeAnalysis" Path="|AWSSDK.SavingsPlans.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.SavingsPlans.CodeAnalysis" Path="|AWSSDK.SavingsPlans.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.SecretsManager.CodeAnalysis" Path="|AWSSDK.SecretsManager.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.SecretsManager.CodeAnalysis" Path="|AWSSDK.SecretsManager.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.SecurityHub.CodeAnalysis" Path="|AWSSDK.SecurityHub.CodeAnalysis|"/>
