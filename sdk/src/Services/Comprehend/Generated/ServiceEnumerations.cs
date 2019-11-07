@@ -225,6 +225,10 @@ namespace Amazon.Comprehend
     {
 
         /// <summary>
+        /// Constant Ar for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode Ar = new LanguageCode("ar");
+        /// <summary>
         /// Constant De for LanguageCode
         /// </summary>
         public static readonly LanguageCode De = new LanguageCode("de");
@@ -241,13 +245,33 @@ namespace Amazon.Comprehend
         /// </summary>
         public static readonly LanguageCode Fr = new LanguageCode("fr");
         /// <summary>
+        /// Constant Hi for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode Hi = new LanguageCode("hi");
+        /// <summary>
         /// Constant It for LanguageCode
         /// </summary>
         public static readonly LanguageCode It = new LanguageCode("it");
         /// <summary>
+        /// Constant Ja for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode Ja = new LanguageCode("ja");
+        /// <summary>
+        /// Constant Ko for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode Ko = new LanguageCode("ko");
+        /// <summary>
         /// Constant Pt for LanguageCode
         /// </summary>
         public static readonly LanguageCode Pt = new LanguageCode("pt");
+        /// <summary>
+        /// Constant Zh for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode Zh = new LanguageCode("zh");
+        /// <summary>
+        /// Constant ZhTW for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode ZhTW = new LanguageCode("zh-TW");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
