@@ -1,3 +1,12 @@
+### 3.3.625.0 (2019-11-06 23:19 UTC)
+* SavingsPlans (3.3.101.0)
+	* This is the first release of Savings Plans, a new flexible pricing model that offers low prices on Amazon EC2 and AWS Fargate usage.
+* Core 3.3.103.60
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.624.0 (2019-11-06 19:59 UTC)
 * Budgets (3.3.101.72)
 	* Documentation updates for budgets to track Savings Plans utilization and coverage
