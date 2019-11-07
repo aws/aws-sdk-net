@@ -768,6 +768,10 @@
       <Project>{2C8CA822-7F6A-4797-ADF3-3B35EC09734C}</Project>
       <Name>AWSSDK.SQS.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/SSO/AWSSDK.SSO.CodeAnalysis.csproj">
+      <Project>{543F687B-6F9B-472A-8AA9-F7AC54F7BAAD}</Project>
+      <Name>AWSSDK.SSO.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/StepFunctions/AWSSDK.StepFunctions.CodeAnalysis.csproj">
       <Project>{D8080C7A-FD95-49F0-BF1C-4599F7CDBC9C}</Project>
       <Name>AWSSDK.StepFunctions.CodeAnalysis</Name>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.SSO.Model.ListAccountRolesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSO.Model.ListAccountsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSO.Model.AccountInfo.EmailAddress</property>
+    <min>1</min>
+    <max>254</max>
+  </property-value-rule>
+</property-value-rules>
