@@ -670,12 +670,12 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetConnectionStatusRequest.Target</property>
     <min>1</min>
-    <max>50</max>
+    <max>400</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetConnectionStatusResponse.Target</property>
     <min>1</min>
-    <max>50</max>
+    <max>400</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetDefaultPatchBaselineResponse.BaselineId</property>
@@ -1438,7 +1438,7 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.StartSessionRequest.Target</property>
     <min>1</min>
-    <max>50</max>
+    <max>400</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.StartSessionResponse.SessionId</property>
@@ -3151,12 +3151,12 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.Session.Target</property>
     <min>1</min>
-    <max>50</max>
+    <max>400</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.SessionFilter.Value</property>
     <min>1</min>
-    <max>200</max>
+    <max>400</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.SessionManagerOutputUrl.CloudWatchOutputUrl</property>

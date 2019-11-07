@@ -42,7 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Required=true, Min=1, Max=400)]
         public string Target
         {
             get { return this._target; }

@@ -108,7 +108,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=200)]
+        [AWSProperty(Required=true, Min=1, Max=400)]
         public string Value
         {
             get { return this._value; }

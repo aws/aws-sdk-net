@@ -196,7 +196,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The instance that the Session Manager session connected to.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=1, Max=400)]
         public string Target
         {
             get { return this._target; }
