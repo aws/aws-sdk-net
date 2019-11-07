@@ -1,3 +1,18 @@
+### 3.3.626.0 (2019-11-07 20:37 UTC)
+* Comprehend (3.3.106.0)
+	* This release adds new languages (ar, hi, ko, ja, zh, zh-TW) for Amazon Comprehend's DetectSentiment, DetectEntities, DetectKeyPhrases, BatchDetectSentiment, BatchDetectEntities and BatchDetectKeyPhrases APIs
+* SimpleSystemsManagement (3.3.108.0)
+	* AWS Systems Manager Session Manager target length increased to 400.
+* SSO (3.3.100.0)
+	* This is an initial release of AWS Single Sign-On (SSO) end-user access. This release adds support for accessing AWS accounts assigned in AWS SSO using short term credentials.
+* SSOOIDC (3.3.100.0)
+	* This is an initial release of AWS Single Sign-On OAuth device code authorization service.
+* Core 3.3.103.61
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.625.0 (2019-11-06 23:19 UTC)
 * SavingsPlans (3.3.101.0)
 	* This is the first release of Savings Plans, a new flexible pricing model that offers low prices on Amazon EC2 and AWS Fargate usage.
