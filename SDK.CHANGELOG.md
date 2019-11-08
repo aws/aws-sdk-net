@@ -1,3 +1,14 @@
+### 3.3.627.0 (2019-11-08 20:24 UTC)
+* CognitoIdentity (3.3.101.0)
+	* This release adds support for disabling classic flow.
+* ECR (3.3.102.7)
+	* This release contains ticket fixes for Amazon ECR.
+* Core 3.3.103.62
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.626.0 (2019-11-07 20:37 UTC)
 * Comprehend (3.3.106.0)
 	* This release adds new languages (ar, hi, ko, ja, zh, zh-TW) for Amazon Comprehend's DetectSentiment, DetectEntities, DetectKeyPhrases, BatchDetectSentiment, BatchDetectEntities and BatchDetectKeyPhrases APIs
