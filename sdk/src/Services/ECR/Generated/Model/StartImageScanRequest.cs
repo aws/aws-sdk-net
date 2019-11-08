@@ -29,7 +29,10 @@ namespace Amazon.ECR.Model
 {
     /// <summary>
     /// Container for the parameters to the StartImageScan operation.
-    /// Starts an image vulnerability scan.
+    /// Starts an image vulnerability scan. An image scan can only be started once per day
+    /// on an individual image. This limit includes if an image was scanned on initial push.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html">Image
+    /// Scanning</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
     /// </summary>
     public partial class StartImageScanRequest : AmazonECRRequest
     {

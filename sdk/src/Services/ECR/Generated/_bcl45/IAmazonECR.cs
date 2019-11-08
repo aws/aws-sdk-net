@@ -1393,7 +1393,10 @@ namespace Amazon.ECR
 
 
         /// <summary>
-        /// Updates the image tag mutability settings for a repository.
+        /// Updates the image tag mutability settings for a repository. When a repository is configured
+        /// with tag immutability, all image tags within the repository will be prevented them
+        /// from being overwritten. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-tag-mutability.html">Image
+        /// Tag Mutability</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutImageTagMutability service method.</param>
         /// 
@@ -1414,7 +1417,10 @@ namespace Amazon.ECR
 
 
         /// <summary>
-        /// Updates the image tag mutability settings for a repository.
+        /// Updates the image tag mutability settings for a repository. When a repository is configured
+        /// with tag immutability, all image tags within the repository will be prevented them
+        /// from being overwritten. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-tag-mutability.html">Image
+        /// Tag Mutability</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutImageTagMutability service method.</param>
         /// <param name="cancellationToken">
@@ -1545,7 +1551,10 @@ namespace Amazon.ECR
 
 
         /// <summary>
-        /// Starts an image vulnerability scan.
+        /// Starts an image vulnerability scan. An image scan can only be started once per day
+        /// on an individual image. This limit includes if an image was scanned on initial push.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html">Image
+        /// Scanning</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartImageScan service method.</param>
         /// 
@@ -1569,7 +1578,10 @@ namespace Amazon.ECR
 
 
         /// <summary>
-        /// Starts an image vulnerability scan.
+        /// Starts an image vulnerability scan. An image scan can only be started once per day
+        /// on an individual image. This limit includes if an image was scanned on initial push.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html">Image
+        /// Scanning</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartImageScan service method.</param>
         /// <param name="cancellationToken">
