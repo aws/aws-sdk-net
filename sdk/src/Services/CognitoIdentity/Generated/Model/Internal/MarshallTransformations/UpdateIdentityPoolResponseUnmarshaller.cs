@@ -51,6 +51,12 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AllowClassicFlow", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.AllowClassicFlow = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AllowUnauthenticatedIdentities", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
