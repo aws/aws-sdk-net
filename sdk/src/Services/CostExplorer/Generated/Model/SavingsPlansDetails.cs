@@ -75,7 +75,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// A geographic location where the Savings Plans is hosted.
+        /// A collection of AWS resources in a geographic area. Each AWS Region is isolated and
+        /// independent of the other Regions.
         /// </para>
         /// </summary>
         public string Region

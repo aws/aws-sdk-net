@@ -31,7 +31,8 @@ namespace Amazon.CostExplorer.Model
     /// Container for the parameters to the GetSavingsPlansUtilization operation.
     /// Retrieves the Savings Plans utilization for your account across date ranges with daily
     /// or monthly granularity. Master accounts in an organization have access to member accounts.
-    /// You can use <code>GetDimensionValues</code> to determine the possible dimension values.
+    /// You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code> to determine
+    /// the possible dimension values.
     /// 
     ///  <note> 
     /// <para>
@@ -69,7 +70,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PAYMENT_OPTIONS</code> 
+        ///  <code>PAYMENT_OPTION</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -79,7 +80,7 @@ namespace Amazon.CostExplorer.Model
         /// <para>
         ///  <code>GetSavingsPlansUtilization</code> uses the same <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
         /// object as the other operations, but only <code>AND</code> is supported among each
-        /// dimension. If there are multiple values for a dimension, they are OR'd together.
+        /// dimension.
         /// </para>
         /// </summary>
         public Expression Filter
@@ -98,6 +99,11 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property Granularity. 
         /// <para>
         /// The granularity of the Amazon Web Services utillization data for your Savings Plans.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>GetSavingsPlansUtilization</code> operation supports only <code>DAILY</code>
+        /// and <code>MONTHLY</code> granularities.
         /// </para>
         /// </summary>
         public Granularity Granularity

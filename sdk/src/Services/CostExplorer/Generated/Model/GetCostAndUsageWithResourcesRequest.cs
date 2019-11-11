@@ -28,16 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetCostAndUsage operation.
-    /// Retrieves cost and usage metrics for your account. You can specify which cost and
-    /// usage-related metric, such as <code>BlendedCosts</code> or <code>UsageQuantity</code>,
+    /// Container for the parameters to the GetCostAndUsageWithResources operation.
+    /// Retrieves cost and usage metrics with resources for your account. You can specify
+    /// which cost and usage-related metric, such as <code>BlendedCosts</code> or <code>UsageQuantity</code>,
     /// that you want the request to return. You can also filter and group your data by various
     /// dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range.
     /// For a complete list of valid dimensions, see the <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
     /// operation. Master accounts in an organization in AWS Organizations have access to
-    /// all member accounts.
+    /// all member accounts. This API is currently available for the Amazon Elastic Compute
+    /// Cloud – Compute service only.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This is an opt-in only feature. You can enable this feature from the Cost Explorer
+    /// Settings page. For information on how to access the Settings page, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html">Controlling
+    /// Access for Cost Explorer</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+    /// </para>
+    ///  </note>
     /// </summary>
-    public partial class GetCostAndUsageRequest : AmazonCostExplorerRequest
+    public partial class GetCostAndUsageWithResourcesRequest : AmazonCostExplorerRequest
     {
         private Expression _filter;
         private Granularity _granularity;
@@ -49,11 +58,16 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// Filters AWS costs by different dimensions. For example, you can specify <code>SERVICE</code>
-        /// and <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's
-        /// usage of that service. You can nest <code>Expression</code> objects to define any
-        /// combination of dimension filters. For more information, see <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
+        /// Filters Amazon Web Services costs by different dimensions. For example, you can specify
+        /// <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated
+        /// with that account's usage of that service. You can nest <code>Expression</code> objects
+        /// to define any combination of dimension filters. For more information, see <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
         /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>GetCostAndUsageWithResources</code> operation requires that you either group
+        /// by or filter by a <code>ResourceId</code>.
         /// </para>
         /// </summary>
         public Expression Filter
@@ -71,14 +85,9 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Granularity. 
         /// <para>
-        /// Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>.
+        /// Sets the AWS cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>.
         /// If <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>,
-        /// either <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// The <code>GetCostAndUsageRequest</code> operation supports only <code>DAILY</code>
-        /// and <code>MONTHLY</code> granularities.
+        /// <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. 
         /// </para>
         /// </summary>
         public Granularity Granularity
@@ -96,18 +105,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property GroupBy. 
         /// <para>
-        /// You can group AWS costs using up to two different groups, either dimensions, tag keys,
-        /// or both.
-        /// </para>
-        ///  
-        /// <para>
-        /// When you group by tag key, you get all tag values, including empty strings.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
-        /// <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>,
-        /// <code>SERVICE</code>, <code>TAGS</code>, <code>TENANCY</code>, and <code>USAGE_TYPE</code>.
+        /// You can group Amazon Web Services costs using up to two different groups: either dimensions,
+        /// tag keys, or both.
         /// </para>
         /// </summary>
         public List<GroupDefinition> GroupBy
@@ -138,7 +137,7 @@ namespace Amazon.CostExplorer.Model
         ///  <note> 
         /// <para>
         /// If you return the <code>UsageQuantity</code> metric, the service aggregates all usage
-        /// numbers without taking into account the units. For example, if you aggregate <code>usageQuantity</code>
+        /// numbers without taking the units into account. For example, if you aggregate <code>usageQuantity</code>
         /// across all of Amazon EC2, the results aren't meaningful because Amazon EC2 compute
         /// hours and data transfer are measured in different units (for example, hours vs. GB).
         /// To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code>
@@ -146,7 +145,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </note> 
         /// <para>
-        ///  <code>Metrics</code> is required for <code>GetCostAndUsage</code> requests.
+        ///  <code>Metrics</code> is required for <code>GetCostAndUsageWithResources</code> requests.
         /// </para>
         /// </summary>
         public List<string> Metrics
@@ -183,11 +182,12 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property TimePeriod. 
         /// <para>
-        /// Sets the start and end dates for retrieving AWS costs. The start date is inclusive,
-        /// but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code>
-        /// and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved
-        /// from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
-        /// <code>2017-05-01</code>.
+        /// Sets the start and end dates for retrieving Amazon Web Services costs. The range must
+        /// be within the last 14 days (the start date cannot be earlier than 14 days ago). The
+        /// start date is inclusive, but the end date is exclusive. For example, if <code>start</code>
+        /// is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the
+        /// cost and usage data is retrieved from <code>2017-01-01</code> up to and including
+        /// <code>2017-04-30</code> but not including <code>2017-05-01</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

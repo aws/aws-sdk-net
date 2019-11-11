@@ -28,30 +28,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// This is the response object from the GetSavingsPlansPurchaseRecommendation operation.
+    /// This is the response object from the GetCostAndUsageWithResources operation.
     /// </summary>
-    public partial class GetSavingsPlansPurchaseRecommendationResponse : AmazonWebServiceResponse
+    public partial class GetCostAndUsageWithResourcesResponse : AmazonWebServiceResponse
     {
-        private SavingsPlansPurchaseRecommendationMetadata _metadata;
+        private List<GroupDefinition> _groupDefinitions = new List<GroupDefinition>();
         private string _nextPageToken;
-        private SavingsPlansPurchaseRecommendation _savingsPlansPurchaseRecommendation;
+        private List<ResultByTime> _resultsByTime = new List<ResultByTime>();
 
         /// <summary>
-        /// Gets and sets the property Metadata. 
+        /// Gets and sets the property GroupDefinitions. 
         /// <para>
-        /// Information regarding this specific recommendation set.
+        /// The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters
+        /// in the request.
         /// </para>
         /// </summary>
-        public SavingsPlansPurchaseRecommendationMetadata Metadata
+        public List<GroupDefinition> GroupDefinitions
         {
-            get { return this._metadata; }
-            set { this._metadata = value; }
+            get { return this._groupDefinitions; }
+            set { this._groupDefinitions = value; }
         }
 
-        // Check to see if Metadata property is set
-        internal bool IsSetMetadata()
+        // Check to see if GroupDefinitions property is set
+        internal bool IsSetGroupDefinitions()
         {
-            return this._metadata != null;
+            return this._groupDefinitions != null && this._groupDefinitions.Count > 0; 
         }
 
         /// <summary>
@@ -74,21 +75,21 @@ namespace Amazon.CostExplorer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SavingsPlansPurchaseRecommendation. 
+        /// Gets and sets the property ResultsByTime. 
         /// <para>
-        /// Contains your request parameters, Savings Plan Recommendations Summary, and Details.
+        /// The time period that is covered by the results in the response.
         /// </para>
         /// </summary>
-        public SavingsPlansPurchaseRecommendation SavingsPlansPurchaseRecommendation
+        public List<ResultByTime> ResultsByTime
         {
-            get { return this._savingsPlansPurchaseRecommendation; }
-            set { this._savingsPlansPurchaseRecommendation = value; }
+            get { return this._resultsByTime; }
+            set { this._resultsByTime = value; }
         }
 
-        // Check to see if SavingsPlansPurchaseRecommendation property is set
-        internal bool IsSetSavingsPlansPurchaseRecommendation()
+        // Check to see if ResultsByTime property is set
+        internal bool IsSetResultsByTime()
         {
-            return this._savingsPlansPurchaseRecommendation != null;
+            return this._resultsByTime != null && this._resultsByTime.Count > 0; 
         }
 
     }

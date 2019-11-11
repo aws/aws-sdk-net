@@ -38,7 +38,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property SavingsPlansUtilizationsByTime. 
         /// <para>
-        /// The amount of time (in hours) ou used your Savings Plans. This allows you to specify
+        /// The amount of cost/commitment you used your Savings Plans. This allows you to specify
         /// date ranges.
         /// </para>
         /// </summary>
@@ -57,7 +57,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Total. 
         /// <para>
-        /// The total amount of time that you used your Savings Plans, regardless of date ranges.
+        /// The total amount of cost/commitment that you used your Savings Plans, regardless of
+        /// date ranges.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

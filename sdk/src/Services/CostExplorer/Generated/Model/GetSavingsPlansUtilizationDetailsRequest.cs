@@ -29,13 +29,16 @@ namespace Amazon.CostExplorer.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSavingsPlansUtilizationDetails operation.
-    /// Retrieves a single daily or monthly Savings Plans utilization rate and details for
-    /// your account. Master accounts in an organization have access to member accounts. You
-    /// can use <code>GetDimensionValues</code> to determine the possible dimension values.
+    /// Retrieves attribute data along with aggregate utilization and savings data for a given
+    /// time period. This doesn't support granular or grouped data (daily/monthly) in response.
+    /// You can't retrieve data by dates in a single response similar to <code>GetSavingsPlanUtilization</code>,
+    /// but you have the option to make multiple calls to <code>GetSavingsPlanUtilizationDetails</code>
+    /// by providing individual dates. You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code>
+    /// to determine the possible dimension values.
     /// 
     ///  <note> 
     /// <para>
-    /// You can't group by any dimension values for <code>GetSavingsPlansUtilizationDetails</code>.
+    ///  <code>GetSavingsPlanUtilizationDetails</code> internally groups data by <code>SavingsPlansArn</code>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -66,7 +69,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PAYMENT_OPTIONS</code> 
+        ///  <code>PAYMENT_OPTION</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -76,7 +79,7 @@ namespace Amazon.CostExplorer.Model
         /// <para>
         ///  <code>GetSavingsPlansUtilizationDetails</code> uses the same <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
         /// object as the other operations, but only <code>AND</code> is supported among each
-        /// dimension. If there are multiple values for a dimension, they are OR'd together.
+        /// dimension.
         /// </para>
         /// </summary>
         public Expression Filter

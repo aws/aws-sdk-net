@@ -72,6 +72,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("CostExplorer")]
+        public void GetCostAndUsageWithResourcesMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<GetCostAndUsageWithResourcesRequest>();
+            var marshaller = new GetCostAndUsageWithResourcesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<GetCostAndUsageWithResourcesRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetCostAndUsageWithResources").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = GetCostAndUsageWithResourcesResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetCostAndUsageWithResourcesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CostExplorer")]
         public void GetCostForecastMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<GetCostForecastRequest>();

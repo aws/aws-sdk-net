@@ -113,6 +113,11 @@ namespace Amazon.CostExplorer.Model
         /// The granularity of the Amazon Web Services cost data for your Savings Plans. <code>Granularity</code>
         /// can't be set if <code>GroupBy</code> is set.
         /// </para>
+        ///  
+        /// <para>
+        /// The <code>GetSavingsPlansCoverage</code> operation supports only <code>DAILY</code>
+        /// and <code>MONTHLY</code> granularities.
+        /// </para>
         /// </summary>
         public Granularity Granularity
         {
@@ -169,7 +174,7 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property Metrics. 
         /// <para>
         /// The measurement that you want your Savings Plans coverage reported in. The only valid
-        /// value is <code>spendCoveredBySavingsPlans</code>.
+        /// value is <code>SpendCoveredBySavingsPlans</code>.
         /// </para>
         /// </summary>
         public List<string> Metrics

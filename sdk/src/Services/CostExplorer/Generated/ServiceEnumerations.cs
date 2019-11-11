@@ -203,6 +203,10 @@ namespace Amazon.CostExplorer
         /// </summary>
         public static readonly Dimension RESERVATION_ID = new Dimension("RESERVATION_ID");
         /// <summary>
+        /// Constant RESOURCE_ID for Dimension
+        /// </summary>
+        public static readonly Dimension RESOURCE_ID = new Dimension("RESOURCE_ID");
+        /// <summary>
         /// Constant RIGHTSIZING_TYPE for Dimension
         /// </summary>
         public static readonly Dimension RIGHTSIZING_TYPE = new Dimension("RIGHTSIZING_TYPE");

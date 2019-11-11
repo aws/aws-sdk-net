@@ -118,6 +118,77 @@ namespace Amazon.CostExplorer
 
         #endregion
         
+        #region  GetCostAndUsageWithResources
+
+
+        /// <summary>
+        /// Retrieves cost and usage metrics with resources for your account. You can specify
+        /// which cost and usage-related metric, such as <code>BlendedCosts</code> or <code>UsageQuantity</code>,
+        /// that you want the request to return. You can also filter and group your data by various
+        /// dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range.
+        /// For a complete list of valid dimensions, see the <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
+        /// operation. Master accounts in an organization in AWS Organizations have access to
+        /// all member accounts. This API is currently available for the Amazon Elastic Compute
+        /// Cloud – Compute service only.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This is an opt-in only feature. You can enable this feature from the Cost Explorer
+        /// Settings page. For information on how to access the Settings page, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html">Controlling
+        /// Access for Cost Explorer</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCostAndUsageWithResources service method.</param>
+        /// 
+        /// <returns>The response from the GetCostAndUsageWithResources service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.BillExpirationException">
+        /// The requested report expired. Update the date interval and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.RequestChangedException">
+        /// Your request parameters changed between pages. Try again with the old parameters or
+        /// without a pagination token.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsageWithResources">REST API Reference for GetCostAndUsageWithResources Operation</seealso>
+        GetCostAndUsageWithResourcesResponse GetCostAndUsageWithResources(GetCostAndUsageWithResourcesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCostAndUsageWithResources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCostAndUsageWithResources operation on AmazonCostExplorerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCostAndUsageWithResources
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsageWithResources">REST API Reference for GetCostAndUsageWithResources Operation</seealso>
+        IAsyncResult BeginGetCostAndUsageWithResources(GetCostAndUsageWithResourcesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCostAndUsageWithResources operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCostAndUsageWithResources.</param>
+        /// 
+        /// <returns>Returns a  GetCostAndUsageWithResourcesResult from CostExplorer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsageWithResources">REST API Reference for GetCostAndUsageWithResources Operation</seealso>
+        GetCostAndUsageWithResourcesResponse EndGetCostAndUsageWithResources(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetCostForecast
 
 
@@ -633,7 +704,8 @@ namespace Amazon.CostExplorer
         /// <summary>
         /// Retrieves the Savings Plans utilization for your account across date ranges with daily
         /// or monthly granularity. Master accounts in an organization have access to member accounts.
-        /// You can use <code>GetDimensionValues</code> to determine the possible dimension values.
+        /// You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code> to determine
+        /// the possible dimension values.
         /// 
         ///  <note> 
         /// <para>
@@ -685,13 +757,16 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Retrieves a single daily or monthly Savings Plans utilization rate and details for
-        /// your account. Master accounts in an organization have access to member accounts. You
-        /// can use <code>GetDimensionValues</code> to determine the possible dimension values.
+        /// Retrieves attribute data along with aggregate utilization and savings data for a given
+        /// time period. This doesn't support granular or grouped data (daily/monthly) in response.
+        /// You can't retrieve data by dates in a single response similar to <code>GetSavingsPlanUtilization</code>,
+        /// but you have the option to make multiple calls to <code>GetSavingsPlanUtilizationDetails</code>
+        /// by providing individual dates. You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code>
+        /// to determine the possible dimension values.
         /// 
         ///  <note> 
         /// <para>
-        /// You can't group by any dimension values for <code>GetSavingsPlansUtilizationDetails</code>.
+        ///  <code>GetSavingsPlanUtilizationDetails</code> internally groups data by <code>SavingsPlansArn</code>.
         /// </para>
         ///  </note>
         /// </summary>

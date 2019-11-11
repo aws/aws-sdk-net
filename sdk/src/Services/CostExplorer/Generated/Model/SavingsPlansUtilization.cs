@@ -78,8 +78,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property UsedCommitment. 
         /// <para>
-        /// The amount of your Savings Plans commitment that was not consumed from Savings Plans
-        /// eligible usage in a specific period.
+        /// The amount of your Savings Plans commitment that was consumed from Savings Plans eligible
+        /// usage in a specific period.
         /// </para>
         /// </summary>
         public string UsedCommitment

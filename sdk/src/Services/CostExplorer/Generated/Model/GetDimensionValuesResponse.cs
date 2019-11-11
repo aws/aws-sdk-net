@@ -108,6 +108,11 @@ namespace Amazon.CostExplorer.Model
         /// RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds,
         /// and credits.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature
+        /// only available for last 14 days for EC2-Compute Service.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions
