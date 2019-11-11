@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using ThirdParty.Json.LitJson;
 using System.Globalization;
 using Amazon.Runtime.Internal.Util;
+using AWSSDK.Runtime.Internal.Util;
 
 namespace Amazon.Util
 {
@@ -59,14 +60,18 @@ namespace Amazon.Util
             EC2_METADATA_ROOT = EC2_METADATA_SVC + LATEST + "/meta-data",
             EC2_USERDATA_ROOT = EC2_METADATA_SVC + LATEST + "/user-data",
             EC2_DYNAMICDATA_ROOT = EC2_METADATA_SVC + LATEST + "/dynamic",
-            AWS_EC2_METADATA_DISABLED = "AWS_EC2_METADATA_DISABLED";
+            AWS_EC2_METADATA_DISABLED = "AWS_EC2_METADATA_DISABLED",
+            EC2_APITOKEN_URL = EC2_METADATA_SVC + LATEST + "/api/token";
 
         private static int
             DEFAULT_RETRIES = 3,
             MIN_PAUSE_MS = 250,
-            MAX_RETRIES = 3;
+            MAX_RETRIES = 3,
+            DEFAULT_APITOKEN_TTL = 21600;
 
         private static Dictionary<string, string> _cache = new Dictionary<string, string>();
+
+        private static bool useNullToken = false; 
 
         /// <summary>
         /// </summary>
@@ -226,7 +231,7 @@ namespace Amazon.Util
         {
             get { return FetchData("/ramdisk-id"); }
         }
-
+                
         /// <summary>
         /// The region in which the instance is running, extracted from the identity
         /// document data.
@@ -498,9 +503,108 @@ namespace Amazon.Util
             }
         }
 
+        /// <summary>
+        /// Fetches the api token to use with metadata requests.
+        /// </summary>        
+        /// <returns>The API token or null</returns>
+        public static string FetchApiToken()
+        {
+            return FetchApiToken(DEFAULT_RETRIES);
+        }
+
+        /// <summary>
+        /// Fetches the api token to use with metadata requests.
+        /// </summary>
+        /// <param name="tries">The number of tries to fetch the api token before giving up and throwing the web exception</param>
+        /// <returns>The API token or null if an API token couldn't be obtained and doesn't need to be used</returns>
+        private static string FetchApiToken(int tries)
+        {
+            for (int retry = 1; retry <= tries; retry++)
+            {
+                if (!IsIMDSEnabled || useNullToken)
+                {
+                    return null;
+                }
+
+                try
+                {
+                    var uriForToken = new Uri(EC2_APITOKEN_URL);
+
+                    var headers = new Dictionary<string, string>();
+                    headers.Add(HeaderKeys.XAwsEc2MetadataTokenTtlSeconds, DEFAULT_APITOKEN_TTL.ToString(CultureInfo.InvariantCulture));
+                    var content = AWSSDKUtils.ExecuteHttpRequest(uriForToken, "PUT", null, TimeSpan.FromSeconds(5), Proxy, headers);
+                    return content.Trim();
+                }
+                catch (Exception e)
+                {
+                    HttpStatusCode? httpStatusCode = ExceptionUtils.DetermineHttpStatusCode(e);
+
+                    if (httpStatusCode == HttpStatusCode.NotFound 
+                        || httpStatusCode == HttpStatusCode.MethodNotAllowed
+                        || httpStatusCode == HttpStatusCode.Forbidden)
+                    {
+                        useNullToken = true;
+                        return null;
+                    }
+
+                    if (retry >= tries)
+                    {
+                        if (httpStatusCode == HttpStatusCode.BadRequest)
+                        {
+                            Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(e, "Unable to contact EC2 Metadata service to obtain a metadata token.");
+                            throw;
+                        }
+
+                        Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(e, "Unable to contact EC2 Metadata service to obtain a metadata token. Attempting to access IMDS without a token.");
+
+                        //If there isn't a status code, it was a failure to contact the server which would be
+                        //a request failure, a network issue, or a timeout. Cache this response and fallback
+                        //to IMDS flow without a token. If the non token IMDS flow returns unauthorized, the 
+                        //useNullToken flag will be cleared and the IMDS flow will attempt to obtain another 
+                        //token.
+                        if (httpStatusCode == null)
+                        {
+                            useNullToken = true;
+                        }
+
+                        //Return null to fallback to the IMDS flow without using a token.                    
+                        return null;
+                    }
+
+                    PauseExponentially(retry - 1);
+                }                
+            }
+
+            return null;
+        }
+
+        public static void ClearTokenFlag()
+        {            
+            useNullToken = false;
+        }
+
         private static List<string> GetItems(string relativeOrAbsolutePath, int tries, bool slurp)
         {
+            return GetItems(relativeOrAbsolutePath, tries, slurp, null);
+        }
+
+        private static List<string> GetItems(string relativeOrAbsolutePath, int tries, bool slurp, string token)
+        {
             var items = new List<string>();
+            //For all meta-data queries we need to fetch an api token to use. In the event a 
+            //token cannot be obtained we will fallback to not using a token.
+            Dictionary<string, string> headers = null;
+            if(token == null)
+            {
+                token = FetchApiToken(DEFAULT_RETRIES);                
+            }
+
+            if (!string.IsNullOrEmpty(token))
+            {
+                headers = new Dictionary<string, string>();
+                headers.Add(HeaderKeys.XAwsEc2MetadataToken, token);
+            }
+
             try
             {
                 if (!IsIMDSEnabled)
@@ -513,8 +617,8 @@ namespace Amazon.Util
                 var uri = relativeOrAbsolutePath.StartsWith(EC2_METADATA_SVC, StringComparison.Ordinal)
                             ? new Uri(relativeOrAbsolutePath)
                             : new Uri(EC2_METADATA_ROOT + relativeOrAbsolutePath);
-
-                var content = AWSSDKUtils.DownloadStringContent(uri,  TimeSpan.FromSeconds(5), Proxy);
+                
+                var content = AWSSDKUtils.ExecuteHttpRequest(uri, "GET", null, TimeSpan.FromSeconds(5), Proxy, headers);
                 using (var stream = new StringReader(content))
                 {
                     if (slurp)
@@ -531,35 +635,48 @@ namespace Amazon.Util
                         while (line != null);
                     }
                 }
-            }
-            catch (WebException wex)
-            {
-                var response = wex.Response as HttpWebResponse;
-                if (response != null && response.StatusCode == HttpStatusCode.NotFound)
-                    return null;
-
-                if (tries <= 1)
-                {
-                    Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(wex, "Unable to contact EC2 Metadata service.");
-                    return null;
-                }
-
-                PauseExponentially(tries);
-                return GetItems(relativeOrAbsolutePath, tries - 1, slurp);
-            }
+            }            
             catch (IMDSDisabledException)
             {
                 // Keep this behavior identical to when HttpStatusCode.NotFound is returned.
                 return null;
             }
+            catch (Exception e)
+            {
+                HttpStatusCode? httpStatusCode = ExceptionUtils.DetermineHttpStatusCode(e);
+
+                if (httpStatusCode == HttpStatusCode.NotFound)
+                {
+                    return null;
+                }
+                else if (httpStatusCode == HttpStatusCode.Unauthorized)
+                {
+                    ClearTokenFlag();
+                    Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(e, "EC2 Metadata service returned unauthorized for token based secure data flow.");
+                    throw;
+                }
+
+                if (tries <= 1)
+                {
+                    Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(e, "Unable to contact EC2 Metadata service.");
+                    return null;
+                }
+
+                PauseExponentially(DEFAULT_RETRIES - tries);
+                return GetItems(relativeOrAbsolutePath, tries - 1, slurp, token);
+            }
 
             return items;
         }
-
-        private static void PauseExponentially(int tries)
+                
+        /// <summary>
+        /// Exponentially sleeps based on the current retry value. A lower 
+        /// value will sleep shorter than a larger value
+        /// </summary>
+        /// <param name="retry">Base 0 retry index</param>
+        private static void PauseExponentially(int retry)
         {
-            tries = Math.Min(tries, MAX_RETRIES);
-            var pause = (int)(Math.Pow(2, DEFAULT_RETRIES - tries) * MIN_PAUSE_MS);
+            var pause = (int)(Math.Pow(2, retry) * MIN_PAUSE_MS);
             Thread.Sleep(pause < MIN_PAUSE_MS ? MIN_PAUSE_MS : pause);
         }
 #if !PCL && !NETSTANDARD

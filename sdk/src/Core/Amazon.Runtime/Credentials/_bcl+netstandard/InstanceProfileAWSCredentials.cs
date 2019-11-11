@@ -14,6 +14,7 @@
  */
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
+using AWSSDK.Runtime.Internal.Util;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -53,13 +54,24 @@ namespace Amazon.Runtime
         protected override CredentialsRefreshState GenerateNewCredentials()
         {
             CredentialsRefreshState newState = null;
+            var token = EC2InstanceMetadata.FetchApiToken();
+
             try
             {
                 // Attempt to get early credentials. OK to fail at this point.
-                newState = GetRefreshState();
+                newState = GetRefreshState(token);
             }
             catch (Exception e)
             {
+                HttpStatusCode? httpStatusCode = ExceptionUtils.DetermineHttpStatusCode(e);
+
+                if (httpStatusCode == HttpStatusCode.Unauthorized)
+                {
+                    EC2InstanceMetadata.ClearTokenFlag();
+                    Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(e, "EC2 Metadata service returned unauthorized for token based secure data flow.");
+                    throw;
+                }
+
                 var logger = Logger.GetLogger(typeof(InstanceProfileAWSCredentials));
                 logger.InfoFormat("Error getting credentials from Instance Profile service: {0}", e);
             }
@@ -71,7 +83,24 @@ namespace Amazon.Runtime
             // If still not successful (no credentials available at start), attempt once more to
             // get credentials, but now without swallowing exception
             if (_currentRefreshState == null)
-                _currentRefreshState = GetRefreshState();
+            {
+                try
+                {
+                    _currentRefreshState = GetRefreshState(token);
+                }             
+                catch (Exception e)
+                {
+                    HttpStatusCode? httpStatusCode = ExceptionUtils.DetermineHttpStatusCode(e);
+
+                    if (httpStatusCode == HttpStatusCode.Unauthorized)
+                    {
+                        EC2InstanceMetadata.ClearTokenFlag();
+                        Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(e, "EC2 Metadata service returned unauthorized for token based secure data flow.");
+                    }
+
+                    throw;
+                }
+            }                
 
             // Return credentials that will expire in at most one hour
             CredentialsRefreshState state = GetEarlyRefreshState(_currentRefreshState);
@@ -139,7 +168,25 @@ namespace Amazon.Runtime
         /// <returns></returns>
         public static IEnumerable<string> GetAvailableRoles(IWebProxy proxy)
         {
-            string allAliases = GetContents(RolesUri, proxy);
+            var token = EC2InstanceMetadata.FetchApiToken();
+
+            var allAliases = string.Empty;
+            try
+            {
+                allAliases = GetContents(RolesUri, proxy, CreateMetadataTokenHeaders(token));
+            }
+            catch (Exception e)
+            {
+                HttpStatusCode? httpStatusCode = ExceptionUtils.DetermineHttpStatusCode(e);
+
+                if (httpStatusCode == HttpStatusCode.Unauthorized)
+                {
+                    EC2InstanceMetadata.ClearTokenFlag();
+                    Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(e, "EC2 Metadata service returned unauthorized for token based secure data flow.");                    
+                }
+
+                throw;
+            }
             if (string.IsNullOrEmpty(allAliases))
                 yield break;
 
@@ -197,32 +244,32 @@ namespace Amazon.Runtime
             return new CredentialsRefreshState(state.Credentials.Copy(), newExpiryTime);
         }
 
-        private CredentialsRefreshState GetRefreshState()
+        private CredentialsRefreshState GetRefreshState(string token)
         {
-            SecurityInfo info = GetServiceInfo(_proxy);
+            SecurityInfo info = GetServiceInfo(_proxy, token);
             if (!string.IsNullOrEmpty(info.Message))
             {
                 throw new AmazonServiceException(string.Format(CultureInfo.InvariantCulture,
                     "Unable to retrieve credentials. Message = \"{0}\".",
                     info.Message));
             }
-            SecurityCredentials credentials = GetRoleCredentials();
+            SecurityCredentials credentials = GetRoleCredentials(token);
 
             CredentialsRefreshState refreshState = new CredentialsRefreshState(new ImmutableCredentials(credentials.AccessKeyId, credentials.SecretAccessKey, credentials.Token), credentials.Expiration);
 
             return refreshState;
         }
 
-        private static SecurityInfo GetServiceInfo(IWebProxy proxy)
+        private static SecurityInfo GetServiceInfo(IWebProxy proxy, string token)
         {
-            CheckIsIMDSEnabled();
-            return GetObjectFromResponse<SecurityInfo>(InfoUri, proxy);
+            CheckIsIMDSEnabled();            
+            return GetObjectFromResponse<SecurityInfo>(InfoUri, proxy, CreateMetadataTokenHeaders(token));
         }
 
-        private SecurityCredentials GetRoleCredentials()
+        private SecurityCredentials GetRoleCredentials(string token)
         {
-            CheckIsIMDSEnabled();
-            return GetObjectFromResponse<SecurityCredentials>(CurrentRoleUri, _proxy);
+            CheckIsIMDSEnabled();            
+            return GetObjectFromResponse<SecurityCredentials>(CurrentRoleUri, _proxy, CreateMetadataTokenHeaders(token));
         }
 
         private static void CheckIsIMDSEnabled()
@@ -264,6 +311,19 @@ namespace Amazon.Runtime
             else
                 return false;
         }
+
+        private static Dictionary<string, string> CreateMetadataTokenHeaders(string token)
+        {
+            Dictionary<string, string> headers = null;            
+            if (!string.IsNullOrEmpty(token))
+            {
+                headers = new Dictionary<string, string>();
+                headers.Add(HeaderKeys.XAwsEc2MetadataToken, token);
+            }
+
+            return headers;
+        }
+                
         #endregion
     }
 }
