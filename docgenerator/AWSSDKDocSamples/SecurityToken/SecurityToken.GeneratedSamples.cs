@@ -27,7 +27,7 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
 
             AssumedRoleUser assumedRoleUser = response.AssumedRoleUser;
             Credentials credentials = response.Credentials;
-            integer packedPolicySize = response.PackedPolicySize;
+            int packedPolicySize = response.PackedPolicySize;
 
             #endregion
         }
@@ -49,7 +49,7 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
             AssumedRoleUser assumedRoleUser = response.AssumedRoleUser;
             string audience = response.Audience;
             Credentials credentials = response.Credentials;
-            integer packedPolicySize = response.PackedPolicySize;
+            int packedPolicySize = response.PackedPolicySize;
             string provider = response.Provider;
             string subjectFromWebIdentityToken = response.SubjectFromWebIdentityToken;
 
@@ -128,7 +128,7 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
 
             Credentials credentials = response.Credentials;
             FederatedUser federatedUser = response.FederatedUser;
-            integer packedPolicySize = response.PackedPolicySize;
+            int packedPolicySize = response.PackedPolicySize;
 
             #endregion
         }

@@ -45,7 +45,7 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
             });
 
             string collectionArn = response.CollectionArn;
-            integer statusCode = response.StatusCode;
+            int statusCode = response.StatusCode;
 
             #endregion
         }
@@ -59,7 +59,7 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
                 CollectionId = "myphotos"
             });
 
-            integer statusCode = response.StatusCode;
+            int statusCode = response.StatusCode;
 
             #endregion
         }

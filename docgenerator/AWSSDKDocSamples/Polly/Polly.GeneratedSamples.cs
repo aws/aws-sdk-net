@@ -99,7 +99,7 @@ namespace AWSSDKDocSamples.Amazon.Polly.Generated
 
             MemoryStream audioStream = response.AudioStream;
             string contentType = response.ContentType;
-            integer requestCharacters = response.RequestCharacters;
+            int requestCharacters = response.RequestCharacters;
 
             #endregion
         }

@@ -440,7 +440,7 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
             {
             });
 
-            Dictionary<string, integer> summaryMap = response.SummaryMap;
+            Dictionary<string, int> summaryMap = response.SummaryMap;
 
             #endregion
         }
@@ -487,8 +487,8 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
             DateTime jobCompletionDate = response.JobCompletionDate;
             DateTime jobCreationDate = response.JobCreationDate;
             string jobStatus = response.JobStatus;
-            integer numberOfServicesAccessible = response.NumberOfServicesAccessible;
-            integer numberOfServicesNotAccessed = response.NumberOfServicesNotAccessed;
+            int numberOfServicesAccessible = response.NumberOfServicesAccessible;
+            int numberOfServicesNotAccessed = response.NumberOfServicesNotAccessed;
 
             #endregion
         }

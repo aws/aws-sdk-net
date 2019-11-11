@@ -310,10 +310,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             {
             });
 
-            integer maxNumberOfAutoScalingGroups = response.MaxNumberOfAutoScalingGroups;
-            integer maxNumberOfLaunchConfigurations = response.MaxNumberOfLaunchConfigurations;
-            integer numberOfAutoScalingGroups = response.NumberOfAutoScalingGroups;
-            integer numberOfLaunchConfigurations = response.NumberOfLaunchConfigurations;
+            int maxNumberOfAutoScalingGroups = response.MaxNumberOfAutoScalingGroups;
+            int maxNumberOfLaunchConfigurations = response.MaxNumberOfLaunchConfigurations;
+            int numberOfAutoScalingGroups = response.NumberOfAutoScalingGroups;
+            int numberOfLaunchConfigurations = response.NumberOfLaunchConfigurations;
 
             #endregion
         }

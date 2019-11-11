@@ -313,7 +313,7 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
 
             string jobDefinitionArn = response.JobDefinitionArn;
             string jobDefinitionName = response.JobDefinitionName;
-            integer revision = response.Revision;
+            int revision = response.Revision;
 
             #endregion
         }
