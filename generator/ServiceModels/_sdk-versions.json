@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.627.0",
+    "ProductVersion" : "3.3.628.0",
     "CoreVersion"    : "3.3.103.62",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -29,7 +29,7 @@
             "InPreview"               : false
         },
         "CloudFormation" : {
-            "Version" : "3.3.100.97",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.62"
@@ -857,7 +857,7 @@
             "InPreview"               : false
         },
         "CostExplorer"                    : {
-            "Version" : "3.3.103.3",
+            "Version" : "3.3.104.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.103.62"

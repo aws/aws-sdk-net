@@ -1,3 +1,9 @@
+### 3.3.628.0 (2019-11-11 20:27 UTC)
+* CloudFormation (3.3.101.0)
+	* The Resource Import feature enables customers to import existing AWS resources into new or existing CloudFormation Stacks.
+* CostExplorer (3.3.104.0)
+	* This launch provides customers with access to GetCostAndUsageWithResources API.
+
 ### 3.3.627.0 (2019-11-08 20:24 UTC)
 * CognitoIdentity (3.3.101.0)
 	* This release adds support for disabling classic flow.
