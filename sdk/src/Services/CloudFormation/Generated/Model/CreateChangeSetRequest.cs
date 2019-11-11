@@ -43,10 +43,11 @@ namespace Amazon.CloudFormation.Model
     /// <para>
     /// To create a change set for a stack that doesn't exist, for the <code>ChangeSetType</code>
     /// parameter, specify <code>CREATE</code>. To create a change set for an existing stack,
-    /// specify <code>UPDATE</code> for the <code>ChangeSetType</code> parameter. After the
-    /// <code>CreateChangeSet</code> call successfully completes, AWS CloudFormation starts
-    /// creating the change set. To check the status of the change set or to review it, use
-    /// the <a>DescribeChangeSet</a> action.
+    /// specify <code>UPDATE</code> for the <code>ChangeSetType</code> parameter. To create
+    /// a change set for an import operation, specify <code>IMPORT</code> for the <code>ChangeSetType</code>
+    /// parameter. After the <code>CreateChangeSet</code> call successfully completes, AWS
+    /// CloudFormation starts creating the change set. To check the status of the change set
+    /// or to review it, use the <a>DescribeChangeSet</a> action.
     /// </para>
     ///  
     /// <para>
@@ -64,6 +65,7 @@ namespace Amazon.CloudFormation.Model
         private string _description;
         private List<string> _notificationARNs = new List<string>();
         private List<Parameter> _parameters = new List<Parameter>();
+        private List<ResourceToImport> _resourcesToImport = new List<ResourceToImport>();
         private List<string> _resourceTypes = new List<string>();
         private string _roleARN;
         private RollbackConfiguration _rollbackConfiguration;
@@ -76,7 +78,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Capabilities. 
         /// <para>
-        /// In some cases, you must explicity acknowledge that your stack template contains certain
+        /// In some cases, you must explicitly acknowledge that your stack template contains certain
         /// capabilities in order for AWS CloudFormation to create the stack.
         /// </para>
         ///  <ul> <li> 
@@ -232,6 +234,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// The type of change set operation. To create a change set for a new stack, specify
         /// <code>CREATE</code>. To create a change set for an existing stack, specify <code>UPDATE</code>.
+        /// To create a change set for an import operation, specify <code>IMPORT</code>.
         /// </para>
         ///  
         /// <para>
@@ -337,6 +340,25 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && this._parameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourcesToImport. 
+        /// <para>
+        /// The resources to import into your stack.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=200)]
+        public List<ResourceToImport> ResourcesToImport
+        {
+            get { return this._resourcesToImport; }
+            set { this._resourcesToImport = value; }
+        }
+
+        // Check to see if ResourcesToImport property is set
+        internal bool IsSetResourcesToImport()
+        {
+            return this._resourcesToImport != null && this._resourcesToImport.Count > 0; 
         }
 
         /// <summary>

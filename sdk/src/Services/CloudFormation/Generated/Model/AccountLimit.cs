@@ -28,8 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The AccountLimit data type. For more information about account limits, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">AWS
+    /// The AccountLimit data type. 
+    /// 
+    ///  
+    /// <para>
+    /// CloudFormation has the following limits per account:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Number of concurrent resources
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Number of stacks
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Number of stack outputs
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information about these account limits, and other CloudFormation limits,
+    /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">AWS
     /// CloudFormation Limits</a> in the <i>AWS CloudFormation User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class AccountLimit
     {
@@ -40,6 +62,11 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the account limit.
+        /// </para>
+        ///  
+        /// <para>
+        /// Values: <code>ConcurrentResourcesLimit</code> | <code>StackLimit</code> | <code>StackOutputsLimit</code>
+        /// 
         /// </para>
         /// </summary>
         public string Name

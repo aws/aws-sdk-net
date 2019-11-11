@@ -143,6 +143,10 @@ namespace Amazon.CloudFormation
         /// </summary>
         public static readonly ChangeAction Add = new ChangeAction("Add");
         /// <summary>
+        /// Constant Import for ChangeAction
+        /// </summary>
+        public static readonly ChangeAction Import = new ChangeAction("Import");
+        /// <summary>
         /// Constant Modify for ChangeAction
         /// </summary>
         public static readonly ChangeAction Modify = new ChangeAction("Modify");
@@ -258,6 +262,10 @@ namespace Amazon.CloudFormation
         /// Constant CREATE for ChangeSetType
         /// </summary>
         public static readonly ChangeSetType CREATE = new ChangeSetType("CREATE");
+        /// <summary>
+        /// Constant IMPORT for ChangeSetType
+        /// </summary>
+        public static readonly ChangeSetType IMPORT = new ChangeSetType("IMPORT");
         /// <summary>
         /// Constant UPDATE for ChangeSetType
         /// </summary>
@@ -889,6 +897,30 @@ namespace Amazon.CloudFormation
         /// </summary>
         public static readonly ResourceStatus DELETE_SKIPPED = new ResourceStatus("DELETE_SKIPPED");
         /// <summary>
+        /// Constant IMPORT_COMPLETE for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus IMPORT_COMPLETE = new ResourceStatus("IMPORT_COMPLETE");
+        /// <summary>
+        /// Constant IMPORT_FAILED for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus IMPORT_FAILED = new ResourceStatus("IMPORT_FAILED");
+        /// <summary>
+        /// Constant IMPORT_IN_PROGRESS for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus IMPORT_IN_PROGRESS = new ResourceStatus("IMPORT_IN_PROGRESS");
+        /// <summary>
+        /// Constant IMPORT_ROLLBACK_COMPLETE for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus IMPORT_ROLLBACK_COMPLETE = new ResourceStatus("IMPORT_ROLLBACK_COMPLETE");
+        /// <summary>
+        /// Constant IMPORT_ROLLBACK_FAILED for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus IMPORT_ROLLBACK_FAILED = new ResourceStatus("IMPORT_ROLLBACK_FAILED");
+        /// <summary>
+        /// Constant IMPORT_ROLLBACK_IN_PROGRESS for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus IMPORT_ROLLBACK_IN_PROGRESS = new ResourceStatus("IMPORT_ROLLBACK_IN_PROGRESS");
+        /// <summary>
         /// Constant UPDATE_COMPLETE for ResourceStatus
         /// </summary>
         public static readonly ResourceStatus UPDATE_COMPLETE = new ResourceStatus("UPDATE_COMPLETE");
@@ -1418,6 +1450,26 @@ namespace Amazon.CloudFormation
         /// Constant DELETE_IN_PROGRESS for StackStatus
         /// </summary>
         public static readonly StackStatus DELETE_IN_PROGRESS = new StackStatus("DELETE_IN_PROGRESS");
+        /// <summary>
+        /// Constant IMPORT_COMPLETE for StackStatus
+        /// </summary>
+        public static readonly StackStatus IMPORT_COMPLETE = new StackStatus("IMPORT_COMPLETE");
+        /// <summary>
+        /// Constant IMPORT_IN_PROGRESS for StackStatus
+        /// </summary>
+        public static readonly StackStatus IMPORT_IN_PROGRESS = new StackStatus("IMPORT_IN_PROGRESS");
+        /// <summary>
+        /// Constant IMPORT_ROLLBACK_COMPLETE for StackStatus
+        /// </summary>
+        public static readonly StackStatus IMPORT_ROLLBACK_COMPLETE = new StackStatus("IMPORT_ROLLBACK_COMPLETE");
+        /// <summary>
+        /// Constant IMPORT_ROLLBACK_FAILED for StackStatus
+        /// </summary>
+        public static readonly StackStatus IMPORT_ROLLBACK_FAILED = new StackStatus("IMPORT_ROLLBACK_FAILED");
+        /// <summary>
+        /// Constant IMPORT_ROLLBACK_IN_PROGRESS for StackStatus
+        /// </summary>
+        public static readonly StackStatus IMPORT_ROLLBACK_IN_PROGRESS = new StackStatus("IMPORT_ROLLBACK_IN_PROGRESS");
         /// <summary>
         /// Constant REVIEW_IN_PROGRESS for StackStatus
         /// </summary>
