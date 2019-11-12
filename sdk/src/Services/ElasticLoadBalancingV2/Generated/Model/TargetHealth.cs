@@ -87,11 +87,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected
-        /// HTTP code.
+        /// HTTP code. Applies only to Application Load Balancers.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Target.Timeout</code> - The health check requests timed out.
+        ///  <code>Target.Timeout</code> - The health check requests timed out. Applies only to
+        /// Application Load Balancers.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -101,6 +102,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>Elb.InternalError</code> - The health checks failed due to an internal error.
+        /// Applies only to Application Load Balancers.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -119,12 +121,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Target.IpUnusable</code> - The target IP address is reserved for use by a load
-        /// balancer.
+        ///  <code>Target.InvalidState</code> - The target is in the stopped or terminated state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Target.InvalidState</code> - The target is in the stopped or terminated state.
+        ///  <code>Target.IpUnusable</code> - The target IP address is reserved for use by a load
+        /// balancer.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -144,7 +146,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>Target.HealthCheckDisabled</code> - Health checks are disabled for the target
-        /// group.
+        /// group. Applies only to Application Load Balancers.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Elb.InternalError</code> - Target health is unavailable due to an internal
+        /// error. Applies only to Network Load Balancers.
         /// </para>
         ///  </li> </ul>
         /// </summary>

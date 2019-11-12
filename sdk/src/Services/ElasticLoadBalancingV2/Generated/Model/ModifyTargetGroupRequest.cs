@@ -77,7 +77,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  
         /// <para>
-        /// If the protocol of the target group is TCP, you can't modify this setting.
+        /// With Network Load Balancers, you can't modify this setting.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=300)]
@@ -141,7 +141,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  
         /// <para>
-        /// If the protocol of the target group is TCP, you can't modify this setting.
+        /// With Network Load Balancers, you can't modify this setting.
         /// </para>
         /// </summary>
         public ProtocolEnum HealthCheckProtocol
@@ -164,7 +164,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  
         /// <para>
-        /// If the protocol of the target group is TCP, you can't modify this setting.
+        /// With Network Load Balancers, you can't modify this setting.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=120)]
@@ -208,7 +208,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  
         /// <para>
-        /// If the protocol of the target group is TCP, you can't modify this setting.
+        /// With Network Load Balancers, you can't modify this setting.
         /// </para>
         /// </summary>
         public Matcher Matcher

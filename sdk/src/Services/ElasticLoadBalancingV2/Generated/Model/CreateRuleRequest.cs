@@ -58,7 +58,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property Actions. 
         /// <para>
         /// The actions. Each rule must include exactly one of the following types of actions:
-        /// <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>.
+        /// <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>, and it
+        /// must be the last action to be performed.
         /// </para>
         ///  
         /// <para>
