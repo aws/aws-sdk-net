@@ -46,10 +46,32 @@ namespace Amazon.Lambda.Model
             set { this._variables = value; }
         }
 
+        /// <summary>
+        /// This property is set to true if the property <seealso cref="Variables"/>
+        /// is set; false otherwise.
+        /// This property can be used to determine if the related property
+        /// was returned by a service response or if the related property
+        /// should be sent to the service during a service call.
+        /// </summary>
+        /// <returns>
+        /// True if the related property was set or will be sent to a service; false otherwise.
+        /// </returns>
+        public bool IsVariablesSet
+        {
+            get
+            {
+                return Amazon.Util.Internal.InternalSDKUtils.GetIsSet(this._variables);
+            }
+            set
+            {
+                Amazon.Util.Internal.InternalSDKUtils.SetIsSet(value, ref this._variables);
+            }
+        }
+
         // Check to see if Variables property is set
         internal bool IsSetVariables()
         {
-            return this._variables != null && this._variables.Count > 0; 
+            return this.IsVariablesSet; 
         }
 
     }
