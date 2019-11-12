@@ -37,7 +37,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property RegionName. 
         /// <para>
-        /// The region where the replica needs to be created.
+        /// The Region where the replica needs to be created.
         /// </para>
         /// </summary>
         public string RegionName

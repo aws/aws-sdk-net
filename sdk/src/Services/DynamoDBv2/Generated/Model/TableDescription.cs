@@ -134,10 +134,18 @@ namespace Amazon.DynamoDBv2.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>Backfilling</code> - If true, then the index is currently in the backfilling
-        /// phase. Backfilling occurs only when a new global secondary index is added to the table;
-        /// it is the process by which DynamoDB populates the new index with data from the table.
+        /// phase. Backfilling occurs only when a new global secondary index is added to the table.
+        /// It is the process by which DynamoDB populates the new index with data from the table.
         /// (This attribute does not appear for indexes that were created during a <code>CreateTable</code>
-        /// operation.)
+        /// operation.) 
+        /// </para>
+        ///  
+        /// <para>
+        ///  You can delete an index that is being created during the <code>Backfilling</code>
+        /// phase when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code>
+        /// is true. You can't delete the index that is being created when <code>IndexStatus</code>
+        /// is set to CREATING and <code>Backfilling</code> is false. (This attribute does not
+        /// appear for indexes that were created during a <code>CreateTable</code> operation.)
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -199,7 +207,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>INCLUDE</code> - Only the specified table attributes are projected into the
-        /// index. The list of projected attributes are in <code>NonKeyAttributes</code>.
+        /// index. The list of projected attributes is in <code>NonKeyAttributes</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -342,15 +350,15 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// the AWS customer ID.
+        /// AWS customer ID
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// the table name.
+        /// Table name
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// the <code>StreamLabel</code>.
+        ///  <code>StreamLabel</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -402,7 +410,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>INCLUDE</code> - Only the specified table attributes are projected into the
-        /// index. The list of projected attributes are in <code>NonKeyAttributes</code>.
+        /// index. The list of projected attributes is in <code>NonKeyAttributes</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

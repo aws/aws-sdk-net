@@ -37,25 +37,7 @@ namespace Amazon.DynamoDBv2.Model
     /// cannot retrieve items from tables in more than one AWS account or Region. The aggregate
     /// size of the items in the transaction cannot exceed 4 MB.
     /// 
-    ///  <note> 
-    /// <para>
-    /// All AWS Regions and AWS GovCloud (US) support up to 25 items per transaction with
-    /// up to 4 MB of data, except the following AWS Regions: 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// China (Beijing)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// China (Ningxia)
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// The China (Beijing) and China (Ningxia) Regions support up to 10 items per transaction
-    /// with up to 4 MB of data. 
-    /// </para>
-    ///  </note> 
+    ///  
     /// <para>
     /// DynamoDB rejects the entire <code>TransactGetItems</code> request if any of the following
     /// is true:
@@ -110,7 +92,7 @@ namespace Amazon.DynamoDBv2.Model
         /// a <code>Get</code> structure.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10)]
+        [AWSProperty(Required=true, Min=1, Max=25)]
         public List<TransactGetItem> TransactItems
         {
             get { return this._transactItems; }

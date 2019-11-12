@@ -78,7 +78,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property SourceBackupArn. 
         /// <para>
-        /// ARN of the backup from which the table was restored.
+        /// The Amazon Resource Name (ARN) of the backup from which the table was restored.
         /// </para>
         /// </summary>
         [AWSProperty(Min=37, Max=1024)]
@@ -97,7 +97,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property SourceTableArn. 
         /// <para>
-        /// ARN of the source table of the backup that is being restored.
+        /// The ARN of the source table of the backup that is being restored.
         /// </para>
         /// </summary>
         public string SourceTableArn

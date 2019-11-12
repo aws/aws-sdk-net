@@ -74,6 +74,55 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.BackupArn);
                 }
 
+                if(publicRequest.IsSetBillingModeOverride())
+                {
+                    context.Writer.WritePropertyName("BillingModeOverride");
+                    context.Writer.Write(publicRequest.BillingModeOverride);
+                }
+
+                if(publicRequest.IsSetGlobalSecondaryIndexOverride())
+                {
+                    context.Writer.WritePropertyName("GlobalSecondaryIndexOverride");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestGlobalSecondaryIndexOverrideListValue in publicRequest.GlobalSecondaryIndexOverride)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = GlobalSecondaryIndexMarshaller.Instance;
+                        marshaller.Marshall(publicRequestGlobalSecondaryIndexOverrideListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetLocalSecondaryIndexOverride())
+                {
+                    context.Writer.WritePropertyName("LocalSecondaryIndexOverride");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestLocalSecondaryIndexOverrideListValue in publicRequest.LocalSecondaryIndexOverride)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LocalSecondaryIndexMarshaller.Instance;
+                        marshaller.Marshall(publicRequestLocalSecondaryIndexOverrideListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetProvisionedThroughputOverride())
+                {
+                    context.Writer.WritePropertyName("ProvisionedThroughputOverride");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ProvisionedThroughputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ProvisionedThroughputOverride, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTargetTableName())
                 {
                     context.Writer.WritePropertyName("TargetTableName");

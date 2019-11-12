@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Represents the autoscaling settings for a global table or global secondary index.
+    /// Represents the auto scaling settings for a global table or global secondary index.
     /// </summary>
     public partial class AutoScalingSettingsDescription
     {
@@ -41,7 +41,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property AutoScalingDisabled. 
         /// <para>
-        /// Disabled autoscaling for this global table or global secondary index.
+        /// Disabled auto scaling for this global table or global secondary index.
         /// </para>
         /// </summary>
         public bool AutoScalingDisabled
@@ -59,7 +59,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property AutoScalingRoleArn. 
         /// <para>
-        /// Role ARN used for configuring autoScaling policy.
+        /// Role ARN used for configuring the auto scaling policy.
         /// </para>
         /// </summary>
         public string AutoScalingRoleArn

@@ -35,25 +35,7 @@ namespace Amazon.DynamoDBv2.Model
     /// example, you cannot both <code>ConditionCheck</code> and <code>Update</code> the same
     /// item. The aggregate size of the items in the transaction cannot exceed 4 MB.
     /// 
-    ///  <note> 
-    /// <para>
-    /// All AWS Regions and AWS GovCloud (US) support up to 25 items per transaction with
-    /// up to 4 MB of data, except the following AWS Regions: 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// China (Beijing)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// China (Ningxia)
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// The China (Beijing) and China (Ningxia) Regions support up to 10 items per transaction
-    /// with up to 4 MB of data. 
-    /// </para>
-    ///  </note> 
+    ///  
     /// <para>
     /// The actions are completed atomically so that either all of them succeed, or all of
     /// them fail. They are defined by the following objects:
@@ -221,7 +203,7 @@ namespace Amazon.DynamoDBv2.Model
         /// on the same item. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10)]
+        [AWSProperty(Required=true, Min=1, Max=25)]
         public List<TransactWriteItem> TransactItems
         {
             get { return this._transactItems; }

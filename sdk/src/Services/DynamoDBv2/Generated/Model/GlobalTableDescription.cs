@@ -131,7 +131,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ReplicationGroup. 
         /// <para>
-        /// The regions where the global table has replicas.
+        /// The Regions where the global table has replicas.
         /// </para>
         /// </summary>
         public List<ReplicaDescription> ReplicationGroup

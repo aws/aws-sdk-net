@@ -97,7 +97,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ProvisionedReadCapacityAutoScalingSettings. 
         /// <para>
-        /// Autoscaling settings for a global secondary index replica's read capacity units.
+        /// Auto scaling settings for a global secondary index replica's read capacity units.
         /// </para>
         /// </summary>
         public AutoScalingSettingsDescription ProvisionedReadCapacityAutoScalingSettings
@@ -135,7 +135,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ProvisionedWriteCapacityAutoScalingSettings. 
         /// <para>
-        /// AutoScaling settings for a global secondary index replica's write capacity units.
+        /// Auto scaling settings for a global secondary index replica's write capacity units.
         /// </para>
         /// </summary>
         public AutoScalingSettingsDescription ProvisionedWriteCapacityAutoScalingSettings

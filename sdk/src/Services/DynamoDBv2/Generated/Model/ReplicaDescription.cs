@@ -37,7 +37,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property RegionName. 
         /// <para>
-        /// The name of the region.
+        /// The name of the Region.
         /// </para>
         /// </summary>
         public string RegionName

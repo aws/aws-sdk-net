@@ -60,7 +60,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ProvisionedWriteCapacityAutoScalingSettingsUpdate. 
         /// <para>
-        /// AutoScaling settings for managing a global secondary index's write capacity units.
+        /// Auto scaling settings for managing a global secondary index's write capacity units.
         /// </para>
         /// </summary>
         public AutoScalingSettingsUpdate ProvisionedWriteCapacityAutoScalingSettingsUpdate

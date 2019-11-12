@@ -44,7 +44,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property RegionName. 
         /// <para>
-        /// The region name of the replica.
+        /// The Region name of the replica.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -99,7 +99,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ReplicaProvisionedReadCapacityAutoScalingSettings. 
         /// <para>
-        /// Autoscaling settings for a global table replica's read capacity units.
+        /// Auto scaling settings for a global table replica's read capacity units.
         /// </para>
         /// </summary>
         public AutoScalingSettingsDescription ReplicaProvisionedReadCapacityAutoScalingSettings
@@ -138,7 +138,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ReplicaProvisionedWriteCapacityAutoScalingSettings. 
         /// <para>
-        /// AutoScaling settings for a global table replica's write capacity units.
+        /// Auto scaling settings for a global table replica's write capacity units.
         /// </para>
         /// </summary>
         public AutoScalingSettingsDescription ReplicaProvisionedWriteCapacityAutoScalingSettings
@@ -177,23 +177,23 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ReplicaStatus. 
         /// <para>
-        /// The current state of the region:
+        /// The current state of the Region:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATING</code> - The region is being created.
+        ///  <code>CREATING</code> - The Region is being created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATING</code> - The region is being updated.
+        ///  <code>UPDATING</code> - The Region is being updated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETING</code> - The region is being deleted.
+        ///  <code>DELETING</code> - The Region is being deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> - The region is ready for use.
+        ///  <code>ACTIVE</code> - The Region is ready for use.
         /// </para>
         ///  </li> </ul>
         /// </summary>

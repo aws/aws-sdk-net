@@ -5827,25 +5827,7 @@ namespace Amazon.DynamoDBv2
         /// cannot retrieve items from tables in more than one AWS account or Region. The aggregate
         /// size of the items in the transaction cannot exceed 4 MB.
         /// 
-        ///  <note> 
-        /// <para>
-        /// All AWS Regions and AWS GovCloud (US) support up to 25 items per transaction with
-        /// up to 4 MB of data, except the following AWS Regions: 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// China (Beijing)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// China (Ningxia)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The China (Beijing) and China (Ningxia) Regions support up to 10 items per transaction
-        /// with up to 4 MB of data. 
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// DynamoDB rejects the entire <code>TransactGetItems</code> request if any of the following
         /// is true:
@@ -5880,6 +5862,11 @@ namespace Amazon.DynamoDBv2
         /// queue is too large to finish. Reduce the frequency of requests and use exponential
         /// backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
+        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -5918,10 +5905,6 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The aggregate size of the items in the transaction exceeds 4 MBs.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// There is a user error, such as an invalid data format.
         /// </para>
         ///  </li> </ul> 
@@ -5943,10 +5926,6 @@ namespace Amazon.DynamoDBv2
         ///  </li> <li> 
         /// <para>
         /// There is insufficient provisioned capacity for the transaction to be completed.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The aggregate size of the items in the transaction exceeds 4 MBs.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6147,25 +6126,7 @@ namespace Amazon.DynamoDBv2
         /// cannot retrieve items from tables in more than one AWS account or Region. The aggregate
         /// size of the items in the transaction cannot exceed 4 MB.
         /// 
-        ///  <note> 
-        /// <para>
-        /// All AWS Regions and AWS GovCloud (US) support up to 25 items per transaction with
-        /// up to 4 MB of data, except the following AWS Regions: 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// China (Beijing)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// China (Ningxia)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The China (Beijing) and China (Ningxia) Regions support up to 10 items per transaction
-        /// with up to 4 MB of data. 
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// DynamoDB rejects the entire <code>TransactGetItems</code> request if any of the following
         /// is true:
@@ -6204,6 +6165,11 @@ namespace Amazon.DynamoDBv2
         /// backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
+        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
@@ -6241,10 +6207,6 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The aggregate size of the items in the transaction exceeds 4 MBs.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// There is a user error, such as an invalid data format.
         /// </para>
         ///  </li> </ul> 
@@ -6266,10 +6228,6 @@ namespace Amazon.DynamoDBv2
         ///  </li> <li> 
         /// <para>
         /// There is insufficient provisioned capacity for the transaction to be completed.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The aggregate size of the items in the transaction exceeds 4 MBs.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6471,25 +6429,7 @@ namespace Amazon.DynamoDBv2
         /// example, you cannot both <code>ConditionCheck</code> and <code>Update</code> the same
         /// item. The aggregate size of the items in the transaction cannot exceed 4 MB.
         /// 
-        ///  <note> 
-        /// <para>
-        /// All AWS Regions and AWS GovCloud (US) support up to 25 items per transaction with
-        /// up to 4 MB of data, except the following AWS Regions: 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// China (Beijing)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// China (Ningxia)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The China (Beijing) and China (Ningxia) Regions support up to 10 items per transaction
-        /// with up to 4 MB of data. 
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// The actions are completed atomically so that either all of them succeed, or all of
         /// them fail. They are defined by the following objects:
@@ -6577,6 +6517,11 @@ namespace Amazon.DynamoDBv2
         /// backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
+        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
@@ -6614,10 +6559,6 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The aggregate size of the items in the transaction exceeds 4 MBs.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// There is a user error, such as an invalid data format.
         /// </para>
         ///  </li> </ul> 
@@ -6639,10 +6580,6 @@ namespace Amazon.DynamoDBv2
         ///  </li> <li> 
         /// <para>
         /// There is insufficient provisioned capacity for the transaction to be completed.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The aggregate size of the items in the transaction exceeds 4 MBs.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6844,25 +6781,7 @@ namespace Amazon.DynamoDBv2
         /// example, you cannot both <code>ConditionCheck</code> and <code>Update</code> the same
         /// item. The aggregate size of the items in the transaction cannot exceed 4 MB.
         /// 
-        ///  <note> 
-        /// <para>
-        /// All AWS Regions and AWS GovCloud (US) support up to 25 items per transaction with
-        /// up to 4 MB of data, except the following AWS Regions: 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// China (Beijing)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// China (Ningxia)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The China (Beijing) and China (Ningxia) Regions support up to 10 items per transaction
-        /// with up to 4 MB of data. 
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// The actions are completed atomically so that either all of them succeed, or all of
         /// them fail. They are defined by the following objects:
@@ -6953,6 +6872,11 @@ namespace Amazon.DynamoDBv2
         /// backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
+        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// increase.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
@@ -6990,10 +6914,6 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The aggregate size of the items in the transaction exceeds 4 MBs.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// There is a user error, such as an invalid data format.
         /// </para>
         ///  </li> </ul> 
@@ -7015,10 +6935,6 @@ namespace Amazon.DynamoDBv2
         ///  </li> <li> 
         /// <para>
         /// There is insufficient provisioned capacity for the transaction to be completed.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The aggregate size of the items in the transaction exceeds 4 MBs.
         /// </para>
         ///  </li> <li> 
         /// <para>
