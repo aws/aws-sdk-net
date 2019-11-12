@@ -1406,6 +1406,9 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
         /// The job was specified in an invalid format or cannot be found.
         /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.OutputVariablesSizeExceededException">
+        /// Exceeded the total size limit for all variables in the pipeline.
+        /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>

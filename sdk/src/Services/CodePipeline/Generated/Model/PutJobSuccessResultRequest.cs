@@ -38,6 +38,7 @@ namespace Amazon.CodePipeline.Model
         private CurrentRevision _currentRevision;
         private ExecutionDetails _executionDetails;
         private string _jobId;
+        private Dictionary<string, string> _outputVariables = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property ContinuationToken. 
@@ -117,6 +118,26 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetJobId()
         {
             return this._jobId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputVariables. 
+        /// <para>
+        /// Key-value pairs produced as output by a job worker that can be made available to a
+        /// downstream action configuration. <code>outputVariables</code> can be included only
+        /// when there is no continuation token on the request.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> OutputVariables
+        {
+            get { return this._outputVariables; }
+            set { this._outputVariables = value; }
+        }
+
+        // Check to see if OutputVariables property is set
+        internal bool IsSetOutputVariables()
+        {
+            return this._outputVariables != null && this._outputVariables.Count > 0; 
         }
 
     }
