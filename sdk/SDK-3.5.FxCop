@@ -138,6 +138,7 @@
       <Directory>$(ProjectDir)/src/Services/machinelearning/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/macie/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/managedblockchain/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/marketplacecatalog/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/marketplaceentitlementservice/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/mediaconnect/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/mediaconvert/bin/Release/net35/</Directory>
@@ -335,6 +336,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MachineLearning.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Macie.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ManagedBlockchain.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MarketplaceCatalog.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MarketplaceEntitlementService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MediaConnect.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MediaConvert.dll" Analyze="True" AnalyzeAllChildren="True" />

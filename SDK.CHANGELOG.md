@@ -1,3 +1,15 @@
+### 3.3.629.0 (2019-11-12 21:03 UTC)
+* CodePipeline (3.3.104.0)
+	* AWS CodePipeline now supports the use of variables in action configuration.
+* DynamoDBv2 (3.3.102.0)
+	* Amazon DynamoDB enables you to restore your data to a new DynamoDB table using a point-in-time or on-demand backup. You now can modify the settings on the new restored table. Specifically, you can exclude some or all of the local and global secondary indexes from being created with the restored table. In addition, you can change the billing mode and provisioned capacity settings.
+* ElasticLoadBalancingV2 (3.3.102.61)
+	* You can configure your Application Load Balancer to either drop invalid header fields or forward them to targets.
+* MarketplaceCatalog (3.3.100.0)
+	* This is the first release for the AWS Marketplace Catalog service which allows you to list, describe and manage change requests on your published entities on AWS Marketplace. 
+* TranscribeService (3.3.109.0)
+	* With this release, Amazon Transcribe now supports transcriptions from audio sources in Welsh English (en-WL), Scottish English(en-AB), Irish English(en-IE), Farsi(fa-IR), Tamil(ta-IN), Indonesian(id-ID), Portuguese (pt-PT), Dutch(nl-NL).
+
 ### 3.3.628.0 (2019-11-11 20:27 UTC)
 * CloudFormation (3.3.101.0)
 	* The Resource Import feature enables customers to import existing AWS resources into new or existing CloudFormation Stacks.
