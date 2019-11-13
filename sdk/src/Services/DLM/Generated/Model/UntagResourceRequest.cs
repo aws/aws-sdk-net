@@ -28,49 +28,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// Specifies a tag for a resource.
+    /// Container for the parameters to the UntagResource operation.
+    /// Removes the specified tags from the specified resource.
     /// </summary>
-    public partial class Tag
+    public partial class UntagResourceRequest : AmazonDLMRequest
     {
-        private string _key;
-        private string _value;
+        private string _resourceArn;
+        private List<string> _tagKeys = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Key. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The tag key.
+        /// The Amazon Resource Name (ARN) of the resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=500)]
-        public string Key
+        [AWSProperty(Required=true)]
+        public string ResourceArn
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._key != null;
+            return this._resourceArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Value. 
+        /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The tag value.
+        /// The tag keys.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=500)]
-        public string Value
+        [AWSProperty(Required=true, Min=1, Max=200)]
+        public List<string> TagKeys
         {
-            get { return this._value; }
-            set { this._value = value; }
+            get { return this._tagKeys; }
+            set { this._tagKeys = value; }
         }
 
-        // Check to see if Value property is set
-        internal bool IsSetValue()
+        // Check to see if TagKeys property is set
+        internal bool IsSetTagKeys()
         {
-            return this._value != null;
+            return this._tagKeys != null && this._tagKeys.Count > 0; 
         }
 
     }

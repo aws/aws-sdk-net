@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DLM.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateLifecyclePolicy Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateLifecyclePolicyRequestMarshaller : IMarshaller<IRequest, CreateLifecyclePolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateLifecyclePolicyRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,49 +52,23 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateLifecyclePolicyRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DLM");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-01-12";            
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/policies";
+            if (!publicRequest.IsSetResourceArn())
+                throw new AmazonDLMException("Request object does not have required field ResourceArn set");
+            request.AddPathResource("{resourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
+            request.ResourcePath = "/tags/{resourceArn}";
             request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetExecutionRoleArn())
-                {
-                    context.Writer.WritePropertyName("ExecutionRoleArn");
-                    context.Writer.Write(publicRequest.ExecutionRoleArn);
-                }
-
-                if(publicRequest.IsSetPolicyDetails())
-                {
-                    context.Writer.WritePropertyName("PolicyDetails");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PolicyDetailsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PolicyDetails, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetState())
-                {
-                    context.Writer.WritePropertyName("State");
-                    context.Writer.Write(publicRequest.State);
-                }
-
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");
@@ -118,9 +92,9 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateLifecyclePolicyRequestMarshaller _instance = new CreateLifecyclePolicyRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateLifecyclePolicyRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -128,7 +102,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateLifecyclePolicyRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {

@@ -252,6 +252,144 @@ namespace Amazon.DLM
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Lists the tags for the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by DLM.</returns>
+        /// <exception cref="Amazon.DLM.Model.InternalServerException">
+        /// The service failed in an unexpected way.
+        /// </exception>
+        /// <exception cref="Amazon.DLM.Model.InvalidRequestException">
+        /// Bad request. The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.DLM.Model.ResourceNotFoundException">
+        /// A requested resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+
+
+        /// <summary>
+        /// Lists the tags for the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by DLM.</returns>
+        /// <exception cref="Amazon.DLM.Model.InternalServerException">
+        /// The service failed in an unexpected way.
+        /// </exception>
+        /// <exception cref="Amazon.DLM.Model.InvalidRequestException">
+        /// Bad request. The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.DLM.Model.ResourceNotFoundException">
+        /// A requested resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Adds the specified tags to the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by DLM.</returns>
+        /// <exception cref="Amazon.DLM.Model.InternalServerException">
+        /// The service failed in an unexpected way.
+        /// </exception>
+        /// <exception cref="Amazon.DLM.Model.InvalidRequestException">
+        /// Bad request. The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.DLM.Model.ResourceNotFoundException">
+        /// A requested resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+
+
+        /// <summary>
+        /// Adds the specified tags to the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by DLM.</returns>
+        /// <exception cref="Amazon.DLM.Model.InternalServerException">
+        /// The service failed in an unexpected way.
+        /// </exception>
+        /// <exception cref="Amazon.DLM.Model.InvalidRequestException">
+        /// Bad request. The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.DLM.Model.ResourceNotFoundException">
+        /// A requested resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Removes the specified tags from the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by DLM.</returns>
+        /// <exception cref="Amazon.DLM.Model.InternalServerException">
+        /// The service failed in an unexpected way.
+        /// </exception>
+        /// <exception cref="Amazon.DLM.Model.InvalidRequestException">
+        /// Bad request. The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.DLM.Model.ResourceNotFoundException">
+        /// A requested resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+
+
+        /// <summary>
+        /// Removes the specified tags from the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by DLM.</returns>
+        /// <exception cref="Amazon.DLM.Model.InternalServerException">
+        /// The service failed in an unexpected way.
+        /// </exception>
+        /// <exception cref="Amazon.DLM.Model.InvalidRequestException">
+        /// Bad request. The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.DLM.Model.ResourceNotFoundException">
+        /// A requested resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateLifecyclePolicy
 
 

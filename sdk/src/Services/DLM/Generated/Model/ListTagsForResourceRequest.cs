@@ -28,49 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// Specifies a tag for a resource.
+    /// Container for the parameters to the ListTagsForResource operation.
+    /// Lists the tags for the specified resource.
     /// </summary>
-    public partial class Tag
+    public partial class ListTagsForResourceRequest : AmazonDLMRequest
     {
-        private string _key;
-        private string _value;
+        private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property Key. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The tag key.
+        /// The Amazon Resource Name (ARN) of the resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=500)]
-        public string Key
+        [AWSProperty(Required=true)]
+        public string ResourceArn
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._key != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Value. 
-        /// <para>
-        /// The tag value.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=500)]
-        public string Value
-        {
-            get { return this._value; }
-            set { this._value = value; }
-        }
-
-        // Check to see if Value property is set
-        internal bool IsSetValue()
-        {
-            return this._value != null;
+            return this._resourceArn != null;
         }
 
     }

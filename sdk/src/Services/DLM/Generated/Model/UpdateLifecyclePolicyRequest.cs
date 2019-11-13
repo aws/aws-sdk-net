@@ -65,6 +65,7 @@ namespace Amazon.DLM.Model
         /// by the lifecycle policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string ExecutionRoleArn
         {
             get { return this._executionRoleArn; }
@@ -80,11 +81,8 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property PolicyDetails. 
         /// <para>
-        /// The configuration of the lifecycle policy.
-        /// </para>
-        ///  
-        /// <para>
-        /// Target tags cannot be re-used across policies.
+        /// The configuration of the lifecycle policy. You cannot update the policy type or the
+        /// resource type.
         /// </para>
         /// </summary>
         public PolicyDetails PolicyDetails
@@ -105,7 +103,7 @@ namespace Amazon.DLM.Model
         /// The identifier of the lifecycle policy.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=64)]
         public string PolicyId
         {
             get { return this._policyId; }

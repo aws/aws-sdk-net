@@ -28,31 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetLifecyclePolicy operation.
-    /// Gets detailed information about the specified lifecycle policy.
+    /// This is the response object from the UntagResource operation.
     /// </summary>
-    public partial class GetLifecyclePolicyRequest : AmazonDLMRequest
+    public partial class UntagResourceResponse : AmazonWebServiceResponse
     {
-        private string _policyId;
-
-        /// <summary>
-        /// Gets and sets the property PolicyId. 
-        /// <para>
-        /// The identifier of the lifecycle policy.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=64)]
-        public string PolicyId
-        {
-            get { return this._policyId; }
-            set { this._policyId = value; }
-        }
-
-        // Check to see if PolicyId property is set
-        internal bool IsSetPolicyId()
-        {
-            return this._policyId != null;
-        }
 
     }
 }

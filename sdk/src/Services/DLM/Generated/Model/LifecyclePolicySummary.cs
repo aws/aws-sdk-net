@@ -35,6 +35,7 @@ namespace Amazon.DLM.Model
         private string _description;
         private string _policyId;
         private GettablePolicyStateValues _state;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -61,6 +62,7 @@ namespace Amazon.DLM.Model
         /// The identifier of the lifecycle policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=64)]
         public string PolicyId
         {
             get { return this._policyId; }
@@ -89,6 +91,25 @@ namespace Amazon.DLM.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

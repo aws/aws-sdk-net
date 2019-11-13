@@ -28,49 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// Specifies a tag for a resource.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class Tag
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private string _key;
-        private string _value;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Key. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// The tag key.
+        /// Information about the tags.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=500)]
-        public string Key
+        [AWSProperty(Min=1, Max=200)]
+        public Dictionary<string, string> Tags
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._key != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Value. 
-        /// <para>
-        /// The tag value.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=500)]
-        public string Value
-        {
-            get { return this._value; }
-            set { this._value = value; }
-        }
-
-        // Check to see if Value property is set
-        internal bool IsSetValue()
-        {
-            return this._value != null;
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }
