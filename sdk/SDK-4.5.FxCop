@@ -74,6 +74,7 @@
       <Directory>$(ProjectDir)/src/Services/costandusagereport/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/costexplorer/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/databasemigrationservice/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/dataexchange/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/datapipeline/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/datasync/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/dax/bin/Release/net45/</Directory>
@@ -197,6 +198,7 @@
       <Directory>$(ProjectDir)/src/Services/signer/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/simpledb/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/simpleemail/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/simpleemailv2/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/simplenotificationservice/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/simplesystemsmanagement/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/simpleworkflow/bin/Release/net45/</Directory>
@@ -272,6 +274,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CostAndUsageReport.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CostExplorer.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.DatabaseMigrationService.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.DataExchange.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.DataPipeline.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.DataSync.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.DAX.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -395,6 +398,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Signer.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.SimpleDB.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.SimpleEmail.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.SimpleEmailV2.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.SimpleNotificationService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.SimpleSystemsManagement.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.SimpleWorkflow.dll" Analyze="True" AnalyzeAllChildren="True" />

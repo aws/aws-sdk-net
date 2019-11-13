@@ -1,3 +1,20 @@
+### 3.3.630.0 (2019-11-13 21:29 UTC)
+* CloudSearch (3.3.101.0)
+	* Amazon CloudSearch domains let you require that all traffic to the domain arrive over HTTPS. This security feature helps you block clients that send unencrypted requests to the domain.
+* DataExchange (3.3.100.0)
+	* Introducing AWS Data Exchange, a service that makes it easy for AWS customers to securely create, manage, access, and exchange data sets in the cloud.
+* DLM (3.3.102.0)
+	* You can now add tags to a lifecycle policy in Data Lifecycle Manager (DLM). Tags allow you to categorize your policies in different ways, such as by department, purpose or owner. You can also enable resource level permissions based on tags to set access control on ability to modify or delete a tagged policy.
+* IoT (3.3.103.0)
+	* This release adds the custom fields definition support in the index definition for AWS IoT Fleet Indexing Service. Custom fields can be used as an aggregation field to run aggregations with both existing GetStatistics API and newly added GetCardinality, GetPercentiles APIs. GetStatistics will return all statistics (min/max/sum/avg/count...) with this release. For more information, please refer to our latest documentation: https://docs.aws.amazon.com/iot/latest/developerguide/iot-indexing.html
+* SimpleEmailV2 (3.3.100.0)
+	* This is the first release of version 2 of the Amazon SES API. You can use this API to configure your Amazon SES account, and to send email. This API extends the functionality that exists in the previous version of the Amazon SES API.
+* Core 3.3.103.63
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.629.0 (2019-11-12 21:03 UTC)
 * CodePipeline (3.3.104.0)
 	* AWS CodePipeline now supports the use of variables in action configuration.
