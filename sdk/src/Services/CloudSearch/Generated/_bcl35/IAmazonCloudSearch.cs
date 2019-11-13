@@ -774,6 +774,64 @@ namespace Amazon.CloudSearch
 
         #endregion
         
+        #region  DescribeDomainEndpointOptions
+
+
+        /// <summary>
+        /// Returns the domain's endpoint options, specifically whether all requests to the domain
+        /// must arrive over HTTPS. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html"
+        /// target="_blank">Configuring Domain Endpoint Options</a> in the <i>Amazon CloudSearch
+        /// Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDomainEndpointOptions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDomainEndpointOptions service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.DisabledOperationException">
+        /// The request was rejected because it attempted an operation which is not enabled.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
+        /// Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.LimitExceededException">
+        /// The request was rejected because a resource limit has already been met.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
+        DescribeDomainEndpointOptionsResponse DescribeDomainEndpointOptions(DescribeDomainEndpointOptionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDomainEndpointOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDomainEndpointOptions operation on AmazonCloudSearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDomainEndpointOptions
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeDomainEndpointOptions(DescribeDomainEndpointOptionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDomainEndpointOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDomainEndpointOptions.</param>
+        /// 
+        /// <returns>Returns a  DescribeDomainEndpointOptionsResult from CloudSearch.</returns>
+        DescribeDomainEndpointOptionsResponse EndDescribeDomainEndpointOptions(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeDomains
 
 
@@ -1255,6 +1313,9 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ValidationException">
+        /// The request was rejected because it has invalid parameters.
+        /// </exception>
         UpdateAvailabilityOptionsResponse UpdateAvailabilityOptions(UpdateAvailabilityOptionsRequest request);
 
         /// <summary>
@@ -1280,6 +1341,70 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>Returns a  UpdateAvailabilityOptionsResult from CloudSearch.</returns>
         UpdateAvailabilityOptionsResponse EndUpdateAvailabilityOptions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateDomainEndpointOptions
+
+
+        /// <summary>
+        /// Updates the domain's endpoint options, specifically whether all requests to the domain
+        /// must arrive over HTTPS. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html"
+        /// target="_blank">Configuring Domain Endpoint Options</a> in the <i>Amazon CloudSearch
+        /// Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDomainEndpointOptions service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDomainEndpointOptions service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.DisabledOperationException">
+        /// The request was rejected because it attempted an operation which is not enabled.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
+        /// Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InvalidTypeException">
+        /// The request was rejected because it specified an invalid type definition.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.LimitExceededException">
+        /// The request was rejected because a resource limit has already been met.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ValidationException">
+        /// The request was rejected because it has invalid parameters.
+        /// </exception>
+        UpdateDomainEndpointOptionsResponse UpdateDomainEndpointOptions(UpdateDomainEndpointOptionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDomainEndpointOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDomainEndpointOptions operation on AmazonCloudSearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDomainEndpointOptions
+        ///         operation.</returns>
+        IAsyncResult BeginUpdateDomainEndpointOptions(UpdateDomainEndpointOptionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDomainEndpointOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDomainEndpointOptions.</param>
+        /// 
+        /// <returns>Returns a  UpdateDomainEndpointOptionsResult from CloudSearch.</returns>
+        UpdateDomainEndpointOptionsResponse EndUpdateDomainEndpointOptions(IAsyncResult asyncResult);
 
         #endregion
         

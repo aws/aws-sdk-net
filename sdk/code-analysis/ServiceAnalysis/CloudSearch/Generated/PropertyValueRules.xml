@@ -103,6 +103,12 @@
     <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudSearch.Model.DescribeDomainEndpointOptionsRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudSearch.Model.DescribeExpressionsRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
@@ -140,6 +146,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudSearch.Model.UpdateAvailabilityOptionsRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudSearch.Model.UpdateDomainEndpointOptionsRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
     <pattern>[a-z][a-z0-9\-]+</pattern>

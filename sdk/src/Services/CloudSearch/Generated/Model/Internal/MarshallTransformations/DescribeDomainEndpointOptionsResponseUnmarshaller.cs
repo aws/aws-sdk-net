@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateAvailabilityOptions operation
+    /// Response Unmarshaller for DescribeDomainEndpointOptions operation
     /// </summary>  
-    public class UpdateAvailabilityOptionsResponseUnmarshaller : XmlResponseUnmarshaller
+    public class DescribeDomainEndpointOptionsResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            UpdateAvailabilityOptionsResponse response = new UpdateAvailabilityOptionsResponse();
+            DescribeDomainEndpointOptionsResponse response = new DescribeDomainEndpointOptionsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("UpdateAvailabilityOptionsResult", 2))
+                    if(context.TestExpression("DescribeDomainEndpointOptionsResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,7 +67,7 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, UpdateAvailabilityOptionsResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, DescribeDomainEndpointOptionsResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -81,10 +81,10 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("AvailabilityOptions", targetDepth))
+                    if (context.TestExpression("DomainEndpointOptions", targetDepth))
                     {
-                        var unmarshaller = AvailabilityOptionsStatusUnmarshaller.Instance;
-                        response.AvailabilityOptions = unmarshaller.Unmarshall(context);
+                        var unmarshaller = DomainEndpointOptionsStatusUnmarshaller.Instance;
+                        response.DomainEndpointOptions = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 
@@ -116,10 +116,6 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
             {
                 return new InternalException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidType"))
-            {
-                return new InvalidTypeException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceeded"))
             {
                 return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -128,15 +124,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
             {
                 return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
-            {
-                return new ValidationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             return new AmazonCloudSearchException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static UpdateAvailabilityOptionsResponseUnmarshaller _instance = new UpdateAvailabilityOptionsResponseUnmarshaller();        
+        private static DescribeDomainEndpointOptionsResponseUnmarshaller _instance = new DescribeDomainEndpointOptionsResponseUnmarshaller();        
 
-        internal static UpdateAvailabilityOptionsResponseUnmarshaller GetInstance()
+        internal static DescribeDomainEndpointOptionsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -144,7 +136,7 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateAvailabilityOptionsResponseUnmarshaller Instance
+        public static DescribeDomainEndpointOptionsResponseUnmarshaller Instance
         {
             get
             {

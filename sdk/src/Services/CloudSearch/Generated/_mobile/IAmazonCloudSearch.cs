@@ -515,6 +515,44 @@ namespace Amazon.CloudSearch
 
         #endregion
                 
+        #region  DescribeDomainEndpointOptions
+
+
+
+        /// <summary>
+        /// Returns the domain's endpoint options, specifically whether all requests to the domain
+        /// must arrive over HTTPS. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html"
+        /// target="_blank">Configuring Domain Endpoint Options</a> in the <i>Amazon CloudSearch
+        /// Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDomainEndpointOptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDomainEndpointOptions service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.DisabledOperationException">
+        /// The request was rejected because it attempted an operation which is not enabled.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
+        /// Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.LimitExceededException">
+        /// The request was rejected because a resource limit has already been met.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
+        Task<DescribeDomainEndpointOptionsResponse> DescribeDomainEndpointOptionsAsync(DescribeDomainEndpointOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeDomains
 
 
@@ -848,7 +886,54 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ValidationException">
+        /// The request was rejected because it has invalid parameters.
+        /// </exception>
         Task<UpdateAvailabilityOptionsResponse> UpdateAvailabilityOptionsAsync(UpdateAvailabilityOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateDomainEndpointOptions
+
+
+
+        /// <summary>
+        /// Updates the domain's endpoint options, specifically whether all requests to the domain
+        /// must arrive over HTTPS. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html"
+        /// target="_blank">Configuring Domain Endpoint Options</a> in the <i>Amazon CloudSearch
+        /// Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDomainEndpointOptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDomainEndpointOptions service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.DisabledOperationException">
+        /// The request was rejected because it attempted an operation which is not enabled.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
+        /// Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InvalidTypeException">
+        /// The request was rejected because it specified an invalid type definition.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.LimitExceededException">
+        /// The request was rejected because a resource limit has already been met.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ValidationException">
+        /// The request was rejected because it has invalid parameters.
+        /// </exception>
+        Task<UpdateDomainEndpointOptionsResponse> UpdateDomainEndpointOptionsAsync(UpdateDomainEndpointOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

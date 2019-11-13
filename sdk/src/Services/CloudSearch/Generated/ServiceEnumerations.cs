@@ -535,4 +535,54 @@ namespace Amazon.CloudSearch
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type TLSSecurityPolicy.
+    /// </summary>
+    public class TLSSecurityPolicy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PolicyMinTLS10201907 for TLSSecurityPolicy
+        /// </summary>
+        public static readonly TLSSecurityPolicy PolicyMinTLS10201907 = new TLSSecurityPolicy("Policy-Min-TLS-1-0-2019-07");
+        /// <summary>
+        /// Constant PolicyMinTLS12201907 for TLSSecurityPolicy
+        /// </summary>
+        public static readonly TLSSecurityPolicy PolicyMinTLS12201907 = new TLSSecurityPolicy("Policy-Min-TLS-1-2-2019-07");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TLSSecurityPolicy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TLSSecurityPolicy FindValue(string value)
+        {
+            return FindValue<TLSSecurityPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TLSSecurityPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }
