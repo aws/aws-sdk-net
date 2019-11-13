@@ -752,6 +752,10 @@
       <Project>{99C31570-B271-443A-BF7F-6E29C281AACB}</Project>
       <Name>AWSSDK.SimpleEmail.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/SimpleEmailV2/AWSSDK.SimpleEmailV2.CodeAnalysis.csproj">
+      <Project>{DC68B85C-4DCD-461D-A976-2632B781A57E}</Project>
+      <Name>AWSSDK.SimpleEmailV2.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/SimpleNotificationService/AWSSDK.SimpleNotificationService.CodeAnalysis.csproj">
       <Project>{4FEB7172-B2D5-4EFA-9B71-A45BFC90F93D}</Project>
       <Name>AWSSDK.SimpleNotificationService.CodeAnalysis</Name>
