@@ -715,7 +715,7 @@ namespace Amazon.IoT
         /// identities.
         /// </summary>
         /// <param name="thingName">The name of the thing.</param>
-        /// <param name="principal">The principal, such as a certificate or other credential.</param>
+        /// <param name="principal">The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -2379,11 +2379,7 @@ namespace Amazon.IoT
         /// <summary>
         /// Creates a stream for delivering one or more large files in chunks over MQTT. A stream
         /// transports data bytes in chunks or blocks packaged as MQTT messages from a source
-        /// like S3. You can have one or more files associated with a stream. The total size of
-        /// a file associated with the stream cannot exceed more than 2 MB. The stream will be
-        /// created with version 0. If a stream is created with the same streamID as a stream
-        /// that existed and was deleted within last 90 days, we will resurrect that old stream
-        /// by incrementing the version by 1.
+        /// like S3. You can have one or more files associated with a stream.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStream service method.</param>
         /// <param name="cancellationToken">
@@ -5707,6 +5703,67 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  GetCardinality
+
+        internal virtual GetCardinalityResponse GetCardinality(GetCardinalityRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCardinalityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCardinalityResponseUnmarshaller.Instance;
+
+            return Invoke<GetCardinalityResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the number of things with distinct values for the aggregation field.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCardinality service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCardinality service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.IndexNotReadyException">
+        /// The index is not ready.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidAggregationException">
+        /// The aggregation is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidQueryException">
+        /// The query is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetCardinality">REST API Reference for GetCardinality Operation</seealso>
+        public virtual Task<GetCardinalityResponse> GetCardinalityAsync(GetCardinalityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCardinalityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCardinalityResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCardinalityResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetEffectivePolicies
 
         internal virtual GetEffectivePoliciesResponse GetEffectivePolicies(GetEffectivePoliciesRequest request)
@@ -5959,6 +6016,70 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  GetPercentiles
+
+        internal virtual GetPercentilesResponse GetPercentiles(GetPercentilesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPercentilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPercentilesResponseUnmarshaller.Instance;
+
+            return Invoke<GetPercentilesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the percentile values for the aggregation field. The results from GetPercentiles
+        /// is an approximation. The default percentile groupings are: 1,5,25,50,75,95,99. You
+        /// can specify custom percentile grouping using the percents argument to the GetPercentiles
+        /// API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPercentiles service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPercentiles service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.IndexNotReadyException">
+        /// The index is not ready.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidAggregationException">
+        /// The aggregation is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidQueryException">
+        /// The query is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPercentiles">REST API Reference for GetPercentiles Operation</seealso>
+        public virtual Task<GetPercentilesResponse> GetPercentilesAsync(GetPercentilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPercentilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPercentilesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPercentilesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetPolicy
 
         internal virtual GetPolicyResponse GetPolicy(GetPolicyRequest request)
@@ -6202,7 +6323,9 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Gets statistics about things that match the specified query.
+        /// Gets statistics returns the count, average, sum, minimum, maximum, sumOfSquares, variance,
+        /// and standard deviation for the specified aggregated field. If the aggregation field
+        /// is of type String, only the count statistic is returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStatistics service method.</param>
         /// <param name="cancellationToken">
@@ -8865,7 +8988,10 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Provisions a thing.
+        /// Provisions a thing in the device registry. RegisterThing calls other AWS IoT control
+        /// plane APIs. These calls might exceed your account level <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_iot">
+        /// AWS IoT Throttling Limits</a> and cause throttle errors. Please contact <a href="https://console.aws.amazon.com/support/home">AWS
+        /// Customer Support</a> to raise your throttling limits if necessary.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterThing service method.</param>
         /// <param name="cancellationToken">

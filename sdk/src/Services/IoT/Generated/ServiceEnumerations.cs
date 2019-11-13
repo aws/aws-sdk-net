@@ -1405,6 +1405,60 @@ namespace Amazon.IoT
 
 
     /// <summary>
+    /// Constants used for properties of type FieldType.
+    /// </summary>
+    public class FieldType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Boolean for FieldType
+        /// </summary>
+        public static readonly FieldType Boolean = new FieldType("Boolean");
+        /// <summary>
+        /// Constant Number for FieldType
+        /// </summary>
+        public static readonly FieldType Number = new FieldType("Number");
+        /// <summary>
+        /// Constant String for FieldType
+        /// </summary>
+        public static readonly FieldType String = new FieldType("String");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FieldType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FieldType FindValue(string value)
+        {
+            return FindValue<FieldType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FieldType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IndexStatus.
     /// </summary>
     public class IndexStatus : ConstantClass

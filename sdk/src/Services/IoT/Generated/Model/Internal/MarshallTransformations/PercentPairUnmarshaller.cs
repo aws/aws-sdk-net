@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ThingIndexingConfiguration Object
+    /// Response Unmarshaller for PercentPair Object
     /// </summary>  
-    public class ThingIndexingConfigurationUnmarshaller : IUnmarshaller<ThingIndexingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ThingIndexingConfiguration, JsonUnmarshallerContext>
+    public class PercentPairUnmarshaller : IUnmarshaller<PercentPair, XmlUnmarshallerContext>, IUnmarshaller<PercentPair, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ThingIndexingConfiguration IUnmarshaller<ThingIndexingConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PercentPair IUnmarshaller<PercentPair, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ThingIndexingConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public PercentPair Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ThingIndexingConfiguration unmarshalledObject = new ThingIndexingConfiguration();
+            PercentPair unmarshalledObject = new PercentPair();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("customFields", targetDepth))
+                if (context.TestExpression("percent", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Field, FieldUnmarshaller>(FieldUnmarshaller.Instance);
-                    unmarshalledObject.CustomFields = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Percent = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("managedFields", targetDepth))
+                if (context.TestExpression("value", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Field, FieldUnmarshaller>(FieldUnmarshaller.Instance);
-                    unmarshalledObject.ManagedFields = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("thingConnectivityIndexingMode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ThingConnectivityIndexingMode = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("thingIndexingMode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ThingIndexingMode = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         }
 
 
-        private static ThingIndexingConfigurationUnmarshaller _instance = new ThingIndexingConfigurationUnmarshaller();        
+        private static PercentPairUnmarshaller _instance = new PercentPairUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ThingIndexingConfigurationUnmarshaller Instance
+        public static PercentPairUnmarshaller Instance
         {
             get
             {

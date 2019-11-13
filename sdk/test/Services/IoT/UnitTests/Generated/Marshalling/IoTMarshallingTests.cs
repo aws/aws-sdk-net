@@ -2477,6 +2477,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("IoT")]
+        public void GetCardinalityMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetCardinality");
+
+            var request = InstantiateClassGenerator.Execute<GetCardinalityRequest>();
+            var marshaller = new GetCardinalityRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetCardinality", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetCardinalityResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetCardinalityResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("IoT")]
         public void GetEffectivePoliciesMarshallTest()
         {
             var operation = service_model.FindOperation("GetEffectivePolicies");
@@ -2629,6 +2661,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = GetOTAUpdateResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as GetOTAUpdateResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("IoT")]
+        public void GetPercentilesMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetPercentiles");
+
+            var request = InstantiateClassGenerator.Execute<GetPercentilesRequest>();
+            var marshaller = new GetPercentilesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetPercentiles", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetPercentilesResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetPercentilesResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

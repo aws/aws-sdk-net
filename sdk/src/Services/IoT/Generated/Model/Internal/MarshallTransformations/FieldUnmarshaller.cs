@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ThingIndexingConfiguration Object
+    /// Response Unmarshaller for Field Object
     /// </summary>  
-    public class ThingIndexingConfigurationUnmarshaller : IUnmarshaller<ThingIndexingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ThingIndexingConfiguration, JsonUnmarshallerContext>
+    public class FieldUnmarshaller : IUnmarshaller<Field, XmlUnmarshallerContext>, IUnmarshaller<Field, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ThingIndexingConfiguration IUnmarshaller<ThingIndexingConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Field IUnmarshaller<Field, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ThingIndexingConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public Field Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ThingIndexingConfiguration unmarshalledObject = new ThingIndexingConfiguration();
+            Field unmarshalledObject = new Field();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("customFields", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Field, FieldUnmarshaller>(FieldUnmarshaller.Instance);
-                    unmarshalledObject.CustomFields = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("managedFields", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Field, FieldUnmarshaller>(FieldUnmarshaller.Instance);
-                    unmarshalledObject.ManagedFields = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("thingConnectivityIndexingMode", targetDepth))
+                if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ThingConnectivityIndexingMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("thingIndexingMode", targetDepth))
+                if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ThingIndexingMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         }
 
 
-        private static ThingIndexingConfigurationUnmarshaller _instance = new ThingIndexingConfigurationUnmarshaller();        
+        private static FieldUnmarshaller _instance = new FieldUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ThingIndexingConfigurationUnmarshaller Instance
+        public static FieldUnmarshaller Instance
         {
             get
             {

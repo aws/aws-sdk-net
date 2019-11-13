@@ -64,10 +64,52 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("average", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Average = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("count", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.Count = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("maximum", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Maximum = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("minimum", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Minimum = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("stdDeviation", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.StdDeviation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sum", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Sum = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sumOfSquares", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.SumOfSquares = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("variance", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Variance = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

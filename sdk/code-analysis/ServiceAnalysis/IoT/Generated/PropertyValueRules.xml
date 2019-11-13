@@ -890,6 +890,20 @@
     <pattern>^[a-zA-Z0-9_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.GetCardinalityRequest.AggregationField</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.GetCardinalityRequest.IndexName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.GetCardinalityRequest.QueryString</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.GetEffectivePoliciesRequest.ThingName</property>
     <min>1</min>
     <max>128</max>
@@ -910,6 +924,20 @@
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.GetPercentilesRequest.AggregationField</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.GetPercentilesRequest.IndexName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.GetPercentilesRequest.QueryString</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.GetPolicyRequest.PolicyName</property>
@@ -2173,6 +2201,11 @@
     <min>12</min>
     <max>12</max>
     <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.PercentPair.Percent</property>
+    <min>0</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.Policy.PolicyName</property>

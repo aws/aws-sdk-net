@@ -28,12 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetStatistics operation.
-    /// Gets statistics returns the count, average, sum, minimum, maximum, sumOfSquares, variance,
-    /// and standard deviation for the specified aggregated field. If the aggregation field
-    /// is of type String, only the count statistic is returned.
+    /// Container for the parameters to the GetCardinality operation.
+    /// Returns the number of things with distinct values for the aggregation field.
     /// </summary>
-    public partial class GetStatisticsRequest : AmazonIoTRequest
+    public partial class GetCardinalityRequest : AmazonIoTRequest
     {
         private string _aggregationField;
         private string _indexName;
@@ -43,7 +41,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property AggregationField. 
         /// <para>
-        /// The aggregation field name.
+        /// The field to aggregate.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -62,7 +60,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property IndexName. 
         /// <para>
-        /// The name of the index to search. The default value is <code>AWS_Things</code>.
+        /// The name of the index to search.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -81,8 +79,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property QueryString. 
         /// <para>
-        /// The query used to search. You can specify "*" for the query string to get the count
-        /// of all indexed things in your AWS account.
+        /// The search query.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -101,7 +98,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property QueryVersion. 
         /// <para>
-        /// The version of the query used to search.
+        /// The query version.
         /// </para>
         /// </summary>
         public string QueryVersion
