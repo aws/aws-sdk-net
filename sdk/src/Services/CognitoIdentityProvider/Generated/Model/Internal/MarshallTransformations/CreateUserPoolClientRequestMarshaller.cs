@@ -158,6 +158,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetPreventUserExistenceErrors())
+                {
+                    context.Writer.WritePropertyName("PreventUserExistenceErrors");
+                    context.Writer.Write(publicRequest.PreventUserExistenceErrors);
+                }
+
                 if(publicRequest.IsSetReadAttributes())
                 {
                     context.Writer.WritePropertyName("ReadAttributes");

@@ -142,6 +142,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     unmarshalledObject.LogoutURLs = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PreventUserExistenceErrors", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PreventUserExistenceErrors = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ReadAttributes", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

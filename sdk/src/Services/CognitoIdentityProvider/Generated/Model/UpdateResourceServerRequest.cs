@@ -30,6 +30,12 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// Container for the parameters to the UpdateResourceServer operation.
     /// Updates the name and scopes of resource server. All other fields are read-only.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// If you don't provide a value for an attribute, it will be set to the default value.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class UpdateResourceServerRequest : AmazonCognitoIdentityProviderRequest
     {

@@ -259,6 +259,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </summary>
         public static readonly AuthFlowType ADMIN_NO_SRP_AUTH = new AuthFlowType("ADMIN_NO_SRP_AUTH");
         /// <summary>
+        /// Constant ADMIN_USER_PASSWORD_AUTH for AuthFlowType
+        /// </summary>
+        public static readonly AuthFlowType ADMIN_USER_PASSWORD_AUTH = new AuthFlowType("ADMIN_USER_PASSWORD_AUTH");
+        /// <summary>
         /// Constant CUSTOM_AUTH for AuthFlowType
         /// </summary>
         public static readonly AuthFlowType CUSTOM_AUTH = new AuthFlowType("CUSTOM_AUTH");
@@ -977,6 +981,26 @@ namespace Amazon.CognitoIdentityProvider
         /// </summary>
         public static readonly ExplicitAuthFlowsType ADMIN_NO_SRP_AUTH = new ExplicitAuthFlowsType("ADMIN_NO_SRP_AUTH");
         /// <summary>
+        /// Constant ALLOW_ADMIN_USER_PASSWORD_AUTH for ExplicitAuthFlowsType
+        /// </summary>
+        public static readonly ExplicitAuthFlowsType ALLOW_ADMIN_USER_PASSWORD_AUTH = new ExplicitAuthFlowsType("ALLOW_ADMIN_USER_PASSWORD_AUTH");
+        /// <summary>
+        /// Constant ALLOW_CUSTOM_AUTH for ExplicitAuthFlowsType
+        /// </summary>
+        public static readonly ExplicitAuthFlowsType ALLOW_CUSTOM_AUTH = new ExplicitAuthFlowsType("ALLOW_CUSTOM_AUTH");
+        /// <summary>
+        /// Constant ALLOW_REFRESH_TOKEN_AUTH for ExplicitAuthFlowsType
+        /// </summary>
+        public static readonly ExplicitAuthFlowsType ALLOW_REFRESH_TOKEN_AUTH = new ExplicitAuthFlowsType("ALLOW_REFRESH_TOKEN_AUTH");
+        /// <summary>
+        /// Constant ALLOW_USER_PASSWORD_AUTH for ExplicitAuthFlowsType
+        /// </summary>
+        public static readonly ExplicitAuthFlowsType ALLOW_USER_PASSWORD_AUTH = new ExplicitAuthFlowsType("ALLOW_USER_PASSWORD_AUTH");
+        /// <summary>
+        /// Constant ALLOW_USER_SRP_AUTH for ExplicitAuthFlowsType
+        /// </summary>
+        public static readonly ExplicitAuthFlowsType ALLOW_USER_SRP_AUTH = new ExplicitAuthFlowsType("ALLOW_USER_SRP_AUTH");
+        /// <summary>
         /// Constant CUSTOM_AUTH_FLOW_ONLY for ExplicitAuthFlowsType
         /// </summary>
         public static readonly ExplicitAuthFlowsType CUSTOM_AUTH_FLOW_ONLY = new ExplicitAuthFlowsType("CUSTOM_AUTH_FLOW_ONLY");
@@ -1230,6 +1254,56 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OAuthFlowType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PreventUserExistenceErrorTypes.
+    /// </summary>
+    public class PreventUserExistenceErrorTypes : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ENABLED for PreventUserExistenceErrorTypes
+        /// </summary>
+        public static readonly PreventUserExistenceErrorTypes ENABLED = new PreventUserExistenceErrorTypes("ENABLED");
+        /// <summary>
+        /// Constant LEGACY for PreventUserExistenceErrorTypes
+        /// </summary>
+        public static readonly PreventUserExistenceErrorTypes LEGACY = new PreventUserExistenceErrorTypes("LEGACY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PreventUserExistenceErrorTypes(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PreventUserExistenceErrorTypes FindValue(string value)
+        {
+            return FindValue<PreventUserExistenceErrorTypes>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PreventUserExistenceErrorTypes(string value)
         {
             return FindValue(value);
         }

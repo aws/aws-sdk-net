@@ -7848,6 +7848,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <para>
         /// Calling this action requires developer credentials.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you don't provide a value for an attribute, it will be set to the default value.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGroup service method.</param>
         /// 
@@ -7880,6 +7885,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <para>
         /// Calling this action requires developer credentials.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you don't provide a value for an attribute, it will be set to the default value.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGroup service method.</param>
         /// <param name="cancellationToken">
@@ -7979,6 +7989,12 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Updates the name and scopes of resource server. All other fields are read-only.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// If you don't provide a value for an attribute, it will be set to the default value.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateResourceServer service method.</param>
         /// 
@@ -8006,6 +8022,12 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Updates the name and scopes of resource server. All other fields are read-only.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// If you don't provide a value for an attribute, it will be set to the default value.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateResourceServer service method.</param>
         /// <param name="cancellationToken">
@@ -8196,9 +8218,14 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Updates the specified user pool with the specified attributes. If you don't provide
-        /// a value for an attribute, it will be set to the default value. You can get a list
+        /// Updates the specified user pool with the specified attributes. You can get a list
         /// of the current user pool settings with .
+        /// 
+        ///  <important> 
+        /// <para>
+        /// If you don't provide a value for an attribute, it will be set to the default value.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUserPool service method.</param>
         /// 
@@ -8249,9 +8276,14 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Updates the specified user pool with the specified attributes. If you don't provide
-        /// a value for an attribute, it will be set to the default value. You can get a list
+        /// Updates the specified user pool with the specified attributes. You can get a list
         /// of the current user pool settings with .
+        /// 
+        ///  <important> 
+        /// <para>
+        /// If you don't provide a value for an attribute, it will be set to the default value.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUserPool service method.</param>
         /// <param name="cancellationToken">
@@ -8308,9 +8340,14 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Updates the specified user pool app client with the specified attributes. If you don't
-        /// provide a value for an attribute, it will be set to the default value. You can get
-        /// a list of the current user pool app client settings with .
+        /// Updates the specified user pool app client with the specified attributes. You can
+        /// get a list of the current user pool app client settings with .
+        /// 
+        ///  <important> 
+        /// <para>
+        /// If you don't provide a value for an attribute, it will be set to the default value.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUserPoolClient service method.</param>
         /// 
@@ -8346,9 +8383,14 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Updates the specified user pool app client with the specified attributes. If you don't
-        /// provide a value for an attribute, it will be set to the default value. You can get
-        /// a list of the current user pool app client settings with .
+        /// Updates the specified user pool app client with the specified attributes. You can
+        /// get a list of the current user pool app client settings with .
+        /// 
+        ///  <important> 
+        /// <para>
+        /// If you don't provide a value for an attribute, it will be set to the default value.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUserPoolClient service method.</param>
         /// <param name="cancellationToken">
