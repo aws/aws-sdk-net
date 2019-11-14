@@ -29,7 +29,9 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeUser operation.
-    /// Describes the specified user account.
+    /// Describes the specified user account. You can find the instance ID in the console
+    /// (it’s the final part of the ARN). The console does not display the user IDs. Instead,
+    /// list the users and note the IDs provided in the output.
     /// </summary>
     public partial class DescribeUserRequest : AmazonConnectRequest
     {

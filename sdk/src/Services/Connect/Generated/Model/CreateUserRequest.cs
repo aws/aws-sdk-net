@@ -41,6 +41,7 @@ namespace Amazon.Connect.Model
         private UserPhoneConfig _phoneConfig;
         private string _routingProfileId;
         private List<string> _securityProfileIds = new List<string>();
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _username;
 
         /// <summary>
@@ -201,6 +202,25 @@ namespace Amazon.Connect.Model
         internal bool IsSetSecurityProfileIds()
         {
             return this._securityProfileIds != null && this._securityProfileIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// One or more tags.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>
