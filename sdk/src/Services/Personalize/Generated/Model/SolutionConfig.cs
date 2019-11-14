@@ -118,8 +118,7 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property HpoConfig. 
         /// <para>
-        /// Describes the properties for hyperparameter optimization (HPO). For use with the bring-your-own-recipe
-        /// feature. Not used with Amazon Personalize predefined recipes.
+        /// Describes the properties for hyperparameter optimization (HPO).
         /// </para>
         /// </summary>
         public HPOConfig HpoConfig

@@ -237,6 +237,76 @@ namespace Amazon.Personalize
         #endregion
 
 
+        #region  CreateBatchInferenceJob
+
+        /// <summary>
+        /// Creates a batch inference job. The operation can handle up to 50 million records and
+        /// the input file must be in JSON format. For more information, see <a>recommendations-batch</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBatchInferenceJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateBatchInferenceJob service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.LimitExceededException">
+        /// The limit on the number of requests per second has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateBatchInferenceJob">REST API Reference for CreateBatchInferenceJob Operation</seealso>
+        public virtual CreateBatchInferenceJobResponse CreateBatchInferenceJob(CreateBatchInferenceJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBatchInferenceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBatchInferenceJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBatchInferenceJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateBatchInferenceJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateBatchInferenceJob operation on AmazonPersonalizeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateBatchInferenceJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateBatchInferenceJob">REST API Reference for CreateBatchInferenceJob Operation</seealso>
+        public virtual IAsyncResult BeginCreateBatchInferenceJob(CreateBatchInferenceJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBatchInferenceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBatchInferenceJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateBatchInferenceJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateBatchInferenceJob.</param>
+        /// 
+        /// <returns>Returns a  CreateBatchInferenceJobResult from Personalize.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateBatchInferenceJob">REST API Reference for CreateBatchInferenceJob Operation</seealso>
+        public virtual CreateBatchInferenceJobResponse EndCreateBatchInferenceJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateBatchInferenceJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateCampaign
 
         /// <summary>
@@ -1677,6 +1747,68 @@ namespace Amazon.Personalize
 
         #endregion
         
+        #region  DescribeBatchInferenceJob
+
+        /// <summary>
+        /// Gets the properties of a batch inference job including name, Amazon Resource Name
+        /// (ARN), status, input and output configurations, and the ARN of the solution version
+        /// used to generate the recommendations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBatchInferenceJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeBatchInferenceJob service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeBatchInferenceJob">REST API Reference for DescribeBatchInferenceJob Operation</seealso>
+        public virtual DescribeBatchInferenceJobResponse DescribeBatchInferenceJob(DescribeBatchInferenceJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBatchInferenceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBatchInferenceJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeBatchInferenceJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeBatchInferenceJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBatchInferenceJob operation on AmazonPersonalizeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBatchInferenceJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeBatchInferenceJob">REST API Reference for DescribeBatchInferenceJob Operation</seealso>
+        public virtual IAsyncResult BeginDescribeBatchInferenceJob(DescribeBatchInferenceJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBatchInferenceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBatchInferenceJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeBatchInferenceJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeBatchInferenceJob.</param>
+        /// 
+        /// <returns>Returns a  DescribeBatchInferenceJobResult from Personalize.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeBatchInferenceJob">REST API Reference for DescribeBatchInferenceJob Operation</seealso>
+        public virtual DescribeBatchInferenceJobResponse EndDescribeBatchInferenceJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeBatchInferenceJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeCampaign
 
         /// <summary>
@@ -2388,6 +2520,67 @@ namespace Amazon.Personalize
         public virtual GetSolutionMetricsResponse EndGetSolutionMetrics(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSolutionMetricsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListBatchInferenceJobs
+
+        /// <summary>
+        /// Gets a list of the batch inference jobs that have been performed off of a solution
+        /// version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBatchInferenceJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListBatchInferenceJobs service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.InvalidNextTokenException">
+        /// The token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListBatchInferenceJobs">REST API Reference for ListBatchInferenceJobs Operation</seealso>
+        public virtual ListBatchInferenceJobsResponse ListBatchInferenceJobs(ListBatchInferenceJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBatchInferenceJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBatchInferenceJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBatchInferenceJobsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBatchInferenceJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBatchInferenceJobs operation on AmazonPersonalizeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBatchInferenceJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListBatchInferenceJobs">REST API Reference for ListBatchInferenceJobs Operation</seealso>
+        public virtual IAsyncResult BeginListBatchInferenceJobs(ListBatchInferenceJobsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBatchInferenceJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBatchInferenceJobsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListBatchInferenceJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBatchInferenceJobs.</param>
+        /// 
+        /// <returns>Returns a  ListBatchInferenceJobsResult from Personalize.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListBatchInferenceJobs">REST API Reference for ListBatchInferenceJobs Operation</seealso>
+        public virtual ListBatchInferenceJobsResponse EndListBatchInferenceJobs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListBatchInferenceJobsResponse>(asyncResult);
         }
 
         #endregion

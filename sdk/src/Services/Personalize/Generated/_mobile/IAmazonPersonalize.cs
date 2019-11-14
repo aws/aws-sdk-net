@@ -37,6 +37,40 @@ namespace Amazon.Personalize
     public partial interface IAmazonPersonalize : IAmazonService, IDisposable
     {
                 
+        #region  CreateBatchInferenceJob
+
+
+
+        /// <summary>
+        /// Creates a batch inference job. The operation can handle up to 50 million records and
+        /// the input file must be in JSON format. For more information, see <a>recommendations-batch</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBatchInferenceJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateBatchInferenceJob service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.LimitExceededException">
+        /// The limit on the number of requests per second has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateBatchInferenceJob">REST API Reference for CreateBatchInferenceJob Operation</seealso>
+        Task<CreateBatchInferenceJobResponse> CreateBatchInferenceJobAsync(CreateBatchInferenceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateCampaign
 
 
@@ -937,6 +971,32 @@ namespace Amazon.Personalize
 
         #endregion
                 
+        #region  DescribeBatchInferenceJob
+
+
+
+        /// <summary>
+        /// Gets the properties of a batch inference job including name, Amazon Resource Name
+        /// (ARN), status, input and output configurations, and the ARN of the solution version
+        /// used to generate the recommendations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBatchInferenceJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeBatchInferenceJob service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeBatchInferenceJob">REST API Reference for DescribeBatchInferenceJob Operation</seealso>
+        Task<DescribeBatchInferenceJobResponse> DescribeBatchInferenceJobAsync(DescribeBatchInferenceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeCampaign
 
 
@@ -1253,6 +1313,31 @@ namespace Amazon.Personalize
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/GetSolutionMetrics">REST API Reference for GetSolutionMetrics Operation</seealso>
         Task<GetSolutionMetricsResponse> GetSolutionMetricsAsync(GetSolutionMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListBatchInferenceJobs
+
+
+
+        /// <summary>
+        /// Gets a list of the batch inference jobs that have been performed off of a solution
+        /// version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBatchInferenceJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBatchInferenceJobs service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.InvalidNextTokenException">
+        /// The token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListBatchInferenceJobs">REST API Reference for ListBatchInferenceJobs Operation</seealso>
+        Task<ListBatchInferenceJobsResponse> ListBatchInferenceJobsAsync(ListBatchInferenceJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

@@ -244,6 +244,56 @@ namespace Amazon.Personalize
         #endregion
 
 
+        #region  CreateBatchInferenceJob
+
+        internal virtual CreateBatchInferenceJobResponse CreateBatchInferenceJob(CreateBatchInferenceJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBatchInferenceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBatchInferenceJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBatchInferenceJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a batch inference job. The operation can handle up to 50 million records and
+        /// the input file must be in JSON format. For more information, see <a>recommendations-batch</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBatchInferenceJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateBatchInferenceJob service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.LimitExceededException">
+        /// The limit on the number of requests per second has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateBatchInferenceJob">REST API Reference for CreateBatchInferenceJob Operation</seealso>
+        public virtual Task<CreateBatchInferenceJobResponse> CreateBatchInferenceJobAsync(CreateBatchInferenceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBatchInferenceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBatchInferenceJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateBatchInferenceJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateCampaign
 
         internal virtual CreateCampaignResponse CreateCampaign(CreateCampaignRequest request)
@@ -1384,6 +1434,48 @@ namespace Amazon.Personalize
 
         #endregion
         
+        #region  DescribeBatchInferenceJob
+
+        internal virtual DescribeBatchInferenceJobResponse DescribeBatchInferenceJob(DescribeBatchInferenceJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBatchInferenceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBatchInferenceJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeBatchInferenceJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the properties of a batch inference job including name, Amazon Resource Name
+        /// (ARN), status, input and output configurations, and the ARN of the solution version
+        /// used to generate the recommendations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBatchInferenceJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeBatchInferenceJob service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeBatchInferenceJob">REST API Reference for DescribeBatchInferenceJob Operation</seealso>
+        public virtual Task<DescribeBatchInferenceJobResponse> DescribeBatchInferenceJobAsync(DescribeBatchInferenceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBatchInferenceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBatchInferenceJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeBatchInferenceJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeCampaign
 
         internal virtual DescribeCampaignResponse DescribeCampaign(DescribeCampaignRequest request)
@@ -1875,6 +1967,47 @@ namespace Amazon.Personalize
             options.ResponseUnmarshaller = GetSolutionMetricsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetSolutionMetricsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListBatchInferenceJobs
+
+        internal virtual ListBatchInferenceJobsResponse ListBatchInferenceJobs(ListBatchInferenceJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBatchInferenceJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBatchInferenceJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBatchInferenceJobsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets a list of the batch inference jobs that have been performed off of a solution
+        /// version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBatchInferenceJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBatchInferenceJobs service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.InvalidNextTokenException">
+        /// The token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListBatchInferenceJobs">REST API Reference for ListBatchInferenceJobs Operation</seealso>
+        public virtual Task<ListBatchInferenceJobsResponse> ListBatchInferenceJobsAsync(ListBatchInferenceJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBatchInferenceJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBatchInferenceJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListBatchInferenceJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion
