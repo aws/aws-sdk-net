@@ -1,12 +1,14 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using System.Text.RegularExpressions;
+using System.Threading;
+using System.Xml;
+using System.Xml.Linq;
 using Amazon.Runtime.CredentialManagement;
 
 namespace TestWrapper.TestRunners
@@ -53,6 +55,8 @@ namespace TestWrapper.TestRunners
         public string[] Categories { get; set; }
         public TestConfiguration Configuration { get; set; }
         public string TestExecutionProfile { get; set; }
+
+        private string TestResultsPath => Path.Combine(TestContainer.DirectoryName, "TestResults");
 
         /// <summary>
         /// Run the tests for this test runner.
@@ -125,61 +129,43 @@ namespace TestWrapper.TestRunners
         protected ResultsSummary Run(IEnumerable<string> tests)
         {
             var args = ConstructArguments(tests);
-            string log;
-            int exitCode = InvokeTestSuite(args, out log);
-            var summary = ParseLog(exitCode, log);
+            int exitCode = InvokeTestSuite(args, out var logLocation);
+            var summary = ParseLog(exitCode, logLocation);
+
+            // Clean up the log files.
+            Directory.Delete(TestResultsPath, true);
+
             return summary;
         }
-
-        protected abstract string ConstructArguments(IEnumerable<string> tests);
         
-        private static ResultsSummary ParseLog(int exitCode, string log)
+        private static ResultsSummary ParseLog(int exitCode, string logLocation)
         {
-            string[] lines = log.Trim().Split('\n');
-            List<string> failedTests = GetFailedTests(lines);
-            int passed = 0, failed = 0, skipped = 0;
-            ExtractSummary(lines, out passed, out failed, out skipped);
-            return new ResultsSummary(exitCode, log, failedTests, passed, failed, skipped);
-        }
+            XNamespace ns = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010";
 
-        private static Regex summaryRegex = new Regex(@"Total tests:\s*(\d*).*Failed:\s*(\d*).*Skipped:\s*(\d*).*");
-        private static void ExtractSummary(string[] lines, out int passedCount, out int failedCount, out int skippedCount)
-        {
-            int total = 0;
-            int failed = 0;
-            int skipped = 0;
+            var testRun = XElement.Load(logLocation);
 
-            for (int i = lines.Length - 1; i >= 0; i--)
-            {
-                string line = lines[i].Trim();
+            var resultSummary = testRun
+                .Descendants(ns + "ResultSummary")
+                .First();
 
-                if (line.IndexOf(@"=== TEST EXECUTION SUMMARY ===", StringComparison.OrdinalIgnoreCase) >= 0)
-                {
-                    throw new Exception("Failed to parse the output while generating test run summary.");
-                }
+            var statistics = resultSummary
+                .Descendants(ns + "Counters")
+                .First()
+                .Attributes()
+                .ToDictionary(stat => stat.Name.LocalName, stat => int.Parse(stat.Value));
 
-                Match match = summaryRegex.Match(line);
-                if (match.Success)
-                {
-                    total += int.Parse(match.Groups[1].ToString());
-                    failed += int.Parse(match.Groups[2].ToString());
-                    skipped += int.Parse(match.Groups[3].ToString());                    
-                }
-            }
-            passedCount = total - failed;
-            failedCount = failed;
-            skippedCount = skipped;
-        }
+            var passedCount = statistics["passed"];
+            var failedCount = statistics["failed"];
+            var skippedCount = statistics["total"] - statistics["executed"];
 
-        private static string ExtractFailedTestName(string line)
-        {
-            return line.StartsWith("Failed") ? line.Substring(6).Trim() : null;
-        }
-        private static List<string> GetFailedTests(string[] lines)
-        {
-            return lines.Select(ExtractFailedTestName)
-                        .Where(testName => !string.IsNullOrEmpty(testName))
-                        .ToList();
+            var failedTests = testRun
+                .Descendants(ns + "Results")
+                .Descendants(ns + "UnitTestResult")
+                .Where(ele => ele.Attributes("outcome").First().Value == "Failed")
+                .Select(ele => ele.Attributes("testName").First().Value)
+                .ToList();
+
+            return new ResultsSummary(exitCode, failedTests, passedCount, failedCount, skippedCount);
         }
 
         private static void ValidateFileInfo(FileInfo fileInfo, string argName)
@@ -203,7 +189,7 @@ namespace TestWrapper.TestRunners
                 return arg;
         }
 
-        protected int InvokeTestSuite(string args, out string log)
+        protected int InvokeTestSuite(string args, out string logLocation)
         {
             var workingDir = WorkingDirectory.FullName;
             var file = TestSuiteExecutable;
@@ -288,19 +274,10 @@ namespace TestWrapper.TestRunners
                 p.Close();
             }
 
-            using (var writer = new StringWriter())
-            {
-                writer.WriteLine(output);
-                if (!string.IsNullOrEmpty(error))
-                {
-                    writer.WriteLine("StdErr:");
-                    writer.WriteLine(error);
-                }
-                if (exitCode != 0)
-                    writer.WriteLine("Exit code = {0}", exitCode);
-
-                log = writer.ToString();
-            }
+            logLocation = Directory.GetFiles(TestResultsPath)
+                .Select(fileName => new FileInfo(fileName))
+                .OrderByDescending(fileInfo => fileInfo.CreationTime)
+                .First().FullName;
 
             return exitCode;
         }
@@ -312,6 +289,76 @@ namespace TestWrapper.TestRunners
                 stringWriter.WriteLine(data);
                 consoleWriter.WriteLine(data);
             };
+        }
+
+        protected virtual string ConstructArguments(IEnumerable<string> tests)
+        {
+            var components = new List<string>();
+
+            // add test switch
+            components.Add("test");
+
+            // add container
+            components.Add(GetContainerArg(TestContainer.FullName));
+
+            // change logger to trx
+            components.Add("--logger trx");
+
+            // add configuration
+            components.Add(GetConfigArg(Configuration));
+
+            // add specific tests
+            // dotnet test cannot handle parameterized test reruns (queries), so collapsing those failures to their distinct top theory
+            var testsList = tests.Select(testName => Regex.Replace(testName, @"\(.*\)$", "")).Distinct().ToList();
+
+            string filter = null;
+            if (testsList.Count > 0)
+            {
+                filter = string.Join("|", testsList.Select(GetTestArg));
+            }
+            else if (Categories != null && Categories.Length > 0)
+            {
+                filter = string.Join("|", Categories.Select(GetCategoryArg));
+            }
+
+            if (!string.IsNullOrEmpty(filter))
+            {
+                components.Add(string.Format("--filter \"{0}\"", filter));
+            }
+
+            components.Add("--no-build");
+
+            var args = string.Join(" ", components);
+            return args;
+        }
+
+        protected virtual string GetContainerArg(string container)
+        {
+            return QuoteArg(container);
+        }
+
+        protected virtual string GetTestArg(string testName)
+        {
+            if (testName.Contains("."))
+            {
+                // assume a "." means it's a fully qualified name
+                return string.Format("FullyQualifiedName={0}", QuoteArg(testName));
+            }
+            else
+            {
+                // assume no "." means it's a test method name
+                return string.Format("Name={0}", QuoteArg(testName));
+            }
+        }
+
+        protected virtual string GetCategoryArg(string categoryName)
+        {
+            return string.Format("Category={0}", categoryName);
+        }
+
+        protected virtual string GetConfigArg(TestConfiguration config)
+        {
+            return string.Format("-c {0}", QuoteArg(config.ToString()));
         }
     }
 }

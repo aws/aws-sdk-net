@@ -94,10 +94,8 @@
 
     <Target Name="build-test-wrapper" Condition="!Exists($(TestWrapperAssembly))">
         <Exec Command="..\sdk\.nuget\NuGet.exe restore .\TestWrapper\TestWrapper.sln" />
-
-        <MSBuild Projects=".\TestWrapper\TestWrapper.sln"
-            Targets="Clean;Build"
-            Properties="Configuration=Debug"/>
+        <Exec Command="dotnet clean TestWrapper.sln" WorkingDirectory=".\TestWrapper" />
+        <Exec Command="dotnet build -c Debug TestWrapper.sln" WorkingDirectory=".\TestWrapper" />
     </Target>
 
     <Target Name="build-test-analyzer" Condition="!Exists($(TestAnalyzerAssembly))">

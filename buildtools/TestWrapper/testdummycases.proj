@@ -1,0 +1,26 @@
+<Project ToolsVersion="14.0"
+         DefaultTargets="test-dummy-cases"
+         xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <Configuration Condition="'$(Configuration)'==''">Debug</Configuration>
+        <TestWrapperAssembly>.\TestRunners\bin\Debug\TestWrapper.dll</TestWrapperAssembly>
+    </PropertyGroup>
+
+    <UsingTask TaskName="TestWrapper.MsTestWrapperTask" AssemblyFile="$(TestWrapperAssembly)"/>
+    <UsingTask TaskName="TestWrapper.XUnitWrapperTask" AssemblyFile="$(TestWrapperAssembly)"/>
+
+    <Target Name="test-dummy-cases">
+        <MsTestWrapperTask
+            TestSuiteRunner="dotnet"
+            TestContainer=".\DummyMSTestCases\DummyMSTestCases.csproj"
+            Configuration="$(Configuration)"
+            TestExecutionProfile="test-runner"/>
+
+        <XUnitWrapperTask
+            TestSuiteRunner="dotnet"
+            TestContainer=".\DummyXUnitTestCases\DummyXUnitTestCases.csproj"
+            Configuration="$(Configuration)"
+            TestExecutionProfile="test-runner"/>
+    </Target>
+
+</Project>

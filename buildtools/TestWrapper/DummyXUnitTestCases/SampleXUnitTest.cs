@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Xunit;
 
 namespace DummyXUnitTestCases
@@ -50,6 +46,12 @@ namespace DummyXUnitTestCases
         public void FailingTheory(int val)
         {
             Assert.True(Odd(val));
+        }
+
+        [Fact(Skip = "Skipped Test")]
+        public void TestSkip()
+        {
+            throw new Exception("This should have been skipped!");
         }
     }
 }
