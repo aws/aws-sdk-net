@@ -28,18 +28,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// A key and value pair that identifies the location of an attachment to a document.
+    /// Identifying information about a document attachment, including the file name and a
+    /// key-value pair that identifies the location of an attachment to a document.
     /// </summary>
     public partial class AttachmentsSource
     {
         private AttachmentsSourceKey _key;
+        private string _name;
         private List<string> _values = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The key of a key and value pair that identifies the location of an attachment to a
-        /// document.
+        /// The key of a key-value pair that identifies the location of an attachment to a document.
         /// </para>
         /// </summary>
         public AttachmentsSourceKey Key
@@ -55,10 +56,29 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the document attachment file.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The URL of the location of a document attachment, such as the URL of an Amazon S3
-        /// bucket.
+        /// The value of a key-value pair that identifies the location of an attachment to a document.
+        /// The format is the URL of the location of a document attachment, such as the URL of
+        /// an Amazon S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]

@@ -47,7 +47,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A list of key and value pairs that describe attachments to a version of a document.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1)]
+        [AWSProperty(Min=0, Max=20)]
         public List<AttachmentsSource> Attachments
         {
             get { return this._attachments; }

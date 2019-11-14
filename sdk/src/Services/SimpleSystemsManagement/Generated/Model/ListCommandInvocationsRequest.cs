@@ -100,6 +100,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Filters. 
         /// <para>
         /// (Optional) One or more filters. Use a filter to return a more specific list of results.
+        /// Note that the <code>DocumentName</code> filter is not supported for ListCommandInvocations.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
