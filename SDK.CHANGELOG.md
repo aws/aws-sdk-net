@@ -1,3 +1,20 @@
+### 3.3.631.0 (2019-11-14 19:28 UTC)
+* AWSMarketplaceMetering (3.3.101.0)
+	* Added CustomerNotEntitledException in MeterUsage API for Container use case.
+* CognitoIdentityProvider (3.3.104.0)
+	* This release adds a new setting at user pool client to prevent user existence related errors during authentication, confirmation, and password recovery related operations. This release also adds support to enable or disable specific authentication flows for a user pool client.
+* Connect (3.3.102.0)
+	* This release enhances the existing user management APIs and adds 3 new APIs - TagResource, UntagResource, and ListTagsForResource to support tagging Amazon Connect users, which facilitates more granular access controls for Amazon Connect users within an Amazon Connect instance. You can learn more about the new APIs here: https://docs.aws.amazon.com/connect/latest/APIReference/Welcome.html.
+* Personalize (3.3.103.0)
+	* Amazon Personalize: Adds ability to get batch recommendations by creating a batch inference job.
+* SimpleSystemsManagement (3.3.109.0)
+	* Updates support for adding attachments to Systems Manager Automation documents
+* Core 3.3.103.64
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.630.0 (2019-11-13 21:29 UTC)
 * CloudSearch (3.3.101.0)
 	* Amazon CloudSearch domains let you require that all traffic to the domain arrive over HTTPS. This security feature helps you block clients that send unencrypted requests to the domain.
