@@ -30,8 +30,8 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Container for the parameters to the GetVoiceConnectorStreamingConfiguration operation.
     /// Retrieves the streaming configuration details for the specified Amazon Chime Voice
-    /// Connector. Shows whether media streaming is enabled for sending to Amazon Kinesis,
-    /// and shows the retention period for the Amazon Kinesis data, in hours.
+    /// Connector. Shows whether media streaming is enabled for sending to Amazon Kinesis.
+    /// It also shows the retention period, in hours, for the Amazon Kinesis data.
     /// </summary>
     public partial class GetVoiceConnectorStreamingConfigurationRequest : AmazonChimeRequest
     {

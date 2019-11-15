@@ -28,28 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// This is the response object from the InviteUsers operation.
+    /// This is the response object from the UpdateRoom operation.
     /// </summary>
-    public partial class InviteUsersResponse : AmazonWebServiceResponse
+    public partial class UpdateRoomResponse : AmazonWebServiceResponse
     {
-        private List<Invite> _invites = new List<Invite>();
+        private Room _room;
 
         /// <summary>
-        /// Gets and sets the property Invites. 
+        /// Gets and sets the property Room. 
         /// <para>
-        /// The email invitation details.
+        /// The room details.
         /// </para>
         /// </summary>
-        public List<Invite> Invites
+        public Room Room
         {
-            get { return this._invites; }
-            set { this._invites = value; }
+            get { return this._room; }
+            set { this._room = value; }
         }
 
-        // Check to see if Invites property is set
-        internal bool IsSetInvites()
+        // Check to see if Room property is set
+        internal bool IsSetRoom()
         {
-            return this._invites != null && this._invites.Count > 0; 
+            return this._room != null;
         }
 
     }

@@ -28,15 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// Container for the parameters to the InviteUsers operation.
-    /// Sends email to a maximum of 50 users, inviting them to the specified Amazon Chime
-    /// <code>Team</code> account. Only <code>Team</code> account types are currently supported
-    /// for this action.
+    /// Container for the parameters to the CreateRoom operation.
+    /// Creates a chat room for the specified Amazon Chime account.
     /// </summary>
-    public partial class InviteUsersRequest : AmazonChimeRequest
+    public partial class CreateRoomRequest : AmazonChimeRequest
     {
         private string _accountId;
-        private List<string> _userEmailList = new List<string>();
+        private string _clientRequestToken;
+        private string _name;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -58,22 +57,41 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserEmailList. 
+        /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// The user email addresses to which to send the email invitation.
+        /// The idempotency token for the request.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=50)]
-        public List<string> UserEmailList
+        [AWSProperty(Min=2, Max=64)]
+        public string ClientRequestToken
         {
-            get { return this._userEmailList; }
-            set { this._userEmailList = value; }
+            get { return this._clientRequestToken; }
+            set { this._clientRequestToken = value; }
         }
 
-        // Check to see if UserEmailList property is set
-        internal bool IsSetUserEmailList()
+        // Check to see if ClientRequestToken property is set
+        internal bool IsSetClientRequestToken()
         {
-            return this._userEmailList != null && this._userEmailList.Count > 0; 
+            return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The room name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
         }
 
     }

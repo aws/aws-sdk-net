@@ -451,6 +451,60 @@ namespace Amazon.Chime
 
 
     /// <summary>
+    /// Constants used for properties of type MemberType.
+    /// </summary>
+    public class MemberType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Bot for MemberType
+        /// </summary>
+        public static readonly MemberType Bot = new MemberType("Bot");
+        /// <summary>
+        /// Constant User for MemberType
+        /// </summary>
+        public static readonly MemberType User = new MemberType("User");
+        /// <summary>
+        /// Constant Webhook for MemberType
+        /// </summary>
+        public static readonly MemberType Webhook = new MemberType("Webhook");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MemberType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MemberType FindValue(string value)
+        {
+            return FindValue<MemberType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MemberType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OrderedPhoneNumberStatus.
     /// </summary>
     public class OrderedPhoneNumberStatus : ConstantClass
@@ -892,6 +946,56 @@ namespace Amazon.Chime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RegistrationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RoomMembershipRole.
+    /// </summary>
+    public class RoomMembershipRole : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Administrator for RoomMembershipRole
+        /// </summary>
+        public static readonly RoomMembershipRole Administrator = new RoomMembershipRole("Administrator");
+        /// <summary>
+        /// Constant Member for RoomMembershipRole
+        /// </summary>
+        public static readonly RoomMembershipRole Member = new RoomMembershipRole("Member");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RoomMembershipRole(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RoomMembershipRole FindValue(string value)
+        {
+            return FindValue<RoomMembershipRole>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RoomMembershipRole(string value)
         {
             return FindValue(value);
         }

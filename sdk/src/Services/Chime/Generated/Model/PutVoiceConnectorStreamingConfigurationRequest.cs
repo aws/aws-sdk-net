@@ -31,7 +31,8 @@ namespace Amazon.Chime.Model
     /// Container for the parameters to the PutVoiceConnectorStreamingConfiguration operation.
     /// Adds a streaming configuration for the specified Amazon Chime Voice Connector. The
     /// streaming configuration specifies whether media streaming is enabled for sending to
-    /// Amazon Kinesis, and sets the retention period for the Amazon Kinesis data, in hours.
+    /// Amazon Kinesis. It also sets the retention period, in hours, for the Amazon Kinesis
+    /// data.
     /// </summary>
     public partial class PutVoiceConnectorStreamingConfigurationRequest : AmazonChimeRequest
     {

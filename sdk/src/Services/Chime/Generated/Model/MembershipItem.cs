@@ -28,28 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// This is the response object from the InviteUsers operation.
+    /// Membership details, such as member ID and member role.
     /// </summary>
-    public partial class InviteUsersResponse : AmazonWebServiceResponse
+    public partial class MembershipItem
     {
-        private List<Invite> _invites = new List<Invite>();
+        private string _memberId;
+        private RoomMembershipRole _role;
 
         /// <summary>
-        /// Gets and sets the property Invites. 
+        /// Gets and sets the property MemberId. 
         /// <para>
-        /// The email invitation details.
+        /// The member ID.
         /// </para>
         /// </summary>
-        public List<Invite> Invites
+        public string MemberId
         {
-            get { return this._invites; }
-            set { this._invites = value; }
+            get { return this._memberId; }
+            set { this._memberId = value; }
         }
 
-        // Check to see if Invites property is set
-        internal bool IsSetInvites()
+        // Check to see if MemberId property is set
+        internal bool IsSetMemberId()
         {
-            return this._invites != null && this._invites.Count > 0; 
+            return this._memberId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Role. 
+        /// <para>
+        /// The member role.
+        /// </para>
+        /// </summary>
+        public RoomMembershipRole Role
+        {
+            get { return this._role; }
+            set { this._role = value; }
+        }
+
+        // Check to see if Role property is set
+        internal bool IsSetRole()
+        {
+            return this._role != null;
         }
 
     }

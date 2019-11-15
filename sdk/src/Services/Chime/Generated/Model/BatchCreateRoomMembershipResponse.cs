@@ -28,28 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// This is the response object from the InviteUsers operation.
+    /// This is the response object from the BatchCreateRoomMembership operation.
     /// </summary>
-    public partial class InviteUsersResponse : AmazonWebServiceResponse
+    public partial class BatchCreateRoomMembershipResponse : AmazonWebServiceResponse
     {
-        private List<Invite> _invites = new List<Invite>();
+        private List<MemberError> _errors = new List<MemberError>();
 
         /// <summary>
-        /// Gets and sets the property Invites. 
+        /// Gets and sets the property Errors. 
         /// <para>
-        /// The email invitation details.
+        /// If the action fails for one or more of the member IDs in the request, a list of the
+        /// member IDs is returned, along with error codes and error messages.
         /// </para>
         /// </summary>
-        public List<Invite> Invites
+        public List<MemberError> Errors
         {
-            get { return this._invites; }
-            set { this._invites = value; }
+            get { return this._errors; }
+            set { this._errors = value; }
         }
 
-        // Check to see if Invites property is set
-        internal bool IsSetInvites()
+        // Check to see if Errors property is set
+        internal bool IsSetErrors()
         {
-            return this._invites != null && this._invites.Count > 0; 
+            return this._errors != null && this._errors.Count > 0; 
         }
 
     }

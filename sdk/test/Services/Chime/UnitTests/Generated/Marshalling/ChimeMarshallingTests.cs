@@ -140,6 +140,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Chime")]
+        public void BatchCreateRoomMembershipMarshallTest()
+        {
+            var operation = service_model.FindOperation("BatchCreateRoomMembership");
+
+            var request = InstantiateClassGenerator.Execute<BatchCreateRoomMembershipRequest>();
+            var marshaller = new BatchCreateRoomMembershipRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("BatchCreateRoomMembership", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = BatchCreateRoomMembershipResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as BatchCreateRoomMembershipResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
         public void BatchDeletePhoneNumberMarshallTest()
         {
             var operation = service_model.FindOperation("BatchDeletePhoneNumber");
@@ -396,6 +428,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Chime")]
+        public void CreateRoomMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateRoom");
+
+            var request = InstantiateClassGenerator.Execute<CreateRoomRequest>();
+            var marshaller = new CreateRoomRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateRoom", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateRoomResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CreateRoomResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
+        public void CreateRoomMembershipMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateRoomMembership");
+
+            var request = InstantiateClassGenerator.Execute<CreateRoomMembershipRequest>();
+            var marshaller = new CreateRoomMembershipRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateRoomMembership", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateRoomMembershipResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CreateRoomMembershipResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
         public void CreateVoiceConnectorMarshallTest()
         {
             var operation = service_model.FindOperation("CreateVoiceConnector");
@@ -518,6 +614,40 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             var internalRequest = marshaller.Marshall(request);
             TestTools.RequestValidator.Validate("DeletePhoneNumber", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
+        public void DeleteRoomMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteRoom");
+
+            var request = InstantiateClassGenerator.Execute<DeleteRoomRequest>();
+            var marshaller = new DeleteRoomRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteRoom", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
+        public void DeleteRoomMembershipMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteRoomMembership");
+
+            var request = InstantiateClassGenerator.Execute<DeleteRoomMembershipRequest>();
+            var marshaller = new DeleteRoomMembershipRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteRoomMembership", request, internalRequest, service_model);            
 
         }
 
@@ -980,6 +1110,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Chime")]
+        public void GetRoomMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetRoom");
+
+            var request = InstantiateClassGenerator.Execute<GetRoomRequest>();
+            var marshaller = new GetRoomRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetRoom", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetRoomResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetRoomResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
         public void GetUserMarshallTest()
         {
             var operation = service_model.FindOperation("GetUser");
@@ -1420,6 +1582,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = ListPhoneNumbersResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as ListPhoneNumbersResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
+        public void ListRoomMembershipsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListRoomMemberships");
+
+            var request = InstantiateClassGenerator.Execute<ListRoomMembershipsRequest>();
+            var marshaller = new ListRoomMembershipsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListRoomMemberships", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListRoomMembershipsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListRoomMembershipsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
+        public void ListRoomsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListRooms");
+
+            var request = InstantiateClassGenerator.Execute<ListRoomsRequest>();
+            var marshaller = new ListRoomsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListRooms", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListRoomsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListRoomsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -2048,6 +2274,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var internalRequest = marshaller.Marshall(request);
             TestTools.RequestValidator.Validate("UpdatePhoneNumberSettings", request, internalRequest, service_model);            
 
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
+        public void UpdateRoomMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateRoom");
+
+            var request = InstantiateClassGenerator.Execute<UpdateRoomRequest>();
+            var marshaller = new UpdateRoomRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateRoom", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateRoomResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpdateRoomResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
+        public void UpdateRoomMembershipMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateRoomMembership");
+
+            var request = InstantiateClassGenerator.Execute<UpdateRoomMembershipRequest>();
+            var marshaller = new UpdateRoomMembershipRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateRoomMembership", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateRoomMembershipResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpdateRoomMembershipResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
         

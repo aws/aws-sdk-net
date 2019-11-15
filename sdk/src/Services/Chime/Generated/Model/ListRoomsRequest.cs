@@ -28,14 +28,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListBots operation.
-    /// Lists the bots associated with the administrator's Amazon Chime Enterprise account
-    /// ID.
+    /// Container for the parameters to the ListRooms operation.
+    /// Lists the room details for the specified Amazon Chime account. Optionally, filter
+    /// the results by a member ID (user ID or bot ID) to see a list of rooms that the member
+    /// belongs to.
     /// </summary>
-    public partial class ListBotsRequest : AmazonChimeRequest
+    public partial class ListRoomsRequest : AmazonChimeRequest
     {
         private string _accountId;
         private int? _maxResults;
+        private string _memberId;
         private string _nextToken;
 
         /// <summary>
@@ -60,7 +62,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return in a single call. The default is 10.
+        /// The maximum number of results to return in a single call.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=99)]
@@ -74,6 +76,24 @@ namespace Amazon.Chime.Model
         internal bool IsSetMaxResults()
         {
             return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MemberId. 
+        /// <para>
+        /// The member ID (user ID or bot ID).
+        /// </para>
+        /// </summary>
+        public string MemberId
+        {
+            get { return this._memberId; }
+            set { this._memberId = value; }
+        }
+
+        // Check to see if MemberId property is set
+        internal bool IsSetMemberId()
+        {
+            return this._memberId != null;
         }
 
         /// <summary>

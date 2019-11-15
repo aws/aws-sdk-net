@@ -28,29 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// This is the response object from the InviteUsers operation.
+    /// This is the response object from the DeleteRoom operation.
     /// </summary>
-    public partial class InviteUsersResponse : AmazonWebServiceResponse
+    public partial class DeleteRoomResponse : AmazonWebServiceResponse
     {
-        private List<Invite> _invites = new List<Invite>();
-
-        /// <summary>
-        /// Gets and sets the property Invites. 
-        /// <para>
-        /// The email invitation details.
-        /// </para>
-        /// </summary>
-        public List<Invite> Invites
-        {
-            get { return this._invites; }
-            set { this._invites = value; }
-        }
-
-        // Check to see if Invites property is set
-        internal bool IsSetInvites()
-        {
-            return this._invites != null && this._invites.Count > 0; 
-        }
 
     }
 }

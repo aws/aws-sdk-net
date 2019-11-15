@@ -517,6 +517,81 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  BatchCreateRoomMembership
+
+        /// <summary>
+        /// Adds up to 50 members to a chat room. Members can be either users or bots. The member
+        /// role designates whether the member is a chat room administrator or a general chat
+        /// room member.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchCreateRoomMembership service method.</param>
+        /// 
+        /// <returns>The response from the BatchCreateRoomMembership service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateRoomMembership">REST API Reference for BatchCreateRoomMembership Operation</seealso>
+        public virtual BatchCreateRoomMembershipResponse BatchCreateRoomMembership(BatchCreateRoomMembershipRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchCreateRoomMembershipRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchCreateRoomMembershipResponseUnmarshaller.Instance;
+
+            return Invoke<BatchCreateRoomMembershipResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchCreateRoomMembership operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchCreateRoomMembership operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchCreateRoomMembership
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateRoomMembership">REST API Reference for BatchCreateRoomMembership Operation</seealso>
+        public virtual IAsyncResult BeginBatchCreateRoomMembership(BatchCreateRoomMembershipRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchCreateRoomMembershipRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchCreateRoomMembershipResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchCreateRoomMembership operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchCreateRoomMembership.</param>
+        /// 
+        /// <returns>Returns a  BatchCreateRoomMembershipResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateRoomMembership">REST API Reference for BatchCreateRoomMembership Operation</seealso>
+        public virtual BatchCreateRoomMembershipResponse EndBatchCreateRoomMembership(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchCreateRoomMembershipResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  BatchDeletePhoneNumber
 
         /// <summary>
@@ -1187,6 +1262,164 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  CreateRoom
+
+        /// <summary>
+        /// Creates a chat room for the specified Amazon Chime account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRoom service method.</param>
+        /// 
+        /// <returns>The response from the CreateRoom service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateRoom">REST API Reference for CreateRoom Operation</seealso>
+        public virtual CreateRoomResponse CreateRoom(CreateRoomRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRoomRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRoomResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRoomResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRoom operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRoom operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRoom
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateRoom">REST API Reference for CreateRoom Operation</seealso>
+        public virtual IAsyncResult BeginCreateRoom(CreateRoomRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRoomRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRoomResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateRoom operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRoom.</param>
+        /// 
+        /// <returns>Returns a  CreateRoomResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateRoom">REST API Reference for CreateRoom Operation</seealso>
+        public virtual CreateRoomResponse EndCreateRoom(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateRoomResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateRoomMembership
+
+        /// <summary>
+        /// Adds a member to a chat room. A member can be either a user or a bot. The member role
+        /// designates whether the member is a chat room administrator or a general chat room
+        /// member.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRoomMembership service method.</param>
+        /// 
+        /// <returns>The response from the CreateRoomMembership service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateRoomMembership">REST API Reference for CreateRoomMembership Operation</seealso>
+        public virtual CreateRoomMembershipResponse CreateRoomMembership(CreateRoomMembershipRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRoomMembershipRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRoomMembershipResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRoomMembershipResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRoomMembership operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRoomMembership operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRoomMembership
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateRoomMembership">REST API Reference for CreateRoomMembership Operation</seealso>
+        public virtual IAsyncResult BeginCreateRoomMembership(CreateRoomMembershipRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRoomMembershipRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRoomMembershipResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateRoomMembership operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRoomMembership.</param>
+        /// 
+        /// <returns>Returns a  CreateRoomMembershipResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateRoomMembership">REST API Reference for CreateRoomMembership Operation</seealso>
+        public virtual CreateRoomMembershipResponse EndCreateRoomMembership(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateRoomMembershipResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateVoiceConnector
 
         /// <summary>
@@ -1613,6 +1846,152 @@ namespace Amazon.Chime
         public virtual DeletePhoneNumberResponse EndDeletePhoneNumber(IAsyncResult asyncResult)
         {
             return EndInvoke<DeletePhoneNumberResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteRoom
+
+        /// <summary>
+        /// Deletes a chat room.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRoom service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRoom service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteRoom">REST API Reference for DeleteRoom Operation</seealso>
+        public virtual DeleteRoomResponse DeleteRoom(DeleteRoomRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRoomRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRoomResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRoomResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRoom operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRoom operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRoom
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteRoom">REST API Reference for DeleteRoom Operation</seealso>
+        public virtual IAsyncResult BeginDeleteRoom(DeleteRoomRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRoomRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRoomResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRoom operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRoom.</param>
+        /// 
+        /// <returns>Returns a  DeleteRoomResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteRoom">REST API Reference for DeleteRoom Operation</seealso>
+        public virtual DeleteRoomResponse EndDeleteRoom(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteRoomResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteRoomMembership
+
+        /// <summary>
+        /// Removes a member from a chat room.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRoomMembership service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRoomMembership service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteRoomMembership">REST API Reference for DeleteRoomMembership Operation</seealso>
+        public virtual DeleteRoomMembershipResponse DeleteRoomMembership(DeleteRoomMembershipRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRoomMembershipRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRoomMembershipResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRoomMembershipResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRoomMembership operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRoomMembership operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRoomMembership
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteRoomMembership">REST API Reference for DeleteRoomMembership Operation</seealso>
+        public virtual IAsyncResult BeginDeleteRoomMembership(DeleteRoomMembershipRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRoomMembershipRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRoomMembershipResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRoomMembership operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRoomMembership.</param>
+        /// 
+        /// <returns>Returns a  DeleteRoomMembershipResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteRoomMembership">REST API Reference for DeleteRoomMembership Operation</seealso>
+        public virtual DeleteRoomMembershipResponse EndDeleteRoomMembership(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteRoomMembershipResponse>(asyncResult);
         }
 
         #endregion
@@ -2922,6 +3301,79 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  GetRoom
+
+        /// <summary>
+        /// Retrieves room details, such as name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRoom service method.</param>
+        /// 
+        /// <returns>The response from the GetRoom service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetRoom">REST API Reference for GetRoom Operation</seealso>
+        public virtual GetRoomResponse GetRoom(GetRoomRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRoomRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRoomResponseUnmarshaller.Instance;
+
+            return Invoke<GetRoomResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRoom operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRoom operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRoom
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetRoom">REST API Reference for GetRoom Operation</seealso>
+        public virtual IAsyncResult BeginGetRoom(GetRoomRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRoomRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRoomResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetRoom operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRoom.</param>
+        /// 
+        /// <returns>Returns a  GetRoomResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetRoom">REST API Reference for GetRoom Operation</seealso>
+        public virtual GetRoomResponse EndGetRoom(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetRoomResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetUser
 
         /// <summary>
@@ -3393,8 +3845,8 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Retrieves the streaming configuration details for the specified Amazon Chime Voice
-        /// Connector. Shows whether media streaming is enabled for sending to Amazon Kinesis,
-        /// and shows the retention period for the Amazon Kinesis data, in hours.
+        /// Connector. Shows whether media streaming is enabled for sending to Amazon Kinesis.
+        /// It also shows the retention period, in hours, for the Amazon Kinesis data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetVoiceConnectorStreamingConfiguration service method.</param>
         /// 
@@ -3623,9 +4075,9 @@ namespace Amazon.Chime
         #region  InviteUsers
 
         /// <summary>
-        /// Sends email invites to as many as 50 users, inviting them to the specified Amazon
-        /// Chime <code>Team</code> account. Only <code>Team</code> account types are currently
-        /// supported for this action.
+        /// Sends email to a maximum of 50 users, inviting them to the specified Amazon Chime
+        /// <code>Team</code> account. Only <code>Team</code> account types are currently supported
+        /// for this action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InviteUsers service method.</param>
         /// 
@@ -3993,6 +4445,155 @@ namespace Amazon.Chime
         public virtual ListPhoneNumbersResponse EndListPhoneNumbers(IAsyncResult asyncResult)
         {
             return EndInvoke<ListPhoneNumbersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListRoomMemberships
+
+        /// <summary>
+        /// Lists the membership details for the specified room, such as member IDs, member email
+        /// addresses, and member names.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRoomMemberships service method.</param>
+        /// 
+        /// <returns>The response from the ListRoomMemberships service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListRoomMemberships">REST API Reference for ListRoomMemberships Operation</seealso>
+        public virtual ListRoomMembershipsResponse ListRoomMemberships(ListRoomMembershipsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRoomMembershipsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRoomMembershipsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRoomMembershipsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRoomMemberships operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRoomMemberships operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRoomMemberships
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListRoomMemberships">REST API Reference for ListRoomMemberships Operation</seealso>
+        public virtual IAsyncResult BeginListRoomMemberships(ListRoomMembershipsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRoomMembershipsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRoomMembershipsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRoomMemberships operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRoomMemberships.</param>
+        /// 
+        /// <returns>Returns a  ListRoomMembershipsResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListRoomMemberships">REST API Reference for ListRoomMemberships Operation</seealso>
+        public virtual ListRoomMembershipsResponse EndListRoomMemberships(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListRoomMembershipsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListRooms
+
+        /// <summary>
+        /// Lists the room details for the specified Amazon Chime account. Optionally, filter
+        /// the results by a member ID (user ID or bot ID) to see a list of rooms that the member
+        /// belongs to.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRooms service method.</param>
+        /// 
+        /// <returns>The response from the ListRooms service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListRooms">REST API Reference for ListRooms Operation</seealso>
+        public virtual ListRoomsResponse ListRooms(ListRoomsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRoomsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRoomsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRoomsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRooms operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRooms operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRooms
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListRooms">REST API Reference for ListRooms Operation</seealso>
+        public virtual IAsyncResult BeginListRooms(ListRoomsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRoomsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRoomsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRooms operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRooms.</param>
+        /// 
+        /// <returns>Returns a  ListRoomsResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListRooms">REST API Reference for ListRooms Operation</seealso>
+        public virtual ListRoomsResponse EndListRooms(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListRoomsResponse>(asyncResult);
         }
 
         #endregion
@@ -4609,7 +5210,8 @@ namespace Amazon.Chime
         /// <summary>
         /// Adds a streaming configuration for the specified Amazon Chime Voice Connector. The
         /// streaming configuration specifies whether media streaming is enabled for sending to
-        /// Amazon Kinesis, and sets the retention period for the Amazon Kinesis data, in hours.
+        /// Amazon Kinesis. It also sets the retention period, in hours, for the Amazon Kinesis
+        /// data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutVoiceConnectorStreamingConfiguration service method.</param>
         /// 
@@ -5543,7 +6145,7 @@ namespace Amazon.Chime
         /// <summary>
         /// Updates the phone number settings for the administrator's AWS account, such as the
         /// default outbound calling name. You can update the default outbound calling name once
-        /// every seven days. Outbound calling names can take up to 72 hours to be updated.
+        /// every seven days. Outbound calling names can take up to 72 hours to update.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePhoneNumberSettings service method.</param>
         /// 
@@ -5609,6 +6211,154 @@ namespace Amazon.Chime
         public virtual UpdatePhoneNumberSettingsResponse EndUpdatePhoneNumberSettings(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdatePhoneNumberSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateRoom
+
+        /// <summary>
+        /// Updates room details, such as the room name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRoom service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRoom service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateRoom">REST API Reference for UpdateRoom Operation</seealso>
+        public virtual UpdateRoomResponse UpdateRoom(UpdateRoomRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRoomRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRoomResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRoomResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRoom operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRoom operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRoom
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateRoom">REST API Reference for UpdateRoom Operation</seealso>
+        public virtual IAsyncResult BeginUpdateRoom(UpdateRoomRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRoomRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRoomResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateRoom operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRoom.</param>
+        /// 
+        /// <returns>Returns a  UpdateRoomResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateRoom">REST API Reference for UpdateRoom Operation</seealso>
+        public virtual UpdateRoomResponse EndUpdateRoom(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateRoomResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateRoomMembership
+
+        /// <summary>
+        /// Updates room membership details, such as member role. The member role designates whether
+        /// the member is a chat room administrator or a general chat room member. Member role
+        /// can only be updated for user IDs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRoomMembership service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRoomMembership service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateRoomMembership">REST API Reference for UpdateRoomMembership Operation</seealso>
+        public virtual UpdateRoomMembershipResponse UpdateRoomMembership(UpdateRoomMembershipRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRoomMembershipRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRoomMembershipResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRoomMembershipResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRoomMembership operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRoomMembership operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRoomMembership
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateRoomMembership">REST API Reference for UpdateRoomMembership Operation</seealso>
+        public virtual IAsyncResult BeginUpdateRoomMembership(UpdateRoomMembershipRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRoomMembershipRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRoomMembershipResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateRoomMembership operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRoomMembership.</param>
+        /// 
+        /// <returns>Returns a  UpdateRoomMembershipResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateRoomMembership">REST API Reference for UpdateRoomMembership Operation</seealso>
+        public virtual UpdateRoomMembershipResponse EndUpdateRoomMembership(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateRoomMembershipResponse>(asyncResult);
         }
 
         #endregion

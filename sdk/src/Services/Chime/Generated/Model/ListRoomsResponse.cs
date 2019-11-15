@@ -28,28 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// This is the response object from the InviteUsers operation.
+    /// This is the response object from the ListRooms operation.
     /// </summary>
-    public partial class InviteUsersResponse : AmazonWebServiceResponse
+    public partial class ListRoomsResponse : AmazonWebServiceResponse
     {
-        private List<Invite> _invites = new List<Invite>();
+        private string _nextToken;
+        private List<Room> _rooms = new List<Room>();
 
         /// <summary>
-        /// Gets and sets the property Invites. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The email invitation details.
+        /// The token to use to retrieve the next page of results.
         /// </para>
         /// </summary>
-        public List<Invite> Invites
+        public string NextToken
         {
-            get { return this._invites; }
-            set { this._invites = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if Invites property is set
-        internal bool IsSetInvites()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._invites != null && this._invites.Count > 0; 
+            return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Rooms. 
+        /// <para>
+        /// The room details.
+        /// </para>
+        /// </summary>
+        public List<Room> Rooms
+        {
+            get { return this._rooms; }
+            set { this._rooms = value; }
+        }
+
+        // Check to see if Rooms property is set
+        internal bool IsSetRooms()
+        {
+            return this._rooms != null && this._rooms.Count > 0; 
         }
 
     }

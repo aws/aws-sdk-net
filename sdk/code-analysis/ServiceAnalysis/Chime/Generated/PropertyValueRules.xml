@@ -13,6 +13,14 @@
     <pattern>^\+?[1-9]\d{1,14}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.BatchCreateRoomMembershipRequest.AccountId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.BatchCreateRoomMembershipRequest.RoomId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.BatchSuspendUserRequest.AccountId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -39,6 +47,28 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.CreateRoomRequest.AccountId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.CreateRoomRequest.ClientRequestToken</property>
+    <min>2</min>
+    <max>64</max>
+    <pattern>[-_a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.CreateRoomMembershipRequest.AccountId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.CreateRoomMembershipRequest.MemberId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.CreateRoomMembershipRequest.RoomId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.CreateVoiceConnectorRequest.Name</property>
     <min>1</min>
     <max>256</max>
@@ -58,6 +88,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.DeleteEventsConfigurationRequest.BotId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.DeleteRoomRequest.AccountId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.DeleteRoomRequest.RoomId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.DeleteRoomMembershipRequest.AccountId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.DeleteRoomMembershipRequest.MemberId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.DeleteRoomMembershipRequest.RoomId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -123,6 +173,14 @@
   <property-value-rule>
     <property>Amazon.Chime.Model.GetPhoneNumberSettingsResponse.CallingName</property>
     <pattern>^$|^[a-zA-Z0-9 ]{2,15}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.GetRoomRequest.AccountId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.GetRoomRequest.RoomId</property>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.GetUserRequest.AccountId</property>
@@ -195,6 +253,28 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.ListPhoneNumbersRequest.MaxResults</property>
+    <min>1</min>
+    <max>99</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.ListRoomMembershipsRequest.AccountId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.ListRoomMembershipsRequest.MaxResults</property>
+    <min>1</min>
+    <max>99</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.ListRoomMembershipsRequest.RoomId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.ListRoomsRequest.AccountId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.ListRoomsRequest.MaxResults</property>
     <min>1</min>
     <max>99</max>
   </property-value-rule>
@@ -323,6 +403,26 @@
     <pattern>^$|^[a-zA-Z0-9 ]{2,15}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.UpdateRoomRequest.AccountId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.UpdateRoomRequest.RoomId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.UpdateRoomMembershipRequest.AccountId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.UpdateRoomMembershipRequest.MemberId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.UpdateRoomMembershipRequest.RoomId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.UpdateUserRequest.AccountId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -351,6 +451,22 @@
   <property-value-rule>
     <property>Amazon.Chime.Model.Invite.EmailAddress</property>
     <pattern>.+@.+\..+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.Member.AccountId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.Member.MemberId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.MemberError.MemberId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.MembershipItem.MemberId</property>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.OrderedPhoneNumber.E164PhoneNumber</property>
@@ -386,6 +502,26 @@
   <property-value-rule>
     <property>Amazon.Chime.Model.PhoneNumberOrder.PhoneNumberOrderId</property>
     <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.Room.AccountId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.Room.CreatedBy</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.Room.RoomId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.RoomMembership.InvitedBy</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.RoomMembership.RoomId</property>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.StreamingConfiguration.DataRetentionInHours</property>

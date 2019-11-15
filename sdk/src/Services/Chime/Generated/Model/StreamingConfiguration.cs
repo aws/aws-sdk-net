@@ -40,7 +40,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property DataRetentionInHours. 
         /// <para>
-        /// The retention period for the Amazon Kinesis data, in hours.
+        /// The retention period, in hours, for the Amazon Kinesis data.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]

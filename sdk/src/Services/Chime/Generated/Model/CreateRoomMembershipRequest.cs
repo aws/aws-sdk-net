@@ -28,15 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListBots operation.
-    /// Lists the bots associated with the administrator's Amazon Chime Enterprise account
-    /// ID.
+    /// Container for the parameters to the CreateRoomMembership operation.
+    /// Adds a member to a chat room. A member can be either a user or a bot. The member role
+    /// designates whether the member is a chat room administrator or a general chat room
+    /// member.
     /// </summary>
-    public partial class ListBotsRequest : AmazonChimeRequest
+    public partial class CreateRoomMembershipRequest : AmazonChimeRequest
     {
         private string _accountId;
-        private int? _maxResults;
-        private string _nextToken;
+        private string _memberId;
+        private RoomMembershipRole _role;
+        private string _roomId;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -58,40 +60,59 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property MemberId. 
         /// <para>
-        /// The maximum number of results to return in a single call. The default is 10.
+        /// The Amazon Chime member ID (user ID or bot ID).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=99)]
-        public int MaxResults
+        [AWSProperty(Required=true)]
+        public string MemberId
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._memberId; }
+            set { this._memberId = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if MemberId property is set
+        internal bool IsSetMemberId()
         {
-            return this._maxResults.HasValue; 
+            return this._memberId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property Role. 
         /// <para>
-        /// The token to use to retrieve the next page of results.
+        /// The role of the member.
         /// </para>
         /// </summary>
-        public string NextToken
+        public RoomMembershipRole Role
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._role; }
+            set { this._role = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if Role property is set
+        internal bool IsSetRole()
         {
-            return this._nextToken != null;
+            return this._role != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoomId. 
+        /// <para>
+        /// The room ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string RoomId
+        {
+            get { return this._roomId; }
+            set { this._roomId = value; }
+        }
+
+        // Check to see if RoomId property is set
+        internal bool IsSetRoomId()
+        {
+            return this._roomId != null;
         }
 
     }

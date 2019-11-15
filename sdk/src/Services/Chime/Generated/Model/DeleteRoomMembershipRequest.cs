@@ -28,15 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// Container for the parameters to the InviteUsers operation.
-    /// Sends email to a maximum of 50 users, inviting them to the specified Amazon Chime
-    /// <code>Team</code> account. Only <code>Team</code> account types are currently supported
-    /// for this action.
+    /// Container for the parameters to the DeleteRoomMembership operation.
+    /// Removes a member from a chat room.
     /// </summary>
-    public partial class InviteUsersRequest : AmazonChimeRequest
+    public partial class DeleteRoomMembershipRequest : AmazonChimeRequest
     {
         private string _accountId;
-        private List<string> _userEmailList = new List<string>();
+        private string _memberId;
+        private string _roomId;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -58,22 +57,41 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserEmailList. 
+        /// Gets and sets the property MemberId. 
         /// <para>
-        /// The user email addresses to which to send the email invitation.
+        /// The member ID (user ID or bot ID).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=50)]
-        public List<string> UserEmailList
+        [AWSProperty(Required=true)]
+        public string MemberId
         {
-            get { return this._userEmailList; }
-            set { this._userEmailList = value; }
+            get { return this._memberId; }
+            set { this._memberId = value; }
         }
 
-        // Check to see if UserEmailList property is set
-        internal bool IsSetUserEmailList()
+        // Check to see if MemberId property is set
+        internal bool IsSetMemberId()
         {
-            return this._userEmailList != null && this._userEmailList.Count > 0; 
+            return this._memberId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoomId. 
+        /// <para>
+        /// The room ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string RoomId
+        {
+            get { return this._roomId; }
+            set { this._roomId = value; }
+        }
+
+        // Check to see if RoomId property is set
+        internal bool IsSetRoomId()
+        {
+            return this._roomId != null;
         }
 
     }
