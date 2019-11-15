@@ -32,7 +32,27 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class RunJobFlowResponse : AmazonWebServiceResponse
     {
+        private string _clusterArn;
         private string _jobFlowId;
+
+        /// <summary>
+        /// Gets and sets the property ClusterArn. 
+        /// <para>
+        /// The Amazon Resource Name of the cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ClusterArn
+        {
+            get { return this._clusterArn; }
+            set { this._clusterArn = value; }
+        }
+
+        // Check to see if ClusterArn property is set
+        internal bool IsSetClusterArn()
+        {
+            return this._clusterArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property JobFlowId. 

@@ -57,6 +57,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     response.AutoScalingPolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ClusterArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ClusterArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ClusterId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

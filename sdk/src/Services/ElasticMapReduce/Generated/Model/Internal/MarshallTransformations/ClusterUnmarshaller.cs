@@ -82,6 +82,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.AutoTerminate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ClusterArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ClusterArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Configurations", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Configuration, ConfigurationUnmarshaller>(ConfigurationUnmarshaller.Instance);

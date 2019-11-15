@@ -85,9 +85,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property EvaluationPeriods. 
         /// <para>
-        /// The number of periods, expressed in seconds using <code>Period</code>, during which
-        /// the alarm condition must exist before the alarm triggers automatic scaling activity.
-        /// The default value is <code>1</code>.
+        /// The number of periods, in five-minute increments, during which the alarm condition
+        /// must exist before the alarm triggers automatic scaling activity. The default value
+        /// is <code>1</code>.
         /// </para>
         /// </summary>
         public int EvaluationPeriods

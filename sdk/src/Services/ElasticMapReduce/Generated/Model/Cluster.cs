@@ -35,6 +35,7 @@ namespace Amazon.ElasticMapReduce.Model
         private List<Application> _applications = new List<Application>();
         private string _autoScalingRole;
         private bool? _autoTerminate;
+        private string _clusterArn;
         private List<Configuration> _configurations = new List<Configuration>();
         private string _customAmiId;
         private int? _ebsRootVolumeSize;
@@ -113,6 +114,25 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetAutoTerminate()
         {
             return this._autoTerminate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterArn. 
+        /// <para>
+        /// The Amazon Resource Name of the cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ClusterArn
+        {
+            get { return this._clusterArn; }
+            set { this._clusterArn = value; }
+        }
+
+        // Check to see if ClusterArn property is set
+        internal bool IsSetClusterArn()
+        {
+            return this._clusterArn != null;
         }
 
         /// <summary>
@@ -537,16 +557,14 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property VisibleToAllUsers. 
         /// <para>
-        ///  <i>This member will be deprecated.</i> 
-        /// </para>
-        ///  
-        /// <para>
         /// Indicates whether the cluster is visible to all IAM users of the AWS account associated
-        /// with the cluster. If this value is set to <code>true</code>, all IAM users of that
-        /// AWS account can view and manage the cluster if they have the proper policy permissions
-        /// set. If this value is <code>false</code>, only the IAM user that created the cluster
-        /// can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a>
-        /// action.
+        /// with the cluster. The default value, <code>true</code>, indicates that all IAM users
+        /// in the AWS account can perform cluster actions if they have the proper IAM policy
+        /// permissions. If this value is <code>false</code>, only the IAM user that created the
+        /// cluster can perform actions. This value can be changed on a running cluster by using
+        /// the <a>SetVisibleToAllUsers</a> action. You can override the default value of <code>true</code>
+        /// when you create a cluster by using the <code>VisibleToAllUsers</code> parameter of
+        /// the <code>RunJobFlow</code> action.
         /// </para>
         /// </summary>
         public bool VisibleToAllUsers
