@@ -65,6 +65,7 @@ namespace Amazon.EC2.Model
         private string _presignedUrl;
         private string _sourceRegion;
         private string _sourceSnapshotId;
+        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -250,6 +251,21 @@ namespace Amazon.EC2.Model
         internal bool IsSetSourceSnapshotId()
         {
             return this._sourceSnapshotId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications.
+        /// </summary>
+        public List<TagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
         }
 
     }
