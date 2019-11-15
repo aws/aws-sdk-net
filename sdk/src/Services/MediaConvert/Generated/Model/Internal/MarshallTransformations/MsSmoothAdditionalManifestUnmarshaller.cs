@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for S3DestinationSettings Object
+    /// Response Unmarshaller for MsSmoothAdditionalManifest Object
     /// </summary>  
-    public class S3DestinationSettingsUnmarshaller : IUnmarshaller<S3DestinationSettings, XmlUnmarshallerContext>, IUnmarshaller<S3DestinationSettings, JsonUnmarshallerContext>
+    public class MsSmoothAdditionalManifestUnmarshaller : IUnmarshaller<MsSmoothAdditionalManifest, XmlUnmarshallerContext>, IUnmarshaller<MsSmoothAdditionalManifest, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        S3DestinationSettings IUnmarshaller<S3DestinationSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MsSmoothAdditionalManifest IUnmarshaller<MsSmoothAdditionalManifest, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public S3DestinationSettings Unmarshall(JsonUnmarshallerContext context)
+        public MsSmoothAdditionalManifest Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            S3DestinationSettings unmarshalledObject = new S3DestinationSettings();
+            MsSmoothAdditionalManifest unmarshalledObject = new MsSmoothAdditionalManifest();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("accessControl", targetDepth))
+                if (context.TestExpression("manifestNameModifier", targetDepth))
                 {
-                    var unmarshaller = S3DestinationAccessControlUnmarshaller.Instance;
-                    unmarshalledObject.AccessControl = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ManifestNameModifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("encryption", targetDepth))
+                if (context.TestExpression("selectedOutputs", targetDepth))
                 {
-                    var unmarshaller = S3EncryptionSettingsUnmarshaller.Instance;
-                    unmarshalledObject.Encryption = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SelectedOutputs = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         }
 
 
-        private static S3DestinationSettingsUnmarshaller _instance = new S3DestinationSettingsUnmarshaller();        
+        private static MsSmoothAdditionalManifestUnmarshaller _instance = new MsSmoothAdditionalManifestUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static S3DestinationSettingsUnmarshaller Instance
+        public static MsSmoothAdditionalManifestUnmarshaller Instance
         {
             get
             {

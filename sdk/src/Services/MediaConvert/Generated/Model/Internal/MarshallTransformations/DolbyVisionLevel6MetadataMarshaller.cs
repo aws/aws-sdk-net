@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// S3DestinationSettings Marshaller
+    /// DolbyVisionLevel6Metadata Marshaller
     /// </summary>       
-    public class S3DestinationSettingsMarshaller : IRequestMarshaller<S3DestinationSettings, JsonMarshallerContext> 
+    public class DolbyVisionLevel6MetadataMarshaller : IRequestMarshaller<DolbyVisionLevel6Metadata, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(S3DestinationSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(DolbyVisionLevel6Metadata requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAccessControl())
+            if(requestObject.IsSetMaxCll())
             {
-                context.Writer.WritePropertyName("accessControl");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = S3DestinationAccessControlMarshaller.Instance;
-                marshaller.Marshall(requestObject.AccessControl, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("maxCll");
+                context.Writer.Write(requestObject.MaxCll);
             }
 
-            if(requestObject.IsSetEncryption())
+            if(requestObject.IsSetMaxFall())
             {
-                context.Writer.WritePropertyName("encryption");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = S3EncryptionSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.Encryption, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("maxFall");
+                context.Writer.Write(requestObject.MaxFall);
             }
 
         }
@@ -72,7 +62,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static S3DestinationSettingsMarshaller Instance = new S3DestinationSettingsMarshaller();
+        public readonly static DolbyVisionLevel6MetadataMarshaller Instance = new DolbyVisionLevel6MetadataMarshaller();
 
     }
 }

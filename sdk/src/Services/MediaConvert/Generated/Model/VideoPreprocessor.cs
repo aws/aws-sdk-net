@@ -35,6 +35,7 @@ namespace Amazon.MediaConvert.Model
     {
         private ColorCorrector _colorCorrector;
         private Deinterlacer _deinterlacer;
+        private DolbyVision _dolbyVision;
         private ImageInserter _imageInserter;
         private NoiseReducer _noiseReducer;
         private TimecodeBurnin _timecodeBurnin;
@@ -70,6 +71,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetDeinterlacer()
         {
             return this._deinterlacer != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DolbyVision. Enable Dolby Vision feature to produce Dolby
+        /// Vision compatible video output.
+        /// </summary>
+        public DolbyVision DolbyVision
+        {
+            get { return this._dolbyVision; }
+            set { this._dolbyVision = value; }
+        }
+
+        // Check to see if DolbyVision property is set
+        internal bool IsSetDolbyVision()
+        {
+            return this._dolbyVision != null;
         }
 
         /// <summary>

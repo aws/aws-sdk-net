@@ -32,12 +32,32 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class MsSmoothGroupSettings
     {
+        private List<MsSmoothAdditionalManifest> _additionalManifests = new List<MsSmoothAdditionalManifest>();
         private MsSmoothAudioDeduplication _audioDeduplication;
         private string _destination;
         private DestinationSettings _destinationSettings;
         private MsSmoothEncryptionSettings _encryption;
         private int? _fragmentLength;
         private MsSmoothManifestEncoding _manifestEncoding;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalManifests. By default, the service creates one
+        /// .ism Microsoft Smooth Streaming manifest for each Microsoft Smooth Streaming output
+        /// group in your job. This default manifest references every output in the output group.
+        /// To create additional manifests that reference a subset of the outputs in the output
+        /// group, specify a list of them here.
+        /// </summary>
+        public List<MsSmoothAdditionalManifest> AdditionalManifests
+        {
+            get { return this._additionalManifests; }
+            set { this._additionalManifests = value; }
+        }
+
+        // Check to see if AdditionalManifests property is set
+        internal bool IsSetAdditionalManifests()
+        {
+            return this._additionalManifests != null && this._additionalManifests.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AudioDeduplication. COMBINE_DUPLICATE_STREAMS combines

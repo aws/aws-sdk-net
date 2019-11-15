@@ -54,7 +54,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CustomLanguageCode. Specify the language for this caption
+        /// Gets and sets the property CustomLanguageCode. Specify the language for this captions
         /// channel, using the ISO 639-2 or ISO 639-3 three-letter language code
         /// </summary>
         [AWSProperty(Min=3, Max=3)]

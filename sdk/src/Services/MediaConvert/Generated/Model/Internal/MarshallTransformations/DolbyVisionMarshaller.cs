@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// S3DestinationSettings Marshaller
+    /// DolbyVision Marshaller
     /// </summary>       
-    public class S3DestinationSettingsMarshaller : IRequestMarshaller<S3DestinationSettings, JsonMarshallerContext> 
+    public class DolbyVisionMarshaller : IRequestMarshaller<DolbyVision, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,29 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(S3DestinationSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(DolbyVision requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAccessControl())
+            if(requestObject.IsSetL6Metadata())
             {
-                context.Writer.WritePropertyName("accessControl");
+                context.Writer.WritePropertyName("l6Metadata");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = S3DestinationAccessControlMarshaller.Instance;
-                marshaller.Marshall(requestObject.AccessControl, context);
+                var marshaller = DolbyVisionLevel6MetadataMarshaller.Instance;
+                marshaller.Marshall(requestObject.L6Metadata, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetEncryption())
+            if(requestObject.IsSetL6Mode())
             {
-                context.Writer.WritePropertyName("encryption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("l6Mode");
+                context.Writer.Write(requestObject.L6Mode);
+            }
 
-                var marshaller = S3EncryptionSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.Encryption, context);
-
-                context.Writer.WriteObjectEnd();
+            if(requestObject.IsSetProfile())
+            {
+                context.Writer.WritePropertyName("profile");
+                context.Writer.Write(requestObject.Profile);
             }
 
         }
@@ -72,7 +73,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static S3DestinationSettingsMarshaller Instance = new S3DestinationSettingsMarshaller();
+        public readonly static DolbyVisionMarshaller Instance = new DolbyVisionMarshaller();
 
     }
 }

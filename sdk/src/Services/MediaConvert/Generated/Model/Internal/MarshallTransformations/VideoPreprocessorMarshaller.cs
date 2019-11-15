@@ -67,6 +67,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDolbyVision())
+            {
+                context.Writer.WritePropertyName("dolbyVision");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DolbyVisionMarshaller.Instance;
+                marshaller.Marshall(requestObject.DolbyVision, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetImageInserter())
             {
                 context.Writer.WritePropertyName("imageInserter");

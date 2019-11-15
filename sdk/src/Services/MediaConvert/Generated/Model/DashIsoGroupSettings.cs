@@ -32,6 +32,7 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class DashIsoGroupSettings
     {
+        private List<DashAdditionalManifest> _additionalManifests = new List<DashAdditionalManifest>();
         private string _baseUrl;
         private string _destination;
         private DestinationSettings _destinationSettings;
@@ -43,6 +44,24 @@ namespace Amazon.MediaConvert.Model
         private DashIsoSegmentControl _segmentControl;
         private int? _segmentLength;
         private DashIsoWriteSegmentTimelineInRepresentation _writeSegmentTimelineInRepresentation;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalManifests. By default, the service creates one
+        /// .mpd DASH manifest for each DASH ISO output group in your job. This default manifest
+        /// references every output in the output group. To create additional DASH manifests that
+        /// reference a subset of the outputs in the output group, specify a list of them here.
+        /// </summary>
+        public List<DashAdditionalManifest> AdditionalManifests
+        {
+            get { return this._additionalManifests; }
+            set { this._additionalManifests = value; }
+        }
+
+        // Check to see if AdditionalManifests property is set
+        internal bool IsSetAdditionalManifests()
+        {
+            return this._additionalManifests != null && this._additionalManifests.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property BaseUrl. A partial URI prefix that will be put in the manifest

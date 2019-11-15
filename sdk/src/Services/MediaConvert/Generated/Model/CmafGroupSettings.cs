@@ -34,6 +34,7 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class CmafGroupSettings
     {
+        private List<CmafAdditionalManifest> _additionalManifests = new List<CmafAdditionalManifest>();
         private string _baseUrl;
         private CmafClientCache _clientCache;
         private CmafCodecSpecification _codecSpecification;
@@ -51,6 +52,26 @@ namespace Amazon.MediaConvert.Model
         private CmafStreamInfResolution _streamInfResolution;
         private CmafWriteDASHManifest _writeDashManifest;
         private CmafWriteHLSManifest _writeHlsManifest;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalManifests. By default, the service creates one
+        /// top-level .m3u8 HLS manifest and one top -level .mpd DASH manifest for each CMAF output
+        /// group in your job. These default manifests reference every output in the output group.
+        /// To create additional top-level manifests that reference a subset of the outputs in
+        /// the output group, specify a list of them here. For each additional manifest that you
+        /// specify, the service creates one HLS manifest and one DASH manifest.
+        /// </summary>
+        public List<CmafAdditionalManifest> AdditionalManifests
+        {
+            get { return this._additionalManifests; }
+            set { this._additionalManifests = value; }
+        }
+
+        // Check to see if AdditionalManifests property is set
+        internal bool IsSetAdditionalManifests()
+        {
+            return this._additionalManifests != null && this._additionalManifests.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property BaseUrl. A partial URI prefix that will be put in the manifest

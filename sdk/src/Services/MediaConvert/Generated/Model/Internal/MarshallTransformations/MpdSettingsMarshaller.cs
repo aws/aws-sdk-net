@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// S3DestinationSettings Marshaller
+    /// MpdSettings Marshaller
     /// </summary>       
-    public class S3DestinationSettingsMarshaller : IRequestMarshaller<S3DestinationSettings, JsonMarshallerContext> 
+    public class MpdSettingsMarshaller : IRequestMarshaller<MpdSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,24 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(S3DestinationSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(MpdSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAccessControl())
+            if(requestObject.IsSetCaptionContainerType())
             {
-                context.Writer.WritePropertyName("accessControl");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = S3DestinationAccessControlMarshaller.Instance;
-                marshaller.Marshall(requestObject.AccessControl, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("captionContainerType");
+                context.Writer.Write(requestObject.CaptionContainerType);
             }
 
-            if(requestObject.IsSetEncryption())
+            if(requestObject.IsSetScte35Esam())
             {
-                context.Writer.WritePropertyName("encryption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("scte35Esam");
+                context.Writer.Write(requestObject.Scte35Esam);
+            }
 
-                var marshaller = S3EncryptionSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.Encryption, context);
-
-                context.Writer.WriteObjectEnd();
+            if(requestObject.IsSetScte35Source())
+            {
+                context.Writer.WritePropertyName("scte35Source");
+                context.Writer.Write(requestObject.Scte35Source);
             }
 
         }
@@ -72,7 +68,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static S3DestinationSettingsMarshaller Instance = new S3DestinationSettingsMarshaller();
+        public readonly static MpdSettingsMarshaller Instance = new MpdSettingsMarshaller();
 
     }
 }

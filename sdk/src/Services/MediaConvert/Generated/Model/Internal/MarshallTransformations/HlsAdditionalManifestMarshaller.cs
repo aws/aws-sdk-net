@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// S3DestinationSettings Marshaller
+    /// HlsAdditionalManifest Marshaller
     /// </summary>       
-    public class S3DestinationSettingsMarshaller : IRequestMarshaller<S3DestinationSettings, JsonMarshallerContext> 
+    public class HlsAdditionalManifestMarshaller : IRequestMarshaller<HlsAdditionalManifest, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,23 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(S3DestinationSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(HlsAdditionalManifest requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAccessControl())
+            if(requestObject.IsSetManifestNameModifier())
             {
-                context.Writer.WritePropertyName("accessControl");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = S3DestinationAccessControlMarshaller.Instance;
-                marshaller.Marshall(requestObject.AccessControl, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("manifestNameModifier");
+                context.Writer.Write(requestObject.ManifestNameModifier);
             }
 
-            if(requestObject.IsSetEncryption())
+            if(requestObject.IsSetSelectedOutputs())
             {
-                context.Writer.WritePropertyName("encryption");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = S3EncryptionSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.Encryption, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("selectedOutputs");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSelectedOutputsListValue in requestObject.SelectedOutputs)
+                {
+                        context.Writer.Write(requestObjectSelectedOutputsListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }
@@ -72,7 +67,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static S3DestinationSettingsMarshaller Instance = new S3DestinationSettingsMarshaller();
+        public readonly static HlsAdditionalManifestMarshaller Instance = new HlsAdditionalManifestMarshaller();
 
     }
 }

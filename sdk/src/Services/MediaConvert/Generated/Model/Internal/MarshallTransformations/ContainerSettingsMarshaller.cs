@@ -106,6 +106,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetMpdSettings())
+            {
+                context.Writer.WritePropertyName("mpdSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MpdSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.MpdSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
