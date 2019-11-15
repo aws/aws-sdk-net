@@ -1,3 +1,27 @@
+### 3.3.632.0 (2019-11-15 19:38 UTC)
+* Chime (3.3.104.0)
+	* This release adds support for Chime Room Management APIs
+* CloudWatchLogs (3.3.101.48)
+	* Documentation updates for logs
+* CognitoIdentityProvider (3.3.105.0)
+	* This release adds a new option in the User Pool to allow specifying sender's name in the emails sent by Amazon Cognito. This release also adds support to add SES Configuration Set to the emails sent by Amazon Cognito.
+* EC2 (3.3.135.0)
+	* You can now add tags while copying snapshots. Previously, a user had to first copy the snapshot and then add tags to the copied snapshot manually. Moving forward, you can specify the list of tags you wish to be applied to the copied snapshot as a parameter on the Copy Snapshot API. 
+* EKS (3.3.104.0)
+	* Introducing Amazon EKS managed node groups, a new feature that lets you easily provision worker nodes for Amazon EKS clusters and keep them up to date using the Amazon EKS management console, CLI, and APIs.
+* ElasticLoadBalancingV2 (3.3.102.64)
+	* Documentation-only change to the default value of the routing.http.drop_invalid_header_fields.enabled attribute.
+* ElasticMapReduce (3.3.103.0)
+	* Access to the cluster ARN makes it easier for you to author resource-level permissions policies in AWS Identity and Access Management. To simplify the process of obtaining the cluster ARN, Amazon EMR has added a new field containing the cluster ARN to all API responses that include the cluster ID.
+* GuardDuty (3.3.104.0)
+	* This release includes new operations related to findings export, including: CreatePublishingDestination, UpdatePublishingDestination, DescribePublishingDestination, DeletePublishingDestination and ListPublishingDestinations.
+* MediaConvert (3.3.110.0)
+	* AWS Elemental MediaConvert SDK has added support for DolbyVision encoding, and SCTE35 & ESAM insertion to DASH ISO EMSG.
+* SimpleSystemsManagement (3.3.109.1)
+	* This release updates AWS Systems Manager Parameter Store documentation for the enhanced search capability.
+* WorkSpaces (3.3.106.0)
+	* Added APIs to register your directories with Amazon WorkSpaces and to modify directory details. 
+
 ### 3.3.631.0 (2019-11-14 19:28 UTC)
 * AWSMarketplaceMetering (3.3.101.0)
 	* Added CustomerNotEntitledException in MeterUsage API for Container use case.
