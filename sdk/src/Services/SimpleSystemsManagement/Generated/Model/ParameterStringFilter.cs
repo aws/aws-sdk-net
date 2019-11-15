@@ -30,13 +30,29 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// One or more filters. Use a filter to return a more specific list of results.
     /// 
-    ///  <note> 
+    ///  <important> 
     /// <para>
-    /// The <code>Name</code> and <code>Tier</code> filter keys can't be used with the <a>GetParametersByPath</a>
-    /// API action. Also, the <code>Label</code> filter key can't be used with the <a>DescribeParameters</a>
-    /// API action.
+    /// The <code>ParameterStringFilter</code> object is used by the <a>DescribeParameters</a>
+    /// and <a>GetParametersByPath</a> API actions. However, not all of the pattern values
+    /// listed for <code>Key</code> can be used with both actions.
     /// </para>
-    ///  </note>
+    ///  
+    /// <para>
+    /// For <code>DescribeActions</code>, all of the listed patterns are valid, with the exception
+    /// of <code>Label</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code>
+    /// are not valid: <code>Name</code>, <code>Path</code>, and <code>Tier</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For examples of CLI commands demonstrating valid parameter filter constructions, see
+    /// <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html">Searching
+    /// for Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class ParameterStringFilter
     {
@@ -66,8 +82,16 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Option. 
         /// <para>
-        /// Valid options are Equals and BeginsWith. For Path filter, valid options are Recursive
-        /// and OneLevel.
+        /// For all filters used with <a>DescribeParameters</a>, valid options include <code>Equals</code>
+        /// and <code>BeginsWith</code>. The <code>Name</code> filter additionally supports the
+        /// <code>Contains</code> option. (Exception: For filters using the key <code>Path</code>,
+        /// valid options include <code>Recursive</code> and <code>OneLevel</code>.)
+        /// </para>
+        ///  
+        /// <para>
+        /// For filters used with <a>GetParametersByPath</a>, valid options include <code>Equals</code>
+        /// and <code>BeginsWith</code>. (Exception: For filters using the key <code>Label</code>,
+        /// the only valid option is <code>Equals</code>.)
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

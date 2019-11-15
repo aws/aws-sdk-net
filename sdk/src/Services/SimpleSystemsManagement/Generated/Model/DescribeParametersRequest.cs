@@ -31,7 +31,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// Container for the parameters to the DescribeParameters operation.
     /// Get information about a parameter.
     /// 
-    ///  
+    ///  <note> 
     /// <para>
     /// Request results are returned on a best-effort basis. If you specify <code>MaxResults</code>
     /// in the request, the response includes information up to the limit specified. The number
@@ -41,6 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// You can specify the <code>NextToken</code> in a subsequent call to get the next set
     /// of results.
     /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeParametersRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -52,7 +53,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters. Use a filter to return a more specific list of results.
+        /// This data type is deprecated. Instead, use <code>ParameterFilters</code>.
         /// </para>
         /// </summary>
         public List<ParametersFilter> Filters

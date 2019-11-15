@@ -4145,7 +4145,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Get information about a parameter.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
         /// Request results are returned on a best-effort basis. If you specify <code>MaxResults</code>
         /// in the request, the response includes information up to the limit specified. The number
@@ -4155,6 +4155,7 @@ namespace Amazon.SimpleSystemsManagement
         /// You can specify the <code>NextToken</code> in a subsequent call to get the next set
         /// of results.
         /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeParameters service method.</param>
         /// 
@@ -4183,7 +4184,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Get information about a parameter.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
         /// Request results are returned on a best-effort basis. If you specify <code>MaxResults</code>
         /// in the request, the response includes information up to the limit specified. The number
@@ -4193,6 +4194,7 @@ namespace Amazon.SimpleSystemsManagement
         /// You can specify the <code>NextToken</code> in a subsequent call to get the next set
         /// of results.
         /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeParameters service method.</param>
         /// <param name="cancellationToken">
@@ -5520,11 +5522,9 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Retrieve parameters in a specific hierarchy. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working
-        /// with Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// Retrieve information about one or more parameters in a specific hierarchy. 
         /// 
-        /// 
-        ///  
+        ///  <note> 
         /// <para>
         /// Request results are returned on a best-effort basis. If you specify <code>MaxResults</code>
         /// in the request, the response includes information up to the limit specified. The number
@@ -5533,10 +5533,6 @@ namespace Amazon.SimpleSystemsManagement
         /// operation and returns the matching values up to that point and a <code>NextToken</code>.
         /// You can specify the <code>NextToken</code> in a subsequent call to get the next set
         /// of results.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// This API action doesn't support filtering by tags. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -5568,11 +5564,9 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Retrieve parameters in a specific hierarchy. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working
-        /// with Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// Retrieve information about one or more parameters in a specific hierarchy. 
         /// 
-        /// 
-        ///  
+        ///  <note> 
         /// <para>
         /// Request results are returned on a best-effort basis. If you specify <code>MaxResults</code>
         /// in the request, the response includes information up to the limit specified. The number
@@ -5581,10 +5575,6 @@ namespace Amazon.SimpleSystemsManagement
         /// operation and returns the matching values up to that point and a <code>NextToken</code>.
         /// You can specify the <code>NextToken</code> in a subsequent call to get the next set
         /// of results.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// This API action doesn't support filtering by tags. 
         /// </para>
         ///  </note>
         /// </summary>
