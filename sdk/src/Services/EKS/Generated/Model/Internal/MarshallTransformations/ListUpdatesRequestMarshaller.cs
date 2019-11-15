@@ -67,6 +67,9 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetNodegroupName())
+                request.Parameters.Add("nodegroupName", StringUtils.FromString(publicRequest.NodegroupName));
             request.ResourcePath = "/clusters/{name}/updates";
             request.MarshallerVersion = 2;
             request.UseQueryString = true;

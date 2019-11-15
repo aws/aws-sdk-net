@@ -29,9 +29,9 @@ namespace Amazon.EKS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCluster operation.
-    /// Deletes the Amazon EKS cluster control plane. 
+    /// Deletes the Amazon EKS cluster control plane.
     /// 
-    ///  <note> 
+    ///  
     /// <para>
     /// If you have active services in your cluster that are associated with a load balancer,
     /// you must delete those services before deleting the cluster so that the load balancers
@@ -39,7 +39,11 @@ namespace Amazon.EKS.Model
     /// prevent you from being able to delete the VPC. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting
     /// a Cluster</a> in the <i>Amazon EKS User Guide</i>.
     /// </para>
-    ///  </note>
+    ///  
+    /// <para>
+    /// If you have managed node groups attached to the cluster, you must delete them first.
+    /// For more information, see <a>DeleteNodegroup</a>.
+    /// </para>
     /// </summary>
     public partial class DeleteClusterRequest : AmazonEKSRequest
     {

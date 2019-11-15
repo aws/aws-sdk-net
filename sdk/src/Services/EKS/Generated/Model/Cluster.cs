@@ -274,7 +274,8 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The metadata that you apply to the cluster to assist with categorization and organization.
-        /// Each tag consists of a key and an optional value, both of which you define.
+        /// Each tag consists of a key and an optional value, both of which you define. Cluster
+        /// tags do not propagate to any other resources associated with the cluster. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

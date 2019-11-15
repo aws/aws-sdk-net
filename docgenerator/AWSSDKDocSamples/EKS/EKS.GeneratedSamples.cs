@@ -77,6 +77,20 @@ namespace AWSSDKDocSamples.Amazon.EKS.Generated
             #endregion
         }
 
+        public void EKSListTagsForResource()
+        {
+            #region to-list-tags-for-a-cluster-1568666903378
+
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest 
+            {
+                ResourceArn = "arn:aws:eks:us-west-2:012345678910:cluster/beta"
+            });
+
+            Dictionary<string, string> tags = response.Tags;
+
+            #endregion
+        }
+
         
         # region ISample Members
         public virtual void Run()

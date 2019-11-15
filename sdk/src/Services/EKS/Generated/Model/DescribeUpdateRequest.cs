@@ -29,7 +29,8 @@ namespace Amazon.EKS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeUpdate operation.
-    /// Returns descriptive information about an update against your Amazon EKS cluster.
+    /// Returns descriptive information about an update against your Amazon EKS cluster or
+    /// associated managed node group.
     /// 
     ///  
     /// <para>
@@ -41,12 +42,13 @@ namespace Amazon.EKS.Model
     public partial class DescribeUpdateRequest : AmazonEKSRequest
     {
         private string _name;
+        private string _nodegroupName;
         private string _updateId;
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Amazon EKS cluster to update.
+        /// The name of the Amazon EKS cluster associated with the update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,6 +62,24 @@ namespace Amazon.EKS.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodegroupName. 
+        /// <para>
+        /// The name of the Amazon EKS node group associated with the update.
+        /// </para>
+        /// </summary>
+        public string NodegroupName
+        {
+            get { return this._nodegroupName; }
+            set { this._nodegroupName = value; }
+        }
+
+        // Check to see if NodegroupName property is set
+        internal bool IsSetNodegroupName()
+        {
+            return this._nodegroupName != null;
         }
 
         /// <summary>

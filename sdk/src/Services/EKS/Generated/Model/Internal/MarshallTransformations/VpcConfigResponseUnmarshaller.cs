@@ -64,6 +64,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("clusterSecurityGroupId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ClusterSecurityGroupId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("endpointPrivateAccess", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

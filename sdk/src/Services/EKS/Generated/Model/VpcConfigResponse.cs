@@ -32,11 +32,31 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class VpcConfigResponse
     {
+        private string _clusterSecurityGroupId;
         private bool? _endpointPrivateAccess;
         private bool? _endpointPublicAccess;
         private List<string> _securityGroupIds = new List<string>();
         private List<string> _subnetIds = new List<string>();
         private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property ClusterSecurityGroupId. 
+        /// <para>
+        /// The cluster security group that was created by Amazon EKS for the cluster. Managed
+        /// node groups use this security group for control plane to data plane communication.
+        /// </para>
+        /// </summary>
+        public string ClusterSecurityGroupId
+        {
+            get { return this._clusterSecurityGroupId; }
+            set { this._clusterSecurityGroupId = value; }
+        }
+
+        // Check to see if ClusterSecurityGroupId property is set
+        internal bool IsSetClusterSecurityGroupId()
+        {
+            return this._clusterSecurityGroupId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EndpointPrivateAccess. 

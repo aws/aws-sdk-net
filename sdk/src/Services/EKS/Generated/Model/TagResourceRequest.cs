@@ -32,7 +32,10 @@ namespace Amazon.EKS.Model
     /// Associates the specified tags to a resource with the specified <code>resourceArn</code>.
     /// If existing tags on a resource are not specified in the request parameters, they are
     /// not changed. When a resource is deleted, the tags associated with that resource are
-    /// deleted as well.
+    /// deleted as well. Tags that you create for Amazon EKS resources do not propagate to
+    /// any other resources associated with the cluster. For example, if you tag a cluster
+    /// with this operation, that tag does not automatically propagate to the subnets and
+    /// worker nodes associated with the cluster.
     /// </summary>
     public partial class TagResourceRequest : AmazonEKSRequest
     {
@@ -43,7 +46,7 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property ResourceArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the
-        /// supported resources are Amazon EKS clusters.
+        /// supported resources are Amazon EKS clusters and managed node groups.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

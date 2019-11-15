@@ -382,12 +382,102 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  CreateNodegroup
+
+        /// <summary>
+        /// Creates a managed worker node group for an Amazon EKS cluster. You can only create
+        /// a node group for your cluster that is equal to the current Kubernetes version for
+        /// the cluster. All node groups are created with the latest AMI release version for the
+        /// respective minor Kubernetes version of the cluster.
+        /// 
+        ///  
+        /// <para>
+        /// An Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated
+        /// Amazon EC2 instances that are managed by AWS for an Amazon EKS cluster. Each node
+        /// group uses a version of the Amazon EKS-optimized Amazon Linux 2 AMI. For more information,
+        /// see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed
+        /// Node Groups</a> in the <i>Amazon EKS User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNodegroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateNodegroup service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceLimitExceededException">
+        /// You have encountered a service limit on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServiceUnavailableException">
+        /// The service is unavailable. Back off and retry the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateNodegroup">REST API Reference for CreateNodegroup Operation</seealso>
+        public virtual CreateNodegroupResponse CreateNodegroup(CreateNodegroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateNodegroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNodegroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateNodegroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateNodegroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateNodegroup operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateNodegroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateNodegroup">REST API Reference for CreateNodegroup Operation</seealso>
+        public virtual IAsyncResult BeginCreateNodegroup(CreateNodegroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateNodegroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNodegroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateNodegroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateNodegroup.</param>
+        /// 
+        /// <returns>Returns a  CreateNodegroupResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateNodegroup">REST API Reference for CreateNodegroup Operation</seealso>
+        public virtual CreateNodegroupResponse EndCreateNodegroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateNodegroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteCluster
 
         /// <summary>
-        /// Deletes the Amazon EKS cluster control plane. 
+        /// Deletes the Amazon EKS cluster control plane.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
         /// If you have active services in your cluster that are associated with a load balancer,
         /// you must delete those services before deleting the cluster so that the load balancers
@@ -395,7 +485,11 @@ namespace Amazon.EKS
         /// prevent you from being able to delete the VPC. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting
         /// a Cluster</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
-        ///  </note>
+        ///  
+        /// <para>
+        /// If you have managed node groups attached to the cluster, you must delete them first.
+        /// For more information, see <a>DeleteNodegroup</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCluster service method.</param>
         /// 
@@ -410,7 +504,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. Amazon EKS clusters are Region-specific.
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -464,6 +559,82 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  DeleteNodegroup
+
+        /// <summary>
+        /// Deletes an Amazon EKS node group for a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNodegroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteNodegroup service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServiceUnavailableException">
+        /// The service is unavailable. Back off and retry the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteNodegroup">REST API Reference for DeleteNodegroup Operation</seealso>
+        public virtual DeleteNodegroupResponse DeleteNodegroup(DeleteNodegroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNodegroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNodegroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteNodegroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteNodegroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNodegroup operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteNodegroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteNodegroup">REST API Reference for DeleteNodegroup Operation</seealso>
+        public virtual IAsyncResult BeginDeleteNodegroup(DeleteNodegroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNodegroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNodegroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteNodegroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteNodegroup.</param>
+        /// 
+        /// <returns>Returns a  DeleteNodegroupResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteNodegroup">REST API Reference for DeleteNodegroup Operation</seealso>
+        public virtual DeleteNodegroupResponse EndDeleteNodegroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteNodegroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeCluster
 
         /// <summary>
@@ -493,7 +664,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. Amazon EKS clusters are Region-specific.
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -547,10 +719,84 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  DescribeNodegroup
+
+        /// <summary>
+        /// Returns descriptive information about an Amazon EKS node group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNodegroup service method.</param>
+        /// 
+        /// <returns>The response from the DescribeNodegroup service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServiceUnavailableException">
+        /// The service is unavailable. Back off and retry the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeNodegroup">REST API Reference for DescribeNodegroup Operation</seealso>
+        public virtual DescribeNodegroupResponse DescribeNodegroup(DescribeNodegroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNodegroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNodegroupResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeNodegroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeNodegroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNodegroup operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeNodegroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeNodegroup">REST API Reference for DescribeNodegroup Operation</seealso>
+        public virtual IAsyncResult BeginDescribeNodegroup(DescribeNodegroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNodegroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNodegroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeNodegroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeNodegroup.</param>
+        /// 
+        /// <returns>Returns a  DescribeNodegroupResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeNodegroup">REST API Reference for DescribeNodegroup Operation</seealso>
+        public virtual DescribeNodegroupResponse EndDescribeNodegroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeNodegroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeUpdate
 
         /// <summary>
-        /// Returns descriptive information about an update against your Amazon EKS cluster.
+        /// Returns descriptive information about an update against your Amazon EKS cluster or
+        /// associated managed node group.
         /// 
         ///  
         /// <para>
@@ -572,7 +818,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. Amazon EKS clusters are Region-specific.
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -691,6 +938,80 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  ListNodegroups
+
+        /// <summary>
+        /// Lists the Amazon EKS node groups associated with the specified cluster in your AWS
+        /// account in the specified Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNodegroups service method.</param>
+        /// 
+        /// <returns>The response from the ListNodegroups service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServiceUnavailableException">
+        /// The service is unavailable. Back off and retry the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListNodegroups">REST API Reference for ListNodegroups Operation</seealso>
+        public virtual ListNodegroupsResponse ListNodegroups(ListNodegroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListNodegroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNodegroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListNodegroupsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListNodegroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListNodegroups operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListNodegroups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListNodegroups">REST API Reference for ListNodegroups Operation</seealso>
+        public virtual IAsyncResult BeginListNodegroups(ListNodegroupsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListNodegroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNodegroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListNodegroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListNodegroups.</param>
+        /// 
+        /// <returns>Returns a  ListNodegroupsResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListNodegroups">REST API Reference for ListNodegroups Operation</seealso>
+        public virtual ListNodegroupsResponse EndListNodegroups(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListNodegroupsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         /// <summary>
@@ -756,8 +1077,8 @@ namespace Amazon.EKS
         #region  ListUpdates
 
         /// <summary>
-        /// Lists the updates associated with an Amazon EKS cluster in your AWS account, in the
-        /// specified Region.
+        /// Lists the updates associated with an Amazon EKS cluster or managed node group in your
+        /// AWS account, in the specified Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUpdates service method.</param>
         /// 
@@ -772,7 +1093,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. Amazon EKS clusters are Region-specific.
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -829,7 +1151,10 @@ namespace Amazon.EKS
         /// Associates the specified tags to a resource with the specified <code>resourceArn</code>.
         /// If existing tags on a resource are not specified in the request parameters, they are
         /// not changed. When a resource is deleted, the tags associated with that resource are
-        /// deleted as well.
+        /// deleted as well. Tags that you create for Amazon EKS resources do not propagate to
+        /// any other resources associated with the cluster. For example, if you tag a cluster
+        /// with this operation, that tag does not automatically propagate to the subnets and
+        /// worker nodes associated with the cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -1011,7 +1336,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. Amazon EKS clusters are Region-specific.
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -1077,6 +1403,12 @@ namespace Amazon.EKS
         /// is eventually consistent). When the update is complete (either <code>Failed</code>
         /// or <code>Successful</code>), the cluster status moves to <code>Active</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// If your cluster has managed node groups attached to it, all of your node groups’ Kubernetes
+        /// versions must match the cluster’s Kubernetes version in order to update the cluster
+        /// to a new Kubernetes version.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateClusterVersion service method.</param>
         /// 
@@ -1098,7 +1430,8 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. Amazon EKS clusters are Region-specific.
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -1145,6 +1478,184 @@ namespace Amazon.EKS
         public virtual UpdateClusterVersionResponse EndUpdateClusterVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateClusterVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateNodegroupConfig
+
+        /// <summary>
+        /// Updates an Amazon EKS managed node group configuration. Your node group continues
+        /// to function during the update. The response output includes an update ID that you
+        /// can use to track the status of your node group update with the <a>DescribeUpdate</a>
+        /// API operation. Currently you can update the Kubernetes labels for a node group or
+        /// the scaling configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNodegroupConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateNodegroupConfig service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateNodegroupConfig">REST API Reference for UpdateNodegroupConfig Operation</seealso>
+        public virtual UpdateNodegroupConfigResponse UpdateNodegroupConfig(UpdateNodegroupConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNodegroupConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNodegroupConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateNodegroupConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateNodegroupConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNodegroupConfig operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateNodegroupConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateNodegroupConfig">REST API Reference for UpdateNodegroupConfig Operation</seealso>
+        public virtual IAsyncResult BeginUpdateNodegroupConfig(UpdateNodegroupConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNodegroupConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNodegroupConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateNodegroupConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateNodegroupConfig.</param>
+        /// 
+        /// <returns>Returns a  UpdateNodegroupConfigResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateNodegroupConfig">REST API Reference for UpdateNodegroupConfig Operation</seealso>
+        public virtual UpdateNodegroupConfigResponse EndUpdateNodegroupConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateNodegroupConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateNodegroupVersion
+
+        /// <summary>
+        /// Updates the Kubernetes version or AMI version of an Amazon EKS managed node group.
+        /// 
+        ///  
+        /// <para>
+        /// You can update to the latest available AMI version of a node group's current Kubernetes
+        /// version by not specifying a Kubernetes version in the request. You can update to the
+        /// latest AMI version of your cluster's current Kubernetes version by specifying your
+        /// cluster's Kubernetes version in the request. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
+        /// EKS-Optimized Linux AMI Versions</a> in the <i>Amazon EKS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot roll back a node group to an earlier Kubernetes version or AMI version.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a node in a managed node group is terminated due to a scaling action or update,
+        /// the pods in that node are drained first. Amazon EKS attempts to drain the nodes gracefully
+        /// and will fail if it is unable to do so. You can <code>force</code> the update if Amazon
+        /// EKS is unable to drain the nodes as a result of a pod disruption budget issue.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNodegroupVersion service method.</param>
+        /// 
+        /// <returns>The response from the UpdateNodegroupVersion service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateNodegroupVersion">REST API Reference for UpdateNodegroupVersion Operation</seealso>
+        public virtual UpdateNodegroupVersionResponse UpdateNodegroupVersion(UpdateNodegroupVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNodegroupVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNodegroupVersionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateNodegroupVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateNodegroupVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNodegroupVersion operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateNodegroupVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateNodegroupVersion">REST API Reference for UpdateNodegroupVersion Operation</seealso>
+        public virtual IAsyncResult BeginUpdateNodegroupVersion(UpdateNodegroupVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNodegroupVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNodegroupVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateNodegroupVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateNodegroupVersion.</param>
+        /// 
+        /// <returns>Returns a  UpdateNodegroupVersionResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateNodegroupVersion">REST API Reference for UpdateNodegroupVersion Operation</seealso>
+        public virtual UpdateNodegroupVersionResponse EndUpdateNodegroupVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateNodegroupVersionResponse>(asyncResult);
         }
 
         #endregion

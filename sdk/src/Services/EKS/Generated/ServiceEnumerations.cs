@@ -25,6 +25,56 @@ namespace Amazon.EKS
 {
 
     /// <summary>
+    /// Constants used for properties of type AMITypes.
+    /// </summary>
+    public class AMITypes : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AL2_x86_64 for AMITypes
+        /// </summary>
+        public static readonly AMITypes AL2_x86_64 = new AMITypes("AL2_x86_64");
+        /// <summary>
+        /// Constant AL2_x86_64_GPU for AMITypes
+        /// </summary>
+        public static readonly AMITypes AL2_x86_64_GPU = new AMITypes("AL2_x86_64_GPU");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AMITypes(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AMITypes FindValue(string value)
+        {
+            return FindValue<AMITypes>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AMITypes(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ClusterStatus.
     /// </summary>
     public class ClusterStatus : ConstantClass
@@ -46,6 +96,10 @@ namespace Amazon.EKS
         /// Constant FAILED for ClusterStatus
         /// </summary>
         public static readonly ClusterStatus FAILED = new ClusterStatus("FAILED");
+        /// <summary>
+        /// Constant UPDATING for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus UPDATING = new ClusterStatus("UPDATING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -97,13 +151,25 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly ErrorCode EniLimitReached = new ErrorCode("EniLimitReached");
         /// <summary>
+        /// Constant InsufficientFreeAddresses for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode InsufficientFreeAddresses = new ErrorCode("InsufficientFreeAddresses");
+        /// <summary>
         /// Constant IpNotAvailable for ErrorCode
         /// </summary>
         public static readonly ErrorCode IpNotAvailable = new ErrorCode("IpNotAvailable");
         /// <summary>
+        /// Constant NodeCreationFailure for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode NodeCreationFailure = new ErrorCode("NodeCreationFailure");
+        /// <summary>
         /// Constant OperationNotPermitted for ErrorCode
         /// </summary>
         public static readonly ErrorCode OperationNotPermitted = new ErrorCode("OperationNotPermitted");
+        /// <summary>
+        /// Constant PodEvictionFailure for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode PodEvictionFailure = new ErrorCode("PodEvictionFailure");
         /// <summary>
         /// Constant SecurityGroupNotFound for ErrorCode
         /// </summary>
@@ -219,6 +285,166 @@ namespace Amazon.EKS
 
 
     /// <summary>
+    /// Constants used for properties of type NodegroupIssueCode.
+    /// </summary>
+    public class NodegroupIssueCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccessDenied for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode AccessDenied = new NodegroupIssueCode("AccessDenied");
+        /// <summary>
+        /// Constant AsgInstanceLaunchFailures for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode AsgInstanceLaunchFailures = new NodegroupIssueCode("AsgInstanceLaunchFailures");
+        /// <summary>
+        /// Constant AutoScalingGroupNotFound for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode AutoScalingGroupNotFound = new NodegroupIssueCode("AutoScalingGroupNotFound");
+        /// <summary>
+        /// Constant Ec2LaunchTemplateNotFound for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode Ec2LaunchTemplateNotFound = new NodegroupIssueCode("Ec2LaunchTemplateNotFound");
+        /// <summary>
+        /// Constant Ec2LaunchTemplateVersionMismatch for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode Ec2LaunchTemplateVersionMismatch = new NodegroupIssueCode("Ec2LaunchTemplateVersionMismatch");
+        /// <summary>
+        /// Constant Ec2SecurityGroupDeletionFailure for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode Ec2SecurityGroupDeletionFailure = new NodegroupIssueCode("Ec2SecurityGroupDeletionFailure");
+        /// <summary>
+        /// Constant Ec2SecurityGroupNotFound for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode Ec2SecurityGroupNotFound = new NodegroupIssueCode("Ec2SecurityGroupNotFound");
+        /// <summary>
+        /// Constant IamInstanceProfileNotFound for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode IamInstanceProfileNotFound = new NodegroupIssueCode("IamInstanceProfileNotFound");
+        /// <summary>
+        /// Constant IamNodeRoleNotFound for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode IamNodeRoleNotFound = new NodegroupIssueCode("IamNodeRoleNotFound");
+        /// <summary>
+        /// Constant InstanceLimitExceeded for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode InstanceLimitExceeded = new NodegroupIssueCode("InstanceLimitExceeded");
+        /// <summary>
+        /// Constant InsufficientFreeAddresses for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode InsufficientFreeAddresses = new NodegroupIssueCode("InsufficientFreeAddresses");
+        /// <summary>
+        /// Constant InternalFailure for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode InternalFailure = new NodegroupIssueCode("InternalFailure");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NodegroupIssueCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NodegroupIssueCode FindValue(string value)
+        {
+            return FindValue<NodegroupIssueCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NodegroupIssueCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NodegroupStatus.
+    /// </summary>
+    public class NodegroupStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for NodegroupStatus
+        /// </summary>
+        public static readonly NodegroupStatus ACTIVE = new NodegroupStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATE_FAILED for NodegroupStatus
+        /// </summary>
+        public static readonly NodegroupStatus CREATE_FAILED = new NodegroupStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATING for NodegroupStatus
+        /// </summary>
+        public static readonly NodegroupStatus CREATING = new NodegroupStatus("CREATING");
+        /// <summary>
+        /// Constant DEGRADED for NodegroupStatus
+        /// </summary>
+        public static readonly NodegroupStatus DEGRADED = new NodegroupStatus("DEGRADED");
+        /// <summary>
+        /// Constant DELETE_FAILED for NodegroupStatus
+        /// </summary>
+        public static readonly NodegroupStatus DELETE_FAILED = new NodegroupStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETING for NodegroupStatus
+        /// </summary>
+        public static readonly NodegroupStatus DELETING = new NodegroupStatus("DELETING");
+        /// <summary>
+        /// Constant UPDATING for NodegroupStatus
+        /// </summary>
+        public static readonly NodegroupStatus UPDATING = new NodegroupStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NodegroupStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NodegroupStatus FindValue(string value)
+        {
+            return FindValue<NodegroupStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NodegroupStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type UpdateParamType.
     /// </summary>
     public class UpdateParamType : ConstantClass
@@ -229,6 +455,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateParamType ClusterLogging = new UpdateParamType("ClusterLogging");
         /// <summary>
+        /// Constant DesiredSize for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType DesiredSize = new UpdateParamType("DesiredSize");
+        /// <summary>
         /// Constant EndpointPrivateAccess for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType EndpointPrivateAccess = new UpdateParamType("EndpointPrivateAccess");
@@ -237,9 +467,29 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateParamType EndpointPublicAccess = new UpdateParamType("EndpointPublicAccess");
         /// <summary>
+        /// Constant LabelsToAdd for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType LabelsToAdd = new UpdateParamType("LabelsToAdd");
+        /// <summary>
+        /// Constant LabelsToRemove for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType LabelsToRemove = new UpdateParamType("LabelsToRemove");
+        /// <summary>
+        /// Constant MaxSize for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType MaxSize = new UpdateParamType("MaxSize");
+        /// <summary>
+        /// Constant MinSize for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType MinSize = new UpdateParamType("MinSize");
+        /// <summary>
         /// Constant PlatformVersion for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType PlatformVersion = new UpdateParamType("PlatformVersion");
+        /// <summary>
+        /// Constant ReleaseVersion for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType ReleaseVersion = new UpdateParamType("ReleaseVersion");
         /// <summary>
         /// Constant Version for UpdateParamType
         /// </summary>
@@ -344,6 +594,10 @@ namespace Amazon.EKS
     public class UpdateType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ConfigUpdate for UpdateType
+        /// </summary>
+        public static readonly UpdateType ConfigUpdate = new UpdateType("ConfigUpdate");
         /// <summary>
         /// Constant EndpointAccessUpdate for UpdateType
         /// </summary>
