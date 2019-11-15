@@ -78,6 +78,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// The maximum number of log events to return in the query. If the query string uses
         /// the <code>fields</code> command, only the specified fields and their values are returned.
+        /// The default is 1000.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
