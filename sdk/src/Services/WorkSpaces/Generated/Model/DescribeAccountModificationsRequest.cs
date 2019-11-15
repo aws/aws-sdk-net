@@ -29,8 +29,8 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAccountModifications operation.
-    /// Retrieves a list that describes modifications to the configuration of bring your own
-    /// license (BYOL) for the specified account.
+    /// Retrieves a list that describes modifications to the configuration of Bring Your Own
+    /// License (BYOL) for the specified account.
     /// </summary>
     public partial class DescribeAccountModificationsRequest : AmazonWorkSpacesRequest
     {

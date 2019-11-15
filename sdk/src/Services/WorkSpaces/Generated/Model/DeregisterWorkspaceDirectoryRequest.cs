@@ -28,18 +28,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Container for the parameters to the AssociateIpGroups operation.
-    /// Associates the specified IP access control group with the specified directory.
+    /// Container for the parameters to the DeregisterWorkspaceDirectory operation.
+    /// Deregisters the specified directory. This operation is asynchronous and returns before
+    /// the WorkSpace directory is deregistered. If any WorkSpaces are registered to this
+    /// directory, you must remove them before you can deregister the directory.
     /// </summary>
-    public partial class AssociateIpGroupsRequest : AmazonWorkSpacesRequest
+    public partial class DeregisterWorkspaceDirectoryRequest : AmazonWorkSpacesRequest
     {
         private string _directoryId;
-        private List<string> _groupIds = new List<string>();
 
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The identifier of the directory.
+        /// The identifier of the directory. If any WorkSpaces are registered to this directory,
+        /// you must remove them before you deregister the directory, or you will receive an OperationNotSupportedException
+        /// error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=65)]
@@ -53,25 +56,6 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetDirectoryId()
         {
             return this._directoryId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property GroupIds. 
-        /// <para>
-        /// The identifiers of one or more IP access control groups.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public List<string> GroupIds
-        {
-            get { return this._groupIds; }
-            set { this._groupIds = value; }
-        }
-
-        // Check to see if GroupIds property is set
-        internal bool IsSetGroupIds()
-        {
-            return this._groupIds != null && this._groupIds.Count > 0; 
         }
 
     }

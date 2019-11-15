@@ -90,6 +90,7 @@ namespace Amazon.WorkSpaces.Model
         /// The identifier of the AWS Directory Service directory for the WorkSpace.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=10, Max=65)]
         public string DirectoryId
         {
             get { return this._directoryId; }
@@ -216,6 +217,7 @@ namespace Amazon.WorkSpaces.Model
         /// The identifier of the subnet for the WorkSpace.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=15, Max=24)]
         public string SubnetId
         {
             get { return this._subnetId; }

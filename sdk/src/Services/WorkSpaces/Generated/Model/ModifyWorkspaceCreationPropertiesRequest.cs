@@ -28,50 +28,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Container for the parameters to the AssociateIpGroups operation.
-    /// Associates the specified IP access control group with the specified directory.
+    /// Container for the parameters to the ModifyWorkspaceCreationProperties operation.
+    /// Modify the default properties used to create WorkSpaces.
     /// </summary>
-    public partial class AssociateIpGroupsRequest : AmazonWorkSpacesRequest
+    public partial class ModifyWorkspaceCreationPropertiesRequest : AmazonWorkSpacesRequest
     {
-        private string _directoryId;
-        private List<string> _groupIds = new List<string>();
+        private string _resourceId;
+        private WorkspaceCreationProperties _workspaceCreationProperties;
 
         /// <summary>
-        /// Gets and sets the property DirectoryId. 
+        /// Gets and sets the property ResourceId. 
         /// <para>
         /// The identifier of the directory.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=65)]
-        public string DirectoryId
+        public string ResourceId
         {
-            get { return this._directoryId; }
-            set { this._directoryId = value; }
+            get { return this._resourceId; }
+            set { this._resourceId = value; }
         }
 
-        // Check to see if DirectoryId property is set
-        internal bool IsSetDirectoryId()
+        // Check to see if ResourceId property is set
+        internal bool IsSetResourceId()
         {
-            return this._directoryId != null;
+            return this._resourceId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property GroupIds. 
+        /// Gets and sets the property WorkspaceCreationProperties. 
         /// <para>
-        /// The identifiers of one or more IP access control groups.
+        /// The default properties for creating WorkSpaces.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public List<string> GroupIds
+        public WorkspaceCreationProperties WorkspaceCreationProperties
         {
-            get { return this._groupIds; }
-            set { this._groupIds = value; }
+            get { return this._workspaceCreationProperties; }
+            set { this._workspaceCreationProperties = value; }
         }
 
-        // Check to see if GroupIds property is set
-        internal bool IsSetGroupIds()
+        // Check to see if WorkspaceCreationProperties property is set
+        internal bool IsSetWorkspaceCreationProperties()
         {
-            return this._groupIds != null && this._groupIds.Count > 0; 
+            return this._workspaceCreationProperties != null;
         }
 
     }

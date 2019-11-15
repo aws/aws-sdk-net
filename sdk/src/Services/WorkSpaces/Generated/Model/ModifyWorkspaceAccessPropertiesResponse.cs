@@ -28,11 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeAccount operation.
-    /// Retrieves a list that describes the configuration of Bring Your Own License (BYOL)
-    /// for the specified account.
+    /// This is the response object from the ModifyWorkspaceAccessProperties operation.
     /// </summary>
-    public partial class DescribeAccountRequest : AmazonWorkSpacesRequest
+    public partial class ModifyWorkspaceAccessPropertiesResponse : AmazonWebServiceResponse
     {
 
     }

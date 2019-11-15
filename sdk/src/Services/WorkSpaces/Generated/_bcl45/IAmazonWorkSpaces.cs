@@ -583,11 +583,73 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  DeregisterWorkspaceDirectory
+
+
+        /// <summary>
+        /// Deregisters the specified directory. This operation is asynchronous and returns before
+        /// the WorkSpace directory is deregistered. If any WorkSpaces are registered to this
+        /// directory, you must remove them before you can deregister the directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterWorkspaceDirectory service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterWorkspaceDirectory service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeregisterWorkspaceDirectory">REST API Reference for DeregisterWorkspaceDirectory Operation</seealso>
+        DeregisterWorkspaceDirectoryResponse DeregisterWorkspaceDirectory(DeregisterWorkspaceDirectoryRequest request);
+
+
+
+        /// <summary>
+        /// Deregisters the specified directory. This operation is asynchronous and returns before
+        /// the WorkSpace directory is deregistered. If any WorkSpaces are registered to this
+        /// directory, you must remove them before you can deregister the directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterWorkspaceDirectory service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeregisterWorkspaceDirectory service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeregisterWorkspaceDirectory">REST API Reference for DeregisterWorkspaceDirectory Operation</seealso>
+        Task<DeregisterWorkspaceDirectoryResponse> DeregisterWorkspaceDirectoryAsync(DeregisterWorkspaceDirectoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeAccount
 
 
         /// <summary>
-        /// Retrieves a list that describes the configuration of bring your own license (BYOL)
+        /// Retrieves a list that describes the configuration of Bring Your Own License (BYOL)
         /// for the specified account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccount service method.</param>
@@ -602,7 +664,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Retrieves a list that describes the configuration of bring your own license (BYOL)
+        /// Retrieves a list that describes the configuration of Bring Your Own License (BYOL)
         /// for the specified account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccount service method.</param>
@@ -623,8 +685,8 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Retrieves a list that describes modifications to the configuration of bring your own
-        /// license (BYOL) for the specified account.
+        /// Retrieves a list that describes modifications to the configuration of Bring Your Own
+        /// License (BYOL) for the specified account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountModifications service method.</param>
         /// 
@@ -638,8 +700,8 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Retrieves a list that describes modifications to the configuration of bring your own
-        /// license (BYOL) for the specified account.
+        /// Retrieves a list that describes modifications to the configuration of Bring Your Own
+        /// License (BYOL) for the specified account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountModifications service method.</param>
         /// <param name="cancellationToken">
@@ -858,8 +920,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Describes the available AWS Directory Service directories that are registered with
-        /// Amazon WorkSpaces.
+        /// Describes the available directories that are registered with Amazon WorkSpaces.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeWorkspaceDirectories service method, as returned by WorkSpaces.</returns>
@@ -870,8 +931,7 @@ namespace Amazon.WorkSpaces
         DescribeWorkspaceDirectoriesResponse DescribeWorkspaceDirectories();
 
         /// <summary>
-        /// Describes the available AWS Directory Service directories that are registered with
-        /// Amazon WorkSpaces.
+        /// Describes the available directories that are registered with Amazon WorkSpaces.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspaceDirectories service method.</param>
         /// 
@@ -884,8 +944,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Describes the available AWS Directory Service directories that are registered with
-        /// Amazon WorkSpaces.
+        /// Describes the available directories that are registered with Amazon WorkSpaces.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -900,8 +959,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Describes the available AWS Directory Service directories that are registered with
-        /// Amazon WorkSpaces.
+        /// Describes the available directories that are registered with Amazon WorkSpaces.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspaceDirectories service method.</param>
         /// <param name="cancellationToken">
@@ -1184,7 +1242,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Imports the specified Windows 7 or Windows 10 bring your own license (BYOL) image
+        /// Imports the specified Windows 7 or Windows 10 Bring Your Own License (BYOL) image
         /// into Amazon WorkSpaces. The image must be an already licensed EC2 image that is in
         /// your AWS account, and you must own the image.
         /// </summary>
@@ -1215,7 +1273,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Imports the specified Windows 7 or Windows 10 bring your own license (BYOL) image
+        /// Imports the specified Windows 7 or Windows 10 Bring Your Own License (BYOL) image
         /// into Amazon WorkSpaces. The image must be an already licensed EC2 image that is in
         /// your AWS account, and you must own the image.
         /// </summary>
@@ -1253,7 +1311,7 @@ namespace Amazon.WorkSpaces
 
         /// <summary>
         /// Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that you can
-        /// use for the network management interface when you enable bring your own license (BYOL).
+        /// use for the network management interface when you enable Bring Your Own License (BYOL).
         /// 
         /// 
         ///  
@@ -1279,7 +1337,7 @@ namespace Amazon.WorkSpaces
 
         /// <summary>
         /// Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that you can
-        /// use for the network management interface when you enable bring your own license (BYOL).
+        /// use for the network management interface when you enable Bring Your Own License (BYOL).
         /// 
         /// 
         ///  
@@ -1310,7 +1368,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Modifies the configuration of bring your own license (BYOL) for the specified account.
+        /// Modifies the configuration of Bring Your Own License (BYOL) for the specified account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyAccount service method.</param>
         /// 
@@ -1336,7 +1394,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Modifies the configuration of bring your own license (BYOL) for the specified account.
+        /// Modifies the configuration of Bring Your Own License (BYOL) for the specified account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyAccount service method.</param>
         /// <param name="cancellationToken">
@@ -1410,6 +1468,146 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  ModifySelfservicePermissions
+
+
+        /// <summary>
+        /// Modifies the self-service WorkSpace management capabilities for your users. For more
+        /// information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/enable-user-self-service-workspace-management.html">Enable
+        /// Self-Service WorkSpace Management Capabilities for Your Users</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifySelfservicePermissions service method.</param>
+        /// 
+        /// <returns>The response from the ModifySelfservicePermissions service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifySelfservicePermissions">REST API Reference for ModifySelfservicePermissions Operation</seealso>
+        ModifySelfservicePermissionsResponse ModifySelfservicePermissions(ModifySelfservicePermissionsRequest request);
+
+
+
+        /// <summary>
+        /// Modifies the self-service WorkSpace management capabilities for your users. For more
+        /// information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/enable-user-self-service-workspace-management.html">Enable
+        /// Self-Service WorkSpace Management Capabilities for Your Users</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifySelfservicePermissions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifySelfservicePermissions service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifySelfservicePermissions">REST API Reference for ModifySelfservicePermissions Operation</seealso>
+        Task<ModifySelfservicePermissionsResponse> ModifySelfservicePermissionsAsync(ModifySelfservicePermissionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ModifyWorkspaceAccessProperties
+
+
+        /// <summary>
+        /// Specifies which devices and operating systems users can use to access their Workspaces.
+        /// For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html#control-device-access">
+        /// Control Device Access</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceAccessProperties service method.</param>
+        /// 
+        /// <returns>The response from the ModifyWorkspaceAccessProperties service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceAccessProperties">REST API Reference for ModifyWorkspaceAccessProperties Operation</seealso>
+        ModifyWorkspaceAccessPropertiesResponse ModifyWorkspaceAccessProperties(ModifyWorkspaceAccessPropertiesRequest request);
+
+
+
+        /// <summary>
+        /// Specifies which devices and operating systems users can use to access their Workspaces.
+        /// For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html#control-device-access">
+        /// Control Device Access</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceAccessProperties service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyWorkspaceAccessProperties service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceAccessProperties">REST API Reference for ModifyWorkspaceAccessProperties Operation</seealso>
+        Task<ModifyWorkspaceAccessPropertiesResponse> ModifyWorkspaceAccessPropertiesAsync(ModifyWorkspaceAccessPropertiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ModifyWorkspaceCreationProperties
+
+
+        /// <summary>
+        /// Modify the default properties used to create WorkSpaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceCreationProperties service method.</param>
+        /// 
+        /// <returns>The response from the ModifyWorkspaceCreationProperties service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceCreationProperties">REST API Reference for ModifyWorkspaceCreationProperties Operation</seealso>
+        ModifyWorkspaceCreationPropertiesResponse ModifyWorkspaceCreationProperties(ModifyWorkspaceCreationPropertiesRequest request);
+
+
+
+        /// <summary>
+        /// Modify the default properties used to create WorkSpaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceCreationProperties service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyWorkspaceCreationProperties service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceCreationProperties">REST API Reference for ModifyWorkspaceCreationProperties Operation</seealso>
+        Task<ModifyWorkspaceCreationPropertiesResponse> ModifyWorkspaceCreationPropertiesAsync(ModifyWorkspaceCreationPropertiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ModifyWorkspaceProperties
 
 
@@ -1439,8 +1637,8 @@ namespace Amazon.WorkSpaces
         /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.UnsupportedWorkspaceConfigurationException">
         /// The configuration of this WorkSpace is not supported for this operation. For more
-        /// information, see the <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/">Amazon
-        /// WorkSpaces Administration Guide</a>.
+        /// information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/required-service-components.html">Required
+        /// Configuration and Service Components for WorkSpaces </a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceProperties">REST API Reference for ModifyWorkspaceProperties Operation</seealso>
         ModifyWorkspacePropertiesResponse ModifyWorkspaceProperties(ModifyWorkspacePropertiesRequest request);
@@ -1476,8 +1674,8 @@ namespace Amazon.WorkSpaces
         /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.UnsupportedWorkspaceConfigurationException">
         /// The configuration of this WorkSpace is not supported for this operation. For more
-        /// information, see the <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/">Amazon
-        /// WorkSpaces Administration Guide</a>.
+        /// information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/required-service-components.html">Required
+        /// Configuration and Service Components for WorkSpaces </a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceProperties">REST API Reference for ModifyWorkspaceProperties Operation</seealso>
         Task<ModifyWorkspacePropertiesResponse> ModifyWorkspacePropertiesAsync(ModifyWorkspacePropertiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1651,6 +1849,102 @@ namespace Amazon.WorkSpaces
         /// <returns>The response from the RebuildWorkspaces service method, as returned by WorkSpaces.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebuildWorkspaces">REST API Reference for RebuildWorkspaces Operation</seealso>
         Task<RebuildWorkspacesResponse> RebuildWorkspacesAsync(RebuildWorkspacesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RegisterWorkspaceDirectory
+
+
+        /// <summary>
+        /// Registers the specified directory. This operation is asynchronous and returns before
+        /// the WorkSpace directory is registered. If this is the first time you are registering
+        /// a directory, you will need to create the workspaces_DefaultRole role before you can
+        /// register a directory. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html#create-default-role">
+        /// Creating the workspaces_DefaultRole Role</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterWorkspaceDirectory service method.</param>
+        /// 
+        /// <returns>The response from the RegisterWorkspaceDirectory service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.UnsupportedNetworkConfigurationException">
+        /// The configuration of this network is not supported for this operation, or your network
+        /// configuration conflicts with the Amazon WorkSpaces management network IP range. For
+        /// more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-vpc.html">
+        /// Configure a VPC for Amazon WorkSpaces</a>.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.WorkspacesDefaultRoleNotFoundException">
+        /// The workspaces_DefaultRole role could not be found. If this is the first time you
+        /// are registering a directory, you will need to create the workspaces_DefaultRole role
+        /// before you can register a directory. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html#create-default-role">Creating
+        /// the workspaces_DefaultRole Role</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RegisterWorkspaceDirectory">REST API Reference for RegisterWorkspaceDirectory Operation</seealso>
+        RegisterWorkspaceDirectoryResponse RegisterWorkspaceDirectory(RegisterWorkspaceDirectoryRequest request);
+
+
+
+        /// <summary>
+        /// Registers the specified directory. This operation is asynchronous and returns before
+        /// the WorkSpace directory is registered. If this is the first time you are registering
+        /// a directory, you will need to create the workspaces_DefaultRole role before you can
+        /// register a directory. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html#create-default-role">
+        /// Creating the workspaces_DefaultRole Role</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterWorkspaceDirectory service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterWorkspaceDirectory service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.UnsupportedNetworkConfigurationException">
+        /// The configuration of this network is not supported for this operation, or your network
+        /// configuration conflicts with the Amazon WorkSpaces management network IP range. For
+        /// more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-vpc.html">
+        /// Configure a VPC for Amazon WorkSpaces</a>.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.WorkspacesDefaultRoleNotFoundException">
+        /// The workspaces_DefaultRole role could not be found. If this is the first time you
+        /// are registering a directory, you will need to create the workspaces_DefaultRole role
+        /// before you can register a directory. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html#create-default-role">Creating
+        /// the workspaces_DefaultRole Role</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RegisterWorkspaceDirectory">REST API Reference for RegisterWorkspaceDirectory Operation</seealso>
+        Task<RegisterWorkspaceDirectoryResponse> RegisterWorkspaceDirectoryAsync(RegisterWorkspaceDirectoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

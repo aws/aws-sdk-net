@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DescribeWorkspaceDirectories Request Marshaller
+    /// RegisterWorkspaceDirectory Request Marshaller
     /// </summary>       
-    public class DescribeWorkspaceDirectoriesRequestMarshaller : IMarshaller<IRequest, DescribeWorkspaceDirectoriesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class RegisterWorkspaceDirectoryRequestMarshaller : IMarshaller<IRequest, RegisterWorkspaceDirectoryRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DescribeWorkspaceDirectoriesRequest)input);
+            return this.Marshall((RegisterWorkspaceDirectoryRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DescribeWorkspaceDirectoriesRequest publicRequest)
+        public IRequest Marshall(RegisterWorkspaceDirectoryRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WorkSpaces");
-            string target = "WorkspacesService.DescribeWorkspaceDirectories";
+            string target = "WorkspacesService.RegisterWorkspaceDirectory";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-04-08";            
@@ -68,27 +68,55 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDirectoryIds())
+                if(publicRequest.IsSetDirectoryId())
                 {
-                    context.Writer.WritePropertyName("DirectoryIds");
+                    context.Writer.WritePropertyName("DirectoryId");
+                    context.Writer.Write(publicRequest.DirectoryId);
+                }
+
+                if(publicRequest.IsSetEnableSelfService())
+                {
+                    context.Writer.WritePropertyName("EnableSelfService");
+                    context.Writer.Write(publicRequest.EnableSelfService);
+                }
+
+                if(publicRequest.IsSetEnableWorkDocs())
+                {
+                    context.Writer.WritePropertyName("EnableWorkDocs");
+                    context.Writer.Write(publicRequest.EnableWorkDocs);
+                }
+
+                if(publicRequest.IsSetSubnetIds())
+                {
+                    context.Writer.WritePropertyName("SubnetIds");
                     context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDirectoryIdsListValue in publicRequest.DirectoryIds)
+                    foreach(var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
                     {
-                            context.Writer.Write(publicRequestDirectoryIdsListValue);
+                            context.Writer.Write(publicRequestSubnetIdsListValue);
                     }
                     context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetLimit())
+                if(publicRequest.IsSetTags())
                 {
-                    context.Writer.WritePropertyName("Limit");
-                    context.Writer.Write(publicRequest.Limit);
+                    context.Writer.WritePropertyName("Tags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetNextToken())
+                if(publicRequest.IsSetTenancy())
                 {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
+                    context.Writer.WritePropertyName("Tenancy");
+                    context.Writer.Write(publicRequest.Tenancy);
                 }
 
         
@@ -100,9 +128,9 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static DescribeWorkspaceDirectoriesRequestMarshaller _instance = new DescribeWorkspaceDirectoriesRequestMarshaller();        
+        private static RegisterWorkspaceDirectoryRequestMarshaller _instance = new RegisterWorkspaceDirectoryRequestMarshaller();        
 
-        internal static DescribeWorkspaceDirectoriesRequestMarshaller GetInstance()
+        internal static RegisterWorkspaceDirectoryRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -110,7 +138,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeWorkspaceDirectoriesRequestMarshaller Instance
+        public static RegisterWorkspaceDirectoryRequestMarshaller Instance
         {
             get
             {

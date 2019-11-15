@@ -118,6 +118,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.RegistrationCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SelfservicePermissions", targetDepth))
+                {
+                    var unmarshaller = SelfservicePermissionsUnmarshaller.Instance;
+                    unmarshalledObject.SelfservicePermissions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("State", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -128,6 +134,18 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SubnetIds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Tenancy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Tenancy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("WorkspaceAccessProperties", targetDepth))
+                {
+                    var unmarshaller = WorkspaceAccessPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.WorkspaceAccessProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("WorkspaceCreationProperties", targetDepth))

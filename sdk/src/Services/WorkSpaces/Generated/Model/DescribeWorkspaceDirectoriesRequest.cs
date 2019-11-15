@@ -29,12 +29,12 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeWorkspaceDirectories operation.
-    /// Describes the available AWS Directory Service directories that are registered with
-    /// Amazon WorkSpaces.
+    /// Describes the available directories that are registered with Amazon WorkSpaces.
     /// </summary>
     public partial class DescribeWorkspaceDirectoriesRequest : AmazonWorkSpacesRequest
     {
         private List<string> _directoryIds = new List<string>();
+        private int? _limit;
         private string _nextToken;
 
         /// <summary>
@@ -54,6 +54,25 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetDirectoryIds()
         {
             return this._directoryIds != null && this._directoryIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Limit. 
+        /// <para>
+        /// The maximum number of directories to return.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=25)]
+        public int Limit
+        {
+            get { return this._limit.GetValueOrDefault(); }
+            set { this._limit = value; }
+        }
+
+        // Check to see if Limit property is set
+        internal bool IsSetLimit()
+        {
+            return this._limit.HasValue; 
         }
 
         /// <summary>

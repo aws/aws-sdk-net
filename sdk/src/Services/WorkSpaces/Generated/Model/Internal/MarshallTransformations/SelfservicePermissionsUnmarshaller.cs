@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DefaultWorkspaceCreationProperties Object
+    /// Response Unmarshaller for SelfservicePermissions Object
     /// </summary>  
-    public class DefaultWorkspaceCreationPropertiesUnmarshaller : IUnmarshaller<DefaultWorkspaceCreationProperties, XmlUnmarshallerContext>, IUnmarshaller<DefaultWorkspaceCreationProperties, JsonUnmarshallerContext>
+    public class SelfservicePermissionsUnmarshaller : IUnmarshaller<SelfservicePermissions, XmlUnmarshallerContext>, IUnmarshaller<SelfservicePermissions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DefaultWorkspaceCreationProperties IUnmarshaller<DefaultWorkspaceCreationProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SelfservicePermissions IUnmarshaller<SelfservicePermissions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,45 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DefaultWorkspaceCreationProperties Unmarshall(JsonUnmarshallerContext context)
+        public SelfservicePermissions Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DefaultWorkspaceCreationProperties unmarshalledObject = new DefaultWorkspaceCreationProperties();
+            SelfservicePermissions unmarshalledObject = new SelfservicePermissions();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CustomSecurityGroupId", targetDepth))
+                if (context.TestExpression("ChangeComputeType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CustomSecurityGroupId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ChangeComputeType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DefaultOu", targetDepth))
+                if (context.TestExpression("IncreaseVolumeSize", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DefaultOu = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IncreaseVolumeSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EnableInternetAccess", targetDepth))
+                if (context.TestExpression("RebuildWorkspace", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.EnableInternetAccess = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RebuildWorkspace = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EnableMaintenanceMode", targetDepth))
+                if (context.TestExpression("RestartWorkspace", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.EnableMaintenanceMode = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RestartWorkspace = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EnableWorkDocs", targetDepth))
+                if (context.TestExpression("SwitchRunningMode", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.EnableWorkDocs = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("UserEnabledAsLocalAdministrator", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.UserEnabledAsLocalAdministrator = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SwitchRunningMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +100,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         }
 
 
-        private static DefaultWorkspaceCreationPropertiesUnmarshaller _instance = new DefaultWorkspaceCreationPropertiesUnmarshaller();        
+        private static SelfservicePermissionsUnmarshaller _instance = new SelfservicePermissionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DefaultWorkspaceCreationPropertiesUnmarshaller Instance
+        public static SelfservicePermissionsUnmarshaller Instance
         {
             get
             {
