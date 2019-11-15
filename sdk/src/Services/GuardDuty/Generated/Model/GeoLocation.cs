@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about the
+    /// Contains information about the location of the remote IP address.
     /// </summary>
     public partial class GeoLocation
     {

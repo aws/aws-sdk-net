@@ -39,7 +39,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the given GuardDuty resource 
+        /// The Amazon Resource Name (ARN) for the GuardDuty resource to apply a tag to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about the DNS request.
+    /// Contains information about the DNS_REQUEST action described in this finding.
     /// </summary>
     public partial class DnsRequestAction
     {
@@ -37,7 +37,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// Domain information for the DNS request.
+        /// Domain information for the API request.
         /// </para>
         /// </summary>
         public string Domain

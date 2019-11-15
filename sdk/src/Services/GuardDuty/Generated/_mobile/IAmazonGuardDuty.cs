@@ -43,8 +43,8 @@ namespace Amazon.GuardDuty
     /// that has never been used, or unusual API calls, like a password policy change to reduce
     /// password strength. GuardDuty informs you of the status of your AWS environment by
     /// producing security findings that you can view in the GuardDuty console or through
-    /// Amazon CloudWatch events. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html">
-    /// Amazon GuardDuty User Guide</a>.
+    /// Amazon CloudWatch events. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html">Amazon
+    /// GuardDuty User Guide</a>.
     /// </summary>
     public partial interface IAmazonGuardDuty : IAmazonService, IDisposable
     {
@@ -160,8 +160,10 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Creates a new IPSet - a list of trusted IP addresses that have been whitelisted for
-        /// secure communication with AWS infrastructure and applications.
+        /// Creates a new IPSet, called Trusted IP list in the consoler user interface. An IPSet
+        /// is a list IP addresses trusted for secure communication with AWS infrastructure and
+        /// applications. GuardDuty does not generate findings for IP addresses included in IPSets.
+        /// Only users from the master account can use this operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIPSet service method.</param>
         /// <param name="cancellationToken">
@@ -206,14 +208,39 @@ namespace Amazon.GuardDuty
 
         #endregion
                 
+        #region  CreatePublishingDestination
+
+
+
+        /// <summary>
+        /// Creates a publishing destination to send findings to. The resource to send findings
+        /// to must exist before you use this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePublishingDestination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePublishingDestination service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// Bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// Internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreatePublishingDestination">REST API Reference for CreatePublishingDestination Operation</seealso>
+        Task<CreatePublishingDestinationResponse> CreatePublishingDestinationAsync(CreatePublishingDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateSampleFindings
 
 
 
         /// <summary>
         /// Generates example findings of types specified by the list of finding types. If 'NULL'
-        /// is specified for findingTypes, the API generates example findings of all supported
-        /// finding types.
+        /// is specified for <code>findingTypes</code>, the API generates example findings of
+        /// all supported finding types.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSampleFindings service method.</param>
         /// <param name="cancellationToken">
@@ -238,7 +265,8 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Create a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP addresses.
-        /// GuardDuty generates findings based on ThreatIntelSets.
+        /// GuardDuty generates findings based on ThreatIntelSets. Only users of the master account
+        /// can use this operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateThreatIntelSet service method.</param>
         /// <param name="cancellationToken">
@@ -360,7 +388,8 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Deletes the IPSet specified by the IPSet ID.
+        /// Deletes the IPSet specified by the <code>ipSetId</code>. IPSets are called Trusted
+        /// IP lists in the console user interface.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIPSet service method.</param>
         /// <param name="cancellationToken">
@@ -404,6 +433,30 @@ namespace Amazon.GuardDuty
 
         #endregion
                 
+        #region  DeletePublishingDestination
+
+
+
+        /// <summary>
+        /// Deletes the publishing definition with the specified <code>destinationId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePublishingDestination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePublishingDestination service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// Bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// Internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeletePublishingDestination">REST API Reference for DeletePublishingDestination Operation</seealso>
+        Task<DeletePublishingDestinationResponse> DeletePublishingDestinationAsync(DeletePublishingDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteThreatIntelSet
 
 
@@ -425,6 +478,30 @@ namespace Amazon.GuardDuty
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteThreatIntelSet">REST API Reference for DeleteThreatIntelSet Operation</seealso>
         Task<DeleteThreatIntelSetResponse> DeleteThreatIntelSetAsync(DeleteThreatIntelSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribePublishingDestination
+
+
+
+        /// <summary>
+        /// Returns information about the publishing destination specified by the provided <code>destinationId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePublishingDestination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribePublishingDestination service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// Bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// Internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DescribePublishingDestination">REST API Reference for DescribePublishingDestination Operation</seealso>
+        Task<DescribePublishingDestinationResponse> DescribePublishingDestinationAsync(DescribePublishingDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -603,7 +680,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Retrieves the IPSet specified by the IPSet ID.
+        /// Retrieves the IPSet specified by the <code>ipSetId</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIPSet service method.</param>
         /// <param name="cancellationToken">
@@ -823,7 +900,9 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Lists the IPSets of the GuardDuty service specified by the detector ID.
+        /// Lists the IPSets of the GuardDuty service specified by the detector ID. If you use
+        /// this operation from a member account, the IPSets returned are the IPSets from the
+        /// associated master account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIPSets service method.</param>
         /// <param name="cancellationToken">
@@ -866,6 +945,30 @@ namespace Amazon.GuardDuty
 
         #endregion
                 
+        #region  ListPublishingDestinations
+
+
+
+        /// <summary>
+        /// Returns a list of publishing destinations associated with the specified <code>dectectorId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPublishingDestinations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPublishingDestinations service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// Bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// Internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListPublishingDestinations">REST API Reference for ListPublishingDestinations Operation</seealso>
+        Task<ListPublishingDestinationsResponse> ListPublishingDestinationsAsync(ListPublishingDestinationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListTagsForResource
 
 
@@ -897,7 +1000,9 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID.
+        /// Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID. If
+        /// you use this operation from a member account, the ThreatIntelSets associated with
+        /// the master account are returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListThreatIntelSets service method.</param>
         /// <param name="cancellationToken">
@@ -921,9 +1026,9 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Re-enables GuardDuty to monitor findings of the member accounts specified by the account
-        /// IDs. A master GuardDuty account can run this command after disabling GuardDuty from
-        /// monitoring these members' findings by running StopMonitoringMembers.
+        /// Turns on GuardDuty monitoring of the specified member accounts. Use this operation
+        /// to restart monitoring of accounts that you stopped monitoring with the <code>StopMonitoringMembers</code>
+        /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMonitoringMembers service method.</param>
         /// <param name="cancellationToken">
@@ -947,9 +1052,8 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Disables GuardDuty from monitoring findings of the member accounts specified by the
-        /// account IDs. After running this command, a master GuardDuty account can run StartMonitoringMembers
-        /// to re-enable GuardDuty to monitor these members’ findings.
+        /// Stops GuardDuty monitoring for the specified member accounnts. Use the <code>StartMonitoringMembers</code>
+        /// to restart monitoring for those accounts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopMonitoringMembers service method.</param>
         /// <param name="cancellationToken">
@@ -997,7 +1101,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Unarchives Amazon GuardDuty findings specified by the list of finding IDs.
+        /// Unarchives GuardDuty findings specified by the <code>findingIds</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UnarchiveFindings service method.</param>
         /// <param name="cancellationToken">
@@ -1045,7 +1149,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Updates an Amazon GuardDuty detector specified by the detectorId.
+        /// Updates the Amazon GuardDuty detector specified by the detectorId.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDetector service method.</param>
         /// <param name="cancellationToken">
@@ -1093,7 +1197,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Marks specified Amazon GuardDuty findings as useful or not useful.
+        /// Marks the specified GuardDuty findings as useful or not useful.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFindingsFeedback service method.</param>
         /// <param name="cancellationToken">
@@ -1133,6 +1237,30 @@ namespace Amazon.GuardDuty
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateIPSet">REST API Reference for UpdateIPSet Operation</seealso>
         Task<UpdateIPSetResponse> UpdateIPSetAsync(UpdateIPSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdatePublishingDestination
+
+
+
+        /// <summary>
+        /// Updates information about the publishing destination specified by the <code>destinationId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePublishingDestination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePublishingDestination service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// Bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// Internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdatePublishingDestination">REST API Reference for UpdatePublishingDestination Operation</seealso>
+        Task<UpdatePublishingDestinationResponse> UpdatePublishingDestinationAsync(UpdatePublishingDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

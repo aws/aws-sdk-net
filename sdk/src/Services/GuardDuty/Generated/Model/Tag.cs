@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about the tag associated with the resource.
+    /// Contains information about a tag associated with the Ec2 instance.
     /// </summary>
     public partial class Tag
     {

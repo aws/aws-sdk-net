@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about the network connection.
+    /// Contains information about the NETWORK_CONNECTION action described in the finding.
     /// </summary>
     public partial class NetworkConnectionAction
     {

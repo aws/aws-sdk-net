@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about the country.
+    /// Contains information about the country in which the remote IP address is located.
     /// </summary>
     public partial class Country
     {

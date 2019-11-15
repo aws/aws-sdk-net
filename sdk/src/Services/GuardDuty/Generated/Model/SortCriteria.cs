@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about the criteria for sorting.
+    /// Contains information about the criteria used for sorting findings.
     /// </summary>
     public partial class SortCriteria
     {

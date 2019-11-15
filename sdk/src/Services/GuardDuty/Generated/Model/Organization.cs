@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Continas information about the organization.
+    /// Continas information about the ISP organization of the remote IP address.
     /// </summary>
     public partial class Organization
     {

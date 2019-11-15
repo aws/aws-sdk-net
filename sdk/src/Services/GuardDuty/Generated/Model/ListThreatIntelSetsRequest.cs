@@ -29,7 +29,9 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the ListThreatIntelSets operation.
-    /// Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID.
+    /// Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID. If
+    /// you use this operation from a member account, the ThreatIntelSets associated with
+    /// the master account are returned.
     /// </summary>
     public partial class ListThreatIntelSetsRequest : AmazonGuardDutyRequest
     {
@@ -79,10 +81,10 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the list action. For subsequent calls to the action
-        /// fill nextToken in the request with the value of NextToken from the previous response
-        /// to continue listing data.
+        /// You can use this parameter to paginate results in the response. Set the value of this
+        /// parameter to null on your first call to the list action. For subsequent calls to the
+        /// action fill nextToken in the request with the value of NextToken from the previous
+        /// response to continue listing data.
         /// </para>
         /// </summary>
         public string NextToken

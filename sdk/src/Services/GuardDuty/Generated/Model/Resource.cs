@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about the resource.
+    /// Contains information about the AWS resource associated with the activity that prompted
+    /// GuardDuty to generate a finding.
     /// </summary>
     public partial class Resource
     {

@@ -39,7 +39,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the given GuardDuty resource 
+        /// The Amazon Resource Name (ARN) for the resource to remove tags from.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +58,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The tag keys to remove from a resource.
+        /// The tag keys to remove from the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

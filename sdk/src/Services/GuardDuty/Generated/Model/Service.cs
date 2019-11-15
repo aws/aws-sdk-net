@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about the service.
+    /// Contains additional information about the generated finding.
     /// </summary>
     public partial class Service
     {

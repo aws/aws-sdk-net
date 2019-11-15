@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about the port probe.
+    /// Contains information about the PORT_PROBE action described in the finding.
     /// </summary>
     public partial class PortProbeAction
     {

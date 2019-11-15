@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about the invitation.
+    /// Contains information about the invitation to become a member account.
     /// </summary>
     public partial class Invitation
     {
@@ -40,7 +40,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// Inviter account ID
+        /// The ID of the account from which the invitations was sent.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -59,7 +59,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property InvitationId. 
         /// <para>
-        /// This value is used to validate the inviter account to the member account.
+        /// The ID of the invitation. This value is used to validate the inviter account to the
+        /// member account.
         /// </para>
         /// </summary>
         public string InvitationId
@@ -77,7 +78,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property InvitedAt. 
         /// <para>
-        /// Timestamp at which the invitation was sent
+        /// Timestamp at which the invitation was sent.
         /// </para>
         /// </summary>
         public string InvitedAt
