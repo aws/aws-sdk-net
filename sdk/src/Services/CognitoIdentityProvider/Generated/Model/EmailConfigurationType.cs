@@ -32,9 +32,47 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class EmailConfigurationType
     {
+        private string _configurationSet;
         private EmailSendingAccountType _emailSendingAccount;
+        private string _from;
         private string _replyToEmailAddress;
         private string _sourceArn;
+
+        /// <summary>
+        /// Gets and sets the property ConfigurationSet. 
+        /// <para>
+        /// The set of configuration rules that can be applied to emails sent using Amazon SES.
+        /// A configuration set is applied to an email by including a reference to the configuration
+        /// set in the headers of the email. Once applied, all of the rules in that configuration
+        /// set are applied to the email. Configuration sets can be used to apply the following
+        /// types of rules to emails: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Event publishing – Amazon SES can track the number of send, delivery, open, click,
+        /// bounce, and complaint events for each email sent. Use event publishing to send information
+        /// about these events to other AWS services such as SNS and CloudWatch.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// IP pool management – When leasing dedicated IP addresses with Amazon SES, you can
+        /// create groups of IP addresses, called dedicated IP pools. You can then associate the
+        /// dedicated IP pools with configuration sets.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string ConfigurationSet
+        {
+            get { return this._configurationSet; }
+            set { this._configurationSet = value; }
+        }
+
+        // Check to see if ConfigurationSet property is set
+        internal bool IsSetConfigurationSet()
+        {
+            return this._configurationSet != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EmailSendingAccount. 
@@ -95,6 +133,26 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetEmailSendingAccount()
         {
             return this._emailSendingAccount != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property From. 
+        /// <para>
+        /// Identifies either the sender’s email address or the sender’s name with their email
+        /// address. For example, <code>testuser@example.com</code> or <code>Test User &lt;testuser@example.com&gt;</code>.
+        /// This address will appear before the body of the email.
+        /// </para>
+        /// </summary>
+        public string From
+        {
+            get { return this._from; }
+            set { this._from = value; }
+        }
+
+        // Check to see if From property is set
+        internal bool IsSetFrom()
+        {
+            return this._from != null;
         }
 
         /// <summary>

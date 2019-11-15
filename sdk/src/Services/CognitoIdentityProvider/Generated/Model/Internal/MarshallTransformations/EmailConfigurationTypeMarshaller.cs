@@ -45,10 +45,22 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EmailConfigurationType requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetConfigurationSet())
+            {
+                context.Writer.WritePropertyName("ConfigurationSet");
+                context.Writer.Write(requestObject.ConfigurationSet);
+            }
+
             if(requestObject.IsSetEmailSendingAccount())
             {
                 context.Writer.WritePropertyName("EmailSendingAccount");
                 context.Writer.Write(requestObject.EmailSendingAccount);
+            }
+
+            if(requestObject.IsSetFrom())
+            {
+                context.Writer.WritePropertyName("From");
+                context.Writer.Write(requestObject.From);
             }
 
             if(requestObject.IsSetReplyToEmailAddress())
