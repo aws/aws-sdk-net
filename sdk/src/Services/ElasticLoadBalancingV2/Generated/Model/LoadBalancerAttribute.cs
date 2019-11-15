@@ -80,7 +80,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         ///  <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether
         /// HTTP headers with invalid header fields are removed by the load balancer (<code>true</code>)
-        /// or routed to targets (<code>false</code>). The default is <code>true</code>.
+        /// or routed to targets (<code>false</code>). The default is <code>false</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
