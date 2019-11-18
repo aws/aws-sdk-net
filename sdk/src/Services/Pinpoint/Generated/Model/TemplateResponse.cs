@@ -35,8 +35,10 @@ namespace Amazon.Pinpoint.Model
     {
         private string _arn;
         private string _creationDate;
+        private string _defaultSubstitutions;
         private string _lastModifiedDate;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private string _templateDescription;
         private string _templateName;
         private TemplateType _templateType;
 
@@ -78,6 +80,27 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DefaultSubstitutions. 
+        /// <para>
+        /// The JSON object that specifies the default values that are used for message variables
+        /// in the message template. This object is a set of key-value pairs. Each key defines
+        /// a message variable in the template. The corresponding value defines the default value
+        /// for that variable.
+        /// </para>
+        /// </summary>
+        public string DefaultSubstitutions
+        {
+            get { return this._defaultSubstitutions; }
+            set { this._defaultSubstitutions = value; }
+        }
+
+        // Check to see if DefaultSubstitutions property is set
+        internal bool IsSetDefaultSubstitutions()
+        {
+            return this._defaultSubstitutions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LastModifiedDate. 
         /// <para>
         /// The date when the message template was last modified.
@@ -114,6 +137,24 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateDescription. 
+        /// <para>
+        /// The custom description of the message template.
+        /// </para>
+        /// </summary>
+        public string TemplateDescription
+        {
+            get { return this._templateDescription; }
+            set { this._templateDescription = value; }
+        }
+
+        // Check to see if TemplateDescription property is set
+        internal bool IsSetTemplateDescription()
+        {
+            return this._templateDescription != null;
         }
 
         /// <summary>

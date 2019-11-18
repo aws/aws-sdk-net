@@ -698,6 +698,55 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  CreateVoiceTemplate
+
+        internal virtual CreateVoiceTemplateResponse CreateVoiceTemplate(CreateVoiceTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVoiceTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVoiceTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVoiceTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a message template that you can use in messages that are sent through the
+        /// voice channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVoiceTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateVoiceTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        public virtual Task<CreateVoiceTemplateResponse> CreateVoiceTemplateAsync(CreateVoiceTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVoiceTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVoiceTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateVoiceTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteAdmChannel
 
         internal virtual DeleteAdmChannelResponse DeleteAdmChannel(DeleteAdmChannelRequest request)
@@ -1727,6 +1776,58 @@ namespace Amazon.Pinpoint
             options.ResponseUnmarshaller = DeleteVoiceChannelResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteVoiceChannelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteVoiceTemplate
+
+        internal virtual DeleteVoiceTemplateResponse DeleteVoiceTemplate(DeleteVoiceTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVoiceTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVoiceTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVoiceTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a message template that was designed for use in messages that were sent through
+        /// the voice channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVoiceTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        public virtual Task<DeleteVoiceTemplateResponse> DeleteVoiceTemplateAsync(DeleteVoiceTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVoiceTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVoiceTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteVoiceTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3844,6 +3945,58 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  GetVoiceTemplate
+
+        internal virtual GetVoiceTemplateResponse GetVoiceTemplate(GetVoiceTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVoiceTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVoiceTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<GetVoiceTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the content and settings for a message template that you can use in messages
+        /// that are sent through the voice channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVoiceTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        public virtual Task<GetVoiceTemplateResponse> GetVoiceTemplateAsync(GetVoiceTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVoiceTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVoiceTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetVoiceTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListJourneys
 
         internal virtual ListJourneysResponse ListJourneys(ListJourneysRequest request)
@@ -5391,6 +5544,58 @@ namespace Amazon.Pinpoint
             options.ResponseUnmarshaller = UpdateVoiceChannelResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateVoiceChannelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateVoiceTemplate
+
+        internal virtual UpdateVoiceTemplateResponse UpdateVoiceTemplate(UpdateVoiceTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVoiceTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVoiceTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateVoiceTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing message template that you can use in messages that are sent through
+        /// the voice channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVoiceTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateVoiceTemplate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        public virtual Task<UpdateVoiceTemplateResponse> UpdateVoiceTemplateAsync(UpdateVoiceTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVoiceTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVoiceTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateVoiceTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion

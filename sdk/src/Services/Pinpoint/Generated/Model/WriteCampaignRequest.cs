@@ -70,7 +70,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The custom description of the campaign.
+        /// A custom description of the campaign.
         /// </para>
         /// </summary>
         public string Description
@@ -289,7 +289,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property TreatmentDescription. 
         /// <para>
-        /// The custom description of a variation of the campaign to use for A/B testing.
+        /// A custom description of a variation of the campaign to use for A/B testing.
         /// </para>
         /// </summary>
         public string TreatmentDescription

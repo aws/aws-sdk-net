@@ -116,7 +116,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property TreatmentDescription. 
         /// <para>
-        /// The custom description of the treatment.
+        /// A custom description of the treatment.
         /// </para>
         /// </summary>
         public string TreatmentDescription

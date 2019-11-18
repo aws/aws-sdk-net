@@ -101,8 +101,8 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property TemplateType. 
         /// <para>
         /// The type of message template to include in the results. Valid values are: EMAIL, SMS,
-        /// and PUSH. To include all types of templates in the results, don't include this parameter
-        /// in your request.
+        /// PUSH, and VOICE. To include all types of templates in the results, don't include this
+        /// parameter in your request.
         /// </para>
         /// </summary>
         public string TemplateType

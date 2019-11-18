@@ -322,7 +322,7 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property RawContent. 
         /// <para>
         /// The raw, JSON-formatted string to use as the payload for the notification message.
-        /// This value overrides all other content for the message.
+        /// If specified, this value overrides all other content for the message.
         /// </para>
         ///  <note>
         /// <para>

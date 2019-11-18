@@ -34,7 +34,9 @@ namespace Amazon.Pinpoint.Model
     public partial class SMSTemplateRequest
     {
         private string _body;
+        private string _defaultSubstitutions;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private string _templateDescription;
 
         /// <summary>
         /// Gets and sets the property Body. 
@@ -55,6 +57,28 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DefaultSubstitutions. 
+        /// <para>
+        /// A JSON object that specifies the default values to use for message variables in the
+        /// message template. This object is a set of key-value pairs. Each key defines a message
+        /// variable in the template. The corresponding value defines the default value for that
+        /// variable. When you create a message that's based on the template, you can override
+        /// these defaults with message-specific and address-specific variables and values.
+        /// </para>
+        /// </summary>
+        public string DefaultSubstitutions
+        {
+            get { return this._defaultSubstitutions; }
+            set { this._defaultSubstitutions = value; }
+        }
+
+        // Check to see if DefaultSubstitutions property is set
+        internal bool IsSetDefaultSubstitutions()
+        {
+            return this._defaultSubstitutions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// A string-to-string map of key-value pairs that defines the tags to associate with
@@ -72,6 +96,24 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateDescription. 
+        /// <para>
+        /// A custom description of the message template.
+        /// </para>
+        /// </summary>
+        public string TemplateDescription
+        {
+            get { return this._templateDescription; }
+            set { this._templateDescription = value; }
+        }
+
+        // Check to see if TemplateDescription property is set
+        internal bool IsSetTemplateDescription()
+        {
+            return this._templateDescription != null;
         }
 
     }

@@ -29,7 +29,7 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Provides the results of a query that retrieved the data for a standard execution metric
-    /// that applies to a journey.
+    /// that applies to a journey, and provides information about that query.
     /// </summary>
     public partial class JourneyExecutionMetricsResponse
     {

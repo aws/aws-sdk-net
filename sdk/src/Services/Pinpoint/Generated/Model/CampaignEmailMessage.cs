@@ -41,7 +41,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property Body. 
         /// <para>
-        /// The body of the email for recipients whose email clients don't support HTML content.
+        /// The body of the email for recipients whose email clients don't render HTML content.
         /// </para>
         /// </summary>
         public string Body
@@ -78,8 +78,8 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property HtmlBody. 
         /// <para>
-        /// The body of the email, in HTML format, for recipients whose email clients support
-        /// HTML content.
+        /// The body of the email, in HTML format, for recipients whose email clients render HTML
+        /// content.
         /// </para>
         /// </summary>
         public string HtmlBody

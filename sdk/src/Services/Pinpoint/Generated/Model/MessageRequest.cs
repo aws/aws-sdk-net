@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Specifies the objects that define configuration and other settings for a message.
+    /// Specifies the configuration and other settings for a message.
     /// </summary>
     public partial class MessageRequest
     {
@@ -103,7 +103,8 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property MessageConfiguration. 
         /// <para>
-        /// The set of properties that defines the configuration settings for the message.
+        /// The settings and content for the default message and any default messages that you
+        /// defined for specific channels.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -40,7 +40,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property WaitFor. 
         /// <para>
-        /// The amount of time, as a duration in ISO 8601 format, to wait before determining whether
+        /// The amount of time to wait, as a duration in ISO 8601 format, before determining whether
         /// the activity's conditions have been met or moving participants to the next activity
         /// in the journey.
         /// </para>

@@ -101,8 +101,8 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property RawContent. 
         /// <para>
-        /// The raw, JSON-formatted string to use as the payload for the notification message.
-        /// This value overrides the message.
+        /// The raw, JSON-formatted string to use as the payload for the message. If specified,
+        /// this value overrides all other values for the message.
         /// </para>
         /// </summary>
         public string RawContent
@@ -120,9 +120,9 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property Substitutions. 
         /// <para>
-        /// An object that maps variable values for the message. Amazon Pinpoint merges these
-        /// values with the variable values specified by properties of the DefaultMessage object.
-        /// The substitutions in this map take precedence over all other substitutions.
+        /// A map of the message variables to merge with the variables specified by properties
+        /// of the DefaultMessage object. The variables specified in this map take precedence
+        /// over all other variables.
         /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Substitutions

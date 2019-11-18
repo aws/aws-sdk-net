@@ -39,6 +39,7 @@ namespace Amazon.Pinpoint.Model
         private string _body;
         private string _imageIconUrl;
         private string _imageUrl;
+        private string _rawContent;
         private string _smallImageIconUrl;
         private string _sound;
         private string _title;
@@ -133,6 +134,26 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetImageUrl()
         {
             return this._imageUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RawContent. 
+        /// <para>
+        /// The raw, JSON-formatted string to use as the payload for a push notification that's
+        /// based on the message template. If specified, this value overrides all other content
+        /// for the message template.
+        /// </para>
+        /// </summary>
+        public string RawContent
+        {
+            get { return this._rawContent; }
+            set { this._rawContent = value; }
+        }
+
+        // Check to see if RawContent property is set
+        internal bool IsSetRawContent()
+        {
+            return this._rawContent != null;
         }
 
         /// <summary>

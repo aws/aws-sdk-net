@@ -37,8 +37,10 @@ namespace Amazon.Pinpoint.Model
         private APNSPushNotificationTemplate _apns;
         private AndroidPushNotificationTemplate _baidu;
         private DefaultPushNotificationTemplate _default;
+        private string _defaultSubstitutions;
         private AndroidPushNotificationTemplate _gcm;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private string _templateDescription;
 
         /// <summary>
         /// Gets and sets the property ADM. 
@@ -117,6 +119,28 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DefaultSubstitutions. 
+        /// <para>
+        /// A JSON object that specifies the default values to use for message variables in the
+        /// message template. This object is a set of key-value pairs. Each key defines a message
+        /// variable in the template. The corresponding value defines the default value for that
+        /// variable. When you create a message that's based on the template, you can override
+        /// these defaults with message-specific and address-specific variables and values.
+        /// </para>
+        /// </summary>
+        public string DefaultSubstitutions
+        {
+            get { return this._defaultSubstitutions; }
+            set { this._defaultSubstitutions = value; }
+        }
+
+        // Check to see if DefaultSubstitutions property is set
+        internal bool IsSetDefaultSubstitutions()
+        {
+            return this._defaultSubstitutions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property GCM. 
         /// <para>
         /// The message template to use for the GCM channel, which is used to send notifications
@@ -155,6 +179,24 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateDescription. 
+        /// <para>
+        /// A custom description of the message template.
+        /// </para>
+        /// </summary>
+        public string TemplateDescription
+        {
+            get { return this._templateDescription; }
+            set { this._templateDescription = value; }
+        }
+
+        // Check to see if TemplateDescription property is set
+        internal bool IsSetTemplateDescription()
+        {
+            return this._templateDescription != null;
         }
 
     }

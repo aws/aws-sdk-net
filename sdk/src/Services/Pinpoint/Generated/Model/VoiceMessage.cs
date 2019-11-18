@@ -42,7 +42,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property Body. 
         /// <para>
-        /// The text script for the voice message.
+        /// The text of the script to use for the voice message.
         /// </para>
         /// </summary>
         public string Body
@@ -60,8 +60,9 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language to use when delivering the message. For a list of supported languages,
-        /// see the <a href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
+        /// The code for the language to use when synthesizing the text of the message script.
+        /// For a list of supported languages and the code for each one, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon
+        /// Polly Developer Guide</a>.
         /// </para>
         /// </summary>
         public string LanguageCode
@@ -120,7 +121,8 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property VoiceId. 
         /// <para>
         /// The name of the voice to use when delivering the message. For a list of supported
-        /// voices, see the <a href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
+        /// voices, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon
+        /// Polly Developer Guide</a>.
         /// </para>
         /// </summary>
         public string VoiceId

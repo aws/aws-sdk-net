@@ -82,6 +82,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.SMSTemplate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VoiceTemplate", targetDepth))
+                {
+                    var unmarshaller = TemplateUnmarshaller.Instance;
+                    unmarshalledObject.VoiceTemplate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

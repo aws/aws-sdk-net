@@ -28,13 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Specifies the message template for each type of channel.
+    /// Specifies the message template to use for the message, for each type of channel.
     /// </summary>
     public partial class TemplateConfiguration
     {
         private Template _emailTemplate;
         private Template _pushTemplate;
         private Template _smsTemplate;
+        private Template _voiceTemplate;
 
         /// <summary>
         /// Gets and sets the property EmailTemplate. 
@@ -88,6 +89,24 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetSMSTemplate()
         {
             return this._smsTemplate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VoiceTemplate. 
+        /// <para>
+        /// The voice template to use for the message.
+        /// </para>
+        /// </summary>
+        public Template VoiceTemplate
+        {
+            get { return this._voiceTemplate; }
+            set { this._voiceTemplate = value; }
+        }
+
+        // Check to see if VoiceTemplate property is set
+        internal bool IsSetVoiceTemplate()
+        {
+            return this._voiceTemplate != null;
         }
 
     }

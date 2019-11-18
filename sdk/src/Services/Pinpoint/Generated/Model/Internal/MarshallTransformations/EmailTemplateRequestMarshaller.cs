@@ -45,6 +45,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EmailTemplateRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetDefaultSubstitutions())
+            {
+                context.Writer.WritePropertyName("DefaultSubstitutions");
+                context.Writer.Write(requestObject.DefaultSubstitutions);
+            }
+
             if(requestObject.IsSetHtmlPart())
             {
                 context.Writer.WritePropertyName("HtmlPart");
@@ -69,6 +75,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                         context.Writer.Write(requestObjectTagsValue);
                 }
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetTemplateDescription())
+            {
+                context.Writer.WritePropertyName("TemplateDescription");
+                context.Writer.Write(requestObject.TemplateDescription);
             }
 
             if(requestObject.IsSetTextPart())

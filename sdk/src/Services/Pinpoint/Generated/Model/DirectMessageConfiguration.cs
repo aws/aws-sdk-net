@@ -103,7 +103,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property DefaultMessage. 
         /// <para>
-        /// The default message body for all channels.
+        /// The default message for all channels.
         /// </para>
         /// </summary>
         public DefaultMessage DefaultMessage
