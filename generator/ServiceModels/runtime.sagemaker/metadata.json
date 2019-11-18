@@ -1,5 +1,5 @@
 {
   "active": true,
-  "synopsis": "Amazon SageMaker is a fully-managed service that enables data scientists and developers to quickly and easily build, train, and deploy machine learning models, at scale.",
+  "synopsis": "Amazon SageMaker Runtime now supports a new TargetModel header to invoke a specific model hosted on multi model endpoints.",
   "generate-client-constructors": true
 }

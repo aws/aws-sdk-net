@@ -245,7 +245,7 @@ namespace Amazon.SageMakerRuntime
         /// 
         ///  
         /// <para>
-        /// For an overview of Amazon SageMaker, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How
+        /// For an overview of Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How
         /// It Works</a>. 
         /// </para>
         ///  
@@ -256,9 +256,16 @@ namespace Amazon.SageMakerRuntime
         /// </para>
         ///  
         /// <para>
-        /// Cals to <code>InvokeEndpoint</code> are authenticated by using AWS Signature Version
+        /// Calls to <code>InvokeEndpoint</code> are authenticated by using AWS Signature Version
         /// 4. For information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
         /// Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// A customer's model containers must respond to requests within 60 seconds. The model
+        /// itself can have a maximum processing time of 60 seconds before responding to the /invocations.
+        /// If your model is going to take 50-60 seconds of processing time, the SDK socket timeout
+        /// should be set to be 70 seconds.
         /// </para>
         ///  <note> 
         /// <para>
@@ -275,7 +282,7 @@ namespace Amazon.SageMakerRuntime
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.SageMakerRuntime.Model.ModelErrorException">
-        /// Model (owned by the customer in the container) returned an error 500.
+        /// Model (owned by the customer in the container) returned 4xx or 5xx error code.
         /// </exception>
         /// <exception cref="Amazon.SageMakerRuntime.Model.ServiceUnavailableException">
         /// The service is unavailable. Try your call again.

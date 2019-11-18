@@ -35,7 +35,7 @@ namespace Amazon.SageMakerRuntime.Model
     /// 
     ///  
     /// <para>
-    /// For an overview of Amazon SageMaker, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How
+    /// For an overview of Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How
     /// It Works</a>. 
     /// </para>
     ///  
@@ -46,9 +46,16 @@ namespace Amazon.SageMakerRuntime.Model
     /// </para>
     ///  
     /// <para>
-    /// Cals to <code>InvokeEndpoint</code> are authenticated by using AWS Signature Version
+    /// Calls to <code>InvokeEndpoint</code> are authenticated by using AWS Signature Version
     /// 4. For information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
     /// Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// A customer's model containers must respond to requests within 60 seconds. The model
+    /// itself can have a maximum processing time of 60 seconds before responding to the /invocations.
+    /// If your model is going to take 50-60 seconds of processing time, the SDK socket timeout
+    /// should be set to be 70 seconds.
     /// </para>
     ///  <note> 
     /// <para>
@@ -65,6 +72,7 @@ namespace Amazon.SageMakerRuntime.Model
         private string _contentType;
         private string _customAttributes;
         private string _endpointName;
+        private string _targetModel;
 
         /// <summary>
         /// Gets and sets the property Accept. 
@@ -93,7 +101,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// </para>
         ///  
         /// <para>
-        /// For information about the format of the request body, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common
+        /// For information about the format of the request body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common
         /// Data Formats—Inference</a>.
         /// </para>
         /// </summary>
@@ -130,7 +138,18 @@ namespace Amazon.SageMakerRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CustomAttributes.
+        /// Gets and sets the property CustomAttributes. 
+        /// <para>
+        /// Provides additional information about a request for an inference submitted to a model
+        /// hosted at an Amazon SageMaker endpoint. The information is an opaque value that is
+        /// forwarded verbatim. You could use this value, for example, to provide an ID that you
+        /// can use to track a request or to provide other metadata that a service endpoint was
+        /// programmed to process. The value must consist of no more than 1024 visible US-ASCII
+        /// characters as specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section
+        /// 3.3.6. Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). This
+        /// feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python
+        /// SDK.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
         public string CustomAttributes
@@ -149,7 +168,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// Gets and sets the property EndpointName. 
         /// <para>
         /// The name of the endpoint that you specified when you created the endpoint using the
-        /// <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
         /// API. 
         /// </para>
         /// </summary>
@@ -164,6 +183,26 @@ namespace Amazon.SageMakerRuntime.Model
         internal bool IsSetEndpointName()
         {
             return this._endpointName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetModel. 
+        /// <para>
+        /// Specifies the model to be requested for an inference when invoking a multi-model endpoint.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string TargetModel
+        {
+            get { return this._targetModel; }
+            set { this._targetModel = value; }
+        }
+
+        // Check to see if TargetModel property is set
+        internal bool IsSetTargetModel()
+        {
+            return this._targetModel != null;
         }
 
     }

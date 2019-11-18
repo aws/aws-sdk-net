@@ -44,7 +44,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// </para>
         ///  
         /// <para>
-        /// For information about the format of the response body, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common
+        /// For information about the format of the response body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common
         /// Data Formats—Inference</a>.
         /// </para>
         /// </summary>
@@ -81,7 +81,23 @@ namespace Amazon.SageMakerRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CustomAttributes.
+        /// Gets and sets the property CustomAttributes. 
+        /// <para>
+        /// Provides additional information in the response about the inference returned by a
+        /// model hosted at an Amazon SageMaker endpoint. The information is an opaque value that
+        /// is forwarded verbatim. You could use this value, for example, to return an ID received
+        /// in the <code>CustomAttributes</code> header of a request or other metadata that a
+        /// service endpoint was programmed to produce. The value must consist of no more than
+        /// 1024 visible US-ASCII characters as specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section
+        /// 3.3.6. Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). If
+        /// the customer wants the custom attribute returned, the model must set the custom attribute
+        /// to be included on the way back. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker
+        /// Python SDK.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
         public string CustomAttributes
