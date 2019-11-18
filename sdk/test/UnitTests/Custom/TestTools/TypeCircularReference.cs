@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet35.UnitTests.TestTools
 {
-    class TypeCircularReference<T>
+    internal class TypeCircularReference<T>
     {
         Stack<T> stack = new Stack<T>();
         HashSet<T> hash = new HashSet<T>();
