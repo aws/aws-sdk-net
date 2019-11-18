@@ -1492,9 +1492,8 @@ namespace Amazon.SageMaker
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  For more information about how batch transformation works Amazon SageMaker, see <a
-        /// href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">How It
-        /// Works</a>. 
+        /// For more information about how batch transformation works, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">Batch
+        /// Transform</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTransformJob service method.</param>

@@ -153,27 +153,31 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>[</code> 
+        ///  The preceding JSON matches the following <code>s3Uris</code>: 
         /// </para>
         ///  
         /// <para>
-        ///  <code> {"prefix": "s3://customer_bucket/some/prefix/"},</code> 
+        ///  <code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code> 
         /// </para>
         ///  
         /// <para>
-        ///  <code> "relative/path/to/custdata-1",</code> 
+        ///  <code>"relative/path/to/custdata-1",</code> 
         /// </para>
         ///  
         /// <para>
-        ///  <code> "relative/path/custdata-2",</code> 
+        ///  <code>"relative/path/custdata-2",</code> 
         /// </para>
         ///  
         /// <para>
-        ///  <code> ...</code> 
+        ///  <code>...</code> 
         /// </para>
         ///  
         /// <para>
-        ///  <code> ]</code> 
+        ///  <code>"relative/path/custdata-N"</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>]</code> 
         /// </para>
         ///  
         /// <para>
@@ -190,6 +194,10 @@ namespace Amazon.SageMaker.Model
         ///  
         /// <para>
         ///  <code>...</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code> 
         /// </para>
         ///  
         /// <para>

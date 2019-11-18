@@ -69,9 +69,8 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  For more information about how batch transformation works Amazon SageMaker, see <a
-    /// href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">How It
-    /// Works</a>. 
+    /// For more information about how batch transformation works, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">Batch
+    /// Transform</a>.
     /// </para>
     /// </summary>
     public partial class CreateTransformJobRequest : AmazonSageMakerRequest
@@ -97,8 +96,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// To enable the batch strategy, you must set <code>SplitType</code> to <code>Line</code>,
-        /// <code>RecordIO</code>, or <code>TFRecord</code>.
+        /// To enable the batch strategy, you must set the <code>SplitType</code> property of
+        /// the <a>DataProcessing</a> object to <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.
         /// </para>
         ///  
         /// <para>

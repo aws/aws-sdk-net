@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
         private string _containerHostname;
         private Dictionary<string, string> _environment = new Dictionary<string, string>();
         private string _image;
+        private ContainerMode _mode;
         private string _modelDataUrl;
         private string _modelPackageName;
 
@@ -113,6 +114,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetImage()
         {
             return this._image != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Mode. 
+        /// <para>
+        /// Specifies whether the container hosts a single model or multiple models.
+        /// </para>
+        /// </summary>
+        public ContainerMode Mode
+        {
+            get { return this._mode; }
+            set { this._mode = value; }
+        }
+
+        // Check to see if Mode property is set
+        internal bool IsSetMode()
+        {
+            return this._mode != null;
         }
 
         /// <summary>

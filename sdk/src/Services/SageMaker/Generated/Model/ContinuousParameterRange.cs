@@ -123,7 +123,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </dd> <dt>ReverseLogarithmic</dt> <dd> 
         /// <para>
-        /// Hyperparemeter tuning searches the values in the hyperparameter range by using a reverse
+        /// Hyperparameter tuning searches the values in the hyperparameter range by using a reverse
         /// logarithmic scale.
         /// </para>
         ///  
