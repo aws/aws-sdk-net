@@ -88,6 +88,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     unmarshalledObject.EstimatedMonthlySavingsAmount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EstimatedOnDemandCostWithCurrentCommitment", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EstimatedOnDemandCostWithCurrentCommitment = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EstimatedROI", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

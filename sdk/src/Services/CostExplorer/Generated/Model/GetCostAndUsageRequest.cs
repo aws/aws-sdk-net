@@ -75,11 +75,6 @@ namespace Amazon.CostExplorer.Model
         /// If <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>,
         /// either <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. 
         /// </para>
-        ///  
-        /// <para>
-        /// The <code>GetCostAndUsageRequest</code> operation supports only <code>DAILY</code>
-        /// and <code>MONTHLY</code> granularities.
-        /// </para>
         /// </summary>
         public Granularity Granularity
         {
@@ -107,7 +102,8 @@ namespace Amazon.CostExplorer.Model
         /// <para>
         /// Valid values are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
         /// <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>,
-        /// <code>SERVICE</code>, <code>TAGS</code>, <code>TENANCY</code>, and <code>USAGE_TYPE</code>.
+        /// <code>SERVICE</code>, <code>TAGS</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>,
+        /// and <code>USAGE_TYPE</code>.
         /// </para>
         /// </summary>
         public List<GroupDefinition> GroupBy

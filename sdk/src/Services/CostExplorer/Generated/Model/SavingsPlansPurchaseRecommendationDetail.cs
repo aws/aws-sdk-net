@@ -40,6 +40,7 @@ namespace Amazon.CostExplorer.Model
         private string _estimatedAverageUtilization;
         private string _estimatedMonthlySavingsAmount;
         private string _estimatedOnDemandCost;
+        private string _estimatedOnDemandCostWithCurrentCommitment;
         private string _estimatedROI;
         private string _estimatedSavingsAmount;
         private string _estimatedSavingsPercentage;
@@ -195,6 +196,25 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetEstimatedOnDemandCost()
         {
             return this._estimatedOnDemandCost != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EstimatedOnDemandCostWithCurrentCommitment. 
+        /// <para>
+        ///  The estimated On-Demand costs you would expect with no additional commitment, based
+        /// on your usage of the selected time period and the Savings Plans you own. 
+        /// </para>
+        /// </summary>
+        public string EstimatedOnDemandCostWithCurrentCommitment
+        {
+            get { return this._estimatedOnDemandCostWithCurrentCommitment; }
+            set { this._estimatedOnDemandCostWithCurrentCommitment = value; }
+        }
+
+        // Check to see if EstimatedOnDemandCostWithCurrentCommitment property is set
+        internal bool IsSetEstimatedOnDemandCostWithCurrentCommitment()
+        {
+            return this._estimatedOnDemandCostWithCurrentCommitment != null;
         }
 
         /// <summary>
