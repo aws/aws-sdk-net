@@ -1744,6 +1744,45 @@ namespace Amazon.S3
     }
 
     /// <summary>
+    /// Specifies whether existing object replication is enabled.
+    /// </summary>
+    public sealed class ExistingObjectReplicationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Enable the replication of existing objects
+        /// </summary>
+        public static readonly ExistingObjectReplicationStatus Enabled = new ExistingObjectReplicationStatus("Enabled");
+
+        /// <summary>
+        /// Disable the replication of existing objects
+        /// </summary>
+        public static readonly ExistingObjectReplicationStatus Disabled = new ExistingObjectReplicationStatus("Disabled");
+
+        private ExistingObjectReplicationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the ExistingObjectReplicationStatus instance for the string value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static ExistingObjectReplicationStatus FindValue(string value)
+        {
+            return FindValue<ExistingObjectReplicationStatus>(value);
+        }
+
+        /// <summary>
+        /// Converts the string to ExistingObjectReplicationStatus instance
+        /// </summary>
+        public static implicit operator ExistingObjectReplicationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Describes when fields in output should be surrounded with quotes.
     /// </summary>
     public sealed class QuoteFields : ConstantClass

@@ -33,6 +33,7 @@ namespace Amazon.S3.Model
         private ReplicationRuleStatus status;
         private ReplicationDestination destination;
         private SourceSelectionCriteria sourceSelectionCriteria;
+        private ExistingObjectReplication existingObjectReplication;
         private DeleteMarkerReplication deleteMarkerReplication;
 
         /// <summary>
@@ -171,6 +172,24 @@ namespace Amazon.S3.Model
         internal bool IsSetSourceSelectionCriteria()
         {
             return this.sourceSelectionCriteria != null;
+        }
+
+        /// <summary>
+        /// A container that specifies information about existing object replication. 
+        /// You can choose whether to enable or disable the replication of existing objects.
+        /// </summary>
+        public ExistingObjectReplication ExistingObjectReplication
+        {
+            get { return this.existingObjectReplication; }
+            set { this.existingObjectReplication = value; }
+        }
+        /// <summary>
+        /// Checks to see if ExistingObjectReplication property is set.
+        /// </summary>
+        /// <returns>true if ExistingObjectReplication property is set.</returns>
+        internal bool IsSetExistingObjectReplication()
+        {
+            return this.existingObjectReplication != null;
         }
 
         /// <summary>

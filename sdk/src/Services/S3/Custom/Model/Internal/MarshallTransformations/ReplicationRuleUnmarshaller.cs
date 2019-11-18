@@ -76,6 +76,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                         continue;
                     }
+                    if (context.TestExpression("ExistingObjectReplication", targetDepth))
+                    {
+                        rule.ExistingObjectReplication = ExistingObjectReplicationUnmarshaller.Instance.Unmarshall(context);
+
+                        continue;
+                    }
                     if (context.TestExpression("DeleteMarkerReplication", targetDepth))
                     {
                         rule.DeleteMarkerReplication = DeleteMarkerReplicationUnmarshaller.Instance.Unmarshall(context);

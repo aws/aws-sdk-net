@@ -131,6 +131,15 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                 }
                                 xmlWriter.WriteEndElement();
                             }
+                            if (rule.IsSetExistingObjectReplication())
+                            {
+                                xmlWriter.WriteStartElement("ExistingObjectReplication");
+                                if (rule.ExistingObjectReplication.IsSetExistingObjectReplicationStatus())
+                                {
+                                    xmlWriter.WriteElementString("Status", "", rule.ExistingObjectReplication.Status);
+                                }
+                                xmlWriter.WriteEndElement();
+                            }
                             if (rule.IsSetDeleteMarkerReplication())
                             {
                                 xmlWriter.WriteStartElement("DeleteMarkerReplication");
