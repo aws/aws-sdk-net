@@ -85,8 +85,14 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Value must be <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
-        /// <code>32</code>, <code>64</code>, <code>128</code>, or <code>256</code>.
+        /// For Aurora MySQL, valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>,
+        /// <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>,
+        /// and <code>256</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Aurora PostgreSQL, valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>,
+        /// <code>16</code>, <code>32</code>, <code>64</code>, <code>192</code>, and <code>384</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

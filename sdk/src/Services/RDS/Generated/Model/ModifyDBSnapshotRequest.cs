@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// Amazon RDS supports upgrading DB snapshots for MySQL and Oracle. 
+    /// Amazon RDS supports upgrading DB snapshots for MySQL, Oracle, and PostgreSQL. 
     /// </para>
     /// </summary>
     public partial class ModifyDBSnapshotRequest : AmazonRDSRequest
@@ -96,7 +96,16 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  <code>11.2.0.4.v11</code> (supported for 11.2.0.3 DB snapshots)
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>PostgreSQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// For the list of engine versions that are available for upgrading a DB snapshot, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion">
+        /// Upgrading the PostgreSQL DB Engine for Amazon RDS</a>. 
+        /// </para>
         /// </summary>
         public string EngineVersion
         {

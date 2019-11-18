@@ -734,6 +734,16 @@ namespace Amazon.RDS.Model
         /// protection is disabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>. 
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Amazon Aurora</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Not applicable. You can enable or disable deletion protection for the DB cluster.
+        /// For more information, see <code>CreateDBCluster</code>. DB instances in a DB cluster
+        /// can be deleted even when deletion protection is enabled for the DB cluster. 
+        /// </para>
         /// </summary>
         public bool DeletionProtection
         {

@@ -1780,6 +1780,12 @@ namespace Amazon.RDS
         /// you do not specify either the SourceType nor the SourceIdentifier, you are notified
         /// of events generated from all RDS sources belonging to your customer account.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// RDS event notification is only available for unencrypted SNS topics. If you specify
+        /// an encrypted SNS topic, event notifications aren't sent for the topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEventSubscription service method.</param>
         /// 
@@ -5419,7 +5425,7 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// Amazon RDS supports upgrading DB snapshots for MySQL and Oracle. 
+        /// Amazon RDS supports upgrading DB snapshots for MySQL, Oracle, and PostgreSQL. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBSnapshot service method.</param>
