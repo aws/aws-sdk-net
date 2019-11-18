@@ -139,6 +139,11 @@
     <pattern>^mw-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateOpsItemRequest.Category</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CreateOpsItemRequest.Description</property>
     <min>1</min>
     <max>1024</max>
@@ -147,6 +152,11 @@
     <property>Amazon.SimpleSystemsManagement.Model.CreateOpsItemRequest.Priority</property>
     <min>1</min>
     <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateOpsItemRequest.Severity</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CreateOpsItemRequest.Source</property>
@@ -182,6 +192,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CreateResourceDataSyncRequest.SyncName</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateResourceDataSyncRequest.SyncType</property>
     <min>1</min>
     <max>64</max>
   </property-value-rule>
@@ -261,6 +276,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DeleteResourceDataSyncRequest.SyncName</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeleteResourceDataSyncRequest.SyncType</property>
     <min>1</min>
     <max>64</max>
   </property-value-rule>
@@ -967,6 +987,11 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetOpsSummaryRequest.SyncName</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetParameterRequest.Name</property>
     <min>1</min>
     <max>2048</max>
@@ -1150,6 +1175,11 @@
     <property>Amazon.SimpleSystemsManagement.Model.ListResourceDataSyncRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ListResourceDataSyncRequest.SyncType</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ModifyDocumentPermissionRequest.Name</property>
@@ -1761,6 +1791,11 @@
     <pattern>^mi-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateOpsItemRequest.Category</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.UpdateOpsItemRequest.Description</property>
     <min>1</min>
     <max>1024</max>
@@ -1773,6 +1808,11 @@
     <property>Amazon.SimpleSystemsManagement.Model.UpdateOpsItemRequest.Priority</property>
     <min>1</min>
     <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateOpsItemRequest.Severity</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.UpdateOpsItemRequest.Title</property>
@@ -2868,7 +2908,7 @@
     <property>Amazon.SimpleSystemsManagement.Model.OpsAggregator.AggregatorType</property>
     <min>1</min>
     <max>20</max>
-    <pattern>^(range|count)</pattern>
+    <pattern>^(range|count|sum)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.OpsAggregator.TypeName</property>
@@ -2877,9 +2917,18 @@
     <pattern>^(AWS|Custom):.*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.OpsEntityItem.CaptureTime</property>
+    <pattern>^(20)[0-9][0-9]-(0[1-9]|1[012])-([12][0-9]|3[01]|0[1-9])(T)(2[0-3]|[0-1][0-9])(:[0-5][0-9])(:[0-5][0-9])(Z)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.OpsFilter.Key</property>
     <min>1</min>
     <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.OpsItem.Category</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.OpsItem.Description</property>
@@ -2896,6 +2945,11 @@
     <max>5</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.OpsItem.Severity</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.OpsItem.Source</property>
     <min>1</min>
     <max>64</max>
@@ -2904,6 +2958,11 @@
     <property>Amazon.SimpleSystemsManagement.Model.OpsItem.Title</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.OpsItemSummary.Category</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.OpsItemSummary.OpsItemId</property>
@@ -2915,6 +2974,11 @@
     <max>5</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.OpsItemSummary.Severity</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.OpsItemSummary.Source</property>
     <min>1</min>
     <max>64</max>
@@ -2923,6 +2987,12 @@
     <property>Amazon.SimpleSystemsManagement.Model.OpsItemSummary.Title</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.OpsResultAttribute.TypeName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^(AWS|Custom):.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.OutputSource.OutputSourceId</property>
@@ -3061,7 +3131,17 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ResourceDataSyncAwsOrganizationsSource.OrganizationSourceType</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ResourceDataSyncItem.SyncName</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ResourceDataSyncItem.SyncType</property>
     <min>1</min>
     <max>64</max>
   </property-value-rule>
@@ -3069,6 +3149,17 @@
     <property>Amazon.SimpleSystemsManagement.Model.ResourceDataSyncNotFoundException.SyncName</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ResourceDataSyncNotFoundException.SyncType</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ResourceDataSyncOrganizationalUnit.OrganizationalUnitId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^ou-[0-9a-z]{4,32}-[a-z0-9]{8,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ResourceDataSyncS3Destination.AWSKMSKeyARN</property>
@@ -3088,6 +3179,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ResourceDataSyncS3Destination.Region</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ResourceDataSyncSource.SourceType</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ResourceDataSyncSourceWithState.SourceType</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ResourceDataSyncSourceWithState.State</property>
     <min>1</min>
     <max>64</max>
   </property-value-rule>

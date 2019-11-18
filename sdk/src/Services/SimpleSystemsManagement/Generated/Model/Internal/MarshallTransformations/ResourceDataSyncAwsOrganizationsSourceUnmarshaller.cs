@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OpsEntityItem Object
+    /// Response Unmarshaller for ResourceDataSyncAwsOrganizationsSource Object
     /// </summary>  
-    public class OpsEntityItemUnmarshaller : IUnmarshaller<OpsEntityItem, XmlUnmarshallerContext>, IUnmarshaller<OpsEntityItem, JsonUnmarshallerContext>
+    public class ResourceDataSyncAwsOrganizationsSourceUnmarshaller : IUnmarshaller<ResourceDataSyncAwsOrganizationsSource, XmlUnmarshallerContext>, IUnmarshaller<ResourceDataSyncAwsOrganizationsSource, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OpsEntityItem IUnmarshaller<OpsEntityItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ResourceDataSyncAwsOrganizationsSource IUnmarshaller<ResourceDataSyncAwsOrganizationsSource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public OpsEntityItem Unmarshall(JsonUnmarshallerContext context)
+        public ResourceDataSyncAwsOrganizationsSource Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OpsEntityItem unmarshalledObject = new OpsEntityItem();
+            ResourceDataSyncAwsOrganizationsSource unmarshalledObject = new ResourceDataSyncAwsOrganizationsSource();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CaptureTime", targetDepth))
+                if (context.TestExpression("OrganizationalUnits", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CaptureTime = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ResourceDataSyncOrganizationalUnit, ResourceDataSyncOrganizationalUnitUnmarshaller>(ResourceDataSyncOrganizationalUnitUnmarshaller.Instance);
+                    unmarshalledObject.OrganizationalUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Content", targetDepth))
+                if (context.TestExpression("OrganizationSourceType", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Dictionary<string, string>, DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance));
-                    unmarshalledObject.Content = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OrganizationSourceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         }
 
 
-        private static OpsEntityItemUnmarshaller _instance = new OpsEntityItemUnmarshaller();        
+        private static ResourceDataSyncAwsOrganizationsSourceUnmarshaller _instance = new ResourceDataSyncAwsOrganizationsSourceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OpsEntityItemUnmarshaller Instance
+        public static ResourceDataSyncAwsOrganizationsSourceUnmarshaller Instance
         {
             get
             {

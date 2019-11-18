@@ -35,6 +35,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class OpsItem
     {
+        private string _category;
         private string _createdBy;
         private DateTime? _createdTime;
         private string _description;
@@ -45,10 +46,31 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _opsItemId;
         private int? _priority;
         private List<RelatedOpsItem> _relatedOpsItems = new List<RelatedOpsItem>();
+        private string _severity;
         private string _source;
         private OpsItemStatus _status;
         private string _title;
         private string _version;
+
+        /// <summary>
+        /// Gets and sets the property Category. 
+        /// <para>
+        /// An OpsItem category. Category options include: Availability, Cost, Performance, Recovery,
+        /// Security.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string Category
+        {
+            get { return this._category; }
+            set { this._category = value; }
+        }
+
+        // Check to see if Category property is set
+        internal bool IsSetCategory()
+        {
+            return this._category != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedBy. 
@@ -258,6 +280,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetRelatedOpsItems()
         {
             return this._relatedOpsItems != null && this._relatedOpsItems.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Severity. 
+        /// <para>
+        /// The severity of the OpsItem. Severity options range from 1 to 4.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string Severity
+        {
+            get { return this._severity; }
+            set { this._severity = value; }
+        }
+
+        // Check to see if Severity property is set
+        internal bool IsSetSeverity()
+        {
+            return this._severity != null;
         }
 
         /// <summary>

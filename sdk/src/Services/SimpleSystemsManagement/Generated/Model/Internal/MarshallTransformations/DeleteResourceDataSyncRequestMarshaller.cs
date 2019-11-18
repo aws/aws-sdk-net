@@ -74,6 +74,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SyncName);
                 }
 
+                if(publicRequest.IsSetSyncType())
+                {
+                    context.Writer.WritePropertyName("SyncType");
+                    context.Writer.Write(publicRequest.SyncType);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

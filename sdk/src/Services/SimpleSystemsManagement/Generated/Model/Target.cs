@@ -81,10 +81,30 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// (Maintenance window targets only) <code>Key=resource-groups:Name,Values=ProductionResourceGroup</code>
     /// 
     /// </para>
+    ///  
+    /// <para>
+    /// This example demonstrates how to target all resources in the resource group <b>ProductionResourceGroup</b>
+    /// in your maintenance window.
+    /// </para>
     ///  </li> <li> 
     /// <para>
     /// (Maintenance window targets only) <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i>
     /// </code> 
+    /// </para>
+    ///  
+    /// <para>
+    /// This example demonstrates how to target only Amazon EC2 instances and VPCs in your
+    /// maintenance window.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// (State Manager association targets only) <code>Key=InstanceIds,Values=<i>*</i> </code>
+    /// 
+    /// </para>
+    ///  
+    /// <para>
+    /// This example demonstrates how to target all managed instances in the AWS Region where
+    /// the association was created.
     /// </para>
     ///  </li> </ul> 
     /// <para>

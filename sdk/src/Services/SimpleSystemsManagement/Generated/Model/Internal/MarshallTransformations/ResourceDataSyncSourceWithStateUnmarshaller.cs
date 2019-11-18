@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OpsEntityItem Object
+    /// Response Unmarshaller for ResourceDataSyncSourceWithState Object
     /// </summary>  
-    public class OpsEntityItemUnmarshaller : IUnmarshaller<OpsEntityItem, XmlUnmarshallerContext>, IUnmarshaller<OpsEntityItem, JsonUnmarshallerContext>
+    public class ResourceDataSyncSourceWithStateUnmarshaller : IUnmarshaller<ResourceDataSyncSourceWithState, XmlUnmarshallerContext>, IUnmarshaller<ResourceDataSyncSourceWithState, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OpsEntityItem IUnmarshaller<OpsEntityItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ResourceDataSyncSourceWithState IUnmarshaller<ResourceDataSyncSourceWithState, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,45 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public OpsEntityItem Unmarshall(JsonUnmarshallerContext context)
+        public ResourceDataSyncSourceWithState Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OpsEntityItem unmarshalledObject = new OpsEntityItem();
+            ResourceDataSyncSourceWithState unmarshalledObject = new ResourceDataSyncSourceWithState();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CaptureTime", targetDepth))
+                if (context.TestExpression("AwsOrganizationsSource", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CaptureTime = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ResourceDataSyncAwsOrganizationsSourceUnmarshaller.Instance;
+                    unmarshalledObject.AwsOrganizationsSource = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Content", targetDepth))
+                if (context.TestExpression("IncludeFutureRegions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Dictionary<string, string>, DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance));
-                    unmarshalledObject.Content = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IncludeFutureRegions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SourceRegions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SourceRegions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SourceType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("State", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +100,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         }
 
 
-        private static OpsEntityItemUnmarshaller _instance = new OpsEntityItemUnmarshaller();        
+        private static ResourceDataSyncSourceWithStateUnmarshaller _instance = new ResourceDataSyncSourceWithStateUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OpsEntityItemUnmarshaller Instance
+        public static ResourceDataSyncSourceWithStateUnmarshaller Instance
         {
             get
             {

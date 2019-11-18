@@ -782,19 +782,41 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Creates a resource data sync configuration to a single bucket in Amazon S3. This is
-        /// an asynchronous operation that returns immediately. After a successful initial sync
-        /// is completed, the system continuously syncs data to the Amazon S3 bucket. To check
-        /// the status of the sync, use the <a>ListResourceDataSync</a>.
+        /// A resource data sync helps you view data from multiple sources in a single location.
+        /// Systems Manager offers two types of resource data sync: <code>SyncToDestination</code>
+        /// and <code>SyncFromSource</code>.
         /// 
         ///  
         /// <para>
-        /// By default, data is not encrypted in Amazon S3. We strongly recommend that you enable
-        /// encryption in Amazon S3 to ensure secure data storage. We also recommend that you
-        /// secure access to the Amazon S3 bucket by creating a restrictive bucket policy. For
-        /// more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
+        /// You can configure Systems Manager Inventory to use the <code>SyncToDestination</code>
+        /// type to synchronize Inventory data from multiple AWS Regions to a single Amazon S3
+        /// bucket. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
         /// Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// You can configure Systems Manager Explorer to use the <code>SyncToDestination</code>
+        /// type to synchronize operational work items (OpsItems) and operational data (OpsData)
+        /// from multiple AWS Regions to a single Amazon S3 bucket. You can also configure Explorer
+        /// to use the <code>SyncFromSource</code> type. This type synchronizes OpsItems and OpsData
+        /// from multiple AWS accounts and Regions by using AWS Organizations. For more information,
+        /// see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting
+        /// Up Explorer to Display Data from Multiple Accounts and Regions</a> in the <i>AWS Systems
+        /// Manager User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// A resource data sync is an asynchronous operation that returns immediately. After
+        /// a successful initial sync is completed, the system continuously syncs data. To check
+        /// the status of a sync, use the <a>ListResourceDataSync</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// By default, data is not encrypted in Amazon S3. We strongly recommend that you enable
+        /// encryption in Amazon S3 to ensure secure data storage. We also recommend that you
+        /// secure access to the Amazon S3 bucket by creating a restrictive bucket policy. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateResourceDataSync service method.</param>
         /// <param name="cancellationToken">
@@ -1168,9 +1190,8 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Deletes a Resource Data Sync configuration. After the configuration is deleted, changes
-        /// to inventory data on managed instances are no longer synced with the target Amazon
-        /// S3 bucket. Deleting a sync configuration does not delete data in the target Amazon
-        /// S3 bucket.
+        /// to data on managed instances are no longer synced to or from the target. Deleting
+        /// a sync configuration does not delete data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResourceDataSync service method.</param>
         /// <param name="cancellationToken">
@@ -1180,6 +1201,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the DeleteResourceDataSync service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncInvalidConfigurationException">
+        /// The specified sync configuration is invalid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncNotFoundException">
         /// The specified sync name was not found.
@@ -3009,6 +3033,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTypeNameException">
         /// The parameter type name is not valid.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncNotFoundException">
+        /// The specified sync name was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsSummary">REST API Reference for GetOpsSummary Operation</seealso>
         Task<GetOpsSummaryResponse> GetOpsSummaryAsync(GetOpsSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -3927,6 +3954,9 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncInvalidConfigurationException">
+        /// The specified sync configuration is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListResourceDataSync">REST API Reference for ListResourceDataSync Operation</seealso>
         Task<ListResourceDataSyncResponse> ListResourceDataSyncAsync(ListResourceDataSyncRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));

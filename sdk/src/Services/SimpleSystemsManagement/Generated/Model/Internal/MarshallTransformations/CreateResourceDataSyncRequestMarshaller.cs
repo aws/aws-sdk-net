@@ -85,6 +85,23 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SyncName);
                 }
 
+                if(publicRequest.IsSetSyncSource())
+                {
+                    context.Writer.WritePropertyName("SyncSource");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ResourceDataSyncSourceMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SyncSource, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSyncType())
+                {
+                    context.Writer.WritePropertyName("SyncType");
+                    context.Writer.Write(publicRequest.SyncType);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

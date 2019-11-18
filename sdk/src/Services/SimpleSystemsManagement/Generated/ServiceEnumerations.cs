@@ -2599,6 +2599,10 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         public static readonly OpsItemFilterKey AutomationId = new OpsItemFilterKey("AutomationId");
         /// <summary>
+        /// Constant Category for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey Category = new OpsItemFilterKey("Category");
+        /// <summary>
         /// Constant CreatedBy for OpsItemFilterKey
         /// </summary>
         public static readonly OpsItemFilterKey CreatedBy = new OpsItemFilterKey("CreatedBy");
@@ -2634,6 +2638,10 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant ResourceId for OpsItemFilterKey
         /// </summary>
         public static readonly OpsItemFilterKey ResourceId = new OpsItemFilterKey("ResourceId");
+        /// <summary>
+        /// Constant Severity for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey Severity = new OpsItemFilterKey("Severity");
         /// <summary>
         /// Constant Source for OpsItemFilterKey
         /// </summary>

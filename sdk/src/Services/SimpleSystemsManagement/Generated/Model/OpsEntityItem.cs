@@ -32,7 +32,26 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class OpsEntityItem
     {
+        private string _captureTime;
         private List<Dictionary<string, string>> _content = new List<Dictionary<string, string>>();
+
+        /// <summary>
+        /// Gets and sets the property CaptureTime. 
+        /// <para>
+        /// The time OpsItem data was captured.
+        /// </para>
+        /// </summary>
+        public string CaptureTime
+        {
+            get { return this._captureTime; }
+            set { this._captureTime = value; }
+        }
+
+        // Check to see if CaptureTime property is set
+        internal bool IsSetCaptureTime()
+        {
+            return this._captureTime != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Content. 

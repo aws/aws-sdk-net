@@ -30,13 +30,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the DeleteResourceDataSync operation.
     /// Deletes a Resource Data Sync configuration. After the configuration is deleted, changes
-    /// to inventory data on managed instances are no longer synced with the target Amazon
-    /// S3 bucket. Deleting a sync configuration does not delete data in the target Amazon
-    /// S3 bucket.
+    /// to data on managed instances are no longer synced to or from the target. Deleting
+    /// a sync configuration does not delete data.
     /// </summary>
     public partial class DeleteResourceDataSyncRequest : AmazonSimpleSystemsManagementRequest
     {
         private string _syncName;
+        private string _syncType;
 
         /// <summary>
         /// Gets and sets the property SyncName. 
@@ -55,6 +55,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetSyncName()
         {
             return this._syncName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SyncType. 
+        /// <para>
+        /// Specify the type of resource data sync to delete.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string SyncType
+        {
+            get { return this._syncType; }
+            set { this._syncType = value; }
+        }
+
+        // Check to see if SyncType property is set
+        internal bool IsSetSyncType()
+        {
+            return this._syncType != null;
         }
 
     }
