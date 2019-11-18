@@ -1,0 +1,143 @@
+/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the cloudformation-2010-05-15.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.CloudFormation.Model
+{
+    /// <summary>
+    /// Container for the parameters to the DeregisterType operation.
+    /// Removes a type or type version from active use in the CloudFormation registry. If
+    /// a type or type version is deregistered, it cannot be used in CloudFormation operations.
+    /// 
+    ///  
+    /// <para>
+    /// To deregister a type, you must individually deregister all registered versions of
+    /// that type. If a type has only a single registered version, deregistering that version
+    /// results in the type itself being deregistered. 
+    /// </para>
+    ///  
+    /// <para>
+    /// You cannot deregister the default version of a type, unless it is the only registered
+    /// version of that type, in which case the type itself is deregistered as well. 
+    /// </para>
+    /// </summary>
+    public partial class DeregisterTypeRequest : AmazonCloudFormationRequest
+    {
+        private string _arn;
+        private RegistryType _type;
+        private string _typeName;
+        private string _versionId;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the type.
+        /// </para>
+        ///  
+        /// <para>
+        /// Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The kind of type.
+        /// </para>
+        ///  
+        /// <para>
+        /// Currently the only valid value is <code>RESOURCE</code>.
+        /// </para>
+        /// </summary>
+        public RegistryType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TypeName. 
+        /// <para>
+        /// The name of the type.
+        /// </para>
+        ///  
+        /// <para>
+        /// Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=10, Max=196)]
+        public string TypeName
+        {
+            get { return this._typeName; }
+            set { this._typeName = value; }
+        }
+
+        // Check to see if TypeName property is set
+        internal bool IsSetTypeName()
+        {
+            return this._typeName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionId. 
+        /// <para>
+        /// The ID of a specific version of the type. The version ID is the value at the end of
+        /// the Amazon Resource Name (ARN) assigned to the type version when it is registered.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string VersionId
+        {
+            get { return this._versionId; }
+            set { this._versionId = value; }
+        }
+
+        // Check to see if VersionId property is set
+        internal bool IsSetVersionId()
+        {
+            return this._versionId != null;
+        }
+
+    }
+}

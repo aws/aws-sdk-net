@@ -419,6 +419,43 @@ namespace Amazon.CloudFormation
 
         #endregion
                 
+        #region  DeregisterType
+
+
+
+        /// <summary>
+        /// Removes a type or type version from active use in the CloudFormation registry. If
+        /// a type or type version is deregistered, it cannot be used in CloudFormation operations.
+        /// 
+        ///  
+        /// <para>
+        /// To deregister a type, you must individually deregister all registered versions of
+        /// that type. If a type has only a single registered version, deregistering that version
+        /// results in the type itself being deregistered. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot deregister the default version of a type, unless it is the only registered
+        /// version of that type, in which case the type itself is deregistered as well. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeregisterType service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.TypeNotFoundException">
+        /// The specified type does not exist in the CloudFormation registry.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeregisterType">REST API Reference for DeregisterType Operation</seealso>
+        Task<DeregisterTypeResponse> DeregisterTypeAsync(DeregisterTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeAccountLimits
 
 
@@ -745,6 +782,71 @@ namespace Amazon.CloudFormation
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackSetOperation">REST API Reference for DescribeStackSetOperation Operation</seealso>
         Task<DescribeStackSetOperationResponse> DescribeStackSetOperationAsync(DescribeStackSetOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeType
+
+
+
+        /// <summary>
+        /// Returns detailed information about a type that has been registered.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information
+        /// about that specific type version. Otherwise, it returns information about the default
+        /// type version.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeType service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.TypeNotFoundException">
+        /// The specified type does not exist in the CloudFormation registry.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeType">REST API Reference for DescribeType Operation</seealso>
+        Task<DescribeTypeResponse> DescribeTypeAsync(DescribeTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeTypeRegistration
+
+
+
+        /// <summary>
+        /// Returns information about a type's registration, including its current status and
+        /// type and version identifiers.
+        /// 
+        ///  
+        /// <para>
+        /// When you initiate a registration request using <code> <a>RegisterType</a> </code>,
+        /// you can then use <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress
+        /// of that registration request.
+        /// </para>
+        ///  
+        /// <para>
+        /// Once the registration request has completed, use <code> <a>DescribeType</a> </code>
+        /// to return detailed informaiton about a type.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTypeRegistration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTypeRegistration service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeTypeRegistration">REST API Reference for DescribeTypeRegistration Operation</seealso>
+        Task<DescribeTypeRegistrationResponse> DescribeTypeRegistrationAsync(DescribeTypeRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1212,6 +1314,148 @@ namespace Amazon.CloudFormation
 
         #endregion
                 
+        #region  ListTypeRegistrations
+
+
+
+        /// <summary>
+        /// Returns a list of registration tokens for the specified type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTypeRegistrations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTypeRegistrations service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypeRegistrations">REST API Reference for ListTypeRegistrations Operation</seealso>
+        Task<ListTypeRegistrationsResponse> ListTypeRegistrationsAsync(ListTypeRegistrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTypes
+
+
+
+        /// <summary>
+        /// Returns summary information about types that have been registered with CloudFormation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTypes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTypes service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypes">REST API Reference for ListTypes Operation</seealso>
+        Task<ListTypesResponse> ListTypesAsync(ListTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTypeVersions
+
+
+
+        /// <summary>
+        /// Returns summary information about the versions of a type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTypeVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTypeVersions service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypeVersions">REST API Reference for ListTypeVersions Operation</seealso>
+        Task<ListTypeVersionsResponse> ListTypeVersionsAsync(ListTypeVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RecordHandlerProgress
+
+
+
+        /// <summary>
+        /// Reports progress of a resource handler to CloudFormation.
+        /// 
+        ///  
+        /// <para>
+        /// Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation
+        /// CLI</a>. Do not use this API in your code.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RecordHandlerProgress service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RecordHandlerProgress service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.InvalidStateTransitionException">
+        /// Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation
+        /// CLI</a>. CloudFormation does not return this error to users.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.OperationStatusCheckFailedException">
+        /// Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation
+        /// CLI</a>. CloudFormation does not return this error to users.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RecordHandlerProgress">REST API Reference for RecordHandlerProgress Operation</seealso>
+        Task<RecordHandlerProgressResponse> RecordHandlerProgressAsync(RecordHandlerProgressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RegisterType
+
+
+
+        /// <summary>
+        /// Registers a type with the CloudFormation service. Registering a type makes it available
+        /// for use in CloudFormation templates in your AWS account, and includes:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Validating the resource schema
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Determining which handlers have been specified for the resource
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Making the resource type available for use in your account
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information on how to develop types and ready them for registeration, see
+        /// <a href="cloudformation-cli/latest/userguide/resource-types.html">Creating Resource
+        /// Providers</a> in the <i>CloudFormation CLI User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Once you have initiated a registration request using <code> <a>RegisterType</a> </code>,
+        /// you can use <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress
+        /// of the registration request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterType service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RegisterType">REST API Reference for RegisterType Operation</seealso>
+        Task<RegisterTypeResponse> RegisterTypeAsync(RegisterTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  SetStackPolicy
 
 
@@ -1227,6 +1471,31 @@ namespace Amazon.CloudFormation
         /// <returns>The response from the SetStackPolicy service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetStackPolicy">REST API Reference for SetStackPolicy Operation</seealso>
         Task<SetStackPolicyResponse> SetStackPolicyAsync(SetStackPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  SetTypeDefaultVersion
+
+
+
+        /// <summary>
+        /// Specify the default version of a type. The default version of a type will be used
+        /// in CloudFormation operations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetTypeDefaultVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SetTypeDefaultVersion service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.CFNRegistryException">
+        /// An error occurred during a CloudFormation registry operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.TypeNotFoundException">
+        /// The specified type does not exist in the CloudFormation registry.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetTypeDefaultVersion">REST API Reference for SetTypeDefaultVersion Operation</seealso>
+        Task<SetTypeDefaultVersionResponse> SetTypeDefaultVersionAsync(SetTypeDefaultVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
