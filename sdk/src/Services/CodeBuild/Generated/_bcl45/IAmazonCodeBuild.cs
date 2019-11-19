@@ -53,6 +53,10 @@ namespace Amazon.CodeBuild
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>BatchGetBuilds</code>: Gets information about one or more builds.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>BatchGetProjects</code>: Gets information about one or more build projects.
     /// A <i>build project</i> defines how AWS CodeBuild runs a build. This includes information
     /// such as where to get the source code to build, the build environment to use, the build
@@ -73,11 +77,12 @@ namespace Amazon.CodeBuild
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>UpdateWebhook</code>: Changes the settings of an existing webhook.
+    ///  <code>DeleteProject</code>: Deletes a build project.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DeleteProject</code>: Deletes a build project.
+    ///  <code>DeleteSourceCredentials</code>: Deletes a set of GitHub, GitHub Enterprise,
+    /// or Bitbucket source credentials.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -87,16 +92,13 @@ namespace Amazon.CodeBuild
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ListProjects</code>: Gets a list of build project names, with each build project
-    /// name representing a single build project.
+    ///  <code>ImportSourceCredentials</code>: Imports the source repository credentials for
+    /// an AWS CodeBuild project that has its source code stored in a GitHub, GitHub Enterprise,
+    /// or Bitbucket repository.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>UpdateProject</code>: Changes the settings of an existing build project.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>BatchGetBuilds</code>: Gets information about one or more builds.
+    ///  <code>InvalidateProjectCache</code>: Resets the cache for a project.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -110,6 +112,22 @@ namespace Amazon.CodeBuild
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>ListCuratedEnvironmentImages</code>: Gets information about Docker images that
+    /// are managed by AWS CodeBuild.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ListProjects</code>: Gets a list of build project names, with each build project
+    /// name representing a single build project.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ListSourceCredentials</code>: Returns a list of <code>SourceCredentialsInfo</code>
+    /// objects. Each <code>SourceCredentialsInfo</code> object includes the authentication
+    /// type, token ARN, and type of source provider for one set of credentials.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>StartBuild</code>: Starts running a build.
     /// </para>
     ///  </li> <li> 
@@ -118,25 +136,11 @@ namespace Amazon.CodeBuild
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ListCuratedEnvironmentImages</code>: Gets information about Docker images that
-    /// are managed by AWS CodeBuild.
+    ///  <code>UpdateProject</code>: Changes the settings of an existing build project.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DeleteSourceCredentials</code>: Deletes a set of GitHub, GitHub Enterprise,
-    /// or Bitbucket source credentials.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>ImportSourceCredentials</code>: Imports the source repository credentials for
-    /// an AWS CodeBuild project that has its source code stored in a GitHub, GitHub Enterprise,
-    /// or Bitbucket repository.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>ListSourceCredentials</code>: Returns a list of <code>SourceCredentialsInfo</code>
-    /// objects. Each <code>SourceCredentialsInfo</code> object includes the authentication
-    /// type, token ARN, and type of source provider for one set of credentials.
+    ///  <code>UpdateWebhook</code>: Changes the settings of an existing webhook.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -182,7 +186,7 @@ namespace Amazon.CodeBuild
 
 
         /// <summary>
-        /// Gets information about builds.
+        /// Gets information about one or more builds.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetBuilds service method.</param>
         /// 
@@ -196,7 +200,7 @@ namespace Amazon.CodeBuild
 
 
         /// <summary>
-        /// Gets information about builds.
+        /// Gets information about one or more builds.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetBuilds service method.</param>
         /// <param name="cancellationToken">
@@ -216,7 +220,7 @@ namespace Amazon.CodeBuild
 
 
         /// <summary>
-        /// Gets information about build projects.
+        /// Gets information about one or more build projects.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetProjects service method.</param>
         /// 
@@ -230,7 +234,7 @@ namespace Amazon.CodeBuild
 
 
         /// <summary>
-        /// Gets information about build projects.
+        /// Gets information about one or more build projects.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetProjects service method.</param>
         /// <param name="cancellationToken">

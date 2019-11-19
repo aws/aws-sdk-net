@@ -74,7 +74,32 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BUILD_GENERAL1_LARGE</code>: Use up to 15 GB memory and 8 vCPUs for builds.
+        ///  <code>BUILD_GENERAL1_LARGE</code>: Use up to 16 GB memory and 8 vCPUs for builds,
+        /// depending on your environment type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs, and 824 GB
+        /// of SSD storage for builds. This compute type supports Docker images up to 100 GB uncompressed.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  If you use <code>BUILD_GENERAL1_LARGE</code>: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  For environment type <code>LINUX_CONTAINER</code>, you can use up to 15 GB memory
+        /// and 8 vCPUs for builds. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory,
+        /// 32 vCPUs, and 4 NVIDIA Tesla V100 GPUs for builds.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  For environment type <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and
+        /// 8 vCPUs on ARM-based processors for builds.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -257,6 +282,28 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         /// The type of build environment to use for related builds.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The environment type <code>ARM_CONTAINER</code> is available only in regions US East
+        /// (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific (Mumbai),
+        /// Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code>
+        /// is available only in regions US East (N. Virginia), US East (N. Virginia), US West
+        /// (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific
+        /// (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China
+        /// (Beijing), and China (Ningxia).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions
+        /// US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central),
+        /// EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul),
+        /// Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China (Ningxia).
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public EnvironmentType Type

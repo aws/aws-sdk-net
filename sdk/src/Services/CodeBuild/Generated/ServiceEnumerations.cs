@@ -433,6 +433,10 @@ namespace Amazon.CodeBuild
     {
 
         /// <summary>
+        /// Constant BUILD_GENERAL1_2XLARGE for ComputeType
+        /// </summary>
+        public static readonly ComputeType BUILD_GENERAL1_2XLARGE = new ComputeType("BUILD_GENERAL1_2XLARGE");
+        /// <summary>
         /// Constant BUILD_GENERAL1_LARGE for ComputeType
         /// </summary>
         public static readonly ComputeType BUILD_GENERAL1_LARGE = new ComputeType("BUILD_GENERAL1_LARGE");
@@ -533,9 +537,17 @@ namespace Amazon.CodeBuild
     {
 
         /// <summary>
+        /// Constant ARM_CONTAINER for EnvironmentType
+        /// </summary>
+        public static readonly EnvironmentType ARM_CONTAINER = new EnvironmentType("ARM_CONTAINER");
+        /// <summary>
         /// Constant LINUX_CONTAINER for EnvironmentType
         /// </summary>
         public static readonly EnvironmentType LINUX_CONTAINER = new EnvironmentType("LINUX_CONTAINER");
+        /// <summary>
+        /// Constant LINUX_GPU_CONTAINER for EnvironmentType
+        /// </summary>
+        public static readonly EnvironmentType LINUX_GPU_CONTAINER = new EnvironmentType("LINUX_GPU_CONTAINER");
         /// <summary>
         /// Constant WINDOWS_CONTAINER for EnvironmentType
         /// </summary>
