@@ -92,7 +92,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property EndTimeUtc. 
         /// <para>
         /// The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling does
-        /// not perform the action after this time. 
+        /// not perform the action after this time.
         /// </para>
         /// </summary>
         public DateTime EndTimeUtc
@@ -255,7 +255,7 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling does
-        /// not perform the action after this time. 
+        /// not perform the action after this time.
         /// </para>
         /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +

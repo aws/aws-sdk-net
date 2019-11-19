@@ -28,13 +28,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Describes a launch template and overrides. 
+    /// Describes a launch template and overrides.
     /// 
     ///  
     /// <para>
     /// The overrides are used to override the instance type specified by the launch template
     /// with multiple instance types that can be used to launch On-Demand Instances and Spot
-    /// Instances. 
+    /// Instances.
+    /// </para>
+    ///  
+    /// <para>
+    /// When you update the launch template or overrides, existing Amazon EC2 instances continue
+    /// to run. When scale out occurs, Amazon EC2 Auto Scaling launches instances to match
+    /// the new settings. When scale in occurs, Amazon EC2 Auto Scaling terminates instances
+    /// according to the group's termination policies.
     /// </para>
     /// </summary>
     public partial class LaunchTemplate
@@ -46,7 +53,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property LaunchTemplateSpecification. 
         /// <para>
         /// The launch template to use. You must specify either the launch template ID or launch
-        /// template name in the request. 
+        /// template name in the request.
         /// </para>
         /// </summary>
         public LaunchTemplateSpecification LaunchTemplateSpecification
@@ -64,9 +71,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Overrides. 
         /// <para>
-        /// Any parameters that you specify override the same parameters in the launch template.
-        /// Currently, the only supported override is instance type. You must specify between
-        /// 2 and 20 overrides.
+        /// An optional setting. Any parameters that you specify override the same parameters
+        /// in the launch template. Currently, the only supported override is instance type. You
+        /// can specify between 1 and 20 instance types.
         /// </para>
         /// </summary>
         public List<LaunchTemplateOverrides> Overrides

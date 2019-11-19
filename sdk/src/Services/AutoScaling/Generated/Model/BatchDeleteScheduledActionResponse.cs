@@ -38,7 +38,6 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property FailedScheduledActions. 
         /// <para>
         /// The names of the scheduled actions that could not be deleted, including an error message.
-        /// 
         /// </para>
         /// </summary>
         public List<FailedScheduledUpdateGroupActionRequest> FailedScheduledActions

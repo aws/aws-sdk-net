@@ -36,6 +36,16 @@ namespace Amazon.AutoScaling.Model
     /// Instances, the maximum price to pay for Spot Instances, and how the Auto Scaling group
     /// allocates instance types to fulfill On-Demand and Spot capacity.
     /// </para>
+    ///  
+    /// <para>
+    /// When you update <code>SpotAllocationStrategy</code>, <code>SpotInstancePools</code>,
+    /// or <code>SpotMaxPrice</code>, this update action does not deploy any changes across
+    /// the running Amazon EC2 instances in the group. Your existing Spot Instances continue
+    /// to run as long as the maximum price for those instances is higher than the current
+    /// Spot price. When scale out occurs, Amazon EC2 Auto Scaling launches instances based
+    /// on the new settings. When scale in occurs, Amazon EC2 Auto Scaling terminates instances
+    /// according to the group's termination policies.
+    /// </para>
     /// </summary>
     public partial class InstancesDistribution
     {
@@ -49,7 +59,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property OnDemandAllocationStrategy. 
         /// <para>
-        /// Indicates how to allocate instance types to fulfill On-Demand capacity. 
+        /// Indicates how to allocate instance types to fulfill On-Demand capacity.
         /// </para>
         ///  
         /// <para>
@@ -58,7 +68,7 @@ namespace Amazon.AutoScaling.Model
         /// to define the launch priority of each instance type. The first instance type in the
         /// array is prioritized higher than the last. If all your On-Demand capacity cannot be
         /// fulfilled using your highest priority instance, then the Auto Scaling groups launches
-        /// the remaining capacity using the second priority instance type, and so on. 
+        /// the remaining capacity using the second priority instance type, and so on.
         /// </para>
         /// </summary>
         public string OnDemandAllocationStrategy
@@ -81,10 +91,17 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>0</code>. If you leave this parameter set to <code>0</code>,
-        /// On-Demand Instances are launched as a percentage of the Auto Scaling group's desired
-        /// capacity, per the <code>OnDemandPercentageAboveBaseCapacity</code> setting.
+        /// Default if not set is 0. If you leave it set to 0, On-Demand Instances are launched
+        /// as a percentage of the Auto Scaling group's desired capacity, per the <code>OnDemandPercentageAboveBaseCapacity</code>
+        /// setting.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// An update to this setting means a gradual replacement of instances to maintain the
+        /// specified number of On-Demand Instances for your base capacity. When replacing instances,
+        /// Amazon EC2 Auto Scaling launches new instances before terminating the old ones.
+        /// </para>
+        ///  </note>
         /// </summary>
         public int OnDemandBaseCapacity
         {
@@ -102,12 +119,23 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property OnDemandPercentageAboveBaseCapacity. 
         /// <para>
         /// Controls the percentages of On-Demand Instances and Spot Instances for your additional
-        /// capacity beyond <code>OnDemandBaseCapacity</code>. The range is 0–100.
+        /// capacity beyond <code>OnDemandBaseCapacity</code>.
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>100</code>. If you leave this parameter set to <code>100</code>,
-        /// the percentages are 100% for On-Demand Instances and 0% for Spot Instances. 
+        /// Default if not set is 100. If you leave it set to 100, the percentages are 100% for
+        /// On-Demand Instances and 0% for Spot Instances.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// An update to this setting means a gradual replacement of instances to maintain the
+        /// percentage of On-Demand Instances for your additional capacity above the base capacity.
+        /// When replacing instances, Amazon EC2 Auto Scaling launches new instances before terminating
+        /// the old ones.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Valid Range: Minimum value of 0. Maximum value of 100.
         /// </para>
         /// </summary>
         public int OnDemandPercentageAboveBaseCapacity
@@ -125,7 +153,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property SpotAllocationStrategy. 
         /// <para>
-        /// Indicates how to allocate instances across Spot Instance pools. 
+        /// Indicates how to allocate instances across Spot Instance pools.
         /// </para>
         ///  
         /// <para>
@@ -133,7 +161,7 @@ namespace Amazon.AutoScaling.Model
         /// instances using the Spot pools with the lowest price, and evenly allocates your instances
         /// across the number of Spot pools that you specify. If the allocation strategy is <code>capacity-optimized</code>,
         /// the Auto Scaling group launches instances using Spot pools that are optimally chosen
-        /// based on the available Spot capacity. 
+        /// based on the available Spot capacity.
         /// </para>
         ///  
         /// <para>
@@ -163,12 +191,15 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The number of Spot Instance pools across which to allocate your Spot Instances. The
         /// Spot pools are determined from the different instance types in the Overrides array
-        /// of <a>LaunchTemplate</a>. The range is 1–20. The default value is <code>2</code>.
-        /// 
+        /// of <a>LaunchTemplate</a>. Default if not set is 2.
         /// </para>
         ///  
         /// <para>
-        /// Valid only when the Spot allocation strategy is <code>lowest-price</code>. 
+        /// Used only when the Spot allocation strategy is <code>lowest-price</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Range: Minimum value of 1. Maximum value of 20.
         /// </para>
         /// </summary>
         public int SpotInstancePools

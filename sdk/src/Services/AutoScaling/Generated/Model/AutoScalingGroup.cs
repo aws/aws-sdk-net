@@ -45,6 +45,7 @@ namespace Amazon.AutoScaling.Model
         private string _launchConfigurationName;
         private LaunchTemplateSpecification _launchTemplate;
         private List<string> _loadBalancerNames = new List<string>();
+        private int? _maxInstanceLifetime;
         private int? _maxSize;
         private int? _minSize;
         private MixedInstancesPolicy _mixedInstancesPolicy;
@@ -306,6 +307,28 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaxInstanceLifetime. 
+        /// <para>
+        /// The maximum amount of time, in seconds, that an instance can be in service.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Range: Minimum value of 604800.
+        /// </para>
+        /// </summary>
+        public int MaxInstanceLifetime
+        {
+            get { return this._maxInstanceLifetime.GetValueOrDefault(); }
+            set { this._maxInstanceLifetime = value; }
+        }
+
+        // Check to see if MaxInstanceLifetime property is set
+        internal bool IsSetMaxInstanceLifetime()
+        {
+            return this._maxInstanceLifetime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxSize. 
         /// <para>
         /// The maximum size of the group.
@@ -346,7 +369,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MixedInstancesPolicy. 
         /// <para>
-        /// The mixed instances policy for the group. 
+        /// The mixed instances policy for the group.
         /// </para>
         /// </summary>
         public MixedInstancesPolicy MixedInstancesPolicy

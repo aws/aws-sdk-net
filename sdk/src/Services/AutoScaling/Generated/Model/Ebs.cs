@@ -76,7 +76,7 @@ namespace Amazon.AutoScaling.Model
         /// but you can specify a custom CMK when you create the snapshot. The ability to encrypt
         /// a snapshot during copying also allows you to apply a new CMK to an already-encrypted
         /// snapshot. Volumes restored from the resulting copy are only accessible using the new
-        /// CMK. 
+        /// CMK.
         /// </para>
         ///  
         /// <para>
@@ -135,7 +135,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property SnapshotId. 
         /// <para>
-        /// The snapshot ID of the volume to use. 
+        /// The snapshot ID of the volume to use.
         /// </para>
         ///  
         /// <para>
@@ -160,7 +160,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property VolumeSize. 
         /// <para>
-        /// The volume size, in Gibibytes (GiB). 
+        /// The volume size, in Gibibytes (GiB).
         /// </para>
         ///  
         /// <para>
@@ -204,7 +204,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code>
+        /// Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code>
         /// | <code>sc1</code> 
         /// </para>
         /// </summary>

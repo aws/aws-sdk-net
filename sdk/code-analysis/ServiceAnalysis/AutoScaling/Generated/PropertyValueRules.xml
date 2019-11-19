@@ -603,12 +603,22 @@
     <max>19</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AutoScaling.Model.AutoScalingInstanceDetails.InstanceType</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AutoScaling.Model.AutoScalingInstanceDetails.LaunchConfigurationName</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.AutoScalingInstanceDetails.LifecycleState</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.AutoScalingInstanceDetails.WeightedCapacity</property>
     <min>1</min>
     <max>32</max>
   </property-value-rule>
@@ -684,9 +694,19 @@
     <max>19</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AutoScaling.Model.Instance.InstanceType</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AutoScaling.Model.Instance.LaunchConfigurationName</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.Instance.WeightedCapacity</property>
+    <min>1</min>
+    <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.InstancesDistribution.OnDemandAllocationStrategy</property>
@@ -767,6 +787,11 @@
     <property>Amazon.AutoScaling.Model.LaunchTemplateOverrides.InstanceType</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.LaunchTemplateOverrides.WeightedCapacity</property>
+    <min>1</min>
+    <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.LaunchTemplateSpecification.LaunchTemplateId</property>

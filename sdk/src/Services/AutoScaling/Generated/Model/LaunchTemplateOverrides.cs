@@ -33,11 +33,12 @@ namespace Amazon.AutoScaling.Model
     public partial class LaunchTemplateOverrides
     {
         private string _instanceType;
+        private string _weightedCapacity;
 
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type. 
+        /// The instance type.
         /// </para>
         ///  
         /// <para>
@@ -56,6 +57,33 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WeightedCapacity. 
+        /// <para>
+        /// The number of capacity units, which gives the instance type a proportional weight
+        /// to other instance types. For example, larger instance types are generally weighted
+        /// more than smaller instance types. These are the same units that you chose to set the
+        /// desired capacity in terms of instances, or a performance attribute such as vCPUs,
+        /// memory, or I/O.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Range: Minimum value of 1. Maximum value of 999.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=32)]
+        public string WeightedCapacity
+        {
+            get { return this._weightedCapacity; }
+            set { this._weightedCapacity = value; }
+        }
+
+        // Check to see if WeightedCapacity property is set
+        internal bool IsSetWeightedCapacity()
+        {
+            return this._weightedCapacity != null;
         }
 
     }

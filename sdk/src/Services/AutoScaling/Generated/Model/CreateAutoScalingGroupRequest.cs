@@ -52,6 +52,7 @@ namespace Amazon.AutoScaling.Model
         private LaunchTemplateSpecification _launchTemplate;
         private List<LifecycleHookSpecification> _lifecycleHookSpecificationList = new List<LifecycleHookSpecification>();
         private List<string> _loadBalancerNames = new List<string>();
+        private int? _maxInstanceLifetime;
         private int? _maxSize;
         private int? _minSize;
         private MixedInstancesPolicy _mixedInstancesPolicy;
@@ -340,6 +341,28 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetLoadBalancerNames()
         {
             return this._loadBalancerNames != null && this._loadBalancerNames.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxInstanceLifetime. 
+        /// <para>
+        /// The maximum amount of time, in seconds, that an instance can be in service.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Range: Minimum value of 604800.
+        /// </para>
+        /// </summary>
+        public int MaxInstanceLifetime
+        {
+            get { return this._maxInstanceLifetime.GetValueOrDefault(); }
+            set { this._maxInstanceLifetime = value; }
+        }
+
+        // Check to see if MaxInstanceLifetime property is set
+        internal bool IsSetMaxInstanceLifetime()
+        {
+            return this._maxInstanceLifetime.HasValue; 
         }
 
         /// <summary>

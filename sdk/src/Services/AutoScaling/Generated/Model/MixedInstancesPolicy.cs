@@ -54,8 +54,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// If you leave this parameter unspecified when creating a mixed instances policy, the
-        /// default values are used.
+        /// If you leave this parameter unspecified, the value for each parameter in <code>InstancesDistribution</code>
+        /// uses a default value.
         /// </para>
         /// </summary>
         public InstancesDistribution InstancesDistribution

@@ -34,7 +34,7 @@ namespace Amazon.AutoScaling.Model
     ///  
     /// <para>
     /// When updating a scheduled scaling action, all optional parameters are left unchanged
-    /// if not specified. 
+    /// if not specified.
     /// </para>
     /// </summary>
     public partial class ScheduledUpdateGroupActionRequest

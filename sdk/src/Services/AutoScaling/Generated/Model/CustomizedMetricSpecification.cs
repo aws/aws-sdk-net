@@ -46,12 +46,12 @@ namespace Amazon.AutoScaling.Model
     /// <para>
     /// Choose a metric that changes proportionally with capacity. The value of the metric
     /// should increase or decrease in inverse proportion to the number of capacity units.
-    /// That is, the value of the metric should decrease when capacity increases. 
+    /// That is, the value of the metric should decrease when capacity increases.
     /// </para>
     ///  </li> </ul> 
     /// <para>
     /// For more information about CloudWatch, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon
-    /// CloudWatch Concepts</a>. 
+    /// CloudWatch Concepts</a>.
     /// </para>
     /// </summary>
     public partial class CustomizedMetricSpecification
