@@ -29,14 +29,21 @@ namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyListener operation.
-    /// Modifies the specified properties of the specified listener.
+    /// Replaces the specified properties of the specified listener. Any properties that you
+    /// do not specify remain unchanged.
     /// 
     ///  
     /// <para>
-    /// Any properties that you do not specify retain their current values. However, changing
-    /// the protocol from HTTPS to HTTP, or from TLS to TCP, removes the security policy and
-    /// default certificate properties. If you change the protocol from HTTP to HTTPS, or
-    /// from TCP to TLS, you must add the security policy and default certificate properties.
+    /// Changing the protocol from HTTPS to HTTP, or from TLS to TCP, removes the security
+    /// policy and default certificate properties. If you change the protocol from HTTP to
+    /// HTTPS, or from TCP to TLS, you must add the security policy and default certificate
+    /// properties.
+    /// </para>
+    ///  
+    /// <para>
+    /// To add an item to a list, remove an item from a list, or update an item in a list,
+    /// you must provide the entire list. For example, to add an action, specify a list with
+    /// the current actions plus the new action.
     /// </para>
     /// </summary>
     public partial class ModifyListenerRequest : AmazonElasticLoadBalancingV2Request
@@ -80,9 +87,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  
         /// <para>
-        /// If the action type is <code>forward</code>, you specify a target group. The protocol
-        /// of the target group must be HTTP or HTTPS for an Application Load Balancer. The protocol
-        /// of the target group must be TCP, TLS, UDP, or TCP_UDP for a Network Load Balancer.
+        /// If the action type is <code>forward</code>, you specify one or more target groups.
+        /// The protocol of the target group must be HTTP or HTTPS for an Application Load Balancer.
+        /// The protocol of the target group must be TCP, TLS, UDP, or TCP_UDP for a Network Load
+        /// Balancer.
         /// </para>
         ///  
         /// <para>
