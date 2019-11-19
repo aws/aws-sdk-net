@@ -102,6 +102,12 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         unmarshalledObject.RoleId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("RoleLastUsed", targetDepth))
+                    {
+                        var unmarshaller = RoleLastUsedUnmarshaller.Instance;
+                        unmarshalledObject.RoleLastUsed = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("RoleName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

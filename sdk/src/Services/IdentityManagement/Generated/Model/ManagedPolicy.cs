@@ -38,7 +38,7 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-    /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
     /// </para>
     /// </summary>
     public partial class ManagedPolicy
@@ -176,7 +176,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-        /// Identifiers</a> in the <i>Using IAM</i> guide.
+        /// Identifiers</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -224,7 +224,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-        /// Identifiers</a> in the <i>Using IAM</i> guide.
+        /// Identifiers</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=16, Max=128)]

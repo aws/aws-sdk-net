@@ -64,10 +64,10 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates Group with the parameterized properties
         /// </summary>
-        /// <param name="path">The path to the group. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </param>
+        /// <param name="path">The path to the group. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </param>
         /// <param name="groupName">The friendly name that identifies the group.</param>
-        /// <param name="groupId"> The stable and unique string identifying the group. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </param>
-        /// <param name="arn"> The Amazon Resource Name (ARN) specifying the group. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using IAM</i> guide. </param>
+        /// <param name="groupId"> The stable and unique string identifying the group. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </param>
+        /// <param name="arn"> The Amazon Resource Name (ARN) specifying the group. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </param>
         /// <param name="createDate">The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the group was created.</param>
         public Group(string path, string groupName, string groupId, string arn, DateTime createDate)
         {
@@ -83,7 +83,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         ///  The Amazon Resource Name (ARN) specifying the group. For more information about ARNs
         /// and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-        /// Identifiers</a> in the <i>Using IAM</i> guide. 
+        /// Identifiers</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -124,7 +124,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         ///  The stable and unique string identifying the group. For more information about IDs,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-        /// Identifiers</a> in the <i>Using IAM</i> guide. 
+        /// Identifiers</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=16, Max=128)]
@@ -163,7 +163,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Path. 
         /// <para>
         /// The path to the group. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-        /// Identifiers</a> in the <i>Using IAM</i> guide. 
+        /// Identifiers</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
