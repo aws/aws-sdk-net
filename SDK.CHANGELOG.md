@@ -1,3 +1,28 @@
+### 3.3.634.0 (2019-11-19 21:03 UTC)
+* AutoScaling (3.3.101.0)
+	* Amazon EC2 Auto Scaling now supports Instance Weighting and Max Instance Lifetime. Instance Weighting allows specifying the capacity units for each instance type included in the MixedInstancesPolicy and how they would contribute to your application's performance. Max Instance Lifetime allows specifying the maximum length of time that an instance can be in service. If any instances are approaching this limit, Amazon EC2 Auto Scaling gradually replaces them.
+* CloudFormation (3.3.103.0)
+	* This release of AWS CloudFormation StackSets enables users to detect drift on a stack set and the stack instances that belong to that stack set.
+* CodeBuild (3.3.104.0)
+	* Add support for ARM and GPU-enhanced build environments and a new SSD-backed Linux compute type with additional CPU and memory in CodeBuild
+* ConfigService (3.3.105.0)
+	* AWSConfig launches support for conformance packs. A conformance pack is a new resource type that allows you to package a collection of Config rules and remediation actions into a single entity. You can create and deploy conformance packs into your account or across all accounts in your organization
+* EC2 (3.3.136.0)
+	* This release adds support for RunInstances to specify the metadata options for new instances; adds a new API, ModifyInstanceMetadataOptions, which lets you modify the metadata options for a running or stopped instance; and adds support for CreateCustomerGateway to specify a device name.
+* ElasticLoadBalancingV2 (3.3.103.0)
+	* This release allows forward actions on Application Load Balancers to route requests to multiple target groups, based on the weight you specify for each target group.
+* IdentityManagement (3.3.104.0)
+	* IAM reports the timestamp when a role's credentials were last used to make an AWS request. This helps you identify unused roles and remove them confidently from your AWS accounts.
+* IoT (3.3.104.0)
+	* As part of this release, we are extending the capability of AWS IoT Rules Engine to send messages directly to customer's own web services/applications. Customers can now create topic rules with HTTP actions to route messages from IoT Core directly to URL's that they own. Ownership is proved by creating and confirming topic rule destinations.
+* Lambda (3.3.104.0)
+	* This release provides three new runtimes to support Node.js 12 (initially 12.13.0), Python 3.8 and Java 11.  
+* Core 3.3.103.65
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.633.0 (2019-11-18 19:17 UTC)
 * CloudFormation (3.3.102.0)
 	* This release introduces APIs for the CloudFormation Registry, a new service to submit and discover resource providers with which you can manage third-party resources natively in CloudFormation.
