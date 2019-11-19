@@ -455,19 +455,18 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For DeleteConfigRule API, AWS Config is deleting this rule. Try your request again
-        /// later.
+        /// For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule API, the rule is deleting your evaluation results. Try your request
+        /// For DeleteConfigRule, the rule is deleting your evaluation results. Try your request
         /// again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule API, a remediation action is associated with the rule and AWS
-        /// Config cannot delete this rule. Delete the remediation action associated with the
-        /// rule before deleting the rule and try your request again later.
+        /// For DeleteConfigRule, a remediation action is associated with the rule and AWS Config
+        /// cannot delete this rule. Delete the remediation action associated with the rule before
+        /// deleting the rule and try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -478,6 +477,16 @@ namespace Amazon.ConfigService
         /// <para>
         /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
         /// Try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation,
+        /// update, and deletion is in progress. Try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteConformancePack, a conformance pack creation, update, and deletion is in
+        /// progress. Try your request again later.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -577,6 +586,90 @@ namespace Amazon.ConfigService
             options.ResponseUnmarshaller = DeleteConfigurationRecorderResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteConfigurationRecorderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteConformancePack
+
+        internal virtual DeleteConformancePackResponse DeleteConformancePack(DeleteConformancePackRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConformancePackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConformancePackResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConformancePackResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified conformance pack and all the AWS Config rules and all evaluation
+        /// results within that conformance pack.
+        /// 
+        ///  
+        /// <para>
+        /// AWS Config sets the conformance pack to <code>DELETE_IN_PROGRESS</code> until the
+        /// deletion is complete. You cannot update a conformance pack while it is in this state.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConformancePack service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteConformancePack service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConformancePackException">
+        /// You specified one or more conformance packs that do not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
+        /// You see this exception in the following cases: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteConfigRule, the rule is deleting your evaluation results. Try your request
+        /// again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteConfigRule, a remediation action is associated with the rule and AWS Config
+        /// cannot delete this rule. Delete the remediation action associated with the rule before
+        /// deleting the rule and try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutConfigOrganizationRule, organization config rule deletion is in progress. Try
+        /// your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
+        /// Try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation,
+        /// update, and deletion is in progress. Try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteConformancePack, a conformance pack creation, update, and deletion is in
+        /// progress. Try your request again later.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConformancePack">REST API Reference for DeleteConformancePack Operation</seealso>
+        public virtual Task<DeleteConformancePackResponse> DeleteConformancePackAsync(DeleteConformancePackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConformancePackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConformancePackResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteConformancePackResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -693,19 +786,18 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For DeleteConfigRule API, AWS Config is deleting this rule. Try your request again
-        /// later.
+        /// For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule API, the rule is deleting your evaluation results. Try your request
+        /// For DeleteConfigRule, the rule is deleting your evaluation results. Try your request
         /// again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule API, a remediation action is associated with the rule and AWS
-        /// Config cannot delete this rule. Delete the remediation action associated with the
-        /// rule before deleting the rule and try your request again later.
+        /// For DeleteConfigRule, a remediation action is associated with the rule and AWS Config
+        /// cannot delete this rule. Delete the remediation action associated with the rule before
+        /// deleting the rule and try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -716,6 +808,16 @@ namespace Amazon.ConfigService
         /// <para>
         /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
         /// Try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation,
+        /// update, and deletion is in progress. Try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteConformancePack, a conformance pack creation, update, and deletion is in
+        /// progress. Try your request again later.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -769,8 +871,9 @@ namespace Amazon.ConfigService
         /// 
         ///  
         /// <para>
-        /// For all OrganizationConfigRule APIs, AWS Config throws an exception if APIs are called
-        /// from member accounts. All APIs must be called from organization master account.
+        /// For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws
+        /// an exception if APIs are called from member accounts. All APIs must be called from
+        /// organization master account.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
@@ -778,19 +881,18 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For DeleteConfigRule API, AWS Config is deleting this rule. Try your request again
-        /// later.
+        /// For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule API, the rule is deleting your evaluation results. Try your request
+        /// For DeleteConfigRule, the rule is deleting your evaluation results. Try your request
         /// again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule API, a remediation action is associated with the rule and AWS
-        /// Config cannot delete this rule. Delete the remediation action associated with the
-        /// rule before deleting the rule and try your request again later.
+        /// For DeleteConfigRule, a remediation action is associated with the rule and AWS Config
+        /// cannot delete this rule. Delete the remediation action associated with the rule before
+        /// deleting the rule and try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -802,6 +904,16 @@ namespace Amazon.ConfigService
         /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
         /// Try your request again later.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation,
+        /// update, and deletion is in progress. Try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteConformancePack, a conformance pack creation, update, and deletion is in
+        /// progress. Try your request again later.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteOrganizationConfigRule">REST API Reference for DeleteOrganizationConfigRule Operation</seealso>
@@ -812,6 +924,107 @@ namespace Amazon.ConfigService
             options.ResponseUnmarshaller = DeleteOrganizationConfigRuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteOrganizationConfigRuleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteOrganizationConformancePack
+
+        internal virtual DeleteOrganizationConformancePackResponse DeleteOrganizationConformancePack(DeleteOrganizationConformancePackRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteOrganizationConformancePackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOrganizationConformancePackResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteOrganizationConformancePackResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified organization conformance pack and all of the config rules and
+        /// remediation actions from all member accounts in that organization. Only a master account
+        /// can delete an organization conformance pack.
+        /// 
+        ///  
+        /// <para>
+        /// AWS Config sets the state of a conformance pack to DELETE_IN_PROGRESS until the deletion
+        /// is complete. You cannot update a conformance pack while it is in this state. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOrganizationConformancePack service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteOrganizationConformancePack service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConformancePackException">
+        /// AWS Config organization conformance pack that you passed in the filter does not exist.
+        /// 
+        ///  
+        /// <para>
+        /// For DeleteOrganizationConformancePack, you tried to delete an organization conformance
+        /// pack that does not exist.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
+        /// For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+        /// 
+        ///  
+        /// <para>
+        /// For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws
+        /// an exception if APIs are called from member accounts. All APIs must be called from
+        /// organization master account.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
+        /// You see this exception in the following cases: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteConfigRule, the rule is deleting your evaluation results. Try your request
+        /// again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteConfigRule, a remediation action is associated with the rule and AWS Config
+        /// cannot delete this rule. Delete the remediation action associated with the rule before
+        /// deleting the rule and try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutConfigOrganizationRule, organization config rule deletion is in progress. Try
+        /// your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
+        /// Try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation,
+        /// update, and deletion is in progress. Try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteConformancePack, a conformance pack creation, update, and deletion is in
+        /// progress. Try your request again later.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteOrganizationConformancePack">REST API Reference for DeleteOrganizationConformancePack Operation</seealso>
+        public virtual Task<DeleteOrganizationConformancePackResponse> DeleteOrganizationConformancePackAsync(DeleteOrganizationConformancePackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteOrganizationConformancePackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOrganizationConformancePackResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteOrganizationConformancePackResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1672,6 +1885,149 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  DescribeConformancePackCompliance
+
+        internal virtual DescribeConformancePackComplianceResponse DescribeConformancePackCompliance(DescribeConformancePackComplianceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConformancePackComplianceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConformancePackComplianceResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeConformancePackComplianceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns compliance information for each rule in that conformance pack.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You must provide exact rule names otherwise AWS Config cannot return evaluation results
+        /// due to insufficient data.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConformancePackCompliance service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeConformancePackCompliance service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleInConformancePackException">
+        /// AWS Config rule that you passed in the filter does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConformancePackException">
+        /// You specified one or more conformance packs that do not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePackCompliance">REST API Reference for DescribeConformancePackCompliance Operation</seealso>
+        public virtual Task<DescribeConformancePackComplianceResponse> DescribeConformancePackComplianceAsync(DescribeConformancePackComplianceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConformancePackComplianceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConformancePackComplianceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeConformancePackComplianceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeConformancePacks
+
+        internal virtual DescribeConformancePacksResponse DescribeConformancePacks(DescribeConformancePacksRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConformancePacksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConformancePacksResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeConformancePacksResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of one or more conformance packs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConformancePacks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeConformancePacks service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConformancePackException">
+        /// You specified one or more conformance packs that do not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePacks">REST API Reference for DescribeConformancePacks Operation</seealso>
+        public virtual Task<DescribeConformancePacksResponse> DescribeConformancePacksAsync(DescribeConformancePacksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConformancePacksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConformancePacksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeConformancePacksResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeConformancePackStatus
+
+        internal virtual DescribeConformancePackStatusResponse DescribeConformancePackStatus(DescribeConformancePackStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConformancePackStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConformancePackStatusResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeConformancePackStatusResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides one or more conformance packs deployment status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConformancePackStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeConformancePackStatus service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePackStatus">REST API Reference for DescribeConformancePackStatus Operation</seealso>
+        public virtual Task<DescribeConformancePackStatusResponse> DescribeConformancePackStatusAsync(DescribeConformancePackStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConformancePackStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConformancePackStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeConformancePackStatusResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeDeliveryChannels
 
         internal virtual DescribeDeliveryChannelsResponse DescribeDeliveryChannels()
@@ -1871,8 +2227,9 @@ namespace Amazon.ConfigService
         /// 
         ///  
         /// <para>
-        /// For all OrganizationConfigRule APIs, AWS Config throws an exception if APIs are called
-        /// from member accounts. All APIs must be called from organization master account.
+        /// For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws
+        /// an exception if APIs are called from member accounts. All APIs must be called from
+        /// organization master account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules">REST API Reference for DescribeOrganizationConfigRules Operation</seealso>
@@ -1941,8 +2298,9 @@ namespace Amazon.ConfigService
         /// 
         ///  
         /// <para>
-        /// For all OrganizationConfigRule APIs, AWS Config throws an exception if APIs are called
-        /// from member accounts. All APIs must be called from organization master account.
+        /// For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws
+        /// an exception if APIs are called from member accounts. All APIs must be called from
+        /// organization master account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRuleStatuses">REST API Reference for DescribeOrganizationConfigRuleStatuses Operation</seealso>
@@ -1953,6 +2311,152 @@ namespace Amazon.ConfigService
             options.ResponseUnmarshaller = DescribeOrganizationConfigRuleStatusesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeOrganizationConfigRuleStatusesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeOrganizationConformancePacks
+
+        internal virtual DescribeOrganizationConformancePacksResponse DescribeOrganizationConformancePacks(DescribeOrganizationConformancePacksRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOrganizationConformancePacksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOrganizationConformancePacksResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeOrganizationConformancePacksResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of organization conformance packs.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When you specify the limit and the next token, you receive a paginated response. Limit
+        /// and next token are not applicable if you specify organization conformance packs names.
+        /// They are only applicable, when you request all the organization conformance packs.
+        /// Only a master account can call this API.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationConformancePacks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeOrganizationConformancePacks service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConformancePackException">
+        /// AWS Config organization conformance pack that you passed in the filter does not exist.
+        /// 
+        ///  
+        /// <para>
+        /// For DeleteOrganizationConformancePack, you tried to delete an organization conformance
+        /// pack that does not exist.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
+        /// For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+        /// 
+        ///  
+        /// <para>
+        /// For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws
+        /// an exception if APIs are called from member accounts. All APIs must be called from
+        /// organization master account.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePacks">REST API Reference for DescribeOrganizationConformancePacks Operation</seealso>
+        public virtual Task<DescribeOrganizationConformancePacksResponse> DescribeOrganizationConformancePacksAsync(DescribeOrganizationConformancePacksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOrganizationConformancePacksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOrganizationConformancePacksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeOrganizationConformancePacksResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeOrganizationConformancePackStatuses
+
+        internal virtual DescribeOrganizationConformancePackStatusesResponse DescribeOrganizationConformancePackStatuses(DescribeOrganizationConformancePackStatusesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOrganizationConformancePackStatusesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOrganizationConformancePackStatusesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeOrganizationConformancePackStatusesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides organization conformance pack deployment status for an organization.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The status is not considered successful until organization conformance pack is successfully
+        /// deployed in all the member accounts with an exception of excluded accounts.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you specify the limit and the next token, you receive a paginated response. Limit
+        /// and next token are not applicable if you specify organization conformance pack names.
+        /// They are only applicable, when you request all the organization conformance packs.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only a master account can call this API.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationConformancePackStatuses service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeOrganizationConformancePackStatuses service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConformancePackException">
+        /// AWS Config organization conformance pack that you passed in the filter does not exist.
+        /// 
+        ///  
+        /// <para>
+        /// For DeleteOrganizationConformancePack, you tried to delete an organization conformance
+        /// pack that does not exist.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
+        /// For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+        /// 
+        ///  
+        /// <para>
+        /// For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws
+        /// an exception if APIs are called from member accounts. All APIs must be called from
+        /// organization master account.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePackStatuses">REST API Reference for DescribeOrganizationConformancePackStatuses Operation</seealso>
+        public virtual Task<DescribeOrganizationConformancePackStatusesResponse> DescribeOrganizationConformancePackStatusesAsync(DescribeOrganizationConformancePackStatusesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOrganizationConformancePackStatusesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOrganizationConformancePackStatusesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeOrganizationConformancePackStatusesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2568,6 +3072,102 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  GetConformancePackComplianceDetails
+
+        internal virtual GetConformancePackComplianceDetailsResponse GetConformancePackComplianceDetails(GetConformancePackComplianceDetailsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConformancePackComplianceDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConformancePackComplianceDetailsResponseUnmarshaller.Instance;
+
+            return Invoke<GetConformancePackComplianceDetailsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns compliance details of a conformance pack for all AWS resources that are monitered
+        /// by conformance pack.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConformancePackComplianceDetails service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConformancePackComplianceDetails service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleInConformancePackException">
+        /// AWS Config rule that you passed in the filter does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConformancePackException">
+        /// You specified one or more conformance packs that do not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetConformancePackComplianceDetails">REST API Reference for GetConformancePackComplianceDetails Operation</seealso>
+        public virtual Task<GetConformancePackComplianceDetailsResponse> GetConformancePackComplianceDetailsAsync(GetConformancePackComplianceDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConformancePackComplianceDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConformancePackComplianceDetailsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetConformancePackComplianceDetailsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetConformancePackComplianceSummary
+
+        internal virtual GetConformancePackComplianceSummaryResponse GetConformancePackComplianceSummary(GetConformancePackComplianceSummaryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConformancePackComplianceSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConformancePackComplianceSummaryResponseUnmarshaller.Instance;
+
+            return Invoke<GetConformancePackComplianceSummaryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConformancePackComplianceSummary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConformancePackComplianceSummary service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConformancePackException">
+        /// You specified one or more conformance packs that do not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetConformancePackComplianceSummary">REST API Reference for GetConformancePackComplianceSummary Operation</seealso>
+        public virtual Task<GetConformancePackComplianceSummaryResponse> GetConformancePackComplianceSummaryAsync(GetConformancePackComplianceSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConformancePackComplianceSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConformancePackComplianceSummaryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetConformancePackComplianceSummaryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetDiscoveredResourceCounts
 
         internal virtual GetDiscoveredResourceCountsResponse GetDiscoveredResourceCounts(GetDiscoveredResourceCountsRequest request)
@@ -2712,8 +3312,9 @@ namespace Amazon.ConfigService
         /// 
         ///  
         /// <para>
-        /// For all OrganizationConfigRule APIs, AWS Config throws an exception if APIs are called
-        /// from member accounts. All APIs must be called from organization master account.
+        /// For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws
+        /// an exception if APIs are called from member accounts. All APIs must be called from
+        /// organization master account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus">REST API Reference for GetOrganizationConfigRuleDetailedStatus Operation</seealso>
@@ -2724,6 +3325,72 @@ namespace Amazon.ConfigService
             options.ResponseUnmarshaller = GetOrganizationConfigRuleDetailedStatusResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetOrganizationConfigRuleDetailedStatusResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetOrganizationConformancePackDetailedStatus
+
+        internal virtual GetOrganizationConformancePackDetailedStatusResponse GetOrganizationConformancePackDetailedStatus(GetOrganizationConformancePackDetailedStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetOrganizationConformancePackDetailedStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOrganizationConformancePackDetailedStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetOrganizationConformancePackDetailedStatusResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns detailed status for each member account within an organization for a given
+        /// organization conformance pack.
+        /// 
+        ///  
+        /// <para>
+        /// Only a master account can call this API.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOrganizationConformancePackDetailedStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetOrganizationConformancePackDetailedStatus service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConformancePackException">
+        /// AWS Config organization conformance pack that you passed in the filter does not exist.
+        /// 
+        ///  
+        /// <para>
+        /// For DeleteOrganizationConformancePack, you tried to delete an organization conformance
+        /// pack that does not exist.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
+        /// For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+        /// 
+        ///  
+        /// <para>
+        /// For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws
+        /// an exception if APIs are called from member accounts. All APIs must be called from
+        /// organization master account.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConformancePackDetailedStatus">REST API Reference for GetOrganizationConformancePackDetailedStatus Operation</seealso>
+        public virtual Task<GetOrganizationConformancePackDetailedStatusResponse> GetOrganizationConformancePackDetailedStatusAsync(GetOrganizationConformancePackDetailedStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetOrganizationConformancePackDetailedStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOrganizationConformancePackDetailedStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetOrganizationConformancePackDetailedStatusResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3098,11 +3765,28 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For OrganizationConfigRule, organization config rule cannot be created because you
-        /// do not have permissions to call IAM <code>GetRole</code> action or create service
+        /// For PutOrganizationConfigRule, organization config rule cannot be created because
+        /// you do not have permissions to call IAM <code>GetRole</code> action or create a service
         /// linked role.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
+        /// be created becuase you do not have permissions: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To call IAM <code>GetRole</code> action or create a service linked role.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To read Amazon S3 bucket.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To create a rule and a stack.
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
         /// One or more of the specified parameters are invalid. Verify that your parameters are
@@ -3121,19 +3805,18 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For DeleteConfigRule API, AWS Config is deleting this rule. Try your request again
-        /// later.
+        /// For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule API, the rule is deleting your evaluation results. Try your request
+        /// For DeleteConfigRule, the rule is deleting your evaluation results. Try your request
         /// again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule API, a remediation action is associated with the rule and AWS
-        /// Config cannot delete this rule. Delete the remediation action associated with the
-        /// rule before deleting the rule and try your request again later.
+        /// For DeleteConfigRule, a remediation action is associated with the rule and AWS Config
+        /// cannot delete this rule. Delete the remediation action associated with the rule before
+        /// deleting the rule and try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3144,6 +3827,16 @@ namespace Amazon.ConfigService
         /// <para>
         /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
         /// Try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation,
+        /// update, and deletion is in progress. Try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteConformancePack, a conformance pack creation, update, and deletion is in
+        /// progress. Try your request again later.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -3220,8 +3913,9 @@ namespace Amazon.ConfigService
         /// 
         ///  
         /// <para>
-        /// For all OrganizationConfigRule APIs, AWS Config throws an exception if APIs are called
-        /// from member accounts. All APIs must be called from organization master account.
+        /// For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws
+        /// an exception if APIs are called from member accounts. All APIs must be called from
+        /// organization master account.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAllFeaturesNotEnabledException">
@@ -3300,6 +3994,144 @@ namespace Amazon.ConfigService
             options.ResponseUnmarshaller = PutConfigurationRecorderResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutConfigurationRecorderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutConformancePack
+
+        internal virtual PutConformancePackResponse PutConformancePack(PutConformancePackRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConformancePackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConformancePackResponseUnmarshaller.Instance;
+
+            return Invoke<PutConformancePackResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates or updates a conformance pack. A conformance pack is a collection of AWS Config
+        /// rules that can be easily deployed in an account and a region.
+        /// 
+        ///  
+        /// <para>
+        /// This API creates a service linked role <code>AWSServiceRoleForConfigConforms</code>
+        /// in your account. The service linked role is created only when the role does not exist
+        /// in your account. AWS Config verifies the existence of role with <code>GetRole</code>
+        /// action.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code>
+        /// parameter, but not both. If you provide both AWS Config uses the <code>TemplateS3Uri</code>
+        /// parameter and ignores the <code>TemplateBody</code> parameter.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutConformancePack service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutConformancePack service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.ConformancePackTemplateValidationException">
+        /// You have specified a template that is not valid or supported.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InsufficientPermissionsException">
+        /// Indicates one of the following errors:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS
+        /// Config lacks permissions to perform the config:Put* action.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN,
+        /// and check the function's permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutOrganizationConfigRule, organization config rule cannot be created because
+        /// you do not have permissions to call IAM <code>GetRole</code> action or create a service
+        /// linked role.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
+        /// be created becuase you do not have permissions: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To call IAM <code>GetRole</code> action or create a service linked role.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To read Amazon S3 bucket.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To create a rule and a stack.
+        /// </para>
+        ///  </li> </ul> </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfConformancePacksExceededException">
+        /// You have reached the limit (20) of the number of conformance packs in an account.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
+        /// You see this exception in the following cases: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteConfigRule, the rule is deleting your evaluation results. Try your request
+        /// again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteConfigRule, a remediation action is associated with the rule and AWS Config
+        /// cannot delete this rule. Delete the remediation action associated with the rule before
+        /// deleting the rule and try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutConfigOrganizationRule, organization config rule deletion is in progress. Try
+        /// your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
+        /// Try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation,
+        /// update, and deletion is in progress. Try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteConformancePack, a conformance pack creation, update, and deletion is in
+        /// progress. Try your request again later.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConformancePack">REST API Reference for PutConformancePack Operation</seealso>
+        public virtual Task<PutConformancePackResponse> PutConformancePackAsync(PutConformancePackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConformancePackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConformancePackResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutConformancePackResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3492,11 +4324,28 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For OrganizationConfigRule, organization config rule cannot be created because you
-        /// do not have permissions to call IAM <code>GetRole</code> action or create service
+        /// For PutOrganizationConfigRule, organization config rule cannot be created because
+        /// you do not have permissions to call IAM <code>GetRole</code> action or create a service
         /// linked role.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
+        /// be created becuase you do not have permissions: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To call IAM <code>GetRole</code> action or create a service linked role.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To read Amazon S3 bucket.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To create a rule and a stack.
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
         /// One or more of the specified parameters are invalid. Verify that your parameters are
@@ -3513,8 +4362,9 @@ namespace Amazon.ConfigService
         /// 
         ///  
         /// <para>
-        /// For all OrganizationConfigRule APIs, AWS Config throws an exception if APIs are called
-        /// from member accounts. All APIs must be called from organization master account.
+        /// For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws
+        /// an exception if APIs are called from member accounts. All APIs must be called from
+        /// organization master account.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAllFeaturesNotEnabledException">
@@ -3526,19 +4376,18 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For DeleteConfigRule API, AWS Config is deleting this rule. Try your request again
-        /// later.
+        /// For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule API, the rule is deleting your evaluation results. Try your request
+        /// For DeleteConfigRule, the rule is deleting your evaluation results. Try your request
         /// again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule API, a remediation action is associated with the rule and AWS
-        /// Config cannot delete this rule. Delete the remediation action associated with the
-        /// rule before deleting the rule and try your request again later.
+        /// For DeleteConfigRule, a remediation action is associated with the rule and AWS Config
+        /// cannot delete this rule. Delete the remediation action associated with the rule before
+        /// deleting the rule and try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3549,6 +4398,16 @@ namespace Amazon.ConfigService
         /// <para>
         /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
         /// Try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation,
+        /// update, and deletion is in progress. Try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteConformancePack, a conformance pack creation, update, and deletion is in
+        /// progress. Try your request again later.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -3563,6 +4422,165 @@ namespace Amazon.ConfigService
             options.ResponseUnmarshaller = PutOrganizationConfigRuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutOrganizationConfigRuleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutOrganizationConformancePack
+
+        internal virtual PutOrganizationConformancePackResponse PutOrganizationConformancePack(PutOrganizationConformancePackRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutOrganizationConformancePackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutOrganizationConformancePackResponseUnmarshaller.Instance;
+
+            return Invoke<PutOrganizationConformancePackResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deploys conformance packs across member accounts in an AWS Organization.
+        /// 
+        ///  
+        /// <para>
+        /// This API enables organization service access through the <code>EnableAWSServiceAccess</code>
+        /// action and creates a service linked role AWSServiceRoleForConfigMultiAccountSetup
+        /// in the master account of your organization. The service linked role is created only
+        /// when the role does not exist in the master account. AWS Config verifies the existence
+        /// of role with GetRole action. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The SPN is <code>config-multiaccountsetup.amazonaws.com</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code>
+        /// parameter, but not both. If you provide both AWS Config uses the <code>TemplateS3Uri</code>
+        /// parameter and ignores the <code>TemplateBody</code> parameter.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutOrganizationConformancePack service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutOrganizationConformancePack service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InsufficientPermissionsException">
+        /// Indicates one of the following errors:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS
+        /// Config lacks permissions to perform the config:Put* action.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN,
+        /// and check the function's permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutOrganizationConfigRule, organization config rule cannot be created because
+        /// you do not have permissions to call IAM <code>GetRole</code> action or create a service
+        /// linked role.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
+        /// be created becuase you do not have permissions: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To call IAM <code>GetRole</code> action or create a service linked role.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To read Amazon S3 bucket.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To create a rule and a stack.
+        /// </para>
+        ///  </li> </ul> </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfOrganizationConformancePacksExceededException">
+        /// You have reached the limit (10) of the number of organization conformance packs in
+        /// an account.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoAvailableOrganizationException">
+        /// Organization is no longer available.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
+        /// For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+        /// 
+        ///  
+        /// <para>
+        /// For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws
+        /// an exception if APIs are called from member accounts. All APIs must be called from
+        /// organization master account.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.OrganizationAllFeaturesNotEnabledException">
+        /// AWS Config resource cannot be created because your organization does not have all
+        /// features enabled.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.OrganizationConformancePackTemplateValidationException">
+        /// You have specified a template that is not valid or supported.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
+        /// You see this exception in the following cases: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteConfigRule, the rule is deleting your evaluation results. Try your request
+        /// again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteConfigRule, a remediation action is associated with the rule and AWS Config
+        /// cannot delete this rule. Delete the remediation action associated with the rule before
+        /// deleting the rule and try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutConfigOrganizationRule, organization config rule deletion is in progress. Try
+        /// your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
+        /// Try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation,
+        /// update, and deletion is in progress. Try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteConformancePack, a conformance pack creation, update, and deletion is in
+        /// progress. Try your request again later.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConformancePack">REST API Reference for PutOrganizationConformancePack Operation</seealso>
+        public virtual Task<PutOrganizationConformancePackResponse> PutOrganizationConformancePackAsync(PutOrganizationConformancePackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutOrganizationConformancePackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutOrganizationConformancePackResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutOrganizationConformancePackResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3608,11 +4626,28 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For OrganizationConfigRule, organization config rule cannot be created because you
-        /// do not have permissions to call IAM <code>GetRole</code> action or create service
+        /// For PutOrganizationConfigRule, organization config rule cannot be created because
+        /// you do not have permissions to call IAM <code>GetRole</code> action or create a service
         /// linked role.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
+        /// be created becuase you do not have permissions: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To call IAM <code>GetRole</code> action or create a service linked role.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To read Amazon S3 bucket.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To create a rule and a stack.
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
         /// One or more of the specified parameters are invalid. Verify that your parameters are
@@ -3869,19 +4904,18 @@ namespace Amazon.ConfigService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For DeleteConfigRule API, AWS Config is deleting this rule. Try your request again
-        /// later.
+        /// For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule API, the rule is deleting your evaluation results. Try your request
+        /// For DeleteConfigRule, the rule is deleting your evaluation results. Try your request
         /// again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteConfigRule API, a remediation action is associated with the rule and AWS
-        /// Config cannot delete this rule. Delete the remediation action associated with the
-        /// rule before deleting the rule and try your request again later.
+        /// For DeleteConfigRule, a remediation action is associated with the rule and AWS Config
+        /// cannot delete this rule. Delete the remediation action associated with the rule before
+        /// deleting the rule and try your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3892,6 +4926,16 @@ namespace Amazon.ConfigService
         /// <para>
         /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
         /// Try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation,
+        /// update, and deletion is in progress. Try your request again later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DeleteConformancePack, a conformance pack creation, update, and deletion is in
+        /// progress. Try your request again later.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -4030,11 +5074,28 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For OrganizationConfigRule, organization config rule cannot be created because you
-        /// do not have permissions to call IAM <code>GetRole</code> action or create service
+        /// For PutOrganizationConfigRule, organization config rule cannot be created because
+        /// you do not have permissions to call IAM <code>GetRole</code> action or create a service
         /// linked role.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
+        /// be created becuase you do not have permissions: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To call IAM <code>GetRole</code> action or create a service linked role.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To read Amazon S3 bucket.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To create a rule and a stack.
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
         /// One or more of the specified parameters are invalid. Verify that your parameters are

@@ -407,6 +407,118 @@ namespace Amazon.ConfigService
 
 
     /// <summary>
+    /// Constants used for properties of type ConformancePackComplianceType.
+    /// </summary>
+    public class ConformancePackComplianceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLIANT for ConformancePackComplianceType
+        /// </summary>
+        public static readonly ConformancePackComplianceType COMPLIANT = new ConformancePackComplianceType("COMPLIANT");
+        /// <summary>
+        /// Constant NON_COMPLIANT for ConformancePackComplianceType
+        /// </summary>
+        public static readonly ConformancePackComplianceType NON_COMPLIANT = new ConformancePackComplianceType("NON_COMPLIANT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConformancePackComplianceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConformancePackComplianceType FindValue(string value)
+        {
+            return FindValue<ConformancePackComplianceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConformancePackComplianceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConformancePackState.
+    /// </summary>
+    public class ConformancePackState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_COMPLETE for ConformancePackState
+        /// </summary>
+        public static readonly ConformancePackState CREATE_COMPLETE = new ConformancePackState("CREATE_COMPLETE");
+        /// <summary>
+        /// Constant CREATE_FAILED for ConformancePackState
+        /// </summary>
+        public static readonly ConformancePackState CREATE_FAILED = new ConformancePackState("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATE_IN_PROGRESS for ConformancePackState
+        /// </summary>
+        public static readonly ConformancePackState CREATE_IN_PROGRESS = new ConformancePackState("CREATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant DELETE_FAILED for ConformancePackState
+        /// </summary>
+        public static readonly ConformancePackState DELETE_FAILED = new ConformancePackState("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for ConformancePackState
+        /// </summary>
+        public static readonly ConformancePackState DELETE_IN_PROGRESS = new ConformancePackState("DELETE_IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConformancePackState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConformancePackState FindValue(string value)
+        {
+            return FindValue<ConformancePackState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConformancePackState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeliveryStatus.
     /// </summary>
     public class DeliveryStatus : ConstantClass
@@ -752,6 +864,162 @@ namespace Amazon.ConfigService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OrganizationConfigRuleTriggerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OrganizationResourceDetailedStatus.
+    /// </summary>
+    public class OrganizationResourceDetailedStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_FAILED for OrganizationResourceDetailedStatus
+        /// </summary>
+        public static readonly OrganizationResourceDetailedStatus CREATE_FAILED = new OrganizationResourceDetailedStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATE_IN_PROGRESS for OrganizationResourceDetailedStatus
+        /// </summary>
+        public static readonly OrganizationResourceDetailedStatus CREATE_IN_PROGRESS = new OrganizationResourceDetailedStatus("CREATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant CREATE_SUCCESSFUL for OrganizationResourceDetailedStatus
+        /// </summary>
+        public static readonly OrganizationResourceDetailedStatus CREATE_SUCCESSFUL = new OrganizationResourceDetailedStatus("CREATE_SUCCESSFUL");
+        /// <summary>
+        /// Constant DELETE_FAILED for OrganizationResourceDetailedStatus
+        /// </summary>
+        public static readonly OrganizationResourceDetailedStatus DELETE_FAILED = new OrganizationResourceDetailedStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for OrganizationResourceDetailedStatus
+        /// </summary>
+        public static readonly OrganizationResourceDetailedStatus DELETE_IN_PROGRESS = new OrganizationResourceDetailedStatus("DELETE_IN_PROGRESS");
+        /// <summary>
+        /// Constant DELETE_SUCCESSFUL for OrganizationResourceDetailedStatus
+        /// </summary>
+        public static readonly OrganizationResourceDetailedStatus DELETE_SUCCESSFUL = new OrganizationResourceDetailedStatus("DELETE_SUCCESSFUL");
+        /// <summary>
+        /// Constant UPDATE_FAILED for OrganizationResourceDetailedStatus
+        /// </summary>
+        public static readonly OrganizationResourceDetailedStatus UPDATE_FAILED = new OrganizationResourceDetailedStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATE_IN_PROGRESS for OrganizationResourceDetailedStatus
+        /// </summary>
+        public static readonly OrganizationResourceDetailedStatus UPDATE_IN_PROGRESS = new OrganizationResourceDetailedStatus("UPDATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant UPDATE_SUCCESSFUL for OrganizationResourceDetailedStatus
+        /// </summary>
+        public static readonly OrganizationResourceDetailedStatus UPDATE_SUCCESSFUL = new OrganizationResourceDetailedStatus("UPDATE_SUCCESSFUL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OrganizationResourceDetailedStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrganizationResourceDetailedStatus FindValue(string value)
+        {
+            return FindValue<OrganizationResourceDetailedStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrganizationResourceDetailedStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OrganizationResourceStatus.
+    /// </summary>
+    public class OrganizationResourceStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_FAILED for OrganizationResourceStatus
+        /// </summary>
+        public static readonly OrganizationResourceStatus CREATE_FAILED = new OrganizationResourceStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATE_IN_PROGRESS for OrganizationResourceStatus
+        /// </summary>
+        public static readonly OrganizationResourceStatus CREATE_IN_PROGRESS = new OrganizationResourceStatus("CREATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant CREATE_SUCCESSFUL for OrganizationResourceStatus
+        /// </summary>
+        public static readonly OrganizationResourceStatus CREATE_SUCCESSFUL = new OrganizationResourceStatus("CREATE_SUCCESSFUL");
+        /// <summary>
+        /// Constant DELETE_FAILED for OrganizationResourceStatus
+        /// </summary>
+        public static readonly OrganizationResourceStatus DELETE_FAILED = new OrganizationResourceStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for OrganizationResourceStatus
+        /// </summary>
+        public static readonly OrganizationResourceStatus DELETE_IN_PROGRESS = new OrganizationResourceStatus("DELETE_IN_PROGRESS");
+        /// <summary>
+        /// Constant DELETE_SUCCESSFUL for OrganizationResourceStatus
+        /// </summary>
+        public static readonly OrganizationResourceStatus DELETE_SUCCESSFUL = new OrganizationResourceStatus("DELETE_SUCCESSFUL");
+        /// <summary>
+        /// Constant UPDATE_FAILED for OrganizationResourceStatus
+        /// </summary>
+        public static readonly OrganizationResourceStatus UPDATE_FAILED = new OrganizationResourceStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATE_IN_PROGRESS for OrganizationResourceStatus
+        /// </summary>
+        public static readonly OrganizationResourceStatus UPDATE_IN_PROGRESS = new OrganizationResourceStatus("UPDATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant UPDATE_SUCCESSFUL for OrganizationResourceStatus
+        /// </summary>
+        public static readonly OrganizationResourceStatus UPDATE_SUCCESSFUL = new OrganizationResourceStatus("UPDATE_SUCCESSFUL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OrganizationResourceStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrganizationResourceStatus FindValue(string value)
+        {
+            return FindValue<OrganizationResourceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrganizationResourceStatus(string value)
         {
             return FindValue(value);
         }
