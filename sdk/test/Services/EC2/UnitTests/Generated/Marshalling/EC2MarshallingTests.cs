@@ -6790,6 +6790,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void ModifyInstanceMetadataOptionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyInstanceMetadataOptions");
+
+            var request = InstantiateClassGenerator.Execute<ModifyInstanceMetadataOptionsRequest>();
+            var marshaller = new ModifyInstanceMetadataOptionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ModifyInstanceMetadataOptionsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyInstanceMetadataOptionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void ModifyInstancePlacementMarshallTest()
         {
             var operation = service_model.FindOperation("ModifyInstancePlacement");

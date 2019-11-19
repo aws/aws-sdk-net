@@ -3033,11 +3033,9 @@ namespace Amazon.EC2
         /// </para>
         ///  <important> 
         /// <para>
-        /// You cannot create more than one customer gateway with the same VPN type, IP address,
-        /// and BGP ASN parameter values. If you run an identical request more than one time,
-        /// the first request creates the customer gateway, and subsequent requests return information
-        /// about the existing customer gateway. The subsequent requests do not create new customer
-        /// gateway resources.
+        /// To create more than one customer gateway with the same VPN type, IP address, and BGP
+        /// ASN, specify a unique device name for each customer gateway. Identical requests return
+        /// information about the existing customer gateway and do not create new customer gateways.
         /// </para>
         ///  </important>
         /// </summary>
@@ -19207,6 +19205,66 @@ namespace Amazon.EC2
         public virtual ModifyInstanceEventStartTimeResponse EndModifyInstanceEventStartTime(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyInstanceEventStartTimeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyInstanceMetadataOptions
+
+        /// <summary>
+        /// Modify the instance metadata parameters on a running or stopped instance. When you
+        /// modify the parameters on a stopped instance, they are applied when the instance is
+        /// started. When you modify the parameters on a running instance, the API responds with
+        /// a state of “pending”. After the parameter modifications are successfully applied to
+        /// the instance, the state of the modifications changes from “pending” to “applied” in
+        /// subsequent describe-instances API calls. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
+        /// Metadata and User Data</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceMetadataOptions service method.</param>
+        /// 
+        /// <returns>The response from the ModifyInstanceMetadataOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataOptions">REST API Reference for ModifyInstanceMetadataOptions Operation</seealso>
+        public virtual ModifyInstanceMetadataOptionsResponse ModifyInstanceMetadataOptions(ModifyInstanceMetadataOptionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyInstanceMetadataOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyInstanceMetadataOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyInstanceMetadataOptionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyInstanceMetadataOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceMetadataOptions operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyInstanceMetadataOptions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataOptions">REST API Reference for ModifyInstanceMetadataOptions Operation</seealso>
+        public virtual IAsyncResult BeginModifyInstanceMetadataOptions(ModifyInstanceMetadataOptionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyInstanceMetadataOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyInstanceMetadataOptionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyInstanceMetadataOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyInstanceMetadataOptions.</param>
+        /// 
+        /// <returns>Returns a  ModifyInstanceMetadataOptionsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataOptions">REST API Reference for ModifyInstanceMetadataOptions Operation</seealso>
+        public virtual ModifyInstanceMetadataOptionsResponse EndModifyInstanceMetadataOptions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyInstanceMetadataOptionsResponse>(asyncResult);
         }
 
         #endregion

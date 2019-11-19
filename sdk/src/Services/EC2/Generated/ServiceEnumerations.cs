@@ -3479,6 +3479,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type HttpTokensState.
+    /// </summary>
+    public class HttpTokensState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Optional for HttpTokensState
+        /// </summary>
+        public static readonly HttpTokensState Optional = new HttpTokensState("optional");
+        /// <summary>
+        /// Constant Required for HttpTokensState
+        /// </summary>
+        public static readonly HttpTokensState Required = new HttpTokensState("required");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HttpTokensState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HttpTokensState FindValue(string value)
+        {
+            return FindValue<HttpTokensState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HttpTokensState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HypervisorType.
     /// </summary>
     public class HypervisorType : ConstantClass
@@ -4126,6 +4176,106 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InstanceMatchCriteria(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InstanceMetadataEndpointState.
+    /// </summary>
+    public class InstanceMetadataEndpointState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for InstanceMetadataEndpointState
+        /// </summary>
+        public static readonly InstanceMetadataEndpointState Disabled = new InstanceMetadataEndpointState("disabled");
+        /// <summary>
+        /// Constant Enabled for InstanceMetadataEndpointState
+        /// </summary>
+        public static readonly InstanceMetadataEndpointState Enabled = new InstanceMetadataEndpointState("enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceMetadataEndpointState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceMetadataEndpointState FindValue(string value)
+        {
+            return FindValue<InstanceMetadataEndpointState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceMetadataEndpointState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InstanceMetadataOptionsState.
+    /// </summary>
+    public class InstanceMetadataOptionsState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Applied for InstanceMetadataOptionsState
+        /// </summary>
+        public static readonly InstanceMetadataOptionsState Applied = new InstanceMetadataOptionsState("applied");
+        /// <summary>
+        /// Constant Pending for InstanceMetadataOptionsState
+        /// </summary>
+        public static readonly InstanceMetadataOptionsState Pending = new InstanceMetadataOptionsState("pending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceMetadataOptionsState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceMetadataOptionsState FindValue(string value)
+        {
+            return FindValue<InstanceMetadataOptionsState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceMetadataOptionsState(string value)
         {
             return FindValue(value);
         }

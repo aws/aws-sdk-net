@@ -54,6 +54,7 @@ namespace Amazon.EC2.Model
         private string _keyName;
         private DateTime? _launchTime;
         private List<LicenseConfiguration> _licenses = new List<LicenseConfiguration>();
+        private InstanceMetadataOptionsResponse _metadataOptions;
         private Monitoring _monitoring;
         private List<InstanceNetworkInterface> _networkInterfaces = new List<InstanceNetworkInterface>();
         private Placement _placement;
@@ -246,7 +247,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ElasticInferenceAcceleratorAssociations. 
         /// <para>
-        ///  The elastic inference accelerator associated with the instance. 
+        ///  The elastic inference accelerator associated with the instance.
         /// </para>
         /// </summary>
         public List<ElasticInferenceAcceleratorAssociation> ElasticInferenceAcceleratorAssociations
@@ -475,6 +476,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetLicenses()
         {
             return this._licenses != null && this._licenses.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataOptions. 
+        /// <para>
+        /// The metadata options for the instance.
+        /// </para>
+        /// </summary>
+        public InstanceMetadataOptionsResponse MetadataOptions
+        {
+            get { return this._metadataOptions; }
+            set { this._metadataOptions = value; }
+        }
+
+        // Check to see if MetadataOptions property is set
+        internal bool IsSetMetadataOptions()
+        {
+            return this._metadataOptions != null;
         }
 
         /// <summary>

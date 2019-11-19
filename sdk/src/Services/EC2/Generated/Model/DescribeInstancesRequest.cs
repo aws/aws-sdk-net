@@ -140,11 +140,8 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>iam-instance-profile.arn</code> - The instance profile associated with the
-        /// instance. Specified as an ARN.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>image-id</code> - The ID of the image used to launch the instance.
+        /// instance. Specified as an ARN. <code>image-id</code> - The ID of the image used to
+        /// launch the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -201,6 +198,21 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>launch-time</code> - The time when the instance was launched.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>metadata-http-tokens</code> - The metadata request authorization state (<code>optional</code>
+        /// | <code>required</code>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>metadata-http-put-response-hop-limit</code> - The http metadata request put
+        /// response hop limit (integer, possible values <code>1</code> to <code>64</code>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>metadata-http-endpoint</code> - Enable or disable metadata access on http endpoint
+        /// (<code>enabled</code> | <code>disabled</code>)
         /// </para>
         ///  </li> <li> 
         /// <para>

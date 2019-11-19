@@ -135,6 +135,7 @@ namespace Amazon.EC2.Model
         private LaunchTemplateSpecification _launchTemplate;
         private List<LicenseConfigurationRequest> _licenseSpecifications = new List<LicenseConfigurationRequest>();
         private int? _maxCount;
+        private InstanceMetadataOptionsRequest _metadataOptions;
         private int? _minCount;
         private bool? _monitoring;
         private List<InstanceNetworkInterfaceSpecification> _networkInterfaces = new List<InstanceNetworkInterfaceSpecification>();
@@ -672,6 +673,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetMaxCount()
         {
             return this._maxCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataOptions. 
+        /// <para>
+        /// The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
+        /// Metadata and User Data</a>.
+        /// </para>
+        /// </summary>
+        public InstanceMetadataOptionsRequest MetadataOptions
+        {
+            get { return this._metadataOptions; }
+            set { this._metadataOptions = value; }
+        }
+
+        // Check to see if MetadataOptions property is set
+        internal bool IsSetMetadataOptions()
+        {
+            return this._metadataOptions != null;
         }
 
         /// <summary>

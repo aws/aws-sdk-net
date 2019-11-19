@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CustomerGateway Object
+    /// Response Unmarshaller for InstanceMetadataOptionsResponse Object
     /// </summary>  
-    public class CustomerGatewayUnmarshaller : IUnmarshaller<CustomerGateway, XmlUnmarshallerContext>, IUnmarshaller<CustomerGateway, JsonUnmarshallerContext>
+    public class InstanceMetadataOptionsResponseUnmarshaller : IUnmarshaller<InstanceMetadataOptionsResponse, XmlUnmarshallerContext>, IUnmarshaller<InstanceMetadataOptionsResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CustomerGateway Unmarshall(XmlUnmarshallerContext context)
+        public InstanceMetadataOptionsResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            CustomerGateway unmarshalledObject = new CustomerGateway();
+            InstanceMetadataOptionsResponse unmarshalledObject = new InstanceMetadataOptionsResponse();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,53 +54,28 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("bgpAsn", targetDepth))
+                    if (context.TestExpression("httpEndpoint", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.BgpAsn = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.HttpEndpoint = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("certificateArn", targetDepth))
+                    if (context.TestExpression("httpPutResponseHopLimit", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.CertificateArn = unmarshaller.Unmarshall(context);
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.HttpPutResponseHopLimit = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("customerGatewayId", targetDepth))
+                    if (context.TestExpression("httpTokens", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.CustomerGatewayId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("deviceName", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DeviceName = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ipAddress", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.IpAddress = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.HttpTokens = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("state", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.State = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("tagSet/item", targetDepth))
-                    {
-                        var unmarshaller = TagUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Tags.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("type", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -118,18 +93,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CustomerGateway Unmarshall(JsonUnmarshallerContext context)
+        public InstanceMetadataOptionsResponse Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static CustomerGatewayUnmarshaller _instance = new CustomerGatewayUnmarshaller();        
+        private static InstanceMetadataOptionsResponseUnmarshaller _instance = new InstanceMetadataOptionsResponseUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CustomerGatewayUnmarshaller Instance
+        public static InstanceMetadataOptionsResponseUnmarshaller Instance
         {
             get
             {

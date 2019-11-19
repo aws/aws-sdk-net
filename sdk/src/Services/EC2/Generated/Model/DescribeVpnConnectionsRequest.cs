@@ -104,6 +104,11 @@ namespace Amazon.EC2.Model
         ///  <code>vpn-gateway-id</code> - The ID of a virtual private gateway associated with
         /// the VPN connection.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>transit-gateway-id</code> - The ID of a transit gateway associated with the
+        /// VPN connection.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters

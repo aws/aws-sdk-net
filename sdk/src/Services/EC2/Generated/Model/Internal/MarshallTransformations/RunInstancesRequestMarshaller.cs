@@ -296,6 +296,21 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("MaxCount", StringUtils.FromInt(publicRequest.MaxCount));
                 }
+                if(publicRequest.IsSetMetadataOptions())
+                {
+                    if(publicRequest.MetadataOptions.IsSetHttpEndpoint())
+                    {
+                        request.Parameters.Add("MetadataOptions" + "." + "HttpEndpoint", StringUtils.FromString(publicRequest.MetadataOptions.HttpEndpoint));
+                    }
+                    if(publicRequest.MetadataOptions.IsSetHttpPutResponseHopLimit())
+                    {
+                        request.Parameters.Add("MetadataOptions" + "." + "HttpPutResponseHopLimit", StringUtils.FromInt(publicRequest.MetadataOptions.HttpPutResponseHopLimit));
+                    }
+                    if(publicRequest.MetadataOptions.IsSetHttpTokens())
+                    {
+                        request.Parameters.Add("MetadataOptions" + "." + "HttpTokens", StringUtils.FromString(publicRequest.MetadataOptions.HttpTokens));
+                    }
+                }
                 if(publicRequest.IsSetMinCount())
                 {
                     request.Parameters.Add("MinCount", StringUtils.FromInt(publicRequest.MinCount));
