@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StackInstanceSummary Object
+    /// Response Unmarshaller for StackSetDriftDetectionDetails Object
     /// </summary>  
-    public class StackInstanceSummaryUnmarshaller : IUnmarshaller<StackInstanceSummary, XmlUnmarshallerContext>, IUnmarshaller<StackInstanceSummary, JsonUnmarshallerContext>
+    public class StackSetDriftDetectionDetailsUnmarshaller : IUnmarshaller<StackSetDriftDetectionDetails, XmlUnmarshallerContext>, IUnmarshaller<StackSetDriftDetectionDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public StackInstanceSummary Unmarshall(XmlUnmarshallerContext context)
+        public StackSetDriftDetectionDetails Unmarshall(XmlUnmarshallerContext context)
         {
-            StackInstanceSummary unmarshalledObject = new StackInstanceSummary();
+            StackSetDriftDetectionDetails unmarshalledObject = new StackSetDriftDetectionDetails();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,10 +54,16 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Account", targetDepth))
+                    if (context.TestExpression("DriftDetectionStatus", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Account = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.DriftDetectionStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("DriftedStackInstancesCount", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.DriftedStackInstancesCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DriftStatus", targetDepth))
@@ -66,40 +72,34 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.DriftStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("FailedStackInstancesCount", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.FailedStackInstancesCount = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("InProgressStackInstancesCount", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.InProgressStackInstancesCount = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("InSyncStackInstancesCount", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.InSyncStackInstancesCount = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("LastDriftCheckTimestamp", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
                         unmarshalledObject.LastDriftCheckTimestamp = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Region", targetDepth))
+                    if (context.TestExpression("TotalStackInstancesCount", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Region = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("StackId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.StackId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("StackSetId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.StackSetId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Status", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("StatusReason", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context);
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.TotalStackInstancesCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -117,18 +117,18 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public StackInstanceSummary Unmarshall(JsonUnmarshallerContext context)
+        public StackSetDriftDetectionDetails Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static StackInstanceSummaryUnmarshaller _instance = new StackInstanceSummaryUnmarshaller();        
+        private static StackSetDriftDetectionDetailsUnmarshaller _instance = new StackSetDriftDetectionDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StackInstanceSummaryUnmarshaller Instance
+        public static StackSetDriftDetectionDetailsUnmarshaller Instance
         {
             get
             {

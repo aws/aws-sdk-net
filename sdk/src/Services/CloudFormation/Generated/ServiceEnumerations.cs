@@ -1553,6 +1553,122 @@ namespace Amazon.CloudFormation
 
 
     /// <summary>
+    /// Constants used for properties of type StackSetDriftDetectionStatus.
+    /// </summary>
+    public class StackSetDriftDetectionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for StackSetDriftDetectionStatus
+        /// </summary>
+        public static readonly StackSetDriftDetectionStatus COMPLETED = new StackSetDriftDetectionStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for StackSetDriftDetectionStatus
+        /// </summary>
+        public static readonly StackSetDriftDetectionStatus FAILED = new StackSetDriftDetectionStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for StackSetDriftDetectionStatus
+        /// </summary>
+        public static readonly StackSetDriftDetectionStatus IN_PROGRESS = new StackSetDriftDetectionStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant PARTIAL_SUCCESS for StackSetDriftDetectionStatus
+        /// </summary>
+        public static readonly StackSetDriftDetectionStatus PARTIAL_SUCCESS = new StackSetDriftDetectionStatus("PARTIAL_SUCCESS");
+        /// <summary>
+        /// Constant STOPPED for StackSetDriftDetectionStatus
+        /// </summary>
+        public static readonly StackSetDriftDetectionStatus STOPPED = new StackSetDriftDetectionStatus("STOPPED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StackSetDriftDetectionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StackSetDriftDetectionStatus FindValue(string value)
+        {
+            return FindValue<StackSetDriftDetectionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StackSetDriftDetectionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StackSetDriftStatus.
+    /// </summary>
+    public class StackSetDriftStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DRIFTED for StackSetDriftStatus
+        /// </summary>
+        public static readonly StackSetDriftStatus DRIFTED = new StackSetDriftStatus("DRIFTED");
+        /// <summary>
+        /// Constant IN_SYNC for StackSetDriftStatus
+        /// </summary>
+        public static readonly StackSetDriftStatus IN_SYNC = new StackSetDriftStatus("IN_SYNC");
+        /// <summary>
+        /// Constant NOT_CHECKED for StackSetDriftStatus
+        /// </summary>
+        public static readonly StackSetDriftStatus NOT_CHECKED = new StackSetDriftStatus("NOT_CHECKED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StackSetDriftStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StackSetDriftStatus FindValue(string value)
+        {
+            return FindValue<StackSetDriftStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StackSetDriftStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StackSetOperationAction.
     /// </summary>
     public class StackSetOperationAction : ConstantClass
@@ -1566,6 +1682,10 @@ namespace Amazon.CloudFormation
         /// Constant DELETE for StackSetOperationAction
         /// </summary>
         public static readonly StackSetOperationAction DELETE = new StackSetOperationAction("DELETE");
+        /// <summary>
+        /// Constant DETECT_DRIFT for StackSetOperationAction
+        /// </summary>
+        public static readonly StackSetOperationAction DETECT_DRIFT = new StackSetOperationAction("DETECT_DRIFT");
         /// <summary>
         /// Constant UPDATE for StackSetOperationAction
         /// </summary>

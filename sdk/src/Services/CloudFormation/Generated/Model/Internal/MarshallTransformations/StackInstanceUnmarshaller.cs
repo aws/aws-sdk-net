@@ -60,6 +60,18 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.Account = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DriftStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DriftStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("LastDriftCheckTimestamp", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.LastDriftCheckTimestamp = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ParameterOverrides/member", targetDepth))
                     {
                         var unmarshaller = ParameterUnmarshaller.Instance;

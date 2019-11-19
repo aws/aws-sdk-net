@@ -102,6 +102,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.RetainStacks = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("StackSetDriftDetectionDetails", targetDepth))
+                    {
+                        var unmarshaller = StackSetDriftDetectionDetailsUnmarshaller.Instance;
+                        unmarshalledObject.StackSetDriftDetectionDetails = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("StackSetId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

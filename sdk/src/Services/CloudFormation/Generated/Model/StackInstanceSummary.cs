@@ -33,6 +33,8 @@ namespace Amazon.CloudFormation.Model
     public partial class StackInstanceSummary
     {
         private string _account;
+        private StackDriftStatus _driftStatus;
+        private DateTime? _lastDriftCheckTimestamp;
         private string _region;
         private string _stackId;
         private string _stackSetId;
@@ -55,6 +57,66 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetAccount()
         {
             return this._account != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DriftStatus. 
+        /// <para>
+        /// Status of the stack instance's actual configuration compared to the expected template
+        /// and parameter configuration of the stack set to which it belongs. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>DRIFTED</code>: The stack differs from the expected template and parameter
+        /// configuration of the stack set to which it belongs. A stack instance is considered
+        /// to have drifted if one or more of the resources in the associated stack have drifted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NOT_CHECKED</code>: AWS CloudFormation has not checked if the stack instance
+        /// differs from its expected stack set configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected
+        /// stack set configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UNKNOWN</code>: This value is reserved for future use.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public StackDriftStatus DriftStatus
+        {
+            get { return this._driftStatus; }
+            set { this._driftStatus = value; }
+        }
+
+        // Check to see if DriftStatus property is set
+        internal bool IsSetDriftStatus()
+        {
+            return this._driftStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastDriftCheckTimestamp. 
+        /// <para>
+        /// Most recent time when CloudFormation performed a drift detection operation on the
+        /// stack instance. This value will be <code>NULL</code> for any stack instance on which
+        /// drift detection has not yet been performed.
+        /// </para>
+        /// </summary>
+        public DateTime LastDriftCheckTimestamp
+        {
+            get { return this._lastDriftCheckTimestamp.GetValueOrDefault(); }
+            set { this._lastDriftCheckTimestamp = value; }
+        }
+
+        // Check to see if LastDriftCheckTimestamp property is set
+        internal bool IsSetLastDriftCheckTimestamp()
+        {
+            return this._lastDriftCheckTimestamp.HasValue; 
         }
 
         /// <summary>

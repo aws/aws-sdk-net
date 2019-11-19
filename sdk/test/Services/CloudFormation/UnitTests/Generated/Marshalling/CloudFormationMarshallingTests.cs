@@ -658,6 +658,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudFormation")]
+        public void DetectStackSetDriftMarshallTest()
+        {
+            var operation = service_model.FindOperation("DetectStackSetDrift");
+
+            var request = InstantiateClassGenerator.Execute<DetectStackSetDriftRequest>();
+            var marshaller = new DetectStackSetDriftRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DetectStackSetDriftResponseUnmarshaller.Instance.Unmarshall(context)
+                as DetectStackSetDriftResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
         public void EstimateTemplateCostMarshallTest()
         {
             var operation = service_model.FindOperation("EstimateTemplateCost");
