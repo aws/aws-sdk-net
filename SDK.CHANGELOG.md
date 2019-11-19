@@ -1,3 +1,13 @@
+### 3.3.634.1 (2019-11-19 22:36 UTC)
+* EC2 (3.3.136.1)
+	* Updated to use new Core, version 3.3.103.66
+	* Updates obsolete IMDS methods to obtain a metadata token that is used with subsequent metadata calls. A potential breaking change exists where exceptions other than WebException may no longer be thrown. Instead null will be returned for consistency between targets.
+* Lambda (3.3.104.1)
+	* Allow clearing of Lambda Environment variables via UpdateLambdaConfiguration.
+* Core 3.3.103.66
+	* Fix unmarshalling of JSON arrays that contain forward slashes in names; Updates IMDS to obtain a metadata token that is used with subsequent metadata calls. This also updates IMDS based instance profile credentials to use metadata tokens as part of IMDS calls. A potential breaking change exists where exceptions other than WebException may no longer be thrown. Instead null will be returned for consistency between targets.
+	* All services packages updated to require new Core
+
 ### 3.3.634.0 (2019-11-19 21:03 UTC)
 * AutoScaling (3.3.101.0)
 	* Amazon EC2 Auto Scaling now supports Instance Weighting and Max Instance Lifetime. Instance Weighting allows specifying the capacity units for each instance type included in the MixedInstancesPolicy and how they would contribute to your application's performance. Max Instance Lifetime allows specifying the maximum length of time that an instance can be in service. If any instances are approaching this limit, Amazon EC2 Auto Scaling gradually replaces them.
