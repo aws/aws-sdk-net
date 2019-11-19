@@ -44,7 +44,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Average. 
         /// <para>
-        /// The average of the aggregated field values.
+        /// The average of the aggregated fields. If the field data type is String this value
+        /// is indeterminate.
         /// </para>
         /// </summary>
         public double Average
@@ -80,7 +81,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Maximum. 
         /// <para>
-        /// The maximum aggregated field value.
+        /// The maximum value of the aggregated fields. If the field data type is String this
+        /// value is indeterminate.
         /// </para>
         /// </summary>
         public double Maximum
@@ -98,7 +100,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Minimum. 
         /// <para>
-        /// The minimum aggregated field value.
+        /// The minimum value of the aggregated fields. If the field data type is String this
+        /// value is indeterminate.
         /// </para>
         /// </summary>
         public double Minimum
@@ -116,7 +119,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property StdDeviation. 
         /// <para>
-        /// The standard deviation of the aggregated field valuesl
+        /// The standard deviation of the aggregated field values.
         /// </para>
         /// </summary>
         public double StdDeviation
@@ -134,7 +137,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Sum. 
         /// <para>
-        /// The sum of the aggregated field values.
+        /// The sum of the aggregated fields. If the field data type is String this value is indeterminate.
         /// </para>
         /// </summary>
         public double Sum

@@ -57,7 +57,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value.
+        /// The value of the percentile.
         /// </para>
         /// </summary>
         public double Value

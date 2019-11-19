@@ -41,7 +41,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property CustomFields. 
         /// <para>
-        /// Contains custom field names and their data type.
+        /// A list of thing fields to index. This list cannot contain any managed fields. Use
+        /// the GetIndexingConfiguration API to get a list of managed fields.
         /// </para>
         /// </summary>
         public List<Field> CustomFields
@@ -59,8 +60,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property ManagedFields. 
         /// <para>
-        /// Contains fields that are indexed and whose types are already known by the Fleet Indexing
-        /// service.
+        /// A list of automatically indexed thing fields.
         /// </para>
         /// </summary>
         public List<Field> ManagedFields

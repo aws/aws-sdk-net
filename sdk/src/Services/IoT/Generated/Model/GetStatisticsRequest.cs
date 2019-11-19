@@ -29,9 +29,7 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the GetStatistics operation.
-    /// Gets statistics returns the count, average, sum, minimum, maximum, sumOfSquares, variance,
-    /// and standard deviation for the specified aggregated field. If the aggregation field
-    /// is of type String, only the count statistic is returned.
+    /// Gets statistics about things that match the specified query.
     /// </summary>
     public partial class GetStatisticsRequest : AmazonIoTRequest
     {
@@ -43,7 +41,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property AggregationField. 
         /// <para>
-        /// The aggregation field name.
+        /// The aggregation field name. Currently not supported.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

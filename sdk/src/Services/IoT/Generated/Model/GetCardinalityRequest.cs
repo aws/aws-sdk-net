@@ -29,7 +29,7 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCardinality operation.
-    /// Returns the number of things with distinct values for the aggregation field.
+    /// Returns the approximate count of unique values that match the query.
     /// </summary>
     public partial class GetCardinalityRequest : AmazonIoTRequest
     {

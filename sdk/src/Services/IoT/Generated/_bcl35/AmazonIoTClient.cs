@@ -1422,6 +1422,79 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  ConfirmTopicRuleDestination
+
+        /// <summary>
+        /// Confirms a topic rule destination. When you create a rule requiring a destination,
+        /// AWS IoT sends a confirmation message to the endpoint or base address you specify.
+        /// The message includes a token which you pass back when calling <code>ConfirmTopicRuleDestination</code>
+        /// to confirm that you own or have access to the endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ConfirmTopicRuleDestination service method.</param>
+        /// 
+        /// <returns>The response from the ConfirmTopicRuleDestination service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictingResourceUpdateException">
+        /// A conflicting resource update exception. This exception is thrown when two pending
+        /// updates cause a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ConfirmTopicRuleDestination">REST API Reference for ConfirmTopicRuleDestination Operation</seealso>
+        public virtual ConfirmTopicRuleDestinationResponse ConfirmTopicRuleDestination(ConfirmTopicRuleDestinationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConfirmTopicRuleDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConfirmTopicRuleDestinationResponseUnmarshaller.Instance;
+
+            return Invoke<ConfirmTopicRuleDestinationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ConfirmTopicRuleDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ConfirmTopicRuleDestination operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndConfirmTopicRuleDestination
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ConfirmTopicRuleDestination">REST API Reference for ConfirmTopicRuleDestination Operation</seealso>
+        public virtual IAsyncResult BeginConfirmTopicRuleDestination(ConfirmTopicRuleDestinationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConfirmTopicRuleDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConfirmTopicRuleDestinationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ConfirmTopicRuleDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginConfirmTopicRuleDestination.</param>
+        /// 
+        /// <returns>Returns a  ConfirmTopicRuleDestinationResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ConfirmTopicRuleDestination">REST API Reference for ConfirmTopicRuleDestination Operation</seealso>
+        public virtual ConfirmTopicRuleDestinationResponse EndConfirmTopicRuleDestination(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ConfirmTopicRuleDestinationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateAuthorizer
 
         /// <summary>
@@ -3251,6 +3324,76 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  CreateTopicRuleDestination
+
+        /// <summary>
+        /// Creates a topic rule destination. The destination must be confirmed prior to use.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTopicRuleDestination service method.</param>
+        /// 
+        /// <returns>The response from the CreateTopicRuleDestination service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictingResourceUpdateException">
+        /// A conflicting resource update exception. This exception is thrown when two pending
+        /// updates cause a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateTopicRuleDestination">REST API Reference for CreateTopicRuleDestination Operation</seealso>
+        public virtual CreateTopicRuleDestinationResponse CreateTopicRuleDestination(CreateTopicRuleDestinationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTopicRuleDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTopicRuleDestinationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTopicRuleDestinationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTopicRuleDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTopicRuleDestination operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTopicRuleDestination
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateTopicRuleDestination">REST API Reference for CreateTopicRuleDestination Operation</seealso>
+        public virtual IAsyncResult BeginCreateTopicRuleDestination(CreateTopicRuleDestinationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTopicRuleDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTopicRuleDestinationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTopicRuleDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTopicRuleDestination.</param>
+        /// 
+        /// <returns>Returns a  CreateTopicRuleDestinationResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateTopicRuleDestination">REST API Reference for CreateTopicRuleDestination Operation</seealso>
+        public virtual CreateTopicRuleDestinationResponse EndCreateTopicRuleDestination(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateTopicRuleDestinationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteAccountAuditConfiguration
 
         /// <summary>
@@ -4999,6 +5142,76 @@ namespace Amazon.IoT
         public virtual DeleteTopicRuleResponse EndDeleteTopicRule(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteTopicRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteTopicRuleDestination
+
+        /// <summary>
+        /// Deletes a topic rule destination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTopicRuleDestination service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTopicRuleDestination service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictingResourceUpdateException">
+        /// A conflicting resource update exception. This exception is thrown when two pending
+        /// updates cause a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteTopicRuleDestination">REST API Reference for DeleteTopicRuleDestination Operation</seealso>
+        public virtual DeleteTopicRuleDestinationResponse DeleteTopicRuleDestination(DeleteTopicRuleDestinationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTopicRuleDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTopicRuleDestinationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTopicRuleDestinationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTopicRuleDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTopicRuleDestination operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTopicRuleDestination
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteTopicRuleDestination">REST API Reference for DeleteTopicRuleDestination Operation</seealso>
+        public virtual IAsyncResult BeginDeleteTopicRuleDestination(DeleteTopicRuleDestinationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTopicRuleDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTopicRuleDestinationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTopicRuleDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTopicRuleDestination.</param>
+        /// 
+        /// <returns>Returns a  DeleteTopicRuleDestinationResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteTopicRuleDestination">REST API Reference for DeleteTopicRuleDestination Operation</seealso>
+        public virtual DeleteTopicRuleDestinationResponse EndDeleteTopicRuleDestination(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteTopicRuleDestinationResponse>(asyncResult);
         }
 
         #endregion
@@ -7321,7 +7534,7 @@ namespace Amazon.IoT
         #region  GetCardinality
 
         /// <summary>
-        /// Returns the number of things with distinct values for the aggregation field.
+        /// Returns the approximate count of unique values that match the query.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCardinality service method.</param>
         /// 
@@ -7754,10 +7967,15 @@ namespace Amazon.IoT
         #region  GetPercentiles
 
         /// <summary>
-        /// Returns the percentile values for the aggregation field. The results from GetPercentiles
-        /// is an approximation. The default percentile groupings are: 1,5,25,50,75,95,99. You
-        /// can specify custom percentile grouping using the percents argument to the GetPercentiles
-        /// API.
+        /// Groups the aggregated values that match the query into percentile groupings. The default
+        /// percentile groupings are: 1,5,25,50,75,95,99, although you can specify your own when
+        /// you call <code>GetPercentiles</code>. This function returns a value for each percentile
+        /// group specified (or the default percentile groupings). The percentile group "1" contains
+        /// the aggregated field value that occurs in approximately one percent of the values
+        /// that match the query. The percentile group "5" contains the aggregated field value
+        /// that occurs in approximately five percent of the values that match the query, and
+        /// so on. The result is an approximation, the more values that match the query, the more
+        /// accurate the percentile values.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPercentiles service method.</param>
         /// 
@@ -8121,9 +8339,7 @@ namespace Amazon.IoT
         #region  GetStatistics
 
         /// <summary>
-        /// Gets statistics returns the count, average, sum, minimum, maximum, sumOfSquares, variance,
-        /// and standard deviation for the specified aggregated field. If the aggregation field
-        /// is of type String, only the count statistic is returned.
+        /// Gets statistics about things that match the specified query.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStatistics service method.</param>
         /// 
@@ -8290,6 +8506,72 @@ namespace Amazon.IoT
         public virtual GetTopicRuleResponse EndGetTopicRule(IAsyncResult asyncResult)
         {
             return EndInvoke<GetTopicRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetTopicRuleDestination
+
+        /// <summary>
+        /// Gets information about a topic rule destination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTopicRuleDestination service method.</param>
+        /// 
+        /// <returns>The response from the GetTopicRuleDestination service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetTopicRuleDestination">REST API Reference for GetTopicRuleDestination Operation</seealso>
+        public virtual GetTopicRuleDestinationResponse GetTopicRuleDestination(GetTopicRuleDestinationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTopicRuleDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTopicRuleDestinationResponseUnmarshaller.Instance;
+
+            return Invoke<GetTopicRuleDestinationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTopicRuleDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTopicRuleDestination operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTopicRuleDestination
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetTopicRuleDestination">REST API Reference for GetTopicRuleDestination Operation</seealso>
+        public virtual IAsyncResult BeginGetTopicRuleDestination(GetTopicRuleDestinationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTopicRuleDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTopicRuleDestinationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTopicRuleDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTopicRuleDestination.</param>
+        /// 
+        /// <returns>Returns a  GetTopicRuleDestinationResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetTopicRuleDestination">REST API Reference for GetTopicRuleDestination Operation</seealso>
+        public virtual GetTopicRuleDestinationResponse EndGetTopicRuleDestination(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTopicRuleDestinationResponse>(asyncResult);
         }
 
         #endregion
@@ -11329,6 +11611,72 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  ListTopicRuleDestinations
+
+        /// <summary>
+        /// Lists all the topic rule destinations in your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTopicRuleDestinations service method.</param>
+        /// 
+        /// <returns>The response from the ListTopicRuleDestinations service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTopicRuleDestinations">REST API Reference for ListTopicRuleDestinations Operation</seealso>
+        public virtual ListTopicRuleDestinationsResponse ListTopicRuleDestinations(ListTopicRuleDestinationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTopicRuleDestinationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTopicRuleDestinationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTopicRuleDestinationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTopicRuleDestinations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTopicRuleDestinations operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTopicRuleDestinations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTopicRuleDestinations">REST API Reference for ListTopicRuleDestinations Operation</seealso>
+        public virtual IAsyncResult BeginListTopicRuleDestinations(ListTopicRuleDestinationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTopicRuleDestinationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTopicRuleDestinationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTopicRuleDestinations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTopicRuleDestinations.</param>
+        /// 
+        /// <returns>Returns a  ListTopicRuleDestinationsResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTopicRuleDestinations">REST API Reference for ListTopicRuleDestinations Operation</seealso>
+        public virtual ListTopicRuleDestinationsResponse EndListTopicRuleDestinations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTopicRuleDestinationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTopicRules
 
         /// <summary>
@@ -11721,10 +12069,7 @@ namespace Amazon.IoT
         #region  RegisterThing
 
         /// <summary>
-        /// Provisions a thing in the device registry. RegisterThing calls other AWS IoT control
-        /// plane APIs. These calls might exceed your account level <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_iot">
-        /// AWS IoT Throttling Limits</a> and cause throttle errors. Please contact <a href="https://console.aws.amazon.com/support/home">AWS
-        /// Customer Support</a> to raise your throttling limits if necessary.
+        /// Provisions a thing.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterThing service method.</param>
         /// 
@@ -14564,6 +14909,77 @@ namespace Amazon.IoT
         public virtual UpdateThingGroupsForThingResponse EndUpdateThingGroupsForThing(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateThingGroupsForThingResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateTopicRuleDestination
+
+        /// <summary>
+        /// Updates a topic rule destination. You use this to change the status, endpoint URL,
+        /// or confirmation URL of the destination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTopicRuleDestination service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTopicRuleDestination service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictingResourceUpdateException">
+        /// A conflicting resource update exception. This exception is thrown when two pending
+        /// updates cause a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateTopicRuleDestination">REST API Reference for UpdateTopicRuleDestination Operation</seealso>
+        public virtual UpdateTopicRuleDestinationResponse UpdateTopicRuleDestination(UpdateTopicRuleDestinationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTopicRuleDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTopicRuleDestinationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTopicRuleDestinationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTopicRuleDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTopicRuleDestination operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTopicRuleDestination
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateTopicRuleDestination">REST API Reference for UpdateTopicRuleDestination Operation</seealso>
+        public virtual IAsyncResult BeginUpdateTopicRuleDestination(UpdateTopicRuleDestinationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTopicRuleDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTopicRuleDestinationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTopicRuleDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTopicRuleDestination.</param>
+        /// 
+        /// <returns>Returns a  UpdateTopicRuleDestinationResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateTopicRuleDestination">REST API Reference for UpdateTopicRuleDestination Operation</seealso>
+        public virtual UpdateTopicRuleDestinationResponse EndUpdateTopicRuleDestination(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateTopicRuleDestinationResponse>(asyncResult);
         }
 
         #endregion

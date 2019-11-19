@@ -417,6 +417,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("IoT")]
+        public void ConfirmTopicRuleDestinationMarshallTest()
+        {
+            var operation = service_model.FindOperation("ConfirmTopicRuleDestination");
+
+            var request = InstantiateClassGenerator.Execute<ConfirmTopicRuleDestinationRequest>();
+            var marshaller = new ConfirmTopicRuleDestinationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ConfirmTopicRuleDestination", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ConfirmTopicRuleDestinationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ConfirmTopicRuleDestinationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("IoT")]
         public void CreateAuthorizerMarshallTest()
         {
             var operation = service_model.FindOperation("CreateAuthorizer");
@@ -971,6 +1003,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var internalRequest = marshaller.Marshall(request);
             TestTools.RequestValidator.Validate("CreateTopicRule", request, internalRequest, service_model);            
 
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("IoT")]
+        public void CreateTopicRuleDestinationMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateTopicRuleDestination");
+
+            var request = InstantiateClassGenerator.Execute<CreateTopicRuleDestinationRequest>();
+            var marshaller = new CreateTopicRuleDestinationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateTopicRuleDestination", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateTopicRuleDestinationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CreateTopicRuleDestinationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
         
@@ -1553,6 +1617,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var internalRequest = marshaller.Marshall(request);
             TestTools.RequestValidator.Validate("DeleteTopicRule", request, internalRequest, service_model);            
 
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("IoT")]
+        public void DeleteTopicRuleDestinationMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteTopicRuleDestination");
+
+            var request = InstantiateClassGenerator.Execute<DeleteTopicRuleDestinationRequest>();
+            var marshaller = new DeleteTopicRuleDestinationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteTopicRuleDestination", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DeleteTopicRuleDestinationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DeleteTopicRuleDestinationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
         
@@ -2853,6 +2949,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = GetTopicRuleResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as GetTopicRuleResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("IoT")]
+        public void GetTopicRuleDestinationMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetTopicRuleDestination");
+
+            var request = InstantiateClassGenerator.Execute<GetTopicRuleDestinationRequest>();
+            var marshaller = new GetTopicRuleDestinationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetTopicRuleDestination", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetTopicRuleDestinationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetTopicRuleDestinationResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -4173,6 +4301,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("IoT")]
+        public void ListTopicRuleDestinationsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListTopicRuleDestinations");
+
+            var request = InstantiateClassGenerator.Execute<ListTopicRuleDestinationsRequest>();
+            var marshaller = new ListTopicRuleDestinationsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListTopicRuleDestinations", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListTopicRuleDestinationsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListTopicRuleDestinationsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("IoT")]
         public void ListTopicRulesMarshallTest()
         {
             var operation = service_model.FindOperation("ListTopicRules");
@@ -5374,6 +5534,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = UpdateThingGroupsForThingResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as UpdateThingGroupsForThingResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("IoT")]
+        public void UpdateTopicRuleDestinationMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateTopicRuleDestination");
+
+            var request = InstantiateClassGenerator.Execute<UpdateTopicRuleDestinationRequest>();
+            var marshaller = new UpdateTopicRuleDestinationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateTopicRuleDestination", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateTopicRuleDestinationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpdateTopicRuleDestinationResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

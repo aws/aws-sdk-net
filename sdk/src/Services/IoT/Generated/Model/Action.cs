@@ -38,6 +38,7 @@ namespace Amazon.IoT.Model
         private DynamoDBv2Action _dynamodBv2;
         private ElasticsearchAction _elasticsearch;
         private FirehoseAction _firehose;
+        private HttpAction _http;
         private IotAnalyticsAction _iotAnalytics;
         private IotEventsAction _iotEvents;
         private KinesisAction _kinesis;
@@ -156,6 +157,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetFirehose()
         {
             return this._firehose != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Http. 
+        /// <para>
+        /// Send data to an HTTPS endpoint.
+        /// </para>
+        /// </summary>
+        public HttpAction Http
+        {
+            get { return this._http; }
+            set { this._http = value; }
+        }
+
+        // Check to see if Http property is set
+        internal bool IsSetHttp()
+        {
+            return this._http != null;
         }
 
         /// <summary>

@@ -37,7 +37,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Cardinality. 
         /// <para>
-        /// The number of things that match the query.
+        /// The approximate count of unique values that match the query.
         /// </para>
         /// </summary>
         public int Cardinality
