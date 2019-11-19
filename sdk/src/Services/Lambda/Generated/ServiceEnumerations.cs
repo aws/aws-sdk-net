@@ -251,6 +251,10 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly Runtime Go1X = new Runtime("go1.x");
         /// <summary>
+        /// Constant Java11 for Runtime
+        /// </summary>
+        public static readonly Runtime Java11 = new Runtime("java11");
+        /// <summary>
         /// Constant Java8 for Runtime
         /// </summary>
         public static readonly Runtime Java8 = new Runtime("java8");
@@ -262,6 +266,10 @@ namespace Amazon.Lambda
         /// Constant Nodejs10X for Runtime
         /// </summary>
         public static readonly Runtime Nodejs10X = new Runtime("nodejs10.x");
+        /// <summary>
+        /// Constant Nodejs12X for Runtime
+        /// </summary>
+        public static readonly Runtime Nodejs12X = new Runtime("nodejs12.x");
         /// <summary>
         /// Constant Nodejs43 for Runtime
         /// </summary>
@@ -294,6 +302,10 @@ namespace Amazon.Lambda
         /// Constant Python37 for Runtime
         /// </summary>
         public static readonly Runtime Python37 = new Runtime("python3.7");
+        /// <summary>
+        /// Constant Python38 for Runtime
+        /// </summary>
+        public static readonly Runtime Python38 = new Runtime("python3.8");
         /// <summary>
         /// Constant Ruby25 for Runtime
         /// </summary>
