@@ -70,6 +70,24 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                     unmarshalledObject.ActorArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("approvalRuleEventMetadata", targetDepth))
+                {
+                    var unmarshaller = ApprovalRuleEventMetadataUnmarshaller.Instance;
+                    unmarshalledObject.ApprovalRuleEventMetadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("approvalRuleOverriddenEventMetadata", targetDepth))
+                {
+                    var unmarshaller = ApprovalRuleOverriddenEventMetadataUnmarshaller.Instance;
+                    unmarshalledObject.ApprovalRuleOverriddenEventMetadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("approvalStateChangedEventMetadata", targetDepth))
+                {
+                    var unmarshaller = ApprovalStateChangedEventMetadataUnmarshaller.Instance;
+                    unmarshalledObject.ApprovalStateChangedEventMetadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("eventDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

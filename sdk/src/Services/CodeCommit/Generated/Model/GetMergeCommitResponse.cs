@@ -77,8 +77,8 @@ namespace Amazon.CodeCommit.Model
         /// Gets and sets the property MergedCommitId. 
         /// <para>
         /// The commit ID for the merge commit created when the source branch was merged into
-        /// the destination branch. If the fast-forward merge strategy was used, no merge commit
-        /// exists.
+        /// the destination branch. If the fast-forward merge strategy was used, there is no merge
+        /// commit.
         /// </para>
         /// </summary>
         public string MergedCommitId

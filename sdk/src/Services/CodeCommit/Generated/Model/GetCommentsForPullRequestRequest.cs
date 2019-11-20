@@ -81,8 +81,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// A non-negative integer used to limit the number of returned results. The default is
-        /// 100 comments. You can return up to 500 comments with a single request.
+        /// A non-zero, non-negative integer used to limit the number of returned results. The
+        /// default is 100 comments. You can return up to 500 comments with a single request.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -100,7 +100,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// An enumeration token that when provided in a request, returns the next batch of the
+        /// An enumeration token that, when provided in a request, returns the next batch of the
         /// results.
         /// </para>
         /// </summary>

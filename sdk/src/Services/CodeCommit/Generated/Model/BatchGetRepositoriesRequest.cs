@@ -35,9 +35,9 @@ namespace Amazon.CodeCommit.Model
     /// <para>
     /// The description field for a repository accepts all HTML characters and all valid Unicode
     /// characters. Applications that do not HTML-encode the description and display it in
-    /// a web page could expose users to potentially malicious code. Make sure that you HTML-encode
+    /// a webpage can expose users to potentially malicious code. Make sure that you HTML-encode
     /// the description field in any application that uses this API to display the repository
-    /// description on a web page.
+    /// description on a webpage.
     /// </para>
     ///  </note>
     /// </summary>
@@ -50,6 +50,12 @@ namespace Amazon.CodeCommit.Model
         /// <para>
         /// The names of the repositories to get information about.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The length constraint limit is for each string in the array. The array itself can
+        /// be empty.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> RepositoryNames

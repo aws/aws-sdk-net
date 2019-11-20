@@ -62,7 +62,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// A non-negative integer used to limit the number of returned results.
+        /// A non-zero, non-negative integer used to limit the number of returned results.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -80,7 +80,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// An enumeration token that when provided in a request, returns the next batch of the
+        /// An enumeration token that, when provided in a request, returns the next batch of the
         /// results.
         /// </para>
         /// </summary>

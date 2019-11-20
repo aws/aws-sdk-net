@@ -29,7 +29,7 @@ namespace Amazon.CodeCommit.Model
 {
     /// <summary>
     /// Container for the parameters to the GetBlob operation.
-    /// Returns the base-64 encoded content of an individual blob within a repository.
+    /// Returns the base-64 encoded content of an individual blob in a repository.
     /// </summary>
     public partial class GetBlobRequest : AmazonCodeCommitRequest
     {

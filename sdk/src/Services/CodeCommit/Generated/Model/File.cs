@@ -40,7 +40,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property AbsolutePath. 
         /// <para>
-        /// The fully-qualified path to the file in the repository.
+        /// The fully qualified path to the file in the repository.
         /// </para>
         /// </summary>
         public string AbsolutePath

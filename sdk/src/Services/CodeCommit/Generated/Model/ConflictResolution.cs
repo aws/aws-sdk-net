@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// A list of inputs to use when resolving conflicts during a merge if AUTOMERGE is chosen
-    /// as the conflict resolution strategy.
+    /// If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving
+    /// conflicts during a merge.
     /// </summary>
     public partial class ConflictResolution
     {
@@ -40,7 +40,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property DeleteFiles. 
         /// <para>
-        /// Files that will be deleted as part of the merge conflict resolution.
+        /// Files to be deleted as part of the merge conflict resolution.
         /// </para>
         /// </summary>
         public List<DeleteFileEntry> DeleteFiles
@@ -58,7 +58,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property ReplaceContents. 
         /// <para>
-        /// Files that will have content replaced as part of the merge conflict resolution.
+        /// Files to have content replaced as part of the merge conflict resolution.
         /// </para>
         /// </summary>
         public List<ReplaceContentEntry> ReplaceContents
@@ -76,7 +76,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property SetFileModes. 
         /// <para>
-        /// File modes that will be set as part of the merge conflict resolution.
+        /// File modes that are set as part of the merge conflict resolution.
         /// </para>
         /// </summary>
         public List<SetFileModeEntry> SetFileModes

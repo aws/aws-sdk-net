@@ -59,7 +59,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The updated content with which you want to replace the existing content of the comment.
+        /// The updated content to replace the existing content of the comment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

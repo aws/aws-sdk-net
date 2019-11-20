@@ -58,7 +58,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property CommitId. 
         /// <para>
-        /// The full SHA of the commit that contains this file change.
+        /// The full SHA ID of the commit that contains this file change.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

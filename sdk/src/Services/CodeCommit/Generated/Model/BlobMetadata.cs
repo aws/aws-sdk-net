@@ -92,7 +92,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        /// The path to the blob and any associated file name, if any.
+        /// The path to the blob and associated file name, if any.
         /// </para>
         /// </summary>
         public string Path

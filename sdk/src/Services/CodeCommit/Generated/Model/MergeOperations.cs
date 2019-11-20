@@ -56,8 +56,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The operation on a file (add, modify, or delete) of a file in the source of a merge
-        /// or pull request.
+        /// The operation (add, modify, or delete) on a file in the source of a merge or pull
+        /// request.
         /// </para>
         /// </summary>
         public ChangeTypeEnum Source

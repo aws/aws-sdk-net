@@ -40,9 +40,9 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property CommitSpecifier. 
         /// <para>
-        /// The fully-quaified reference that identifies the commit that contains the file. For
-        /// example, you could specify a full commit ID, a tag, a branch name, or a reference
-        /// such as refs/heads/master. If none is provided, then the head commit will be used.
+        /// The fully quaified reference that identifies the commit that contains the file. For
+        /// example, you can specify a full commit ID, a tag, a branch name, or a reference such
+        /// as refs/heads/master. If none is provided, the head commit is used.
         /// </para>
         /// </summary>
         public string CommitSpecifier
@@ -60,8 +60,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property FilePath. 
         /// <para>
-        /// The fully-qualified path to the file, including the full name and extension of the
-        /// file. For example, /examples/file.md is the fully-qualified path to a file named file.md
+        /// The fully qualified path to the file, including the full name and extension of the
+        /// file. For example, /examples/file.md is the fully qualified path to a file named file.md
         /// in a folder named examples.
         /// </para>
         /// </summary>

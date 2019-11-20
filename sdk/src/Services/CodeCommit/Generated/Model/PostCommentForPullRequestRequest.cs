@@ -84,9 +84,9 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// A unique, client-generated idempotency token that when provided in a request, ensures
+        /// A unique, client-generated idempotency token that, when provided in a request, ensures
         /// the request cannot be repeated with a changed parameter. If a request is received
-        /// with the same parameters and a token is included, the request will return information
+        /// with the same parameters and a token is included, the request returns information
         /// about the initial request that used that token.
         /// </para>
         /// </summary>
@@ -125,7 +125,7 @@ namespace Amazon.CodeCommit.Model
         /// Gets and sets the property Location. 
         /// <para>
         /// The location of the change where you want to post your comment. If no location is
-        /// provided, the comment will be posted as a general comment on the pull request difference
+        /// provided, the comment is posted as a general comment on the pull request difference
         /// between the before commit ID and the after commit ID.
         /// </para>
         /// </summary>

@@ -43,6 +43,51 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("CodeCommit")]
+        public void AssociateApprovalRuleTemplateWithRepositoryMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<AssociateApprovalRuleTemplateWithRepositoryRequest>();
+            var marshaller = new AssociateApprovalRuleTemplateWithRepositoryRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<AssociateApprovalRuleTemplateWithRepositoryRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeCommit")]
+        public void BatchAssociateApprovalRuleTemplateWithRepositoriesMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<BatchAssociateApprovalRuleTemplateWithRepositoriesRequest>();
+            var marshaller = new BatchAssociateApprovalRuleTemplateWithRepositoriesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<BatchAssociateApprovalRuleTemplateWithRepositoriesRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("BatchAssociateApprovalRuleTemplateWithRepositories").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = BatchAssociateApprovalRuleTemplateWithRepositoriesResponseUnmarshaller.Instance.Unmarshall(context)
+                as BatchAssociateApprovalRuleTemplateWithRepositoriesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeCommit")]
         public void BatchDescribeMergeConflictsMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<BatchDescribeMergeConflictsRequest>();
@@ -64,6 +109,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = BatchDescribeMergeConflictsResponseUnmarshaller.Instance.Unmarshall(context)
                 as BatchDescribeMergeConflictsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeCommit")]
+        public void BatchDisassociateApprovalRuleTemplateFromRepositoriesMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest>();
+            var marshaller = new BatchDisassociateApprovalRuleTemplateFromRepositoriesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("BatchDisassociateApprovalRuleTemplateFromRepositories").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = BatchDisassociateApprovalRuleTemplateFromRepositoriesResponseUnmarshaller.Instance.Unmarshall(context)
+                as BatchDisassociateApprovalRuleTemplateFromRepositoriesResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -122,6 +196,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = BatchGetRepositoriesResponseUnmarshaller.Instance.Unmarshall(context)
                 as BatchGetRepositoriesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeCommit")]
+        public void CreateApprovalRuleTemplateMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<CreateApprovalRuleTemplateRequest>();
+            var marshaller = new CreateApprovalRuleTemplateRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<CreateApprovalRuleTemplateRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateApprovalRuleTemplate").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = CreateApprovalRuleTemplateResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateApprovalRuleTemplateResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -204,6 +307,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("CodeCommit")]
+        public void CreatePullRequestApprovalRuleMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<CreatePullRequestApprovalRuleRequest>();
+            var marshaller = new CreatePullRequestApprovalRuleRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<CreatePullRequestApprovalRuleRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreatePullRequestApprovalRule").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = CreatePullRequestApprovalRuleResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreatePullRequestApprovalRuleResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeCommit")]
         public void CreateRepositoryMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<CreateRepositoryRequest>();
@@ -254,6 +386,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateUnreferencedMergeCommitResponseUnmarshaller.Instance.Unmarshall(context)
                 as CreateUnreferencedMergeCommitResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeCommit")]
+        public void DeleteApprovalRuleTemplateMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DeleteApprovalRuleTemplateRequest>();
+            var marshaller = new DeleteApprovalRuleTemplateRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DeleteApprovalRuleTemplateRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteApprovalRuleTemplate").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DeleteApprovalRuleTemplateResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteApprovalRuleTemplateResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -349,6 +510,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("CodeCommit")]
+        public void DeletePullRequestApprovalRuleMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DeletePullRequestApprovalRuleRequest>();
+            var marshaller = new DeletePullRequestApprovalRuleRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DeletePullRequestApprovalRuleRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeletePullRequestApprovalRule").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DeletePullRequestApprovalRuleResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeletePullRequestApprovalRuleResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeCommit")]
         public void DeleteRepositoryMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DeleteRepositoryRequest>();
@@ -428,6 +618,80 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribePullRequestEventsResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribePullRequestEventsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeCommit")]
+        public void DisassociateApprovalRuleTemplateFromRepositoryMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DisassociateApprovalRuleTemplateFromRepositoryRequest>();
+            var marshaller = new DisassociateApprovalRuleTemplateFromRepositoryRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DisassociateApprovalRuleTemplateFromRepositoryRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeCommit")]
+        public void EvaluatePullRequestApprovalRulesMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<EvaluatePullRequestApprovalRulesRequest>();
+            var marshaller = new EvaluatePullRequestApprovalRulesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<EvaluatePullRequestApprovalRulesRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("EvaluatePullRequestApprovalRules").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = EvaluatePullRequestApprovalRulesResponseUnmarshaller.Instance.Unmarshall(context)
+                as EvaluatePullRequestApprovalRulesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeCommit")]
+        public void GetApprovalRuleTemplateMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<GetApprovalRuleTemplateRequest>();
+            var marshaller = new GetApprovalRuleTemplateRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<GetApprovalRuleTemplateRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetApprovalRuleTemplate").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = GetApprovalRuleTemplateResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetApprovalRuleTemplateResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -813,6 +1077,64 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("CodeCommit")]
+        public void GetPullRequestApprovalStatesMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<GetPullRequestApprovalStatesRequest>();
+            var marshaller = new GetPullRequestApprovalStatesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<GetPullRequestApprovalStatesRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetPullRequestApprovalStates").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = GetPullRequestApprovalStatesResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetPullRequestApprovalStatesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeCommit")]
+        public void GetPullRequestOverrideStateMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<GetPullRequestOverrideStateRequest>();
+            var marshaller = new GetPullRequestOverrideStateRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<GetPullRequestOverrideStateRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetPullRequestOverrideState").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = GetPullRequestOverrideStateResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetPullRequestOverrideStateResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeCommit")]
         public void GetRepositoryMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<GetRepositoryRequest>();
@@ -863,6 +1185,64 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetRepositoryTriggersResponseUnmarshaller.Instance.Unmarshall(context)
                 as GetRepositoryTriggersResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeCommit")]
+        public void ListApprovalRuleTemplatesMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<ListApprovalRuleTemplatesRequest>();
+            var marshaller = new ListApprovalRuleTemplatesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<ListApprovalRuleTemplatesRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListApprovalRuleTemplates").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = ListApprovalRuleTemplatesResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListApprovalRuleTemplatesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeCommit")]
+        public void ListAssociatedApprovalRuleTemplatesForRepositoryMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<ListAssociatedApprovalRuleTemplatesForRepositoryRequest>();
+            var marshaller = new ListAssociatedApprovalRuleTemplatesForRepositoryRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<ListAssociatedApprovalRuleTemplatesForRepositoryRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListAssociatedApprovalRuleTemplatesForRepository").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = ListAssociatedApprovalRuleTemplatesForRepositoryResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListAssociatedApprovalRuleTemplatesForRepositoryResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -950,6 +1330,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListRepositoriesResponseUnmarshaller.Instance.Unmarshall(context)
                 as ListRepositoriesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeCommit")]
+        public void ListRepositoriesForApprovalRuleTemplateMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<ListRepositoriesForApprovalRuleTemplateRequest>();
+            var marshaller = new ListRepositoriesForApprovalRuleTemplateRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<ListRepositoriesForApprovalRuleTemplateRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListRepositoriesForApprovalRuleTemplate").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = ListRepositoriesForApprovalRuleTemplateResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListRepositoriesForApprovalRuleTemplateResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -1154,6 +1563,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = MergePullRequestByThreeWayResponseUnmarshaller.Instance.Unmarshall(context)
                 as MergePullRequestByThreeWayResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeCommit")]
+        public void OverridePullRequestApprovalRulesMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<OverridePullRequestApprovalRulesRequest>();
+            var marshaller = new OverridePullRequestApprovalRulesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<OverridePullRequestApprovalRulesRequest>(request,jsonRequest);
+
         }
 
         
@@ -1367,6 +1792,93 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("CodeCommit")]
+        public void UpdateApprovalRuleTemplateContentMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<UpdateApprovalRuleTemplateContentRequest>();
+            var marshaller = new UpdateApprovalRuleTemplateContentRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<UpdateApprovalRuleTemplateContentRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateApprovalRuleTemplateContent").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = UpdateApprovalRuleTemplateContentResponseUnmarshaller.Instance.Unmarshall(context)
+                as UpdateApprovalRuleTemplateContentResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeCommit")]
+        public void UpdateApprovalRuleTemplateDescriptionMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<UpdateApprovalRuleTemplateDescriptionRequest>();
+            var marshaller = new UpdateApprovalRuleTemplateDescriptionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<UpdateApprovalRuleTemplateDescriptionRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateApprovalRuleTemplateDescription").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = UpdateApprovalRuleTemplateDescriptionResponseUnmarshaller.Instance.Unmarshall(context)
+                as UpdateApprovalRuleTemplateDescriptionResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeCommit")]
+        public void UpdateApprovalRuleTemplateNameMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<UpdateApprovalRuleTemplateNameRequest>();
+            var marshaller = new UpdateApprovalRuleTemplateNameRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<UpdateApprovalRuleTemplateNameRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateApprovalRuleTemplateName").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = UpdateApprovalRuleTemplateNameResponseUnmarshaller.Instance.Unmarshall(context)
+                as UpdateApprovalRuleTemplateNameResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeCommit")]
         public void UpdateCommentMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<UpdateCommentRequest>();
@@ -1404,6 +1916,51 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
             Comparer.CompareObjectToJson<UpdateDefaultBranchRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeCommit")]
+        public void UpdatePullRequestApprovalRuleContentMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<UpdatePullRequestApprovalRuleContentRequest>();
+            var marshaller = new UpdatePullRequestApprovalRuleContentRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<UpdatePullRequestApprovalRuleContentRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdatePullRequestApprovalRuleContent").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = UpdatePullRequestApprovalRuleContentResponseUnmarshaller.Instance.Unmarshall(context)
+                as UpdatePullRequestApprovalRuleContentResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeCommit")]
+        public void UpdatePullRequestApprovalStateMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<UpdatePullRequestApprovalStateRequest>();
+            var marshaller = new UpdatePullRequestApprovalStateRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<UpdatePullRequestApprovalStateRequest>(request,jsonRequest);
 
         }
 

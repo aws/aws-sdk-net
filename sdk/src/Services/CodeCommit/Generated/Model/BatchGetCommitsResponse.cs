@@ -58,8 +58,8 @@ namespace Amazon.CodeCommit.Model
         /// Gets and sets the property Errors. 
         /// <para>
         /// Returns any commit IDs for which information could not be found. For example, if one
-        /// of the commit IDs was a shortened SHA or that commit was not found in the specified
-        /// repository, the ID will return an error object with additional information.
+        /// of the commit IDs was a shortened SHA ID or that commit was not found in the specified
+        /// repository, the ID returns an error object with more information.
         /// </para>
         /// </summary>
         public List<BatchGetCommitsError> Errors

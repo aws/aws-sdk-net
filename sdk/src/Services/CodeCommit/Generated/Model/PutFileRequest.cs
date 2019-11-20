@@ -48,7 +48,7 @@ namespace Amazon.CodeCommit.Model
         /// Gets and sets the property BranchName. 
         /// <para>
         /// The name of the branch where you want to add or update the file. If this is an empty
-        /// repository, this branch will be created.
+        /// repository, this branch is created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -67,8 +67,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property CommitMessage. 
         /// <para>
-        /// A message about why this file was added or updated. While optional, adding a message
-        /// is strongly encouraged in order to provide a more useful commit history for your repository.
+        /// A message about why this file was added or updated. Although it is optional, a message
+        /// makes the commit history for your repository more useful.
         /// </para>
         /// </summary>
         public string CommitMessage
@@ -123,7 +123,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property FileMode. 
         /// <para>
-        /// The file mode permissions of the blob. Valid file mode permissions are listed below.
+        /// The file mode permissions of the blob. Valid file mode permissions are listed here.
         /// </para>
         /// </summary>
         public FileModeTypeEnum FileMode
@@ -146,8 +146,8 @@ namespace Amazon.CodeCommit.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If the path does not currently exist in the repository, the path will be created as
-        /// part of adding the file.
+        /// If the path does not currently exist in the repository, the path is created as part
+        /// of adding the file.
         /// </para>
         ///  </note>
         /// </summary>
@@ -167,8 +167,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the person adding or updating the file. While optional, adding a name
-        /// is strongly encouraged in order to provide a more useful commit history for your repository.
+        /// The name of the person adding or updating the file. Although it is optional, a name
+        /// makes the commit history for your repository more useful.
         /// </para>
         /// </summary>
         public string Name
@@ -192,8 +192,8 @@ namespace Amazon.CodeCommit.Model
         /// </para>
         ///  
         /// <para>
-        /// The commit ID must match the ID of the head commit at the time of the operation, or
-        /// an error will occur, and the file will not be added or updated.
+        /// The commit ID must match the ID of the head commit at the time of the operation. Otherwise,
+        /// an error occurs, and the file is not added or updated.
         /// </para>
         /// </summary>
         public string ParentCommitId

@@ -62,8 +62,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property DestinationReference. 
         /// <para>
-        /// The branch of the repository where the pull request changes will be merged into. Also
-        /// known as the destination branch. 
+        /// The branch of the repository where the pull request changes are merged. Also known
+        /// as the destination branch. 
         /// </para>
         /// </summary>
         public string DestinationReference
@@ -140,7 +140,7 @@ namespace Amazon.CodeCommit.Model
         /// <para>
         /// The full commit ID of the tip of the source branch used to create the pull request.
         /// If the pull request branch is updated by a push while the pull request is open, the
-        /// commit ID will change to reflect the new tip of the branch.
+        /// commit ID changes to reflect the new tip of the branch.
         /// </para>
         /// </summary>
         public string SourceCommit

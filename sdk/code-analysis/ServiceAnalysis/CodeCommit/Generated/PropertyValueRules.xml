@@ -1,16 +1,52 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.CodeCommit.Model.AssociateApprovalRuleTemplateWithRepositoryRequest.ApprovalRuleTemplateName</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.AssociateApprovalRuleTemplateWithRepositoryRequest.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\w\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.BatchAssociateApprovalRuleTemplateWithRepositoriesRequest.ApprovalRuleTemplateName</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeCommit.Model.BatchDescribeMergeConflictsRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
     <pattern>[\w\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeCommit.Model.BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest.ApprovalRuleTemplateName</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeCommit.Model.BatchGetCommitsRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
     <pattern>[\w\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.CreateApprovalRuleTemplateRequest.ApprovalRuleTemplateContent</property>
+    <min>1</min>
+    <max>3000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.CreateApprovalRuleTemplateRequest.ApprovalRuleTemplateDescription</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.CreateApprovalRuleTemplateRequest.ApprovalRuleTemplateName</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.CreateBranchRequest.BranchName</property>
@@ -43,6 +79,16 @@
     <max>150</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeCommit.Model.CreatePullRequestApprovalRuleRequest.ApprovalRuleContent</property>
+    <min>1</min>
+    <max>3000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.CreatePullRequestApprovalRuleRequest.ApprovalRuleName</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeCommit.Model.CreateRepositoryRequest.RepositoryDescription</property>
     <max>1000</max>
   </property-value-rule>
@@ -57,6 +103,11 @@
     <min>1</min>
     <max>100</max>
     <pattern>[\w\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.DeleteApprovalRuleTemplateRequest.ApprovalRuleTemplateName</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.DeleteBranchRequest.BranchName</property>
@@ -81,6 +132,11 @@
     <pattern>[\w\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeCommit.Model.DeletePullRequestApprovalRuleRequest.ApprovalRuleName</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeCommit.Model.DeleteRepositoryRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
@@ -91,6 +147,22 @@
     <min>1</min>
     <max>100</max>
     <pattern>[\w\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.DisassociateApprovalRuleTemplateFromRepositoryRequest.ApprovalRuleTemplateName</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.DisassociateApprovalRuleTemplateFromRepositoryRequest.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\w\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.GetApprovalRuleTemplateRequest.ApprovalRuleTemplateName</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.GetBlobRequest.RepositoryName</property>
@@ -180,6 +252,12 @@
     <pattern>[\w\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeCommit.Model.ListAssociatedApprovalRuleTemplatesForRepositoryRequest.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\w\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeCommit.Model.ListBranchesRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
@@ -190,6 +268,11 @@
     <min>1</min>
     <max>100</max>
     <pattern>[\w\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.ListRepositoriesForApprovalRuleTemplateRequest.ApprovalRuleTemplateName</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.MergeBranchesByFastForwardRequest.RepositoryName</property>
@@ -294,6 +377,36 @@
     <pattern>[\w\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeCommit.Model.UpdateApprovalRuleTemplateContentRequest.ApprovalRuleTemplateName</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.UpdateApprovalRuleTemplateContentRequest.NewRuleContent</property>
+    <min>1</min>
+    <max>3000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.UpdateApprovalRuleTemplateDescriptionRequest.ApprovalRuleTemplateDescription</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.UpdateApprovalRuleTemplateDescriptionRequest.ApprovalRuleTemplateName</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.UpdateApprovalRuleTemplateNameRequest.NewApprovalRuleTemplateName</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.UpdateApprovalRuleTemplateNameRequest.OldApprovalRuleTemplateName</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeCommit.Model.UpdateDefaultBranchRequest.DefaultBranchName</property>
     <min>1</min>
     <max>256</max>
@@ -303,6 +416,16 @@
     <min>1</min>
     <max>100</max>
     <pattern>[\w\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.UpdatePullRequestApprovalRuleContentRequest.ApprovalRuleName</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.UpdatePullRequestApprovalRuleContentRequest.NewRuleContent</property>
+    <min>1</min>
+    <max>3000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.UpdatePullRequestDescriptionRequest.Description</property>
@@ -335,6 +458,53 @@
     <pattern>[\w\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeCommit.Model.ApprovalRule.ApprovalRuleContent</property>
+    <min>1</min>
+    <max>3000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.ApprovalRule.ApprovalRuleName</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.ApprovalRuleEventMetadata.ApprovalRuleContent</property>
+    <min>1</min>
+    <max>3000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.ApprovalRuleEventMetadata.ApprovalRuleName</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.ApprovalRuleTemplate.ApprovalRuleTemplateContent</property>
+    <min>1</min>
+    <max>3000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.ApprovalRuleTemplate.ApprovalRuleTemplateDescription</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.ApprovalRuleTemplate.ApprovalRuleTemplateName</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.BatchAssociateApprovalRuleTemplateWithRepositoriesError.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\w\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.BatchDisassociateApprovalRuleTemplateFromRepositoriesError.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\w\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeCommit.Model.BranchInfo.BranchName</property>
     <min>1</min>
     <max>256</max>
@@ -350,6 +520,11 @@
     <min>1</min>
     <max>100</max>
     <pattern>[\w\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.OriginApprovalRuleTemplate.ApprovalRuleTemplateName</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.PullRequest.Description</property>

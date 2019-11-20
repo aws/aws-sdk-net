@@ -38,8 +38,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property FailedExecutions. 
         /// <para>
-        /// The list of triggers that were not able to be tested. This list provides the names
-        /// of the triggers that could not be tested, separated by commas.
+        /// The list of triggers that were not tested. This list provides the names of the triggers
+        /// that could not be tested, separated by commas.
         /// </para>
         /// </summary>
         public List<RepositoryTriggerExecutionFailure> FailedExecutions

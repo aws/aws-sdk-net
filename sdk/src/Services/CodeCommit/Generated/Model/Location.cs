@@ -59,7 +59,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property FilePosition. 
         /// <para>
-        /// The position of a change within a compared file, in line number format.
+        /// The position of a change in a compared file, in line number format.
         /// </para>
         /// </summary>
         public long FilePosition
@@ -77,8 +77,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property RelativeFileVersion. 
         /// <para>
-        /// In a comparison of commits or a pull request, whether the change is in the 'before'
-        /// or 'after' of that comparison.
+        /// In a comparison of commits or a pull request, whether the change is in the before
+        /// or after of that comparison.
         /// </para>
         /// </summary>
         public RelativeFileVersionEnum RelativeFileVersion

@@ -42,7 +42,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property AfterCommitId. 
         /// <para>
-        /// To establish the directionality of the comparison, the full commit ID of the 'after'
+        /// To establish the directionality of the comparison, the full commit ID of the after
         /// commit.
         /// </para>
         /// </summary>
@@ -62,7 +62,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property BeforeCommitId. 
         /// <para>
-        /// To establish the directionality of the comparison, the full commit ID of the 'before'
+        /// To establish the directionality of the comparison, the full commit ID of the before
         /// commit.
         /// </para>
         /// </summary>
@@ -81,8 +81,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// A non-negative integer used to limit the number of returned results. The default is
-        /// 100 comments, and is configurable up to 500.
+        /// A non-zero, non-negative integer used to limit the number of returned results. The
+        /// default is 100 comments, but you can configure up to 500.
         /// </para>
         /// </summary>
         public int MaxResults

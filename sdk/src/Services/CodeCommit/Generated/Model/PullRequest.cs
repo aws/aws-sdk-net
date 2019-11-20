@@ -32,6 +32,7 @@ namespace Amazon.CodeCommit.Model
     /// </summary>
     public partial class PullRequest
     {
+        private List<ApprovalRule> _approvalRules = new List<ApprovalRule>();
         private string _authorArn;
         private string _clientRequestToken;
         private DateTime? _creationDate;
@@ -40,7 +41,26 @@ namespace Amazon.CodeCommit.Model
         private string _pullRequestId;
         private PullRequestStatusEnum _pullRequestStatus;
         private List<PullRequestTarget> _pullRequestTargets = new List<PullRequestTarget>();
+        private string _revisionId;
         private string _title;
+
+        /// <summary>
+        /// Gets and sets the property ApprovalRules. 
+        /// <para>
+        /// The approval rules applied to the pull request.
+        /// </para>
+        /// </summary>
+        public List<ApprovalRule> ApprovalRules
+        {
+            get { return this._approvalRules; }
+            set { this._approvalRules = value; }
+        }
+
+        // Check to see if ApprovalRules property is set
+        internal bool IsSetApprovalRules()
+        {
+            return this._approvalRules != null && this._approvalRules.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AuthorArn. 
@@ -63,9 +83,9 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// A unique, client-generated idempotency token that when provided in a request, ensures
+        /// A unique, client-generated idempotency token that, when provided in a request, ensures
         /// the request cannot be repeated with a changed parameter. If a request is received
-        /// with the same parameters and a token is included, the request will return information
+        /// with the same parameters and a token is included, the request returns information
         /// about the initial request that used that token.
         /// </para>
         /// </summary>
@@ -195,10 +215,28 @@ namespace Amazon.CodeCommit.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RevisionId. 
+        /// <para>
+        /// The system-generated revision ID for the pull request.
+        /// </para>
+        /// </summary>
+        public string RevisionId
+        {
+            get { return this._revisionId; }
+            set { this._revisionId = value; }
+        }
+
+        // Check to see if RevisionId property is set
+        internal bool IsSetRevisionId()
+        {
+            return this._revisionId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
         /// The user-defined title of the pull request. This title is displayed in the list of
-        /// pull requests to other users of the repository.
+        /// pull requests to other repository users.
         /// </para>
         /// </summary>
         [AWSProperty(Max=150)]

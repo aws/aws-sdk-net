@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// Information about errors in a BatchDescribeMergeConflicts operation.
+    /// Returns information about errors in a BatchDescribeMergeConflicts operation.
     /// </summary>
     public partial class BatchDescribeMergeConflictsError
     {

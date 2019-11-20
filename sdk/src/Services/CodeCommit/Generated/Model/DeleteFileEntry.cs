@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// A file that will be deleted as part of a commit.
+    /// A file that is deleted as part of a commit.
     /// </summary>
     public partial class DeleteFileEntry
     {
@@ -37,7 +37,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property FilePath. 
         /// <para>
-        /// The full path of the file that will be deleted, including the name of the file.
+        /// The full path of the file to be deleted, including the name of the file.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

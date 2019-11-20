@@ -31,7 +31,7 @@ namespace Amazon.CodeCommit.Model
     /// Container for the parameters to the DescribeMergeConflicts operation.
     /// Returns information about one or more merge conflicts in the attempted merge of two
     /// commit specifiers using the squash or three-way merge strategy. If the merge option
-    /// for the attempted merge is specified as FAST_FORWARD_MERGE, an exception will be thrown.
+    /// for the attempted merge is specified as FAST_FORWARD_MERGE, an exception is thrown.
     /// </summary>
     public partial class DescribeMergeConflictsRequest : AmazonCodeCommitRequest
     {
@@ -49,9 +49,9 @@ namespace Amazon.CodeCommit.Model
         /// Gets and sets the property ConflictDetailLevel. 
         /// <para>
         /// The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
-        /// which will return a not mergeable result if the same file has differences in both
-        /// branches. If LINE_LEVEL is specified, a conflict will be considered not mergeable
-        /// if the same file in both branches has differences on the same line.
+        /// which returns a not-mergeable result if the same file has differences in both branches.
+        /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file
+        /// in both branches has differences on the same line.
         /// </para>
         /// </summary>
         public ConflictDetailLevelTypeEnum ConflictDetailLevel
@@ -71,7 +71,7 @@ namespace Amazon.CodeCommit.Model
         /// <para>
         /// Specifies which branch to use when resolving conflicts, or whether to attempt automatically
         /// merging two versions of a file. The default is NONE, which requires any conflicts
-        /// to be resolved manually before the merge operation will be successful.
+        /// to be resolved manually before the merge operation is successful.
         /// </para>
         /// </summary>
         public ConflictResolutionStrategyTypeEnum ConflictResolutionStrategy
@@ -89,8 +89,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property DestinationCommitSpecifier. 
         /// <para>
-        /// The branch, tag, HEAD, or other fully qualified reference used to identify a commit.
-        /// For example, a branch name or a full commit ID.
+        /// The branch, tag, HEAD, or other fully qualified reference used to identify a commit
+        /// (for example, a branch name or a full commit ID).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -165,7 +165,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// An enumeration token that when provided in a request, returns the next batch of the
+        /// An enumeration token that, when provided in a request, returns the next batch of the
         /// results.
         /// </para>
         /// </summary>
@@ -203,8 +203,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property SourceCommitSpecifier. 
         /// <para>
-        /// The branch, tag, HEAD, or other fully qualified reference used to identify a commit.
-        /// For example, a branch name or a full commit ID.
+        /// The branch, tag, HEAD, or other fully qualified reference used to identify a commit
+        /// (for example, a branch name or a full commit ID).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -78,8 +78,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property FilePath. 
         /// <para>
-        /// The fully-qualified path to the file that will be deleted, including the full name
-        /// and extension of that file.
+        /// The fully qualified path to the file to be deleted, including the full name and extension
+        /// of that file.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

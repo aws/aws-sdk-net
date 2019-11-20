@@ -40,7 +40,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property AbsolutePath. 
         /// <para>
-        /// The fully-qualified path to the folder that contains the symbolic link.
+        /// The fully qualified path to the folder that contains the symbolic link.
         /// </para>
         /// </summary>
         public string AbsolutePath
