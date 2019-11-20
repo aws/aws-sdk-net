@@ -38,7 +38,8 @@ namespace Amazon.MigrationHub.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The configurationId in ADS that uniquely identifies the grouped application.
+        /// The configurationId in Application Discovery Service that uniquely identifies the
+        /// grouped application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1600)]

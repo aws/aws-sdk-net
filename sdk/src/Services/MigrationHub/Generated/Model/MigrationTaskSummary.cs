@@ -44,7 +44,8 @@ namespace Amazon.MigrationHub.Model
         /// <summary>
         /// Gets and sets the property MigrationTaskName. 
         /// <para>
-        /// Unique identifier that references the migration task.
+        /// Unique identifier that references the migration task. <i>Do not store personal data
+        /// in this field.</i> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -61,7 +62,10 @@ namespace Amazon.MigrationHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProgressPercent.
+        /// Gets and sets the property ProgressPercent. 
+        /// <para>
+        /// Indication of the percentage completion of the task.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public int ProgressPercent

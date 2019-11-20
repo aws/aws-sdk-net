@@ -51,7 +51,7 @@ namespace Amazon.MigrationHub.Model
     ///  </li> <li> 
     /// <para>
     ///  <code>CreateProgressUpdateStream</code>, <code>ImportMigrationTask</code>, <code>NotifyMigrationTaskState</code>,
-    /// and all Associate[*] APIs realted to the tasks belonging to the stream will throw
+    /// and all Associate[*] APIs related to the tasks belonging to the stream will throw
     /// "InvalidInputException" if the stream of the same name is in the process of being
     /// deleted.
     /// </para>
@@ -90,7 +90,8 @@ namespace Amazon.MigrationHub.Model
         /// <summary>
         /// Gets and sets the property ProgressUpdateStreamName. 
         /// <para>
-        /// The name of the ProgressUpdateStream. 
+        /// The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

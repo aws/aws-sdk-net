@@ -39,7 +39,8 @@ namespace Amazon.MigrationHub.Model
         /// <summary>
         /// Gets and sets the property MigrationTaskName. 
         /// <para>
-        /// The identifier given to the MigrationTask.
+        /// The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
