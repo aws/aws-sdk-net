@@ -111,6 +111,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     response.Options = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Schedule", targetDepth))
+                {
+                    var unmarshaller = TaskScheduleUnmarshaller.Instance;
+                    response.Schedule = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SourceLocationArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

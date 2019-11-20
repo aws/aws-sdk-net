@@ -331,12 +331,12 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property TaskQueueing. 
         /// <para>
         /// A value that determines whether tasks should be queued before executing the tasks.
-        /// If set to <code>Enabled</code>, the tasks will queued. The default is <code>Enabled</code>.
+        /// If set to <code>ENABLED</code>, the tasks will be queued. The default is <code>ENABLED</code>.
         /// </para>
         ///  
         /// <para>
         /// If you use the same agent to run multiple tasks you can enable the tasks to run in
-        /// series. For more information see <a>task-queue</a>.
+        /// series. For more information see <a>queue-task-execution</a>.
         /// </para>
         /// </summary>
         public TaskQueueing TaskQueueing

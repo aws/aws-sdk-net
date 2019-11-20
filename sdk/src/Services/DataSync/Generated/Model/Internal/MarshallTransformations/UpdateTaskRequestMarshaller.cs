@@ -107,6 +107,17 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetSchedule())
+                {
+                    context.Writer.WritePropertyName("Schedule");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TaskScheduleMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Schedule, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTaskArn())
                 {
                     context.Writer.WritePropertyName("TaskArn");
