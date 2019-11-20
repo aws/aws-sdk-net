@@ -33,7 +33,7 @@ namespace Amazon.MediaStore.Model
     /// (such as "environment") and the tag value represents a specific value within that
     /// category (such as "test," "development," or "production"). You can add up to 50 tags
     /// to each container. For more information about tagging, including naming and usage
-    /// conventions, see <a href="https://aws.amazon.com/documentation/mediastore/tagging">Tagging
+    /// conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging
     /// Resources in MediaStore</a>.
     /// </summary>
     public partial class Tag
@@ -48,7 +48,7 @@ namespace Amazon.MediaStore.Model
         /// category of information, such as "customer." Tag keys are case-sensitive.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
