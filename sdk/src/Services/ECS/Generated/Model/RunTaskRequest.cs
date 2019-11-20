@@ -84,6 +84,7 @@ namespace Amazon.ECS.Model
         private List<PlacementStrategy> _placementStrategy = new List<PlacementStrategy>();
         private string _platformVersion;
         private PropagateTags _propagateTags;
+        private string _referenceId;
         private string _startedBy;
         private List<Tag> _tags = new List<Tag>();
         private string _taskDefinition;
@@ -322,6 +323,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetPropagateTags()
         {
             return this._propagateTags != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReferenceId. 
+        /// <para>
+        /// The reference ID to use for the task.
+        /// </para>
+        /// </summary>
+        public string ReferenceId
+        {
+            get { return this._referenceId; }
+            set { this._referenceId = value; }
+        }
+
+        // Check to see if ReferenceId property is set
+        internal bool IsSetReferenceId()
+        {
+            return this._referenceId != null;
         }
 
         /// <summary>

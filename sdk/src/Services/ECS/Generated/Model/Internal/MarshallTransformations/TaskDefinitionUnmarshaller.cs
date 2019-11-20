@@ -94,6 +94,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Family = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("inferenceAccelerators", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<InferenceAccelerator, InferenceAcceleratorUnmarshaller>(InferenceAcceleratorUnmarshaller.Instance);
+                    unmarshalledObject.InferenceAccelerators = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ipcMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

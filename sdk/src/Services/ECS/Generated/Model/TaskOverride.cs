@@ -33,8 +33,10 @@ namespace Amazon.ECS.Model
     public partial class TaskOverride
     {
         private List<ContainerOverride> _containerOverrides = new List<ContainerOverride>();
+        private string _cpu;
         private string _executionRoleArn;
         private List<InferenceAcceleratorOverride> _inferenceAcceleratorOverrides = new List<InferenceAcceleratorOverride>();
+        private string _memory;
         private string _taskRoleArn;
 
         /// <summary>
@@ -53,6 +55,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetContainerOverrides()
         {
             return this._containerOverrides != null && this._containerOverrides.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Cpu. 
+        /// <para>
+        /// The cpu override for the task.
+        /// </para>
+        /// </summary>
+        public string Cpu
+        {
+            get { return this._cpu; }
+            set { this._cpu = value; }
+        }
+
+        // Check to see if Cpu property is set
+        internal bool IsSetCpu()
+        {
+            return this._cpu != null;
         }
 
         /// <summary>
@@ -90,6 +110,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetInferenceAcceleratorOverrides()
         {
             return this._inferenceAcceleratorOverrides != null && this._inferenceAcceleratorOverrides.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Memory. 
+        /// <para>
+        /// The memory override for the task.
+        /// </para>
+        /// </summary>
+        public string Memory
+        {
+            get { return this._memory; }
+            set { this._memory = value; }
+        }
+
+        // Check to see if Memory property is set
+        internal bool IsSetMemory()
+        {
+            return this._memory != null;
         }
 
         /// <summary>
