@@ -264,6 +264,12 @@
     <pattern>^([01]\d|2[0-3]):?([0-5]\d)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FSx.Model.CreateFileSystemWindowsConfiguration.PreferredSubnetId</property>
+    <min>15</min>
+    <max>24</max>
+    <pattern>^(subnet-[0-9a-f]{8,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FSx.Model.CreateFileSystemWindowsConfiguration.ThroughputCapacity</property>
     <min>8</min>
     <max>2048</max>
@@ -534,6 +540,22 @@
     <min>5</min>
     <max>5</max>
     <pattern>^([01]\d|2[0-3]):?([0-5]\d)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.WindowsFileSystemConfiguration.PreferredFileServerIp</property>
+    <pattern>^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.WindowsFileSystemConfiguration.PreferredSubnetId</property>
+    <min>15</min>
+    <max>24</max>
+    <pattern>^(subnet-[0-9a-f]{8,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.WindowsFileSystemConfiguration.RemoteAdministrationEndpoint</property>
+    <min>16</min>
+    <max>275</max>
+    <pattern>^(fsi?-[0-9a-f]{8,}\..{4,253})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.WindowsFileSystemConfiguration.ThroughputCapacity</property>

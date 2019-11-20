@@ -37,6 +37,8 @@ namespace Amazon.FSx.Model
         private int? _automaticBackupRetentionDays;
         private bool? _copyTagsToBackups;
         private string _dailyAutomaticBackupStartTime;
+        private WindowsDeploymentType _deploymentType;
+        private string _preferredSubnetId;
         private SelfManagedActiveDirectoryConfiguration _selfManagedActiveDirectoryConfiguration;
         private int? _throughputCapacity;
         private string _weeklyMaintenanceStartTime;
@@ -122,6 +124,64 @@ namespace Amazon.FSx.Model
         internal bool IsSetDailyAutomaticBackupStartTime()
         {
             return this._dailyAutomaticBackupStartTime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentType. 
+        /// <para>
+        /// Specifies the file system deployment type, valid values are the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// MULTI_AZ_1 - Deploys a high availability file system that is configured for Multi-AZ
+        /// redundancy to tolerate temporary Availability Zone (AZ) unavailability. You can only
+        /// deploy a Multi-AZ file system in AWS Regions that have a minimum of three Availability
+        /// Zones.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SINGLE_AZ_1 - (Default) Choose to deploy a file system that is configured for single
+        /// AZ redundancy.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To learn more about high availability Multi-AZ file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
+        /// High Availability for Amazon FSx for Windows File Server</a>.
+        /// </para>
+        /// </summary>
+        public WindowsDeploymentType DeploymentType
+        {
+            get { return this._deploymentType; }
+            set { this._deploymentType = value; }
+        }
+
+        // Check to see if DeploymentType property is set
+        internal bool IsSetDeploymentType()
+        {
+            return this._deploymentType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredSubnetId. 
+        /// <para>
+        /// Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This
+        /// specifies the subnet in which you want the preferred file server to be located. For
+        /// in-AWS applications, we recommend that you launch your clients in the same Availability
+        /// Zone (AZ) as your preferred file server to reduce cross-AZ data transfer costs and
+        /// minimize latency. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=15, Max=24)]
+        public string PreferredSubnetId
+        {
+            get { return this._preferredSubnetId; }
+            set { this._preferredSubnetId = value; }
+        }
+
+        // Check to see if PreferredSubnetId property is set
+        internal bool IsSetPreferredSubnetId()
+        {
+            return this._preferredSubnetId != null;
         }
 
         /// <summary>

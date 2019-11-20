@@ -88,10 +88,34 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.DailyAutomaticBackupStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DeploymentType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DeploymentType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MaintenanceOperationsInProgress", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.MaintenanceOperationsInProgress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PreferredFileServerIp", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PreferredFileServerIp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PreferredSubnetId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PreferredSubnetId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RemoteAdministrationEndpoint", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RemoteAdministrationEndpoint = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SelfManagedActiveDirectoryConfiguration", targetDepth))

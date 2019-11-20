@@ -100,9 +100,10 @@ namespace Amazon.FSx.Model
         /// <para>
         /// (Optional) The name of the domain group whose members are granted administrative privileges
         /// for the file system. Administrative privileges include taking ownership of files and
-        /// folders, and setting audit controls (audit ACLs) on files and folders. The group that
-        /// you specify must already exist in your domain. If you don't provide one, your AD domain's
-        /// Domain Admins group is used.
+        /// folders, setting audit controls (audit ACLs) on files and folders, and administering
+        /// the file system remotely by using the FSx Remote PowerShell. The group that you specify
+        /// must already exist in your domain. If you don't provide one, your AD domain's Domain
+        /// Admins group is used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
