@@ -34,21 +34,6 @@ namespace Amazon.QuickSight.Model
     /// 
     ///  
     /// <para>
-    /// The permission resource is <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt;</i>
-    /// </code>.
-    /// </para>
-    ///  
-    /// <para>
-    /// The condition resource is the Amazon Resource Name (ARN) for the IAM user or role,
-    /// and the session name. 
-    /// </para>
-    ///  
-    /// <para>
-    /// The condition keys are <code>quicksight:IamArn</code> and <code>quicksight:SessionName</code>.
-    /// 
-    /// </para>
-    ///  
-    /// <para>
     ///  <b>CLI Sample:</b> 
     /// </para>
     ///  
@@ -162,7 +147,7 @@ namespace Amazon.QuickSight.Model
         /// The namespace. Currently, you should set this to <code>default</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=64)]
         public string Namespace
         {
             get { return this._awsNamespace; }
@@ -182,7 +167,7 @@ namespace Amazon.QuickSight.Model
         /// IAM role. You don't need to provide the session name for other scenarios, for example
         /// when you are registering an IAM user or an Amazon QuickSight user. You can register
         /// multiple users using the same IAM role if each user has a different session name.
-        /// For more information on assuming IAM roles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
+        /// For more information on assuming IAM roles, see <a href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html">
         /// <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> 
         /// </para>
         /// </summary>
@@ -221,7 +206,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property UserRole. 
         /// <para>
-        /// The Amazon QuickSight role of the user. The user role can be one of the following:
+        /// The Amazon QuickSight role for the user. The user role can be one of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -229,13 +214,21 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AUTHOR</code>: A user who can create data sources, data sets, analyses, and
+        ///  <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and
         /// dashboards.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight
         /// settings.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RESTRICTED_READER</code>: This role isn't currently available for use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.
         /// </para>
         ///  </li> </ul>
         /// </summary>

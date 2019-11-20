@@ -33,11 +33,6 @@ namespace Amazon.QuickSight.Model
     /// 
     ///  
     /// <para>
-    /// The permission resource is <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt;</i>
-    /// </code>. 
-    /// </para>
-    ///  
-    /// <para>
     /// The response is a one or more group objects. 
     /// </para>
     ///  
@@ -103,7 +98,7 @@ namespace Amazon.QuickSight.Model
         /// The namespace. Currently, you should set this to <code>default</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=64)]
         public string Namespace
         {
             get { return this._awsNamespace; }

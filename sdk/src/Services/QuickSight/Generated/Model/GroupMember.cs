@@ -29,7 +29,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// A member of an Amazon QuickSight group. Currently, group members must be users. Groups
-    /// can't be members of another group.
+    /// can't be members of another group. .
     /// </summary>
     public partial class GroupMember
     {
@@ -39,7 +39,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the group member (user).
+        /// The Amazon Resource name (ARN) for the group member (user).
         /// </para>
         /// </summary>
         public string Arn
