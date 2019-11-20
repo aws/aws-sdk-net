@@ -13,6 +13,10 @@
     <pattern>^\+?[1-9]\d{1,14}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.BatchCreateAttendeeRequest.MeetingId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.BatchCreateRoomMembershipRequest.AccountId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -39,12 +43,32 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.CreateAttendeeRequest.ExternalUserId</property>
+    <min>2</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.CreateAttendeeRequest.MeetingId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.CreateBotRequest.AccountId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.CreateBotRequest.Domain</property>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.CreateMeetingRequest.ClientRequestToken</property>
+    <min>2</min>
+    <max>64</max>
+    <pattern>[-_a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.CreateMeetingRequest.MeetingHostId</property>
+    <min>2</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.CreateRoomRequest.AccountId</property>
@@ -83,12 +107,24 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.DeleteAttendeeRequest.AttendeeId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.DeleteAttendeeRequest.MeetingId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.DeleteEventsConfigurationRequest.AccountId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.DeleteEventsConfigurationRequest.BotId</property>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.DeleteMeetingRequest.MeetingId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.DeleteRoomRequest.AccountId</property>
@@ -151,6 +187,14 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.GetAttendeeRequest.AttendeeId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.GetAttendeeRequest.MeetingId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.GetBotRequest.AccountId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -165,6 +209,10 @@
   <property-value-rule>
     <property>Amazon.Chime.Model.GetEventsConfigurationRequest.BotId</property>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.GetMeetingRequest.MeetingId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.GetPhoneNumberOrderRequest.PhoneNumberOrderId</property>
@@ -238,11 +286,25 @@
     <pattern>.+@.+\..+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.ListAttendeesRequest.MaxResults</property>
+    <min>1</min>
+    <max>99</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.ListAttendeesRequest.MeetingId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.ListBotsRequest.AccountId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.ListBotsRequest.MaxResults</property>
+    <min>1</min>
+    <max>99</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.ListMeetingsRequest.MaxResults</property>
     <min>1</min>
     <max>99</max>
   </property-value-rule>
@@ -449,8 +511,70 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.Attendee.AttendeeId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.Attendee.ExternalUserId</property>
+    <min>2</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.Attendee.JoinToken</property>
+    <min>2</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.CreateAttendeeError.ExternalUserId</property>
+    <min>2</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.CreateAttendeeRequestItem.ExternalUserId</property>
+    <min>2</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.Invite.EmailAddress</property>
     <pattern>.+@.+\..+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.MediaPlacement.AudioHostUrl</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.MediaPlacement.ScreenDataUrl</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.MediaPlacement.ScreenSharingUrl</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.MediaPlacement.ScreenViewingUrl</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.MediaPlacement.SignalingUrl</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.MediaPlacement.TurnControlUrl</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.Meeting.MeetingId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.MeetingNotificationConfiguration.SnsTopicArn</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.MeetingNotificationConfiguration.SqsQueueArn</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.Member.AccountId</property>
