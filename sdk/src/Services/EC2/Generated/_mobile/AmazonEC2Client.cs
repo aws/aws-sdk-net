@@ -7185,6 +7185,40 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeFastSnapshotRestores
+
+        internal virtual DescribeFastSnapshotRestoresResponse DescribeFastSnapshotRestores(DescribeFastSnapshotRestoresRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFastSnapshotRestoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFastSnapshotRestoresResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFastSnapshotRestoresResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the state of fast snapshot restores for your snapshots.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFastSnapshotRestores service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeFastSnapshotRestores service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastSnapshotRestores">REST API Reference for DescribeFastSnapshotRestores Operation</seealso>
+        public virtual Task<DescribeFastSnapshotRestoresResponse> DescribeFastSnapshotRestoresAsync(DescribeFastSnapshotRestoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFastSnapshotRestoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFastSnapshotRestoresResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeFastSnapshotRestoresResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeFleetHistory
 
         internal virtual DescribeFleetHistoryResponse DescribeFleetHistory(DescribeFleetHistoryRequest request)
@@ -11554,6 +11588,41 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableFastSnapshotRestores
+
+        internal virtual DisableFastSnapshotRestoresResponse DisableFastSnapshotRestores(DisableFastSnapshotRestoresRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableFastSnapshotRestoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableFastSnapshotRestoresResponseUnmarshaller.Instance;
+
+            return Invoke<DisableFastSnapshotRestoresResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disables fast snapshot restores for the specified snapshots in the specified Availability
+        /// Zones.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableFastSnapshotRestores service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableFastSnapshotRestores service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastSnapshotRestores">REST API Reference for DisableFastSnapshotRestores Operation</seealso>
+        public virtual Task<DisableFastSnapshotRestoresResponse> DisableFastSnapshotRestoresAsync(DisableFastSnapshotRestoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableFastSnapshotRestoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableFastSnapshotRestoresResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisableFastSnapshotRestoresResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisableTransitGatewayRouteTablePropagation
 
         internal virtual DisableTransitGatewayRouteTablePropagationResponse DisableTransitGatewayRouteTablePropagation(DisableTransitGatewayRouteTablePropagationRequest request)
@@ -12044,6 +12113,48 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = EnableEbsEncryptionByDefaultResponseUnmarshaller.Instance;
 
             return InvokeAsync<EnableEbsEncryptionByDefaultResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  EnableFastSnapshotRestores
+
+        internal virtual EnableFastSnapshotRestoresResponse EnableFastSnapshotRestores(EnableFastSnapshotRestoresRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableFastSnapshotRestoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableFastSnapshotRestoresResponseUnmarshaller.Instance;
+
+            return Invoke<EnableFastSnapshotRestoresResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Enables fast snapshot restores for the specified snapshots in the specified Availability
+        /// Zones.
+        /// 
+        ///  
+        /// <para>
+        /// You get the full benefit of fast snapshot restores after they enter the <code>enabled</code>
+        /// state. To get the current state of fast snapshot restores, use <a>DescribeFastSnapshotRestores</a>.
+        /// To disable fast snapshot restores, use <a>DisableFastSnapshotRestores</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableFastSnapshotRestores service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableFastSnapshotRestores service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastSnapshotRestores">REST API Reference for EnableFastSnapshotRestores Operation</seealso>
+        public virtual Task<EnableFastSnapshotRestoresResponse> EnableFastSnapshotRestoresAsync(EnableFastSnapshotRestoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableFastSnapshotRestoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableFastSnapshotRestoresResponseUnmarshaller.Instance;
+
+            return InvokeAsync<EnableFastSnapshotRestoresResponse>(request, options, cancellationToken);
         }
 
         #endregion

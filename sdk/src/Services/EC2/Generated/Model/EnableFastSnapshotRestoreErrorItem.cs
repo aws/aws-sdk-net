@@ -28,17 +28,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the CopySnapshot operation.
+    /// Contains information about the errors that occurred when enabling fast snapshot restores.
     /// </summary>
-    public partial class CopySnapshotResponse : AmazonWebServiceResponse
+    public partial class EnableFastSnapshotRestoreErrorItem
     {
+        private List<EnableFastSnapshotRestoreStateErrorItem> _fastSnapshotRestoreStateErrors = new List<EnableFastSnapshotRestoreStateErrorItem>();
         private string _snapshotId;
-        private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property FastSnapshotRestoreStateErrors. 
+        /// <para>
+        /// The errors.
+        /// </para>
+        /// </summary>
+        public List<EnableFastSnapshotRestoreStateErrorItem> FastSnapshotRestoreStateErrors
+        {
+            get { return this._fastSnapshotRestoreStateErrors; }
+            set { this._fastSnapshotRestoreStateErrors = value; }
+        }
+
+        // Check to see if FastSnapshotRestoreStateErrors property is set
+        internal bool IsSetFastSnapshotRestoreStateErrors()
+        {
+            return this._fastSnapshotRestoreStateErrors != null && this._fastSnapshotRestoreStateErrors.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property SnapshotId. 
         /// <para>
-        /// The ID of the new snapshot.
+        /// The ID of the snapshot.
         /// </para>
         /// </summary>
         public string SnapshotId
@@ -51,24 +69,6 @@ namespace Amazon.EC2.Model
         internal bool IsSetSnapshotId()
         {
             return this._snapshotId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// Any tags applied to the new snapshot.
-        /// </para>
-        /// </summary>
-        public List<Tag> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

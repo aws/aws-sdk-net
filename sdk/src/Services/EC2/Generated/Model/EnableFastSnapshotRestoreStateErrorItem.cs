@@ -28,47 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the CopySnapshot operation.
+    /// Contains information about an error that occurred when enabling fast snapshot restores.
     /// </summary>
-    public partial class CopySnapshotResponse : AmazonWebServiceResponse
+    public partial class EnableFastSnapshotRestoreStateErrorItem
     {
-        private string _snapshotId;
-        private List<Tag> _tags = new List<Tag>();
+        private string _availabilityZone;
+        private EnableFastSnapshotRestoreStateError _error;
 
         /// <summary>
-        /// Gets and sets the property SnapshotId. 
+        /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The ID of the new snapshot.
+        /// The Availability Zone.
         /// </para>
         /// </summary>
-        public string SnapshotId
+        public string AvailabilityZone
         {
-            get { return this._snapshotId; }
-            set { this._snapshotId = value; }
+            get { return this._availabilityZone; }
+            set { this._availabilityZone = value; }
         }
 
-        // Check to see if SnapshotId property is set
-        internal bool IsSetSnapshotId()
+        // Check to see if AvailabilityZone property is set
+        internal bool IsSetAvailabilityZone()
         {
-            return this._snapshotId != null;
+            return this._availabilityZone != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. 
+        /// Gets and sets the property Error. 
         /// <para>
-        /// Any tags applied to the new snapshot.
+        /// The error.
         /// </para>
         /// </summary>
-        public List<Tag> Tags
+        public EnableFastSnapshotRestoreStateError Error
         {
-            get { return this._tags; }
-            set { this._tags = value; }
+            get { return this._error; }
+            set { this._error = value; }
         }
 
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
+        // Check to see if Error property is set
+        internal bool IsSetError()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._error != null;
         }
 
     }

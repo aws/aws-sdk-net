@@ -7764,6 +7764,46 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeFastSnapshotRestores
+
+
+        /// <summary>
+        /// Describes the state of fast snapshot restores for your snapshots.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFastSnapshotRestores service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFastSnapshotRestores service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastSnapshotRestores">REST API Reference for DescribeFastSnapshotRestores Operation</seealso>
+        DescribeFastSnapshotRestoresResponse DescribeFastSnapshotRestores(DescribeFastSnapshotRestoresRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFastSnapshotRestores operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFastSnapshotRestores operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFastSnapshotRestores
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastSnapshotRestores">REST API Reference for DescribeFastSnapshotRestores Operation</seealso>
+        IAsyncResult BeginDescribeFastSnapshotRestores(DescribeFastSnapshotRestoresRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeFastSnapshotRestores operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeFastSnapshotRestores.</param>
+        /// 
+        /// <returns>Returns a  DescribeFastSnapshotRestoresResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastSnapshotRestores">REST API Reference for DescribeFastSnapshotRestores Operation</seealso>
+        DescribeFastSnapshotRestoresResponse EndDescribeFastSnapshotRestores(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeFleetHistory
 
 
@@ -12346,6 +12386,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableFastSnapshotRestores
+
+
+        /// <summary>
+        /// Disables fast snapshot restores for the specified snapshots in the specified Availability
+        /// Zones.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableFastSnapshotRestores service method.</param>
+        /// 
+        /// <returns>The response from the DisableFastSnapshotRestores service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastSnapshotRestores">REST API Reference for DisableFastSnapshotRestores Operation</seealso>
+        DisableFastSnapshotRestoresResponse DisableFastSnapshotRestores(DisableFastSnapshotRestoresRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableFastSnapshotRestores operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableFastSnapshotRestores operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableFastSnapshotRestores
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastSnapshotRestores">REST API Reference for DisableFastSnapshotRestores Operation</seealso>
+        IAsyncResult BeginDisableFastSnapshotRestores(DisableFastSnapshotRestoresRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableFastSnapshotRestores operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableFastSnapshotRestores.</param>
+        /// 
+        /// <returns>Returns a  DisableFastSnapshotRestoresResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastSnapshotRestores">REST API Reference for DisableFastSnapshotRestores Operation</seealso>
+        DisableFastSnapshotRestoresResponse EndDisableFastSnapshotRestores(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisableTransitGatewayRouteTablePropagation
 
 
@@ -12909,6 +12990,54 @@ namespace Amazon.EC2
         /// <returns>Returns a  EnableEbsEncryptionByDefaultResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableEbsEncryptionByDefault">REST API Reference for EnableEbsEncryptionByDefault Operation</seealso>
         EnableEbsEncryptionByDefaultResponse EndEnableEbsEncryptionByDefault(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  EnableFastSnapshotRestores
+
+
+        /// <summary>
+        /// Enables fast snapshot restores for the specified snapshots in the specified Availability
+        /// Zones.
+        /// 
+        ///  
+        /// <para>
+        /// You get the full benefit of fast snapshot restores after they enter the <code>enabled</code>
+        /// state. To get the current state of fast snapshot restores, use <a>DescribeFastSnapshotRestores</a>.
+        /// To disable fast snapshot restores, use <a>DisableFastSnapshotRestores</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableFastSnapshotRestores service method.</param>
+        /// 
+        /// <returns>The response from the EnableFastSnapshotRestores service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastSnapshotRestores">REST API Reference for EnableFastSnapshotRestores Operation</seealso>
+        EnableFastSnapshotRestoresResponse EnableFastSnapshotRestores(EnableFastSnapshotRestoresRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableFastSnapshotRestores operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableFastSnapshotRestores operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableFastSnapshotRestores
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastSnapshotRestores">REST API Reference for EnableFastSnapshotRestores Operation</seealso>
+        IAsyncResult BeginEnableFastSnapshotRestores(EnableFastSnapshotRestoresRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableFastSnapshotRestores operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableFastSnapshotRestores.</param>
+        /// 
+        /// <returns>Returns a  EnableFastSnapshotRestoresResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastSnapshotRestores">REST API Reference for EnableFastSnapshotRestores Operation</seealso>
+        EnableFastSnapshotRestoresResponse EndEnableFastSnapshotRestores(IAsyncResult asyncResult);
 
         #endregion
         

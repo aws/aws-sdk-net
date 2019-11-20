@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private string _availabilityZone;
         private DateTime? _createTime;
         private bool? _encrypted;
+        private bool? _fastRestored;
         private int? _iops;
         private string _kmsKeyId;
         private int? _size;
@@ -115,6 +116,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetEncrypted()
         {
             return this._encrypted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FastRestored. 
+        /// <para>
+        /// Indicates whether the volume was created using fast snapshot restore.
+        /// </para>
+        /// </summary>
+        public bool FastRestored
+        {
+            get { return this._fastRestored.GetValueOrDefault(); }
+            set { this._fastRestored = value; }
+        }
+
+        // Check to see if FastRestored property is set
+        internal bool IsSetFastRestored()
+        {
+            return this._fastRestored.HasValue; 
         }
 
         /// <summary>

@@ -3562,6 +3562,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DescribeFastSnapshotRestoresMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeFastSnapshotRestores");
+
+            var request = InstantiateClassGenerator.Execute<DescribeFastSnapshotRestoresRequest>();
+            var marshaller = new DescribeFastSnapshotRestoresRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeFastSnapshotRestoresResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeFastSnapshotRestoresResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DescribeFleetHistoryMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeFleetHistory");
@@ -5587,6 +5611,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DisableFastSnapshotRestoresMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisableFastSnapshotRestores");
+
+            var request = InstantiateClassGenerator.Execute<DisableFastSnapshotRestoresRequest>();
+            var marshaller = new DisableFastSnapshotRestoresRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DisableFastSnapshotRestoresResponseUnmarshaller.Instance.Unmarshall(context)
+                as DisableFastSnapshotRestoresResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DisableTransitGatewayRouteTablePropagationMarshallTest()
         {
             var operation = service_model.FindOperation("DisableTransitGatewayRouteTablePropagation");
@@ -5851,6 +5899,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = EnableEbsEncryptionByDefaultResponseUnmarshaller.Instance.Unmarshall(context)
                 as EnableEbsEncryptionByDefaultResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void EnableFastSnapshotRestoresMarshallTest()
+        {
+            var operation = service_model.FindOperation("EnableFastSnapshotRestores");
+
+            var request = InstantiateClassGenerator.Execute<EnableFastSnapshotRestoresRequest>();
+            var marshaller = new EnableFastSnapshotRestoresRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = EnableFastSnapshotRestoresResponseUnmarshaller.Instance.Unmarshall(context)
+                as EnableFastSnapshotRestoresResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

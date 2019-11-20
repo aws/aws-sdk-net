@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Volume Object
+    /// Response Unmarshaller for DisableFastSnapshotRestoreSuccessItem Object
     /// </summary>  
-    public class VolumeUnmarshaller : IUnmarshaller<Volume, XmlUnmarshallerContext>, IUnmarshaller<Volume, JsonUnmarshallerContext>
+    public class DisableFastSnapshotRestoreSuccessItemUnmarshaller : IUnmarshaller<DisableFastSnapshotRestoreSuccessItem, XmlUnmarshallerContext>, IUnmarshaller<DisableFastSnapshotRestoreSuccessItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Volume Unmarshall(XmlUnmarshallerContext context)
+        public DisableFastSnapshotRestoreSuccessItem Unmarshall(XmlUnmarshallerContext context)
         {
-            Volume unmarshalledObject = new Volume();
+            DisableFastSnapshotRestoreSuccessItem unmarshalledObject = new DisableFastSnapshotRestoreSuccessItem();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,53 +54,52 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("attachmentSet/item", targetDepth))
-                    {
-                        var unmarshaller = VolumeAttachmentUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Attachments.Add(item);
-                        continue;
-                    }
                     if (context.TestExpression("availabilityZone", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("createTime", targetDepth))
+                    if (context.TestExpression("disabledTime", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.DisabledTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("encrypted", targetDepth))
+                    if (context.TestExpression("disablingTime", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        unmarshalledObject.Encrypted = unmarshaller.Unmarshall(context);
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.DisablingTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("fastRestored", targetDepth))
+                    if (context.TestExpression("enabledTime", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        unmarshalledObject.FastRestored = unmarshaller.Unmarshall(context);
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.EnabledTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("iops", targetDepth))
+                    if (context.TestExpression("enablingTime", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.Iops = unmarshaller.Unmarshall(context);
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.EnablingTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("kmsKeyId", targetDepth))
+                    if (context.TestExpression("optimizingTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.OptimizingTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ownerAlias", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.OwnerAlias = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("size", targetDepth))
+                    if (context.TestExpression("ownerId", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.Size = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("snapshotId", targetDepth))
@@ -109,29 +108,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.SnapshotId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("status", targetDepth))
+                    if (context.TestExpression("state", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.State = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("tagSet/item", targetDepth))
-                    {
-                        var unmarshaller = TagUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Tags.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("volumeId", targetDepth))
+                    if (context.TestExpression("stateTransitionReason", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.VolumeId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("volumeType", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.VolumeType = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.StateTransitionReason = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -149,18 +135,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Volume Unmarshall(JsonUnmarshallerContext context)
+        public DisableFastSnapshotRestoreSuccessItem Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static VolumeUnmarshaller _instance = new VolumeUnmarshaller();        
+        private static DisableFastSnapshotRestoreSuccessItemUnmarshaller _instance = new DisableFastSnapshotRestoreSuccessItemUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VolumeUnmarshaller Instance
+        public static DisableFastSnapshotRestoreSuccessItemUnmarshaller Instance
         {
             get
             {

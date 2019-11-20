@@ -28,47 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the CopySnapshot operation.
+    /// Describes an error that occurred when enabling fast snapshot restores.
     /// </summary>
-    public partial class CopySnapshotResponse : AmazonWebServiceResponse
+    public partial class EnableFastSnapshotRestoreStateError
     {
-        private string _snapshotId;
-        private List<Tag> _tags = new List<Tag>();
+        private string _code;
+        private string _message;
 
         /// <summary>
-        /// Gets and sets the property SnapshotId. 
+        /// Gets and sets the property Code. 
         /// <para>
-        /// The ID of the new snapshot.
+        /// The error code.
         /// </para>
         /// </summary>
-        public string SnapshotId
+        public string Code
         {
-            get { return this._snapshotId; }
-            set { this._snapshotId = value; }
+            get { return this._code; }
+            set { this._code = value; }
         }
 
-        // Check to see if SnapshotId property is set
-        internal bool IsSetSnapshotId()
+        // Check to see if Code property is set
+        internal bool IsSetCode()
         {
-            return this._snapshotId != null;
+            return this._code != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. 
+        /// Gets and sets the property Message. 
         /// <para>
-        /// Any tags applied to the new snapshot.
+        /// The error message.
         /// </para>
         /// </summary>
-        public List<Tag> Tags
+        public string Message
         {
-            get { return this._tags; }
-            set { this._tags = value; }
+            get { return this._message; }
+            set { this._message = value; }
         }
 
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
+        // Check to see if Message property is set
+        internal bool IsSetMessage()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._message != null;
         }
 
     }

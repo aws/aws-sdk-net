@@ -2827,6 +2827,68 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type FastSnapshotRestoreStateCode.
+    /// </summary>
+    public class FastSnapshotRestoreStateCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for FastSnapshotRestoreStateCode
+        /// </summary>
+        public static readonly FastSnapshotRestoreStateCode Disabled = new FastSnapshotRestoreStateCode("disabled");
+        /// <summary>
+        /// Constant Disabling for FastSnapshotRestoreStateCode
+        /// </summary>
+        public static readonly FastSnapshotRestoreStateCode Disabling = new FastSnapshotRestoreStateCode("disabling");
+        /// <summary>
+        /// Constant Enabled for FastSnapshotRestoreStateCode
+        /// </summary>
+        public static readonly FastSnapshotRestoreStateCode Enabled = new FastSnapshotRestoreStateCode("enabled");
+        /// <summary>
+        /// Constant Enabling for FastSnapshotRestoreStateCode
+        /// </summary>
+        public static readonly FastSnapshotRestoreStateCode Enabling = new FastSnapshotRestoreStateCode("enabling");
+        /// <summary>
+        /// Constant Optimizing for FastSnapshotRestoreStateCode
+        /// </summary>
+        public static readonly FastSnapshotRestoreStateCode Optimizing = new FastSnapshotRestoreStateCode("optimizing");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FastSnapshotRestoreStateCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FastSnapshotRestoreStateCode FindValue(string value)
+        {
+            return FindValue<FastSnapshotRestoreStateCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FastSnapshotRestoreStateCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FleetActivityStatus.
     /// </summary>
     public class FleetActivityStatus : ConstantClass

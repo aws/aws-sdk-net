@@ -254,7 +254,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagSpecifications.
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// The tags to apply to the new snapshot.
+        /// </para>
         /// </summary>
         public List<TagSpecification> TagSpecifications
         {
