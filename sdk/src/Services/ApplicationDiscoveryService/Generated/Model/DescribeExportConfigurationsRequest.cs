@@ -41,7 +41,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property ExportIds. 
         /// <para>
-        /// A list of continuous export ids to search for.
+        /// A list of continuous export IDs to search for.
         /// </para>
         /// </summary>
         public List<string> ExportIds
