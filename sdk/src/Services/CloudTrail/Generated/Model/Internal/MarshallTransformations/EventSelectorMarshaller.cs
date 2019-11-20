@@ -61,6 +61,17 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetExcludeManagementEventSources())
+            {
+                context.Writer.WritePropertyName("ExcludeManagementEventSources");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectExcludeManagementEventSourcesListValue in requestObject.ExcludeManagementEventSources)
+                {
+                        context.Writer.Write(requestObjectExcludeManagementEventSourcesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetIncludeManagementEvents())
             {
                 context.Writer.WritePropertyName("IncludeManagementEvents");

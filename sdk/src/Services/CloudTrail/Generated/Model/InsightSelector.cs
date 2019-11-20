@@ -28,32 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// Returns the objects or data listed below if successful. Otherwise, returns an error.
+    /// A JSON string that contains a list of insight types that are logged on a trail.
     /// </summary>
-    public partial class DescribeTrailsResponse : AmazonWebServiceResponse
+    public partial class InsightSelector
     {
-        private List<Trail> _trailList = new List<Trail>();
+        private InsightType _insightType;
 
         /// <summary>
-        /// Gets and sets the property TrailList. 
+        /// Gets and sets the property InsightType. 
         /// <para>
-        /// The list of trail objects. Trail objects with string values are only returned if values
-        /// for the objects exist in a trail's configuration. For example, <code>SNSTopicName</code>
-        /// and <code>SNSTopicARN</code> are only returned in results if a trail is configured
-        /// to send SNS notifications. Similarly, <code>KMSKeyId</code> only appears in results
-        /// if a trail's log files are encrypted with AWS KMS-managed keys.
+        /// The type of insights to log on a trail. In this release, only <code>ApiCallRateInsight</code>
+        /// is supported as an insight type.
         /// </para>
         /// </summary>
-        public List<Trail> TrailList
+        public InsightType InsightType
         {
-            get { return this._trailList; }
-            set { this._trailList = value; }
+            get { return this._insightType; }
+            set { this._insightType = value; }
         }
 
-        // Check to see if TrailList property is set
-        internal bool IsSetTrailList()
+        // Check to see if InsightType property is set
+        internal bool IsSetInsightType()
         {
-            return this._trailList != null && this._trailList.Count > 0; 
+            return this._insightType != null;
         }
 
     }

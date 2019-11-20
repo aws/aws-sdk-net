@@ -82,6 +82,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                     unmarshalledObject.HasCustomEventSelectors = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HasInsightSelectors", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.HasInsightSelectors = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("HomeRegion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

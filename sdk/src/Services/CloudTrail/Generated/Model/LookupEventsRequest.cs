@@ -30,8 +30,10 @@ namespace Amazon.CloudTrail.Model
     /// <summary>
     /// Container for the parameters to the LookupEvents operation.
     /// Looks up <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events">management
-    /// events</a> captured by CloudTrail. You can look up events that occurred in a region
-    /// within the last 90 days. Lookup supports the following attributes:
+    /// events</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-insights-events">CloudTrail
+    /// Insights events</a> that are captured by CloudTrail. You can look up events that occurred
+    /// in a region within the last 90 days. Lookup supports the following attributes for
+    /// management events:
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -67,25 +69,37 @@ namespace Amazon.CloudTrail.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
+    /// Lookup supports the following attributes for Insights events:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Event ID
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Event name
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Event source
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
     /// All attributes are optional. The default number of results returned is 50, with a
     /// maximum of 50 possible. The response includes a token that you can use to get the
     /// next page of results.
     /// </para>
     ///  <important> 
     /// <para>
-    /// The rate of lookup requests is limited to one per second per account. If this limit
+    /// The rate of lookup requests is limited to two per second per account. If this limit
     /// is exceeded, a throttling error occurs.
-    /// </para>
-    ///  
-    /// <para>
-    /// Events that occurred during the selected time range will not be available for lookup
-    /// if CloudTrail logging was not enabled when the events occurred.
     /// </para>
     ///  </important>
     /// </summary>
     public partial class LookupEventsRequest : AmazonCloudTrailRequest
     {
         private DateTime? _endTime;
+        private EventCategory _eventCategory;
         private List<LookupAttribute> _lookupAttributes = new List<LookupAttribute>();
         private int? _maxResults;
         private string _nextToken;
@@ -108,6 +122,26 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetEndTime()
         {
             return this._endTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventCategory. 
+        /// <para>
+        /// Specifies the event category. If you do not specify an event category, events of the
+        /// category are not returned in the response. For example, if you do not specify <code>insight</code>
+        /// as the value of <code>EventCategory</code>, no Insights events are returned.
+        /// </para>
+        /// </summary>
+        public EventCategory EventCategory
+        {
+            get { return this._eventCategory; }
+            set { this._eventCategory = value; }
+        }
+
+        // Check to see if EventCategory property is set
+        internal bool IsSetEventCategory()
+        {
+            return this._eventCategory != null;
         }
 
         /// <summary>

@@ -651,6 +651,34 @@ namespace Amazon.CloudTrail
         /// </summary>
         /// 
         /// <returns>The response from the DescribeTrails service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
+        /// This exception is thrown when the provided trail name is not valid. Trail names must
+        /// meet the following requirements:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_),
+        /// or dashes (-)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start with a letter or number, and end with a letter or number
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Be between 3 and 128 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
+        /// and <code>my--namespace</code> are invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Not be in IP address format (for example, 192.168.5.4)
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
         /// </exception>
@@ -668,6 +696,34 @@ namespace Amazon.CloudTrail
         /// <param name="request">Container for the necessary parameters to execute the DescribeTrails service method.</param>
         /// 
         /// <returns>The response from the DescribeTrails service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
+        /// This exception is thrown when the provided trail name is not valid. Trail names must
+        /// meet the following requirements:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_),
+        /// or dashes (-)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start with a letter or number, and end with a letter or number
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Be between 3 and 128 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
+        /// and <code>my--namespace</code> are invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Not be in IP address format (for example, 192.168.5.4)
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
         /// </exception>
@@ -687,6 +743,34 @@ namespace Amazon.CloudTrail
         /// </param>
         /// 
         /// <returns>The response from the DescribeTrails service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
+        /// This exception is thrown when the provided trail name is not valid. Trail names must
+        /// meet the following requirements:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_),
+        /// or dashes (-)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start with a letter or number, and end with a letter or number
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Be between 3 and 128 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
+        /// and <code>my--namespace</code> are invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Not be in IP address format (for example, 192.168.5.4)
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
         /// </exception>
@@ -708,6 +792,34 @@ namespace Amazon.CloudTrail
         /// </param>
         /// 
         /// <returns>The response from the DescribeTrails service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
+        /// This exception is thrown when the provided trail name is not valid. Trail names must
+        /// meet the following requirements:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_),
+        /// or dashes (-)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start with a letter or number, and end with a letter or number
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Be between 3 and 128 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
+        /// and <code>my--namespace</code> are invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Not be in IP address format (for example, 192.168.5.4)
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
         /// </exception>
@@ -863,6 +975,136 @@ namespace Amazon.CloudTrail
 
         #endregion
         
+        #region  GetInsightSelectors
+
+
+        /// <summary>
+        /// Describes the settings for the Insights event selectors that you configured for your
+        /// trail. <code>GetInsightSelectors</code> shows if CloudTrail Insights event logging
+        /// is enabled on the trail, and if it is, which insight types are enabled. If you run
+        /// <code>GetInsightSelectors</code> on a trail that does not have Insights events enabled,
+        /// the operation throws the exception <code>InsightNotEnabledException</code> 
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
+        /// CloudTrail Insights Events for Trails </a> in the <i>AWS CloudTrail User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInsightSelectors service method.</param>
+        /// 
+        /// <returns>The response from the GetInsightSelectors service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.InsightNotEnabledException">
+        /// If you run <code>GetInsightSelectors</code> on a trail that does not have Insights
+        /// events enabled, the operation throws the exception <code>InsightNotEnabledException</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
+        /// This exception is thrown when the provided trail name is not valid. Trail names must
+        /// meet the following requirements:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_),
+        /// or dashes (-)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start with a letter or number, and end with a letter or number
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Be between 3 and 128 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
+        /// and <code>my--namespace</code> are invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Not be in IP address format (for example, 192.168.5.4)
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
+        /// This exception is thrown when the trail with the given name is not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetInsightSelectors">REST API Reference for GetInsightSelectors Operation</seealso>
+        GetInsightSelectorsResponse GetInsightSelectors(GetInsightSelectorsRequest request);
+
+
+
+        /// <summary>
+        /// Describes the settings for the Insights event selectors that you configured for your
+        /// trail. <code>GetInsightSelectors</code> shows if CloudTrail Insights event logging
+        /// is enabled on the trail, and if it is, which insight types are enabled. If you run
+        /// <code>GetInsightSelectors</code> on a trail that does not have Insights events enabled,
+        /// the operation throws the exception <code>InsightNotEnabledException</code> 
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
+        /// CloudTrail Insights Events for Trails </a> in the <i>AWS CloudTrail User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInsightSelectors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInsightSelectors service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.InsightNotEnabledException">
+        /// If you run <code>GetInsightSelectors</code> on a trail that does not have Insights
+        /// events enabled, the operation throws the exception <code>InsightNotEnabledException</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
+        /// This exception is thrown when the provided trail name is not valid. Trail names must
+        /// meet the following requirements:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_),
+        /// or dashes (-)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start with a letter or number, and end with a letter or number
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Be between 3 and 128 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
+        /// and <code>my--namespace</code> are invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Not be in IP address format (for example, 192.168.5.4)
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
+        /// This exception is thrown when the trail with the given name is not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetInsightSelectors">REST API Reference for GetInsightSelectors Operation</seealso>
+        Task<GetInsightSelectorsResponse> GetInsightSelectorsAsync(GetInsightSelectorsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetTrail
 
 
@@ -1005,8 +1247,14 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  </li> </ul>
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
         /// This exception is thrown when the trail with the given name is not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrailStatus">REST API Reference for GetTrailStatus Operation</seealso>
         GetTrailStatusResponse GetTrailStatus(GetTrailStatusRequest request);
@@ -1053,8 +1301,14 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  </li> </ul>
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
         /// This exception is thrown when the trail with the given name is not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrailStatus">REST API Reference for GetTrailStatus Operation</seealso>
         Task<GetTrailStatusResponse> GetTrailStatusAsync(GetTrailStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1314,8 +1568,10 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Looks up <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events">management
-        /// events</a> captured by CloudTrail. You can look up events that occurred in a region
-        /// within the last 90 days. Lookup supports the following attributes:
+        /// events</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-insights-events">CloudTrail
+        /// Insights events</a> that are captured by CloudTrail. You can look up events that occurred
+        /// in a region within the last 90 days. Lookup supports the following attributes for
+        /// management events:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -1351,25 +1607,39 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// Lookup supports the following attributes for Insights events:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Event ID
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Event name
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Event source
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// All attributes are optional. The default number of results returned is 50, with a
         /// maximum of 50 possible. The response includes a token that you can use to get the
         /// next page of results.
         /// </para>
         ///  <important> 
         /// <para>
-        /// The rate of lookup requests is limited to one per second per account. If this limit
+        /// The rate of lookup requests is limited to two per second per account. If this limit
         /// is exceeded, a throttling error occurs.
-        /// </para>
-        ///  
-        /// <para>
-        /// Events that occurred during the selected time range will not be available for lookup
-        /// if CloudTrail logging was not enabled when the events occurred.
         /// </para>
         ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the LookupEvents service method.</param>
         /// 
         /// <returns>The response from the LookupEvents service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidEventCategoryException">
+        /// Occurs if an event category that is not valid is specified as a value of <code>EventCategory</code>.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidLookupAttributesException">
         /// Occurs when an invalid lookup attribute is specified.
         /// </exception>
@@ -1384,6 +1654,12 @@ namespace Amazon.CloudTrail
         /// Occurs if the timestamp values are invalid. Either the start time occurs after the
         /// end time or the time range is outside the range of possible values.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">REST API Reference for LookupEvents Operation</seealso>
         LookupEventsResponse LookupEvents(LookupEventsRequest request);
 
@@ -1391,8 +1667,10 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Looks up <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events">management
-        /// events</a> captured by CloudTrail. You can look up events that occurred in a region
-        /// within the last 90 days. Lookup supports the following attributes:
+        /// events</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-insights-events">CloudTrail
+        /// Insights events</a> that are captured by CloudTrail. You can look up events that occurred
+        /// in a region within the last 90 days. Lookup supports the following attributes for
+        /// management events:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -1428,19 +1706,30 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// Lookup supports the following attributes for Insights events:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Event ID
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Event name
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Event source
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// All attributes are optional. The default number of results returned is 50, with a
         /// maximum of 50 possible. The response includes a token that you can use to get the
         /// next page of results.
         /// </para>
         ///  <important> 
         /// <para>
-        /// The rate of lookup requests is limited to one per second per account. If this limit
+        /// The rate of lookup requests is limited to two per second per account. If this limit
         /// is exceeded, a throttling error occurs.
-        /// </para>
-        ///  
-        /// <para>
-        /// Events that occurred during the selected time range will not be available for lookup
-        /// if CloudTrail logging was not enabled when the events occurred.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1450,6 +1739,9 @@ namespace Amazon.CloudTrail
         /// </param>
         /// 
         /// <returns>The response from the LookupEvents service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidEventCategoryException">
+        /// Occurs if an event category that is not valid is specified as a value of <code>EventCategory</code>.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidLookupAttributesException">
         /// Occurs when an invalid lookup attribute is specified.
         /// </exception>
@@ -1463,6 +1755,12 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTimeRangeException">
         /// Occurs if the timestamp values are invalid. Either the start time occurs after the
         /// end time or the time range is outside the range of possible values.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">REST API Reference for LookupEvents Operation</seealso>
         Task<LookupEventsResponse> LookupEventsAsync(LookupEventsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1758,6 +2056,158 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventSelectors">REST API Reference for PutEventSelectors Operation</seealso>
         Task<PutEventSelectorsResponse> PutEventSelectorsAsync(PutEventSelectorsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutInsightSelectors
+
+
+        /// <summary>
+        /// Lets you enable Insights event logging by specifying the Insights selectors that you
+        /// want to enable on an existing trail. You also use <code>PutInsightSelectors</code>
+        /// to turn off Insights event logging, by passing an empty list of insight types. In
+        /// this release, only <code>ApiCallRateInsight</code> is supported as an Insights selector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutInsightSelectors service method.</param>
+        /// 
+        /// <returns>The response from the PutInsightSelectors service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
+        /// This exception is thrown when the policy on the S3 bucket or KMS key is not sufficient.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientS3BucketPolicyException">
+        /// This exception is thrown when the policy on the S3 bucket is not sufficient.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidHomeRegionException">
+        /// This exception is thrown when an operation is called on a trail from a region other
+        /// than the region in which the trail was created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidInsightSelectorsException">
+        /// The formatting or syntax of the <code>InsightSelectors</code> JSON statement in your
+        /// <code>PutInsightSelectors</code> or <code>GetInsightSelectors</code> request is not
+        /// valid, or the specified insight type in the <code>InsightSelectors</code> statement
+        /// is not a valid insight type.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
+        /// This exception is thrown when the provided trail name is not valid. Trail names must
+        /// meet the following requirements:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_),
+        /// or dashes (-)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start with a letter or number, and end with a letter or number
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Be between 3 and 128 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
+        /// and <code>my--namespace</code> are invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Not be in IP address format (for example, 192.168.5.4)
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
+        /// This exception is thrown when the AWS account making the request to create or update
+        /// an organization trail is not the master account for an organization in AWS Organizations.
+        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
+        /// This exception is thrown when the trail with the given name is not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutInsightSelectors">REST API Reference for PutInsightSelectors Operation</seealso>
+        PutInsightSelectorsResponse PutInsightSelectors(PutInsightSelectorsRequest request);
+
+
+
+        /// <summary>
+        /// Lets you enable Insights event logging by specifying the Insights selectors that you
+        /// want to enable on an existing trail. You also use <code>PutInsightSelectors</code>
+        /// to turn off Insights event logging, by passing an empty list of insight types. In
+        /// this release, only <code>ApiCallRateInsight</code> is supported as an Insights selector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutInsightSelectors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutInsightSelectors service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
+        /// This exception is thrown when the policy on the S3 bucket or KMS key is not sufficient.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientS3BucketPolicyException">
+        /// This exception is thrown when the policy on the S3 bucket is not sufficient.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidHomeRegionException">
+        /// This exception is thrown when an operation is called on a trail from a region other
+        /// than the region in which the trail was created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidInsightSelectorsException">
+        /// The formatting or syntax of the <code>InsightSelectors</code> JSON statement in your
+        /// <code>PutInsightSelectors</code> or <code>GetInsightSelectors</code> request is not
+        /// valid, or the specified insight type in the <code>InsightSelectors</code> statement
+        /// is not a valid insight type.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
+        /// This exception is thrown when the provided trail name is not valid. Trail names must
+        /// meet the following requirements:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_),
+        /// or dashes (-)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start with a letter or number, and end with a letter or number
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Be between 3 and 128 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
+        /// and <code>my--namespace</code> are invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Not be in IP address format (for example, 192.168.5.4)
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
+        /// This exception is thrown when the AWS account making the request to create or update
+        /// an organization trail is not the master account for an organization in AWS Organizations.
+        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
+        /// This exception is thrown when the trail with the given name is not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutInsightSelectors">REST API Reference for PutInsightSelectors Operation</seealso>
+        Task<PutInsightSelectorsResponse> PutInsightSelectorsAsync(PutInsightSelectorsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2237,6 +2687,35 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.InvalidCloudWatchLogsRoleArnException">
         /// This exception is thrown when the provided role is not valid.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidEventSelectorsException">
+        /// This exception is thrown when the <code>PutEventSelectors</code> operation is called
+        /// with a number of event selectors or data resources that is not valid. The combination
+        /// of event selectors and data resources is not valid. A trail can have up to 5 event
+        /// selectors. A trail is limited to 250 data resources. These data resources can be distributed
+        /// across event selectors, but the overall total cannot exceed 250.
+        /// 
+        ///  
+        /// <para>
+        /// You can:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Specify a valid number of event selectors (1 to 5) for a trail.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify a valid number of data resources (1 to 250) for an event selector. The limit
+        /// of number of resources on an individual event selector is configurable up to 250.
+        /// However, this upper limit is allowed only if the total number of data resources does
+        /// not exceed 250 across all event selectors for a trail.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code>
+        /// parameter with a value of <code>read-only</code> is invalid.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidHomeRegionException">
         /// This exception is thrown when an operation is called on a trail from a region other
         /// than the region in which the trail was created.
@@ -2375,6 +2854,35 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidCloudWatchLogsRoleArnException">
         /// This exception is thrown when the provided role is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidEventSelectorsException">
+        /// This exception is thrown when the <code>PutEventSelectors</code> operation is called
+        /// with a number of event selectors or data resources that is not valid. The combination
+        /// of event selectors and data resources is not valid. A trail can have up to 5 event
+        /// selectors. A trail is limited to 250 data resources. These data resources can be distributed
+        /// across event selectors, but the overall total cannot exceed 250.
+        /// 
+        ///  
+        /// <para>
+        /// You can:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Specify a valid number of event selectors (1 to 5) for a trail.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify a valid number of data resources (1 to 250) for an event selector. The limit
+        /// of number of resources on an individual event selector is configurable up to 250.
+        /// However, this upper limit is allowed only if the total number of data resources does
+        /// not exceed 250 across all event selectors for a trail.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code>
+        /// parameter with a value of <code>read-only</code> is invalid.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidHomeRegionException">
         /// This exception is thrown when an operation is called on a trail from a region other

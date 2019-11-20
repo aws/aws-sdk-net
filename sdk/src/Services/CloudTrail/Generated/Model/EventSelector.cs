@@ -43,6 +43,7 @@ namespace Amazon.CloudTrail.Model
     public partial class EventSelector
     {
         private List<DataResource> _dataResources = new List<DataResource>();
+        private List<string> _excludeManagementEventSources = new List<string>();
         private bool? _includeManagementEvents;
         private ReadWriteType _readWriteType;
 
@@ -71,6 +72,28 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetDataResources()
         {
             return this._dataResources != null && this._dataResources.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExcludeManagementEventSources. 
+        /// <para>
+        /// An optional list of service event sources from which you do not want management events
+        /// to be logged on your trail. In this release, the list can be empty (disables the filter),
+        /// or it can filter out AWS Key Management Service events by containing <code>"kms.amazonaws.com"</code>.
+        /// By default, <code>ExcludeManagementEventSources</code> is empty, and AWS KMS events
+        /// are included in events that are logged to your trail. 
+        /// </para>
+        /// </summary>
+        public List<string> ExcludeManagementEventSources
+        {
+            get { return this._excludeManagementEventSources; }
+            set { this._excludeManagementEventSources = value; }
+        }
+
+        // Check to see if ExcludeManagementEventSources property is set
+        internal bool IsSetExcludeManagementEventSources()
+        {
+            return this._excludeManagementEventSources != null && this._excludeManagementEventSources.Count > 0; 
         }
 
         /// <summary>

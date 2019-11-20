@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeTrails operation
+    /// Response Unmarshaller for PutInsightSelectors operation
     /// </summary>  
-    public class DescribeTrailsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class PutInsightSelectorsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,22 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeTrailsResponse response = new DescribeTrailsResponse();
+            PutInsightSelectorsResponse response = new PutInsightSelectorsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("trailList", targetDepth))
+                if (context.TestExpression("InsightSelectors", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Trail, TrailUnmarshaller>(TrailUnmarshaller.Instance);
-                    response.TrailList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<InsightSelector, InsightSelectorUnmarshaller>(InsightSelectorUnmarshaller.Instance);
+                    response.InsightSelectors = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TrailARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TrailARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -72,13 +78,37 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientEncryptionPolicyException"))
+            {
+                return new InsufficientEncryptionPolicyException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientS3BucketPolicyException"))
+            {
+                return new InsufficientS3BucketPolicyException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidHomeRegionException"))
+            {
+                return new InvalidHomeRegionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInsightSelectorsException"))
+            {
+                return new InvalidInsightSelectorsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTrailNameException"))
             {
                 return new InvalidTrailNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NotOrganizationMasterAccountException"))
+            {
+                return new NotOrganizationMasterAccountException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotPermittedException"))
             {
                 return new OperationNotPermittedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("TrailNotFoundException"))
+            {
+                return new TrailNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOperationException"))
             {
@@ -87,9 +117,9 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             return new AmazonCloudTrailException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DescribeTrailsResponseUnmarshaller _instance = new DescribeTrailsResponseUnmarshaller();        
+        private static PutInsightSelectorsResponseUnmarshaller _instance = new PutInsightSelectorsResponseUnmarshaller();        
 
-        internal static DescribeTrailsResponseUnmarshaller GetInstance()
+        internal static PutInsightSelectorsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -97,7 +127,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeTrailsResponseUnmarshaller Instance
+        public static PutInsightSelectorsResponseUnmarshaller Instance
         {
             get
             {

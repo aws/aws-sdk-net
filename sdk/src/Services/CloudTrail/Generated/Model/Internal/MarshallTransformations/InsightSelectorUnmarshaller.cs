@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EventSelector Object
+    /// Response Unmarshaller for InsightSelector Object
     /// </summary>  
-    public class EventSelectorUnmarshaller : IUnmarshaller<EventSelector, XmlUnmarshallerContext>, IUnmarshaller<EventSelector, JsonUnmarshallerContext>
+    public class InsightSelectorUnmarshaller : IUnmarshaller<InsightSelector, XmlUnmarshallerContext>, IUnmarshaller<InsightSelector, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        EventSelector IUnmarshaller<EventSelector, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        InsightSelector IUnmarshaller<InsightSelector, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public EventSelector Unmarshall(JsonUnmarshallerContext context)
+        public InsightSelector Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EventSelector unmarshalledObject = new EventSelector();
+            InsightSelector unmarshalledObject = new InsightSelector();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DataResources", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<DataResource, DataResourceUnmarshaller>(DataResourceUnmarshaller.Instance);
-                    unmarshalledObject.DataResources = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ExcludeManagementEventSources", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ExcludeManagementEventSources = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("IncludeManagementEvents", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.IncludeManagementEvents = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ReadWriteType", targetDepth))
+                if (context.TestExpression("InsightType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReadWriteType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InsightType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         }
 
 
-        private static EventSelectorUnmarshaller _instance = new EventSelectorUnmarshaller();        
+        private static InsightSelectorUnmarshaller _instance = new InsightSelectorUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EventSelectorUnmarshaller Instance
+        public static InsightSelectorUnmarshaller Instance
         {
             get
             {

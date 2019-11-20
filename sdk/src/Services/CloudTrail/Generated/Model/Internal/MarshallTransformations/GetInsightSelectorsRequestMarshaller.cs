@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// LookupEvents Request Marshaller
+    /// GetInsightSelectors Request Marshaller
     /// </summary>       
-    public class LookupEventsRequestMarshaller : IMarshaller<IRequest, LookupEventsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetInsightSelectorsRequestMarshaller : IMarshaller<IRequest, GetInsightSelectorsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((LookupEventsRequest)input);
+            return this.Marshall((GetInsightSelectorsRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(LookupEventsRequest publicRequest)
+        public IRequest Marshall(GetInsightSelectorsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudTrail");
-            string target = "com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.LookupEvents";
+            string target = "com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetInsightSelectors";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-11-01";            
@@ -68,50 +68,10 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEndTime())
+                if(publicRequest.IsSetTrailName())
                 {
-                    context.Writer.WritePropertyName("EndTime");
-                    context.Writer.Write(publicRequest.EndTime);
-                }
-
-                if(publicRequest.IsSetEventCategory())
-                {
-                    context.Writer.WritePropertyName("EventCategory");
-                    context.Writer.Write(publicRequest.EventCategory);
-                }
-
-                if(publicRequest.IsSetLookupAttributes())
-                {
-                    context.Writer.WritePropertyName("LookupAttributes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLookupAttributesListValue in publicRequest.LookupAttributes)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = LookupAttributeMarshaller.Instance;
-                        marshaller.Marshall(publicRequestLookupAttributesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetStartTime())
-                {
-                    context.Writer.WritePropertyName("StartTime");
-                    context.Writer.Write(publicRequest.StartTime);
+                    context.Writer.WritePropertyName("TrailName");
+                    context.Writer.Write(publicRequest.TrailName);
                 }
 
         
@@ -123,9 +83,9 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static LookupEventsRequestMarshaller _instance = new LookupEventsRequestMarshaller();        
+        private static GetInsightSelectorsRequestMarshaller _instance = new GetInsightSelectorsRequestMarshaller();        
 
-        internal static LookupEventsRequestMarshaller GetInstance()
+        internal static GetInsightSelectorsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -133,7 +93,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LookupEventsRequestMarshaller Instance
+        public static GetInsightSelectorsRequestMarshaller Instance
         {
             get
             {

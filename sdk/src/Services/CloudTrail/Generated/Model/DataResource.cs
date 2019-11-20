@@ -29,9 +29,9 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// The Amazon S3 buckets or AWS Lambda functions that you specify in your event selectors
-    /// for your trail to log data events. Data events provide insight into the resource operations
-    /// performed on or within a resource itself. These are also known as data plane operations.
-    /// You can specify up to 250 data resources for a trail.
+    /// for your trail to log data events. Data events provide information about the resource
+    /// operations performed on or within a resource itself. These are also known as data
+    /// plane operations. You can specify up to 250 data resources for a trail.
     /// 
     ///  <note> 
     /// <para>

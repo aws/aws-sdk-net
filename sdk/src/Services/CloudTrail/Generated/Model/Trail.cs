@@ -35,6 +35,7 @@ namespace Amazon.CloudTrail.Model
         private string _cloudWatchLogsLogGroupArn;
         private string _cloudWatchLogsRoleArn;
         private bool? _hasCustomEventSelectors;
+        private bool? _hasInsightSelectors;
         private string _homeRegion;
         private bool? _includeGlobalServiceEvents;
         private bool? _isMultiRegionTrail;
@@ -102,6 +103,25 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetHasCustomEventSelectors()
         {
             return this._hasCustomEventSelectors.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HasInsightSelectors. 
+        /// <para>
+        /// Specifies whether a trail has insight types specified in an <code>InsightSelector</code>
+        /// list.
+        /// </para>
+        /// </summary>
+        public bool HasInsightSelectors
+        {
+            get { return this._hasInsightSelectors.GetValueOrDefault(); }
+            set { this._hasInsightSelectors = value; }
+        }
+
+        // Check to see if HasInsightSelectors property is set
+        internal bool IsSetHasInsightSelectors()
+        {
+            return this._hasInsightSelectors.HasValue; 
         }
 
         /// <summary>
