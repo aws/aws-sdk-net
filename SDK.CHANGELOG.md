@@ -1,3 +1,39 @@
+### 3.3.635.0 (2019-11-20 19:24 UTC)
+* ApplicationDiscoveryService (3.3.102.0)
+	* New exception type for use with Migration Hub home region
+* Chime (3.3.105.0)
+	* Adds APIs to create and manage meeting session resources for the Amazon Chime SDK
+* CloudTrail (3.3.102.0)
+	*  1. This release adds two new APIs, GetInsightSelectors and PutInsightSelectors, which let you configure CloudTrail Insights event delivery on a trail. An Insights event is a new type of event that is generated when CloudTrail detects unusual activity in your AWS account. In this release, only "ApiCallRateInsight" is a supported Insights event type. 2. This release also adds the new "ExcludeManagementEventSource" option to the existing PutEventSelectors API. This field currently supports only AWS Key Management Services.
+* CodeCommit (3.3.106.0)
+	* This release adds support for creating pull request approval rules and pull request approval rule templates in AWS CodeCommit. This allows developers to block merges of pull requests, contingent on the approval rules being satisfiied.
+* DataSync (3.3.107.0)
+	* Update to configure task to run periodically on a schedule
+* DLM (3.3.103.0)
+	* DLM now supports Fast Snapshot Restore. You can enable Fast Restore on snapshots created by DLM, provide the AZs and the number of snapshots to be enabled with this capability.
+* EC2 (3.3.137.0)
+	* This release of Amazon Elastic Compute Cloud (Amazon EC2) introduces support for Amazon Elastic Block Store (Amazon EBS) fast snapshot restores.
+* ECS (3.3.111.0)
+	* Added support for CPU and memory task-level overrides on the RunTask and StartTask APIs.  Added location information to Tasks.
+* FSx (3.3.102.0)
+	* Announcing a Multi-AZ deployment type for Amazon FSx for Windows File Server, providing fully-managed Windows file storage with high availability and redundancy across multiple AWS Availability Zones.
+* KinesisFirehose (3.3.103.0)
+	* With this release, Amazon Kinesis Data Firehose allows server side encryption with customer managed CMKs. Customer managed CMKs ( "Customer Master Keys") are AWS Key Management Service (KMS) keys that are fully managed by the customer. With customer managed CMKs, customers can establish and maintain their key policies, IAM policies, rotating policies and add tags. For more information about AWS KMS and CMKs, please refer to:  https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html. Please refer to the following link to create CMKs: https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-create-cmk.html
+* MediaStore (3.3.102.0)
+	* This release fixes a broken link in the SDK documentation.
+* MigrationHub (3.3.101.0)
+	* New exception type for use with Migration Hub home region
+* MigrationHubConfig (3.3.100.0)
+	* AWS Migration Hub Config Service allows you to get and set the Migration Hub home region for use with AWS Migration Hub and Application Discovery Service
+* QuickSight (3.3.102.0)
+	* Amazon QuickSight now supports programmatic creation and management of data sources, data sets, dashboards and templates with new APIs. Templates hold dashboard metadata, and can be used to create copies connected to the same or different dataset as required. Also included in this release are APIs for SPICE ingestions, fine-grained access control over AWS resources using AWS Identity and Access Management (IAM) policies, as well AWS tagging. APIs are supported for both Standard and Enterprise Edition, with edition-specific support for specific functionality.
+* S3 (3.3.108.0)
+	* This release introduces support for Amazon S3 Replication Time Control, a new feature of S3 Replication that provides a predictable replication time backed by a Service Level Agreement. S3 Replication Time Control helps customers meet compliance or business requirements for data replication, and provides visibility into the replication process with new Amazon CloudWatch Metrics.
+* StorageGateway (3.3.110.0)
+	* The new DescribeAvailabilityMonitorTest API provides the results of the most recent High Availability monitoring test. The new StartAvailabilityMonitorTest API verifies the storage gateway is configured for High Availability monitoring. The new ActiveDirectoryStatus response element has been added to the DescribeSMBSettings and JoinDomain APIs to indicate the status of the gateway after the most recent JoinDomain operation. The new TimeoutInSeconds parameter of the JoinDomain API allows for the configuration of the timeout in which the JoinDomain operation must complete.
+* TranscribeService (3.3.110.0)
+	* With this release Amazon Transcribe enables alternative transcriptions so that you can see different interpretations of transcribed audio.
+
 ### 3.3.634.1 (2019-11-19 22:36 UTC)
 * EC2 (3.3.136.1)
 	* Updated to use new Core, version 3.3.103.66
