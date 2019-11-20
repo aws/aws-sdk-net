@@ -76,6 +76,12 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreateRule = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FastRestoreRule", targetDepth))
+                {
+                    var unmarshaller = FastRestoreRuleUnmarshaller.Instance;
+                    unmarshalledObject.FastRestoreRule = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
