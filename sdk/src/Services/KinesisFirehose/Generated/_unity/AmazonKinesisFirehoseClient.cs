@@ -220,20 +220,19 @@ namespace Amazon.KinesisFirehose
         /// 
         ///  
         /// <para>
-        /// You can delete a delivery stream only if it is in <code>ACTIVE</code> or <code>DELETING</code>
-        /// state, and not in the <code>CREATING</code> state. While the deletion request is in
-        /// process, the delivery stream is in the <code>DELETING</code> state.
+        /// To check the state of a delivery stream, use <a>DescribeDeliveryStream</a>. You can
+        /// delete a delivery stream only if it is in one of the following states: <code>ACTIVE</code>,
+        /// <code>DELETING</code>, <code>CREATING_FAILED</code>, or <code>DELETING_FAILED</code>.
+        /// You can't delete a delivery stream that is in the <code>CREATING</code> state. While
+        /// the deletion request is in process, the delivery stream is in the <code>DELETING</code>
+        /// state.
         /// </para>
         ///  
         /// <para>
-        /// To check the state of a delivery stream, use <a>DescribeDeliveryStream</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// While the delivery stream is <code>DELETING</code> state, the service might continue
-        /// to accept the records, but it doesn't make any guarantees with respect to delivering
-        /// the data. Therefore, as a best practice, you should first stop any applications that
-        /// are sending records before deleting a delivery stream.
+        /// While the delivery stream is in the <code>DELETING</code> state, the service might
+        /// continue to accept records, but it doesn't make any guarantees with respect to delivering
+        /// the data. Therefore, as a best practice, first stop any applications that are sending
+        /// records before you delete a delivery stream.
         /// </para>
         /// </summary>
         /// <param name="deliveryStreamName">The name of the delivery stream.</param>
@@ -469,6 +468,12 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.InvalidArgumentException">
         /// The specified input parameter has a value that is not valid.
         /// </exception>
+        /// <exception cref="Amazon.KinesisFirehose.Model.InvalidKMSResourceException">
+        /// Kinesis Data Firehose throws this exception when an attempt to put records or to start
+        /// or stop delivery stream encryption fails. This happens when the KMS service throws
+        /// one of the following exception types: <code>AccessDeniedException</code>, <code>InvalidStateException</code>,
+        /// <code>DisabledException</code>, or <code>NotFoundException</code>.
+        /// </exception>
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
         /// </exception>
@@ -613,6 +618,12 @@ namespace Amazon.KinesisFirehose
         /// <returns>The response from the PutRecordBatch service method, as returned by KinesisFirehose.</returns>
         /// <exception cref="Amazon.KinesisFirehose.Model.InvalidArgumentException">
         /// The specified input parameter has a value that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisFirehose.Model.InvalidKMSResourceException">
+        /// Kinesis Data Firehose throws this exception when an attempt to put records or to start
+        /// or stop delivery stream encryption fails. This happens when the KMS service throws
+        /// one of the following exception types: <code>AccessDeniedException</code>, <code>InvalidStateException</code>,
+        /// <code>DisabledException</code>, or <code>NotFoundException</code>.
         /// </exception>
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.

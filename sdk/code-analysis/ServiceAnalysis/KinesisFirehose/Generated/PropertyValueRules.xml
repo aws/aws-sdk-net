@@ -155,6 +155,18 @@
     <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.DeliveryStreamEncryptionConfiguration.KeyARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.DeliveryStreamEncryptionConfigurationInput.KeyARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.DestinationDescription.DestinationId</property>
     <min>1</min>
     <max>100</max>
@@ -293,6 +305,10 @@
     <min>1</min>
     <max>512</max>
     <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.FailureDescription.Details</property>
+    <pattern>^(?!\s*$).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.KinesisStreamSourceConfiguration.KinesisStreamARN</property>

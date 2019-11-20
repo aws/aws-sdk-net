@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeliveryStreamEncryptionConfiguration Object
+    /// Response Unmarshaller for FailureDescription Object
     /// </summary>  
-    public class DeliveryStreamEncryptionConfigurationUnmarshaller : IUnmarshaller<DeliveryStreamEncryptionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<DeliveryStreamEncryptionConfiguration, JsonUnmarshallerContext>
+    public class FailureDescriptionUnmarshaller : IUnmarshaller<FailureDescription, XmlUnmarshallerContext>, IUnmarshaller<FailureDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DeliveryStreamEncryptionConfiguration IUnmarshaller<DeliveryStreamEncryptionConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FailureDescription IUnmarshaller<FailureDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DeliveryStreamEncryptionConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public FailureDescription Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DeliveryStreamEncryptionConfiguration unmarshalledObject = new DeliveryStreamEncryptionConfiguration();
+            FailureDescription unmarshalledObject = new FailureDescription();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("FailureDescription", targetDepth))
-                {
-                    var unmarshaller = FailureDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.FailureDescription = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("KeyARN", targetDepth))
+                if (context.TestExpression("Details", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KeyARN = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Details = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("KeyType", targetDepth))
+                if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KeyType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         }
 
 
-        private static DeliveryStreamEncryptionConfigurationUnmarshaller _instance = new DeliveryStreamEncryptionConfigurationUnmarshaller();        
+        private static FailureDescriptionUnmarshaller _instance = new FailureDescriptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeliveryStreamEncryptionConfigurationUnmarshaller Instance
+        public static FailureDescriptionUnmarshaller Instance
         {
             get
             {

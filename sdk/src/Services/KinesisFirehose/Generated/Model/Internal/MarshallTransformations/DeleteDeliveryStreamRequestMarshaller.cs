@@ -68,6 +68,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAllowForceDelete())
+                {
+                    context.Writer.WritePropertyName("AllowForceDelete");
+                    context.Writer.Write(publicRequest.AllowForceDelete);
+                }
+
                 if(publicRequest.IsSetDeliveryStreamName())
                 {
                     context.Writer.WritePropertyName("DeliveryStreamName");

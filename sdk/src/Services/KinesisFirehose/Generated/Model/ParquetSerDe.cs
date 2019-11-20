@@ -68,7 +68,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The compression code to use over data blocks. The possible values are <code>UNCOMPRESSED</code>,
         /// <code>SNAPPY</code>, and <code>GZIP</code>, with the default being <code>SNAPPY</code>.
         /// Use <code>SNAPPY</code> for higher decompression speed. Use <code>GZIP</code> if the
-        /// compression ration is more important than speed.
+        /// compression ratio is more important than speed.
         /// </para>
         /// </summary>
         public ParquetCompression Compression

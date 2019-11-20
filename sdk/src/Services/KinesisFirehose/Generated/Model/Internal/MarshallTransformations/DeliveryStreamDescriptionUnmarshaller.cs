@@ -106,6 +106,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     unmarshalledObject.Destinations = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FailureDescription", targetDepth))
+                {
+                    var unmarshaller = FailureDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.FailureDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("HasMoreDestinations", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

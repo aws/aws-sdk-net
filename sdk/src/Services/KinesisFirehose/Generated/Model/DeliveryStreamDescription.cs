@@ -39,6 +39,7 @@ namespace Amazon.KinesisFirehose.Model
         private DeliveryStreamStatus _deliveryStreamStatus;
         private DeliveryStreamType _deliveryStreamType;
         private List<DestinationDescription> _destinations = new List<DestinationDescription>();
+        private FailureDescription _failureDescription;
         private bool? _hasMoreDestinations;
         private DateTime? _lastUpdateTimestamp;
         private SourceDescription _source;
@@ -123,7 +124,10 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DeliveryStreamStatus. 
         /// <para>
-        /// The status of the delivery stream.
+        /// The status of the delivery stream. If the status of a delivery stream is <code>CREATING_FAILED</code>,
+        /// this status doesn't change, and you can't invoke <code>CreateDeliveryStream</code>
+        /// again on it. However, you can invoke the <a>DeleteDeliveryStream</a> operation to
+        /// delete it.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -185,6 +189,26 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetDestinations()
         {
             return this._destinations != null && this._destinations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailureDescription. 
+        /// <para>
+        /// Provides details in case one of the following operations fails due to an error related
+        /// to KMS: <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>, <a>StartDeliveryStreamEncryption</a>,
+        /// <a>StopDeliveryStreamEncryption</a>.
+        /// </para>
+        /// </summary>
+        public FailureDescription FailureDescription
+        {
+            get { return this._failureDescription; }
+            set { this._failureDescription = value; }
+        }
+
+        // Check to see if FailureDescription property is set
+        internal bool IsSetFailureDescription()
+        {
+            return this._failureDescription != null;
         }
 
         /// <summary>

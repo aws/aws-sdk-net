@@ -39,9 +39,16 @@ namespace Amazon.KinesisFirehose.Model
     /// <para>
     /// This is an asynchronous operation that immediately returns. The initial status of
     /// the delivery stream is <code>CREATING</code>. After the delivery stream is created,
-    /// its status is <code>ACTIVE</code> and it now accepts data. Attempts to send data to
-    /// a delivery stream that is not in the <code>ACTIVE</code> state cause an exception.
-    /// To check the state of a delivery stream, use <a>DescribeDeliveryStream</a>.
+    /// its status is <code>ACTIVE</code> and it now accepts data. If the delivery stream
+    /// creation fails, the status transitions to <code>CREATING_FAILED</code>. Attempts to
+    /// send data to a delivery stream that is not in the <code>ACTIVE</code> state cause
+    /// an exception. To check the state of a delivery stream, use <a>DescribeDeliveryStream</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// If the status of a delivery stream is <code>CREATING_FAILED</code>, this status doesn't
+    /// change, and you can't invoke <code>CreateDeliveryStream</code> again on it. However,
+    /// you can invoke the <a>DeleteDeliveryStream</a> operation to delete it.
     /// </para>
     ///  
     /// <para>
@@ -51,6 +58,12 @@ namespace Amazon.KinesisFirehose.Model
     /// as input, set the <code>DeliveryStreamType</code> parameter to <code>KinesisStreamAsSource</code>,
     /// and provide the Kinesis stream Amazon Resource Name (ARN) and role ARN in the <code>KinesisStreamSourceConfiguration</code>
     /// parameter.
+    /// </para>
+    ///  
+    /// <para>
+    /// To create a delivery stream with server-side encryption (SSE) enabled, include <a>DeliveryStreamEncryptionConfigurationInput</a>
+    /// in your request. This is optional. You can also invoke <a>StartDeliveryStreamEncryption</a>
+    /// to turn on SSE for an existing delivery stream that doesn't have SSE enabled.
     /// </para>
     ///  
     /// <para>
@@ -108,6 +121,7 @@ namespace Amazon.KinesisFirehose.Model
     /// </summary>
     public partial class CreateDeliveryStreamRequest : AmazonKinesisFirehoseRequest
     {
+        private DeliveryStreamEncryptionConfigurationInput _deliveryStreamEncryptionConfigurationInput;
         private string _deliveryStreamName;
         private DeliveryStreamType _deliveryStreamType;
         private ElasticsearchDestinationConfiguration _elasticsearchDestinationConfiguration;
@@ -117,6 +131,25 @@ namespace Amazon.KinesisFirehose.Model
         private S3DestinationConfiguration _s3DestinationConfiguration;
         private SplunkDestinationConfiguration _splunkDestinationConfiguration;
         private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property DeliveryStreamEncryptionConfigurationInput. 
+        /// <para>
+        /// Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for
+        /// Server-Side Encryption (SSE).
+        /// </para>
+        /// </summary>
+        public DeliveryStreamEncryptionConfigurationInput DeliveryStreamEncryptionConfigurationInput
+        {
+            get { return this._deliveryStreamEncryptionConfigurationInput; }
+            set { this._deliveryStreamEncryptionConfigurationInput = value; }
+        }
+
+        // Check to see if DeliveryStreamEncryptionConfigurationInput property is set
+        internal bool IsSetDeliveryStreamEncryptionConfigurationInput()
+        {
+            return this._deliveryStreamEncryptionConfigurationInput != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DeliveryStreamName. 
