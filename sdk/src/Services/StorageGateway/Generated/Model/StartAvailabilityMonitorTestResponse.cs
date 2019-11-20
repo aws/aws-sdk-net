@@ -28,33 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeChapCredentials operation.
-    /// Returns an array of Challenge-Handshake Authentication Protocol (CHAP) credentials
-    /// information for a specified iSCSI target, one for each target-initiator pair. This
-    /// operation is supported in the volume and tape gateway types.
+    /// This is the response object from the StartAvailabilityMonitorTest operation.
     /// </summary>
-    public partial class DescribeChapCredentialsRequest : AmazonStorageGatewayRequest
+    public partial class StartAvailabilityMonitorTestResponse : AmazonWebServiceResponse
     {
-        private string _targetARN;
+        private string _gatewayARN;
 
         /// <summary>
-        /// Gets and sets the property TargetARN. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <a>DescribeStorediSCSIVolumes</a>
-        /// operation to return to retrieve the TargetARN for specified VolumeARN.
-        /// </para>
+        /// Gets and sets the property GatewayARN.
         /// </summary>
-        [AWSProperty(Required=true, Min=50, Max=800)]
-        public string TargetARN
+        [AWSProperty(Min=50, Max=500)]
+        public string GatewayARN
         {
-            get { return this._targetARN; }
-            set { this._targetARN = value; }
+            get { return this._gatewayARN; }
+            set { this._gatewayARN = value; }
         }
 
-        // Check to see if TargetARN property is set
-        internal bool IsSetTargetARN()
+        // Check to see if GatewayARN property is set
+        internal bool IsSetGatewayARN()
         {
-            return this._targetARN != null;
+            return this._gatewayARN != null;
         }
 
     }

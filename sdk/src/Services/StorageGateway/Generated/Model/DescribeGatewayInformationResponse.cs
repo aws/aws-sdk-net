@@ -42,6 +42,7 @@ namespace Amazon.StorageGateway.Model
         private string _gatewayState;
         private string _gatewayTimezone;
         private string _gatewayType;
+        private HostEnvironment _hostEnvironment;
         private string _lastSoftwareUpdate;
         private string _nextUpdateAvailabilityDate;
         private List<Tag> _tags = new List<Tag>();
@@ -50,8 +51,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLogGroupARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to
-        /// monitor and log events in the gateway.
+        /// The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is used to
+        /// monitor events in the gateway.
         /// </para>
         /// </summary>
         [AWSProperty(Max=562)]
@@ -231,6 +232,24 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetGatewayType()
         {
             return this._gatewayType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HostEnvironment. 
+        /// <para>
+        /// The type of hypervisor environment used by the host.
+        /// </para>
+        /// </summary>
+        public HostEnvironment HostEnvironment
+        {
+            get { return this._hostEnvironment; }
+            set { this._hostEnvironment = value; }
+        }
+
+        // Check to see if HostEnvironment property is set
+        internal bool IsSetHostEnvironment()
+        {
+            return this._hostEnvironment != null;
         }
 
         /// <summary>

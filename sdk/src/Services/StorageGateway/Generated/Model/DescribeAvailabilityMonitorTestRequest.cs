@@ -28,33 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeChapCredentials operation.
-    /// Returns an array of Challenge-Handshake Authentication Protocol (CHAP) credentials
-    /// information for a specified iSCSI target, one for each target-initiator pair. This
-    /// operation is supported in the volume and tape gateway types.
+    /// Container for the parameters to the DescribeAvailabilityMonitorTest operation.
+    /// Returns information about the most recent High Availability monitoring test that was
+    /// performed on the host in a cluster. If a test isn't performed, the status and start
+    /// time in the response would be null.
     /// </summary>
-    public partial class DescribeChapCredentialsRequest : AmazonStorageGatewayRequest
+    public partial class DescribeAvailabilityMonitorTestRequest : AmazonStorageGatewayRequest
     {
-        private string _targetARN;
+        private string _gatewayARN;
 
         /// <summary>
-        /// Gets and sets the property TargetARN. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <a>DescribeStorediSCSIVolumes</a>
-        /// operation to return to retrieve the TargetARN for specified VolumeARN.
-        /// </para>
+        /// Gets and sets the property GatewayARN.
         /// </summary>
-        [AWSProperty(Required=true, Min=50, Max=800)]
-        public string TargetARN
+        [AWSProperty(Required=true, Min=50, Max=500)]
+        public string GatewayARN
         {
-            get { return this._targetARN; }
-            set { this._targetARN = value; }
+            get { return this._gatewayARN; }
+            set { this._gatewayARN = value; }
         }
 
-        // Check to see if TargetARN property is set
-        internal bool IsSetTargetARN()
+        // Check to see if GatewayARN property is set
+        internal bool IsSetGatewayARN()
         {
-            return this._targetARN != null;
+            return this._gatewayARN != null;
         }
 
     }

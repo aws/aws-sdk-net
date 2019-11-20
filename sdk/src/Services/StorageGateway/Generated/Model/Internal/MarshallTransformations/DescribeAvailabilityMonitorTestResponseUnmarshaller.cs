@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for JoinDomain operation
+    /// Response Unmarshaller for DescribeAvailabilityMonitorTest operation
     /// </summary>  
-    public class JoinDomainResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeAvailabilityMonitorTestResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,28 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            JoinDomainResponse response = new JoinDomainResponse();
+            DescribeAvailabilityMonitorTestResponse response = new DescribeAvailabilityMonitorTestResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ActiveDirectoryStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ActiveDirectoryStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("GatewayARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.GatewayARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StartTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.StartTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,9 +95,9 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             return new AmazonStorageGatewayException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static JoinDomainResponseUnmarshaller _instance = new JoinDomainResponseUnmarshaller();        
+        private static DescribeAvailabilityMonitorTestResponseUnmarshaller _instance = new DescribeAvailabilityMonitorTestResponseUnmarshaller();        
 
-        internal static JoinDomainResponseUnmarshaller GetInstance()
+        internal static DescribeAvailabilityMonitorTestResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -99,7 +105,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static JoinDomainResponseUnmarshaller Instance
+        public static DescribeAvailabilityMonitorTestResponseUnmarshaller Instance
         {
             get
             {

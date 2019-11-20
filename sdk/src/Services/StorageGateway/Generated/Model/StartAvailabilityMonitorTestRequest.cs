@@ -28,20 +28,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeBandwidthRateLimit operation.
-    /// Returns the bandwidth rate limits of a gateway. By default, these limits are not set,
-    /// which means no bandwidth rate limiting is in effect. This operation is supported for
-    /// the stored volume, cached volume and tape gateway types.'
+    /// Container for the parameters to the StartAvailabilityMonitorTest operation.
+    /// Start a test that verifies that the specified gateway is configured for High Availability
+    /// monitoring in your host environment. This request only initiates the test and that
+    /// a successful response only indicates that the test was started. It doesn't indicate
+    /// that the test passed. For the status of the test, invoke the <code>DescribeAvailabilityMonitorTest</code>
+    /// API. 
     /// 
-    ///  
+    ///  <note> 
     /// <para>
-    /// This operation only returns a value for a bandwidth rate limit only if the limit is
-    /// set. If no limits are set for the gateway, then this operation returns only the gateway
-    /// ARN in the response body. To specify which gateway to describe, use the Amazon Resource
-    /// Name (ARN) of the gateway in your request.
+    /// Starting this test will cause your gateway to go offline for a brief period.
     /// </para>
+    ///  </note>
     /// </summary>
-    public partial class DescribeBandwidthRateLimitRequest : AmazonStorageGatewayRequest
+    public partial class StartAvailabilityMonitorTestRequest : AmazonStorageGatewayRequest
     {
         private string _gatewayARN;
 

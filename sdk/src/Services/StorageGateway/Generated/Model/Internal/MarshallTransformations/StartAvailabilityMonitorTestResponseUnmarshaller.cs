@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for JoinDomain operation
+    /// Response Unmarshaller for StartAvailabilityMonitorTest operation
     /// </summary>  
-    public class JoinDomainResponseUnmarshaller : JsonResponseUnmarshaller
+    public class StartAvailabilityMonitorTestResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,18 +45,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            JoinDomainResponse response = new JoinDomainResponse();
+            StartAvailabilityMonitorTestResponse response = new StartAvailabilityMonitorTestResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ActiveDirectoryStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ActiveDirectoryStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("GatewayARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -89,9 +83,9 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             return new AmazonStorageGatewayException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static JoinDomainResponseUnmarshaller _instance = new JoinDomainResponseUnmarshaller();        
+        private static StartAvailabilityMonitorTestResponseUnmarshaller _instance = new StartAvailabilityMonitorTestResponseUnmarshaller();        
 
-        internal static JoinDomainResponseUnmarshaller GetInstance()
+        internal static StartAvailabilityMonitorTestResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -99,7 +93,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static JoinDomainResponseUnmarshaller Instance
+        public static StartAvailabilityMonitorTestResponseUnmarshaller Instance
         {
             get
             {

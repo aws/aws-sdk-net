@@ -768,6 +768,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("StorageGateway")]
+        public void DescribeAvailabilityMonitorTestMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeAvailabilityMonitorTestRequest>();
+            var marshaller = new DescribeAvailabilityMonitorTestRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DescribeAvailabilityMonitorTestRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeAvailabilityMonitorTest").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DescribeAvailabilityMonitorTestResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeAvailabilityMonitorTestResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("StorageGateway")]
         public void DescribeBandwidthRateLimitMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DescribeBandwidthRateLimitRequest>();
@@ -1833,6 +1862,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ShutdownGatewayResponseUnmarshaller.Instance.Unmarshall(context)
                 as ShutdownGatewayResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("StorageGateway")]
+        public void StartAvailabilityMonitorTestMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<StartAvailabilityMonitorTestRequest>();
+            var marshaller = new StartAvailabilityMonitorTestRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<StartAvailabilityMonitorTestRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("StartAvailabilityMonitorTest").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = StartAvailabilityMonitorTestResponseUnmarshaller.Instance.Unmarshall(context)
+                as StartAvailabilityMonitorTestResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 

@@ -1343,7 +1343,8 @@ namespace Amazon.StorageGateway
         /// Deletes the bandwidth rate limits of a gateway. You can delete either the upload and
         /// download bandwidth rate limit, or you can delete both. If you delete only one of the
         /// limits, the other limit remains unchanged. To specify which gateway to work with,
-        /// use the Amazon Resource Name (ARN) of the gateway in your request.
+        /// use the Amazon Resource Name (ARN) of the gateway in your request. This operation
+        /// is supported for the stored volume, cached volume and tape gateway types.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBandwidthRateLimit service method.</param>
         /// 
@@ -1365,7 +1366,8 @@ namespace Amazon.StorageGateway
         /// Deletes the bandwidth rate limits of a gateway. You can delete either the upload and
         /// download bandwidth rate limit, or you can delete both. If you delete only one of the
         /// limits, the other limit remains unchanged. To specify which gateway to work with,
-        /// use the Amazon Resource Name (ARN) of the gateway in your request.
+        /// use the Amazon Resource Name (ARN) of the gateway in your request. This operation
+        /// is supported for the stored volume, cached volume and tape gateway types.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBandwidthRateLimit service method.</param>
         /// <param name="cancellationToken">
@@ -1391,7 +1393,8 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Deletes Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified
-        /// iSCSI target and initiator pair.
+        /// iSCSI target and initiator pair. This operation is supported in volume and tape gateway
+        /// types.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteChapCredentials service method.</param>
         /// 
@@ -1411,7 +1414,8 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Deletes Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified
-        /// iSCSI target and initiator pair.
+        /// iSCSI target and initiator pair. This operation is supported in volume and tape gateway
+        /// types.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteChapCredentials service method.</param>
         /// <param name="cancellationToken">
@@ -1812,12 +1816,61 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  DescribeAvailabilityMonitorTest
+
+
+        /// <summary>
+        /// Returns information about the most recent High Availability monitoring test that was
+        /// performed on the host in a cluster. If a test isn't performed, the status and start
+        /// time in the response would be null.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAvailabilityMonitorTest service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAvailabilityMonitorTest service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeAvailabilityMonitorTest">REST API Reference for DescribeAvailabilityMonitorTest Operation</seealso>
+        DescribeAvailabilityMonitorTestResponse DescribeAvailabilityMonitorTest(DescribeAvailabilityMonitorTestRequest request);
+
+
+
+        /// <summary>
+        /// Returns information about the most recent High Availability monitoring test that was
+        /// performed on the host in a cluster. If a test isn't performed, the status and start
+        /// time in the response would be null.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAvailabilityMonitorTest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAvailabilityMonitorTest service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeAvailabilityMonitorTest">REST API Reference for DescribeAvailabilityMonitorTest Operation</seealso>
+        Task<DescribeAvailabilityMonitorTestResponse> DescribeAvailabilityMonitorTestAsync(DescribeAvailabilityMonitorTestRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeBandwidthRateLimit
 
 
         /// <summary>
         /// Returns the bandwidth rate limits of a gateway. By default, these limits are not set,
-        /// which means no bandwidth rate limiting is in effect.
+        /// which means no bandwidth rate limiting is in effect. This operation is supported for
+        /// the stored volume, cached volume and tape gateway types.'
         /// 
         ///  
         /// <para>
@@ -1845,7 +1898,8 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Returns the bandwidth rate limits of a gateway. By default, these limits are not set,
-        /// which means no bandwidth rate limiting is in effect.
+        /// which means no bandwidth rate limiting is in effect. This operation is supported for
+        /// the stored volume, cached volume and tape gateway types.'
         /// 
         ///  
         /// <para>
@@ -1997,7 +2051,8 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Returns an array of Challenge-Handshake Authentication Protocol (CHAP) credentials
-        /// information for a specified iSCSI target, one for each target-initiator pair.
+        /// information for a specified iSCSI target, one for each target-initiator pair. This
+        /// operation is supported in the volume and tape gateway types.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeChapCredentials service method.</param>
         /// 
@@ -2017,7 +2072,8 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Returns an array of Challenge-Handshake Authentication Protocol (CHAP) credentials
-        /// information for a specified iSCSI target, one for each target-initiator pair.
+        /// information for a specified iSCSI target, one for each target-initiator pair. This
+        /// operation is supported in the volume and tape gateway types.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeChapCredentials service method.</param>
         /// <param name="cancellationToken">
@@ -2781,7 +2837,7 @@ namespace Amazon.StorageGateway
         /// specified gateway. Detaching and attaching a volume enables you to recover your data
         /// from one gateway to a different gateway without creating a snapshot. It also makes
         /// it easier to move your volumes from an on-premises gateway to a gateway hosted on
-        /// an Amazon EC2 instance.
+        /// an Amazon EC2 instance. This operation is only supported in the volume gateway type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachVolume service method.</param>
         /// 
@@ -2804,7 +2860,7 @@ namespace Amazon.StorageGateway
         /// specified gateway. Detaching and attaching a volume enables you to recover your data
         /// from one gateway to a different gateway without creating a snapshot. It also makes
         /// it easier to move your volumes from an on-premises gateway to a gateway hosted on
-        /// an Amazon EC2 instance.
+        /// an Amazon EC2 instance. This operation is only supported in the volume gateway type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachVolume service method.</param>
         /// <param name="cancellationToken">
@@ -3196,8 +3252,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Lists the tags that have been added to the specified resource. This operation is only
-        /// supported in the cached volume, stored volume and tape gateway type.
+        /// Lists the tags that have been added to the specified resource. This operation is supported
+        /// in storage gateways of all types.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -3216,8 +3272,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Lists the tags that have been added to the specified resource. This operation is only
-        /// supported in the cached volume, stored volume and tape gateway type.
+        /// Lists the tags that have been added to the specified resource. This operation is supported
+        /// in storage gateways of all types.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -3588,6 +3644,23 @@ namespace Amazon.StorageGateway
         /// You can subscribe to be notified through an CloudWatch event when your <code>RefreshCache</code>
         /// operation completes. 
         /// </para>
+        ///  
+        /// <para>
+        /// Throttle limit: This API is asynchronous so the gateway will accept no more than two
+        /// refreshes at any time. We recommend using the refresh-complete CloudWatch event notification
+        /// before issuing additional requests. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
+        /// Notified About File Operations</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you invoke the RefreshCache API when two requests are already being processed,
+        /// any new request will cause an <code>InvalidGatewayRequestException</code> error because
+        /// too many requests were sent to the server.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see "https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification".
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RefreshCache service method.</param>
         /// 
@@ -3622,6 +3695,23 @@ namespace Amazon.StorageGateway
         /// You can subscribe to be notified through an CloudWatch event when your <code>RefreshCache</code>
         /// operation completes. 
         /// </para>
+        ///  
+        /// <para>
+        /// Throttle limit: This API is asynchronous so the gateway will accept no more than two
+        /// refreshes at any time. We recommend using the refresh-complete CloudWatch event notification
+        /// before issuing additional requests. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
+        /// Notified About File Operations</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you invoke the RefreshCache API when two requests are already being processed,
+        /// any new request will cause an <code>InvalidGatewayRequestException</code> error because
+        /// too many requests were sent to the server.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see "https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification".
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RefreshCache service method.</param>
         /// <param name="cancellationToken">
@@ -3646,8 +3736,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Removes one or more tags from the specified resource. This operation is only supported
-        /// in the cached volume, stored volume and tape gateway types.
+        /// Removes one or more tags from the specified resource. This operation is supported
+        /// in storage gateways of all types.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
         /// 
@@ -3666,8 +3756,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Removes one or more tags from the specified resource. This operation is only supported
-        /// in the cached volume, stored volume and tape gateway types.
+        /// Removes one or more tags from the specified resource. This operation is supported
+        /// in storage gateways of all types.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
         /// <param name="cancellationToken">
@@ -4171,6 +4261,70 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  StartAvailabilityMonitorTest
+
+
+        /// <summary>
+        /// Start a test that verifies that the specified gateway is configured for High Availability
+        /// monitoring in your host environment. This request only initiates the test and that
+        /// a successful response only indicates that the test was started. It doesn't indicate
+        /// that the test passed. For the status of the test, invoke the <code>DescribeAvailabilityMonitorTest</code>
+        /// API. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Starting this test will cause your gateway to go offline for a brief period.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAvailabilityMonitorTest service method.</param>
+        /// 
+        /// <returns>The response from the StartAvailabilityMonitorTest service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/StartAvailabilityMonitorTest">REST API Reference for StartAvailabilityMonitorTest Operation</seealso>
+        StartAvailabilityMonitorTestResponse StartAvailabilityMonitorTest(StartAvailabilityMonitorTestRequest request);
+
+
+
+        /// <summary>
+        /// Start a test that verifies that the specified gateway is configured for High Availability
+        /// monitoring in your host environment. This request only initiates the test and that
+        /// a successful response only indicates that the test was started. It doesn't indicate
+        /// that the test passed. For the status of the test, invoke the <code>DescribeAvailabilityMonitorTest</code>
+        /// API. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Starting this test will cause your gateway to go offline for a brief period.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAvailabilityMonitorTest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartAvailabilityMonitorTest service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/StartAvailabilityMonitorTest">REST API Reference for StartAvailabilityMonitorTest Operation</seealso>
+        Task<StartAvailabilityMonitorTestResponse> StartAvailabilityMonitorTestAsync(StartAvailabilityMonitorTestRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  StartGateway
 
 
@@ -4253,7 +4407,8 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// Updates the bandwidth rate limits of a gateway. You can update both the upload and
         /// download bandwidth rate limit or specify only one of the two. If you don't set a bandwidth
-        /// rate limit, the existing rate limit remains.
+        /// rate limit, the existing rate limit remains. This operation is supported for the stored
+        /// volume, cached volume and tape gateway types.'
         /// 
         ///  
         /// <para>
@@ -4286,7 +4441,8 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// Updates the bandwidth rate limits of a gateway. You can update both the upload and
         /// download bandwidth rate limit or specify only one of the two. If you don't set a bandwidth
-        /// rate limit, the existing rate limit remains.
+        /// rate limit, the existing rate limit remains. This operation is supported for the stored
+        /// volume, cached volume and tape gateway types.'
         /// 
         ///  
         /// <para>
@@ -4325,7 +4481,8 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// Updates the Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified
         /// iSCSI target. By default, a gateway does not have CHAP enabled; however, for added
-        /// security, you might use it.
+        /// security, you might use it. This operation is supported in the volume and tape gateway
+        /// types.
         /// 
         ///  <important> 
         /// <para>
@@ -4353,7 +4510,8 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// Updates the Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified
         /// iSCSI target. By default, a gateway does not have CHAP enabled; however, for added
-        /// security, you might use it.
+        /// security, you might use it. This operation is supported in the volume and tape gateway
+        /// types.
         /// 
         ///  <important> 
         /// <para>

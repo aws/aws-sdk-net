@@ -32,7 +32,59 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class JoinDomainResponse : AmazonWebServiceResponse
     {
+        private ActiveDirectoryStatus _activeDirectoryStatus;
         private string _gatewayARN;
+
+        /// <summary>
+        /// Gets and sets the property ActiveDirectoryStatus. 
+        /// <para>
+        /// Indicates the status of the gateway as a member of the Active Directory domain.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ACCESS_DENIED: Indicates that the <code>JoinDomain</code> operation failed due to
+        /// an authentication error.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DETACHED: Indicates that gateway is not joined to a domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// JOINED: Indicates that the gateway has successfully joined a domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// JOINING: Indicates that a <code>JoinDomain</code> operation is in progress.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NETWORK_ERROR: Indicates that <code>JoinDomain</code> operation failed due to a network
+        /// or connectivity error.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TIMEOUT: Indicates that the <code>JoinDomain</code> operation failed because the operation
+        /// didn't complete within the allotted time.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNKNOWN_ERROR: Indicates that the <code>JoinDomain</code> operation failed due to
+        /// another type of error.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ActiveDirectoryStatus ActiveDirectoryStatus
+        {
+            get { return this._activeDirectoryStatus; }
+            set { this._activeDirectoryStatus = value; }
+        }
+
+        // Check to see if ActiveDirectoryStatus property is set
+        internal bool IsSetActiveDirectoryStatus()
+        {
+            return this._activeDirectoryStatus != null;
+        }
 
         /// <summary>
         /// Gets and sets the property GatewayARN. 

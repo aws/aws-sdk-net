@@ -533,6 +533,16 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.DescribeAvailabilityMonitorTestRequest.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.DescribeAvailabilityMonitorTestResponse.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.DescribeBandwidthRateLimitRequest.GatewayARN</property>
     <min>50</min>
     <max>500</max>
@@ -834,6 +844,11 @@
     <pattern>^[ -~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.JoinDomainRequest.TimeoutInSeconds</property>
+    <min>0</min>
+    <max>3600</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.JoinDomainRequest.UserName</property>
     <min>1</min>
     <max>1024</max>
@@ -1092,6 +1107,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.ShutdownGatewayResponse.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.StartAvailabilityMonitorTestRequest.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.StartAvailabilityMonitorTestResponse.GatewayARN</property>
     <min>50</min>
     <max>500</max>
   </property-value-rule>
