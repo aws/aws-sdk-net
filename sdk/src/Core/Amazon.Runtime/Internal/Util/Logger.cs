@@ -45,7 +45,7 @@ namespace Amazon.Runtime.Internal.Util
             InternalLog4netLogger log4netLogger = new InternalLog4netLogger(type);
             loggers.Add(log4netLogger);
             loggers.Add(new InternalConsoleLogger(type));
-#if BCL || (NETSTANDARD && !NETSTANDARD13)
+#if !NETSTANDARD13
             InternalSystemDiagnosticsLogger sdLogger = new InternalSystemDiagnosticsLogger(type);
             loggers.Add(sdLogger);
 #endif
@@ -68,12 +68,8 @@ namespace Amazon.Runtime.Internal.Util
                     il.IsEnabled = (logging & LoggingOptions.Log4Net) == LoggingOptions.Log4Net;
                 if (il is InternalConsoleLogger)
                     il.IsEnabled = (logging & LoggingOptions.Console) == LoggingOptions.Console;
-#if BCL || (NETSTANDARD && !NETSTANDARD13)
+#if !NETSTANDARD13
                 if (il is InternalSystemDiagnosticsLogger)
-                    il.IsEnabled = (logging & LoggingOptions.SystemDiagnostics) == LoggingOptions.SystemDiagnostics;
-#endif
-#if __ANDROID__ || __IOS__
-                if (il is InternalConsoleLogger)
                     il.IsEnabled = (logging & LoggingOptions.SystemDiagnostics) == LoggingOptions.SystemDiagnostics;
 #endif
             }
