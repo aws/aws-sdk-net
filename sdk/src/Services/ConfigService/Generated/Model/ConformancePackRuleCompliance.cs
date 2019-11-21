@@ -39,7 +39,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ComplianceType. 
         /// <para>
-        /// Filters the results by compliance.
+        /// Compliance of the AWS Config rule
         /// </para>
         ///  
         /// <para>
@@ -61,7 +61,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigRuleName. 
         /// <para>
-        /// Filters the results by AWS Config rule name.
+        /// Name of the config rule.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

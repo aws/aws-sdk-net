@@ -233,6 +233,9 @@ namespace Amazon.ConfigService.Model
         ///  
         /// <para>
         /// An empty field indicates that the current configuration was not initiated by any event.
+        /// As of Version 1.3, the relatedEvents field is empty. You can access the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents
+        /// API</a> in the <i>AWS CloudTrail API Reference</i> to retrieve the events for the
+        /// resource.
         /// </para>
         /// </summary>
         public List<string> RelatedEvents

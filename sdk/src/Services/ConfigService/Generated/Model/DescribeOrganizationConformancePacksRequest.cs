@@ -33,9 +33,16 @@ namespace Amazon.ConfigService.Model
     /// 
     ///  <note> 
     /// <para>
-    /// When you specify the limit and the next token, you receive a paginated response. Limit
-    /// and next token are not applicable if you specify organization conformance packs names.
-    /// They are only applicable, when you request all the organization conformance packs.
+    /// When you specify the limit and the next token, you receive a paginated response. 
+    /// </para>
+    ///  
+    /// <para>
+    /// Limit and next token are not applicable if you specify organization conformance packs
+    /// names. They are only applicable, when you request all the organization conformance
+    /// packs. 
+    /// </para>
+    ///  
+    /// <para>
     /// Only a master account can call this API.
     /// </para>
     ///  </note>

@@ -33,21 +33,28 @@ namespace Amazon.ConfigService.Model
     /// 
     ///  
     /// <para>
-    /// This API enables organization service access through the <code>EnableAWSServiceAccess</code>
-    /// action and creates a service linked role AWSServiceRoleForConfigMultiAccountSetup
-    /// in the master account of your organization. The service linked role is created only
-    /// when the role does not exist in the master account. AWS Config verifies the existence
-    /// of role with GetRole action. 
+    /// This API enables organization service access for <code>config-multiaccountsetup.amazonaws.com</code>
+    /// through the <code>EnableAWSServiceAccess</code> action and creates a service linked
+    /// role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master account of
+    /// your organization. The service linked role is created only when the role does not
+    /// exist in the master account. AWS Config verifies the existence of role with GetRole
+    /// action.
     /// </para>
     ///  <note> 
-    /// <para>
-    /// The SPN is <code>config-multiaccountsetup.amazonaws.com</code>.
-    /// </para>
-    ///  
     /// <para>
     /// You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code>
     /// parameter, but not both. If you provide both AWS Config uses the <code>TemplateS3Uri</code>
     /// parameter and ignores the <code>TemplateBody</code> parameter.
+    /// </para>
+    ///  
+    /// <para>
+    /// AWS Config sets the state of a conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS
+    /// until the confomance pack is created or updated. You cannot update a conformance pack
+    /// while it is in this state.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can create 6 conformance packs with 25 AWS Config rules in each pack.
     /// </para>
     ///  </note>
     /// </summary>
@@ -84,7 +91,13 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property DeliveryS3Bucket. 
         /// <para>
         /// Location of an Amazon S3 bucket where AWS Config can deliver evaluation results. AWS
-        /// Config stores intermediate files while processing conformance pack template.
+        /// Config stores intermediate files while processing conformance pack template. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The delivery bucket name should start with awsconfigconforms. For example: "Resource":
+        /// "arn:aws:s3:::your_bucket_name/*". For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html">Permissions
+        /// for cross account bucket access</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=63)]
@@ -182,7 +195,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property TemplateS3Uri. 
         /// <para>
         /// Location of file containing the template body. The uri must point to the conformance
-        /// pack template (max size: 300,000 bytes).
+        /// pack template (max size: 300 KB).
         /// </para>
         ///  <note> 
         /// <para>

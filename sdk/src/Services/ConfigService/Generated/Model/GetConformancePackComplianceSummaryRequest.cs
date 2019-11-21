@@ -29,7 +29,8 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetConformancePackComplianceSummary operation.
-    /// 
+    /// Returns compliance details for the conformance pack based on the cumulative compliance
+    /// results of all the rules in that conformance pack.
     /// </summary>
     public partial class GetConformancePackComplianceSummaryRequest : AmazonConfigServiceRequest
     {
@@ -38,7 +39,10 @@ namespace Amazon.ConfigService.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ConformancePackNames.
+        /// Gets and sets the property ConformancePackNames. 
+        /// <para>
+        /// Names of conformance packs.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
         public List<string> ConformancePackNames
@@ -54,7 +58,10 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Limit.
+        /// Gets and sets the property Limit. 
+        /// <para>
+        /// The maximum number of conformance packs returned on each page.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
         public int Limit
@@ -70,7 +77,11 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The nextToken string returned on a previous page that you use to get the next page
+        /// of results in a paginated response.
+        /// </para>
         /// </summary>
         public string NextToken
         {

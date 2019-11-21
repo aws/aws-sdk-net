@@ -29,12 +29,11 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeConformancePackCompliance operation.
-    /// Returns compliance information for each rule in that conformance pack.
+    /// Returns compliance details for each rule in that conformance pack.
     /// 
     ///  <note> 
     /// <para>
-    /// You must provide exact rule names otherwise AWS Config cannot return evaluation results
-    /// due to insufficient data.
+    /// You must provide exact rule names.
     /// </para>
     ///  </note>
     /// </summary>

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// 
+    /// Summary includes the name and status of the conformance pack.
     /// </summary>
     public partial class ConformancePackComplianceSummary
     {
@@ -36,7 +36,11 @@ namespace Amazon.ConfigService.Model
         private string _conformancePackName;
 
         /// <summary>
-        /// Gets and sets the property ConformancePackComplianceStatus.
+        /// Gets and sets the property ConformancePackComplianceStatus. 
+        /// <para>
+        /// The status of the conformance pack. The allowed values are COMPLIANT and NON_COMPLIANT.
+        /// 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public ConformancePackComplianceType ConformancePackComplianceStatus
@@ -52,7 +56,10 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ConformancePackName.
+        /// Gets and sets the property ConformancePackName. 
+        /// <para>
+        /// The name of the conformance pack name.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string ConformancePackName

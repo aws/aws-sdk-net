@@ -29,7 +29,7 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Returns details of a conformance pack. A conformance pack is a collection of AWS Config
-    /// rules that can be easily deployed in an account and a region.
+    /// rules and remediation actions that can be easily deployed in an account and a region.
     /// </summary>
     public partial class ConformancePackDetail
     {
@@ -119,7 +119,10 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreatedBy.
+        /// Gets and sets the property CreatedBy. 
+        /// <para>
+        /// AWS service that created the conformance pack.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string CreatedBy
@@ -137,8 +140,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property DeliveryS3Bucket. 
         /// <para>
-        /// Location of an Amazon S3 bucket where AWS Config can deliver evaluation results and
-        /// conformance pack template that is used to create a pack.
+        /// Conformance pack template that is used to create a pack. The delivery bucket name
+        /// should start with awsconfigconforms. For example: "Resource": "arn:aws:s3:::your_bucket_name/*".
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=63)]
@@ -157,7 +160,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property DeliveryS3KeyPrefix. 
         /// <para>
-        /// Any folder structure you want to add to an Amazon S3 bucket.
+        /// The prefix for the Amazon S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

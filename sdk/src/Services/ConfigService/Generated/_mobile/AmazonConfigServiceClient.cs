@@ -604,8 +604,8 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Deletes the specified conformance pack and all the AWS Config rules and all evaluation
-        /// results within that conformance pack.
+        /// Deletes the specified conformance pack and all the AWS Config rules, remediation actions,
+        /// and all evaluation results within that conformance pack.
         /// 
         ///  
         /// <para>
@@ -1142,6 +1142,48 @@ namespace Amazon.ConfigService
             options.ResponseUnmarshaller = DeleteRemediationExceptionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteRemediationExceptionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteResourceConfig
+
+        internal virtual DeleteResourceConfigResponse DeleteResourceConfig(DeleteResourceConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourceConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourceConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourceConfigResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Records the configuration state for a custom resource that has been deleted. This
+        /// API records a new ConfigurationItem with a ResourceDeleted status. You can retrieve
+        /// the ConfigurationItems recorded for this resource in your AWS Config History.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteResourceConfig service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoRunningConfigurationRecorderException">
+        /// There is no configuration recorder running.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteResourceConfig">REST API Reference for DeleteResourceConfig Operation</seealso>
+        public virtual Task<DeleteResourceConfigResponse> DeleteResourceConfigAsync(DeleteResourceConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourceConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourceConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteResourceConfigResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1899,12 +1941,11 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns compliance information for each rule in that conformance pack.
+        /// Returns compliance details for each rule in that conformance pack.
         /// 
         ///  <note> 
         /// <para>
-        /// You must provide exact rule names otherwise AWS Config cannot return evaluation results
-        /// due to insufficient data.
+        /// You must provide exact rule names.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2002,6 +2043,12 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Provides one or more conformance packs deployment status.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If there are no conformance packs then you will see an empty result.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConformancePackStatus service method.</param>
         /// <param name="cancellationToken">
@@ -2333,9 +2380,16 @@ namespace Amazon.ConfigService
         /// 
         ///  <note> 
         /// <para>
-        /// When you specify the limit and the next token, you receive a paginated response. Limit
-        /// and next token are not applicable if you specify organization conformance packs names.
-        /// They are only applicable, when you request all the organization conformance packs.
+        /// When you specify the limit and the next token, you receive a paginated response. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Limit and next token are not applicable if you specify organization conformance packs
+        /// names. They are only applicable, when you request all the organization conformance
+        /// packs. 
+        /// </para>
+        ///  
+        /// <para>
         /// Only a master account can call this API.
         /// </para>
         ///  </note>
@@ -3138,7 +3192,8 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// 
+        /// Returns compliance details for the conformance pack based on the cumulative compliance
+        /// results of all the rules in that conformance pack.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetConformancePackComplianceSummary service method.</param>
         /// <param name="cancellationToken">
@@ -3772,7 +3827,7 @@ namespace Amazon.ConfigService
         ///  </li> <li> 
         /// <para>
         /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
-        /// be created becuase you do not have permissions: 
+        /// be created because you do not have permissions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3781,10 +3836,6 @@ namespace Amazon.ConfigService
         ///  </li> <li> 
         /// <para>
         /// To read Amazon S3 bucket.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To create a rule and a stack.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
@@ -4013,7 +4064,7 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Creates or updates a conformance pack. A conformance pack is a collection of AWS Config
-        /// rules that can be easily deployed in an account and a region.
+        /// rules that can be easily deployed in an account and a region and across AWS Organization.
         /// 
         ///  
         /// <para>
@@ -4061,7 +4112,7 @@ namespace Amazon.ConfigService
         ///  </li> <li> 
         /// <para>
         /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
-        /// be created becuase you do not have permissions: 
+        /// be created because you do not have permissions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -4071,10 +4122,6 @@ namespace Amazon.ConfigService
         /// <para>
         /// To read Amazon S3 bucket.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To create a rule and a stack.
-        /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
@@ -4082,7 +4129,8 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfConformancePacksExceededException">
-        /// You have reached the limit (20) of the number of conformance packs in an account.
+        /// You have reached the limit (6) of the number of conformance packs in an account (6
+        /// conformance pack with 25 AWS Config rules per pack).
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
         /// You see this exception in the following cases: 
@@ -4331,7 +4379,7 @@ namespace Amazon.ConfigService
         ///  </li> <li> 
         /// <para>
         /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
-        /// be created becuase you do not have permissions: 
+        /// be created because you do not have permissions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -4340,10 +4388,6 @@ namespace Amazon.ConfigService
         ///  </li> <li> 
         /// <para>
         /// To read Amazon S3 bucket.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To create a rule and a stack.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
@@ -4444,21 +4488,28 @@ namespace Amazon.ConfigService
         /// 
         ///  
         /// <para>
-        /// This API enables organization service access through the <code>EnableAWSServiceAccess</code>
-        /// action and creates a service linked role AWSServiceRoleForConfigMultiAccountSetup
-        /// in the master account of your organization. The service linked role is created only
-        /// when the role does not exist in the master account. AWS Config verifies the existence
-        /// of role with GetRole action. 
+        /// This API enables organization service access for <code>config-multiaccountsetup.amazonaws.com</code>
+        /// through the <code>EnableAWSServiceAccess</code> action and creates a service linked
+        /// role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master account of
+        /// your organization. The service linked role is created only when the role does not
+        /// exist in the master account. AWS Config verifies the existence of role with GetRole
+        /// action.
         /// </para>
         ///  <note> 
-        /// <para>
-        /// The SPN is <code>config-multiaccountsetup.amazonaws.com</code>.
-        /// </para>
-        ///  
         /// <para>
         /// You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code>
         /// parameter, but not both. If you provide both AWS Config uses the <code>TemplateS3Uri</code>
         /// parameter and ignores the <code>TemplateBody</code> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// AWS Config sets the state of a conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS
+        /// until the confomance pack is created or updated. You cannot update a conformance pack
+        /// while it is in this state.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can create 6 conformance packs with 25 AWS Config rules in each pack.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4490,7 +4541,7 @@ namespace Amazon.ConfigService
         ///  </li> <li> 
         /// <para>
         /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
-        /// be created becuase you do not have permissions: 
+        /// be created because you do not have permissions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -4500,15 +4551,11 @@ namespace Amazon.ConfigService
         /// <para>
         /// To read Amazon S3 bucket.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To create a rule and a stack.
-        /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfOrganizationConformancePacksExceededException">
-        /// You have reached the limit (10) of the number of organization conformance packs in
-        /// an account.
+        /// You have reached the limit (6) of the number of organization conformance packs in
+        /// an account (6 conformance pack with 25 AWS Config rules per pack per account).
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoAvailableOrganizationException">
         /// Organization is no longer available.
@@ -4633,7 +4680,7 @@ namespace Amazon.ConfigService
         ///  </li> <li> 
         /// <para>
         /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
-        /// be created becuase you do not have permissions: 
+        /// be created because you do not have permissions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -4642,10 +4689,6 @@ namespace Amazon.ConfigService
         ///  </li> <li> 
         /// <para>
         /// To read Amazon S3 bucket.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To create a rule and a stack.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
@@ -4701,6 +4744,100 @@ namespace Amazon.ConfigService
             options.ResponseUnmarshaller = PutRemediationExceptionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutRemediationExceptionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutResourceConfig
+
+        internal virtual PutResourceConfigResponse PutResourceConfig(PutResourceConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourceConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourceConfigResponseUnmarshaller.Instance;
+
+            return Invoke<PutResourceConfigResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Records the configuration state for the resource provided in the request. The configuration
+        /// state of a resource is represented in AWS Config as Configuration Items. Once this
+        /// API records the configuration item, you can retrieve the list of configuration items
+        /// for the custom resource type using existing AWS Config APIs. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The custom resource type must be registered with AWS CloudFormation. This API accepts
+        /// the configuration item registered with AWS CloudFormation.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you call this API, AWS Config only stores configuration state of the resource
+        /// provided in the request. This API does not change or remediate the configuration of
+        /// the resource. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourceConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutResourceConfig service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InsufficientPermissionsException">
+        /// Indicates one of the following errors:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS
+        /// Config lacks permissions to perform the config:Put* action.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN,
+        /// and check the function's permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutOrganizationConfigRule, organization config rule cannot be created because
+        /// you do not have permissions to call IAM <code>GetRole</code> action or create a service
+        /// linked role.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
+        /// be created because you do not have permissions: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To call IAM <code>GetRole</code> action or create a service linked role.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To read Amazon S3 bucket.
+        /// </para>
+        ///  </li> </ul> </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.MaxActiveResourcesExceededException">
+        /// You have reached the limit (100,000) of active custom resource types in your account.
+        /// Delete unused resources using <code>DeleteResourceConfig</code>.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoRunningConfigurationRecorderException">
+        /// There is no configuration recorder running.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutResourceConfig">REST API Reference for PutResourceConfig Operation</seealso>
+        public virtual Task<PutResourceConfigResponse> PutResourceConfigAsync(PutResourceConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourceConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourceConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutResourceConfigResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5081,7 +5218,7 @@ namespace Amazon.ConfigService
         ///  </li> <li> 
         /// <para>
         /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
-        /// be created becuase you do not have permissions: 
+        /// be created because you do not have permissions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5090,10 +5227,6 @@ namespace Amazon.ConfigService
         ///  </li> <li> 
         /// <para>
         /// To read Amazon S3 bucket.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To create a rule and a stack.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>

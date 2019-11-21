@@ -30,6 +30,12 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Container for the parameters to the DescribeConformancePackStatus operation.
     /// Provides one or more conformance packs deployment status.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// If there are no conformance packs then you will see an empty result.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeConformancePackStatusRequest : AmazonConfigServiceRequest
     {
@@ -59,7 +65,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of conformance packs returned on each page.
+        /// The maximum number of conformance packs status returned on each page.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]

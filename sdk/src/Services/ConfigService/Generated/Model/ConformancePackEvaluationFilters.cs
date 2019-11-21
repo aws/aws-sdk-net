@@ -84,6 +84,12 @@ namespace Amazon.ConfigService.Model
         /// <para>
         /// Filters the results by resource IDs.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This is valid only when you provide resource type. If there is no resource type, you
+        /// will see an error.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
         public List<string> ResourceIds

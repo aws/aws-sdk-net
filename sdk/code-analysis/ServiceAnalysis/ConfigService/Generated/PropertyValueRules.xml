@@ -81,6 +81,16 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.DeleteResourceConfigRequest.ResourceId</property>
+    <min>1</min>
+    <max>768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.DeleteResourceConfigRequest.ResourceType</property>
+    <min>1</min>
+    <max>196</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.DeleteRetentionConfigurationRequest.RetentionConfigurationName</property>
     <min>1</min>
     <max>256</max>
@@ -486,6 +496,22 @@
     <property>Amazon.ConfigService.Model.PutRemediationExceptionsRequest.Message</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.PutResourceConfigRequest.ResourceId</property>
+    <min>1</min>
+    <max>768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.PutResourceConfigRequest.ResourceType</property>
+    <min>1</min>
+    <max>196</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.PutResourceConfigRequest.SchemaVersionId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[A-Za-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.PutRetentionConfigurationRequest.RetentionPeriodInDays</property>

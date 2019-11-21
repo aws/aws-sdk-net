@@ -29,8 +29,8 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteConformancePack operation.
-    /// Deletes the specified conformance pack and all the AWS Config rules and all evaluation
-    /// results within that conformance pack.
+    /// Deletes the specified conformance pack and all the AWS Config rules, remediation actions,
+    /// and all evaluation results within that conformance pack.
     /// 
     ///  
     /// <para>

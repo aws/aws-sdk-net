@@ -332,6 +332,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("ConfigService")]
+        public void DeleteResourceConfigMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DeleteResourceConfigRequest>();
+            var marshaller = new DeleteResourceConfigRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DeleteResourceConfigRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ConfigService")]
         public void DeleteRetentionConfigurationMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DeleteRetentionConfigurationRequest>();
@@ -1836,6 +1852,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = PutRemediationExceptionsResponseUnmarshaller.Instance.Unmarshall(context)
                 as PutRemediationExceptionsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ConfigService")]
+        public void PutResourceConfigMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<PutResourceConfigRequest>();
+            var marshaller = new PutResourceConfigRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<PutResourceConfigRequest>(request,jsonRequest);
+
         }
 
         

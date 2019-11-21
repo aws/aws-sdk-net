@@ -125,7 +125,7 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DELETE_FAILED when a conformance pack deletion failed from your account.
+        /// DELETE_FAILED when a conformance pack deletion failed in your account.
         /// </para>
         ///  </li> </ul>
         /// </summary>

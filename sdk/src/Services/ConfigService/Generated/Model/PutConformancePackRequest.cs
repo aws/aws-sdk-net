@@ -30,7 +30,7 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Container for the parameters to the PutConformancePack operation.
     /// Creates or updates a conformance pack. A conformance pack is a collection of AWS Config
-    /// rules that can be easily deployed in an account and a region.
+    /// rules that can be easily deployed in an account and a region and across AWS Organization.
     /// 
     ///  
     /// <para>
@@ -97,8 +97,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property DeliveryS3Bucket. 
         /// <para>
-        /// Location of an Amazon S3 bucket where AWS Config can deliver evaluation results. AWS
-        /// Config stores intermediate files while processing conformance pack template.
+        /// AWS Config stores intermediate files while processing conformance pack template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=63)]
@@ -141,7 +140,8 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can only use a YAML template with one resource type, that is, config rule.
+        /// You can only use a YAML template with one resource type, that is, config rule and
+        /// a remediation action. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -161,9 +161,9 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property TemplateS3Uri. 
         /// <para>
-        /// Location of file containing the template body. The uri must point to the conformance
-        /// pack template (max size: 300,000 bytes) that is located in an Amazon S3 bucket in
-        /// the same region as the conformance pack.
+        /// Location of file containing the template body (<code>s3://bucketname/prefix</code>).
+        /// The uri must point to the conformance pack template (max size: 300 KB) that is located
+        /// in an Amazon S3 bucket in the same region as the conformance pack. 
         /// </para>
         ///  <note> 
         /// <para>
