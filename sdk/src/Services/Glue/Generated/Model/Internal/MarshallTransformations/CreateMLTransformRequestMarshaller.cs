@@ -74,6 +74,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetGlueVersion())
+                {
+                    context.Writer.WritePropertyName("GlueVersion");
+                    context.Writer.Write(publicRequest.GlueVersion);
+                }
+
                 if(publicRequest.IsSetInputRecordTables())
                 {
                     context.Writer.WritePropertyName("InputRecordTables");

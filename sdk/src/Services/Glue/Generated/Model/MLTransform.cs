@@ -35,6 +35,7 @@ namespace Amazon.Glue.Model
         private DateTime? _createdOn;
         private string _description;
         private EvaluationMetrics _evaluationMetrics;
+        private string _glueVersion;
         private List<GlueTable> _inputRecordTables = new List<GlueTable>();
         private int? _labelCount;
         private DateTime? _lastModifiedOn;
@@ -108,6 +109,28 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GlueVersion. 
+        /// <para>
+        /// This value determines which version of AWS Glue this machine learning transform is
+        /// compatible with. Glue 1.0 is recommended for most customers. If the value is not set,
+        /// the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
+        /// Glue Versions</a> in the developer guide.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string GlueVersion
+        {
+            get { return this._glueVersion; }
+            set { this._glueVersion = value; }
+        }
+
+        // Check to see if GlueVersion property is set
+        internal bool IsSetGlueVersion()
+        {
+            return this._glueVersion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InputRecordTables. 
         /// <para>
         /// A list of AWS Glue table definitions used by the transform.
@@ -170,10 +193,34 @@ namespace Amazon.Glue.Model
         /// The number of AWS Glue data processing units (DPUs) that are allocated to task runs
         /// for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU
         /// is a relative measure of processing power that consists of 4 vCPUs of compute capacity
-        /// and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS
+        /// and 16 GB of memory. For more information, see the <a href="http://aws.amazon.com/glue/pricing/">AWS
         /// Glue pricing page</a>. 
         /// </para>
         ///  
+        /// <para>
+        ///  <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code>
+        /// and <code>WorkerType</code>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code>
+        /// cannot be set.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code>
+        /// can be set.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and
+        /// vice versa).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>,
         /// the <code>MaxCapacity</code> field is set automatically and becomes read-only.
@@ -236,6 +283,11 @@ namespace Amazon.Glue.Model
         /// The number of workers of a defined <code>workerType</code> that are allocated when
         /// a task of the transform runs.
         /// </para>
+        ///  
+        /// <para>
+        /// If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and
+        /// vice versa).
+        /// </para>
         /// </summary>
         public int NumberOfWorkers
         {
@@ -274,10 +326,22 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property Role. 
         /// <para>
         /// The name or Amazon Resource Name (ARN) of the IAM role with the required permissions.
+        /// The required permissions include both AWS Glue service role permissions to AWS Glue
+        /// resources, and Amazon S3 permissions required by the transform. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// This role needs AWS Glue service role permissions to allow access to resources in
+        /// AWS Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach
+        /// a Policy to IAM Users That Access AWS Glue</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources,
         /// targets, temporary directory, scripts, and any libraries used by the task run for
         /// this transform.
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Role
         {
@@ -388,6 +452,30 @@ namespace Amazon.Glue.Model
         /// <para>
         /// For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory
         /// and a 128GB disk, and 1 executor per worker.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code>
+        /// and <code>WorkerType</code>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code>
+        /// cannot be set.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code>
+        /// can be set.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and
+        /// vice versa).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -69,6 +69,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     response.EvaluationMetrics = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("GlueVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.GlueVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InputRecordTables", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<GlueTable, GlueTableUnmarshaller>(GlueTableUnmarshaller.Instance);

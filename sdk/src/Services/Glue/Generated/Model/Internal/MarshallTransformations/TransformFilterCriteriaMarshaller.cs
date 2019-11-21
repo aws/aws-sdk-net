@@ -57,6 +57,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CreatedBefore);
             }
 
+            if(requestObject.IsSetGlueVersion())
+            {
+                context.Writer.WritePropertyName("GlueVersion");
+                context.Writer.Write(requestObject.GlueVersion);
+            }
+
             if(requestObject.IsSetLastModifiedAfter())
             {
                 context.Writer.WritePropertyName("LastModifiedAfter");
