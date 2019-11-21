@@ -11768,6 +11768,83 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  UpdateResourceDataSync
+
+
+        /// <summary>
+        /// Update a resource data sync. After you create a resource data sync for a Region, you
+        /// can't change the account options for that sync. For example, if you create a sync
+        /// in the us-east-2 (Ohio) Region and you choose the Include only the current account
+        /// option, you can't edit that sync later and choose the Include all accounts from my
+        /// AWS Organizations configuration option. Instead, you must delete the first resource
+        /// data sync, and create a new one.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceDataSync service method.</param>
+        /// 
+        /// <returns>The response from the UpdateResourceDataSync service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncConflictException">
+        /// Another <code>UpdateResourceDataSync</code> request is being processed. Wait a few
+        /// minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncInvalidConfigurationException">
+        /// The specified sync configuration is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncNotFoundException">
+        /// The specified sync name was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateResourceDataSync">REST API Reference for UpdateResourceDataSync Operation</seealso>
+        public virtual UpdateResourceDataSyncResponse UpdateResourceDataSync(UpdateResourceDataSyncRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResourceDataSyncRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResourceDataSyncResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateResourceDataSyncResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Update a resource data sync. After you create a resource data sync for a Region, you
+        /// can't change the account options for that sync. For example, if you create a sync
+        /// in the us-east-2 (Ohio) Region and you choose the Include only the current account
+        /// option, you can't edit that sync later and choose the Include all accounts from my
+        /// AWS Organizations configuration option. Instead, you must delete the first resource
+        /// data sync, and create a new one.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceDataSync service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateResourceDataSync service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncConflictException">
+        /// Another <code>UpdateResourceDataSync</code> request is being processed. Wait a few
+        /// minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncInvalidConfigurationException">
+        /// The specified sync configuration is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncNotFoundException">
+        /// The specified sync name was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateResourceDataSync">REST API Reference for UpdateResourceDataSync Operation</seealso>
+        public virtual Task<UpdateResourceDataSyncResponse> UpdateResourceDataSyncAsync(UpdateResourceDataSyncRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResourceDataSyncRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResourceDataSyncResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateResourceDataSyncResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateServiceSetting
 
 

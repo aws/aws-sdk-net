@@ -9975,6 +9975,78 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  UpdateResourceDataSync
+
+        /// <summary>
+        /// Update a resource data sync. After you create a resource data sync for a Region, you
+        /// can't change the account options for that sync. For example, if you create a sync
+        /// in the us-east-2 (Ohio) Region and you choose the Include only the current account
+        /// option, you can't edit that sync later and choose the Include all accounts from my
+        /// AWS Organizations configuration option. Instead, you must delete the first resource
+        /// data sync, and create a new one.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceDataSync service method.</param>
+        /// 
+        /// <returns>The response from the UpdateResourceDataSync service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncConflictException">
+        /// Another <code>UpdateResourceDataSync</code> request is being processed. Wait a few
+        /// minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncInvalidConfigurationException">
+        /// The specified sync configuration is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncNotFoundException">
+        /// The specified sync name was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateResourceDataSync">REST API Reference for UpdateResourceDataSync Operation</seealso>
+        public virtual UpdateResourceDataSyncResponse UpdateResourceDataSync(UpdateResourceDataSyncRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResourceDataSyncRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResourceDataSyncResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateResourceDataSyncResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateResourceDataSync operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceDataSync operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateResourceDataSync
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateResourceDataSync">REST API Reference for UpdateResourceDataSync Operation</seealso>
+        public virtual IAsyncResult BeginUpdateResourceDataSync(UpdateResourceDataSyncRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResourceDataSyncRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResourceDataSyncResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateResourceDataSync operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateResourceDataSync.</param>
+        /// 
+        /// <returns>Returns a  UpdateResourceDataSyncResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateResourceDataSync">REST API Reference for UpdateResourceDataSync Operation</seealso>
+        public virtual UpdateResourceDataSyncResponse EndUpdateResourceDataSync(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateResourceDataSyncResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateServiceSetting
 
         /// <summary>
