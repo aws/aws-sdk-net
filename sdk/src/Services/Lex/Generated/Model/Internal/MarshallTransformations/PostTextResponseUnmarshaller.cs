@@ -81,6 +81,12 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
                     response.ResponseCard = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sentimentResponse", targetDepth))
+                {
+                    var unmarshaller = SentimentResponseUnmarshaller.Instance;
+                    response.SentimentResponse = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sessionAttributes", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

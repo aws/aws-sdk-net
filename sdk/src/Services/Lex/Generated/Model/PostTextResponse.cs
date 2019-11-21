@@ -37,6 +37,7 @@ namespace Amazon.Lex.Model
         private string _message;
         private MessageFormatType _messageFormat;
         private ResponseCard _responseCard;
+        private SentimentResponse _sentimentResponse;
         private Dictionary<string, string> _sessionAttributes = new Dictionary<string, string>();
         private Dictionary<string, string> _slots = new Dictionary<string, string>();
         private string _slotToElicit;
@@ -234,6 +235,29 @@ namespace Amazon.Lex.Model
         internal bool IsSetResponseCard()
         {
             return this._responseCard != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SentimentResponse. 
+        /// <para>
+        /// The sentiment expressed in and utterance.
+        /// </para>
+        ///  
+        /// <para>
+        /// When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis,
+        /// this field contains the result of the analysis.
+        /// </para>
+        /// </summary>
+        public SentimentResponse SentimentResponse
+        {
+            get { return this._sentimentResponse; }
+            set { this._sentimentResponse = value; }
+        }
+
+        // Check to see if SentimentResponse property is set
+        internal bool IsSetSentimentResponse()
+        {
+            return this._sentimentResponse != null;
         }
 
         /// <summary>
