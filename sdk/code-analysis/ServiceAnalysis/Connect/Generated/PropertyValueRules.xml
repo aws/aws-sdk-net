@@ -12,7 +12,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateUserRequest.Username</property>
     <min>1</min>
-    <max>20</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DeleteUserRequest.InstanceId</property>
@@ -150,6 +150,34 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.StartChatContactRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartChatContactRequest.ContactFlowId</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartChatContactRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartChatContactResponse.ContactId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartChatContactResponse.ParticipantId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartChatContactResponse.ParticipantToken</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.StartOutboundVoiceContactRequest.ClientToken</property>
     <max>500</max>
   </property-value-rule>
@@ -213,8 +241,23 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.ChatMessage.Content</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ChatMessage.ContentType</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.ContactFlowSummary.Id</property>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ParticipantDetails.DisplayName</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.QueueSummary.Name</property>
@@ -229,7 +272,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.User.Username</property>
     <min>1</min>
-    <max>20</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UserIdentityInfo.FirstName</property>
@@ -248,6 +291,6 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.UserSummary.Username</property>
     <min>1</min>
-    <max>20</max>
+    <max>100</max>
   </property-value-rule>
 </property-value-rules>

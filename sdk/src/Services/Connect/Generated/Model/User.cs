@@ -213,7 +213,7 @@ namespace Amazon.Connect.Model
         /// The user name assigned to the user account.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=20)]
+        [AWSProperty(Min=1, Max=100)]
         public string Username
         {
             get { return this._username; }

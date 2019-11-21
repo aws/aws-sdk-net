@@ -231,7 +231,7 @@ namespace Amazon.Connect.Model
         /// management, the user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=20)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Username
         {
             get { return this._username; }

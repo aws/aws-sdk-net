@@ -31,6 +31,10 @@ namespace Amazon.Connect
     {
 
         /// <summary>
+        /// Constant CHAT for Channel
+        /// </summary>
+        public static readonly Channel CHAT = new Channel("CHAT");
+        /// <summary>
         /// Constant VOICE for Channel
         /// </summary>
         public static readonly Channel VOICE = new Channel("VOICE");
@@ -221,6 +225,10 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly CurrentMetricName AGENTS_ON_CALL = new CurrentMetricName("AGENTS_ON_CALL");
         /// <summary>
+        /// Constant AGENTS_ON_CONTACT for CurrentMetricName
+        /// </summary>
+        public static readonly CurrentMetricName AGENTS_ON_CONTACT = new CurrentMetricName("AGENTS_ON_CONTACT");
+        /// <summary>
         /// Constant AGENTS_ONLINE for CurrentMetricName
         /// </summary>
         public static readonly CurrentMetricName AGENTS_ONLINE = new CurrentMetricName("AGENTS_ONLINE");
@@ -240,6 +248,14 @@ namespace Amazon.Connect
         /// Constant OLDEST_CONTACT_AGE for CurrentMetricName
         /// </summary>
         public static readonly CurrentMetricName OLDEST_CONTACT_AGE = new CurrentMetricName("OLDEST_CONTACT_AGE");
+        /// <summary>
+        /// Constant SLOTS_ACTIVE for CurrentMetricName
+        /// </summary>
+        public static readonly CurrentMetricName SLOTS_ACTIVE = new CurrentMetricName("SLOTS_ACTIVE");
+        /// <summary>
+        /// Constant SLOTS_AVAILABLE for CurrentMetricName
+        /// </summary>
+        public static readonly CurrentMetricName SLOTS_AVAILABLE = new CurrentMetricName("SLOTS_AVAILABLE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

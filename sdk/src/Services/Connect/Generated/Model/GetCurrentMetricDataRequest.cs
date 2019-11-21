@@ -72,6 +72,10 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Unit: COUNT
         /// </para>
+        ///  </dd> <dt>AGENTS_ON_CONTACT</dt> <dd> 
+        /// <para>
+        /// Unit: COUNT
+        /// </para>
         ///  </dd> <dt>AGENTS_ONLINE</dt> <dd> 
         /// <para>
         /// Unit: COUNT
@@ -91,6 +95,14 @@ namespace Amazon.Connect.Model
         ///  </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> 
         /// <para>
         /// Unit: SECONDS
+        /// </para>
+        ///  </dd> <dt>SLOTS_ACTIVE</dt> <dd> 
+        /// <para>
+        /// Unit: COUNT
+        /// </para>
+        ///  </dd> <dt>SLOTS_AVAILABLE</dt> <dd> 
+        /// <para>
+        /// Unit: COUNT
         /// </para>
         ///  </dd> </dl>
         /// </summary>
