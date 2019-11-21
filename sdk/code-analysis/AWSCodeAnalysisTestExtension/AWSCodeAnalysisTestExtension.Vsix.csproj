@@ -248,6 +248,10 @@
       <Project>{5C6865ED-8436-403E-9839-BC75B87D401C}</Project>
       <Name>AWSSDK.Connect.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ConnectParticipant/AWSSDK.ConnectParticipant.CodeAnalysis.csproj">
+      <Project>{2C9844AF-7955-410B-A1EF-B47DB1FBAD2F}</Project>
+      <Name>AWSSDK.ConnectParticipant.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/CostAndUsageReport/AWSSDK.CostAndUsageReport.CodeAnalysis.csproj">
       <Project>{F03AF29A-5DE2-45C4-BB91-75713E672A10}</Project>
       <Name>AWSSDK.CostAndUsageReport.CodeAnalysis</Name>
