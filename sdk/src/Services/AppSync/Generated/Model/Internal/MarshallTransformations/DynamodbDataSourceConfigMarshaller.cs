@@ -51,6 +51,17 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AwsRegion);
             }
 
+            if(requestObject.IsSetDeltaSyncConfig())
+            {
+                context.Writer.WritePropertyName("deltaSyncConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DeltaSyncConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.DeltaSyncConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTableName())
             {
                 context.Writer.WritePropertyName("tableName");
@@ -61,6 +72,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("useCallerCredentials");
                 context.Writer.Write(requestObject.UseCallerCredentials);
+            }
+
+            if(requestObject.IsSetVersioned())
+            {
+                context.Writer.WritePropertyName("versioned");
+                context.Writer.Write(requestObject.Versioned);
             }
 
         }

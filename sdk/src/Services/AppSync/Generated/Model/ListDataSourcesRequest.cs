@@ -82,6 +82,7 @@ namespace Amazon.AppSync.Model
         /// be used to return the next set of items in the list. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=65536)]
         public string NextToken
         {
             get { return this._nextToken; }

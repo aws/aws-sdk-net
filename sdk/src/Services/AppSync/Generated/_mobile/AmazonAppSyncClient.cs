@@ -244,6 +244,58 @@ namespace Amazon.AppSync
         #endregion
 
 
+        #region  CreateApiCache
+
+        internal virtual CreateApiCacheResponse CreateApiCache(CreateApiCacheRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateApiCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApiCacheResponseUnmarshaller.Instance;
+
+            return Invoke<CreateApiCacheResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a cache for the GraphQL API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApiCache service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateApiCache service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateApiCache">REST API Reference for CreateApiCache Operation</seealso>
+        public virtual Task<CreateApiCacheResponse> CreateApiCacheAsync(CreateApiCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateApiCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApiCacheResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateApiCacheResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateApiKey
 
         internal virtual CreateApiKeyResponse CreateApiKey(CreateApiKeyRequest request)
@@ -571,6 +623,58 @@ namespace Amazon.AppSync
 
         #endregion
         
+        #region  DeleteApiCache
+
+        internal virtual DeleteApiCacheResponse DeleteApiCache(DeleteApiCacheRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApiCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApiCacheResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteApiCacheResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an <code>ApiCache</code> object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApiCache service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteApiCache service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteApiCache">REST API Reference for DeleteApiCache Operation</seealso>
+        public virtual Task<DeleteApiCacheResponse> DeleteApiCacheAsync(DeleteApiCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApiCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApiCacheResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteApiCacheResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteApiKey
 
         internal virtual DeleteApiKeyResponse DeleteApiKey(DeleteApiKeyRequest request)
@@ -870,6 +974,110 @@ namespace Amazon.AppSync
             options.ResponseUnmarshaller = DeleteTypeResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteTypeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  FlushApiCache
+
+        internal virtual FlushApiCacheResponse FlushApiCache(FlushApiCacheRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = FlushApiCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = FlushApiCacheResponseUnmarshaller.Instance;
+
+            return Invoke<FlushApiCacheResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Flushes an <code>ApiCache</code> object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the FlushApiCache service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the FlushApiCache service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/FlushApiCache">REST API Reference for FlushApiCache Operation</seealso>
+        public virtual Task<FlushApiCacheResponse> FlushApiCacheAsync(FlushApiCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = FlushApiCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = FlushApiCacheResponseUnmarshaller.Instance;
+
+            return InvokeAsync<FlushApiCacheResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetApiCache
+
+        internal virtual GetApiCacheResponse GetApiCache(GetApiCacheRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApiCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApiCacheResponseUnmarshaller.Instance;
+
+            return Invoke<GetApiCacheResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves an <code>ApiCache</code> object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetApiCache service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetApiCache service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetApiCache">REST API Reference for GetApiCache Operation</seealso>
+        public virtual Task<GetApiCacheResponse> GetApiCacheAsync(GetApiCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApiCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApiCacheResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetApiCacheResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1774,6 +1982,58 @@ namespace Amazon.AppSync
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateApiCache
+
+        internal virtual UpdateApiCacheResponse UpdateApiCache(UpdateApiCacheRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApiCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApiCacheResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateApiCacheResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the cache for the GraphQL API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApiCache service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateApiCache service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiCache">REST API Reference for UpdateApiCache Operation</seealso>
+        public virtual Task<UpdateApiCacheResponse> UpdateApiCacheAsync(UpdateApiCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApiCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApiCacheResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateApiCacheResponse>(request, options, cancellationToken);
         }
 
         #endregion

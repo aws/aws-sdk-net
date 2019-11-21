@@ -159,7 +159,7 @@ namespace Amazon.AppSync.Model
         /// A user-supplied name for the <code>DataSource</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=65536)]
         public string Name
         {
             get { return this._name; }

@@ -25,6 +25,188 @@ namespace Amazon.AppSync
 {
 
     /// <summary>
+    /// Constants used for properties of type ApiCacheStatus.
+    /// </summary>
+    public class ApiCacheStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for ApiCacheStatus
+        /// </summary>
+        public static readonly ApiCacheStatus AVAILABLE = new ApiCacheStatus("AVAILABLE");
+        /// <summary>
+        /// Constant CREATING for ApiCacheStatus
+        /// </summary>
+        public static readonly ApiCacheStatus CREATING = new ApiCacheStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for ApiCacheStatus
+        /// </summary>
+        public static readonly ApiCacheStatus DELETING = new ApiCacheStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for ApiCacheStatus
+        /// </summary>
+        public static readonly ApiCacheStatus FAILED = new ApiCacheStatus("FAILED");
+        /// <summary>
+        /// Constant MODIFYING for ApiCacheStatus
+        /// </summary>
+        public static readonly ApiCacheStatus MODIFYING = new ApiCacheStatus("MODIFYING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApiCacheStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApiCacheStatus FindValue(string value)
+        {
+            return FindValue<ApiCacheStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApiCacheStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ApiCacheType.
+    /// </summary>
+    public class ApiCacheType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant R4_2XLARGE for ApiCacheType
+        /// </summary>
+        public static readonly ApiCacheType R4_2XLARGE = new ApiCacheType("R4_2XLARGE");
+        /// <summary>
+        /// Constant R4_4XLARGE for ApiCacheType
+        /// </summary>
+        public static readonly ApiCacheType R4_4XLARGE = new ApiCacheType("R4_4XLARGE");
+        /// <summary>
+        /// Constant R4_8XLARGE for ApiCacheType
+        /// </summary>
+        public static readonly ApiCacheType R4_8XLARGE = new ApiCacheType("R4_8XLARGE");
+        /// <summary>
+        /// Constant R4_LARGE for ApiCacheType
+        /// </summary>
+        public static readonly ApiCacheType R4_LARGE = new ApiCacheType("R4_LARGE");
+        /// <summary>
+        /// Constant R4_XLARGE for ApiCacheType
+        /// </summary>
+        public static readonly ApiCacheType R4_XLARGE = new ApiCacheType("R4_XLARGE");
+        /// <summary>
+        /// Constant T2_MEDIUM for ApiCacheType
+        /// </summary>
+        public static readonly ApiCacheType T2_MEDIUM = new ApiCacheType("T2_MEDIUM");
+        /// <summary>
+        /// Constant T2_SMALL for ApiCacheType
+        /// </summary>
+        public static readonly ApiCacheType T2_SMALL = new ApiCacheType("T2_SMALL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApiCacheType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApiCacheType FindValue(string value)
+        {
+            return FindValue<ApiCacheType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApiCacheType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ApiCachingBehavior.
+    /// </summary>
+    public class ApiCachingBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FULL_REQUEST_CACHING for ApiCachingBehavior
+        /// </summary>
+        public static readonly ApiCachingBehavior FULL_REQUEST_CACHING = new ApiCachingBehavior("FULL_REQUEST_CACHING");
+        /// <summary>
+        /// Constant PER_RESOLVER_CACHING for ApiCachingBehavior
+        /// </summary>
+        public static readonly ApiCachingBehavior PER_RESOLVER_CACHING = new ApiCachingBehavior("PER_RESOLVER_CACHING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApiCachingBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApiCachingBehavior FindValue(string value)
+        {
+            return FindValue<ApiCachingBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApiCachingBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AuthenticationType.
     /// </summary>
     public class AuthenticationType : ConstantClass
@@ -122,6 +304,114 @@ namespace Amazon.AppSync
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AuthorizationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConflictDetectionType.
+    /// </summary>
+    public class ConflictDetectionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for ConflictDetectionType
+        /// </summary>
+        public static readonly ConflictDetectionType NONE = new ConflictDetectionType("NONE");
+        /// <summary>
+        /// Constant VERSION for ConflictDetectionType
+        /// </summary>
+        public static readonly ConflictDetectionType VERSION = new ConflictDetectionType("VERSION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConflictDetectionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConflictDetectionType FindValue(string value)
+        {
+            return FindValue<ConflictDetectionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConflictDetectionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConflictHandlerType.
+    /// </summary>
+    public class ConflictHandlerType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTOMERGE for ConflictHandlerType
+        /// </summary>
+        public static readonly ConflictHandlerType AUTOMERGE = new ConflictHandlerType("AUTOMERGE");
+        /// <summary>
+        /// Constant LAMBDA for ConflictHandlerType
+        /// </summary>
+        public static readonly ConflictHandlerType LAMBDA = new ConflictHandlerType("LAMBDA");
+        /// <summary>
+        /// Constant NONE for ConflictHandlerType
+        /// </summary>
+        public static readonly ConflictHandlerType NONE = new ConflictHandlerType("NONE");
+        /// <summary>
+        /// Constant OPTIMISTIC_CONCURRENCY for ConflictHandlerType
+        /// </summary>
+        public static readonly ConflictHandlerType OPTIMISTIC_CONCURRENCY = new ConflictHandlerType("OPTIMISTIC_CONCURRENCY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConflictHandlerType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConflictHandlerType FindValue(string value)
+        {
+            return FindValue<ConflictHandlerType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConflictHandlerType(string value)
         {
             return FindValue(value);
         }

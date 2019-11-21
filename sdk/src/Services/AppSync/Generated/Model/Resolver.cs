@@ -32,6 +32,7 @@ namespace Amazon.AppSync.Model
     /// </summary>
     public partial class Resolver
     {
+        private CachingConfig _cachingConfig;
         private string _dataSourceName;
         private string _fieldName;
         private ResolverKind _kind;
@@ -39,7 +40,26 @@ namespace Amazon.AppSync.Model
         private string _requestMappingTemplate;
         private string _resolverArn;
         private string _responseMappingTemplate;
+        private SyncConfig _syncConfig;
         private string _typeName;
+
+        /// <summary>
+        /// Gets and sets the property CachingConfig. 
+        /// <para>
+        /// The caching configuration for the resolver.
+        /// </para>
+        /// </summary>
+        public CachingConfig CachingConfig
+        {
+            get { return this._cachingConfig; }
+            set { this._cachingConfig = value; }
+        }
+
+        // Check to see if CachingConfig property is set
+        internal bool IsSetCachingConfig()
+        {
+            return this._cachingConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DataSourceName. 
@@ -47,6 +67,7 @@ namespace Amazon.AppSync.Model
         /// The resolver data source name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=65536)]
         public string DataSourceName
         {
             get { return this._dataSourceName; }
@@ -65,6 +86,7 @@ namespace Amazon.AppSync.Model
         /// The resolver field name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=65536)]
         public string FieldName
         {
             get { return this._fieldName; }
@@ -182,11 +204,30 @@ namespace Amazon.AppSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SyncConfig. 
+        /// <para>
+        /// The <code>SyncConfig</code> for a resolver attached to a versioned datasource.
+        /// </para>
+        /// </summary>
+        public SyncConfig SyncConfig
+        {
+            get { return this._syncConfig; }
+            set { this._syncConfig = value; }
+        }
+
+        // Check to see if SyncConfig property is set
+        internal bool IsSetSyncConfig()
+        {
+            return this._syncConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TypeName. 
         /// <para>
         /// The resolver type name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=65536)]
         public string TypeName
         {
             get { return this._typeName; }

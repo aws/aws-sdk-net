@@ -48,6 +48,7 @@ namespace Amazon.AppSync.Model
         /// The name of the <code>DataSource</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=65536)]
         public string DataSourceName
         {
             get { return this._dataSourceName; }
@@ -139,6 +140,7 @@ namespace Amazon.AppSync.Model
         /// The name of the <code>Function</code> object.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=65536)]
         public string Name
         {
             get { return this._name; }

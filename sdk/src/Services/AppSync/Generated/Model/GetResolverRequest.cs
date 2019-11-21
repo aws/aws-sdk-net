@@ -62,7 +62,7 @@ namespace Amazon.AppSync.Model
         /// The resolver field name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=65536)]
         public string FieldName
         {
             get { return this._fieldName; }
@@ -81,7 +81,7 @@ namespace Amazon.AppSync.Model
         /// The resolver type name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=65536)]
         public string TypeName
         {
             get { return this._typeName; }

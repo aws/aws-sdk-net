@@ -61,7 +61,7 @@ namespace Amazon.AppSync.Model
         /// The <code>Function</code> ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=65536)]
         public string FunctionId
         {
             get { return this._functionId; }

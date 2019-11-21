@@ -157,6 +157,7 @@ namespace Amazon.AppSync.Model
         /// The name of the data source.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=65536)]
         public string Name
         {
             get { return this._name; }

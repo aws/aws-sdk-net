@@ -72,7 +72,7 @@ namespace Amazon.AppSync.Model
         /// The <code>Function</code> <code>DataSource</code> name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=65536)]
         public string DataSourceName
         {
             get { return this._dataSourceName; }
@@ -129,7 +129,7 @@ namespace Amazon.AppSync.Model
         /// The <code>Function</code> name. The function name does not have to be unique.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=65536)]
         public string Name
         {
             get { return this._name; }
