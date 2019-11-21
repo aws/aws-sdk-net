@@ -37,6 +37,26 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Amplify.Model.CreateBackendEnvironmentRequest.AppId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.CreateBackendEnvironmentRequest.DeploymentArtifacts</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.CreateBackendEnvironmentRequest.EnvironmentName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.CreateBackendEnvironmentRequest.StackName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Amplify.Model.CreateBranchRequest.AppId</property>
     <min>1</min>
     <max>255</max>
@@ -123,6 +143,16 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Amplify.Model.DeleteBackendEnvironmentRequest.AppId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.DeleteBackendEnvironmentRequest.EnvironmentName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Amplify.Model.DeleteBranchRequest.AppId</property>
     <min>1</min>
     <max>255</max>
@@ -188,6 +218,16 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.GetArtifactUrlResponse.ArtifactUrl</property>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.GetBackendEnvironmentRequest.AppId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.GetBackendEnvironmentRequest.EnvironmentName</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.GetBranchRequest.AppId</property>
@@ -264,6 +304,29 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListArtifactsResponse.NextToken</property>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.ListBackendEnvironmentsRequest.AppId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.ListBackendEnvironmentsRequest.EnvironmentName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.ListBackendEnvironmentsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.ListBackendEnvironmentsRequest.NextToken</property>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.ListBackendEnvironmentsResponse.NextToken</property>
     <max>2000</max>
   </property-value-rule>
   <property-value-rule>
@@ -585,6 +648,26 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.AutoBranchCreationConfig.PullRequestEnvironmentName</property>
     <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.BackendEnvironment.BackendEnvironmentArn</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.BackendEnvironment.DeploymentArtifacts</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.BackendEnvironment.EnvironmentName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.BackendEnvironment.StackName</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.BadRequestException.Message</property>

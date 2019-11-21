@@ -307,6 +307,76 @@ namespace Amazon.Amplify
 
         #endregion
         
+        #region  CreateBackendEnvironment
+
+        /// <summary>
+        /// Creates a new backend environment for an Amplify App.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBackendEnvironment service method.</param>
+        /// 
+        /// <returns>The response from the CreateBackendEnvironment service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
+        /// Exception thrown when a resource could not be created because of service limits.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateBackendEnvironment">REST API Reference for CreateBackendEnvironment Operation</seealso>
+        public virtual CreateBackendEnvironmentResponse CreateBackendEnvironment(CreateBackendEnvironmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBackendEnvironmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBackendEnvironmentResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBackendEnvironmentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateBackendEnvironment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateBackendEnvironment operation on AmazonAmplifyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateBackendEnvironment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateBackendEnvironment">REST API Reference for CreateBackendEnvironment Operation</seealso>
+        public virtual IAsyncResult BeginCreateBackendEnvironment(CreateBackendEnvironmentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBackendEnvironmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBackendEnvironmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateBackendEnvironment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateBackendEnvironment.</param>
+        /// 
+        /// <returns>Returns a  CreateBackendEnvironmentResult from Amplify.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateBackendEnvironment">REST API Reference for CreateBackendEnvironment Operation</seealso>
+        public virtual CreateBackendEnvironmentResponse EndCreateBackendEnvironment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateBackendEnvironmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateBranch
 
         /// <summary>
@@ -659,6 +729,76 @@ namespace Amazon.Amplify
         public virtual DeleteAppResponse EndDeleteApp(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteAppResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteBackendEnvironment
+
+        /// <summary>
+        /// Delete backend environment for an Amplify App.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBackendEnvironment service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBackendEnvironment service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.DependentServiceFailureException">
+        /// Exception thrown when an operation fails due to a dependent service throwing an exception.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteBackendEnvironment">REST API Reference for DeleteBackendEnvironment Operation</seealso>
+        public virtual DeleteBackendEnvironmentResponse DeleteBackendEnvironment(DeleteBackendEnvironmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBackendEnvironmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBackendEnvironmentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBackendEnvironmentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBackendEnvironment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBackendEnvironment operation on AmazonAmplifyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBackendEnvironment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteBackendEnvironment">REST API Reference for DeleteBackendEnvironment Operation</seealso>
+        public virtual IAsyncResult BeginDeleteBackendEnvironment(DeleteBackendEnvironmentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBackendEnvironmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBackendEnvironmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteBackendEnvironment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBackendEnvironment.</param>
+        /// 
+        /// <returns>Returns a  DeleteBackendEnvironmentResult from Amplify.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteBackendEnvironment">REST API Reference for DeleteBackendEnvironment Operation</seealso>
+        public virtual DeleteBackendEnvironmentResponse EndDeleteBackendEnvironment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteBackendEnvironmentResponse>(asyncResult);
         }
 
         #endregion
@@ -1147,6 +1287,73 @@ namespace Amazon.Amplify
 
         #endregion
         
+        #region  GetBackendEnvironment
+
+        /// <summary>
+        /// Retrieves a backend environment for an Amplify App.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBackendEnvironment service method.</param>
+        /// 
+        /// <returns>The response from the GetBackendEnvironment service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetBackendEnvironment">REST API Reference for GetBackendEnvironment Operation</seealso>
+        public virtual GetBackendEnvironmentResponse GetBackendEnvironment(GetBackendEnvironmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBackendEnvironmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBackendEnvironmentResponseUnmarshaller.Instance;
+
+            return Invoke<GetBackendEnvironmentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBackendEnvironment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBackendEnvironment operation on AmazonAmplifyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBackendEnvironment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetBackendEnvironment">REST API Reference for GetBackendEnvironment Operation</seealso>
+        public virtual IAsyncResult BeginGetBackendEnvironment(GetBackendEnvironmentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBackendEnvironmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBackendEnvironmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBackendEnvironment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBackendEnvironment.</param>
+        /// 
+        /// <returns>Returns a  GetBackendEnvironmentResult from Amplify.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetBackendEnvironment">REST API Reference for GetBackendEnvironment Operation</seealso>
+        public virtual GetBackendEnvironmentResponse EndGetBackendEnvironment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetBackendEnvironmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetBranch
 
         /// <summary>
@@ -1548,6 +1755,70 @@ namespace Amazon.Amplify
         public virtual ListArtifactsResponse EndListArtifacts(IAsyncResult asyncResult)
         {
             return EndInvoke<ListArtifactsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListBackendEnvironments
+
+        /// <summary>
+        /// Lists backend environments for an Amplify App.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBackendEnvironments service method.</param>
+        /// 
+        /// <returns>The response from the ListBackendEnvironments service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListBackendEnvironments">REST API Reference for ListBackendEnvironments Operation</seealso>
+        public virtual ListBackendEnvironmentsResponse ListBackendEnvironments(ListBackendEnvironmentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBackendEnvironmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBackendEnvironmentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBackendEnvironmentsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBackendEnvironments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBackendEnvironments operation on AmazonAmplifyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBackendEnvironments
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListBackendEnvironments">REST API Reference for ListBackendEnvironments Operation</seealso>
+        public virtual IAsyncResult BeginListBackendEnvironments(ListBackendEnvironmentsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBackendEnvironmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBackendEnvironmentsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListBackendEnvironments operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBackendEnvironments.</param>
+        /// 
+        /// <returns>Returns a  ListBackendEnvironmentsResult from Amplify.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListBackendEnvironments">REST API Reference for ListBackendEnvironments Operation</seealso>
+        public virtual ListBackendEnvironmentsResponse EndListBackendEnvironments(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListBackendEnvironmentsResponse>(asyncResult);
         }
 
         #endregion

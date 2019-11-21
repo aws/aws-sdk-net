@@ -76,6 +76,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Amplify")]
+        public void CreateBackendEnvironmentMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateBackendEnvironment");
+
+            var request = InstantiateClassGenerator.Execute<CreateBackendEnvironmentRequest>();
+            var marshaller = new CreateBackendEnvironmentRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateBackendEnvironment", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateBackendEnvironmentResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CreateBackendEnvironmentResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Amplify")]
         public void CreateBranchMarshallTest()
         {
             var operation = service_model.FindOperation("CreateBranch");
@@ -228,6 +260,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = DeleteAppResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as DeleteAppResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Amplify")]
+        public void DeleteBackendEnvironmentMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteBackendEnvironment");
+
+            var request = InstantiateClassGenerator.Execute<DeleteBackendEnvironmentRequest>();
+            var marshaller = new DeleteBackendEnvironmentRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteBackendEnvironment", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DeleteBackendEnvironmentResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DeleteBackendEnvironmentResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -460,6 +524,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Amplify")]
+        public void GetBackendEnvironmentMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetBackendEnvironment");
+
+            var request = InstantiateClassGenerator.Execute<GetBackendEnvironmentRequest>();
+            var marshaller = new GetBackendEnvironmentRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetBackendEnvironment", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetBackendEnvironmentResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetBackendEnvironmentResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Amplify")]
         public void GetBranchMarshallTest()
         {
             var operation = service_model.FindOperation("GetBranch");
@@ -644,6 +740,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = ListArtifactsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as ListArtifactsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Amplify")]
+        public void ListBackendEnvironmentsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListBackendEnvironments");
+
+            var request = InstantiateClassGenerator.Execute<ListBackendEnvironmentsRequest>();
+            var marshaller = new ListBackendEnvironmentsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListBackendEnvironments", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListBackendEnvironmentsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListBackendEnvironmentsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
