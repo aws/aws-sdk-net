@@ -38,6 +38,7 @@ namespace Amazon.LexModelBuildingService.Model
         private Prompt _clarificationPrompt;
         private DateTime? _createdDate;
         private string _description;
+        private bool? _detectSentiment;
         private string _failureReason;
         private int? _idleSessionTTLInSeconds;
         private List<Intent> _intents = new List<Intent>();
@@ -180,6 +181,25 @@ namespace Amazon.LexModelBuildingService.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DetectSentiment. 
+        /// <para>
+        /// Indicates whether utterances entered by the user should be sent to Amazon Comprehend
+        /// for sentiment analysis.
+        /// </para>
+        /// </summary>
+        public bool DetectSentiment
+        {
+            get { return this._detectSentiment.GetValueOrDefault(); }
+            set { this._detectSentiment = value; }
+        }
+
+        // Check to see if DetectSentiment property is set
+        internal bool IsSetDetectSentiment()
+        {
+            return this._detectSentiment.HasValue; 
         }
 
         /// <summary>

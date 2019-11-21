@@ -39,8 +39,11 @@ namespace Amazon.LexModelBuildingService.Model
     /// </para>
     ///  
     /// <para>
-    /// Use the <code>DeleteStoredUtterances</code> operation to manually delete stored utterances
-    /// for a specific user.
+    /// Use the <code>DeleteUtterances</code> operation to manually delete stored utterances
+    /// for a specific user. When you use the <code>DeleteUtterances</code> operation, utterances
+    /// stored for improving your bot's ability to respond to user input are deleted immediately.
+    /// Utterances stored for use with the <code>GetUtterancesView</code> operation are deleted
+    /// after 15 days.
     /// </para>
     ///  
     /// <para>

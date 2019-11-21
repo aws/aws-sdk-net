@@ -115,6 +115,12 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetDetectSentiment())
+                {
+                    context.Writer.WritePropertyName("detectSentiment");
+                    context.Writer.Write(publicRequest.DetectSentiment);
+                }
+
                 if(publicRequest.IsSetIdleSessionTTLInSeconds())
                 {
                     context.Writer.WritePropertyName("idleSessionTTLInSeconds");

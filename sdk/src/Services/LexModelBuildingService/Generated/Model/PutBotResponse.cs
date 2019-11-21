@@ -39,6 +39,7 @@ namespace Amazon.LexModelBuildingService.Model
         private DateTime? _createdDate;
         private bool? _createVersion;
         private string _description;
+        private bool? _detectSentiment;
         private string _failureReason;
         private int? _idleSessionTTLInSeconds;
         private List<Intent> _intents = new List<Intent>();
@@ -165,7 +166,12 @@ namespace Amazon.LexModelBuildingService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreateVersion.
+        /// Gets and sets the property CreateVersion. 
+        /// <para>
+        ///  <code>True</code> if a new version of the bot was created. If the <code>createVersion</code>
+        /// field was not specified in the request, the <code>createVersion</code> field is set
+        /// to false in the response.
+        /// </para>
         /// </summary>
         public bool CreateVersion
         {
@@ -196,6 +202,27 @@ namespace Amazon.LexModelBuildingService.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DetectSentiment. 
+        /// <para>
+        ///  <code>true</code> if the bot is configured to send user utterances to Amazon Comprehend
+        /// for sentiment analysis. If the <code>detectSentiment</code> field was not specified
+        /// in the request, the <code>detectSentiment</code> field is <code>false</code> in the
+        /// response.
+        /// </para>
+        /// </summary>
+        public bool DetectSentiment
+        {
+            get { return this._detectSentiment.GetValueOrDefault(); }
+            set { this._detectSentiment = value; }
+        }
+
+        // Check to see if DetectSentiment property is set
+        internal bool IsSetDetectSentiment()
+        {
+            return this._detectSentiment.HasValue; 
         }
 
         /// <summary>
@@ -316,15 +343,27 @@ namespace Amazon.LexModelBuildingService.Model
         /// <para>
         ///  When you send a request to create a bot with <code>processBehavior</code> set to
         /// <code>BUILD</code>, Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>.
-        /// After Amazon Lex builds the bot, it sets <code>status</code> to <code>READY</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// In the <code>READY_BASIC_TESTING</code> state you can test the bot with user inputs
+        /// that exactly match the utterances configured for the bot's intents and values in the
+        /// slot types.
+        /// </para>
+        ///  
+        /// <para>
         /// If Amazon Lex can't build the bot, Amazon Lex sets <code>status</code> to <code>FAILED</code>.
         /// Amazon Lex returns the reason for the failure in the <code>failureReason</code> response
         /// element. 
         /// </para>
         ///  
         /// <para>
-        /// When you set <code>processBehavior</code>to <code>SAVE</code>, Amazon Lex sets the
+        /// When you set <code>processBehavior</code> to <code>SAVE</code>, Amazon Lex sets the
         /// status code to <code>NOT BUILT</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When the bot is in the <code>READY</code> state you can test and publish the bot.
         /// </para>
         /// </summary>
         public Status Status
