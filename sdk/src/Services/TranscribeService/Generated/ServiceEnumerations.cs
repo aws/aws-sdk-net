@@ -31,9 +31,17 @@ namespace Amazon.TranscribeService
     {
 
         /// <summary>
+        /// Constant ArAE for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode ArAE = new LanguageCode("ar-AE");
+        /// <summary>
         /// Constant ArSA for LanguageCode
         /// </summary>
         public static readonly LanguageCode ArSA = new LanguageCode("ar-SA");
+        /// <summary>
+        /// Constant DeCH for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode DeCH = new LanguageCode("de-CH");
         /// <summary>
         /// Constant DeDE for LanguageCode
         /// </summary>
@@ -87,6 +95,10 @@ namespace Amazon.TranscribeService
         /// </summary>
         public static readonly LanguageCode FrFR = new LanguageCode("fr-FR");
         /// <summary>
+        /// Constant HeIL for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode HeIL = new LanguageCode("he-IL");
+        /// <summary>
         /// Constant HiIN for LanguageCode
         /// </summary>
         public static readonly LanguageCode HiIN = new LanguageCode("hi-IN");
@@ -99,9 +111,17 @@ namespace Amazon.TranscribeService
         /// </summary>
         public static readonly LanguageCode ItIT = new LanguageCode("it-IT");
         /// <summary>
+        /// Constant JaJP for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode JaJP = new LanguageCode("ja-JP");
+        /// <summary>
         /// Constant KoKR for LanguageCode
         /// </summary>
         public static readonly LanguageCode KoKR = new LanguageCode("ko-KR");
+        /// <summary>
+        /// Constant MsMY for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode MsMY = new LanguageCode("ms-MY");
         /// <summary>
         /// Constant NlNL for LanguageCode
         /// </summary>
@@ -122,6 +142,14 @@ namespace Amazon.TranscribeService
         /// Constant TaIN for LanguageCode
         /// </summary>
         public static readonly LanguageCode TaIN = new LanguageCode("ta-IN");
+        /// <summary>
+        /// Constant TeIN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode TeIN = new LanguageCode("te-IN");
+        /// <summary>
+        /// Constant TrTR for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode TrTR = new LanguageCode("tr-TR");
         /// <summary>
         /// Constant ZhCN for LanguageCode
         /// </summary>
