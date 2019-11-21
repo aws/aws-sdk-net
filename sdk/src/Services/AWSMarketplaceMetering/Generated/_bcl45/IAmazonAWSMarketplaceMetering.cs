@@ -47,7 +47,7 @@ namespace Amazon.AWSMarketplaceMetering
     ///  <ul> <li> 
     /// <para>
     ///  <i>MeterUsage</i>- Submits the metering record for a Marketplace product. MeterUsage
-    /// is called from an EC2 instance.
+    /// is called from an EC2 instance or a container running on EKS or ECS.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -205,8 +205,8 @@ namespace Amazon.AWSMarketplaceMetering
         /// 
         ///  
         /// <para>
-        /// MeterUsage is authenticated on the buyer's AWS account, generally when running from
-        /// an EC2 instance on the AWS Marketplace.
+        /// MeterUsage is authenticated on the buyer's AWS account using credentials from the
+        /// EC2 instance, ECS task, or EKS pod.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MeterUsage service method.</param>
@@ -216,16 +216,17 @@ namespace Amazon.AWSMarketplaceMetering
         /// Exception thrown when the customer does not have a valid subscription for the product.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.DuplicateRequestException">
-        /// A metering record has already been emitted by the same EC2 instance for the given
-        /// {usageDimension, timestamp} with a different usageQuantity.
+        /// A metering record has already been emitted by the same EC2 instance, ECS task, or
+        /// EKS pod for the given {usageDimension, timestamp} with a different usageQuantity.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InternalServiceErrorException">
         /// An internal error has occurred. Retry your request. If the problem persists, post
         /// a message with details on the AWS forums.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidEndpointRegionException">
-        /// The endpoint being called is in a Region different from your EC2 instance. The Region
-        /// of the Metering Service endpoint and the Region of the EC2 instance must match.
+        /// The endpoint being called is in a AWS Region different from your EC2 instance, ECS
+        /// task, or EKS pod. The Region of the Metering Service endpoint and the AWS Region of
+        /// the resource must match.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidProductCodeException">
         /// The product code passed does not match the product code used for publishing the product.
@@ -250,8 +251,8 @@ namespace Amazon.AWSMarketplaceMetering
         /// 
         ///  
         /// <para>
-        /// MeterUsage is authenticated on the buyer's AWS account, generally when running from
-        /// an EC2 instance on the AWS Marketplace.
+        /// MeterUsage is authenticated on the buyer's AWS account using credentials from the
+        /// EC2 instance, ECS task, or EKS pod.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MeterUsage service method.</param>
@@ -264,16 +265,17 @@ namespace Amazon.AWSMarketplaceMetering
         /// Exception thrown when the customer does not have a valid subscription for the product.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.DuplicateRequestException">
-        /// A metering record has already been emitted by the same EC2 instance for the given
-        /// {usageDimension, timestamp} with a different usageQuantity.
+        /// A metering record has already been emitted by the same EC2 instance, ECS task, or
+        /// EKS pod for the given {usageDimension, timestamp} with a different usageQuantity.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InternalServiceErrorException">
         /// An internal error has occurred. Retry your request. If the problem persists, post
         /// a message with details on the AWS forums.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidEndpointRegionException">
-        /// The endpoint being called is in a Region different from your EC2 instance. The Region
-        /// of the Metering Service endpoint and the Region of the EC2 instance must match.
+        /// The endpoint being called is in a AWS Region different from your EC2 instance, ECS
+        /// task, or EKS pod. The Region of the Metering Service endpoint and the AWS Region of
+        /// the resource must match.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidProductCodeException">
         /// The product code passed does not match the product code used for publishing the product.
