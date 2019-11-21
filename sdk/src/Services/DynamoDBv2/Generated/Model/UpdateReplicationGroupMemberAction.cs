@@ -28,17 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Contains the details of the replica.
+    /// Represents a replica to be modified.
     /// </summary>
-    public partial class ReplicaDescription
+    public partial class UpdateReplicationGroupMemberAction
     {
-        private List<ReplicaGlobalSecondaryIndexDescription> _globalSecondaryIndexes = new List<ReplicaGlobalSecondaryIndexDescription>();
+        private List<ReplicaGlobalSecondaryIndex> _globalSecondaryIndexes = new List<ReplicaGlobalSecondaryIndex>();
         private string _kmsMasterKeyId;
         private ProvisionedThroughputOverride _provisionedThroughputOverride;
         private string _regionName;
-        private ReplicaStatus _replicaStatus;
-        private string _replicaStatusDescription;
-        private string _replicaStatusPercentProgress;
 
         /// <summary>
         /// Gets and sets the property GlobalSecondaryIndexes. 
@@ -46,7 +43,8 @@ namespace Amazon.DynamoDBv2.Model
         /// Replica-specific global secondary index settings.
         /// </para>
         /// </summary>
-        public List<ReplicaGlobalSecondaryIndexDescription> GlobalSecondaryIndexes
+        [AWSProperty(Min=1)]
+        public List<ReplicaGlobalSecondaryIndex> GlobalSecondaryIndexes
         {
             get { return this._globalSecondaryIndexes; }
             set { this._globalSecondaryIndexes = value; }
@@ -61,8 +59,10 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property KMSMasterKeyId. 
         /// <para>
-        /// The AWS KMS customer master key (CMK) of the replica that will be used for AWS KMS
-        /// encryption.
+        /// The AWS KMS customer master key (CMK) of the replica that should be used for AWS KMS
+        /// encryption. To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name,
+        /// or alias ARN. Note that you should only provide this parameter if the key is different
+        /// from the default DynamoDB KMS master key alias/aws/dynamodb.
         /// </para>
         /// </summary>
         public string KMSMasterKeyId
@@ -80,7 +80,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ProvisionedThroughputOverride. 
         /// <para>
-        /// Replica-specific provisioned throughput. If not described, uses the source table's
+        /// Replica-specific provisioned throughput. If not specified, uses the source table's
         /// provisioned throughput settings.
         /// </para>
         /// </summary>
@@ -99,9 +99,10 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property RegionName. 
         /// <para>
-        /// The name of the Region.
+        /// The Region where the replica exists.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RegionName
         {
             get { return this._regionName; }
@@ -112,77 +113,6 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetRegionName()
         {
             return this._regionName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ReplicaStatus. 
-        /// <para>
-        /// The current state of the replica:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>CREATING</code> - The replica is being created.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>UPDATING</code> - The replica is being updated.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>DELETING</code> - The replica is being deleted.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>ACTIVE</code> - The replica is ready for use.
-        /// </para>
-        ///  </li> </ul>
-        /// </summary>
-        public ReplicaStatus ReplicaStatus
-        {
-            get { return this._replicaStatus; }
-            set { this._replicaStatus = value; }
-        }
-
-        // Check to see if ReplicaStatus property is set
-        internal bool IsSetReplicaStatus()
-        {
-            return this._replicaStatus != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ReplicaStatusDescription. 
-        /// <para>
-        /// Detailed information about the replica status.
-        /// </para>
-        /// </summary>
-        public string ReplicaStatusDescription
-        {
-            get { return this._replicaStatusDescription; }
-            set { this._replicaStatusDescription = value; }
-        }
-
-        // Check to see if ReplicaStatusDescription property is set
-        internal bool IsSetReplicaStatusDescription()
-        {
-            return this._replicaStatusDescription != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ReplicaStatusPercentProgress. 
-        /// <para>
-        /// Specifies the progress of a Create, Update, or Delete action on the replica as a percentage.
-        /// </para>
-        /// </summary>
-        public string ReplicaStatusPercentProgress
-        {
-            get { return this._replicaStatusPercentProgress; }
-            set { this._replicaStatusPercentProgress = value; }
-        }
-
-        // Check to see if ReplicaStatusPercentProgress property is set
-        internal bool IsSetReplicaStatusPercentProgress()
-        {
-            return this._replicaStatusPercentProgress != null;
         }
 
     }

@@ -1545,6 +1545,43 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  DescribeTableReplicaAutoScaling
+        internal virtual DescribeTableReplicaAutoScalingResponse DescribeTableReplicaAutoScaling(DescribeTableReplicaAutoScalingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTableReplicaAutoScalingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTableReplicaAutoScalingResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTableReplicaAutoScalingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTableReplicaAutoScaling operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTableReplicaAutoScaling operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTableReplicaAutoScaling">REST API Reference for DescribeTableReplicaAutoScaling Operation</seealso>
+        public virtual void DescribeTableReplicaAutoScalingAsync(DescribeTableReplicaAutoScalingRequest request, AmazonServiceCallback<DescribeTableReplicaAutoScalingRequest, DescribeTableReplicaAutoScalingResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DescribeTableReplicaAutoScalingRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DescribeTableReplicaAutoScalingResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<DescribeTableReplicaAutoScalingRequest,DescribeTableReplicaAutoScalingResponse> responseObject 
+                            = new AmazonServiceResult<DescribeTableReplicaAutoScalingRequest,DescribeTableReplicaAutoScalingResponse>((DescribeTableReplicaAutoScalingRequest)req, (DescribeTableReplicaAutoScalingResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  DescribeTimeToLive
         internal virtual DescribeTimeToLiveResponse DescribeTimeToLive(DescribeTimeToLiveRequest request)
         {
@@ -3316,6 +3353,43 @@ namespace Amazon.DynamoDBv2
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
                     AmazonServiceResult<UpdateTableRequest,UpdateTableResponse> responseObject 
                             = new AmazonServiceResult<UpdateTableRequest,UpdateTableResponse>((UpdateTableRequest)req, (UpdateTableResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  UpdateTableReplicaAutoScaling
+        internal virtual UpdateTableReplicaAutoScalingResponse UpdateTableReplicaAutoScaling(UpdateTableReplicaAutoScalingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTableReplicaAutoScalingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTableReplicaAutoScalingResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTableReplicaAutoScalingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTableReplicaAutoScaling operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTableReplicaAutoScaling operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTableReplicaAutoScaling">REST API Reference for UpdateTableReplicaAutoScaling Operation</seealso>
+        public virtual void UpdateTableReplicaAutoScalingAsync(UpdateTableReplicaAutoScalingRequest request, AmazonServiceCallback<UpdateTableReplicaAutoScalingRequest, UpdateTableReplicaAutoScalingResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UpdateTableReplicaAutoScalingRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UpdateTableReplicaAutoScalingResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<UpdateTableReplicaAutoScalingRequest,UpdateTableReplicaAutoScalingResponse> responseObject 
+                            = new AmazonServiceResult<UpdateTableReplicaAutoScalingRequest,UpdateTableReplicaAutoScalingResponse>((UpdateTableReplicaAutoScalingRequest)req, (UpdateTableReplicaAutoScalingResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
             BeginInvoke(request, invokeOptions, options, callbackHelper);

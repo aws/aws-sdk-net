@@ -68,6 +68,7 @@ namespace Amazon.DynamoDBv2.Model
         private BillingMode _billingMode;
         private List<GlobalSecondaryIndexUpdate> _globalSecondaryIndexUpdates = new List<GlobalSecondaryIndexUpdate>();
         private ProvisionedThroughput _provisionedThroughput;
+        private List<ReplicationGroupUpdate> _replicaUpdates = new List<ReplicationGroupUpdate>();
         private SSESpecification _sseSpecification;
         private StreamSpecification _streamSpecification;
         private string _tableName;
@@ -202,6 +203,31 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetProvisionedThroughput()
         {
             return this._provisionedThroughput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicaUpdates. 
+        /// <para>
+        /// A list of replica update actions (create, delete, or update) for the table.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+        /// 2019.11.21</a> of global tables.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<ReplicationGroupUpdate> ReplicaUpdates
+        {
+            get { return this._replicaUpdates; }
+            set { this._replicaUpdates = value; }
+        }
+
+        // Check to see if ReplicaUpdates property is set
+        internal bool IsSetReplicaUpdates()
+        {
+            return this._replicaUpdates != null && this._replicaUpdates.Count > 0; 
         }
 
         /// <summary>

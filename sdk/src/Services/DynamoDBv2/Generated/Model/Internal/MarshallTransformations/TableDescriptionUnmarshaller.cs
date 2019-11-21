@@ -88,6 +88,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.GlobalSecondaryIndexes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("GlobalTableVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GlobalTableVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ItemCount", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
@@ -122,6 +128,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ProvisionedThroughputDescriptionUnmarshaller.Instance;
                     unmarshalledObject.ProvisionedThroughput = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Replicas", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ReplicaDescription, ReplicaDescriptionUnmarshaller>(ReplicaDescriptionUnmarshaller.Instance);
+                    unmarshalledObject.Replicas = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RestoreSummary", targetDepth))

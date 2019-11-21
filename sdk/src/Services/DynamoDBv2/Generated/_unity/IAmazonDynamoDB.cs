@@ -954,6 +954,23 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  DescribeTableReplicaAutoScaling
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTableReplicaAutoScaling operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTableReplicaAutoScaling operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTableReplicaAutoScaling">REST API Reference for DescribeTableReplicaAutoScaling Operation</seealso>
+        void DescribeTableReplicaAutoScalingAsync(DescribeTableReplicaAutoScalingRequest request, AmazonServiceCallback<DescribeTableReplicaAutoScalingRequest, DescribeTableReplicaAutoScalingResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
         #region  DescribeTimeToLive
 
 
@@ -2108,6 +2125,23 @@ namespace Amazon.DynamoDBv2
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable">REST API Reference for UpdateTable Operation</seealso>
         void UpdateTableAsync(UpdateTableRequest request, AmazonServiceCallback<UpdateTableRequest, UpdateTableResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  UpdateTableReplicaAutoScaling
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTableReplicaAutoScaling operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTableReplicaAutoScaling operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTableReplicaAutoScaling">REST API Reference for UpdateTableReplicaAutoScaling Operation</seealso>
+        void UpdateTableReplicaAutoScalingAsync(UpdateTableReplicaAutoScalingRequest request, AmazonServiceCallback<UpdateTableReplicaAutoScalingRequest, UpdateTableReplicaAutoScalingResponse> callback, AsyncOptions options = null);
 
 
         #endregion

@@ -28,37 +28,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeGlobalTable operation.
-    /// Returns information about the specified global table.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// This method only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-    /// 2017.11.29</a> of global tables.
-    /// </para>
-    ///  </note>
+    /// Replica-specific provisioned throughput settings. If not specified, uses the source
+    /// table's provisioned throughput settings.
     /// </summary>
-    public partial class DescribeGlobalTableRequest : AmazonDynamoDBRequest
+    public partial class ProvisionedThroughputOverride
     {
-        private string _globalTableName;
+        private long? _readCapacityUnits;
 
         /// <summary>
-        /// Gets and sets the property GlobalTableName. 
+        /// Gets and sets the property ReadCapacityUnits. 
         /// <para>
-        /// The name of the global table.
+        /// Replica-specific read capacity units. If not specified, uses the source table's read
+        /// capacity settings.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=255)]
-        public string GlobalTableName
+        [AWSProperty(Min=1)]
+        public long ReadCapacityUnits
         {
-            get { return this._globalTableName; }
-            set { this._globalTableName = value; }
+            get { return this._readCapacityUnits.GetValueOrDefault(); }
+            set { this._readCapacityUnits = value; }
         }
 
-        // Check to see if GlobalTableName property is set
-        internal bool IsSetGlobalTableName()
+        // Check to see if ReadCapacityUnits property is set
+        internal bool IsSetReadCapacityUnits()
         {
-            return this._globalTableName != null;
+            return this._readCapacityUnits.HasValue; 
         }
 
     }

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ReplicaDescription Object
+    /// Response Unmarshaller for ReplicaAutoScalingDescription Object
     /// </summary>  
-    public class ReplicaDescriptionUnmarshaller : IUnmarshaller<ReplicaDescription, XmlUnmarshallerContext>, IUnmarshaller<ReplicaDescription, JsonUnmarshallerContext>
+    public class ReplicaAutoScalingDescriptionUnmarshaller : IUnmarshaller<ReplicaAutoScalingDescription, XmlUnmarshallerContext>, IUnmarshaller<ReplicaAutoScalingDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ReplicaDescription IUnmarshaller<ReplicaDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ReplicaAutoScalingDescription IUnmarshaller<ReplicaAutoScalingDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ReplicaDescription Unmarshall(JsonUnmarshallerContext context)
+        public ReplicaAutoScalingDescription Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ReplicaDescription unmarshalledObject = new ReplicaDescription();
+            ReplicaAutoScalingDescription unmarshalledObject = new ReplicaAutoScalingDescription();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
                 if (context.TestExpression("GlobalSecondaryIndexes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ReplicaGlobalSecondaryIndexDescription, ReplicaGlobalSecondaryIndexDescriptionUnmarshaller>(ReplicaGlobalSecondaryIndexDescriptionUnmarshaller.Instance);
+                    var unmarshaller = new ListUnmarshaller<ReplicaGlobalSecondaryIndexAutoScalingDescription, ReplicaGlobalSecondaryIndexAutoScalingDescriptionUnmarshaller>(ReplicaGlobalSecondaryIndexAutoScalingDescriptionUnmarshaller.Instance);
                     unmarshalledObject.GlobalSecondaryIndexes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("KMSMasterKeyId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KMSMasterKeyId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ProvisionedThroughputOverride", targetDepth))
-                {
-                    var unmarshaller = ProvisionedThroughputOverrideUnmarshaller.Instance;
-                    unmarshalledObject.ProvisionedThroughputOverride = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RegionName", targetDepth))
@@ -88,22 +76,22 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.RegionName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ReplicaProvisionedReadCapacityAutoScalingSettings", targetDepth))
+                {
+                    var unmarshaller = AutoScalingSettingsDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.ReplicaProvisionedReadCapacityAutoScalingSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReplicaProvisionedWriteCapacityAutoScalingSettings", targetDepth))
+                {
+                    var unmarshaller = AutoScalingSettingsDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.ReplicaProvisionedWriteCapacityAutoScalingSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ReplicaStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReplicaStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ReplicaStatusDescription", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReplicaStatusDescription = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ReplicaStatusPercentProgress", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReplicaStatusPercentProgress = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +100,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         }
 
 
-        private static ReplicaDescriptionUnmarshaller _instance = new ReplicaDescriptionUnmarshaller();        
+        private static ReplicaAutoScalingDescriptionUnmarshaller _instance = new ReplicaAutoScalingDescriptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ReplicaDescriptionUnmarshaller Instance
+        public static ReplicaAutoScalingDescriptionUnmarshaller Instance
         {
             get
             {

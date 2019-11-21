@@ -41,6 +41,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Indicates whether DynamoDB Streams is enabled (true) or disabled (false) on the table.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool StreamEnabled
         {
             get { return this._streamEnabled.GetValueOrDefault(); }

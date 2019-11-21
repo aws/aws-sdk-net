@@ -39,7 +39,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property KMSMasterKeyArn. 
         /// <para>
-        /// The KMS customer master key (CMK) ARN used for the AWS KMS encryption.
+        /// The AWS KMS customer master key (CMK) ARN used for the AWS KMS encryption.
         /// </para>
         /// </summary>
         public string KMSMasterKeyArn

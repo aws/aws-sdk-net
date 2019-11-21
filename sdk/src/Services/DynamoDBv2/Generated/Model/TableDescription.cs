@@ -36,12 +36,14 @@ namespace Amazon.DynamoDBv2.Model
         private BillingModeSummary _billingModeSummary;
         private DateTime? _creationDateTime;
         private List<GlobalSecondaryIndexDescription> _globalSecondaryIndexes = new List<GlobalSecondaryIndexDescription>();
+        private string _globalTableVersion;
         private long? _itemCount;
         private List<KeySchemaElement> _keySchema = new List<KeySchemaElement>();
         private string _latestStreamArn;
         private string _latestStreamLabel;
         private List<LocalSecondaryIndexDescription> _localSecondaryIndexes = new List<LocalSecondaryIndexDescription>();
         private ProvisionedThroughputDescription _provisionedThroughput;
+        private List<ReplicaDescription> _replicas = new List<ReplicaDescription>();
         private RestoreSummary _restoreSummary;
         private SSEDescription _sseDescription;
         private StreamSpecification _streamSpecification;
@@ -243,6 +245,25 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetGlobalSecondaryIndexes()
         {
             return this._globalSecondaryIndexes != null && this._globalSecondaryIndexes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GlobalTableVersion. 
+        /// <para>
+        /// Represents the version of <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global
+        /// tables</a> in use, if the table is replicated across AWS Regions.
+        /// </para>
+        /// </summary>
+        public string GlobalTableVersion
+        {
+            get { return this._globalTableVersion; }
+            set { this._globalTableVersion = value; }
+        }
+
+        // Check to see if GlobalTableVersion property is set
+        internal bool IsSetGlobalTableVersion()
+        {
+            return this._globalTableVersion != null;
         }
 
         /// <summary>
@@ -471,6 +492,24 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetProvisionedThroughput()
         {
             return this._provisionedThroughput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Replicas. 
+        /// <para>
+        /// Represents replicas of the table.
+        /// </para>
+        /// </summary>
+        public List<ReplicaDescription> Replicas
+        {
+            get { return this._replicas; }
+            set { this._replicas = value; }
+        }
+
+        // Check to see if Replicas property is set
+        internal bool IsSetReplicas()
+        {
+            return this._replicas != null && this._replicas.Count > 0; 
         }
 
         /// <summary>

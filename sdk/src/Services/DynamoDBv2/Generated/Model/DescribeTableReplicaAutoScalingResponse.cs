@@ -28,37 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeGlobalTable operation.
-    /// Returns information about the specified global table.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// This method only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-    /// 2017.11.29</a> of global tables.
-    /// </para>
-    ///  </note>
+    /// This is the response object from the DescribeTableReplicaAutoScaling operation.
     /// </summary>
-    public partial class DescribeGlobalTableRequest : AmazonDynamoDBRequest
+    public partial class DescribeTableReplicaAutoScalingResponse : AmazonWebServiceResponse
     {
-        private string _globalTableName;
+        private TableAutoScalingDescription _tableAutoScalingDescription;
 
         /// <summary>
-        /// Gets and sets the property GlobalTableName. 
+        /// Gets and sets the property TableAutoScalingDescription. 
         /// <para>
-        /// The name of the global table.
+        /// Represents the auto scaling properties of the table.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=255)]
-        public string GlobalTableName
+        public TableAutoScalingDescription TableAutoScalingDescription
         {
-            get { return this._globalTableName; }
-            set { this._globalTableName = value; }
+            get { return this._tableAutoScalingDescription; }
+            set { this._tableAutoScalingDescription = value; }
         }
 
-        // Check to see if GlobalTableName property is set
-        internal bool IsSetGlobalTableName()
+        // Check to see if TableAutoScalingDescription property is set
+        internal bool IsSetTableAutoScalingDescription()
         {
-            return this._globalTableName != null;
+            return this._tableAutoScalingDescription != null;
         }
 
     }

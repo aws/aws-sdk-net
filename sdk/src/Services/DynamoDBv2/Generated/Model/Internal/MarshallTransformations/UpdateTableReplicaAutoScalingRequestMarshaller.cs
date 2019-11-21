@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateTable Request Marshaller
+    /// UpdateTableReplicaAutoScaling Request Marshaller
     /// </summary>       
-    public class UpdateTableRequestMarshaller : IMarshaller<IRequest, UpdateTableRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateTableReplicaAutoScalingRequestMarshaller : IMarshaller<IRequest, UpdateTableReplicaAutoScalingRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateTableRequest)input);
+            return this.Marshall((UpdateTableReplicaAutoScalingRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateTableRequest publicRequest)
+        public IRequest Marshall(UpdateTableReplicaAutoScalingRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DynamoDBv2");
-            string target = "DynamoDB_20120810.UpdateTable";
+            string target = "DynamoDB_20120810.UpdateTableReplicaAutoScaling";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-08-10";            
@@ -68,28 +68,6 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAttributeDefinitions())
-                {
-                    context.Writer.WritePropertyName("AttributeDefinitions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAttributeDefinitionsListValue in publicRequest.AttributeDefinitions)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AttributeDefinitionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAttributeDefinitionsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetBillingMode())
-                {
-                    context.Writer.WritePropertyName("BillingMode");
-                    context.Writer.Write(publicRequest.BillingMode);
-                }
-
                 if(publicRequest.IsSetGlobalSecondaryIndexUpdates())
                 {
                     context.Writer.WritePropertyName("GlobalSecondaryIndexUpdates");
@@ -98,7 +76,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     {
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = GlobalSecondaryIndexUpdateMarshaller.Instance;
+                        var marshaller = GlobalSecondaryIndexAutoScalingUpdateMarshaller.Instance;
                         marshaller.Marshall(publicRequestGlobalSecondaryIndexUpdatesListValue, context);
 
                         context.Writer.WriteObjectEnd();
@@ -106,13 +84,13 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetProvisionedThroughput())
+                if(publicRequest.IsSetProvisionedWriteCapacityAutoScalingUpdate())
                 {
-                    context.Writer.WritePropertyName("ProvisionedThroughput");
+                    context.Writer.WritePropertyName("ProvisionedWriteCapacityAutoScalingUpdate");
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = ProvisionedThroughputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ProvisionedThroughput, context);
+                    var marshaller = AutoScalingSettingsUpdateMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ProvisionedWriteCapacityAutoScalingUpdate, context);
 
                     context.Writer.WriteObjectEnd();
                 }
@@ -125,34 +103,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     {
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ReplicationGroupUpdateMarshaller.Instance;
+                        var marshaller = ReplicaAutoScalingUpdateMarshaller.Instance;
                         marshaller.Marshall(publicRequestReplicaUpdatesListValue, context);
 
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetSSESpecification())
-                {
-                    context.Writer.WritePropertyName("SSESpecification");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SSESpecificationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SSESpecification, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetStreamSpecification())
-                {
-                    context.Writer.WritePropertyName("StreamSpecification");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = StreamSpecificationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.StreamSpecification, context);
-
-                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetTableName())
@@ -170,9 +126,9 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateTableRequestMarshaller _instance = new UpdateTableRequestMarshaller();        
+        private static UpdateTableReplicaAutoScalingRequestMarshaller _instance = new UpdateTableReplicaAutoScalingRequestMarshaller();        
 
-        internal static UpdateTableRequestMarshaller GetInstance()
+        internal static UpdateTableReplicaAutoScalingRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -180,7 +136,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateTableRequestMarshaller Instance
+        public static UpdateTableReplicaAutoScalingRequestMarshaller Instance
         {
             get
             {

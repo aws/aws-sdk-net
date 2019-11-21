@@ -28,37 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeGlobalTable operation.
-    /// Returns information about the specified global table.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// This method only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-    /// 2017.11.29</a> of global tables.
-    /// </para>
-    ///  </note>
+    /// Represents a replica to be deleted.
     /// </summary>
-    public partial class DescribeGlobalTableRequest : AmazonDynamoDBRequest
+    public partial class DeleteReplicationGroupMemberAction
     {
-        private string _globalTableName;
+        private string _regionName;
 
         /// <summary>
-        /// Gets and sets the property GlobalTableName. 
+        /// Gets and sets the property RegionName. 
         /// <para>
-        /// The name of the global table.
+        /// The Region where the replica exists.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=255)]
-        public string GlobalTableName
+        [AWSProperty(Required=true)]
+        public string RegionName
         {
-            get { return this._globalTableName; }
-            set { this._globalTableName = value; }
+            get { return this._regionName; }
+            set { this._regionName = value; }
         }
 
-        // Check to see if GlobalTableName property is set
-        internal bool IsSetGlobalTableName()
+        // Check to see if RegionName property is set
+        internal bool IsSetRegionName()
         {
-            return this._globalTableName != null;
+            return this._regionName != null;
         }
 
     }

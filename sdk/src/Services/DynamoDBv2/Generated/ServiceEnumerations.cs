@@ -773,6 +773,10 @@ namespace Amazon.DynamoDBv2
         /// </summary>
         public static readonly ReplicaStatus CREATING = new ReplicaStatus("CREATING");
         /// <summary>
+        /// Constant CREATION_FAILED for ReplicaStatus
+        /// </summary>
+        public static readonly ReplicaStatus CREATION_FAILED = new ReplicaStatus("CREATION_FAILED");
+        /// <summary>
         /// Constant DELETING for ReplicaStatus
         /// </summary>
         public static readonly ReplicaStatus DELETING = new ReplicaStatus("DELETING");

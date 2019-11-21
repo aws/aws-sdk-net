@@ -28,37 +28,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeGlobalTable operation.
-    /// Returns information about the specified global table.
+    /// Container for the parameters to the DescribeTableReplicaAutoScaling operation.
+    /// Describes auto scaling settings across replicas of the global table at once.
     /// 
     ///  <note> 
     /// <para>
-    /// This method only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-    /// 2017.11.29</a> of global tables.
+    /// This method only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+    /// 2019.11.21</a> of global tables.
     /// </para>
     ///  </note>
     /// </summary>
-    public partial class DescribeGlobalTableRequest : AmazonDynamoDBRequest
+    public partial class DescribeTableReplicaAutoScalingRequest : AmazonDynamoDBRequest
     {
-        private string _globalTableName;
+        private string _tableName;
 
         /// <summary>
-        /// Gets and sets the property GlobalTableName. 
+        /// Gets and sets the property TableName. 
         /// <para>
-        /// The name of the global table.
+        /// The name of the table.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=255)]
-        public string GlobalTableName
+        public string TableName
         {
-            get { return this._globalTableName; }
-            set { this._globalTableName = value; }
+            get { return this._tableName; }
+            set { this._tableName = value; }
         }
 
-        // Check to see if GlobalTableName property is set
-        internal bool IsSetGlobalTableName()
+        // Check to see if TableName property is set
+        internal bool IsSetTableName()
         {
-            return this._globalTableName != null;
+            return this._tableName != null;
         }
 
     }

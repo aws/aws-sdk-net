@@ -1118,7 +1118,12 @@ namespace Amazon.DynamoDBv2
         /// relationship between two or more DynamoDB tables with the same table name in the provided
         /// Regions. 
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// This method only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+        /// 2017.11.29</a> of global tables.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// If you want to add a new replica table to a global table, each of the following conditions
         /// must be true:
@@ -2171,6 +2176,13 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Returns information about the specified global table.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This method only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+        /// 2017.11.29</a> of global tables.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalTable service method.</param>
         /// 
@@ -2235,6 +2247,13 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Describes Region-specific settings for a global table.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This method only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+        /// 2017.11.29</a> of global tables.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalTableSettings service method.</param>
         /// 
@@ -2547,6 +2566,74 @@ namespace Amazon.DynamoDBv2
         public virtual DescribeTableResponse EndDescribeTable(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeTableResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeTableReplicaAutoScaling
+
+        /// <summary>
+        /// Describes auto scaling settings across replicas of the global table at once.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This method only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+        /// 2019.11.21</a> of global tables.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTableReplicaAutoScaling service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTableReplicaAutoScaling service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTableReplicaAutoScaling">REST API Reference for DescribeTableReplicaAutoScaling Operation</seealso>
+        public virtual DescribeTableReplicaAutoScalingResponse DescribeTableReplicaAutoScaling(DescribeTableReplicaAutoScalingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTableReplicaAutoScalingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTableReplicaAutoScalingResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTableReplicaAutoScalingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTableReplicaAutoScaling operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTableReplicaAutoScaling operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTableReplicaAutoScaling
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTableReplicaAutoScaling">REST API Reference for DescribeTableReplicaAutoScaling Operation</seealso>
+        public virtual IAsyncResult BeginDescribeTableReplicaAutoScaling(DescribeTableReplicaAutoScalingRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTableReplicaAutoScalingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTableReplicaAutoScalingResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTableReplicaAutoScaling operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTableReplicaAutoScaling.</param>
+        /// 
+        /// <returns>Returns a  DescribeTableReplicaAutoScalingResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTableReplicaAutoScaling">REST API Reference for DescribeTableReplicaAutoScaling Operation</seealso>
+        public virtual DescribeTableReplicaAutoScalingResponse EndDescribeTableReplicaAutoScaling(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeTableReplicaAutoScalingResponse>(asyncResult);
         }
 
         #endregion
@@ -2897,6 +2984,13 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Lists all global tables that have a replica in the specified Region.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This method only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+        /// 2017.11.29</a> of global tables.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGlobalTables service method.</param>
         /// 
@@ -6000,6 +6094,100 @@ namespace Amazon.DynamoDBv2
         public virtual UpdateTableResponse EndUpdateTable(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateTableResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateTableReplicaAutoScaling
+
+        /// <summary>
+        /// Updates auto scaling settings on your global tables at once.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This method only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+        /// 2019.11.21</a> of global tables.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTableReplicaAutoScaling service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTableReplicaAutoScaling service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// Up to 50 simultaneous table operations are allowed per account. These operations include
+        /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The only exception is when you are creating a table with one or more secondary indexes.
+        /// You can have up to 25 such requests running at a time; however, if the table or index
+        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
+        /// operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a soft account limit of 256 tables.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
+        /// The operation conflicts with the resource's availability. For example, you attempted
+        /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTableReplicaAutoScaling">REST API Reference for UpdateTableReplicaAutoScaling Operation</seealso>
+        public virtual UpdateTableReplicaAutoScalingResponse UpdateTableReplicaAutoScaling(UpdateTableReplicaAutoScalingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTableReplicaAutoScalingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTableReplicaAutoScalingResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTableReplicaAutoScalingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTableReplicaAutoScaling operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTableReplicaAutoScaling operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTableReplicaAutoScaling
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTableReplicaAutoScaling">REST API Reference for UpdateTableReplicaAutoScaling Operation</seealso>
+        public virtual IAsyncResult BeginUpdateTableReplicaAutoScaling(UpdateTableReplicaAutoScalingRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTableReplicaAutoScalingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTableReplicaAutoScalingResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTableReplicaAutoScaling operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTableReplicaAutoScaling.</param>
+        /// 
+        /// <returns>Returns a  UpdateTableReplicaAutoScalingResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTableReplicaAutoScaling">REST API Reference for UpdateTableReplicaAutoScaling Operation</seealso>
+        public virtual UpdateTableReplicaAutoScalingResponse EndUpdateTableReplicaAutoScaling(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateTableReplicaAutoScalingResponse>(asyncResult);
         }
 
         #endregion
