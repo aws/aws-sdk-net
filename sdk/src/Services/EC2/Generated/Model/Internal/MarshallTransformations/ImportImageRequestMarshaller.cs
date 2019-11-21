@@ -140,6 +140,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("KmsKeyId", StringUtils.FromString(publicRequest.KmsKeyId));
                 }
+                if(publicRequest.IsSetLicenseSpecifications())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.LicenseSpecifications)
+                    {
+                        if(publicRequestlistValue.IsSetLicenseConfigurationArn())
+                        {
+                            request.Parameters.Add("LicenseSpecifications" + "." + publicRequestlistValueIndex + "." + "LicenseConfigurationArn", StringUtils.FromString(publicRequestlistValue.LicenseConfigurationArn));
+                        }
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetLicenseType())
                 {
                     request.Parameters.Add("LicenseType", StringUtils.FromString(publicRequest.LicenseType));

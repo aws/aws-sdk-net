@@ -60,6 +60,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AllocationTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("allowsMultipleInstanceTypes", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AllowsMultipleInstanceTypes = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("autoPlacement", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -70,6 +76,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("availabilityZoneId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AvailabilityZoneId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("availableCapacity", targetDepth))
@@ -113,6 +125,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         var unmarshaller = HostInstanceUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Instances.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("ownerId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("releaseTime", targetDepth))

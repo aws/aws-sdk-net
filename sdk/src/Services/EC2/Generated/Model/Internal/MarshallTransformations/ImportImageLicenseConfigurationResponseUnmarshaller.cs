@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for HostInstance Object
+    /// Response Unmarshaller for ImportImageLicenseConfigurationResponse Object
     /// </summary>  
-    public class HostInstanceUnmarshaller : IUnmarshaller<HostInstance, XmlUnmarshallerContext>, IUnmarshaller<HostInstance, JsonUnmarshallerContext>
+    public class ImportImageLicenseConfigurationResponseUnmarshaller : IUnmarshaller<ImportImageLicenseConfigurationResponse, XmlUnmarshallerContext>, IUnmarshaller<ImportImageLicenseConfigurationResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public HostInstance Unmarshall(XmlUnmarshallerContext context)
+        public ImportImageLicenseConfigurationResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            HostInstance unmarshalledObject = new HostInstance();
+            ImportImageLicenseConfigurationResponse unmarshalledObject = new ImportImageLicenseConfigurationResponse();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,22 +54,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("instanceId", targetDepth))
+                    if (context.TestExpression("licenseConfigurationArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("instanceType", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ownerId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.LicenseConfigurationArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -87,18 +75,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public HostInstance Unmarshall(JsonUnmarshallerContext context)
+        public ImportImageLicenseConfigurationResponse Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static HostInstanceUnmarshaller _instance = new HostInstanceUnmarshaller();        
+        private static ImportImageLicenseConfigurationResponseUnmarshaller _instance = new ImportImageLicenseConfigurationResponseUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static HostInstanceUnmarshaller Instance
+        public static ImportImageLicenseConfigurationResponseUnmarshaller Instance
         {
             get
             {

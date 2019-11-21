@@ -33,8 +33,10 @@ namespace Amazon.EC2.Model
     public partial class Host
     {
         private DateTime? _allocationTime;
+        private AllowsMultipleInstanceTypes _allowsMultipleInstanceTypes;
         private AutoPlacement _autoPlacement;
         private string _availabilityZone;
+        private string _availabilityZoneId;
         private AvailableCapacity _availableCapacity;
         private string _clientToken;
         private string _hostId;
@@ -42,6 +44,7 @@ namespace Amazon.EC2.Model
         private HostRecovery _hostRecovery;
         private string _hostReservationId;
         private List<HostInstance> _instances = new List<HostInstance>();
+        private string _ownerId;
         private DateTime? _releaseTime;
         private AllocationState _state;
         private List<Tag> _tags = new List<Tag>();
@@ -62,6 +65,27 @@ namespace Amazon.EC2.Model
         internal bool IsSetAllocationTime()
         {
             return this._allocationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AllowsMultipleInstanceTypes. 
+        /// <para>
+        /// Indicates whether the Dedicated Host supports multiple instance types of the same
+        /// instance family, or a specific instance type only. <code>one</code> indicates that
+        /// the Dedicated Host supports multiple instance types in the instance family. <code>off</code>
+        /// indicates that the Dedicated Host supports a single instance type only.
+        /// </para>
+        /// </summary>
+        public AllowsMultipleInstanceTypes AllowsMultipleInstanceTypes
+        {
+            get { return this._allowsMultipleInstanceTypes; }
+            set { this._allowsMultipleInstanceTypes = value; }
+        }
+
+        // Check to see if AllowsMultipleInstanceTypes property is set
+        internal bool IsSetAllowsMultipleInstanceTypes()
+        {
+            return this._allowsMultipleInstanceTypes != null;
         }
 
         /// <summary>
@@ -101,9 +125,27 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AvailabilityZoneId. 
+        /// <para>
+        /// The ID of the Availability Zone in which the Dedicated Host is allocated.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZoneId
+        {
+            get { return this._availabilityZoneId; }
+            set { this._availabilityZoneId = value; }
+        }
+
+        // Check to see if AvailabilityZoneId property is set
+        internal bool IsSetAvailabilityZoneId()
+        {
+            return this._availabilityZoneId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AvailableCapacity. 
         /// <para>
-        /// The number of new instances that can be launched onto the Dedicated Host.
+        /// Information about the instances running on the Dedicated Host.
         /// </para>
         /// </summary>
         public AvailableCapacity AvailableCapacity
@@ -227,6 +269,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstances()
         {
             return this._instances != null && this._instances.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerId. 
+        /// <para>
+        /// The ID of the AWS account that owns the Dedicated Host.
+        /// </para>
+        /// </summary>
+        public string OwnerId
+        {
+            get { return this._ownerId; }
+            set { this._ownerId = value; }
+        }
+
+        // Check to see if OwnerId property is set
+        internal bool IsSetOwnerId()
+        {
+            return this._ownerId != null;
         }
 
         /// <summary>

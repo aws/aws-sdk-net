@@ -756,8 +756,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Allocates a Dedicated Host to your account. At a minimum, specify the instance size
-        /// type, Availability Zone, and quantity of hosts to allocate.
+        /// Allocates a Dedicated Host to your account. At a minimum, specify the supported instance
+        /// type or instance family, the Availability Zone in which to allocate the host, and
+        /// the number of hosts to allocate.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AllocateHosts service method.</param>
         /// 
@@ -774,8 +775,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Allocates a Dedicated Host to your account. At a minimum, specify the instance size
-        /// type, Availability Zone, and quantity of hosts to allocate.
+        /// Allocates a Dedicated Host to your account. At a minimum, specify the supported instance
+        /// type or instance family, the Availability Zone in which to allocate the host, and
+        /// the number of hosts to allocate.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AllocateHosts service method.</param>
         /// <param name="cancellationToken">
@@ -10122,11 +10124,11 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// The results describe all the Dedicated Host reservation offerings, including offerings
-        /// that may not match the instance family and Region of your Dedicated Hosts. When purchasing
-        /// an offering, ensure that the instance family and Region of the offering matches that
-        /// of the Dedicated Hosts with which it is to be associated. For more information about
-        /// supported instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
+        /// The results describe all of the Dedicated Host reservation offerings, including offerings
+        /// that might not match the instance family and Region of your Dedicated Hosts. When
+        /// purchasing an offering, ensure that the instance family and Region of the offering
+        /// matches that of the Dedicated Hosts with which it is to be associated. For more information
+        /// about supported instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
         /// Hosts Overview</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. 
         /// </para>
         /// </summary>
@@ -10149,11 +10151,11 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// The results describe all the Dedicated Host reservation offerings, including offerings
-        /// that may not match the instance family and Region of your Dedicated Hosts. When purchasing
-        /// an offering, ensure that the instance family and Region of the offering matches that
-        /// of the Dedicated Hosts with which it is to be associated. For more information about
-        /// supported instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
+        /// The results describe all of the Dedicated Host reservation offerings, including offerings
+        /// that might not match the instance family and Region of your Dedicated Hosts. When
+        /// purchasing an offering, ensure that the instance family and Region of the offering
+        /// matches that of the Dedicated Hosts with which it is to be associated. For more information
+        /// about supported instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
         /// Hosts Overview</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. 
         /// </para>
         /// </summary>
@@ -18471,6 +18473,12 @@ namespace Amazon.EC2
         /// enabled. When auto-placement is disabled, you need to provide a host ID to have the
         /// instance launch onto a specific host. If no host ID is provided, the instance is launched
         /// onto a suitable host with auto-placement enabled.
+        /// 
+        ///  
+        /// <para>
+        /// You can also use this API action to modify a Dedicated Host to support either multiple
+        /// instance types in an instance family, or to support a specific instance type only.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyHosts service method.</param>
         /// 
@@ -18493,6 +18501,12 @@ namespace Amazon.EC2
         /// enabled. When auto-placement is disabled, you need to provide a host ID to have the
         /// instance launch onto a specific host. If no host ID is provided, the instance is launched
         /// onto a suitable host with auto-placement enabled.
+        /// 
+        ///  
+        /// <para>
+        /// You can also use this API action to modify a Dedicated Host to support either multiple
+        /// instance types in an instance family, or to support a specific instance type only.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyHosts service method.</param>
         /// <param name="cancellationToken">
