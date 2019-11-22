@@ -68,6 +68,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetQualityFilter())
+                {
+                    context.Writer.WritePropertyName("QualityFilter");
+                    context.Writer.Write(publicRequest.QualityFilter);
+                }
+
                 if(publicRequest.IsSetSimilarityThreshold())
                 {
                     context.Writer.WritePropertyName("SimilarityThreshold");

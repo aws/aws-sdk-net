@@ -733,6 +733,18 @@ namespace Amazon.Rekognition
         /// </summary>
         public static readonly QualityFilter AUTO = new QualityFilter("AUTO");
         /// <summary>
+        /// Constant HIGH for QualityFilter
+        /// </summary>
+        public static readonly QualityFilter HIGH = new QualityFilter("HIGH");
+        /// <summary>
+        /// Constant LOW for QualityFilter
+        /// </summary>
+        public static readonly QualityFilter LOW = new QualityFilter("LOW");
+        /// <summary>
+        /// Constant MEDIUM for QualityFilter
+        /// </summary>
+        public static readonly QualityFilter MEDIUM = new QualityFilter("MEDIUM");
+        /// <summary>
         /// Constant NONE for QualityFilter
         /// </summary>
         public static readonly QualityFilter NONE = new QualityFilter("NONE");
@@ -794,6 +806,10 @@ namespace Amazon.Rekognition
         /// Constant LOW_CONFIDENCE for Reason
         /// </summary>
         public static readonly Reason LOW_CONFIDENCE = new Reason("LOW_CONFIDENCE");
+        /// <summary>
+        /// Constant LOW_FACE_QUALITY for Reason
+        /// </summary>
+        public static readonly Reason LOW_FACE_QUALITY = new Reason("LOW_FACE_QUALITY");
         /// <summary>
         /// Constant LOW_SHARPNESS for Reason
         /// </summary>

@@ -97,6 +97,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MaxFaces);
                 }
 
+                if(publicRequest.IsSetQualityFilter())
+                {
+                    context.Writer.WritePropertyName("QualityFilter");
+                    context.Writer.Write(publicRequest.QualityFilter);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

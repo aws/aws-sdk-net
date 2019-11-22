@@ -37,7 +37,7 @@ namespace Amazon.Rekognition.Model
     /// detected, the operation returns face details. These details include a bounding box
     /// of the face, a confidence value (that the bounding box contains a face), and a fixed
     /// set of attributes such as facial landmarks (for example, coordinates of eye and mouth),
-    /// gender, presence of beard, sunglasses, and so on. 
+    /// presence of beard, sunglasses, and so on. 
     /// </para>
     ///  
     /// <para>

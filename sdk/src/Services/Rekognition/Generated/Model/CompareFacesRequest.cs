@@ -68,6 +68,21 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
+    /// The <code>QualityFilter</code> input parameter allows you to filter out detected faces
+    /// that don’t meet a required quality bar. The quality bar is based on a variety of common
+    /// use cases. By default, <code>CompareFaces</code> chooses the quality bar that's used
+    /// to filter faces. You can also explicitly choose the quality bar. Use <code>QualityFilter</code>,
+    /// to set the quality bar by specifying <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>.
+    /// If you do not want to filter detected faces, specify <code>NONE</code>. 
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// To use quality filtering, you need a collection associated with version 3 of the face
+    /// model or higher. To get the version of the face model associated with a collection,
+    /// call <a>DescribeCollection</a>. 
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// If the image doesn't contain Exif metadata, <code>CompareFaces</code> returns orientation
     /// information for the source and target images. Use these values to display the images
     /// with the correct image orientation.
@@ -95,9 +110,41 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class CompareFacesRequest : AmazonRekognitionRequest
     {
+        private QualityFilter _qualityFilter;
         private float? _similarityThreshold;
         private Image _sourceImage;
         private Image _targetImage;
+
+        /// <summary>
+        /// Gets and sets the property QualityFilter. 
+        /// <para>
+        /// A filter that specifies a quality bar for how much filtering is done to identify faces.
+        /// Filtered faces aren't compared. If you specify <code>AUTO</code>, Amazon Rekognition
+        /// chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or
+        /// <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality
+        /// bar. The default value is <code>AUTO</code>. The quality bar is based on a variety
+        /// of common use cases. Low-quality detections can occur for a number of reasons. Some
+        /// examples are an object that's misidentified as a face, a face that's too blurry, or
+        /// a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no
+        /// filtering is performed. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To use quality filtering, the collection you are using must be associated with version
+        /// 3 of the face model or higher.
+        /// </para>
+        /// </summary>
+        public QualityFilter QualityFilter
+        {
+            get { return this._qualityFilter; }
+            set { this._qualityFilter = value; }
+        }
+
+        // Check to see if QualityFilter property is set
+        internal bool IsSetQualityFilter()
+        {
+            return this._qualityFilter != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SimilarityThreshold. 
