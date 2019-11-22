@@ -57,6 +57,12 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
                     response.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("createdAt", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.CreatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("egressEndpoints", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<EgressEndpoint, EgressEndpointUnmarshaller>(EgressEndpointUnmarshaller.Instance);
