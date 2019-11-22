@@ -1652,6 +1652,68 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  ModifyCluster
+
+        /// <summary>
+        /// Modifies the number of steps that can be executed concurrently for the cluster specified
+        /// using ClusterID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCluster service method.</param>
+        /// 
+        /// <returns>The response from the ModifyCluster service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyCluster">REST API Reference for ModifyCluster Operation</seealso>
+        public virtual ModifyClusterResponse ModifyCluster(ModifyClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyClusterResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyClusterResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCluster operation on AmazonElasticMapReduceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyCluster">REST API Reference for ModifyCluster Operation</seealso>
+        public virtual IAsyncResult BeginModifyCluster(ModifyClusterRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyCluster.</param>
+        /// 
+        /// <returns>Returns a  ModifyClusterResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyCluster">REST API Reference for ModifyCluster Operation</seealso>
+        public virtual ModifyClusterResponse EndModifyCluster(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyClusterResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ModifyInstanceFleet
 
         /// <summary>

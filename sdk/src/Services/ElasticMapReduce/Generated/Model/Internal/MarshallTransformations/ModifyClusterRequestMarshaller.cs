@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CancelSteps Request Marshaller
+    /// ModifyCluster Request Marshaller
     /// </summary>       
-    public class CancelStepsRequestMarshaller : IMarshaller<IRequest, CancelStepsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ModifyClusterRequestMarshaller : IMarshaller<IRequest, ModifyClusterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CancelStepsRequest)input);
+            return this.Marshall((ModifyClusterRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CancelStepsRequest publicRequest)
+        public IRequest Marshall(ModifyClusterRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
-            string target = "ElasticMapReduce.CancelSteps";
+            string target = "ElasticMapReduce.ModifyCluster";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2009-03-31";            
@@ -74,21 +74,10 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ClusterId);
                 }
 
-                if(publicRequest.IsSetStepCancellationOption())
+                if(publicRequest.IsSetStepConcurrencyLevel())
                 {
-                    context.Writer.WritePropertyName("StepCancellationOption");
-                    context.Writer.Write(publicRequest.StepCancellationOption);
-                }
-
-                if(publicRequest.IsSetStepIds())
-                {
-                    context.Writer.WritePropertyName("StepIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestStepIdsListValue in publicRequest.StepIds)
-                    {
-                            context.Writer.Write(publicRequestStepIdsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("StepConcurrencyLevel");
+                    context.Writer.Write(publicRequest.StepConcurrencyLevel);
                 }
 
         
@@ -100,9 +89,9 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CancelStepsRequestMarshaller _instance = new CancelStepsRequestMarshaller();        
+        private static ModifyClusterRequestMarshaller _instance = new ModifyClusterRequestMarshaller();        
 
-        internal static CancelStepsRequestMarshaller GetInstance()
+        internal static ModifyClusterRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -110,7 +99,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CancelStepsRequestMarshaller Instance
+        public static ModifyClusterRequestMarshaller Instance
         {
             get
             {

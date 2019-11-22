@@ -88,6 +88,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.NormalizedInstanceHours = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OutpostArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OutpostArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = ClusterStatusUnmarshaller.Instance;

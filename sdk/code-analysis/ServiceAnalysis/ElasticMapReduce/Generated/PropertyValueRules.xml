@@ -160,6 +160,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.Cluster.OutpostArn</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.Cluster.SecurityConfiguration</property>
     <min>0</min>
     <max>10280</max>
@@ -167,6 +172,11 @@
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.ClusterSummary.ClusterArn</property>
     <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.ClusterSummary.OutpostArn</property>
+    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>

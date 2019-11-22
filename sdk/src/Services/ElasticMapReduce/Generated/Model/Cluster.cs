@@ -47,6 +47,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string _masterPublicDnsName;
         private string _name;
         private int? _normalizedInstanceHours;
+        private string _outpostArn;
         private string _releaseLabel;
         private RepoUpgradeOnBoot _repoUpgradeOnBoot;
         private string _requestedAmiVersion;
@@ -55,6 +56,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string _securityConfiguration;
         private string _serviceRole;
         private ClusterStatus _status;
+        private int? _stepConcurrencyLevel;
         private List<Tag> _tags = new List<Tag>();
         private bool? _terminationProtected;
         private bool? _visibleToAllUsers;
@@ -353,6 +355,25 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OutpostArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the Outpost where the cluster is launched. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string OutpostArn
+        {
+            get { return this._outpostArn; }
+            set { this._outpostArn = value; }
+        }
+
+        // Check to see if OutpostArn property is set
+        internal bool IsSetOutpostArn()
+        {
+            return this._outpostArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ReleaseLabel. 
         /// <para>
         /// The Amazon EMR release label, which determines the version of open-source application
@@ -514,6 +535,24 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StepConcurrencyLevel. 
+        /// <para>
+        /// Specifies the number of steps that can be executed concurrently.
+        /// </para>
+        /// </summary>
+        public int StepConcurrencyLevel
+        {
+            get { return this._stepConcurrencyLevel.GetValueOrDefault(); }
+            set { this._stepConcurrencyLevel = value; }
+        }
+
+        // Check to see if StepConcurrencyLevel property is set
+        internal bool IsSetStepConcurrencyLevel()
+        {
+            return this._stepConcurrencyLevel.HasValue; 
         }
 
         /// <summary>

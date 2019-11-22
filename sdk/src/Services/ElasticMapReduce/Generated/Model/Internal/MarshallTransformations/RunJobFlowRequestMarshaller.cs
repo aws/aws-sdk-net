@@ -232,6 +232,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ServiceRole);
                 }
 
+                if(publicRequest.IsSetStepConcurrencyLevel())
+                {
+                    context.Writer.WritePropertyName("StepConcurrencyLevel");
+                    context.Writer.Write(publicRequest.StepConcurrencyLevel);
+                }
+
                 if(publicRequest.IsSetSteps())
                 {
                     context.Writer.WritePropertyName("Steps");

@@ -38,6 +38,7 @@ namespace Amazon.ElasticMapReduce.Model
     public partial class CancelStepsRequest : AmazonElasticMapReduceRequest
     {
         private string _clusterId;
+        private StepCancellationOption _stepCancellationOption;
         private List<string> _stepIds = new List<string>();
 
         /// <summary>
@@ -47,7 +48,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// and <a>ListClusters</a> to get ClusterIDs. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string ClusterId
         {
             get { return this._clusterId; }
@@ -61,12 +62,32 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StepCancellationOption. 
+        /// <para>
+        /// The option to choose for cancelling <code>RUNNING</code> steps. By default, the value
+        /// is <code>SEND_INTERRUPT</code>.
+        /// </para>
+        /// </summary>
+        public StepCancellationOption StepCancellationOption
+        {
+            get { return this._stepCancellationOption; }
+            set { this._stepCancellationOption = value; }
+        }
+
+        // Check to see if StepCancellationOption property is set
+        internal bool IsSetStepCancellationOption()
+        {
+            return this._stepCancellationOption != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StepIds. 
         /// <para>
         /// The list of <code>StepIDs</code> to cancel. Use <a>ListSteps</a> to get steps and
         /// their states for the specified cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> StepIds
         {
             get { return this._stepIds; }

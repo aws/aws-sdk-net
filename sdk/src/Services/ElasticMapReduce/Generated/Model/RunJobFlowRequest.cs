@@ -88,6 +88,7 @@ namespace Amazon.ElasticMapReduce.Model
         private ScaleDownBehavior _scaleDownBehavior;
         private string _securityConfiguration;
         private string _serviceRole;
+        private int? _stepConcurrencyLevel;
         private List<StepConfig> _steps = new List<StepConfig>();
         private List<string> _supportedProducts = new List<string>();
         private List<Tag> _tags = new List<Tag>();
@@ -549,6 +550,25 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetServiceRole()
         {
             return this._serviceRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StepConcurrencyLevel. 
+        /// <para>
+        /// Specifies the number of steps that can be executed concurrently. The default value
+        /// is <code>1</code>. The maximum value is <code>256</code>.
+        /// </para>
+        /// </summary>
+        public int StepConcurrencyLevel
+        {
+            get { return this._stepConcurrencyLevel.GetValueOrDefault(); }
+            set { this._stepConcurrencyLevel = value; }
+        }
+
+        // Check to see if StepConcurrencyLevel property is set
+        internal bool IsSetStepConcurrencyLevel()
+        {
+            return this._stepConcurrencyLevel.HasValue; 
         }
 
         /// <summary>

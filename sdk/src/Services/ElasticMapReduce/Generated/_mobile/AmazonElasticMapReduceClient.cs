@@ -1343,6 +1343,48 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  ModifyCluster
+
+        internal virtual ModifyClusterResponse ModifyCluster(ModifyClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyClusterResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyClusterResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modifies the number of steps that can be executed concurrently for the cluster specified
+        /// using ClusterID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyCluster service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyCluster">REST API Reference for ModifyCluster Operation</seealso>
+        public virtual Task<ModifyClusterResponse> ModifyClusterAsync(ModifyClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyClusterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifyInstanceFleet
 
         internal virtual ModifyInstanceFleetResponse ModifyInstanceFleet(ModifyInstanceFleetRequest request)
