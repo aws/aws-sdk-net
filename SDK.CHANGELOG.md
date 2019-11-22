@@ -1,3 +1,34 @@
+### 3.3.637.0 (2019-11-22 20:14 UTC)
+* ApplicationAutoScaling (3.3.102.0)
+	* Update default endpoint for Application Auto Scaling.
+* AutoScalingPlans (3.3.101.0)
+	* Update default endpoint for AWS Auto Scaling.
+* CertificateManager (3.3.101.0)
+	* This release adds support for Tag-Based IAM for AWS Certificate Manager and adding tags to certificates upon creation.
+* CodeBuild (3.3.105.0)
+	* Add Canonical ARN to LogsLocation.
+* EC2 (3.3.139.0)
+	* This release adds two new APIs (DescribeInstanceTypes and DescribeInstanceTypeOfferings) that give customers access to instance type attributes and regional and zonal offerings.
+* ElasticMapReduce (3.3.104.0)
+	* Amazon EMR adds support for concurrent step execution and cancelling running steps. Amazon EMR has added a new Outpost ARN field in the ListCluster and DescribeCluster API responses that is populated for clusters launched in an AWS Outpost subnet.
+* ForecastService (3.3.101.0)
+	* This release adds two key updates to existing APIs. 1. Amazon Forecast can now generate forecasts in any quantile using the optional parameter forecastTypes in the CreateForecast API and 2. You can get additional details (metrics and relevant error messages) on your AutoML runs using the DescribePredictor and GetAccuracyMetrics APIs.
+* MediaPackageVod (3.3.102.0)
+	* Includes the submission time of Asset ingestion request in the API response for Create/List/Describe Assets.
+* Rekognition (3.3.102.0)
+	* This release adds enhanced face filtering support to the IndexFaces API operation, and introduces face filtering for CompareFaces and SearchFacesByImage API operations.
+* SecurityToken (3.3.104.0)
+	* Support tagging for STS sessions and tag based access control for the STS APIs
+* SimpleNotificationService (3.3.101.92)
+	* Added documentation for the dead-letter queue feature.
+* SimpleSystemsManagement (3.3.112.0)
+	* Add RebootOption and LastNoRebootInstallOperationTime for DescribeInstancePatchStates and DescribeInstancePatchStatesForPatchGroup API
+* Core 3.3.103.68
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.636.0 (2019-11-21 22:52 UTC)
 * Amplify (3.3.104.0)
 	* This release of AWS Amplify Console introduces support for backend environments. Backend environments are containers for AWS deployments. Each environment is a collection of AWS resources.
